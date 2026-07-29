@@ -1,1 +1,36 @@
+name: Build and Deploy
 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'clubs/**'
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Run aggregation
+      run: python3 engine/aggregate.py
+    
+    - name: Build landing pages
+      run: python3 engine/build_extended.py --batch-landing-pages
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "Auto-generated landing pages" || true
+        git push
