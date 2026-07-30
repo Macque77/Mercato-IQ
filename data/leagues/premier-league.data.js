@@ -5,88 +5,109 @@
 
 const LEAGUE = {
   name: "Premier League",
+  nation: "England",
   stories_count: 116
 };
 
 const TOP_STORIES = [  {
     name: "Senior core review", prob: 70,
-    club_origin: "manchester-city", direction: "out"
+    club_origin: "manchester-city", direction: "out",
+    from: "Manchester City", to: "Various"
   },
   {
     name: "Manager appointment", prob: 50,
-    club_origin: "fulham", direction: "in"
+    club_origin: "fulham", direction: "in",
+    from: "TBC", to: "Fulham"
   },
   {
     name: "Manager: McKenna (risk)", prob: 45,
-    club_origin: "ipswich-town", direction: "out"
+    club_origin: "ipswich-town", direction: "out",
+    from: "Ipswich Town", to: "Fulham"
   },
   {
     name: "Morgan Rogers", prob: 35,
-    club_origin: "arsenal", direction: "in"
+    club_origin: "arsenal", direction: "in",
+    from: "Aston Villa", to: "Arsenal"
   },
   {
     name: "Squad rationalisation", prob: 65,
-    club_origin: "chelsea", direction: "out"
+    club_origin: "chelsea", direction: "out",
+    from: "Chelsea", to: "Various"
   },
   {
     name: "Dayann Methalie", prob: 58,
-    club_origin: "sunderland", direction: "in"
+    club_origin: "sunderland", direction: "in",
+    from: "Toulouse", to: "Sunderland"
   },
   {
     name: "Lamine Camara", prob: 35,
-    club_origin: "aston-villa", direction: "in"
+    club_origin: "aston-villa", direction: "in",
+    from: "Monaco", to: "Aston Villa"
   },
   {
     name: "Gabriel Jesus", prob: 35,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Open to offers"
   },
   {
     name: "Adam Wharton", prob: 30,
-    club_origin: "crystal-palace", direction: "out"
+    club_origin: "crystal-palace", direction: "out",
+    from: "Crystal Palace", to: "Elite interest"
   },
   {
     name: "Elliot Anderson", prob: 30,
-    club_origin: "manchester-city", direction: "in"
+    club_origin: "manchester-city", direction: "in",
+    from: "(discussed)", to: "Manchester City"
   },
   {
     name: "Riccardo Calafiori", prob: 30,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Juventus"
   },
   {
     name: "Leandro Trossard", prob: 30,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Open to offers"
   },
   {
     name: "Christian Nørgaard", prob: 30,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Listening to offers"
   },
   {
     name: "Gabriel Martinelli", prob: 28,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Available"
   },
   {
     name: "Ben White", prob: 25,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Listening to offers"
   },
   {
     name: "Eli Junior Kroupi", prob: 20,
-    club_origin: "arsenal", direction: "in"
+    club_origin: "arsenal", direction: "in",
+    from: "Bournemouth", to: "Arsenal"
   },
   {
     name: "Enzo Fernández", prob: 18,
-    club_origin: "manchester-city", direction: "in"
+    club_origin: "manchester-city", direction: "in",
+    from: "(discussed)", to: "Manchester City"
   },
   {
     name: "Noah Sadiki", prob: 18,
-    club_origin: "sunderland", direction: "out"
+    club_origin: "sunderland", direction: "out",
+    from: "Sunderland", to: "Man Utd / City / Chelsea / Arsenal"
   },
   {
     name: "Matthis Abline", prob: 14,
-    club_origin: "sunderland", direction: "in"
+    club_origin: "sunderland", direction: "in",
+    from: "Nantes", to: "Sunderland"
   },
   {
     name: "Julián Álvarez", prob: 10,
-    club_origin: "arsenal", direction: "in"
+    club_origin: "arsenal", direction: "in",
+    from: "Atlético Madrid", to: "Arsenal"
   },
 ];
 
@@ -94,6 +115,6 @@ const BY_CLUB = {"manchester-city": 3, "fulham": 6, "ipswich-town": 6, "arsenal"
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T09:45:13.117856Z",
+  updated: "2026-07-30T10:48:01.966183Z",
   label: "League aggregation"
 };
