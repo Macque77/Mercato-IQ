@@ -4,145 +4,18 @@
    ============================================================ */
 
 const HEADLINES = [
-  {
-    headline: "Senior core review",
-    summary: "The clearest business: a generational refresh sees several Guardiola-era seniors",
-    value: "Mixed",
-    from: "manchester-city", to: "Various",
-    prob: 70, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "manchester-city",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    headline: "Manager appointment",
-    summary: "",
-    value: "Compensation",
-    from: "fulham", to: "TBC",
-    prob: 50, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "fulham",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    headline: "Manager: McKenna (risk)",
-    summary: "",
-    value: "~£8m buy-out",
-    from: "ipswich-town", to: "Fulham",
-    prob: 45, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "ipswich-town",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    headline: "Morgan Rogers",
-    summary: "",
-    value: "£80m+",
-    from: "arsenal", to: "Aston Villa",
-    prob: 35, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Squad rationalisation",
-    summary: "The defining business: a vast roster trimmed for balance and cost-rule profit. P",
-    value: "Mixed (profit-rich)",
-    from: "chelsea", to: "Various",
-    prob: 65, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "chelsea",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Dayann Methalie",
-    summary: "",
-    value: "~€30m (£25-26m)",
-    from: "sunderland", to: "Toulouse",
-    prob: 58, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "sunderland",
-    updated: "2026-07-29T21:40:00Z"
-  },
-  {
-    headline: "Lamine Camara",
-    summary: "",
-    value: "~€50m",
-    from: "aston-villa", to: "Monaco",
-    prob: 35, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "aston-villa",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Gabriel Jesus",
-    summary: "",
-    value: "£25-35m",
-    from: "arsenal", to: "Open to offers",
-    prob: 35, trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Adam Wharton",
-    summary: "",
-    value: "£60m+",
-    from: "crystal-palace", to: "Elite interest",
-    prob: 30, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "crystal-palace",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Elliot Anderson",
-    summary: "",
-    value: "£50-70m",
-    from: "manchester-city", to: "(discussed)",
-    prob: 30, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "manchester-city",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    headline: "Riccardo Calafiori",
-    summary: "",
-    value: "£35-45m",
-    from: "arsenal", to: "Juventus",
-    prob: 30, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Leandro Trossard",
-    summary: "",
-    value: "£12-18m",
-    from: "arsenal", to: "Open to offers",
-    prob: 30, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
-  },
-];
-
-const NATIONS = [
-  {
-    name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 116, league_count: 1
-  },
 ];
 
 const STATS = {
   global_spend: "£5.2bn estimated",
-  top_league: "Premier League",
+  top_league: "Unknown",
   most_active_club: "Manchester City",
-  nations_covered: 1,
-  leagues_covered: 1
+  nations_covered: 0,
+  leagues_covered: 0
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T23:24:34.045185Z",
+  asof: "30 Jul 2026",
+  updated: "2026-07-30T10:02:43.766455Z",
   label: "Global aggregation from all clubs"
 };
