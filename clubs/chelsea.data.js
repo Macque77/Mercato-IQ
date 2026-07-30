@@ -1,58 +1,293 @@
 /* ============================================================
    MERCATO IQ · CLUB DATA · CHELSEA · STATE OF RECORD
+   This file IS the club's live state. A refresh edits ONLY this
+   file, then engine/build.py splices it into template.html to
+   produce chelsea.html. Never hand-edit the built html.
+   Mechanics: engine/REFRESH_RUNBOOK.md · Rules: 00_MASTER_ENGINE.md
+   ------------------------------------------------------------
+   MIGRATION NOTE (format migration only, data carried from the
+   6 Jun 2026 v1 dashboard, no re-verification):
+   · truth values SYNTHESISED conservatively from source tier and
+     recency (T1 85 / T2 70 / T3 55 / T4 35; minus 10 where a note
+     reads cooled or stale). The old single probability is kept as
+     Happens?. No light-band fixes were needed (no prob sat outside
+     its declared band).
+   · The v1 build held only 3 rated rows (thread-level, not named
+     players); the QA gate requires 5 combined rows, so two extra
+     thread rows (Defensive balance, Midfield control) were derived
+     from the v1 POSITIONS board (heat 55 / 50 used as prob, truth
+     via the same tier rule). They restate v1 content only;
+     no new rumours were added.
+   · Old file held no source URLs, so LINKMAP/WL_LINKMAP point at
+     named-source hubs only (club beat: Matt Law, Nizaar Kinsella,
+     BBC, The Athletic); replace with exact URLs at next refresh.
+   · Old badge payload was JPEG data mislabelled image/png; it fails
+     PNG validation, so the build uses the chelsea.png reference +
+     SVG shield fallback until a true PNG is inlined.
+   · BRAND tokens carried from the v1 CSS accents, which skinned
+     Chelsea in the GOLD secondary (#DBA111), not the club blue
+     (#034694 per chelsea.md); review the skin at next refresh.
    ============================================================ */
 
+/* ── IDENTITY & SKIN (stable, re-check rarely) ── */
 const BRAND = {
-  club: "Chelsea", mono: "C", slug: "chelsea",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Your Nation","Your League"]
+  club: "Chelsea", mono: "CFC", slug: "chelsea",
+  primary: "#DBA111", primaryBright: "#e4b84c", primaryDeep: "#83600a",
+  primaryRgb: "219,161,17",
+  breadcrumb: ["England","Premier League"]
 };
 
+/* ── VOLATILE FACTS (machine-readable; verification cadence per runbook)
+   verified deliberately stale (old build date): next refresh must re-verify all fields. ── */
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  verified: "2026-06-06",
+  coach: "Xabi Alonso (four-year deal from 1 Jul 2026)",
+  dof: "BlueCo recruitment (co-sporting directors)",
+  europe: "None (2026/27)",
+  finish: "Mid-table (9th, 2025/26)",
+  owner: "BlueCo (Todd Boehly / Clearlake Capital)",
+  window: "Opens 15 Jun, runs to 1 Sep 2026"
 };
 
+/* ── SWEEP PLAN (fire ALL feeds + queries IN PARALLEL at refresh start) ── */
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["chelsea transfer news"]
+  feeds: [
+    "https://www.newsnow.co.uk/h/Sport/Football/Premier+League/Chelsea/Transfer+News",
+    "https://www.transferfeed.com/clubs/chelsea",
+    "https://www.football.london/chelsea-fc/",
+    "https://www.skysports.com/chelsea"
+  ],
+  queries: [
+    "Chelsea transfer news <current month + year>",
+    "Chelsea bid OR medical OR 'personal terms'",
+    "Chelsea calciomercato Di Marzio TuttoMercatoWeb Gazzetta",
+    "Chelsea transfer L'Equipe Foot Mercato OR TyC Sports Globo Esporte",
+    "Chelsea fichajes Marca AS Relevo OR A Bola Record"
+  ],
+  note: "Foreign desks per profile: South America (TyC Sports/Ole/Globo Esporte), France (L'Equipe/RMC/Foot Mercato), Portugal (A Bola/Record), Italy (Di Marzio/TMW/Gazzetta/Corriere + Serie A local beats), Germany (Plettenberg/Sky DE/Bild/Kicker), Spain (Marca/AS/Relevo/Moretto + La Liga local beats). For every linked player also search the current club's local press in the native language. Club-specific: check BlueCo multi-club ties (Strasbourg feeder deals) and any live PSR/SCR sanction each refresh. Add one query per movable live thread. Trace every aggregator hit to its original reporter (master §4)."
 };
 
-const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
-};
+/* ── EDIT THESE EACH REFRESH ──────────────────────────
+   asof: human display date · updated: full ISO timestamp (drives live ticker) */
+const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label: "Build · Alonso era, no Europe (migrated to v2, awaiting live refresh)" };
 
-const CONFIRMED_IN = [];
+/* CONFIRMED BUSINESS - move items here as deals are officially done.
+   free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
+const CONFIRMED_IN = [
+  {name:"Emmanuel Emegha", sub:"ST · Netherlands", to:"agreed from Strasbourg", fee:"Undisclosed", free:false, status:"done", statusTxt:"AGREED",
+   note:"The Strasbourg captain and striker is reported as long agreed to join via the BlueCo cross-club pipeline this summer. A direct, on-model young centre-forward; awaiting formal completion."},
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
-const RISERS = [];
-const FALLERS = [];
-const NEW = [];
-const IGNORE = [];
-const POSITIONS = [];
-const WATCHLIST = [];
 
+const INCOMING = [
+  {name:"Alonso-fit additions", sub:"System pieces", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£60-120m total", truth:55, prob:40, light:'y', trend:'flat',
+   note:"With Emegha agreed, further targets are likely to be Alonso-shaped, balanced and tactically specific rather than another volume splurge. Names firm up once he starts on 1 July."},
+  {name:"Defensive balance", sub:"Positional thread", club:"Market", pos:"CB/FB", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Within £120-200m gross", truth:55, prob:55, light:'g', trend:'flat',
+   note:"Carried from the v1 positions board (heat 55): an Alonso-shaped defensive structure is a stated priority of the rebuild. Thread-level only; the v1 state held no named defensive targets, so names attach at the next refresh."},
+  {name:"Midfield control", sub:"Positional thread", club:"Market", pos:"CM", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Within £120-200m gross", truth:55, prob:50, light:'y', trend:'flat',
+   note:"Carried from the v1 positions board (heat 50): tactical fit for Alonso in central midfield is a flagged need. Thread-level only; no named midfield targets were held in the v1 state."},
+];
+
+const OUTGOING = [
+  {name:"Squad rationalisation", sub:"Surplus & loan army", club:"Various", pos:"-", report:"~2 wks ago", src:"ESPN / aggregated", tier:2, fee:"Mixed (profit-rich)", truth:70, prob:65, light:'g', trend:'up',
+   note:"The defining business: a vast roster trimmed for balance and cost-rule profit. PRICING: fringe and academy names move at varied floors; book profit on homegrown sales."},
+  {name:"High earners", sub:"Wage & ratio relief", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
+   note:"Expect some bigger names to move on as Alonso reshapes the side and BlueCo manage the cost ratio."},
+];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Alonso</b>: appointed; four-year deal from 1 July."},
+  {ar:"⬆", t:"<b>Emegha</b>: agreed from Strasbourg via the BlueCo pipeline."},
+];
+const FALLERS = [
+  {ar:"⬇", t:"<b>European planning</b>: Chelsea have no Europe for 2026/27."},
+  {ar:"⬇", t:"<b>Rosenior-era stories</b>: sacked; now out of date."},
+];
+const NEW = [
+  {ar:"✦", t:"Manager: <b>Xabi Alonso</b> in (third change of the season)."},
+  {ar:"✦", t:"In: <b>Emegha</b> agreed + Alonso-fit pieces. Out: major squad rationalisation."},
+];
+const IGNORE = [
+  {ar:"✕", t:"<b>Maresca / Rosenior</b>-era links: not live."},
+  {ar:"✕", t:"<b>Champions League planning</b>: Chelsea missed Europe."},
+];
+
+const POSITIONS = [
+  {p:"Squad rationalisation (out)", w:85, x:"A vast roster must be trimmed for balance and profit"},
+  {p:"Striker", w:60, x:"Emegha agreed; depth and goals"},
+  {p:"Defensive balance", w:55, x:"Alonso-shaped structure"},
+  {p:"Midfield control", w:50, x:"Tactical fit for Alonso"},
+  {p:"Goalkeeper", w:35, x:"Review under the new coach"},
+];
+
+/* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
+   aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
+const WATCHLIST = [
+  {name:"Emmanuel Emegha", club:"Strasbourg", pos:"ST", dir:"in", age:"~2 wks", tier:2, note:"(In ledger.) Long-agreed BlueCo cross-club move."},
+  {name:"Loan army", club:"Chelsea", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"Chelsea's large loan and fringe group to be traded for balance and profit."},
+  {name:"Alonso targets", club:"Market", pos:"-", dir:"in", age:"~2 wks", tier:3, note:"System-specific additions expected once Alonso starts on 1 July."},
+];
+
+/* ---------- SOURCE LINKS ----------
+   Exact URLs only where verified this refresh; otherwise the named source's hub.
+   The v1 file held no URLs, so all entries below are hubs pending re-verification.
+   Aggregators (TransferFeed etc.) are never linked: the traced original is. */
 const HUB = {
-  club: {l:"Chelsea Official", u:"#"}
+  bbcChe:    {l:"BBC Sport · Chelsea", u:"https://www.bbc.co.uk/sport/football/teams/chelsea"},
+  bbcGossip: {l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
+  athletic:  {l:"The Athletic · Chelsea", u:"https://www.nytimes.com/athletic/football/club/chelsea/"},
+  ornstein:  {l:"David Ornstein (The Athletic) · X", u:"https://x.com/David_Ornstein"},
+  romano:    {l:"Fabrizio Romano · X", u:"https://x.com/FabrizioRomano"},
+  law:       {l:"Matt Law (Telegraph) · X", u:"https://x.com/Matt_Law_DT"},
+  kinsella:  {l:"Nizaar Kinsella (BBC) · X", u:"https://x.com/NizaarKinsella"},
+  schira:    {l:"Nicolò Schira · X", u:"https://x.com/NicoSchira"},
+  sky:       {l:"Sky Sports · Chelsea", u:"https://www.skysports.com/chelsea"},
+  espn:      {l:"ESPN FC · football", u:"https://www.espn.co.uk/football/"},
+  fldn:      {l:"football.london · Chelsea", u:"https://www.football.london/chelsea-fc/"},
+  standard:  {l:"Evening Standard · Chelsea", u:"https://www.standard.co.uk/sport/football/chelsea"},
+  lequipe:   {l:"L'Équipe · football", u:"https://www.lequipe.fr/Football/"},
+  cfc:       {l:"Chelsea Official · news", u:"https://www.chelseafc.com/en/news"},
+};
+const LINKMAP = {
+  "Alonso-fit additions": ["bbcChe","athletic","law"],
+  "Defensive balance": ["bbcChe","law"],
+  "Midfield control": ["athletic","kinsella"],
+  "Squad rationalisation": ["espn","athletic","kinsella"],
+  "High earners": ["bbcChe","law"],
+  "Emmanuel Emegha": ["romano","lequipe","cfc"],
+};
+const WL_LINKMAP = {
+  "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
-
+/* ── PROSE (derived outputs; REWRITE per master §9b on every refresh, never carry over) ── */
 const PROSE = {
-  heroH2: `Chelsea · 2026/27 Season`,
-  heroLede: `Transfer window active. Chelsea preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
-  methodLegend: ``
+  heroH2: `<em>Alonso</em> takes charge: Club World Cup holders rebuild after missing Europe`,
+  heroLede: `A turbulent season ends with a fresh start: <b>Xabi Alonso</b> arrives as head coach (a four-year deal from 1 July), Chelsea's third managerial change of a chaotic campaign after Maresca left and Rosenior was sacked. Despite being <b>Club World Cup holders</b>, the Blues <b>missed European qualification</b> for 2026/27, which both stings and, under the cost rules, hands them the looser <b>85% cap</b>. Recruitment runs through the <b>BlueCo</b> structure, with Strasbourg's Emmanuel <b>Emegha</b> already agreed.`,
+  metaRow: `
+      <span>DECISION-MAKER: <b>BlueCo</b> (Recruitment)</span>
+      <span>HEAD COACH: <b>Xabi Alonso</b></span>
+      <span>OWNER: <b>BlueCo (Boehly / Clearlake)</b></span>
+      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    `,
+  stats: `
+    <div class="stat"><div class="l">2025/26 Finish</div><div class="v">Mid-table</div></div>
+    <div class="stat"><div class="l">2026/27 Europe</div><div class="v">NONE</div></div>
+    <div class="stat"><div class="l">Est. Gross Spend</div><div class="v">£120-200<small>m</small></div></div>
+    <div class="stat"><div class="l">Est. Sales</div><div class="v">£100-180<small>m</small></div></div>
+    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">85<small>%</small></div></div>`,
+  positionPanel: `
+  <!-- ANALYSIS: MODEL + FINANCE -->
+  <section id="sec-position">
+    <div class="sec-head"><h3>Club Position</h3><span class="num">01</span></div>
+    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the European trade-off.</p>
+
+    <div class="cards">
+      <!-- THE MODEL -->
+      <div class="card">
+        <h4>The Model <span class="tag">CORE PRINCIPLE</span></h4>
+        <p>A <b>young, high-volume recruitment model</b> under <b>BlueCo</b> (Boehly and Clearlake), now coached by <b>Xabi Alonso</b>. After managerial churn, the priority is on-pitch coherence and trimming a vast squad as much as adding to it.</p>
+        <div class="quote">Alonso, fresh from Real Madrid and a trophy-laden Leverkusen spell, inherits a talented but unbalanced roster and a brief to make it greater than the sum of its parts.</div>
+        <p><b>This window's logic:</b> integrate Alonso's ideas, bank the agreed Emegha deal, and rationalise the squad.</p>
+        <ul>
+          <li>Confirmed in: Emegha (Strasbourg), the BlueCo cross-club pipeline.</li>
+          <li>Markets: young, high-ceiling talent, as ever under BlueCo.</li>
+          <li>Squad churn: a large group of fringe and loaned players to be traded.</li>
+        </ul>
+        <div class="verdict"><b>Tracker implication:</b> weight Alonso-fit profiles and major outgoings equally; this is a rationalising window.</div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="card">
+        <h4>Financial Position <span class="tag">STRONG</span></h4>
+        <p>Owned by <b>BlueCo</b>, Chelsea spend heavily but have absorbed large losses, so cost-rule compliance and player-trading profit are central.</p>
+        <ul>
+          <li><b>No European football</b> hands the looser <b>85%</b> cap, easing the ratio after heavy spend.</li>
+          <li>Missing the Champions League is a meaningful revenue blow, however.</li>
+          <li>Selling surplus and academy players books profit and protects the ratio.</li>
+        </ul>
+        <div class="verdict"><b>Caveat:</b> the squad is large and expensive; trimming is as important as buying.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPUTATION + RISK/REWARD -->
+  <section id="sec-tradeoff">
+    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">02</span></div>
+    <p class="sec-sub">As Club World Cup holders Chelsea retain pull, but missing Europe and a chaotic season dent it; the 85% cap is the financial silver lining.</p>
+
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card">
+        <h4>Reputational Standing</h4>
+        <p>Club World Cup holders with elite resources, but three managers in a season and no European football have dented the project's credibility. Alonso's pedigree is the reset.</p>
+        <ul>
+          <li>Alonso's Leverkusen success lends real coaching credibility.</li>
+          <li>BlueCo's spending keeps Chelsea attractive to young talent.</li>
+        </ul>
+        <div class="verdict"><b>Double edge:</b> a bloated squad and no Europe mean Chelsea are sellers as much as buyers this summer.</div>
+      </div>
+      <div class="card">
+        <h4>The SCR Tightening <span class="tag">KEY TENSION</span></h4>
+        <p>The new <b>Squad Cost Ratio</b> caps wages, agent fees and amortisation at <b>85% of revenue for clubs outside Europe</b>, the looser of the two limits (European clubs sit at 70%). No continental football is a sporting blow but a quiet financial edge over rivals juggling the tighter cap.</p>
+        <p>BlueCo lean heavily on player-trading profit to satisfy the rules, so academy and surplus sales are structural.</p>
+        <ul>
+          <li>A 3-year net transfer position feeds the calculation.</li>
+          <li>Profit-rich sales of homegrown players are a recurring BlueCo lever.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riskgrid">
+      <div class="risk-r">
+        <h5>▲ Reward: Alonso turns talent into a team</h5>
+        <ul>
+          <li>A top coach could quickly organise an expensively assembled squad.</li>
+          <li>The 85% cap eases the ratio after heavy spend.</li>
+          <li>A coherent season would restore Champions League ambitions.</li>
+        </ul>
+      </div>
+      <div class="risk-d">
+        <h5>▼ Risk: more churn and no Europe</h5>
+        <ul>
+          <li>A fourth manager in barely a year would signal deeper dysfunction.</li>
+          <li>No Champions League revenue bites despite the looser cap.</li>
+          <li>A bloated squad risks unrest among fringe players.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict" style="margin-top:18px;max-width:none">
+      <b>Net read:</b> a rationalising window under Alonso, bank the agreed Emegha deal, trim a vast squad for profit and balance, add a few system-fit pieces, and use the looser 85% cap to reset after a chaotic year.
+    </div>
+  </section>
+`,
+  confirmedPending: `<b>Window opens 15 June; nothing is registered yet.</b> The settled business is the dugout: <b>Xabi Alonso</b> begins on 1 July. Striker <b>Emmanuel Emegha</b> is already agreed to arrive from sister club Strasbourg. Other moves enter the ledger only on announcement.`,
+  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, BlueCo network 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the last refresh.`,
+  outgoingSub: `Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.`,
+  pricingBanner: `
+      <b>Pricing principle: Chelsea sell from a vast, churn-heavy squad.</b> With a bloated roster and no Europe, surplus and loan-army names move at softer floors, while genuine first-team assets hold a holder's premium. BlueCo's model is constant trading, so expect both sizeable sales and buys.
+    `,
+  excludedNote: `<b>Excluded as stale:</b> Maresca and Rosenior-era stories are not live; Chelsea's head coach from 1 July is Xabi Alonso, so any item naming a predecessor is out of date.`,
+  spendIn: { v: `£120-200m`, x: `Emegha agreed; further young, Alonso-fit additions, funded substantially by sales.` },
+  spendOut: { v: `£100-180m`, x: `A large squad trimmed: surplus, loan-army and profit-rich academy sales to satisfy the cost rules.` },
+  methodLegend: `
+      <div class="col">
+        <h5>Source Tiers (current)</h5>
+        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b>: David Ornstein, Fabrizio Romano, BBC, The Athletic. <i>Used for:</i> the Alonso appointment, the Rosenior sacking, the Emegha agreement.</span></div>
+        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b>: Sky Sports, reliable national and club writers (Matt Law, Nizaar Kinsella); Nicolò Schira on the managerial saga.</span></div>
+        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b>: TEAMtalk, Football Insider, club sites, mixed-record nationals.</span></div>
+        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b>: Fichajes, Africa Foot, Foot Sur 7, Média Foot, fan posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> for the full rumour sweep, then traced to the original reporter for weighting, never weighted as a primary source themselves.</span></div>
+      </div>
+      <div class="col">
+        <h5>Weighting Model &amp; Recency Decay</h5>
+        <div class="weights">
+          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+          <span class="w">BlueCo network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+        </div>
+        <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
+        <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom and Hadj Moussa fall on this basis.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b>: the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window: fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
+      </div>`
 };

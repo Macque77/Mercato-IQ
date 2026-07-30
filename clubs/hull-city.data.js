@@ -1,0 +1,263 @@
+/* ============================================================
+   MERCATO IQ · CLUB DATA · HULL CITY · STATE OF RECORD
+   This file IS the club's live state. A refresh edits ONLY this
+   file, then engine/build.py splices it into template.html to
+   produce hull-city.html. Never hand-edit the built html.
+   Mechanics: engine/REFRESH_RUNBOOK.md · Rules: 00_MASTER_ENGINE.md
+   ============================================================ */
+
+/* ── IDENTITY & SKIN (stable, re-check rarely) ── */
+const BRAND = {
+  club: "Hull City", mono: "HCFC", slug: "hull-city",
+  primary: "#F18A01", primaryBright: "#f4a740", primaryDeep: "#905200",
+  primaryRgb: "241,138,1",
+  breadcrumb: ["England","Premier League"]
+};
+
+/* ── VOLATILE FACTS (machine-readable; verification cadence per runbook) ── */
+const VOLATILE = {
+  verified: "2026-06-06",
+  coach: "Sergej Jakirovic",
+  dof: "Owner-driven recruitment structure (no established sporting director)",
+  europe: "None (2026/27)",
+  finish: "Promoted via the play-offs (2025/26 Championship)",
+  owner: "Acun Ilicali (Acun Medya)",
+  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+};
+
+/* ── SWEEP PLAN (fire ALL feeds + queries IN PARALLEL at refresh start) ── */
+const SWEEP = {
+  feeds: [
+    "https://www.newsnow.co.uk/h/Sport/Football/Premier+League/Hull+City/Transfer+News",
+    "https://www.transferfeed.com/clubs/hull-city",
+    "https://www.hulldailymail.co.uk/sport/football/",
+    "https://www.skysports.com/hull-city"
+  ],
+  queries: [
+    "Hull City transfer news <current month + year>",
+    "Hull City bid OR medical OR 'personal terms'",
+    "Hull City transfer Fanatik Yagiz Sabuncuoglu",
+    "Hull City transfer Plettenberg Bild Kicker",
+    "Hull City transfer Voetbal International Telegraaf",
+    "Hull City transfer Fotbollskanalen VG Tipsbladet"
+  ],
+  note: "Foreign desks per profile: Turkey (Fanatik, Yagiz Sabuncuoglu, the Ilicali network's home market), Germany (Plettenberg/Sky DE, Bild, Kicker), Netherlands (Voetbal International, De Telegraaf), Scandinavia (Fotbollskanalen, VG, Tipsbladet). Priority beat: The Athletic, BBC Radio Humberside, Hull Daily Mail / Hull Live. For every linked player also search the current club's local press in the native language. Trace every aggregator hit to its original reporter (master §4)."
+};
+
+/* ── EDIT THESE EACH REFRESH ──────────────────────────
+   asof: human display date · updated: full ISO timestamp (drives live ticker) */
+const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label: "Build · Promoted, survival rebuild (migrated to v2, awaiting live refresh)" };
+
+/* CONFIRMED BUSINESS - move items here as deals are officially done.
+   free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
+const CONFIRMED_IN = [];
+const CONFIRMED_OUT = [];
+
+/* NOTE (migration): the prior page predates the window opening and carried NO sourced
+   player rumours, only survival-rebuild framing. The rows below are that framing split
+   by position need, clearly labelled; nothing is asserted as a sourced link. */
+const INCOMING = [
+  {name:"PL-experienced rebuild", sub:"Framing · survival-ready profiles", club:"Market", pos:"ALL", report:"window framing", src:"Pattern-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',
+   note:"A Championship-built squad needs a broad upgrade. Acun's network typically drives a high volume of arrivals, including loans and frees. Specific names firm up as the window opens; this frames the task, not invented targets."},
+  {name:"Goalscorer", sub:"Framing · position need, no named target", club:"Market", pos:"ST", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:40, light:'y', trend:'flat',
+   note:"Framing row, not a sourced rumour: goals are decisive in a survival fight, making a Premier League-level goalscorer the single clearest need in the rebuild. No named target is asserted; candidates will be rated as sourced links emerge."},
+  {name:"Centre-back", sub:"Framing · position need, no named target", club:"Market", pos:"CB", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:35, light:'y', trend:'flat',
+   note:"Framing row, not a sourced rumour: solidity at the step up is a stated priority; a promoted defence typically concedes most without top-flight-ready reinforcement. No named target is asserted."},
+  {name:"Midfield control", sub:"Framing · position need, no named target", club:"Market", pos:"CM", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:32, light:'y', trend:'flat',
+   note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted."},
+  {name:"Goalkeeper / depth", sub:"Framing · position need, no named target", club:"Market", pos:"GK", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:28, light:'o', trend:'flat',
+   note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted."},
+];
+
+const OUTGOING = [
+  {name:"Championship-level players", sub:"Framing · step-up churn", club:"Various", pos:"ALL", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
+   note:"Squad players who got Hull up but may not suit the Premier League moved on. PRICING: standard floors; a standout sold only at a premium."},
+];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Promotion</b> - first top flight since 2016/17."},
+  {ar:"⬆", t:"<b>Owner-driven window</b> - Acun's network drives volume."},
+];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Standing still</b> - a near-total upgrade is needed."},
+  {ar:"⬇", t:"<b>Quantity over quality</b> - cohesion must not suffer."},
+];
+const NEW = [
+  {ar:"✦", t:"Manager: <b>Jakirovic</b>; owner <b>Acun Ilicali</b>; <b>no Europe</b>."},
+  {ar:"✦", t:"In: a broad PL-level upgrade (loans/frees likely). Out: Championship-level players."},
+];
+const IGNORE = [
+  {ar:"✕", t:"<b>Invented specific targets</b> - none asserted without sourcing."},
+  {ar:"✕", t:"<b>Championship-only links</b> - reframed for the PL step up."},
+];
+
+const POSITIONS = [
+  {p:"Broad PL-level upgrade", w:80, x:"A Championship squad needs survival quality"},
+  {p:"Goalscorer", w:62, x:"Goals are decisive in a survival fight"},
+  {p:"Centre-back", w:55, x:"Solidity at the step up"},
+  {p:"Midfield control", w:50, x:"Composure against PL sides"},
+  {p:"Goalkeeper / depth", w:42, x:"Reliability and squad breadth"},
+];
+
+/* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
+   aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
+const WATCHLIST = [
+  {name:"PL-ready targets", club:"Market", pos:"ALL", dir:"in", age:"framing", tier:3, note:"Survival-profile recruits via Acun's network; loans and frees likely. Names firm up as the window opens."},
+  {name:"Squad-trim sales", club:"Hull City", pos:"ALL", dir:"out", age:"framing", tier:3, note:"Championship-level players moved on to fund and accommodate the upgrade."},
+];
+
+/* ---------- SOURCE LINKS ----------
+   Exact URLs only where verified this refresh; otherwise the named source's hub.
+   Aggregators (TransferFeed etc.) are never linked: the traced original is. */
+const HUB = {
+  hullLive:   {l:"Hull Live · Hull City", u:"https://www.hulldailymail.co.uk/sport/football/"},
+  bbcHull:    {l:"BBC Sport · Hull City", u:"https://www.bbc.co.uk/sport/football/teams/hull-city"},
+  bbcGossip:  {l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
+  athletic:   {l:"The Athletic · football", u:"https://www.nytimes.com/athletic/football/"},
+  sky:        {l:"Sky Sports · Hull City", u:"https://www.skysports.com/hull-city"},
+  official:   {l:"Hull City Official · news", u:"https://www.wearehullcity.co.uk/news/"},
+  fanatik:    {l:"Fanatik", u:"https://www.fanatik.com.tr/"},
+};
+const LINKMAP = {
+  "PL-experienced rebuild": ["hullLive","bbcHull","sky"],
+  "Goalscorer": ["hullLive","bbcGossip"],
+  "Centre-back": ["hullLive","bbcGossip"],
+  "Midfield control": ["hullLive","bbcGossip"],
+  "Goalkeeper / depth": ["hullLive","bbcGossip"],
+  "Championship-level players": ["hullLive","official"],
+};
+const WL_LINKMAP = {
+  "PL-ready targets":"hullLive","Squad-trim sales":"official",
+};
+
+/* ── PROSE (derived outputs; REWRITE per master §9b on every refresh, never carry over) ── */
+const PROSE = {
+  heroH2: `<em>Jakirovic</em> and Acun's Tigers are back: a first top flight since 2016/17`,
+  heroLede: `Hull City have completed a remarkable turnaround, from a relegation escape to <b>promotion</b> and a return to the Premier League for the first time since 2016/17, the club's sixth top-flight season. Bosnian coach Sergej <b>Jakirovic</b> has been widely praised, and ambitious owner <b>Acun Ilicali</b> now faces the step up. The summer brief is unambiguous: recruit decisively, and largely from scratch in Premier League terms, to give a Championship-built squad a fighting chance of survival.`,
+  metaRow: `
+      <span>DECISION-MAKER: <b>Acun Ilicali</b> (Owner)</span>
+      <span>HEAD COACH: <b>Sergej Jakirovic</b></span>
+      <span>OWNER: <b>Acun Ilicali (Acun Medya)</b></span>
+      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    `,
+  stats: `
+    <div class="stat"><div class="l">2025/26 Finish</div><div class="v">Promoted</div></div>
+    <div class="stat"><div class="l">2026/27 Europe</div><div class="v">NONE</div></div>
+    <div class="stat"><div class="l">Est. Gross Spend</div><div class="v">£50-100<small>m</small></div></div>
+    <div class="stat"><div class="l">Est. Sales</div><div class="v">£20-50<small>m</small></div></div>
+    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">85<small>%</small></div></div>`,
+  positionPanel: `
+  <!-- ANALYSIS: MODEL + FINANCE -->
+  <section id="sec-position">
+    <div class="sec-head"><h3>Club Position</h3><span class="num">01</span></div>
+    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the cost-cap trade-off.</p>
+
+    <div class="cards">
+      <!-- THE MODEL -->
+      <div class="card">
+        <h4>The Model <span class="tag">CORE PRINCIPLE</span></h4>
+        <p>An <b>owner-driven, high-volume</b> recruitment model under <b>Acun Ilicali</b>, coached by <b>Jakirovic</b>. Acun's international connections (and Turkish links in particular) typically generate a busy window; the challenge is converting volume into Premier League quality.</p>
+        <div class="quote">Jakirovic was credited with "working wonders" to take a side that narrowly survived relegation a year ago all the way to promotion.</div>
+        <p><b>This window's logic:</b> a near-total Premier League-level upgrade of a Championship-built squad, focused on survival.</p>
+        <ul>
+          <li>Expect a high volume of arrivals, including loans and free transfers via Acun's network.</li>
+          <li>Priority profiles: proven PL or top-European experience for an instant step up.</li>
+          <li>Specific names firm up as the window opens; none fabricated here.</li>
+        </ul>
+        <div class="verdict"><b>Tracker implication:</b> weight experienced, survival-ready profiles; expect breadth of business, and judge it on quality not quantity.</div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="card">
+        <h4>Financial Position <span class="tag">STRONG</span></h4>
+        <p>Funded by media entrepreneur <b>Acun Ilicali</b>, Hull have spent ambitiously in the Championship; promotion brings a major central-revenue uplift.</p>
+        <ul>
+          <li>No European football means the looser <b>85%</b> cost cap, useful for a big rebuild.</li>
+          <li>Promotion revenue and owner backing fund an aggressive window.</li>
+          <li>Loans and frees via Acun's network stretch the budget.</li>
+        </ul>
+        <div class="verdict"><b>Caveat:</b> Championship spending habits must translate into Premier League quality, the hard part.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPUTATION + RISK/REWARD -->
+  <section id="sec-tradeoff">
+    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">02</span></div>
+    <p class="sec-sub">Premier League status and an ambitious owner aid recruitment, but Hull must convince proven players to join a survival fight, and spend wisely.</p>
+
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card">
+        <h4>Reputational Standing</h4>
+        <p>Acun Ilicali's ownership has raised Hull's profile and ambition, and Premier League football is a real draw, though survival favourites must still sell the project to quality targets.</p>
+        <ul>
+          <li>Owner ambition and a wide network help land players.</li>
+          <li>Jakirovic's promotion gives the project credibility.</li>
+        </ul>
+        <div class="verdict"><b>Double edge:</b> a high-volume approach can bring quality, but cohesion is a risk if too much changes at once.</div>
+      </div>
+      <div class="card">
+        <h4>The SCR Tightening <span class="tag">KEY TENSION</span></h4>
+        <p>The new <b>Squad Cost Ratio</b> caps wages, agent fees and amortisation at <b>85% of revenue for clubs outside Europe</b>, the looser of the two limits. For a promoted side that headroom matters: it allows aggressive squad-building to survive, provided the trading is disciplined.</p>
+        <p>The central-revenue uplift widens the budget; loans and frees protect the ratio.</p>
+        <ul>
+          <li>A 3-year net transfer position feeds the calculation.</li>
+          <li>Frees and loans via the owner's network are cost-efficient levers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riskgrid">
+      <div class="risk-r">
+        <h5>▲ Reward: an ambitious survival bid</h5>
+        <ul>
+          <li>Owner backing plus the 85% cap allow a serious squad upgrade.</li>
+          <li>Acun's network can unlock value others miss.</li>
+          <li>Jakirovic has already exceeded expectations once.</li>
+        </ul>
+      </div>
+      <div class="risk-d">
+        <h5>▼ Risk: volume over coherence</h5>
+        <ul>
+          <li>Too many new faces can disrupt cohesion at the worst time.</li>
+          <li>Championship-level recruits may not make the step up.</li>
+          <li>Recent promoted sides have struggled to stay up.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict" style="margin-top:18px;max-width:none">
+      <b>Net read:</b> expect a busy, owner-driven window with loans and frees prominent, aimed at a near-total PL-level upgrade for survival; success hinges on quality and cohesion, not volume, within the 85% cap.
+    </div>
+  </section>
+`,
+  confirmedPending: `<b>Window opens 15 June; nothing is registered yet.</b> Hull are up under Jakirovic and owner Acun Ilicali, whose wide international network typically drives a high volume of business. Specific incomings firm up as the window opens; this report frames the survival task rather than inventing targets.`,
+  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). Weighting: recency 30%, source 25%, tactical fit 15%, Ilicali network 15%, finance 10%, competition 5%. Pre-window state of record: the rows below are clearly-labelled framing of the survival brief, not sourced rumours; named links replace them as reporting lands. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the last refresh.`,
+  outgoingSub: `Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.`,
+  pricingBanner: `
+      <b>Pricing principle: as a promoted club, Hull are buyers paying a promotion premium.</b> Selling clubs price up knowing the central-revenue windfall; Hull's own Championship standouts carry holder's premiums if Premier League clubs come calling. Acun's network often unlocks value via loans and free transfers.
+    `,
+  excludedNote: `<b>Excluded as stale:</b> Championship-era links are reframed for the Premier League context; no specific incoming is asserted without sourcing.`,
+  spendIn: { v: `£50-100m`, x: `A broad Premier League-level upgrade, with loans and frees prominent via Acun's network.` },
+  spendOut: { v: `£20-50m`, x: `Championship-level squad players moved on; a standout sold only at a premium.` },
+  methodLegend: `
+      <div class="col">
+        <h5>Source Tiers (current)</h5>
+        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b>: David Ornstein, Fabrizio Romano, BBC, The Athletic. <i>Used for:</i> promotion and Jakirovic's appointment and tenure.</span></div>
+        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b>: Premier League and reliable national writers; regional Hull coverage (Hull Live / BBC Radio Humberside rise a tier inside their patch); Fanatik and Yagiz Sabuncuoglu on the Turkish market.</span></div>
+        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b>: TEAMtalk, Football Insider, club sites, mixed-record nationals.</span></div>
+        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b>: Fichajes, Africa Foot, Foot Sur 7, Média Foot, fan posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> for the full rumour sweep, then traced to the original reporter for weighting, never weighted as a primary source themselves.</span></div>
+      </div>
+      <div class="col">
+        <h5>Weighting Model &amp; Recency Decay</h5>
+        <div class="weights">
+          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+          <span class="w">Ilicali network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+        </div>
+        <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
+        <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom &amp; Hadj Moussa fall on this basis.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b> - the credibility of the link itself, driven by tier, corroboration and recency. Pre-window framing rows carry a neutral T3 baseline until sourced links replace them.</span></div>
+        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window - fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
+      </div>`
+};
