@@ -11,6 +11,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mercato IQ · The Transfer Market, Decoded</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0c0f">
 <meta name="description" content="Every credible transfer rumour across Europe's major leagues, rated on two independent scores and updated the moment the picture changes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -250,6 +257,10 @@
     .status-pill{display:none}
     .hero-mark{width:38px;height:38px}
     .wb-unit{min-width:44px}
+  }
+  @media(max-width:360px){
+    .hgrid{grid-template-columns:1fr}
+    .deadline-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -597,7 +608,7 @@ const STATS = {
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T12:52:46.877396Z",
+  updated: "2026-07-30T11:54:47.800245Z",
   label: "Global aggregation from all clubs"
 };
 

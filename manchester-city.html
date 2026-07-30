@@ -14,6 +14,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mercato IQ: Manchester City</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0c0f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -88,15 +95,39 @@
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:54px 0 26px;border-bottom:1px solid var(--line)}
-  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
-  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,66px);line-height:.92;text-transform:uppercase;letter-spacing:.5px;max-width:18ch}
+  /* ---------- HERO (compact: matches landing-page space usage) ---------- */
+  .hero{padding:26px 0 16px;border-bottom:1px solid var(--line)}
+  .hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:10px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.2vw,36px);line-height:1.02;text-transform:uppercase;letter-spacing:.5px;max-width:34ch}
   .hero h2 em{font-style:normal;color:var(--red-bright)}
-  .hero .lede{margin-top:20px;max-width:74ch;color:#c9ccd4;font-size:16.5px}
+  .hero .lede{margin-top:10px;max-width:80ch;color:#c9ccd4;font-size:13.5px;line-height:1.5}
   .hero .lede b{color:var(--white)}
-  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
   .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- INS & OUTS SNAPSHOT (Overview focus, mirrors landing-page story grid) ---------- */
+  .ov-snap{margin:20px 0 4px}
+  .ov-snap-head{margin-bottom:12px}
+  .ov-snap-head h3{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.5px;color:var(--white)}
+  .ov-snap-head .ov-snap-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:3px}
+  .ov-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .ov-cols > .ov-col{min-width:0}
+  .ov-col-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .ov-col-head .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+  .ov-col-head .lbl.in{color:var(--green)}
+  .ov-col-head .lbl.out{color:var(--red-bright)}
+  .ov-viewall{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:4px 11px;transition:.15s;background:none;cursor:pointer}
+  .ov-viewall:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .ov-card{display:flex;align-items:center;gap:12px;padding:10px 13px;border:1px solid var(--line);border-radius:9px;background:var(--panel-2);margin-bottom:8px;cursor:pointer;transition:.15s}
+  .ov-card:hover{border-color:var(--red-deep);background:var(--panel)}
+  .ov-card .ov-main{flex:1;min-width:0}
+  .ov-card .ov-name{font-size:13.5px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-vs{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-side{text-align:right;flex:0 1 auto;max-width:42%;min-width:0}
+  .ov-card .ov-fee{font-family:var(--mono);font-size:11.5px;color:var(--white);white-space:normal;overflow-wrap:break-word;line-height:1.35}
+  .ov-card .ov-pct{font-family:var(--mono);font-size:10px;margin-top:3px;white-space:nowrap}
+  .ov-empty{font-family:var(--mono);font-size:12px;color:var(--muted);padding:13px;border:1px dashed var(--line);border-radius:9px}
+  @media (max-width:900px){.ov-cols{grid-template-columns:1fr}}
 
   /* ---------- UPDATED STAMP ---------- */
   .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
@@ -108,7 +139,7 @@
   .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
 
   /* ---------- STAT STRIP ---------- */
-  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:34px 0}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0 18px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
   .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
   .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
@@ -344,9 +375,9 @@
   @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   .tabbtn{appearance:none;background:none;border:1px solid transparent;cursor:pointer;font:inherit;color:inherit}
 
-  /* full-height hero on the Overview tab */
-  #panel-overview .hero{min-height:calc(100vh - 320px);display:flex;flex-direction:column;justify-content:center}
-  #panel-overview .hero .lede{max-width:1020px}
+  /* Overview hero is compact by design (30 Jul 2026) — the ins/outs snapshot below it
+     is the primary content, matching the landing pages' hero-then-stories priority. */
+  #panel-overview .hero .lede{max-width:900px}
 
   /* ===== PAGER ===== */
   .pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:34px 0 6px;padding:12px 14px;
@@ -436,6 +467,24 @@
     <h2 id="heroH2"></h2>
     <p class="lede" id="heroLede"></p>
     <div class="meta-row" id="metaRow"></div>
+  </div>
+
+  <!-- INS & OUTS SNAPSHOT (primary focus of Overview, 30 Jul 2026) -->
+  <div class="ov-snap">
+    <div class="ov-snap-head">
+      <h3>Transfer Ins &amp; Outs</h3>
+      <div class="ov-snap-sub">Best-sourced live business right now &middot; click any row for the full breakdown</div>
+    </div>
+    <div class="ov-cols">
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl in">Incoming</span><button class="tabbtn ov-viewall" data-go="in">View all Targets In &rarr;</button></div>
+        <div id="ovIn"></div>
+      </div>
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl out">Outgoing</span><button class="tabbtn ov-viewall" data-go="out">View all Out &amp; Sales &rarr;</button></div>
+        <div id="ovOut"></div>
+      </div>
+    </div>
   </div>
 
   <!-- STAT STRIP -->
@@ -939,6 +988,33 @@ function renderTable(list, id){
 }
 renderTable(INCOMING,'incoming');
 renderTable(OUTGOING,'outgoing');
+
+/* Overview ins/outs snapshot -- top-4 by Happens? probability, click-through to the full tab */
+function ovCard(p, dir){
+  const color = lightColor[p.light] || 'var(--muted)';
+  const vs = dir==='in' ? `from ${p.club}` : `to ${p.club}`;
+  return `<div class="ov-card" data-go="${dir}">
+      <div class="ov-main">
+        <div class="ov-name">${p.name}</div>
+        <div class="ov-vs">${vs} &middot; ${p.pos}</div>
+      </div>
+      <div class="ov-side">
+        <div class="ov-fee">${p.fee}</div>
+        <div class="ov-pct" style="color:${color}">${p.prob}% likely</div>
+      </div>
+    </div>`;
+}
+function renderOverviewSnapshot(){
+  const topIn = [...INCOMING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  const topOut = [...OUTGOING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  document.getElementById('ovIn').innerHTML = topIn.length ? topIn.map(p=>ovCard(p,'in')).join('') : '<div class="ov-empty">No live targets tracked yet.</div>';
+  document.getElementById('ovOut').innerHTML = topOut.length ? topOut.map(p=>ovCard(p,'out')).join('') : '<div class="ov-empty">No exits tracked yet.</div>';
+  document.querySelectorAll('.ov-card[data-go]').forEach(c=>c.addEventListener('click', ()=>{
+    const btn = document.querySelector(`.tabbtn[data-go="${c.dataset.go}"]:not(.ov-viewall)`);
+    if(btn) btn.click();
+  }));
+}
+renderOverviewSnapshot();
 
 /* confirmed ledger */
 function renderLedger(list, id, emptyMsg){

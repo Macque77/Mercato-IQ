@@ -1,16 +1,26 @@
 <!--
-  SUNDERLAND AFC — TRANSFER INTELLIGENCE TERMINAL
-  Living tracker. To update: re-run searches, edit the DATA object below
-  (REPORT_META + INCOMING + OUTGOING + SUMMARY), and the page re-renders.
-  Self-contained single file. No external storage used.
-  Updated: 2026-06-05
+  MERCATO IQ - CLUB DASHBOARD SHELL (TEMPLATE v2, club-agnostic)
+  DO NOT EDIT DURING A REFRESH. This file carries zero club data:
+  all club state lives in clubs/<slug>.data.js (BRAND, VOLATILE, REPORT_META,
+  PROSE, DATA arrays, HUB/LINKMAP, SWEEP) and is spliced between the
+  DATA/ENDDATA markers by engine/build.py, which also fills the badge URI token
+  and Mercato IQ: Nottingham Forest. Build: python3 engine/build.py <slug>  ->  <slug>.html
+  Refresh mechanics: engine/REFRESH_RUNBOOK.md. Analysis rules: 00_MASTER_ENGINE.md.
+  Dual-metric rating (True? / Happens?), scroll-reduction tabs, no storage APIs.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercato IQ — Nottingham Forest</title>
+<title>Mercato IQ: Nottingham Forest</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0c0f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -21,9 +31,10 @@
     --panel:#16181e;
     --panel-2:#1c1f26;
     --line:#2a2e38;
-    --red:#ffffff;
-    --red-bright:#ffffff;
-    --red-deep:#999999;
+    --red:#e21f26;
+    --red-bright:#ff2b24;
+    --red-deep:#a3151a;
+    --primary-rgb:226,31,38;
     --white:#f4f3ee;
     --muted:#8b909c;
     --muted-2:#5f6471;
@@ -51,8 +62,8 @@
   body::before{
     content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
     background:
-      repeating-linear-gradient(90deg, transparent 0 38px, rgba(226,31,38,0.022) 38px 39px),
-      radial-gradient(1200px 600px at 80% -10%, rgba(226,31,38,0.10), transparent 60%),
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(var(--primary-rgb),0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(var(--primary-rgb),0.10), transparent 60%),
       radial-gradient(900px 500px at -10% 110%, rgba(232,194,73,0.05), transparent 55%);
   }
   .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 22px}
@@ -69,7 +80,7 @@
   .crest{
     width:46px;height:46px;flex:none;border-radius:7px;
     position:relative;overflow:hidden;background:#0e1014;
-    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(226,31,38,0.35);
+    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(var(--primary-rgb),0.35);
     display:grid;place-items:center;
   }
   .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
@@ -84,15 +95,39 @@
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:54px 0 26px;border-bottom:1px solid var(--line)}
-  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
-  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,66px);line-height:.92;text-transform:uppercase;letter-spacing:.5px;max-width:none}
+  /* ---------- HERO (compact: matches landing-page space usage) ---------- */
+  .hero{padding:26px 0 16px;border-bottom:1px solid var(--line)}
+  .hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:10px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.2vw,36px);line-height:1.02;text-transform:uppercase;letter-spacing:.5px;max-width:34ch}
   .hero h2 em{font-style:normal;color:var(--red-bright)}
-  .hero .lede{margin-top:20px;max-width:none;color:#c9ccd4;font-size:17px;line-height:1.62}
+  .hero .lede{margin-top:10px;max-width:80ch;color:#c9ccd4;font-size:13.5px;line-height:1.5}
   .hero .lede b{color:var(--white)}
-  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
   .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- INS & OUTS SNAPSHOT (Overview focus, mirrors landing-page story grid) ---------- */
+  .ov-snap{margin:20px 0 4px}
+  .ov-snap-head{margin-bottom:12px}
+  .ov-snap-head h3{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.5px;color:var(--white)}
+  .ov-snap-head .ov-snap-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:3px}
+  .ov-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .ov-cols > .ov-col{min-width:0}
+  .ov-col-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .ov-col-head .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+  .ov-col-head .lbl.in{color:var(--green)}
+  .ov-col-head .lbl.out{color:var(--red-bright)}
+  .ov-viewall{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:4px 11px;transition:.15s;background:none;cursor:pointer}
+  .ov-viewall:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .ov-card{display:flex;align-items:center;gap:12px;padding:10px 13px;border:1px solid var(--line);border-radius:9px;background:var(--panel-2);margin-bottom:8px;cursor:pointer;transition:.15s}
+  .ov-card:hover{border-color:var(--red-deep);background:var(--panel)}
+  .ov-card .ov-main{flex:1;min-width:0}
+  .ov-card .ov-name{font-size:13.5px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-vs{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-side{text-align:right;flex:0 1 auto;max-width:42%;min-width:0}
+  .ov-card .ov-fee{font-family:var(--mono);font-size:11.5px;color:var(--white);white-space:normal;overflow-wrap:break-word;line-height:1.35}
+  .ov-card .ov-pct{font-family:var(--mono);font-size:10px;margin-top:3px;white-space:nowrap}
+  .ov-empty{font-family:var(--mono);font-size:12px;color:var(--muted);padding:13px;border:1px dashed var(--line);border-radius:9px}
+  @media (max-width:900px){.ov-cols{grid-template-columns:1fr}}
 
   /* ---------- UPDATED STAMP ---------- */
   .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
@@ -104,7 +139,7 @@
   .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
 
   /* ---------- STAT STRIP ---------- */
-  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:34px 0}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0 18px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
   .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
   .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
@@ -127,7 +162,7 @@
   .card h4 .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--bg);background:var(--gold);padding:2px 7px;border-radius:4px}
   .card p{color:#c3c7d0;font-size:14.5px;margin-bottom:11px}
   .card p b{color:var(--white)}
-  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(226,31,38,0.07),transparent)}
+  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(var(--primary-rgb),0.07),transparent)}
   .card ul{list-style:none;margin:6px 0 4px}
   .card li{position:relative;padding-left:20px;color:#c3c7d0;font-size:14px;margin-bottom:7px}
   .card li::before{content:"›";position:absolute;left:2px;color:var(--red-bright);font-weight:700}
@@ -143,15 +178,15 @@
   .riskgrid li{font-size:13.5px}
 
   /* ---------- TABLES ---------- */
-  .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-  table{width:100%;border-collapse:collapse;min-width:820px}
+  .tbl-scroll{overflow-x:visible;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{width:100%;border-collapse:collapse;min-width:0;table-layout:auto}
   thead th{
     font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);
-    text-align:left;padding:14px 11px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:nowrap;position:sticky;top:0
+    text-align:left;padding:14px 14px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:normal;position:sticky;top:0
   }
-  tbody td{padding:13px 11px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
   tbody tr{transition:background .15s}
-  tbody tr:hover{background:rgba(226,31,38,0.05)}
+  tbody tr:hover{background:rgba(var(--primary-rgb),0.05)}
   tbody tr:last-child td{border-bottom:none}
   .pl-name{font-weight:700;color:var(--white);font-size:14.5px}
   .pl-sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
@@ -169,8 +204,38 @@
   .ldot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
   .trend{font-family:var(--mono);font-weight:700;font-size:14px}
   .up{color:var(--green)} .down{color:var(--crit)} .flat{color:var(--muted)}
-  td.note{color:var(--muted);font-size:13px;max-width:none;line-height:1.5}
+  td.note{color:var(--muted);font-size:12.5px;width:34%;min-width:300px;max-width:none;line-height:1.5;white-space:normal;word-break:normal;overflow-wrap:anywhere}
   .confirmed{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;color:var(--bg);background:var(--white);padding:3px 7px;border-radius:4px;font-weight:700}
+
+  /* ---------- DUAL RATING (True? / Happens?) ---------- */
+  .rate{display:flex;flex-direction:column;gap:7px;min-width:158px}
+  .rate-row{display:flex;align-items:center;gap:7px}
+  .rate-row .rl{font-family:var(--mono);font-size:8.5px;letter-spacing:.3px;color:var(--muted-2);width:52px;flex:none;text-transform:uppercase}
+  .rate-dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .rate-bar{flex:1;height:5px;border-radius:99px;background:#262a33;overflow:hidden;min-width:38px}
+  .rate-fill{height:100%;border-radius:99px}
+  .rate-val{font-family:var(--mono);font-size:11px;font-weight:700;width:30px;text-align:right}
+
+  /* ---------- NEW pill ---------- */
+  .new-tag{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.8px;color:var(--bg);background:var(--gold);padding:1px 6px;border-radius:4px;margin-left:8px;vertical-align:middle;animation:newpulse 1.8s infinite}
+  @keyframes newpulse{0%,100%{box-shadow:0 0 7px rgba(232,194,73,.4)}50%{box-shadow:0 0 15px rgba(232,194,73,.85)}}
+
+  /* ---------- BREADCRUMB ---------- */
+  .crumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--white)}
+  .crumb .sep{color:var(--muted-2)}
+  .crumb b{color:var(--red-bright)}
+
+  /* ---------- QUICK NAV (scroll-reduction) ---------- */
+  .quicknav{position:sticky;top:74px;z-index:40;background:rgba(12,13,16,.93);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .quicknav-inner{max-width:1240px;margin:0 auto;display:flex;gap:6px;padding:8px 22px;overflow-x:auto;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
+  .quicknav-inner::-webkit-scrollbar{display:none}
+  .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none}
+  .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
+  section[id]{scroll-margin-top:132px}
 
   /* ---------- SUMMARY ---------- */
   .summary-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
@@ -240,7 +305,7 @@
   .wl-item .wpos{font-family:var(--mono);font-size:10px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:1px 5px}
   .wl-item .wage{font-family:var(--mono);font-size:10.5px;color:var(--muted-2)}
   .wl-dir{font-family:var(--mono);font-size:9px;letter-spacing:1px;padding:1px 5px;border-radius:3px;font-weight:700}
-  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(226,31,38,0.14);color:#ef9a9a}
+  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
   @media(max-width:900px){.wl-list{grid-template-columns:1fr}}
 
   /* ---------- METHODOLOGY / LEGEND ---------- */
@@ -260,8 +325,8 @@
   .reveal{opacity:0;transform:translateY(16px);animation:rise .7s forwards}
   @keyframes rise{to{opacity:1;transform:none}}
 
-  /* ---------- MOBILE: tables collapse into cards ---------- */
-  @media(max-width:680px){
+  /* ---------- MOBILE / TABLET: tables collapse into cards (strict no-scroll: <1180px) ---------- */
+  @media(max-width:1180px){
     .tbl-scroll{overflow-x:visible;border:none;background:transparent;border-radius:0}
     table{min-width:0;display:block}
     thead{display:none}
@@ -274,11 +339,16 @@
     tbody td.cell-name{display:block;border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:2px}
     tbody td.cell-name::before{display:none}
     tbody td.cell-name .pl-name{font-size:16px}
-    td.note{display:block;max-width:none;color:#c3c7d0;font-size:12.5px}
+    td.note{display:block;width:auto;min-width:0;max-width:none;color:#c3c7d0;font-size:12.5px}
     td.note::before{display:block;margin-bottom:5px}
     .prob-wrap{min-width:0;flex:1;max-width:62%}
   }
 
+  @media(max-width:560px){
+    .status-pill{display:none}
+    .updated-stamp{flex-wrap:wrap}
+    .stat .v{font-size:26px}
+  }
   @media(max-width:900px){
     .stats{grid-template-columns:repeat(2,1fr)}
     .cards{grid-template-columns:1fr}
@@ -298,6 +368,62 @@
     section,.card,.box,.led-col,.tbl-scroll,.summary-grid,.cards{break-inside:avoid}
     .status-pill{display:none}
   }
+
+  /* ===== TAB PANELS (scroll-reduction protocol) ===== */
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:panelIn .28s ease both}
+  @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .tabbtn{appearance:none;background:none;border:1px solid transparent;cursor:pointer;font:inherit;color:inherit}
+
+  /* Overview hero is compact by design (30 Jul 2026) — the ins/outs snapshot below it
+     is the primary content, matching the landing pages' hero-then-stories priority. */
+  #panel-overview .hero .lede{max-width:900px}
+
+  /* ===== PAGER ===== */
+  .pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:34px 0 6px;padding:12px 14px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .pg-btn{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);
+    background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;cursor:pointer;transition:.15s}
+  .pg-btn:hover{border-color:var(--red);color:var(--red-bright)}
+  .pg-btn:disabled{opacity:.32;cursor:default}
+  .pg-btn:disabled:hover{border-color:var(--line);color:var(--white)}
+  .pg-meter{display:flex;gap:7px}
+  .pg-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.15s}
+  .pg-dot.on{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .pg-hint{font-family:var(--mono);font-size:10px;color:var(--muted-2);letter-spacing:1px;text-align:center;margin:6px 0 0}
+
+  /* ===== COMPACT NO-SCROLL TABLES ===== */
+  .tbl-scroll table{table-layout:fixed;width:100%}
+  .tbl-scroll th,.tbl-scroll td{padding:9px 8px;font-size:12.5px}
+  .tbl-scroll td.note{font-size:12px;line-height:1.5}
+  .tbl-scroll th:nth-child(1),.tbl-scroll td:nth-child(1){width:12%}
+  .tbl-scroll th:nth-child(2),.tbl-scroll td:nth-child(2){width:9%}
+  .tbl-scroll th:nth-child(3),.tbl-scroll td:nth-child(3){width:5%}
+  .tbl-scroll th:nth-child(4),.tbl-scroll td:nth-child(4){width:7%}
+  .tbl-scroll th:nth-child(5),.tbl-scroll td:nth-child(5){width:10%}
+  .tbl-scroll th:nth-child(6),.tbl-scroll td:nth-child(6){width:8%}
+  .tbl-scroll th:nth-child(7),.tbl-scroll td:nth-child(7){width:14%}
+  .tbl-scroll th:nth-child(8),.tbl-scroll td:nth-child(8){width:4%}
+  .tbl-scroll th:nth-child(9),.tbl-scroll td:nth-child(9){width:31%}
+  @media(max-width:980px){.tbl-scroll table{table-layout:auto}}
+
+  /* ===== EXPANDABLE SOURCE LINKS ===== */
+  tr.rumour-row{cursor:pointer}
+  tr.rumour-row:hover td{background:rgba(var(--primary-rgb),.045)}
+  .src-toggle{display:inline-block;margin-left:6px;font-family:var(--mono);font-size:9px;color:var(--muted);
+    border:1px solid var(--line);border-radius:5px;padding:1px 6px;letter-spacing:1px;vertical-align:middle;transition:.15s}
+  tr.rumour-row.open .src-toggle{color:var(--gold);border-color:var(--gold-deep)}
+  tr.src-row{display:none}
+  tr.src-row.open{display:table-row}
+  tr.src-row>td{background:var(--bg-2)!important;border-left:2px solid var(--red);padding:10px 14px}
+  .src-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .src-links .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--muted)}
+  .src-links a{font-family:var(--mono);font-size:11px;color:var(--gold);text-decoration:none;border:1px solid var(--line);
+    border-radius:6px;padding:4px 9px;background:var(--panel);transition:.15s}
+  .src-links a:hover{border-color:var(--gold-deep);color:var(--white)}
+  .src-links .hubnote{font-size:10px;color:var(--muted-2);font-family:var(--mono)}
+  .wl-item .src-links{margin-top:7px}
+  .wl-item{cursor:pointer}
 </style>
 </head>
 <body>
@@ -305,45 +431,75 @@
 <header class="top">
   <div class="top-inner">
     <div class="brand">
-      <div class="crest"><img src="data:image/png;base64,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ecvIDZqsGI6EikrKNJKTl3PRr5jOrh4ULaRO2t9Vs7y1UTMA/IIbp7VU1XVYGjEMTEgkZOeOK5UMR0Joznqaz+qxTud7z+q6Ps+X3rWv5HYT6janTgomy5UDFXYP9J0v5B96Pt6iuC3H3re0fWRbAQy8p2z2rKphuWL5TswGdKpXjGqrK1jVs7yOKHyLgFCO+Oop11qdrb2xWNhyCAPTNWoxa6gflCzdyApJx+HNcjrUQh1B41UoAfukEY/OsqcI1Za6HoY3FVcFQUo2kujNXSNWhjDQynCs2c1oyapZQQsUdWbJOAOM+tcOCR0pcn3rpnhYyd7nhYfP6tKnyON+xs6XfImsvNKwCspGam1+6trl4Qjhtq44rn+n1pdxbrWrormT7HHHM5qjUpNX53cTvxSUUVqeYFFFFABRRRQAUUUUAFFFFAH3/RRRQAUUUUAfAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBe07V9R0idp9Ovri0lZCjPBKUJUkHGQemQPyqO+v7vUryS7vbmW5uJMF5ZnLM2BgZJ5PAA/CquKMUDcm9LhRRRQIKKKKACiiigAooooAKKKKACiiigAooooA+/wCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Z" alt="Nottingham Forest badge" onerror="this.style.display='none'"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)">NFFC</text></svg></div>
+      <div class="crest"><img src="nottinghamforest.png" alt="Club badge" onerror="this.style.display='none'"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)" id="monoText"></text></svg></div>
       <div>
-        <h1>Mercato <b>IQ</b> · Nottingham Forest</h1>
+        <h1 id="brandName"></h1>
         <div class="sub">The transfer market, decoded · Independent intelligence</div>
       </div>
     </div>
-    <div class="status-pill"><span class="dot"></span> WINDOW OPENS 15 JUN · <span id="asof"></span></div>
+    <div class="status-pill"><span class="dot"></span> WINDOW OPEN · <span id="asof"></span></div>
   </div>
 </header>
 
+<!-- TAB NAV (scroll-reduction protocol: one section on screen at a time) -->
+<nav class="quicknav" aria-label="Dashboard sections">
+  <div class="quicknav-inner" id="tabbar" role="tablist">
+    <span class="qn-tag">SECTIONS</span>
+    <button class="qn-link tabbtn active" data-go="overview" role="tab" aria-selected="true">Overview</button>
+    <button class="qn-link tabbtn lead" data-go="confirmed" role="tab">Confirmed</button>
+    <button class="qn-link tabbtn lead" data-go="in" role="tab">Targets In</button>
+    <button class="qn-link tabbtn lead" data-go="out" role="tab">Out &amp; Sales</button>
+    <button class="qn-link tabbtn" data-go="index" role="tab">Full Index</button>
+    <button class="qn-link tabbtn" data-go="briefing" role="tab">Briefing</button>
+    <button class="qn-link tabbtn" data-go="position" role="tab">Club Position</button>
+    <button class="qn-link tabbtn" data-go="method" role="tab">Method</button>
+  </div>
+</nav>
+
 <div class="wrap">
 
+  <div class="tabpanel active" id="panel-overview">
   <!-- HERO -->
-  <div class="hero reveal">
+  <div class="hero">
+    <div class="crumb" id="crumb"></div>
     <div class="updated-stamp" id="stamp"></div>
-    <div class="kicker" id="kicker">Data as of 5 June 2026</div>
-    <h2>After the chaos: <em>Pereira</em> rebuilds Forest around the core, funded by an Anderson sale</h2>
-    <p class="lede">Forest emerge from a wild season, four permanent managers, a slide from European qualifiers to <b>16th</b>, and now stability under Vitor <b>Pereira</b>, who is planning the window with owner <b>Evangelos Marinakis</b>. Pereira believes the squad underachieved and wants to <b>keep the core</b> (Gibbs-White, Murillo, Milenkovic, Aina, Sangare, Wood, Igor Jesus), targeting three or four signings rather than an overhaul. The summer likely hinges on the sale of <b>Elliot Anderson</b>, valued north of £100m.</p>
-    <div class="meta-row">
-      <span>DECISION-MAKER: <b>Evangelos Marinakis</b> (Owner (hands-on))</span>
-      <span>HEAD COACH: <b>Vitor Pereira</b></span>
-      <span>OWNER: <b>Evangelos Marinakis</b></span>
-      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    <div class="kicker" id="kicker"></div>
+    <h2 id="heroH2"></h2>
+    <p class="lede" id="heroLede"></p>
+    <div class="meta-row" id="metaRow"></div>
+  </div>
+
+  <!-- INS & OUTS SNAPSHOT (primary focus of Overview, 30 Jul 2026) -->
+  <div class="ov-snap">
+    <div class="ov-snap-head">
+      <h3>Transfer Ins &amp; Outs</h3>
+      <div class="ov-snap-sub">Best-sourced live business right now &middot; click any row for the full breakdown</div>
+    </div>
+    <div class="ov-cols">
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl in">Incoming</span><button class="tabbtn ov-viewall" data-go="in">View all Targets In &rarr;</button></div>
+        <div id="ovIn"></div>
+      </div>
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl out">Outgoing</span><button class="tabbtn ov-viewall" data-go="out">View all Out &amp; Sales &rarr;</button></div>
+        <div id="ovOut"></div>
+      </div>
     </div>
   </div>
 
   <!-- STAT STRIP -->
-  <div class="stats reveal" style="animation-delay:.08s">
-    <div class="stat"><div class="l">2025/26 Finish</div><div class="v">16<small>th</small></div></div>
-    <div class="stat"><div class="l">2026/27 Europe</div><div class="v">NONE</div></div>
-    <div class="stat"><div class="l">Est. Gross Spend</div><div class="v">£70–130<small>m</small></div></div>
-    <div class="stat"><div class="l">Est. Sales</div><div class="v">£80–150<small>m</small></div></div>
-    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">85<small>%</small></div></div>
-  </div>
+  <div class="stats" id="statStrip"></div>
 
+  </div><!-- /panel-overview -->
+
+  <div class="tabpanel" id="panel-position">
+  </div><!-- /panel-position -->
+
+  <div class="tabpanel" id="panel-confirmed">
   <!-- CONFIRMED BUSINESS -->
-  <section class="reveal">
-    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">01</span></div>
-    <p class="sec-sub">Done deals and locked-in contract outcomes. This is a living ledger: as the rumours below are officially confirmed they move up here and leave the speculative tables. <b>Contract status sets the fee</b> — an out-of-contract player aged 24+ leaves on a full Bosman free, so no fee applies regardless of homegrown status; the holder's-premium logic only governs players still under contract.</p>
+  <section id="sec-confirmed">
+    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">03</span></div>
+    <p class="sec-sub">Done deals and locked-in contract outcomes. This is a living ledger: as the rumours below are officially confirmed they move up here and leave the speculative tables. <b>Contract status sets the fee</b>: an out-of-contract player aged 24+ leaves on a full Bosman free, so no fee applies regardless of homegrown status; the holder's-premium logic only governs players still under contract.</p>
     <div class="ledger">
       <div class="led-col led-in">
         <div class="led-head"><span class="led-dot in"></span> In <span class="led-count" id="cinCount"></span></div>
@@ -354,140 +510,67 @@
         <div id="confirmedOut"></div>
       </div>
     </div>
-    <div class="pending-note"><b>Window opens 15 June; nothing is registered yet.</b> Pereira is confirmed as head coach and planning three or four additions. The pivotal item is <b>Elliot Anderson</b>: Forest accept a sale is likely (Manchester City and United keen), with Marinakis leading talks. Incomings firm up once that resolves.</div>
+    <div class="pending-note" id="pendingNote"></div>
   </section>
 
+  </div><!-- /panel-confirmed -->
+
+  <div class="tabpanel" id="panel-in">
   <!-- INCOMING -->
-  <section class="reveal">
-    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">02</span></div>
-    <p class="sec-sub">Probability reflects recency (30%), source reliability (25%), tactical fit (15%), Marinakis network (15%), financial realism (10%) and competition (5%) — not fan desire.</p>
+  <section id="sec-in">
+    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">04</span></div>
+    <p class="sec-sub" id="inSub"></p>
     <div class="tbl-scroll">
       <table>
         <thead><tr>
-          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Probability</th><th>Trend</th><th>Why it sits here / obstacles</th>
+          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Why it sits here / obstacles</th>
         </tr></thead>
         <tbody id="incoming"></tbody>
       </table>
     </div>
   </section>
 
+  </div><!-- /panel-in -->
+
+  <div class="tabpanel" id="panel-out">
   <!-- OUTGOING -->
-  <section class="reveal">
-    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">03</span></div>
-    <p class="sec-sub">Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.</p>
-    <div class="verdict" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(226,31,38,0.08),var(--panel-2))">
-      <b>Pricing principle: Forest price prized assets steeply.</b> Marinakis values Elliot Anderson upwards of £110m, lifted by a long contract, England pedigree and a possible World Cup boost. Core players they aim to keep carry holder's premiums; squad names move at softer floors to balance the books.
-    </div>
+  <section id="sec-out">
+    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">05</span></div>
+    <p class="sec-sub" id="outSub"></p>
+    <div class="verdict" id="pricingBanner" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(var(--primary-rgb),0.08),var(--panel-2))"></div>
     <div class="tbl-scroll">
       <table>
         <thead><tr>
-          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Sale Prob.</th><th>Trend</th><th>Read</th>
+          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Read</th>
         </tr></thead>
         <tbody id="outgoing"></tbody>
       </table>
     </div>
   </section>
 
-  <!-- ANALYSIS: MODEL + FINANCE -->
-  <section class="reveal" style="animation-delay:.12s">
-    <div class="sec-head"><h3>Club Position</h3><span class="num">04</span></div>
-    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the European trade-off.</p>
+  </div><!-- /panel-out -->
 
-    <div class="cards">
-      <!-- THE MODEL -->
-      <div class="card">
-        <h4>The Model <span class="tag">CORE PRINCIPLE</span></h4>
-        <p>An <b>owner-driven, collaborative</b> model under <b>Evangelos Marinakis</b>, with head coach <b>Pereira</b> identifying needs and recruitment drawing up targets. After a £200m, 13-signing spree last summer, this window is about refinement, not volume.</p>
-        <div class="quote">Pereira wants at least two options in every position and three or four signings, "minor tweaks rather than an overhaul", built around a core he believes underachieved.</div>
-        <p><b>This window's logic:</b> keep the spine, fund additions through an Anderson sale, and add a forward, wing pace and a centre-back.</p>
-        <ul>
-          <li>Likely exit: Elliot Anderson (Man City favourites; Man Utd keen).</li>
-          <li>Forward target linked: a new frontman (Mateta among the names, ~£25m).</li>
-          <li>Markets: targeted quality, no repeat of last summer's volume spree.</li>
-        </ul>
-        <div class="verdict"><b>Tracker implication:</b> weight a marquee outgoing (Anderson) and three or four focused additions; treat the core as retained.</div>
-      </div>
-
-      <!-- FINANCE -->
-      <div class="card">
-        <h4>Financial Position <span class="tag">STRONG</span></h4>
-        <p>Backed by <b>Marinakis</b>, Forest spend ambitiously but must manage the cost rules carefully after heavy recent investment and a drop down the table.</p>
-        <ul>
-          <li>No European football brings the looser <b>85%</b> cost cap.</li>
-          <li>An Anderson sale (£100m-plus) would create major headroom.</li>
-          <li>A drop in finishing position costs prize money, sharpening the need to trade well.</li>
-        </ul>
-        <div class="verdict"><b>Caveat:</b> the Elanga sale and others sit in the multi-year SCR window; trading remains central.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REPUTATION + RISK/REWARD -->
-  <section class="reveal" style="animation-delay:.02s">
-    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">05</span></div>
-    <p class="sec-sub">Forest retain a strong core and an ambitious owner, but the chaotic season and no European football mean a recalibration, funded by a marquee sale.</p>
-
-    <div class="cards" style="margin-bottom:18px">
-      <div class="card">
-        <h4>Reputational Standing</h4>
-        <p>Forest's reputation took a hit from a season of upheaval, but the core squad and Marinakis' ambition keep them an attractive proposition; Pereira brings needed stability.</p>
-        <ul>
-          <li>A talented core (Gibbs-White, Murillo) anchors the rebuild.</li>
-          <li>Marinakis' willingness to spend appeals, within the rules.</li>
-        </ul>
-        <div class="verdict"><b>Double edge:</b> prized assets like Anderson draw elite bids that both fund and test the rebuild.</div>
-      </div>
-      <div class="card">
-        <h4>The SCR Tightening <span class="tag">KEY TENSION</span></h4>
-        <p>The new <b>Squad Cost Ratio</b> caps wages, agent fees and amortisation at <b>85% of revenue for clubs outside Europe</b>, the looser of the two limits (European clubs sit at 70%). No continental football is a sporting blow but a quiet financial edge over rivals juggling the tighter cap.</p>
-        <p>An Anderson sale would ease the ratio significantly; without it, Forest must trade carefully.</p>
-        <ul>
-          <li>A 3-year net transfer position feeds the calculation; the Elanga fee sits within it.</li>
-          <li>A marquee sale unlocks the planned additions.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="riskgrid">
-      <div class="risk-r">
-        <h5>▲ Reward, a focused rebuild off a strong core</h5>
-        <ul>
-          <li>Keeping the spine and adding three or four could lift Forest to the top half.</li>
-          <li>An Anderson sale funds quality without overspending.</li>
-          <li>Pereira's stability ends the managerial chaos.</li>
-        </ul>
-      </div>
-      <div class="risk-d">
-        <h5>▼ Risk, a damaging sell-off</h5>
-        <ul>
-          <li>Losing Anderson weakens midfield even if it funds others.</li>
-          <li>If the core frays, the rebuild stalls.</li>
-          <li>Lost prize money tightens the budget.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="verdict" style="margin-top:18px;max-width:none">
-      <b>Net read:</b> stabilise under Pereira, keep the core, cash in on Anderson at a premium, and reinvest in three or four targeted signings (a forward, wing pace, a centre-back) within the 85% cap.
-    </div>
-  </section>
-
+  <div class="tabpanel" id="panel-index">
   <!-- WATCHLIST -->
-  <section class="reveal">
+  <section id="sec-index">
     <div class="sec-head"><h3>Full Rumour Index</h3><span class="num">06</span></div>
-    <p class="sec-sub">The comprehensive long tail — every other name in circulation (aggregated feeds incl. TransferFeed), kept compact and clearly tiered. These are monitoring-only, lower-credibility or cooling links that haven't earned a place in the analysed tables. Filter by direction.</p>
+    <p class="sec-sub">The comprehensive long tail: every other name in circulation (aggregated feeds incl. TransferFeed), kept compact and clearly tiered. These are monitoring-only, lower-credibility or cooling links that haven't earned a place in the analysed tables. Filter by direction.</p>
     <div class="wl-tabs">
       <button class="wl-tab active" data-f="all">All</button>
       <button class="wl-tab" data-f="in">Targets In</button>
       <button class="wl-tab" data-f="out">Possible Out</button>
     </div>
     <div class="wl-list" id="watchlist"></div>
-    <div class="pending-note" style="border-color:var(--line)"><b>Excluded as stale:</b> Nuno, Postecoglou and Dyche-era links are not live; Pereira is the head coach. Completed 2025 business (Elanga) is SCR context, not live.</div>
+    <div class="pending-note" id="excludedNote" style="border-color:var(--line)"></div>
   </section>
 
+  </div><!-- /panel-index -->
+
+  <div class="tabpanel" id="panel-briefing">
   <!-- SUMMARY OUTPUTS -->
-  <section class="reveal">
+  <section id="sec-briefing">
     <div class="sec-head"><h3>Daily Briefing</h3><span class="num">07</span></div>
-    <p class="sec-sub">The eight required readouts, regenerated each refresh.</p>
+    <p class="sec-sub">The eight required readouts, regenerated on each update.</p>
 
     <div class="summary-grid">
       <div class="box">
@@ -508,96 +591,390 @@
       <div class="box">
         <h4>Estimated Spend</h4>
         <div class="spend">
-          <div class="s in"><div class="l">Gross Incoming</div><div class="v">£70–130m</div><div class="x">Three or four focused additions, funded largely by an Anderson sale.</div></div>
-          <div class="s out"><div class="l">Outgoing Sales</div><div class="v">£80–150m</div><div class="x">Elliot Anderson the headline sale (£100m-plus), plus fringe departures.</div></div>
+          <div class="s in"><div class="l">Gross Incoming</div><div class="v" id="spendInV"></div><div class="x" id="spendInX"></div></div>
+          <div class="s out"><div class="l">Outgoing Sales</div><div class="v" id="spendOutV"></div><div class="x" id="spendOutX"></div></div>
         </div>
       </div>
     </div>
   </section>
 
+  </div><!-- /panel-briefing -->
+
+  <div class="tabpanel" id="panel-method">
   <!-- METHODOLOGY -->
-  <section class="reveal">
+  <section id="sec-method">
     <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">08</span></div>
     <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
-    <div class="legend">
-      <div class="col">
-        <h5>Source Tiers (current)</h5>
-        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b> — David Ornstein, Fabrizio Romano, BBC, The Athletic; NY Times on the planning meeting. <i>Used for:</i> Pereira's role, the Anderson situation, the summer brief.</span></div>
-        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b> — Football Insider, OneFootball and reliable national writers.</span></div>
-        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b> — TEAMtalk, Football Insider, club sites, mixed-record nationals.</span></div>
-        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b> — Fichajes, Africa Foot, Foot Sur 7, Média Foot, fan posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> for the full rumour sweep, then traced to the original reporter for weighting — never weighted as a primary source themselves.</span></div>
-      </div>
-      <div class="col">
-        <h5>Weighting Model &amp; Recency Decay</h5>
-        <div class="weights">
-          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
-          <span class="w">Marinakis network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
-        </div>
-        <div class="row" style="margin-top:16px"><span class="k">0–7d</span><span>Very strong · <span class="k">8–14d</span> strong · <span class="k">15–30d</span> moderate</span></div>
-        <div class="row"><span class="k">31–60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
-        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom & Hadj Moussa fall on this basis.</span></div>
-      </div>
+    <div class="legend" id="methodLegend">
     </div>
   </section>
 
+  </div><!-- /panel-method -->
+
+  <!-- PAGER -->
+  <div class="pager" aria-label="Section pager">
+    <button class="pg-btn" id="pgPrev" type="button">&#8592; Prev</button>
+    <div class="pg-meter" id="pgMeter"></div>
+    <button class="pg-btn" id="pgNext" type="button">Next &#8594;</button>
+  </div>
+
   <footer class="reveal">
-    <b id="updatedFoot">Living tracker — 5 Jun 2026.</b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <b id="updatedFoot"></b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
     <div class="disclaimer">
-      Built from publicly reported sources retrieved on 5 June 2026, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+      Built from publicly reported sources retrieved on <span id="discDate"></span>, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
     </div>
   </footer>
 </div>
 
 <script>
 /* ============================================================
-   DATA — edit this block on each daily update, page re-renders.
+   DATA: edit this block on each daily update, page re-renders.
    light: 'g'=green(>50%) 'y'=yellow(30-50%) 'o'=orange(15-30%) 'r'=red(<15%)
    trend: 'up' | 'flat' | 'down'
    ============================================================ */
-/* ── EDIT THESE TWO LINES EACH DAY ──────────────────────────
-   asof: human display date · updatedDate: ISO (drives freshness) */
-const REPORT_META = { asof: "6 Jun 2026", updatedDate: "2026-06-06", label: "Build · Pereira rebuild, Anderson sale" };
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+/*==DATA==*/
+/* ============================================================
+   MERCATO IQ · CLUB DATA · NOTTINGHAM FOREST · STATE OF RECORD
+   This file IS the club's live state. A refresh edits ONLY this
+   file, then engine/build.py splices it into template.html to
+   produce nottingham-forest.html. Never hand-edit the built html.
+   Mechanics: engine/REFRESH_RUNBOOK.md · Rules: 00_MASTER_ENGINE.md
+   ------------------------------------------------------------
+   MIGRATION NOTE (30 Jul 2026): first live-format build for this
+   club (previously on the legacy single-page template with no
+   BRAND-driven colours). Researched fresh via live web search.
+   ============================================================ */
+
+const BRAND = {
+  club: "Nottingham Forest", mono: "NFFC", slug: "nottingham-forest",
+  primary: "#DD0000", primaryBright: "#FF3333", primaryDeep: "#8C0000",
+  primaryRgb: "221,0,0",
+  breadcrumb: ["England","Premier League"]
+};
+const VOLATILE = {
+  verified: "2026-07-30",
+  coach: "Oliver Glasner",
+  dof: "Vacant — Marinakis-led recruitment (no permanent Director of Football since Edu Gaspar's Mar 2026 exit)",
+  europe: "None (2026/27) — 14th finish means no European football",
+  finish: "14th (2025/26)",
+  owner: "Evangelos Marinakis (also owns Olympiacos)",
+  window: "Opened 15 Jun, runs to 1 Sep 2026, 11pm UK"
+};
+const SWEEP = {
+  feeds: [
+    "https://www.newsnow.co.uk/h/Sport/Football/Premier+League/Nottingham+Forest/Transfer+News",
+    "https://www.nottinghamforest.news/transfers/",
+    "https://www.skysports.com/nottingham-forest",
+    "https://www.bbc.co.uk/sport/football/teams/nottingham-forest",
+    "https://www.footballinsider247.com/nottingham-forest-fc/transfers/"
+  ],
+  queries: [
+    "Nottingham Forest transfer news 2026",
+    "Nottingham Forest bid OR medical OR 'personal terms'",
+    "Nottingham Forest calciomercato Diomande OR Lucumi",
+    "Nottingham Forest mercato Sporting CP Feyenoord Bologna",
+    "Nottingham Forest transfer Glasner Marinakis"
+  ],
+  note: "Foreign desks per profile: Portugal (Record/A Bola/O Jogo for Sporting-linked business), Italy (Il Resto del Carlino/TMW for Bologna's Lucumí), NL (De Telegraaf/Feyenoord beat for Read), plus Marinakis's own Greek press (given the Olympiacos pipeline that took Carmo and Jota Silva). Trace every aggregator hit (TransferFeed, NewsNow) to its original reporter before weighting."
+};
+const REPORT_META = { asof: "30 Jul 2026", updated: "2026-07-30T14:00:00Z", label: "Diomande nears an imminent announcement off the Anderson windfall; Bergvall has told Spurs he wants the move; Gibbs-White stays off the market despite Villa's push" };
+
+const CONFIRMED_IN = [
+  {name:"Xaver Schlager", sub:"28 · DM/CM · Austria", to:"free from RB Leipzig", fee:"FREE", free:true, status:"done", statusTxt:"SIGNED IN",
+   note:"Done (15 Jul): the Austria international joins on a free after his Leipzig contract expired, on a 2+1 year deal. He and Glasner worked together at Wolfsburg (2019-21), and the club is redirecting the fee it saved into wages for a ready-made, high-pressing engine room piece — exactly the profile Glasner wants after Anderson's exit."},
+  {name:"Boyd Fraser", sub:"16 · CM · Scotland U16", to:"from Heart of Midlothian", fee:"~£100k (compensation)", free:false, status:"done", statusTxt:"SIGNED IN",
+   note:"Done (25 Jun): a Scotland U16 international midfielder signed through 2029, beating reported interest from Southampton, Crystal Palace, Tottenham, Celtic and Rangers. A pure academy bet, but the calibre of the chasing pack for a 16-year-old says something about how the recruitment department is casting its net this window."},
+];
+const CONFIRMED_OUT = [
+  {name:"Elliot Anderson", sub:"23 · CM · England", to:"Manchester City", fee:"£116m", free:false, status:"exit", statusTxt:"CLUB-RECORD SALE", isNew:true,
+   note:"Done (2 Jul): a club-record sale that shattered expectations — City met Forest's number in full, with Anderson completing a medical in Kansas during England's World Cup campaign before the move was announced. This single fee is now funding the bulk of Glasner's rebuild and is the reason Forest can chase Diomande, Bergvall and Read simultaneously without needing to sell anyone else."},
+  {name:"David Carmo", sub:"25 · CB · Portugal", to:"Olympiacos (permanent)", fee:"Undisclosed", free:false, status:"exit", statusTxt:"EXIT CONFIRMED",
+   note:"Done (~1 Jul): the centre-back, who spent last season out on loan at Olympiacos, was made permanent — a straightforward move within Marinakis's two-club ownership pipeline rather than an open-market sale."},
+  {name:"Jota Silva", sub:"24 · FW · Portugal", to:"Olympiacos", fee:"Undisclosed", free:false, status:"exit", statusTxt:"EXIT CONFIRMED",
+   note:"Done (9 Jul): a second player moving down the same Marinakis-owned pipeline to Piraeus, freeing an attacking squad slot as Forest reshapes the forward line around Delap-type targets."},
+  {name:"Angus Gunn, Stefan Ortega & Willy Boly", sub:"GK / GK / CB", to:"Free agents (contracts expired)", fee:"FREE", free:true, status:"exit", statusTxt:"RETAINED LIST — OUT",
+   note:"Confirmed on the retained list (1 Jul): both senior goalkeepers who covered for Matz Sels leave on Bosmans, alongside veteran centre-back Willy Boly. It leaves only the 34-year-old Sels and young John Victor as senior keepers on the books — the single biggest hole nobody has yet moved to fill."},
+];
+
 const INCOMING = [
-  {name:"New forward", sub:"Frontman target", club:"Market", pos:"ST", report:"~4 days ago", src:"NY Times / Football Insider", tier:2, fee:"£25–45m", prob:40, light:'y', trend:'up',
-   note:"A new striker is sought to support Wood and Igor Jesus; Jean-Philippe Mateta is among the linked names at around £25m. Funding likely tied to the Anderson sale."},
-  {name:"Wing pace & a centre-back", sub:"Targeted additions", club:"Various", pos:"W/CB", report:"~4 days ago", src:"NY Times", tier:2, fee:"£40–80m total", prob:38, light:'y', trend:'flat',
-   note:"Pereira wants two options in every position; pace on the wing and defensive cover are priorities among three or four planned signings."},
+  {name:"Ousmane Diomande", sub:"22 · CB · Ivory Coast", club:"Sporting CP", pos:"CB", report:"29 Jul 2026", src:"Fabrizio Romano / BBC Sport (Sami Mokbel) / Record", tier:1, fee:"~£37m + £5m add-ons", truth:90, prob:80, light:'g', trend:'up',
+   note:"The window's clearest deal. Romano has Forest in 'advanced talks' with negotiations underway both club-to-club and with the player's camp, well below Diomande's £68.2m release clause. Nottingham Forest News (27 Jul) reports personal terms are already agreed, Sporting have begun excluding him from friendlies to prepare for his exit, and BBC's update (29 Jul) has the deal 'advancing' with 'work still to be done to close it.' Liverpool were long linked but have stepped back to prioritise Bradley Barcola; Crystal Palace remain a distant alternative suitor after selling Maxence Lacroix. An announcement inside days feels likely."},
+  {name:"Lucas Bergvall", sub:"20 · CM · Sweden", club:"Tottenham Hotspur", pos:"CM", report:"27 Jul 2026", src:"The Guardian / TEAMtalk / football365", tier:1, fee:"£50-65m (Spurs valuation)", truth:74, prob:40, light:'y', trend:'up',
+   note:"Genuinely live: the Guardian reports Bergvall has formally told Tottenham he wants to leave, naming Forest as his preferred destination, with playing time set to shrink behind new signings Sandro Tonali and Mateus Fernandes. Forest's opening £38m bid was rejected in mid-July against a £50m Spurs valuation that has since been quoted as high as £65m, and head coach Di Zerbi is described as 'relaxed' rather than combative about a sale. The player wants it; the fee gap is now the only real obstacle, and Forest may need patience rather than a fresh bid straight away."},
+  {name:"Liam Delap", sub:"23 · ST · England U21", club:"Chelsea", pos:"ST", report:"29 Jul 2026", src:"Chelsea FC Online / national press round-ups", tier:2, fee:"Fee unclear (cost Chelsea £30m in 2025)", truth:55, prob:32, light:'y', trend:'up',
+   note:"Rekindled rather than fresh — Forest tried and failed to sign Delap in 2025 (he also turned down Man Utd, Newcastle and Everton then), but a struggling first season at Chelsea (2 goals, 3 assists in 41 games behind João Pedro and new arrival Emmanuel Emegha) has Chelsea now open to a sale. Forest 'anticipate competition' for him without a named rival yet. Reads as a real, growing interest rather than an imminent bid."},
+  {name:"Givairo Read", sub:"20 · RB/RW · Netherlands", club:"Feyenoord", pos:"RB", report:"29 Jul 2026", src:"Inside Futbol / Pulse Sports Nigeria", tier:3, fee:"€22m bid vs €25m ask (stalled)", truth:62, prob:27, light:'o', trend:'down',
+   note:"Stalled at a €3m gap: Forest's third bid (€22m, on a five-year, ~€20m contract offer) was knocked back by Feyenoord's €25m valuation, and neither side has moved since. Read is reportedly keen on the Premier League move, but Forest haven't returned with an improved offer as of 29 Jul, and the same pursuit is already squeezing Ola Aina's game time before a ball has even been signed for."},
+  {name:"Jhon Lucumí", sub:"26 · CB · Colombia", club:"Bologna", pos:"CB", report:"24 Jul 2026", src:"Inside Futbol (via Il Resto del Carlino) / Football Insider", tier:3, fee:"~€25-30m guide (release clause lapsed)", truth:58, prob:24, light:'o', trend:'down',
+   note:"Cooling as the field crowds. Lucumí's €28m release clause expired unused, and with only a year left on his contract a lower fee is now plausible, but Forest have been forced to 'wait' while the Colombian weighs a queue that reportedly includes Manchester United (per the same Italian sourcing), Inter Milan, Juventus, Sunderland and Bournemouth. Bologna want a quick resolution; Forest are no longer clearly out in front."},
+  {name:"Curtis Jones", sub:"25 · CM · England", club:"Liverpool", pos:"CM", report:"4 Jul 2026", src:"TEAMtalk (via Daily Mail)", tier:2, fee:"£35-40m (Liverpool valuation)", truth:56, prob:22, light:'o', trend:'flat',
+   note:"An Anderson-replacement line rather than a live negotiation: Jones wants to leave Anfield with under a year left on his deal, and Liverpool have set a £35-40m price. 'There's definitely interest there' from Forest per the report, but Inter Milan are also circling and haven't matched the number, and nothing has moved publicly since the early-July report — worth tracking rather than expecting imminently."},
 ];
+
 const OUTGOING = [
-  {name:"Elliot Anderson", sub:"23 · CM · England", club:"Man City / Man Utd", pos:"CM", report:"~3 wks ago", src:"Football Insider", tier:2, fee:"£100m+", prob:55, light:'y', trend:'up',
-   note:"The pivotal sale. Forest are not actively selling but accept he is likely to move, with Marinakis valuing him north of £110m and leading talks. PRICING: a steep holder's premium; a World Cup could push it higher. Funds the rebuild."},
-  {name:"Fringe forwards", sub:"Kalimuendo / Awoniyi watch", club:"Various", pos:"ST", report:"~3 days ago", src:"Aggregated", tier:3, fee:"Mixed", prob:35, light:'o', trend:'flat',
-   note:"Squad forwards could move to balance the books and minutes. PRICING: standard floors; Lucca returns to Napoli with the option not taken up."},
+  {name:"Murillo", sub:"23 · CB · Brazil", club:"Chelsea / Real Madrid interest", pos:"CB", report:"6 Jun 2026", src:"CaughtOffside / Football Insider", tier:2, fee:"£50-70m guide", truth:60, prob:18, light:'o', trend:'down',
+   note:"Real interest, cooled by his own new deal: Chelsea did 'extensive groundwork' on Murillo back in February and Real Madrid have also been credited, but Forest handed him a four-year extension in May — read by Football Insider as prepping him for a bigger eventual sale rather than genuinely closing the door, with the club saying it would only accept a 'silly offer.' No fresh bid has surfaced since the new contract, so completion this window looks unlikely without an extraordinary number."},
+  {name:"Morgan Gibbs-White", sub:"25 · AM · England", club:"Aston Villa interest", pos:"AM", report:"24 Jul 2026", src:"Yahoo Sports (Mick Brown)", tier:3, fee:"Valuation undisclosed — Forest refusing to sell", truth:62, prob:12, light:'r', trend:'down',
+   note:"Villa have identified Gibbs-White as their primary Morgan Rogers replacement and are 'prepared to make a substantial bid,' but Forest's stance is described as unequivocal: they 'don't want to lose him under any circumstances.' Marinakis blocked a Tottenham move with a contract extension last summer and is expected to do the same again — this reads as interest without a realistic pathway to a sale."},
 ];
+
 const RISERS = [
-  {ar:"⬆", t:"<b>Pereira</b> — confirmed; stability after four managers."},
-  {ar:"⬆", t:"<b>Anderson sale</b> — likely; would fund the rebuild."},
+  {ar:"⬆", t:"<b>Diomande</b>: personal terms agreed, Sporting excluding him from friendlies, BBC and Romano both describe talks as advancing fast — an announcement could land within days."},
+  {ar:"⬆", t:"<b>Bergvall</b>: has formally told Tottenham he wants the move and named Forest as his preference, a material step up from a speculative link."},
+  {ar:"⬆", t:"<b>Delap</b>: interest rekindled as his Chelsea season has flopped (2 goals in 41 games) and the club's attack has become overcrowded behind João Pedro and Emegha."},
 ];
 const FALLERS = [
-  {ar:"⬇", t:"<b>Volume spending</b> — no repeat of last summer's £200m spree."},
-  {ar:"⬇", t:"<b>Nuno/Ange/Dyche-era links</b> — not live."},
+  {ar:"⬇", t:"<b>Read</b>: stuck on a €3m gap with Feyenoord since Forest's third bid, and no improved offer has followed — the deal is at a genuine standstill."},
+  {ar:"⬇", t:"<b>Lucumí</b>: Manchester United, Inter Milan and Juventus have all been credited with interest, crowding a race Forest were previously leading."},
+  {ar:"⬇", t:"<b>Murillo</b>: his May contract extension and Forest's 'silly offer' stance have cooled a once-hot Chelsea/Real Madrid link, with no fresh bid since."},
 ];
 const NEW = [
-  {ar:"✦", t:"Context: a chaotic 16th-placed season; <b>no Europe</b> now."},
-  {ar:"✦", t:"In: a forward, wing pace, a CB. Out: <b>Anderson</b> the marquee sale."},
+  {ar:"✦", t:"<b>Diomande breaks toward completion:</b> personal terms agreed and Sporting preparing for his exit, per BBC and Fabrizio Romano's 'advanced talks' report."},
+  {ar:"✦", t:"<b>Bergvall goes public:</b> the Guardian reports he has told Tottenham directly that he wants to join Forest, a significant escalation from prior speculation."},
+  {ar:"✦", t:"<b>Schlager and Fraser both signed</b> this month, giving Glasner an experienced Bundesliga presser plus a highly-rated Scottish teenager as his first senior and academy business."},
 ];
 const IGNORE = [
-  {ar:"✕", t:"<b>Previous-manager</b> planning — Pereira is in charge."},
-  {ar:"✕", t:"<b>Elanga sale</b> — completed in 2025; SCR context only."},
+  {ar:"✕", t:"<b>James McAtee &amp; Omari Hutchinson</b> — both signed in August 2025 under Nuno; recycled aggregator links still surface these as 'targets' but they're already first-team Forest players."},
+  {ar:"✕", t:"<b>Taiwo Awoniyi to West Ham/Everton</b> — the credited reporting is from January 2025; recent Nigerian press (Jul 2026) instead has him settled and expected to stay well past 2028."},
+  {ar:"✕", t:"<b>Jesse Derry</b> — occasionally mislabeled as a Forest target on aggregator feeds; he is in fact heading out on loan to Sporting CP from Chelsea, unconnected to Forest's business."},
 ];
+
 const POSITIONS = [
-  {p:"Sale: Elliot Anderson (out)", w:80, x:"The pivotal, rebuild-funding move"},
-  {p:"Striker", w:65, x:"Support Wood and Igor Jesus"},
-  {p:"Winger (pace)", w:58, x:"Pereira wants more threat wide"},
-  {p:"Centre-back", w:52, x:"Defensive depth"},
-  {p:"Goalkeeper", w:38, x:"May need attention"},
+  {p:"Centre-back", w:82, x:"Diomande's near-complete arrival addresses the headline need, but Carmo's permanent Olympiacos exit and Murillo's uncertain long-term future mean depth here stays a live concern even once he lands"},
+  {p:"Central/attacking midfield", w:80, x:"Anderson's £116m sale leaves an obvious creative-engine gap; Bergvall (preferred, player-driven) and Curtis Jones (lower-probability alternative) are both being chased to fill it"},
+  {p:"Right-back / wide areas", w:58, x:"Read and Dodo are both being pursued as attacking full-back upgrades, directly squeezing an injury-hit Ola Aina's standing in the process"},
+  {p:"Striker", w:46, x:"Delap chase reflects genuine depth need behind an ageing Chris Wood and an uncertain Taiwo Awoniyi, rather than an urgent starting-XI hole"},
+  {p:"Goalkeeper depth", w:30, x:"Both senior back-ups (Gunn, Ortega) left as free agents, leaving only the 34-year-old Sels and untested John Victor — a need nobody has yet moved to address"},
 ];
+
 const WATCHLIST = [
-  {name:"Elliot Anderson", club:"Nottingham Forest", pos:"CM", dir:"out", age:"~3 wks", tier:2, note:"(Also in main table.) Likely £100m-plus sale; Man City favourites, Marinakis leading talks."},
-  {name:"New forward", club:"Market", pos:"ST", dir:"in", age:"~4d", tier:2, note:"(In ledger.) A frontman target; Mateta among the names, funding tied to Anderson."},
+  {name:"Cathal McCarthy", club:"Hull City", pos:"CB", dir:"in", age:"~3 wks", tier:3, note:"19-year-old Irish centre-back; Forest's seven-figure bid was rejected, an improved offer is expected, with a Championship loan likely if he signs."},
+  {name:"Dodo", club:"Fiorentina", pos:"RB", dir:"in", age:"~2 wks", tier:3, note:"27-year-old attacking full-back being 'lined up' alongside the Read pursuit; explosive going forward, considered weaker defensively than Aina."},
+  {name:"Honest Ahanor", club:"Atalanta", pos:"CB", dir:"in", age:"~11 wks", tier:3, note:"18-year-old Champions League regular monitored since November; Atalanta want £30m+ and he's 'in no rush to leave' — a longer-term watch, not a summer deal."},
+  {name:"Chris Wood", club:"Contract situation", pos:"ST", dir:"out", age:"~3 wks", tier:3, note:"Entering the final year of his deal at 34; local reporting suggests a sale makes sense to avoid losing him free next summer, but no interested club has been named yet."},
+  {name:"Ola Aina", club:"Contract/squad status", pos:"RB", dir:"out", age:"~4 days", tier:3, note:"Injury-hit 2025/26 (28 matches missed) and now facing fresh competition from the Read pursuit; no external suitor reported, but his standing is visibly eroding."},
 ];
+
+const HUB = {
+  bbcNFFC: {l:"BBC Sport · Nottingham Forest", u:"https://www.bbc.co.uk/sport/football/teams/nottingham-forest"},
+  skyNFFC: {l:"Sky Sports · Nottingham Forest", u:"https://www.skysports.com/nottingham-forest"},
+  skyGlasner: {l:"Sky Sports · Glasner appointed", u:"https://www.skysports.com/football/news/11095/13560923/oliver-glasner-to-nottingham-forest-former-crystal-palace-boss-succeeds-vitor-pereira-at-the-city-ground"},
+  skyAnderson: {l:"Sky Sports · Anderson record £116m move", u:"https://www.skysports.com/football/news/11095/13558090/elliot-anderson-to-man-city-midfielder-completes-record-breaking-lb116m-transfer-from-nottingham-forest"},
+  espnAnderson: {l:"ESPN · Anderson completes City move", u:"https://www.espn.com/soccer/story/_/id/49433223/elliot-anderson-completes-move-manchester-city-nottingham-forest"},
+  romanoX: {l:"Fabrizio Romano · X", u:"https://x.com/FabrizioRomano"},
+  romanoDiomandeX: {l:"Fabrizio Romano · Diomande 'advanced talks' (X)", u:"https://x.com/FabrizioRomano/status/2079604490097881296"},
+  forestNewsDiomande: {l:"Nottingham Forest News · Diomande state of play", u:"https://www.nottinghamforest.news/2026/07/27/the-state-of-play-in-nottingham-forests-pursuit-of-sporting-cp-star-ousmane-diomande/"},
+  eotkDiomande: {l:"Empire of the Kop · Diomande closing in (BBC update)", u:"https://www.empireofthekop.com/2026/07/29/discussions-advanced-liverpool-target-could-sign-on-dotted-line-imminently-after-bbc-update/"},
+  chelseaFCO: {l:"Chelsea FC Online · Forest rekindle Delap pursuit", u:"https://chelseafconline.com/2026/07/nottingham-forest-rekindle-pursuit-of-chelseas-23-year-old-striker-reports/"},
+  f365Bergvall: {l:"football365 · Bergvall price tag, bid rejected", u:"https://www.football365.com/news/tottenham-reveal-lucas-bergvall-price-tag-nottingham-forest-bid-rejected"},
+  forestNewsBergvall: {l:"Nottingham Forest News · What Bergvall told Spurs", u:"https://www.nottinghamforest.news/2026/07/27/what-lucas-bergvall-has-told-tottenham-as-nottingham-forest-remain-interested/"},
+  insideFutbolRead: {l:"Inside Futbol · Read move at a standstill", u:"https://insidefutbol.com/2026/07/29/nottingham-forest-yet-to-lodge-fresh-bid-move-for-star-at-standstill/721575/"},
+  insideFutbolLucumi: {l:"Inside Futbol · Man Utd talk swirls on Lucumí", u:"https://insidefutbol.com/2026/07/20/beginning-to-swirl-talk-of-manchester-united-entering-race-for-nottingham-forest-target/720418/"},
+  insideFutbolLucumi2: {l:"Inside Futbol · Battle for Lucumí heats up", u:"https://insidefutbol.com/2026/07/24/champions-league-side-prepare-strong-move-for-nottingham-forest-target/721030/"},
+  fiDodo: {l:"Football Insider · Meet Dodo", u:"https://www.footballinsider247.com/nottingham-forest/meet-dodo-the-nottingham-forest-target-who-once-eclipsed-alphonso-davies"},
+  teamtalkJones: {l:"TEAMtalk · Jones wants to leave, Forest in the race", u:"https://www.teamtalk.com/liverpool/liverpool-midfielder-wants-to-leave-as-nottingham-forest-thunder-into-transfer-race-as-reds-name-price"},
+  fiMarinakisSpend: {l:"Football Insider · Marinakis funding £20m-a-month", u:"https://www.footballinsider247.com/nottingham-forest/evangelos-marinakis-investing-20m-a-month-to-fund-nottingham-forest-signing-spree"},
+  fiThreePlayers: {l:"Football Insider · Forest to buy three more players", u:"https://www.footballinsider247.com/nottingham-forest/nottingham-forest-to-buy-three-more-players-soon"},
+  yahooGibbsWhite: {l:"Yahoo Sports · Gibbs-White decision vs Villa interest", u:"https://uk.sports.yahoo.com/news/nottingham-forest-morgan-gibbs-white-101913764.html"},
+  fiMurillo: {l:"Football Insider · Murillo exit 'looks inevitable'", u:"https://www.footballinsider247.com/nottingham-forest/nottingham-forest-murillo-exit-now-looks-inevitable-as-plans-to-sign-replacement-accelerate"},
+  forestOfficialGlasner: {l:"Nottingham Forest Official · Glasner appointed", u:"https://www.nottinghamforest.co.uk/news/2026/july/06/forest-appoint-oliver-glasner-as-head-coach/"},
+  ggfnSchlager: {l:"Get German Football News · Schlager official", u:"https://www.getfootballnewsgermany.com/2026/xaver-schlager-forest-official/"},
+  cryptoFraser: {l:"CryptoBriefing · Boyd Fraser signs from Hearts", u:"https://cryptobriefing.com/nottingham-forest-signs-boyd-fraser-hearts/"},
+  soccernewsTransfers: {l:"SoccerNews · Forest transfers hub", u:"https://www.soccernews.com/soccer-transfers/nottingham-forest-transfers/"},
+  pulseAina: {l:"Pulse Sports Nigeria · Aina's standing at risk", u:"https://www.pulsesports.ng/story/nottingham-forests-transfer-activity-gives-aina-cause-for-concern-2026072707374427224"},
+  forestNewsMcCarthy: {l:"Nottingham Forest News · Who is Cathal McCarthy", u:"https://www.nottinghamforest.news/2026/07/08/who-is-cathal-mccarthy-the-highly-rated-irishman-nottingham-forest-have-bid-for/"},
+  forestNewsPolicy: {l:"Nottingham Forest News · New transfer policy this summer", u:"https://www.nottinghamforest.news/2026/07/08/nottingham-forest-clearly-implementing-new-transfer-policy-this-summer/"},
+  forestNewsAhanor: {l:"Nottingham Forest News · Monitoring Honest Ahanor", u:"https://www.nottinghamforest.news/2026/05/14/nottingham-forest-keeping-close-tabs-on-champions-league-teenager/"},
+  forestNewsFinalYear: {l:"Nottingham Forest News · Three players in final contract year", u:"https://www.nottinghamforest.news/2026/07/07/the-three-nottingham-forest-players-who-are-entering-final-year-of-contract/"},
+  espnEdu: {l:"ESPN · Edu Gaspar's uncertain future", u:"https://www.espn.co.uk/football/story/_/id/48120318/nottingham-forest-sporting-director-edu-uncertain-future"},
+  skyWindowDates: {l:"Sky Sports · 2026 transfer window dates", u:"https://www.skysports.com/football/news/11095/13546220/summer-transfer-window-2026-dates-when-is-deadline-day-for-premier-league-and-efl-clubs-to-sign-players"},
+};
+
+const LINKMAP = {
+  "Xaver Schlager": ["ggfnSchlager","forestOfficialGlasner"],
+  "Boyd Fraser": ["cryptoFraser"],
+  "Elliot Anderson": ["skyAnderson","espnAnderson"],
+  "David Carmo": ["soccernewsTransfers"],
+  "Jota Silva": ["soccernewsTransfers"],
+  "Angus Gunn, Stefan Ortega & Willy Boly": ["soccernewsTransfers"],
+  "Ousmane Diomande": ["romanoDiomandeX","forestNewsDiomande","eotkDiomande"],
+  "Lucas Bergvall": ["f365Bergvall","forestNewsBergvall"],
+  "Liam Delap": ["chelseaFCO"],
+  "Givairo Read": ["insideFutbolRead","pulseAina"],
+  "Jhon Lucumí": ["insideFutbolLucumi","insideFutbolLucumi2"],
+  "Curtis Jones": ["teamtalkJones"],
+  "Murillo": ["fiMurillo"],
+  "Morgan Gibbs-White": ["yahooGibbsWhite"],
+};
+const WL_LINKMAP = {
+  "Cathal McCarthy": "forestNewsMcCarthy",
+  "Dodo": "fiDodo",
+  "Honest Ahanor": "forestNewsAhanor",
+  "Chris Wood": "forestNewsFinalYear",
+  "Ola Aina": "pulseAina",
+};
+
+const PROSE = {
+  heroH2: `<em>Diomande</em> races toward the line as Forest's £116m Anderson windfall funds a four-target chase under new coach <em>Glasner</em>`,
+  heroLede: `Six weeks into a window bookended by chaos and cash, Forest's story is simple: sell one for a fortune, chase four with it. <b>Elliot Anderson's £116m move to Manchester City</b> — a club-record sale — is now bankrolling simultaneous pursuits of <b>Ousmane Diomande</b> (nearing completion, personal terms agreed), <b>Lucas Bergvall</b> (who has told Spurs he wants the move), <b>Liam Delap</b> and <b>Givairo Read</b>. All of it is happening under a fifth head coach in under two years, <b>Oliver Glasner</b>, appointed 6 July after Vítor Pereira was sacked despite steering Forest to survival and a Europa League semi-final. With no sporting director since Edu Gaspar's turbulent March exit, recruitment now runs through <b>owner Evangelos Marinakis</b> directly — a structure that has, so far, produced fast, decisive business rather than paralysis.`,
+  metaRow: `
+      <span>DECISION-MAKER: <b>Evangelos Marinakis</b> (Owner, direct recruitment control)</span>
+      <span>HEAD COACH: <b>Oliver Glasner</b></span>
+      <span>OWNER: <b>Evangelos Marinakis</b></span>
+      <span>WINDOW: <b>Open → 1 Sep</b></span>
+    `,
+  stats: `
+    <div class="stat"><div class="l">2025/26 Finish</div><div class="v">14<small>th</small></div></div>
+    <div class="stat"><div class="l">2026/27 Europe</div><div class="v">NONE</div></div>
+    <div class="stat gold"><div class="l">Record Sale (Anderson)</div><div class="v">£116<small>m</small></div></div>
+    <div class="stat"><div class="l">Est. Further Spend</div><div class="v">£60-110<small>m</small></div></div>
+    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">85<small>%</small></div></div>`,
+  positionPanel: `
+  <!-- ANALYSIS: MODEL + FINANCE -->
+  <section id="sec-position">
+    <div class="sec-head"><h3>Club Position</h3><span class="num">01</span></div>
+    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the price of managerial chaos.</p>
+
+    <div class="cards">
+      <!-- THE MODEL -->
+      <div class="card">
+        <h4>The Model <span class="tag">OWNER-DRIVEN</span></h4>
+        <p>Forest's recruitment no longer runs through a conventional sporting-director structure. <b>Edu Gaspar</b>, hired from Arsenal in 2025 as "global head of football," was told to stay away from the training ground in March 2026 amid reported clashes with then-manager Nuno, and formally exited soon after. Since then, business has been driven directly by <b>Evangelos Marinakis</b> and his inner circle, with the head coach given real say once appointed — Glasner has been able to "press ahead with a number of deals" since arriving in July.</p>
+        <div class="quote">Financial adviser Stefan Borson's framing: Marinakis is "putting in £15m-£20m-a-month right now," a scale of direct owner cash injection few Premier League clubs can match.</div>
+        <p><b>The Olympiacos pipeline:</b> Marinakis's dual ownership of Forest and Olympiacos already this window sent David Carmo and Jota Silva to Piraeus — a standing release valve for squad players that has no equivalent at almost any other club in the league.</p>
+        <ul>
+          <li>Four different permanent/interim head coaches started the 2025/26 season alone (Nuno → Postecoglou → Dyche → Pereira); Glasner is the fifth appointment since September 2025.</li>
+          <li>Despite that turnover, the Anderson sale and the Diomande, Bergvall and Read pursuits show recruitment has kept moving independent of the dugout — a genuinely unusual level of continuity from ownership alone.</li>
+          <li>Sweet-spot profile this window: 20-26, either a data-backed value buy (Diomande, discounted well below release clause) or a player who has actively pushed for the move (Bergvall).</li>
+        </ul>
+        <div class="verdict"><b>Tracker implication:</b> weight owner-driven, fast-moving deals (Diomande) more heavily than usual for a club without a permanent DoF; treat any deal requiring patient relationship-building as more fragile given the lack of a stable recruitment office.</div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="card">
+        <h4>Financial Position <span class="tag">CASH-RICH, OWNER-BACKED</span></h4>
+        <p>The <b>£116m Anderson sale</b> to Manchester City is the largest fee ever received by the club and instantly reshapes the summer's affordability picture — Forest can now fund three or four mid-size deals without leaning on further big sales.</p>
+        <ul>
+          <li>Marinakis's direct monthly cash injections (est. £15-20m) mean the club isn't solely reliant on transfer trading to fund business, a genuine point of difference from most of the bottom half of the table.</li>
+          <li>With <b>no European football in 2026/27</b>, Forest sit under the standard <b>85% Squad Cost Ratio cap</b> rather than the tighter 70% applied to clubs in Europe — real short-term spending headroom, even if it comes with zero European revenue this season.</li>
+          <li>Existing core assets have been quietly locked down rather than cashed in: <b>Murillo</b> (new four-year deal, May), <b>Neco Williams</b> (new four-year deal), and <b>Ibrahim Sangare</b> (new long-term deal, 28 Jul) have all recommitted this summer.</li>
+        </ul>
+        <div class="verdict"><b>Caveat:</b> the retained list also stripped out both senior back-up goalkeepers (Gunn, Ortega) and veteran Willy Boly for nothing, and no goalkeeper reinforcement has yet arrived — spending power hasn't yet translated into squad-wide coverage.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPUTATION + RISK/REWARD -->
+  <section id="sec-tradeoff">
+    <div class="sec-head"><h3>Reputation &amp; The Stability Trade-Off</h3><span class="num">02</span></div>
+    <p class="sec-sub">A club that can now outspend most of the division, run by an owner unafraid to sack managers who overperform expectations — and the tension that creates for anyone assessing whether a deal will actually stick.</p>
+
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card">
+        <h4>Reputational Standing</h4>
+        <p>Forest's on-pitch story last season was genuinely elite — a Europa League semi-final run under Vítor Pereira, only for Marinakis to sack him anyway on the logic that the football, not just the results, wasn't good enough. That ruthlessness is now a double-edged recruitment tool: it signals real ambition and resource to targets like Diomande and Bergvall, but the trigger-happy managerial record (five appointments in under two years) is a legitimate reason for a player weighing up whether the project he's signing for will look the same in six months.</p>
+        <ul>
+          <li>Glasner arrives with genuine pedigree (Europa Conference League with Crystal Palace, Europa League with Frankfurt), which has already helped land Schlager, who followed him from their Wolfsburg days.</li>
+          <li>The Anderson sale price (£116m for a player who cost Forest a fraction of that) is itself a recruitment asset — proof the club can develop and cash in at the very top of the market.</li>
+        </ul>
+        <div class="verdict"><b>Double edge:</b> the same spending power and resale story that attracts Diomande and Bergvall also puts Murillo and Gibbs-White in the shop window for bigger clubs — Forest are actively resisting both this window rather than cashing in.</div>
+      </div>
+      <div class="card">
+        <h4>The Managerial-Continuity Risk <span class="tag">KEY TENSION</span></h4>
+        <p>Every rumour on this page assumes Glasner is still head coach when deals complete. Given the club sacked a manager who reached a European semi-final, that assumption carries more risk at Forest than almost anywhere else in the league.</p>
+        <p>A related risk sits with the vacant Director of Football role: recruitment decisions currently concentrate in the owner's circle rather than a dedicated football-operations structure, which has so far produced speed (Anderson, Schlager, Diomande) but offers no institutional buffer if Marinakis's patience with Glasner runs out the way it did with three predecessors.</p>
+        <ul>
+          <li>No permanent DoF since March 2026 means less insulation for the head coach if results dip.</li>
+          <li>The squad has already absorbed four managerial reboots in a single season — Glasner inherits both talent and some genuine fatigue.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riskgrid">
+      <div class="risk-r">
+        <h5>▲ Reward: A cash-rich reset under a proven European coach</h5>
+        <ul>
+          <li>The Anderson fee gives Glasner resources most newly-arrived Premier League coaches never get in year one.</li>
+          <li>Diomande, if completed, addresses the defence at a discount well below market rate — smart value business rather than panic spending.</li>
+          <li>Marinakis's direct cash backing means the rebuild isn't contingent on further high-profile sales.</li>
+        </ul>
+      </div>
+      <div class="risk-d">
+        <h5>▼ Risk: Instability undermining the very deals being closed</h5>
+        <ul>
+          <li>A repeat of last season's managerial churn would strand mid-window signings (Bergvall, Read, Delap) with a coach who didn't sign off on them.</li>
+          <li>The goalkeeper gap (both senior back-ups gone, nobody signed) shows spending power hasn't yet translated into squad-wide planning.</li>
+          <li>A DoF vacancy leaves no clear owner of the medium-term recruitment strategy beyond Marinakis himself.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict" style="margin-top:18px;max-width:none">
+      <b>Net read:</b> Forest have more genuine spending power than their table position suggests, and Glasner's early business (Schlager in, Diomande imminent, Bergvall genuinely interested) reads as coherent rather than scattergun. The real risk to this tracker isn't affordability, it's continuity: nothing here is safe from being reshuffled if results wobble and Marinakis reaches for the trigger again.
+    </div>
+  </section>
+`,
+  confirmedPending: `<b>Pending / context:</b> Diomande is the closest thing to a done deal not yet announced — personal terms agreed, Sporting already planning without him, an announcement expected within days per Fabrizio Romano. On the retention side, <b>Ibrahim Sangare</b> (28 Jul), <b>Murillo</b> (May) and <b>Neco Williams</b> have all signed new long-term deals this window, taking three potential exit sagas off the table before they started. No further official announcements are imminent on the goalkeeping gap left by Gunn and Ortega's departures.`,
+  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete — Gibbs-White interest from Villa is a good example on the outgoing side. Weighting: recency 30%, source tier 25%, tactical fit under Glasner 15%, ownership network (Marinakis/Olympiacos channel) 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the window opened.`,
+  outgoingSub: `Forest's outgoing business this window has already been decided by one deal: Anderson's £116m sale funds almost everything else, meaning further sales (Murillo, Gibbs-White) are being resisted rather than pursued.`,
+  pricingBanner: `
+      <b>Pricing principle: with £116m already banked, further sales go at a holder's price or not at all.</b> Marinakis's public stance on Gibbs-White ("don't want to lose him under any circumstances") and the club's "silly offer" line on Murillo both reflect a club under zero financial pressure to sell twice in one window. Treat the fees below as floors that would need a genuinely outsized bid to move, and treat Forest's own resistance as the dominant factor suppressing completion probability, more than any specific valuation gap.
+    `,
+  excludedNote: `<b>Excluded as stale/resolved:</b> James McAtee and Omari Hutchinson (both signed August 2025, recycled by aggregators as "targets" despite already being Forest players); Taiwo Awoniyi to West Ham or Everton (January 2025 reporting, superseded by his stated intent to stay past 2028); Jesse Derry (mislabeled by some feeds as a Forest target — he is joining Sporting CP on loan from Chelsea, unconnected to Forest's business).`,
+  spendIn: { v: `£70-120m`, x: `Diomande (~£42m all-in) plus whichever of Bergvall/Delap/Read/Lucumí progress furthest — almost entirely funded by the Anderson sale rather than requiring further outgoing business.` },
+  spendOut: { v: `£116m banked, more unlikely`, x: `Anderson's world-record fee is already in the bank. Murillo and Gibbs-White both attract real interest, but Forest are actively resisting both, so a further nine-figure sale this window looks unlikely without an exceptional offer.` },
+  methodLegend: `
+      <div class="col">
+        <h5>Source Tiers (current)</h5>
+        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b>: Fabrizio Romano, BBC Sport, The Guardian, official club statements (Anderson, Schlager, Glasner announcements).</span></div>
+        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b>: Sky Sports, TEAMtalk, football365, Chelsea FC Online (beat-specific), Get German Football News (Schlager). Nottingham Forest News rises within its specialism given direct beat access.</span></div>
+        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b>: Football Insider, Inside Futbol, Pulse Sports Nigeria, SoccerNews, CryptoBriefing's sports desk, mixed-record regional and international press.</span></div>
+        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b>: single-source social posts, thin fan-site aggregation. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used only as a discovery index, then traced to the original reporter for weighting, never weighted directly.</span></div>
+      </div>
+      <div class="col">
+        <h5>Weighting Model &amp; Recency Decay</h5>
+        <div class="weights">
+          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+          <span class="w">Ownership network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+        </div>
+        <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
+        <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled links from Forest's chaotic 2025/26 season (McAtee, Hutchinson, old Awoniyi links) do not refresh on aggregator repetition and are treated as dead.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b> — driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window — fee realism, club stance, player will, competition and need. The two move independently.</span></div>
+        <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
+      </div>`
+};
+
+/*==ENDDATA==*/
+
+/* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */
+(function(){
+  const rs=document.documentElement.style;
+  rs.setProperty('--red',BRAND.primary);
+  rs.setProperty('--red-bright',BRAND.primaryBright);
+  rs.setProperty('--red-deep',BRAND.primaryDeep);
+  rs.setProperty('--primary-rgb',BRAND.primaryRgb);
+  document.title='Mercato IQ: '+BRAND.club;
+  document.getElementById('brandName').innerHTML='Mercato <b>IQ</b> · '+BRAND.club;
+  document.getElementById('monoText').textContent=BRAND.mono;
+  document.getElementById('crumb').innerHTML=BRAND.breadcrumb.map(x=>`<a href="#">${x}</a><span class="sep">›</span>`).join('')+`<b>${BRAND.club}</b>`;
+  const set=(id,h)=>{const el=document.getElementById(id); if(el) el.innerHTML=h||'';};
+  set('heroH2',PROSE.heroH2); set('heroLede',PROSE.heroLede); set('metaRow',PROSE.metaRow);
+  set('statStrip',PROSE.stats); set('panel-position',PROSE.positionPanel);
+  set('pendingNote',PROSE.confirmedPending); set('pricingBanner',PROSE.pricingBanner);
+  set('excludedNote',PROSE.excludedNote); set('methodLegend',PROSE.methodLegend);
+  set('inSub',PROSE.incomingSub); set('outSub',PROSE.outgoingSub);
+  set('spendInV',PROSE.spendIn.v); set('spendInX',PROSE.spendIn.x);
+  set('spendOutV',PROSE.spendOut.v); set('spendOutX',PROSE.spendOut.x);
+  const dd=document.getElementById('discDate'); if(dd) dd.textContent=REPORT_META.asof;
+})();
+function srcLinksHTML(name){
+  const keys = LINKMAP[name] || [];
+  if(!keys.length) return '<span class="hubnote">No verified link held for this thread: traced source named in the row.</span>';
+  return keys.map(k=>{const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;}).join('');
+}
+
+/* ---------- RENDER ---------- */
 const lightColor = {g:'var(--green)', y:'var(--yellow)', o:'var(--orange)', r:'var(--crit)'};
 const trendGlyph = {up:'⬆', flat:'➡', down:'⬇'};
 
@@ -615,22 +992,70 @@ function trendCell(tr){
   return `<span class="trend ${cls}">${trendGlyph[tr]}</span>`;
 }
 
+function lightFor(v){ return v>50?'g':v>=30?'y':v>=15?'o':'r'; }
+function rateRows(p){
+  const tl = p.tlight || lightFor(p.truth);
+  const hl = p.light  || lightFor(p.prob);
+  return `<div class="rate">
+      <div class="rate-row"><span class="rl">True?</span><span class="rate-dot" style="background:${lightColor[tl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.truth}%;background:${lightColor[tl]}"></div></div><span class="rate-val" style="color:${lightColor[tl]}">${p.truth}%</span></div>
+      <div class="rate-row"><span class="rl">Happens?</span><span class="rate-dot" style="background:${lightColor[hl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.prob}%;background:${lightColor[hl]}"></div></div><span class="rate-val" style="color:${lightColor[hl]}">${p.prob}%</span></div>
+    </div>`;
+}
+
 function renderTable(list, id){
-  document.getElementById(id).innerHTML = list.map(p=>`
-    <tr>
-      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}</div><div class="pl-sub">${p.sub}</div></td>
+  document.getElementById(id).innerHTML = list.map((p,i)=>`
+    <tr class="rumour-row" data-row="${id}-${i}" tabindex="0" aria-expanded="false">
+      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}${p.isNew?'<span class="new-tag">NEW</span>':''}<span class="src-toggle">SOURCES &#9656;</span></div><div class="pl-sub">${p.sub}</div></td>
       <td data-label="Club">${p.club}</td>
       <td data-label="Pos"><span class="pos">${p.pos}</span></td>
       <td class="fee" data-label="Reported">${p.report}</td>
       <td data-label="Source">${p.src} ${tierBadge(p.tier)}</td>
       <td class="fee" data-label="Est. fee">${p.fee}</td>
-      <td data-label="Probability">${probCell(p.prob, p.light)}</td>
+      <td data-label="Rating">${rateRows(p)}</td>
       <td data-label="Trend">${trendCell(p.trend)}</td>
       <td class="note" data-label="Analysis">${p.note}</td>
-    </tr>`).join('');
+    </tr>
+    <tr class="src-row" data-for="${id}-${i}"><td colspan="9"><div class="src-links"><span class="lbl">TRACED SOURCES</span>${srcLinksHTML(p.name)}</div></td></tr>`).join('');
+  document.querySelectorAll(`#${id} tr.rumour-row`).forEach(row=>{
+    const open = ()=>{
+      const tgt = document.querySelector(`tr.src-row[data-for="${row.dataset.row}"]`);
+      const isOpen = tgt.classList.toggle('open');
+      row.classList.toggle('open', isOpen);
+      row.setAttribute('aria-expanded', isOpen?'true':'false');
+    };
+    row.addEventListener('click', e=>{ if(e.target.closest('a')) return; open(); });
+    row.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+  });
 }
 renderTable(INCOMING,'incoming');
 renderTable(OUTGOING,'outgoing');
+
+/* Overview ins/outs snapshot -- top-4 by Happens? probability, click-through to the full tab */
+function ovCard(p, dir){
+  const color = lightColor[p.light] || 'var(--muted)';
+  const vs = dir==='in' ? `from ${p.club}` : `to ${p.club}`;
+  return `<div class="ov-card" data-go="${dir}">
+      <div class="ov-main">
+        <div class="ov-name">${p.name}</div>
+        <div class="ov-vs">${vs} &middot; ${p.pos}</div>
+      </div>
+      <div class="ov-side">
+        <div class="ov-fee">${p.fee}</div>
+        <div class="ov-pct" style="color:${color}">${p.prob}% likely</div>
+      </div>
+    </div>`;
+}
+function renderOverviewSnapshot(){
+  const topIn = [...INCOMING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  const topOut = [...OUTGOING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  document.getElementById('ovIn').innerHTML = topIn.length ? topIn.map(p=>ovCard(p,'in')).join('') : '<div class="ov-empty">No live targets tracked yet.</div>';
+  document.getElementById('ovOut').innerHTML = topOut.length ? topOut.map(p=>ovCard(p,'out')).join('') : '<div class="ov-empty">No exits tracked yet.</div>';
+  document.querySelectorAll('.ov-card[data-go]').forEach(c=>c.addEventListener('click', ()=>{
+    const btn = document.querySelector(`.tabbtn[data-go="${c.dataset.go}"]:not(.ov-viewall)`);
+    if(btn) btn.click();
+  }));
+}
+renderOverviewSnapshot();
 
 /* confirmed ledger */
 function renderLedger(list, id, emptyMsg){
@@ -647,7 +1072,7 @@ function renderLedger(list, id, emptyMsg){
       <div class="dfee ${d.free?'free':''}">${d.fee}</div>
     </div>`).join('');
 }
-renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing — window opens 15 June.');
+renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing.');
 renderLedger(CONFIRMED_OUT,'confirmedOut','No confirmed departures yet.');
 document.getElementById('cinCount').textContent = CONFIRMED_IN.length;
 document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
@@ -656,7 +1081,7 @@ document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
 function renderWatchlist(filter){
   const rows = WATCHLIST.filter(w => filter==='all' || w.dir===filter);
   document.getElementById('watchlist').innerHTML = rows.map(w=>`
-    <div class="wl-item ${w.dir}">
+    <div class="wl-item ${w.dir}" data-wl="${w.name}">
       <div class="wmeta">
         <div class="wtop">
           <span class="wname">${w.name}</span>
@@ -664,6 +1089,7 @@ function renderWatchlist(filter){
           <span class="wl-dir ${w.dir}">${w.dir.toUpperCase()}</span>
         </div>
         <div class="wnote">${w.note}</div>
+        <div class="src-links" style="display:none"><span class="lbl">TRACED SOURCE</span>${(()=>{const k=WL_LINKMAP[w.name];if(!k) return '<span class="hubnote">Source named above; no verified link held.</span>';const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;})()}</div>
       </div>
       <div class="wright">
         <span class="wpos">${w.pos}</span>
@@ -673,6 +1099,12 @@ function renderWatchlist(filter){
     </div>`).join('');
 }
 renderWatchlist('all');
+document.getElementById('watchlist').addEventListener('click', e=>{
+  if(e.target.closest('a')) return;
+  const item = e.target.closest('.wl-item'); if(!item) return;
+  const box = item.querySelector('.src-links');
+  if(box) box.style.display = box.style.display==='none' ? 'flex' : 'none';
+});
 document.querySelectorAll('.wl-tab').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     document.querySelectorAll('.wl-tab').forEach(b=>b.classList.remove('active'));
@@ -707,29 +1139,80 @@ document.getElementById('positions').innerHTML = POSITIONS.map(p=>`
     <span class="heatbar"><span class="heatfill" style="width:${p.w}%"></span></span>
   </div>`).join('');
 
-/* last-updated stamp + freshness (single source: REPORT_META) */
+/* last-updated stamp + live freshness ticker (single source: REPORT_META.updated ISO) */
 (function(){
   document.getElementById('kicker').textContent =
     `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
   document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
   const foot = document.getElementById('updatedFoot');
-  if(foot) foot.textContent = `Living tracker — ${REPORT_META.asof}.`;
+  if(foot) foot.textContent = `Living tracker - last refreshed ${REPORT_META.asof}.`;
 
-  // relative freshness vs the viewer's own clock
-  const d0 = new Date(REPORT_META.updatedDate + "T00:00:00");
-  const now = new Date();
-  const days = Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate()) -
-                           new Date(d0.getFullYear(),d0.getMonth(),d0.getDate())) / 86400000);
-  let txt, col;
-  if(isNaN(days)){ txt="CURRENT"; col="var(--muted)"; }
-  else if(days < 0){ txt="POST-DATED"; col="var(--muted)"; }
-  else if(days === 0){ txt="UPDATED TODAY"; col="var(--green)"; }
-  else if(days === 1){ txt="UPDATED YESTERDAY"; col="var(--yellow)"; }
-  else if(days <= 3){ txt=days+" DAYS OLD"; col="var(--yellow)"; }
-  else { txt=days+" DAYS OLD · REFRESH DUE"; col="var(--orange)"; }
-  document.getElementById('stamp').innerHTML =
-    `<span class="seg dt">UPDATED&nbsp;<b>${REPORT_META.asof}</b></span>`+
-    `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+  const t0 = new Date(REPORT_META.updated).getTime();
+  const stamp = document.getElementById('stamp');
+  function fmt(ms){
+    if(isNaN(ms)) return ['CURRENT','var(--muted)'];
+    if(ms < 0)   return ['POST-DATED','var(--muted)'];
+    const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
+    let txt;
+    if(s < 60)      txt = s+'s';
+    else if(m < 60) txt = m+'m '+(s%60)+'s';
+    else if(h < 24) txt = h+'h '+(m%60)+'m';
+    else            txt = d+'d '+(h%24)+'h';
+    const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
+    return ['UPDATED '+txt+' AGO', col];
+  }
+  function tick(){
+    const [txt,col] = fmt(Date.now() - t0);
+    stamp.innerHTML =
+      `<span class="seg dt">REFRESHED&nbsp;<b>${REPORT_META.asof}</b></span>`+
+      `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ===== TAB + PAGER ENGINE (scroll-reduction protocol) =====
+   Names chosen to avoid window globals (top, name, status, history etc.). */
+(function(){
+  const tabOrder = ['overview','confirmed','in','out','index','briefing','position','method'];
+  const tabBtns  = Array.from(document.querySelectorAll('.tabbtn'));
+  const meterEl  = document.getElementById('pgMeter');
+  const prevBtn  = document.getElementById('pgPrev');
+  const nextBtn  = document.getElementById('pgNext');
+  let curIdx = 0;
+
+  meterEl.innerHTML = tabOrder.map((t,i)=>`<span class="pg-dot${i===0?' on':''}" data-i="${i}" title="${t}"></span>`).join('');
+  const dots = Array.from(meterEl.querySelectorAll('.pg-dot'));
+
+  function showTab(idx, push){
+    if(idx<0 || idx>=tabOrder.length) return;
+    curIdx = idx;
+    const key = tabOrder[idx];
+    document.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+key));
+    tabBtns.forEach(b=>{
+      const on = b.dataset.go===key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on?'true':'false');
+    });
+    dots.forEach((d,i)=>d.classList.toggle('on', i===idx));
+    prevBtn.disabled = idx===0;
+    nextBtn.disabled = idx===tabOrder.length-1;
+    if(push!==false){ try{ window.history.replaceState(null,'','#tab-'+key); }catch(e){} }
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+
+  tabBtns.forEach(b=>b.addEventListener('click', ()=>showTab(tabOrder.indexOf(b.dataset.go))));
+  dots.forEach(d=>d.addEventListener('click', ()=>showTab(parseInt(d.dataset.i,10))));
+  prevBtn.addEventListener('click', ()=>showTab(curIdx-1));
+  nextBtn.addEventListener('click', ()=>showTab(curIdx+1));
+  document.addEventListener('keydown', e=>{
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if(e.key==='ArrowRight') showTab(curIdx+1);
+    if(e.key==='ArrowLeft')  showTab(curIdx-1);
+  });
+
+  const h = (window.location.hash||'').replace('#tab-','');
+  const start = tabOrder.indexOf(h);
+  showTab(start>=0 ? start : 0, false);
 })();
 </script>
 </body>

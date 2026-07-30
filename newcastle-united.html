@@ -1,16 +1,26 @@
 <!--
-  SUNDERLAND AFC — TRANSFER INTELLIGENCE TERMINAL
-  Living tracker. To update: re-run searches, edit the DATA object below
-  (REPORT_META + INCOMING + OUTGOING + SUMMARY), and the page re-renders.
-  Self-contained single file. No external storage used.
-  Updated: 2026-06-05
+  MERCATO IQ - CLUB DASHBOARD SHELL (TEMPLATE v2, club-agnostic)
+  DO NOT EDIT DURING A REFRESH. This file carries zero club data:
+  all club state lives in clubs/<slug>.data.js (BRAND, VOLATILE, REPORT_META,
+  PROSE, DATA arrays, HUB/LINKMAP, SWEEP) and is spliced between the
+  DATA/ENDDATA markers by engine/build.py, which also fills the badge URI token
+  and Mercato IQ: Newcastle United. Build: python3 engine/build.py <slug>  ->  <slug>.html
+  Refresh mechanics: engine/REFRESH_RUNBOOK.md. Analysis rules: 00_MASTER_ENGINE.md.
+  Dual-metric rating (True? / Happens?), scroll-reduction tabs, no storage APIs.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercato IQ — Newcastle United</title>
+<title>Mercato IQ: Newcastle United</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0c0f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -21,9 +31,10 @@
     --panel:#16181e;
     --panel-2:#1c1f26;
     --line:#2a2e38;
-    --red:#ffffff;
-    --red-bright:#ffffff;
-    --red-deep:#999999;
+    --red:#e21f26;
+    --red-bright:#ff2b24;
+    --red-deep:#a3151a;
+    --primary-rgb:226,31,38;
     --white:#f4f3ee;
     --muted:#8b909c;
     --muted-2:#5f6471;
@@ -51,8 +62,8 @@
   body::before{
     content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
     background:
-      repeating-linear-gradient(90deg, transparent 0 38px, rgba(226,31,38,0.022) 38px 39px),
-      radial-gradient(1200px 600px at 80% -10%, rgba(226,31,38,0.10), transparent 60%),
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(var(--primary-rgb),0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(var(--primary-rgb),0.10), transparent 60%),
       radial-gradient(900px 500px at -10% 110%, rgba(232,194,73,0.05), transparent 55%);
   }
   .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 22px}
@@ -69,7 +80,7 @@
   .crest{
     width:46px;height:46px;flex:none;border-radius:7px;
     position:relative;overflow:hidden;background:#0e1014;
-    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(226,31,38,0.35);
+    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(var(--primary-rgb),0.35);
     display:grid;place-items:center;
   }
   .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
@@ -84,15 +95,39 @@
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:54px 0 26px;border-bottom:1px solid var(--line)}
-  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
-  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,66px);line-height:.92;text-transform:uppercase;letter-spacing:.5px;max-width:none}
+  /* ---------- HERO (compact: matches landing-page space usage) ---------- */
+  .hero{padding:26px 0 16px;border-bottom:1px solid var(--line)}
+  .hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:10px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.2vw,36px);line-height:1.02;text-transform:uppercase;letter-spacing:.5px;max-width:34ch}
   .hero h2 em{font-style:normal;color:var(--red-bright)}
-  .hero .lede{margin-top:20px;max-width:none;color:#c9ccd4;font-size:17px;line-height:1.62}
+  .hero .lede{margin-top:10px;max-width:80ch;color:#c9ccd4;font-size:13.5px;line-height:1.5}
   .hero .lede b{color:var(--white)}
-  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
   .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- INS & OUTS SNAPSHOT (Overview focus, mirrors landing-page story grid) ---------- */
+  .ov-snap{margin:20px 0 4px}
+  .ov-snap-head{margin-bottom:12px}
+  .ov-snap-head h3{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.5px;color:var(--white)}
+  .ov-snap-head .ov-snap-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:3px}
+  .ov-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .ov-cols > .ov-col{min-width:0}
+  .ov-col-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .ov-col-head .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+  .ov-col-head .lbl.in{color:var(--green)}
+  .ov-col-head .lbl.out{color:var(--red-bright)}
+  .ov-viewall{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:4px 11px;transition:.15s;background:none;cursor:pointer}
+  .ov-viewall:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .ov-card{display:flex;align-items:center;gap:12px;padding:10px 13px;border:1px solid var(--line);border-radius:9px;background:var(--panel-2);margin-bottom:8px;cursor:pointer;transition:.15s}
+  .ov-card:hover{border-color:var(--red-deep);background:var(--panel)}
+  .ov-card .ov-main{flex:1;min-width:0}
+  .ov-card .ov-name{font-size:13.5px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-vs{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-side{text-align:right;flex:0 1 auto;max-width:42%;min-width:0}
+  .ov-card .ov-fee{font-family:var(--mono);font-size:11.5px;color:var(--white);white-space:normal;overflow-wrap:break-word;line-height:1.35}
+  .ov-card .ov-pct{font-family:var(--mono);font-size:10px;margin-top:3px;white-space:nowrap}
+  .ov-empty{font-family:var(--mono);font-size:12px;color:var(--muted);padding:13px;border:1px dashed var(--line);border-radius:9px}
+  @media (max-width:900px){.ov-cols{grid-template-columns:1fr}}
 
   /* ---------- UPDATED STAMP ---------- */
   .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
@@ -104,7 +139,7 @@
   .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
 
   /* ---------- STAT STRIP ---------- */
-  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:34px 0}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0 18px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
   .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
   .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
@@ -127,7 +162,7 @@
   .card h4 .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--bg);background:var(--gold);padding:2px 7px;border-radius:4px}
   .card p{color:#c3c7d0;font-size:14.5px;margin-bottom:11px}
   .card p b{color:var(--white)}
-  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(226,31,38,0.07),transparent)}
+  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(var(--primary-rgb),0.07),transparent)}
   .card ul{list-style:none;margin:6px 0 4px}
   .card li{position:relative;padding-left:20px;color:#c3c7d0;font-size:14px;margin-bottom:7px}
   .card li::before{content:"›";position:absolute;left:2px;color:var(--red-bright);font-weight:700}
@@ -143,15 +178,15 @@
   .riskgrid li{font-size:13.5px}
 
   /* ---------- TABLES ---------- */
-  .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-  table{width:100%;border-collapse:collapse;min-width:820px}
+  .tbl-scroll{overflow-x:visible;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{width:100%;border-collapse:collapse;min-width:0;table-layout:auto}
   thead th{
     font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);
-    text-align:left;padding:14px 11px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:nowrap;position:sticky;top:0
+    text-align:left;padding:14px 14px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:normal;position:sticky;top:0
   }
-  tbody td{padding:13px 11px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
   tbody tr{transition:background .15s}
-  tbody tr:hover{background:rgba(226,31,38,0.05)}
+  tbody tr:hover{background:rgba(var(--primary-rgb),0.05)}
   tbody tr:last-child td{border-bottom:none}
   .pl-name{font-weight:700;color:var(--white);font-size:14.5px}
   .pl-sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
@@ -169,8 +204,38 @@
   .ldot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
   .trend{font-family:var(--mono);font-weight:700;font-size:14px}
   .up{color:var(--green)} .down{color:var(--crit)} .flat{color:var(--muted)}
-  td.note{color:var(--muted);font-size:13px;max-width:none;line-height:1.5}
+  td.note{color:var(--muted);font-size:12.5px;width:34%;min-width:300px;max-width:none;line-height:1.5;white-space:normal;word-break:normal;overflow-wrap:anywhere}
   .confirmed{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;color:var(--bg);background:var(--white);padding:3px 7px;border-radius:4px;font-weight:700}
+
+  /* ---------- DUAL RATING (True? / Happens?) ---------- */
+  .rate{display:flex;flex-direction:column;gap:7px;min-width:158px}
+  .rate-row{display:flex;align-items:center;gap:7px}
+  .rate-row .rl{font-family:var(--mono);font-size:8.5px;letter-spacing:.3px;color:var(--muted-2);width:52px;flex:none;text-transform:uppercase}
+  .rate-dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .rate-bar{flex:1;height:5px;border-radius:99px;background:#262a33;overflow:hidden;min-width:38px}
+  .rate-fill{height:100%;border-radius:99px}
+  .rate-val{font-family:var(--mono);font-size:11px;font-weight:700;width:30px;text-align:right}
+
+  /* ---------- NEW pill ---------- */
+  .new-tag{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.8px;color:var(--bg);background:var(--gold);padding:1px 6px;border-radius:4px;margin-left:8px;vertical-align:middle;animation:newpulse 1.8s infinite}
+  @keyframes newpulse{0%,100%{box-shadow:0 0 7px rgba(232,194,73,.4)}50%{box-shadow:0 0 15px rgba(232,194,73,.85)}}
+
+  /* ---------- BREADCRUMB ---------- */
+  .crumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--white)}
+  .crumb .sep{color:var(--muted-2)}
+  .crumb b{color:var(--red-bright)}
+
+  /* ---------- QUICK NAV (scroll-reduction) ---------- */
+  .quicknav{position:sticky;top:74px;z-index:40;background:rgba(12,13,16,.93);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .quicknav-inner{max-width:1240px;margin:0 auto;display:flex;gap:6px;padding:8px 22px;overflow-x:auto;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
+  .quicknav-inner::-webkit-scrollbar{display:none}
+  .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none}
+  .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
+  section[id]{scroll-margin-top:132px}
 
   /* ---------- SUMMARY ---------- */
   .summary-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
@@ -240,7 +305,7 @@
   .wl-item .wpos{font-family:var(--mono);font-size:10px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:1px 5px}
   .wl-item .wage{font-family:var(--mono);font-size:10.5px;color:var(--muted-2)}
   .wl-dir{font-family:var(--mono);font-size:9px;letter-spacing:1px;padding:1px 5px;border-radius:3px;font-weight:700}
-  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(226,31,38,0.14);color:#ef9a9a}
+  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
   @media(max-width:900px){.wl-list{grid-template-columns:1fr}}
 
   /* ---------- METHODOLOGY / LEGEND ---------- */
@@ -260,8 +325,8 @@
   .reveal{opacity:0;transform:translateY(16px);animation:rise .7s forwards}
   @keyframes rise{to{opacity:1;transform:none}}
 
-  /* ---------- MOBILE: tables collapse into cards ---------- */
-  @media(max-width:680px){
+  /* ---------- MOBILE / TABLET: tables collapse into cards (strict no-scroll: <1180px) ---------- */
+  @media(max-width:1180px){
     .tbl-scroll{overflow-x:visible;border:none;background:transparent;border-radius:0}
     table{min-width:0;display:block}
     thead{display:none}
@@ -274,11 +339,16 @@
     tbody td.cell-name{display:block;border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:2px}
     tbody td.cell-name::before{display:none}
     tbody td.cell-name .pl-name{font-size:16px}
-    td.note{display:block;max-width:none;color:#c3c7d0;font-size:12.5px}
+    td.note{display:block;width:auto;min-width:0;max-width:none;color:#c3c7d0;font-size:12.5px}
     td.note::before{display:block;margin-bottom:5px}
     .prob-wrap{min-width:0;flex:1;max-width:62%}
   }
 
+  @media(max-width:560px){
+    .status-pill{display:none}
+    .updated-stamp{flex-wrap:wrap}
+    .stat .v{font-size:26px}
+  }
   @media(max-width:900px){
     .stats{grid-template-columns:repeat(2,1fr)}
     .cards{grid-template-columns:1fr}
@@ -298,6 +368,62 @@
     section,.card,.box,.led-col,.tbl-scroll,.summary-grid,.cards{break-inside:avoid}
     .status-pill{display:none}
   }
+
+  /* ===== TAB PANELS (scroll-reduction protocol) ===== */
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:panelIn .28s ease both}
+  @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .tabbtn{appearance:none;background:none;border:1px solid transparent;cursor:pointer;font:inherit;color:inherit}
+
+  /* Overview hero is compact by design (30 Jul 2026) — the ins/outs snapshot below it
+     is the primary content, matching the landing pages' hero-then-stories priority. */
+  #panel-overview .hero .lede{max-width:900px}
+
+  /* ===== PAGER ===== */
+  .pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:34px 0 6px;padding:12px 14px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .pg-btn{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);
+    background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;cursor:pointer;transition:.15s}
+  .pg-btn:hover{border-color:var(--red);color:var(--red-bright)}
+  .pg-btn:disabled{opacity:.32;cursor:default}
+  .pg-btn:disabled:hover{border-color:var(--line);color:var(--white)}
+  .pg-meter{display:flex;gap:7px}
+  .pg-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.15s}
+  .pg-dot.on{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .pg-hint{font-family:var(--mono);font-size:10px;color:var(--muted-2);letter-spacing:1px;text-align:center;margin:6px 0 0}
+
+  /* ===== COMPACT NO-SCROLL TABLES ===== */
+  .tbl-scroll table{table-layout:fixed;width:100%}
+  .tbl-scroll th,.tbl-scroll td{padding:9px 8px;font-size:12.5px}
+  .tbl-scroll td.note{font-size:12px;line-height:1.5}
+  .tbl-scroll th:nth-child(1),.tbl-scroll td:nth-child(1){width:12%}
+  .tbl-scroll th:nth-child(2),.tbl-scroll td:nth-child(2){width:9%}
+  .tbl-scroll th:nth-child(3),.tbl-scroll td:nth-child(3){width:5%}
+  .tbl-scroll th:nth-child(4),.tbl-scroll td:nth-child(4){width:7%}
+  .tbl-scroll th:nth-child(5),.tbl-scroll td:nth-child(5){width:10%}
+  .tbl-scroll th:nth-child(6),.tbl-scroll td:nth-child(6){width:8%}
+  .tbl-scroll th:nth-child(7),.tbl-scroll td:nth-child(7){width:14%}
+  .tbl-scroll th:nth-child(8),.tbl-scroll td:nth-child(8){width:4%}
+  .tbl-scroll th:nth-child(9),.tbl-scroll td:nth-child(9){width:31%}
+  @media(max-width:980px){.tbl-scroll table{table-layout:auto}}
+
+  /* ===== EXPANDABLE SOURCE LINKS ===== */
+  tr.rumour-row{cursor:pointer}
+  tr.rumour-row:hover td{background:rgba(var(--primary-rgb),.045)}
+  .src-toggle{display:inline-block;margin-left:6px;font-family:var(--mono);font-size:9px;color:var(--muted);
+    border:1px solid var(--line);border-radius:5px;padding:1px 6px;letter-spacing:1px;vertical-align:middle;transition:.15s}
+  tr.rumour-row.open .src-toggle{color:var(--gold);border-color:var(--gold-deep)}
+  tr.src-row{display:none}
+  tr.src-row.open{display:table-row}
+  tr.src-row>td{background:var(--bg-2)!important;border-left:2px solid var(--red);padding:10px 14px}
+  .src-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .src-links .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--muted)}
+  .src-links a{font-family:var(--mono);font-size:11px;color:var(--gold);text-decoration:none;border:1px solid var(--line);
+    border-radius:6px;padding:4px 9px;background:var(--panel);transition:.15s}
+  .src-links a:hover{border-color:var(--gold-deep);color:var(--white)}
+  .src-links .hubnote{font-size:10px;color:var(--muted-2);font-family:var(--mono)}
+  .wl-item .src-links{margin-top:7px}
+  .wl-item{cursor:pointer}
 </style>
 </head>
 <body>
@@ -305,45 +431,75 @@
 <header class="top">
   <div class="top-inner">
     <div class="brand">
-      <div class="crest"><img src="data:image/png;base64,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ZVfulSDj8RUE1lI0RCTM2MZDHqPSvIbTxPqlmf3d1IFHQA1tW3xF1CBlLwxyY7sOtdccdQlq9GcFTJ8VD4HdHc3ujvJeQ3Fs0cewenQ96S4sLm8tWgljE82RsmHBUA8g1zEPxJVkPn2pDZz8hxV6P4jaaxIltp0IxyrdD3pqpQk78xm8PjoK3Jexr6xYTT6dDa26+c0bh2OMYp+vWdzfaYtvbxNI5ZWA3DPGP8ACs9fiBo7bgXkVc4UEcEe9SHx3o56Pvx90KCCB+Nbc1F7S6GS+uRsvZvR3NVnumiWNbYqNo35IIAxj881n6dYXFlbMrWx88S7g56AVB/wnOjA7SW8snLKPT/9dRP8QdJTAAkYdwe9TKVFJe8RGGK97lpvU3b6we/09Yy584HOCOKIILrYizOnyYxj1HSuZm+JGnEfJbXAccfMwIqlL8SAoIhtk/4EM05Yign8RccHjZR5eSx3aWxXzAwDLIMMoIIP4VD/AGdapGEeBWQHIVyBj8683n+IWozcJDFF6NGMGsW88R6pesfOvJXB/hY1hPHUYO61Omjk+Leknb5nr1xqmnaam2W6jiAHCD5vwyKwb3x/p1uCsCbiRwR0P1ry17iWTO5yc9s1FmuWeZyfwo76eRU/+XkrnYX/AI+v7ksIW8pTxhOK5m4v7i6kLyyMzE5yTVWiuOrialTdnqUMFRo/BECSeppKKKwbudQUUUUgCiiigD7/AKKKKACiiigD4AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA+/wCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Z" alt="Newcastle United badge" onerror="this.style.display='none'"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)">NUFC</text></svg></div>
+      <div class="crest"><img src="newcastleunited.png" alt="Club badge" onerror="this.style.display='none'"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)" id="monoText"></text></svg></div>
       <div>
-        <h1>Mercato <b>IQ</b> · Newcastle United</h1>
+        <h1 id="brandName"></h1>
         <div class="sub">The transfer market, decoded · Independent intelligence</div>
       </div>
     </div>
-    <div class="status-pill"><span class="dot"></span> WINDOW OPENS 15 JUN · <span id="asof"></span></div>
+    <div class="status-pill"><span class="dot"></span> WINDOW OPEN · <span id="asof"></span></div>
   </div>
 </header>
 
+<!-- TAB NAV (scroll-reduction protocol: one section on screen at a time) -->
+<nav class="quicknav" aria-label="Dashboard sections">
+  <div class="quicknav-inner" id="tabbar" role="tablist">
+    <span class="qn-tag">SECTIONS</span>
+    <button class="qn-link tabbtn active" data-go="overview" role="tab" aria-selected="true">Overview</button>
+    <button class="qn-link tabbtn lead" data-go="confirmed" role="tab">Confirmed</button>
+    <button class="qn-link tabbtn lead" data-go="in" role="tab">Targets In</button>
+    <button class="qn-link tabbtn lead" data-go="out" role="tab">Out &amp; Sales</button>
+    <button class="qn-link tabbtn" data-go="index" role="tab">Full Index</button>
+    <button class="qn-link tabbtn" data-go="briefing" role="tab">Briefing</button>
+    <button class="qn-link tabbtn" data-go="position" role="tab">Club Position</button>
+    <button class="qn-link tabbtn" data-go="method" role="tab">Method</button>
+  </div>
+</nav>
+
 <div class="wrap">
 
+  <div class="tabpanel active" id="panel-overview">
   <!-- HERO -->
-  <div class="hero reveal">
+  <div class="hero">
+    <div class="crumb" id="crumb"></div>
     <div class="updated-stamp" id="stamp"></div>
-    <div class="kicker" id="kicker">Data as of 5 June 2026</div>
-    <h2>End of an era under <em>Howe</em>: a recalibrated squad after the Isak windfall</h2>
-    <p class="lede">Newcastle enter the summer as a club <b>without European football</b> after an injury-hit, mid-table 2025/26, and Eddie <b>Howe</b> has signalled a <b>change of speed</b>: the squad could look very different. The defining event remains last summer's <b>British-record £125m sale of Alexander Isak to Liverpool</b>, which reshaped the sporting blueprint and was reinvested (Elanga, Woltemade, Wissa). With farewells already said to stalwarts like Kieran Trippier, this is a <b>reset</b> rather than a defence, run on PIF money but bounded by the cost rules.</p>
-    <div class="meta-row">
-      <span>DECISION-MAKER: <b>PIF board</b> (Ownership)</span>
-      <span>HEAD COACH: <b>Eddie Howe</b></span>
-      <span>OWNER: <b>Saudi Public Investment Fund</b></span>
-      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    <div class="kicker" id="kicker"></div>
+    <h2 id="heroH2"></h2>
+    <p class="lede" id="heroLede"></p>
+    <div class="meta-row" id="metaRow"></div>
+  </div>
+
+  <!-- INS & OUTS SNAPSHOT (primary focus of Overview, 30 Jul 2026) -->
+  <div class="ov-snap">
+    <div class="ov-snap-head">
+      <h3>Transfer Ins &amp; Outs</h3>
+      <div class="ov-snap-sub">Best-sourced live business right now &middot; click any row for the full breakdown</div>
+    </div>
+    <div class="ov-cols">
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl in">Incoming</span><button class="tabbtn ov-viewall" data-go="in">View all Targets In &rarr;</button></div>
+        <div id="ovIn"></div>
+      </div>
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl out">Outgoing</span><button class="tabbtn ov-viewall" data-go="out">View all Out &amp; Sales &rarr;</button></div>
+        <div id="ovOut"></div>
+      </div>
     </div>
   </div>
 
   <!-- STAT STRIP -->
-  <div class="stats reveal" style="animation-delay:.08s">
-    <div class="stat"><div class="l">2025/26 Finish</div><div class="v">Mid-table</div></div>
-    <div class="stat"><div class="l">2026/27 Europe</div><div class="v">NONE</div></div>
-    <div class="stat"><div class="l">Est. Gross Spend</div><div class="v">£80–140<small>m</small></div></div>
-    <div class="stat"><div class="l">Est. Sales</div><div class="v">£60–120<small>m</small></div></div>
-    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">85<small>%</small></div></div>
-  </div>
+  <div class="stats" id="statStrip"></div>
 
+  </div><!-- /panel-overview -->
+
+  <div class="tabpanel" id="panel-position">
+  </div><!-- /panel-position -->
+
+  <div class="tabpanel" id="panel-confirmed">
   <!-- CONFIRMED BUSINESS -->
-  <section class="reveal">
-    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">01</span></div>
-    <p class="sec-sub">Done deals and locked-in contract outcomes. This is a living ledger: as the rumours below are officially confirmed they move up here and leave the speculative tables. <b>Contract status sets the fee</b> — an out-of-contract player aged 24+ leaves on a full Bosman free, so no fee applies regardless of homegrown status; the holder's-premium logic only governs players still under contract.</p>
+  <section id="sec-confirmed">
+    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">03</span></div>
+    <p class="sec-sub">Done deals and locked-in contract outcomes. This is a living ledger: as the rumours below are officially confirmed they move up here and leave the speculative tables. <b>Contract status sets the fee</b>: an out-of-contract player aged 24+ leaves on a full Bosman free, so no fee applies regardless of homegrown status; the holder's-premium logic only governs players still under contract.</p>
     <div class="ledger">
       <div class="led-col led-in">
         <div class="led-head"><span class="led-dot in"></span> In <span class="led-count" id="cinCount"></span></div>
@@ -354,140 +510,67 @@
         <div id="confirmedOut"></div>
       </div>
     </div>
-    <div class="pending-note"><b>Window opens 15 June; nothing is registered yet.</b> Howe has flagged significant change and several senior departures (the Trippier-era farewells). Incoming targets enter the ledger only on announcement; this is a building summer, not a defence of European football.</div>
+    <div class="pending-note" id="pendingNote"></div>
   </section>
 
+  </div><!-- /panel-confirmed -->
+
+  <div class="tabpanel" id="panel-in">
   <!-- INCOMING -->
-  <section class="reveal">
-    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">02</span></div>
-    <p class="sec-sub">Probability reflects recency (30%), source reliability (25%), tactical fit (15%), PIF network (15%), financial realism (10%) and competition (5%) — not fan desire.</p>
+  <section id="sec-in">
+    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">04</span></div>
+    <p class="sec-sub" id="inSub"></p>
     <div class="tbl-scroll">
       <table>
         <thead><tr>
-          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Probability</th><th>Trend</th><th>Why it sits here / obstacles</th>
+          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Why it sits here / obstacles</th>
         </tr></thead>
         <tbody id="incoming"></tbody>
       </table>
     </div>
   </section>
 
+  </div><!-- /panel-in -->
+
+  <div class="tabpanel" id="panel-out">
   <!-- OUTGOING -->
-  <section class="reveal">
-    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">03</span></div>
-    <p class="sec-sub">Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.</p>
-    <div class="verdict" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(226,31,38,0.08),var(--panel-2))">
-      <b>Pricing principle: Newcastle price under-contract players at a holder's premium</b>, with long deals, heavy minutes and elite suitors lifting fees above consensus. After the Isak windfall the club is under no pressure to sell, but the cost rules mean clearing high earners is still useful, which softens the floor on fringe names while key players stay priced to keep.
-    </div>
+  <section id="sec-out">
+    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">05</span></div>
+    <p class="sec-sub" id="outSub"></p>
+    <div class="verdict" id="pricingBanner" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(var(--primary-rgb),0.08),var(--panel-2))"></div>
     <div class="tbl-scroll">
       <table>
         <thead><tr>
-          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Sale Prob.</th><th>Trend</th><th>Read</th>
+          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Read</th>
         </tr></thead>
         <tbody id="outgoing"></tbody>
       </table>
     </div>
   </section>
 
-  <!-- ANALYSIS: MODEL + FINANCE -->
-  <section class="reveal" style="animation-delay:.12s">
-    <div class="sec-head"><h3>Club Position</h3><span class="num">04</span></div>
-    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the European trade-off.</p>
+  </div><!-- /panel-out -->
 
-    <div class="cards">
-      <!-- THE MODEL -->
-      <div class="card">
-        <h4>The Model <span class="tag">CORE PRINCIPLE</span></h4>
-        <p>A <b>PIF-backed, ambition-led</b> build under Eddie <b>Howe</b>, recalibrated since the record Isak sale. The model blends marquee additions with Premier League-proven quality, but every move runs through the cost rules.</p>
-        <div class="quote">Howe: this summer "we might see a change of speed... it may well be different", an explicit signal that continuity gives way to refresh.</div>
-        <p><b>This window's logic:</b> rebuild attacking output after Isak, refresh an ageing spine, and stay compliant.</p>
-        <ul>
-          <li>Reinvested the Isak fee last year (Elanga, Woltemade, Wissa); now needs goals and depth.</li>
-          <li>Markets: PL-proven plus high-ceiling talent, within cost-rule limits.</li>
-          <li>Several senior players moving on as an era ends.</li>
-        </ul>
-        <div class="verdict"><b>Tracker implication:</b> weight forward and squad-refresh profiles; treat veteran exits as structural.</div>
-      </div>
-
-      <!-- FINANCE -->
-      <div class="card">
-        <h4>Financial Position <span class="tag">STRONG</span></h4>
-        <p>Backed by the <b>Saudi Public Investment Fund</b>, Newcastle have huge ambition but operate under tight cost-rule discipline after years of careful PSR management.</p>
-        <ul>
-          <li><b>No European football</b> means the looser <b>85%</b> cost cap, a small edge.</li>
-          <li>The Isak windfall created headroom that is now being deployed.</li>
-          <li>Clearing high earners keeps the ratio comfortable.</li>
-        </ul>
-        <div class="verdict"><b>Caveat:</b> PIF wealth does not override the cost rules; trading remains disciplined.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REPUTATION + RISK/REWARD -->
-  <section class="reveal" style="animation-delay:.02s">
-    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">05</span></div>
-    <p class="sec-sub">Newcastle remain a big draw under PIF, but no European football this season is a recruitment headwind even as the 85% cap eases the finances.</p>
-
-    <div class="cards" style="margin-bottom:18px">
-      <div class="card">
-        <h4>Reputational Standing</h4>
-        <p>Carabao Cup winners in 2025 and a PIF-backed project, Newcastle retain strong pulling power, though missing Europe blunts the immediate pitch to elite targets.</p>
-        <ul>
-          <li>Howe remains secure and respected after ending the long trophy drought.</li>
-          <li>Ambition and resources keep Newcastle competitive for big names.</li>
-        </ul>
-        <div class="verdict"><b>Double edge:</b> without Europe, top targets may wait, and Newcastle must sell the project rather than Thursday-night football.</div>
-      </div>
-      <div class="card">
-        <h4>The SCR Tightening <span class="tag">KEY TENSION</span></h4>
-        <p>The new <b>Squad Cost Ratio</b> caps wages, agent fees and amortisation at <b>85% of revenue for clubs outside Europe</b>, the looser of the two limits (European clubs sit at 70%). No continental football is a sporting blow but a quiet financial edge over rivals juggling the tighter cap.</p>
-        <p>The Isak sale sits in the 3-year net position, aiding compliance, but that benefit fades over time.</p>
-        <ul>
-          <li>A 3-year net transfer position feeds the calculation.</li>
-          <li>Clearing high earners now protects future headroom.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="riskgrid">
-      <div class="risk-r">
-        <h5>▲ Reward, a clean reset that re-arms the attack</h5>
-        <ul>
-          <li>Reinvesting wisely after Isak could quickly restore a top-half, Europe-chasing side.</li>
-          <li>PIF resources plus the 85% cap give real spending room.</li>
-          <li>Refreshing the ageing spine extends the cycle.</li>
-        </ul>
-      </div>
-      <div class="risk-d">
-        <h5>▼ Risk, drift without Europe</h5>
-        <ul>
-          <li>A second season without Europe could stall momentum and recruitment.</li>
-          <li>Replacing Isak's goals is genuinely hard.</li>
-          <li>An injury-hit squad needs depth as much as stars.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="verdict" style="margin-top:18px;max-width:none">
-      <b>Net read:</b> a focused rebuild, reinvest for goals and depth, move on the era's stalwarts, and use the looser 85% cap to re-arm for a push back toward Europe, rather than a marquee splurge.
-    </div>
-  </section>
-
+  <div class="tabpanel" id="panel-index">
   <!-- WATCHLIST -->
-  <section class="reveal">
+  <section id="sec-index">
     <div class="sec-head"><h3>Full Rumour Index</h3><span class="num">06</span></div>
-    <p class="sec-sub">The comprehensive long tail — every other name in circulation (aggregated feeds incl. TransferFeed), kept compact and clearly tiered. These are monitoring-only, lower-credibility or cooling links that haven't earned a place in the analysed tables. Filter by direction.</p>
+    <p class="sec-sub">The comprehensive long tail: every other name in circulation (aggregated feeds incl. TransferFeed), kept compact and clearly tiered. These are monitoring-only, lower-credibility or cooling links that haven't earned a place in the analysed tables. Filter by direction.</p>
     <div class="wl-tabs">
       <button class="wl-tab active" data-f="all">All</button>
       <button class="wl-tab" data-f="in">Targets In</button>
       <button class="wl-tab" data-f="out">Possible Out</button>
     </div>
     <div class="wl-list" id="watchlist"></div>
-    <div class="pending-note" style="border-color:var(--line)"><b>Excluded as stale:</b> recycled 2025-window stories (including Isak-to-Liverpool, long since completed) are not live this summer.</div>
+    <div class="pending-note" id="excludedNote" style="border-color:var(--line)"></div>
   </section>
 
+  </div><!-- /panel-index -->
+
+  <div class="tabpanel" id="panel-briefing">
   <!-- SUMMARY OUTPUTS -->
-  <section class="reveal">
+  <section id="sec-briefing">
     <div class="sec-head"><h3>Daily Briefing</h3><span class="num">07</span></div>
-    <p class="sec-sub">The eight required readouts, regenerated each refresh.</p>
+    <p class="sec-sub">The eight required readouts, regenerated on each update.</p>
 
     <div class="summary-grid">
       <div class="box">
@@ -508,99 +591,389 @@
       <div class="box">
         <h4>Estimated Spend</h4>
         <div class="spend">
-          <div class="s in"><div class="l">Gross Incoming</div><div class="v">£80–140m</div><div class="x">Goals and squad depth after Isak; upper end if a marquee forward lands.</div></div>
-          <div class="s out"><div class="l">Outgoing Sales</div><div class="v">£60–120m</div><div class="x">Senior and fringe departures as an era ends, plus cost-rule housekeeping.</div></div>
+          <div class="s in"><div class="l">Gross Incoming</div><div class="v" id="spendInV"></div><div class="x" id="spendInX"></div></div>
+          <div class="s out"><div class="l">Outgoing Sales</div><div class="v" id="spendOutV"></div><div class="x" id="spendOutX"></div></div>
         </div>
       </div>
     </div>
   </section>
 
+  </div><!-- /panel-briefing -->
+
+  <div class="tabpanel" id="panel-method">
   <!-- METHODOLOGY -->
-  <section class="reveal">
+  <section id="sec-method">
     <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">08</span></div>
     <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
-    <div class="legend">
-      <div class="col">
-        <h5>Source Tiers (current)</h5>
-        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b> — David Ornstein, Fabrizio Romano, BBC, The Athletic. <i>Used for:</i> the Isak sale, Howe's summer signals, senior departures.</span></div>
-        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b> — Sky Sports, Keith Downie, reliable national and club reporters.</span></div>
-        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b> — TEAMtalk, Football Insider, club sites, mixed-record nationals.</span></div>
-        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b> — Fichajes, Africa Foot, Foot Sur 7, Média Foot, fan posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> for the full rumour sweep, then traced to the original reporter for weighting — never weighted as a primary source themselves.</span></div>
-      </div>
-      <div class="col">
-        <h5>Weighting Model &amp; Recency Decay</h5>
-        <div class="weights">
-          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
-          <span class="w">PIF network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
-        </div>
-        <div class="row" style="margin-top:16px"><span class="k">0–7d</span><span>Very strong · <span class="k">8–14d</span> strong · <span class="k">15–30d</span> moderate</span></div>
-        <div class="row"><span class="k">31–60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
-        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom & Hadj Moussa fall on this basis.</span></div>
-      </div>
+    <div class="legend" id="methodLegend">
     </div>
   </section>
 
+  </div><!-- /panel-method -->
+
+  <!-- PAGER -->
+  <div class="pager" aria-label="Section pager">
+    <button class="pg-btn" id="pgPrev" type="button">&#8592; Prev</button>
+    <div class="pg-meter" id="pgMeter"></div>
+    <button class="pg-btn" id="pgNext" type="button">Next &#8594;</button>
+  </div>
+
   <footer class="reveal">
-    <b id="updatedFoot">Living tracker — 5 Jun 2026.</b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <b id="updatedFoot"></b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
     <div class="disclaimer">
-      Built from publicly reported sources retrieved on 5 June 2026, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+      Built from publicly reported sources retrieved on <span id="discDate"></span>, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
     </div>
   </footer>
 </div>
 
 <script>
 /* ============================================================
-   DATA — edit this block on each daily update, page re-renders.
+   DATA: edit this block on each daily update, page re-renders.
    light: 'g'=green(>50%) 'y'=yellow(30-50%) 'o'=orange(15-30%) 'r'=red(<15%)
    trend: 'up' | 'flat' | 'down'
    ============================================================ */
-/* ── EDIT THESE TWO LINES EACH DAY ──────────────────────────
-   asof: human display date · updatedDate: ISO (drives freshness) */
-const REPORT_META = { asof: "6 Jun 2026", updatedDate: "2026-06-06", label: "Build · post-Isak reset" };
-const CONFIRMED_IN = [];
+/*==DATA==*/
+/* ============================================================
+   MERCATO IQ · CLUB DATA · NEWCASTLE UNITED · STATE OF RECORD
+   This file IS the club's live state. A refresh edits ONLY this
+   file, then engine/build.py splices it into template.html to
+   produce newcastle-united.html. Never hand-edit the built html.
+   Mechanics: engine/REFRESH_RUNBOOK.md · Rules: 00_MASTER_ENGINE.md
+   ------------------------------------------------------------
+   MIGRATION NOTE (30 Jul 2026): first live-format build for this
+   club (previously on the legacy single-page template with no
+   BRAND-driven colours). Researched fresh via live web search.
+   ============================================================ */
+
+const BRAND = {
+  club: "Newcastle United", mono: "NUFC", slug: "newcastle-united",
+  primary: "#BFC4C9", primaryBright: "#FFFFFF", primaryDeep: "#000000",
+  primaryRgb: "191,196,201",
+  breadcrumb: ["England","Premier League"]
+};
+const VOLATILE = {
+  verified: "2026-07-30",
+  coach: "VACANT — Eddie Howe left the role 30 Jul 2026; Ross Wilson (Sporting Director) and CEO David Hopkinson run the search, Al-Ahli's Matthias Jaissle the advanced favourite",
+  dof: "Ross Wilson (Sporting Director)",
+  europe: "None (2026/27)",
+  finish: "12th (2025/26, 49 pts)",
+  owner: "PIF-led consortium (chairman Yasir Al-Rumayyan); PCP Capital Partners (Amanda Staveley/Mehrdad Ghodoussi) and Reuben Brothers minority stakes",
+  window: "Opened 15 Jun, closes 1 Sep 2026, 11pm UK"
+};
+const SWEEP = {
+  feeds: [
+    "https://www.newsnow.co.uk/h/Sport/Football/Premier+League/Newcastle+United/Transfer+News",
+    "https://www.chroniclelive.co.uk/all-about/newcastle-united-fc",
+    "https://www.shieldsgazette.com/sport/football/newcastle-united",
+    "https://www.skysports.com/newcastle-united",
+    "https://www.teamtalk.com/newcastle-united"
+  ],
+  queries: [
+    "Newcastle United transfer news July 2026",
+    "Newcastle United bid OR medical OR 'personal terms'",
+    "Newcastle United head coach appointment Jaissle McKenna Conte",
+    "Newcastle United calciomercato Scalvini Atalanta Tutto Atalanta",
+    "Newcastle United fichajes Marca AS Relevo Ederson Oso",
+    "Newcastle Bruno Guimaraes Arsenal Telegraph talkSPORT"
+  ],
+  note: "NUFC-specific beat prioritised: Chronicle Live (Lee Ryder), Shields Gazette/NUFC The Mag, The Athletic (Chris Waugh). Foreign desks per profile: Italy (Tutto Atalanta/Gazzetta for Scalvini and Ederson), Spain (Marca/AS/Relevo for Oso, Real Betis local press for Ezzalzouli), Czech/Portugal (for Hornicek). Coaching-search sweep runs in parallel given the 30 Jul vacancy. Trace every aggregator hit (TransferFeed, NewsNow) to its original reporter, never link the aggregator itself."
+};
+
+const REPORT_META = { asof: "30 Jul 2026", updated: "2026-07-30T18:00:00Z", label: "Emergency build: Eddie Howe quits as head coach, Jaissle the advanced favourite; Bruno Guimaraes-to-Arsenal now 'the final straw' with a decision expected within days" };
+
+const CONFIRMED_IN = [
+  {name:"Sean Steur", sub:"20 · CM/DM · Netherlands", to:"permanent from Ajax", fee:"£23m", free:false, status:"done", statusTxt:"DONE, SIGNED",
+   note:"Confirmed by Sky Sports: a five-year deal signed in the immediate aftermath of Sandro Tonali's departure to Tottenham, filling the vacated central-midfield slot with a younger, cheaper profile. A composed Eredivisie ball-player Newcastle's recruitment team have tracked for over a year; regarded as a squad player initially rather than a like-for-like Tonali replacement."},
+  {name:"Bazoumana Touré", sub:"20 · RW/LW · Ivory Coast", to:"permanent, undisclosed selling club", fee:"£42m", free:false, status:"done", statusTxt:"DONE, SIGNED",
+   note:"Confirmed by Sky Sports at £42m: a statement swoop for a highly-rated Ivorian winger, part of the club's declared shift toward an 18-24 age bracket, £20-40m recruitment model under Ross Wilson. Adds direct competition on the right and left flanks ahead of any Jacob Murphy exit."},
+  {name:"Ewen Jaouen", sub:"20 · GK · France (U21)", to:"permanent from Stade de Reims", fee:"≈£18-24m", free:false, status:"done", statusTxt:"DONE, SIGNED",
+   note:"Fabrizio Romano's 'here we go': a long-term deal to June 2030 for a 34-appearance, 15-clean-sheet Ligue 2 season. Signed as a development goalkeeper behind the senior pecking order, not an immediate Nick Pope replacement — that role is being addressed separately via the live Lukáš Horníček pursuit below."},
+  {name:"Kyle Healy", sub:"16 · RB", to:"West Ham United academy", fee:"Undisclosed (academy fee)", free:false, status:"done", statusTxt:"DONE, SIGNED",
+   note:"Romano confirmed the academy switch on 23 Jul: six U18 Premier League appearances at West Ham last season. A future-facing addition with zero first-team implication this window, included for completeness of the state of record."},
+  {name:"Lukáš Horníček", sub:"24 · GK · Czech Republic", to:"from SC Braga", fee:"≈£24.5-30m (release clause)", free:false, status:"pending", statusTxt:"AGREED, RELEASE CLAUSE TRIGGERED",
+   note:"Multiple outlets (TeamTalk, Shields Gazette, Football365) report the £24.5m-30m release clause has been triggered and personal terms are close, positioning Horníček as the senior alternative to Nick Pope after Newcastle again missed out on James Trafford (now signing for Leeds). Reported to have already turned down interest from Hull City. Not yet a club announcement, so it is held here rather than in the fully-confirmed table; expect a formal unveiling within days."},
+];
 const CONFIRMED_OUT = [
-  {name:"Senior departures", sub:"Trippier-era farewells", to:"Various", fee:"Mixed", free:false, status:"exit", statusTxt:"ERA ENDING",
-   note:"Howe has confirmed an end-of-era feel, with farewells already said to long-serving stalwarts. Specific exits firm up once the window opens."},
+  {name:"Anthony Gordon", sub:"25 · LW · England", to:"Barcelona (permanent)", fee:"£69m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Confirmed by Sky Sports: the England winger completes a move to Barcelona, one of three marquee departures (with Tonali and Isak's move last transfer deadline day) that funded this summer's rebuild after a 12th-place finish and no European football. Newcastle immediately opened a chase for a direct like-for-like in Abde Ezzalzouli (see Incoming)."},
+  {name:"Sandro Tonali", sub:"26 · CM · Italy", to:"Tottenham Hotspur (permanent)", fee:"£100m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"A Tottenham club-record fee, confirmed by Sky Sports and ESPN. A landmark sale that reshapes the midfield picture and materially strengthens Newcastle's Squad Cost Ratio headroom heading into a summer already featuring the Bruno Guimaraes saga."},
+  {name:"Kieran Trippier", sub:"35 · RB · England", to:"Wolverhampton Wanderers", fee:"Free transfer", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Confirmed by Sky Sports: the veteran right-back leaves on a free at the end of his contract after four years and a League Cup winner's medal, ending his second spell on Tyneside."},
+  {name:"Emil Krafth", sub:"31 · RB · Sweden", to:"Released, free agent", fee:"Free (contract expired)", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Contract-expiry departure confirmed in early summer reporting; a squad-depth exit with no fee, freeing a wage-bill slot rather than driving strategy."},
 ];
+
 const INCOMING = [
-  {name:"Forward target", sub:"Goals after Isak", club:"Market", pos:"ST/W", report:"~3 wks ago", src:"CaughtOffside", tier:3, fee:"£40–70m", prob:40, light:'y', trend:'up',
-   note:"Replacing Isak's output remains the headline need. Howe has signalled change; expect a PL-proven or high-ceiling forward, bounded by the cost rules. Names firming up as the window opens."},
-  {name:"Squad-depth refresh", sub:"Spine reinforcement", club:"Various", pos:"—", report:"~3 wks ago", src:"Aggregated", tier:3, fee:"£30–60m", prob:38, light:'y', trend:'up',
-   note:"An injury-ravaged campaign exposed depth; Howe wants a different-looking squad. Expect multiple measured additions over one marquee."},
+  {name:"Matthias Jaissle", sub:"38 · Head Coach appointment", club:"Al-Ahli (Saudi Pro League)", pos:"Head coach", report:"30 Jul 2026", src:"Khel Now / Sky Sports News", tier:2, fee:"Compensation (PIF-to-PIF)", truth:65, prob:45, light:'y', trend:'up',
+   note:"The gating decision of the entire window: Eddie Howe left the head-coach role today after squad-composition concerns, missing out on Johan Manzambi being the final straw. Jaissle, back-to-back AFC Champions League winner at PIF-owned Al-Ahli and formerly of Red Bull Salzburg, is reported to be in 'advanced discussions', helped by his existing relationship with Newcastle's Saudi ownership. Sporting director Ross Wilson and CEO David Hopkinson are compiling the shortlist; Kieran McKenna and Antonio Conte are also named. True reflects credible, multi-outlet reporting of talks; Happens is tempered because nothing is signed and a PIF-to-PIF appointment, while logical, still needs Al-Ahli's release and full board sign-off."},
+  {name:"Giorgio Scalvini", sub:"22 · CB · Italy", club:"Atalanta", pos:"CB", report:"29 Jul 2026", src:"Sebastien Vidal / Tutto Atalanta", tier:2, fee:"≈€45m (£38m)", truth:60, prob:40, light:'y', trend:'up',
+   note:"Reported to be in 'pole position', advancing on an estimated €45m fee, part of a reported £68m double defensive swoop alongside the Horníček goalkeeper deal. Atalanta, missing Champions League football under new coach Maurizio Sarri, are said to be willing to cash in on their academy-produced centre-back to rebalance finances. Fits Newcastle's real need: Fabian Schär and Dan Burn are both 34 with deals expiring 2027, so this is genuine succession planning, not a luxury signing. Tottenham are also credited with interest."},
+  {name:"Abde Ezzalzouli", sub:"24 · LW/RW · Morocco", club:"Real Betis", pos:"W", report:"29 May 2026 (recurring through Jul)", src:"Graeme Bailey (TeamTalk, exclusive)", tier:2, fee:"≈£43-52m (release clause ≈€60m)", truth:60, prob:35, light:'y', trend:'up',
+   note:"Framed repeatedly by TeamTalk as the direct Anthony Gordon replacement, with Betis 'fully expecting' to lose him after an outstanding season (his camp reportedly open to the move) and a 'clear pathway to a prominent attacking role' cited as Newcastle's edge. Barcelona hold a 20% sell-on. Competition is real and wide (Chelsea, Man City, Everton, Villa, Dortmund, Leipzig, Napoli), which caps Happens despite Newcastle's stated advantage; still live as of late July per TeamTalk's continuing coverage."},
+  {name:"Joaquín Oso", sub:"21 · RB/LB · Spain", club:"Sevilla", pos:"FB", report:"14 Jul 2026", src:"TEAMtalk", tier:3, fee:"Undisclosed (contact made)", truth:45, prob:20, light:'o', trend:'down',
+   note:"Newcastle made contact to explore conditions of a deal for the versatile Sevilla full-back, with Nottingham Forest also enquiring. By mid-July, Fiorentina were reported to have 'accelerated' and moved ahead of Newcastle, Tottenham and Fulham in the race, which drags Happens down; monitored rather than a live priority chase."},
+  {name:"Ederson (Atalanta)", sub:"24 · DM · Brazil", club:"Atalanta", pos:"DM", report:"18-20 Jul 2026", src:"CaughtOffside / TheHardTackle", tier:3, fee:"Undisclosed ('big' offer required)", truth:40, prob:20, light:'o', trend:'flat',
+   note:"Conflicting within 48 hours: one report (19 Jul) had Ederson 'set for an Atalanta stay' despite the Newcastle links, the next (20 Jul) had Atalanta 'prepared to cash in' if a big offer arrives. Newcastle are credited with interest as an alternative central-midfield option should Bruno Guimaraes be sold, but the club's own stance is unresolved, hence the moderate truth and low probability."},
 ];
+
 const OUTGOING = [
-  {name:"Senior core", sub:"Era stalwarts", club:"Various", pos:"—", report:"~3 wks ago", src:"CaughtOffside", tier:3, fee:"Mixed", prob:60, light:'g', trend:'up',
-   note:"Farewells already made to long-serving players; a generational refresh is under way. PRICING: age and contracts cap fees; the value is wage relief and squad-list space."},
-  {name:"Fringe sales", sub:"Cost-rule housekeeping", club:"Various", pos:"—", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", prob:45, light:'y', trend:'flat',
-   note:"Expect fringe departures to keep the cost ratio comfortable and fund incomings."},
+  {name:"Bruno Guimarães", sub:"28 · CM · Brazil, captain", club:"Arsenal", pos:"CM/DM", report:"30 Jul 2026", src:"Sky Sports / Telegraph (Luke Edwards) / talkSPORT (Ben Jacobs)", tier:1, fee:"£75-85m", truth:80, prob:55, light:'g', trend:'up',
+   note:"The defining storyline of the window. The Newcastle captain told the club he wants to join Arsenal after Brazil's World Cup exit; Newcastle value him at ≈£85m, Arsenal believe anything above £75m has a real chance. Telegraph's Luke Edwards reports Howe himself now believes Guimarães will be sold and that it was 'the final straw' behind his own exit today. talkSPORT's Ben Jacobs says Guimarães wants clarity before Friday's pre-season return and expects resolution 'by Friday or shortly after'. Two years plus a club option remain on his contract, so Newcastle are not forced sellers, but the player's stated wish plus the coaching vacuum materially lift the probability versus a normal transfer saga."},
+  {name:"Jacob Murphy", sub:"31 · RW/LW · England", club:"Everton", pos:"W", report:"12 Jul 2026", src:"TEAMtalk", tier:3, fee:"Enquiry stage, undisclosed", truth:50, prob:22, light:'o', trend:'flat',
+   note:"Everton have launched an enquiry as they work through multiple winger options; a decade-long servant whose game time is squeezed by Bazoumana Touré's arrival and any Ezzalzouli deal. PRICING: enquiry-stage only with no bid reported, so probability stays modest, but the squeeze on minutes makes an exit logical business."},
+  {name:"Lewis Hall", sub:"22 · LB/LWB · England", club:"Manchester United", pos:"LB", report:"10-13 Jul 2026", src:"TEAMtalk / Caught Offside", tier:3, fee:"≈£55-60m", truth:45, prob:20, light:'o', trend:'flat',
+   note:"Manchester United are described as 'determined' to land Hall, valued at roughly £55-60m, with reports suggesting the player himself is open to the move. Newcastle have set what's called a 'prohibitive' price tag, and United are also tracking two other left-backs, which softens Happens. A sale would leave a fresh full-back hole alongside the Oso interest above."},
+  {name:"Nick Pope", sub:"34 · GK · England", club:"Ipswich Town (interest)", pos:"GK", report:"~Jul 2026", src:"Shields Gazette (Lee Ryder)", tier:2, fee:"Undisclosed", truth:60, prob:30, light:'y', trend:'up',
+   note:"First revealed by the Gazette: Pope 'will be allowed to leave' this summer, with Ipswich and other Premier League sides interested. Explicitly contingent on Newcastle first landing a senior replacement — which is exactly what the live Horníček deal is designed to unlock, so this rises once that's formally announced."},
+  {name:"Joe Willock", sub:"26 · CM/AM · England", club:"Open to reasonable offers", pos:"CM", report:"~Jul 2026", src:"Shields Gazette", tier:2, fee:"Reasonable offer accepted", truth:60, prob:28, light:'o', trend:'flat',
+   note:"Entering the final year of his contract; the club is 'actively trying to strengthen' central midfield and would accept a fair offer for the experienced, well-travelled squad option. A sell-to-avoid-a-free calculation rather than an active push to move him on."},
 ];
+
 const RISERS = [
-  {ar:"⬆", t:"<b>Forward search</b> — replacing Isak's goals tops the list."},
-  {ar:"⬆", t:"<b>Squad refresh</b> — Howe signals a change of speed."},
+  {ar:"⬆", t:"<b>Bruno Guimarães</b>: 'final straw' framing behind Howe's exit, decision reportedly due within days."},
+  {ar:"⬆", t:"<b>Matthias Jaissle</b>: advanced talks for the vacant head-coach seat, helped by the shared PIF ownership link."},
+  {ar:"⬆", t:"<b>Giorgio Scalvini</b>: Newcastle reported 'in pole position', part of a £68m double defensive swoop."},
+  {ar:"⬆", t:"<b>Nick Pope</b>: exit path clears as the Horníček goalkeeper deal edges toward completion."},
 ];
 const FALLERS = [
-  {ar:"⬇", t:"<b>Continuity</b> — Howe says this summer will be different."},
-  {ar:"⬇", t:"<b>Isak-to-Liverpool stories</b> — completed last year; now stale."},
+  {ar:"⬇", t:"<b>Johan Manzambi</b>: lost to Aston Villa's club-record £59.5m deal — a factor in Howe's own departure."},
+  {ar:"⬇", t:"<b>James Trafford</b>: missed for a third straight window, now signing for Leeds United (£40m)."},
+  {ar:"⬇", t:"<b>Víctor Muñoz</b>: gone to Liverpool for £34.5m after Newcastle were in the race throughout June."},
+  {ar:"⬇", t:"<b>Joaquín Oso</b>: Fiorentina reported to have 'accelerated' past Newcastle in the chase."},
 ];
 const NEW = [
-  {ar:"✦", t:"Context: <b>no European football</b> for 2026/27; the looser 85% cap applies."},
-  {ar:"✦", t:"In: a forward and depth. Out: era stalwarts as Howe refreshes the squad."},
+  {ar:"✦", t:"BREAKING: <b>Eddie Howe leaves</b> as head coach (30 Jul); <b>Matthias Jaissle</b> (Al-Ahli) the advanced favourite, McKenna and Conte also named."},
+  {ar:"✦", t:"<b>Bruno Guimarães-to-Arsenal</b> escalates sharply: Telegraph and talkSPORT both now report momentum toward a £75-85m sale within days."},
+  {ar:"✦", t:"Defensive business advancing: <b>Horníček</b> (GK, release clause triggered) and <b>Scalvini</b> (CB, 'pole position') form a reported £68m double deal."},
 ];
 const IGNORE = [
-  {ar:"✕", t:"<b>Isak links</b> — he left for Liverpool in 2025; not live."},
-  {ar:"✕", t:"<b>2025-window recycled names</b> — not this summer's business."},
+  {ar:"✕", t:"<b>Johan Manzambi</b>: resolved — signed for Aston Villa in a club-record £59.5m deal; any 2026 piece still listing him as a Newcastle target is stale."},
+  {ar:"✕", t:"<b>James Trafford</b>: resolved — signing for Leeds United; treat any lingering Newcastle-Trafford link as recycled from the 2024/2025 chases."},
+  {ar:"✕", t:"<b>Víctor Muñoz</b>: resolved — Liverpool completed the £34.5m signing in July; discount any Newcastle framing as pre-resolution reporting."},
+  {ar:"✕", t:"<b>Aaron Ramsdale (£13.8m)</b>: dated reporting from the 2025 window, not current business; excluded from this refresh."},
 ];
+
 const POSITIONS = [
-  {p:"Forward / striker", w:82, x:"Replacing Isak's goals is the priority"},
-  {p:"Squad depth", w:68, x:"Injury-hit campaign exposed thin areas"},
-  {p:"Full-back", w:55, x:"Trippier-era refresh"},
-  {p:"Central midfield", w:48, x:"Energy and legs"},
-  {p:"Goalkeeping cover", w:35, x:"Depth review"},
+  {p:"Head coach", w:95, x:"The gating decision for the entire window; vacancy opened today, Jaissle the advanced name"},
+  {p:"Centre-back", w:72, x:"Schär (34) and Burn (34) both out of contract 2027; Scalvini the live succession target"},
+  {p:"Winger", w:65, x:"Replacing Gordon; Ezzalzouli the stated priority after Muñoz was lost to Liverpool"},
+  {p:"Goalkeeper", w:58, x:"Pope exit path opens once Horníček (senior) completes; Jaouen signed as the long-term project"},
+  {p:"Central midfield", w:50, x:"Contingent on a Bruno Guimarães sale; Steur signed as depth, Ederson monitored as a possible replacement"},
 ];
+
 const WATCHLIST = [
-  {name:"Forward target", club:"Market", pos:"ST", dir:"in", age:"~3 wks", tier:3, note:"(Also in main table.) Goals after Isak remain the headline need."},
-  {name:"Senior departures", club:"Newcastle", pos:"—", dir:"out", age:"~3 wks", tier:3, note:"Era stalwarts moving on; names firm up as the window opens."},
+  {name:"Nick Woltemade", club:"Newcastle United", pos:"ST", dir:"out", age:"~2 wks", tier:2, note:"The Athletic (Chris Waugh) reports his fit in Howe's system was already uncertain after a difficult World Cup; with Howe now gone, his standing under a new coach is an open question, though a sale remains unlikely given the fee sunk into him."},
+  {name:"Yoane Wissa", club:"Newcastle United", pos:"ST", dir:"out", age:"~2 wks", tier:2, note:"The Athletic reports Newcastle explored a sale market but judged the financial hit too heavy; the club is banking on a stronger season after his World Cup involvement rather than moving him on."},
+  {name:"Joe White", club:"Newcastle United", pos:"CM", dir:"out", age:"~3 wks", tier:3, note:"Academy midfielder expected to leave permanently for 'a fresh start' after a disappointing loan at Bradford City (four appearances)."},
+  {name:"Harrison Ashby", club:"Newcastle United", pos:"RB/LWB", dir:"out", age:"~3 wks", tier:3, note:"Signed from West Ham with promise but never made his senior Newcastle debut across three loan spells; expected to be allowed to leave permanently."},
+  {name:"Dan Burn & Fabian Schär", club:"Newcastle United", pos:"CB", dir:"out", age:"~4 wks", tier:3, note:"Both 34 with contracts expiring 2027; not an active sale story, but their situation is the direct driver of the Scalvini centre-back pursuit above. Monitoring only."},
+  {name:"Kieran McKenna / Antonio Conte", club:"Alternate coaching candidates", pos:"Head coach", dir:"in", age:"~same day", tier:3, note:"Named alongside Jaissle as the search continues; no reported contact confirmed for either as of 30 Jul, well behind Jaissle in the reported pecking order."},
 ];
+
+const HUB = {
+  bbcNUFC:    {l:"BBC Sport · Newcastle United", u:"https://www.bbc.co.uk/sport/football/teams/newcastle-united"},
+  bbcGossip:  {l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
+  skyNUFC:    {l:"Sky Sports · Newcastle United", u:"https://www.skysports.com/newcastle-united"},
+  athletic:   {l:"The Athletic · Newcastle United (Chris Waugh)", u:"https://www.nytimes.com/athletic/football/club/newcastle-united/"},
+  romano:     {l:"Fabrizio Romano · X", u:"https://x.com/FabrizioRomano"},
+  chronicle:  {l:"Chronicle Live · Newcastle United (Lee Ryder)", u:"https://www.chroniclelive.co.uk/all-about/newcastle-united-fc"},
+  leeRyder:   {l:"Lee Ryder · X", u:"https://x.com/lee_ryder"},
+  shieldsGaz: {l:"Shields Gazette · Newcastle United", u:"https://www.shieldsgazette.com/sport/football/newcastle-united"},
+  teamtalk:   {l:"TEAMtalk · Newcastle United", u:"https://www.teamtalk.com/newcastle-united"},
+  telegraph:  {l:"Luke Edwards (The Telegraph) · X", u:"https://x.com/LukeEdwardsTele"},
+  talksport:  {l:"Ben Jacobs (talkSPORT) · X", u:"https://x.com/JacobsBen"},
+  nufcOfficial:{l:"Newcastle United Official · news", u:"https://www.newcastleunited.com/en/news"},
+  tuttoAtalanta:{l:"Tutto Atalanta", u:"https://www.tuttoatalanta.com/"},
+  newcastleWorld:{l:"Newcastle World · football", u:"https://www.newcastleworld.com/sport/football/newcastle-united"},
+  khelnow:    {l:"Khel Now · football", u:"https://khelnow.com/football"},
+};
+const LINKMAP = {
+  "Sean Steur": ["skyNUFC","nufcOfficial"],
+  "Bazoumana Touré": ["skyNUFC","nufcOfficial"],
+  "Ewen Jaouen": ["romano","nufcOfficial"],
+  "Kyle Healy": ["romano"],
+  "Lukáš Horníček": ["teamtalk","shieldsGaz"],
+  "Anthony Gordon": ["skyNUFC"],
+  "Sandro Tonali": ["skyNUFC"],
+  "Kieran Trippier": ["skyNUFC"],
+  "Emil Krafth": ["chronicle"],
+  "Matthias Jaissle": ["khelnow","skyNUFC"],
+  "Giorgio Scalvini": ["tuttoAtalanta","teamtalk"],
+  "Abde Ezzalzouli": ["teamtalk"],
+  "Joaquín Oso": ["teamtalk"],
+  "Ederson (Atalanta)": ["teamtalk"],
+  "Bruno Guimarães": ["telegraph","talksport","skyNUFC"],
+  "Jacob Murphy": ["teamtalk"],
+  "Lewis Hall": ["teamtalk"],
+  "Nick Pope": ["shieldsGaz","leeRyder"],
+  "Joe Willock": ["shieldsGaz"],
+};
+const WL_LINKMAP = {
+  "Nick Woltemade":"athletic","Yoane Wissa":"athletic","Joe White":"shieldsGaz","Harrison Ashby":"shieldsGaz",
+  "Dan Burn & Fabian Schär":"teamtalk","Kieran McKenna / Antonio Conte":"khelnow",
+};
+
+const PROSE = {
+  heroH2: `The dugout is empty and the captain wants out: Newcastle's window is thrown into <em>chaos</em>`,
+  heroLede: `Newcastle United's summer flipped on its head on 30 July: head coach <b>Eddie Howe</b> walked away after almost five years, with reporting pointing to frustration over a summer that has already sold <b>Anthony Gordon</b> (£69m), <b>Sandro Tonali</b> (£100m) and, last deadline day, <b>Alexander Isak</b> — and then missed out on primary target <b>Johan Manzambi</b> to Aston Villa. Hours later, captain <b>Bruno Guimarães</b>' wish to join Arsenal is being framed by the Telegraph as "the final straw," with talkSPORT reporting a resolution possible within days. Beneath the upheaval, real recruitment business continues at pace: a goalkeeper (<b>Lukáš Horníček</b>) and a centre-back (<b>Giorgio Scalvini</b>) are both advancing, and <b>Matthias Jaissle</b> of PIF sister club Al-Ahli is the early favourite to take the reins.`,
+  metaRow: `
+      <span>DECISION-MAKER: <b>Ross Wilson</b> (Sporting Director) &amp; David Hopkinson (CEO)</span>
+      <span>HEAD COACH: <b>Vacant</b> (Howe departed 30 Jul)</span>
+      <span>OWNER: <b>PIF-led consortium</b> (Yasir Al-Rumayyan)</span>
+      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    `,
+  stats: `
+    <div class="stat"><div class="l">2025/26 Finish</div><div class="v">12<small>th</small></div></div>
+    <div class="stat"><div class="l">2026/27 Europe</div><div class="v">NONE</div></div>
+    <div class="stat gold"><div class="l">Est. Gross Spend</div><div class="v">£120-180<small>m</small></div></div>
+    <div class="stat gold"><div class="l">Est. Sales</div><div class="v">£180-260<small>m</small></div></div>
+    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">85<small>%</small></div></div>`,
+  positionPanel: `
+  <!-- ANALYSIS: MODEL + FINANCE -->
+  <section id="sec-position">
+    <div class="sec-head"><h3>Club Position</h3><span class="num">01</span></div>
+    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and today's coaching upheaval.</p>
+
+    <div class="cards">
+      <!-- THE MODEL -->
+      <div class="card">
+        <h4>The Model <span class="tag">IN FLUX</span></h4>
+        <p>Under sporting director <b>Ross Wilson</b> (ex-Nottingham Forest, appointed after triggering his release clause), Newcastle have pivoted this summer toward a declared <b>Borussia Dortmund-style framework</b>: buy players aged roughly 18-24 in the £20-40m bracket with development and resale ceiling, rather than chase 30-year-old marquee names. Steur, Touré, Jaouen and Healy all fit that mould exactly.</p>
+        <div class="quote">The model just lost its author on the pitch: Eddie Howe, the manager who turned this recruitment into results, left the building hours before this report was filed. Whoever replaces him inherits the framework, not necessarily the say over it.</div>
+        <p><b>This window's logic:</b> sell the ageing, injury-prone or homesick (Gordon, Tonali, Isak), reinvest in youth and defensive succession (Scalvini, Horníček), and now, urgently, appoint a head coach who can hold the dressing room together while Bruno Guimarães' exit is negotiated.</p>
+        <ul>
+          <li>Stated needs pre-crisis: a senior goalkeeper, a centre-back, a winger to replace Gordon.</li>
+          <li>New, more urgent needs: a head coach, and a contingency plan if the captain leaves.</li>
+          <li>Markets: Serie A (Scalvini, Ederson), La Liga (Ezzalzouli, Oso), Ligue 2/France (Jaouen), plus the PIF network for the coaching search.</li>
+        </ul>
+        <div class="verdict"><b>Tracker implication:</b> treat every incoming link as provisional until a head coach is confirmed — recruitment philosophy is set, but a new voice can still reprioritise targets within weeks.</div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="card">
+        <h4>Financial Position <span class="tag">TRANSITIONING</span></h4>
+        <p>Backed by the <b>PIF-led consortium</b> under chairman Yasir Al-Rumayyan, with PCP Capital Partners and the Reuben Brothers holding minority stakes, Newcastle's ultimate financial ceiling is enormous. In practice, spending has run through disciplined channels: a 2024-25 accounting profit of £34.7m was substantially inflated by one-off related-party asset sales, masking an underlying operating loss estimated near £98.4m, with staff costs running at 72.6% of revenue.</p>
+        <ul>
+          <li>The <b>Squad Cost Ratio</b> regime replacing PSR closes off the related-party accounting workarounds Newcastle leaned on in 2025.</li>
+          <li>This summer's sales (Isak £125m, Tonali £100m, Gordon £69m) generate very large one-off inflows and materially strengthen the SCR position for years, not just this window.</li>
+          <li>A £106.5m equity injection from parent company PZ Newco and a new £100m HSBC/First Abu Dhabi Bank facility add further liquidity headroom.</li>
+        </ul>
+        <div class="verdict"><b>Caveat:</b> cash is genuinely available; the constraint this summer is less the balance sheet than boardroom bandwidth, spent instead on an unplanned coaching search.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPUTATION + RISK/REWARD -->
+  <section id="sec-tradeoff">
+    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">02</span></div>
+    <p class="sec-sub">Missing Europe and losing a popular manager on the same day tests a project built on momentum; the PIF financial base and network offer a fast way to answer both questions.</p>
+
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card">
+        <h4>Reputational Standing</h4>
+        <p>Newcastle enter this window without European football for the first time since 2023, after a 12th-place finish that undercut the momentum of the PIF era's early Champions League run. Losing Howe — widely seen as the best manager Newcastle have had this century — on the eve of pre-season, and simultaneously fighting to keep the club captain, is a serious reputational wobble at exactly the moment a head-coach candidate is weighing up the job.</p>
+        <ul>
+          <li>The PIF-Al-Ahli relationship is a genuine differentiator: Jaissle's advanced talks lean directly on that network.</li>
+          <li>A swift, credible coaching appointment is now the single biggest lever on how this whole window is remembered.</li>
+        </ul>
+        <div class="verdict"><b>Double edge:</b> the same sales (Isak, Tonali, Gordon) that strengthen the balance sheet are the ones cited as reasons Howe grew frustrated and Guimarães wants to leave.</div>
+      </div>
+      <div class="card">
+        <h4>The SCR Cushion <span class="tag">EASED, NOT SOLVED</span></h4>
+        <p>With no European football in 2026/27, Newcastle sit under the looser <b>85% Squad Cost Ratio</b> cap rather than the 70% ceiling that applies to clubs in continental competition. Combined with this summer's outgoing fees, that gives real headroom to fund the Scalvini/Horníček defensive rebuild and a marquee winger without immediately pressing the ratio.</p>
+        <ul>
+          <li>A 3-year net transfer position feeds the SCR calculation, so the Isak/Tonali/Gordon fees compound benefit across multiple windows.</li>
+          <li>The looser 85% cap outside Europe is, ironically, the one silver lining of missing out on continental football this season.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riskgrid">
+      <div class="risk-r">
+        <h5>▲ Reward: financial headroom and a network no rival can match</h5>
+        <ul>
+          <li>Real cash from three big sales plus fresh equity and bank facilities give genuine spending power.</li>
+          <li>The PIF/Al-Ahli link offers a fast, credible route to a proven, title-winning coach in Jaissle.</li>
+          <li>A looser 85% cost cap outside Europe gives more room than most of the Premier League's mid-table.</li>
+        </ul>
+      </div>
+      <div class="risk-d">
+        <h5>▼ Risk: a squad and a season built on quicksand</h5>
+        <ul>
+          <li>Pre-season begins with no head coach, a captain trying to leave, and three key attacking/midfield exits already banked.</li>
+          <li>A rushed or wrong coaching appointment could waste the financial advantage entirely.</li>
+          <li>Losing Guimarães without a like-for-like replacement lined up leaves a genuine leadership and control-of-midfield gap.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict" style="margin-top:18px;max-width:none">
+      <b>Net read:</b> land the head coach fast — Jaissle is the live favourite — resolve Guimarães's future inside the week as both parties want, bank the Scalvini/Horníček defensive rebuild, and use the well-funded, looser-cap position to land one marquee winger (Ezzalzouli) to actually replace Gordon's output. The financial base is stronger than the mood; the next 10 days will decide which one wins out.
+    </div>
+  </section>
+`,
+  confirmedPending: `<b>Horníček's £24.5-30m release-clause move is agreed in principle but not yet formally announced</b> — expect confirmation within days once terms and a medical are finalised. There is, as of writing, <b>no contract-renewal story to report for Bruno Guimarães</b>; if anything the opposite is true, with reporting suggesting Newcastle themselves now expect to sell rather than retain their captain. Watch this space: a swift head-coach appointment could change that calculus overnight.`,
+  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Wilson network 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since Howe's departure broke this afternoon.`,
+  outgoingSub: `Three confirmed sales (Gordon, Tonali, plus last deadline day's Isak deal) have already banked close to £300m combined; a fourth, Bruno Guimarães, would fund the head-coach transition and a marquee winger in one move.`,
+  pricingBanner: `
+      <b>Pricing principle: with sales already funding a rebuild, Newcastle are pragmatic rather than reluctant sellers this summer.</b> Three multipliers push fees up regardless: <b>(1)</b> genuine first-team quality (Guimarães, Willock) draws Premier League and European interest; <b>(2)</b> contract length gives Newcastle leverage on Guimarães specifically (two years plus an option); <b>(3)</b> a competitive market (Man Utd on Hall, Everton on Murphy) supports the asking price. The one softener: out-of-contract-adjacent players (Pope, entering the final stages of his Newcastle career) are priced to move rather than to deter.
+    `,
+  excludedNote: `<b>Excluded as stale/already-resolved:</b> Johan Manzambi (signed for Aston Villa, £59.5m — a direct factor in Howe's exit), James Trafford (signing for Leeds United after Newcastle missed out a third time), Víctor Muñoz (signed for Liverpool, £34.5m) and a recycled Aaron Ramsdale report dated to the 2025 window. Any article still framing these as live Newcastle targets is out of date.`,
+  spendIn: { v: `£120-180m`, x: `Horníček and Scalvini (≈£55-65m combined) are close to done; a winger (Ezzalzouli) and any central-midfield replacement for Guimarães would push toward the top of the range, contingent on the coaching appointment.` },
+  spendOut: { v: `£180-260m`, x: `Gordon (£69m) and Tonali (£100m) are already banked; a Guimarães sale at the reported £75-85m valuation would be the single largest fee of the summer if it completes as expected within days.` },
+  methodLegend: `
+      <div class="col">
+        <h5>Source Tiers (current)</h5>
+        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b>: Fabrizio Romano, Sky Sports, The Telegraph (Luke Edwards on Newcastle specifically), talkSPORT (Ben Jacobs). <i>Used for:</i> all confirmed transfers, Howe's exit, and the Bruno Guimarães escalation.</span></div>
+        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b>: Chronicle Live/Shields Gazette (Lee Ryder and the NUFC beat), The Athletic (Chris Waugh), TeamTalk exclusives (Graeme Bailey on Ezzalzouli), Tutto Atalanta on Scalvini.</span></div>
+        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b>: TEAMtalk aggregated pieces, CaughtOffside, TheHardTackle, Football365, Khel Now on the coaching search.</span></div>
+        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b>: unverified fan sites, recycled aggregator posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> only, then traced to the original reporter for weighting, never weighted as a primary source themselves.</span></div>
+      </div>
+      <div class="col">
+        <h5>Weighting Model &amp; Recency Decay</h5>
+        <div class="weights">
+          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+          <span class="w">Wilson network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+        </div>
+        <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
+        <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Manzambi, Trafford and Muñoz links fall on this basis post-resolution.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b>: the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window: fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
+      </div>`
+};
+
+/*==ENDDATA==*/
+
+/* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */
+(function(){
+  const rs=document.documentElement.style;
+  rs.setProperty('--red',BRAND.primary);
+  rs.setProperty('--red-bright',BRAND.primaryBright);
+  rs.setProperty('--red-deep',BRAND.primaryDeep);
+  rs.setProperty('--primary-rgb',BRAND.primaryRgb);
+  document.title='Mercato IQ: '+BRAND.club;
+  document.getElementById('brandName').innerHTML='Mercato <b>IQ</b> · '+BRAND.club;
+  document.getElementById('monoText').textContent=BRAND.mono;
+  document.getElementById('crumb').innerHTML=BRAND.breadcrumb.map(x=>`<a href="#">${x}</a><span class="sep">›</span>`).join('')+`<b>${BRAND.club}</b>`;
+  const set=(id,h)=>{const el=document.getElementById(id); if(el) el.innerHTML=h||'';};
+  set('heroH2',PROSE.heroH2); set('heroLede',PROSE.heroLede); set('metaRow',PROSE.metaRow);
+  set('statStrip',PROSE.stats); set('panel-position',PROSE.positionPanel);
+  set('pendingNote',PROSE.confirmedPending); set('pricingBanner',PROSE.pricingBanner);
+  set('excludedNote',PROSE.excludedNote); set('methodLegend',PROSE.methodLegend);
+  set('inSub',PROSE.incomingSub); set('outSub',PROSE.outgoingSub);
+  set('spendInV',PROSE.spendIn.v); set('spendInX',PROSE.spendIn.x);
+  set('spendOutV',PROSE.spendOut.v); set('spendOutX',PROSE.spendOut.x);
+  const dd=document.getElementById('discDate'); if(dd) dd.textContent=REPORT_META.asof;
+})();
+function srcLinksHTML(name){
+  const keys = LINKMAP[name] || [];
+  if(!keys.length) return '<span class="hubnote">No verified link held for this thread: traced source named in the row.</span>';
+  return keys.map(k=>{const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;}).join('');
+}
+
+/* ---------- RENDER ---------- */
 const lightColor = {g:'var(--green)', y:'var(--yellow)', o:'var(--orange)', r:'var(--crit)'};
 const trendGlyph = {up:'⬆', flat:'➡', down:'⬇'};
 
@@ -618,22 +991,70 @@ function trendCell(tr){
   return `<span class="trend ${cls}">${trendGlyph[tr]}</span>`;
 }
 
+function lightFor(v){ return v>50?'g':v>=30?'y':v>=15?'o':'r'; }
+function rateRows(p){
+  const tl = p.tlight || lightFor(p.truth);
+  const hl = p.light  || lightFor(p.prob);
+  return `<div class="rate">
+      <div class="rate-row"><span class="rl">True?</span><span class="rate-dot" style="background:${lightColor[tl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.truth}%;background:${lightColor[tl]}"></div></div><span class="rate-val" style="color:${lightColor[tl]}">${p.truth}%</span></div>
+      <div class="rate-row"><span class="rl">Happens?</span><span class="rate-dot" style="background:${lightColor[hl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.prob}%;background:${lightColor[hl]}"></div></div><span class="rate-val" style="color:${lightColor[hl]}">${p.prob}%</span></div>
+    </div>`;
+}
+
 function renderTable(list, id){
-  document.getElementById(id).innerHTML = list.map(p=>`
-    <tr>
-      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}</div><div class="pl-sub">${p.sub}</div></td>
+  document.getElementById(id).innerHTML = list.map((p,i)=>`
+    <tr class="rumour-row" data-row="${id}-${i}" tabindex="0" aria-expanded="false">
+      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}${p.isNew?'<span class="new-tag">NEW</span>':''}<span class="src-toggle">SOURCES &#9656;</span></div><div class="pl-sub">${p.sub}</div></td>
       <td data-label="Club">${p.club}</td>
       <td data-label="Pos"><span class="pos">${p.pos}</span></td>
       <td class="fee" data-label="Reported">${p.report}</td>
       <td data-label="Source">${p.src} ${tierBadge(p.tier)}</td>
       <td class="fee" data-label="Est. fee">${p.fee}</td>
-      <td data-label="Probability">${probCell(p.prob, p.light)}</td>
+      <td data-label="Rating">${rateRows(p)}</td>
       <td data-label="Trend">${trendCell(p.trend)}</td>
       <td class="note" data-label="Analysis">${p.note}</td>
-    </tr>`).join('');
+    </tr>
+    <tr class="src-row" data-for="${id}-${i}"><td colspan="9"><div class="src-links"><span class="lbl">TRACED SOURCES</span>${srcLinksHTML(p.name)}</div></td></tr>`).join('');
+  document.querySelectorAll(`#${id} tr.rumour-row`).forEach(row=>{
+    const open = ()=>{
+      const tgt = document.querySelector(`tr.src-row[data-for="${row.dataset.row}"]`);
+      const isOpen = tgt.classList.toggle('open');
+      row.classList.toggle('open', isOpen);
+      row.setAttribute('aria-expanded', isOpen?'true':'false');
+    };
+    row.addEventListener('click', e=>{ if(e.target.closest('a')) return; open(); });
+    row.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+  });
 }
 renderTable(INCOMING,'incoming');
 renderTable(OUTGOING,'outgoing');
+
+/* Overview ins/outs snapshot -- top-4 by Happens? probability, click-through to the full tab */
+function ovCard(p, dir){
+  const color = lightColor[p.light] || 'var(--muted)';
+  const vs = dir==='in' ? `from ${p.club}` : `to ${p.club}`;
+  return `<div class="ov-card" data-go="${dir}">
+      <div class="ov-main">
+        <div class="ov-name">${p.name}</div>
+        <div class="ov-vs">${vs} &middot; ${p.pos}</div>
+      </div>
+      <div class="ov-side">
+        <div class="ov-fee">${p.fee}</div>
+        <div class="ov-pct" style="color:${color}">${p.prob}% likely</div>
+      </div>
+    </div>`;
+}
+function renderOverviewSnapshot(){
+  const topIn = [...INCOMING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  const topOut = [...OUTGOING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  document.getElementById('ovIn').innerHTML = topIn.length ? topIn.map(p=>ovCard(p,'in')).join('') : '<div class="ov-empty">No live targets tracked yet.</div>';
+  document.getElementById('ovOut').innerHTML = topOut.length ? topOut.map(p=>ovCard(p,'out')).join('') : '<div class="ov-empty">No exits tracked yet.</div>';
+  document.querySelectorAll('.ov-card[data-go]').forEach(c=>c.addEventListener('click', ()=>{
+    const btn = document.querySelector(`.tabbtn[data-go="${c.dataset.go}"]:not(.ov-viewall)`);
+    if(btn) btn.click();
+  }));
+}
+renderOverviewSnapshot();
 
 /* confirmed ledger */
 function renderLedger(list, id, emptyMsg){
@@ -650,7 +1071,7 @@ function renderLedger(list, id, emptyMsg){
       <div class="dfee ${d.free?'free':''}">${d.fee}</div>
     </div>`).join('');
 }
-renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing — window opens 15 June.');
+renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing.');
 renderLedger(CONFIRMED_OUT,'confirmedOut','No confirmed departures yet.');
 document.getElementById('cinCount').textContent = CONFIRMED_IN.length;
 document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
@@ -659,7 +1080,7 @@ document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
 function renderWatchlist(filter){
   const rows = WATCHLIST.filter(w => filter==='all' || w.dir===filter);
   document.getElementById('watchlist').innerHTML = rows.map(w=>`
-    <div class="wl-item ${w.dir}">
+    <div class="wl-item ${w.dir}" data-wl="${w.name}">
       <div class="wmeta">
         <div class="wtop">
           <span class="wname">${w.name}</span>
@@ -667,6 +1088,7 @@ function renderWatchlist(filter){
           <span class="wl-dir ${w.dir}">${w.dir.toUpperCase()}</span>
         </div>
         <div class="wnote">${w.note}</div>
+        <div class="src-links" style="display:none"><span class="lbl">TRACED SOURCE</span>${(()=>{const k=WL_LINKMAP[w.name];if(!k) return '<span class="hubnote">Source named above; no verified link held.</span>';const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;})()}</div>
       </div>
       <div class="wright">
         <span class="wpos">${w.pos}</span>
@@ -676,6 +1098,12 @@ function renderWatchlist(filter){
     </div>`).join('');
 }
 renderWatchlist('all');
+document.getElementById('watchlist').addEventListener('click', e=>{
+  if(e.target.closest('a')) return;
+  const item = e.target.closest('.wl-item'); if(!item) return;
+  const box = item.querySelector('.src-links');
+  if(box) box.style.display = box.style.display==='none' ? 'flex' : 'none';
+});
 document.querySelectorAll('.wl-tab').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     document.querySelectorAll('.wl-tab').forEach(b=>b.classList.remove('active'));
@@ -710,29 +1138,80 @@ document.getElementById('positions').innerHTML = POSITIONS.map(p=>`
     <span class="heatbar"><span class="heatfill" style="width:${p.w}%"></span></span>
   </div>`).join('');
 
-/* last-updated stamp + freshness (single source: REPORT_META) */
+/* last-updated stamp + live freshness ticker (single source: REPORT_META.updated ISO) */
 (function(){
   document.getElementById('kicker').textContent =
     `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
   document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
   const foot = document.getElementById('updatedFoot');
-  if(foot) foot.textContent = `Living tracker — ${REPORT_META.asof}.`;
+  if(foot) foot.textContent = `Living tracker - last refreshed ${REPORT_META.asof}.`;
 
-  // relative freshness vs the viewer's own clock
-  const d0 = new Date(REPORT_META.updatedDate + "T00:00:00");
-  const now = new Date();
-  const days = Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate()) -
-                           new Date(d0.getFullYear(),d0.getMonth(),d0.getDate())) / 86400000);
-  let txt, col;
-  if(isNaN(days)){ txt="CURRENT"; col="var(--muted)"; }
-  else if(days < 0){ txt="POST-DATED"; col="var(--muted)"; }
-  else if(days === 0){ txt="UPDATED TODAY"; col="var(--green)"; }
-  else if(days === 1){ txt="UPDATED YESTERDAY"; col="var(--yellow)"; }
-  else if(days <= 3){ txt=days+" DAYS OLD"; col="var(--yellow)"; }
-  else { txt=days+" DAYS OLD · REFRESH DUE"; col="var(--orange)"; }
-  document.getElementById('stamp').innerHTML =
-    `<span class="seg dt">UPDATED&nbsp;<b>${REPORT_META.asof}</b></span>`+
-    `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+  const t0 = new Date(REPORT_META.updated).getTime();
+  const stamp = document.getElementById('stamp');
+  function fmt(ms){
+    if(isNaN(ms)) return ['CURRENT','var(--muted)'];
+    if(ms < 0)   return ['POST-DATED','var(--muted)'];
+    const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
+    let txt;
+    if(s < 60)      txt = s+'s';
+    else if(m < 60) txt = m+'m '+(s%60)+'s';
+    else if(h < 24) txt = h+'h '+(m%60)+'m';
+    else            txt = d+'d '+(h%24)+'h';
+    const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
+    return ['UPDATED '+txt+' AGO', col];
+  }
+  function tick(){
+    const [txt,col] = fmt(Date.now() - t0);
+    stamp.innerHTML =
+      `<span class="seg dt">REFRESHED&nbsp;<b>${REPORT_META.asof}</b></span>`+
+      `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ===== TAB + PAGER ENGINE (scroll-reduction protocol) =====
+   Names chosen to avoid window globals (top, name, status, history etc.). */
+(function(){
+  const tabOrder = ['overview','confirmed','in','out','index','briefing','position','method'];
+  const tabBtns  = Array.from(document.querySelectorAll('.tabbtn'));
+  const meterEl  = document.getElementById('pgMeter');
+  const prevBtn  = document.getElementById('pgPrev');
+  const nextBtn  = document.getElementById('pgNext');
+  let curIdx = 0;
+
+  meterEl.innerHTML = tabOrder.map((t,i)=>`<span class="pg-dot${i===0?' on':''}" data-i="${i}" title="${t}"></span>`).join('');
+  const dots = Array.from(meterEl.querySelectorAll('.pg-dot'));
+
+  function showTab(idx, push){
+    if(idx<0 || idx>=tabOrder.length) return;
+    curIdx = idx;
+    const key = tabOrder[idx];
+    document.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+key));
+    tabBtns.forEach(b=>{
+      const on = b.dataset.go===key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on?'true':'false');
+    });
+    dots.forEach((d,i)=>d.classList.toggle('on', i===idx));
+    prevBtn.disabled = idx===0;
+    nextBtn.disabled = idx===tabOrder.length-1;
+    if(push!==false){ try{ window.history.replaceState(null,'','#tab-'+key); }catch(e){} }
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+
+  tabBtns.forEach(b=>b.addEventListener('click', ()=>showTab(tabOrder.indexOf(b.dataset.go))));
+  dots.forEach(d=>d.addEventListener('click', ()=>showTab(parseInt(d.dataset.i,10))));
+  prevBtn.addEventListener('click', ()=>showTab(curIdx-1));
+  nextBtn.addEventListener('click', ()=>showTab(curIdx+1));
+  document.addEventListener('keydown', e=>{
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if(e.key==='ArrowRight') showTab(curIdx+1);
+    if(e.key==='ArrowLeft')  showTab(curIdx-1);
+  });
+
+  const h = (window.location.hash||'').replace('#tab-','');
+  const start = tabOrder.indexOf(h);
+  showTab(start>=0 ? start : 0, false);
 })();
 </script>
 </body>
