@@ -49,40 +49,36 @@
   .crumb .sep{color:var(--muted-2)}
   .crumb b{color:var(--gold)}
 
-  .hero{padding:6px 0 34px;border-bottom:1px solid var(--line);position:relative}
-  .hero-top{display:grid;grid-template-columns:1fr 360px;gap:44px;align-items:start}
-  .hero .flagbig{font-size:56px;line-height:1;margin-bottom:18px}
-  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
-  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,58px);line-height:.98;text-transform:uppercase;letter-spacing:.5px;max-width:20ch}
+  .hero{padding:18px 0 16px;border-bottom:1px solid var(--line);position:relative}
+  .hero-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .hero .flagbig{font-size:36px;line-height:1;flex:none}
+  .hero-text{flex:1 1 420px;min-width:280px}
+  .hero .kicker{font-family:var(--mono);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--red-bright);margin-bottom:5px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(20px,2.4vw,28px);line-height:1.05;text-transform:uppercase;letter-spacing:.4px}
   .hero h2 em{font-style:normal;color:var(--gold)}
-  .hero .lede{margin-top:18px;max-width:62ch;color:#c9ccd4;font-size:16.5px}
+  .hero .lede{margin-top:5px;max-width:none;color:#b7bac2;font-size:13px;line-height:1.4}
   .hero .lede b{color:var(--white)}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
-  .btn{font-family:var(--mono);font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;padding:13px 24px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;flex:none;align-items:center}
+  .btn{font-family:var(--mono);font-size:11.5px;letter-spacing:1.1px;text-transform:uppercase;padding:12px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
   .btn-primary{background:var(--red);color:#fff}
   .btn-primary:hover{background:var(--red-bright);transform:translateY(-2px)}
-  .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
-  .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
-  .updated-stamp .seg.dt{color:var(--muted);border-right:1px solid var(--line)}
-  .updated-stamp .seg.dt b{color:var(--white)}
-  .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
-  .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
 
-  .rail{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;max-height:640px;overflow-y:auto}
-  .rail h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold)}
-  .rail .rail-sub{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
-  .rail-list{display:flex;flex-direction:column;gap:8px;margin-top:16px}
-  .rail-item{display:flex;align-items:center;gap:12px;padding:10px 13px;border-radius:10px;background:var(--panel-2);border:1px solid var(--line);text-decoration:none;color:inherit;transition:.15s}
-  .rail-item:hover{border-color:var(--gold-deep);background:#22252d;transform:translateX(3px)}
-  .rail-item .flag{font-size:18px;flex:none;line-height:1}
-  .rail-item .info{flex:1;min-width:0}
-  .rail-item .nm{font-family:var(--display);font-size:13px;letter-spacing:.3px;text-transform:uppercase}
-  .rail-item .ct{font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:2px}
-  .rail-item .arrow{color:var(--muted-2);font-size:15px;flex:none}
-  .rail-empty{font-size:12.5px;color:var(--muted-2);font-style:italic;padding:10px 0;line-height:1.5}
-  .legacy-tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted-2);background:rgba(139,144,156,0.14);padding:2px 6px;border-radius:4px;flex:none}
+  .rail{margin-top:14px}
+  .rail h4{display:none}
+  .rail .rail-sub{display:none}
+  .rail-list{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .rail-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-right:2px;flex:none}
+  .rail-item{display:flex;align-items:center;gap:7px;padding:6px 12px 6px 8px;border-radius:999px;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:inherit;transition:.15s}
+  .rail-item:hover{border-color:var(--gold-deep);background:var(--panel-2);transform:translateY(-1px)}
+  .rail-item .flag{font-size:15px;flex:none;line-height:1}
+  .rail-item .info{display:flex;align-items:baseline;gap:6px;min-width:0}
+  .rail-item .nm{font-family:var(--display);font-size:11.5px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+  .rail-item .ct{font-size:9.5px;color:var(--muted);font-family:var(--mono);white-space:nowrap}
+  .rail-item .arrow{color:var(--muted-2);font-size:11px;flex:none}
+  .rail-empty{font-size:12px;color:var(--muted-2);font-style:italic;padding:4px 0;line-height:1.5}
+  .legacy-tag{font-family:var(--mono);font-size:8px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted-2);background:rgba(139,144,156,0.14);padding:2px 5px;border-radius:4px;flex:none}
 
-  .window-banner{margin:30px 0 6px;border-radius:14px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:linear-gradient(135deg, rgba(51,196,106,0.10), var(--panel));transition:.3s}
+  .window-banner{margin:16px 0 6px;border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:linear-gradient(135deg, rgba(51,196,106,0.10), var(--panel));transition:.3s}
   .window-banner.deadline{border-color:var(--red-deep);background:linear-gradient(135deg, rgba(226,31,38,0.18), var(--panel));animation:bannerPulse 1.6s infinite}
   .window-banner.closed{border-color:var(--line);background:var(--panel);opacity:.75}
   @keyframes bannerPulse{0%,100%{box-shadow:0 0 0 rgba(226,31,38,0)}50%{box-shadow:0 0 34px rgba(226,31,38,0.35)}}
@@ -95,7 +91,7 @@
   .wb-unit .v{font-family:var(--display);font-size:clamp(24px,3.4vw,34px);line-height:1}
   .wb-unit .l{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
 
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:32px 0 8px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 8px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
   .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
   .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
@@ -130,6 +126,9 @@
   .hb.in{background:rgba(51,196,106,0.14);color:var(--green)}
   .hb.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
   .htitle{font-family:var(--display);font-weight:400;font-size:19px;letter-spacing:.3px;line-height:1.15;margin-bottom:10px;flex-grow:1;text-transform:none}
+  .hclubs{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--white);margin-bottom:8px;flex-wrap:wrap}
+  .hclubs .arrow{color:var(--muted-2);font-size:12px;flex:none}
+  .hclubs .to{color:var(--gold)}
   .hctx{font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:14px}
   .hfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
   .hfoot .age{font-family:var(--mono);font-size:11px;color:var(--muted-2)}
@@ -177,9 +176,8 @@
   footer b{color:var(--white)}
   .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
 
-  @media(max-width:1080px){ .hero-top{grid-template-columns:1fr} .rail{max-width:520px;max-height:420px} }
-  @media(max-width:900px){ .stats{grid-template-columns:repeat(2,1fr)} .twocol{grid-template-columns:1fr} .legend{grid-template-columns:1fr} .brand .sub{display:none} .window-banner{flex-direction:column;align-items:flex-start} }
-  @media(max-width:560px){ .status-pill{display:none} .updated-stamp{flex-wrap:wrap} .wb-unit{min-width:44px} }
+  @media(max-width:900px){ .stats{grid-template-columns:repeat(2,1fr)} .twocol{grid-template-columns:1fr} .legend{grid-template-columns:1fr} .brand .sub{display:none} .window-banner{flex-direction:column;align-items:flex-start} .hero-cta{width:100%} .hero-cta .btn{width:100%;justify-content:center} }
+  @media(max-width:560px){ .status-pill{display:none} .wb-unit{min-width:44px} }
 </style>
 </head>
 <body>
@@ -227,24 +225,21 @@
   <div class="crumb" id="crumb"></div>
 
   <div class="hero">
-    <div class="hero-top">
-      <div class="hero-main">
-        <div class="flagbig">&#127942;</div>
-        <div class="updated-stamp" id="stamp"></div>
+    <div class="hero-row">
+      <div class="flagbig">&#127942;</div>
+      <div class="hero-text">
         <div class="kicker" id="kicker"></div>
         <h2 id="heroH2"></h2>
         <p class="lede" id="heroLede"></p>
-        <div class="hero-cta">
-          <button class="btn btn-primary" id="ctaBreaking" type="button">See the Premier League's biggest stories &rarr;</button>
-        </div>
       </div>
-
-      <aside class="rail" aria-label="Select a club">
-        <h4>Select a Club</h4>
-        <p class="rail-sub">Jump straight to any club's full transfer dashboard.</p>
-        <div class="rail-list" id="club-rail"></div>
-      </aside>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="ctaBreaking" type="button">See the Premier League's biggest stories &rarr;</button>
+      </div>
     </div>
+
+    <aside class="rail" aria-label="Select a club">
+      <div class="rail-list" id="club-rail"></div>
+    </aside>
   </div>
 
   <div class="window-banner" id="windowBanner"></div>
@@ -317,34 +312,113 @@ const LEAGUE = {
   stories_count: 116
 };
 
-const TOP_STORIES = [
-  { name: "Senior core review", prob: 70, club_origin: "manchester-city", direction: "out" },
-  { name: "Manager appointment", prob: 50, club_origin: "fulham", direction: "in" },
-  { name: "Manager: McKenna (risk)", prob: 45, club_origin: "ipswich-town", direction: "out" },
-  { name: "Morgan Rogers", prob: 35, club_origin: "arsenal", direction: "in" },
-  { name: "Squad rationalisation", prob: 65, club_origin: "chelsea", direction: "out" },
-  { name: "Dayann Methalie", prob: 58, club_origin: "sunderland", direction: "in" },
-  { name: "Lamine Camara", prob: 35, club_origin: "aston-villa", direction: "in" },
-  { name: "Gabriel Jesus", prob: 35, club_origin: "arsenal", direction: "out" },
-  { name: "Adam Wharton", prob: 30, club_origin: "crystal-palace", direction: "out" },
-  { name: "Elliot Anderson", prob: 30, club_origin: "manchester-city", direction: "in" },
-  { name: "Riccardo Calafiori", prob: 30, club_origin: "arsenal", direction: "out" },
-  { name: "Leandro Trossard", prob: 30, club_origin: "arsenal", direction: "out" },
-  { name: "Christian Nørgaard", prob: 30, club_origin: "arsenal", direction: "out" },
-  { name: "Gabriel Martinelli", prob: 28, club_origin: "arsenal", direction: "out" },
-  { name: "Ben White", prob: 25, club_origin: "arsenal", direction: "out" },
-  { name: "Eli Junior Kroupi", prob: 20, club_origin: "arsenal", direction: "in" },
-  { name: "Enzo Fernández", prob: 18, club_origin: "manchester-city", direction: "in" },
-  { name: "Noah Sadiki", prob: 18, club_origin: "sunderland", direction: "out" },
-  { name: "Matthis Abline", prob: 14, club_origin: "sunderland", direction: "in" },
-  { name: "Julián Álvarez", prob: 10, club_origin: "arsenal", direction: "in" },
+const TOP_STORIES = [  {
+    name: "Senior core review", prob: 70,
+    club_origin: "manchester-city", direction: "out",
+    from: "Manchester City", to: "Various"
+  },
+  {
+    name: "Manager appointment", prob: 50,
+    club_origin: "fulham", direction: "in",
+    from: "TBC", to: "Fulham"
+  },
+  {
+    name: "Manager: McKenna (risk)", prob: 45,
+    club_origin: "ipswich-town", direction: "out",
+    from: "Ipswich Town", to: "Fulham"
+  },
+  {
+    name: "Morgan Rogers", prob: 35,
+    club_origin: "arsenal", direction: "in",
+    from: "Aston Villa", to: "Arsenal"
+  },
+  {
+    name: "Squad rationalisation", prob: 65,
+    club_origin: "chelsea", direction: "out",
+    from: "Chelsea", to: "Various"
+  },
+  {
+    name: "Dayann Methalie", prob: 58,
+    club_origin: "sunderland", direction: "in",
+    from: "Toulouse", to: "Sunderland"
+  },
+  {
+    name: "Lamine Camara", prob: 35,
+    club_origin: "aston-villa", direction: "in",
+    from: "Monaco", to: "Aston Villa"
+  },
+  {
+    name: "Gabriel Jesus", prob: 35,
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Open to offers"
+  },
+  {
+    name: "Adam Wharton", prob: 30,
+    club_origin: "crystal-palace", direction: "out",
+    from: "Crystal Palace", to: "Elite interest"
+  },
+  {
+    name: "Elliot Anderson", prob: 30,
+    club_origin: "manchester-city", direction: "in",
+    from: "(discussed)", to: "Manchester City"
+  },
+  {
+    name: "Riccardo Calafiori", prob: 30,
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Juventus"
+  },
+  {
+    name: "Leandro Trossard", prob: 30,
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Open to offers"
+  },
+  {
+    name: "Christian Nørgaard", prob: 30,
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Listening to offers"
+  },
+  {
+    name: "Gabriel Martinelli", prob: 28,
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Available"
+  },
+  {
+    name: "Ben White", prob: 25,
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Listening to offers"
+  },
+  {
+    name: "Eli Junior Kroupi", prob: 20,
+    club_origin: "arsenal", direction: "in",
+    from: "Bournemouth", to: "Arsenal"
+  },
+  {
+    name: "Enzo Fernández", prob: 18,
+    club_origin: "manchester-city", direction: "in",
+    from: "(discussed)", to: "Manchester City"
+  },
+  {
+    name: "Noah Sadiki", prob: 18,
+    club_origin: "sunderland", direction: "out",
+    from: "Sunderland", to: "Man Utd / City / Chelsea / Arsenal"
+  },
+  {
+    name: "Matthis Abline", prob: 14,
+    club_origin: "sunderland", direction: "in",
+    from: "Nantes", to: "Sunderland"
+  },
+  {
+    name: "Julián Álvarez", prob: 10,
+    club_origin: "arsenal", direction: "in",
+    from: "Atlético Madrid", to: "Arsenal"
+  },
 ];
 
 const BY_CLUB = {"manchester-city": 3, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "chelsea": 5, "sunderland": 20, "aston-villa": 5, "crystal-palace": 5, "leeds-united": 24, "brighton": 5, "bournemouth": 4, "liverpool": 6, "brentford": 3, "hull-city": 5, "coventry-city": 4, "everton": 4};
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T09:45:13.117856Z",
+  updated: "2026-07-30T10:48:01.966183Z",
   label: "League aggregation"
 };
 /*==DATA==*/
@@ -378,26 +452,28 @@ function windowStatus(win){
 
 (function(){
   document.title = 'Mercato IQ · ' + LEAGUE.name;
-  document.getElementById('asofPill').textContent = (REPORT_META.asof || '').toUpperCase();
   document.getElementById('crumb').innerHTML = `<a href="../index.html">Global</a><span class="sep">&rsaquo;</span><a href="../nations/england.html">${LEAGUE.nation}</a><span class="sep">&rsaquo;</span><b>${LEAGUE.name}</b>`;
   document.getElementById('kicker').textContent = 'LEAGUE · ' + LEAGUE.nation + ' · ' + (Object.keys(BY_CLUB).length + LEGACY_CLUBS.length) + ' CLUBS';
   document.getElementById('heroH2').innerHTML = LEAGUE.name + " <em>Transfer Watch</em>";
-  document.getElementById('heroLede').innerHTML = `<b>${TOP_STORIES.length}</b> of <b>${LEAGUE.stories_count}</b> tracked stories shown below, ranked by source tier then likelihood. Every card links through to the full club dashboard.`;
+  document.getElementById('heroLede').innerHTML = `<b>${TOP_STORIES.length}</b> of <b>${LEAGUE.stories_count}</b> tracked stories shown below, ranked by source tier then likelihood.`;
   document.getElementById('topSub').textContent = `The biggest stories across every tracked ${LEAGUE.name} club right now, ranked by source tier, then how likely each is to actually happen.`;
 
+  /* Header status pill doubles as the freshness ticker (keeps the hero compact). */
   const t0 = new Date(REPORT_META.updated).getTime();
-  const stamp = document.getElementById('stamp');
+  const pillTxt = document.getElementById('asofPill');
+  const pillDot = document.querySelector('.status-pill .dot');
   function fmt(ms){
-    if(isNaN(ms) || ms < 0) return ['CURRENT', 'var(--muted)'];
+    if(isNaN(ms) || ms < 0) return ['CURRENT', 'var(--green)'];
     const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
     let txt;
     if(s < 60) txt = s+'s'; else if(m < 60) txt = m+'m '+(s%60)+'s'; else if(h < 24) txt = h+'h '+(m%60)+'m'; else txt = d+'d '+(h%24)+'h';
     const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
-    return ['UPDATED '+txt+' AGO', col];
+    return [txt+' ago', col];
   }
   function tick(){
     const [txt, col] = fmt(Date.now() - t0);
-    stamp.innerHTML = `<span class="seg dt">AS OF&nbsp;<b>${REPORT_META.asof || ''}</b></span><span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+    pillTxt.innerHTML = `AS OF <b style="color:var(--white)">${REPORT_META.asof || ''}</b> &middot; updated <b style="color:${col}">${txt}</b>`;
+    if(pillDot){ pillDot.style.background = col; pillDot.style.boxShadow = '0 0 10px '+col; }
   }
   tick(); setInterval(tick, 1000);
 })();
@@ -421,12 +497,12 @@ function renderHeadlines(){
     const light = lightFor(s.prob || 0);
     const dirClass = s.direction === 'out' ? 'out' : 'in';
     const dirLabel = s.direction === 'out' ? 'OUT' : 'IN';
-    const clubName = CLUB_NAMES[s.club_origin] || s.club_origin;
     const href = s.club_origin ? ('../' + s.club_origin + '.html') : '#';
+    const clubsLine = (s.from || s.to) ? `<div class="hclubs"><span class="from">${s.from || '?'}</span><span class="arrow">&rarr;</span><span class="to">${s.to || '?'}</span></div>` : '';
     return `<a class="hcard" href="${href}">
         <div class="hbadges"><span class="hb ${dirClass}">${dirLabel}</span></div>
         <div class="htitle">${s.name || ''}</div>
-        <div class="hctx"><b>${clubName}</b></div>
+        ${clubsLine}
         <div class="hfoot">
           <span class="age">View club &rarr;</span>
           <span class="hprob"><span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 6px ${lightColor[light]}"></span><span class="val" style="color:${lightColor[light]}">${s.prob || 0}%</span></span>
@@ -437,20 +513,21 @@ function renderHeadlines(){
 
 function renderRail(){
   const rail = document.getElementById('club-rail');
+  const eyebrow = '<span class="rail-eyebrow">SELECT A CLUB</span>';
   const tracked = Object.entries(BY_CLUB).sort((a,b) => b[1]-a[1]);
   const rows = tracked.map(([slug, count]) => `
     <a class="rail-item" href="../${slug}.html">
       <span class="flag">&#9917;</span>
-      <span class="info"><span class="nm">${CLUB_NAMES[slug] || slug}</span><span class="ct">${count} live ${count === 1 ? 'story' : 'stories'}</span></span>
+      <span class="info"><span class="nm">${CLUB_NAMES[slug] || slug}</span><span class="ct">${count} ${count === 1 ? 'story' : 'stories'}</span></span>
       <span class="arrow">&rarr;</span>
     </a>`);
   const legacyRows = LEGACY_CLUBS.map(slug => `
     <a class="rail-item" href="../${slug}.html">
       <span class="flag">&#9917;</span>
-      <span class="info"><span class="nm">${CLUB_NAMES[slug] || slug}</span><span class="ct">Awaiting live refresh</span></span>
+      <span class="info"><span class="nm">${CLUB_NAMES[slug] || slug}</span></span>
       <span class="legacy-tag">LEGACY</span>
     </a>`);
-  rail.innerHTML = rows.join('') + legacyRows.join('');
+  rail.innerHTML = eyebrow + rows.join('') + legacyRows.join('');
 }
 
 function renderTrending(){
