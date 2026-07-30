@@ -11,63 +11,78 @@ const NATION = {
 
 const TOP_STORIES = [  {
     name: "Senior core review",prob: 70,
-    club_origin: "manchester-city", direction: "out"
+    club_origin: "manchester-city", direction: "out",
+    from: "Manchester City", to: "Various"
   },
   {
     name: "Manager appointment",prob: 50,
-    club_origin: "fulham", direction: "in"
+    club_origin: "fulham", direction: "in",
+    from: "TBC", to: "Fulham"
   },
   {
     name: "Manager: McKenna (risk)",prob: 45,
-    club_origin: "ipswich-town", direction: "out"
+    club_origin: "ipswich-town", direction: "out",
+    from: "Ipswich Town", to: "Fulham"
   },
   {
     name: "Morgan Rogers",prob: 35,
-    club_origin: "arsenal", direction: "in"
+    club_origin: "arsenal", direction: "in",
+    from: "Aston Villa", to: "Arsenal"
   },
   {
     name: "Squad rationalisation",prob: 65,
-    club_origin: "chelsea", direction: "out"
+    club_origin: "chelsea", direction: "out",
+    from: "Chelsea", to: "Various"
   },
   {
     name: "Dayann Methalie",prob: 58,
-    club_origin: "sunderland", direction: "in"
+    club_origin: "sunderland", direction: "in",
+    from: "Toulouse", to: "Sunderland"
   },
   {
     name: "Lamine Camara",prob: 35,
-    club_origin: "aston-villa", direction: "in"
+    club_origin: "aston-villa", direction: "in",
+    from: "Monaco", to: "Aston Villa"
   },
   {
     name: "Gabriel Jesus",prob: 35,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Open to offers"
   },
   {
     name: "Adam Wharton",prob: 30,
-    club_origin: "crystal-palace", direction: "out"
+    club_origin: "crystal-palace", direction: "out",
+    from: "Crystal Palace", to: "Elite interest"
   },
   {
     name: "Elliot Anderson",prob: 30,
-    club_origin: "manchester-city", direction: "in"
+    club_origin: "manchester-city", direction: "in",
+    from: "(discussed)", to: "Manchester City"
   },
   {
     name: "Riccardo Calafiori",prob: 30,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Juventus"
   },
   {
     name: "Leandro Trossard",prob: 30,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Open to offers"
   },
   {
     name: "Christian Nørgaard",prob: 30,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Listening to offers"
   },
   {
     name: "Gabriel Martinelli",prob: 28,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Available"
   },
   {
     name: "Ben White",prob: 25,
-    club_origin: "arsenal", direction: "out"
+    club_origin: "arsenal", direction: "out",
+    from: "Arsenal", to: "Listening to offers"
   },
 ];
 
@@ -75,6 +90,6 @@ const BY_LEAGUE = {"Premier League": 116};
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T09:45:13.117521Z",
+  updated: "2026-07-30T10:48:01.965828Z",
   label: "Nation aggregation"
 };
