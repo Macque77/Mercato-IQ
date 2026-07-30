@@ -1,0 +1,1141 @@
+<!--
+  MERCATO IQ - CLUB DASHBOARD SHELL (TEMPLATE v2, club-agnostic)
+  DO NOT EDIT DURING A REFRESH. This file carries zero club data:
+  all club state lives in clubs/<slug>.data.js (BRAND, VOLATILE, REPORT_META,
+  PROSE, DATA arrays, HUB/LINKMAP, SWEEP) and is spliced between the
+  DATA/ENDDATA markers by engine/build.py, which also fills the badge URI token
+  and Mercato IQ: Arsenal. Build: python3 engine/build.py <slug>  ->  <slug>.html
+  Refresh mechanics: engine/REFRESH_RUNBOOK.md. Analysis rules: 00_MASTER_ENGINE.md.
+  Dual-metric rating (True? / Happens?), scroll-reduction tabs, no storage APIs.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ: Arsenal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;
+    --bg-2:#111318;
+    --panel:#16181e;
+    --panel-2:#1c1f26;
+    --line:#2a2e38;
+    --red:#e21f26;
+    --red-bright:#ff2b24;
+    --red-deep:#a3151a;
+    --primary-rgb:226,31,38;
+    --white:#f4f3ee;
+    --muted:#8b909c;
+    --muted-2:#5f6471;
+    --gold:#e8c249;
+    --gold-deep:#a07f12;
+    --green:#33c46a;
+    --yellow:#f2c531;
+    --orange:#ef8b2c;
+    --crit:#e9483f;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle pinstripe atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(var(--primary-rgb),0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(var(--primary-rgb),0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(232,194,73,0.05), transparent 55%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 22px}
+
+  /* ---------- HEADER ---------- */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(12,13,16,0.97),rgba(12,13,16,0.86));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 22px;max-width:1240px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px}
+  .crest{
+    width:46px;height:46px;flex:none;border-radius:7px;
+    position:relative;overflow:hidden;background:#0e1014;
+    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(var(--primary-rgb),0.35);
+    display:grid;place-items:center;
+  }
+  .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
+  .crest svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1 b{color:var(--red-bright)}
+  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .status-pill{
+    display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
+    color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:54px 0 26px;border-bottom:1px solid var(--line)}
+  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,66px);line-height:.92;text-transform:uppercase;letter-spacing:.5px;max-width:18ch}
+  .hero h2 em{font-style:normal;color:var(--red-bright)}
+  .hero .lede{margin-top:20px;max-width:74ch;color:#c9ccd4;font-size:16.5px}
+  .hero .lede b{color:var(--white)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- UPDATED STAMP ---------- */
+  .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
+  .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .updated-stamp .seg.ed{background:var(--red);color:#fff;font-weight:700;letter-spacing:1px}
+  .updated-stamp .seg.dt{color:var(--muted);border-right:1px solid var(--line)}
+  .updated-stamp .seg.dt b{color:var(--white)}
+  .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
+  .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:34px 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
+  .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .stat .v{font-family:var(--display);font-weight:400;font-size:30px;margin-top:8px;line-height:1;letter-spacing:.5px}
+  .stat .v small{font-size:14px;color:var(--muted);font-family:var(--mono)}
+  .stat.gold::after{background:var(--gold)}
+  .stat.gold .v{color:var(--gold)}
+
+  /* ---------- SECTION ---------- */
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  .sec-head h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;letter-spacing:.5px}
+  .sec-head .num{font-family:var(--mono);font-size:12px;color:var(--red-bright);border:1px solid var(--red-deep);border-radius:6px;padding:3px 8px}
+  .sec-sub{color:var(--muted);font-size:14px;margin-bottom:26px;max-width:80ch}
+
+  /* analysis cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative}
+  .card h4{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .card h4 .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--bg);background:var(--gold);padding:2px 7px;border-radius:4px}
+  .card p{color:#c3c7d0;font-size:14.5px;margin-bottom:11px}
+  .card p b{color:var(--white)}
+  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(var(--primary-rgb),0.07),transparent)}
+  .card ul{list-style:none;margin:6px 0 4px}
+  .card li{position:relative;padding-left:20px;color:#c3c7d0;font-size:14px;margin-bottom:7px}
+  .card li::before{content:"›";position:absolute;left:2px;color:var(--red-bright);font-weight:700}
+  .verdict{margin-top:14px;padding:12px 14px;border-radius:8px;background:var(--panel-2);border:1px dashed var(--line);font-size:13.5px}
+  .verdict b{color:var(--gold)}
+
+  .riskgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:6px}
+  .riskgrid > div{padding:22px 24px}
+  .risk-r{background:linear-gradient(180deg,rgba(51,196,106,0.06),transparent);border-right:1px solid var(--line)}
+  .risk-d{background:linear-gradient(180deg,rgba(233,72,63,0.06),transparent)}
+  .risk-r h5,.risk-d h5{font-family:var(--display);font-weight:400;font-size:16px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px}
+  .risk-r h5{color:var(--green)} .risk-d h5{color:var(--crit)}
+  .riskgrid li{font-size:13.5px}
+
+  /* ---------- TABLES ---------- */
+  .tbl-scroll{overflow-x:visible;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{width:100%;border-collapse:collapse;min-width:0;table-layout:auto}
+  thead th{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);
+    text-align:left;padding:14px 14px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:normal;position:sticky;top:0
+  }
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:rgba(var(--primary-rgb),0.05)}
+  tbody tr:last-child td{border-bottom:none}
+  .pl-name{font-weight:700;color:var(--white);font-size:14.5px}
+  .pl-sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .pos{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:2px 6px;white-space:nowrap}
+  .fee{font-family:var(--mono);color:#dfe2e8;white-space:nowrap}
+  .tier{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap}
+  .t1{color:#7fe3a3;background:rgba(51,196,106,0.13)}
+  .t2{color:#bfe07f;background:rgba(160,224,127,0.12)}
+  .t3{color:var(--yellow);background:rgba(242,197,49,0.12)}
+  .t4{color:#ef9a9a;background:rgba(233,72,63,0.12)}
+  .prob-wrap{display:flex;align-items:center;gap:9px;min-width:120px}
+  .prob-bar{flex:1;height:6px;border-radius:99px;background:#262a33;overflow:hidden}
+  .prob-fill{height:100%;border-radius:99px}
+  .prob-val{font-family:var(--mono);font-size:12px;font-weight:700;width:34px;text-align:right}
+  .ldot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .trend{font-family:var(--mono);font-weight:700;font-size:14px}
+  .up{color:var(--green)} .down{color:var(--crit)} .flat{color:var(--muted)}
+  td.note{color:var(--muted);font-size:12.5px;width:34%;min-width:300px;max-width:none;line-height:1.5;white-space:normal;word-break:normal;overflow-wrap:anywhere}
+  .confirmed{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;color:var(--bg);background:var(--white);padding:3px 7px;border-radius:4px;font-weight:700}
+
+  /* ---------- DUAL RATING (True? / Happens?) ---------- */
+  .rate{display:flex;flex-direction:column;gap:7px;min-width:158px}
+  .rate-row{display:flex;align-items:center;gap:7px}
+  .rate-row .rl{font-family:var(--mono);font-size:8.5px;letter-spacing:.3px;color:var(--muted-2);width:52px;flex:none;text-transform:uppercase}
+  .rate-dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .rate-bar{flex:1;height:5px;border-radius:99px;background:#262a33;overflow:hidden;min-width:38px}
+  .rate-fill{height:100%;border-radius:99px}
+  .rate-val{font-family:var(--mono);font-size:11px;font-weight:700;width:30px;text-align:right}
+
+  /* ---------- NEW pill ---------- */
+  .new-tag{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.8px;color:var(--bg);background:var(--gold);padding:1px 6px;border-radius:4px;margin-left:8px;vertical-align:middle;animation:newpulse 1.8s infinite}
+  @keyframes newpulse{0%,100%{box-shadow:0 0 7px rgba(232,194,73,.4)}50%{box-shadow:0 0 15px rgba(232,194,73,.85)}}
+
+  /* ---------- BREADCRUMB ---------- */
+  .crumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--white)}
+  .crumb .sep{color:var(--muted-2)}
+  .crumb b{color:var(--red-bright)}
+
+  /* ---------- QUICK NAV (scroll-reduction) ---------- */
+  .quicknav{position:sticky;top:74px;z-index:40;background:rgba(12,13,16,.93);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .quicknav-inner{max-width:1240px;margin:0 auto;display:flex;gap:6px;padding:8px 22px;overflow-x:auto;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
+  .quicknav-inner::-webkit-scrollbar{display:none}
+  .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none}
+  .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
+  section[id]{scroll-margin-top:132px}
+
+  /* ---------- SUMMARY ---------- */
+  .summary-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+  .box h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:16px;color:var(--red-bright)}
+  .rank{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .rank:last-child{border:none}
+  .rank .n{font-family:var(--display);font-size:18px;color:var(--muted-2);width:26px}
+  .rank .nm{flex:1;font-size:14px}
+  .rank .nm small{color:var(--muted);font-family:var(--mono);font-size:11px;margin-left:6px}
+  .rank .pct{font-family:var(--mono);font-weight:700;font-size:13px}
+  .chiplist{display:flex;flex-direction:column;gap:11px}
+  .chip{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:#c8ccd4}
+  .chip .ar{font-family:var(--mono);font-weight:700;flex:none}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .pos-need{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,46,56,0.55);font-size:14px}
+  .pos-need:last-child{border:none}
+  .heatbar{height:7px;border-radius:99px;width:120px;background:#262a33;overflow:hidden}
+  .heatfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--red))}
+  .spend{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
+  .spend .s{flex:1;min-width:220px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .spend .s .l{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+  .spend .s .v{font-family:var(--display);font-size:30px;margin-top:6px;letter-spacing:.5px}
+  .spend .s.in .v{color:var(--green)} .spend .s.out .v{color:var(--red-bright)}
+  .spend .s .x{font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* ---------- CONFIRMED LEDGER ---------- */
+  .ledger{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .led-col{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .led-in{border-top:3px solid var(--green)}
+  .led-out{border-top:3px solid var(--red)}
+  .led-head{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:17px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+  .led-dot{width:9px;height:9px;border-radius:50%}
+  .led-dot.in{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .led-dot.out{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .led-count{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 8px}
+  .deal{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .deal:last-child{border:none}
+  .deal .dmeta{flex:1}
+  .deal .dname{font-weight:700;color:var(--white);font-size:14.5px}
+  .deal .dsub{font-size:11.5px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .deal .dnote{font-size:12.5px;color:#c3c7d0;margin-top:6px;line-height:1.46}
+  .deal .dfee{font-family:var(--mono);font-weight:700;font-size:13px;white-space:nowrap;text-align:right}
+  .deal .dfee.free{color:var(--gold)}
+  .status{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:1px;padding:3px 7px;border-radius:4px;margin-top:8px;font-weight:700}
+  .status.done{background:var(--green);color:var(--bg)}
+  .status.exit{background:var(--white);color:var(--bg)}
+  .status.pending{background:rgba(242,197,49,0.13);color:var(--yellow);border:1px solid var(--gold-deep)}
+  .empty{color:var(--muted-2);font-size:13px;font-style:italic;padding:14px 0}
+  .pending-note{margin-top:16px;font-size:12.5px;color:var(--muted);border:1px dashed var(--line);border-radius:8px;padding:12px 14px}
+  .pending-note b{color:var(--gold)}
+
+  /* ---------- WATCHLIST ---------- */
+  .wl-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .wl-tab{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 15px;cursor:pointer;transition:all .15s}
+  .wl-tab:hover{color:var(--white);border-color:var(--muted)}
+  .wl-tab.active{background:var(--red);color:#fff;border-color:var(--red)}
+  .wl-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .wl-item{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px 15px;border-left-width:3px}
+  .wl-item.in{border-left-color:var(--green)} .wl-item.out{border-left-color:var(--red)}
+  .wl-item .wmeta{flex:1;min-width:0}
+  .wl-item .wtop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .wl-item .wname{font-weight:700;font-size:14px;color:var(--white)}
+  .wl-item .wclub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+  .wl-item .wnote{font-size:12.5px;color:#b6bac4;margin-top:5px;line-height:1.45}
+  .wl-item .wright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none}
+  .wl-item .wpos{font-family:var(--mono);font-size:10px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:1px 5px}
+  .wl-item .wage{font-family:var(--mono);font-size:10.5px;color:var(--muted-2)}
+  .wl-dir{font-family:var(--mono);font-size:9px;letter-spacing:1px;padding:1px 5px;border-radius:3px;font-weight:700}
+  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
+  @media(max-width:900px){.wl-list{grid-template-columns:1fr}}
+
+  /* ---------- METHODOLOGY / LEGEND ---------- */
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .legend .col h5{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .legend .row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#c3c7d0;margin-bottom:9px}
+  .legend .row .k{font-family:var(--mono);font-weight:700;flex:none;min-width:48px}
+  .weights{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .w{font-family:var(--mono);font-size:11.5px;color:#c3c7d0;border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+  .w b{color:var(--gold)}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:12.5px}
+  footer b{color:var(--white)}
+  .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
+
+  /* entrance animation */
+  .reveal{opacity:0;transform:translateY(16px);animation:rise .7s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- MOBILE / TABLET: tables collapse into cards (strict no-scroll: <1180px) ---------- */
+  @media(max-width:1180px){
+    .tbl-scroll{overflow-x:visible;border:none;background:transparent;border-radius:0}
+    table{min-width:0;display:block}
+    thead{display:none}
+    tbody{display:block}
+    tbody tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px 16px 12px;margin-bottom:14px}
+    tbody tr:hover{background:var(--panel)}
+    tbody td{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:8px 0;border-bottom:1px solid rgba(42,46,56,0.5);font-size:13px}
+    tbody td:last-child{border-bottom:none}
+    tbody td::before{content:attr(data-label);font-family:var(--mono);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);flex:none;padding-top:3px}
+    tbody td.cell-name{display:block;border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:2px}
+    tbody td.cell-name::before{display:none}
+    tbody td.cell-name .pl-name{font-size:16px}
+    td.note{display:block;width:auto;min-width:0;max-width:none;color:#c3c7d0;font-size:12.5px}
+    td.note::before{display:block;margin-bottom:5px}
+    .prob-wrap{min-width:0;flex:1;max-width:62%}
+  }
+
+  @media(max-width:560px){
+    .status-pill{display:none}
+    .updated-stamp{flex-wrap:wrap}
+    .stat .v{font-size:26px}
+  }
+  @media(max-width:900px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .summary-grid{grid-template-columns:1fr}
+    .riskgrid{grid-template-columns:1fr}
+    .risk-r{border-right:none;border-bottom:1px solid var(--line)}
+    .legend{grid-template-columns:1fr}
+    .twocol{grid-template-columns:1fr}
+    .brand .sub{display:none}
+  }
+  /* ---------- PRINT ---------- */
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    header.top{position:static}
+    body::before{opacity:.4}
+    .reveal{opacity:1;transform:none;animation:none}
+    section,.card,.box,.led-col,.tbl-scroll,.summary-grid,.cards{break-inside:avoid}
+    .status-pill{display:none}
+  }
+
+  /* ===== TAB PANELS (scroll-reduction protocol) ===== */
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:panelIn .28s ease both}
+  @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .tabbtn{appearance:none;background:none;border:1px solid transparent;cursor:pointer;font:inherit;color:inherit}
+
+  /* full-height hero on the Overview tab */
+  #panel-overview .hero{min-height:calc(100vh - 320px);display:flex;flex-direction:column;justify-content:center}
+  #panel-overview .hero .lede{max-width:1020px}
+
+  /* ===== PAGER ===== */
+  .pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:34px 0 6px;padding:12px 14px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .pg-btn{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);
+    background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;cursor:pointer;transition:.15s}
+  .pg-btn:hover{border-color:var(--red);color:var(--red-bright)}
+  .pg-btn:disabled{opacity:.32;cursor:default}
+  .pg-btn:disabled:hover{border-color:var(--line);color:var(--white)}
+  .pg-meter{display:flex;gap:7px}
+  .pg-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.15s}
+  .pg-dot.on{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .pg-hint{font-family:var(--mono);font-size:10px;color:var(--muted-2);letter-spacing:1px;text-align:center;margin:6px 0 0}
+
+  /* ===== COMPACT NO-SCROLL TABLES ===== */
+  .tbl-scroll table{table-layout:fixed;width:100%}
+  .tbl-scroll th,.tbl-scroll td{padding:9px 8px;font-size:12.5px}
+  .tbl-scroll td.note{font-size:12px;line-height:1.5}
+  .tbl-scroll th:nth-child(1),.tbl-scroll td:nth-child(1){width:12%}
+  .tbl-scroll th:nth-child(2),.tbl-scroll td:nth-child(2){width:9%}
+  .tbl-scroll th:nth-child(3),.tbl-scroll td:nth-child(3){width:5%}
+  .tbl-scroll th:nth-child(4),.tbl-scroll td:nth-child(4){width:7%}
+  .tbl-scroll th:nth-child(5),.tbl-scroll td:nth-child(5){width:10%}
+  .tbl-scroll th:nth-child(6),.tbl-scroll td:nth-child(6){width:8%}
+  .tbl-scroll th:nth-child(7),.tbl-scroll td:nth-child(7){width:14%}
+  .tbl-scroll th:nth-child(8),.tbl-scroll td:nth-child(8){width:4%}
+  .tbl-scroll th:nth-child(9),.tbl-scroll td:nth-child(9){width:31%}
+  @media(max-width:980px){.tbl-scroll table{table-layout:auto}}
+
+  /* ===== EXPANDABLE SOURCE LINKS ===== */
+  tr.rumour-row{cursor:pointer}
+  tr.rumour-row:hover td{background:rgba(var(--primary-rgb),.045)}
+  .src-toggle{display:inline-block;margin-left:6px;font-family:var(--mono);font-size:9px;color:var(--muted);
+    border:1px solid var(--line);border-radius:5px;padding:1px 6px;letter-spacing:1px;vertical-align:middle;transition:.15s}
+  tr.rumour-row.open .src-toggle{color:var(--gold);border-color:var(--gold-deep)}
+  tr.src-row{display:none}
+  tr.src-row.open{display:table-row}
+  tr.src-row>td{background:var(--bg-2)!important;border-left:2px solid var(--red);padding:10px 14px}
+  .src-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .src-links .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--muted)}
+  .src-links a{font-family:var(--mono);font-size:11px;color:var(--gold);text-decoration:none;border:1px solid var(--line);
+    border-radius:6px;padding:4px 9px;background:var(--panel);transition:.15s}
+  .src-links a:hover{border-color:var(--gold-deep);color:var(--white)}
+  .src-links .hubnote{font-size:10px;color:var(--muted-2);font-family:var(--mono)}
+  .wl-item .src-links{margin-top:7px}
+  .wl-item{cursor:pointer}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="crest"><img src="arsenal.png" alt="Club badge" onerror="this.style.display=&#39;none&#39;"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)" id="monoText"></text></svg></div>
+      <div>
+        <h1 id="brandName"></h1>
+        <div class="sub">The transfer market, decoded · Independent intelligence</div>
+      </div>
+    </div>
+    <div class="status-pill"><span class="dot"></span> WINDOW OPEN · <span id="asof"></span></div>
+  </div>
+</header>
+
+<!-- TAB NAV (scroll-reduction protocol: one section on screen at a time) -->
+<nav class="quicknav" aria-label="Dashboard sections">
+  <div class="quicknav-inner" id="tabbar" role="tablist">
+    <span class="qn-tag">SECTIONS</span>
+    <button class="qn-link tabbtn active" data-go="overview" role="tab" aria-selected="true">Overview</button>
+    <button class="qn-link tabbtn lead" data-go="confirmed" role="tab">Confirmed</button>
+    <button class="qn-link tabbtn lead" data-go="in" role="tab">Targets In</button>
+    <button class="qn-link tabbtn lead" data-go="out" role="tab">Out &amp; Sales</button>
+    <button class="qn-link tabbtn" data-go="index" role="tab">Full Index</button>
+    <button class="qn-link tabbtn" data-go="briefing" role="tab">Briefing</button>
+    <button class="qn-link tabbtn" data-go="position" role="tab">Club Position</button>
+    <button class="qn-link tabbtn" data-go="method" role="tab">Method</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="tabpanel active" id="panel-overview">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="crumb" id="crumb"></div>
+    <div class="updated-stamp" id="stamp"></div>
+    <div class="kicker" id="kicker"></div>
+    <h2 id="heroH2"></h2>
+    <p class="lede" id="heroLede"></p>
+    <div class="meta-row" id="metaRow"></div>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stats" id="statStrip"></div>
+
+  </div><!-- /panel-overview -->
+
+  <div class="tabpanel" id="panel-position">
+  </div><!-- /panel-position -->
+
+  <div class="tabpanel" id="panel-confirmed">
+  <!-- CONFIRMED BUSINESS -->
+  <section id="sec-confirmed">
+    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">03</span></div>
+    <p class="sec-sub">Done deals and locked-in contract outcomes. This is a living ledger: as the rumours below are officially confirmed they move up here and leave the speculative tables. <b>Contract status sets the fee</b>: an out-of-contract player aged 24+ leaves on a full Bosman free, so no fee applies regardless of homegrown status; the holder's-premium logic only governs players still under contract.</p>
+    <div class="ledger">
+      <div class="led-col led-in">
+        <div class="led-head"><span class="led-dot in"></span> In <span class="led-count" id="cinCount"></span></div>
+        <div id="confirmedIn"></div>
+      </div>
+      <div class="led-col led-out">
+        <div class="led-head"><span class="led-dot out"></span> Out <span class="led-count" id="coutCount"></span></div>
+        <div id="confirmedOut"></div>
+      </div>
+    </div>
+    <div class="pending-note" id="pendingNote"></div>
+  </section>
+
+  </div><!-- /panel-confirmed -->
+
+  <div class="tabpanel" id="panel-in">
+  <!-- INCOMING -->
+  <section id="sec-in">
+    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">04</span></div>
+    <p class="sec-sub" id="inSub"></p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Why it sits here / obstacles</th>
+        </tr></thead>
+        <tbody id="incoming"></tbody>
+      </table>
+    </div>
+  </section>
+
+  </div><!-- /panel-in -->
+
+  <div class="tabpanel" id="panel-out">
+  <!-- OUTGOING -->
+  <section id="sec-out">
+    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">05</span></div>
+    <p class="sec-sub" id="outSub"></p>
+    <div class="verdict" id="pricingBanner" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(var(--primary-rgb),0.08),var(--panel-2))"></div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Read</th>
+        </tr></thead>
+        <tbody id="outgoing"></tbody>
+      </table>
+    </div>
+  </section>
+
+  </div><!-- /panel-out -->
+
+  <div class="tabpanel" id="panel-index">
+  <!-- WATCHLIST -->
+  <section id="sec-index">
+    <div class="sec-head"><h3>Full Rumour Index</h3><span class="num">06</span></div>
+    <p class="sec-sub">The comprehensive long tail: every other name in circulation (aggregated feeds incl. TransferFeed), kept compact and clearly tiered. These are monitoring-only, lower-credibility or cooling links that haven't earned a place in the analysed tables. Filter by direction.</p>
+    <div class="wl-tabs">
+      <button class="wl-tab active" data-f="all">All</button>
+      <button class="wl-tab" data-f="in">Targets In</button>
+      <button class="wl-tab" data-f="out">Possible Out</button>
+    </div>
+    <div class="wl-list" id="watchlist"></div>
+    <div class="pending-note" id="excludedNote" style="border-color:var(--line)"></div>
+  </section>
+
+  </div><!-- /panel-index -->
+
+  <div class="tabpanel" id="panel-briefing">
+  <!-- SUMMARY OUTPUTS -->
+  <section id="sec-briefing">
+    <div class="sec-head"><h3>Daily Briefing</h3><span class="num">07</span></div>
+    <p class="sec-sub">The eight required readouts, regenerated on each update.</p>
+
+    <div class="summary-grid">
+      <div class="box">
+        <h4>Top 10 Most Likely Movements <span style="color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:1px">· UNCONFIRMED · IN &amp; OUT</span></h4>
+        <div id="top10"></div>
+      </div>
+      <div class="box">
+        <h4>Risers · Fallers · New Entries · Ignore</h4>
+        <div class="chiplist" id="movers"></div>
+      </div>
+    </div>
+
+    <div class="twocol">
+      <div class="box">
+        <h4>Positions Most Likely Strengthened</h4>
+        <div id="positions"></div>
+      </div>
+      <div class="box">
+        <h4>Estimated Spend</h4>
+        <div class="spend">
+          <div class="s in"><div class="l">Gross Incoming</div><div class="v" id="spendInV"></div><div class="x" id="spendInX"></div></div>
+          <div class="s out"><div class="l">Outgoing Sales</div><div class="v" id="spendOutV"></div><div class="x" id="spendOutX"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /panel-briefing -->
+
+  <div class="tabpanel" id="panel-method">
+  <!-- METHODOLOGY -->
+  <section id="sec-method">
+    <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">08</span></div>
+    <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
+    <div class="legend" id="methodLegend">
+    </div>
+  </section>
+
+  </div><!-- /panel-method -->
+
+  <!-- PAGER -->
+  <div class="pager" aria-label="Section pager">
+    <button class="pg-btn" id="pgPrev" type="button">&#8592; Prev</button>
+    <div class="pg-meter" id="pgMeter"></div>
+    <button class="pg-btn" id="pgNext" type="button">Next &#8594;</button>
+  </div>
+
+  <footer class="reveal">
+    <b id="updatedFoot"></b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <div class="disclaimer">
+      Built from publicly reported sources retrieved on <span id="discDate"></span>, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   DATA: edit this block on each daily update, page re-renders.
+   light: 'g'=green(>50%) 'y'=yellow(30-50%) 'o'=orange(15-30%) 'r'=red(<15%)
+   trend: 'up' | 'flat' | 'down'
+   ============================================================ */
+/*==DATA==*/
+/* ============================================================
+   MERCATO IQ · CLUB DATA · ARSENAL · STATE OF RECORD
+   This file IS the club's live state. A refresh edits ONLY this
+   file, then engine/build.py splices it into template.html to
+   produce arsenal.html. Never hand-edit the built html.
+   Mechanics: engine/REFRESH_RUNBOOK.md · Rules: 00_MASTER_ENGINE.md
+   ------------------------------------------------------------
+   MIGRATION NOTE (format migration only, data carried from the
+   6 Jun 2026 v1 dashboard, no re-verification):
+   · truth values SYNTHESISED from the old single-metric rows as
+     truth = clamp(prob + 25 + tierBonus, 10, 95), tierBonus
+     T1 +15 / T2 +10 / T3 0 / T4 -10.
+   · Light-band fixes (light adjusted, prob untouched): Trossard
+     prob 30 o -> y; Norgaard prob 30 o -> y.
+   · Old file held no source URLs, so LINKMAP/WL_LINKMAP point at
+     named-source hubs only; replace with exact URLs at next refresh.
+   · Old badge payload was JPEG data mislabelled image/png; it fails
+     PNG validation, so the build uses the arsenal.png reference +
+     SVG shield fallback until a true PNG is inlined.
+   ============================================================ */
+
+/* ── IDENTITY & SKIN (stable, re-check rarely) ── */
+const BRAND = {
+  club: "Arsenal", mono: "ARS", slug: "arsenal",
+  primary: "#EF0107", primaryBright: "#ff2630", primaryDeep: "#9c0006",
+  primaryRgb: "239,1,7",
+  breadcrumb: ["England","Premier League"]
+};
+
+/* ── VOLATILE FACTS (machine-readable; verification cadence per runbook)
+   verified deliberately stale (old build date): next refresh must re-verify all fields. ── */
+const VOLATILE = {
+  verified: "2026-06-06",
+  coach: "Mikel Arteta",
+  dof: "Andrea Berta (Sporting Director)",
+  europe: "Champions League (2026/27)",
+  finish: "1st (2025/26, champions)",
+  owner: "Kroenke Sports & Entertainment (Stan and Josh Kroenke)",
+  window: "Opens 15 Jun, runs to 1 Sep 2026"
+};
+
+/* ── SWEEP PLAN (fire ALL feeds + queries IN PARALLEL at refresh start) ── */
+const SWEEP = {
+  feeds: [
+    "https://www.newsnow.co.uk/h/Sport/Football/Premier+League/Arsenal/Transfer+News",
+    "https://www.transferfeed.com/clubs/arsenal",
+    "https://www.standard.co.uk/sport/football/arsenal",
+    "https://www.skysports.com/arsenal"
+  ],
+  queries: [
+    "Arsenal transfer news <current month + year>",
+    "Arsenal bid OR medical OR 'personal terms'",
+    "Arsenal calciomercato Di Marzio TuttoMercatoWeb Gazzetta",
+    "Arsenal transfer Plettenberg Bild OR L'Equipe Foot Mercato",
+    "Arsenal fichajes Marca AS Relevo OR TyC Sports"
+  ],
+  note: "Foreign desks per profile: Italy (Di Marzio/TMW/Gazzetta/Corriere + Serie A local beats), Germany (Plettenberg/Sky DE/Bild/Kicker), France (L'Equipe/RMC/Foot Mercato), Spain (Marca/AS/Relevo/Moretto + La Liga local beats), South America (TyC Sports/Ole/Globo Esporte), Portugal (A Bola/Record). For every linked player also search the current club's local press in the native language. Add one query per movable live thread. Trace every aggregator hit to its original reporter (master §4)."
+};
+
+/* ── EDIT THESE EACH REFRESH ──────────────────────────
+   asof: human display date · updated: full ISO timestamp (drives live ticker) */
+const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label: "Champions' window build: Hincapié permanent secured, Morgan Rogers the marquee chase, fringe churn to fund it (migrated to v2, awaiting live refresh)" };
+
+/* CONFIRMED BUSINESS - move items here as deals are officially done.
+   free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
+const CONFIRMED_IN = [
+  {name:"Piero Hincapié", sub:"24 · CB/LB · Ecuador", to:"permanent from Bayer Leverkusen", fee:"≈£45m", free:false, status:"done", statusTxt:"DONE, AWAITING ANNOUNCEMENT",
+   note:"Romano 'here we go': the season-long loan converts to a permanent on a pre-agreed deal. A five-year contract is already signed, the fee is around €52m and Leverkusen keep a 10% sell-on. Arsenal's first business of summer 2026, using the same loan-to-buy structure as the Raya deal from Brentford. A genuine purchase, not a loan: real squad value across centre-back and left-back."},
+];
+const CONFIRMED_OUT = [];
+
+const INCOMING = [
+  {name:"Morgan Rogers", sub:"23 · England · AM", club:"Aston Villa", pos:"AM/W", report:"2 Jun 2026", src:"BBC (Sami Mokbel) / Jamie Dickenson", tier:1, fee:"£80m+", truth:75, prob:35, light:'y', trend:'up',
+   note:"The marquee pursuit and best-sourced of the attacking targets: the BBC names Rogers an Arsenal priority and the player has reportedly given the thumbs up to the move. PFA Young Player profile, versatile creator, fits the 'win-now plus resale' brief. OBSTACLES: an £80m-plus fee, a six-year Villa deal to 2031, a Villa side now in the Champions League and reluctant to sell, and direct competition from Manchester United, Chelsea and Liverpool."},
+  {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£80m+", truth:55, prob:20, light:'o', trend:'flat',
+   note:"Named by the BBC among Arsenal's three main attacking targets after a strong season. On-profile (young, high ceiling, resale) and a forward, which is a stated need. OBSTACLE: a fee reported in excess of £80m for a teenager, and Bournemouth under no pressure to sell."},
+  {name:"Benjamin Šeško", sub:"22 · Slovenia · ST", club:"RB Leipzig", pos:"ST", report:"~2 wks ago", src:"Aggregated / sportskeeda", tier:3, fee:"£60-70m", truth:40, prob:15, light:'o', trend:'flat',
+   note:"A recurring centre-forward option as Arsenal weigh succession for Gabriel Jesus; reporting has Arsenal registering interest. OBSTACLES: T3 sourcing, a crowded market for elite young strikers, and the cost-cap maths on another big fee."},
+  {name:"Julián Álvarez", sub:"26 · Argentina · ST", club:"Atlético Madrid", pos:"ST", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£120m+", truth:45, prob:10, light:'r', trend:'flat',
+   note:"Listed by the BBC as an attacking target but flagged as 'highly complex': a valuation north of £120m would almost certainly require a major sale first, and Atlético hold all the leverage. An aspirational, low-probability swing rather than a likely deal."},
+];
+
+const OUTGOING = [
+  {name:"Gabriel Jesus", sub:"29 · ST · Brazil", club:"Open to offers", pos:"ST", report:"1 Jun 2026", src:"BBC / CBS", tier:2, fee:"£25-35m", truth:70, prob:35, light:'y', trend:'flat',
+   note:"Among those who could be sold to fund arrivals, with his recent campaign disrupted by a cruciate injury. PRICING: an injury record and contract length soften the floor, but a proven PL forward retains value. A sale helps the cost ratio and clears a striker slot."},
+  {name:"Riccardo Calafiori", sub:"23 · LB/CB · Italy", club:"Juventus", pos:"LB/CB", report:"~1 wk ago", src:"Gazzetta dello Sport", tier:2, fee:"£35-45m", truth:65, prob:30, light:'y', trend:'up',
+   note:"Juventus are credited with strong interest and reportedly see him as a first-choice target to add Italy internationals. PRICING: under contract with no need to sell, so Arsenal hold a holder's price; the report notes any deal may hinge on whether Calafiori himself pushes to leave."},
+  {name:"Leandro Trossard", sub:"31 · W · Belgium", club:"Open to offers", pos:"W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£12-18m", truth:65, prob:30, light:'y', trend:'up',
+   note:"With around 12 months left on his deal, this is a sell-or-risk-a-free decision. PRICING: the short contract caps the fee and makes a sale this window logical to bank value and trim wages."},
+  {name:"Christian Nørgaard", sub:"DM · Denmark", club:"Listening to offers", pos:"DM", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£8-12m", truth:65, prob:30, light:'y', trend:'flat',
+   note:"Arsenal are set to listen to offers as part of squad churn. A depth midfielder rather than a starter, so a clean, headroom-extending sale."},
+  {name:"Gabriel Martinelli", sub:"24 · LW · Brazil", club:"Available", pos:"LW", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£35-50m", truth:63, prob:28, light:'o', trend:'flat',
+   note:"Named among those who could be made available to fund incomings. PRICING: still a saleable resale asset, so the price is firm; a sale would likely be tied to landing a wide/creative upgrade."},
+  {name:"Ben White", sub:"RB/CB · England", club:"Listening to offers", pos:"RB/CB", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£25-35m", truth:60, prob:25, light:'o', trend:'flat',
+   note:"Among the names Arsenal will listen on. Versatile and experienced; a sale would open a full-back refresh that is itself a stated target area."},
+  {name:"William Saliba", sub:"24 · CB · France", club:"Real Madrid", pos:"CB", report:"~1 wk ago", src:"Marca / BBC gossip", tier:3, fee:"£80m+ (resisting)", truth:35, prob:10, light:'r', trend:'down',
+   note:"Real Madrid are reported to have made him a top defensive target. PRICING: Arsenal have worked to secure his long-term future and would price a sale prohibitively. The high ask is designed to deter, not invite; very low probability."},
+];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Hincapié</b>: permanent confirmed, Arsenal's first summer signing."},
+  {ar:"⬆", t:"<b>Morgan Rogers</b>: BBC names him a priority; player reported to favour the move."},
+  {ar:"⬆", t:"<b>Calafiori</b>: Juventus push hard; a possible funding sale."},
+  {ar:"⬆", t:"<b>Trossard</b>: 12 months left makes a sale this window logical."},
+];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Saliba</b>: Arsenal resist Madrid and price to deter; long-term future worked on."},
+  {ar:"⬇", t:"<b>Álvarez</b>: £120m-plus valuation makes it highly complex and unlikely."},
+  {ar:"⬇", t:"<b>2025 names</b>: Zubimendi, Nico Williams, Joan García already resolved last window."},
+];
+const NEW = [
+  {ar:"✦", t:"Confirmed: <b>Hincapié</b> permanent. In: <b>Rogers</b> (prime target), <b>Kroupi</b>, <b>Álvarez</b>, <b>Šeško</b> on the forward/creator board."},
+  {ar:"✦", t:"Out: fringe churn to fund deals, <b>Jesus</b>, <b>Martinelli</b>, <b>Trossard</b>, <b>Nørgaard</b>, <b>White</b>; <b>Calafiori to Juve</b> live."},
+];
+const IGNORE = [
+  {ar:"✕", t:"<b>Eberechi Eze</b>: already an Arsenal player (signed 2025); not a target."},
+  {ar:"✕", t:"<b>Zubimendi · Nico Williams · Joan García</b>: 2025-window business, resolved; recycled links are stale."},
+  {ar:"✕", t:"<b>'£300m, seven signings'</b>: last summer's plan, not this disciplined, sales-funded window."},
+];
+
+const POSITIONS = [
+  {p:"Forward / striker", w:85, x:"Stated need; Kroupi, Šeško, Álvarez + Jesus possibly out"},
+  {p:"Attacking mid / creator", w:78, x:"Morgan Rogers the prime, best-sourced pursuit"},
+  {p:"Full-back", w:62, x:"A stated target area; Calafiori and White could move on"},
+  {p:"Central midfield", w:52, x:"BBC lists a CM among the needs; Nørgaard may leave"},
+  {p:"Centre-back", w:28, x:"Hincapié done; depth only, Saliba retained"},
+];
+
+/* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
+   aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
+const WATCHLIST = [
+  {name:"Khvicha Kvaratskhelia", club:"PSG", pos:"W", dir:"in", age:"~12 wks", tier:3, note:"Earlier framed by Romano as a priority winger target; complex on PSG's valuation and no fresh 2026 confirmation. Monitoring only."},
+  {name:"Hugo Ekitike", club:"Eintracht Frankfurt", pos:"ST", dir:"in", age:"~2 wks", tier:4, note:"A young striker option floated for Arsenal, but more strongly linked with Liverpool. Early-warning only."},
+  {name:"Morgan Gibbs-White", club:"Nottingham Forest", pos:"AM", dir:"in", age:"~6 wks", tier:4, note:"Previously considered as a creator alongside Rogers; cooled and behind Rogers in the pecking order."},
+  {name:"Jurriën Timber", club:"Arsenal", pos:"RB/CB", dir:"out", age:"~1 wk", tier:1, note:"Not a sale: contract renewal talks are advanced. Listed here only to track the retention story."},
+  {name:"Declan Rice", club:"Arsenal", pos:"CM", dir:"out", age:"~1 wk", tier:1, note:"Not a sale: initial renewal talks reported positive. Retention, not departure."},
+  {name:"Ethan Nwaneri", club:"Arsenal", pos:"AM", dir:"out", age:"~12 wks", tier:2, note:"Already re-signed; Romano guarantees no intention to sell despite a difficult loan spell. Stays."},
+  {name:"Reiss Nelson", club:"Fringe / loan", pos:"W", dir:"out", age:"~5 wks", tier:4, note:"Peripheral attacker, a candidate for a permanent exit or loan as part of squad churn. Low detail."},
+];
+
+/* ---------- SOURCE LINKS ----------
+   Exact URLs only where verified this refresh; otherwise the named source's hub.
+   The v1 file held no URLs, so all entries below are hubs pending re-verification.
+   Aggregators (TransferFeed etc.) are never linked: the traced original is. */
+const HUB = {
+  bbcArs:    {l:"BBC Sport · Arsenal", u:"https://www.bbc.co.uk/sport/football/teams/arsenal"},
+  bbcGossip: {l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
+  mokbel:    {l:"Sami Mokbel (BBC) · X", u:"https://x.com/SamiMokbel81_DM"},
+  athletic:  {l:"The Athletic · Arsenal", u:"https://www.nytimes.com/athletic/football/club/arsenal/"},
+  ornstein:  {l:"David Ornstein (The Athletic) · X", u:"https://x.com/David_Ornstein"},
+  romano:    {l:"Fabrizio Romano · X", u:"https://x.com/FabrizioRomano"},
+  sky:       {l:"Sky Sports · Arsenal", u:"https://www.skysports.com/arsenal"},
+  gazzetta:  {l:"Gazzetta dello Sport", u:"https://www.gazzetta.it/"},
+  marca:     {l:"Marca", u:"https://www.marca.com/"},
+  lequipe:   {l:"L'Équipe · football", u:"https://www.lequipe.fr/Football/"},
+  cbs:       {l:"CBS Sports · football", u:"https://www.cbssports.com/soccer/"},
+  standard:  {l:"Evening Standard · Arsenal", u:"https://www.standard.co.uk/sport/football/arsenal"},
+  afc:       {l:"Arsenal Official · news", u:"https://www.arsenal.com/news"},
+};
+const LINKMAP = {
+  "Morgan Rogers": ["bbcArs","mokbel"],
+  "Eli Junior Kroupi": ["bbcArs"],
+  "Benjamin Šeško": ["bbcGossip"],
+  "Julián Álvarez": ["bbcArs"],
+  "Gabriel Jesus": ["bbcArs","cbs"],
+  "Riccardo Calafiori": ["gazzetta"],
+  "Leandro Trossard": ["bbcArs"],
+  "Christian Nørgaard": ["bbcArs"],
+  "Gabriel Martinelli": ["bbcArs"],
+  "Ben White": ["bbcArs"],
+  "William Saliba": ["marca","bbcGossip"],
+  "Piero Hincapié": ["romano","afc"],
+};
+const WL_LINKMAP = {
+  "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
+  "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",
+};
+
+/* ── PROSE (derived outputs; REWRITE per master §9b on every refresh, never carry over) ── */
+const PROSE = {
+  heroH2: `Champions at last, Hincapié secured: the marquee chase is <em>Morgan Rogers</em>`,
+  heroLede: `Arsenal enter the summer as <b>Premier League champions</b> for the first time in 22 years and back in the <b>2026/27 Champions League</b>, but carrying the sting of a penalty-shootout defeat to PSG in the Champions League final. After a heavy 2025 outlay, title bonuses, and a tighter <b>70% Squad Cost Ratio cap</b> that comes with European football, this reads as a <b>measured, value-led window funded partly by sales</b>, not another splurge. The first business is the confirmed permanent signing of <b>Piero Hincapié</b>; the headline pursuit is Aston Villa's <b>Morgan Rogers</b> (the player is receptive, but it is an £80m-plus deal with Manchester United, Chelsea and Liverpool also circling). A forward and a full-back are the other stated priorities. Nothing on the incoming side beyond Hincapié yet carries a Tier 1 "here we go".`,
+  metaRow: `
+      <span>DECISION-MAKER: <b>Andrea Berta</b> (Sporting Director)</span>
+      <span>HEAD COACH: <b>Mikel Arteta</b></span>
+      <span>OWNER: <b>Kroenke Sports &amp; Entertainment</b></span>
+      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    `,
+  stats: `
+    <div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">1<small>st</small></div></div>
+    <div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">UCL</div></div>
+    <div class="stat"><div class="l">Est. Gross Spend</div><div class="v">£100-180<small>m</small></div></div>
+    <div class="stat"><div class="l">Est. Sales</div><div class="v">£80-150<small>m</small></div></div>
+    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">70<small>%</small></div></div>`,
+  positionPanel: `
+  <!-- ANALYSIS: MODEL + FINANCE -->
+  <section id="sec-position">
+    <div class="sec-head"><h3>Club Position</h3><span class="num">01</span></div>
+    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the European trade-off.</p>
+
+    <div class="cards">
+      <!-- THE MODEL -->
+      <div class="card">
+        <h4>The Model <span class="tag">CORE PRINCIPLE</span></h4>
+        <p>A <b>buy-to-win, data-led</b> model run by sporting director <b>Andrea Berta</b> (ex-Atlético Madrid) under Mikel Arteta. Unlike a pure resale club, Arsenal pay premium fees for elite age-23-to-26 profiles with both immediate impact and resale ceiling; the squad is already mature, so the brief is <b>succession and marginal upgrades, not a rebuild</b>.</p>
+        <div class="quote">A recurring Berta device is the pre-agreed loan-to-permanent: Hincapié arrives this summer on a buy option set last August, the same structure Arsenal used years ago for David Raya from Brentford.</div>
+        <p><b>This window's logic:</b> a heavy 2025 outlay plus title bonuses mean spending is now disciplined and partly self-funded by selling the fringe, rather than a repeat of last summer's volume.</p>
+        <ul>
+          <li>Stated needs: a <b>forward</b>, an <b>attacking midfielder/creator</b>, and a <b>full-back</b>.</li>
+          <li>Markets: the top five European leagues plus elite South American and Spanish talent.</li>
+          <li>Retention is half the work: new deals for Timber and Rice are live; Nwaneri already re-signed.</li>
+        </ul>
+        <div class="verdict"><b>Tracker implication:</b> upgrade fresh, well-sourced links for the three stated needs (Rogers, Kroupi); discount marquee names that need a record fee unless they are an outright first-XI upgrade and financially clearable.</div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="card">
+        <h4>Financial Position <span class="tag">STRONG</span></h4>
+        <p>Backed by <b>Kroenke Sports &amp; Entertainment</b>, with title-winning prize money, deep Champions League revenue and elite commercial and matchday income at a near-capacity Emirates. Spending power is genuinely top of the market.</p>
+        <ul>
+          <li>The constraint is not cash but the cost ratio: a heavy 2025 spend plus <b>title and progression bonuses</b> push wages and amortisation up against the cap.</li>
+          <li>Champions League football sets the <b>stricter 70%</b> Squad Cost Ratio limit (versus 85% for non-European clubs), so headroom is tighter than the wage bill alone suggests.</li>
+          <li>Sales of fringe and surplus players are expected to <b>fund</b> the marquee arrivals rather than supplement them.</li>
+        </ul>
+        <div class="verdict"><b>Caveat:</b> any record bid (Álvarez territory) likely requires a sizeable sale first; expect smart trading, not unchecked spending.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPUTATION + RISK/REWARD -->
+  <section id="sec-tradeoff">
+    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">02</span></div>
+    <p class="sec-sub">Champion status is now a powerful recruitment magnet, but it also tightens the cost ratio and puts the crown jewels in the window.</p>
+
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card">
+        <h4>Reputational Standing</h4>
+        <p>Champions of England and Champions League finalists: Arsenal can now offer elite players a title-winning side and a genuine European platform. That standing is real <b>leverage</b> in a deal like Morgan Rogers, where the player is reported receptive despite rival interest.</p>
+        <ul>
+          <li>Arteta is the first Arsenal manager to win the league in 22 years.</li>
+          <li>The pull on top young talent is at its strongest in two decades.</li>
+        </ul>
+        <div class="verdict"><b>Double edge:</b> the same standing makes Arsenal's best assets targets, with <b>Real Madrid</b> reported to view William Saliba as a top defensive target, and Juventus pressing for Riccardo Calafiori.</div>
+      </div>
+      <div class="card">
+        <h4>The SCR Tightening <span class="tag">KEY TENSION</span></h4>
+        <p>New <b>Squad Cost Ratio</b> rules replace PSR this summer. The cap on wages, agent fees and amortisation is <b>85% of revenue, but only 70% for clubs in European competition</b>, which is where Arsenal sit as champions.</p>
+        <p>Champions League income is large, but the 70% ceiling plus title bonuses and the amortisation of last summer's spend means the ratio, not the bank balance, governs this window.</p>
+        <ul>
+          <li>A 3-year net transfer position feeds the calculation, so player sales improve the ratio, not just the cash position.</li>
+          <li>That is why selling fringe players (Jesus, Martinelli, Trossard, Nørgaard, White) <b>extends headroom</b> for a marquee arrival.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riskgrid">
+      <div class="risk-r">
+        <h5>▲ Reward: defending the title and chasing the one missing trophy</h5>
+        <ul>
+          <li>A first <b>Champions League</b> crown is now the explicit ambition after the final defeat to PSG; the squad is built for a deep run.</li>
+          <li>Title-holder revenue and coefficient income compound the commercial flywheel.</li>
+          <li>Champion status maximises the pull on elite targets such as Rogers.</li>
+        </ul>
+      </div>
+      <div class="risk-d">
+        <h5>▼ Risk: the cost of over-reaching</h5>
+        <ul>
+          <li>Stacking wages on top of title bonuses risks pressing the <b>70% cost cap</b>, inviting fines, reduced headroom or sanction.</li>
+          <li>Paying a record fee (Álvarez) without a matching sale would force an awkward mid-window scramble to balance the ratio.</li>
+          <li>Selling a key asset (Calafiori, or resisting Madrid for Saliba) reshapes the defence the title was built on.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict" style="margin-top:18px;max-width:none">
+      <b>Net read:</b> the evidence points to a disciplined, sales-funded window: bank the confirmed Hincapié deal, push hard for one marquee creator/forward (Rogers the priority), add a full-back, and clear enough of the fringe to keep the 70% ratio intact while chasing the Champions League the squad just fell one shootout short of.
+    </div>
+  </section>
+`,
+  confirmedPending: `<b>Window opens 15 June, so deals are agreed but not yet formally registered.</b> Hincapié's permanent (above) is signed and awaiting announcement. The other live retention story is contract renewals: talks for <b>Jurriën Timber</b> are advanced and initial talks for <b>Declan Rice</b> are positive, while <b>Ethan Nwaneri</b> has already re-signed and is not for sale. These enter the ledger only once announced.`,
+  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Berta network 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the last refresh.`,
+  outgoingSub: `Sales feed both affordability and SCR headroom. With the 70% cap in play, clearing the fringe is what unlocks a marquee arrival.`,
+  pricingBanner: `
+      <b>Pricing principle: as champions under no pressure to sell, Arsenal price every outgoing at a holder's price, not market value.</b> Four multipliers stack above consensus: <b>(1)</b> long contracts remove buyer leverage; <b>(2)</b> near-ever-present minutes prove the asset; <b>(3)</b> a multi-club bidding war inflates the number; <b>(4)</b> elite suitors pay a premium for proven quality. The wrinkle this summer is that title bonuses and the stricter 70% European cost cap make some <b>churn of the fringe</b> (Jesus, Martinelli, Trossard, Nørgaard, White) financially useful, which softens the floor on those names; a prized academy or first-XI asset (Saliba, Saka) is priced to deter, not invite.
+    `,
+  excludedNote: `<b>Excluded as stale/already-resolved:</b> names recycled from the 2025 window are not live, including the "seven signings / £300m" plan and targets that were either signed last summer (Eberechi Eze) or completed elsewhere (Martín Zubimendi, Nico Williams, Joan García). Treat any 2026 article still listing them as a current target as out of date.`,
+  spendIn: { v: `£100-180m`, x: `Lower for Hincapié plus one value full-back; upper only if a marquee creator/forward (Rogers, or a Kroupi/Álvarez swing) is funded by sales.` },
+  spendOut: { v: `£80-150m`, x: `Cash from churning the fringe at holder's prices: Jesus, Martinelli, Trossard, Nørgaard and White could each move; a Calafiori sale to Juventus would add a chunk. Reaching the upper end likely needs one of the bigger assets to go.` },
+  methodLegend: `
+      <div class="col">
+        <h5>Source Tiers (current)</h5>
+        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b>: David Ornstein, Fabrizio Romano, BBC, The Athletic. <i>Used for:</i> the Hincapié permanent, the Rogers priority, renewal talks for Timber and Rice.</span></div>
+        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b>: Sky Sports, Gazzetta dello Sport (Calafiori), Marca (Saliba), L'Équipe, RMC, reliable national writers.</span></div>
+        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b>: TEAMtalk, Football Insider, club sites, mixed-record nationals.</span></div>
+        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b>: Fichajes, Africa Foot, Foot Sur 7, Média Foot, fan posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> for the full rumour sweep, then traced to the original reporter for weighting, never weighted as a primary source themselves.</span></div>
+      </div>
+      <div class="col">
+        <h5>Weighting Model &amp; Recency Decay</h5>
+        <div class="weights">
+          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+          <span class="w">Berta network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+        </div>
+        <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
+        <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom and Hadj Moussa fall on this basis.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b>: the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window: fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
+      </div>`
+};
+
+/*==ENDDATA==*/
+
+/* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */
+(function(){
+  const rs=document.documentElement.style;
+  rs.setProperty('--red',BRAND.primary);
+  rs.setProperty('--red-bright',BRAND.primaryBright);
+  rs.setProperty('--red-deep',BRAND.primaryDeep);
+  rs.setProperty('--primary-rgb',BRAND.primaryRgb);
+  document.title='Mercato IQ: '+BRAND.club;
+  document.getElementById('brandName').innerHTML='Mercato <b>IQ</b> · '+BRAND.club;
+  document.getElementById('monoText').textContent=BRAND.mono;
+  document.getElementById('crumb').innerHTML=BRAND.breadcrumb.map(x=>`<a href="#">${x}</a><span class="sep">›</span>`).join('')+`<b>${BRAND.club}</b>`;
+  const set=(id,h)=>{const el=document.getElementById(id); if(el) el.innerHTML=h||'';};
+  set('heroH2',PROSE.heroH2); set('heroLede',PROSE.heroLede); set('metaRow',PROSE.metaRow);
+  set('statStrip',PROSE.stats); set('panel-position',PROSE.positionPanel);
+  set('pendingNote',PROSE.confirmedPending); set('pricingBanner',PROSE.pricingBanner);
+  set('excludedNote',PROSE.excludedNote); set('methodLegend',PROSE.methodLegend);
+  set('inSub',PROSE.incomingSub); set('outSub',PROSE.outgoingSub);
+  set('spendInV',PROSE.spendIn.v); set('spendInX',PROSE.spendIn.x);
+  set('spendOutV',PROSE.spendOut.v); set('spendOutX',PROSE.spendOut.x);
+  const dd=document.getElementById('discDate'); if(dd) dd.textContent=REPORT_META.asof;
+})();
+function srcLinksHTML(name){
+  const keys = LINKMAP[name] || [];
+  if(!keys.length) return '<span class="hubnote">No verified link held for this thread: traced source named in the row.</span>';
+  return keys.map(k=>{const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;}).join('');
+}
+
+/* ---------- RENDER ---------- */
+const lightColor = {g:'var(--green)', y:'var(--yellow)', o:'var(--orange)', r:'var(--crit)'};
+const trendGlyph = {up:'⬆', flat:'➡', down:'⬇'};
+
+function probCell(prob, light){
+  if(light==='confirmed') return `<span class="confirmed">CONFIRMED</span>`;
+  return `<div class="prob-wrap">
+      <span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 7px ${lightColor[light]}"></span>
+      <div class="prob-bar"><div class="prob-fill" style="width:${prob}%;background:${lightColor[light]}"></div></div>
+      <span class="prob-val" style="color:${lightColor[light]}">${prob}%</span>
+    </div>`;
+}
+function tierBadge(t){ return `<span class="tier t${t}">T${t}</span>`; }
+function trendCell(tr){
+  const cls = tr==='up'?'up':tr==='down'?'down':'flat';
+  return `<span class="trend ${cls}">${trendGlyph[tr]}</span>`;
+}
+
+function lightFor(v){ return v>50?'g':v>=30?'y':v>=15?'o':'r'; }
+function rateRows(p){
+  const tl = p.tlight || lightFor(p.truth);
+  const hl = p.light  || lightFor(p.prob);
+  return `<div class="rate">
+      <div class="rate-row"><span class="rl">True?</span><span class="rate-dot" style="background:${lightColor[tl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.truth}%;background:${lightColor[tl]}"></div></div><span class="rate-val" style="color:${lightColor[tl]}">${p.truth}%</span></div>
+      <div class="rate-row"><span class="rl">Happens?</span><span class="rate-dot" style="background:${lightColor[hl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.prob}%;background:${lightColor[hl]}"></div></div><span class="rate-val" style="color:${lightColor[hl]}">${p.prob}%</span></div>
+    </div>`;
+}
+
+function renderTable(list, id){
+  document.getElementById(id).innerHTML = list.map((p,i)=>`
+    <tr class="rumour-row" data-row="${id}-${i}" tabindex="0" aria-expanded="false">
+      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}${p.isNew?'<span class="new-tag">NEW</span>':''}<span class="src-toggle">SOURCES &#9656;</span></div><div class="pl-sub">${p.sub}</div></td>
+      <td data-label="Club">${p.club}</td>
+      <td data-label="Pos"><span class="pos">${p.pos}</span></td>
+      <td class="fee" data-label="Reported">${p.report}</td>
+      <td data-label="Source">${p.src} ${tierBadge(p.tier)}</td>
+      <td class="fee" data-label="Est. fee">${p.fee}</td>
+      <td data-label="Rating">${rateRows(p)}</td>
+      <td data-label="Trend">${trendCell(p.trend)}</td>
+      <td class="note" data-label="Analysis">${p.note}</td>
+    </tr>
+    <tr class="src-row" data-for="${id}-${i}"><td colspan="9"><div class="src-links"><span class="lbl">TRACED SOURCES</span>${srcLinksHTML(p.name)}</div></td></tr>`).join('');
+  document.querySelectorAll(`#${id} tr.rumour-row`).forEach(row=>{
+    const open = ()=>{
+      const tgt = document.querySelector(`tr.src-row[data-for="${row.dataset.row}"]`);
+      const isOpen = tgt.classList.toggle('open');
+      row.classList.toggle('open', isOpen);
+      row.setAttribute('aria-expanded', isOpen?'true':'false');
+    };
+    row.addEventListener('click', e=>{ if(e.target.closest('a')) return; open(); });
+    row.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+  });
+}
+renderTable(INCOMING,'incoming');
+renderTable(OUTGOING,'outgoing');
+
+/* confirmed ledger */
+function renderLedger(list, id, emptyMsg){
+  const el = document.getElementById(id);
+  if(!list.length){ el.innerHTML = `<div class="empty">${emptyMsg}</div>`; return; }
+  el.innerHTML = list.map(d=>`
+    <div class="deal">
+      <div class="dmeta">
+        <div class="dname">${d.name}</div>
+        <div class="dsub">${d.sub} · → ${d.to}</div>
+        <div class="dnote">${d.note}</div>
+        <span class="status ${d.status}">${d.statusTxt}</span>
+      </div>
+      <div class="dfee ${d.free?'free':''}">${d.fee}</div>
+    </div>`).join('');
+}
+renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing.');
+renderLedger(CONFIRMED_OUT,'confirmedOut','No confirmed departures yet.');
+document.getElementById('cinCount').textContent = CONFIRMED_IN.length;
+document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
+
+/* watchlist with direction filter */
+function renderWatchlist(filter){
+  const rows = WATCHLIST.filter(w => filter==='all' || w.dir===filter);
+  document.getElementById('watchlist').innerHTML = rows.map(w=>`
+    <div class="wl-item ${w.dir}" data-wl="${w.name}">
+      <div class="wmeta">
+        <div class="wtop">
+          <span class="wname">${w.name}</span>
+          <span class="wclub">${w.dir==='in'?'← '+w.club:'→ '+w.club}</span>
+          <span class="wl-dir ${w.dir}">${w.dir.toUpperCase()}</span>
+        </div>
+        <div class="wnote">${w.note}</div>
+        <div class="src-links" style="display:none"><span class="lbl">TRACED SOURCE</span>${(()=>{const k=WL_LINKMAP[w.name];if(!k) return '<span class="hubnote">Source named above; no verified link held.</span>';const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;})()}</div>
+      </div>
+      <div class="wright">
+        <span class="wpos">${w.pos}</span>
+        <span class="wage">${w.age}</span>
+        <span class="tier t${w.tier}" style="font-family:var(--mono);font-size:10px;padding:1px 5px;border-radius:4px">T${w.tier}</span>
+      </div>
+    </div>`).join('');
+}
+renderWatchlist('all');
+document.getElementById('watchlist').addEventListener('click', e=>{
+  if(e.target.closest('a')) return;
+  const item = e.target.closest('.wl-item'); if(!item) return;
+  const box = item.querySelector('.src-links');
+  if(box) box.style.display = box.style.display==='none' ? 'flex' : 'none';
+});
+document.querySelectorAll('.wl-tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.wl-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderWatchlist(btn.dataset.f);
+  });
+});
+
+/* Top 10 combined by probability (exclude confirmed=100 absolute, but include as flag) */
+const combined = [
+  ...INCOMING.map(p=>({...p, dir:'IN'})),
+  ...OUTGOING.filter(p=>p.light!=='confirmed').map(p=>({...p, dir:'OUT'}))
+].sort((a,b)=>b.prob-a.prob).slice(0,10);
+
+document.getElementById('top10').innerHTML = combined.map((p,i)=>`
+  <div class="rank">
+    <span class="n">${String(i+1).padStart(2,'0')}</span>
+    <span class="nm">${p.name} <small>${p.dir} · ${p.club}</small></span>
+    <span class="pct" style="color:${lightColor[p.light]}">${p.prob}%</span>
+  </div>`).join('');
+
+function chips(arr){ return arr.map(c=>`<div class="chip"><span class="ar">${c.ar}</span><span>${c.t}</span></div>`).join(''); }
+document.getElementById('movers').innerHTML =
+  `<div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--green);margin:2px 0 4px">RISERS</div>${chips(RISERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--crit);margin:12px 0 4px">FALLERS</div>${chips(FALLERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--gold);margin:12px 0 4px">NEW ENTRIES</div>${chips(NEW)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--muted);margin:12px 0 4px">IGNORE</div>${chips(IGNORE)}`;
+
+document.getElementById('positions').innerHTML = POSITIONS.map(p=>`
+  <div class="pos-need">
+    <span>${p.p} <small style="color:var(--muted);font-family:var(--mono);font-size:11px">${p.x}</small></span>
+    <span class="heatbar"><span class="heatfill" style="width:${p.w}%"></span></span>
+  </div>`).join('');
+
+/* last-updated stamp + live freshness ticker (single source: REPORT_META.updated ISO) */
+(function(){
+  document.getElementById('kicker').textContent =
+    `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
+  document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
+  const foot = document.getElementById('updatedFoot');
+  if(foot) foot.textContent = `Living tracker - last refreshed ${REPORT_META.asof}.`;
+
+  const t0 = new Date(REPORT_META.updated).getTime();
+  const stamp = document.getElementById('stamp');
+  function fmt(ms){
+    if(isNaN(ms)) return ['CURRENT','var(--muted)'];
+    if(ms < 0)   return ['POST-DATED','var(--muted)'];
+    const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
+    let txt;
+    if(s < 60)      txt = s+'s';
+    else if(m < 60) txt = m+'m '+(s%60)+'s';
+    else if(h < 24) txt = h+'h '+(m%60)+'m';
+    else            txt = d+'d '+(h%24)+'h';
+    const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
+    return ['UPDATED '+txt+' AGO', col];
+  }
+  function tick(){
+    const [txt,col] = fmt(Date.now() - t0);
+    stamp.innerHTML =
+      `<span class="seg dt">REFRESHED&nbsp;<b>${REPORT_META.asof}</b></span>`+
+      `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ===== TAB + PAGER ENGINE (scroll-reduction protocol) =====
+   Names chosen to avoid window globals (top, name, status, history etc.). */
+(function(){
+  const tabOrder = ['overview','confirmed','in','out','index','briefing','position','method'];
+  const tabBtns  = Array.from(document.querySelectorAll('.tabbtn'));
+  const meterEl  = document.getElementById('pgMeter');
+  const prevBtn  = document.getElementById('pgPrev');
+  const nextBtn  = document.getElementById('pgNext');
+  let curIdx = 0;
+
+  meterEl.innerHTML = tabOrder.map((t,i)=>`<span class="pg-dot${i===0?' on':''}" data-i="${i}" title="${t}"></span>`).join('');
+  const dots = Array.from(meterEl.querySelectorAll('.pg-dot'));
+
+  function showTab(idx, push){
+    if(idx<0 || idx>=tabOrder.length) return;
+    curIdx = idx;
+    const key = tabOrder[idx];
+    document.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+key));
+    tabBtns.forEach(b=>{
+      const on = b.dataset.go===key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on?'true':'false');
+    });
+    dots.forEach((d,i)=>d.classList.toggle('on', i===idx));
+    prevBtn.disabled = idx===0;
+    nextBtn.disabled = idx===tabOrder.length-1;
+    if(push!==false){ try{ window.history.replaceState(null,'','#tab-'+key); }catch(e){} }
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+
+  tabBtns.forEach(b=>b.addEventListener('click', ()=>showTab(tabOrder.indexOf(b.dataset.go))));
+  dots.forEach(d=>d.addEventListener('click', ()=>showTab(parseInt(d.dataset.i,10))));
+  prevBtn.addEventListener('click', ()=>showTab(curIdx-1));
+  nextBtn.addEventListener('click', ()=>showTab(curIdx+1));
+  document.addEventListener('keydown', e=>{
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if(e.key==='ArrowRight') showTab(curIdx+1);
+    if(e.key==='ArrowLeft')  showTab(curIdx-1);
+  });
+
+  const h = (window.location.hash||'').replace('#tab-','');
+  const start = tabOrder.indexOf(h);
+  showTab(start>=0 ? start : 0, false);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,740 @@
+<!--
+  SUNDERLAND AFC — TRANSFER INTELLIGENCE TERMINAL
+  Living tracker. To update: re-run searches, edit the DATA object below
+  (REPORT_META + INCOMING + OUTGOING + SUMMARY), and the page re-renders.
+  Self-contained single file. No external storage used.
+  Updated: 2026-06-05
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ — Tottenham Hotspur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;
+    --bg-2:#111318;
+    --panel:#16181e;
+    --panel-2:#1c1f26;
+    --line:#2a2e38;
+    --red:#ffffff;
+    --red-bright:#ffffff;
+    --red-deep:#999999;
+    --white:#f4f3ee;
+    --muted:#8b909c;
+    --muted-2:#5f6471;
+    --gold:#e8c249;
+    --gold-deep:#a07f12;
+    --green:#33c46a;
+    --yellow:#f2c531;
+    --orange:#ef8b2c;
+    --crit:#e9483f;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle pinstripe atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(226,31,38,0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(226,31,38,0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(232,194,73,0.05), transparent 55%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 22px}
+
+  /* ---------- HEADER ---------- */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(12,13,16,0.97),rgba(12,13,16,0.86));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 22px;max-width:1240px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px}
+  .crest{
+    width:46px;height:46px;flex:none;border-radius:7px;
+    position:relative;overflow:hidden;background:#0e1014;
+    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(226,31,38,0.35);
+    display:grid;place-items:center;
+  }
+  .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
+  .crest svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1 b{color:var(--red-bright)}
+  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .status-pill{
+    display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
+    color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:54px 0 26px;border-bottom:1px solid var(--line)}
+  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,66px);line-height:.92;text-transform:uppercase;letter-spacing:.5px;max-width:none}
+  .hero h2 em{font-style:normal;color:var(--red-bright)}
+  .hero .lede{margin-top:20px;max-width:none;color:#c9ccd4;font-size:17px;line-height:1.62}
+  .hero .lede b{color:var(--white)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- UPDATED STAMP ---------- */
+  .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
+  .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .updated-stamp .seg.ed{background:var(--red);color:#fff;font-weight:700;letter-spacing:1px}
+  .updated-stamp .seg.dt{color:var(--muted);border-right:1px solid var(--line)}
+  .updated-stamp .seg.dt b{color:var(--white)}
+  .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
+  .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:34px 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
+  .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .stat .v{font-family:var(--display);font-weight:400;font-size:30px;margin-top:8px;line-height:1;letter-spacing:.5px}
+  .stat .v small{font-size:14px;color:var(--muted);font-family:var(--mono)}
+  .stat.gold::after{background:var(--gold)}
+  .stat.gold .v{color:var(--gold)}
+
+  /* ---------- SECTION ---------- */
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  .sec-head h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;letter-spacing:.5px}
+  .sec-head .num{font-family:var(--mono);font-size:12px;color:var(--red-bright);border:1px solid var(--red-deep);border-radius:6px;padding:3px 8px}
+  .sec-sub{color:var(--muted);font-size:14px;margin-bottom:26px;max-width:80ch}
+
+  /* analysis cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative}
+  .card h4{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .card h4 .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--bg);background:var(--gold);padding:2px 7px;border-radius:4px}
+  .card p{color:#c3c7d0;font-size:14.5px;margin-bottom:11px}
+  .card p b{color:var(--white)}
+  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(226,31,38,0.07),transparent)}
+  .card ul{list-style:none;margin:6px 0 4px}
+  .card li{position:relative;padding-left:20px;color:#c3c7d0;font-size:14px;margin-bottom:7px}
+  .card li::before{content:"›";position:absolute;left:2px;color:var(--red-bright);font-weight:700}
+  .verdict{margin-top:14px;padding:12px 14px;border-radius:8px;background:var(--panel-2);border:1px dashed var(--line);font-size:13.5px}
+  .verdict b{color:var(--gold)}
+
+  .riskgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:6px}
+  .riskgrid > div{padding:22px 24px}
+  .risk-r{background:linear-gradient(180deg,rgba(51,196,106,0.06),transparent);border-right:1px solid var(--line)}
+  .risk-d{background:linear-gradient(180deg,rgba(233,72,63,0.06),transparent)}
+  .risk-r h5,.risk-d h5{font-family:var(--display);font-weight:400;font-size:16px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px}
+  .risk-r h5{color:var(--green)} .risk-d h5{color:var(--crit)}
+  .riskgrid li{font-size:13.5px}
+
+  /* ---------- TABLES ---------- */
+  .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{width:100%;border-collapse:collapse;min-width:820px}
+  thead th{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);
+    text-align:left;padding:14px 11px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:nowrap;position:sticky;top:0
+  }
+  tbody td{padding:13px 11px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:rgba(226,31,38,0.05)}
+  tbody tr:last-child td{border-bottom:none}
+  .pl-name{font-weight:700;color:var(--white);font-size:14.5px}
+  .pl-sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .pos{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:2px 6px;white-space:nowrap}
+  .fee{font-family:var(--mono);color:#dfe2e8;white-space:nowrap}
+  .tier{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap}
+  .t1{color:#7fe3a3;background:rgba(51,196,106,0.13)}
+  .t2{color:#bfe07f;background:rgba(160,224,127,0.12)}
+  .t3{color:var(--yellow);background:rgba(242,197,49,0.12)}
+  .t4{color:#ef9a9a;background:rgba(233,72,63,0.12)}
+  .prob-wrap{display:flex;align-items:center;gap:9px;min-width:120px}
+  .prob-bar{flex:1;height:6px;border-radius:99px;background:#262a33;overflow:hidden}
+  .prob-fill{height:100%;border-radius:99px}
+  .prob-val{font-family:var(--mono);font-size:12px;font-weight:700;width:34px;text-align:right}
+  .ldot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .trend{font-family:var(--mono);font-weight:700;font-size:14px}
+  .up{color:var(--green)} .down{color:var(--crit)} .flat{color:var(--muted)}
+  td.note{color:var(--muted);font-size:13px;max-width:none;line-height:1.5}
+  .confirmed{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;color:var(--bg);background:var(--white);padding:3px 7px;border-radius:4px;font-weight:700}
+
+  /* ---------- SUMMARY ---------- */
+  .summary-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+  .box h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:16px;color:var(--red-bright)}
+  .rank{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .rank:last-child{border:none}
+  .rank .n{font-family:var(--display);font-size:18px;color:var(--muted-2);width:26px}
+  .rank .nm{flex:1;font-size:14px}
+  .rank .nm small{color:var(--muted);font-family:var(--mono);font-size:11px;margin-left:6px}
+  .rank .pct{font-family:var(--mono);font-weight:700;font-size:13px}
+  .chiplist{display:flex;flex-direction:column;gap:11px}
+  .chip{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:#c8ccd4}
+  .chip .ar{font-family:var(--mono);font-weight:700;flex:none}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .pos-need{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,46,56,0.55);font-size:14px}
+  .pos-need:last-child{border:none}
+  .heatbar{height:7px;border-radius:99px;width:120px;background:#262a33;overflow:hidden}
+  .heatfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--red))}
+  .spend{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
+  .spend .s{flex:1;min-width:220px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .spend .s .l{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+  .spend .s .v{font-family:var(--display);font-size:30px;margin-top:6px;letter-spacing:.5px}
+  .spend .s.in .v{color:var(--green)} .spend .s.out .v{color:var(--red-bright)}
+  .spend .s .x{font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* ---------- CONFIRMED LEDGER ---------- */
+  .ledger{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .led-col{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .led-in{border-top:3px solid var(--green)}
+  .led-out{border-top:3px solid var(--red)}
+  .led-head{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:17px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+  .led-dot{width:9px;height:9px;border-radius:50%}
+  .led-dot.in{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .led-dot.out{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .led-count{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 8px}
+  .deal{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .deal:last-child{border:none}
+  .deal .dmeta{flex:1}
+  .deal .dname{font-weight:700;color:var(--white);font-size:14.5px}
+  .deal .dsub{font-size:11.5px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .deal .dnote{font-size:12.5px;color:#c3c7d0;margin-top:6px;line-height:1.46}
+  .deal .dfee{font-family:var(--mono);font-weight:700;font-size:13px;white-space:nowrap;text-align:right}
+  .deal .dfee.free{color:var(--gold)}
+  .status{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:1px;padding:3px 7px;border-radius:4px;margin-top:8px;font-weight:700}
+  .status.done{background:var(--green);color:var(--bg)}
+  .status.exit{background:var(--white);color:var(--bg)}
+  .status.pending{background:rgba(242,197,49,0.13);color:var(--yellow);border:1px solid var(--gold-deep)}
+  .empty{color:var(--muted-2);font-size:13px;font-style:italic;padding:14px 0}
+  .pending-note{margin-top:16px;font-size:12.5px;color:var(--muted);border:1px dashed var(--line);border-radius:8px;padding:12px 14px}
+  .pending-note b{color:var(--gold)}
+
+  /* ---------- WATCHLIST ---------- */
+  .wl-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .wl-tab{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 15px;cursor:pointer;transition:all .15s}
+  .wl-tab:hover{color:var(--white);border-color:var(--muted)}
+  .wl-tab.active{background:var(--red);color:#fff;border-color:var(--red)}
+  .wl-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .wl-item{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px 15px;border-left-width:3px}
+  .wl-item.in{border-left-color:var(--green)} .wl-item.out{border-left-color:var(--red)}
+  .wl-item .wmeta{flex:1;min-width:0}
+  .wl-item .wtop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .wl-item .wname{font-weight:700;font-size:14px;color:var(--white)}
+  .wl-item .wclub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+  .wl-item .wnote{font-size:12.5px;color:#b6bac4;margin-top:5px;line-height:1.45}
+  .wl-item .wright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none}
+  .wl-item .wpos{font-family:var(--mono);font-size:10px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:1px 5px}
+  .wl-item .wage{font-family:var(--mono);font-size:10.5px;color:var(--muted-2)}
+  .wl-dir{font-family:var(--mono);font-size:9px;letter-spacing:1px;padding:1px 5px;border-radius:3px;font-weight:700}
+  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(226,31,38,0.14);color:#ef9a9a}
+  @media(max-width:900px){.wl-list{grid-template-columns:1fr}}
+
+  /* ---------- METHODOLOGY / LEGEND ---------- */
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .legend .col h5{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .legend .row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#c3c7d0;margin-bottom:9px}
+  .legend .row .k{font-family:var(--mono);font-weight:700;flex:none;min-width:48px}
+  .weights{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .w{font-family:var(--mono);font-size:11.5px;color:#c3c7d0;border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+  .w b{color:var(--gold)}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:12.5px}
+  footer b{color:var(--white)}
+  .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
+
+  /* entrance animation */
+  .reveal{opacity:0;transform:translateY(16px);animation:rise .7s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- MOBILE: tables collapse into cards ---------- */
+  @media(max-width:680px){
+    .tbl-scroll{overflow-x:visible;border:none;background:transparent;border-radius:0}
+    table{min-width:0;display:block}
+    thead{display:none}
+    tbody{display:block}
+    tbody tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px 16px 12px;margin-bottom:14px}
+    tbody tr:hover{background:var(--panel)}
+    tbody td{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:8px 0;border-bottom:1px solid rgba(42,46,56,0.5);font-size:13px}
+    tbody td:last-child{border-bottom:none}
+    tbody td::before{content:attr(data-label);font-family:var(--mono);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);flex:none;padding-top:3px}
+    tbody td.cell-name{display:block;border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:2px}
+    tbody td.cell-name::before{display:none}
+    tbody td.cell-name .pl-name{font-size:16px}
+    td.note{display:block;max-width:none;color:#c3c7d0;font-size:12.5px}
+    td.note::before{display:block;margin-bottom:5px}
+    .prob-wrap{min-width:0;flex:1;max-width:62%}
+  }
+
+  @media(max-width:900px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .summary-grid{grid-template-columns:1fr}
+    .riskgrid{grid-template-columns:1fr}
+    .risk-r{border-right:none;border-bottom:1px solid var(--line)}
+    .legend{grid-template-columns:1fr}
+    .twocol{grid-template-columns:1fr}
+    .brand .sub{display:none}
+  }
+  /* ---------- PRINT ---------- */
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    header.top{position:static}
+    body::before{opacity:.4}
+    .reveal{opacity:1;transform:none;animation:none}
+    section,.card,.box,.led-col,.tbl-scroll,.summary-grid,.cards{break-inside:avoid}
+    .status-pill{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="crest"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/wAARCAEYARgDACIAAREBAhEB/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMAAAERAhEAPwD5/ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA+/6KKKACiiigD4AooooAKKKKACiiigAooooAKKKKACnI21gSM02imnbUCyVWQbun9KgZdrU+J8Ng9KYxy2etazcXG/USvcbRRRWIwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPv+iiigAooooA+AKKKKACiiigAooooAKKKKACiiigAooooAKKcAOc02mAUUUUgCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA+/6KKKACiiigD4AooooAKKKKACiiigAooooAKKKKACnKpZgB3pACTVqJQq8jk1pThzysJuxDKgXGOlR1bZdy44qsY3BxtP5VrXpcj93YSdxlFOKleoI+tNrnZQUUUUgCiinBSx4GaaAbRUvlMVzx9Kjoaa3ASiiikAUUUUAFFFFABRRRQAUUUUAff9FFFABRRRQB8AUUUUAFFFFABRRRQAUUUUAFFFFAE0K5fcegqxjFQwfcP1qWvRw0UoGU3qLxikIJ4BxmkzS55FbpKxC0IpwSAfTiq9XGXcGqqRg81wYiDUr20NYO6G0UUVzFkkcZf6d6sBQoAHSkRQiAHqeaea76NJKPMzOUuhG5wMAdRVY8HmrmecYzVeYYaliINq/YcX0IqKKK4SwooooAKKKKACiiigAooooA+/6KKKACiiigD4AooooAKKKKACiiigAooooAKKKKAJoTgketTVVBKkEVZRt654z6V24ap9kzmuotFFFdliLBUcqEjIznuKkpcn6H1qKkOaLQ07Mp06NcuKnZA3bn1pVQL0H41xLDy5i+dWFoo5pCQOSRXfokjPcdjg1DN90UrT44H61E8hfGcVzVq0XFxRcYu9xlFFFcBoFFFFABRRRQAUUUUAFFFFAH3/AEUUUAFFFFAHwBRRRQAUUUUAFFFFABRRRQAUUUUAHepYn2HHY1FRVRfK7oC6CMAg8GlPWqqSsnHap1IOMH3r0KVVTVm9TFwY7ijiiitepIHFHfFBGaZK+0YB5onJRV2NK+gkkm3gdagLE96Qkk80lefVqub8jWMbBRRRWBQUUUUAFFFFABRRRQAUUUUAFFFFAH3/AEUUUAFFFFAHwBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABSgkHikopp2AtpJv7DPpTqqKxU5HWrSsGUH9K76FXmXK9zOURc4BJqrI25jU0rYTHrxVes8TPaI4LqJRRRXGWFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAff9FFFABRRRQB8AUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFTwEcg1BU0A+cmtaTtNWE9hZzkgCoKsT42++ar1WI+MUdgooorAoKKKKACiiigAooooAKKKKACiiigAooooA+/6KKKACiiigD4AooooAKKKKACiiigAooooAKKKKACiiigAooooAWpYThqiqwpEcY4571rSjeQpbEUjFmOaZT5GVsbRimUqmst7gthKKKKzGFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAff9FFFABRRRQB8AUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUoGegqSKMMSSeB2qdQAuAOPWtqdGU9SXJIijhJ5YcelE3b0qakZAeGHPtXUqPLBpbsnmu9SnRUrwleRgj2qKuFxcXZmlwoooqQCiiigAooooAKKKKACiiigAooooAKKKKAPv+iiigAooooA+AKKKKACiiigAooooAKKKKACiiigApyqXOBTaljdVBznPtVwSbs2DJkXaoGOfWlJA6nFRF3djtBxTwgwN2c9we1d8JxS5YmTXViGZR2/Gk87jAX86ftUnkfjilxjpRy1L7hdEYmx/DUT7D90H3zVnHOSOaRlDDnj6ConSlLdopSRUoqSSMofamVxSi4uzLEoooqQCiiigAooooAKKKKACiiigAooooA+/wCiiigAooooA+AKKKKACiiigAooooAKKKKACiiigBVG44qTyjuAz1qMAntUkcbNyOBWkEm9UJk4BAAXGBRg9zk0zcRwRnHenKwJ64NejFxskZu4tGaORyeRSkgnnpV6bokSgHnmkLhfSjerDqM+1Lmj13HYG5VlI5xxVSrnBII7VVflia48THZlw2G0UUVyFhRRRQAUUUUAFFFFABRRRQAUUUUAff8ARRRQAUUUUAfAFFFFABRRRQAUUUUAFFFFABRRRQBYhHyH1JxSp0IycjoKjik2HB6VJkK+f4TyDXZRa5fMmVx5AppQEcDFSZBpD+VdXLFrzM+Yj+denI9DUbSlhjAFWBgd6idAGBIBHfFZVITS91lRaZASSaUcAHP4ChlweOlIVPcVwO99dzQlWUKpHPtUNFFOU3LcVgoooqBhRRRQAUUUUAFFFFABRRRQAUUUUAff9FFFABRRRQB8AUUUUAFFFFABRRRQAUUUUAFFFFAB3qRGGCD+dR0VUZNO6AsxyBvlY9Ohp+T0IwaqA4NTrLkfMenSuujX/mIlHsS4prD5cZyKA6t0IH1pc8ZJArqvGWtyLMaYlI6nP6VHIpAyWz7U8yhRkHn0qF3LnNclVQV9dS43GUUUVxlhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH3/RRRQAUUUUAfAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABS5JpKKLgFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB9/wBFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//Z" alt="Tottenham Hotspur badge" onerror="this.style.display='none'"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)">THFC</text></svg></div>
+      <div>
+        <h1>Mercato <b>IQ</b> · Tottenham Hotspur</h1>
+        <div class="sub">The transfer market, decoded · Independent intelligence</div>
+      </div>
+    </div>
+    <div class="status-pill"><span class="dot"></span> WINDOW OPENS 15 JUN · <span id="asof"></span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero reveal">
+    <div class="updated-stamp" id="stamp"></div>
+    <div class="kicker" id="kicker">Data as of 5 June 2026</div>
+    <h2><em>De Zerbi</em>'s overhaul begins: a radical rebuild after a 17th-placed survival</h2>
+    <p class="lede">Spurs enter the summer in full reset. After back-to-back <b>17th-placed finishes</b> and <b>no European football</b>, Roberto <b>De Zerbi</b> (appointed in March on a long-term deal) is overseeing what reporting calls a <b>radical squad overhaul</b>: multiple players have reportedly agreed to join, leadership and experience are priorities, and <b>Andy Robertson</b> is set to arrive on a free. Recruitment runs through sporting director <b>Johan Lange</b>.</p>
+    <div class="meta-row">
+      <span>DECISION-MAKER: <b>Johan Lange</b> (Sporting Director)</span>
+      <span>HEAD COACH: <b>Roberto De Zerbi</b></span>
+      <span>OWNER: <b>ENIC Group</b></span>
+      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    </div>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stats reveal" style="animation-delay:.08s">
+    <div class="stat"><div class="l">2025/26 Finish</div><div class="v">17<small>th</small></div></div>
+    <div class="stat"><div class="l">2026/27 Europe</div><div class="v">NONE</div></div>
+    <div class="stat"><div class="l">Est. Gross Spend</div><div class="v">£100–160<small>m</small></div></div>
+    <div class="stat"><div class="l">Est. Sales</div><div class="v">£80–140<small>m</small></div></div>
+    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">85<small>%</small></div></div>
+  </div>
+
+  <!-- CONFIRMED BUSINESS -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">01</span></div>
+    <p class="sec-sub">Done deals and locked-in contract outcomes. This is a living ledger: as the rumours below are officially confirmed they move up here and leave the speculative tables. <b>Contract status sets the fee</b> — an out-of-contract player aged 24+ leaves on a full Bosman free, so no fee applies regardless of homegrown status; the holder's-premium logic only governs players still under contract.</p>
+    <div class="ledger">
+      <div class="led-col led-in">
+        <div class="led-head"><span class="led-dot in"></span> In <span class="led-count" id="cinCount"></span></div>
+        <div id="confirmedIn"></div>
+      </div>
+      <div class="led-col led-out">
+        <div class="led-head"><span class="led-dot out"></span> Out <span class="led-count" id="coutCount"></span></div>
+        <div id="confirmedOut"></div>
+      </div>
+    </div>
+    <div class="pending-note"><b>Window opens 15 June; nothing is registered yet.</b> The settled business is in the dugout: <b>De Zerbi</b> is the long-term head coach, and <b>Andy Robertson</b> is reported to have agreed a free transfer from Liverpool for 1 July. Multiple other "yes" agreements are reported but unsigned, and enter the ledger only on announcement.</div>
+  </section>
+
+  <!-- INCOMING -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">02</span></div>
+    <p class="sec-sub">Probability reflects recency (30%), source reliability (25%), tactical fit (15%), Lange network (15%), financial realism (10%) and competition (5%) — not fan desire.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Probability</th><th>Trend</th><th>Why it sits here / obstacles</th>
+        </tr></thead>
+        <tbody id="incoming"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- OUTGOING -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">03</span></div>
+    <p class="sec-sub">Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.</p>
+    <div class="verdict" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(226,31,38,0.08),var(--panel-2))">
+      <b>Pricing principle: Spurs price under-contract assets at a holder's premium</b>, though a 17th-placed season and an overhaul soften the floor on fringe and surplus names. Long deals, minutes and rival interest lift fees above consensus; players De Zerbi wants out are priced to move.
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Sale Prob.</th><th>Trend</th><th>Read</th>
+        </tr></thead>
+        <tbody id="outgoing"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ANALYSIS: MODEL + FINANCE -->
+  <section class="reveal" style="animation-delay:.12s">
+    <div class="sec-head"><h3>Club Position</h3><span class="num">04</span></div>
+    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the European trade-off.</p>
+
+    <div class="cards">
+      <!-- THE MODEL -->
+      <div class="card">
+        <h4>The Model <span class="tag">CORE PRINCIPLE</span></h4>
+        <p>A <b>full rebuild under Roberto De Zerbi</b>, with sporting director <b>Johan Lange</b> leading recruitment for ENIC. After two 17th-placed finishes, the brief is wholesale: add leadership, experience and quality to a squad short of all three.</p>
+        <div class="quote">Reporting describes a "radical overhaul", with several targets said to have already agreed personal terms as De Zerbi reshapes the side in his image.</div>
+        <p><b>This window's logic:</b> rebuild the spine, add proven leaders, and install De Zerbi's possession-based style.</p>
+        <ul>
+          <li>Targets linked: experienced defenders and midfielders plus a forward.</li>
+          <li>Markets: a mix of proven quality and De Zerbi-fit technical profiles.</li>
+          <li>Robertson (free) is the early concrete addition.</li>
+        </ul>
+        <div class="verdict"><b>Tracker implication:</b> upgrade leadership and De Zerbi-system fits; discount pure-potential punts given the urgency to climb.</div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="card">
+        <h4>Financial Position <span class="tag">STRONG</span></h4>
+        <p>Backed by <b>ENIC</b>, Spurs run a financially conservative model with strong stadium and commercial revenue, but two poor seasons and no Europe constrain the upside.</p>
+        <ul>
+          <li><b>No European football</b> means the looser <b>85%</b> cost cap, a small advantage for a big rebuild.</li>
+          <li>Sales of surplus players are expected to fund incomings.</li>
+          <li>The stadium debt and wage discipline shape the budget.</li>
+        </ul>
+        <div class="verdict"><b>Caveat:</b> ambition is real but Spurs rarely overspend; expect smart trading.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPUTATION + RISK/REWARD -->
+  <section class="reveal" style="animation-delay:.02s">
+    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">05</span></div>
+    <p class="sec-sub">Spurs remain a major club, but two 17th-placed seasons and no Europe dent the pitch to targets, even as the 85% cap eases a big rebuild.</p>
+
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card">
+        <h4>Reputational Standing</h4>
+        <p>A global brand with an elite stadium, but on-pitch standing has slipped after consecutive relegation-flirting seasons. De Zerbi's appointment and an overhaul are the reset.</p>
+        <ul>
+          <li>De Zerbi earned a strong reputation at Brighton, aiding the recruitment pitch.</li>
+          <li>Several players reportedly keen to join despite no Europe.</li>
+        </ul>
+        <div class="verdict"><b>Double edge:</b> the rebuild invites bids for prized names (a Vicario, for instance) even as Spurs add.</div>
+      </div>
+      <div class="card">
+        <h4>The SCR Tightening <span class="tag">KEY TENSION</span></h4>
+        <p>The new <b>Squad Cost Ratio</b> caps wages, agent fees and amortisation at <b>85% of revenue for clubs outside Europe</b>, the looser of the two limits (European clubs sit at 70%). No continental football is a sporting blow but a quiet financial edge over rivals juggling the tighter cap.</p>
+        <p>For a club rebuilding heavily, the looser cap is genuinely useful, but a 17th-placed revenue base limits the ceiling.</p>
+        <ul>
+          <li>A 3-year net transfer position feeds the calculation.</li>
+          <li>Surplus sales extend headroom for the overhaul.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riskgrid">
+      <div class="risk-r">
+        <h5>▲ Reward, a De Zerbi-led climb back up the table</h5>
+        <ul>
+          <li>A coherent rebuild under a respected coach could lift Spurs quickly.</li>
+          <li>The 85% cap gives room to add several quality players.</li>
+          <li>Free and value signings (Robertson) stretch the budget.</li>
+        </ul>
+      </div>
+      <div class="risk-d">
+        <h5>▼ Risk, an overhaul that takes time to gel</h5>
+        <ul>
+          <li>Wholesale change risks a slow start and another anxious season.</li>
+          <li>Losing key assets mid-rebuild would set the project back.</li>
+          <li>No Europe limits revenue for the scale of change needed.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict" style="margin-top:18px;max-width:none">
+      <b>Net read:</b> a genuine overhaul, add leadership and De Zerbi-system fits (Robertson the early piece), funded by surplus sales and helped by the looser 85% cap, aiming to climb well clear of another relegation scrap.
+    </div>
+  </section>
+
+  <!-- WATCHLIST -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Full Rumour Index</h3><span class="num">06</span></div>
+    <p class="sec-sub">The comprehensive long tail — every other name in circulation (aggregated feeds incl. TransferFeed), kept compact and clearly tiered. These are monitoring-only, lower-credibility or cooling links that haven't earned a place in the analysed tables. Filter by direction.</p>
+    <div class="wl-tabs">
+      <button class="wl-tab active" data-f="all">All</button>
+      <button class="wl-tab" data-f="in">Targets In</button>
+      <button class="wl-tab" data-f="out">Possible Out</button>
+    </div>
+    <div class="wl-list" id="watchlist"></div>
+    <div class="pending-note" style="border-color:var(--line)"><b>Excluded as stale:</b> Postecoglou, Frank and Tudor-era stories are not live; Spurs' head coach is now De Zerbi, so any item naming a predecessor is out of date.</div>
+  </section>
+
+  <!-- SUMMARY OUTPUTS -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Daily Briefing</h3><span class="num">07</span></div>
+    <p class="sec-sub">The eight required readouts, regenerated each refresh.</p>
+
+    <div class="summary-grid">
+      <div class="box">
+        <h4>Top 10 Most Likely Movements <span style="color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:1px">· UNCONFIRMED · IN &amp; OUT</span></h4>
+        <div id="top10"></div>
+      </div>
+      <div class="box">
+        <h4>Risers · Fallers · New Entries · Ignore</h4>
+        <div class="chiplist" id="movers"></div>
+      </div>
+    </div>
+
+    <div class="twocol">
+      <div class="box">
+        <h4>Positions Most Likely Strengthened</h4>
+        <div id="positions"></div>
+      </div>
+      <div class="box">
+        <h4>Estimated Spend</h4>
+        <div class="spend">
+          <div class="s in"><div class="l">Gross Incoming</div><div class="v">£100–160m</div><div class="x">A spine rebuild: defenders, midfield and a forward; free and value deals stretch it further.</div></div>
+          <div class="s out"><div class="l">Outgoing Sales</div><div class="v">£80–140m</div><div class="x">Surplus and out-of-favour players sold to fund the overhaul; interest in a Vicario-type asset.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">08</span></div>
+    <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
+    <div class="legend">
+      <div class="col">
+        <h5>Source Tiers (current)</h5>
+        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b> — David Ornstein, Fabrizio Romano, BBC, The Athletic. <i>Used for:</i> the De Zerbi appointment, the Robertson free transfer, the overhaul reporting.</span></div>
+        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b> — Sky Sports, TeamTalk, reliable national and club writers.</span></div>
+        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b> — TEAMtalk, Football Insider, club sites, mixed-record nationals.</span></div>
+        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b> — Fichajes, Africa Foot, Foot Sur 7, Média Foot, fan posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> for the full rumour sweep, then traced to the original reporter for weighting — never weighted as a primary source themselves.</span></div>
+      </div>
+      <div class="col">
+        <h5>Weighting Model &amp; Recency Decay</h5>
+        <div class="weights">
+          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+          <span class="w">Lange network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+        </div>
+        <div class="row" style="margin-top:16px"><span class="k">0–7d</span><span>Very strong · <span class="k">8–14d</span> strong · <span class="k">15–30d</span> moderate</span></div>
+        <div class="row"><span class="k">31–60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom & Hadj Moussa fall on this basis.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="reveal">
+    <b id="updatedFoot">Living tracker — 5 Jun 2026.</b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <div class="disclaimer">
+      Built from publicly reported sources retrieved on 5 June 2026, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   DATA — edit this block on each daily update, page re-renders.
+   light: 'g'=green(>50%) 'y'=yellow(30-50%) 'o'=orange(15-30%) 'r'=red(<15%)
+   trend: 'up' | 'flat' | 'down'
+   ============================================================ */
+/* ── EDIT THESE TWO LINES EACH DAY ──────────────────────────
+   asof: human display date · updatedDate: ISO (drives freshness) */
+const REPORT_META = { asof: "6 Jun 2026", updatedDate: "2026-06-06", label: "Build · De Zerbi overhaul" };
+const CONFIRMED_IN = [
+  {name:"Andy Robertson", sub:"LB · Scotland", to:"joins on a free, 1 Jul", fee:"FREE", free:true, status:"done", statusTxt:"AGREED · FREE",
+   note:"Reported agreed: the experienced Scotland left-back arrives on a free when his Liverpool contract expires on 1 July, exactly the leadership and know-how De Zerbi has prioritised. Awaiting formal announcement."},
+];
+const CONFIRMED_OUT = [];
+const INCOMING = [
+  {name:"Experienced spine targets", sub:"Leadership & quality", club:"Multiple", pos:"—", report:"~4 days ago", src:"Fabrizio Romano / TeamTalk", tier:1, fee:"£90–140m total", prob:50, light:'y', trend:'up',
+   note:"Reporting says several players have agreed to join as De Zerbi rebuilds. The brief is leadership and experience across the spine; specific names firm up as the window opens. A genuinely radical overhaul."},
+  {name:"Forward addition", sub:"Goals for the rebuild", club:"Market", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£40–60m", prob:35, light:'y', trend:'flat',
+   note:"A reliable scorer is part of the plan; links include proven options as Spurs look to climb. Sourcing firming up."},
+];
+const OUTGOING = [
+  {name:"Surplus & out-of-favour", sub:"Overhaul exits", club:"Various", pos:"—", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", prob:60, light:'g', trend:'up',
+   note:"A radical overhaul means significant outgoings to fund and clear space. PRICING: De Zerbi-surplus names move at softer floors; assets under contract hold value."},
+  {name:"Guglielmo Vicario", sub:"GK · Italy", club:"Inter Milan", pos:"GK", report:"~1 wk ago", src:"Italian press", tier:3, fee:"~£17.5m", prob:30, light:'o', trend:'flat',
+   note:"Reported Inter interest at a cut price. PRICING: a sale depends on De Zerbi's plans in goal; holder's price applies if Spurs resist."},
+];
+const RISERS = [
+  {ar:"⬆", t:"<b>Robertson</b> — agreed on a free; leadership for the rebuild."},
+  {ar:"⬆", t:"<b>Overhaul</b> — multiple targets reported to have said yes."},
+];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Status-quo squad</b> — wholesale change is coming under De Zerbi."},
+  {ar:"⬇", t:"<b>Predecessor-era stories</b> — out of date now De Zerbi is in."},
+];
+const NEW = [
+  {ar:"✦", t:"Manager: <b>De Zerbi</b> long-term; <b>Johan Lange</b> sporting director."},
+  {ar:"✦", t:"In: <b>Robertson</b> (free) + a spine rebuild. Out: surplus, possibly <b>Vicario</b>."},
+];
+const IGNORE = [
+  {ar:"✕", t:"<b>Postecoglou / Frank / Tudor</b>-era links — not live."},
+  {ar:"✕", t:"<b>European-football planning</b> — Spurs have none for 2026/27."},
+];
+const POSITIONS = [
+  {p:"Central midfield", w:80, x:"Leadership and control for De Zerbi"},
+  {p:"Centre-back", w:72, x:"Experience and defensive rebuild"},
+  {p:"Forward", w:65, x:"Goals to climb the table"},
+  {p:"Left-back", w:45, x:"Robertson agreed; depth settled"},
+  {p:"Goalkeeper", w:40, x:"Vicario's future under review"},
+];
+const WATCHLIST = [
+  {name:"Robertson", club:"Liverpool", pos:"LB", dir:"in", age:"~3d", tier:1, note:"(In ledger.) Agreed free transfer for 1 July."},
+  {name:"Vicario", club:"Inter Milan", pos:"GK", dir:"out", age:"~1 wk", tier:3, note:"(Also in main table.) Cut-price Inter interest reported."},
+  {name:"De Zerbi targets", club:"Multiple", pos:"—", dir:"in", age:"~4d", tier:1, note:"Several players reported to have agreed to join; names firm up as the window opens."},
+];
+const lightColor = {g:'var(--green)', y:'var(--yellow)', o:'var(--orange)', r:'var(--crit)'};
+const trendGlyph = {up:'⬆', flat:'➡', down:'⬇'};
+
+function probCell(prob, light){
+  if(light==='confirmed') return `<span class="confirmed">CONFIRMED</span>`;
+  return `<div class="prob-wrap">
+      <span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 7px ${lightColor[light]}"></span>
+      <div class="prob-bar"><div class="prob-fill" style="width:${prob}%;background:${lightColor[light]}"></div></div>
+      <span class="prob-val" style="color:${lightColor[light]}">${prob}%</span>
+    </div>`;
+}
+function tierBadge(t){ return `<span class="tier t${t}">T${t}</span>`; }
+function trendCell(tr){
+  const cls = tr==='up'?'up':tr==='down'?'down':'flat';
+  return `<span class="trend ${cls}">${trendGlyph[tr]}</span>`;
+}
+
+function renderTable(list, id){
+  document.getElementById(id).innerHTML = list.map(p=>`
+    <tr>
+      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}</div><div class="pl-sub">${p.sub}</div></td>
+      <td data-label="Club">${p.club}</td>
+      <td data-label="Pos"><span class="pos">${p.pos}</span></td>
+      <td class="fee" data-label="Reported">${p.report}</td>
+      <td data-label="Source">${p.src} ${tierBadge(p.tier)}</td>
+      <td class="fee" data-label="Est. fee">${p.fee}</td>
+      <td data-label="Probability">${probCell(p.prob, p.light)}</td>
+      <td data-label="Trend">${trendCell(p.trend)}</td>
+      <td class="note" data-label="Analysis">${p.note}</td>
+    </tr>`).join('');
+}
+renderTable(INCOMING,'incoming');
+renderTable(OUTGOING,'outgoing');
+
+/* confirmed ledger */
+function renderLedger(list, id, emptyMsg){
+  const el = document.getElementById(id);
+  if(!list.length){ el.innerHTML = `<div class="empty">${emptyMsg}</div>`; return; }
+  el.innerHTML = list.map(d=>`
+    <div class="deal">
+      <div class="dmeta">
+        <div class="dname">${d.name}</div>
+        <div class="dsub">${d.sub} · → ${d.to}</div>
+        <div class="dnote">${d.note}</div>
+        <span class="status ${d.status}">${d.statusTxt}</span>
+      </div>
+      <div class="dfee ${d.free?'free':''}">${d.fee}</div>
+    </div>`).join('');
+}
+renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing — window opens 15 June.');
+renderLedger(CONFIRMED_OUT,'confirmedOut','No confirmed departures yet.');
+document.getElementById('cinCount').textContent = CONFIRMED_IN.length;
+document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
+
+/* watchlist with direction filter */
+function renderWatchlist(filter){
+  const rows = WATCHLIST.filter(w => filter==='all' || w.dir===filter);
+  document.getElementById('watchlist').innerHTML = rows.map(w=>`
+    <div class="wl-item ${w.dir}">
+      <div class="wmeta">
+        <div class="wtop">
+          <span class="wname">${w.name}</span>
+          <span class="wclub">${w.dir==='in'?'← '+w.club:'→ '+w.club}</span>
+          <span class="wl-dir ${w.dir}">${w.dir.toUpperCase()}</span>
+        </div>
+        <div class="wnote">${w.note}</div>
+      </div>
+      <div class="wright">
+        <span class="wpos">${w.pos}</span>
+        <span class="wage">${w.age}</span>
+        <span class="tier t${w.tier}" style="font-family:var(--mono);font-size:10px;padding:1px 5px;border-radius:4px">T${w.tier}</span>
+      </div>
+    </div>`).join('');
+}
+renderWatchlist('all');
+document.querySelectorAll('.wl-tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.wl-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderWatchlist(btn.dataset.f);
+  });
+});
+
+/* Top 10 combined by probability (exclude confirmed=100 absolute, but include as flag) */
+const combined = [
+  ...INCOMING.map(p=>({...p, dir:'IN'})),
+  ...OUTGOING.filter(p=>p.light!=='confirmed').map(p=>({...p, dir:'OUT'}))
+].sort((a,b)=>b.prob-a.prob).slice(0,10);
+
+document.getElementById('top10').innerHTML = combined.map((p,i)=>`
+  <div class="rank">
+    <span class="n">${String(i+1).padStart(2,'0')}</span>
+    <span class="nm">${p.name} <small>${p.dir} · ${p.club}</small></span>
+    <span class="pct" style="color:${lightColor[p.light]}">${p.prob}%</span>
+  </div>`).join('');
+
+function chips(arr){ return arr.map(c=>`<div class="chip"><span class="ar">${c.ar}</span><span>${c.t}</span></div>`).join(''); }
+document.getElementById('movers').innerHTML =
+  `<div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--green);margin:2px 0 4px">RISERS</div>${chips(RISERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--crit);margin:12px 0 4px">FALLERS</div>${chips(FALLERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--gold);margin:12px 0 4px">NEW ENTRIES</div>${chips(NEW)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--muted);margin:12px 0 4px">IGNORE</div>${chips(IGNORE)}`;
+
+document.getElementById('positions').innerHTML = POSITIONS.map(p=>`
+  <div class="pos-need">
+    <span>${p.p} <small style="color:var(--muted);font-family:var(--mono);font-size:11px">${p.x}</small></span>
+    <span class="heatbar"><span class="heatfill" style="width:${p.w}%"></span></span>
+  </div>`).join('');
+
+/* last-updated stamp + freshness (single source: REPORT_META) */
+(function(){
+  document.getElementById('kicker').textContent =
+    `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
+  document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
+  const foot = document.getElementById('updatedFoot');
+  if(foot) foot.textContent = `Living tracker — ${REPORT_META.asof}.`;
+
+  // relative freshness vs the viewer's own clock
+  const d0 = new Date(REPORT_META.updatedDate + "T00:00:00");
+  const now = new Date();
+  const days = Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate()) -
+                           new Date(d0.getFullYear(),d0.getMonth(),d0.getDate())) / 86400000);
+  let txt, col;
+  if(isNaN(days)){ txt="CURRENT"; col="var(--muted)"; }
+  else if(days < 0){ txt="POST-DATED"; col="var(--muted)"; }
+  else if(days === 0){ txt="UPDATED TODAY"; col="var(--green)"; }
+  else if(days === 1){ txt="UPDATED YESTERDAY"; col="var(--yellow)"; }
+  else if(days <= 3){ txt=days+" DAYS OLD"; col="var(--yellow)"; }
+  else { txt=days+" DAYS OLD · REFRESH DUE"; col="var(--orange)"; }
+  document.getElementById('stamp').innerHTML =
+    `<span class="seg dt">UPDATED&nbsp;<b>${REPORT_META.asof}</b></span>`+
+    `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+})();
+</script>
+</body>
+</html>

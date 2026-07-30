@@ -1,0 +1,740 @@
+<!--
+  SUNDERLAND AFC — TRANSFER INTELLIGENCE TERMINAL
+  Living tracker. To update: re-run searches, edit the DATA object below
+  (REPORT_META + INCOMING + OUTGOING + SUMMARY), and the page re-renders.
+  Self-contained single file. No external storage used.
+  Updated: 2026-06-05
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ — Manchester United</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;
+    --bg-2:#111318;
+    --panel:#16181e;
+    --panel-2:#1c1f26;
+    --line:#2a2e38;
+    --red:#FBE122;
+    --red-bright:#fce859;
+    --red-deep:#968714;
+    --white:#f4f3ee;
+    --muted:#8b909c;
+    --muted-2:#5f6471;
+    --gold:#e8c249;
+    --gold-deep:#a07f12;
+    --green:#33c46a;
+    --yellow:#f2c531;
+    --orange:#ef8b2c;
+    --crit:#e9483f;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle pinstripe atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(226,31,38,0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(226,31,38,0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(232,194,73,0.05), transparent 55%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 22px}
+
+  /* ---------- HEADER ---------- */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(12,13,16,0.97),rgba(12,13,16,0.86));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 22px;max-width:1240px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px}
+  .crest{
+    width:46px;height:46px;flex:none;border-radius:7px;
+    position:relative;overflow:hidden;background:#0e1014;
+    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(226,31,38,0.35);
+    display:grid;place-items:center;
+  }
+  .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
+  .crest svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1 b{color:var(--red-bright)}
+  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .status-pill{
+    display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
+    color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:54px 0 26px;border-bottom:1px solid var(--line)}
+  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,66px);line-height:.92;text-transform:uppercase;letter-spacing:.5px;max-width:none}
+  .hero h2 em{font-style:normal;color:var(--red-bright)}
+  .hero .lede{margin-top:20px;max-width:none;color:#c9ccd4;font-size:17px;line-height:1.62}
+  .hero .lede b{color:var(--white)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- UPDATED STAMP ---------- */
+  .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
+  .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .updated-stamp .seg.ed{background:var(--red);color:#fff;font-weight:700;letter-spacing:1px}
+  .updated-stamp .seg.dt{color:var(--muted);border-right:1px solid var(--line)}
+  .updated-stamp .seg.dt b{color:var(--white)}
+  .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
+  .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:34px 0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
+  .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .stat .v{font-family:var(--display);font-weight:400;font-size:30px;margin-top:8px;line-height:1;letter-spacing:.5px}
+  .stat .v small{font-size:14px;color:var(--muted);font-family:var(--mono)}
+  .stat.gold::after{background:var(--gold)}
+  .stat.gold .v{color:var(--gold)}
+
+  /* ---------- SECTION ---------- */
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  .sec-head h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;letter-spacing:.5px}
+  .sec-head .num{font-family:var(--mono);font-size:12px;color:var(--red-bright);border:1px solid var(--red-deep);border-radius:6px;padding:3px 8px}
+  .sec-sub{color:var(--muted);font-size:14px;margin-bottom:26px;max-width:80ch}
+
+  /* analysis cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative}
+  .card h4{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .card h4 .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--bg);background:var(--gold);padding:2px 7px;border-radius:4px}
+  .card p{color:#c3c7d0;font-size:14.5px;margin-bottom:11px}
+  .card p b{color:var(--white)}
+  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(226,31,38,0.07),transparent)}
+  .card ul{list-style:none;margin:6px 0 4px}
+  .card li{position:relative;padding-left:20px;color:#c3c7d0;font-size:14px;margin-bottom:7px}
+  .card li::before{content:"›";position:absolute;left:2px;color:var(--red-bright);font-weight:700}
+  .verdict{margin-top:14px;padding:12px 14px;border-radius:8px;background:var(--panel-2);border:1px dashed var(--line);font-size:13.5px}
+  .verdict b{color:var(--gold)}
+
+  .riskgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:6px}
+  .riskgrid > div{padding:22px 24px}
+  .risk-r{background:linear-gradient(180deg,rgba(51,196,106,0.06),transparent);border-right:1px solid var(--line)}
+  .risk-d{background:linear-gradient(180deg,rgba(233,72,63,0.06),transparent)}
+  .risk-r h5,.risk-d h5{font-family:var(--display);font-weight:400;font-size:16px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px}
+  .risk-r h5{color:var(--green)} .risk-d h5{color:var(--crit)}
+  .riskgrid li{font-size:13.5px}
+
+  /* ---------- TABLES ---------- */
+  .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{width:100%;border-collapse:collapse;min-width:820px}
+  thead th{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);
+    text-align:left;padding:14px 11px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:nowrap;position:sticky;top:0
+  }
+  tbody td{padding:13px 11px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:rgba(226,31,38,0.05)}
+  tbody tr:last-child td{border-bottom:none}
+  .pl-name{font-weight:700;color:var(--white);font-size:14.5px}
+  .pl-sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .pos{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:2px 6px;white-space:nowrap}
+  .fee{font-family:var(--mono);color:#dfe2e8;white-space:nowrap}
+  .tier{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap}
+  .t1{color:#7fe3a3;background:rgba(51,196,106,0.13)}
+  .t2{color:#bfe07f;background:rgba(160,224,127,0.12)}
+  .t3{color:var(--yellow);background:rgba(242,197,49,0.12)}
+  .t4{color:#ef9a9a;background:rgba(233,72,63,0.12)}
+  .prob-wrap{display:flex;align-items:center;gap:9px;min-width:120px}
+  .prob-bar{flex:1;height:6px;border-radius:99px;background:#262a33;overflow:hidden}
+  .prob-fill{height:100%;border-radius:99px}
+  .prob-val{font-family:var(--mono);font-size:12px;font-weight:700;width:34px;text-align:right}
+  .ldot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .trend{font-family:var(--mono);font-weight:700;font-size:14px}
+  .up{color:var(--green)} .down{color:var(--crit)} .flat{color:var(--muted)}
+  td.note{color:var(--muted);font-size:13px;max-width:none;line-height:1.5}
+  .confirmed{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;color:var(--bg);background:var(--white);padding:3px 7px;border-radius:4px;font-weight:700}
+
+  /* ---------- SUMMARY ---------- */
+  .summary-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+  .box h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:16px;color:var(--red-bright)}
+  .rank{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .rank:last-child{border:none}
+  .rank .n{font-family:var(--display);font-size:18px;color:var(--muted-2);width:26px}
+  .rank .nm{flex:1;font-size:14px}
+  .rank .nm small{color:var(--muted);font-family:var(--mono);font-size:11px;margin-left:6px}
+  .rank .pct{font-family:var(--mono);font-weight:700;font-size:13px}
+  .chiplist{display:flex;flex-direction:column;gap:11px}
+  .chip{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:#c8ccd4}
+  .chip .ar{font-family:var(--mono);font-weight:700;flex:none}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .pos-need{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,46,56,0.55);font-size:14px}
+  .pos-need:last-child{border:none}
+  .heatbar{height:7px;border-radius:99px;width:120px;background:#262a33;overflow:hidden}
+  .heatfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--red))}
+  .spend{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
+  .spend .s{flex:1;min-width:220px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .spend .s .l{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+  .spend .s .v{font-family:var(--display);font-size:30px;margin-top:6px;letter-spacing:.5px}
+  .spend .s.in .v{color:var(--green)} .spend .s.out .v{color:var(--red-bright)}
+  .spend .s .x{font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* ---------- CONFIRMED LEDGER ---------- */
+  .ledger{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .led-col{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .led-in{border-top:3px solid var(--green)}
+  .led-out{border-top:3px solid var(--red)}
+  .led-head{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:17px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+  .led-dot{width:9px;height:9px;border-radius:50%}
+  .led-dot.in{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .led-dot.out{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .led-count{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 8px}
+  .deal{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .deal:last-child{border:none}
+  .deal .dmeta{flex:1}
+  .deal .dname{font-weight:700;color:var(--white);font-size:14.5px}
+  .deal .dsub{font-size:11.5px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .deal .dnote{font-size:12.5px;color:#c3c7d0;margin-top:6px;line-height:1.46}
+  .deal .dfee{font-family:var(--mono);font-weight:700;font-size:13px;white-space:nowrap;text-align:right}
+  .deal .dfee.free{color:var(--gold)}
+  .status{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:1px;padding:3px 7px;border-radius:4px;margin-top:8px;font-weight:700}
+  .status.done{background:var(--green);color:var(--bg)}
+  .status.exit{background:var(--white);color:var(--bg)}
+  .status.pending{background:rgba(242,197,49,0.13);color:var(--yellow);border:1px solid var(--gold-deep)}
+  .empty{color:var(--muted-2);font-size:13px;font-style:italic;padding:14px 0}
+  .pending-note{margin-top:16px;font-size:12.5px;color:var(--muted);border:1px dashed var(--line);border-radius:8px;padding:12px 14px}
+  .pending-note b{color:var(--gold)}
+
+  /* ---------- WATCHLIST ---------- */
+  .wl-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .wl-tab{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 15px;cursor:pointer;transition:all .15s}
+  .wl-tab:hover{color:var(--white);border-color:var(--muted)}
+  .wl-tab.active{background:var(--red);color:#fff;border-color:var(--red)}
+  .wl-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .wl-item{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px 15px;border-left-width:3px}
+  .wl-item.in{border-left-color:var(--green)} .wl-item.out{border-left-color:var(--red)}
+  .wl-item .wmeta{flex:1;min-width:0}
+  .wl-item .wtop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .wl-item .wname{font-weight:700;font-size:14px;color:var(--white)}
+  .wl-item .wclub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+  .wl-item .wnote{font-size:12.5px;color:#b6bac4;margin-top:5px;line-height:1.45}
+  .wl-item .wright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none}
+  .wl-item .wpos{font-family:var(--mono);font-size:10px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:1px 5px}
+  .wl-item .wage{font-family:var(--mono);font-size:10.5px;color:var(--muted-2)}
+  .wl-dir{font-family:var(--mono);font-size:9px;letter-spacing:1px;padding:1px 5px;border-radius:3px;font-weight:700}
+  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(226,31,38,0.14);color:#ef9a9a}
+  @media(max-width:900px){.wl-list{grid-template-columns:1fr}}
+
+  /* ---------- METHODOLOGY / LEGEND ---------- */
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .legend .col h5{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .legend .row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#c3c7d0;margin-bottom:9px}
+  .legend .row .k{font-family:var(--mono);font-weight:700;flex:none;min-width:48px}
+  .weights{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .w{font-family:var(--mono);font-size:11.5px;color:#c3c7d0;border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+  .w b{color:var(--gold)}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:12.5px}
+  footer b{color:var(--white)}
+  .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
+
+  /* entrance animation */
+  .reveal{opacity:0;transform:translateY(16px);animation:rise .7s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- MOBILE: tables collapse into cards ---------- */
+  @media(max-width:680px){
+    .tbl-scroll{overflow-x:visible;border:none;background:transparent;border-radius:0}
+    table{min-width:0;display:block}
+    thead{display:none}
+    tbody{display:block}
+    tbody tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px 16px 12px;margin-bottom:14px}
+    tbody tr:hover{background:var(--panel)}
+    tbody td{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:8px 0;border-bottom:1px solid rgba(42,46,56,0.5);font-size:13px}
+    tbody td:last-child{border-bottom:none}
+    tbody td::before{content:attr(data-label);font-family:var(--mono);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);flex:none;padding-top:3px}
+    tbody td.cell-name{display:block;border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:2px}
+    tbody td.cell-name::before{display:none}
+    tbody td.cell-name .pl-name{font-size:16px}
+    td.note{display:block;max-width:none;color:#c3c7d0;font-size:12.5px}
+    td.note::before{display:block;margin-bottom:5px}
+    .prob-wrap{min-width:0;flex:1;max-width:62%}
+  }
+
+  @media(max-width:900px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .summary-grid{grid-template-columns:1fr}
+    .riskgrid{grid-template-columns:1fr}
+    .risk-r{border-right:none;border-bottom:1px solid var(--line)}
+    .legend{grid-template-columns:1fr}
+    .twocol{grid-template-columns:1fr}
+    .brand .sub{display:none}
+  }
+  /* ---------- PRINT ---------- */
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    header.top{position:static}
+    body::before{opacity:.4}
+    .reveal{opacity:1;transform:none;animation:none}
+    section,.card,.box,.led-col,.tbl-scroll,.summary-grid,.cards{break-inside:avoid}
+    .status-pill{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="crest"><img src="data:image/png;base64,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" alt="Manchester United badge" onerror="this.style.display=&#39;none&#39;"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)">MUFC</text></svg></div>
+      <div>
+        <h1>Mercato <b>IQ</b> · Manchester United</h1>
+        <div class="sub">The transfer market, decoded · Independent intelligence</div>
+      </div>
+    </div>
+    <div class="status-pill"><span class="dot"></span> WINDOW OPENS 15 JUN · <span id="asof"></span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero reveal">
+    <div class="updated-stamp" id="stamp"></div>
+    <div class="kicker" id="kicker">Data as of 5 June 2026</div>
+    <h2><em>Carrick</em> confirmed and back in Europe: a depth rebuild after a January turnaround</h2>
+    <p class="lede">Michael <b>Carrick</b> has been made permanent manager after steering United into the <b>Champions League</b> following his January arrival, a finish that reframes the whole window. With European football back, the priority is <b>strength in depth</b> across the squad; <b>Casemiro</b> has reached the end of his Old Trafford spell, while the club have signalled they want captain <b>Bruno Fernandes</b> to stay. Recruitment runs through the <b>INEOS</b> football structure under Sir Jim Ratcliffe.</p>
+    <div class="meta-row">
+      <span>DECISION-MAKER: <b>INEOS</b> (Football Ops)</span>
+      <span>HEAD COACH: <b>Michael Carrick</b></span>
+      <span>OWNER: <b>Glazers / INEOS (Ratcliffe)</b></span>
+      <span>WINDOW: <b>15 Jun → 1 Sep</b></span>
+    </div>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stats reveal" style="animation-delay:.08s">
+    <div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">3<small>rd</small></div></div>
+    <div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">UCL</div></div>
+    <div class="stat"><div class="l">Est. Gross Spend</div><div class="v">£100–160<small>m</small></div></div>
+    <div class="stat"><div class="l">Est. Sales</div><div class="v">£60–120<small>m</small></div></div>
+    <div class="stat gold"><div class="l">SCR Cost Cap</div><div class="v">70<small>%</small></div></div>
+  </div>
+
+  <!-- CONFIRMED BUSINESS -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">01</span></div>
+    <p class="sec-sub">Done deals and locked-in contract outcomes. This is a living ledger: as the rumours below are officially confirmed they move up here and leave the speculative tables. <b>Contract status sets the fee</b> — an out-of-contract player aged 24+ leaves on a full Bosman free, so no fee applies regardless of homegrown status; the holder's-premium logic only governs players still under contract.</p>
+    <div class="ledger">
+      <div class="led-col led-in">
+        <div class="led-head"><span class="led-dot in"></span> In <span class="led-count" id="cinCount"></span></div>
+        <div id="confirmedIn"></div>
+      </div>
+      <div class="led-col led-out">
+        <div class="led-head"><span class="led-dot out"></span> Out <span class="led-count" id="coutCount"></span></div>
+        <div id="confirmedOut"></div>
+      </div>
+    </div>
+    <div class="pending-note"><b>Window opens 15 June; nothing is registered yet.</b> The settled business is in the dugout: <b>Carrick</b> is confirmed permanent after Champions League qualification. <b>Casemiro</b> is moving on, and the club's stated preference is to keep <b>Bruno Fernandes</b>. Incoming targets enter the ledger only on announcement.</div>
+  </section>
+
+  <!-- INCOMING -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">02</span></div>
+    <p class="sec-sub">Probability reflects recency (30%), source reliability (25%), tactical fit (15%), INEOS network (15%), financial realism (10%) and competition (5%) — not fan desire.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Probability</th><th>Trend</th><th>Why it sits here / obstacles</th>
+        </tr></thead>
+        <tbody id="incoming"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- OUTGOING -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">03</span></div>
+    <p class="sec-sub">Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.</p>
+    <div class="verdict" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(226,31,38,0.08),var(--panel-2))">
+      <b>Pricing principle: United price under-contract players at a holder's premium.</b> Long deals, proven minutes, multi-club interest and elite suitors each lift the fee above consensus. Where the squad needs trimming for the cost ratio, fringe and high-earner sales come at a softer floor, while a key asset is priced to keep.
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Sale Prob.</th><th>Trend</th><th>Read</th>
+        </tr></thead>
+        <tbody id="outgoing"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ANALYSIS: MODEL + FINANCE -->
+  <section class="reveal" style="animation-delay:.12s">
+    <div class="sec-head"><h3>Club Position</h3><span class="num">04</span></div>
+    <p class="sec-sub">The lens through which every rumour is weighted: the recruitment philosophy, the balance sheet, the brand, and the European trade-off.</p>
+
+    <div class="cards">
+      <!-- THE MODEL -->
+      <div class="card">
+        <h4>The Model <span class="tag">CORE PRINCIPLE</span></h4>
+        <p>A <b>structured rebuild under INEOS</b> (Sir Jim Ratcliffe's sporting leadership) with Michael <b>Carrick</b> now the permanent head coach. Champions League qualification accelerates the plan: the brief shifts from survival of a difficult era to <b>building depth</b> for a multi-competition season.</p>
+        <div class="quote">Carrick earned the job by results: an in-season turnaround that took United from drift to a top-three finish and European football.</div>
+        <p><b>This window's logic:</b> add quality depth, move on high earners at the end of their cycle, and resolve key contract questions (Bruno).</p>
+        <ul>
+          <li>Priority: squad depth across the spine for Champions League rotation.</li>
+          <li>Markets: a mix of proven Premier League quality and younger upside under INEOS analytics.</li>
+          <li>Contracts: keep Bruno Fernandes; manage the wage bill down where possible.</li>
+        </ul>
+        <div class="verdict"><b>Tracker implication:</b> upgrade well-sourced depth signings; discount marquee names that do not clear the wage and cost-ratio maths.</div>
+      </div>
+
+      <!-- FINANCE -->
+      <div class="card">
+        <h4>Financial Position <span class="tag">STRONG</span></h4>
+        <p>Owned by the <b>Glazers with INEOS</b> holding sporting control, United have elite revenue but have spent heavily across recent windows, so discipline and the cost ratio shape this summer.</p>
+        <ul>
+          <li>Champions League income returns, but the <b>70% European cost cap</b> now applies.</li>
+          <li>Moving on high earners (Casemiro and others) is central to creating headroom.</li>
+          <li>Cost-cutting under INEOS continues across the football operation.</li>
+        </ul>
+        <div class="verdict"><b>Caveat:</b> ambitions are large, but sales likely have to precede the bigger buys.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPUTATION + RISK/REWARD -->
+  <section class="reveal" style="animation-delay:.02s">
+    <div class="sec-head"><h3>Reputation &amp; The Cost-Cap Trade-Off</h3><span class="num">05</span></div>
+    <p class="sec-sub">A return to the Champions League restores United's pull, but the 70% cost cap and a bloated wage bill shape what is possible.</p>
+
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card">
+        <h4>Reputational Standing</h4>
+        <p>Champions League football and a stabilising manager restore some of United's recruitment gravity after a turbulent period. Carrick's turnaround has bought credibility.</p>
+        <ul>
+          <li>European nights aid the pitch to targets weighing United against rivals.</li>
+          <li>A clearer football structure under INEOS reassures the market.</li>
+        </ul>
+        <div class="verdict"><b>Double edge:</b> United must still convince elite targets the project is on track, and may have to sell before buying.</div>
+      </div>
+      <div class="card">
+        <h4>The SCR Tightening <span class="tag">KEY TENSION</span></h4>
+        <p>The new <b>Squad Cost Ratio</b> caps wages, agent fees and amortisation at <b>85% of revenue, or 70% for clubs in Europe</b>, where United now sit after qualifying for the Champions League.</p>
+        <p>Years of heavy spend mean amortisation is high, so the ratio, not the cheque book, is the real constraint.</p>
+        <ul>
+          <li>A 3-year net position feeds the calculation, so sales improve headroom directly.</li>
+          <li>That is why moving on Casemiro and other high earners is structural.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="riskgrid">
+      <div class="risk-r">
+        <h5>▲ Reward, building on a Champions League return</h5>
+        <ul>
+          <li>European qualification validates the Carrick appointment and aids recruitment.</li>
+          <li>Depth additions could turn a recovery into a sustained climb.</li>
+          <li>Keeping Bruno anchors the rebuild.</li>
+        </ul>
+      </div>
+      <div class="risk-d">
+        <h5>▼ Risk, over-reaching on a tight ratio</h5>
+        <ul>
+          <li>The 70% cap plus a heavy wage bill limits spending power.</li>
+          <li>Failing to clear high earners would stall the window.</li>
+          <li>Champions League rotation demands depth the squad currently lacks.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict" style="margin-top:18px;max-width:none">
+      <b>Net read:</b> a depth-first window funded partly by moving on high earners: lock down Bruno, add quality across the spine for Europe, and keep within the 70% cap rather than chasing a single marquee name.
+    </div>
+  </section>
+
+  <!-- WATCHLIST -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Full Rumour Index</h3><span class="num">06</span></div>
+    <p class="sec-sub">The comprehensive long tail — every other name in circulation (aggregated feeds incl. TransferFeed), kept compact and clearly tiered. These are monitoring-only, lower-credibility or cooling links that haven't earned a place in the analysed tables. Filter by direction.</p>
+    <div class="wl-tabs">
+      <button class="wl-tab active" data-f="all">All</button>
+      <button class="wl-tab" data-f="in">Targets In</button>
+      <button class="wl-tab" data-f="out">Possible Out</button>
+    </div>
+    <div class="wl-list" id="watchlist"></div>
+    <div class="pending-note" style="border-color:var(--line)"><b>Excluded as stale:</b> previous-regime stories and recycled 2025 links are not live; United's manager is now Carrick, so any item naming a predecessor is out of date.</div>
+  </section>
+
+  <!-- SUMMARY OUTPUTS -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Daily Briefing</h3><span class="num">07</span></div>
+    <p class="sec-sub">The eight required readouts, regenerated each refresh.</p>
+
+    <div class="summary-grid">
+      <div class="box">
+        <h4>Top 10 Most Likely Movements <span style="color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:1px">· UNCONFIRMED · IN &amp; OUT</span></h4>
+        <div id="top10"></div>
+      </div>
+      <div class="box">
+        <h4>Risers · Fallers · New Entries · Ignore</h4>
+        <div class="chiplist" id="movers"></div>
+      </div>
+    </div>
+
+    <div class="twocol">
+      <div class="box">
+        <h4>Positions Most Likely Strengthened</h4>
+        <div id="positions"></div>
+      </div>
+      <div class="box">
+        <h4>Estimated Spend</h4>
+        <div class="spend">
+          <div class="s in"><div class="l">Gross Incoming</div><div class="v">£100–160m</div><div class="x">Depth across the spine; the upper end needs sales first under the cost cap.</div></div>
+          <div class="s out"><div class="l">Outgoing Sales</div><div class="v">£60–120m</div><div class="x">Casemiro and other high earners moving on, plus fringe sales, to create wage and ratio headroom.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="reveal">
+    <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">08</span></div>
+    <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
+    <div class="legend">
+      <div class="col">
+        <h5>Source Tiers (current)</h5>
+        <div class="row"><span class="k tier t1">T1</span><span><b>Elite</b> — David Ornstein, Fabrizio Romano, BBC, The Athletic. <i>Used for:</i> the Carrick appointment, Champions League qualification, the Bruno stay-or-go question.</span></div>
+        <div class="row"><span class="k tier t2">T2</span><span><b>Strong</b> — Sky Sports, ESPN, reliable national and club writers.</span></div>
+        <div class="row"><span class="k tier t3">T3</span><span><b>Moderate</b> — TEAMtalk, Football Insider, club sites, mixed-record nationals.</span></div>
+        <div class="row"><span class="k tier t4">T4</span><span><b>Weak</b> — Fichajes, Africa Foot, Foot Sur 7, Média Foot, fan posts. <b>Aggregator feeds</b> (TransferFeed, NewsNow) are used as a <i>discovery index</i> for the full rumour sweep, then traced to the original reporter for weighting — never weighted as a primary source themselves.</span></div>
+      </div>
+      <div class="col">
+        <h5>Weighting Model &amp; Recency Decay</h5>
+        <div class="weights">
+          <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+          <span class="w">INEOS network <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+        </div>
+        <div class="row" style="margin-top:16px"><span class="k">0–7d</span><span>Very strong · <span class="k">8–14d</span> strong · <span class="k">15–30d</span> moderate</span></div>
+        <div class="row"><span class="k">31–60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom & Hadj Moussa fall on this basis.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="reveal">
+    <b id="updatedFoot">Living tracker — 5 Jun 2026.</b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <div class="disclaimer">
+      Built from publicly reported sources retrieved on 5 June 2026, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   DATA — edit this block on each daily update, page re-renders.
+   light: 'g'=green(>50%) 'y'=yellow(30-50%) 'o'=orange(15-30%) 'r'=red(<15%)
+   trend: 'up' | 'flat' | 'down'
+   ============================================================ */
+/* ── EDIT THESE TWO LINES EACH DAY ──────────────────────────
+   asof: human display date · updatedDate: ISO (drives freshness) */
+const REPORT_META = { asof: "6 Jun 2026", updatedDate: "2026-06-06", label: "Build · Carrick confirmed, back in Europe" };
+const CONFIRMED_IN = [];
+const CONFIRMED_OUT = [
+  {name:"Casemiro", sub:"DM · Brazil", to:"Departing", fee:"TBC / free-ish", free:false, status:"exit", statusTxt:"END OF SPELL",
+   note:"Has reached the end of his Old Trafford career after four years; a high earner moving on, which both opens a midfield slot and frees significant wages."},
+];
+const INCOMING = [
+  {name:"Squad-depth targets", sub:"Spine reinforcements", club:"Various", pos:"—", report:"~3 days ago", src:"TeamTalk / ESPN", tier:2, fee:"£60–100m total", prob:45, light:'y', trend:'up',
+   note:"With Champions League football back, United's clearest need is depth across the squad. Specific names are still firming up post-qualification; expect a mix of proven PL quality and younger INEOS-profile upside."},
+  {name:"Midfield replacement", sub:"For Casemiro's role", club:"Market", pos:"DM/CM", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£40–60m", prob:35, light:'y', trend:'up',
+   note:"Casemiro's exit opens a holding-midfield slot; a younger ball-winner is a logical priority for Carrick's system."},
+];
+const OUTGOING = [
+  {name:"Casemiro", sub:"DM · Brazil", club:"Free agent / Saudi / Brazil", pos:"DM", report:"~3 days ago", src:"TeamTalk", tier:2, fee:"Low / free-ish", prob:75, light:'g', trend:'up',
+   note:"Confirmed end of his United chapter (see ledger). PRICING: age and wages cap any fee; the win is wage relief and squad-list space."},
+  {name:"High earners & fringe", sub:"Wage-bill trim", club:"Various", pos:"—", report:"~2 wks ago", src:"ESPN", tier:3, fee:"Mixed", prob:50, light:'y', trend:'flat',
+   note:"INEOS continue to manage the wage bill down; expect several departures to fund and enable incomings under the 70% cap."},
+];
+const RISERS = [
+  {ar:"⬆", t:"<b>Carrick</b> — confirmed permanent after Champions League qualification."},
+  {ar:"⬆", t:"<b>Depth signings</b> — European football makes squad depth the priority."},
+];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Casemiro</b> — chapter over; moving on."},
+  {ar:"⬇", t:"<b>Marquee-only spending</b> — sales likely needed first under the cap."},
+];
+const NEW = [
+  {ar:"✦", t:"Manager: <b>Carrick</b> permanent; United back in the <b>Champions League</b>."},
+  {ar:"✦", t:"In: depth across the spine. Out: <b>Casemiro</b> and high earners. Stay: <b>Bruno Fernandes</b> (club preference)."},
+];
+const IGNORE = [
+  {ar:"✕", t:"<b>Previous-regime stories</b> — out of date now Carrick is permanent."},
+  {ar:"✕", t:"<b>Speculative 'galactico' links</b> — do not clear the cost-ratio maths."},
+];
+const POSITIONS = [
+  {p:"Central / defensive midfield", w:78, x:"Casemiro replacement; depth for Europe"},
+  {p:"Squad depth (all areas)", w:72, x:"Champions League rotation need"},
+  {p:"Forward depth", w:55, x:"Goals and rotation up front"},
+  {p:"Full-back", w:48, x:"Balance and cover"},
+  {p:"Goalkeeping cover", w:35, x:"Depth review"},
+];
+const WATCHLIST = [
+  {name:"Bruno Fernandes", club:"Man Utd", pos:"AM", dir:"out", age:"~12 wks", tier:1, note:"Not for sale by preference: United want the captain to stay at least one more year; tracked as the key retention story."},
+  {name:"Depth targets", club:"Market", pos:"—", dir:"in", age:"~3d", tier:2, note:"Specific names firming up after Champions League qualification; a mix of proven PL and INEOS-profile youth."},
+  {name:"Wage-bill exits", club:"Man Utd", pos:"—", dir:"out", age:"~2 wks", tier:3, note:"Several high earners and fringe players expected to move on under INEOS cost discipline."},
+];
+const lightColor = {g:'var(--green)', y:'var(--yellow)', o:'var(--orange)', r:'var(--crit)'};
+const trendGlyph = {up:'⬆', flat:'➡', down:'⬇'};
+
+function probCell(prob, light){
+  if(light==='confirmed') return `<span class="confirmed">CONFIRMED</span>`;
+  return `<div class="prob-wrap">
+      <span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 7px ${lightColor[light]}"></span>
+      <div class="prob-bar"><div class="prob-fill" style="width:${prob}%;background:${lightColor[light]}"></div></div>
+      <span class="prob-val" style="color:${lightColor[light]}">${prob}%</span>
+    </div>`;
+}
+function tierBadge(t){ return `<span class="tier t${t}">T${t}</span>`; }
+function trendCell(tr){
+  const cls = tr==='up'?'up':tr==='down'?'down':'flat';
+  return `<span class="trend ${cls}">${trendGlyph[tr]}</span>`;
+}
+
+function renderTable(list, id){
+  document.getElementById(id).innerHTML = list.map(p=>`
+    <tr>
+      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}</div><div class="pl-sub">${p.sub}</div></td>
+      <td data-label="Club">${p.club}</td>
+      <td data-label="Pos"><span class="pos">${p.pos}</span></td>
+      <td class="fee" data-label="Reported">${p.report}</td>
+      <td data-label="Source">${p.src} ${tierBadge(p.tier)}</td>
+      <td class="fee" data-label="Est. fee">${p.fee}</td>
+      <td data-label="Probability">${probCell(p.prob, p.light)}</td>
+      <td data-label="Trend">${trendCell(p.trend)}</td>
+      <td class="note" data-label="Analysis">${p.note}</td>
+    </tr>`).join('');
+}
+renderTable(INCOMING,'incoming');
+renderTable(OUTGOING,'outgoing');
+
+/* confirmed ledger */
+function renderLedger(list, id, emptyMsg){
+  const el = document.getElementById(id);
+  if(!list.length){ el.innerHTML = `<div class="empty">${emptyMsg}</div>`; return; }
+  el.innerHTML = list.map(d=>`
+    <div class="deal">
+      <div class="dmeta">
+        <div class="dname">${d.name}</div>
+        <div class="dsub">${d.sub} · → ${d.to}</div>
+        <div class="dnote">${d.note}</div>
+        <span class="status ${d.status}">${d.statusTxt}</span>
+      </div>
+      <div class="dfee ${d.free?'free':''}">${d.fee}</div>
+    </div>`).join('');
+}
+renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing — window opens 15 June.');
+renderLedger(CONFIRMED_OUT,'confirmedOut','No confirmed departures yet.');
+document.getElementById('cinCount').textContent = CONFIRMED_IN.length;
+document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
+
+/* watchlist with direction filter */
+function renderWatchlist(filter){
+  const rows = WATCHLIST.filter(w => filter==='all' || w.dir===filter);
+  document.getElementById('watchlist').innerHTML = rows.map(w=>`
+    <div class="wl-item ${w.dir}">
+      <div class="wmeta">
+        <div class="wtop">
+          <span class="wname">${w.name}</span>
+          <span class="wclub">${w.dir==='in'?'← '+w.club:'→ '+w.club}</span>
+          <span class="wl-dir ${w.dir}">${w.dir.toUpperCase()}</span>
+        </div>
+        <div class="wnote">${w.note}</div>
+      </div>
+      <div class="wright">
+        <span class="wpos">${w.pos}</span>
+        <span class="wage">${w.age}</span>
+        <span class="tier t${w.tier}" style="font-family:var(--mono);font-size:10px;padding:1px 5px;border-radius:4px">T${w.tier}</span>
+      </div>
+    </div>`).join('');
+}
+renderWatchlist('all');
+document.querySelectorAll('.wl-tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.wl-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderWatchlist(btn.dataset.f);
+  });
+});
+
+/* Top 10 combined by probability (exclude confirmed=100 absolute, but include as flag) */
+const combined = [
+  ...INCOMING.map(p=>({...p, dir:'IN'})),
+  ...OUTGOING.filter(p=>p.light!=='confirmed').map(p=>({...p, dir:'OUT'}))
+].sort((a,b)=>b.prob-a.prob).slice(0,10);
+
+document.getElementById('top10').innerHTML = combined.map((p,i)=>`
+  <div class="rank">
+    <span class="n">${String(i+1).padStart(2,'0')}</span>
+    <span class="nm">${p.name} <small>${p.dir} · ${p.club}</small></span>
+    <span class="pct" style="color:${lightColor[p.light]}">${p.prob}%</span>
+  </div>`).join('');
+
+function chips(arr){ return arr.map(c=>`<div class="chip"><span class="ar">${c.ar}</span><span>${c.t}</span></div>`).join(''); }
+document.getElementById('movers').innerHTML =
+  `<div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--green);margin:2px 0 4px">RISERS</div>${chips(RISERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--crit);margin:12px 0 4px">FALLERS</div>${chips(FALLERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--gold);margin:12px 0 4px">NEW ENTRIES</div>${chips(NEW)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--muted);margin:12px 0 4px">IGNORE</div>${chips(IGNORE)}`;
+
+document.getElementById('positions').innerHTML = POSITIONS.map(p=>`
+  <div class="pos-need">
+    <span>${p.p} <small style="color:var(--muted);font-family:var(--mono);font-size:11px">${p.x}</small></span>
+    <span class="heatbar"><span class="heatfill" style="width:${p.w}%"></span></span>
+  </div>`).join('');
+
+/* last-updated stamp + freshness (single source: REPORT_META) */
+(function(){
+  document.getElementById('kicker').textContent =
+    `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
+  document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
+  const foot = document.getElementById('updatedFoot');
+  if(foot) foot.textContent = `Living tracker — ${REPORT_META.asof}.`;
+
+  // relative freshness vs the viewer's own clock
+  const d0 = new Date(REPORT_META.updatedDate + "T00:00:00");
+  const now = new Date();
+  const days = Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate()) -
+                           new Date(d0.getFullYear(),d0.getMonth(),d0.getDate())) / 86400000);
+  let txt, col;
+  if(isNaN(days)){ txt="CURRENT"; col="var(--muted)"; }
+  else if(days < 0){ txt="POST-DATED"; col="var(--muted)"; }
+  else if(days === 0){ txt="UPDATED TODAY"; col="var(--green)"; }
+  else if(days === 1){ txt="UPDATED YESTERDAY"; col="var(--yellow)"; }
+  else if(days <= 3){ txt=days+" DAYS OLD"; col="var(--yellow)"; }
+  else { txt=days+" DAYS OLD · REFRESH DUE"; col="var(--orange)"; }
+  document.getElementById('stamp').innerHTML =
+    `<span class="seg dt">UPDATED&nbsp;<b>${REPORT_META.asof}</b></span>`+
+    `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+})();
+</script>
+</body>
+</html>

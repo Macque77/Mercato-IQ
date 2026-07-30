@@ -78,46 +78,42 @@
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* ---------- HERO (two-column: story on the left, nation rail on the right) ---------- */
-  .hero{padding:56px 0 34px;border-bottom:1px solid var(--line);position:relative}
-  .hero-top{display:grid;grid-template-columns:1fr 360px;gap:44px;align-items:start}
-  .hero-mark{width:104px;height:104px;margin-bottom:24px;filter:drop-shadow(0 0 24px rgba(232,194,73,0.22))}
-  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
-  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,5.6vw,68px);line-height:.96;text-transform:uppercase;letter-spacing:.5px;max-width:18ch}
+  /* ---------- HERO (compact masthead: small mark + headline + CTA in one row, full width) ---------- */
+  .hero{padding:18px 0 16px;border-bottom:1px solid var(--line);position:relative}
+  .hero-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .hero-mark{width:48px;height:48px;flex:none;filter:drop-shadow(0 0 12px rgba(232,194,73,0.22))}
+  .hero-text{flex:1 1 420px;min-width:280px}
+  .hero .kicker{font-family:var(--mono);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--red-bright);margin-bottom:5px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(20px,2.4vw,28px);line-height:1.05;text-transform:uppercase;letter-spacing:.4px}
   .hero h2 em{font-style:normal;color:var(--gold)}
-  .hero .lede{margin-top:20px;max-width:62ch;color:#c9ccd4;font-size:17px}
+  .hero .lede{margin-top:5px;max-width:none;color:#b7bac2;font-size:13px;line-height:1.4}
   .hero .lede b{color:var(--white)}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-  .btn{font-family:var(--mono);font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;padding:13px 24px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;flex:none;align-items:center}
+  .btn{font-family:var(--mono);font-size:11.5px;letter-spacing:1.1px;text-transform:uppercase;padding:12px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
   .btn-primary{background:var(--red);color:#fff}
   .btn-primary:hover{background:var(--red-bright);transform:translateY(-2px)}
   .btn-ghost{border-color:var(--line);color:var(--white);background:var(--panel)}
   .btn-ghost:hover{border-color:var(--gold-deep);color:var(--gold)}
   .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--muted)}
   .meta-row span b{color:var(--gold);font-weight:700}
-  .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:22px;background:var(--panel)}
-  .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
-  .updated-stamp .seg.dt{color:var(--muted);border-right:1px solid var(--line)}
-  .updated-stamp .seg.dt b{color:var(--white)}
-  .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
-  .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
 
-  /* ---------- NATION RAIL (always visible, right of the hero) ---------- */
-  .rail{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .rail h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold)}
-  .rail .rail-sub{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
-  .rail-list{display:flex;flex-direction:column;gap:9px;margin-top:16px}
-  .rail-item{display:flex;align-items:center;gap:12px;padding:12px 13px;border-radius:10px;background:var(--panel-2);border:1px solid var(--line);text-decoration:none;color:inherit;transition:.15s}
-  .rail-item:hover{border-color:var(--gold-deep);background:#22252d;transform:translateX(3px)}
-  .rail-item .flag{font-size:22px;flex:none;line-height:1}
-  .rail-item .info{flex:1;min-width:0}
-  .rail-item .nm{font-family:var(--display);font-size:14px;letter-spacing:.3px;text-transform:uppercase}
-  .rail-item .ct{font-size:10.5px;color:var(--muted);font-family:var(--mono);margin-top:2px}
-  .rail-item .arrow{color:var(--muted-2);font-size:15px;flex:none}
-  .rail-empty{font-size:12.5px;color:var(--muted-2);font-style:italic;padding:10px 0;line-height:1.5}
+  /* ---------- SELECT RAIL (horizontal chip strip, wraps to use the full row width) ---------- */
+  .rail{margin-top:14px}
+  .rail h4{display:none}
+  .rail .rail-sub{display:none}
+  .rail-list{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .rail-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-right:2px;flex:none}
+  .rail-item{display:flex;align-items:center;gap:7px;padding:6px 12px 6px 8px;border-radius:999px;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:inherit;transition:.15s}
+  .rail-item:hover{border-color:var(--gold-deep);background:var(--panel-2);transform:translateY(-1px)}
+  .rail-item .flag{font-size:15px;flex:none;line-height:1}
+  .rail-item .info{display:flex;align-items:baseline;gap:6px;min-width:0}
+  .rail-item .nm{font-family:var(--display);font-size:11.5px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+  .rail-item .ct{font-size:9.5px;color:var(--muted);font-family:var(--mono);white-space:nowrap}
+  .rail-item .arrow{color:var(--muted-2);font-size:11px;flex:none}
+  .rail-empty{font-size:12px;color:var(--muted-2);font-style:italic;padding:4px 0;line-height:1.5}
 
   /* ---------- TRANSFER WINDOW / DEADLINE DAY BANNER (front and centre, right under the hero) ---------- */
-  .window-banner{margin:30px 0 6px;border-radius:14px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:linear-gradient(135deg, rgba(51,196,106,0.10), var(--panel));transition:.3s}
+  .window-banner{margin:16px 0 6px;border-radius:14px;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:linear-gradient(135deg, rgba(51,196,106,0.10), var(--panel));transition:.3s}
   .window-banner.deadline{border-color:var(--red-deep);background:linear-gradient(135deg, rgba(226,31,38,0.18), var(--panel));animation:bannerPulse 1.6s infinite}
   .window-banner.closed{border-color:var(--line);background:var(--panel);opacity:.75}
   @keyframes bannerPulse{0%,100%{box-shadow:0 0 0 rgba(226,31,38,0)}50%{box-shadow:0 0 34px rgba(226,31,38,0.35)}}
@@ -131,7 +127,7 @@
   .wb-unit .l{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
 
   /* ---------- STAT STRIP ---------- */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:32px 0 8px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 8px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
   .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
   .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
@@ -175,6 +171,9 @@
   .hb.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
   .hb.tier{background:rgba(232,194,73,0.14);color:var(--gold)}
   .htitle{font-family:var(--display);font-weight:400;font-size:19px;letter-spacing:.3px;line-height:1.15;margin-bottom:10px;flex-grow:1;text-transform:none}
+  .hclubs{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--white);margin-bottom:8px;flex-wrap:wrap}
+  .hclubs .arrow{color:var(--muted-2);font-size:12px;flex:none}
+  .hclubs .to{color:var(--gold)}
   .hctx{font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:14px}
   .hfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
   .hfoot .age{font-family:var(--mono);font-size:11px;color:var(--muted-2)}
@@ -238,22 +237,18 @@
   .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
 
   /* ---------- RESPONSIVE ---------- */
-  @media(max-width:1080px){
-    .hero-top{grid-template-columns:1fr}
-    .rail{max-width:520px}
-  }
   @media(max-width:900px){
     .stats{grid-template-columns:repeat(2,1fr)}
     .twocol{grid-template-columns:1fr}
     .legend{grid-template-columns:1fr}
     .brand .sub{display:none}
     .window-banner{flex-direction:column;align-items:flex-start}
+    .hero-cta{width:100%}
+    .hero-cta .btn{width:100%;justify-content:center}
   }
   @media(max-width:560px){
     .status-pill{display:none}
-    .updated-stamp{flex-wrap:wrap}
-    .hero{padding:44px 0 30px}
-    .hero-mark{width:80px;height:80px}
+    .hero-mark{width:38px;height:38px}
     .wb-unit{min-width:44px}
   }
 </style>
@@ -301,57 +296,54 @@
 
 <div class="wrap">
 
-  <!-- HERO: always visible, this is the front door of the whole site -->
+  <!-- HERO: compact masthead, always visible, this is the front door of the whole site -->
   <div class="hero">
-    <div class="hero-top">
-      <div class="hero-main">
-        <svg class="hero-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ mark">
-          <defs>
-            <radialGradient id="ballFill2" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#2b2f38"/><stop offset="55%" stop-color="#16181d"/><stop offset="100%" stop-color="#08090b"/></radialGradient>
-            <radialGradient id="sheen2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
-            <linearGradient id="greenArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4f7c5"/><stop offset="18%" stop-color="#5fcf6a"/><stop offset="38%" stop-color="#127a34"/><stop offset="55%" stop-color="#6fe07a"/><stop offset="72%" stop-color="#1a8f3d"/><stop offset="100%" stop-color="#063d18"/></linearGradient>
-            <linearGradient id="redArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffd3cf"/><stop offset="18%" stop-color="#ff5b4e"/><stop offset="38%" stop-color="#951712"/><stop offset="55%" stop-color="#ff6a5c"/><stop offset="72%" stop-color="#ab1c15"/><stop offset="100%" stop-color="#4a0906"/></linearGradient>
-            <linearGradient id="chrome2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4f7f9"/><stop offset="30%" stop-color="#aab4bd"/><stop offset="55%" stop-color="#5b6570"/><stop offset="80%" stop-color="#c7d0d7"/><stop offset="100%" stop-color="#7c848d"/></linearGradient>
-            <filter id="markGlow2" x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur stdDeviation="2.1" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <g filter="url(#markGlow2)" fill="none" stroke-linecap="round">
-            <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="url(#greenArc2)" stroke-width="6.5"/>
-            <polygon points="109.2,51.3 100.4,47.9 105.27,52.41 104.9,58.4" fill="url(#greenArc2)" stroke="#eafff0" stroke-width="0.4" stroke-opacity="0.5"/>
-            <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="url(#redArc2)" stroke-width="6.5"/>
-            <polygon points="10.8,68.7 19.6,72.1 14.73,67.59 15.1,61.6" fill="url(#redArc2)" stroke="#fff1ef" stroke-width="0.4" stroke-opacity="0.5"/>
-          </g>
-          <circle cx="60" cy="60" r="38" fill="url(#ballFill2)" stroke="#3a3f4b" stroke-width="1.5"/>
-          <circle cx="60" cy="60" r="38" fill="none" stroke="url(#chrome2)" stroke-width="1" opacity="0.4"/>
-          <ellipse cx="46" cy="42" rx="20" ry="14" fill="url(#sheen2)"/>
-          <g stroke="url(#chrome2)" stroke-width="1" opacity="0.65" fill="none" stroke-linecap="round">
-            <line x1="60" y1="48" x2="60" y2="22"/>
-            <line x1="71.41" y1="56.29" x2="96.14" y2="48.26"/>
-            <line x1="67.05" y1="69.71" x2="82.34" y2="90.74"/>
-            <line x1="52.95" y1="69.71" x2="37.66" y2="90.74"/>
-            <line x1="48.59" y1="56.29" x2="23.86" y2="48.26"/>
-          </g>
-          <polygon points="60,48 71.41,56.29 67.05,69.71 52.95,69.71 48.59,56.29" fill="#14161b" stroke="url(#chrome2)" stroke-width="1.4"/>
-          <circle cx="60" cy="60" r="3.1" fill="url(#chrome2)"/>
-        </svg>
-        <div class="updated-stamp" id="stamp"></div>
+    <div class="hero-row">
+      <svg class="hero-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ mark">
+        <defs>
+          <radialGradient id="ballFill2" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#2b2f38"/><stop offset="55%" stop-color="#16181d"/><stop offset="100%" stop-color="#08090b"/></radialGradient>
+          <radialGradient id="sheen2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="greenArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4f7c5"/><stop offset="18%" stop-color="#5fcf6a"/><stop offset="38%" stop-color="#127a34"/><stop offset="55%" stop-color="#6fe07a"/><stop offset="72%" stop-color="#1a8f3d"/><stop offset="100%" stop-color="#063d18"/></linearGradient>
+          <linearGradient id="redArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffd3cf"/><stop offset="18%" stop-color="#ff5b4e"/><stop offset="38%" stop-color="#951712"/><stop offset="55%" stop-color="#ff6a5c"/><stop offset="72%" stop-color="#ab1c15"/><stop offset="100%" stop-color="#4a0906"/></linearGradient>
+          <linearGradient id="chrome2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4f7f9"/><stop offset="30%" stop-color="#aab4bd"/><stop offset="55%" stop-color="#5b6570"/><stop offset="80%" stop-color="#c7d0d7"/><stop offset="100%" stop-color="#7c848d"/></linearGradient>
+          <filter id="markGlow2" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="2.1" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#markGlow2)" fill="none" stroke-linecap="round">
+          <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="url(#greenArc2)" stroke-width="6.5"/>
+          <polygon points="109.2,51.3 100.4,47.9 105.27,52.41 104.9,58.4" fill="url(#greenArc2)" stroke="#eafff0" stroke-width="0.4" stroke-opacity="0.5"/>
+          <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="url(#redArc2)" stroke-width="6.5"/>
+          <polygon points="10.8,68.7 19.6,72.1 14.73,67.59 15.1,61.6" fill="url(#redArc2)" stroke="#fff1ef" stroke-width="0.4" stroke-opacity="0.5"/>
+        </g>
+        <circle cx="60" cy="60" r="38" fill="url(#ballFill2)" stroke="#3a3f4b" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="38" fill="none" stroke="url(#chrome2)" stroke-width="1" opacity="0.4"/>
+        <ellipse cx="46" cy="42" rx="20" ry="14" fill="url(#sheen2)"/>
+        <g stroke="url(#chrome2)" stroke-width="1" opacity="0.65" fill="none" stroke-linecap="round">
+          <line x1="60" y1="48" x2="60" y2="22"/>
+          <line x1="71.41" y1="56.29" x2="96.14" y2="48.26"/>
+          <line x1="67.05" y1="69.71" x2="82.34" y2="90.74"/>
+          <line x1="52.95" y1="69.71" x2="37.66" y2="90.74"/>
+          <line x1="48.59" y1="56.29" x2="23.86" y2="48.26"/>
+        </g>
+        <polygon points="60,48 71.41,56.29 67.05,69.71 52.95,69.71 48.59,56.29" fill="#14161b" stroke="url(#chrome2)" stroke-width="1.4"/>
+        <circle cx="60" cy="60" r="3.1" fill="url(#chrome2)"/>
+      </svg>
+      <div class="hero-text">
         <div class="kicker">GLOBAL &middot; ALL LEAGUES &middot; UPDATED THE MOMENT THE PICTURE CHANGES</div>
-        <h2>The transfer market,<br><em>decoded</em> live.</h2>
-        <p class="lede">Every credible rumour across Europe's major leagues, rated on two independent scores, <b>is it true</b>, and <b>will it actually happen</b>, then ranked, sourced back to the original reporter, and rebuilt the moment a story moves. No aggregator noise. No guessing which report to trust.</p>
-        <div class="hero-cta">
-          <button class="btn btn-primary" id="ctaBreaking" type="button">See today's biggest stories &rarr;</button>
-        </div>
+        <h2>The transfer market, <em>decoded</em> live.</h2>
+        <p class="lede">Every credible rumour, rated on two independent scores, <b>is it true</b> and <b>will it actually happen</b>, sourced back to the original reporter.</p>
       </div>
-
-      <!-- NATION RAIL: always visible, this is how you drill down -->
-      <aside class="rail" aria-label="Select a nation">
-        <h4>Select a Nation</h4>
-        <p class="rail-sub">Pick a nation to see its biggest stories, then drill into a league, then a club.</p>
-        <div class="rail-list" id="nation-rail"></div>
-      </aside>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="ctaBreaking" type="button">See today's biggest stories &rarr;</button>
+      </div>
     </div>
+
+    <!-- NATION RAIL: always visible, horizontal chip strip, this is how you drill down -->
+    <aside class="rail" aria-label="Select a nation">
+      <div class="rail-list" id="nation-rail"></div>
+    </aside>
   </div>
 
   <!-- TRANSFER WINDOW / DEADLINE DAY: front and centre, right under the hero -->
@@ -453,7 +445,8 @@ const HEADLINES = [
     headline: "Senior core review",
     summary: "The clearest business: a generational refresh sees several Guardiola-era seniors",
     value: "Mixed",
-    from: "manchester-city", to: "Various",
+    from: "Manchester City", to: "Various",
+    direction: "out",
     prob: 70, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "manchester-city",
@@ -463,7 +456,8 @@ const HEADLINES = [
     headline: "Manager appointment",
     summary: "",
     value: "Compensation",
-    from: "fulham", to: "TBC",
+    from: "TBC", to: "Fulham",
+    direction: "in",
     prob: 50, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "fulham",
@@ -473,7 +467,8 @@ const HEADLINES = [
     headline: "Manager: McKenna (risk)",
     summary: "",
     value: "~£8m buy-out",
-    from: "ipswich-town", to: "Fulham",
+    from: "Ipswich Town", to: "Fulham",
+    direction: "out",
     prob: 45, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "ipswich-town",
@@ -483,7 +478,8 @@ const HEADLINES = [
     headline: "Morgan Rogers",
     summary: "",
     value: "£80m+",
-    from: "arsenal", to: "Aston Villa",
+    from: "Aston Villa", to: "Arsenal",
+    direction: "in",
     prob: 35, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
@@ -493,7 +489,8 @@ const HEADLINES = [
     headline: "Squad rationalisation",
     summary: "The defining business: a vast roster trimmed for balance and cost-rule profit. P",
     value: "Mixed (profit-rich)",
-    from: "chelsea", to: "Various",
+    from: "Chelsea", to: "Various",
+    direction: "out",
     prob: 65, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "chelsea",
@@ -503,7 +500,8 @@ const HEADLINES = [
     headline: "Dayann Methalie",
     summary: "",
     value: "~€30m (£25-26m)",
-    from: "sunderland", to: "Toulouse",
+    from: "Toulouse", to: "Sunderland",
+    direction: "in",
     prob: 58, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "sunderland",
@@ -513,7 +511,8 @@ const HEADLINES = [
     headline: "Lamine Camara",
     summary: "",
     value: "~€50m",
-    from: "aston-villa", to: "Monaco",
+    from: "Monaco", to: "Aston Villa",
+    direction: "in",
     prob: 35, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "aston-villa",
@@ -523,7 +522,8 @@ const HEADLINES = [
     headline: "Gabriel Jesus",
     summary: "",
     value: "£25-35m",
-    from: "arsenal", to: "Open to offers",
+    from: "Arsenal", to: "Open to offers",
+    direction: "out",
     prob: 35, trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
@@ -533,7 +533,8 @@ const HEADLINES = [
     headline: "Adam Wharton",
     summary: "",
     value: "£60m+",
-    from: "crystal-palace", to: "Elite interest",
+    from: "Crystal Palace", to: "Elite interest",
+    direction: "out",
     prob: 30, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "crystal-palace",
@@ -543,7 +544,8 @@ const HEADLINES = [
     headline: "Elliot Anderson",
     summary: "",
     value: "£50-70m",
-    from: "manchester-city", to: "(discussed)",
+    from: "(discussed)", to: "Manchester City",
+    direction: "in",
     prob: 30, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "manchester-city",
@@ -553,7 +555,8 @@ const HEADLINES = [
     headline: "Riccardo Calafiori",
     summary: "",
     value: "£35-45m",
-    from: "arsenal", to: "Juventus",
+    from: "Arsenal", to: "Juventus",
+    direction: "out",
     prob: 30, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
@@ -563,13 +566,22 @@ const HEADLINES = [
     headline: "Leandro Trossard",
     summary: "",
     value: "£12-18m",
-    from: "arsenal", to: "Open to offers",
+    from: "Arsenal", to: "Open to offers",
+    direction: "out",
     prob: 30, trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
     updated: "2026-06-06T12:00:00Z"
   },
 ];
+
+const NATIONS = [
+  {
+    name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    stories_count: 116, league_count: 1
+  },
+];
+
 const STATS = {
   global_spend: "£5.2bn estimated",
   top_league: "Premier League",
@@ -577,13 +589,12 @@ const STATS = {
   nations_covered: 1,
   leagues_covered: 1
 };
-const NATIONS = [
-  {
-    name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 116, league_count: 1
-  },
-];
-const REPORT_META = { updated: "2026-07-29T23:24:34.045185Z", asof: "29 Jul 2026" };
+
+const REPORT_META = {
+  asof: "30 Jul 2026",
+  updated: "2026-07-30T10:48:01.965346Z",
+  label: "Global aggregation from all clubs"
+};
 /*==DATA==*/
 
 /* window-close dates are the one thing this page hardcodes rather than derives,
@@ -619,10 +630,12 @@ function renderHeadlines(){
     const dirLabel = hl.direction === 'out' ? 'OUT' : 'IN';
     const tierBadge = hl.tier === 1 ? '<span class="hb tier">Tier 1</span>' : '';
     const href = hl.club_link ? (hl.club_link + '.html') : '#';
+    const clubsLine = (hl.from || hl.to) ? `<div class="hclubs"><span class="from">${hl.from || '?'}</span><span class="arrow">&rarr;</span><span class="to">${hl.to || '?'}</span></div>` : '';
     return `<a class="hcard" href="${href}">
         <div class="hbadges"><span class="hb ${dirClass}">${dirLabel}</span>${tierBadge}</div>
         <div class="htitle">${hl.headline || ''}</div>
-        <div class="hctx"><b>${hl.nation || ''}</b> &middot; ${hl.league || ''} &middot; ${hl.value || ''}</div>
+        ${clubsLine}
+        <div class="hctx">${hl.league || ''} &middot; ${hl.value || ''}</div>
         <div class="hfoot">
           <span class="age">${hl.updated ? timeAgo(hl.updated) : (hl.report || '')}</span>
           <span class="hprob"><span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 6px ${lightColor[light]}"></span><span class="val" style="color:${lightColor[light]}">${hl.prob || 0}%</span></span>
@@ -634,13 +647,14 @@ function renderHeadlines(){
 function renderRail(){
   const rail = document.getElementById('nation-rail');
   const list = Array.isArray(NATIONS) ? NATIONS : [];
-  if(!list.length){ rail.innerHTML = '<div class="rail-empty">Nations appear here once engine/aggregate.py has run across at least one club.</div>'; return; }
-  rail.innerHTML = list.map(n => `
+  const eyebrow = '<span class="rail-eyebrow">SELECT A NATION</span>';
+  if(!list.length){ rail.innerHTML = eyebrow + '<div class="rail-empty">Nations appear here once engine/aggregate.py has run across at least one club.</div>'; return; }
+  rail.innerHTML = eyebrow + list.map(n => `
     <a class="rail-item" href="nations/${n.slug}.html">
       <span class="flag">${n.flag_emoji || '\u{1F30D}'}</span>
-      <span class="info"><span class="nm">${n.name}</span><span class="ct">${n.stories_count || 0} live ${n.stories_count === 1 ? 'story' : 'stories'}</span></span>
+      <span class="info"><span class="nm">${n.name}</span><span class="ct">${n.stories_count || 0} ${n.stories_count === 1 ? 'story' : 'stories'}</span></span>
       <span class="arrow">&rarr;</span>
-    </a>`).join('') + (list.length < 2 ? '<div class="rail-empty">More nations appear here as they\'re brought under live tracking.</div>' : '');
+    </a>`).join('') + (list.length < 2 ? '<span class="rail-empty">More nations appear here as they\'re brought under live tracking.</span>' : '');
 }
 
 function renderTrending(){
@@ -708,12 +722,14 @@ function timeAgo(iso){
   return d+'d ago';
 }
 
+/* Header status pill doubles as the freshness ticker (the old, taller hero
+   stamp was removed to keep the hero compact) — "AS OF <date> · updated Xm ago". */
 (function(){
-  document.getElementById('asofPill').textContent = (REPORT_META.asof || '').toUpperCase();
   const t0 = new Date(REPORT_META.updated).getTime();
-  const stamp = document.getElementById('stamp');
+  const pillTxt = document.getElementById('asofPill');
+  const pillDot = document.querySelector('.status-pill .dot');
   function fmt(ms){
-    if(isNaN(ms) || ms < 0) return ['CURRENT', 'var(--muted)'];
+    if(isNaN(ms) || ms < 0) return ['CURRENT', 'var(--green)'];
     const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
     let txt;
     if(s < 60) txt = s+'s';
@@ -721,13 +737,12 @@ function timeAgo(iso){
     else if(h < 24) txt = h+'h '+(m%60)+'m';
     else txt = d+'d '+(h%24)+'h';
     const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
-    return ['UPDATED '+txt+' AGO', col];
+    return [txt+' ago', col];
   }
   function tick(){
     const [txt, col] = fmt(Date.now() - t0);
-    stamp.innerHTML =
-      `<span class="seg dt">AS OF&nbsp;<b>${REPORT_META.asof || ''}</b></span>`+
-      `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+    pillTxt.innerHTML = `AS OF <b style="color:var(--white)">${REPORT_META.asof || ''}</b> &middot; updated <b style="color:${col}">${txt}</b>`;
+    if(pillDot){ pillDot.style.background = col; pillDot.style.boxShadow = '0 0 10px '+col; }
   }
   tick(); setInterval(tick, 1000);
 })();
