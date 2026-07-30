@@ -226,7 +226,7 @@ def batch_landing_pages():
     # Nations
     if os.path.exists('data/nations'):
         for data_file in glob.glob('data/nations/*.data.js'):
-            slug = Path(data_file).stem
+            slug = Path(data_file).name.replace('.data.js', '')
             print(f'  Building nation: {slug}')
             try:
                 build_nation(slug)
@@ -236,7 +236,7 @@ def batch_landing_pages():
     # Leagues
     if os.path.exists('data/leagues'):
         for data_file in glob.glob('data/leagues/*.data.js'):
-            slug = Path(data_file).stem
+            slug = Path(data_file).name.replace('.data.js', '')
             print(f'  Building league: {slug}')
             try:
                 build_league(slug)
