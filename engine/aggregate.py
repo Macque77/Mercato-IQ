@@ -13,10 +13,27 @@ import glob
 from datetime import datetime
 from pathlib import Path
 
+FLAG_EMOJI = {
+    'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿', 'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+    'Northern Ireland': '🇬🇧', 'Republic of Ireland': '🇮🇪', 'Ireland': '🇮🇪',
+    'Spain': '🇪🇸', 'Italy': '🇮🇹', 'Germany': '🇩🇪', 'France': '🇫🇷',
+    'Portugal': '🇵🇹', 'Netherlands': '🇳🇱', 'Belgium': '🇧🇪', 'Turkey': '🇹🇷',
+    'Turkiye': '🇹🇷', 'Greece': '🇬🇷', 'Russia': '🇷🇺', 'Ukraine': '🇺🇦',
+    'Switzerland': '🇨🇭', 'Austria': '🇦🇹', 'Denmark': '🇩🇰', 'Sweden': '🇸🇪',
+    'Norway': '🇳🇴', 'Poland': '🇵🇱', 'Croatia': '🇭🇷', 'Serbia': '🇷🇸',
+    'Brazil': '🇧🇷', 'Argentina': '🇦🇷', 'USA': '🇺🇸', 'United States': '🇺🇸',
+    'Saudi Arabia': '🇸🇦', 'Qatar': '🇶🇦', 'Unknown': '🌍',
+}
+
+def slugify(text):
+    """Lowercase, hyphenate a name into a URL-safe slug."""
+    text = re.sub(r"[^a-zA-Z0-9\s-]", '', text or '').strip().lower()
+    return re.sub(r'[\s_]+', '-', text)
+
 def extract_js_array(content, array_name):
     """Extract a JavaScript array from .data.js content via regex.
     Returns a list of dicts, or empty list if not found."""
-    pattern = rf'const\s+{array_name}\s*=\s*\[([\\s\\S]*?)\n\];'
+    pattern = rf'const\s+{array_name}\s*=\s*\[([\s\S]*?)\n\];'
     match = re.search(pattern, content)
     if not match:
         return []
@@ -36,7 +53,7 @@ def extract_array_objects(array_content):
         current += char
         if depth == 0 and current.strip() and char == '}':
             try:
-                obj_str = current.strip().rstrip(',')
+                obj_str = current.strip().rstrip(',').lstrip(',').strip()
                 obj = parse_js_object(obj_str)
                 if obj:
                     objects.append(obj)
@@ -54,8 +71,6 @@ def parse_js_object(obj_str):
     content = obj_str[1:-1]
     result = {}
 
-    # Simple key:value extraction (doesn't handle nested objects)
-    # Pattern: key: value, where value can be string, number, boolean
     pattern = r'(\w+)\s*:\s*([^,}]+?)(?=,\s*\w+\s*:|$)'
     matches = re.finditer(pattern, content)
 
@@ -63,7 +78,6 @@ def parse_js_object(obj_str):
         key = match.group(1).strip()
         value = match.group(2).strip()
 
-        # Clean up value
         if value.startswith('"') and value.endswith('"'):
             result[key] = value[1:-1]
         elif value.startswith("'") and value.endswith("'"):
@@ -75,17 +89,26 @@ def parse_js_object(obj_str):
         elif value.isdigit() or (value.startswith('-') and value[1:].isdigit()):
             result[key] = int(value)
         else:
-            result[key] = value  # leave as-is for now
+            result[key] = value
 
     return result if result else None
 
 def extract_brand(content):
-    """Extract BRAND object from club data."""
+    """Extract BRAND object from club data.
+    breadcrumb is a JS array (e.g. ["England", "Premier League"]), which the
+    generic key:value parser in parse_js_object can't handle (it splits on
+    every comma, including the ones inside the array), so it's parsed with
+    its own targeted regex and merged over whatever parse_js_object returns."""
     pattern = r'const\s+BRAND\s*=\s*({[^}]+});'
     match = re.search(pattern, content)
-    if match:
-        return parse_js_object(match.group(1))
-    return {}
+    if not match:
+        return {}
+    block = match.group(1)
+    result = parse_js_object(block) or {}
+    bc_match = re.search(r'breadcrumb\s*:\s*\[([^\]]*)\]', block)
+    if bc_match:
+        result['breadcrumb'] = re.findall(r'["\']([^"\']*)["\']', bc_match.group(1))
+    return result
 
 def extract_report_meta(content):
     """Extract REPORT_META (updated timestamp) from club data."""
@@ -111,11 +134,9 @@ def aggregate_club_data(club_slug, club_data_path):
     meta = extract_report_meta(content)
     updated_str = meta.get('updated', '')
 
-    # Extract INCOMING and OUTGOING
     incoming = extract_js_array(content, 'INCOMING')
     outgoing = extract_js_array(content, 'OUTGOING')
 
-    # Add club origin and normalize recency
     for item in incoming:
         item['club_origin'] = brand.get('slug', club_slug)
         breadcrumb = brand.get('breadcrumb', ['Unknown', 'Unknown'])
@@ -144,34 +165,29 @@ def aggregate_club_data(club_slug, club_data_path):
 def deduplicate_and_rank(stories):
     """Deduplicate players and rank. Returns sorted list, highest-priority first."""
 
-    # Deduplicate: merge stories with same name, keep highest tier
     deduped = {}
     for story in stories:
         name = story.get('name', 'Unknown')
         if name not in deduped:
             deduped[name] = story
         else:
-            # Keep the higher-tier version (lower tier number = higher priority)
             existing_tier = deduped[name].get('tier', 5)
             new_tier = story.get('tier', 5)
             if new_tier < existing_tier:
                 deduped[name] = story
             elif new_tier == existing_tier:
-                # If same tier, keep the one with higher prob
                 existing_prob = deduped[name].get('prob', 0)
                 new_prob = story.get('prob', 0)
                 if new_prob > existing_prob:
                     deduped[name] = story
 
-    # Rank: tier (asc), prob (desc), then by value
     def sort_key(story):
         name, item = story
         tier = item.get('tier', 5)
-        prob = -(item.get('prob', 0))  # negative because we want desc
-        # Extract numeric value from fee string for tiebreaker
+        prob = -(item.get('prob', 0))
         fee_str = str(item.get('fee', '0m'))
         value_match = re.search(r'(\d+)', fee_str)
-        value = -(int(value_match.group(1)) if value_match else 0)  # negative for desc
+        value = -(int(value_match.group(1)) if value_match else 0)
         return (tier, prob, value)
 
     sorted_stories = sorted(deduped.items(), key=sort_key)
@@ -181,7 +197,6 @@ def emit_global_data(all_stories):
     """Emit data/global.data.js with top 12 stories."""
     top_stories = all_stories[:12]
 
-    # Compute global stats
     nations = {}
     leagues = {}
     for story in all_stories:
@@ -196,7 +211,28 @@ def emit_global_data(all_stories):
 
     top_league = max(leagues.items(), key=lambda x: x[1])[0] if leagues else 'Unknown'
 
-    # Build JS output
+    # Leagues represented within each nation (for nation-card subtitles)
+    nation_leagues = {}
+    for story in all_stories:
+        nation = story.get('nation', 'Unknown')
+        league = story.get('league', 'Unknown')
+        nation_leagues.setdefault(nation, set()).add(league)
+
+    nations_sorted = sorted(nations.items(), key=lambda x: -x[1])
+    nations_js = '[\n'
+    for nation_name, count in nations_sorted:
+        if nation_name == 'Unknown':
+            continue
+        slug = slugify(nation_name)
+        flag = FLAG_EMOJI.get(nation_name, '🌍')
+        league_count = len(nation_leagues.get(nation_name, set()))
+        nations_js += f'''  {{
+    name: "{nation_name}", slug: "{slug}", flag_emoji: "{flag}",
+    stories_count: {count}, league_count: {league_count}
+  }},
+'''
+    nations_js += ']'
+
     headlines_js = '[\n'
     for story in top_stories:
         headline = story.get('name', 'Unknown').replace('"', '\\"')
@@ -230,6 +266,8 @@ def emit_global_data(all_stories):
 
 const HEADLINES = {headlines_js};
 
+const NATIONS = {nations_js};
+
 const STATS = {{
   global_spend: "£5.2bn estimated",
   top_league: "{top_league}",
@@ -255,7 +293,6 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
     nation_stories = [s for s in all_stories if s.get('nation') == nation_name]
     top_stories = nation_stories[:15]
 
-    # Count by league within this nation
     leagues = {}
     for story in nation_stories:
         league = story.get('league', 'Unknown')
@@ -271,6 +308,7 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
   }},
 '''
     stories_js += ']'
+    nation_flag = FLAG_EMOJI.get(nation_name, '\U0001F30D')
 
     data_js = f'''/* ============================================================
    MERCATO IQ · NATION DATA · {nation_name}
@@ -279,7 +317,7 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
 
 const NATION = {{
   name: "{nation_name}",
-  flag_emoji: "🌍",
+  flag_emoji: "{nation_flag}",
   stories_count: {len(nation_stories)}
 }};
 
@@ -304,7 +342,6 @@ def emit_league_data(all_stories, league_slug, league_name):
     league_stories = [s for s in all_stories if s.get('league') == league_name]
     top_stories = league_stories[:20]
 
-    # Count by club within this league
     clubs = {}
     for story in league_stories:
         club = story.get('club_origin', 'Unknown')
@@ -348,7 +385,6 @@ const REPORT_META = {{
     print(f'EMIT: data/leagues/{league_slug}.data.js ({len(top_stories)} top stories)')
 
 def main():
-    # Collect all club data
     print('AGGREGATE: reading all club data files...')
     all_stories = []
     nations_set = set()
@@ -368,19 +404,15 @@ def main():
 
     print(f'AGGREGATE: {len(all_stories)} total stories found across all clubs')
 
-    # Deduplicate and rank
     sorted_stories = deduplicate_and_rank(all_stories)
     print(f'AGGREGATE: {len(sorted_stories)} unique stories after dedup')
 
-    # Emit global
     emit_global_data(sorted_stories)
 
-    # Emit per nation
     for nation in sorted(nations_set):
         nation_slug = nation.lower().replace(' ', '-')
         emit_nation_data(sorted_stories, nation_slug, nation)
 
-    # Emit per league
     for league in sorted(leagues_set):
         league_slug = league.lower().replace(' ', '-')
         emit_league_data(sorted_stories, league_slug, league)
