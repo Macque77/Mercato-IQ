@@ -1,0 +1,741 @@
+<!--
+  MERCATO IQ - GLOBAL SPLASH (v3, matches the club dashboard design system)
+  DO NOT EDIT DURING A REFRESH. Data lives in data/global.data.js, generated
+  by engine/aggregate.py and spliced in by engine/build_extended.py --level global.
+  Mechanics: engine/REFRESH_RUNBOOK.md. Design language forked from template.html
+  so every level of the site (splash -> nation -> league -> club) reads as one product.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ · The Transfer Market, Decoded</title>
+<meta name="description" content="Every credible transfer rumour across Europe's major leagues, rated on two independent scores and updated the moment the picture changes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;
+    --bg-2:#111318;
+    --panel:#16181e;
+    --panel-2:#1c1f26;
+    --line:#2a2e38;
+    --red:#e21f26;
+    --red-bright:#ff2b24;
+    --red-deep:#a3151a;
+    --primary-rgb:226,31,38;
+    --white:#f4f3ee;
+    --muted:#8b909c;
+    --muted-2:#5f6471;
+    --gold:#e8c249;
+    --gold-deep:#a07f12;
+    --green:#33c46a;
+    --yellow:#f2c531;
+    --orange:#ef8b2c;
+    --crit:#e9483f;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(var(--primary-rgb),0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(232,194,73,0.09), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(var(--primary-rgb),0.08), transparent 55%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:0 28px}
+
+  /* ---------- HEADER ---------- */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(12,13,16,0.97),rgba(12,13,16,0.86));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 28px;max-width:1600px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px}
+  .mark{width:46px;height:46px;flex:none;filter:drop-shadow(0 0 10px rgba(232,194,73,0.25))}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1 b{color:var(--gold)}
+  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .status-pill{
+    display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
+    color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* ---------- HERO (always visible: this is the front door) ---------- */
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);position:relative}
+  .hero-mark{width:120px;height:120px;margin-bottom:26px;filter:drop-shadow(0 0 24px rgba(232,194,73,0.22))}
+  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(38px,7vw,76px);line-height:.94;text-transform:uppercase;letter-spacing:.5px;max-width:20ch}
+  .hero h2 em{font-style:normal;color:var(--gold)}
+  .hero .lede{margin-top:22px;max-width:74ch;color:#c9ccd4;font-size:17.5px}
+  .hero .lede b{color:var(--white)}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .btn{font-family:var(--mono);font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;padding:13px 24px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary{background:var(--red);color:#fff}
+  .btn-primary:hover{background:var(--red-bright);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--line);color:var(--white);background:var(--panel)}
+  .btn-ghost:hover{border-color:var(--gold-deep);color:var(--gold)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row span b{color:var(--gold);font-weight:700}
+  .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:22px;background:var(--panel)}
+  .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .updated-stamp .seg.dt{color:var(--muted);border-right:1px solid var(--line)}
+  .updated-stamp .seg.dt b{color:var(--white)}
+  .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
+  .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:38px 0 8px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
+  .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .stat .v{font-family:var(--display);font-weight:400;font-size:28px;margin-top:8px;line-height:1;letter-spacing:.5px}
+  .stat .v small{font-size:13px;color:var(--muted);font-family:var(--mono)}
+  .stat.gold::after{background:var(--gold)}
+  .stat.gold .v{color:var(--gold)}
+
+  /* ---------- QUICK NAV (scroll-reduction protocol) ---------- */
+  .quicknav{position:sticky;top:75px;z-index:40;background:rgba(12,13,16,.93);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .quicknav-inner{max-width:1600px;margin:0 auto;display:flex;gap:6px;padding:8px 28px;overflow-x:auto;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
+  .quicknav-inner::-webkit-scrollbar{display:none}
+  .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none;background:none;cursor:pointer}
+  .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
+  section[id]{scroll-margin-top:150px}
+
+  /* ---------- SECTION ---------- */
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  .sec-head h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;letter-spacing:.5px}
+  .sec-head .num{font-family:var(--mono);font-size:12px;color:var(--red-bright);border:1px solid var(--red-deep);border-radius:6px;padding:3px 8px}
+  .sec-sub{color:var(--muted);font-size:14px;margin-bottom:26px;max-width:80ch}
+
+  /* ---------- HEADLINE CARDS ---------- */
+  /* auto-fit (not auto-fill): with auto-fill, unused tracks stay reserved-but-empty when
+     there are fewer cards than columns that could fit, so the visible cards bunch to the
+     left of a mostly-empty row. auto-fit collapses those empty tracks to zero width, so the
+     cards actually there stretch to use the full row. */
+  .hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .hcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;position:relative;overflow:hidden;transition:.2s;cursor:pointer;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+  .hcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--line);transition:.2s}
+  .hcard:hover{border-color:var(--gold-deep);transform:translateY(-3px);background:var(--panel-2)}
+  .hcard:hover::before{background:var(--gold)}
+  .hbadges{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+  .hb{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+  .hb.in{background:rgba(51,196,106,0.14);color:var(--green)}
+  .hb.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
+  .hb.tier{background:rgba(232,194,73,0.14);color:var(--gold)}
+  .htitle{font-family:var(--display);font-weight:400;font-size:19px;letter-spacing:.3px;line-height:1.15;margin-bottom:10px;flex-grow:1;text-transform:none}
+  .hctx{font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:14px}
+  .hfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+  .hfoot .age{font-family:var(--mono);font-size:11px;color:var(--muted-2)}
+  .hprob{display:flex;align-items:center;gap:7px}
+  .hprob .ldot{width:8px;height:8px;border-radius:50%}
+  .hprob .val{font-family:var(--mono);font-weight:700;font-size:13px}
+
+  /* ---------- NATION / LEAGUE CARDS ---------- */
+  .ngrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .ncard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 18px;text-align:center;cursor:pointer;transition:.2s;text-decoration:none;color:inherit;display:block}
+  .ncard:hover{background:var(--panel-2);border-color:var(--gold-deep);transform:translateY(-3px)}
+  .ncard .flag{font-size:38px;margin-bottom:10px;line-height:1}
+  .ncard .nm{font-family:var(--display);font-weight:400;font-size:16px;letter-spacing:.4px;text-transform:uppercase;margin-bottom:6px}
+  .ncard .st{font-size:11.5px;color:var(--muted);font-family:var(--mono)}
+  .empty-note{color:var(--muted-2);font-size:13px;font-style:italic;padding:14px 0}
+
+  /* ---------- TRENDING / BOX ---------- */
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+  .box h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:16px;color:var(--gold)}
+  .rank{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .rank:last-child{border:none}
+  .rank .n{font-family:var(--display);font-size:18px;color:var(--muted-2);width:26px;flex:none}
+  .rank .nm{flex:1;font-size:14px;min-width:0}
+  .rank .nm small{display:block;color:var(--muted);font-family:var(--mono);font-size:11px;margin-top:2px}
+  .rank .pct{font-family:var(--mono);font-weight:700;font-size:13px;flex:none}
+
+  /* ---------- DEADLINE DAY ---------- */
+  .countdown{background:linear-gradient(135deg,rgba(var(--primary-rgb),0.12),var(--panel));border:1px solid var(--red-deep);border-radius:14px;padding:32px;text-align:center;margin-bottom:28px}
+  .countdown .cd-label{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .cd-nums{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  .cd-unit{min-width:88px}
+  .cd-unit .v{font-family:var(--display);font-size:clamp(32px,6vw,54px);color:var(--white);line-height:1;text-shadow:0 0 20px rgba(var(--primary-rgb),0.4)}
+  .cd-unit .l{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .dl-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .dl-league{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+  .dl-status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 10px;border-radius:5px}
+  .dl-status.active{background:rgba(51,196,106,0.14);color:var(--green)}
+  .dl-status.final{background:rgba(242,197,49,0.14);color:var(--yellow)}
+  .dl-status.closed{background:rgba(233,72,63,0.14);color:var(--crit)}
+
+  /* ---------- METHOD (legend) ---------- */
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .legend .col h5{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .legend .row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#c3c7d0;margin-bottom:9px}
+  .legend .row .k{font-family:var(--mono);font-weight:700;flex:none;min-width:48px}
+  .tier{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap}
+  .t1{color:#7fe3a3;background:rgba(51,196,106,0.13)}
+  .t2{color:#bfe07f;background:rgba(160,224,127,0.12)}
+  .t3{color:var(--yellow);background:rgba(242,197,49,0.12)}
+  .t4{color:#ef9a9a;background:rgba(233,72,63,0.12)}
+  .weights{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .w{font-family:var(--mono);font-size:11.5px;color:#c3c7d0;border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+  .w b{color:var(--gold)}
+
+  /* ---------- TAB PANELS ---------- */
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:panelIn .28s ease both}
+  @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* ---------- PAGER ---------- */
+  .pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:34px 0 6px;padding:12px 14px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .pg-btn{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);
+    background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;cursor:pointer;transition:.15s}
+  .pg-btn:hover{border-color:var(--gold-deep);color:var(--gold)}
+  .pg-btn:disabled{opacity:.32;cursor:default}
+  .pg-btn:disabled:hover{border-color:var(--line);color:var(--white)}
+  .pg-meter{display:flex;gap:7px}
+  .pg-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.15s}
+  .pg-dot.on{background:var(--red);box-shadow:0 0 8px var(--red)}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:12.5px}
+  footer b{color:var(--white)}
+  .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .twocol{grid-template-columns:1fr}
+    .legend{grid-template-columns:1fr}
+    .brand .sub{display:none}
+  }
+  @media(max-width:560px){
+    .status-pill{display:none}
+    .updated-stamp{flex-wrap:wrap}
+    .hero{padding:44px 0 30px}
+    .hero-mark{width:88px;height:88px}
+    .cd-unit{min-width:70px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ">
+        <defs>
+          <radialGradient id="ballFill" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#2b2f38"/><stop offset="55%" stop-color="#16181d"/><stop offset="100%" stop-color="#08090b"/></radialGradient>
+          <radialGradient id="sheen" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="greenArc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4f7c5"/><stop offset="18%" stop-color="#5fcf6a"/><stop offset="38%" stop-color="#127a34"/><stop offset="55%" stop-color="#6fe07a"/><stop offset="72%" stop-color="#1a8f3d"/><stop offset="100%" stop-color="#063d18"/></linearGradient>
+          <linearGradient id="redArc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffd3cf"/><stop offset="18%" stop-color="#ff5b4e"/><stop offset="38%" stop-color="#951712"/><stop offset="55%" stop-color="#ff6a5c"/><stop offset="72%" stop-color="#ab1c15"/><stop offset="100%" stop-color="#4a0906"/></linearGradient>
+          <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4f7f9"/><stop offset="30%" stop-color="#aab4bd"/><stop offset="55%" stop-color="#5b6570"/><stop offset="80%" stop-color="#c7d0d7"/><stop offset="100%" stop-color="#7c848d"/></linearGradient>
+        </defs>
+        <g fill="none" stroke-linecap="round">
+          <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="url(#greenArc)" stroke-width="7"/>
+          <polygon points="109.2,51.3 100.4,47.9 105.27,52.41 104.9,58.4" fill="url(#greenArc)" stroke="#eafff0" stroke-width="0.4" stroke-opacity="0.5"/>
+          <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="url(#redArc)" stroke-width="7"/>
+          <polygon points="10.8,68.7 19.6,72.1 14.73,67.59 15.1,61.6" fill="url(#redArc)" stroke="#fff1ef" stroke-width="0.4" stroke-opacity="0.5"/>
+        </g>
+        <circle cx="60" cy="60" r="38" fill="url(#ballFill)" stroke="#3a3f4b" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="38" fill="none" stroke="url(#chrome)" stroke-width="1" opacity="0.4"/>
+        <ellipse cx="46" cy="42" rx="20" ry="14" fill="url(#sheen)"/>
+        <g stroke="url(#chrome)" stroke-width="1" opacity="0.65" fill="none" stroke-linecap="round">
+          <line x1="60" y1="48" x2="60" y2="22"/>
+          <line x1="71.41" y1="56.29" x2="96.14" y2="48.26"/>
+          <line x1="67.05" y1="69.71" x2="82.34" y2="90.74"/>
+          <line x1="52.95" y1="69.71" x2="37.66" y2="90.74"/>
+          <line x1="48.59" y1="56.29" x2="23.86" y2="48.26"/>
+        </g>
+        <polygon points="60,48 71.41,56.29 67.05,69.71 52.95,69.71 48.59,56.29" fill="#14161b" stroke="url(#chrome)" stroke-width="1.4"/>
+        <circle cx="60" cy="60" r="3.1" fill="url(#chrome)"/>
+      </svg>
+      <div>
+        <h1>Mercato <b>IQ</b></h1>
+        <div class="sub">The transfer market, decoded</div>
+      </div>
+    </div>
+    <div class="status-pill"><span class="dot"></span> LIVE · <span id="asofPill"></span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO: always visible, this is the front door of the whole site -->
+  <div class="hero">
+    <svg class="hero-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ mark">
+      <defs>
+        <radialGradient id="ballFill2" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#2b2f38"/><stop offset="55%" stop-color="#16181d"/><stop offset="100%" stop-color="#08090b"/></radialGradient>
+        <radialGradient id="sheen2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="greenArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4f7c5"/><stop offset="18%" stop-color="#5fcf6a"/><stop offset="38%" stop-color="#127a34"/><stop offset="55%" stop-color="#6fe07a"/><stop offset="72%" stop-color="#1a8f3d"/><stop offset="100%" stop-color="#063d18"/></linearGradient>
+        <linearGradient id="redArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffd3cf"/><stop offset="18%" stop-color="#ff5b4e"/><stop offset="38%" stop-color="#951712"/><stop offset="55%" stop-color="#ff6a5c"/><stop offset="72%" stop-color="#ab1c15"/><stop offset="100%" stop-color="#4a0906"/></linearGradient>
+        <linearGradient id="chrome2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4f7f9"/><stop offset="30%" stop-color="#aab4bd"/><stop offset="55%" stop-color="#5b6570"/><stop offset="80%" stop-color="#c7d0d7"/><stop offset="100%" stop-color="#7c848d"/></linearGradient>
+        <filter id="markGlow2" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="2.1" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <g filter="url(#markGlow2)" fill="none" stroke-linecap="round">
+        <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="url(#greenArc2)" stroke-width="6.5"/>
+        <polygon points="109.2,51.3 100.4,47.9 105.27,52.41 104.9,58.4" fill="url(#greenArc2)" stroke="#eafff0" stroke-width="0.4" stroke-opacity="0.5"/>
+        <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="url(#redArc2)" stroke-width="6.5"/>
+        <polygon points="10.8,68.7 19.6,72.1 14.73,67.59 15.1,61.6" fill="url(#redArc2)" stroke="#fff1ef" stroke-width="0.4" stroke-opacity="0.5"/>
+      </g>
+      <circle cx="60" cy="60" r="38" fill="url(#ballFill2)" stroke="#3a3f4b" stroke-width="1.5"/>
+      <circle cx="60" cy="60" r="38" fill="none" stroke="url(#chrome2)" stroke-width="1" opacity="0.4"/>
+      <ellipse cx="46" cy="42" rx="20" ry="14" fill="url(#sheen2)"/>
+      <g stroke="url(#chrome2)" stroke-width="1" opacity="0.65" fill="none" stroke-linecap="round">
+        <line x1="60" y1="48" x2="60" y2="22"/>
+        <line x1="71.41" y1="56.29" x2="96.14" y2="48.26"/>
+        <line x1="67.05" y1="69.71" x2="82.34" y2="90.74"/>
+        <line x1="52.95" y1="69.71" x2="37.66" y2="90.74"/>
+        <line x1="48.59" y1="56.29" x2="23.86" y2="48.26"/>
+      </g>
+      <polygon points="60,48 71.41,56.29 67.05,69.71 52.95,69.71 48.59,56.29" fill="#14161b" stroke="url(#chrome2)" stroke-width="1.4"/>
+      <circle cx="60" cy="60" r="3.1" fill="url(#chrome2)"/>
+    </svg>
+    <div class="updated-stamp" id="stamp"></div>
+    <div class="kicker">GLOBAL &middot; ALL LEAGUES &middot; UPDATED THE MOMENT THE PICTURE CHANGES</div>
+    <h2>The transfer market,<br><em>decoded</em> live.</h2>
+    <p class="lede">Every credible rumour across Europe's major leagues, rated on two independent scores, <b>is it true</b>, and <b>will it actually happen</b>, then ranked, sourced back to the original reporter, and rebuilt the moment a story moves. No aggregator noise. No guessing which report to trust.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#sec-nations">Select a nation &rarr;</a>
+      <a class="btn btn-ghost" href="#sec-breaking">See today's biggest stories</a>
+    </div>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stats" id="statStrip"></div>
+
+  <!-- TAB NAV (scroll-reduction protocol, same as club pages) -->
+  <nav class="quicknav" aria-label="Sections" style="margin-top:8px">
+    <div class="quicknav-inner" id="tabbar" role="tablist">
+      <span class="qn-tag">SECTIONS</span>
+      <button class="qn-link tabbtn active" data-go="breaking" role="tab" aria-selected="true">Breaking</button>
+      <button class="qn-link tabbtn lead" data-go="nations" role="tab">By Nation</button>
+      <button class="qn-link tabbtn" data-go="trending" role="tab">Trending</button>
+      <button class="qn-link tabbtn lead" data-go="deadline" role="tab">Deadline Day</button>
+      <button class="qn-link tabbtn" data-go="method" role="tab">Method</button>
+    </div>
+  </nav>
+
+  <div class="tabpanel active" id="panel-breaking">
+    <section id="sec-breaking">
+      <div class="sec-head"><h3>Breaking Now</h3><span class="num">01</span></div>
+      <p class="sec-sub">The biggest stories across every tracked club right now, ranked by source tier, then how likely each is to actually happen.</p>
+      <div class="hgrid" id="headlines-grid"></div>
+    </section>
+  </div>
+
+  <div class="tabpanel" id="panel-nations">
+    <section id="sec-nations">
+      <div class="sec-head"><h3>Select a Nation</h3><span class="num">02</span></div>
+      <p class="sec-sub">Pick a nation to see its biggest transfer stories, then drill into a league, then a club.</p>
+      <div class="ngrid" id="nation-grid"></div>
+    </section>
+  </div>
+
+  <div class="tabpanel" id="panel-trending">
+    <section id="sec-trending">
+      <div class="sec-head"><h3>Trending</h3><span class="num">03</span></div>
+      <p class="sec-sub">What's moving the market this week.</p>
+      <div class="twocol">
+        <div class="box">
+          <h4>&#128293; Biggest Deals</h4>
+          <div id="biggest-deals"></div>
+        </div>
+        <div class="box">
+          <h4>&#11088; Likeliest to Happen</h4>
+          <div id="likely-deals"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="tabpanel" id="panel-deadline">
+    <section id="sec-deadline">
+      <div class="sec-head"><h3>Deadline Day</h3><span class="num">04</span></div>
+      <p class="sec-sub">Every tracked window, live status, and the countdown that matters most.</p>
+      <div class="countdown">
+        <div class="cd-label">Next major window closes in</div>
+        <div class="cd-nums" id="countdown"></div>
+      </div>
+      <div class="deadline-grid" id="deadline-grid"></div>
+    </section>
+  </div>
+
+  <div class="tabpanel" id="panel-method">
+    <section id="sec-method">
+      <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">05</span></div>
+      <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
+      <div class="legend">
+        <div class="col">
+          <h5>Source Tiers</h5>
+          <div class="row"><span class="k"><span class="tier t1">T1</span></span><span><b style="color:var(--white)">Elite</b>: Ornstein, Romano, BBC, The Athletic, official club statements.</span></div>
+          <div class="row"><span class="k"><span class="tier t2">T2</span></span><span><b style="color:var(--white)">Strong</b>: Sky Sports, Di Marzio, Moretto, Plettenberg, reliable club correspondents.</span></div>
+          <div class="row"><span class="k"><span class="tier t3">T3</span></span><span><b style="color:var(--white)">Moderate</b>: TEAMtalk, Football Insider, regional press, club-specific sites.</span></div>
+          <div class="row"><span class="k"><span class="tier t4">T4</span></span><span><b style="color:var(--white)">Weak</b>: Fichajes, fan accounts, aggregator feeds used only as a discovery index, never linked directly.</span></div>
+        </div>
+        <div class="col">
+          <h5>The Dual Rating</h5>
+          <div class="row"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b style="color:var(--white)">real and accurately sourced</b>, driven by tier, corroboration and recency.</span></div>
+          <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b style="color:var(--white)">actually completes</b> this window, fee realism, club stance, player will, competition and need.</span></div>
+          <div class="row"><span class="k">Lights</span><span>&#128994; &gt;50% &middot; &#128993; 30-50% &middot; &#128992; 15-30% &middot; &#128308; &lt;15% (applied to each score separately).</span></div>
+          <h5 style="margin-top:18px">Weighting Model</h5>
+          <div class="weights">
+            <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+            <span class="w">Recruitment fit <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAGER -->
+  <div class="pager" aria-label="Section pager">
+    <button class="pg-btn" id="pgPrev" type="button">&#8592; Prev</button>
+    <div class="pg-meter" id="pgMeter"></div>
+    <button class="pg-btn" id="pgNext" type="button">Next &#8594;</button>
+  </div>
+
+  <footer>
+    <b>Mercato IQ</b> &middot; independent transfer-market intelligence, updated live from Tier 1-3 reporting across Europe's major leagues.
+    <div class="disclaimer">
+      Probabilities are evidence-weighted estimates, not predictions of preferred signings. They move: rising on credible reinforcement, falling on silence or fading sources. Built from publicly reported sources, weighted by tier and recency. Transfer reporting is inherently uncertain; nothing here is financial advice or a guarantee of any outcome.
+    </div>
+  </footer>
+</div>
+
+<script>
+/*==DATA==*/
+const HEADLINES = [
+  {
+    headline: "Senior core review",
+    summary: "The clearest business: a generational refresh sees several Guardiola-era seniors",
+    value: "Mixed",
+    from: "manchester-city", to: "Various",
+    prob: 70, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Manager appointment",
+    summary: "",
+    value: "Compensation",
+    from: "fulham", to: "TBC",
+    prob: 50, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "fulham",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Manager: McKenna (risk)",
+    summary: "",
+    value: "~£8m buy-out",
+    from: "ipswich-town", to: "Fulham",
+    prob: 45, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "ipswich-town",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Morgan Rogers",
+    summary: "",
+    value: "£80m+",
+    from: "arsenal", to: "Aston Villa",
+    prob: 35, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Squad rationalisation",
+    summary: "The defining business: a vast roster trimmed for balance and cost-rule profit. P",
+    value: "Mixed (profit-rich)",
+    from: "chelsea", to: "Various",
+    prob: 65, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "chelsea",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Dayann Methalie",
+    summary: "",
+    value: "~€30m (£25-26m)",
+    from: "sunderland", to: "Toulouse",
+    prob: 58, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-29T21:40:00Z"
+  },
+  {
+    headline: "Lamine Camara",
+    summary: "",
+    value: "~€50m",
+    from: "aston-villa", to: "Monaco",
+    prob: 35, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Gabriel Jesus",
+    summary: "",
+    value: "£25-35m",
+    from: "arsenal", to: "Open to offers",
+    prob: 35, trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Adam Wharton",
+    summary: "",
+    value: "£60m+",
+    from: "crystal-palace", to: "Elite interest",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "crystal-palace",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Elliot Anderson",
+    summary: "",
+    value: "£50-70m",
+    from: "manchester-city", to: "(discussed)",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Riccardo Calafiori",
+    summary: "",
+    value: "£35-45m",
+    from: "arsenal", to: "Juventus",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Leandro Trossard",
+    summary: "",
+    value: "£12-18m",
+    from: "arsenal", to: "Open to offers",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+];
+const STATS = {
+  global_spend: "£5.2bn estimated",
+  top_league: "Premier League",
+  most_active_club: "Manchester City",
+  nations_covered: 1,
+  leagues_covered: 1
+};
+const NATIONS = [
+  {
+    name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    stories_count: 116, league_count: 1
+  },
+];
+const REPORT_META = { updated: "2026-07-29T23:24:34.045185Z", asof: "29 Jul 2026" };
+/*==DATA==*/
+
+/* window-close dates are the one thing this page hardcodes rather than derives,
+   since they change once a year, not per refresh. Edit here when windows shift. */
+const LEAGUE_WINDOWS = [
+  { name: "Premier League", closes: "2026-09-01T22:00:00Z" },
+  { name: "Championship",   closes: "2026-09-01T22:00:00Z" },
+  { name: "La Liga",        closes: "2026-09-01T22:00:00Z" },
+  { name: "Serie A",        closes: "2026-09-01T22:00:00Z" },
+  { name: "Bundesliga",     closes: "2026-09-01T21:00:00Z" },
+  { name: "Ligue 1",        closes: "2026-09-01T22:00:00Z" },
+];
+
+const lightColor = { g: 'var(--green)', y: 'var(--yellow)', o: 'var(--orange)', r: 'var(--crit)' };
+function lightFor(v){ return v > 50 ? 'g' : v >= 30 ? 'y' : v >= 15 ? 'o' : 'r'; }
+
+function renderHeadlines(){
+  const grid = document.getElementById('headlines-grid');
+  if(!HEADLINES.length){ grid.innerHTML = '<div class="empty-note">No headlines yet. Run engine/aggregate.py after the first club refresh.</div>'; return; }
+  grid.innerHTML = HEADLINES.slice(0, 24).map(hl => {
+    const light = lightFor(hl.prob || 0);
+    const dirClass = hl.direction === 'out' ? 'out' : 'in';
+    const dirLabel = hl.direction === 'out' ? 'OUT' : 'IN';
+    const tierBadge = hl.tier === 1 ? '<span class="hb tier">Tier 1</span>' : '';
+    const href = hl.club_link ? (hl.club_link + '.html') : '#';
+    return `<a class="hcard" href="${href}">
+        <div class="hbadges"><span class="hb ${dirClass}">${dirLabel}</span>${tierBadge}</div>
+        <div class="htitle">${hl.headline || ''}</div>
+        <div class="hctx"><b>${hl.nation || ''}</b> &middot; ${hl.league || ''} &middot; ${hl.value || ''}</div>
+        <div class="hfoot">
+          <span class="age">${hl.updated ? timeAgo(hl.updated) : (hl.report || '')}</span>
+          <span class="hprob"><span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 6px ${lightColor[light]}"></span><span class="val" style="color:${lightColor[light]}">${hl.prob || 0}%</span></span>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+function renderNations(){
+  const grid = document.getElementById('nation-grid');
+  const list = Array.isArray(NATIONS) ? NATIONS : [];
+  if(!list.length){ grid.innerHTML = '<div class="empty-note">Nations appear here once engine/aggregate.py has run across at least one club.</div>'; return; }
+  grid.innerHTML = list.map(n => `
+    <a class="ncard" href="nations/${n.slug}.html">
+      <div class="flag">${n.flag_emoji || '\u{1F30D}'}</div>
+      <div class="nm">${n.name}</div>
+      <div class="st">${n.stories_count || 0} live ${n.stories_count === 1 ? 'story' : 'stories'}</div>
+    </a>`).join('');
+}
+
+function renderTrending(){
+  const byValue = HEADLINES.slice().sort((a, b) => (parseInt(b.value) || 0) - (parseInt(a.value) || 0)).slice(0, 10);
+  const likely = HEADLINES.filter(h => (h.prob || 0) >= 75).sort((a, b) => (b.prob||0)-(a.prob||0)).slice(0, 10);
+  const rankRow = (h) => `<div class="rank"><span class="n"></span><span class="nm">${h.headline}<small>${h.nation || ''} &middot; ${h.value || ''}</small></span><span class="pct" style="color:${lightColor[lightFor(h.prob||0)]}">${h.prob || 0}%</span></div>`;
+  document.getElementById('biggest-deals').innerHTML = byValue.length ? byValue.map(rankRow).join('') : '<div class="empty-note">No data yet.</div>';
+  document.getElementById('likely-deals').innerHTML = likely.length ? likely.map(rankRow).join('') : '<div class="empty-note">No data yet.</div>';
+}
+
+function renderDeadlines(){
+  const now = Date.now();
+  document.getElementById('deadline-grid').innerHTML = LEAGUE_WINDOWS.map(w => {
+    const diffDays = (new Date(w.closes).getTime() - now) / 86400000;
+    let cls = 'active', label = '&#128994; Active';
+    if(diffDays < 0){ cls = 'closed'; label = '&#128308; Closed'; }
+    else if(diffDays <= 7){ cls = 'final'; label = '&#128993; Final Week'; }
+    return `<div class="dl-card"><div class="dl-league">${w.name}</div><span class="dl-status ${cls}">${label}</span></div>`;
+  }).join('');
+
+  const soonest = LEAGUE_WINDOWS.map(w => new Date(w.closes).getTime()).filter(t => t > now).sort((a,b)=>a-b)[0];
+  const cdEl = document.getElementById('countdown');
+  function tickCountdown(){
+    if(!soonest){ cdEl.innerHTML = '<div class="cd-unit"><div class="v">&mdash;</div><div class="l">All tracked windows closed</div></div>'; return; }
+    const ms = soonest - Date.now();
+    const d = Math.max(0, Math.floor(ms / 86400000));
+    const h = Math.max(0, Math.floor((ms % 86400000) / 3600000));
+    const m = Math.max(0, Math.floor((ms % 3600000) / 60000));
+    const s = Math.max(0, Math.floor((ms % 60000) / 1000));
+    cdEl.innerHTML = [[d,'DAYS'],[h,'HRS'],[m,'MIN'],[s,'SEC']].map(([v,l]) =>
+      `<div class="cd-unit"><div class="v">${String(v).padStart(2,'0')}</div><div class="l">${l}</div></div>`).join('');
+  }
+  tickCountdown();
+  setInterval(tickCountdown, 1000);
+}
+
+function renderStats(){
+  document.getElementById('statStrip').innerHTML = `
+    <div class="stat gold"><div class="l">Est. Global Spend</div><div class="v">${STATS.global_spend || 'TBC'}</div></div>
+    <div class="stat"><div class="l">Most Active League</div><div class="v" style="font-size:20px">${STATS.top_league || 'TBC'}</div></div>
+    <div class="stat"><div class="l">Nations Tracked</div><div class="v">${STATS.nations_covered || 0}</div></div>
+    <div class="stat"><div class="l">Leagues Tracked</div><div class="v">${STATS.leagues_covered || 0}</div></div>`;
+}
+
+function timeAgo(iso){
+  const ms = Date.now() - new Date(iso).getTime();
+  if(isNaN(ms)) return '';
+  const s = Math.floor(ms/1000), m = Math.floor(s/60), h = Math.floor(m/60), d = Math.floor(h/24);
+  if(s < 60) return 'just now';
+  if(m < 60) return m+'m ago';
+  if(h < 24) return h+'h ago';
+  return d+'d ago';
+}
+
+(function(){
+  document.getElementById('asofPill').textContent = (REPORT_META.asof || '').toUpperCase();
+  const t0 = new Date(REPORT_META.updated).getTime();
+  const stamp = document.getElementById('stamp');
+  function fmt(ms){
+    if(isNaN(ms) || ms < 0) return ['CURRENT', 'var(--muted)'];
+    const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
+    let txt;
+    if(s < 60) txt = s+'s';
+    else if(m < 60) txt = m+'m '+(s%60)+'s';
+    else if(h < 24) txt = h+'h '+(m%60)+'m';
+    else txt = d+'d '+(h%24)+'h';
+    const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
+    return ['UPDATED '+txt+' AGO', col];
+  }
+  function tick(){
+    const [txt, col] = fmt(Date.now() - t0);
+    stamp.innerHTML =
+      `<span class="seg dt">AS OF&nbsp;<b>${REPORT_META.asof || ''}</b></span>`+
+      `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+renderStats();
+renderHeadlines();
+renderNations();
+renderTrending();
+renderDeadlines();
+
+/* ===== TAB + PAGER ENGINE (identical pattern to the club dashboards) ===== */
+(function(){
+  const tabOrder = ['breaking','nations','trending','deadline','method'];
+  const tabBtns = Array.from(document.querySelectorAll('.tabbtn'));
+  const meterEl = document.getElementById('pgMeter');
+  const prevBtn = document.getElementById('pgPrev');
+  const nextBtn = document.getElementById('pgNext');
+  let curIdx = 0;
+
+  meterEl.innerHTML = tabOrder.map((t,i) => `<span class="pg-dot${i===0?' on':''}" data-i="${i}" title="${t}"></span>`).join('');
+  const dots = Array.from(meterEl.querySelectorAll('.pg-dot'));
+
+  function showTab(idx, push){
+    if(idx < 0 || idx >= tabOrder.length) return;
+    curIdx = idx;
+    const key = tabOrder[idx];
+    document.querySelectorAll('.tabpanel').forEach(p => p.classList.toggle('active', p.id === 'panel-'+key));
+    tabBtns.forEach(b => {
+      const on = b.dataset.go === key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    dots.forEach((d,i) => d.classList.toggle('on', i === idx));
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === tabOrder.length - 1;
+    if(push !== false){ try{ window.history.replaceState(null,'','#tab-'+key); }catch(e){} }
+  }
+
+  tabBtns.forEach(b => b.addEventListener('click', () => showTab(tabOrder.indexOf(b.dataset.go))));
+  dots.forEach(d => d.addEventListener('click', () => showTab(parseInt(d.dataset.i,10))));
+  prevBtn.addEventListener('click', () => showTab(curIdx-1));
+  nextBtn.addEventListener('click', () => showTab(curIdx+1));
+  document.addEventListener('keydown', e => {
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if(e.key === 'ArrowRight') showTab(curIdx+1);
+    if(e.key === 'ArrowLeft') showTab(curIdx-1);
+  });
+
+  const h = (window.location.hash||'').replace('#tab-','');
+  const start = tabOrder.indexOf(h);
+  showTab(start >= 0 ? start : 0, false);
+})();
+</script>
+</body>
+</html>
