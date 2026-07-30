@@ -231,138 +231,116 @@
 const LEAGUE = {
   name: "Premier League",
   nation: "England",
-  stories_count: 107
+  stories_count: 148
 };
 
 const TOP_STORIES = [  {
     name: "Ousmane Diomande", prob: 80,
-    club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
-    from: "Sporting CP", to: "Nottingham Forest",
-    value: "~£37m + £5m add-ons", updated: "2026-07-30T14:00:00Z"
+    club_origin: "nottingham-forest", direction: "in",
+    from: "Sporting CP", to: "Nottingham Forest"
+  },
+  {
+    name: "Senior core review", prob: 70,
+    club_origin: "manchester-city", direction: "out",
+    from: "Manchester City", to: "Various"
   },
   {
     name: "Cristian Romero", prob: 62,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
-    value: "≈€40m (£35m)", updated: "2026-07-30T14:00:00Z"
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)"
   },
   {
     name: "Bruno Guimarães", prob: 55,
-    club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
-    from: "Newcastle United", to: "Arsenal",
-    value: "£75-85m", updated: "2026-07-30T18:00:00Z"
+    club_origin: "newcastle-united", direction: "out",
+    from: "Newcastle United", to: "Arsenal"
   },
   {
     name: "Savinho", prob: 55,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
-    from: "Manchester City", to: "Tottenham Hotspur",
-    value: "£60m", updated: "2026-07-30T14:00:00Z"
+    club_origin: "tottenham-hotspur", direction: "in",
+    from: "Manchester City", to: "Tottenham Hotspur"
+  },
+  {
+    name: "Manager appointment", prob: 50,
+    club_origin: "fulham", direction: "in",
+    from: "TBC", to: "Fulham"
+  },
+  {
+    name: "Manager: McKenna (risk)", prob: 45,
+    club_origin: "ipswich-town", direction: "out",
+    from: "Ipswich Town", to: "Fulham"
   },
   {
     name: "Lucas Bergvall", prob: 45,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
-    value: "Not yet tested", updated: "2026-07-30T14:00:00Z"
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United"
   },
   {
     name: "Morgan Rogers", prob: 35,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
-    from: "Aston Villa", to: "Arsenal",
-    value: "£80m+", updated: "2026-06-06T12:00:00Z"
+    club_origin: "arsenal", direction: "in",
+    from: "Aston Villa", to: "Arsenal"
   },
   {
     name: "Mateus Fernandes", prob: 34,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
-    from: "West Ham United", to: "Manchester United",
-    value: "£80m (West Ham valuation)", updated: "2026-07-29T18:00:00Z"
+    club_origin: "manchester-united", direction: "in",
+    from: "West Ham United", to: "Manchester United"
   },
   {
     name: "Lewis Hall", prob: 32,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
-    from: "Newcastle United", to: "Manchester United",
-    value: "Not yet quantified — Newcastle expected to demand a premium", updated: "2026-07-29T18:00:00Z"
+    club_origin: "manchester-united", direction: "in",
+    from: "Newcastle United", to: "Manchester United"
   },
   {
     name: "Rafael Leão", prob: 26,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
-    from: "AC Milan", to: "Tottenham Hotspur",
-    value: "TBC", updated: "2026-07-30T14:00:00Z"
+    club_origin: "tottenham-hotspur", direction: "in",
+    from: "AC Milan", to: "Tottenham Hotspur"
   },
   {
     name: "Cody Gakpo", prob: 20,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
-    from: "Liverpool", to: "Tottenham Hotspur",
-    value: "Not yet tested", updated: "2026-07-30T14:00:00Z"
+    club_origin: "tottenham-hotspur", direction: "in",
+    from: "Liverpool", to: "Tottenham Hotspur"
+  },
+  {
+    name: "Squad rationalisation", prob: 65,
+    club_origin: "chelsea", direction: "out",
+    from: "Chelsea", to: "Various"
   },
   {
     name: "Dayann Methalie", prob: 58,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
-    from: "Toulouse", to: "Sunderland",
-    value: "~€30m (£25-26m)", updated: "2026-07-29T21:40:00Z"
+    club_origin: "sunderland", direction: "in",
+    from: "Toulouse", to: "Sunderland"
+  },
+  {
+    name: "Matthias Jaissle", prob: 45,
+    club_origin: "newcastle-united", direction: "in",
+    from: "Al-Ahli (Saudi Pro League)", to: "Newcastle United"
   },
   {
     name: "Marcus Rashford", prob: 42,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
-    from: "Manchester United", to: "AS Roma (or open market)",
-    value: "£40m release clause (all clubs bar Man City & Liverpool)", updated: "2026-07-29T18:00:00Z"
+    club_origin: "manchester-united", direction: "out",
+    from: "Manchester United", to: "AS Roma (or open market)"
   },
   {
     name: "Djed Spence", prob: 42,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "TBD",
-    value: "≈£40m / €40m", updated: "2026-07-30T14:00:00Z"
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "TBD"
   },
   {
     name: "Giorgio Scalvini", prob: 40,
-    club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
-    from: "Atalanta", to: "Newcastle United",
-    value: "≈€45m (£38m)", updated: "2026-07-30T18:00:00Z"
+    club_origin: "newcastle-united", direction: "in",
+    from: "Atalanta", to: "Newcastle United"
   },
   {
     name: "Guglielmo Vicario", prob: 36,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "Juventus",
-    value: "≈£20m", updated: "2026-07-30T14:00:00Z"
-  },
-  {
-    name: "Lamine Camara", prob: 35,
-    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
-    from: "Monaco", to: "Aston Villa",
-    value: "~€50m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Abde Ezzalzouli", prob: 35,
-    club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
-    from: "Real Betis", to: "Newcastle United",
-    value: "≈£43-52m (release clause ≈€60m)", updated: "2026-07-30T18:00:00Z"
-  },
-  {
-    name: "Gabriel Jesus", prob: 35,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
-    from: "Arsenal", to: "Open to offers",
-    value: "£25-35m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Liam Delap", prob: 32,
-    club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
-    from: "Chelsea", to: "Nottingham Forest",
-    value: "Fee unclear (cost Chelsea £30m in 2025)", updated: "2026-07-30T14:00:00Z"
-  },
-  {
-    name: "Adam Wharton", prob: 30,
-    club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "out",
-    from: "Crystal Palace", to: "Elite interest",
-    value: "£60m+", updated: "2026-06-06T12:00:00Z"
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Juventus"
   },
 ];
 
-const BY_CLUB = {"nottingham-forest": 7, "tottenham-hotspur": 10, "newcastle-united": 8, "arsenal": 11, "manchester-united": 10, "sunderland": 20, "aston-villa": 3, "crystal-palace": 1, "manchester-city": 2, "fulham": 1, "leeds-united": 23, "brighton": 1, "bournemouth": 3, "liverpool": 4, "everton": 1, "ipswich-town": 1, "coventry-city": 1};
-
-const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 11}, {"slug": "aston-villa", "name": "Aston Villa", "count": 3}, {"slug": "bournemouth", "name": "Bournemouth", "count": 3}, {"slug": "brentford", "name": "Brentford", "count": 0}, {"slug": "brighton", "name": "Brighton", "count": 1}, {"slug": "chelsea", "name": "Chelsea", "count": 0}, {"slug": "coventry-city", "name": "Coventry City", "count": 1}, {"slug": "crystal-palace", "name": "Crystal Palace", "count": 1}, {"slug": "everton", "name": "Everton", "count": 1}, {"slug": "fulham", "name": "Fulham", "count": 1}, {"slug": "hull-city", "name": "Hull City", "count": 0}, {"slug": "ipswich-town", "name": "Ipswich Town", "count": 1}, {"slug": "leeds-united", "name": "Leeds United", "count": 23}, {"slug": "liverpool", "name": "Liverpool", "count": 4}, {"slug": "manchester-city", "name": "Manchester City", "count": 2}, {"slug": "manchester-united", "name": "Manchester United", "count": 10}, {"slug": "newcastle-united", "name": "Newcastle United", "count": 8}, {"slug": "nottingham-forest", "name": "Nottingham Forest", "count": 7}, {"slug": "sunderland", "name": "Sunderland", "count": 20}, {"slug": "tottenham-hotspur", "name": "Tottenham Hotspur", "count": 10}];
+const BY_CLUB = {"nottingham-forest": 7, "manchester-city": 3, "tottenham-hotspur": 10, "newcastle-united": 9, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "manchester-united": 10, "chelsea": 5, "sunderland": 20, "aston-villa": 4, "crystal-palace": 5, "leeds-united": 23, "brighton": 5, "bournemouth": 4, "hull-city": 5, "brentford": 3, "liverpool": 5, "coventry-city": 4, "everton": 3};
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T17:36:33.052592Z",
+  updated: "2026-07-30T20:47:05.787520Z",
   label: "League aggregation"
 };
 
