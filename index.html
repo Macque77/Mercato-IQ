@@ -1,5 +1,5 @@
 <!--
-  MERCATO IQ - GLOBAL SPLASH (v3, matches the club dashboard design system)
+  MERCATO IQ - GLOBAL SPLASH (v4: full-width hero + nation rail + live window banner)
   DO NOT EDIT DURING A REFRESH. Data lives in data/global.data.js, generated
   by engine/aggregate.py and spliced in by engine/build_extended.py --level global.
   Mechanics: engine/REFRESH_RUNBOOK.md. Design language forked from template.html
@@ -78,21 +78,22 @@
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* ---------- HERO (always visible: this is the front door) ---------- */
-  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);position:relative}
-  .hero-mark{width:120px;height:120px;margin-bottom:26px;filter:drop-shadow(0 0 24px rgba(232,194,73,0.22))}
+  /* ---------- HERO (two-column: story on the left, nation rail on the right) ---------- */
+  .hero{padding:56px 0 34px;border-bottom:1px solid var(--line);position:relative}
+  .hero-top{display:grid;grid-template-columns:1fr 360px;gap:44px;align-items:start}
+  .hero-mark{width:104px;height:104px;margin-bottom:24px;filter:drop-shadow(0 0 24px rgba(232,194,73,0.22))}
   .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:16px}
-  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(38px,7vw,76px);line-height:.94;text-transform:uppercase;letter-spacing:.5px;max-width:20ch}
+  .hero h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,5.6vw,68px);line-height:.96;text-transform:uppercase;letter-spacing:.5px;max-width:18ch}
   .hero h2 em{font-style:normal;color:var(--gold)}
-  .hero .lede{margin-top:22px;max-width:74ch;color:#c9ccd4;font-size:17.5px}
+  .hero .lede{margin-top:20px;max-width:62ch;color:#c9ccd4;font-size:17px}
   .hero .lede b{color:var(--white)}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
   .btn{font-family:var(--mono);font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;padding:13px 24px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
   .btn-primary{background:var(--red);color:#fff}
   .btn-primary:hover{background:var(--red-bright);transform:translateY(-2px)}
   .btn-ghost{border-color:var(--line);color:var(--white);background:var(--panel)}
   .btn-ghost:hover{border-color:var(--gold-deep);color:var(--gold)}
-  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--muted)}
   .meta-row span b{color:var(--gold);font-weight:700}
   .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:22px;background:var(--panel)}
   .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
@@ -101,8 +102,36 @@
   .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
   .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
 
+  /* ---------- NATION RAIL (always visible, right of the hero) ---------- */
+  .rail{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .rail h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold)}
+  .rail .rail-sub{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+  .rail-list{display:flex;flex-direction:column;gap:9px;margin-top:16px}
+  .rail-item{display:flex;align-items:center;gap:12px;padding:12px 13px;border-radius:10px;background:var(--panel-2);border:1px solid var(--line);text-decoration:none;color:inherit;transition:.15s}
+  .rail-item:hover{border-color:var(--gold-deep);background:#22252d;transform:translateX(3px)}
+  .rail-item .flag{font-size:22px;flex:none;line-height:1}
+  .rail-item .info{flex:1;min-width:0}
+  .rail-item .nm{font-family:var(--display);font-size:14px;letter-spacing:.3px;text-transform:uppercase}
+  .rail-item .ct{font-size:10.5px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .rail-item .arrow{color:var(--muted-2);font-size:15px;flex:none}
+  .rail-empty{font-size:12.5px;color:var(--muted-2);font-style:italic;padding:10px 0;line-height:1.5}
+
+  /* ---------- TRANSFER WINDOW / DEADLINE DAY BANNER (front and centre, right under the hero) ---------- */
+  .window-banner{margin:30px 0 6px;border-radius:14px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:linear-gradient(135deg, rgba(51,196,106,0.10), var(--panel));transition:.3s}
+  .window-banner.deadline{border-color:var(--red-deep);background:linear-gradient(135deg, rgba(226,31,38,0.18), var(--panel));animation:bannerPulse 1.6s infinite}
+  .window-banner.closed{border-color:var(--line);background:var(--panel);opacity:.75}
+  @keyframes bannerPulse{0%,100%{box-shadow:0 0 0 rgba(226,31,38,0)}50%{box-shadow:0 0 34px rgba(226,31,38,0.35)}}
+  .wb-label{font-family:var(--mono);font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--green)}
+  .window-banner.deadline .wb-label{color:var(--red-bright)}
+  .window-banner.closed .wb-label{color:var(--muted)}
+  .wb-title{font-family:var(--display);font-size:clamp(21px,2.8vw,30px);text-transform:uppercase;margin-top:6px;letter-spacing:.4px}
+  .wb-cd{display:flex;gap:14px}
+  .wb-unit{min-width:52px;text-align:center}
+  .wb-unit .v{font-family:var(--display);font-size:clamp(24px,3.4vw,34px);line-height:1}
+  .wb-unit .l{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
+
   /* ---------- STAT STRIP ---------- */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:38px 0 8px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:32px 0 8px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
   .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
   .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
@@ -118,6 +147,8 @@
   .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none;background:none;cursor:pointer}
   .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
   .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  .qn-link.active{color:var(--white);background:var(--panel-2);border-color:var(--gold-deep)}
+  .qn-link.active.lead{color:var(--red-bright);background:rgba(226,31,38,0.12);border-color:var(--red-deep)}
   .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
   section[id]{scroll-margin-top:150px}
 
@@ -151,15 +182,6 @@
   .hprob .ldot{width:8px;height:8px;border-radius:50%}
   .hprob .val{font-family:var(--mono);font-weight:700;font-size:13px}
 
-  /* ---------- NATION / LEAGUE CARDS ---------- */
-  .ngrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-  .ncard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 18px;text-align:center;cursor:pointer;transition:.2s;text-decoration:none;color:inherit;display:block}
-  .ncard:hover{background:var(--panel-2);border-color:var(--gold-deep);transform:translateY(-3px)}
-  .ncard .flag{font-size:38px;margin-bottom:10px;line-height:1}
-  .ncard .nm{font-family:var(--display);font-weight:400;font-size:16px;letter-spacing:.4px;text-transform:uppercase;margin-bottom:6px}
-  .ncard .st{font-size:11.5px;color:var(--muted);font-family:var(--mono)}
-  .empty-note{color:var(--muted-2);font-size:13px;font-style:italic;padding:14px 0}
-
   /* ---------- TRENDING / BOX ---------- */
   .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
@@ -171,20 +193,14 @@
   .rank .nm small{display:block;color:var(--muted);font-family:var(--mono);font-size:11px;margin-top:2px}
   .rank .pct{font-family:var(--mono);font-weight:700;font-size:13px;flex:none}
 
-  /* ---------- DEADLINE DAY ---------- */
-  .countdown{background:linear-gradient(135deg,rgba(var(--primary-rgb),0.12),var(--panel));border:1px solid var(--red-deep);border-radius:14px;padding:32px;text-align:center;margin-bottom:28px}
-  .countdown .cd-label{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-  .cd-nums{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-  .cd-unit{min-width:88px}
-  .cd-unit .v{font-family:var(--display);font-size:clamp(32px,6vw,54px);color:var(--white);line-height:1;text-shadow:0 0 20px rgba(var(--primary-rgb),0.4)}
-  .cd-unit .l{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  /* ---------- WINDOWS TAB (per-league grid) ---------- */
   .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
   .dl-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
   .dl-league{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
   .dl-status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 10px;border-radius:5px}
-  .dl-status.active{background:rgba(51,196,106,0.14);color:var(--green)}
-  .dl-status.final{background:rgba(242,197,49,0.14);color:var(--yellow)}
-  .dl-status.closed{background:rgba(233,72,63,0.14);color:var(--crit)}
+  .dl-status.open{background:rgba(51,196,106,0.14);color:var(--green)}
+  .dl-status.deadline{background:rgba(233,72,63,0.16);color:var(--crit)}
+  .dl-status.closed{background:rgba(139,144,156,0.14);color:var(--muted)}
 
   /* ---------- METHOD (legend) ---------- */
   .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -222,18 +238,23 @@
   .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
 
   /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1080px){
+    .hero-top{grid-template-columns:1fr}
+    .rail{max-width:520px}
+  }
   @media(max-width:900px){
     .stats{grid-template-columns:repeat(2,1fr)}
     .twocol{grid-template-columns:1fr}
     .legend{grid-template-columns:1fr}
     .brand .sub{display:none}
+    .window-banner{flex-direction:column;align-items:flex-start}
   }
   @media(max-width:560px){
     .status-pill{display:none}
     .updated-stamp{flex-wrap:wrap}
     .hero{padding:44px 0 30px}
-    .hero-mark{width:88px;height:88px}
-    .cd-unit{min-width:70px}
+    .hero-mark{width:80px;height:80px}
+    .wb-unit{min-width:44px}
   }
 </style>
 </head>
@@ -282,46 +303,59 @@
 
   <!-- HERO: always visible, this is the front door of the whole site -->
   <div class="hero">
-    <svg class="hero-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ mark">
-      <defs>
-        <radialGradient id="ballFill2" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#2b2f38"/><stop offset="55%" stop-color="#16181d"/><stop offset="100%" stop-color="#08090b"/></radialGradient>
-        <radialGradient id="sheen2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
-        <linearGradient id="greenArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4f7c5"/><stop offset="18%" stop-color="#5fcf6a"/><stop offset="38%" stop-color="#127a34"/><stop offset="55%" stop-color="#6fe07a"/><stop offset="72%" stop-color="#1a8f3d"/><stop offset="100%" stop-color="#063d18"/></linearGradient>
-        <linearGradient id="redArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffd3cf"/><stop offset="18%" stop-color="#ff5b4e"/><stop offset="38%" stop-color="#951712"/><stop offset="55%" stop-color="#ff6a5c"/><stop offset="72%" stop-color="#ab1c15"/><stop offset="100%" stop-color="#4a0906"/></linearGradient>
-        <linearGradient id="chrome2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4f7f9"/><stop offset="30%" stop-color="#aab4bd"/><stop offset="55%" stop-color="#5b6570"/><stop offset="80%" stop-color="#c7d0d7"/><stop offset="100%" stop-color="#7c848d"/></linearGradient>
-        <filter id="markGlow2" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="2.1" result="b"/>
-          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-      <g filter="url(#markGlow2)" fill="none" stroke-linecap="round">
-        <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="url(#greenArc2)" stroke-width="6.5"/>
-        <polygon points="109.2,51.3 100.4,47.9 105.27,52.41 104.9,58.4" fill="url(#greenArc2)" stroke="#eafff0" stroke-width="0.4" stroke-opacity="0.5"/>
-        <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="url(#redArc2)" stroke-width="6.5"/>
-        <polygon points="10.8,68.7 19.6,72.1 14.73,67.59 15.1,61.6" fill="url(#redArc2)" stroke="#fff1ef" stroke-width="0.4" stroke-opacity="0.5"/>
-      </g>
-      <circle cx="60" cy="60" r="38" fill="url(#ballFill2)" stroke="#3a3f4b" stroke-width="1.5"/>
-      <circle cx="60" cy="60" r="38" fill="none" stroke="url(#chrome2)" stroke-width="1" opacity="0.4"/>
-      <ellipse cx="46" cy="42" rx="20" ry="14" fill="url(#sheen2)"/>
-      <g stroke="url(#chrome2)" stroke-width="1" opacity="0.65" fill="none" stroke-linecap="round">
-        <line x1="60" y1="48" x2="60" y2="22"/>
-        <line x1="71.41" y1="56.29" x2="96.14" y2="48.26"/>
-        <line x1="67.05" y1="69.71" x2="82.34" y2="90.74"/>
-        <line x1="52.95" y1="69.71" x2="37.66" y2="90.74"/>
-        <line x1="48.59" y1="56.29" x2="23.86" y2="48.26"/>
-      </g>
-      <polygon points="60,48 71.41,56.29 67.05,69.71 52.95,69.71 48.59,56.29" fill="#14161b" stroke="url(#chrome2)" stroke-width="1.4"/>
-      <circle cx="60" cy="60" r="3.1" fill="url(#chrome2)"/>
-    </svg>
-    <div class="updated-stamp" id="stamp"></div>
-    <div class="kicker">GLOBAL &middot; ALL LEAGUES &middot; UPDATED THE MOMENT THE PICTURE CHANGES</div>
-    <h2>The transfer market,<br><em>decoded</em> live.</h2>
-    <p class="lede">Every credible rumour across Europe's major leagues, rated on two independent scores, <b>is it true</b>, and <b>will it actually happen</b>, then ranked, sourced back to the original reporter, and rebuilt the moment a story moves. No aggregator noise. No guessing which report to trust.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#sec-nations">Select a nation &rarr;</a>
-      <a class="btn btn-ghost" href="#sec-breaking">See today's biggest stories</a>
+    <div class="hero-top">
+      <div class="hero-main">
+        <svg class="hero-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ mark">
+          <defs>
+            <radialGradient id="ballFill2" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#2b2f38"/><stop offset="55%" stop-color="#16181d"/><stop offset="100%" stop-color="#08090b"/></radialGradient>
+            <radialGradient id="sheen2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+            <linearGradient id="greenArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4f7c5"/><stop offset="18%" stop-color="#5fcf6a"/><stop offset="38%" stop-color="#127a34"/><stop offset="55%" stop-color="#6fe07a"/><stop offset="72%" stop-color="#1a8f3d"/><stop offset="100%" stop-color="#063d18"/></linearGradient>
+            <linearGradient id="redArc2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffd3cf"/><stop offset="18%" stop-color="#ff5b4e"/><stop offset="38%" stop-color="#951712"/><stop offset="55%" stop-color="#ff6a5c"/><stop offset="72%" stop-color="#ab1c15"/><stop offset="100%" stop-color="#4a0906"/></linearGradient>
+            <linearGradient id="chrome2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4f7f9"/><stop offset="30%" stop-color="#aab4bd"/><stop offset="55%" stop-color="#5b6570"/><stop offset="80%" stop-color="#c7d0d7"/><stop offset="100%" stop-color="#7c848d"/></linearGradient>
+            <filter id="markGlow2" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="2.1" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#markGlow2)" fill="none" stroke-linecap="round">
+            <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="url(#greenArc2)" stroke-width="6.5"/>
+            <polygon points="109.2,51.3 100.4,47.9 105.27,52.41 104.9,58.4" fill="url(#greenArc2)" stroke="#eafff0" stroke-width="0.4" stroke-opacity="0.5"/>
+            <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="url(#redArc2)" stroke-width="6.5"/>
+            <polygon points="10.8,68.7 19.6,72.1 14.73,67.59 15.1,61.6" fill="url(#redArc2)" stroke="#fff1ef" stroke-width="0.4" stroke-opacity="0.5"/>
+          </g>
+          <circle cx="60" cy="60" r="38" fill="url(#ballFill2)" stroke="#3a3f4b" stroke-width="1.5"/>
+          <circle cx="60" cy="60" r="38" fill="none" stroke="url(#chrome2)" stroke-width="1" opacity="0.4"/>
+          <ellipse cx="46" cy="42" rx="20" ry="14" fill="url(#sheen2)"/>
+          <g stroke="url(#chrome2)" stroke-width="1" opacity="0.65" fill="none" stroke-linecap="round">
+            <line x1="60" y1="48" x2="60" y2="22"/>
+            <line x1="71.41" y1="56.29" x2="96.14" y2="48.26"/>
+            <line x1="67.05" y1="69.71" x2="82.34" y2="90.74"/>
+            <line x1="52.95" y1="69.71" x2="37.66" y2="90.74"/>
+            <line x1="48.59" y1="56.29" x2="23.86" y2="48.26"/>
+          </g>
+          <polygon points="60,48 71.41,56.29 67.05,69.71 52.95,69.71 48.59,56.29" fill="#14161b" stroke="url(#chrome2)" stroke-width="1.4"/>
+          <circle cx="60" cy="60" r="3.1" fill="url(#chrome2)"/>
+        </svg>
+        <div class="updated-stamp" id="stamp"></div>
+        <div class="kicker">GLOBAL &middot; ALL LEAGUES &middot; UPDATED THE MOMENT THE PICTURE CHANGES</div>
+        <h2>The transfer market,<br><em>decoded</em> live.</h2>
+        <p class="lede">Every credible rumour across Europe's major leagues, rated on two independent scores, <b>is it true</b>, and <b>will it actually happen</b>, then ranked, sourced back to the original reporter, and rebuilt the moment a story moves. No aggregator noise. No guessing which report to trust.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" id="ctaBreaking" type="button">See today's biggest stories &rarr;</button>
+        </div>
+      </div>
+
+      <!-- NATION RAIL: always visible, this is how you drill down -->
+      <aside class="rail" aria-label="Select a nation">
+        <h4>Select a Nation</h4>
+        <p class="rail-sub">Pick a nation to see its biggest stories, then drill into a league, then a club.</p>
+        <div class="rail-list" id="nation-rail"></div>
+      </aside>
     </div>
   </div>
+
+  <!-- TRANSFER WINDOW / DEADLINE DAY: front and centre, right under the hero -->
+  <div class="window-banner" id="windowBanner"></div>
 
   <!-- STAT STRIP -->
   <div class="stats" id="statStrip"></div>
@@ -331,9 +365,8 @@
     <div class="quicknav-inner" id="tabbar" role="tablist">
       <span class="qn-tag">SECTIONS</span>
       <button class="qn-link tabbtn active" data-go="breaking" role="tab" aria-selected="true">Breaking</button>
-      <button class="qn-link tabbtn lead" data-go="nations" role="tab">By Nation</button>
       <button class="qn-link tabbtn" data-go="trending" role="tab">Trending</button>
-      <button class="qn-link tabbtn lead" data-go="deadline" role="tab">Deadline Day</button>
+      <button class="qn-link tabbtn" data-go="windows" role="tab" id="windowsTabBtn">Transfer Windows</button>
       <button class="qn-link tabbtn" data-go="method" role="tab">Method</button>
     </div>
   </nav>
@@ -346,17 +379,9 @@
     </section>
   </div>
 
-  <div class="tabpanel" id="panel-nations">
-    <section id="sec-nations">
-      <div class="sec-head"><h3>Select a Nation</h3><span class="num">02</span></div>
-      <p class="sec-sub">Pick a nation to see its biggest transfer stories, then drill into a league, then a club.</p>
-      <div class="ngrid" id="nation-grid"></div>
-    </section>
-  </div>
-
   <div class="tabpanel" id="panel-trending">
     <section id="sec-trending">
-      <div class="sec-head"><h3>Trending</h3><span class="num">03</span></div>
+      <div class="sec-head"><h3>Trending</h3><span class="num">02</span></div>
       <p class="sec-sub">What's moving the market this week.</p>
       <div class="twocol">
         <div class="box">
@@ -371,21 +396,17 @@
     </section>
   </div>
 
-  <div class="tabpanel" id="panel-deadline">
-    <section id="sec-deadline">
-      <div class="sec-head"><h3>Deadline Day</h3><span class="num">04</span></div>
-      <p class="sec-sub">Every tracked window, live status, and the countdown that matters most.</p>
-      <div class="countdown">
-        <div class="cd-label">Next major window closes in</div>
-        <div class="cd-nums" id="countdown"></div>
-      </div>
+  <div class="tabpanel" id="panel-windows">
+    <section id="sec-windows">
+      <div class="sec-head"><h3>Transfer Windows</h3><span class="num">03</span></div>
+      <p class="sec-sub">Every tracked window, live status, and the countdown that matters most. A window reads <b style="color:var(--white)">Transfer Window</b> while it's open, then flips to <b style="color:var(--red-bright)">Deadline Day</b> in its final 24 hours.</p>
       <div class="deadline-grid" id="deadline-grid"></div>
     </section>
   </div>
 
   <div class="tabpanel" id="panel-method">
     <section id="sec-method">
-      <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">05</span></div>
+      <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">04</span></div>
       <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
       <div class="legend">
         <div class="col">
@@ -427,28 +448,142 @@
 
 <script>
 /*==DATA==*/
-/* ============================================================
-   MERCATO IQ · GLOBAL DATA · STATE OF RECORD
-   Generated by engine/aggregate.py from all club data.js files.
-   ============================================================ */
-
 const HEADLINES = [
+  {
+    headline: "Senior core review",
+    summary: "The clearest business: a generational refresh sees several Guardiola-era seniors",
+    value: "Mixed",
+    from: "manchester-city", to: "Various",
+    prob: 70, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Manager appointment",
+    summary: "",
+    value: "Compensation",
+    from: "fulham", to: "TBC",
+    prob: 50, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "fulham",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Manager: McKenna (risk)",
+    summary: "",
+    value: "~£8m buy-out",
+    from: "ipswich-town", to: "Fulham",
+    prob: 45, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "ipswich-town",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Morgan Rogers",
+    summary: "",
+    value: "£80m+",
+    from: "arsenal", to: "Aston Villa",
+    prob: 35, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Squad rationalisation",
+    summary: "The defining business: a vast roster trimmed for balance and cost-rule profit. P",
+    value: "Mixed (profit-rich)",
+    from: "chelsea", to: "Various",
+    prob: 65, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "chelsea",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Dayann Methalie",
+    summary: "",
+    value: "~€30m (£25-26m)",
+    from: "sunderland", to: "Toulouse",
+    prob: 58, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-29T21:40:00Z"
+  },
+  {
+    headline: "Lamine Camara",
+    summary: "",
+    value: "~€50m",
+    from: "aston-villa", to: "Monaco",
+    prob: 35, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Gabriel Jesus",
+    summary: "",
+    value: "£25-35m",
+    from: "arsenal", to: "Open to offers",
+    prob: 35, trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Adam Wharton",
+    summary: "",
+    value: "£60m+",
+    from: "crystal-palace", to: "Elite interest",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "crystal-palace",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Elliot Anderson",
+    summary: "",
+    value: "£50-70m",
+    from: "manchester-city", to: "(discussed)",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Riccardo Calafiori",
+    summary: "",
+    value: "£35-45m",
+    from: "arsenal", to: "Juventus",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Leandro Trossard",
+    summary: "",
+    value: "£12-18m",
+    from: "arsenal", to: "Open to offers",
+    prob: 30, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
 ];
-
 const STATS = {
   global_spend: "£5.2bn estimated",
-  top_league: "Unknown",
+  top_league: "Premier League",
   most_active_club: "Manchester City",
-  nations_covered: 0,
-  leagues_covered: 0
+  nations_covered: 1,
+  leagues_covered: 1
 };
-
-const REPORT_META = {
-  asof: "30 Jul 2026",
-  updated: "2026-07-30T10:02:43.766455Z",
-  label: "Global aggregation from all clubs"
-};
-
+const NATIONS = [
+  {
+    name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    stories_count: 116, league_count: 1
+  },
+];
+const REPORT_META = { updated: "2026-07-29T23:24:34.045185Z", asof: "29 Jul 2026" };
 /*==DATA==*/
 
 /* window-close dates are the one thing this page hardcodes rather than derives,
@@ -464,6 +599,16 @@ const LEAGUE_WINDOWS = [
 
 const lightColor = { g: 'var(--green)', y: 'var(--yellow)', o: 'var(--orange)', r: 'var(--crit)' };
 function lightFor(v){ return v > 50 ? 'g' : v >= 30 ? 'y' : v >= 15 ? 'o' : 'r'; }
+
+/* A window reads "Transfer Window" (open, green) right up until its final 24 hours,
+   when it flips to "Deadline Day" (red, urgent). Past close it reads "Window Closed". */
+function windowStatus(win){
+  const closeMs = new Date(win.closes).getTime();
+  const diffMs = closeMs - Date.now();
+  if(diffMs <= 0) return { state: 'closed', cls: 'closed', label: 'WINDOW CLOSED' };
+  if(diffMs <= 86400000) return { state: 'deadline', cls: 'deadline', label: 'DEADLINE DAY' };
+  return { state: 'open', cls: 'open', label: 'TRANSFER WINDOW' };
+}
 
 function renderHeadlines(){
   const grid = document.getElementById('headlines-grid');
@@ -486,16 +631,16 @@ function renderHeadlines(){
   }).join('');
 }
 
-function renderNations(){
-  const grid = document.getElementById('nation-grid');
+function renderRail(){
+  const rail = document.getElementById('nation-rail');
   const list = Array.isArray(NATIONS) ? NATIONS : [];
-  if(!list.length){ grid.innerHTML = '<div class="empty-note">Nations appear here once engine/aggregate.py has run across at least one club.</div>'; return; }
-  grid.innerHTML = list.map(n => `
-    <a class="ncard" href="nations/${n.slug}.html">
-      <div class="flag">${n.flag_emoji || '\u{1F30D}'}</div>
-      <div class="nm">${n.name}</div>
-      <div class="st">${n.stories_count || 0} live ${n.stories_count === 1 ? 'story' : 'stories'}</div>
-    </a>`).join('');
+  if(!list.length){ rail.innerHTML = '<div class="rail-empty">Nations appear here once engine/aggregate.py has run across at least one club.</div>'; return; }
+  rail.innerHTML = list.map(n => `
+    <a class="rail-item" href="nations/${n.slug}.html">
+      <span class="flag">${n.flag_emoji || '\u{1F30D}'}</span>
+      <span class="info"><span class="nm">${n.name}</span><span class="ct">${n.stories_count || 0} live ${n.stories_count === 1 ? 'story' : 'stories'}</span></span>
+      <span class="arrow">&rarr;</span>
+    </a>`).join('') + (list.length < 2 ? '<div class="rail-empty">More nations appear here as they\'re brought under live tracking.</div>' : '');
 }
 
 function renderTrending(){
@@ -507,29 +652,42 @@ function renderTrending(){
 }
 
 function renderDeadlines(){
-  const now = Date.now();
   document.getElementById('deadline-grid').innerHTML = LEAGUE_WINDOWS.map(w => {
-    const diffDays = (new Date(w.closes).getTime() - now) / 86400000;
-    let cls = 'active', label = '&#128994; Active';
-    if(diffDays < 0){ cls = 'closed'; label = '&#128308; Closed'; }
-    else if(diffDays <= 7){ cls = 'final'; label = '&#128993; Final Week'; }
-    return `<div class="dl-card"><div class="dl-league">${w.name}</div><span class="dl-status ${cls}">${label}</span></div>`;
+    const st = windowStatus(w);
+    const label = st.state === 'open' ? '&#128994; Transfer Window' : st.state === 'deadline' ? '&#128308; Deadline Day' : '&#9899; Closed';
+    return `<div class="dl-card"><div class="dl-league">${w.name}</div><span class="dl-status ${st.cls}">${label}</span></div>`;
   }).join('');
+}
 
-  const soonest = LEAGUE_WINDOWS.map(w => new Date(w.closes).getTime()).filter(t => t > now).sort((a,b)=>a-b)[0];
-  const cdEl = document.getElementById('countdown');
-  function tickCountdown(){
-    if(!soonest){ cdEl.innerHTML = '<div class="cd-unit"><div class="v">&mdash;</div><div class="l">All tracked windows closed</div></div>'; return; }
-    const ms = soonest - Date.now();
-    const d = Math.max(0, Math.floor(ms / 86400000));
-    const h = Math.max(0, Math.floor((ms % 86400000) / 3600000));
-    const m = Math.max(0, Math.floor((ms % 3600000) / 60000));
-    const s = Math.max(0, Math.floor((ms % 60000) / 1000));
-    cdEl.innerHTML = [[d,'DAYS'],[h,'HRS'],[m,'MIN'],[s,'SEC']].map(([v,l]) =>
-      `<div class="cd-unit"><div class="v">${String(v).padStart(2,'0')}</div><div class="l">${l}</div></div>`).join('');
+/* The prominent banner right under the hero always tracks the earliest-closing
+   window among leagues we actually have live data for today (Premier League). */
+function renderWindowBanner(){
+  const primary = LEAGUE_WINDOWS.find(w => w.name === STATS.top_league) || LEAGUE_WINDOWS[0];
+  const el = document.getElementById('windowBanner');
+  const tabBtn = document.getElementById('windowsTabBtn');
+  function paint(){
+    const st = windowStatus(primary);
+    el.className = 'window-banner' + (st.state !== 'open' ? ' ' + st.cls : '');
+    const closeMs = new Date(primary.closes).getTime();
+    const ms = Math.max(0, closeMs - Date.now());
+    const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
+    const eyebrow = st.state === 'open' ? '&#128994; WINDOW OPEN' : st.state === 'deadline' ? '&#128308; LIVE NOW' : 'WINDOW STATUS';
+    const cd = st.state === 'closed'
+      ? '<div class="wb-unit"><div class="v">&mdash;</div><div class="l">Closed</div></div>'
+      : [[d,'DAYS'],[h,'HRS'],[m,'MIN'],[s,'SEC']].map(([v,l]) => `<div class="wb-unit"><div class="v">${String(v).padStart(2,'0')}</div><div class="l">${l}</div></div>`).join('');
+    el.innerHTML = `
+      <div>
+        <div class="wb-label">${eyebrow}</div>
+        <div class="wb-title">${primary.name} &middot; ${st.label}</div>
+      </div>
+      <div class="wb-cd">${cd}</div>`;
+    if(tabBtn){
+      tabBtn.textContent = st.state === 'deadline' ? '\u{1F534} Deadline Day' : 'Transfer Windows';
+      tabBtn.classList.toggle('lead', st.state === 'deadline');
+    }
   }
-  tickCountdown();
-  setInterval(tickCountdown, 1000);
+  paint();
+  setInterval(paint, 1000);
 }
 
 function renderStats(){
@@ -576,13 +734,14 @@ function timeAgo(iso){
 
 renderStats();
 renderHeadlines();
-renderNations();
+renderRail();
 renderTrending();
 renderDeadlines();
+renderWindowBanner();
 
 /* ===== TAB + PAGER ENGINE (identical pattern to the club dashboards) ===== */
 (function(){
-  const tabOrder = ['breaking','nations','trending','deadline','method'];
+  const tabOrder = ['breaking','trending','windows','method'];
   const tabBtns = Array.from(document.querySelectorAll('.tabbtn'));
   const meterEl = document.getElementById('pgMeter');
   const prevBtn = document.getElementById('pgPrev');
@@ -592,7 +751,10 @@ renderDeadlines();
   meterEl.innerHTML = tabOrder.map((t,i) => `<span class="pg-dot${i===0?' on':''}" data-i="${i}" title="${t}"></span>`).join('');
   const dots = Array.from(meterEl.querySelectorAll('.pg-dot'));
 
-  function showTab(idx, push){
+  /* scroll: only true for a real user interaction (tab click, dot click, pager, CTA,
+     or landing directly on a #tab-xxx hash). Never true on the default initial paint,
+     so the hero / nation rail / transfer-window banner stay in view on first load. */
+  function showTab(idx, push, scroll){
     if(idx < 0 || idx >= tabOrder.length) return;
     curIdx = idx;
     const key = tabOrder[idx];
@@ -606,21 +768,23 @@ renderDeadlines();
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === tabOrder.length - 1;
     if(push !== false){ try{ window.history.replaceState(null,'','#tab-'+key); }catch(e){} }
+    if(scroll){ try{ document.getElementById('sec-'+key).scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){} }
   }
 
-  tabBtns.forEach(b => b.addEventListener('click', () => showTab(tabOrder.indexOf(b.dataset.go))));
-  dots.forEach(d => d.addEventListener('click', () => showTab(parseInt(d.dataset.i,10))));
-  prevBtn.addEventListener('click', () => showTab(curIdx-1));
-  nextBtn.addEventListener('click', () => showTab(curIdx+1));
+  tabBtns.forEach(b => b.addEventListener('click', () => showTab(tabOrder.indexOf(b.dataset.go), true, true)));
+  dots.forEach(d => d.addEventListener('click', () => showTab(parseInt(d.dataset.i,10), true, true)));
+  prevBtn.addEventListener('click', () => showTab(curIdx-1, true, true));
+  nextBtn.addEventListener('click', () => showTab(curIdx+1, true, true));
   document.addEventListener('keydown', e => {
     if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
-    if(e.key === 'ArrowRight') showTab(curIdx+1);
-    if(e.key === 'ArrowLeft') showTab(curIdx-1);
+    if(e.key === 'ArrowRight') showTab(curIdx+1, true, true);
+    if(e.key === 'ArrowLeft') showTab(curIdx-1, true, true);
   });
+  document.getElementById('ctaBreaking').addEventListener('click', () => showTab(0, true, true));
 
   const h = (window.location.hash||'').replace('#tab-','');
   const start = tabOrder.indexOf(h);
-  showTab(start >= 0 ? start : 0, false);
+  showTab(start >= 0 ? start : 0, false, start >= 0);
 })();
 </script>
 </body>
