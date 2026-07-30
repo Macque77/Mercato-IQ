@@ -137,8 +137,11 @@ def aggregate_club_data(club_slug, club_data_path):
     incoming = extract_js_array(content, 'INCOMING')
     outgoing = extract_js_array(content, 'OUTGOING')
 
+    club_display_name = brand.get('club', club_slug)
+
     for item in incoming:
         item['club_origin'] = brand.get('slug', club_slug)
+        item['club_origin_name'] = club_display_name
         breadcrumb = brand.get('breadcrumb', ['Unknown', 'Unknown'])
         item['nation'] = breadcrumb[0] if breadcrumb else 'Unknown'
         item['league'] = breadcrumb[1] if breadcrumb and len(breadcrumb) > 1 else 'Unknown'
@@ -148,6 +151,7 @@ def aggregate_club_data(club_slug, club_data_path):
 
     for item in outgoing:
         item['club_origin'] = brand.get('slug', club_slug)
+        item['club_origin_name'] = club_display_name
         breadcrumb = brand.get('breadcrumb', ['Unknown', 'Unknown'])
         item['nation'] = breadcrumb[0] if breadcrumb else 'Unknown'
         item['league'] = breadcrumb[1] if breadcrumb and len(breadcrumb) > 1 else 'Unknown'
@@ -238,8 +242,16 @@ def emit_global_data(all_stories):
         headline = story.get('name', 'Unknown').replace('"', '\\"')
         summary = story.get('note', '')[:80].replace('"', '\\"')
         value = story.get('fee', 'TBC').replace('"', '\\"')
-        from_club = story.get('club_origin', '?')
-        to_club = story.get('club', 'TBD')
+        direction = story.get('direction', 'in')
+        club_link = story.get('club_origin', '?')
+        origin_name = story.get('club_origin_name', club_link).replace('"', '\\"')
+        counterparty = str(story.get('club', 'TBD')).replace('"', '\\"')
+        # direction 'out': the tracked club is the seller (from), counterparty is the buyer (to).
+        # direction 'in': the counterparty is the seller (from), the tracked club is the buyer (to).
+        if direction == 'out':
+            from_club, to_club = origin_name, counterparty
+        else:
+            from_club, to_club = counterparty, origin_name
         prob = story.get('prob', 50)
         trend = story.get('trend', 'flat')
         nation = story.get('nation', 'Unknown')
@@ -251,9 +263,10 @@ def emit_global_data(all_stories):
     summary: "{summary}",
     value: "{value}",
     from: "{from_club}", to: "{to_club}",
+    direction: "{direction}",
     prob: {prob}, trend: '{trend}',
     nation: "{nation}", league: "{league}",
-    club_link: "{from_club}",
+    club_link: "{club_link}",
     updated: "{updated}"
   }},
 '''
@@ -302,9 +315,15 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
 
     stories_js = '['
     for story in top_stories:
+        direction = story.get('direction', 'in')
+        club_link = story.get('club_origin', '')
+        origin_name = str(story.get('club_origin_name', club_link)).replace('"', '\\"')
+        counterparty = str(story.get('club', 'TBD')).replace('"', '\\"')
+        from_club, to_club = (origin_name, counterparty) if direction == 'out' else (counterparty, origin_name)
         stories_js += f'''  {{
     name: "{story.get('name', '')}",prob: {story.get('prob', 50)},
-    club_origin: "{story.get('club_origin', '')}", direction: "{story.get('direction', 'in')}"
+    club_origin: "{club_link}", direction: "{direction}",
+    from: "{from_club}", to: "{to_club}"
   }},
 '''
     stories_js += ']'
@@ -341,6 +360,7 @@ def emit_league_data(all_stories, league_slug, league_name):
     """Emit data/leagues/<slug>.data.js for a single league."""
     league_stories = [s for s in all_stories if s.get('league') == league_name]
     top_stories = league_stories[:20]
+    league_nation = next((s.get('nation') for s in league_stories if s.get('nation')), 'Unknown')
 
     clubs = {}
     for story in league_stories:
@@ -351,9 +371,15 @@ def emit_league_data(all_stories, league_slug, league_name):
 
     stories_js = '['
     for story in top_stories:
+        direction = story.get('direction', 'in')
+        club_link = story.get('club_origin', '')
+        origin_name = str(story.get('club_origin_name', club_link)).replace('"', '\\"')
+        counterparty = str(story.get('club', 'TBD')).replace('"', '\\"')
+        from_club, to_club = (origin_name, counterparty) if direction == 'out' else (counterparty, origin_name)
         stories_js += f'''  {{
     name: "{story.get('name', '')}", prob: {story.get('prob', 50)},
-    club_origin: "{story.get('club_origin', '')}", direction: "{story.get('direction', 'in')}"
+    club_origin: "{club_link}", direction: "{direction}",
+    from: "{from_club}", to: "{to_club}"
   }},
 '''
     stories_js += ']'
@@ -365,6 +391,7 @@ def emit_league_data(all_stories, league_slug, league_name):
 
 const LEAGUE = {{
   name: "{league_name}",
+  nation: "{league_nation}",
   stories_count: {len(league_stories)}
 }};
 
