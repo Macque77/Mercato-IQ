@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} · Mercato IQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0a0e27;
+      --panel: #1a1f3a;
+      --panel-hover: #24293f;
+      --text-primary: #e0e2ff;
+      --text-secondary: #a8aac4;
+      --border: #2a2f45;
+      --primary-rgb: 239, 68, 68;
+      --red: rgb(var(--primary-rgb));
+      --red-bright: #ff4444;
+      --red-deep: #8b0000;
+      --gold: #fbbf24;
+      --green: #10b981;
+      --amber: #f59e0b;
+      --slate: #64748b;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* ========== HEADER & BREADCRUMB ========== */
+    header {
+      background: linear-gradient(135deg, var(--panel) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb a {
+      color: var(--red);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 0.25rem;
+    }
+
+    .hero {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+
+    .hero-content h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .hero-content p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      max-width: 600px;
+    }
+
+    .update-ticker {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+
+    .update-ticker .pulse {
+      width: 8px;
+      height: 8px;
+      background-color: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* ========== TABS ========== */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      overflow-x: auto;
+    }
+
+    .tab-button {
+      padding: 1rem 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .tab-button:hover {
+      color: var(--text-primary);
+    }
+
+    .tab-button.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ========== STAT STRIP ========== */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* ========== STORY CARDS ========== */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .story-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .story-card:hover {
+      background: var(--panel-hover);
+      border-color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    .story-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+
+    .story-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      flex: 1;
+    }
+
+    .story-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--panel-hover);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .badge.direction-in {
+      border-color: var(--green);
+      color: var(--green);
+      background-color: rgba(16, 185, 129, 0.1);
+    }
+
+    .badge.direction-out {
+      border-color: var(--red);
+      color: var(--red);
+      background-color: rgba(239, 68, 68, 0.1);
+    }
+
+    .badge.prob {
+      border-color: var(--amber);
+      color: var(--amber);
+      background-color: rgba(245, 158, 11, 0.1);
+    }
+
+    .badge.new {
+      border-color: var(--gold);
+      color: var(--gold);
+      background-color: rgba(251, 191, 36, 0.1);
+    }
+
+    .story-club {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .story-note {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .story-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+
+    /* ========== CLUB CARDS (BY CLUB) ========== */
+    .club-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .club-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .club-card:hover {
+      background: var(--panel-hover);
+      border-color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    .club-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .club-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .club-stat {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+
+    .club-stat-label {
+      color: var(--text-secondary);
+    }
+
+    .club-stat-value {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ========== FILTERS ========== */
+    .filter-section {
+      margin-bottom: 2rem;
+    }
+
+    .filter-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-pill {
+      padding: 0.5rem 1rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .filter-pill.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: var(--text-primary);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p {
+      line-height: 1.7;
+    }
+
+    .footer-section a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1180px) {
+      .story-card {
+        padding: 1rem;
+      }
+
+      .stat-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 0.75rem;
+      }
+
+      .hero-content h1 {
+        font-size: 24px;
+      }
+
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .club-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .tabs {
+        gap: 0;
+      }
+
+      .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 14px;
+      }
+
+      .breadcrumb {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Global</a>
+        <span>›</span>
+        <a id="breadcrumb-league"></a>
+      </div>
+      <div class="hero">
+        <div class="hero-badge">🏆</div>
+        <div class="hero-content">
+          <h1 id="league-name"></h1>
+          <p id="league-context"></p>
+          <div class="update-ticker">
+            <div class="pulse"></div>
+            <span>Last update: <span id="time-ago"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="overview">Overview</button>
+      <button class="tab-button" data-tab="stories">Top Stories</button>
+      <button class="tab-button" data-tab="clubs">By Club</button>
+      <button class="tab-button" data-tab="about">About</button>
+    </div>
+
+    <!-- OVERVIEW TAB -->
+    <div class="tab-content active" data-tab="overview">
+      <div class="stat-strip" id="stat-strip"></div>
+    </div>
+
+    <!-- TOP STORIES TAB -->
+    <div class="tab-content" data-tab="stories">
+      <div class="filter-section">
+        <label class="filter-label">Direction</label>
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="in">Incoming</button>
+          <button class="filter-pill" data-filter="out">Outgoing</button>
+        </div>
+      </div>
+      <div class="stories-grid" id="stories-grid"></div>
+    </div>
+
+    <!-- BY CLUB TAB -->
+    <div class="tab-content" data-tab="clubs">
+      <div class="club-cards" id="club-cards"></div>
+    </div>
+
+    <!-- ABOUT TAB -->
+    <div class="tab-content" data-tab="about">
+      <div style="max-width: 800px;">
+        <h2 style="font-size: 24px; margin-bottom: 1rem; color: var(--text-primary);">How This Data Works</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+          League-level transfer intelligence is aggregated from detailed club analysis across all teams in this league. Each story represents a confirmed rumour, scouted interest, or reported bid tracked across elite sources and international press desks.
+        </p>
+        <h3 style="font-size: 16px; margin-bottom: 0.5rem; color: var(--text-primary);">Data Sources</h3>
+        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+          Tier 1 journalists (Ornstein, Romano, Amoyal), club specialists, foreign press desks for each nation, and aggregation from live club tracking.
+        </p>
+        <h3 style="font-size: 16px; margin-bottom: 0.5rem; color: var(--text-primary);">Updates</h3>
+        <p style="color: var(--text-secondary);">
+          This page auto-regenerates when any club in the league refreshes. Frequency depends on transfer window activity—typically every 15–60 minutes during active windows, less frequently in off-season.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Mercato IQ</h3>
+          <p>Transfer market intelligence for football fans. Real-time tracking of rumours, bids, and confirmed deals across all major leagues.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Data Policy</h3>
+          <p>All information sourced from Tier 1 journalists and official club channels. Always check primary sources before sharing.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Navigation</h3>
+          <p><a href="index.html">← Back to Global</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /*==DATA==*/
+/* ============================================================
+   MERCATO IQ · LEAGUE DATA · Premier League
+   Generated by engine/aggregate.py. Never hand-edit.
+   ============================================================ */
+
+const LEAGUE = {
+  name: "Premier League",
+  stories_count: 116
+};
+
+const TOP_STORIES = [  {
+    name: "Senior core review", prob: 70,
+    club_origin: "manchester-city", direction: "out"
+  },
+  {
+    name: "Manager appointment", prob: 50,
+    club_origin: "fulham", direction: "in"
+  },
+  {
+    name: "Manager: McKenna (risk)", prob: 45,
+    club_origin: "ipswich-town", direction: "out"
+  },
+  {
+    name: "Morgan Rogers", prob: 35,
+    club_origin: "arsenal", direction: "in"
+  },
+  {
+    name: "Squad rationalisation", prob: 65,
+    club_origin: "chelsea", direction: "out"
+  },
+  {
+    name: "Dayann Methalie", prob: 58,
+    club_origin: "sunderland", direction: "in"
+  },
+  {
+    name: "Lamine Camara", prob: 35,
+    club_origin: "aston-villa", direction: "in"
+  },
+  {
+    name: "Gabriel Jesus", prob: 35,
+    club_origin: "arsenal", direction: "out"
+  },
+  {
+    name: "Adam Wharton", prob: 30,
+    club_origin: "crystal-palace", direction: "out"
+  },
+  {
+    name: "Elliot Anderson", prob: 30,
+    club_origin: "manchester-city", direction: "in"
+  },
+  {
+    name: "Riccardo Calafiori", prob: 30,
+    club_origin: "arsenal", direction: "out"
+  },
+  {
+    name: "Leandro Trossard", prob: 30,
+    club_origin: "arsenal", direction: "out"
+  },
+  {
+    name: "Christian Nørgaard", prob: 30,
+    club_origin: "arsenal", direction: "out"
+  },
+  {
+    name: "Gabriel Martinelli", prob: 28,
+    club_origin: "arsenal", direction: "out"
+  },
+  {
+    name: "Ben White", prob: 25,
+    club_origin: "arsenal", direction: "out"
+  },
+  {
+    name: "Eli Junior Kroupi", prob: 20,
+    club_origin: "arsenal", direction: "in"
+  },
+  {
+    name: "Enzo Fernández", prob: 18,
+    club_origin: "manchester-city", direction: "in"
+  },
+  {
+    name: "Noah Sadiki", prob: 18,
+    club_origin: "sunderland", direction: "out"
+  },
+  {
+    name: "Matthis Abline", prob: 14,
+    club_origin: "sunderland", direction: "in"
+  },
+  {
+    name: "Julián Álvarez", prob: 10,
+    club_origin: "arsenal", direction: "in"
+  },
+];
+
+const BY_CLUB = {"manchester-city": 3, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "chelsea": 5, "sunderland": 20, "aston-villa": 5, "crystal-palace": 5, "leeds-united": 24, "brighton": 5, "bournemouth": 4, "liverpool": 6, "brentford": 3, "hull-city": 5, "coventry-city": 4, "everton": 4};
+
+const REPORT_META = {
+  asof: "29 Jul 2026",
+  updated: "2026-07-29T23:24:34.045556Z",
+  label: "League aggregation"
+};
+
+/*==DATA==*/
+
+    let currentFilter = 'all';
+
+    function renderHero() {
+      document.getElementById('league-name').textContent = LEAGUE.name;
+      document.getElementById('breadcrumb-league').textContent = LEAGUE.name;
+      document.getElementById('league-context').textContent = `Transfer intelligence from ${Object.keys(BY_CLUB).length} clubs`;
+      updateTimestamp();
+    }
+
+    function updateTimestamp() {
+      const updated = new Date(REPORT_META.updated);
+      const now = new Date();
+      const seconds = Math.floor((now - updated) / 1000);
+      let timeStr = '';
+
+      if (seconds < 60) timeStr = 'just now';
+      else if (seconds < 3600) timeStr = `${Math.floor(seconds / 60)}m ago`;
+      else if (seconds < 86400) timeStr = `${Math.floor(seconds / 3600)}h ago`;
+      else timeStr = `${Math.floor(seconds / 86400)}d ago`;
+
+      document.getElementById('time-ago').textContent = timeStr;
+    }
+
+    function renderStats() {
+      const totalStories = TOP_STORIES.length;
+      const incomingCount = TOP_STORIES.filter(s => s.direction === 'in').length;
+      const outgoingCount = TOP_STORIES.filter(s => s.direction === 'out').length;
+      const avgProb = Math.round(TOP_STORIES.reduce((sum, s) => sum + s.prob, 0) / totalStories || 0);
+
+      const stats = [
+        { label: 'Total Stories', value: totalStories },
+        { label: 'Incoming Targets', value: incomingCount },
+        { label: 'Outgoing Sales', value: outgoingCount },
+        { label: 'Avg Probability', value: `${avgProb}%` }
+      ];
+
+      const strip = document.getElementById('stat-strip');
+      strip.innerHTML = stats.map(s => `
+        <div class="stat-card">
+          <div class="stat-label">${s.label}</div>
+          <div class="stat-value">${s.value}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderStories() {
+      const filtered = currentFilter === 'all'
+        ? TOP_STORIES
+        : TOP_STORIES.filter(s => s.direction === currentFilter);
+
+      const grid = document.getElementById('stories-grid');
+      grid.innerHTML = filtered.map(story => {
+        const directionBadge = story.direction === 'in' ? 'IN' : 'OUT';
+        const directionClass = story.direction === 'in' ? 'direction-in' : 'direction-out';
+        const newBadge = story.new ? '<div class="badge new">New</div>' : '';
+
+        return `
+          <div class="story-card">
+            <div class="story-header">
+              <div class="story-name">${story.name}</div>
+              <div class="story-badges">
+                <div class="badge ${directionClass}">${directionBadge}</div>
+                <div class="badge prob">${story.prob}%</div>
+                ${newBadge}
+              </div>
+            </div>
+            <div class="story-club">${story.club_origin}</div>
+            <div class="story-note">${story.note || 'No details available'}</div>
+            <div class="story-footer">
+              <span>${story.report || '~1 wk ago'}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderClubs() {
+      const cardsContainer = document.getElementById('club-cards');
+      cardsContainer.innerHTML = Object.entries(BY_CLUB).map(([club, count]) => `
+        <div class="club-card">
+          <div class="club-name">${club}</div>
+          <div class="club-stats">
+            <div class="club-stat">
+              <span class="club-stat-label">Stories</span>
+              <span class="club-stat-value">${count}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setupTabs() {
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          document.querySelector(`[data-tab="${btn.dataset.tab}"]`).classList.add('active');
+        });
+      });
+    }
+
+    function setupFilters() {
+      document.querySelectorAll('[data-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          renderStories();
+        });
+      });
+    }
+
+    function init() {
+      renderHero();
+      renderStats();
+      renderStories();
+      renderClubs();
+      setupTabs();
+      setupFilters();
+      setInterval(updateTimestamp, 60000); // Update every minute
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
