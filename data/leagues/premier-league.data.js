@@ -111,10 +111,10 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"nottingham-forest": 7, "manchester-city": 3, "tottenham-hotspur": 10, "newcastle-united": 9, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "manchester-united": 10, "chelsea": 5, "sunderland": 20, "aston-villa": 4, "crystal-palace": 5, "leeds-united": 23, "brighton": 5, "bournemouth": 4, "hull-city": 5, "brentford": 3, "liverpool": 5, "coventry-city": 4, "everton": 3};
+const BY_CLUB = {"nottingham-forest": 7, "manchester-city": 3, "tottenham-hotspur": 10, "newcastle-united": 9, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "manchester-united": 10, "chelsea": 5, "sunderland": 20, "aston-villa": 4, "crystal-palace": 5, "leeds-united": 23, "brighton": 5, "bournemouth": 4, "brentford": 3, "hull-city": 5, "liverpool": 5, "coventry-city": 4, "everton": 3};
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T12:52:46.878024Z",
+  updated: "2026-07-30T11:54:47.801130Z",
   label: "League aggregation"
 };
