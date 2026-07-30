@@ -93,7 +93,7 @@ const TOP_STORIES = [  {
 const BY_CLUB = {"manchester-city": 3, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "chelsea": 5, "sunderland": 20, "aston-villa": 5, "crystal-palace": 5, "leeds-united": 24, "brighton": 5, "bournemouth": 4, "liverpool": 6, "brentford": 3, "hull-city": 5, "coventry-city": 4, "everton": 4};
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T23:24:34.045556Z",
+  asof: "30 Jul 2026",
+  updated: "2026-07-30T09:45:13.117856Z",
   label: "League aggregation"
 };
