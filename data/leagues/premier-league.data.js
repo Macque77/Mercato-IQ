@@ -6,13 +6,33 @@
 const LEAGUE = {
   name: "Premier League",
   nation: "England",
-  stories_count: 116
+  stories_count: 148
 };
 
 const TOP_STORIES = [  {
+    name: "Ousmane Diomande", prob: 80,
+    club_origin: "nottingham-forest", direction: "in",
+    from: "Sporting CP", to: "Nottingham Forest"
+  },
+  {
     name: "Senior core review", prob: 70,
     club_origin: "manchester-city", direction: "out",
     from: "Manchester City", to: "Various"
+  },
+  {
+    name: "Cristian Romero", prob: 62,
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)"
+  },
+  {
+    name: "Bruno Guimarães", prob: 55,
+    club_origin: "newcastle-united", direction: "out",
+    from: "Newcastle United", to: "Arsenal"
+  },
+  {
+    name: "Savinho", prob: 55,
+    club_origin: "tottenham-hotspur", direction: "in",
+    from: "Manchester City", to: "Tottenham Hotspur"
   },
   {
     name: "Manager appointment", prob: 50,
@@ -25,9 +45,34 @@ const TOP_STORIES = [  {
     from: "Ipswich Town", to: "Fulham"
   },
   {
+    name: "Lucas Bergvall", prob: 45,
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United"
+  },
+  {
     name: "Morgan Rogers", prob: 35,
     club_origin: "arsenal", direction: "in",
     from: "Aston Villa", to: "Arsenal"
+  },
+  {
+    name: "Mateus Fernandes", prob: 34,
+    club_origin: "manchester-united", direction: "in",
+    from: "West Ham United", to: "Manchester United"
+  },
+  {
+    name: "Lewis Hall", prob: 32,
+    club_origin: "manchester-united", direction: "in",
+    from: "Newcastle United", to: "Manchester United"
+  },
+  {
+    name: "Rafael Leão", prob: 26,
+    club_origin: "tottenham-hotspur", direction: "in",
+    from: "AC Milan", to: "Tottenham Hotspur"
+  },
+  {
+    name: "Cody Gakpo", prob: 20,
+    club_origin: "tottenham-hotspur", direction: "in",
+    from: "Liverpool", to: "Tottenham Hotspur"
   },
   {
     name: "Squad rationalisation", prob: 65,
@@ -40,81 +85,36 @@ const TOP_STORIES = [  {
     from: "Toulouse", to: "Sunderland"
   },
   {
-    name: "Lamine Camara", prob: 35,
-    club_origin: "aston-villa", direction: "in",
-    from: "Monaco", to: "Aston Villa"
+    name: "Matthias Jaissle", prob: 45,
+    club_origin: "newcastle-united", direction: "in",
+    from: "Al-Ahli (Saudi Pro League)", to: "Newcastle United"
   },
   {
-    name: "Gabriel Jesus", prob: 35,
-    club_origin: "arsenal", direction: "out",
-    from: "Arsenal", to: "Open to offers"
+    name: "Marcus Rashford", prob: 42,
+    club_origin: "manchester-united", direction: "out",
+    from: "Manchester United", to: "AS Roma (or open market)"
   },
   {
-    name: "Adam Wharton", prob: 30,
-    club_origin: "crystal-palace", direction: "out",
-    from: "Crystal Palace", to: "Elite interest"
+    name: "Djed Spence", prob: 42,
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "TBD"
   },
   {
-    name: "Elliot Anderson", prob: 30,
-    club_origin: "manchester-city", direction: "in",
-    from: "(discussed)", to: "Manchester City"
+    name: "Giorgio Scalvini", prob: 40,
+    club_origin: "newcastle-united", direction: "in",
+    from: "Atalanta", to: "Newcastle United"
   },
   {
-    name: "Riccardo Calafiori", prob: 30,
-    club_origin: "arsenal", direction: "out",
-    from: "Arsenal", to: "Juventus"
-  },
-  {
-    name: "Leandro Trossard", prob: 30,
-    club_origin: "arsenal", direction: "out",
-    from: "Arsenal", to: "Open to offers"
-  },
-  {
-    name: "Christian Nørgaard", prob: 30,
-    club_origin: "arsenal", direction: "out",
-    from: "Arsenal", to: "Listening to offers"
-  },
-  {
-    name: "Gabriel Martinelli", prob: 28,
-    club_origin: "arsenal", direction: "out",
-    from: "Arsenal", to: "Available"
-  },
-  {
-    name: "Ben White", prob: 25,
-    club_origin: "arsenal", direction: "out",
-    from: "Arsenal", to: "Listening to offers"
-  },
-  {
-    name: "Eli Junior Kroupi", prob: 20,
-    club_origin: "arsenal", direction: "in",
-    from: "Bournemouth", to: "Arsenal"
-  },
-  {
-    name: "Enzo Fernández", prob: 18,
-    club_origin: "manchester-city", direction: "in",
-    from: "(discussed)", to: "Manchester City"
-  },
-  {
-    name: "Noah Sadiki", prob: 18,
-    club_origin: "sunderland", direction: "out",
-    from: "Sunderland", to: "Man Utd / City / Chelsea / Arsenal"
-  },
-  {
-    name: "Matthis Abline", prob: 14,
-    club_origin: "sunderland", direction: "in",
-    from: "Nantes", to: "Sunderland"
-  },
-  {
-    name: "Julián Álvarez", prob: 10,
-    club_origin: "arsenal", direction: "in",
-    from: "Atlético Madrid", to: "Arsenal"
+    name: "Guglielmo Vicario", prob: 36,
+    club_origin: "tottenham-hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Juventus"
   },
 ];
 
-const BY_CLUB = {"manchester-city": 3, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "chelsea": 5, "sunderland": 20, "aston-villa": 5, "crystal-palace": 5, "leeds-united": 24, "brighton": 5, "bournemouth": 4, "liverpool": 6, "brentford": 3, "hull-city": 5, "coventry-city": 4, "everton": 4};
+const BY_CLUB = {"nottingham-forest": 7, "manchester-city": 3, "tottenham-hotspur": 10, "newcastle-united": 9, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "manchester-united": 10, "chelsea": 5, "sunderland": 20, "aston-villa": 4, "crystal-palace": 5, "leeds-united": 23, "brighton": 5, "bournemouth": 4, "hull-city": 5, "brentford": 3, "liverpool": 5, "coventry-city": 4, "everton": 3};
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T10:48:01.966183Z",
+  updated: "2026-07-30T12:52:46.878024Z",
   label: "League aggregation"
 };
