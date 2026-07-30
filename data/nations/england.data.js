@@ -5,7 +5,7 @@
 
 const NATION = {
   name: "England",
-  flag_emoji: "🌍",
+  flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
   stories_count: 116
 };
 
@@ -74,7 +74,7 @@ const TOP_STORIES = [  {
 const BY_LEAGUE = {"Premier League": 116};
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T23:24:34.045429Z",
+  asof: "30 Jul 2026",
+  updated: "2026-07-30T09:45:13.117521Z",
   label: "Nation aggregation"
 };
