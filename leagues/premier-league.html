@@ -101,6 +101,13 @@
   .sec-sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:80ch}
 
   .hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+
+  /* All-clubs quick-navigation grid */
+  .club-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+  .club-card{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 16px;text-decoration:none;color:inherit;transition:.15s}
+  .club-card:hover{border-color:var(--gold-deep);background:var(--panel-2);transform:translateY(-2px)}
+  .club-card .nm{font-family:var(--display);font-size:14.5px;letter-spacing:.3px;text-transform:uppercase;color:var(--white)}
+  .club-card .ct{font-size:10.5px;color:var(--muted);font-family:var(--mono);white-space:nowrap;flex:none}
   .hcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;position:relative;overflow:hidden;transition:.2s;cursor:pointer;display:flex;flex-direction:column;text-decoration:none;color:inherit}
   .hcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--line);transition:.2s}
   .hcard:hover{border-color:var(--gold-deep);transform:translateY(-3px);background:var(--panel-2)}
@@ -109,12 +116,14 @@
   .hb{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px}
   .hb.in{background:rgba(51,196,106,0.14);color:var(--green)}
   .hb.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
-  .hclub{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:.3px;line-height:1.08;text-transform:uppercase;margin-bottom:6px;color:var(--white)}
-  .hplayer{font-size:14.5px;font-weight:600;color:var(--gold);line-height:1.2;margin-bottom:8px;flex-grow:1}
+  .hplayer{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:.3px;line-height:1.08;text-transform:uppercase;margin-bottom:6px;color:var(--white)}
+  .hclub{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.3px;text-transform:uppercase;line-height:1.2;margin-bottom:10px}
   .hclubs{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:8px;flex-wrap:wrap}
   .hclubs .arrow{color:var(--muted-2);font-size:11px;flex:none}
   .hclubs .to{color:#c3c7d0}
   .hctx{font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:14px}
+  .hctx a{color:var(--muted);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
+  .hctx a:hover{color:var(--gold)}
   .hfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
   .hfoot .age{font-family:var(--mono);font-size:11px;color:var(--muted-2)}
   .hprob{display:flex;align-items:center;gap:7px}
@@ -157,7 +166,7 @@
         <div class="sub">The transfer market, decoded</div>
       </div>
     </div>
-    <div class="status-pill"><span class="dot"></span> LIVE &middot; <span id="asofPill"></span></div>
+    <div class="status-pill"><span class="dot" id="windowDot"></span> <span id="windowLabel">Open</span> &middot; <span id="asofPill"></span></div>
   </div>
 </header>
 
@@ -188,6 +197,12 @@
     <div class="sec-head"><h3>Live Transfer Stories</h3><span class="num" id="storyCount"></span></div>
     <p class="sec-sub">Every named-player rumour and confirmed move tracked across this league right now, ranked by how likely each is to happen. Click through to a club page for full sourcing.</p>
     <div class="hgrid" id="stories-grid"></div>
+  </section>
+
+  <section id="sec-clubs">
+    <div class="sec-head"><h3>All Clubs</h3><span class="num" id="clubGridCount"></span></div>
+    <p class="sec-sub">Every club in this league &mdash; jump straight to any club's full transfer dashboard.</p>
+    <div class="club-grid" id="all-clubs-grid"></div>
   </section>
 
   <footer>
@@ -347,7 +362,7 @@ const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 11}, {"slug"
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T13:14:03.886967Z",
+  updated: "2026-07-30T17:36:33.052592Z",
   label: "League aggregation"
 };
 
@@ -371,6 +386,31 @@ const REPORT_META = {
   document.getElementById('heroKicker').textContent =
     (LEAGUE.nation || '').toUpperCase() + ' · ' + (LEAGUE.name || '').toUpperCase() + ' · UPDATED THE MOMENT THE PICTURE CHANGES';
   document.getElementById('heroH2').innerHTML = LEAGUE.name + ' Transfer Window';
+
+  // Transfer window status: Open / Closed / Deadline Day, same 3-state logic used everywhere else.
+  const LEAGUE_WINDOWS = {
+    "Premier League": "2026-09-01T22:00:00Z",
+    "Championship":   "2026-09-01T22:00:00Z",
+    "La Liga":        "2026-09-01T22:00:00Z",
+    "Serie A":        "2026-09-01T22:00:00Z",
+    "Bundesliga":     "2026-09-01T21:00:00Z",
+    "Ligue 1":        "2026-09-01T22:00:00Z",
+  };
+  function windowStatus(closesIso){
+    const diffMs = new Date(closesIso).getTime() - Date.now();
+    if(diffMs <= 0) return { state: 'closed', label: 'Closed', color: 'var(--muted)' };
+    if(diffMs <= 86400000) return { state: 'deadline', label: 'Deadline Day', color: 'var(--crit)' };
+    return { state: 'open', label: 'Open', color: 'var(--green)' };
+  }
+  (function(){
+    const closes = LEAGUE_WINDOWS[LEAGUE.name] || LEAGUE_WINDOWS["Premier League"];
+    const st = windowStatus(closes);
+    document.getElementById('windowLabel').textContent = st.label;
+    const dot = document.getElementById('windowDot');
+    dot.style.background = st.color;
+    dot.style.boxShadow = `0 0 10px ${st.color}`;
+    dot.style.animation = st.state === 'deadline' ? 'pulse 1s infinite' : st.state === 'closed' ? 'none' : '';
+  })();
 
   // Concise summary hero: name the top 3 live stories by probability, not generic stat counts.
   (function(){
@@ -428,6 +468,20 @@ const REPORT_META = {
     document.getElementById('storyCount').textContent = String(total).padStart(2,'0');
   })();
 
+
+  // All-clubs quick navigation — every club in the league, always complete (CLUBS_LIST includes 0-story clubs).
+  (function(){
+    const grid = document.getElementById('all-clubs-grid');
+    const list = Array.isArray(CLUBS_LIST) ? CLUBS_LIST.slice().sort((a,b)=>a.name.localeCompare(b.name)) : [];
+    document.getElementById('clubGridCount').textContent = String(list.length).padStart(2,'0');
+    if(!list.length){ grid.innerHTML = '<div class="empty-note">No clubs tracked yet.</div>'; return; }
+    grid.innerHTML = list.map(c => `
+      <a class="club-card" href="../${c.slug}.html">
+        <span class="nm">${c.name}</span>
+        <span class="ct">${c.count} ${c.count === 1 ? 'story' : 'stories'}</span>
+      </a>`).join('');
+  })();
+
   // Story grid — club name headlines every card, same pattern as the global page.
   (function(){
     const grid = document.getElementById('stories-grid');
@@ -438,17 +492,18 @@ const REPORT_META = {
       const dirLabel = s.direction === 'out' ? 'OUT' : 'IN';
       const href = s.club_origin ? ('../' + s.club_origin + '.html') : '#';
       const clubsLine = (s.from || s.to) ? `<div class="hclubs"><span class="from">${s.from || '?'}</span><span class="arrow">&rarr;</span><span class="to">${s.to || '?'}</span></div>` : '';
-      return `<a class="hcard" href="${href}">
+      const leagueLink = s.league ? `<a href="../leagues/${slugify(s.league)}.html" onclick="event.stopPropagation()">${s.league}</a>` : '';
+      return `<div class="hcard" data-href="${href}" onclick="if(!event.target.closest('a'))window.location.href=this.dataset.href" tabindex="0" role="link">
           <div class="hbadges"><span class="hb ${dirClass}">${dirLabel}</span></div>
-          <div class="hclub">${s.club_display_name || ''}</div>
           <div class="hplayer">${s.name || ''}</div>
+          <div class="hclub">${s.club_display_name || ''}</div>
           ${clubsLine}
-          <div class="hctx">${s.league || ''} &middot; ${s.value || ''}</div>
+          <div class="hctx">${leagueLink} &middot; ${s.value || ''}</div>
           <div class="hfoot">
             <span class="age">${s.updated ? timeAgo(s.updated) : ''}</span>
             <span class="hprob"><span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 6px ${lightColor[light]}"></span><span class="val" style="color:${lightColor[light]}">${s.prob || 0}%</span></span>
           </div>
-        </a>`;
+        </div>`;
     }).join('');
   })();
 })();
