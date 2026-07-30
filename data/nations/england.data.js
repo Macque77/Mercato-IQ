@@ -90,6 +90,6 @@ const BY_LEAGUE = {"Premier League": 148};
 
 const REPORT_META = {
   asof: "30 Jul 2026",
-  updated: "2026-07-30T16:18:22.355620Z",
+  updated: "2026-07-30T11:54:47.800828Z",
   label: "Nation aggregation"
 };
