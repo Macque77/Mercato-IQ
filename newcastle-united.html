@@ -190,8 +190,12 @@
   tbody tr:last-child td{border-bottom:none}
   .pl-name{font-weight:700;color:var(--white);font-size:14.5px}
   .pl-sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
-  .pos{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:2px 6px;white-space:nowrap}
-  .fee{font-family:var(--mono);color:#dfe2e8;white-space:nowrap}
+  /* Neither badge nor fee/report text is nowrap any more: real data sometimes carries longer
+     strings than a short position code or a "£40m" fee (e.g. pos:"Head coach", report:"14 Jul
+     2026 (no fresher update found)"), and forcing nowrap on a fixed-width table cell made that
+     overflow into the next column instead of wrapping, reading as overlapping text. */
+  .pos{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:2px 6px;white-space:normal;overflow-wrap:break-word;line-height:1.25;display:inline-block}
+  .fee{font-family:var(--mono);color:#dfe2e8;white-space:normal;overflow-wrap:break-word}
   .tier{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap}
   .t1{color:#7fe3a3;background:rgba(51,196,106,0.13)}
   .t2{color:#bfe07f;background:rgba(160,224,127,0.12)}
@@ -234,6 +238,10 @@
   .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none}
   .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
   .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  /* Selected section: inverted (white pill, near-black text) so it's unmistakable which of the
+     eight tabs is showing, rather than blending in with the unselected ones. Wins over .lead. */
+  .qn-link.active{background:var(--white);color:#0c0d10;border-color:var(--white);font-weight:700}
+  .qn-link.active:hover{background:var(--white);color:#0c0d10}
   .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
   section[id]{scroll-margin-top:132px}
 
@@ -397,14 +405,15 @@
   .tbl-scroll th,.tbl-scroll td{padding:9px 8px;font-size:12.5px}
   .tbl-scroll td.note{font-size:12px;line-height:1.5}
   .tbl-scroll th:nth-child(1),.tbl-scroll td:nth-child(1){width:12%}
-  .tbl-scroll th:nth-child(2),.tbl-scroll td:nth-child(2){width:9%}
-  .tbl-scroll th:nth-child(3),.tbl-scroll td:nth-child(3){width:5%}
-  .tbl-scroll th:nth-child(4),.tbl-scroll td:nth-child(4){width:7%}
-  .tbl-scroll th:nth-child(5),.tbl-scroll td:nth-child(5){width:10%}
+  .tbl-scroll th:nth-child(2),.tbl-scroll td:nth-child(2){width:8%}
+  .tbl-scroll th:nth-child(3),.tbl-scroll td:nth-child(3){width:7%}
+  .tbl-scroll th:nth-child(4),.tbl-scroll td:nth-child(4){width:9%}
+  .tbl-scroll th:nth-child(5),.tbl-scroll td:nth-child(5){width:9%}
   .tbl-scroll th:nth-child(6),.tbl-scroll td:nth-child(6){width:8%}
-  .tbl-scroll th:nth-child(7),.tbl-scroll td:nth-child(7){width:14%}
+  .tbl-scroll th:nth-child(7),.tbl-scroll td:nth-child(7){width:13%}
   .tbl-scroll th:nth-child(8),.tbl-scroll td:nth-child(8){width:4%}
-  .tbl-scroll th:nth-child(9),.tbl-scroll td:nth-child(9){width:31%}
+  .tbl-scroll th:nth-child(9),.tbl-scroll td:nth-child(9){width:30%}
+  .tbl-scroll td{overflow-wrap:break-word}
   @media(max-width:980px){.tbl-scroll table{table-layout:auto}}
 
   /* ===== EXPANDABLE SOURCE LINKS ===== */
@@ -448,7 +457,7 @@
     <button class="qn-link tabbtn active" data-go="overview" role="tab" aria-selected="true">Overview</button>
     <button class="qn-link tabbtn lead" data-go="confirmed" role="tab">Confirmed</button>
     <button class="qn-link tabbtn lead" data-go="in" role="tab">Targets In</button>
-    <button class="qn-link tabbtn lead" data-go="out" role="tab">Out &amp; Sales</button>
+    <button class="qn-link tabbtn lead" data-go="out" role="tab">Out</button>
     <button class="qn-link tabbtn" data-go="index" role="tab">Full Index</button>
     <button class="qn-link tabbtn" data-go="briefing" role="tab">Briefing</button>
     <button class="qn-link tabbtn" data-go="position" role="tab">Club Position</button>
@@ -679,7 +688,7 @@ const SWEEP = {
   note: "NUFC-specific beat prioritised: Chronicle Live (Lee Ryder), Shields Gazette/NUFC The Mag, The Athletic (Chris Waugh). Foreign desks per profile: Italy (Tutto Atalanta/Gazzetta for Scalvini and Ederson), Spain (Marca/AS/Relevo for Oso, Real Betis local press for Ezzalzouli), Czech/Portugal (for Hornicek). Coaching-search sweep runs in parallel given the 30 Jul vacancy. Trace every aggregator hit (TransferFeed, NewsNow) to its original reporter, never link the aggregator itself."
 };
 
-const REPORT_META = { asof: "31 Jul 2026", updated: "2026-07-31T09:30:00Z", label: "FootballTransfers-gated refresh: Aladji Bamba's £35.5m Monaco move and five further exits added to Confirmed; Jaissle now 'here we go' and due to arrive Saturday, Bruno Guimaraes-to-Arsenal 'close to finalising' but still unresolved" };
+const REPORT_META = { asof: "31 Jul 2026", updated: "2026-07-31T09:30:00Z", label: "Jaissle 'here we go', Bruno-to-Arsenal closing, Bamba move confirmed" };
 
 const CONFIRMED_IN = [
   {name:"Sean Steur", sub:"20 · CM/DM · Netherlands", to:"permanent from Ajax", fee:"£23m", free:false, status:"done", statusTxt:"DONE, SIGNED",
@@ -846,8 +855,8 @@ const WL_LINKMAP = {
 };
 
 const PROSE = {
-  heroH2: `A coach lands, a captain edges closer to the exit: <em>Jaissle "here we go"</em>, Bruno-to-Arsenal "close to finalising", and a hidden Bamba signing surfaces on the confirmed-deals check`,
-  heroLede: `A day on from the chaos of Eddie Howe's departure, Newcastle's picture is sharpening rather than calming. <b>Matthias Jaissle</b> has gone from "advanced discussions" to Fabrizio Romano's <b>"here we go"</b>, with Sky Germany and Goal.com both reporting a contract to 2030 already agreed and Jaissle due in Newcastle on <b>Saturday 1 August</b> to be unveiled - still not a formal club statement, but about as close as reporting gets before one. The <b>Bruno Guimarães</b> saga has moved too: The Sun's Jack Rosser and FootballTransfers both now describe Arsenal as <b>"close to finalising"</b> a deal, fee reports converging somewhere north of £70m against Newcastle's earlier £85m ask. This refresh's FootballTransfers.com confirmed-deals cross-check also surfaced a genuine gap in the previous state of record: <b>Aladji Bamba</b>, a £35.5m defensive midfielder from Monaco, completed his move on 24 July but was never added to the tracked confirmed list - he's in now, alongside five further confirmed exits (Ruddy, Targett, an Ashby loan to Luton, Hernes and two academy departures) that had drifted out of view. Beneath the headline moves, <b>Giorgio Scalvini</b> (CB) remains live but now faces Tottenham as a competing suitor, <b>Joaquín Oso</b> (FB) appears to have swung decisively toward Nottingham Forest, and <b>Ederson</b> of Atalanta has signed a new contract there and is off the board entirely. Outgoing, <b>Joe Willock</b> gained real shape this week - a £10m Besiktas bid was rejected, but his agent has travelled to Istanbul - while <b>Lewis Hall</b> now has Chelsea circling alongside Manchester United.`,
+  heroH2: `<em>Jaissle "here we go"</em>, Bruno-to-Arsenal closing in`,
+  heroLede: `<b>Matthias Jaissle</b> has gone from advanced talks to Fabrizio Romano's <b>"here we go"</b>, due in Newcastle <b>Saturday 1 August</b> to be unveiled. The <b>Bruno Guimarães</b> sale to Arsenal is now "close to finalising", fee edging past £70m. Every other live thread, plus this refresh's confirmed-deals catch-up, is below.`,
   metaRow: `
       <span>DECISION-MAKER: <b>Ross Wilson</b> (Sporting Director) &amp; David Hopkinson (CEO)</span>
       <span>HEAD COACH: <b>Vacant</b> (Howe departed 30 Jul)</span>

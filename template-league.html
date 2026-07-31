@@ -247,7 +247,7 @@
     `<a href="../nations/${slugify(LEAGUE.nation)}.html">&larr; Back to ${LEAGUE.nation}</a>`;
 
   document.getElementById('heroKicker').textContent =
-    (LEAGUE.nation || '').toUpperCase() + ' · ' + (LEAGUE.name || '').toUpperCase() + ' · UPDATED THE MOMENT THE PICTURE CHANGES';
+    (LEAGUE.nation || '').toUpperCase() + ' · ' + (LEAGUE.name || '').toUpperCase() + ' · LIVE';
   document.getElementById('heroH2').innerHTML = LEAGUE.name + ' Transfer Window';
 
   // Transfer window status: Open / Closed / Deadline Day, same 3-state logic used everywhere else.
@@ -284,7 +284,7 @@
       return `<b>${s.club_display_name}</b> ${verb} <b>${s.name}</b>`;
     });
     let sentence = bits.length === 1 ? bits[0] : bits.slice(0,-1).join(', ') + ' and ' + bits[bits.length-1];
-    document.getElementById('heroLede').innerHTML = sentence + `. ${TOP_STORIES.length} live stories tracked right now.`;
+    document.getElementById('heroLede').innerHTML = sentence + `. ${TOP_STORIES.length} tracked live.`;
   })();
 
   function timeAgo(iso){
