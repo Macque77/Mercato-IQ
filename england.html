@@ -3,7 +3,7 @@
   DO NOT EDIT DURING A REFRESH. Data lives in data/nations/<slug>.data.js, generated
   by engine/aggregate.py and spliced in by engine/build_extended.py --level nation.
   Design language matches index.html exactly so the whole site reads as one product.
-  Player-transfer rumours and confirmed in/outs only — no managerial content (filtered
+  Player-transfer rumours and confirmed in/outs only, no managerial content (filtered
   upstream in aggregate.py).
 -->
 <!DOCTYPE html>
@@ -107,8 +107,14 @@
   .hcard:hover::before{background:var(--gold)}
   .hbadges{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
   .hb{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px}
-  .hb.in{background:rgba(51,196,106,0.14);color:var(--green)}
-  .hb.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
+  /* Tier badge replaces IN/OUT here: this page spans many clubs, so no single side of a deal
+     is "in" or "out" from a fixed perspective. */
+  .hb.t1{background:rgba(51,196,106,0.14);color:#7fe3a3}
+  .hb.t2{background:rgba(160,224,127,0.14);color:#bfe07f}
+  .hb.t3{background:rgba(242,197,49,0.14);color:var(--yellow)}
+  .hb.t4{background:rgba(233,72,63,0.14);color:#ef9a9a}
+  .hclub a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(232,194,73,0.5)}
+  .hclub a:hover{color:var(--white);border-bottom-color:currentColor}
   .hplayer{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:.3px;line-height:1.08;text-transform:uppercase;margin-bottom:6px;color:var(--white)}
   .hclub{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.3px;text-transform:uppercase;line-height:1.2;margin-bottom:10px}
   .hclubs{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:8px;flex-wrap:wrap}
@@ -196,7 +202,7 @@
     <div class="foot-cols">
       <div>
         <h5>About Mercato IQ</h5>
-        <p>Transfer market intelligence for football fans. Every rumour rated on two independent scores &mdash; is it true, and will it actually happen &mdash; sourced back to the original reporter.</p>
+        <p>Transfer market intelligence for football fans. Every rumour rated on two independent scores, is it true and will it actually happen, sourced back to the original reporter.</p>
       </div>
       <div>
         <h5>Navigation</h5>
@@ -217,108 +223,123 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 104
+  stories_count: 102
 };
 
 const TOP_STORIES = [  {
     name: "Ousmane Diomande",prob: 80,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest",
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "~£37m + £5m add-ons", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Bruno Guimarães",prob: 62,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Arsenal",
+    tier: 1, coverage: 4, coverage_trend: 'flat',
     value: "£70-85m (gap narrowing)", updated: "2026-07-31T09:30:00Z", league: "Premier League"
   },
   {
     name: "Cristian Romero",prob: 62,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "≈€40m (£35m)", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Savinho",prob: 55,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Manchester City", to: "Tottenham Hotspur",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£60m", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Lucas Bergvall",prob: 45,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Morgan Rogers",prob: 35,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Aston Villa", to: "Arsenal",
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£80m+", updated: "2026-06-06T12:00:00Z", league: "Premier League"
   },
   {
     name: "Mateus Fernandes",prob: 34,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "West Ham United", to: "Manchester United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£80m (West Ham valuation)", updated: "2026-07-29T18:00:00Z", league: "Premier League"
   },
   {
     name: "Lewis Hall",prob: 32,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "Newcastle United", to: "Manchester United",
-    value: "Not yet quantified — Newcastle expected to demand a premium", updated: "2026-07-29T18:00:00Z", league: "Premier League"
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-07-29T18:00:00Z", league: "Premier League"
   },
   {
     name: "Rafael Leão",prob: 26,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "AC Milan", to: "Tottenham Hotspur",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "TBC", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Cody Gakpo",prob: 20,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Liverpool", to: "Tottenham Hotspur",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Dayann Methalie",prob: 52,
     club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
     from: "Toulouse", to: "Sunderland",
+    tier: 2, coverage: 5, coverage_trend: 'flat',
     value: "TBC", updated: "2026-07-31T09:00:00Z", league: "Premier League"
   },
   {
     name: "Marcus Rashford",prob: 42,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
     from: "Manchester United", to: "AS Roma (or open market)",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£40m release clause (all clubs bar Man City & Liverpool)", updated: "2026-07-29T18:00:00Z", league: "Premier League"
   },
   {
     name: "Djed Spence",prob: 42,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "TBD",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "≈£40m / €40m", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Abde Ezzalzouli",prob: 38,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
     from: "Real Betis", to: "Newcastle United",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "≈£43-52m (release clause ≈€60m)", updated: "2026-07-31T09:30:00Z", league: "Premier League"
   },
   {
     name: "Joe Willock",prob: 38,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Besiktas",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£10m bid rejected", updated: "2026-07-31T09:30:00Z", league: "Premier League"
   },
 ];
 
-const BY_LEAGUE = {"Premier League": 104};
+const BY_LEAGUE = {"Premier League": 102};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 104}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 102}];
 
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T08:32:24.540128Z",
+  updated: "2026-07-31T11:13:00.066144Z",
   label: "Nation aggregation"
 };
 
@@ -336,7 +357,7 @@ const REPORT_META = {
     `<a href="../index.html">Global</a><span class="sep">›</span><b>${NATION.name}</b>`;
 
   document.getElementById('heroKicker').textContent =
-    (NATION.name || '').toUpperCase() + ' · ALL LEAGUES · UPDATED THE MOMENT THE PICTURE CHANGES';
+    (NATION.name || '').toUpperCase() + ' · ALL LEAGUES · LIVE';
   document.getElementById('heroH2').innerHTML = NATION.name + ' Transfer Season';
 
   // Transfer window status: Open / Closed / Deadline Day, same 3-state logic used everywhere else.
@@ -366,7 +387,7 @@ const REPORT_META = {
       return `<b>${s.club_display_name}</b> ${verb} <b>${s.name}</b>`;
     });
     let sentence = bits.length === 1 ? bits[0] : bits.slice(0,-1).join(', ') + ' and ' + bits[bits.length-1];
-    document.getElementById('heroLede').innerHTML = sentence + ` &mdash; ${TOP_STORIES.length} live stories tracked right now.`;
+    document.getElementById('heroLede').innerHTML = sentence + `. ${TOP_STORIES.length} tracked live.`;
   })();
 
   function timeAgo(iso){
@@ -414,21 +435,21 @@ const REPORT_META = {
     document.getElementById('storyCount').textContent = String(total).padStart(2,'0');
   })();
 
-  // Story grid — club name headlines every card, same pattern as the global page.
+  // Story grid: club name headlines every card, same pattern as the global page.
   (function(){
     const grid = document.getElementById('stories-grid');
     if(!TOP_STORIES.length){ grid.innerHTML = '<div class="empty-note">No live rumours tracked yet for this nation.</div>'; return; }
     grid.innerHTML = TOP_STORIES.map(s => {
       const light = lightFor(s.prob || 0);
-      const dirClass = s.direction === 'out' ? 'out' : 'in';
-      const dirLabel = s.direction === 'out' ? 'OUT' : 'IN';
+      const tier = s.tier || 3;
       const href = s.club_origin ? ('../' + s.club_origin + '.html') : '#';
+      const clubLink = s.club_origin ? `<a href="${href}" onclick="event.stopPropagation()">${s.club_display_name || ''}</a>` : (s.club_display_name || '');
       const clubsLine = (s.from || s.to) ? `<div class="hclubs"><span class="from">${s.from || '?'}</span><span class="arrow">&rarr;</span><span class="to">${s.to || '?'}</span></div>` : '';
       const leagueLink = s.league ? `<a href="../leagues/${slugify(s.league)}.html" onclick="event.stopPropagation()">${s.league}</a>` : '';
       return `<div class="hcard" data-href="${href}" onclick="if(!event.target.closest('a'))window.location.href=this.dataset.href" tabindex="0" role="link">
-          <div class="hbadges"><span class="hb ${dirClass}">${dirLabel}</span></div>
+          <div class="hbadges"><span class="hb t${tier}">TIER ${tier}</span></div>
           <div class="hplayer">${s.name || ''}</div>
-          <div class="hclub">${s.club_display_name || ''}</div>
+          <div class="hclub">${clubLink}</div>
           ${clubsLine}
           <div class="hctx">${leagueLink} &middot; ${s.value || ''}</div>
           <div class="hfoot">
