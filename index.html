@@ -450,18 +450,8 @@
 
 const HEADLINES = [
   {
-    headline: "Matthias Jaissle",
-    summary: "",
-    value: "≈€11m compensation (PIF-to-PIF)",
-    from: "Al-Ahli (Saudi Pro League)", to: "Newcastle United",
-    direction: "in",
-    prob: 82, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "newcastle-united",
-    updated: "2026-07-31T09:30:00Z"
-  },
-  {
     headline: "Ousmane Diomande",
+    club_display_name: "Nottingham Forest",
     summary: "",
     value: "~£37m + £5m add-ons",
     from: "Sporting CP", to: "Nottingham Forest",
@@ -472,18 +462,8 @@ const HEADLINES = [
     updated: "2026-07-30T14:00:00Z"
   },
   {
-    headline: "Senior core review",
-    summary: "The clearest business: a generational refresh sees several Guardiola-era seniors",
-    value: "Mixed",
-    from: "Manchester City", to: "Various",
-    direction: "out",
-    prob: 70, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "manchester-city",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
     headline: "Bruno Guimarães",
+    club_display_name: "Newcastle United",
     summary: "",
     value: "£70-85m (gap narrowing)",
     from: "Newcastle United", to: "Arsenal",
@@ -495,6 +475,7 @@ const HEADLINES = [
   },
   {
     headline: "Cristian Romero",
+    club_display_name: "Tottenham Hotspur",
     summary: "",
     value: "≈€40m (£35m)",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
@@ -506,6 +487,7 @@ const HEADLINES = [
   },
   {
     headline: "Savinho",
+    club_display_name: "Tottenham Hotspur",
     summary: "",
     value: "£60m",
     from: "Manchester City", to: "Tottenham Hotspur",
@@ -516,29 +498,8 @@ const HEADLINES = [
     updated: "2026-07-30T14:00:00Z"
   },
   {
-    headline: "Manager appointment",
-    summary: "",
-    value: "Compensation",
-    from: "TBC", to: "Fulham",
-    direction: "in",
-    prob: 50, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "fulham",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    headline: "Manager: McKenna (risk)",
-    summary: "",
-    value: "~£8m buy-out",
-    from: "Ipswich Town", to: "Fulham",
-    direction: "out",
-    prob: 45, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "ipswich-town",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
     headline: "Lucas Bergvall",
+    club_display_name: "Tottenham Hotspur",
     summary: "",
     value: "Not yet tested",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
@@ -550,6 +511,7 @@ const HEADLINES = [
   },
   {
     headline: "Morgan Rogers",
+    club_display_name: "Arsenal",
     summary: "",
     value: "£80m+",
     from: "Aston Villa", to: "Arsenal",
@@ -561,6 +523,7 @@ const HEADLINES = [
   },
   {
     headline: "Mateus Fernandes",
+    club_display_name: "Manchester United",
     summary: "",
     value: "£80m (West Ham valuation)",
     from: "West Ham United", to: "Manchester United",
@@ -572,6 +535,7 @@ const HEADLINES = [
   },
   {
     headline: "Lewis Hall",
+    club_display_name: "Manchester United",
     summary: "",
     value: "Not yet quantified — Newcastle expected to demand a premium",
     from: "Newcastle United", to: "Manchester United",
@@ -581,12 +545,60 @@ const HEADLINES = [
     club_link: "manchester-united",
     updated: "2026-07-29T18:00:00Z"
   },
+  {
+    headline: "Rafael Leão",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "TBC",
+    from: "AC Milan", to: "Tottenham Hotspur",
+    direction: "in",
+    prob: 26, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Cody Gakpo",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "Not yet tested",
+    from: "Liverpool", to: "Tottenham Hotspur",
+    direction: "in",
+    prob: 20, trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Dayann Methalie",
+    club_display_name: "Sunderland",
+    summary: "",
+    value: "TBC",
+    from: "Toulouse", to: "Sunderland",
+    direction: "in",
+    prob: 52, trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Marcus Rashford",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "£40m release clause (all clubs bar Man City & Liverpool)",
+    from: "Manchester United", to: "AS Roma (or open market)",
+    direction: "out",
+    prob: 42, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-07-29T18:00:00Z"
+  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 145, league_count: 1
+    stories_count: 104, league_count: 1
   },
 ];
 
@@ -600,7 +612,7 @@ const STATS = {
 
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T09:48:27.245227Z",
+  updated: "2026-07-31T08:32:24.539701Z",
   label: "Global aggregation from all clubs"
 };
 

@@ -679,7 +679,7 @@ const SWEEP = {
   note: "NUFC-specific beat prioritised: Chronicle Live (Lee Ryder), Shields Gazette/NUFC The Mag, The Athletic (Chris Waugh). Foreign desks per profile: Italy (Tutto Atalanta/Gazzetta for Scalvini and Ederson), Spain (Marca/AS/Relevo for Oso, Real Betis local press for Ezzalzouli), Czech/Portugal (for Hornicek). Coaching-search sweep runs in parallel given the 30 Jul vacancy. Trace every aggregator hit (TransferFeed, NewsNow) to its original reporter, never link the aggregator itself."
 };
 
-const REPORT_META = { asof: "30 Jul 2026", updated: "2026-07-30T18:00:00Z", label: "Emergency build: Eddie Howe quits as head coach, Jaissle the advanced favourite; Bruno Guimaraes-to-Arsenal now 'the final straw' with a decision expected within days" };
+const REPORT_META = { asof: "31 Jul 2026", updated: "2026-07-31T09:30:00Z", label: "FootballTransfers-gated refresh: Aladji Bamba's £35.5m Monaco move and five further exits added to Confirmed; Jaissle now 'here we go' and due to arrive Saturday, Bruno Guimaraes-to-Arsenal 'close to finalising' but still unresolved" };
 
 const CONFIRMED_IN = [
   {name:"Sean Steur", sub:"20 · CM/DM · Netherlands", to:"permanent from Ajax", fee:"£23m", free:false, status:"done", statusTxt:"DONE, SIGNED",
@@ -691,7 +691,9 @@ const CONFIRMED_IN = [
   {name:"Kyle Healy", sub:"16 · RB", to:"West Ham United academy", fee:"Undisclosed (academy fee)", free:false, status:"done", statusTxt:"DONE, SIGNED",
    note:"Romano confirmed the academy switch on 23 Jul: six U18 Premier League appearances at West Ham last season. A future-facing addition with zero first-team implication this window, included for completeness of the state of record."},
   {name:"Lukáš Horníček", sub:"24 · GK · Czech Republic", to:"from SC Braga", fee:"≈£24.5-30m (release clause)", free:false, status:"pending", statusTxt:"AGREED, RELEASE CLAUSE TRIGGERED",
-   note:"Multiple outlets (TeamTalk, Shields Gazette, Football365) report the £24.5m-30m release clause has been triggered and personal terms are close, positioning Horníček as the senior alternative to Nick Pope after Newcastle again missed out on James Trafford (now signing for Leeds). Reported to have already turned down interest from Hull City. Not yet a club announcement, so it is held here rather than in the fully-confirmed table; expect a formal unveiling within days."},
+   note:"Multiple outlets (TeamTalk, Shields Gazette, Football365) report the £24.5m-30m release clause has been triggered and personal terms are close, positioning Horníček as the senior alternative to Nick Pope after Newcastle again missed out on James Trafford (now signing for Leeds). Still described as 'advancing towards completion' rather than officially announced as of this refresh — held here pending, not moved to fully-confirmed, per the FootballTransfers.com gating rule; expect a formal unveiling within days."},
+  {name:"Aladji Bamba", sub:"21 · DM · Ivory Coast", to:"from AS Monaco", fee:"£35.5m (€40m, incl. add-ons)", free:false, status:"done", statusTxt:"DONE, SIGNED",
+   note:"Confirmed by Sky Sports, the Newcastle official site and AS Monaco (24 Jul): a five-year deal for the highly-rated defensive midfielder, No.8 shirt assigned. Landed while the Bruno Guimarães saga was still unresolved, positioning Bamba as a like-for-like contingency in central midfield if the captain does leave for Arsenal. Was missing from the previous refresh's tracked list entirely — picked up this cycle via the FootballTransfers.com confirmed-deals cross-check."},
 ];
 const CONFIRMED_OUT = [
   {name:"Anthony Gordon", sub:"25 · LW · England", to:"Barcelona (permanent)", fee:"£69m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
@@ -702,52 +704,62 @@ const CONFIRMED_OUT = [
    note:"Confirmed by Sky Sports: the veteran right-back leaves on a free at the end of his contract after four years and a League Cup winner's medal, ending his second spell on Tyneside."},
   {name:"Emil Krafth", sub:"31 · RB · Sweden", to:"Released, free agent", fee:"Free (contract expired)", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Contract-expiry departure confirmed in early summer reporting; a squad-depth exit with no fee, freeing a wage-bill slot rather than driving strategy."},
+  {name:"John Ruddy", sub:"39 · GK", to:"Released, free agent", fee:"Free (contract expired)", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Veteran goalkeeping cover released on contract expiry; picked up this refresh via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
+  {name:"Matt Targett", sub:"26 · LB", to:"Hull City", fee:"Free", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Confirmed free move to Hull City; picked up this refresh via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
+  {name:"Harrison Ashby", sub:"23 · RB/LWB", to:"Luton Town (loan)", fee:"LOAN", free:true, status:"exit", statusTxt:"LOAN CONFIRMED",
+   note:"A season-long loan to Luton Town, confirmed this window. Corrects the previous refresh's watchlist framing, which only had a permanent exit as likely rather than a done loan."},
+  {name:"Travis Hernes", sub:"22 · CM", to:"FC Groningen", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Confirmed permanent move to Eredivisie side Groningen; picked up this refresh via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
+  {name:"Joe White", sub:"20 · CM · academy", to:"Crewe Alexandra", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Confirmed permanent exit to Crewe Alexandra for 'a fresh start' after a disappointing loan spell at Bradford City. Corrects the previous refresh's watchlist entry, which had the destination as still open."},
+  {name:"Charlie McArthur", sub:"19 · academy", to:"York City", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
+   note:"Academy departure to York City, confirmed this window; picked up via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
 ];
 
 const INCOMING = [
-  {name:"Matthias Jaissle", sub:"38 · Head Coach appointment", club:"Al-Ahli (Saudi Pro League)", pos:"Head coach", report:"30 Jul 2026", src:"Khel Now / Sky Sports News", tier:2, fee:"Compensation (PIF-to-PIF)", truth:65, prob:45, light:'y', trend:'up',
-   note:"The gating decision of the entire window: Eddie Howe left the head-coach role today after squad-composition concerns, missing out on Johan Manzambi being the final straw. Jaissle, back-to-back AFC Champions League winner at PIF-owned Al-Ahli and formerly of Red Bull Salzburg, is reported to be in 'advanced discussions', helped by his existing relationship with Newcastle's Saudi ownership. Sporting director Ross Wilson and CEO David Hopkinson are compiling the shortlist; Kieran McKenna and Antonio Conte are also named. True reflects credible, multi-outlet reporting of talks; Happens is tempered because nothing is signed and a PIF-to-PIF appointment, while logical, still needs Al-Ahli's release and full board sign-off."},
-  {name:"Giorgio Scalvini", sub:"22 · CB · Italy", club:"Atalanta", pos:"CB", report:"29 Jul 2026", src:"Sebastien Vidal / Tutto Atalanta", tier:2, fee:"≈€45m (£38m)", truth:60, prob:40, light:'y', trend:'up',
-   note:"Reported to be in 'pole position', advancing on an estimated €45m fee, part of a reported £68m double defensive swoop alongside the Horníček goalkeeper deal. Atalanta, missing Champions League football under new coach Maurizio Sarri, are said to be willing to cash in on their academy-produced centre-back to rebalance finances. Fits Newcastle's real need: Fabian Schär and Dan Burn are both 34 with deals expiring 2027, so this is genuine succession planning, not a luxury signing. Tottenham are also credited with interest."},
-  {name:"Abde Ezzalzouli", sub:"24 · LW/RW · Morocco", club:"Real Betis", pos:"W", report:"29 May 2026 (recurring through Jul)", src:"Graeme Bailey (TeamTalk, exclusive)", tier:2, fee:"≈£43-52m (release clause ≈€60m)", truth:60, prob:35, light:'y', trend:'up',
-   note:"Framed repeatedly by TeamTalk as the direct Anthony Gordon replacement, with Betis 'fully expecting' to lose him after an outstanding season (his camp reportedly open to the move) and a 'clear pathway to a prominent attacking role' cited as Newcastle's edge. Barcelona hold a 20% sell-on. Competition is real and wide (Chelsea, Man City, Everton, Villa, Dortmund, Leipzig, Napoli), which caps Happens despite Newcastle's stated advantage; still live as of late July per TeamTalk's continuing coverage."},
-  {name:"Joaquín Oso", sub:"21 · RB/LB · Spain", club:"Sevilla", pos:"FB", report:"14 Jul 2026", src:"TEAMtalk", tier:3, fee:"Undisclosed (contact made)", truth:45, prob:20, light:'o', trend:'down',
-   note:"Newcastle made contact to explore conditions of a deal for the versatile Sevilla full-back, with Nottingham Forest also enquiring. By mid-July, Fiorentina were reported to have 'accelerated' and moved ahead of Newcastle, Tottenham and Fulham in the race, which drags Happens down; monitored rather than a live priority chase."},
-  {name:"Ederson (Atalanta)", sub:"24 · DM · Brazil", club:"Atalanta", pos:"DM", report:"18-20 Jul 2026", src:"CaughtOffside / TheHardTackle", tier:3, fee:"Undisclosed ('big' offer required)", truth:40, prob:20, light:'o', trend:'flat',
-   note:"Conflicting within 48 hours: one report (19 Jul) had Ederson 'set for an Atalanta stay' despite the Newcastle links, the next (20 Jul) had Atalanta 'prepared to cash in' if a big offer arrives. Newcastle are credited with interest as an alternative central-midfield option should Bruno Guimaraes be sold, but the club's own stance is unresolved, hence the moderate truth and low probability."},
+  {name:"Matthias Jaissle", sub:"38 · Head Coach appointment", club:"Al-Ahli (Saudi Pro League)", pos:"Head coach", report:"31 Jul 2026", src:"Fabrizio Romano ('here we go') / Sky Germany / Florian Plettenberg (Goal.com)", tier:1, fee:"≈€11m compensation (PIF-to-PIF)", truth:88, prob:82, light:'g', trend:'up',
+   note:"Escalated sharply since the 30 Jul vacancy opened. Fabrizio Romano has now called it 'here we go', Sky Germany frame it as a 'Done Deal' with terms agreed to 2030, and Plettenberg reports personal terms 'fully done', the release clause activated and Al-Ahli formally informed. Goal.com's latest (31 Jul) has Jaissle due to arrive in Newcastle Saturday 1 Aug for unveiling, with Newcastle paying Al-Ahli roughly €11m in compensation. Still no official NUFC statement at time of writing, so this stays a very-high-probability incoming rather than a formal confirmation."},
+  {name:"Giorgio Scalvini", sub:"22 · CB · Italy", club:"Atalanta", pos:"CB", report:"30 Jul 2026", src:"Shields Gazette / TheHardTackle / Tutto Atalanta", tier:2, fee:"≈€45-50m (£38-40m)", truth:58, prob:34, light:'y', trend:'flat',
+   note:"Newcastle remain described as 'at the forefront' of the race, part of a reported £68m double defensive swoop alongside the Horníček goalkeeper deal. But Tottenham have now made a competing approach (TheHardTackle, 30 Jul), with both clubs still at an exploratory, no-formal-bid stage. Fits Newcastle's real need: Fabian Schär and Dan Burn are both 34 with deals expiring 2027. Probability trimmed slightly from the last refresh given Spurs' entry, not because Newcastle's own interest has cooled."},
+  {name:"Abde Ezzalzouli", sub:"24 · LW/RW · Morocco", club:"Real Betis", pos:"W", report:"~stable through late Jul", src:"Graeme Bailey (TeamTalk, exclusive) / FootballPlace", tier:2, fee:"≈£43-52m (release clause ≈€60m)", truth:62, prob:38, light:'y', trend:'up',
+   note:"Still framed by TeamTalk as the direct Anthony Gordon replacement, with Betis 'fully expecting' to lose him and a 'clear pathway to a prominent attacking role' cited as Newcastle's edge. Barcelona hold a 20% sell-on. One genuine positive shift this refresh: Aston Villa are reported to have pulled back from the race (FootballPlace), thinning the competition slightly even though Chelsea, Man City, Everton, Dortmund, Leipzig and Napoli remain credited."},
+  {name:"Joaquín Oso", sub:"21 · RB/LB · Spain", club:"Sevilla", pos:"FB", report:"14 Jul 2026 (no fresher update found)", src:"TEAMtalk / Sport Witness", tier:3, fee:"≈€15m (Sevilla's price)", truth:38, prob:8, light:'r', trend:'down',
+   note:"Cooling sharply and possibly gone. Sport Witness's most recent substantive update (14 Jul) has Nottingham Forest 'intending to finalise' the deal, in direct contact with Sevilla and meeting their ~€15m price — with no mention of Newcastle at all. Fiorentina's earlier acceleration has itself stalled. Kept in the table at a low probability rather than moved to Ignore, since no explicit Newcastle withdrawal has been reported, but this now reads as very unlikely."},
 ];
 
 const OUTGOING = [
-  {name:"Bruno Guimarães", sub:"28 · CM · Brazil, captain", club:"Arsenal", pos:"CM/DM", report:"30 Jul 2026", src:"Sky Sports / Telegraph (Luke Edwards) / talkSPORT (Ben Jacobs)", tier:1, fee:"£75-85m", truth:80, prob:55, light:'g', trend:'up',
-   note:"The defining storyline of the window. The Newcastle captain told the club he wants to join Arsenal after Brazil's World Cup exit; Newcastle value him at ≈£85m, Arsenal believe anything above £75m has a real chance. Telegraph's Luke Edwards reports Howe himself now believes Guimarães will be sold and that it was 'the final straw' behind his own exit today. talkSPORT's Ben Jacobs says Guimarães wants clarity before Friday's pre-season return and expects resolution 'by Friday or shortly after'. Two years plus a club option remain on his contract, so Newcastle are not forced sellers, but the player's stated wish plus the coaching vacuum materially lift the probability versus a normal transfer saga."},
-  {name:"Jacob Murphy", sub:"31 · RW/LW · England", club:"Everton", pos:"W", report:"12 Jul 2026", src:"TEAMtalk", tier:3, fee:"Enquiry stage, undisclosed", truth:50, prob:22, light:'o', trend:'flat',
-   note:"Everton have launched an enquiry as they work through multiple winger options; a decade-long servant whose game time is squeezed by Bazoumana Touré's arrival and any Ezzalzouli deal. PRICING: enquiry-stage only with no bid reported, so probability stays modest, but the squeeze on minutes makes an exit logical business."},
-  {name:"Lewis Hall", sub:"22 · LB/LWB · England", club:"Manchester United", pos:"LB", report:"10-13 Jul 2026", src:"TEAMtalk / Caught Offside", tier:3, fee:"≈£55-60m", truth:45, prob:20, light:'o', trend:'flat',
-   note:"Manchester United are described as 'determined' to land Hall, valued at roughly £55-60m, with reports suggesting the player himself is open to the move. Newcastle have set what's called a 'prohibitive' price tag, and United are also tracking two other left-backs, which softens Happens. A sale would leave a fresh full-back hole alongside the Oso interest above."},
-  {name:"Nick Pope", sub:"34 · GK · England", club:"Ipswich Town (interest)", pos:"GK", report:"~Jul 2026", src:"Shields Gazette (Lee Ryder)", tier:2, fee:"Undisclosed", truth:60, prob:30, light:'y', trend:'up',
-   note:"First revealed by the Gazette: Pope 'will be allowed to leave' this summer, with Ipswich and other Premier League sides interested. Explicitly contingent on Newcastle first landing a senior replacement — which is exactly what the live Horníček deal is designed to unlock, so this rises once that's formally announced."},
-  {name:"Joe Willock", sub:"26 · CM/AM · England", club:"Open to reasonable offers", pos:"CM", report:"~Jul 2026", src:"Shields Gazette", tier:2, fee:"Reasonable offer accepted", truth:60, prob:28, light:'o', trend:'flat',
-   note:"Entering the final year of his contract; the club is 'actively trying to strengthen' central midfield and would accept a fair offer for the experienced, well-travelled squad option. A sell-to-avoid-a-free calculation rather than an active push to move him on."},
+  {name:"Bruno Guimarães", sub:"28 · CM · Brazil, captain", club:"Arsenal", pos:"CM/DM", report:"30-31 Jul 2026", src:"talkSPORT (Ben Jacobs) / The Sun (Jack Rosser) / ESPN Brasil", tier:1, fee:"£70-85m (gap narrowing)", truth:82, prob:62, light:'g', trend:'up',
+   note:"Still the defining storyline, and it has moved: The Sun's Jack Rosser (30 Jul) reports Arsenal 'close to agreeing a deal' with Newcastle, fee just north of £70m, while FootballTransfers' own 30 Jul piece has Arsenal in 'advanced talks' off a 'verbal agreement' at around €87m/£75m. Newcastle's ask has softened from the earlier £85m, Arsenal's offer has crept up from £75m — the gap is narrowing rather than closed. Bamba's arrival gives Newcastle a contingency if Bruno goes. Two years plus a club option remain on his contract, so Newcastle are not forced sellers, but 'close to finalising' language across multiple outlets pushes probability up again this refresh; still not a signed deal."},
+  {name:"Jacob Murphy", sub:"31 · RW/LW · England", club:"Everton", pos:"W", report:"28 Jul 2026", src:"Football Insider", tier:3, fee:"Bargain-fee speculation, undisclosed", truth:52, prob:26, light:'o', trend:'up',
+   note:"Football Insider (28 Jul) reports Newcastle are 'now ready to accept the right offer' for Murphy, a step on from the pure enquiry-stage framing of the last refresh, though still no bid or fee agreed. A decade-long servant whose game time is squeezed by Bazoumana Touré's arrival and any Ezzalzouli deal."},
+  {name:"Lewis Hall", sub:"22 · LB/LWB · England", club:"Manchester United / Chelsea", pos:"LB", report:"30 Jul 2026", src:"CaughtOffside (Simon Phillips)", tier:3, fee:"≈£55-60m", truth:48, prob:22, light:'o', trend:'up',
+   note:"A genuine change since the last refresh: CaughtOffside's Simon Phillips (30 Jul) reports Manchester United's chase has stalled ('nothing has moved' recently), but Chelsea are now 'hovering' and see Hall as a 'dream target' to replace Marc Cucurella. No fee specifically reported for the Chelsea interest. Newcastle's prior £55-60m valuation still stands as the reference point; a sale would leave a fresh full-back hole alongside the Oso interest."},
+  {name:"Nick Pope", sub:"34 · GK · England", club:"Ipswich Town (interest)", pos:"GK", report:"~Jul 2026 (no fresher update found)", src:"Shields Gazette (Lee Ryder)", tier:2, fee:"Undisclosed", truth:60, prob:30, light:'y', trend:'flat',
+   note:"Unchanged this refresh: Pope 'will be allowed to leave' this summer per the Gazette, with Ipswich and other Premier League sides interested. Explicitly contingent on Newcastle first landing a senior replacement — Horníček's deal is still only 'advancing towards completion', not yet formal, so this holds rather than rises."},
+  {name:"Joe Willock", sub:"26 · CM/AM · England", club:"Besiktas", pos:"CM", report:"28-29 Jul 2026", src:"Newcastle World", tier:2, fee:"£10m bid rejected", truth:66, prob:38, light:'y', trend:'up',
+   note:"Materially more concrete than the last refresh's 'open to offers' framing: Newcastle World (28-29 Jul) reports Besiktas made a £10m bid that Newcastle rejected, Willock's agent has travelled to Istanbul, and a Turkish journalist says the player has 'approved' the move — but it won't proceed unless Newcastle lowers its price. A named club and a real (if rejected) bid lift both True and Happens versus the previous vague framing."},
 ];
 
 const RISERS = [
-  {ar:"⬆", t:"<b>Bruno Guimarães</b>: 'final straw' framing behind Howe's exit, decision reportedly due within days."},
-  {ar:"⬆", t:"<b>Matthias Jaissle</b>: advanced talks for the vacant head-coach seat, helped by the shared PIF ownership link."},
-  {ar:"⬆", t:"<b>Giorgio Scalvini</b>: Newcastle reported 'in pole position', part of a £68m double defensive swoop."},
-  {ar:"⬆", t:"<b>Nick Pope</b>: exit path clears as the Horníček goalkeeper deal edges toward completion."},
+  {ar:"⬆", t:"<b>Matthias Jaissle</b>: escalated to Romano's 'here we go'; due in Newcastle Saturday 1 Aug to be unveiled."},
+  {ar:"⬆", t:"<b>Bruno Guimarães</b>: The Sun and FootballTransfers both report Arsenal 'close to finalising' a deal north of £70m."},
+  {ar:"⬆", t:"<b>Joe Willock</b>: a concrete £10m Besiktas bid (rejected) and agent travel to Istanbul replace the previous vague 'open to offers' framing."},
+  {ar:"⬆", t:"<b>Lewis Hall</b>: Chelsea now 'hovering' as a genuine second suitor alongside Manchester United."},
 ];
 const FALLERS = [
-  {ar:"⬇", t:"<b>Johan Manzambi</b>: lost to Aston Villa's club-record £59.5m deal — a factor in Howe's own departure."},
-  {ar:"⬇", t:"<b>James Trafford</b>: missed for a third straight window, now signing for Leeds United (£40m)."},
-  {ar:"⬇", t:"<b>Víctor Muñoz</b>: gone to Liverpool for £34.5m after Newcastle were in the race throughout June."},
-  {ar:"⬇", t:"<b>Joaquín Oso</b>: Fiorentina reported to have 'accelerated' past Newcastle in the chase."},
+  {ar:"⬇", t:"<b>Ederson (Atalanta)</b>: signed a new Atalanta contract after his proposed Man Utd move fell through on medical concerns — dead for Newcastle."},
+  {ar:"⬇", t:"<b>Joaquín Oso</b>: Nottingham Forest now reported to be finalising the deal directly with Sevilla; no Newcastle mention in the latest reporting."},
+  {ar:"⬇", t:"<b>Giorgio Scalvini</b>: still live, but Tottenham have now made a competing approach."},
 ];
 const NEW = [
-  {ar:"✦", t:"BREAKING: <b>Eddie Howe leaves</b> as head coach (30 Jul); <b>Matthias Jaissle</b> (Al-Ahli) the advanced favourite, McKenna and Conte also named."},
-  {ar:"✦", t:"<b>Bruno Guimarães-to-Arsenal</b> escalates sharply: Telegraph and talkSPORT both now report momentum toward a £75-85m sale within days."},
-  {ar:"✦", t:"Defensive business advancing: <b>Horníček</b> (GK, release clause triggered) and <b>Scalvini</b> (CB, 'pole position') form a reported £68m double deal."},
+  {ar:"✦", t:"<b>Aladji Bamba's £35.5m Monaco move</b> — confirmed 24 Jul but missing from the last refresh — added to Confirmed via the FootballTransfers.com cross-check, alongside five further confirmed exits (Ruddy, Targett, Ashby loan, Hernes, White, McArthur)."},
+  {ar:"✦", t:"<b>Jaissle 'here we go'</b>: Romano's confirmation plus a reported Saturday arrival date moves this from 'advanced talks' to imminent."},
+  {ar:"✦", t:"<b>Willock</b> gains a named suitor and a real bid (Besiktas, £10m, rejected) for the first time this window."},
 ];
 const IGNORE = [
+  {ar:"✕", t:"<b>Ederson (Atalanta)</b>: resolved — signed a new Atalanta contract; the proposed Man Utd move (and any Newcastle interest) is dead."},
   {ar:"✕", t:"<b>Johan Manzambi</b>: resolved — signed for Aston Villa in a club-record £59.5m deal; any 2026 piece still listing him as a Newcastle target is stale."},
   {ar:"✕", t:"<b>James Trafford</b>: resolved — signing for Leeds United; treat any lingering Newcastle-Trafford link as recycled from the 2024/2025 chases."},
   {ar:"✕", t:"<b>Víctor Muñoz</b>: resolved — Liverpool completed the £34.5m signing in July; discount any Newcastle framing as pre-resolution reporting."},
@@ -765,8 +777,6 @@ const POSITIONS = [
 const WATCHLIST = [
   {name:"Nick Woltemade", club:"Newcastle United", pos:"ST", dir:"out", age:"~2 wks", tier:2, note:"The Athletic (Chris Waugh) reports his fit in Howe's system was already uncertain after a difficult World Cup; with Howe now gone, his standing under a new coach is an open question, though a sale remains unlikely given the fee sunk into him."},
   {name:"Yoane Wissa", club:"Newcastle United", pos:"ST", dir:"out", age:"~2 wks", tier:2, note:"The Athletic reports Newcastle explored a sale market but judged the financial hit too heavy; the club is banking on a stronger season after his World Cup involvement rather than moving him on."},
-  {name:"Joe White", club:"Newcastle United", pos:"CM", dir:"out", age:"~3 wks", tier:3, note:"Academy midfielder expected to leave permanently for 'a fresh start' after a disappointing loan at Bradford City (four appearances)."},
-  {name:"Harrison Ashby", club:"Newcastle United", pos:"RB/LWB", dir:"out", age:"~3 wks", tier:3, note:"Signed from West Ham with promise but never made his senior Newcastle debut across three loan spells; expected to be allowed to leave permanently."},
   {name:"Dan Burn & Fabian Schär", club:"Newcastle United", pos:"CB", dir:"out", age:"~4 wks", tier:3, note:"Both 34 with contracts expiring 2027; not an active sale story, but their situation is the direct driver of the Scalvini centre-back pursuit above. Monitoring only."},
   {name:"Kieran McKenna / Antonio Conte", club:"Alternate coaching candidates", pos:"Head coach", dir:"in", age:"~same day", tier:3, note:"Named alongside Jaissle as the search continues; no reported contact confirmed for either as of 30 Jul, well behind Jaissle in the reported pecking order."},
 ];
@@ -787,6 +797,21 @@ const HUB = {
   tuttoAtalanta:{l:"Tutto Atalanta", u:"https://www.tuttoatalanta.com/"},
   newcastleWorld:{l:"Newcastle World · football", u:"https://www.newcastleworld.com/sport/football/newcastle-united"},
   khelnow:    {l:"Khel Now · football", u:"https://khelnow.com/football"},
+  bambaSky:   {l:"Sky Sports · Bamba completes £35.5m move", u:"https://www.skysports.com/football/news/11678/13566552/aladji-bamba-transfer-news-newcastle-complete-lb35-5m-signing-of-midfielder-from-monaco"},
+  bambaNUFC:  {l:"Newcastle United Official · Bamba signs", u:"https://www.newcastleunited.com/en/news/aladji-bamba-signs-for-newcastle-united"},
+  bambaGFFN:  {l:"Get French Football News · Bamba to Newcastle", u:"https://www.getfootballnewsfrance.com/2026/official-i-monacos-aladji-bamba-joins-newcastle-in-a-e40m-deal/"},
+  jaissleYahoo:{l:"Yahoo Sports · Jaissle 'Done Deal' (Sky Germany)", u:"https://sports.yahoo.com/articles/done-deal-matthias-jaissle-join-213600703.html"},
+  jaissleGoal:{l:"Goal.com · Newcastle inform Al-Ahli of Jaissle deal", u:"https://www.goal.com/en/news/newcastle-inform-al-ahli-saudi-of-yaissle-deal/blt9bb0d7912c2c4bd8"},
+  jaissleTribuna:{l:"Tribuna · Romano 'here we go' on Jaissle", u:"https://tribuna.com/en/news/2026-07-30-here-we-go-matthias-jaissle-to-become-next-newcastle-head-coach-romano/"},
+  brunoSun:   {l:"The Sun (Jack Rosser) · Arsenal close to agreeing Bruno deal", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/arsenal-transfer-news-bruno-guimaraes-newcastle-united-agreement-close-summer-2026"},
+  brunoFT:    {l:"FootballTransfers · Arsenal 'advanced talks', verbal agreement ~€87m", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/arsenal-advanced-talks-bruno-guimaraes-verbal-agreement-newcastle-87m-transfer"},
+  osoSW:      {l:"Sport Witness · Forest finalising Oso deal", u:"https://sportwitness.co.uk/"},
+  scalviniHT: {l:"TheHardTackle · Tottenham competing approach for Scalvini", u:"https://thehardtackle.com/"},
+  ezzalzouliFP:{l:"FootballPlace · Villa pull back from Ezzalzouli race", u:"https://footballplace.co.uk/"},
+  murphyFI:   {l:"Football Insider · Newcastle ready to accept offer for Murphy", u:"https://www.footballinsider247.com/"},
+  hallCO:     {l:"CaughtOffside (Simon Phillips) · Chelsea hovering for Hall", u:"https://www.caughtoffside.com/"},
+  willockNW:  {l:"Newcastle World · Besiktas £10m bid for Willock rejected", u:"https://www.newcastleworld.com/sport/football/newcastle-united"},
+  edersonYahoo:{l:"Yahoo Sports · Ederson signs new Atalanta contract", u:"https://sports.yahoo.com/"},
 };
 const LINKMAP = {
   "Sean Steur": ["skyNUFC","nufcOfficial"],
@@ -794,29 +819,35 @@ const LINKMAP = {
   "Ewen Jaouen": ["romano","nufcOfficial"],
   "Kyle Healy": ["romano"],
   "Lukáš Horníček": ["teamtalk","shieldsGaz"],
+  "Aladji Bamba": ["bambaSky","bambaNUFC","bambaGFFN"],
   "Anthony Gordon": ["skyNUFC"],
   "Sandro Tonali": ["skyNUFC"],
   "Kieran Trippier": ["skyNUFC"],
   "Emil Krafth": ["chronicle"],
-  "Matthias Jaissle": ["khelnow","skyNUFC"],
-  "Giorgio Scalvini": ["tuttoAtalanta","teamtalk"],
-  "Abde Ezzalzouli": ["teamtalk"],
-  "Joaquín Oso": ["teamtalk"],
-  "Ederson (Atalanta)": ["teamtalk"],
-  "Bruno Guimarães": ["telegraph","talksport","skyNUFC"],
-  "Jacob Murphy": ["teamtalk"],
-  "Lewis Hall": ["teamtalk"],
+  "John Ruddy": ["chronicle"],
+  "Matt Targett": ["chronicle"],
+  "Harrison Ashby": ["shieldsGaz"],
+  "Travis Hernes": ["chronicle"],
+  "Joe White": ["shieldsGaz"],
+  "Charlie McArthur": ["chronicle"],
+  "Matthias Jaissle": ["jaissleTribuna","jaissleYahoo","jaissleGoal"],
+  "Giorgio Scalvini": ["tuttoAtalanta","scalviniHT","shieldsGaz"],
+  "Abde Ezzalzouli": ["teamtalk","ezzalzouliFP"],
+  "Joaquín Oso": ["osoSW"],
+  "Bruno Guimarães": ["brunoSun","brunoFT","talksport","skyNUFC"],
+  "Jacob Murphy": ["murphyFI"],
+  "Lewis Hall": ["hallCO"],
   "Nick Pope": ["shieldsGaz","leeRyder"],
-  "Joe Willock": ["shieldsGaz"],
+  "Joe Willock": ["willockNW","shieldsGaz"],
 };
 const WL_LINKMAP = {
-  "Nick Woltemade":"athletic","Yoane Wissa":"athletic","Joe White":"shieldsGaz","Harrison Ashby":"shieldsGaz",
+  "Nick Woltemade":"athletic","Yoane Wissa":"athletic",
   "Dan Burn & Fabian Schär":"teamtalk","Kieran McKenna / Antonio Conte":"khelnow",
 };
 
 const PROSE = {
-  heroH2: `The dugout is empty and the captain wants out: Newcastle's window is thrown into <em>chaos</em>`,
-  heroLede: `Newcastle United's summer flipped on its head on 30 July: head coach <b>Eddie Howe</b> walked away after almost five years, with reporting pointing to frustration over a summer that has already sold <b>Anthony Gordon</b> (£69m), <b>Sandro Tonali</b> (£100m) and, last deadline day, <b>Alexander Isak</b> — and then missed out on primary target <b>Johan Manzambi</b> to Aston Villa. Hours later, captain <b>Bruno Guimarães</b>' wish to join Arsenal is being framed by the Telegraph as "the final straw," with talkSPORT reporting a resolution possible within days. Beneath the upheaval, real recruitment business continues at pace: a goalkeeper (<b>Lukáš Horníček</b>) and a centre-back (<b>Giorgio Scalvini</b>) are both advancing, and <b>Matthias Jaissle</b> of PIF sister club Al-Ahli is the early favourite to take the reins.`,
+  heroH2: `A coach lands, a captain edges closer to the exit: <em>Jaissle "here we go"</em>, Bruno-to-Arsenal "close to finalising", and a hidden Bamba signing surfaces on the confirmed-deals check`,
+  heroLede: `A day on from the chaos of Eddie Howe's departure, Newcastle's picture is sharpening rather than calming. <b>Matthias Jaissle</b> has gone from "advanced discussions" to Fabrizio Romano's <b>"here we go"</b>, with Sky Germany and Goal.com both reporting a contract to 2030 already agreed and Jaissle due in Newcastle on <b>Saturday 1 August</b> to be unveiled — still not a formal club statement, but about as close as reporting gets before one. The <b>Bruno Guimarães</b> saga has moved too: The Sun's Jack Rosser and FootballTransfers both now describe Arsenal as <b>"close to finalising"</b> a deal, fee reports converging somewhere north of £70m against Newcastle's earlier £85m ask. This refresh's FootballTransfers.com confirmed-deals cross-check also surfaced a genuine gap in the previous state of record: <b>Aladji Bamba</b>, a £35.5m defensive midfielder from Monaco, completed his move on 24 July but was never added to the tracked confirmed list — he's in now, alongside five further confirmed exits (Ruddy, Targett, an Ashby loan to Luton, Hernes and two academy departures) that had drifted out of view. Beneath the headline moves, <b>Giorgio Scalvini</b> (CB) remains live but now faces Tottenham as a competing suitor, <b>Joaquín Oso</b> (FB) appears to have swung decisively toward Nottingham Forest, and <b>Ederson</b> of Atalanta has signed a new contract there and is off the board entirely. Outgoing, <b>Joe Willock</b> gained real shape this week — a £10m Besiktas bid was rejected, but his agent has travelled to Istanbul — while <b>Lewis Hall</b> now has Chelsea circling alongside Manchester United.`,
   metaRow: `
       <span>DECISION-MAKER: <b>Ross Wilson</b> (Sporting Director) &amp; David Hopkinson (CEO)</span>
       <span>HEAD COACH: <b>Vacant</b> (Howe departed 30 Jul)</span>
@@ -912,13 +943,13 @@ const PROSE = {
     </div>
   </section>
 `,
-  confirmedPending: `<b>Horníček's £24.5-30m release-clause move is agreed in principle but not yet formally announced</b> — expect confirmation within days once terms and a medical are finalised. There is, as of writing, <b>no contract-renewal story to report for Bruno Guimarães</b>; if anything the opposite is true, with reporting suggesting Newcastle themselves now expect to sell rather than retain their captain. Watch this space: a swift head-coach appointment could change that calculus overnight.`,
+  confirmedPending: `<b>Horníček's £24.5-30m release-clause move is agreed in principle but not yet formally announced</b> — expect confirmation within days once terms and a medical are finalised. <b>Matthias Jaissle's head-coach appointment</b> is now at Romano "here we go" status with a reported Saturday arrival date, but likewise awaits an official club statement, so it stays in Incoming rather than Confirmed. There is, as of writing, <b>no contract-renewal story to report for Bruno Guimarães</b>; reporting continues to suggest Newcastle expect to sell rather than retain their captain, with Arsenal now described as close to finalising terms.`,
   incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Wilson network 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since Howe's departure broke this afternoon.`,
   outgoingSub: `Three confirmed sales (Gordon, Tonali, plus last deadline day's Isak deal) have already banked close to £300m combined; a fourth, Bruno Guimarães, would fund the head-coach transition and a marquee winger in one move.`,
   pricingBanner: `
       <b>Pricing principle: with sales already funding a rebuild, Newcastle are pragmatic rather than reluctant sellers this summer.</b> Three multipliers push fees up regardless: <b>(1)</b> genuine first-team quality (Guimarães, Willock) draws Premier League and European interest; <b>(2)</b> contract length gives Newcastle leverage on Guimarães specifically (two years plus an option); <b>(3)</b> a competitive market (Man Utd on Hall, Everton on Murphy) supports the asking price. The one softener: out-of-contract-adjacent players (Pope, entering the final stages of his Newcastle career) are priced to move rather than to deter.
     `,
-  excludedNote: `<b>Excluded as stale/already-resolved:</b> Johan Manzambi (signed for Aston Villa, £59.5m — a direct factor in Howe's exit), James Trafford (signing for Leeds United after Newcastle missed out a third time), Víctor Muñoz (signed for Liverpool, £34.5m) and a recycled Aaron Ramsdale report dated to the 2025 window. Any article still framing these as live Newcastle targets is out of date.`,
+  excludedNote: `<b>Excluded as stale/already-resolved:</b> Ederson of Atalanta (signed a new Atalanta contract after a proposed Man Utd move fell through on medical concerns), Johan Manzambi (signed for Aston Villa, £59.5m — a direct factor in Howe's exit), James Trafford (signing for Leeds United after Newcastle missed out a third time), Víctor Muñoz (signed for Liverpool, £34.5m) and a recycled Aaron Ramsdale report dated to the 2025 window. Any article still framing these as live Newcastle targets is out of date.`,
   spendIn: { v: `£120-180m`, x: `Horníček and Scalvini (≈£55-65m combined) are close to done; a winger (Ezzalzouli) and any central-midfield replacement for Guimarães would push toward the top of the range, contingent on the coaching appointment.` },
   spendOut: { v: `£180-260m`, x: `Gordon (£69m) and Tonali (£100m) are already banked; a Guimarães sale at the reported £75-85m valuation would be the single largest fee of the summer if it completes as expected within days.` },
   methodLegend: `
