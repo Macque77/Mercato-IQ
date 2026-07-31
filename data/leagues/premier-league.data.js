@@ -6,10 +6,15 @@
 const LEAGUE = {
   name: "Premier League",
   nation: "England",
-  stories_count: 148
+  stories_count: 145
 };
 
 const TOP_STORIES = [  {
+    name: "Matthias Jaissle", prob: 82,
+    club_origin: "newcastle-united", direction: "in",
+    from: "Al-Ahli (Saudi Pro League)", to: "Newcastle United"
+  },
+  {
     name: "Ousmane Diomande", prob: 80,
     club_origin: "nottingham-forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest"
@@ -20,14 +25,14 @@ const TOP_STORIES = [  {
     from: "Manchester City", to: "Various"
   },
   {
+    name: "Bruno Guimarães", prob: 62,
+    club_origin: "newcastle-united", direction: "out",
+    from: "Newcastle United", to: "Arsenal"
+  },
+  {
     name: "Cristian Romero", prob: 62,
     club_origin: "tottenham-hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)"
-  },
-  {
-    name: "Bruno Guimarães", prob: 55,
-    club_origin: "newcastle-united", direction: "out",
-    from: "Newcastle United", to: "Arsenal"
   },
   {
     name: "Savinho", prob: 55,
@@ -80,14 +85,9 @@ const TOP_STORIES = [  {
     from: "Chelsea", to: "Various"
   },
   {
-    name: "Dayann Methalie", prob: 58,
+    name: "Dayann Methalie", prob: 52,
     club_origin: "sunderland", direction: "in",
     from: "Toulouse", to: "Sunderland"
-  },
-  {
-    name: "Matthias Jaissle", prob: 45,
-    club_origin: "newcastle-united", direction: "in",
-    from: "Al-Ahli (Saudi Pro League)", to: "Newcastle United"
   },
   {
     name: "Marcus Rashford", prob: 42,
@@ -100,21 +100,21 @@ const TOP_STORIES = [  {
     from: "Tottenham Hotspur", to: "TBD"
   },
   {
-    name: "Giorgio Scalvini", prob: 40,
+    name: "Abde Ezzalzouli", prob: 38,
     club_origin: "newcastle-united", direction: "in",
-    from: "Atalanta", to: "Newcastle United"
+    from: "Real Betis", to: "Newcastle United"
   },
   {
-    name: "Guglielmo Vicario", prob: 36,
-    club_origin: "tottenham-hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "Juventus"
+    name: "Joe Willock", prob: 38,
+    club_origin: "newcastle-united", direction: "out",
+    from: "Newcastle United", to: "Besiktas"
   },
 ];
 
-const BY_CLUB = {"nottingham-forest": 7, "manchester-city": 3, "tottenham-hotspur": 10, "newcastle-united": 9, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "manchester-united": 10, "chelsea": 5, "sunderland": 20, "aston-villa": 4, "crystal-palace": 5, "leeds-united": 23, "brighton": 5, "bournemouth": 4, "hull-city": 5, "brentford": 3, "liverpool": 5, "coventry-city": 4, "everton": 3};
+const BY_CLUB = {"newcastle-united": 8, "nottingham-forest": 7, "manchester-city": 3, "tottenham-hotspur": 10, "fulham": 6, "ipswich-town": 6, "arsenal": 11, "manchester-united": 10, "chelsea": 5, "sunderland": 18, "aston-villa": 4, "crystal-palace": 5, "leeds-united": 23, "brighton": 5, "bournemouth": 4, "hull-city": 5, "brentford": 3, "liverpool": 5, "coventry-city": 4, "everton": 3};
 
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T08:11:13.145227Z",
+  updated: "2026-07-31T09:48:27.245845Z",
   label: "League aggregation"
 };

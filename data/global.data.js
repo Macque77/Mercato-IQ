@@ -5,6 +5,17 @@
 
 const HEADLINES = [
   {
+    headline: "Matthias Jaissle",
+    summary: "",
+    value: "≈€11m compensation (PIF-to-PIF)",
+    from: "Al-Ahli (Saudi Pro League)", to: "Newcastle United",
+    direction: "in",
+    prob: 82, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-07-31T09:30:00Z"
+  },
+  {
     headline: "Ousmane Diomande",
     summary: "",
     value: "~£37m + £5m add-ons",
@@ -27,6 +38,17 @@ const HEADLINES = [
     updated: "2026-06-06T00:00:00Z"
   },
   {
+    headline: "Bruno Guimarães",
+    summary: "",
+    value: "£70-85m (gap narrowing)",
+    from: "Newcastle United", to: "Arsenal",
+    direction: "out",
+    prob: 62, trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-07-31T09:30:00Z"
+  },
+  {
     headline: "Cristian Romero",
     summary: "",
     value: "≈€40m (£35m)",
@@ -36,17 +58,6 @@ const HEADLINES = [
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-07-30T14:00:00Z"
-  },
-  {
-    headline: "Bruno Guimarães",
-    summary: "",
-    value: "£75-85m",
-    from: "Newcastle United", to: "Arsenal",
-    direction: "out",
-    prob: 55, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "newcastle-united",
-    updated: "2026-07-30T18:00:00Z"
   },
   {
     headline: "Savinho",
@@ -125,23 +136,12 @@ const HEADLINES = [
     club_link: "manchester-united",
     updated: "2026-07-29T18:00:00Z"
   },
-  {
-    headline: "Rafael Leão",
-    summary: "",
-    value: "TBC",
-    from: "AC Milan", to: "Tottenham Hotspur",
-    direction: "in",
-    prob: 26, trend: 'up',
-    nation: "England", league: "Premier League",
-    club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
-  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 148, league_count: 1
+    stories_count: 145, league_count: 1
   },
 ];
 
@@ -155,6 +155,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T08:11:13.108097Z",
+  updated: "2026-07-31T09:48:27.245227Z",
   label: "Global aggregation from all clubs"
 };
