@@ -89,7 +89,7 @@ const TOP_STORIES = [  {
 const BY_LEAGUE = {"Premier League": 148};
 
 const REPORT_META = {
-  asof: "30 Jul 2026",
-  updated: "2026-07-30T20:47:05.787213Z",
+  asof: "31 Jul 2026",
+  updated: "2026-07-31T08:11:13.144854Z",
   label: "Nation aggregation"
 };
