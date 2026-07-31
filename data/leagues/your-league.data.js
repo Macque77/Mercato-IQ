@@ -15,6 +15,6 @@ const BY_CLUB = {};
 
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T09:48:27.245981Z",
+  updated: "2026-07-31T10:39:44.010662Z",
   label: "League aggregation"
 };
