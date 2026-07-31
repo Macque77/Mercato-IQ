@@ -13,8 +13,10 @@ const TOP_STORIES = [];
 
 const BY_LEAGUE = {};
 
+const LEAGUES_LIST = [];
+
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T10:39:44.010351Z",
+  updated: "2026-07-31T16:14:22.945037Z",
   label: "Nation aggregation"
 };

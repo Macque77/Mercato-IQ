@@ -230,9 +230,11 @@ const TOP_STORIES = [];
 
 const BY_LEAGUE = {};
 
+const LEAGUES_LIST = [];
+
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T10:39:44.010351Z",
+  updated: "2026-07-31T16:14:22.945037Z",
   label: "Nation aggregation"
 };
 
@@ -250,7 +252,7 @@ const REPORT_META = {
     `<a href="../index.html">Global</a><span class="sep">›</span><b>${NATION.name}</b>`;
 
   document.getElementById('heroKicker').textContent =
-    (NATION.name || '').toUpperCase() + ' · ALL LEAGUES · UPDATED THE MOMENT THE PICTURE CHANGES';
+    (NATION.name || '').toUpperCase() + ' · ALL LEAGUES · LIVE';
   document.getElementById('heroH2').innerHTML = NATION.name + ' Transfer Season';
 
   // Transfer window status: Open / Closed / Deadline Day, same 3-state logic used everywhere else.
@@ -280,7 +282,7 @@ const REPORT_META = {
       return `<b>${s.club_display_name}</b> ${verb} <b>${s.name}</b>`;
     });
     let sentence = bits.length === 1 ? bits[0] : bits.slice(0,-1).join(', ') + ' and ' + bits[bits.length-1];
-    document.getElementById('heroLede').innerHTML = sentence + `. ${TOP_STORIES.length} live stories tracked right now.`;
+    document.getElementById('heroLede').innerHTML = sentence + `. ${TOP_STORIES.length} tracked live.`;
   })();
 
   function timeAgo(iso){
