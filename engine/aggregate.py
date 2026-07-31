@@ -30,6 +30,32 @@ def slugify(text):
     text = re.sub(r"[^a-zA-Z0-9\s-]", '', text or '').strip().lower()
     return re.sub(r'[\s_]+', '-', text)
 
+# Landing pages (global/nation/league) are player-transfer-rumours-and-confirmed-business only.
+# Managerial/coaching links and generic "framing rows" (position-need context with no named
+# individual player and no named real counterpart club) are real content on the club pages but
+# don't belong in the aggregated rollups. Filtered out here, at the point stories enter the
+# cross-club pool, so club pages themselves are completely unaffected.
+NON_PLAYER_POS = {'head coach', 'manager', 'coach', 'squad', 'sqd', 'spine'}
+NON_PLAYER_CLUB = {'market', 'various'}
+NON_PLAYER_REPORT = {'window framing'}  # club data's own marker for a synthetic, no-named-player row
+
+def is_player_transfer_story(item):
+    """True if this row is a genuine named-player transfer rumour/confirmed move,
+    not a managerial link or a no-named-player framing/context row. 'window framing' is the
+    marker club data files use for pattern-based/data-model rows (e.g. "Prized asset (premium
+    sale)", "Forward depth options") that describe a recruitment pattern, not an actual rumour,
+    so they're excluded regardless of which placeholder club/position they carry."""
+    pos = str(item.get('pos', '')).strip().lower()
+    club = str(item.get('club', '')).strip().lower()
+    report = str(item.get('report', '')).strip().lower()
+    if pos in NON_PLAYER_POS:
+        return False
+    if club in NON_PLAYER_CLUB:
+        return False
+    if report in NON_PLAYER_REPORT:
+        return False
+    return True
+
 def extract_js_array(content, array_name):
     """Extract a JavaScript array from .data.js content via regex.
     Returns a list of dicts, or empty list if not found."""
@@ -118,6 +144,39 @@ def extract_report_meta(content):
         return parse_js_object(match.group(1))
     return {"updated": datetime.utcnow().isoformat() + 'Z'}
 
+def extract_linkmap_counts(content):
+    """Extract LINKMAP name -> number of distinct sources cited for that player.
+    Used as the 'coverage' figure that drives the Trending tab (most-covered stories)."""
+    pattern = r'const\s+LINKMAP\s*=\s*\{([\s\S]*?)\n\};'
+    match = re.search(pattern, content)
+    if not match:
+        return {}
+    body = match.group(1)
+    counts = {}
+    for m in re.finditer(r'"((?:[^"\\]|\\.)*)"\s*:\s*\[([^\]]*)\]', body):
+        name = m.group(1)
+        items = re.findall(r'"[^"]*"', m.group(2))
+        counts[name] = max(len(items), 1)
+    return counts
+
+COVERAGE_HISTORY_PATH = 'data/.coverage_history.json'
+
+def load_coverage_history():
+    """Coverage count from the previous aggregate.py run, keyed by player name.
+    Compared against this run's counts to produce a real (not simulated) recency signal
+    for the Trending tab's arrow: has this story picked up more source coverage since
+    the last refresh?"""
+    try:
+        with open(COVERAGE_HISTORY_PATH) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def save_coverage_history(history):
+    os.makedirs('data', exist_ok=True)
+    with open(COVERAGE_HISTORY_PATH, 'w') as f:
+        json.dump(history, f)
+
 def aggregate_club_data(club_slug, club_data_path):
     """Read a single club's data.js and extract relevant fields."""
     try:
@@ -136,6 +195,7 @@ def aggregate_club_data(club_slug, club_data_path):
 
     incoming = extract_js_array(content, 'INCOMING')
     outgoing = extract_js_array(content, 'OUTGOING')
+    linkmap_counts = extract_linkmap_counts(content)
 
     club_display_name = brand.get('club', club_slug)
 
@@ -148,6 +208,7 @@ def aggregate_club_data(club_slug, club_data_path):
         item['direction'] = 'in'
         item['updated'] = updated_str
         item['report'] = item.get('report', '~1 wk ago')
+        item['coverage'] = linkmap_counts.get(item.get('name', ''), 1)
 
     for item in outgoing:
         item['club_origin'] = brand.get('slug', club_slug)
@@ -158,6 +219,12 @@ def aggregate_club_data(club_slug, club_data_path):
         item['direction'] = 'out'
         item['updated'] = updated_str
         item['report'] = item.get('report', '~1 wk ago')
+        item['coverage'] = linkmap_counts.get(item.get('name', ''), 1)
+
+    # Landing pages only aggregate genuine named-player transfer rumours/confirmed moves —
+    # drop managerial links and no-named-player framing rows here (club pages keep them).
+    incoming = [item for item in incoming if is_player_transfer_story(item)]
+    outgoing = [item for item in outgoing if is_player_transfer_story(item)]
 
     return {
         'brand': brand,
@@ -197,9 +264,13 @@ def deduplicate_and_rank(stories):
     sorted_stories = sorted(deduped.items(), key=sort_key)
     return [item for name, item in sorted_stories]
 
+GLOBAL_STORY_CAP = 60  # Breaking shows the top ~24 of these by tier/prob; Trending shows the rest.
+
 def emit_global_data(all_stories):
-    """Emit data/global.data.js with top 12 stories."""
-    top_stories = all_stories[:12]
+    """Emit data/global.data.js. HEADLINES carries every tracked story up to GLOBAL_STORY_CAP,
+    already ranked by tier/prob/value (deduplicate_and_rank order) so Breaking can show the
+    leaders and Trending can show everything else, re-sorted by coverage."""
+    top_stories = all_stories[:GLOBAL_STORY_CAP]
 
     nations = {}
     leagues = {}
@@ -257,14 +328,19 @@ def emit_global_data(all_stories):
         nation = story.get('nation', 'Unknown')
         league = story.get('league', 'Unknown')
         updated = story.get('updated', '')
+        tier = story.get('tier', 3)
+        coverage = story.get('coverage', 1)
+        coverage_trend = story.get('coverage_trend', 'flat')
 
         headlines_js += f'''  {{
     headline: "{headline}",
+    club_display_name: "{origin_name}",
     summary: "{summary}",
     value: "{value}",
     from: "{from_club}", to: "{to_club}",
     direction: "{direction}",
     prob: {prob}, trend: '{trend}',
+    tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
     nation: "{nation}", league: "{league}",
     club_link: "{club_link}",
     updated: "{updated}"
@@ -320,14 +396,28 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
         origin_name = str(story.get('club_origin_name', club_link)).replace('"', '\\"')
         counterparty = str(story.get('club', 'TBD')).replace('"', '\\"')
         from_club, to_club = (origin_name, counterparty) if direction == 'out' else (counterparty, origin_name)
+        value = str(story.get('fee', 'TBC')).replace('"', '\\"')
+        updated = story.get('updated', '')
+        league = str(story.get('league', '')).replace('"', '\\"')
+        tier = story.get('tier', 3)
+        coverage = story.get('coverage', 1)
+        coverage_trend = story.get('coverage_trend', 'flat')
         stories_js += f'''  {{
     name: "{story.get('name', '')}",prob: {story.get('prob', 50)},
-    club_origin: "{club_link}", direction: "{direction}",
-    from: "{from_club}", to: "{to_club}"
+    club_origin: "{club_link}", club_display_name: "{origin_name}", direction: "{direction}",
+    from: "{from_club}", to: "{to_club}",
+    tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
+    value: "{value}", updated: "{updated}", league: "{league}"
   }},
 '''
     stories_js += ']'
     nation_flag = FLAG_EMOJI.get(nation_name, '\U0001F30D')
+
+    leagues_list = sorted(
+        [{'slug': slugify(name), 'name': name, 'count': count} for name, count in leagues.items()],
+        key=lambda l: l['name']
+    )
+    leagues_list_js = json.dumps(leagues_list)
 
     data_js = f'''/* ============================================================
    MERCATO IQ · NATION DATA · {nation_name}
@@ -344,6 +434,8 @@ const TOP_STORIES = {stories_js};
 
 const BY_LEAGUE = {json.dumps(leagues)};
 
+const LEAGUES_LIST = {leagues_list_js};
+
 const REPORT_META = {{
   asof: "{datetime.utcnow().strftime('%d %b %Y')}",
   updated: "{datetime.utcnow().isoformat()}Z",
@@ -356,8 +448,10 @@ const REPORT_META = {{
         f.write(data_js)
     print(f'EMIT: data/nations/{nation_slug}.data.js ({len(top_stories)} top stories)')
 
-def emit_league_data(all_stories, league_slug, league_name):
-    """Emit data/leagues/<slug>.data.js for a single league."""
+def emit_league_data(all_stories, league_slug, league_name, league_clubs=None):
+    """Emit data/leagues/<slug>.data.js for a single league. league_clubs (optional) is the
+    full club membership list [{slug,name,nation,league}] regardless of whether a club has any
+    surviving stories, so the club-navigation rail can list every club, not just active ones."""
     league_stories = [s for s in all_stories if s.get('league') == league_name]
     top_stories = league_stories[:20]
     league_nation = next((s.get('nation') for s in league_stories if s.get('nation')), 'Unknown')
@@ -376,13 +470,33 @@ def emit_league_data(all_stories, league_slug, league_name):
         origin_name = str(story.get('club_origin_name', club_link)).replace('"', '\\"')
         counterparty = str(story.get('club', 'TBD')).replace('"', '\\"')
         from_club, to_club = (origin_name, counterparty) if direction == 'out' else (counterparty, origin_name)
+        value = str(story.get('fee', 'TBC')).replace('"', '\\"')
+        updated = story.get('updated', '')
+        tier = story.get('tier', 3)
+        coverage = story.get('coverage', 1)
+        coverage_trend = story.get('coverage_trend', 'flat')
         stories_js += f'''  {{
     name: "{story.get('name', '')}", prob: {story.get('prob', 50)},
-    club_origin: "{club_link}", direction: "{direction}",
-    from: "{from_club}", to: "{to_club}"
+    club_origin: "{club_link}", club_display_name: "{origin_name}", direction: "{direction}",
+    from: "{from_club}", to: "{to_club}",
+    tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
+    value: "{value}", updated: "{updated}"
   }},
 '''
     stories_js += ']'
+
+    if league_clubs:
+        clubs_list = sorted(
+            [{'slug': c['slug'], 'name': c['name'], 'count': clubs.get(c['slug'], 0)} for c in league_clubs],
+            key=lambda c: c['name']
+        )
+    else:
+        clubs_list = sorted(
+            ({'slug': slug, 'name': next((s.get('club_origin_name', slug) for s in league_stories if s.get('club_origin') == slug), slug), 'count': count}
+             for slug, count in clubs.items()),
+            key=lambda c: c['name']
+        )
+    clubs_list_js = json.dumps(clubs_list)
 
     data_js = f'''/* ============================================================
    MERCATO IQ · LEAGUE DATA · {league_name}
@@ -399,6 +513,8 @@ const TOP_STORIES = {stories_js};
 
 const BY_CLUB = {json.dumps(clubs)};
 
+const CLUBS_LIST = {clubs_list_js};
+
 const REPORT_META = {{
   asof: "{datetime.utcnow().strftime('%d %b %Y')}",
   updated: "{datetime.utcnow().isoformat()}Z",
@@ -414,6 +530,7 @@ const REPORT_META = {{
 def main():
     print('AGGREGATE: reading all club data files...')
     all_stories = []
+    all_clubs = []  # every club with a BRAND, regardless of whether it has any surviving stories
     nations_set = set()
     leagues_set = set()
 
@@ -428,11 +545,37 @@ def main():
                 if len(breadcrumb) >= 2:
                     nations_set.add(breadcrumb[0])
                     leagues_set.add(breadcrumb[1])
+                    all_clubs.append({
+                        'slug': club_data['brand'].get('slug', club_slug),
+                        'name': club_data['brand'].get('club', club_slug),
+                        'nation': breadcrumb[0],
+                        'league': breadcrumb[1],
+                    })
 
     print(f'AGGREGATE: {len(all_stories)} total stories found across all clubs')
 
     sorted_stories = deduplicate_and_rank(all_stories)
     print(f'AGGREGATE: {len(sorted_stories)} unique stories after dedup')
+
+    # Coverage trend: compare this run's source count per player against the last run's,
+    # persisted in data/.coverage_history.json. A real delta, not a simulated one -- a story
+    # only shows 'up' if it has genuinely picked up more sources since the previous refresh.
+    history = load_coverage_history()
+    new_history = {}
+    for story in sorted_stories:
+        name = story.get('name', 'Unknown')
+        cov = story.get('coverage', 1)
+        prev = history.get(name)
+        if prev is None:
+            story['coverage_trend'] = 'flat'
+        elif cov > prev:
+            story['coverage_trend'] = 'up'
+        elif cov < prev:
+            story['coverage_trend'] = 'down'
+        else:
+            story['coverage_trend'] = 'flat'
+        new_history[name] = cov
+    save_coverage_history(new_history)
 
     emit_global_data(sorted_stories)
 
@@ -442,7 +585,8 @@ def main():
 
     for league in sorted(leagues_set):
         league_slug = league.lower().replace(' ', '-')
-        emit_league_data(sorted_stories, league_slug, league)
+        league_clubs = [c for c in all_clubs if c['league'] == league]
+        emit_league_data(sorted_stories, league_slug, league, league_clubs)
 
     print(f'AGGREGATE: complete. Emitted global + {len(nations_set)} nations + {len(leagues_set)} leagues')
 
