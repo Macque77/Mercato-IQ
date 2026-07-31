@@ -85,7 +85,7 @@
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  /* ---------- HERO (compact, full-width stacked blocks — heading/lede are block-level so
+  /* ---------- HERO (compact, full-width stacked blocks: heading/lede are block-level so
      they genuinely span the row instead of sharing a flex row with the mark/CTA, which is
      what was reading as "scrunched left with dead space on the right") ---------- */
   .hero{padding:12px 0 10px;border-bottom:1px solid var(--line);position:relative}
@@ -112,6 +112,14 @@
   .crumb a:hover{color:var(--white)}
   .crumb .sep{color:var(--muted-2)}
   .crumb b{color:var(--red-bright)}
+
+  /* ---------- DRILL-DOWN GUIDE (nation -> league -> club, sits above the nation rail) ---------- */
+  .drill-guide{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .dg-step{color:var(--white);letter-spacing:.3px}
+  .dg-step b{color:var(--gold);font-weight:700}
+  .dg-sep{color:var(--muted-2)}
+  .dg-note{width:100%;color:var(--muted);font-family:var(--body);font-size:12.5px;margin-top:2px}
+  @media(min-width:640px){ .dg-note{width:auto;margin-top:0;margin-left:6px} }
 
   /* ---------- SELECT RAIL (horizontal chip strip, wraps to use the full row width) ---------- */
   .rail{margin-top:14px}
@@ -184,13 +192,24 @@
   .hcard:hover::before{background:var(--gold)}
   .hbadges{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
   .hb{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px}
-  .hb.in{background:rgba(51,196,106,0.14);color:var(--green)}
-  .hb.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
-  .hb.tier{background:rgba(232,194,73,0.14);color:var(--gold)}
+  /* Tier badge replaces the old IN/OUT tag on aggregated pages (31 Jul 2026): direction only
+     means anything once a single tracked club's perspective is fixed, and no single club is
+     fixed above club level, so a tier badge is shown instead. Colours match club-page tiers. */
+  .hb.t1{background:rgba(51,196,106,0.14);color:#7fe3a3}
+  .hb.t2{background:rgba(160,224,127,0.14);color:#bfe07f}
+  .hb.t3{background:rgba(242,197,49,0.14);color:var(--yellow)}
+  .hb.t4{background:rgba(233,72,63,0.14);color:#ef9a9a}
+  .hb.cov{background:rgba(232,194,73,0.14);color:var(--gold)}
+  .cov-arrow{font-family:var(--mono);font-weight:700}
+  .cov-arrow.up{color:var(--green)}
+  .cov-arrow.down{color:var(--crit)}
+  .cov-arrow.flat{color:var(--muted)}
   /* Club name is the primary headline (what a fan scans for first); the player is the
-     secondary line right below it — this was backwards before (player huge, club tiny mono). */
+     secondary line right below it. */
   .hplayer{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:.3px;line-height:1.08;text-transform:uppercase;margin-bottom:6px;color:var(--white)}
   .hclub{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.3px;text-transform:uppercase;line-height:1.2;margin-bottom:10px}
+  .hclub a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(232,194,73,0.5)}
+  .hclub a:hover{color:var(--white);border-bottom-color:currentColor}
   .hclubs{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:8px;flex-wrap:wrap}
   .hclubs .arrow{color:var(--muted-2);font-size:11px;flex:none}
   .hclubs .to{color:#c3c7d0}
@@ -342,6 +361,11 @@
     <h2>The transfer market, <em>decoded</em> live.</h2>
     <p class="lede">Every credible rumour, rated on two independent scores, <b>is it true</b> and <b>will it actually happen</b>, sourced back to the original reporter.</p>
 
+    <!-- DRILL-DOWN GUIDE: spells out the three-step path (nation, then league, then club)
+         before the rail itself, so first-time visitors understand how the site is structured
+         rather than just seeing a row of flags. -->
+    <p class="drill-guide"><span class="dg-step"><b>1. Nation</b></span><span class="dg-sep">&rarr;</span><span class="dg-step"><b>2. League</b></span><span class="dg-sep">&rarr;</span><span class="dg-step"><b>3. Club</b></span><span class="dg-note">Pick a nation below to start, then narrow down to a league and a club.</span></p>
+
     <!-- NATION RAIL: always visible, horizontal chip strip, this is how you drill down -->
     <aside class="rail" aria-label="Select a nation">
       <div class="rail-list" id="nation-rail"></div>
@@ -377,16 +401,10 @@
   <div class="tabpanel" id="panel-trending">
     <section id="sec-trending">
       <div class="sec-head"><h3>Trending</h3><span class="num">02</span></div>
-      <p class="sec-sub">What's moving the market this week.</p>
-      <div class="twocol">
-        <div class="box">
-          <h4>&#128293; Biggest Deals</h4>
-          <div id="biggest-deals"></div>
-        </div>
-        <div class="box">
-          <h4>&#11088; Likeliest to Happen</h4>
-          <div id="likely-deals"></div>
-        </div>
+      <p class="sec-sub">Every live deal not already featured in Breaking, ranked by how many sources are covering it. The arrow shows whether that coverage has grown since the last refresh.</p>
+      <div class="box" style="max-width:900px">
+        <h4>&#128293; Most Covered</h4>
+        <div id="trending-list"></div>
       </div>
     </section>
   </div>
@@ -457,6 +475,7 @@ const HEADLINES = [
     from: "Sporting CP", to: "Nottingham Forest",
     direction: "in",
     prob: 80, trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "nottingham-forest",
     updated: "2026-07-30T14:00:00Z"
@@ -469,6 +488,7 @@ const HEADLINES = [
     from: "Newcastle United", to: "Arsenal",
     direction: "out",
     prob: 62, trend: 'up',
+    tier: 1, coverage: 4, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "newcastle-united",
     updated: "2026-07-31T09:30:00Z"
@@ -481,6 +501,7 @@ const HEADLINES = [
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
     direction: "out",
     prob: 62, trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-07-30T14:00:00Z"
@@ -493,6 +514,7 @@ const HEADLINES = [
     from: "Manchester City", to: "Tottenham Hotspur",
     direction: "in",
     prob: 55, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-07-30T14:00:00Z"
@@ -505,6 +527,7 @@ const HEADLINES = [
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
     direction: "out",
     prob: 45, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-07-30T14:00:00Z"
@@ -517,6 +540,7 @@ const HEADLINES = [
     from: "Aston Villa", to: "Arsenal",
     direction: "in",
     prob: 35, trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
     updated: "2026-06-06T12:00:00Z"
@@ -529,6 +553,7 @@ const HEADLINES = [
     from: "West Ham United", to: "Manchester United",
     direction: "in",
     prob: 34, trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
     updated: "2026-07-29T18:00:00Z"
@@ -537,10 +562,11 @@ const HEADLINES = [
     headline: "Lewis Hall",
     club_display_name: "Manchester United",
     summary: "",
-    value: "Not yet quantified — Newcastle expected to demand a premium",
+    value: "Not yet quantified - Newcastle expected to demand a premium",
     from: "Newcastle United", to: "Manchester United",
     direction: "in",
     prob: 32, trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
     updated: "2026-07-29T18:00:00Z"
@@ -553,6 +579,7 @@ const HEADLINES = [
     from: "AC Milan", to: "Tottenham Hotspur",
     direction: "in",
     prob: 26, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-07-30T14:00:00Z"
@@ -565,6 +592,7 @@ const HEADLINES = [
     from: "Liverpool", to: "Tottenham Hotspur",
     direction: "in",
     prob: 20, trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-07-30T14:00:00Z"
@@ -577,6 +605,7 @@ const HEADLINES = [
     from: "Toulouse", to: "Sunderland",
     direction: "in",
     prob: 52, trend: 'flat',
+    tier: 2, coverage: 5, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
@@ -589,16 +618,641 @@ const HEADLINES = [
     from: "Manchester United", to: "AS Roma (or open market)",
     direction: "out",
     prob: 42, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
     updated: "2026-07-29T18:00:00Z"
+  },
+  {
+    headline: "Djed Spence",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "≈£40m / €40m",
+    from: "Tottenham Hotspur", to: "TBD",
+    direction: "out",
+    prob: 42, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Abde Ezzalzouli",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "≈£43-52m (release clause ≈€60m)",
+    from: "Real Betis", to: "Newcastle United",
+    direction: "in",
+    prob: 38, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-07-31T09:30:00Z"
+  },
+  {
+    headline: "Joe Willock",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "£10m bid rejected",
+    from: "Newcastle United", to: "Besiktas",
+    direction: "out",
+    prob: 38, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-07-31T09:30:00Z"
+  },
+  {
+    headline: "Guglielmo Vicario",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "≈£20m",
+    from: "Tottenham Hotspur", to: "Juventus",
+    direction: "out",
+    prob: 36, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Lamine Camara",
+    club_display_name: "Aston Villa",
+    summary: "",
+    value: "~€50m",
+    from: "Monaco", to: "Aston Villa",
+    direction: "in",
+    prob: 35, trend: 'up',
+    tier: 2, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Gabriel Jesus",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£25-35m",
+    from: "Arsenal", to: "Open to offers",
+    direction: "out",
+    prob: 35, trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Giorgio Scalvini",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "≈€45-50m (£38-40m)",
+    from: "Atalanta", to: "Newcastle United",
+    direction: "in",
+    prob: 34, trend: 'flat',
+    tier: 2, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-07-31T09:30:00Z"
+  },
+  {
+    headline: "Liam Delap",
+    club_display_name: "Nottingham Forest",
+    summary: "",
+    value: "Fee unclear (cost Chelsea £30m in 2025)",
+    from: "Chelsea", to: "Nottingham Forest",
+    direction: "in",
+    prob: 32, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "nottingham-forest",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Adam Wharton",
+    club_display_name: "Crystal Palace",
+    summary: "",
+    value: "£60m+",
+    from: "Crystal Palace", to: "Elite interest",
+    direction: "out",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "crystal-palace",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Elliot Anderson",
+    club_display_name: "Manchester City",
+    summary: "",
+    value: "£50-70m",
+    from: "(discussed)", to: "Manchester City",
+    direction: "in",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Riccardo Calafiori",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£35-45m",
+    from: "Arsenal", to: "Juventus",
+    direction: "out",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Leandro Trossard",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£12-18m",
+    from: "Arsenal", to: "Open to offers",
+    direction: "out",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Christian Nørgaard",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£8-12m",
+    from: "Arsenal", to: "Listening to offers",
+    direction: "out",
+    prob: 30, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Nick Pope",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "Undisclosed",
+    from: "Newcastle United", to: "Ipswich Town (interest)",
+    direction: "out",
+    prob: 30, trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-07-31T09:30:00Z"
+  },
+  {
+    headline: "Manu Kone",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "€60m ask; cash-plus-Rashford structure discussed",
+    from: "AS Roma", to: "Manchester United",
+    direction: "in",
+    prob: 28, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-07-29T18:00:00Z"
+  },
+  {
+    headline: "Gabriel Martinelli",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£35-50m",
+    from: "Arsenal", to: "Available",
+    direction: "out",
+    prob: 28, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Ben White",
+    club_display_name: "Arsenal",
+    summary: "Among the names Arsenal will listen on. Versatile and experienced; a sale would ",
+    value: "£25-35m",
+    from: "Arsenal", to: "Listening to offers",
+    direction: "out",
+    prob: 25, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Iliman Ndiaye",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "TBC",
+    from: "Everton", to: "Manchester United",
+    direction: "in",
+    prob: 25, trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-07-29T18:00:00Z"
+  },
+  {
+    headline: "Curtis Jones",
+    club_display_name: "Nottingham Forest",
+    summary: "",
+    value: "£35-40m (Liverpool valuation)",
+    from: "Liverpool", to: "Nottingham Forest",
+    direction: "in",
+    prob: 22, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "nottingham-forest",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Eli Junior Kroupi",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£80m+",
+    from: "Bournemouth", to: "Arsenal",
+    direction: "in",
+    prob: 20, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Enzo Fernández",
+    club_display_name: "Manchester City",
+    summary: "",
+    value: "£70m+",
+    from: "(discussed)", to: "Manchester City",
+    direction: "in",
+    prob: 18, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Noah Sadiki",
+    club_display_name: "Sunderland",
+    summary: "",
+    value: "£55-65m+",
+    from: "Sunderland", to: "Man Utd / City / Chelsea / Arsenal",
+    direction: "out",
+    prob: 18, trend: 'flat',
+    tier: 2, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Murillo",
+    club_display_name: "Nottingham Forest",
+    summary: "",
+    value: "£50-70m guide",
+    from: "Nottingham Forest", to: "Chelsea / Real Madrid interest",
+    direction: "out",
+    prob: 18, trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "nottingham-forest",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Julián Álvarez",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£120m+",
+    from: "Atlético Madrid", to: "Arsenal",
+    direction: "in",
+    prob: 10, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Matthis Abline",
+    club_display_name: "Sunderland",
+    summary: "Cooling further as the striker need eases and the thread goes quiet. Le Bris's '",
+    value: "€20m bid rejected (~€50m ask)",
+    from: "Nantes", to: "Sunderland",
+    direction: "in",
+    prob: 10, trend: 'down',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Bruno Fernandes",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "€65m release clause (overseas only) - moot",
+    from: "Manchester United", to: "Al-Nassr (collapsed interest)",
+    direction: "out",
+    prob: 5, trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-07-29T18:00:00Z"
+  },
+  {
+    headline: "Granit Xhaka",
+    club_display_name: "Sunderland",
+    summary: "Resolved: staying. Chelsea's £8m opening bid was rejected out of hand and Sunder",
+    value: "£8m bid rejected",
+    from: "Sunderland", to: "Chelsea / Man Utd",
+    direction: "out",
+    prob: 5, trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Raul Jimenez",
+    club_display_name: "Fulham",
+    summary: "Out of contract at the end of June and set to leave (Everton among those linked)",
+    value: "FREE",
+    from: "Fulham", to: "Free agent",
+    direction: "out",
+    prob: 60, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "fulham",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Joel Piroe",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "£8-10m",
+    from: "Leeds United", to: "PSV / Boro / Rangers / Ipswich",
+    direction: "out",
+    prob: 58, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Prized young asset",
+    club_display_name: "Bournemouth",
+    summary: "",
+    value: "£40m+",
+    from: "Bournemouth", to: "Elite suitors",
+    direction: "out",
+    prob: 50, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "bournemouth",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Joe Gelhardt",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "£4-8m / loan",
+    from: "Leeds United", to: "Hull / Rangers / Celtic",
+    direction: "out",
+    prob: 50, trend: 'up',
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Anthony Patterson",
+    club_display_name: "Sunderland",
+    summary: "",
+    value: "£7-10m",
+    from: "Sunderland", to: "Wrexham / Millwall / Wolves",
+    direction: "out",
+    prob: 48, trend: 'flat',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Joshua Zirkzee",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "Season loan + £30m option to buy",
+    from: "Manchester United", to: "Juventus (loan)",
+    direction: "out",
+    prob: 45, trend: 'up',
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-07-29T18:00:00Z"
+  },
+  {
+    headline: "Ao Tanaka",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "£12-18m",
+    from: "Leeds United", to: "Newcastle / Everton / Bundesliga",
+    direction: "out",
+    prob: 45, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Illan Meslier",
+    club_display_name: "Leeds United",
+    summary: "Expected to leave Elland Road after losing the No.1 spot; Birmingham could move ",
+    value: "£5-10m",
+    from: "Leeds United", to: "Birmingham / Championship",
+    direction: "out",
+    prob: 45, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Wilfried Gnonto",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "£20-28m",
+    from: "Leeds United", to: "SC Freiburg",
+    direction: "out",
+    prob: 40, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Jack Harrison",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "€8m option",
+    from: "Leeds United", to: "Fiorentina",
+    direction: "out",
+    prob: 40, trend: 'flat',
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Arthur Masuaku",
+    club_display_name: "Sunderland",
+    summary: "",
+    value: "Free/undisclosed",
+    from: "Sunderland", to: "Konyaspor (Turkey)",
+    direction: "out",
+    prob: 40, trend: 'up',
+    tier: 3, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Ibrahima Konaté",
+    club_display_name: "Liverpool",
+    summary: "",
+    value: "£50m+ or free risk",
+    from: "Liverpool", to: "Real Madrid",
+    direction: "out",
+    prob: 38, trend: 'up',
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "liverpool",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Largie Ramazani",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "£8-12m",
+    from: "Leeds United", to: "Valencia",
+    direction: "out",
+    prob: 38, trend: 'flat',
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Simon Adingra",
+    club_display_name: "Sunderland",
+    summary: "",
+    value: "~£30m (€35m)",
+    from: "Sunderland", to: "AS Roma / West Ham",
+    direction: "out",
+    prob: 36, trend: 'up',
+    tier: 3, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Yan Diomande",
+    club_display_name: "Liverpool",
+    summary: "",
+    value: "£20-30m",
+    from: "(target)", to: "Liverpool",
+    direction: "in",
+    prob: 35, trend: 'up',
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "liverpool",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Jadon Sancho",
+    club_display_name: "Aston Villa",
+    summary: "",
+    value: "Low / wages",
+    from: "Aston Villa", to: "Seeking exit",
+    direction: "out",
+    prob: 35, trend: 'flat',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Jack Grealish",
+    club_display_name: "Everton",
+    summary: "A stay (loan-to-permanent) is reported as a concrete possibility after his spell",
+    value: "Loan/perm",
+    from: "Man City", to: "Everton",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "everton",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Ernest Poku",
+    club_display_name: "Sunderland",
+    summary: "",
+    value: "~£21m (€25m)",
+    from: "Bayer Leverkusen", to: "Sunderland",
+    direction: "in",
+    prob: 32, trend: 'up',
+    tier: 3, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Crysencio Summerville",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "£20-30m",
+    from: "West Ham", to: "Leeds United",
+    direction: "in",
+    prob: 30, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Hayden Hackney",
+    club_display_name: "Leeds United",
+    summary: "",
+    value: "£18-20m",
+    from: "Middlesbrough", to: "Leeds United",
+    direction: "in",
+    prob: 30, trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "leeds-united",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Tim Iroegbunam",
+    club_display_name: "Ipswich Town",
+    summary: "Reportedly on Ipswich's radar; one year left on his Everton deal makes a move fe",
+    value: "£10-18m",
+    from: "Everton", to: "Ipswich Town",
+    direction: "in",
+    prob: 30, trend: 'flat',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "ipswich-town",
+    updated: "2026-06-06T00:00:00Z"
   },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 104, league_count: 1
+    stories_count: 102, league_count: 1
   },
 ];
 
@@ -612,7 +1266,7 @@ const STATS = {
 
 const REPORT_META = {
   asof: "31 Jul 2026",
-  updated: "2026-07-31T08:32:24.539701Z",
+  updated: "2026-07-31T10:22:14.967774Z",
   label: "Global aggregation from all clubs"
 };
 
@@ -648,19 +1302,21 @@ function renderHeadlines(){
   if(!HEADLINES.length){ grid.innerHTML = '<div class="empty-note">No headlines yet. Run engine/aggregate.py after the first club refresh.</div>'; return; }
   grid.innerHTML = HEADLINES.slice(0, 24).map(hl => {
     const light = lightFor(hl.prob || 0);
-    const dirClass = hl.direction === 'out' ? 'out' : 'in';
-    const dirLabel = hl.direction === 'out' ? 'OUT' : 'IN';
-    const tierBadge = hl.tier === 1 ? '<span class="hb tier">Tier 1</span>' : '';
+    const tier = hl.tier || 3;
+    const tierBadge = `<span class="hb t${tier}">TIER ${tier}</span>`;
     const href = hl.club_link ? (hl.club_link + '.html') : '#';
     const clubsLine = (hl.from || hl.to) ? `<div class="hclubs"><span class="from">${hl.from || '?'}</span><span class="arrow">&rarr;</span><span class="to">${hl.to || '?'}</span></div>` : '';
     const leagueSlug = slugify(hl.league || '');
+    const nationSlug = slugify(hl.nation || '');
     const leagueLink = hl.league ? `<a href="leagues/${leagueSlug}.html" onclick="event.stopPropagation()">${hl.league}</a>` : '';
+    const nationLink = hl.nation ? `<a href="nations/${nationSlug}.html" onclick="event.stopPropagation()">${hl.nation}</a>` : '';
+    const clubLink = hl.club_link ? `<a href="${href}" onclick="event.stopPropagation()">${hl.club_display_name || ''}</a>` : (hl.club_display_name || '');
     return `<div class="hcard" data-href="${href}" onclick="if(!event.target.closest('a'))window.location.href=this.dataset.href" tabindex="0" role="link">
-        <div class="hbadges"><span class="hb ${dirClass}">${dirLabel}</span>${tierBadge}</div>
+        <div class="hbadges">${tierBadge}</div>
         <div class="hplayer">${hl.headline || ''}</div>
-        <div class="hclub">${hl.club_display_name || ''}</div>
+        <div class="hclub">${clubLink}</div>
         ${clubsLine}
-        <div class="hctx">${leagueLink} &middot; ${hl.value || ''}</div>
+        <div class="hctx">${nationLink}${nationLink && leagueLink ? ' &middot; ' : ''}${leagueLink} &middot; ${hl.value || ''}</div>
         <div class="hfoot">
           <span class="age">${hl.updated ? timeAgo(hl.updated) : (hl.report || '')}</span>
           <span class="hprob"><span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 6px ${lightColor[light]}"></span><span class="val" style="color:${lightColor[light]}">${hl.prob || 0}%</span></span>
@@ -682,12 +1338,23 @@ function renderRail(){
     </a>`).join('') + (list.length < 2 ? '<span class="rail-empty">More nations appear here as they\'re brought under live tracking.</span>' : '');
 }
 
+/* Trending = everything not shown on Breaking (which takes HEADLINES.slice(0,24)), re-sorted
+   by source coverage rather than tier/probability. The arrow reflects a real week-on-week
+   delta computed in engine/aggregate.py (this run's source count vs the last refresh's),
+   not a simulated signal. */
+const coverageArrow = { up: '&#9650;', down: '&#9660;', flat: '&#9679;' };
 function renderTrending(){
-  const byValue = HEADLINES.slice().sort((a, b) => (parseInt(b.value) || 0) - (parseInt(a.value) || 0)).slice(0, 10);
-  const likely = HEADLINES.filter(h => (h.prob || 0) >= 75).sort((a, b) => (b.prob||0)-(a.prob||0)).slice(0, 10);
-  const rankRow = (h) => `<div class="rank"><span class="n"></span><span class="nm">${h.headline}<small>${h.nation || ''} &middot; ${h.value || ''}</small></span><span class="pct" style="color:${lightColor[lightFor(h.prob||0)]}">${h.prob || 0}%</span></div>`;
-  document.getElementById('biggest-deals').innerHTML = byValue.length ? byValue.map(rankRow).join('') : '<div class="empty-note">No data yet.</div>';
-  document.getElementById('likely-deals').innerHTML = likely.length ? likely.map(rankRow).join('') : '<div class="empty-note">No data yet.</div>';
+  const breaking = new Set(HEADLINES.slice(0, 24));
+  const rest = HEADLINES.filter(h => !breaking.has(h));
+  const sorted = rest.slice().sort((a, b) => (b.coverage || 1) - (a.coverage || 1) || (b.prob || 0) - (a.prob || 0));
+  const rankRow = (h) => {
+    const trend = h.coverage_trend || 'flat';
+    const covLabel = (h.coverage || 1) === 1 ? '1 source' : `${h.coverage || 1} sources`;
+    return `<div class="rank"><span class="n"></span><span class="nm">${h.headline}<small>${h.club_display_name || ''} &middot; ${h.nation || ''}</small></span><span class="pct"><span class="cov-arrow ${trend}">${coverageArrow[trend]}</span> ${covLabel}</span></div>`;
+  };
+  document.getElementById('trending-list').innerHTML = sorted.length
+    ? sorted.map(rankRow).join('')
+    : '<div class="empty-note">Nothing trending outside Breaking right now: every tracked story is already on the front tab.</div>';
 }
 
 function renderDeadlines(){
@@ -712,7 +1379,7 @@ function renderWindowBanner(){
     const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
     const eyebrow = st.state === 'open' ? '&#128994; Open' : st.state === 'deadline' ? '&#128308; Deadline Day' : '&#9899; Closed';
     const cd = st.state === 'closed'
-      ? '<div class="wb-unit"><div class="v">&mdash;</div><div class="l">Closed</div></div>'
+      ? '<div class="wb-unit"><div class="v">-</div><div class="l">Closed</div></div>'
       : [[d,'DAYS'],[h,'HRS'],[m,'MIN'],[s,'SEC']].map(([v,l]) => `<div class="wb-unit"><div class="v">${String(v).padStart(2,'0')}</div><div class="l">${l}</div></div>`).join('');
     el.innerHTML = `
       <div>
@@ -748,7 +1415,7 @@ function timeAgo(iso){
 }
 
 /* Header status pill doubles as the freshness ticker (the old, taller hero
-   stamp was removed to keep the hero compact) — "AS OF <date> · updated Xm ago". */
+   stamp was removed to keep the hero compact): "AS OF <date> · updated Xm ago". */
 (function(){
   const t0 = new Date(REPORT_META.updated).getTime();
   const pillTxt = document.getElementById('asofPill');

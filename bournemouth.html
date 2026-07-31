@@ -375,7 +375,7 @@
   @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   .tabbtn{appearance:none;background:none;border:1px solid transparent;cursor:pointer;font:inherit;color:inherit}
 
-  /* Overview hero is compact by design (30 Jul 2026) — the ins/outs snapshot below it
+  /* Overview hero is compact by design (30 Jul 2026): the ins/outs snapshot below it
      is the primary content, matching the landing pages' hero-then-stories priority. */
   #panel-overview .hero .lede{width:100%}
 
@@ -907,7 +907,15 @@ const PROSE = {
   document.title='Mercato IQ: '+BRAND.club;
   document.getElementById('brandName').innerHTML='Mercato <b>IQ</b> · '+BRAND.club;
   document.getElementById('monoText').textContent=BRAND.mono;
-  document.getElementById('crumb').innerHTML=BRAND.breadcrumb.map(x=>`<a href="#">${x}</a><span class="sep">›</span>`).join('')+`<b>${BRAND.club}</b>`;
+  /* Breadcrumb: Global > Nation > League > Club, every level a real link, so there is
+     always a clear way back up the chain from a club page. */
+  const crumbSlugify = s => (s||'').toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-');
+  const crumbParts = [{ label: 'Global', href: 'index.html' }];
+  (BRAND.breadcrumb||[]).forEach((x,i)=>{
+    const href = i===0 ? `nations/${crumbSlugify(x)}.html` : `leagues/${crumbSlugify(x)}.html`;
+    crumbParts.push({ label: x, href });
+  });
+  document.getElementById('crumb').innerHTML=crumbParts.map(p=>`<a href="${p.href}">${p.label}</a><span class="sep">›</span>`).join('')+`<b>${BRAND.club}</b>`;
   const set=(id,h)=>{const el=document.getElementById(id); if(el) el.innerHTML=h||'';};
   set('heroH2',PROSE.heroH2); set('heroLede',PROSE.heroLede); set('metaRow',PROSE.metaRow);
   set('statStrip',PROSE.stats); set('panel-position',PROSE.positionPanel);
