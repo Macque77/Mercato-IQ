@@ -803,6 +803,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "01 Aug 2026",
-  updated: "2026-08-01T08:57:50.870849Z",
+  updated: "2026-08-01T12:17:38.942506Z",
   label: "Global aggregation from all clubs"
 };
