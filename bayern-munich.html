@@ -1,0 +1,1039 @@
+<!--
+  MERCATO IQ - CLUB DASHBOARD SHELL (TEMPLATE v2, club-agnostic)
+  DO NOT EDIT DURING A REFRESH. This file carries zero club data:
+  all club state lives in clubs/<slug>.data.js (BRAND, VOLATILE, REPORT_META,
+  PROSE, DATA arrays, HUB/LINKMAP, SWEEP) and is spliced between the
+  DATA/ENDDATA markers by engine/build.py, which also fills the badge URI token
+  and Mercato IQ: Bayern Munich. Build: python3 engine/build.py <slug>  ->  <slug>.html
+  Refresh mechanics: engine/REFRESH_RUNBOOK.md. Analysis rules: 00_MASTER_ENGINE.md.
+  Dual-metric rating (True? / Happens?), scroll-reduction tabs, no storage APIs.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ: Bayern Munich</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0c0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;
+    --bg-2:#111318;
+    --panel:#16181e;
+    --panel-2:#1c1f26;
+    --line:#2a2e38;
+    --red:#e21f26;
+    --red-bright:#ff2b24;
+    --red-deep:#a3151a;
+    --primary-rgb:226,31,38;
+    --white:#f4f3ee;
+    --muted:#8b909c;
+    --muted-2:#5f6471;
+    --gold:#e8c249;
+    --gold-deep:#a07f12;
+    --green:#33c46a;
+    --yellow:#f2c531;
+    --orange:#ef8b2c;
+    --crit:#e9483f;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle pinstripe atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(var(--primary-rgb),0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(var(--primary-rgb),0.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(232,194,73,0.05), transparent 55%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:0 28px}
+
+  /* ---------- HEADER ---------- */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(12,13,16,0.97),rgba(12,13,16,0.86));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 28px;max-width:1600px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px}
+  .crest{
+    width:46px;height:46px;flex:none;border-radius:7px;
+    position:relative;overflow:hidden;background:#0e1014;
+    box-shadow:0 0 0 1px #000, 0 6px 18px rgba(var(--primary-rgb),0.35);
+    display:grid;place-items:center;
+  }
+  .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
+  .crest svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,42px);letter-spacing:.6px;text-transform:uppercase;line-height:.95}
+  .brand h1 b{color:var(--red-bright)}
+  .brand .sub{font-size:12px;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold);margin-top:5px;font-weight:600}
+  .breadcrumbs-nav{
+    display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;
+    text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)
+  }
+  .breadcrumbs-nav a{
+    color:var(--white);text-decoration:none;border-bottom:2px solid transparent;
+    transition:.15s;padding-bottom:2px
+  }
+  .breadcrumbs-nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+  .breadcrumbs-nav .sep{color:var(--muted-2);margin:0 4px}
+  .breadcrumbs-nav .current{color:var(--red-bright);font-weight:600}
+  .status-pill{
+    display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
+    color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* ---------- HERO (compact: matches landing-page space usage) ---------- */
+  .hero{padding:26px 0 16px;border-bottom:1px solid var(--line)}
+  .hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red-bright);margin-bottom:10px}
+  .hero h2{width:100%;font-family:var(--display);font-weight:400;font-size:clamp(22px,3.2vw,36px);line-height:1.02;text-transform:uppercase;letter-spacing:.5px}
+  .hero h2 em{font-style:normal;color:var(--red-bright)}
+  .hero .lede{width:100%;margin-top:10px;color:#c9ccd4;font-size:13.5px;line-height:1.5}
+  .hero .lede b{color:var(--white)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+  .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- INS & OUTS SNAPSHOT (Overview focus, mirrors landing-page story grid) ---------- */
+  .ov-snap{margin:20px 0 4px}
+  .ov-snap-head{margin-bottom:12px}
+  .ov-snap-head h3{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.5px;color:var(--white)}
+  .ov-snap-head .ov-snap-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:3px}
+  .ov-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .ov-cols > .ov-col{min-width:0}
+  .ov-col-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .ov-col-head .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+  .ov-col-head .lbl.in{color:var(--green)}
+  .ov-col-head .lbl.out{color:var(--red-bright)}
+  .ov-viewall{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:4px 11px;transition:.15s;background:none;cursor:pointer}
+  .ov-viewall:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .ov-card{display:flex;align-items:center;gap:12px;padding:10px 13px;border:1px solid var(--line);border-radius:9px;background:var(--panel-2);margin-bottom:8px;cursor:pointer;transition:.15s}
+  .ov-card:hover{border-color:var(--red-deep);background:var(--panel)}
+  .ov-card .ov-main{flex:1;min-width:0}
+  .ov-card .ov-name{font-size:13.5px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-vs{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ov-card .ov-side{text-align:right;flex:0 1 auto;max-width:42%;min-width:0}
+  .ov-card .ov-fee{font-family:var(--mono);font-size:11.5px;color:var(--white);white-space:normal;overflow-wrap:break-word;line-height:1.35}
+  .ov-card .ov-pct{font-family:var(--mono);font-size:10px;margin-top:3px;white-space:nowrap}
+  .ov-empty{font-family:var(--mono);font-size:12px;color:var(--muted);padding:13px;border:1px dashed var(--line);border-radius:9px}
+  @media (max-width:900px){.ov-cols{grid-template-columns:1fr}}
+
+  /* ---------- UPDATED STAMP ---------- */
+  .updated-stamp{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11.5px;margin-bottom:18px;background:var(--panel)}
+  .updated-stamp .seg{padding:7px 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .updated-stamp .seg.ed{background:var(--red);color:#fff;font-weight:700;letter-spacing:1px}
+  .updated-stamp .seg.dt{color:var(--muted);border-right:1px solid var(--line)}
+  .updated-stamp .seg.dt b{color:var(--white)}
+  .updated-stamp .seg.fresh{font-weight:700;letter-spacing:.5px}
+  .updated-stamp .fdot{width:8px;height:8px;border-radius:50%}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0 18px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 16px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
+  .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .stat .v{font-family:var(--display);font-weight:400;font-size:30px;margin-top:8px;line-height:1;letter-spacing:.5px}
+  .stat .v small{font-size:14px;color:var(--muted);font-family:var(--mono)}
+  .stat.gold::after{background:var(--gold)}
+  .stat.gold .v{color:var(--gold)}
+
+  /* ---------- SECTION ---------- */
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  .sec-head h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;letter-spacing:.5px}
+  .sec-head .num{font-family:var(--mono);font-size:12px;color:var(--red-bright);border:1px solid var(--red-deep);border-radius:6px;padding:3px 8px}
+  .sec-sub{color:var(--muted);font-size:14px;margin-bottom:26px;max-width:80ch}
+
+  /* analysis cards */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative}
+  .card h4{font-family:var(--display);font-weight:400;font-size:18px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .card h4 .tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--bg);background:var(--gold);padding:2px 7px;border-radius:4px}
+  .card p{color:#c3c7d0;font-size:14.5px;margin-bottom:11px}
+  .card p b{color:var(--white)}
+  .card .quote{border-left:3px solid var(--red);padding:8px 0 8px 14px;color:var(--white);font-style:italic;font-size:14px;margin:14px 0;background:linear-gradient(90deg,rgba(var(--primary-rgb),0.07),transparent)}
+  .card ul{list-style:none;margin:6px 0 4px}
+  .card li{position:relative;padding-left:20px;color:#c3c7d0;font-size:14px;margin-bottom:7px}
+  .card li::before{content:"›";position:absolute;left:2px;color:var(--red-bright);font-weight:700}
+  .verdict{margin-top:14px;padding:12px 14px;border-radius:8px;background:var(--panel-2);border:1px dashed var(--line);font-size:13.5px}
+  .verdict b{color:var(--gold)}
+
+  .riskgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:6px}
+  .riskgrid > div{padding:22px 24px}
+  .risk-r{background:linear-gradient(180deg,rgba(51,196,106,0.06),transparent);border-right:1px solid var(--line)}
+  .risk-d{background:linear-gradient(180deg,rgba(233,72,63,0.06),transparent)}
+  .risk-r h5,.risk-d h5{font-family:var(--display);font-weight:400;font-size:16px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px}
+  .risk-r h5{color:var(--green)} .risk-d h5{color:var(--crit)}
+  .riskgrid li{font-size:13.5px}
+
+  /* ---------- TABLES ---------- */
+  .tbl-scroll{overflow-x:visible;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{width:100%;border-collapse:collapse;min-width:0;table-layout:auto}
+  thead th{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);
+    text-align:left;padding:14px 14px;border-bottom:1px solid var(--line);background:var(--bg-2);white-space:normal;position:sticky;top:0
+  }
+  tbody td{padding:13px 14px;border-bottom:1px solid rgba(42,46,56,0.6);font-size:13.5px;vertical-align:middle}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:rgba(var(--primary-rgb),0.05)}
+  tbody tr:last-child td{border-bottom:none}
+  .pl-name{font-weight:700;color:var(--white);font-size:14.5px}
+  .pl-sub{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  /* Neither badge nor fee/report text is nowrap any more: real data sometimes carries longer
+     strings than a short position code or a "£40m" fee (e.g. pos:"Head coach", report:"14 Jul
+     2026 (no fresher update found)"), and forcing nowrap on a fixed-width table cell made that
+     overflow into the next column instead of wrapping, reading as overlapping text. */
+  .pos{font-family:var(--mono);font-size:11px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:2px 6px;white-space:normal;overflow-wrap:break-word;line-height:1.25;display:inline-block}
+  .fee{font-family:var(--mono);color:#dfe2e8;white-space:normal;overflow-wrap:break-word}
+  .tier{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap}
+  .t1{color:#7fe3a3;background:rgba(51,196,106,0.13)}
+  .t2{color:#bfe07f;background:rgba(160,224,127,0.12)}
+  .t3{color:var(--yellow);background:rgba(242,197,49,0.12)}
+  .t4{color:#ef9a9a;background:rgba(233,72,63,0.12)}
+  .prob-wrap{display:flex;align-items:center;gap:9px;min-width:120px}
+  .prob-bar{flex:1;height:6px;border-radius:99px;background:#262a33;overflow:hidden}
+  .prob-fill{height:100%;border-radius:99px}
+  .prob-val{font-family:var(--mono);font-size:12px;font-weight:700;width:34px;text-align:right}
+  .ldot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .trend{font-family:var(--mono);font-weight:700;font-size:14px}
+  .up{color:var(--green)} .down{color:var(--crit)} .flat{color:var(--muted)}
+  td.note{color:var(--muted);font-size:12.5px;width:34%;min-width:300px;max-width:none;line-height:1.5;white-space:normal;word-break:normal;overflow-wrap:anywhere}
+  .confirmed{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;color:var(--bg);background:var(--white);padding:3px 7px;border-radius:4px;font-weight:700}
+
+  /* ---------- DUAL RATING (True? / Happens?) ---------- */
+  .rate{display:flex;flex-direction:column;gap:7px;min-width:158px}
+  .rate-row{display:flex;align-items:center;gap:7px}
+  .rate-row .rl{font-family:var(--mono);font-size:8.5px;letter-spacing:.3px;color:var(--muted-2);width:52px;flex:none;text-transform:uppercase}
+  .rate-dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .rate-bar{flex:1;height:5px;border-radius:99px;background:#262a33;overflow:hidden;min-width:38px}
+  .rate-fill{height:100%;border-radius:99px}
+  .rate-val{font-family:var(--mono);font-size:11px;font-weight:700;width:30px;text-align:right}
+
+  /* ---------- NEW pill ---------- */
+  .new-tag{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.8px;color:var(--bg);background:var(--gold);padding:1px 6px;border-radius:4px;margin-left:8px;vertical-align:middle;animation:newpulse 1.8s infinite}
+  @keyframes newpulse{0%,100%{box-shadow:0 0 7px rgba(232,194,73,.4)}50%{box-shadow:0 0 15px rgba(232,194,73,.85)}}
+
+  /* ---------- BREADCRUMB ---------- */
+  .crumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--white)}
+  .crumb .sep{color:var(--muted-2)}
+  .crumb b{color:var(--red-bright)}
+
+  /* ---------- QUICK NAV (scroll-reduction) ---------- */
+  .quicknav{position:sticky;top:74px;z-index:40;background:rgba(12,13,16,.93);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .quicknav-inner{max-width:1600px;margin:0 auto;display:flex;gap:6px;padding:8px 28px;overflow-x:auto;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
+  .quicknav-inner::-webkit-scrollbar{display:none}
+  .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none}
+  .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  /* Selected section: inverted (white pill, near-black text) so it's unmistakable which of the
+     eight tabs is showing, rather than blending in with the unselected ones. Wins over .lead. */
+  .qn-link.active{background:var(--white);color:#0c0d10;border-color:var(--white);font-weight:700}
+  .qn-link.active:hover{background:var(--white);color:#0c0d10}
+  .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
+  section[id]{scroll-margin-top:132px}
+
+  /* ---------- SUMMARY ---------- */
+  .summary-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+  .box h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:16px;color:var(--red-bright)}
+  .rank{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .rank:last-child{border:none}
+  .rank .n{font-family:var(--display);font-size:18px;color:var(--muted-2);width:26px}
+  .rank .nm{flex:1;font-size:14px}
+  .rank .nm small{color:var(--muted);font-family:var(--mono);font-size:11px;margin-left:6px}
+  .rank .pct{font-family:var(--mono);font-weight:700;font-size:13px}
+  .chiplist{display:flex;flex-direction:column;gap:11px}
+  .chip{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:#c8ccd4}
+  .chip .ar{font-family:var(--mono);font-weight:700;flex:none}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .pos-need{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,46,56,0.55);font-size:14px}
+  .pos-need:last-child{border:none}
+  .heatbar{height:7px;border-radius:99px;width:120px;background:#262a33;overflow:hidden}
+  .heatfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--red))}
+  .spend{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
+  .spend .s{flex:1;min-width:220px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .spend .s .l{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+  .spend .s .v{font-family:var(--display);font-size:30px;margin-top:6px;letter-spacing:.5px}
+  .spend .s.in .v{color:var(--green)} .spend .s.out .v{color:var(--red-bright)}
+  .spend .s .x{font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* ---------- CONFIRMED LEDGER ---------- */
+  .ledger{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .led-col{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .led-in{border-top:3px solid var(--green)}
+  .led-out{border-top:3px solid var(--red)}
+  .led-head{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:17px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+  .led-dot{width:9px;height:9px;border-radius:50%}
+  .led-dot.in{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .led-dot.out{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .led-count{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 8px}
+  .deal{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .deal:last-child{border:none}
+  .deal .dmeta{flex:1}
+  .deal .dname{font-weight:700;color:var(--white);font-size:14.5px}
+  .deal .dsub{font-size:11.5px;color:var(--muted);font-family:var(--mono);margin-top:2px}
+  .deal .dnote{font-size:12.5px;color:#c3c7d0;margin-top:6px;line-height:1.46}
+  .deal .dfee{font-family:var(--mono);font-weight:700;font-size:13px;white-space:nowrap;text-align:right}
+  .deal .dfee.free{color:var(--gold)}
+  .status{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:1px;padding:3px 7px;border-radius:4px;margin-top:8px;font-weight:700}
+  .status.done{background:var(--green);color:var(--bg)}
+  .status.exit{background:var(--white);color:var(--bg)}
+  .status.pending{background:rgba(242,197,49,0.13);color:var(--yellow);border:1px solid var(--gold-deep)}
+  .empty{color:var(--muted-2);font-size:13px;font-style:italic;padding:14px 0}
+  .pending-note{margin-top:16px;font-size:12.5px;color:var(--muted);border:1px dashed var(--line);border-radius:8px;padding:12px 14px}
+  .pending-note b{color:var(--gold)}
+
+  /* ---------- WATCHLIST ---------- */
+  .wl-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+  .wl-tab{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 15px;cursor:pointer;transition:all .15s}
+  .wl-tab:hover{color:var(--white);border-color:var(--muted)}
+  .wl-tab.active{background:var(--red);color:#fff;border-color:var(--red)}
+  .wl-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .wl-item{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:13px 15px;border-left-width:3px}
+  .wl-item.in{border-left-color:var(--green)} .wl-item.out{border-left-color:var(--red)}
+  .wl-item .wmeta{flex:1;min-width:0}
+  .wl-item .wtop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .wl-item .wname{font-weight:700;font-size:14px;color:var(--white)}
+  .wl-item .wclub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+  .wl-item .wnote{font-size:12.5px;color:#b6bac4;margin-top:5px;line-height:1.45}
+  .wl-item .wright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none}
+  .wl-item .wpos{font-family:var(--mono);font-size:10px;color:var(--gold);border:1px solid var(--gold-deep);border-radius:4px;padding:1px 5px}
+  .wl-item .wage{font-family:var(--mono);font-size:10.5px;color:var(--muted-2)}
+  .wl-dir{font-family:var(--mono);font-size:9px;letter-spacing:1px;padding:1px 5px;border-radius:3px;font-weight:700}
+  .wl-dir.in{background:rgba(51,196,106,0.14);color:var(--green)} .wl-dir.out{background:rgba(var(--primary-rgb),0.14);color:#ef9a9a}
+  @media(max-width:900px){.wl-list{grid-template-columns:1fr}}
+
+  /* ---------- METHODOLOGY / LEGEND ---------- */
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .legend .col h5{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .legend .row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#c3c7d0;margin-bottom:9px}
+  .legend .row .k{font-family:var(--mono);font-weight:700;flex:none;min-width:48px}
+  .weights{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .w{font-family:var(--mono);font-size:11.5px;color:#c3c7d0;border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+  .w b{color:var(--gold)}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:12.5px}
+  footer b{color:var(--white)}
+  .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
+
+  /* entrance animation */
+  .reveal{opacity:0;transform:translateY(16px);animation:rise .7s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- MOBILE / TABLET: tables collapse into cards (strict no-scroll: <1180px) ---------- */
+  @media(max-width:1180px){
+    .tbl-scroll{overflow-x:visible;border:none;background:transparent;border-radius:0}
+    table{min-width:0;display:block}
+    thead{display:none}
+    tbody{display:block}
+    tbody tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px 16px 12px;margin-bottom:14px}
+    tbody tr:hover{background:var(--panel)}
+    tbody td{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:8px 0;border-bottom:1px solid rgba(42,46,56,0.5);font-size:13px}
+    tbody td:last-child{border-bottom:none}
+    tbody td::before{content:attr(data-label);font-family:var(--mono);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);flex:none;padding-top:3px}
+    tbody td.cell-name{display:block;border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:2px}
+    tbody td.cell-name::before{display:none}
+    tbody td.cell-name .pl-name{font-size:16px}
+    td.note{display:block;width:auto;min-width:0;max-width:none;color:#c3c7d0;font-size:12.5px}
+    td.note::before{display:block;margin-bottom:5px}
+    .prob-wrap{min-width:0;flex:1;max-width:62%}
+  }
+
+  @media(max-width:560px){
+    .status-pill{display:none}
+    .updated-stamp{flex-wrap:wrap}
+    .stat .v{font-size:26px}
+  }
+  @media(max-width:900px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .summary-grid{grid-template-columns:1fr}
+    .riskgrid{grid-template-columns:1fr}
+    .risk-r{border-right:none;border-bottom:1px solid var(--line)}
+    .legend{grid-template-columns:1fr}
+    .twocol{grid-template-columns:1fr}
+    .brand .sub{display:none}
+  }
+  /* ---------- PRINT ---------- */
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    header.top{position:static}
+    body::before{opacity:.4}
+    .reveal{opacity:1;transform:none;animation:none}
+    section,.card,.box,.led-col,.tbl-scroll,.summary-grid,.cards{break-inside:avoid}
+    .status-pill{display:none}
+  }
+
+  /* ===== TAB PANELS (scroll-reduction protocol) ===== */
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:panelIn .28s ease both}
+  @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .tabbtn{appearance:none;background:none;border:1px solid transparent;cursor:pointer;font:inherit;color:inherit}
+
+  /* Overview hero is compact by design (30 Jul 2026): the ins/outs snapshot below it
+     is the primary content, matching the landing pages' hero-then-stories priority. */
+  #panel-overview .hero .lede{width:100%}
+
+  /* ===== PAGER ===== */
+  .pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:34px 0 6px;padding:12px 14px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .pg-btn{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);
+    background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;cursor:pointer;transition:.15s}
+  .pg-btn:hover{border-color:var(--red);color:var(--red-bright)}
+  .pg-btn:disabled{opacity:.32;cursor:default}
+  .pg-btn:disabled:hover{border-color:var(--line);color:var(--white)}
+  .pg-meter{display:flex;gap:7px}
+  .pg-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.15s}
+  .pg-dot.on{background:var(--red);box-shadow:0 0 8px var(--red)}
+  .pg-hint{font-family:var(--mono);font-size:10px;color:var(--muted-2);letter-spacing:1px;text-align:center;margin:6px 0 0}
+
+  /* ===== COMPACT NO-SCROLL TABLES ===== */
+  .tbl-scroll table{table-layout:fixed;width:100%}
+  .tbl-scroll th,.tbl-scroll td{padding:9px 8px;font-size:12.5px}
+  .tbl-scroll td.note{font-size:12px;line-height:1.5}
+  .tbl-scroll th:nth-child(1),.tbl-scroll td:nth-child(1){width:12%}
+  .tbl-scroll th:nth-child(2),.tbl-scroll td:nth-child(2){width:8%}
+  .tbl-scroll th:nth-child(3),.tbl-scroll td:nth-child(3){width:7%}
+  .tbl-scroll th:nth-child(4),.tbl-scroll td:nth-child(4){width:9%}
+  .tbl-scroll th:nth-child(5),.tbl-scroll td:nth-child(5){width:9%}
+  .tbl-scroll th:nth-child(6),.tbl-scroll td:nth-child(6){width:8%}
+  .tbl-scroll th:nth-child(7),.tbl-scroll td:nth-child(7){width:13%}
+  .tbl-scroll th:nth-child(8),.tbl-scroll td:nth-child(8){width:4%}
+  .tbl-scroll th:nth-child(9),.tbl-scroll td:nth-child(9){width:30%}
+  .tbl-scroll td{overflow-wrap:break-word}
+  @media(max-width:980px){.tbl-scroll table{table-layout:auto}}
+
+  /* ===== EXPANDABLE SOURCE LINKS ===== */
+  tr.rumour-row{cursor:pointer}
+  tr.rumour-row:hover td{background:rgba(var(--primary-rgb),.045)}
+  .src-toggle{display:inline-block;margin-left:6px;font-family:var(--mono);font-size:9px;color:var(--muted);
+    border:1px solid var(--line);border-radius:5px;padding:1px 6px;letter-spacing:1px;vertical-align:middle;transition:.15s}
+  tr.rumour-row.open .src-toggle{color:var(--gold);border-color:var(--gold-deep)}
+  tr.src-row{display:none}
+  tr.src-row.open{display:table-row}
+  tr.src-row>td{background:var(--bg-2)!important;border-left:2px solid var(--red);padding:10px 14px}
+  .src-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .src-links .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--muted)}
+  .src-links a{font-family:var(--mono);font-size:11px;color:var(--gold);text-decoration:none;border:1px solid var(--line);
+    border-radius:6px;padding:4px 9px;background:var(--panel);transition:.15s}
+  .src-links a:hover{border-color:var(--gold-deep);color:var(--white)}
+  .src-links .hubnote{font-size:10px;color:var(--muted-2);font-family:var(--mono)}
+  .wl-item .src-links{margin-top:7px}
+  .wl-item{cursor:pointer}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="crest"><img src="bayernmunich.png" alt="Club badge" onerror="this.style.display='none'"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L92 22 V57 C92 81 73 94 50 100 C27 94 8 81 8 57 V22 Z" fill="var(--red)" stroke="#000" stroke-width="5"/><text x="50" y="60" text-anchor="middle" font-size="22" textLength="60" lengthAdjust="spacingAndGlyphs" fill="var(--white)" style="font-family:var(--display)" id="monoText"></text></svg></div>
+      <div>
+        <h1 id="brandName"></h1>
+        <div class="sub">Live transfer rumours · Rated on two metrics that actually matter</div>
+      </div>
+    </div>
+    <nav class="breadcrumbs-nav" id="headerBreadcrumbs"></nav>
+    <div class="status-pill"><span class="dot" id="windowDot"></span> <span id="windowLabel">Open</span> · <span id="asof"></span></div>
+  </div>
+</header>
+
+<!-- TAB NAV (scroll-reduction protocol: one section on screen at a time) -->
+<nav class="quicknav" aria-label="Dashboard sections">
+  <div class="quicknav-inner" id="tabbar" role="tablist">
+    <span class="qn-tag">SECTIONS</span>
+    <button class="qn-link tabbtn active" data-go="overview" role="tab" aria-selected="true">Overview</button>
+    <button class="qn-link tabbtn lead" data-go="confirmed" role="tab">Confirmed</button>
+    <button class="qn-link tabbtn lead" data-go="in" role="tab">Targets In</button>
+    <button class="qn-link tabbtn lead" data-go="out" role="tab">Out</button>
+    <button class="qn-link tabbtn" data-go="index" role="tab">Full Index</button>
+    <button class="qn-link tabbtn" data-go="briefing" role="tab">Briefing</button>
+    <button class="qn-link tabbtn" data-go="position" role="tab">Club Position</button>
+    <button class="qn-link tabbtn" data-go="method" role="tab">Method</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="tabpanel active" id="panel-overview">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="crumb" id="crumb"></div>
+    <div class="updated-stamp" id="stamp"></div>
+    <div class="kicker" id="kicker"></div>
+    <h2 id="heroH2"></h2>
+    <p class="lede" id="heroLede"></p>
+    <div class="meta-row" id="metaRow"></div>
+  </div>
+
+  <!-- INS & OUTS SNAPSHOT (primary focus of Overview, 30 Jul 2026) -->
+  <div class="ov-snap">
+    <div class="ov-snap-head">
+      <h3>Transfer Ins &amp; Outs</h3>
+      <div class="ov-snap-sub">Best-sourced live business right now &middot; click any row for the full breakdown</div>
+    </div>
+    <div class="ov-cols">
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl in">Incoming</span><button class="tabbtn ov-viewall" data-go="in">View all Targets In &rarr;</button></div>
+        <div id="ovIn"></div>
+      </div>
+      <div class="ov-col">
+        <div class="ov-col-head"><span class="lbl out">Outgoing</span><button class="tabbtn ov-viewall" data-go="out">View all Out &amp; Sales &rarr;</button></div>
+        <div id="ovOut"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stats" id="statStrip"></div>
+
+  </div><!-- /panel-overview -->
+
+  <div class="tabpanel" id="panel-position">
+  </div><!-- /panel-position -->
+
+  <div class="tabpanel" id="panel-confirmed">
+  <!-- CONFIRMED BUSINESS -->
+  <section id="sec-confirmed">
+    <div class="sec-head"><h3>Confirmed Business</h3><span class="num">03</span></div>
+    <p class="sec-sub">The deals that have actually happened. When the paperwork's done and the medical's passed, it moves here. <b>How we price it</b>: contract status drives the fee—an out-of-contract veteran leaves for nothing on a free transfer, regardless of training compensation; young players still bound by contracts are worth more to their selling club.</p>
+    <div class="ledger">
+      <div class="led-col led-in">
+        <div class="led-head"><span class="led-dot in"></span> In <span class="led-count" id="cinCount"></span></div>
+        <div id="confirmedIn"></div>
+      </div>
+      <div class="led-col led-out">
+        <div class="led-head"><span class="led-dot out"></span> Out <span class="led-count" id="coutCount"></span></div>
+        <div id="confirmedOut"></div>
+      </div>
+    </div>
+    <div class="pending-note" id="pendingNote"></div>
+  </section>
+
+  </div><!-- /panel-confirmed -->
+
+  <div class="tabpanel" id="panel-in">
+  <!-- INCOMING -->
+  <section id="sec-in">
+    <div class="sec-head"><h3>Incoming Targets</h3><span class="num">04</span></div>
+    <p class="sec-sub" id="inSub"></p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>From</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Why it sits here / obstacles</th>
+        </tr></thead>
+        <tbody id="incoming"></tbody>
+      </table>
+    </div>
+  </section>
+
+  </div><!-- /panel-in -->
+
+  <div class="tabpanel" id="panel-out">
+  <!-- OUTGOING -->
+  <section id="sec-out">
+    <div class="sec-head"><h3>Outgoing &amp; Sales</h3><span class="num">05</span></div>
+    <p class="sec-sub" id="outSub"></p>
+    <div class="verdict" id="pricingBanner" style="max-width:none;margin-bottom:20px;border-color:var(--red-deep);background:linear-gradient(90deg,rgba(var(--primary-rgb),0.08),var(--panel-2))"></div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th><th>Suitor(s)</th><th>Pos</th><th>Last Credible Report</th><th>Top Source · Tier</th><th>Est. Fee</th><th>Rating · True? / Happens?</th><th>Trend</th><th>Read</th>
+        </tr></thead>
+        <tbody id="outgoing"></tbody>
+      </table>
+    </div>
+  </section>
+
+  </div><!-- /panel-out -->
+
+  <div class="tabpanel" id="panel-index">
+  <!-- WATCHLIST -->
+  <section id="sec-index">
+    <div class="sec-head"><h3>Full Rumour Index</h3><span class="num">06</span></div>
+    <p class="sec-sub">Every name being discussed from reporter to reporter, mapped by credibility tier. Some of these will evaporate by next week; others are the next big move. Filter by direction to find what's in the pipe.</p>
+    <div class="wl-tabs">
+      <button class="wl-tab active" data-f="all">All</button>
+      <button class="wl-tab" data-f="in">Targets In</button>
+      <button class="wl-tab" data-f="out">Possible Out</button>
+    </div>
+    <div class="wl-list" id="watchlist"></div>
+    <div class="pending-note" id="excludedNote" style="border-color:var(--line)"></div>
+  </section>
+
+  </div><!-- /panel-index -->
+
+  <div class="tabpanel" id="panel-briefing">
+  <!-- SUMMARY OUTPUTS -->
+  <section id="sec-briefing">
+    <div class="sec-head"><h3>Daily Briefing</h3><span class="num">07</span></div>
+    <p class="sec-sub">The headline numbers and moves that matter most right now.</p>
+
+    <div class="summary-grid">
+      <div class="box">
+        <h4>Top 10 Most Likely Movements <span style="color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:1px">· UNCONFIRMED · IN &amp; OUT</span></h4>
+        <div id="top10"></div>
+      </div>
+      <div class="box">
+        <h4>Risers · Fallers · New Entries · Ignore</h4>
+        <div class="chiplist" id="movers"></div>
+      </div>
+    </div>
+
+    <div class="twocol">
+      <div class="box">
+        <h4>Positions Most Likely Strengthened</h4>
+        <div id="positions"></div>
+      </div>
+      <div class="box">
+        <h4>Estimated Spend</h4>
+        <div class="spend">
+          <div class="s in"><div class="l">Gross Incoming</div><div class="v" id="spendInV"></div><div class="x" id="spendInX"></div></div>
+          <div class="s out"><div class="l">Outgoing Sales</div><div class="v" id="spendOutV"></div><div class="x" id="spendOutX"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /panel-briefing -->
+
+  <div class="tabpanel" id="panel-method">
+  <!-- METHODOLOGY -->
+  <section id="sec-method">
+    <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">08</span></div>
+    <p class="sec-sub">We trace every rumour back to the reporter who broke it. An aggregator reshuffling an existing story is not the same as the journalist who got it first.</p>
+    <div class="legend" id="methodLegend">
+    </div>
+  </section>
+
+  </div><!-- /panel-method -->
+
+  <!-- PAGER -->
+  <div class="pager" aria-label="Section pager">
+    <button class="pg-btn" id="pgPrev" type="button">&#8592; Prev</button>
+    <div class="pg-meter" id="pgMeter"></div>
+    <button class="pg-btn" id="pgNext" type="button">Next &#8594;</button>
+  </div>
+
+  <footer class="reveal">
+    <b id="updatedFoot"></b> Ratings are evidence-weighted estimates based on source credibility, not guarantees. They change as new reporting emerges.
+    <div class="disclaimer">
+      Sourced from the reporters who get it right. Fees and valuations shift constantly—what's live today might be dead by Friday. This is transfer intelligence, not gospel.
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   DATA: edit this block on each daily update, page re-renders.
+   light: 'g'=green(>50%) 'y'=yellow(30-50%) 'o'=orange(15-30%) 'r'=red(<15%)
+   trend: 'up' | 'flat' | 'down'
+   ============================================================ */
+/*==DATA==*/
+/* ============================================================
+   MERCATO IQ · CLUB DATA · BAYERN MUNICH · STATE OF RECORD
+   ============================================================ */
+
+const BRAND = {
+  club: "Bayern Munich",
+  mono: "FCB",
+  slug: "bayern-munich",
+  primary: "#DC143C",
+  primaryBright: "#FF4444",
+  primaryDeep: "#8B0000",
+  primaryRgb: "220,20,60",
+  breadcrumb: ["Germany", "Bundesliga"]
+};
+
+const VOLATILE = {
+  verified: "2026-08-03",
+  coach: "Thomas Tuchel",
+  dof: "Christoph Freund (Director)",
+  europe: "UEFA Champions League (2026/27)",
+  finish: "3rd Bundesliga (2025/26)",
+  owner: "Allianz Arena (Uli Hoeneß, President)",
+  window: "Opens 1 Jul, closes 1 Sep 2026"
+};
+
+const SWEEP = {
+  feeds: ["https://www.transfermarkt.com/"],
+  queries: ["Bayern Munich transfer news 2026"]
+};
+
+const REPORT_META = {
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Bayern Munich"
+};
+
+const CONFIRMED_IN = [
+  {name:"Hirving Lozano", sub:"28 · RW · Mexico", to:"permanent from PSV Eindhoven", fee:"€21m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25 Jun. The Mexican winger rejoins Bayern after loan spell, bringing pace and experience to right wing position."}
+];
+
+const CONFIRMED_OUT = [
+  {name:"Jamal Musiala", sub:"23 · LW/CAM · Germany", club:"Atlético Madrid", pos:"LW/CAM", fee:"€110m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced 28 Jul. Musiala departs for Atlético Madrid in blockbuster deal as Bayern restructure attacking options."}
+];
+
+const INCOMING = [];
+
+const OUTGOING = [];
+
+const RISERS = [];
+
+const FALLERS = [];
+
+const NEW = [
+  {ar:"✦", t:"Bayern's summer business complete: Lozano in for €21m, Musiala out for €110m. Squad reshuffled around Tuchel's tactics."}
+];
+
+const IGNORE = [];
+
+const POSITIONS = [
+  {p:"Left winger", w:85, x:"Musiala's departure creates major void. Recruitment focus for final weeks of window."}
+];
+
+const WATCHLIST = [];
+
+const HUB = {
+  club: {l:"Bayern Munich Official", u:"#"}
+};
+
+const LINKMAP = {};
+const WL_LINKMAP = {};
+
+const PROSE = {
+  heroH2: `Bayern Munich · 2026/27 Season`,
+  heroLede: `Transfer window active. Bayern Munich preparing squad for next season.`,
+  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
+  spendIn: { v: `TBD` },
+  spendOut: { v: `TBD` },
+  methodLegend: ``
+};
+
+/*==ENDDATA==*/
+
+/* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */
+(function(){
+  const rs=document.documentElement.style;
+  rs.setProperty('--red',BRAND.primary);
+  rs.setProperty('--red-bright',BRAND.primaryBright);
+  rs.setProperty('--red-deep',BRAND.primaryDeep);
+  rs.setProperty('--primary-rgb',BRAND.primaryRgb);
+  document.title='Mercato IQ: '+BRAND.club;
+  document.getElementById('brandName').innerHTML='Mercato <b>IQ</b> · '+BRAND.club;
+  document.getElementById('monoText').textContent=BRAND.mono;
+  /* Breadcrumb: Global > Nation > League > Club, every level a real link, so there is
+     always a clear way back up the chain from a club page. */
+  const crumbSlugify = s => (s||'').toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-');
+  const crumbParts = [{ label: 'Global', href: 'index.html' }];
+  (BRAND.breadcrumb||[]).forEach((x,i)=>{
+    const href = i===0 ? `nations/${crumbSlugify(x)}.html` : `leagues/${crumbSlugify(x)}.html`;
+    crumbParts.push({ label: x, href });
+  });
+  document.getElementById('crumb').innerHTML=crumbParts.map(p=>`<a href="${p.href}">${p.label}</a><span class="sep">›</span>`).join('')+`<b>${BRAND.club}</b>`;
+  // Also render in header for easy navigation
+  const headerBreadEl = document.getElementById('headerBreadcrumbs');
+  if(headerBreadEl) {
+    const headerBread = crumbParts.map((p,i) => `<a href="${p.href}">${p.label}</a>` + (i < crumbParts.length - 1 ? `<span class="sep">/</span>` : '')).join('');
+    headerBreadEl.innerHTML = headerBread + `<span class="sep">/</span><span class="current">${BRAND.club}</span>`;
+  }
+  const set=(id,h)=>{const el=document.getElementById(id); if(el) el.innerHTML=h||'';};
+  set('heroH2',PROSE.heroH2); set('heroLede',PROSE.heroLede); set('metaRow',PROSE.metaRow);
+  set('statStrip',PROSE.stats); set('panel-position',PROSE.positionPanel);
+  set('pendingNote',PROSE.confirmedPending); set('pricingBanner',PROSE.pricingBanner);
+  set('excludedNote',PROSE.excludedNote); set('methodLegend',PROSE.methodLegend);
+  set('inSub',PROSE.incomingSub); set('outSub',PROSE.outgoingSub);
+  set('spendInV',PROSE.spendIn.v); set('spendInX',PROSE.spendIn.x);
+  set('spendOutV',PROSE.spendOut.v); set('spendOutX',PROSE.spendOut.x);
+  const dd=document.getElementById('discDate'); if(dd) dd.textContent=REPORT_META.asof;
+})();
+function srcLinksHTML(name){
+  const keys = LINKMAP[name] || [];
+  if(!keys.length) return '<span class="hubnote">No verified link held for this thread: traced source named in the row.</span>';
+  return keys.map(k=>{const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;}).join('');
+}
+
+/* ---------- RENDER ---------- */
+const lightColor = {g:'var(--green)', y:'var(--yellow)', o:'var(--orange)', r:'var(--crit)'};
+const trendGlyph = {up:'⬆', flat:'➡', down:'⬇'};
+
+function probCell(prob, light){
+  if(light==='confirmed') return `<span class="confirmed">CONFIRMED</span>`;
+  return `<div class="prob-wrap">
+      <span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 7px ${lightColor[light]}"></span>
+      <div class="prob-bar"><div class="prob-fill" style="width:${prob}%;background:${lightColor[light]}"></div></div>
+      <span class="prob-val" style="color:${lightColor[light]}">${prob}%</span>
+    </div>`;
+}
+function tierBadge(t){ return `<span class="tier t${t}">T${t}</span>`; }
+function trendCell(tr){
+  const cls = tr==='up'?'up':tr==='down'?'down':'flat';
+  return `<span class="trend ${cls}">${trendGlyph[tr]}</span>`;
+}
+
+function lightFor(v){ return v>50?'g':v>=30?'y':v>=15?'o':'r'; }
+function rateRows(p){
+  const tl = p.tlight || lightFor(p.truth);
+  const hl = p.light  || lightFor(p.prob);
+  return `<div class="rate">
+      <div class="rate-row"><span class="rl">True?</span><span class="rate-dot" style="background:${lightColor[tl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.truth}%;background:${lightColor[tl]}"></div></div><span class="rate-val" style="color:${lightColor[tl]}">${p.truth}%</span></div>
+      <div class="rate-row"><span class="rl">Happens?</span><span class="rate-dot" style="background:${lightColor[hl]}"></span><div class="rate-bar"><div class="rate-fill" style="width:${p.prob}%;background:${lightColor[hl]}"></div></div><span class="rate-val" style="color:${lightColor[hl]}">${p.prob}%</span></div>
+    </div>`;
+}
+
+function renderTable(list, id){
+  document.getElementById(id).innerHTML = list.map((p,i)=>`
+    <tr class="rumour-row" data-row="${id}-${i}" tabindex="0" aria-expanded="false">
+      <td class="cell-name" data-label="Player"><div class="pl-name">${p.name}${p.isNew?'<span class="new-tag">NEW</span>':''}<span class="src-toggle">SOURCES &#9656;</span></div><div class="pl-sub">${p.sub}</div></td>
+      <td data-label="Club">${p.club}</td>
+      <td data-label="Pos"><span class="pos">${p.pos}</span></td>
+      <td class="fee" data-label="Reported">${p.report}</td>
+      <td data-label="Source">${p.src} ${tierBadge(p.tier)}</td>
+      <td class="fee" data-label="Est. fee">${p.fee}</td>
+      <td data-label="Rating">${rateRows(p)}</td>
+      <td data-label="Trend">${trendCell(p.trend)}</td>
+      <td class="note" data-label="Analysis">${p.note}</td>
+    </tr>
+    <tr class="src-row" data-for="${id}-${i}"><td colspan="9"><div class="src-links"><span class="lbl">TRACED SOURCES</span>${srcLinksHTML(p.name)}</div></td></tr>`).join('');
+  document.querySelectorAll(`#${id} tr.rumour-row`).forEach(row=>{
+    const open = ()=>{
+      const tgt = document.querySelector(`tr.src-row[data-for="${row.dataset.row}"]`);
+      const isOpen = tgt.classList.toggle('open');
+      row.classList.toggle('open', isOpen);
+      row.setAttribute('aria-expanded', isOpen?'true':'false');
+    };
+    row.addEventListener('click', e=>{ if(e.target.closest('a')) return; open(); });
+    row.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+  });
+}
+renderTable(INCOMING,'incoming');
+renderTable(OUTGOING,'outgoing');
+
+/* Overview ins/outs snapshot -- top-4 by Happens? probability, click-through to the full tab */
+function ovCard(p, dir){
+  const color = lightColor[p.light] || 'var(--muted)';
+  const vs = dir==='in' ? `from ${p.club}` : `to ${p.club}`;
+  return `<div class="ov-card" data-go="${dir}">
+      <div class="ov-main">
+        <div class="ov-name">${p.name}</div>
+        <div class="ov-vs">${vs} &middot; ${p.pos}</div>
+      </div>
+      <div class="ov-side">
+        <div class="ov-fee">${p.fee}</div>
+        <div class="ov-pct" style="color:${color}">${p.prob}% likely</div>
+      </div>
+    </div>`;
+}
+function renderOverviewSnapshot(){
+  const topIn = [...INCOMING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  const topOut = [...OUTGOING].sort((a,b)=>b.prob-a.prob).slice(0,4);
+  document.getElementById('ovIn').innerHTML = topIn.length ? topIn.map(p=>ovCard(p,'in')).join('') : '<div class="ov-empty">No live targets tracked yet.</div>';
+  document.getElementById('ovOut').innerHTML = topOut.length ? topOut.map(p=>ovCard(p,'out')).join('') : '<div class="ov-empty">No exits tracked yet.</div>';
+  document.querySelectorAll('.ov-card[data-go]').forEach(c=>c.addEventListener('click', ()=>{
+    const btn = document.querySelector(`.tabbtn[data-go="${c.dataset.go}"]:not(.ov-viewall)`);
+    if(btn) btn.click();
+  }));
+}
+renderOverviewSnapshot();
+
+/* confirmed ledger */
+function renderLedger(list, id, emptyMsg){
+  const el = document.getElementById(id);
+  if(!list.length){ el.innerHTML = `<div class="empty">${emptyMsg}</div>`; return; }
+  el.innerHTML = list.map(d=>`
+    <div class="deal">
+      <div class="dmeta">
+        <div class="dname">${d.name}</div>
+        <div class="dsub">${d.sub} · → ${d.to}</div>
+        <div class="dnote">${d.note}</div>
+        <span class="status ${d.status}">${d.statusTxt}</span>
+      </div>
+      <div class="dfee ${d.free?'free':''}">${d.fee}</div>
+    </div>`).join('');
+}
+renderLedger(CONFIRMED_IN,'confirmedIn','Awaiting first confirmed signing.');
+renderLedger(CONFIRMED_OUT,'confirmedOut','No confirmed departures yet.');
+document.getElementById('cinCount').textContent = CONFIRMED_IN.length;
+document.getElementById('coutCount').textContent = CONFIRMED_OUT.length;
+
+/* watchlist with direction filter */
+function renderWatchlist(filter){
+  const rows = WATCHLIST.filter(w => filter==='all' || w.dir===filter);
+  document.getElementById('watchlist').innerHTML = rows.map(w=>`
+    <div class="wl-item ${w.dir}" data-wl="${w.name}">
+      <div class="wmeta">
+        <div class="wtop">
+          <span class="wname">${w.name}</span>
+          <span class="wclub">${w.dir==='in'?'← '+w.club:'→ '+w.club}</span>
+          <span class="wl-dir ${w.dir}">${w.dir.toUpperCase()}</span>
+        </div>
+        <div class="wnote">${w.note}</div>
+        <div class="src-links" style="display:none"><span class="lbl">TRACED SOURCE</span>${(()=>{const k=WL_LINKMAP[w.name];if(!k) return '<span class="hubnote">Source named above; no verified link held.</span>';const h=HUB[k];return `<a href="${h.u}" target="_blank" rel="noopener">${h.l} &#8599;</a>`;})()}</div>
+      </div>
+      <div class="wright">
+        <span class="wpos">${w.pos}</span>
+        <span class="wage">${w.age}</span>
+        <span class="tier t${w.tier}" style="font-family:var(--mono);font-size:10px;padding:1px 5px;border-radius:4px">T${w.tier}</span>
+      </div>
+    </div>`).join('');
+}
+renderWatchlist('all');
+document.getElementById('watchlist').addEventListener('click', e=>{
+  if(e.target.closest('a')) return;
+  const item = e.target.closest('.wl-item'); if(!item) return;
+  const box = item.querySelector('.src-links');
+  if(box) box.style.display = box.style.display==='none' ? 'flex' : 'none';
+});
+document.querySelectorAll('.wl-tab').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.wl-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderWatchlist(btn.dataset.f);
+  });
+});
+
+/* Top 10 combined by probability (exclude confirmed=100 absolute, but include as flag) */
+const combined = [
+  ...INCOMING.map(p=>({...p, dir:'IN'})),
+  ...OUTGOING.filter(p=>p.light!=='confirmed').map(p=>({...p, dir:'OUT'}))
+].sort((a,b)=>b.prob-a.prob).slice(0,10);
+
+document.getElementById('top10').innerHTML = combined.map((p,i)=>`
+  <div class="rank">
+    <span class="n">${String(i+1).padStart(2,'0')}</span>
+    <span class="nm">${p.name} <small>${p.dir} · ${p.club}</small></span>
+    <span class="pct" style="color:${lightColor[p.light]}">${p.prob}%</span>
+  </div>`).join('');
+
+function chips(arr){ return arr.map(c=>`<div class="chip"><span class="ar">${c.ar}</span><span>${c.t}</span></div>`).join(''); }
+document.getElementById('movers').innerHTML =
+  `<div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--green);margin:2px 0 4px">RISERS</div>${chips(RISERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--crit);margin:12px 0 4px">FALLERS</div>${chips(FALLERS)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--gold);margin:12px 0 4px">NEW ENTRIES</div>${chips(NEW)}
+   <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--muted);margin:12px 0 4px">IGNORE</div>${chips(IGNORE)}`;
+
+document.getElementById('positions').innerHTML = POSITIONS.map(p=>`
+  <div class="pos-need">
+    <span>${p.p} <small style="color:var(--muted);font-family:var(--mono);font-size:11px">${p.x}</small></span>
+    <span class="heatbar"><span class="heatfill" style="width:${p.w}%"></span></span>
+  </div>`).join('');
+
+/* Transfer window status: Open / Closed / Deadline Day, shared logic with every other page level. */
+const PL_WINDOW_CLOSES = "2026-09-01T22:00:00Z";
+function windowStatus(closesIso){
+  const diffMs = new Date(closesIso).getTime() - Date.now();
+  if(diffMs <= 0) return { state: 'closed', label: 'Closed', color: 'var(--muted)' };
+  if(diffMs <= 86400000) return { state: 'deadline', label: 'Deadline Day', color: 'var(--crit)' };
+  return { state: 'open', label: 'Open', color: 'var(--green)' };
+}
+(function(){
+  const st = windowStatus(PL_WINDOW_CLOSES);
+  document.getElementById('windowLabel').textContent = st.label;
+  const dot = document.getElementById('windowDot');
+  dot.style.background = st.color;
+  dot.style.boxShadow = `0 0 10px ${st.color}`;
+  dot.style.animation = st.state === 'deadline' ? 'pulse 1s infinite' : st.state === 'closed' ? 'none' : '';
+})();
+
+/* last-updated stamp + live freshness ticker (single source: REPORT_META.updated ISO) */
+(function(){
+  document.getElementById('kicker').textContent =
+    `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
+  document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
+  const foot = document.getElementById('updatedFoot');
+  if(foot) foot.textContent = `Live transfer tracker - updated ${REPORT_META.asof}.`;
+
+  const t0 = new Date(REPORT_META.updated).getTime();
+  const stamp = document.getElementById('stamp');
+  function fmt(ms){
+    if(isNaN(ms)) return ['CURRENT','var(--muted)'];
+    if(ms < 0)   return ['POST-DATED','var(--muted)'];
+    const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
+    let txt;
+    if(s < 60)      txt = s+'s';
+    else if(m < 60) txt = m+'m '+(s%60)+'s';
+    else if(h < 24) txt = h+'h '+(m%60)+'m';
+    else            txt = d+'d '+(h%24)+'h';
+    const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
+    return ['UPDATED '+txt+' AGO', col];
+  }
+  function tick(){
+    const [txt,col] = fmt(Date.now() - t0);
+    stamp.innerHTML =
+      `<span class="seg dt">REFRESHED&nbsp;<b>${REPORT_META.asof}</b></span>`+
+      `<span class="seg fresh" style="color:${col}"><span class="fdot" style="background:${col};box-shadow:0 0 8px ${col}"></span>${txt}</span>`;
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ===== TAB + PAGER ENGINE (scroll-reduction protocol) =====
+   Names chosen to avoid window globals (top, name, status, history etc.). */
+(function(){
+  const tabOrder = ['overview','confirmed','in','out','index','briefing','position','method'];
+  const tabBtns  = Array.from(document.querySelectorAll('.tabbtn'));
+  const meterEl  = document.getElementById('pgMeter');
+  const prevBtn  = document.getElementById('pgPrev');
+  const nextBtn  = document.getElementById('pgNext');
+  let curIdx = 0;
+
+  meterEl.innerHTML = tabOrder.map((t,i)=>`<span class="pg-dot${i===0?' on':''}" data-i="${i}" title="${t}"></span>`).join('');
+  const dots = Array.from(meterEl.querySelectorAll('.pg-dot'));
+
+  function showTab(idx, push){
+    if(idx<0 || idx>=tabOrder.length) return;
+    curIdx = idx;
+    const key = tabOrder[idx];
+    document.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+key));
+    tabBtns.forEach(b=>{
+      const on = b.dataset.go===key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on?'true':'false');
+    });
+    dots.forEach((d,i)=>d.classList.toggle('on', i===idx));
+    prevBtn.disabled = idx===0;
+    nextBtn.disabled = idx===tabOrder.length-1;
+    if(push!==false){ try{ window.history.replaceState(null,'','#tab-'+key); }catch(e){} }
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+
+  tabBtns.forEach(b=>b.addEventListener('click', ()=>showTab(tabOrder.indexOf(b.dataset.go))));
+  dots.forEach(d=>d.addEventListener('click', ()=>showTab(parseInt(d.dataset.i,10))));
+  prevBtn.addEventListener('click', ()=>showTab(curIdx-1));
+  nextBtn.addEventListener('click', ()=>showTab(curIdx+1));
+  document.addEventListener('keydown', e=>{
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if(e.key==='ArrowRight') showTab(curIdx+1);
+    if(e.key==='ArrowLeft')  showTab(curIdx-1);
+  });
+
+  const h = (window.location.hash||'').replace('#tab-','');
+  const start = tabOrder.indexOf(h);
+  showTab(start>=0 ? start : 0, false);
+})();
+</script>
+</body>
+</html>

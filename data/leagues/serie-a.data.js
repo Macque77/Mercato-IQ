@@ -5,18 +5,32 @@
 
 const LEAGUE = {
   name: "Serie A",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Italy",
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Nicolò Barella", prob: 95,
+    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
+    from: "Inter Milan", to: "Inter Milan",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "New long-term deal", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Paulo Dybala", prob: 92,
+    club_origin: "juventus", club_display_name: "Juventus", direction: "in",
+    from: "AS Roma", to: "Juventus",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free agent", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"inter-milan": 1, "juventus": 1};
 
-const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 0}, {"slug": "as-roma", "name": "AS Roma", "count": 0}, {"slug": "atalanta", "name": "Atalanta", "count": 0}, {"slug": "bologna", "name": "Bologna", "count": 0}, {"slug": "cagliari", "name": "Cagliari", "count": 0}, {"slug": "como", "name": "Como 1907", "count": 0}, {"slug": "empoli", "name": "Empoli FC", "count": 0}, {"slug": "parma", "name": "Parma", "count": 0}, {"slug": "torino", "name": "Torino", "count": 0}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 0}, {"slug": "venezia", "name": "Venezia", "count": 0}];
+const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 0}, {"slug": "as-roma", "name": "AS Roma", "count": 0}, {"slug": "atalanta", "name": "Atalanta", "count": 0}, {"slug": "bologna", "name": "Bologna", "count": 0}, {"slug": "cagliari", "name": "Cagliari", "count": 0}, {"slug": "como", "name": "Como 1907", "count": 0}, {"slug": "empoli", "name": "Empoli FC", "count": 0}, {"slug": "inter-milan", "name": "Inter Milan", "count": 1}, {"slug": "juventus", "name": "Juventus", "count": 1}, {"slug": "parma", "name": "Parma", "count": 0}, {"slug": "torino", "name": "Torino", "count": 0}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 0}, {"slug": "venezia", "name": "Venezia", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:24:00.615928Z",
+  updated: "2026-08-03T14:34:32.750837Z",
   label: "League aggregation"
 };

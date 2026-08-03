@@ -236,19 +236,26 @@
 
 const LEAGUE = {
   name: "Liga Portugal",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Portugal",
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Pepe", prob: 80,
+    club_origin: "fc-porto", club_display_name: "FC Porto", direction: "in",
+    from: "Free agent (Real Madrid exit)", to: "FC Porto",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free agent", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"fc-porto": 1};
 
-const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0}, {"slug": "tondela", "name": "CD Tondela", "count": 0}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0}, {"slug": "estoril", "name": "Estoril Praia", "count": 0}, {"slug": "arouca", "name": "FC Arouca", "count": 0}, {"slug": "porto", "name": "FC Porto", "count": 0}, {"slug": "chaves", "name": "GD Chaves", "count": 0}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0}, {"slug": "braga", "name": "SC Braga", "count": 0}, {"slug": "benfica", "name": "SL Benfica", "count": 0}, {"slug": "santa-clara", "name": "Santa Clara", "count": 0}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 0}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 0}];
+const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0}, {"slug": "tondela", "name": "CD Tondela", "count": 0}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0}, {"slug": "estoril", "name": "Estoril Praia", "count": 0}, {"slug": "arouca", "name": "FC Arouca", "count": 0}, {"slug": "porto", "name": "FC Porto", "count": 0}, {"slug": "fc-porto", "name": "FC Porto", "count": 1}, {"slug": "chaves", "name": "GD Chaves", "count": 0}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0}, {"slug": "braga", "name": "SC Braga", "count": 0}, {"slug": "benfica", "name": "SL Benfica", "count": 0}, {"slug": "santa-clara", "name": "Santa Clara", "count": 0}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 0}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:24:00.614569Z",
+  updated: "2026-08-03T14:34:32.749406Z",
   label: "League aggregation"
 };
 

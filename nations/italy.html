@@ -223,18 +223,32 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 0
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Nicolò Barella",prob: 95,
+    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
+    from: "Inter Milan", to: "Inter Milan",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "New long-term deal", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Paulo Dybala",prob: 92,
+    club_origin: "juventus", club_display_name: "Juventus", direction: "in",
+    from: "AS Roma", to: "Juventus",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free agent", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Serie A": 2};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 2}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:24:00.611596Z",
+  updated: "2026-08-03T14:34:32.746023Z",
   label: "Nation aggregation"
 };
 

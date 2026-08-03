@@ -135,6 +135,45 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
+    headline: "Nicolò Barella",
+    club_display_name: "Inter Milan",
+    summary: "Inter securing midfield lynchpin Barella with fresh contract through 2031. Talks",
+    value: "New long-term deal",
+    from: "Inter Milan", to: "Inter Milan",
+    direction: "in",
+    prob: 95, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "inter-milan",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Paulo Dybala",
+    club_display_name: "Juventus",
+    summary: "Dybala's Roma contract expires and Juventus are preparing to bring back the Arge",
+    value: "Free agent",
+    from: "AS Roma", to: "Juventus",
+    direction: "in",
+    prob: 92, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "juventus",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Pepe",
+    club_display_name: "FC Porto",
+    summary: "Porto moving to bring back veteran defender Pepe as free agent after Real Madrid",
+    value: "Free agent",
+    from: "Free agent (Real Madrid exit)", to: "FC Porto",
+    direction: "in",
+    prob: 80, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Portugal", league: "Liga Portugal",
+    club_link: "fc-porto",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Jude Bellingham",
     club_display_name: "Real Madrid",
     summary: "",
@@ -745,45 +784,6 @@ const HEADLINES = [
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
-  {
-    headline: "Yan Diomande",
-    club_display_name: "Liverpool",
-    summary: "",
-    value: "£20-30m",
-    from: "(target)", to: "Liverpool",
-    direction: "in",
-    prob: 35, trend: 'up',
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "liverpool",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    headline: "Jack Grealish",
-    club_display_name: "Everton",
-    summary: "A stay (loan-to-permanent) is reported as a concrete possibility after his spell",
-    value: "Loan/perm",
-    from: "Man City", to: "Everton",
-    direction: "in",
-    prob: 35, trend: 'flat',
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "everton",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Jadon Sancho",
-    club_display_name: "Aston Villa",
-    summary: "",
-    value: "Low / wages",
-    from: "Aston Villa", to: "Seeking exit",
-    direction: "out",
-    prob: 35, trend: 'flat',
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "aston-villa",
-    updated: "2026-06-06T12:00:00Z"
-  },
 ];
 
 const NATIONS = [
@@ -797,7 +797,11 @@ const NATIONS = [
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 0, league_count: 0
+    stories_count: 2, league_count: 1
+  },
+  {
+    name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
+    stories_count: 1, league_count: 1
   },
   {
     name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
@@ -805,10 +809,6 @@ const NATIONS = [
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 0, league_count: 0
-  },
-  {
-    name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
     stories_count: 0, league_count: 0
   },
   {
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:24:00.610567Z",
+  updated: "2026-08-03T14:34:32.744859Z",
   label: "Global aggregation from all clubs"
 };

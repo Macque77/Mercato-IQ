@@ -223,18 +223,25 @@
 const NATION = {
   name: "Portugal",
   flag_emoji: "🇵🇹",
-  stories_count: 0
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Pepe",prob: 80,
+    club_origin: "fc-porto", club_display_name: "FC Porto", direction: "in",
+    from: "Free agent (Real Madrid exit)", to: "FC Porto",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free agent", updated: "2026-08-03T14:30:00Z", league: "Liga Portugal"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Liga Portugal": 1};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "liga-portugal", "name": "Liga Portugal", "count": 1}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:24:00.611873Z",
+  updated: "2026-08-03T14:34:32.746367Z",
   label: "Nation aggregation"
 };
 
