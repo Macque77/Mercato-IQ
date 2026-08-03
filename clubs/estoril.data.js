@@ -6,7 +6,7 @@ const BRAND = {
   club: "Estoril Praia", mono: "EP", slug: "estoril",
   primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
   primaryRgb: "0,61,165",
-  breadcrumb: ["Your Nation","Your League"]
+  breadcrumb: ["Portugal","Liga Portugal"]
 };
 
 const VOLATILE = {

@@ -6,7 +6,7 @@ const BRAND = {
   club: "ARCO Zaragoza", mono: "AZ", slug: "arco-sd",
   primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
   primaryRgb: "0,61,165",
-  breadcrumb: ["Your Nation","Your League"]
+  breadcrumb: ["Spain","La Liga 2"]
 };
 
 const VOLATILE = {

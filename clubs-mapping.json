@@ -1,0 +1,1077 @@
+{
+  "1-fc-augsburg": {
+    "name": "1. FC Augsburg",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "1-fc-heidenheim": {
+    "name": "1. FC Heidenheim",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "ac-milan": {
+    "name": "AC Milan",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "akademica": {
+    "name": "Académica",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "adana-demirspor": {
+    "name": "Adana Demirspor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "aek-athens": {
+    "name": "AEK Athens",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "ajax": {
+    "name": "Ajax",
+    "nation": "Netherlands",
+    "league": "Eredivisie"
+  },
+  "alanyaspor": {
+    "name": "Alanyaspor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "alaves": {
+    "name": "Deportivo Alavés",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "albacete": {
+    "name": "Albacete Balompié",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "alcorcon": {
+    "name": "Alcorcón",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "alessandria": {
+    "name": "Alessandria",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "almeria-b": {
+    "name": "UD Almería B",
+    "nation": "Spain",
+    "league": "Segunda División B"
+  },
+  "amiens-sc": {
+    "name": "Amiens SC",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "angers-sco": {
+    "name": "Angers SCO",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "annecy": {
+    "name": "FC Annecy",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "antalyaspor": {
+    "name": "Antalyaspor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "apollon-athens": {
+    "name": "Apollon Athens",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "arco-sd": {
+    "name": "Arco SD",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "aris-thessaloniki": {
+    "name": "Aris Thessaloniki",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "arminia-bielefeld": {
+    "name": "Arminia Bielefeld",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "arouca": {
+    "name": "FC Arouca",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "arsenal": {
+    "name": "Arsenal",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "as-acn-ajaccio": {
+    "name": "AC Ajaccio",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "as-monaco": {
+    "name": "AS Monaco",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "as-monaco-b": {
+    "name": "AS Monaco B",
+    "nation": "France",
+    "league": "Championnat National"
+  },
+  "as-nancy-lorraine": {
+    "name": "AS Nancy-Lorraine",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "as-roma": {
+    "name": "AS Roma",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "as-saint-etienne": {
+    "name": "AS Saint-Étienne",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "ascoli": {
+    "name": "Ascoli",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "ascoli-picchio": {
+    "name": "Ascoli Picchio",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "asm-montpellier": {
+    "name": "Montpellier HSC",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "asse-sochaux": {
+    "name": "Sochaux",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "asteras-tripolis": {
+    "name": "Asteras Tripolis",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "aston-villa": {
+    "name": "Aston Villa",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "atalanta": {
+    "name": "Atalanta",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "athletic-bilbao": {
+    "name": "Athletic Bilbao",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "atletico-madrid": {
+    "name": "Atlético Madrid",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "atromitos": {
+    "name": "Atromitos Athens",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "avellino": {
+    "name": "Avellino",
+    "nation": "Italy",
+    "league": "Serie C"
+  },
+  "aydin-sk": {
+    "name": "Aydın SK",
+    "nation": "Turkey",
+    "league": "Süper Lig 1"
+  },
+  "az-alkmaar": {
+    "name": "AZ Alkmaar",
+    "nation": "Netherlands",
+    "league": "Eredivisie"
+  },
+  "barcelona": {
+    "name": "FC Barcelona",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "bayer-leverkusen": {
+    "name": "Bayer Leverkusen",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "beerschot": {
+    "name": "Beerschot",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "belenenses": {
+    "name": "CF Os Belenenses",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "benevento": {
+    "name": "Benevento",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "benfica": {
+    "name": "SL Benfica",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "besiktas": {
+    "name": "Beşiktaş",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "blackburn-rovers": {
+    "name": "Blackburn Rovers",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "boavista": {
+    "name": "Boavista",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "bologna": {
+    "name": "Bologna",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "borussia-dortmund": {
+    "name": "Borussia Dortmund",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "borussia-monchengladbach": {
+    "name": "Borussia Mönchengladbach",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "bournemouth": {
+    "name": "Bournemouth",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "braga": {
+    "name": "Sporting Braga",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "brentford": {
+    "name": "Brentford",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "brescia": {
+    "name": "Brescia",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "brighton": {
+    "name": "Brighton & Hove Albion",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "bristol-city": {
+    "name": "Bristol City",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "bristol-rovers": {
+    "name": "Bristol Rovers",
+    "nation": "England",
+    "league": "League Two"
+  },
+  "burgos-cf": {
+    "name": "Burgos CF",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "caen": {
+    "name": "Stade Malherbe Caen",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "cagliari": {
+    "name": "Cagliari",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "calcio-catania": {
+    "name": "Catania",
+    "nation": "Italy",
+    "league": "Serie C"
+  },
+  "cambridge-united": {
+    "name": "Cambridge United",
+    "nation": "England",
+    "league": "League Two"
+  },
+  "cardiff-city": {
+    "name": "Cardiff City",
+    "nation": "Wales",
+    "league": "Championship"
+  },
+  "cartagena": {
+    "name": "FC Cartagena",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "cd-castellon": {
+    "name": "Castellón",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "cd-numancia": {
+    "name": "CD Numancia",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "celta-vigo": {
+    "name": "Celta Vigo",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "cercle-brugge": {
+    "name": "Cercle Brugge",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "cf-eldense": {
+    "name": "CF Eldense",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "charleroi": {
+    "name": "Sporting de Charleroi",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "chaves": {
+    "name": "Desportivo de Chaves",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "chelsea": {
+    "name": "Chelsea",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "cidadela": {
+    "name": "Cidadela",
+    "nation": "Portugal",
+    "league": "Liga Portugal 2"
+  },
+  "clermont-foot": {
+    "name": "Clermont Foot",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "club-brugge": {
+    "name": "Club Brugge",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "como": {
+    "name": "Como",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "cordoba": {
+    "name": "Córdoba",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "cosenza": {
+    "name": "Cosenza",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "coventry-city": {
+    "name": "Coventry City",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "cremonese": {
+    "name": "Cremonese",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "crystal-palace": {
+    "name": "Crystal Palace",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "denizlispor": {
+    "name": "Denizlispor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "derby-county": {
+    "name": "Derby County",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "dfcde": {
+    "name": "DFC Dortmund",
+    "nation": "Germany",
+    "league": "Regionalliga"
+  },
+  "dijon": {
+    "name": "Dijon FCO",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "duisburg": {
+    "name": "MSV Duisburg",
+    "nation": "Germany",
+    "league": "Regionalliga"
+  },
+  "dynamo-dresden": {
+    "name": "Dynamo Dresden",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "eibar": {
+    "name": "Eibar",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "eintracht-frankfurt": {
+    "name": "Eintracht Frankfurt",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "elche": {
+    "name": "Elche",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "empoli": {
+    "name": "Empoli",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "erzgebirge-aue": {
+    "name": "Erzgebirge Aue",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "erzurumspor": {
+    "name": "Erzurumspor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "estoril": {
+    "name": "Estoril",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "eupen": {
+    "name": "KAS Eupen",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "everton": {
+    "name": "Everton",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "fulham": {
+    "name": "Fulham",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "hull-city": {
+    "name": "Hull City",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "ipswich-town": {
+    "name": "Ipswich Town",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "leeds-united": {
+    "name": "Leeds United",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "liverpool": {
+    "name": "Liverpool",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "manchester-city": {
+    "name": "Manchester City",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "manchester-united": {
+    "name": "Manchester United",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "newcastle-united": {
+    "name": "Newcastle United",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "nottingham-forest": {
+    "name": "Nottingham Forest",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "oh-leuven": {
+    "name": "OH Leuven",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "olympiacos": {
+    "name": "Olympiacos",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "olympique-lyonnais": {
+    "name": "Olympique Lyonnais",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "olympique-marseille": {
+    "name": "Olympique Marseille",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "opa-ofi": {
+    "name": "OPA Ofi Crete",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "osasuna": {
+    "name": "Osasuna",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "osnabruck": {
+    "name": "VfL Osnabrück",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "pacos-ferreira": {
+    "name": "Paços de Ferreira",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "panaitolikos": {
+    "name": "Panaitolikos",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "panathinaikos": {
+    "name": "Panathinaikos",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "paok": {
+    "name": "PAOK",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "paris-fc": {
+    "name": "Paris FC",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "paris-saint-germain": {
+    "name": "Paris Saint-Germain",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "parma": {
+    "name": "Parma",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "pec-zwolle": {
+    "name": "PEC Zwolle",
+    "nation": "Netherlands",
+    "league": "Eredivisie"
+  },
+  "penafiel": {
+    "name": "Penafiel",
+    "nation": "Portugal",
+    "league": "Liga Portugal 2"
+  },
+  "peristeri": {
+    "name": "Peristeri",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "perugia": {
+    "name": "Perugia",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "pg-asteras": {
+    "name": "Asteras Tripolis Youth",
+    "nation": "Greece",
+    "league": "Super League U19"
+  },
+  "pisa": {
+    "name": "Pisa",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "plymouth-argyle": {
+    "name": "Plymouth Argyle",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "ponferradina": {
+    "name": "Ponferradina",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "porto": {
+    "name": "FC Porto",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "preston-north-end": {
+    "name": "Preston North End",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "preussen-munster": {
+    "name": "Preußen Münster",
+    "nation": "Germany",
+    "league": "Regionalliga"
+  },
+  "psg-b": {
+    "name": "Paris Saint-Germain B",
+    "nation": "France",
+    "league": "Championnat National"
+  },
+  "psv-eindhoven": {
+    "name": "PSV Eindhoven",
+    "nation": "Netherlands",
+    "league": "Eredivisie"
+  },
+  "qpr": {
+    "name": "Queens Park Rangers",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "rajon-sports": {
+    "name": "Rajon Sports",
+    "nation": "Turkey",
+    "league": "Süper Lig 1"
+  },
+  "rayo-vallecano": {
+    "name": "Rayo Vallecano",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "rc-lens": {
+    "name": "RC Lens",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "reading": {
+    "name": "Reading",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "real-betis": {
+    "name": "Real Betis",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "real-madrid": {
+    "name": "Real Madrid",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "real-madrid-castilla": {
+    "name": "Real Madrid Castilla",
+    "nation": "Spain",
+    "league": "Segunda División B"
+  },
+  "real-sociedad": {
+    "name": "Real Sociedad",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "real-valladolid": {
+    "name": "Real Valladolid",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "regensburg": {
+    "name": "Jahn Regensburg",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "reggiana": {
+    "name": "Reggiana",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "reggina": {
+    "name": "Reggina",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "rize-kk": {
+    "name": "Rize KK",
+    "nation": "Turkey",
+    "league": "Süper Lig 1"
+  },
+  "rizespor": {
+    "name": "Çaykur Rizespor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "rkc-waalwijk": {
+    "name": "RKC Waalwijk",
+    "nation": "Netherlands",
+    "league": "Eredivisie"
+  },
+  "roda-jc": {
+    "name": "Roda JC",
+    "nation": "Netherlands",
+    "league": "Eerste Divisie"
+  },
+  "rodez-aveyron": {
+    "name": "Rodez Aveyron Football",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "rostock": {
+    "name": "Hansa Rostock",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "rotterdam-sparta": {
+    "name": "Sparta Rotterdam",
+    "nation": "Netherlands",
+    "league": "Eredivisie"
+  },
+  "rsc-anderlecht": {
+    "name": "RSC Anderlecht",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "sabadell": {
+    "name": "Sabadell",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "salernitana": {
+    "name": "Salernitana",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "samsunspor": {
+    "name": "Samsunspor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "sandhausen": {
+    "name": "SV Sandhausen",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "santa-clara": {
+    "name": "Santa Clara",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "sassuolo": {
+    "name": "Sassuolo",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "sb-metz": {
+    "name": "FC Metz",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "sc-freiburg": {
+    "name": "SC Freiburg",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "sc-heerenveen": {
+    "name": "SC Heerenveen",
+    "nation": "Netherlands",
+    "league": "Eredivisie"
+  },
+  "schalke-04": {
+    "name": "FC Schalke 04",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "sd-huesca": {
+    "name": "SD Huesca",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "sevilla": {
+    "name": "Sevilla",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "sevillilla": {
+    "name": "Sevilla Atlético",
+    "nation": "Spain",
+    "league": "Segunda División B"
+  },
+  "sheffield-united": {
+    "name": "Sheffield United",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "sint-truiden": {
+    "name": "Sint-Truiden",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "sivasspor": {
+    "name": "Sivasspor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "southampton": {
+    "name": "Southampton",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "sporting-cp": {
+    "name": "Sporting CP",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "sporting-gijon": {
+    "name": "Sporting Gijón",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "st-pauli": {
+    "name": "FC St. Pauli",
+    "nation": "Germany",
+    "league": "2. Bundesliga"
+  },
+  "stade-brest": {
+    "name": "Stade Brest",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "stade-rennais": {
+    "name": "Stade Rennais",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "standard-liege": {
+    "name": "Standard Liège",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "stoke-city": {
+    "name": "Stoke City",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "sunderland": {
+    "name": "Sunderland",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "sv-werder-bremen": {
+    "name": "Werder Bremen",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "swansea-city": {
+    "name": "Swansea City",
+    "nation": "Wales",
+    "league": "Championship"
+  },
+  "tenerife": {
+    "name": "CD Tenerife",
+    "nation": "Spain",
+    "league": "La Liga 2"
+  },
+  "ternana": {
+    "name": "Ternana",
+    "nation": "Italy",
+    "league": "Serie B"
+  },
+  "thanatos-aspropyrgos": {
+    "name": "Thanatos Aspropyrgos",
+    "nation": "Greece",
+    "league": "Super League 2"
+  },
+  "tondela": {
+    "name": "Tondela",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "torino": {
+    "name": "Torino",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "tottenham": {
+    "name": "Tottenham Hotspur",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "tottenham-hotspur": {
+    "name": "Tottenham Hotspur",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "toulouse-fc": {
+    "name": "Toulouse FC",
+    "nation": "France",
+    "league": "Ligue 1"
+  },
+  "trabzonspor": {
+    "name": "Trabzonspor",
+    "nation": "Turkey",
+    "league": "Super Lig"
+  },
+  "treviso": {
+    "name": "Treviso",
+    "nation": "Italy",
+    "league": "Serie C"
+  },
+  "tsg-hoffenheim": {
+    "name": "TSG Hoffenheim",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "ucl-albanova": {
+    "name": "Albanova",
+    "nation": "Sweden",
+    "league": "Allsvenskan"
+  },
+  "union-berlin": {
+    "name": "Union Berlin",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "union-saint-gilloise": {
+    "name": "Union Saint-Gilloise",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "valencia": {
+    "name": "Valencia CF",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "valenciennes-fc": {
+    "name": "Valenciennes FC",
+    "nation": "France",
+    "league": "Ligue 2"
+  },
+  "venezia": {
+    "name": "Venezia",
+    "nation": "Italy",
+    "league": "Serie A"
+  },
+  "vfb-stuttgart": {
+    "name": "VfB Stuttgart",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "vfl-bochum": {
+    "name": "VfL Bochum",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "vfl-wolfsburg": {
+    "name": "VfL Wolfsburg",
+    "nation": "Germany",
+    "league": "Bundesliga"
+  },
+  "villarreal": {
+    "name": "Villarreal CF",
+    "nation": "Spain",
+    "league": "La Liga"
+  },
+  "vitesse": {
+    "name": "Vitesse",
+    "nation": "Netherlands",
+    "league": "Eerste Divisie"
+  },
+  "vitoria-guimaraes": {
+    "name": "Vitória Guimarães",
+    "nation": "Portugal",
+    "league": "Liga Portugal"
+  },
+  "volos-nps": {
+    "name": "Volos NPS",
+    "nation": "Greece",
+    "league": "Super League"
+  },
+  "waasland-beveren": {
+    "name": "Waasland-Beveren",
+    "nation": "Belgium",
+    "league": "First Division A"
+  },
+  "watford": {
+    "name": "Watford",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "west-bromwich-albion": {
+    "name": "West Bromwich Albion",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "west-ham": {
+    "name": "West Ham United",
+    "nation": "England",
+    "league": "Premier League"
+  },
+  "westerlo": {
+    "name": "KVC Westerlo",
+    "nation": "Belgium",
+    "league": "Pro League"
+  },
+  "wigan-athletic": {
+    "name": "Wigan Athletic",
+    "nation": "England",
+    "league": "Championship"
+  },
+  "wolverhampton": {
+    "name": "Wolverhampton Wanderers",
+    "nation": "England",
+    "league": "Premier League"
+  }
+}

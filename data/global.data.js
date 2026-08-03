@@ -143,7 +143,7 @@ const HEADLINES = [
     direction: "in",
     prob: 52, trend: 'flat',
     tier: 2, coverage: 5, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -442,7 +442,7 @@ const HEADLINES = [
     direction: "out",
     prob: 18, trend: 'flat',
     tier: 2, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -481,7 +481,7 @@ const HEADLINES = [
     direction: "in",
     prob: 10, trend: 'down',
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -507,7 +507,7 @@ const HEADLINES = [
     direction: "out",
     prob: 5, trend: 'flat',
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -533,7 +533,7 @@ const HEADLINES = [
     direction: "out",
     prob: 58, trend: 'up',
     tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -559,7 +559,7 @@ const HEADLINES = [
     direction: "out",
     prob: 50, trend: 'up',
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -572,7 +572,7 @@ const HEADLINES = [
     direction: "out",
     prob: 48, trend: 'flat',
     tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -598,7 +598,7 @@ const HEADLINES = [
     direction: "out",
     prob: 45, trend: 'up',
     tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -611,7 +611,7 @@ const HEADLINES = [
     direction: "out",
     prob: 45, trend: 'up',
     tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -624,7 +624,7 @@ const HEADLINES = [
     direction: "out",
     prob: 40, trend: 'up',
     tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -637,7 +637,7 @@ const HEADLINES = [
     direction: "out",
     prob: 40, trend: 'flat',
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -650,7 +650,7 @@ const HEADLINES = [
     direction: "out",
     prob: 40, trend: 'up',
     tier: 3, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -676,7 +676,7 @@ const HEADLINES = [
     direction: "out",
     prob: 38, trend: 'flat',
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -689,7 +689,7 @@ const HEADLINES = [
     direction: "out",
     prob: 36, trend: 'up',
     tier: 3, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -707,19 +707,6 @@ const HEADLINES = [
     updated: "2026-06-06T00:00:00Z"
   },
   {
-    headline: "Jack Grealish",
-    club_display_name: "Everton",
-    summary: "A stay (loan-to-permanent) is reported as a concrete possibility after his spell",
-    value: "Loan/perm",
-    from: "Man City", to: "Everton",
-    direction: "in",
-    prob: 35, trend: 'flat',
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "everton",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
     headline: "Jadon Sancho",
     club_display_name: "Aston Villa",
     summary: "",
@@ -733,6 +720,19 @@ const HEADLINES = [
     updated: "2026-06-06T12:00:00Z"
   },
   {
+    headline: "Jack Grealish",
+    club_display_name: "Everton",
+    summary: "A stay (loan-to-permanent) is reported as a concrete possibility after his spell",
+    value: "Loan/perm",
+    from: "Man City", to: "Everton",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "everton",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
     headline: "Ernest Poku",
     club_display_name: "Sunderland",
     summary: "",
@@ -741,7 +741,7 @@ const HEADLINES = [
     direction: "in",
     prob: 32, trend: 'up',
     tier: 3, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
@@ -754,7 +754,7 @@ const HEADLINES = [
     direction: "in",
     prob: 30, trend: 'up',
     tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -767,7 +767,7 @@ const HEADLINES = [
     direction: "in",
     prob: 30, trend: 'up',
     tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
+    nation: "England", league: "Championship",
     club_link: "leeds-united",
     updated: "2026-06-06T12:00:00Z"
   },
@@ -789,7 +789,7 @@ const HEADLINES = [
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 102, league_count: 1
+    stories_count: 102, league_count: 2
   },
 ];
 
@@ -798,11 +798,11 @@ const STATS = {
   top_league: "Premier League",
   most_active_club: "Manchester City",
   nations_covered: 1,
-  leagues_covered: 1
+  leagues_covered: 2
 };
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T12:50:16.912211Z",
+  updated: "2026-08-03T13:29:07.212722Z",
   label: "Global aggregation from all clubs"
 };

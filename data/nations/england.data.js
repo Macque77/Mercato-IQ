@@ -84,7 +84,7 @@ const TOP_STORIES = [  {
     club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
     from: "Toulouse", to: "Sunderland",
     tier: 2, coverage: 5, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-31T09:00:00Z", league: "Premier League"
+    value: "TBC", updated: "2026-07-31T09:00:00Z", league: "Championship"
   },
   {
     name: "Marcus Rashford",prob: 42,
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Premier League": 102};
+const BY_LEAGUE = {"Premier League": 61, "Championship": 41};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 102}];
+const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 41}, {"slug": "premier-league", "name": "Premier League", "count": 61}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T12:50:16.912597Z",
+  updated: "2026-08-03T13:29:07.213376Z",
   label: "Nation aggregation"
 };
