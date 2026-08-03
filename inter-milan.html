@@ -484,80 +484,65 @@ const PROSE = {
   }
   document.title = 'Mercato IQ: ' + (BRAND ? BRAND.club : 'Transfers');
 
-  // Render confirmed transfers
-  if(typeof CONFIRMED_IN !== 'undefined' && CONFIRMED_IN.length > 0) {
+  // Render confirmed IN
+  if(typeof CONFIRMED_IN !== 'undefined') {
     const confirmed = document.getElementById('confirmed');
-    CONFIRMED_IN.forEach(t => {
-      const card = createTransferCard(t, 'in');
-      confirmed.appendChild(card);
-    });
-  } else {
-    const confirmed = document.getElementById('confirmed');
-    if(confirmed) confirmed.innerHTML = '<div class="empty">No confirmed transfers yet</div>';
+    if(confirmed) {
+      if(CONFIRMED_IN.length > 0) {
+        confirmed.innerHTML = CONFIRMED_IN.map(t => renderCard(t)).join('');
+      } else {
+        confirmed.innerHTML = '<div class="empty">No confirmed transfers yet</div>';
+      }
+    }
   }
 
-  // Render rumors
-  if(typeof INCOMING !== 'undefined' && INCOMING.length > 0) {
+  // Render rumors/incoming
+  if(typeof INCOMING !== 'undefined') {
     const rumors = document.getElementById('rumors');
-    INCOMING.forEach(t => {
-      const card = createTransferCard(t, 'in');
-      rumors.appendChild(card);
-    });
-  } else {
-    const rumors = document.getElementById('rumors');
-    if(rumors) rumors.innerHTML = '<div class="empty">No active rumors yet</div>';
+    if(rumors) {
+      if(INCOMING.length > 0) {
+        rumors.innerHTML = INCOMING.map(t => renderCard(t)).join('');
+      } else {
+        rumors.innerHTML = '<div class="empty">No active rumors yet</div>';
+      }
+    }
   }
 })();
 
-function createTransferCard(transfer, direction) {
-  const card = document.createElement('div');
-  card.className = 'transfer-card';
+function renderCard(t) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const truth = t.truth || 50;
+  const prob = t.prob || 50;
+  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
+  const noteClass = isBullshit ? ' bullshit' : '';
 
-  const tierColors = {1: 'tier1', 2: 'tier2', 3: 'tier3'};
-  const tierLabels = {1: 'Tier 1', 2: 'Tier 2', 3: 'Tier 3'};
-  const tier = transfer.tier || 3;
-  const tierClass = tierColors[tier] || 'tier3';
-  const tierLabel = tierLabels[tier] || 'Unconfirmed';
-
-  const isBullshit = transfer.light === 'r' && transfer.truth < 40 && transfer.prob < 35;
-
-  let html = `
+  return `<div class="transfer-card">
+    ${bullTag}
     <div class="card-header">
       <div class="card-player">
-        <span class="player-name">${transfer.name}</span>
+        <span class="player-name">${t.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="source-info">${transfer.src || 'Unknown'}</div>
+      <div class="source-info">${t.src || 'Unknown'}</div>
     </div>
     <div class="card-body">
-      <div class="note${isBullshit ? ' bullshit' : ''}">
-        ${transfer.note || 'No details available'}
-      </div>
+      <div class="note${noteClass}">${t.note || 'No details'}</div>
     </div>
     <div class="card-footer">
       <div class="metric">
         <div class="metric-label">Truth</div>
-        <div class="metric-bar">
-          <div class="metric-fill" style="width:${transfer.truth || 50}%;"></div>
-        </div>
-        <div class="metric-value">${transfer.truth || 50}%</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%"></div></div>
+        <div class="metric-value">${truth}%</div>
       </div>
       <div class="metric">
         <div class="metric-label">Probability</div>
-        <div class="metric-bar">
-          <div class="metric-fill" style="width:${transfer.prob || 50}%;"></div>
-        </div>
-        <div class="metric-value">${transfer.prob || 50}%</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
+        <div class="metric-value">${prob}%</div>
       </div>
     </div>
-  `;
-
-  if(isBullshit) {
-    html = `<div class="bullshit-tag">BULLSHIT</div>${html}`;
-  }
-
-  card.innerHTML = html;
-  return card;
+  </div>`;
 }
 </script>
 

@@ -655,63 +655,45 @@
   if(typeof GLOBAL_TRANSFERS !== 'undefined' && GLOBAL_TRANSFERS.length > 0) {
     const feed = document.getElementById('feed');
     if(feed) {
-      GLOBAL_TRANSFERS.forEach(t => {
-        const card = createTransferCard(t);
-        feed.appendChild(card);
-      });
+      feed.innerHTML = GLOBAL_TRANSFERS.map(t => renderCard(t)).join('');
     }
   }
 })();
 
-function createTransferCard(transfer) {
-  const card = document.createElement('div');
-  card.className = 'transfer-card';
+function renderCard(t) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const truth = t.truth || 50;
+  const prob = t.prob || 50;
+  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
+  const noteClass = isBullshit ? ' bullshit' : '';
 
-  const tierColors = {1: 't1', 2: 't2', 3: 't3'};
-  const tierLabels = {1: 'Tier 1', 2: 'Tier 2', 3: 'Tier 3'};
-  const tier = transfer.tier || 3;
-  const tierClass = tierColors[tier] || 't3';
-  const tierLabel = tierLabels[tier] || 'Unconfirmed';
-
-  const isBullshit = transfer.light === 'r' && transfer.truth < 40 && transfer.prob < 35;
-
-  let html = `
+  return `<div class="transfer-card">
+    ${bullTag}
     <div class="card-header">
       <div class="card-player">
-        <span class="player-name">${transfer.name}</span>
-        <span class="tier-badge ${tierClass}">${tierLabel}</span>
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="source-info">${transfer.src || 'Unknown'}</div>
+      <div class="source-info">${t.src || 'Unknown'}</div>
     </div>
     <div class="card-body">
-      <div class="note${isBullshit ? ' bullshit' : ''}">
-        ${transfer.note || 'No details available'}
-      </div>
+      <div class="note${noteClass}">${t.note || 'No details'}</div>
     </div>
     <div class="card-footer">
       <div class="metric">
         <div class="metric-label">Truth</div>
-        <div class="metric-bar">
-          <div class="metric-fill" style="width:${transfer.truth || 50}%;"></div>
-        </div>
-        <div class="metric-value">${transfer.truth || 50}%</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%"></div></div>
+        <div class="metric-value">${truth}%</div>
       </div>
       <div class="metric">
         <div class="metric-label">Probability</div>
-        <div class="metric-bar">
-          <div class="metric-fill" style="width:${transfer.prob || 50}%;"></div>
-        </div>
-        <div class="metric-value">${transfer.prob || 50}%</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
+        <div class="metric-value">${prob}%</div>
       </div>
     </div>
-  `;
-
-  if(isBullshit) {
-    html = `<div class="bullshit-tag">BULLSHIT</div>${html}`;
-  }
-
-  card.innerHTML = html;
-  return card;
+  </div>`;
 }
 </script>
 
