@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "cou
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:23:26.741015Z",
+  updated: "2026-08-03T14:24:00.613056Z",
   label: "League aggregation"
 };

@@ -17,6 +17,6 @@ const LEAGUES_LIST = [];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:23:26.739118Z",
+  updated: "2026-08-03T14:24:00.611745Z",
   label: "Nation aggregation"
 };
