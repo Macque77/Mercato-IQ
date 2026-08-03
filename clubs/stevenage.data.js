@@ -45,10 +45,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Stevenage Official", u:"#"}
+  "gnews-harveywhite": {l:"Related news search: Harvey White", u:"https://news.google.com/search?q=Stevenage%20Harvey%20White%20transfer&hl=en-GB&gl=GB"},
+  "gnews-danphillips": {l:"Related news search: Dan Phillips", u:"https://news.google.com/search?q=Stevenage%20Dan%20Phillips%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Harvey White": ["gnews-harveywhite"],
+  "Dan Phillips": ["gnews-danphillips"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

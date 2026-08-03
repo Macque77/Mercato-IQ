@@ -20,7 +20,7 @@ const TOP_STORIES = [  {
     name: "Xavi Simons", prob: 65,
     club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
     from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "Loan + option", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -52,6 +52,6 @@ const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 1, "badge": fa
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:40:10.506087Z",
+  updated: "2026-08-03T19:52:45.470752Z",
   label: "League aggregation"
 };

@@ -87,11 +87,30 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"Real-Madrid Official", u:"#"}
+  "gnews-ferrantorres": {l:"Related news search: Ferran Torres", u:"https://news.google.com/search?q=Real%20Madrid%20Ferran%20Torres%20transfer&hl=en-GB&gl=GB"},
+  "gnews-vinciusjnior": {l:"Related news search: Vinícius Júnior", u:"https://news.google.com/search?q=Real%20Madrid%20Vin%C3%ADcius%20J%C3%BAnior%20transfer&hl=en-GB&gl=GB"},
+  "gnews-nachofernndez": {l:"Related news search: Nacho Fernández", u:"https://news.google.com/search?q=Real%20Madrid%20Nacho%20Fern%C3%A1ndez%20transfer&hl=en-GB&gl=GB"},
+  "bild": {l:"Bild", u:"https://www.bild.de/sport/fussball/"},
+  "goal": {l:"Goal.com", u:"https://www.goal.com/en"},
+  "caughtoffside": {l:"CaughtOffside", u:"https://www.caughtoffside.com/"},
+  "leparisien": {l:"Le Parisien", u:"https://www.leparisien.fr/sports/football/"},
+  "gazzetta": {l:"Gazzetta dello Sport", u:"https://www.gazzetta.it/"},
+  "gnews-florianwirtz": {l:"Related news search: Florian Wirtz", u:"https://news.google.com/search?q=Real%20Madrid%20Florian%20Wirtz%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Ferran Torres": ["gnews-ferrantorres"],
+  "Vinícius Júnior": ["gnews-vinciusjnior"],
+  "Nacho Fernández": ["gnews-nachofernndez"],
+  "Florian Wirtz": ["bild"],
+  "Rodrygo Goes": ["goal", "caughtoffside"],
+  "Éder Militão": ["leparisien"],
+  "Brahim Díaz": ["gazzetta"]
+};
+const WL_LINKMAP = {
+  "Vinícius Júnior": ["gnews-vinciusjnior"],
+  "Florian Wirtz": ["gnews-florianwirtz"]
+};
 
 const PROSE = {
   heroH2: `Real Madrid · 2026/27 Season`,

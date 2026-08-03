@@ -57,10 +57,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"RSC Anderlecht Official", u:"#"}
+  "vrt": {l:"VRT Sporza", u:"https://sporza.be/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Denzel Dumfries": ["vrt"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

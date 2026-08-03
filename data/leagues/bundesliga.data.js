@@ -41,7 +41,7 @@ const TOP_STORIES = [  {
     name: "Moussa Diaby", prob: 35,
     club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
     from: "Bayer Leverkusen", to: "Borussia Dortmund",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "€40m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -59,6 +59,6 @@ const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "cou
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:40:10.503891Z",
+  updated: "2026-08-03T19:52:45.467924Z",
   label: "League aggregation"
 };

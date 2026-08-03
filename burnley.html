@@ -596,10 +596,25 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Burnley FC Official", u:"#"}
+  "gnews-lluccastell": {l:"Related news search: Lluc Castell", u:"https://news.google.com/search?q=Burnley%20Lluc%20Castell%20transfer&hl=en-GB&gl=GB"},
+  "gnews-martindubravka": {l:"Related news search: Martin Dubravka", u:"https://news.google.com/search?q=Burnley%20Martin%20Dubravka%20transfer&hl=en-GB&gl=GB"},
+  "gnews-jaidonanthony": {l:"Related news search: Jaidon Anthony", u:"https://news.google.com/search?q=Burnley%20Jaidon%20Anthony%20transfer&hl=en-GB&gl=GB"},
+  "gnews-loumtchaouna": {l:"Related news search: Loum Tchaouna", u:"https://news.google.com/search?q=Burnley%20Loum%20Tchaouna%20transfer&hl=en-GB&gl=GB"},
+  "gnews-maximeesteve": {l:"Related news search: Maxime Esteve", u:"https://news.google.com/search?q=Burnley%20Maxime%20Esteve%20transfer&hl=en-GB&gl=GB"},
+  "romano": {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"},
+  "eastanglian": {l:"East Anglian Daily Times", u:"https://www.eadt.co.uk/sport"},
+  "schira": {l:"Nicolò Schira", u:"https://x.com/NicoSchira"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Lluc Castell": ["gnews-lluccastell"],
+  "Martin Dubravka": ["gnews-martindubravka"],
+  "Jaidon Anthony": ["gnews-jaidonanthony"],
+  "Loum Tchaouna": ["gnews-loumtchaouna"],
+  "Maxime Esteve": ["gnews-maximeesteve"],
+  "Florentino Luis": ["romano", "eastanglian"],
+  "Andreas Hountondji": ["schira"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

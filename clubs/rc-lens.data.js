@@ -58,10 +58,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"RC Lens Official", u:"#"}
+  "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"},
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Rafael Leão": ["lequipe"],
+  "Jonathan David": ["sky"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

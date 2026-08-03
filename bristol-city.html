@@ -585,10 +585,18 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Bristol-City Official", u:"#"}
+  "gnews-samtickle": {l:"Related news search: Sam Tickle", u:"https://news.google.com/search?q=Bristol%20City%20Sam%20Tickle%20transfer&hl=en-GB&gl=GB"},
+  "gnews-bradcollins": {l:"Related news search: Brad Collins", u:"https://news.google.com/search?q=Bristol%20City%20Brad%20Collins%20transfer&hl=en-GB&gl=GB"},
+  "gnews-sinclairarmstrong": {l:"Related news search: Sinclair Armstrong", u:"https://news.google.com/search?q=Bristol%20City%20Sinclair%20Armstrong%20transfer&hl=en-GB&gl=GB"},
+  "yahoosport": {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Sam Tickle": ["gnews-samtickle"],
+  "Brad Collins": ["gnews-bradcollins"],
+  "Sinclair Armstrong": ["gnews-sinclairarmstrong"],
+  "Rio Cardines": ["yahoosport"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

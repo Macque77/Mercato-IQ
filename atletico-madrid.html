@@ -578,7 +578,7 @@ const CONFIRMED_OUT = [];
 
 const INCOMING = [
   {name:"Gabriel Jesus", sub:"26 · ST · Brazil", club:"Manchester City", pos:"ST", report:"1 Aug 2026", src:"Sky Sports / Samuel Luckhurst", tier:2, fee:"€45m", truth:65, prob:42, light:"y", trend:"up", note:"Reports from Manchester-area sources suggest City are open to selling Jesus. Atlético are interested, but a deal is far from certain."},
-  {name:"Villarreal winger", sub:"TBD", club:"Villarreal", pos:"RW", report:"30 Jul 2026", src:"Matteo Moretto / Relevo", tier:2, fee:"€20m+", truth:55, prob:35, light:"o", trend:"flat", note:"Moretto reports Atlético monitoring Villarreal's attacking options as a squad-depth play."}
+  {name:"Villarreal winger", sub:"TBD", club:"Villarreal", pos:"RW", report:"30 Jul 2026", src:"Matteo Moretto / Relevo", tier:2, fee:"€20m+", truth:55, prob:35, light:"y", trend:"flat", note:"Moretto reports Atlético monitoring Villarreal's attacking options as a squad-depth play."}
 ];
 
 const OUTGOING = [];
@@ -604,10 +604,18 @@ const POSITIONS = [
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Atlético Madrid Official", u:"#"}
+  "gnews-johnnycardoso": {l:"Related news search: Johnny Cardoso", u:"https://news.google.com/search?q=Atl%C3%A9tico%20Madrid%20Johnny%20Cardoso%20transfer&hl=en-GB&gl=GB"},
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
+  "luckhurst": {l:"Samuel Luckhurst (MEN)", u:"https://www.manchestereveningnews.co.uk/all-about/manchester-united-fc"},
+  "moretto": {l:"Matteo Moretto", u:"https://x.com/MatteMoretto"},
+  "relevo": {l:"Relevo", u:"https://www.relevo.com/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Johnny Cardoso": ["gnews-johnnycardoso"],
+  "Gabriel Jesus": ["sky", "luckhurst"],
+  "Villarreal winger": ["moretto", "relevo"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

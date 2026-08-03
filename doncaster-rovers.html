@@ -583,10 +583,17 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Doncaster Rovers Official", u:"#"}
+  "gnews-alfiemay": {l:"Related news search: Alfie May", u:"https://news.google.com/search?q=Doncaster%20Rovers%20Alfie%20May%20transfer&hl=en-GB&gl=GB"},
+  "src-benwignall": {l:"Ben Wignall", u:"https://news.google.com/search?q=Ben%20Wignall%20Doncaster%20Rovers%20transfer&hl=en-GB&gl=GB"},
+  "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
+  "gnews-owenbailey": {l:"Related news search: Owen Bailey", u:"https://news.google.com/search?q=Doncaster%20Rovers%20Owen%20Bailey%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Alfie May": ["gnews-alfiemay"],
+  "Luke Molyneux": ["src-benwignall", "flw"],
+  "Owen Bailey": ["gnews-owenbailey"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

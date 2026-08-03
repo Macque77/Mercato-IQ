@@ -58,10 +58,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Eintracht Frankfurt Official", u:"#"}
+  "bild": {l:"Bild", u:"https://www.bild.de/sport/fussball/"},
+  "skydeutschland": {l:"Sky Sport Deutschland", u:"https://sportnews.bz/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Trent Alexander-Arnold": ["bild"],
+  "Sam Lammers": ["skydeutschland"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

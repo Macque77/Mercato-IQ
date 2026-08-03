@@ -584,10 +584,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Luton Town Official", u:"#"}
+  "gnews-christmakosso": {l:"Related news search: Christ Makosso", u:"https://news.google.com/search?q=Luton%20Town%20Christ%20Makosso%20transfer&hl=en-GB&gl=GB"},
+  "gnews-leebuchanan": {l:"Related news search: Lee Buchanan", u:"https://news.google.com/search?q=Luton%20Town%20Lee%20Buchanan%20transfer&hl=en-GB&gl=GB"},
+  "src-managerjackwilshere": {l:"Manager Jack Wilshere", u:"https://news.google.com/search?q=Manager%20Jack%20Wilshere%20Luton%20Town%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Christ Makosso": ["gnews-christmakosso"],
+  "Lee Buchanan": ["gnews-leebuchanan"],
+  "Unnamed forwards (x2)": ["src-managerjackwilshere"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

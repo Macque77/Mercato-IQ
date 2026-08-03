@@ -47,10 +47,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Leyton Orient Official", u:"#"}
+  "gnews-alfiegilchrist": {l:"Related news search: Alfie Gilchrist", u:"https://news.google.com/search?q=Leyton%20Orient%20Alfie%20Gilchrist%20transfer&hl=en-GB&gl=GB"},
+  "gnews-owendale": {l:"Related news search: Owen Dale", u:"https://news.google.com/search?q=Leyton%20Orient%20Owen%20Dale%20transfer&hl=en-GB&gl=GB"},
+  "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Alfie Gilchrist": ["gnews-alfiegilchrist"],
+  "Owen Dale": ["gnews-owendale"],
+  "Dom Ballard": ["flw"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

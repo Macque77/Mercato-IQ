@@ -583,10 +583,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Wigan-Athletic Official", u:"#"}
+  "nixon": {l:"Alan Nixon", u:"https://x.com/reluctantnicko"},
+  "gnews-joewalsh": {l:"Related news search: Joe Walsh", u:"https://news.google.com/search?q=Wigan%20Athletic%20Joe%20Walsh%20transfer&hl=en-GB&gl=GB"},
+  "gnews-samtickle": {l:"Related news search: Sam Tickle", u:"https://news.google.com/search?q=Wigan%20Athletic%20Sam%20Tickle%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Reggie Walsh": ["nixon"],
+  "Joe Walsh": ["gnews-joewalsh"],
+  "Sam Tickle": ["gnews-samtickle"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

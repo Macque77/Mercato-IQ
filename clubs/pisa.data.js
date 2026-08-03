@@ -46,10 +46,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Pisa Official", u:"#"}
+  "gnews-pietroberuatto": {l:"Related news search: Pietro Beruatto", u:"https://news.google.com/search?q=Pisa%20Pietro%20Beruatto%20transfer&hl=en-GB&gl=GB"},
+  "tuttomercato": {l:"Tuttomercatoweb", u:"https://www.tuttomercatoweb.com/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Pietro Beruatto": ["gnews-pietroberuatto"],
+  "Loyola": ["tuttomercato"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

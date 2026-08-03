@@ -52,10 +52,22 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Notts County Official", u:"#"}
+  "gnews-emileacquah": {l:"Related news search: Emile Acquah", u:"https://news.google.com/search?q=Notts%20County%20Emile%20Acquah%20transfer&hl=en-GB&gl=GB"},
+  "gnews-matthewdennis": {l:"Related news search: Matthew Dennis", u:"https://news.google.com/search?q=Notts%20County%20Matthew%20Dennis%20transfer&hl=en-GB&gl=GB"},
+  "gnews-tommioreilly": {l:"Related news search: Tommi O'Reilly", u:"https://news.google.com/search?q=Notts%20County%20Tommi%20O%27Reilly%20transfer&hl=en-GB&gl=GB"},
+  "gnews-michaelmellon": {l:"Related news search: Michael Mellon", u:"https://news.google.com/search?q=Notts%20County%20Michael%20Mellon%20transfer&hl=en-GB&gl=GB"},
+  "gnews-devonmatthews": {l:"Related news search: Devon Matthews", u:"https://news.google.com/search?q=Notts%20County%20Devon%20Matthews%20transfer&hl=en-GB&gl=GB"},
+  "gnews-alassanajatta": {l:"Related news search: Alassana Jatta", u:"https://news.google.com/search?q=Notts%20County%20Alassana%20Jatta%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Emile Acquah": ["gnews-emileacquah"],
+  "Matthew Dennis": ["gnews-matthewdennis"],
+  "Tommi O'Reilly": ["gnews-tommioreilly"],
+  "Michael Mellon": ["gnews-michaelmellon"],
+  "Devon Matthews": ["gnews-devonmatthews"],
+  "Alassana Jatta": ["gnews-alassanajatta"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

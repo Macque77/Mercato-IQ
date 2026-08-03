@@ -71,11 +71,19 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"Paris Saint-Germain Official", u:"#"}
+  "gnews-jooneves": {l:"Related news search: João Neves", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Jo%C3%A3o%20Neves%20transfer&hl=en-GB&gl=GB"},
+  "gnews-randalkolomuani": {l:"Related news search: Randal Kolo Muani", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Randal%20Kolo%20Muani%20transfer&hl=en-GB&gl=GB"},
+  "gnews-gonaloramos": {l:"Related news search: Gonçalo Ramos", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Gon%C3%A7alo%20Ramos%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "João Neves": ["gnews-jooneves"],
+  "Randal Kolo Muani": ["gnews-randalkolomuani"],
+  "Gonçalo Ramos": ["gnews-gonaloramos"]
+};
+const WL_LINKMAP = {
+  "João Neves": ["gnews-jooneves"]
+};
 
 const PROSE = {
   heroH2: `Back-to-back European champions reshape the forward line around João Neves`,

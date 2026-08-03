@@ -51,10 +51,24 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Dundee United Official", u:"#"}
+  "gnews-jesserandall": {l:"Related news search: Jesse Randall", u:"https://news.google.com/search?q=Dundee%20United%20Jesse%20Randall%20transfer&hl=en-GB&gl=GB"},
+  "gnews-joshuarawlins": {l:"Related news search: Joshua Rawlins", u:"https://news.google.com/search?q=Dundee%20United%20Joshua%20Rawlins%20transfer&hl=en-GB&gl=GB"},
+  "gnews-lachlanrose": {l:"Related news search: Lachlan Rose", u:"https://news.google.com/search?q=Dundee%20United%20Lachlan%20Rose%20transfer&hl=en-GB&gl=GB"},
+  "gnews-dylantait": {l:"Related news search: Dylan Tait", u:"https://news.google.com/search?q=Dundee%20United%20Dylan%20Tait%20transfer&hl=en-GB&gl=GB"},
+  "gnews-jackwalton": {l:"Related news search: Jack Walton", u:"https://news.google.com/search?q=Dundee%20United%20Jack%20Walton%20transfer&hl=en-GB&gl=GB"},
+  "gnews-michaelforbes": {l:"Related news search: Michael Forbes", u:"https://news.google.com/search?q=Dundee%20United%20Michael%20Forbes%20transfer&hl=en-GB&gl=GB"},
+  "scotsman": {l:"The Scotsman", u:"https://www.scotsman.com/sport/football"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Jesse Randall": ["gnews-jesserandall"],
+  "Joshua Rawlins": ["gnews-joshuarawlins"],
+  "Lachlan Rose": ["gnews-lachlanrose"],
+  "Dylan Tait": ["gnews-dylantait"],
+  "Jack Walton": ["gnews-jackwalton"],
+  "Michael Forbes": ["gnews-michaelforbes"],
+  "Bowie": ["scotsman"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

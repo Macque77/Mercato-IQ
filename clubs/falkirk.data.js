@@ -46,10 +46,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Falkirk Official", u:"#"}
+  "gnews-dylantait": {l:"Related news search: Dylan Tait", u:"https://news.google.com/search?q=Falkirk%20Dylan%20Tait%20transfer&hl=en-GB&gl=GB"},
+  "src-msn": {l:"MSN", u:"https://news.google.com/search?q=MSN%20Falkirk%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Dylan Tait": ["gnews-dylantait"],
+  "Calvin Miller": ["src-msn"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

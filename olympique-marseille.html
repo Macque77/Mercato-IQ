@@ -596,10 +596,17 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Olympique de Marseille Official", u:"#"}
+  "gnews-matteoguendouzi": {l:"Related news search: Matteo Guendouzi", u:"https://news.google.com/search?q=Olympique%20de%20Marseille%20Matteo%20Guendouzi%20transfer&hl=en-GB&gl=GB"},
+  "hawkins": {l:"Fabrice Hawkins (L'Équipe)", u:"https://x.com/HawkinsFabrice"},
+  "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"},
+  "skynews": {l:"Sky Sports News", u:"https://www.skysports.com/football/news"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Matteo Guendouzi": ["gnews-matteoguendouzi"],
+  "Ousmane Dembélé": ["hawkins", "lequipe"],
+  "Luis Díaz": ["skynews"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

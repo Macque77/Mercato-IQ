@@ -57,10 +57,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Standard Liège Official", u:"#"}
+  "rtbf": {l:"RTBF Sport", u:"https://www.rtbf.be/sport/football"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Andi Zeqiri": ["rtbf"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

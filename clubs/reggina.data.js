@@ -57,10 +57,36 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Reggina Official", u:"#"}
+  "gnews-madyabonckelet": {l:"Related news search: Mady Abonckelet", u:"https://news.google.com/search?q=Reggina%20Mady%20Abonckelet%20transfer&hl=en-GB&gl=GB"},
+  "gnews-giulianoalma": {l:"Related news search: Giuliano Alma", u:"https://news.google.com/search?q=Reggina%20Giuliano%20Alma%20transfer&hl=en-GB&gl=GB"},
+  "gnews-riccardorotulo": {l:"Related news search: Riccardo Rotulo", u:"https://news.google.com/search?q=Reggina%20Riccardo%20Rotulo%20transfer&hl=en-GB&gl=GB"},
+  "gnews-micheleguida": {l:"Related news search: Michele Guida", u:"https://news.google.com/search?q=Reggina%20Michele%20Guida%20transfer&hl=en-GB&gl=GB"},
+  "gnews-edoardodemori": {l:"Related news search: Edoardo De Mori", u:"https://news.google.com/search?q=Reggina%20Edoardo%20De%20Mori%20transfer&hl=en-GB&gl=GB"},
+  "gnews-ernestorunza": {l:"Related news search: Ernesto Runza", u:"https://news.google.com/search?q=Reggina%20Ernesto%20Runza%20transfer&hl=en-GB&gl=GB"},
+  "gnews-simonefranchini": {l:"Related news search: Simone Franchini", u:"https://news.google.com/search?q=Reggina%20Simone%20Franchini%20transfer&hl=en-GB&gl=GB"},
+  "gnews-palmieri": {l:"Related news search: Palmieri", u:"https://news.google.com/search?q=Reggina%20Palmieri%20transfer&hl=en-GB&gl=GB"},
+  "gnews-toscano": {l:"Related news search: Toscano", u:"https://news.google.com/search?q=Reggina%20Toscano%20transfer&hl=en-GB&gl=GB"},
+  "gnews-specker": {l:"Related news search: Specker", u:"https://news.google.com/search?q=Reggina%20Specker%20transfer&hl=en-GB&gl=GB"},
+  "gnews-fazio": {l:"Related news search: Fazio", u:"https://news.google.com/search?q=Reggina%20Fazio%20transfer&hl=en-GB&gl=GB"},
+  "gnews-piras": {l:"Related news search: Piras", u:"https://news.google.com/search?q=Reggina%20Piras%20transfer&hl=en-GB&gl=GB"},
+  "gnews-palumbo": {l:"Related news search: Palumbo", u:"https://news.google.com/search?q=Reggina%20Palumbo%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Mady Abonckelet": ["gnews-madyabonckelet"],
+  "Giuliano Alma": ["gnews-giulianoalma"],
+  "Riccardo Rotulo": ["gnews-riccardorotulo"],
+  "Michele Guida": ["gnews-micheleguida"],
+  "Edoardo De Mori": ["gnews-edoardodemori"],
+  "Ernesto Runza": ["gnews-ernestorunza"],
+  "Simone Franchini": ["gnews-simonefranchini"],
+  "Palmieri": ["gnews-palmieri"],
+  "Toscano": ["gnews-toscano"],
+  "Specker": ["gnews-specker"],
+  "Fazio": ["gnews-fazio"],
+  "Piras": ["gnews-piras"],
+  "Palumbo": ["gnews-palumbo"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

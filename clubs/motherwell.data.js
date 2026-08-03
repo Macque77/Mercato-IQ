@@ -44,10 +44,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Motherwell Official", u:"#"}
+  "gnews-elijahjust": {l:"Related news search: Elijah Just", u:"https://news.google.com/search?q=Motherwell%20Elijah%20Just%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Elijah Just": ["gnews-elijahjust"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

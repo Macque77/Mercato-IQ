@@ -576,7 +576,7 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Sergiño Dest", sub:"23 · LW · USA", club:"PSV Eindhoven (loan return)", pos:"LW", report:"01 Aug 2026", src:"Gerard Romero", tier:1, fee:"Loan to buy", truth:88, prob:85, light:"g", trend:"up", note:"Barcelona preparing final push to secure American winger on permanent deal after successful loan spell."},
-  {name:"Vinícius Gabias", sub:"20 · CM · Brazil", club:"Flamengo", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€18m", truth:75, prob:68, light:"y", trend:"up", note:"Brazilian prospect attracting serious interest; negotiations ongoing with Rio club."},
+  {name:"Vinícius Gabias", sub:"20 · CM · Brazil", club:"Flamengo", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€18m", truth:75, prob:68, light:"g", trend:"up", note:"Brazilian prospect attracting serious interest; negotiations ongoing with Rio club."},
   {name:"Ederson", sub:"45 · RB · Spain", club:"Sevilla", pos:"RB", report:"26 Jul 2026", src:"Twitter Gossip Account #47", tier:4, fee:"€2.5m", truth:12, prob:8, light:"r", trend:"down", bullshit:true, note:"An anonymous, uncredentialed account claiming Barcelona want a 45-year-old centre-back who is, in fact, a retired goalkeeper. Fake source, impossible claim."}
 ];
 
@@ -611,11 +611,26 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"Barcelona Official", u:"#"}
+  "gnews-robertlewandowski": {l:"Related news search: Robert Lewandowski", u:"https://news.google.com/search?q=FC%20Barcelona%20Robert%20Lewandowski%20transfer&hl=en-GB&gl=GB"},
+  "gnews-ferrantorres": {l:"Related news search: Ferran Torres", u:"https://news.google.com/search?q=FC%20Barcelona%20Ferran%20Torres%20transfer&hl=en-GB&gl=GB"},
+  "gromero": {l:"Gerard Romero", u:"https://x.com/gerardromero"},
+  "romano": {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"},
+  "gnews-ederson": {l:"Related news search: Ederson", u:"https://news.google.com/search?q=FC%20Barcelona%20Ederson%20transfer&hl=en-GB&gl=GB"},
+  "gnews-sergiodest": {l:"Related news search: Sergiño Dest", u:"https://news.google.com/search?q=FC%20Barcelona%20Sergi%C3%B1o%20Dest%20transfer&hl=en-GB&gl=GB"},
+  "gnews-vinciusgabias": {l:"Related news search: Vinícius Gabias", u:"https://news.google.com/search?q=FC%20Barcelona%20Vin%C3%ADcius%20Gabias%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Robert Lewandowski": ["gnews-robertlewandowski"],
+  "Ferran Torres": ["gnews-ferrantorres"],
+  "Sergiño Dest": ["gromero"],
+  "Vinícius Gabias": ["romano"],
+  "Ederson": ["gnews-ederson"]
+};
+const WL_LINKMAP = {
+  "Sergiño Dest": ["gnews-sergiodest"],
+  "Vinícius Gabias": ["gnews-vinciusgabias"]
+};
 
 const PROSE = {
   heroH2: `FC Barcelona · 2026/27 Season`,

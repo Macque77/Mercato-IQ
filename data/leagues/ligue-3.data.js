@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "amiens-sc", "name": "Amiens SC", "count": 0, "badg
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:40:10.508816Z",
+  updated: "2026-08-03T19:52:45.474832Z",
   label: "League aggregation"
 };

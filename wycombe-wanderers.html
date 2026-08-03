@@ -583,10 +583,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Wycombe Wanderers Official", u:"#"}
+  "gnews-joelrandall": {l:"Related news search: Joel Randall", u:"https://news.google.com/search?q=Wycombe%20Wanderers%20Joel%20Randall%20transfer&hl=en-GB&gl=GB"},
+  "gnews-conorhazard": {l:"Related news search: Conor Hazard", u:"https://news.google.com/search?q=Wycombe%20Wanderers%20Conor%20Hazard%20transfer&hl=en-GB&gl=GB"},
+  "gnews-fredonyedinma": {l:"Related news search: Fred Onyedinma", u:"https://news.google.com/search?q=Wycombe%20Wanderers%20Fred%20Onyedinma%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Joel Randall": ["gnews-joelrandall"],
+  "Conor Hazard": ["gnews-conorhazard"],
+  "Fred Onyedinma": ["gnews-fredonyedinma"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

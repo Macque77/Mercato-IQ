@@ -44,10 +44,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Bromley Official", u:"#"}
+  "gnews-tiernanbrooks": {l:"Related news search: Tiernan Brooks", u:"https://news.google.com/search?q=Bromley%20Tiernan%20Brooks%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Tiernan Brooks": ["gnews-tiernanbrooks"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

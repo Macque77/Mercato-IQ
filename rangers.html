@@ -590,10 +590,26 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Rangers Official", u:"#"}
+  "gnews-lawrenceshankland": {l:"Related news search: Lawrence Shankland", u:"https://news.google.com/search?q=Rangers%20Lawrence%20Shankland%20transfer&hl=en-GB&gl=GB"},
+  "gnews-danilo": {l:"Related news search: Danilo", u:"https://news.google.com/search?q=Rangers%20Danilo%20transfer&hl=en-GB&gl=GB"},
+  "gnews-godfrey": {l:"Related news search: Godfrey", u:"https://news.google.com/search?q=Rangers%20Godfrey%20transfer&hl=en-GB&gl=GB"},
+  "gnews-jamestavernier": {l:"Related news search: James Tavernier", u:"https://news.google.com/search?q=Rangers%20James%20Tavernier%20transfer&hl=en-GB&gl=GB"},
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
+  "scotsman": {l:"The Scotsman", u:"https://www.scotsman.com/sport/football"},
+  "dailyrecord": {l:"Daily Record", u:"https://www.dailyrecord.co.uk/sport/football/"},
+  "glasgowworld": {l:"GlasgowWorld", u:"https://www.glasgowworld.com/sport"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Lawrence Shankland": ["gnews-lawrenceshankland"],
+  "Danilo": ["gnews-danilo"],
+  "Godfrey": ["gnews-godfrey"],
+  "James Tavernier": ["gnews-jamestavernier"],
+  "Jahnoah Markelo": ["sky"],
+  "Mikey Moore": ["scotsman"],
+  "Nico Raskin": ["dailyrecord"],
+  "Unnamed Rangers attacker": ["glasgowworld"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

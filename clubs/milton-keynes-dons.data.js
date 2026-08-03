@@ -46,10 +46,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Milton Keynes Dons Official", u:"#"}
+  "gnews-samnombe": {l:"Related news search: Sam Nombe", u:"https://news.google.com/search?q=Milton%20Keynes%20Dons%20Sam%20Nombe%20transfer&hl=en-GB&gl=GB"},
+  "gnews-mattyyoung": {l:"Related news search: Matty Young", u:"https://news.google.com/search?q=Milton%20Keynes%20Dons%20Matty%20Young%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Sam Nombe": ["gnews-samnombe"],
+  "Matty Young": ["gnews-mattyyoung"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

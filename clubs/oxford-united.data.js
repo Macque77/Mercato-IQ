@@ -46,10 +46,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Oxford United Official", u:"#"}
+  "gnews-sydiepeck": {l:"Related news search: Sydie Peck", u:"https://news.google.com/search?q=Oxford%20United%20Sydie%20Peck%20transfer&hl=en-GB&gl=GB"},
+  "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
+  "gnews-cameronbrannagan": {l:"Related news search: Cameron Brannagan", u:"https://news.google.com/search?q=Oxford%20United%20Cameron%20Brannagan%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Sydie Peck": ["gnews-sydiepeck"],
+  "Brodie Spencer": ["flw"],
+  "Cameron Brannagan": ["gnews-cameronbrannagan"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

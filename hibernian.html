@@ -583,10 +583,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Hibernian Official", u:"#"}
+  "gnews-kerr": {l:"Related news search: Kerr", u:"https://news.google.com/search?q=Hibernian%20Kerr%20transfer&hl=en-GB&gl=GB"},
+  "gnews-nathanlowe": {l:"Related news search: Nathan Lowe", u:"https://news.google.com/search?q=Hibernian%20Nathan%20Lowe%20transfer&hl=en-GB&gl=GB"},
+  "gnews-chriscadden": {l:"Related news search: Chris Cadden", u:"https://news.google.com/search?q=Hibernian%20Chris%20Cadden%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Kerr": ["gnews-kerr"],
+  "Nathan Lowe": ["gnews-nathanlowe"],
+  "Chris Cadden": ["gnews-chriscadden"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

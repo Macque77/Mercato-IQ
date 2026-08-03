@@ -578,7 +578,7 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Todibo from Nice", sub:"24 · CB · France", club:"OGC Nice", pos:"CB", report:"31 Jul 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€20m", truth:58, prob:42, light:"y", trend:"up", note:"Hawkins reports Benfica interested in Nice defender. Deal talks ongoing but not finalized."},
-  {name:"Sérgio Conceição", sub:"35 · ST · Portugal", club:"Free agent", pos:"ST", report:"28 Jul 2026", src:"Portuguese media", tier:2, fee:"Free agent", truth:40, prob:22, light:"r", trend:"flat", note:"Speculation about former Porto striker; low likelihood given age and competition."}
+  {name:"Sérgio Conceição", sub:"35 · ST · Portugal", club:"Free agent", pos:"ST", report:"28 Jul 2026", src:"Portuguese media", tier:2, fee:"Free agent", truth:40, prob:22, light:"o", trend:"flat", note:"Speculation about former Porto striker; low likelihood given age and competition."}
 ];
 
 const OUTGOING = [];
@@ -604,11 +604,20 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"SL Benfica Official", u:"#"}
+  "gnews-jooneves": {l:"Related news search: João Neves", u:"https://news.google.com/search?q=SL%20Benfica%20Jo%C3%A3o%20Neves%20transfer&hl=en-GB&gl=GB"},
+  "hawkins": {l:"Fabrice Hawkins (L'Équipe)", u:"https://x.com/HawkinsFabrice"},
+  "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"},
+  "gnews-srgioconceio": {l:"Related news search: Sérgio Conceição", u:"https://news.google.com/search?q=SL%20Benfica%20S%C3%A9rgio%20Concei%C3%A7%C3%A3o%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "João Neves": ["gnews-jooneves"],
+  "Todibo from Nice": ["hawkins", "lequipe"],
+  "Sérgio Conceição": ["gnews-srgioconceio"]
+};
+const WL_LINKMAP = {
+  "João Neves": ["gnews-jooneves"]
+};
 
 const PROSE = {
   heroH2: `SL Benfica · 2026/27 Season`,

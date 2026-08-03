@@ -585,10 +585,19 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Barnsley Official", u:"#"}
+  "gnews-callumbrittain": {l:"Related news search: Callum Brittain", u:"https://news.google.com/search?q=Barnsley%20Callum%20Brittain%20transfer&hl=en-GB&gl=GB"},
+  "src-charliegregory": {l:"Charlie Gregory", u:"https://news.google.com/search?q=Charlie%20Gregory%20Barnsley%20transfer&hl=en-GB&gl=GB"},
+  "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
+  "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"},
+  "gnews-davidmcgoldrick": {l:"Related news search: David McGoldrick", u:"https://news.google.com/search?q=Barnsley%20David%20McGoldrick%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Callum Brittain": ["gnews-callumbrittain"],
+  "Unnamed 24yo midfielder": ["src-charliegregory", "flw"],
+  "Adam Phillips": ["orourke"],
+  "David McGoldrick": ["gnews-davidmcgoldrick"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

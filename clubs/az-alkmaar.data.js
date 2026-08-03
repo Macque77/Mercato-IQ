@@ -57,10 +57,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"AZ Alkmaar Official", u:"#"}
+  "espn": {l:"ESPN", u:"https://www.espn.com/soccer/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Mats Wieffer": ["espn"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

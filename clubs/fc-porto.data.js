@@ -63,11 +63,16 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"FC Porto Official", u:"#"}
+  "ojogo": {l:"O Jogo", u:"https://www.ojogo.pt/"},
+  "gnews-pepe": {l:"Related news search: Pepe", u:"https://news.google.com/search?q=FC%20Porto%20Pepe%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Pepe": ["ojogo"]
+};
+const WL_LINKMAP = {
+  "Pepe": ["gnews-pepe"]
+};
 
 const PROSE = {
   heroH2: `FC Porto · 2026/27 Season`,

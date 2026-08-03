@@ -590,10 +590,27 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Celtic Official", u:"#"}
+  "gnews-kasperhogh": {l:"Related news search: Kasper Hogh", u:"https://news.google.com/search?q=Celtic%20Kasper%20Hogh%20transfer&hl=en-GB&gl=GB"},
+  "gnews-joshclarke": {l:"Related news search: Josh Clarke", u:"https://news.google.com/search?q=Celtic%20Josh%20Clarke%20transfer&hl=en-GB&gl=GB"},
+  "gnews-benmcpherson": {l:"Related news search: Ben McPherson", u:"https://news.google.com/search?q=Celtic%20Ben%20McPherson%20transfer&hl=en-GB&gl=GB"},
+  "gnews-bensummers": {l:"Related news search: Ben Summers", u:"https://news.google.com/search?q=Celtic%20Ben%20Summers%20transfer&hl=en-GB&gl=GB"},
+  "bbc": {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football"},
+  "footballinsider": {l:"Football Insider", u:"https://www.footballinsider247.com/"},
+  "dailyrecord": {l:"Daily Record", u:"https://www.dailyrecord.co.uk/sport/football/"},
+  "yahoosport": {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/"},
+  "scottishsun": {l:"The Scottish Sun", u:"https://www.thescottishsun.co.uk/sport/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Kasper Hogh": ["gnews-kasperhogh"],
+  "Josh Clarke": ["gnews-joshclarke"],
+  "Ben McPherson": ["gnews-benmcpherson"],
+  "Ben Summers": ["gnews-bensummers"],
+  "Gvidas Gineitis": ["bbc", "footballinsider", "dailyrecord"],
+  "Claudio Braga": ["yahoosport"],
+  "Alistair Johnston": ["footballinsider"],
+  "Reo Hatate": ["scottishsun"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

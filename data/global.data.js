@@ -12,7 +12,7 @@ const HEADLINES = [
     from: "Burnley", to: "Ipswich Town",
     direction: "out",
     prob: 90, trend: 'up',
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     nation: "England", league: "Championship",
     club_link: "burnley",
     updated: "2026-08-03T14:30:00Z"
@@ -181,23 +181,10 @@ const HEADLINES = [
     from: "Olimpija Ljubljana (on loan at Bravo)", to: "Leicester City",
     direction: "in",
     prob: 85, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "England", league: "League One",
     club_link: "leicester-city",
     updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    headline: "Udoka Godwin-Malife",
-    club_display_name: "Reading",
-    summary: "",
-    value: "Undisclosed",
-    from: "Burton Albion", to: "Reading",
-    direction: "in",
-    prob: 85, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "League One",
-    club_link: "reading",
-    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Mehmet Topal",
@@ -211,6 +198,19 @@ const HEADLINES = [
     nation: "Turkey", league: "Super Lig",
     club_link: "fenerbahce",
     updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Udoka Godwin-Malife",
+    club_display_name: "Reading",
+    summary: "",
+    value: "Undisclosed",
+    from: "Burton Albion", to: "Reading",
+    direction: "in",
+    prob: 85, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "reading",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Niclas Füllkrug",
@@ -246,7 +246,7 @@ const HEADLINES = [
     from: "Brighton", to: "Leicester City",
     direction: "in",
     prob: 75, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "England", league: "League One",
     club_link: "leicester-city",
     updated: "2026-08-03T18:00:00Z"
@@ -272,7 +272,7 @@ const HEADLINES = [
     from: "Doncaster Rovers", to: "Salford City",
     direction: "out",
     prob: 70, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "England", league: "League One",
     club_link: "doncaster-rovers",
     updated: "2026-08-03T18:00:00Z"
@@ -298,7 +298,7 @@ const HEADLINES = [
     from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
     direction: "in",
     prob: 65, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "Netherlands", league: "Eredivisie",
     club_link: "psv-eindhoven",
     updated: "2026-08-03T14:30:00Z"
@@ -311,7 +311,7 @@ const HEADLINES = [
     from: "Wolverhampton Wanderers", to: "Atlético Madrid",
     direction: "out",
     prob: 60, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "England", league: "Championship",
     club_link: "wolverhampton",
     updated: "2026-07-29T00:00:00Z"
@@ -324,7 +324,7 @@ const HEADLINES = [
     from: "Torino", to: "Celtic",
     direction: "in",
     prob: 60, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 3, coverage_trend: 'up',
     nation: "Scotland", league: "Premiership",
     club_link: "celtic",
     updated: "2026-08-03T18:00:00Z"
@@ -343,6 +343,19 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
+    headline: "Daniel Jebbison",
+    club_display_name: "Preston North End",
+    summary: "",
+    value: "Loan + option",
+    from: "Preston North End", to: "Blackburn Rovers",
+    direction: "out",
+    prob: 55, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "preston-north-end",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Jahnoah Markelo",
     club_display_name: "Rangers",
     summary: "Rangers reportedly in talks for the defender.",
@@ -354,19 +367,6 @@ const HEADLINES = [
     nation: "Scotland", league: "Premiership",
     club_link: "rangers",
     updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    headline: "Daniel Jebbison",
-    club_display_name: "Blackburn Rovers",
-    summary: "",
-    value: "Loan + option",
-    from: "Preston North End", to: "Blackburn Rovers",
-    direction: "in",
-    prob: 55, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "blackburn-rovers",
-    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Eseosa Sule",
@@ -493,7 +493,7 @@ const HEADLINES = [
     from: "Manchester City", to: "Atlético Madrid",
     direction: "in",
     prob: 42, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "Spain", league: "La Liga",
     club_link: "atletico-madrid",
     updated: "2026-08-03T14:30:00Z"
@@ -545,7 +545,7 @@ const HEADLINES = [
     from: "OGC Nice", to: "SL Benfica",
     direction: "in",
     prob: 42, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "Portugal", league: "Liga Portugal",
     club_link: "sl-benfica",
     updated: "2026-08-03T14:30:00Z"
@@ -584,7 +584,7 @@ const HEADLINES = [
     from: "RB Leipzig", to: "AS Roma",
     direction: "in",
     prob: 40, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "Italy", league: "Serie A",
     club_link: "as-roma",
     updated: "2026-08-03T14:30:00Z"
@@ -727,7 +727,7 @@ const HEADLINES = [
     from: "PSG", to: "Olympique de Marseille",
     direction: "in",
     prob: 35, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     nation: "France", league: "Ligue 1",
     club_link: "olympique-marseille",
     updated: "2026-08-03T14:30:00Z"
@@ -746,19 +746,6 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
-    headline: "Moussa Diaby",
-    club_display_name: "Borussia Dortmund",
-    summary: "German media reports Dortmund as one of several clubs interested in Leverkusen w",
-    value: "€40m",
-    from: "Bayer Leverkusen", to: "Borussia Dortmund",
-    direction: "in",
-    prob: 35, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Germany", league: "Bundesliga",
-    club_link: "borussia-dortmund",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Konstantinos Karetsas",
     club_display_name: "AC Milan",
     summary: "",
@@ -769,6 +756,19 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "Italy", league: "Serie A",
     club_link: "ac-milan",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Moussa Diaby",
+    club_display_name: "Borussia Dortmund",
+    summary: "German media reports Dortmund as one of several clubs interested in Leverkusen w",
+    value: "€40m",
+    from: "Bayer Leverkusen", to: "Borussia Dortmund",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "borussia-dortmund",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:40:10.499513Z",
+  updated: "2026-08-03T19:52:45.461259Z",
   label: "Global aggregation from all clubs"
 };

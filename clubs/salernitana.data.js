@@ -49,10 +49,18 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Salernitana Official", u:"#"}
+  "gnews-mastrovito": {l:"Related news search: Mastrovito", u:"https://news.google.com/search?q=US%20Salernitana%20Mastrovito%20transfer&hl=en-GB&gl=GB"},
+  "gnews-heinz": {l:"Related news search: Heinz", u:"https://news.google.com/search?q=US%20Salernitana%20Heinz%20transfer&hl=en-GB&gl=GB"},
+  "gnews-corriere": {l:"Related news search: Corriere", u:"https://news.google.com/search?q=US%20Salernitana%20Corriere%20transfer&hl=en-GB&gl=GB"},
+  "tuttomercato": {l:"Tuttomercatoweb", u:"https://www.tuttomercatoweb.com/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Mastrovito": ["gnews-mastrovito"],
+  "Heinz": ["gnews-heinz"],
+  "Corriere": ["gnews-corriere"],
+  "Arena": ["tuttomercato"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

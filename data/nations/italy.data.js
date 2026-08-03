@@ -13,7 +13,7 @@ const TOP_STORIES = [  {
     name: "Serhou Guirassy",prob: 40,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "RB Leipzig", to: "AS Roma",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
@@ -87,13 +87,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie C"
   },
   {
-    name: "Andrea Sottil",prob: 35,
-    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
-    from: "Undisclosed", to: "US Cremonese",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "N/A", updated: "2026-07-29T00:00:00Z", league: "Serie B"
-  },
-  {
     name: "Kurminowski",prob: 35,
     club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
     from: "Free agent", to: "Ascoli Picchio",
@@ -101,16 +94,23 @@ const TOP_STORIES = [  {
     value: "Free", updated: "2026-07-29T00:00:00Z", league: "Serie B"
   },
   {
+    name: "Andrea Sottil",prob: 35,
+    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
+    from: "Undisclosed", to: "US Cremonese",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "N/A", updated: "2026-07-29T00:00:00Z", league: "Serie B"
+  },
+  {
+    name: "Arena",prob: 30,
+    club_origin: "salernitana", club_display_name: "US Salernitana", direction: "out",
+    from: "US Salernitana", to: "Trento / Treviso",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie C"
+  },
+  {
     name: "Cherubini",prob: 30,
     club_origin: "benevento", club_display_name: "Benevento", direction: "in",
     from: "Roma", to: "Benevento",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie B"
-  },
-  {
-    name: "De Luca",prob: 30,
-    club_origin: "benevento", club_display_name: "Benevento", direction: "in",
-    from: "Undisclosed", to: "Benevento",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie B"
   },
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 8}, {"slug
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:40:10.501099Z",
+  updated: "2026-08-03T19:52:45.463995Z",
   label: "Nation aggregation"
 };

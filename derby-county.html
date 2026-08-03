@@ -584,10 +584,18 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Derby-County Official", u:"#"}
+  "gnews-bobbyclark": {l:"Related news search: Bobby Clark", u:"https://news.google.com/search?q=Derby%20County%20Bobby%20Clark%20transfer&hl=en-GB&gl=GB"},
+  "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"},
+  "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
+  "sunderlandecho": {l:"Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Bobby Clark": ["gnews-bobbyclark"],
+  "Divin Mubama": ["orourke"],
+  "Stephen Mfuni": ["flw"],
+  "Tommy Watson": ["sunderlandecho"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

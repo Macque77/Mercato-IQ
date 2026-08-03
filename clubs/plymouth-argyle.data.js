@@ -51,10 +51,22 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Plymouth-Argyle Official", u:"#"}
+  "gnews-lorenttolaj": {l:"Related news search: Lorent Tolaj", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Lorent%20Tolaj%20transfer&hl=en-GB&gl=GB"},
+  "gnews-murphycooper": {l:"Related news search: Murphy Cooper", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Murphy%20Cooper%20transfer&hl=en-GB&gl=GB"},
+  "gnews-jaydenwareham": {l:"Related news search: Jayden Wareham", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Jayden%20Wareham%20transfer&hl=en-GB&gl=GB"},
+  "gnews-callumrobinson": {l:"Related news search: Callum Robinson", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Callum%20Robinson%20transfer&hl=en-GB&gl=GB"},
+  "gnews-michaelmellon": {l:"Related news search: Michael Mellon", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Michael%20Mellon%20transfer&hl=en-GB&gl=GB"},
+  "gnews-bimpepple": {l:"Related news search: Bim Pepple", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Bim%20Pepple%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Lorent Tolaj": ["gnews-lorenttolaj"],
+  "Murphy Cooper": ["gnews-murphycooper"],
+  "Jayden Wareham": ["gnews-jaydenwareham"],
+  "Callum Robinson": ["gnews-callumrobinson"],
+  "Michael Mellon": ["gnews-michaelmellon"],
+  "Bim Pepple": ["gnews-bimpepple"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

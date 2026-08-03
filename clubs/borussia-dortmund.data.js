@@ -40,7 +40,7 @@ const CONFIRMED_OUT = [];
 
 const INCOMING = [
   {name:"Mats Wieffer", sub:"24 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"2 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"€25m", truth:62, prob:45, light:"y", trend:"up", note:"Falk reports Dortmund pursuing Dutch midfielder from AZ Alkmaar. Talks progressing steadily."},
-  {name:"Moussa Diaby", sub:"25 · LW · France", club:"Bayer Leverkusen", pos:"LW", report:"1 Aug 2026", src:"Bild / Sky Deutschland", tier:2, fee:"€40m", truth:55, prob:35, light:"o", trend:"flat", note:"German media reports Dortmund as one of several clubs interested in Leverkusen winger. Deal unlikely given Leverkusen's asking price."}
+  {name:"Moussa Diaby", sub:"25 · LW · France", club:"Bayer Leverkusen", pos:"LW", report:"1 Aug 2026", src:"Bild / Sky Deutschland", tier:2, fee:"€40m", truth:55, prob:35, light:"y", trend:"flat", note:"German media reports Dortmund as one of several clubs interested in Leverkusen winger. Deal unlikely given Leverkusen's asking price."}
 ];
 
 const OUTGOING = [];
@@ -66,11 +66,19 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"Borussia Dortmund Official", u:"#"}
+  "skydeutschland": {l:"Sky Sport Deutschland", u:"https://sportnews.bz/"},
+  "falk": {l:"Christian Falk (Sky Deutschland)", u:"https://x.com/Cfbayern"},
+  "bild": {l:"Bild", u:"https://www.bild.de/sport/fussball/"},
+  "gnews-matswieffer": {l:"Related news search: Mats Wieffer", u:"https://news.google.com/search?q=Borussia%20Dortmund%20Mats%20Wieffer%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Mats Wieffer": ["skydeutschland", "falk"],
+  "Moussa Diaby": ["bild", "skydeutschland"]
+};
+const WL_LINKMAP = {
+  "Mats Wieffer": ["gnews-matswieffer"]
+};
 
 const PROSE = {
   heroH2: `Borussia Dortmund · 2026/27 Season`,

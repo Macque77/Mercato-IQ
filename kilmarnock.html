@@ -588,10 +588,26 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Kilmarnock Official", u:"#"}
+  "gnews-ieuanowen": {l:"Related news search: Ieuan Owen", u:"https://news.google.com/search?q=Kilmarnock%20Ieuan%20Owen%20transfer&hl=en-GB&gl=GB"},
+  "gnews-calumferrie": {l:"Related news search: Calum Ferrie", u:"https://news.google.com/search?q=Kilmarnock%20Calum%20Ferrie%20transfer&hl=en-GB&gl=GB"},
+  "gnews-roshaunmathurin": {l:"Related news search: Roshaun Mathurin", u:"https://news.google.com/search?q=Kilmarnock%20Roshaun%20Mathurin%20transfer&hl=en-GB&gl=GB"},
+  "gnews-markohara": {l:"Related news search: Mark O'Hara", u:"https://news.google.com/search?q=Kilmarnock%20Mark%20O%27Hara%20transfer&hl=en-GB&gl=GB"},
+  "gnews-baileyrice": {l:"Related news search: Bailey Rice", u:"https://news.google.com/search?q=Kilmarnock%20Bailey%20Rice%20transfer&hl=en-GB&gl=GB"},
+  "gnews-findlaycurtis": {l:"Related news search: Findlay Curtis", u:"https://news.google.com/search?q=Kilmarnock%20Findlay%20Curtis%20transfer&hl=en-GB&gl=GB"},
+  "gnews-johnlyyfeko": {l:"Related news search: Johnly Yfeko", u:"https://news.google.com/search?q=Kilmarnock%20Johnly%20Yfeko%20transfer&hl=en-GB&gl=GB"},
+  "yahoosport": {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Ieuan Owen": ["gnews-ieuanowen"],
+  "Calum Ferrie": ["gnews-calumferrie"],
+  "Roshaun Mathurin": ["gnews-roshaunmathurin"],
+  "Mark O'Hara": ["gnews-markohara"],
+  "Bailey Rice": ["gnews-baileyrice"],
+  "Findlay Curtis": ["gnews-findlaycurtis"],
+  "Johnly Yfeko": ["gnews-johnlyyfeko"],
+  "Unnamed Kilmarnock player": ["yahoosport"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

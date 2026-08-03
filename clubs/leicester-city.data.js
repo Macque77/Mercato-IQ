@@ -47,10 +47,18 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Leicester City Official", u:"#"}
+  "src-planetnogomet": {l:"Planet Nogomet", u:"https://news.google.com/search?q=Planet%20Nogomet%20Leicester%20City%20transfer&hl=en-GB&gl=GB"},
+  "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
+  "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"},
+  "gnews-liamcullen": {l:"Related news search: Liam Cullen", u:"https://news.google.com/search?q=Leicester%20City%20Liam%20Cullen%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Admir Bristric": ["src-planetnogomet", "flw"],
+  "Tommy Watson": ["orourke", "flw"],
+  "Liam Cullen": ["gnews-liamcullen"],
+  "Dom Ballard": ["flw"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -583,10 +583,18 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Aberdeen Official", u:"#"}
+  "gnews-connorronan": {l:"Related news search: Connor Ronan", u:"https://news.google.com/search?q=Aberdeen%20Connor%20Ronan%20transfer&hl=en-GB&gl=GB"},
+  "gnews-mariusmuller": {l:"Related news search: Marius Muller", u:"https://news.google.com/search?q=Aberdeen%20Marius%20Muller%20transfer&hl=en-GB&gl=GB"},
+  "gnews-chriscadden": {l:"Related news search: Chris Cadden", u:"https://news.google.com/search?q=Aberdeen%20Chris%20Cadden%20transfer&hl=en-GB&gl=GB"},
+  "gnews-ayoubmouloua": {l:"Related news search: Ayoub Mouloua", u:"https://news.google.com/search?q=Aberdeen%20Ayoub%20Mouloua%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Connor Ronan": ["gnews-connorronan"],
+  "Marius Muller": ["gnews-mariusmuller"],
+  "Chris Cadden": ["gnews-chriscadden"],
+  "Ayoub Mouloua": ["gnews-ayoubmouloua"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

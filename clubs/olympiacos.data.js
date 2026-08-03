@@ -57,10 +57,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Olympiacos FC Official", u:"#"}
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Chiquinho": ["sky"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

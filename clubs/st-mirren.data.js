@@ -51,10 +51,22 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"St Mirren Official", u:"#"}
+  "gnews-samuelramos": {l:"Related news search: Samuel Ramos", u:"https://news.google.com/search?q=St%20Mirren%20Samuel%20Ramos%20transfer&hl=en-GB&gl=GB"},
+  "gnews-ryancarr": {l:"Related news search: Ryan Carr", u:"https://news.google.com/search?q=St%20Mirren%20Ryan%20Carr%20transfer&hl=en-GB&gl=GB"},
+  "gnews-chrismochrie": {l:"Related news search: Chris Mochrie", u:"https://news.google.com/search?q=St%20Mirren%20Chris%20Mochrie%20transfer&hl=en-GB&gl=GB"},
+  "gnews-justinthomas": {l:"Related news search: Justin Thomas", u:"https://news.google.com/search?q=St%20Mirren%20Justin%20Thomas%20transfer&hl=en-GB&gl=GB"},
+  "gnews-tunmisesobowale": {l:"Related news search: Tunmise Sobowale", u:"https://news.google.com/search?q=St%20Mirren%20Tunmise%20Sobowale%20transfer&hl=en-GB&gl=GB"},
+  "dailyrecord": {l:"Daily Record", u:"https://www.dailyrecord.co.uk/sport/football/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Samuel Ramos": ["gnews-samuelramos"],
+  "Ryan Carr": ["gnews-ryancarr"],
+  "Chris Mochrie": ["gnews-chrismochrie"],
+  "Justin Thomas": ["gnews-justinthomas"],
+  "Tunmise Sobowale": ["gnews-tunmisesobowale"],
+  "Sule, Mallan and Reid": ["dailyrecord"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -56,10 +56,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Olympique Lyonnais Official", u:"#"}
+  "rmcsport": {l:"RMC Sport", u:"https://rmcsport.bfmtv.com/football/"},
+  "romano": {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Florian Thauvin": ["rmcsport"],
+  "Madison Ingram": ["romano"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

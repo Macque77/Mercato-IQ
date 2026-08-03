@@ -46,10 +46,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Calcio-Catania Official", u:"#"}
+  "gnews-catelloamendola": {l:"Related news search: Catello Amendola", u:"https://news.google.com/search?q=Calcio%20Catania%20Catello%20Amendola%20transfer&hl=en-GB&gl=GB"},
+  "gnews-gregorioluperini": {l:"Related news search: Gregorio Luperini", u:"https://news.google.com/search?q=Calcio%20Catania%20Gregorio%20Luperini%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Catello Amendola": ["gnews-catelloamendola"],
+  "Gregorio Luperini": ["gnews-gregorioluperini"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

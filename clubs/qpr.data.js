@@ -44,10 +44,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Qpr Official", u:"#"}
+  "gnews-glenkamara": {l:"Related news search: Glen Kamara", u:"https://news.google.com/search?q=Queens%20Park%20Rangers%20Glen%20Kamara%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Glen Kamara": ["gnews-glenkamara"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

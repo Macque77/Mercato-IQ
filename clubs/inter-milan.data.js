@@ -42,7 +42,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Ademola Lookman", sub:"28 · W · Nigeria", club:"Atalanta", pos:"W", report:"2 Aug 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:40, prob:15, light:"r", trend:"down", note:"A recurring name, but Inter are reported to have pulled out of the race for the Atalanta winger, with the club now weighing alternatives instead."}
+  {name:"Ademola Lookman", sub:"28 · W · Nigeria", club:"Atalanta", pos:"W", report:"2 Aug 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"down", note:"A recurring name, but Inter are reported to have pulled out of the race for the Atalanta winger, with the club now weighing alternatives instead."}
 ];
 
 const OUTGOING = [

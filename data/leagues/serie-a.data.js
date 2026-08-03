@@ -13,7 +13,7 @@ const TOP_STORIES = [  {
     name: "Serhou Guirassy", prob: 40,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "RB Leipzig", to: "AS Roma",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "€30m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -73,6 +73,6 @@ const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 2, "badge"
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:40:10.511015Z",
+  updated: "2026-08-03T19:52:45.477780Z",
   label: "League aggregation"
 };

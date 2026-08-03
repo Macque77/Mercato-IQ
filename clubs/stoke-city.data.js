@@ -47,10 +47,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Stoke-City Official", u:"#"}
+  "gnews-ethangalbraith": {l:"Related news search: Ethan Galbraith", u:"https://news.google.com/search?q=Stoke%20City%20Ethan%20Galbraith%20transfer&hl=en-GB&gl=GB"},
+  "gnews-lewiskoumas": {l:"Related news search: Lewis Koumas", u:"https://news.google.com/search?q=Stoke%20City%20Lewis%20Koumas%20transfer&hl=en-GB&gl=GB"},
+  "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Ethan Galbraith": ["gnews-ethangalbraith"],
+  "Lewis Koumas": ["gnews-lewiskoumas"],
+  "George Hirst": ["orourke"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

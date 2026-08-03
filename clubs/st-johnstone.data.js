@@ -48,10 +48,20 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"St Johnstone Official", u:"#"}
+  "gnews-danielfinlayson": {l:"Related news search: Daniel Finlayson", u:"https://news.google.com/search?q=St%20Johnstone%20Daniel%20Finlayson%20transfer&hl=en-GB&gl=GB"},
+  "gnews-mattytodd": {l:"Related news search: Matty Todd", u:"https://news.google.com/search?q=St%20Johnstone%20Matty%20Todd%20transfer&hl=en-GB&gl=GB"},
+  "gnews-unaxalvarezdeeulate": {l:"Related news search: Unax Alvarez de Eulate", u:"https://news.google.com/search?q=St%20Johnstone%20Unax%20Alvarez%20de%20Eulate%20transfer&hl=en-GB&gl=GB"},
+  "gnews-loganchalmers": {l:"Related news search: Logan Chalmers", u:"https://news.google.com/search?q=St%20Johnstone%20Logan%20Chalmers%20transfer&hl=en-GB&gl=GB"},
+  "gnews-nieuwenhof": {l:"Related news search: Nieuwenhof", u:"https://news.google.com/search?q=St%20Johnstone%20Nieuwenhof%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Daniel Finlayson": ["gnews-danielfinlayson"],
+  "Matty Todd": ["gnews-mattytodd"],
+  "Unax Alvarez de Eulate": ["gnews-unaxalvarezdeeulate"],
+  "Logan Chalmers": ["gnews-loganchalmers"],
+  "Nieuwenhof": ["gnews-nieuwenhof"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

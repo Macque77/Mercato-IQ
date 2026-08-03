@@ -44,10 +44,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Mansfield Town Official", u:"#"}
+  "gnews-davidmcgoldrick": {l:"Related news search: David McGoldrick", u:"https://news.google.com/search?q=Mansfield%20Town%20David%20McGoldrick%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "David McGoldrick": ["gnews-davidmcgoldrick"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

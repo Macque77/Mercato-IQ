@@ -45,10 +45,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Peterborough United Official", u:"#"}
+  "gnews-kyreecelisbie": {l:"Related news search: Kyreece Lisbie", u:"https://news.google.com/search?q=Peterborough%20United%20Kyreece%20Lisbie%20transfer&hl=en-GB&gl=GB"},
+  "gnews-harryashfield": {l:"Related news search: Harry Ashfield", u:"https://news.google.com/search?q=Peterborough%20United%20Harry%20Ashfield%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Kyreece Lisbie": ["gnews-kyreecelisbie"],
+  "Harry Ashfield": ["gnews-harryashfield"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

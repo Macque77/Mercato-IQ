@@ -50,10 +50,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"West-Ham Official", u:"#"}
+  "gnews-mateusfernandes": {l:"Related news search: Mateus Fernandes", u:"https://news.google.com/search?q=West%20Ham%20United%20Mateus%20Fernandes%20transfer&hl=en-GB&gl=GB"},
+  "gnews-freddiepotts": {l:"Related news search: Freddie Potts", u:"https://news.google.com/search?q=West%20Ham%20United%20Freddie%20Potts%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Mateus Fernandes": ["gnews-mateusfernandes"],
+  "Freddie Potts": ["gnews-freddiepotts"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

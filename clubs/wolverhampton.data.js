@@ -48,10 +48,17 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Wolverhampton Official", u:"#"}
+  "gnews-kierantrippier": {l:"Related news search: Kieran Trippier", u:"https://news.google.com/search?q=Wolverhampton%20Wanderers%20Kieran%20Trippier%20transfer&hl=en-GB&gl=GB"},
+  "gnews-mattdoherty": {l:"Related news search: Matt Doherty", u:"https://news.google.com/search?q=Wolverhampton%20Wanderers%20Matt%20Doherty%20transfer&hl=en-GB&gl=GB"},
+  "bbc": {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football"},
+  "molineuxnews": {l:"Molineux News", u:"https://www.molineuxnews.co.uk/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Kieran Trippier": ["gnews-kierantrippier"],
+  "Matt Doherty": ["gnews-mattdoherty"],
+  "João Gomes": ["bbc", "molineuxnews"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

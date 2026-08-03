@@ -44,10 +44,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Cambridge-United Official", u:"#"}
+  "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Luke Berry": ["flw"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

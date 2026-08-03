@@ -69,11 +69,22 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"AS Roma Official", u:"#"}
+  "gnews-paulodybala": {l:"Related news search: Paulo Dybala", u:"https://news.google.com/search?q=AS%20Roma%20Paulo%20Dybala%20transfer&hl=en-GB&gl=GB"},
+  "moretto": {l:"Matteo Moretto", u:"https://x.com/MatteMoretto"},
+  "romano": {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"},
+  "corriere": {l:"Corriere della Sera", u:"https://www.corriere.it/sport/"},
+  "gnews-serhouguirassy": {l:"Related news search: Serhou Guirassy", u:"https://news.google.com/search?q=AS%20Roma%20Serhou%20Guirassy%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Paulo Dybala": ["gnews-paulodybala"],
+  "Serhou Guirassy": ["moretto", "romano"],
+  "Jeremie Freuler": ["corriere"]
+};
+const WL_LINKMAP = {
+  "Serhou Guirassy": ["gnews-serhouguirassy"],
+  "Paulo Dybala": ["gnews-paulodybala"]
+};
 
 const PROSE = {
   heroH2: `AS Roma · 2026/27 Season`,

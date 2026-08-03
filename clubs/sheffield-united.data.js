@@ -48,10 +48,17 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Sheffield-United Official", u:"#"}
+  "gnews-mattdoherty": {l:"Related news search: Matt Doherty", u:"https://news.google.com/search?q=Sheffield%20United%20Matt%20Doherty%20transfer&hl=en-GB&gl=GB"},
+  "thestar": {l:"The Star (Sheffield)", u:"https://www.thestar.co.uk/sport"},
+  "src-cityxtra": {l:"City Xtra", u:"https://news.google.com/search?q=City%20Xtra%20Sheffield%20United%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Matt Doherty": ["gnews-mattdoherty"],
+  "Nicolas Valentini": ["thestar"],
+  "Kalvin Phillips": ["src-cityxtra", "thestar"],
+  "Rabbi Matondo": ["thestar"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

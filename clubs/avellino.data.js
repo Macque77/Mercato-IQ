@@ -48,10 +48,18 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Avellino Official", u:"#"}
+  "gnews-filipposcotti": {l:"Related news search: Filippo Scotti", u:"https://news.google.com/search?q=US%20Avellino%20Filippo%20Scotti%20transfer&hl=en-GB&gl=GB"},
+  "gnews-giuseppepanico": {l:"Related news search: Giuseppe Panico", u:"https://news.google.com/search?q=US%20Avellino%20Giuseppe%20Panico%20transfer&hl=en-GB&gl=GB"},
+  "gnews-gianmarcotodisco": {l:"Related news search: Gianmarco Todisco", u:"https://news.google.com/search?q=US%20Avellino%20Gianmarco%20Todisco%20transfer&hl=en-GB&gl=GB"},
+  "gnews-andreacagnano": {l:"Related news search: Andrea Cagnano", u:"https://news.google.com/search?q=US%20Avellino%20Andrea%20Cagnano%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Filippo Scotti": ["gnews-filipposcotti"],
+  "Giuseppe Panico": ["gnews-giuseppepanico"],
+  "Gianmarco Todisco": ["gnews-gianmarcotodisco"],
+  "Andrea Cagnano": ["gnews-andreacagnano"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

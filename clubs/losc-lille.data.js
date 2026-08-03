@@ -58,10 +58,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"LOSC Lille Official", u:"#"}
+  "rmcsport": {l:"RMC Sport", u:"https://rmcsport.bfmtv.com/football/"},
+  "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Gonçalo Inácio": ["rmcsport"],
+  "Milan Skriniar": ["lequipe"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {

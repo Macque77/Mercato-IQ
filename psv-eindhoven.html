@@ -577,7 +577,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Xavi Simons", sub:"21 · CAM · Netherlands", club:"PSV Eindhoven (loan from Leipzig)", pos:"CAM", report:"1 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"Loan + option", truth:75, prob:65, light:"y", trend:"up", note:"Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented Dutch playmaker."}
+  {name:"Xavi Simons", sub:"21 · CAM · Netherlands", club:"PSV Eindhoven (loan from Leipzig)", pos:"CAM", report:"1 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"Loan + option", truth:75, prob:65, light:"g", trend:"up", note:"Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented Dutch playmaker."}
 ];
 
 const OUTGOING = [];
@@ -603,11 +603,19 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  club: {l:"PSV Eindhoven Official", u:"#"}
+  "gnews-hirvinglozano": {l:"Related news search: Hirving Lozano", u:"https://news.google.com/search?q=PSV%20Eindhoven%20Hirving%20Lozano%20transfer&hl=en-GB&gl=GB"},
+  "skydeutschland": {l:"Sky Sport Deutschland", u:"https://sportnews.bz/"},
+  "falk": {l:"Christian Falk (Sky Deutschland)", u:"https://x.com/Cfbayern"},
+  "gnews-xavisimons": {l:"Related news search: Xavi Simons", u:"https://news.google.com/search?q=PSV%20Eindhoven%20Xavi%20Simons%20transfer&hl=en-GB&gl=GB"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Hirving Lozano": ["gnews-hirvinglozano"],
+  "Xavi Simons": ["skydeutschland", "falk"]
+};
+const WL_LINKMAP = {
+  "Xavi Simons": ["gnews-xavisimons"]
+};
 
 const PROSE = {
   heroH2: `PSV Eindhoven · 2026/27 Season`,
