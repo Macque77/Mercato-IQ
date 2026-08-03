@@ -136,6 +136,15 @@
   .rail-item .arrow{color:var(--muted-2);font-size:11px;flex:none}
   .rail-empty{font-size:12px;color:var(--muted-2);font-style:italic;padding:4px 0;line-height:1.5}
 
+  /* ---------- NATIONS GRID (browse all tracked nations) ---------- */
+  .nations-section{margin:20px 0}
+  .nations-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:12px}
+  .nation-card{display:flex;flex-direction:column;gap:10px;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--panel-2);text-decoration:none;color:inherit;transition:.15s;cursor:pointer}
+  .nation-card:hover{border-color:var(--gold-deep);background:var(--panel);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,194,73,0.15)}
+  .nation-card-flag{font-size:28px;line-height:1}
+  .nation-card-name{font-family:var(--display);font-size:14px;font-weight:400;letter-spacing:.3px;text-transform:uppercase;color:var(--white)}
+  .nation-card-count{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
   /* ---------- TRANSFER WINDOW / DEADLINE DAY BANNER (front and centre, right under the hero) ---------- */
   .top-strip{display:flex;gap:12px;align-items:stretch;margin:10px 0 6px;flex-wrap:wrap}
   .window-banner{flex:1 1 320px;margin:0;border-radius:12px;padding:11px 20px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:linear-gradient(135deg, rgba(51,196,106,0.10), var(--panel));transition:.3s}
@@ -373,6 +382,13 @@
     <aside class="rail" aria-label="Select a nation">
       <div class="rail-list" id="nation-rail"></div>
     </aside>
+
+    <!-- NATIONS GRID: Browse all available nations -->
+    <section class="nations-section" id="nations-section" style="display:none;margin-top:28px">
+      <div class="sec-head"><h3>Browse by Nation</h3><span class="num">—</span></div>
+      <p class="sec-sub">All nations currently tracked across European football</p>
+      <div class="nations-grid" id="nations-grid"></div>
+    </section>
   </div>
 
   <!-- TRANSFER WINDOW / DEADLINE DAY: front and centre, right under the hero -->
@@ -1330,15 +1346,33 @@ function renderHeadlines(){
 
 function renderRail(){
   const rail = document.getElementById('nation-rail');
+  const nationsSection = document.getElementById('nations-section');
   const list = Array.isArray(NATIONS) ? NATIONS : [];
   const eyebrow = '<span class="rail-eyebrow">SELECT A NATION</span>';
-  if(!list.length){ rail.innerHTML = eyebrow + '<div class="rail-empty">Nations appear here once engine/aggregate.py has run across at least one club.</div>'; return; }
-  rail.innerHTML = eyebrow + list.map(n => `
-    <a class="rail-item" href="nations/${n.slug}.html">
-      <span class="flag">${n.flag_emoji || '\u{1F30D}'}</span>
-      <span class="info"><span class="nm">${n.name}</span><span class="ct">${n.stories_count || 0} ${n.stories_count === 1 ? 'story' : 'stories'}</span></span>
-      <span class="arrow">&rarr;</span>
-    </a>`).join('') + (list.length < 2 ? '<span class="rail-empty">More nations appear here as they\'re brought under live tracking.</span>' : '');
+  if(!list.length){
+    rail.innerHTML = eyebrow + '<div class="rail-empty">Nations appear here once engine/aggregate.py has run across at least one club.</div>';
+    nationsSection.style.display = 'none';
+  } else {
+    rail.innerHTML = eyebrow + list.map(n => `
+      <a class="rail-item" href="nations/${n.slug}.html">
+        <span class="flag">${n.flag_emoji || '\u{1F30D}'}</span>
+        <span class="info"><span class="nm">${n.name}</span><span class="ct">${n.stories_count || 0} ${n.stories_count === 1 ? 'story' : 'stories'}</span></span>
+        <span class="arrow">&rarr;</span>
+      </a>`).join('') + (list.length < 2 ? '<span class="rail-empty">More nations appear here as they\'re brought under live tracking.</span>' : '');
+
+    // Show nations grid if there are nations
+    if(list.length > 0) {
+      nationsSection.style.display = 'block';
+      const gridHtml = list.map(n => `
+        <a href="nations/${n.slug}.html" class="nation-card">
+          <div class="nation-card-flag">${n.flag_emoji || '🌍'}</div>
+          <div class="nation-card-name">${n.name}</div>
+          <div class="nation-card-count">${n.league_count || 1} ${n.league_count === 1 ? 'league' : 'leagues'}</div>
+          <div class="nation-card-count">${n.stories_count || 0} ${n.stories_count === 1 ? 'story' : 'stories'}</div>
+        </a>`).join('');
+      document.getElementById('nations-grid').innerHTML = gridHtml;
+    }
+  }
 }
 
 /* Trending = everything not shown on Breaking (which takes HEADLINES.slice(0,24)), re-sorted
