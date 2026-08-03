@@ -18,6 +18,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Sergiño Dest",
+    club_display_name: "FC Barcelona",
+    summary: "Barcelona preparing final push to secure American winger on permanent deal after",
+    value: "Loan to buy",
+    from: "PSV Eindhoven (loan return)", to: "FC Barcelona",
+    direction: "in",
+    prob: 85, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "barcelona",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Ousmane Diomande",
     club_display_name: "Nottingham Forest",
     summary: "",
@@ -29,6 +42,19 @@ const HEADLINES = [
     nation: "England", league: "Premier League",
     club_link: "nottingham-forest",
     updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Vinícius Gabias",
+    club_display_name: "FC Barcelona",
+    summary: "Brazilian prospect attracting serious interest; negotiations ongoing with Rio cl",
+    value: "€18m",
+    from: "Flamengo", to: "FC Barcelona",
+    direction: "in",
+    prob: 68, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "barcelona",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Bruno Guimarães",
@@ -758,32 +784,6 @@ const HEADLINES = [
     club_link: "arsenal",
     updated: "2026-08-03T12:48:44Z"
   },
-  {
-    headline: "Nick Pope",
-    club_display_name: "Newcastle United",
-    summary: "",
-    value: "Undisclosed",
-    from: "Newcastle United", to: "Ipswich Town (interest)",
-    direction: "out",
-    prob: 30, trend: 'flat',
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "newcastle-united",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Éder Militão",
-    club_display_name: "Real Madrid",
-    summary: "",
-    value: "€90m (PSG valuation)",
-    from: "Real Madrid", to: "Paris Saint-Germain (interest)",
-    direction: "out",
-    prob: 28, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "real-madrid",
-    updated: "2026-07-29T00:00:00Z"
-  },
 ];
 
 const NATIONS = [
@@ -792,12 +792,12 @@ const NATIONS = [
     stories_count: 100, league_count: 2
   },
   {
-    name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 8, league_count: 1
+    name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
+    stories_count: 11, league_count: 1
   },
   {
-    name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 7, league_count: 1
+    name: "France", slug: "france", flag_emoji: "🇫🇷",
+    stories_count: 8, league_count: 1
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:36:37.154570Z",
+  updated: "2026-08-03T15:47:01.977601Z",
   label: "Global aggregation from all clubs"
 };

@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "aydin-sk", "name": "Giresunspor", "count": 0}, {"s
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:36:37.161828Z",
+  updated: "2026-08-03T15:47:01.987400Z",
   label: "League aggregation"
 };

@@ -232,10 +232,24 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 7
+  stories_count: 11
 };
 
 const TOP_STORIES = [  {
+    name: "Sergiño Dest",prob: 85,
+    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
+    from: "PSV Eindhoven (loan return)", to: "FC Barcelona",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Loan to buy", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Vinícius Gabias",prob: 68,
+    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
+    from: "Flamengo", to: "FC Barcelona",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "€18m", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
     name: "Jude Bellingham",prob: 78,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
     from: "Borussia Dortmund", to: "Real Madrid",
@@ -284,15 +298,29 @@ const TOP_STORIES = [  {
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "€100m (speculation)", updated: "2026-07-29T00:00:00Z", league: "La Liga"
   },
+  {
+    name: "Ederson",prob: 8,
+    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
+    from: "Sevilla", to: "FC Barcelona",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "€2.5m", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "",prob: 50,
+    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "out",
+    from: "FC Barcelona", to: "TBD",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
 ];
 
-const BY_LEAGUE = {"La Liga": 7};
+const BY_LEAGUE = {"La Liga": 11};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 7}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 11}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:36:37.156524Z",
+  updated: "2026-08-03T15:47:01.979806Z",
   label: "Nation aggregation"
 };
 

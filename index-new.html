@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ · Transfer Rumors Decoded (No Bullshit)</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Every transfer rumor, decoded. Tier-rated sources, dual-metric scoring, and we tell you which ones are complete bullshit. The transfer market intelligence for football fans who want the truth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e17;
+    --bg-elevated:#111824;
+    --surface:#1a2332;
+    --surface-alt:#242d3d;
+    --border:#3a4452;
+    --text-primary:#f0f2f5;
+    --text-secondary:#a8adb8;
+    --text-muted:#7a8291;
+    --accent-gold:#e8c249;
+    --accent-red:#ff3d47;
+    --accent-red-dark:#cc2f38;
+    --accent-green:#2ecc71;
+    --accent-blue:#3498db;
+    --accent-orange:#f39c12;
+    --tier1:#2ecc71;
+    --tier2:#e8c249;
+    --tier3:#f39c12;
+    --bullshit:#ff6b6b;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+    --space-xs:4px;
+    --space-sm:8px;
+    --space-md:12px;
+    --space-lg:16px;
+    --space-xl:24px;
+    --space-2xl:32px;
+    --space-3xl:48px;
+    --radius-sm:6px;
+    --radius-md:8px;
+    --radius-lg:12px;
+    --radius-xl:16px;
+    --radius-full:9999px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background:var(--bg);
+    color:var(--text-primary);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  body::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background:
+      radial-gradient(800px 600px at 20% 0%, rgba(232,194,73,0.06), transparent 40%),
+      radial-gradient(1000px 800px at 80% 100%, rgba(255,61,71,0.05), transparent 50%);
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:linear-gradient(180deg, rgba(10,14,23,0.95), rgba(10,14,23,0.85));
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    padding:var(--space-lg) var(--space-xl);
+  }
+
+  .header-inner {
+    max-width:1600px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:var(--space-xl);
+  }
+
+  .logo {
+    display:flex;
+    align-items:center;
+    gap:var(--space-md);
+    text-decoration:none;
+    color:inherit;
+  }
+
+  .logo-mark {
+    width:44px;
+    height:44px;
+    background:linear-gradient(135deg, var(--accent-gold), var(--accent-red));
+    border-radius:var(--radius-md);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--display);
+    font-size:20px;
+    font-weight:bold;
+    color:var(--bg);
+  }
+
+  .logo-text {
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+
+  .logo-text h1 {
+    font-family:var(--display);
+    font-size:18px;
+    font-weight:400;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  .logo-text .tagline {
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+  }
+
+  .status-indicator {
+    display:flex;
+    align-items:center;
+    gap:var(--space-sm);
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-secondary);
+  }
+
+  .live-dot {
+    width:8px;
+    height:8px;
+    background:var(--accent-green);
+    border-radius:50%;
+    animation:pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity:1; }
+    50% { opacity:0.4; }
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    position:relative;
+    z-index:1;
+    max-width:1400px;
+    margin:0 auto;
+    padding:var(--space-3xl) var(--space-xl);
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    margin-bottom:var(--space-3xl);
+    text-align:center;
+  }
+
+  .hero h2 {
+    font-family:var(--display);
+    font-size:clamp(32px, 6vw, 56px);
+    font-weight:400;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:var(--space-lg);
+    line-height:1.1;
+  }
+
+  .hero h2 .gold { color:var(--accent-gold); }
+  .hero h2 .red { color:var(--accent-red); }
+
+  .hero .description {
+    font-size:18px;
+    color:var(--text-secondary);
+    max-width:600px;
+    margin:0 auto var(--space-2xl);
+    line-height:1.7;
+  }
+
+  .hero-controls {
+    display:flex;
+    justify-content:center;
+    gap:var(--space-md);
+    flex-wrap:wrap;
+  }
+
+  /* ===== TABS/FILTERS ===== */
+  .filter-bar {
+    display:flex;
+    gap:var(--space-sm);
+    overflow-x:auto;
+    padding:var(--space-xl) 0;
+    margin-bottom:var(--space-2xl);
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+
+  .filter-bar::-webkit-scrollbar { display:none; }
+
+  .filter-btn {
+    padding:var(--space-sm) var(--space-lg);
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-full);
+    color:var(--text-secondary);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:all 200ms ease;
+  }
+
+  .filter-btn:hover {
+    border-color:var(--accent-gold);
+    color:var(--accent-gold);
+  }
+
+  .filter-btn.active {
+    background:var(--accent-gold);
+    border-color:var(--accent-gold);
+    color:var(--bg);
+    font-weight:600;
+  }
+
+  /* ===== NATION SELECTOR ===== */
+  .nations-bar {
+    display:flex;
+    gap:var(--space-md);
+    overflow-x:auto;
+    padding:var(--space-lg);
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    margin-bottom:var(--space-2xl);
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+
+  .nations-bar::-webkit-scrollbar { display:none; }
+
+  .nation-tag {
+    display:flex;
+    align-items:center;
+    gap:var(--space-sm);
+    padding:var(--space-sm) var(--space-lg);
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-full);
+    text-decoration:none;
+    color:var(--text-secondary);
+    white-space:nowrap;
+    transition:all 200ms ease;
+    cursor:pointer;
+  }
+
+  .nation-tag:hover {
+    border-color:var(--accent-gold);
+    background:rgba(232,194,73,0.1);
+    color:var(--accent-gold);
+  }
+
+  .nation-flag { font-size:18px; }
+
+  .nation-name {
+    font-family:var(--display);
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+
+  /* ===== TRANSFER FEED ===== */
+  .feed {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(360px, 1fr));
+    gap:var(--space-xl);
+    margin-bottom:var(--space-3xl);
+  }
+
+  .transfer-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    transition:all 300ms ease;
+    cursor:pointer;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .transfer-card:hover {
+    border-color:var(--accent-gold);
+    transform:translateY(-4px);
+    box-shadow:0 12px 24px rgba(232,194,73,0.15);
+  }
+
+  .card-header {
+    padding:var(--space-lg);
+    border-bottom:1px solid var(--border);
+    background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.05));
+  }
+
+  .card-title {
+    font-family:var(--display);
+    font-size:18px;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    margin-bottom:var(--space-sm);
+    display:flex;
+    align-items:center;
+    gap:var(--space-md);
+  }
+
+  .card-badge {
+    display:inline-flex;
+    align-items:center;
+    gap:var(--space-xs);
+    padding:var(--space-xs) var(--space-sm);
+    background:var(--bg);
+    border-radius:var(--radius-sm);
+    font-family:var(--mono);
+    font-size:9px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  .badge-t1 { color:var(--tier1); border:1px solid var(--tier1); }
+  .badge-t2 { color:var(--tier2); border:1px solid var(--tier2); }
+  .badge-t3 { color:var(--tier3); border:1px solid var(--tier3); }
+  .badge-bullshit { color:var(--bullshit); border:1px solid var(--bullshit); }
+
+  .card-subtitle {
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text-secondary);
+  }
+
+  .card-body {
+    padding:var(--space-lg);
+    flex:1;
+  }
+
+  .transfer-direction {
+    display:flex;
+    align-items:center;
+    gap:var(--space-md);
+    margin-bottom:var(--space-lg);
+  }
+
+  .player-name {
+    font-family:var(--display);
+    font-size:16px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+
+  .player-info {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+  }
+
+  .direction-arrow {
+    font-size:20px;
+    color:var(--accent-gold);
+  }
+
+  .direction-arrow.out { color:var(--accent-red); }
+
+  .club-info {
+    display:flex;
+    align-items:center;
+    gap:var(--space-sm);
+  }
+
+  .club-badge {
+    width:32px;
+    height:32px;
+    background:var(--bg-elevated);
+    border-radius:var(--radius-sm);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:bold;
+    flex-shrink:0;
+  }
+
+  .club-name {
+    font-size:14px;
+    font-weight:600;
+  }
+
+  .club-league {
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--text-muted);
+  }
+
+  .card-note {
+    background:rgba(232,194,73,0.08);
+    border-left:3px solid var(--accent-gold);
+    padding:var(--space-md);
+    border-radius:var(--radius-sm);
+    font-size:14px;
+    line-height:1.6;
+    color:var(--text-secondary);
+    margin-bottom:var(--space-lg);
+  }
+
+  .card-note.bullshit {
+    background:rgba(255,107,107,0.08);
+    border-left-color:var(--bullshit);
+    color:var(--text-primary);
+  }
+
+  .card-footer {
+    padding:var(--space-lg);
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:var(--space-md);
+  }
+
+  .metrics {
+    display:flex;
+    gap:var(--space-lg);
+    flex:1;
+  }
+
+  .metric {
+    flex:1;
+    min-width:0;
+  }
+
+  .metric-label {
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:var(--space-xs);
+  }
+
+  .metric-bar {
+    height:4px;
+    background:var(--bg-elevated);
+    border-radius:var(--radius-full);
+    overflow:hidden;
+  }
+
+  .metric-fill {
+    height:100%;
+    background:linear-gradient(90deg, var(--accent-gold), var(--accent-red));
+    border-radius:var(--radius-full);
+  }
+
+  .metric-value {
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    color:var(--text-primary);
+    margin-top:var(--space-xs);
+  }
+
+  .card-source {
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--text-muted);
+    text-align:right;
+  }
+
+  /* ===== MOBILE ===== */
+  @media(max-width:768px) {
+    .container {
+      padding:var(--space-2xl) var(--space-lg);
+    }
+
+    .hero h2 {
+      font-size:clamp(24px, 5vw, 36px);
+    }
+
+    .feed {
+      grid-template-columns:1fr;
+    }
+
+    .header-inner {
+      gap:var(--space-md);
+    }
+
+    .logo-text .tagline {
+      display:none;
+    }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .transfer-card {
+    animation:fadeInUp 600ms ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity:0;
+      transform:translateY(20px);
+    }
+    to {
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+
+  /* ===== BULLSHIT CALLOUT ===== */
+  .bullshit-callout {
+    position:absolute;
+    top:var(--space-md);
+    right:var(--space-md);
+    background:var(--bullshit);
+    color:white;
+    padding:var(--space-sm) var(--space-md);
+    border-radius:var(--radius-md);
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    animation:spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    0%, 100% { transform:rotate(-5deg); }
+    50% { transform:rotate(5deg); }
+  }
+
+  /* ===== EMPTY STATE ===== */
+  .empty {
+    text-align:center;
+    padding:var(--space-3xl) var(--space-xl);
+    color:var(--text-muted);
+  }
+
+  .empty h3 {
+    font-family:var(--display);
+    font-size:24px;
+    margin-bottom:var(--space-md);
+    color:var(--text-secondary);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top:1px solid var(--border);
+    padding:var(--space-3xl) var(--space-xl);
+    text-align:center;
+    color:var(--text-muted);
+    font-family:var(--mono);
+    font-size:12px;
+  }
+
+  footer a {
+    color:var(--accent-gold);
+    text-decoration:none;
+  }
+
+  footer a:hover {
+    text-decoration:underline;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-mark">M</div>
+      <div class="logo-text">
+        <h1>Mercato<br/>IQ</h1>
+        <span class="tagline">Transfer Market Decoded</span>
+      </div>
+    </a>
+    <div class="status-indicator">
+      <div class="live-dot"></div>
+      <span>Live Feed</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <h2>Transfer <span class="gold">Rumors</span>, <span class="red">Decoded</span></h2>
+    <p class="description">Every credible transfer story across Europe's major leagues. Tier-rated sources, dual-metric scoring, and we tell you straight when they're complete bullshit.</p>
+  </section>
+
+  <div class="nations-bar">
+    <a href="#" class="nation-tag">🏴󠁧󠁢󠁥󠁮󠁧󠁿 <span class="nation-name">England</span></a>
+    <a href="#" class="nation-tag">🇪🇸 <span class="nation-name">Spain</span></a>
+    <a href="#" class="nation-tag">🇮🇹 <span class="nation-name">Italy</span></a>
+    <a href="#" class="nation-tag">🇩🇪 <span class="nation-name">Germany</span></a>
+    <a href="#" class="nation-tag">🇫🇷 <span class="nation-name">France</span></a>
+    <a href="#" class="nation-tag">🇳🇱 <span class="nation-name">Netherlands</span></a>
+    <a href="#" class="nation-tag">🇵🇹 <span class="nation-name">Portugal</span></a>
+    <a href="#" class="nation-tag">🇧🇪 <span class="nation-name">Belgium</span></a>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active">All Stories</button>
+    <button class="filter-btn">Tier 1 Only</button>
+    <button class="filter-btn">Incoming</button>
+    <button class="filter-btn">Outgoing</button>
+    <button class="filter-btn">Likely</button>
+    <button class="filter-btn">Unlikely</button>
+    <button class="filter-btn">Bullshit</button>
+  </div>
+
+  <div class="feed" id="feed">
+    <!-- Transfer cards will be populated here via JavaScript from data/global.data.js -->
+  </div>
+
+  <div class="empty" id="empty-state" style="display:none;">
+    <h3>No transfers found</h3>
+    <p>Try adjusting your filters or selecting a different nation.</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Mercato IQ · <a href="/">Explore by Nation</a> · <a href="/">Browse by League</a> · <a href="/">About Our Sources</a></p>
+  <p style="margin-top:var(--space-lg); font-size:11px; color:var(--text-muted);">Updated in real-time. No BS. No sensationalism. Just facts, tiers, and calling it straight.</p>
+</footer>
+
+<script>
+// Transfer data will be spliced in here by build system
+// This is where the magic happens - rendering incredible cards with personality
+</script>
+
+</body>
+</html>

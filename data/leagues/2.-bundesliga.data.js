@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:36:37.157268Z",
+  updated: "2026-08-03T15:47:01.981249Z",
   label: "League aggregation"
 };

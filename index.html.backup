@@ -1,0 +1,1561 @@
+<!--
+  MERCATO IQ - GLOBAL SPLASH (v4: full-width hero + nation rail + live window banner)
+  DO NOT EDIT DURING A REFRESH. Data lives in data/global.data.js, generated
+  by engine/aggregate.py and spliced in by engine/build_extended.py --level global.
+  Mechanics: engine/REFRESH_RUNBOOK.md. Design language forked from template.html
+  so every level of the site (splash -> nation -> league -> club) reads as one product.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ · The Transfer Market, Decoded</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0c0f">
+<meta name="description" content="Every credible transfer rumour across Europe's major leagues, rated on two independent scores and updated the moment the picture changes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;
+    --bg-2:#111318;
+    --panel:#16181e;
+    --panel-2:#1c1f26;
+    --line:#2a2e38;
+    --red:#e21f26;
+    --red-bright:#ff2b24;
+    --red-deep:#a3151a;
+    --primary-rgb:226,31,38;
+    --white:#f4f3ee;
+    --muted:#8b909c;
+    --muted-2:#5f6471;
+    --gold:#e8c249;
+    --gold-deep:#a07f12;
+    --green:#33c46a;
+    --yellow:#f2c531;
+    --orange:#ef8b2c;
+    --crit:#e9483f;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 38px, rgba(var(--primary-rgb),0.022) 38px 39px),
+      radial-gradient(1200px 600px at 80% -10%, rgba(232,194,73,0.09), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(var(--primary-rgb),0.08), transparent 55%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1600px;margin:0 auto;padding:0 28px}
+
+  /* ---------- HEADER ---------- */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,rgba(12,13,16,0.97),rgba(12,13,16,0.86));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 28px;max-width:1600px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:14px}
+  .mark{width:46px;height:46px;flex:none;filter:drop-shadow(0 0 10px rgba(232,194,73,0.25))}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1 b{color:var(--gold)}
+  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);margin-top:3px;font-weight:600}
+  .status-pill{
+    display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
+    color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* ---------- HERO (compact, full-width stacked blocks: heading/lede are block-level so
+     they genuinely span the row instead of sharing a flex row with the mark/CTA, which is
+     what was reading as "scrunched left with dead space on the right") ---------- */
+  .hero{padding:12px 0 10px;border-bottom:1px solid var(--line);position:relative}
+  .hero-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .hero-top-left{display:flex;align-items:center;gap:9px;min-width:0}
+  .hero-mark{width:24px;height:24px;flex:none;filter:drop-shadow(0 0 8px rgba(232,194,73,0.22))}
+  .hero .kicker{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--red-bright);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hero h2{width:100%;font-family:var(--display);font-weight:400;font-size:clamp(18px,2.1vw,24px);line-height:1.08;text-transform:uppercase;letter-spacing:.3px}
+  .hero h2 em{font-style:normal;color:var(--gold)}
+  .hero .lede{width:100%;margin-top:5px;color:#b7bac2;font-size:12.5px;line-height:1.42}
+  .hero .lede b{color:var(--white)}
+  .hero-cta{flex:none}
+  .btn{font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:9px 16px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+  .btn-primary{background:var(--red);color:#fff}
+  .btn-primary:hover{background:var(--red-bright);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--line);color:var(--white);background:var(--panel)}
+  .btn-ghost:hover{border-color:var(--gold-deep);color:var(--gold)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .meta-row span b{color:var(--gold);font-weight:700}
+
+  /* ---------- BREADCRUMB (shared across index/nation/league/club) ---------- */
+  .crumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted-2);margin-bottom:8px;flex-wrap:wrap}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--white)}
+  .crumb .sep{color:var(--muted-2)}
+  .crumb b{color:var(--red-bright)}
+
+  /* ---------- DRILL-DOWN GUIDE (nation -> league -> club, sits above the nation rail) ---------- */
+  .drill-guide{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .dg-step{color:var(--white);letter-spacing:.3px}
+  .dg-step b{color:var(--gold);font-weight:700}
+  .dg-sep{color:var(--muted-2)}
+  .dg-note{width:100%;color:var(--muted);font-family:var(--body);font-size:12.5px;margin-top:2px}
+  @media(min-width:640px){ .dg-note{width:auto;margin-top:0;margin-left:6px} }
+
+  /* ---------- SELECT RAIL (horizontal chip strip, wraps to use the full row width) ---------- */
+  .rail{margin-top:14px}
+  .rail h4{display:none}
+  .rail .rail-sub{display:none}
+  .rail-list{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .rail-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin-right:2px;flex:none}
+  .rail-item{display:flex;align-items:center;gap:7px;padding:6px 12px 6px 8px;border-radius:999px;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:inherit;transition:.15s}
+  .rail-item:hover{border-color:var(--gold-deep);background:var(--panel-2);transform:translateY(-1px)}
+  .rail-item .flag{font-size:15px;flex:none;line-height:1}
+  .rail-item .info{display:flex;align-items:baseline;gap:6px;min-width:0}
+  .rail-item .nm{font-family:var(--display);font-size:11.5px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+  .rail-item .ct{font-size:9.5px;color:var(--muted);font-family:var(--mono);white-space:nowrap}
+  .rail-item .arrow{color:var(--muted-2);font-size:11px;flex:none}
+  .rail-empty{font-size:12px;color:var(--muted-2);font-style:italic;padding:4px 0;line-height:1.5}
+
+  /* ---------- NATIONS GRID (browse all tracked nations) ---------- */
+  .nations-section{margin:20px 0}
+  .nations-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:12px}
+  .nation-card{display:flex;flex-direction:column;gap:10px;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--panel-2);text-decoration:none;color:inherit;transition:.15s;cursor:pointer}
+  .nation-card:hover{border-color:var(--gold-deep);background:var(--panel);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,194,73,0.15)}
+  .nation-card-flag{font-size:28px;line-height:1}
+  .nation-card-name{font-family:var(--display);font-size:14px;font-weight:400;letter-spacing:.3px;text-transform:uppercase;color:var(--white)}
+  .nation-card-count{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
+  /* ---------- TRANSFER WINDOW / DEADLINE DAY BANNER (front and centre, right under the hero) ---------- */
+  .top-strip{display:flex;gap:12px;align-items:stretch;margin:10px 0 6px;flex-wrap:wrap}
+  .window-banner{flex:1 1 320px;margin:0;border-radius:12px;padding:11px 20px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);background:linear-gradient(135deg, rgba(51,196,106,0.10), var(--panel));transition:.3s}
+  .window-banner.deadline{border-color:var(--red-deep);background:linear-gradient(135deg, rgba(226,31,38,0.18), var(--panel));animation:bannerPulse 1.6s infinite}
+  .window-banner.closed{border-color:var(--line);background:var(--panel);opacity:.75}
+  @keyframes bannerPulse{0%,100%{box-shadow:0 0 0 rgba(226,31,38,0)}50%{box-shadow:0 0 34px rgba(226,31,38,0.35)}}
+  .wb-label{font-family:var(--mono);font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--green)}
+  .window-banner.deadline .wb-label{color:var(--red-bright)}
+  .window-banner.closed .wb-label{color:var(--muted)}
+  .wb-title{font-family:var(--display);font-size:clamp(16px,2vw,21px);text-transform:uppercase;margin-top:3px;letter-spacing:.4px}
+  .wb-cd{display:flex;gap:12px}
+  .wb-unit{min-width:42px;text-align:center}
+  .wb-unit .v{font-family:var(--display);font-size:clamp(18px,2.4vw,24px);line-height:1}
+  .wb-unit .l{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{flex:2 1 480px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
+  .stat .l{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+  .stat .v{font-family:var(--display);font-weight:400;font-size:21px;margin-top:5px;line-height:1;letter-spacing:.5px}
+  .stat .v small{font-size:13px;color:var(--muted);font-family:var(--mono)}
+  .stat.gold::after{background:var(--gold)}
+  .stat.gold .v{color:var(--gold)}
+
+  /* ---------- QUICK NAV (scroll-reduction protocol) ---------- */
+  .quicknav{position:sticky;top:75px;z-index:40;background:rgba(12,13,16,.93);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .quicknav-inner{max-width:1600px;margin:0 auto;display:flex;gap:6px;padding:8px 28px;overflow-x:auto;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
+  .quicknav-inner::-webkit-scrollbar{display:none}
+  .qn-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid transparent;white-space:nowrap;transition:all .15s;flex:none;background:none;cursor:pointer}
+  .qn-link:hover{color:var(--white);border-color:var(--line);background:var(--panel)}
+  .qn-link.lead{color:var(--red-bright);border-color:var(--red-deep)}
+  /* Selected section: inverted (white pill, near-black text) so it's unmistakable which tab
+     is showing, matching the same pattern used on club pages. */
+  .qn-link.active{color:#0c0d10;background:var(--white);border-color:var(--white);font-weight:700}
+  .qn-link.active.lead{color:#0c0d10;background:var(--white);border-color:var(--white)}
+  .qn-link.active:hover{color:#0c0d10;background:var(--white)}
+  .qn-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;color:var(--muted-2);flex:none;margin-right:4px}
+  section[id]{scroll-margin-top:150px}
+
+  /* ---------- SECTION ---------- */
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+  .sec-head h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;letter-spacing:.5px}
+  .sec-head .num{font-family:var(--mono);font-size:12px;color:var(--red-bright);border:1px solid var(--red-deep);border-radius:6px;padding:3px 8px}
+  .sec-sub{color:var(--muted);font-size:14px;margin-bottom:26px;max-width:80ch}
+
+  /* ---------- HEADLINE CARDS ---------- */
+  /* auto-fit (not auto-fill): with auto-fill, unused tracks stay reserved-but-empty when
+     there are fewer cards than columns that could fit, so the visible cards bunch to the
+     left of a mostly-empty row. auto-fit collapses those empty tracks to zero width, so the
+     cards actually there stretch to use the full row. */
+  .hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .hcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;position:relative;overflow:hidden;transition:.2s;cursor:pointer;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+  .hcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--line);transition:.2s}
+  .hcard:hover{border-color:var(--gold-deep);transform:translateY(-3px);background:var(--panel-2)}
+  .hcard:hover::before{background:var(--gold)}
+  .hbadges{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+  .hb{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+  /* Tier badge replaces the old IN/OUT tag on aggregated pages (31 Jul 2026): direction only
+     means anything once a single tracked club's perspective is fixed, and no single club is
+     fixed above club level, so a tier badge is shown instead. Colours match club-page tiers. */
+  .hb.t1{background:rgba(51,196,106,0.14);color:#7fe3a3}
+  .hb.t2{background:rgba(160,224,127,0.14);color:#bfe07f}
+  .hb.t3{background:rgba(242,197,49,0.14);color:var(--yellow)}
+  .hb.t4{background:rgba(233,72,63,0.14);color:#ef9a9a}
+  .hb.cov{background:rgba(232,194,73,0.14);color:var(--gold)}
+  .cov-arrow{font-family:var(--mono);font-weight:700}
+  .cov-arrow.up{color:var(--green)}
+  .cov-arrow.down{color:var(--crit)}
+  .cov-arrow.flat{color:var(--muted)}
+  /* Club name is the primary headline (what a fan scans for first); the player is the
+     secondary line right below it. */
+  .hplayer{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:.3px;line-height:1.08;text-transform:uppercase;margin-bottom:6px;color:var(--white)}
+  .hclub{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.3px;text-transform:uppercase;line-height:1.2;margin-bottom:10px}
+  .hclub a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(232,194,73,0.5)}
+  .hclub a:hover{color:var(--white);border-bottom-color:currentColor}
+  .hclubs{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:8px;flex-wrap:wrap}
+  .hclubs .arrow{color:var(--muted-2);font-size:11px;flex:none}
+  .hclubs .to{color:#c3c7d0}
+  .hctx{font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:14px}
+  .hctx a{color:var(--muted);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
+  .hctx a:hover{color:var(--gold)}
+  .hfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+  .hfoot .age{font-family:var(--mono);font-size:11px;color:var(--muted-2)}
+  .hprob{display:flex;align-items:center;gap:7px}
+  .hprob .ldot{width:8px;height:8px;border-radius:50%}
+  .hprob .val{font-family:var(--mono);font-weight:700;font-size:13px}
+
+  /* ---------- TRENDING / BOX ---------- */
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+  .box h4{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:16px;color:var(--gold)}
+  .rank{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,46,56,0.55)}
+  .rank:last-child{border:none}
+  .rank .n{font-family:var(--display);font-size:18px;color:var(--muted-2);width:26px;flex:none}
+  .rank .nm{flex:1;font-size:14px;min-width:0}
+  .rank .nm small{display:block;color:var(--muted);font-family:var(--mono);font-size:11px;margin-top:2px}
+  .rank .pct{font-family:var(--mono);font-weight:700;font-size:13px;flex:none}
+
+  /* ---------- WINDOWS TAB (per-league grid) ---------- */
+  .deadline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .dl-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .dl-league{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+  .dl-status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 10px;border-radius:5px}
+  .dl-status.open{background:rgba(51,196,106,0.14);color:var(--green)}
+  .dl-status.deadline{background:rgba(233,72,63,0.16);color:var(--crit)}
+  .dl-status.closed{background:rgba(139,144,156,0.14);color:var(--muted)}
+
+  /* ---------- METHOD (legend) ---------- */
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .legend .col h5{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .legend .row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#c3c7d0;margin-bottom:9px}
+  .legend .row .k{font-family:var(--mono);font-weight:700;flex:none;min-width:48px}
+  .tier{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;white-space:nowrap}
+  .t1{color:#7fe3a3;background:rgba(51,196,106,0.13)}
+  .t2{color:#bfe07f;background:rgba(160,224,127,0.12)}
+  .t3{color:var(--yellow);background:rgba(242,197,49,0.12)}
+  .t4{color:#ef9a9a;background:rgba(233,72,63,0.12)}
+  .weights{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .w{font-family:var(--mono);font-size:11.5px;color:#c3c7d0;border:1px solid var(--line);border-radius:6px;padding:5px 9px}
+  .w b{color:var(--gold)}
+
+  /* ---------- TAB PANELS ---------- */
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:panelIn .28s ease both}
+  @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* ---------- PAGER ---------- */
+  .pager{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:34px 0 6px;padding:12px 14px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .pg-btn{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--white);
+    background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;cursor:pointer;transition:.15s}
+  .pg-btn:hover{border-color:var(--gold-deep);color:var(--gold)}
+  .pg-btn:disabled{opacity:.32;cursor:default}
+  .pg-btn:disabled:hover{border-color:var(--line);color:var(--white)}
+  .pg-meter{display:flex;gap:7px}
+  .pg-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.15s}
+  .pg-dot.on{background:var(--red);box-shadow:0 0 8px var(--red)}
+
+  footer{padding:40px 0 70px;color:var(--muted);font-size:12.5px}
+  footer b{color:var(--white)}
+  .disclaimer{margin-top:16px;font-size:11.5px;color:var(--muted-2);max-width:90ch;line-height:1.6}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .twocol{grid-template-columns:1fr}
+    .legend{grid-template-columns:1fr}
+    .brand .sub{display:none}
+    .window-banner{flex-direction:column;align-items:flex-start}
+    .hero-cta{width:100%}
+    .hero-cta .btn{width:100%;justify-content:center}
+  }
+  @media(max-width:560px){
+    .status-pill{display:none}
+    .hero-mark{width:38px;height:38px}
+    .wb-unit{min-width:44px}
+  }
+  @media(max-width:360px){
+    .hgrid{grid-template-columns:1fr}
+    .deadline-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ">
+        <defs>
+          <radialGradient id="ballFill" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#2b2f38"/><stop offset="55%" stop-color="#16181d"/><stop offset="100%" stop-color="#08090b"/></radialGradient>
+          <radialGradient id="sheen" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="greenArc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4f7c5"/><stop offset="18%" stop-color="#5fcf6a"/><stop offset="38%" stop-color="#127a34"/><stop offset="55%" stop-color="#6fe07a"/><stop offset="72%" stop-color="#1a8f3d"/><stop offset="100%" stop-color="#063d18"/></linearGradient>
+          <linearGradient id="redArc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffd3cf"/><stop offset="18%" stop-color="#ff5b4e"/><stop offset="38%" stop-color="#951712"/><stop offset="55%" stop-color="#ff6a5c"/><stop offset="72%" stop-color="#ab1c15"/><stop offset="100%" stop-color="#4a0906"/></linearGradient>
+          <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f4f7f9"/><stop offset="30%" stop-color="#aab4bd"/><stop offset="55%" stop-color="#5b6570"/><stop offset="80%" stop-color="#c7d0d7"/><stop offset="100%" stop-color="#7c848d"/></linearGradient>
+        </defs>
+        <g fill="none" stroke-linecap="round">
+          <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="url(#greenArc)" stroke-width="7"/>
+          <polygon points="109.2,51.3 100.4,47.9 105.27,52.41 104.9,58.4" fill="url(#greenArc)" stroke="#eafff0" stroke-width="0.4" stroke-opacity="0.5"/>
+          <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="url(#redArc)" stroke-width="7"/>
+          <polygon points="10.8,68.7 19.6,72.1 14.73,67.59 15.1,61.6" fill="url(#redArc)" stroke="#fff1ef" stroke-width="0.4" stroke-opacity="0.5"/>
+        </g>
+        <circle cx="60" cy="60" r="38" fill="url(#ballFill)" stroke="#3a3f4b" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="38" fill="none" stroke="url(#chrome)" stroke-width="1" opacity="0.4"/>
+        <ellipse cx="46" cy="42" rx="20" ry="14" fill="url(#sheen)"/>
+        <g stroke="url(#chrome)" stroke-width="1" opacity="0.65" fill="none" stroke-linecap="round">
+          <line x1="60" y1="48" x2="60" y2="22"/>
+          <line x1="71.41" y1="56.29" x2="96.14" y2="48.26"/>
+          <line x1="67.05" y1="69.71" x2="82.34" y2="90.74"/>
+          <line x1="52.95" y1="69.71" x2="37.66" y2="90.74"/>
+          <line x1="48.59" y1="56.29" x2="23.86" y2="48.26"/>
+        </g>
+        <polygon points="60,48 71.41,56.29 67.05,69.71 52.95,69.71 48.59,56.29" fill="#14161b" stroke="url(#chrome)" stroke-width="1.4"/>
+        <circle cx="60" cy="60" r="3.1" fill="url(#chrome)"/>
+      </svg>
+      <div>
+        <h1>Mercato <b>IQ</b></h1>
+        <div class="sub">Live transfer rumours · Rated on two metrics that actually matter</div>
+      </div>
+    </div>
+    <div class="status-pill"><span class="dot"></span> LIVE · <span id="asofPill"></span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO: compact masthead, always visible, this is the front door of the whole site.
+       Heading/lede are full-width block elements (not sharing a flex row with the mark/CTA)
+       so they genuinely span the page width instead of reading as a narrow left column. -->
+  <div class="hero">
+    <div class="hero-top">
+      <div class="hero-top-left">
+        <svg class="hero-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mercato IQ mark">
+          <circle cx="60" cy="60" r="38" fill="#16181d" stroke="#3a3f4b" stroke-width="2"/>
+          <path d="M13.0 42.9 A50 50 0 0 1 109.2 51.3" stroke="#33c46a" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <path d="M107.0 77.1 A50 50 0 0 1 10.8 68.7" stroke="#e2454a" stroke-width="7" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="kicker">GLOBAL &middot; ALL LEAGUES &middot; LIVE</div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="ctaBreaking" type="button">See today's biggest stories &rarr;</button>
+      </div>
+    </div>
+    <h2>Every transfer story that matters, <em>live</em>.</h2>
+    <p class="lede">Rated on what actually predicts reality: <b>is it true</b> and <b>will it happen</b>. Sourced back to the reporter. All 13 European nations, 28 leagues, 215 clubs.</p>
+
+    <!-- DRILL-DOWN GUIDE: spells out the three-step path (nation, then league, then club)
+         before the rail itself, so first-time visitors understand how the site is structured
+         rather than just seeing a row of flags. -->
+    <p class="drill-guide"><span class="dg-step"><b>1. Nation</b></span><span class="dg-sep">&rarr;</span><span class="dg-step"><b>2. League</b></span><span class="dg-sep">&rarr;</span><span class="dg-step"><b>3. Club</b></span><span class="dg-note">Start below.</span></p>
+
+    <!-- NATION RAIL: always visible, horizontal chip strip, this is how you drill down -->
+    <aside class="rail" aria-label="Select a nation">
+      <div class="rail-list" id="nation-rail"></div>
+    </aside>
+  </div>
+
+  <!-- TRANSFER WINDOW / DEADLINE DAY: front and centre, right under the hero -->
+  <div class="top-strip">
+    <div class="window-banner" id="windowBanner"></div>
+    <!-- STAT STRIP -->
+    <div class="stats" id="statStrip"></div>
+  </div>
+
+  <!-- TAB NAV (scroll-reduction protocol, same as club pages) -->
+  <nav class="quicknav" aria-label="Sections" style="margin-top:8px">
+    <div class="quicknav-inner" id="tabbar" role="tablist">
+      <span class="qn-tag">SECTIONS</span>
+      <button class="qn-link tabbtn active" data-go="breaking" role="tab" aria-selected="true">Breaking</button>
+      <button class="qn-link tabbtn" data-go="trending" role="tab">Trending</button>
+      <button class="qn-link tabbtn" data-go="windows" role="tab" id="windowsTabBtn">Transfer Windows</button>
+      <button class="qn-link tabbtn" data-go="method" role="tab">Method</button>
+    </div>
+  </nav>
+
+  <div class="tabpanel active" id="panel-breaking">
+    <section id="sec-breaking">
+      <div class="sec-head"><h3>Breaking Now</h3><span class="num">01</span></div>
+      <p class="sec-sub">The biggest stories across every tracked club right now, ranked by source tier, then how likely each is to actually happen.</p>
+      <div class="hgrid" id="headlines-grid"></div>
+    </section>
+  </div>
+
+  <div class="tabpanel" id="panel-trending">
+    <section id="sec-trending">
+      <div class="sec-head"><h3>Trending</h3><span class="num">02</span></div>
+      <p class="sec-sub">Every live deal not already featured in Breaking, ranked by how many sources are covering it. The arrow shows whether that coverage has grown since the last refresh.</p>
+      <div class="box" style="max-width:900px">
+        <h4>&#128293; Most Covered</h4>
+        <div id="trending-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="tabpanel" id="panel-windows">
+    <section id="sec-windows">
+      <div class="sec-head"><h3>Transfer Windows</h3><span class="num">03</span></div>
+      <p class="sec-sub">Every tracked window, live status, and the countdown that matters most. A window reads <b style="color:var(--white)">Transfer Window</b> while it's open, then flips to <b style="color:var(--red-bright)">Deadline Day</b> in its final 24 hours.</p>
+      <div class="deadline-grid" id="deadline-grid"></div>
+    </section>
+  </div>
+
+  <div class="tabpanel" id="panel-method">
+    <section id="sec-method">
+      <div class="sec-head"><h3>Source Evaluation &amp; Method</h3><span class="num">04</span></div>
+      <p class="sec-sub">Always trace the original reporter. An aggregator repeating a journalist is never weighted equally to the journalist.</p>
+      <div class="legend">
+        <div class="col">
+          <h5>Source Tiers</h5>
+          <div class="row"><span class="k"><span class="tier t1">T1</span></span><span><b style="color:var(--white)">Elite</b>: Ornstein, Romano, BBC, The Athletic, official club statements.</span></div>
+          <div class="row"><span class="k"><span class="tier t2">T2</span></span><span><b style="color:var(--white)">Strong</b>: Sky Sports, Di Marzio, Moretto, Plettenberg, reliable club correspondents.</span></div>
+          <div class="row"><span class="k"><span class="tier t3">T3</span></span><span><b style="color:var(--white)">Moderate</b>: TEAMtalk, Football Insider, regional press, club-specific sites.</span></div>
+          <div class="row"><span class="k"><span class="tier t4">T4</span></span><span><b style="color:var(--white)">Weak</b>: Fichajes, fan accounts, aggregator feeds used only as a discovery index, never linked directly.</span></div>
+        </div>
+        <div class="col">
+          <h5>The Dual Rating</h5>
+          <div class="row"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b style="color:var(--white)">real and accurately sourced</b>, driven by tier, corroboration and recency.</span></div>
+          <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b style="color:var(--white)">actually completes</b> this window, fee realism, club stance, player will, competition and need.</span></div>
+          <div class="row"><span class="k">Lights</span><span>&#128994; &gt;50% &middot; &#128993; 30-50% &middot; &#128992; 15-30% &middot; &#128308; &lt;15% (applied to each score separately).</span></div>
+          <h5 style="margin-top:18px">Weighting Model</h5>
+          <div class="weights">
+            <span class="w">Recency <b>30%</b></span><span class="w">Source <b>25%</b></span><span class="w">Tactical fit <b>15%</b></span>
+            <span class="w">Recruitment fit <b>15%</b></span><span class="w">Finance <b>10%</b></span><span class="w">Competition <b>5%</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAGER -->
+  <div class="pager" aria-label="Section pager">
+    <button class="pg-btn" id="pgPrev" type="button">&#8592; Prev</button>
+    <div class="pg-meter" id="pgMeter"></div>
+    <button class="pg-btn" id="pgNext" type="button">Next &#8594;</button>
+  </div>
+
+  <footer>
+    <b>Mercato IQ</b> &middot; independent transfer-market intelligence, updated live from Tier 1-3 reporting across Europe's major leagues.
+    <div class="disclaimer">
+      Probabilities are evidence-weighted estimates, not predictions of preferred signings. They move: rising on credible reinforcement, falling on silence or fading sources. Built from publicly reported sources, weighted by tier and recency. Transfer reporting is inherently uncertain; nothing here is financial advice or a guarantee of any outcome.
+    </div>
+  </footer>
+</div>
+
+<script>
+/*==DATA==*/
+/* ============================================================
+   MERCATO IQ · GLOBAL DATA · STATE OF RECORD
+   Generated by engine/aggregate.py from all club data.js files.
+   ============================================================ */
+
+const HEADLINES = [
+  {
+    headline: "Vinicius Jr",
+    club_display_name: "Paris Saint-Germain",
+    summary: "Ornstein confirms: Real Madrid winger departs to Saudi Arabia in record deal. PS",
+    value: "€500m (structured)",
+    from: "Al-Nassr (Saudi Arabia)", to: "Paris Saint-Germain",
+    direction: "in",
+    prob: 95, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "paris-saint-germain",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Ousmane Diomande",
+    club_display_name: "Nottingham Forest",
+    summary: "",
+    value: "~£37m + £5m add-ons",
+    from: "Sporting CP", to: "Nottingham Forest",
+    direction: "in",
+    prob: 80, trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "nottingham-forest",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Bruno Guimarães",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "£70-85m (gap narrowing)",
+    from: "Newcastle United", to: "Arsenal",
+    direction: "out",
+    prob: 62, trend: 'up',
+    tier: 1, coverage: 4, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Cristian Romero",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "≈€40m (£35m)",
+    from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
+    direction: "out",
+    prob: 62, trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Tammy Abraham",
+    club_display_name: "AC Milan",
+    summary: "Ornstein reports Milan serious interest in Roma striker as potential alternative",
+    value: "€35m",
+    from: "AS Roma", to: "AC Milan",
+    direction: "in",
+    prob: 58, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "ac-milan",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Savinho",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "£60m",
+    from: "Manchester City", to: "Tottenham Hotspur",
+    direction: "in",
+    prob: 55, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Madison Ingram",
+    club_display_name: "Olympique Lyonnais",
+    summary: "Romano reports Chelsea open to loan move for young midfielder to Lyon.",
+    value: "€30m",
+    from: "Chelsea", to: "Olympique Lyonnais",
+    direction: "in",
+    prob: 55, trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "olympique-lyon",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Lucas Bergvall",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "Not yet tested",
+    from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
+    direction: "out",
+    prob: 45, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Morgan Rogers",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£80m+",
+    from: "Aston Villa", to: "Arsenal",
+    direction: "in",
+    prob: 35, trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Mateus Fernandes",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "£80m (West Ham valuation)",
+    from: "West Ham United", to: "Manchester United",
+    direction: "in",
+    prob: 34, trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Lewis Hall",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "Not yet quantified - Newcastle expected to demand a premium",
+    from: "Newcastle United", to: "Manchester United",
+    direction: "in",
+    prob: 32, trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Rafael Leão",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "TBC",
+    from: "AC Milan", to: "Tottenham Hotspur",
+    direction: "in",
+    prob: 26, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Cody Gakpo",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "Not yet tested",
+    from: "Liverpool", to: "Tottenham Hotspur",
+    direction: "in",
+    prob: 20, trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Nicolò Barella",
+    club_display_name: "Inter Milan",
+    summary: "Inter securing midfield lynchpin Barella with fresh contract through 2031. Talks",
+    value: "New long-term deal",
+    from: "Inter Milan", to: "Inter Milan",
+    direction: "in",
+    prob: 95, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "inter-milan",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Paulo Dybala",
+    club_display_name: "Juventus",
+    summary: "Dybala's Roma contract expires and Juventus are preparing to bring back the Arge",
+    value: "Free agent",
+    from: "AS Roma", to: "Juventus",
+    direction: "in",
+    prob: 92, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "juventus",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Mats Wieffer",
+    club_display_name: "AZ Alkmaar",
+    summary: "ESPN reports AZ close to Wieffer extension before Dortmund move.",
+    value: "Contract renewal",
+    from: "AZ Alkmaar", to: "AZ Alkmaar",
+    direction: "in",
+    prob: 88, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "az-alkmaar",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Mehmet Topal",
+    club_display_name: "Fenerbahçe SK",
+    summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
+    value: "Contract renewal",
+    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
+    direction: "in",
+    prob: 85, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Super Lig",
+    club_link: "fenerbahce",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Niclas Füllkrug",
+    club_display_name: "Werder Bremen",
+    summary: "Kicker reports Werder close to Füllkrug contract extension.",
+    value: "Contract renewal",
+    from: "Free agent (Werder)", to: "Werder Bremen",
+    direction: "in",
+    prob: 82, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "werder-bremen",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Pepe",
+    club_display_name: "FC Porto",
+    summary: "Porto moving to bring back veteran defender Pepe as free agent after Real Madrid",
+    value: "Free agent",
+    from: "Free agent (Real Madrid exit)", to: "FC Porto",
+    direction: "in",
+    prob: 80, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Portugal", league: "Liga Portugal",
+    club_link: "fc-porto",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Jude Bellingham",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "€130m (Dortmund asking price)",
+    from: "Borussia Dortmund", to: "Real Madrid",
+    direction: "in",
+    prob: 78, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Xavi Simons",
+    club_display_name: "PSV Eindhoven",
+    summary: "Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented D",
+    value: "Loan + option",
+    from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
+    direction: "in",
+    prob: 65, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "psv-eindhoven",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Dayann Methalie",
+    club_display_name: "Sunderland",
+    summary: "",
+    value: "TBC",
+    from: "Toulouse", to: "Sunderland",
+    direction: "in",
+    prob: 52, trend: 'flat',
+    tier: 2, coverage: 5, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Mateo Kvasina",
+    club_display_name: "FC Cologne",
+    summary: "Sky reports Cologne pursuing young striker from Gladbach.",
+    value: "€8m",
+    from: "Borussia Mönchengladbach", to: "FC Cologne",
+    direction: "in",
+    prob: 48, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "fc-cologne",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Chiquinho",
+    club_display_name: "Olympiacos FC",
+    summary: "Sky reports Olympiacos interest in Portuguese left-back.",
+    value: "€8m",
+    from: "Guimarães", to: "Olympiacos FC",
+    direction: "in",
+    prob: 48, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Greece", league: "Super League",
+    club_link: "olympiacos",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Florian Thauvin",
+    club_display_name: "Olympique Lyonnais",
+    summary: "RMC reports Lyon in talks with veteran winger after Udinese exit.",
+    value: "Free agent",
+    from: "Free agent (Udinese)", to: "Olympique Lyonnais",
+    direction: "in",
+    prob: 48, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "olympique-lyon",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "David Njoku",
+    club_display_name: "Club Brugge",
+    summary: "HLN reports Brugge pursuing Nigerian striker from Udinese.",
+    value: "€18m",
+    from: "Udinese", to: "Club Brugge",
+    direction: "in",
+    prob: 45, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Belgium", league: "Pro League",
+    club_link: "club-brugge",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Elia Caprile",
+    club_display_name: "VfL Bochum",
+    summary: "Sky reports Bochum interested in young Italian goalkeeper.",
+    value: "€12m",
+    from: "Empoli", to: "VfL Bochum",
+    direction: "in",
+    prob: 44, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "vfl-bochum",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Gabriel Jesus",
+    club_display_name: "Atlético Madrid",
+    summary: "Reports from Manchester area sources suggest City open to selling Jesus. Atlétic",
+    value: "€45m",
+    from: "Manchester City", to: "Atlético Madrid",
+    direction: "in",
+    prob: 42, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "atletico-madrid",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Marcus Rashford",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "£40m release clause (all clubs bar Man City & Liverpool)",
+    from: "Manchester United", to: "AS Roma (or open market)",
+    direction: "out",
+    prob: 42, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Jarrad Branthwaite",
+    club_display_name: "Feyenoord Rotterdam",
+    summary: "Sky reports Feyenoord in loan discussions with Everton for young defender.",
+    value: "€40m loan option",
+    from: "Everton", to: "Feyenoord Rotterdam",
+    direction: "in",
+    prob: 42, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "feyenoord",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Djed Spence",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "≈£40m / €40m",
+    from: "Tottenham Hotspur", to: "TBD",
+    direction: "out",
+    prob: 42, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Todibo from Nice",
+    club_display_name: "SL Benfica",
+    summary: "Hawkins reports Benfica interested in Nice defender. Deal talks ongoing but not ",
+    value: "€20m",
+    from: "OGC Nice", to: "SL Benfica",
+    direction: "in",
+    prob: 42, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Portugal", league: "Liga Portugal",
+    club_link: "sl-benfica",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Álvaro Soler",
+    club_display_name: "Galatasaray SK",
+    summary: "Sky reports Galatasaray interest in Spanish winger.",
+    value: "€10m",
+    from: "Montpellier", to: "Galatasaray SK",
+    direction: "in",
+    prob: 42, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Super Lig",
+    club_link: "galatasaray",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Gonçalo Inácio",
+    club_display_name: "LOSC Lille",
+    summary: "RMC reports Lille monitoring Portuguese defender from Sporting.",
+    value: "€35m",
+    from: "Sporting CP", to: "LOSC Lille",
+    direction: "in",
+    prob: 40, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "losc-lille",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Serhou Guirassy",
+    club_display_name: "AS Roma",
+    summary: "Romano and Moretto report Roma in talks with Leipzig for young striker. Deal not",
+    value: "€30m",
+    from: "RB Leipzig", to: "AS Roma",
+    direction: "in",
+    prob: 40, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "as-roma",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Tomás Bisuma",
+    club_display_name: "SC Heerenveen",
+    summary: "Sky reports Heerenveen interest in Fiorentina midfielder.",
+    value: "€15m",
+    from: "Fiorentina", to: "SC Heerenveen",
+    direction: "in",
+    prob: 40, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "sc-heerenveen",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Oussama El Khannouss",
+    club_display_name: "AEK Athens",
+    summary: "Sky reports AEK pursuing midfielder from Leicester.",
+    value: "€15m",
+    from: "Leicester City", to: "AEK Athens",
+    direction: "in",
+    prob: 40, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Greece", league: "Super League",
+    club_link: "aek-athens",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Sotirios Papagiannopoulos",
+    club_display_name: "AIK Fotboll",
+    summary: "Sky reports AIK monitoring Greek defender.",
+    value: "€6m",
+    from: "AEK Athens", to: "AIK Fotboll",
+    direction: "in",
+    prob: 40, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Sweden", league: "Allsvenskan",
+    club_link: "aik-fotboll",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Abde Ezzalzouli",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "≈£43-52m (release clause ≈€60m)",
+    from: "Real Betis", to: "Newcastle United",
+    direction: "in",
+    prob: 38, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Sam Lammers",
+    club_display_name: "Eintracht Frankfurt",
+    summary: "Sky reports Frankfurt pursuing Dutch striker from PSV.",
+    value: "€20m",
+    from: "PSV Eindhoven", to: "Eintracht Frankfurt",
+    direction: "in",
+    prob: 38, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "eintracht-frankfurt",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Andi Zeqiri",
+    club_display_name: "Standard Liège",
+    summary: "RTBF reports Standard monitoring Swiss striker from Augsburg.",
+    value: "€12m",
+    from: "Augsburg", to: "Standard Liège",
+    direction: "in",
+    prob: 38, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Belgium", league: "Pro League",
+    club_link: "standard-liege",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Joe Willock",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "£10m bid rejected",
+    from: "Newcastle United", to: "Besiktas",
+    direction: "out",
+    prob: 38, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Guglielmo Vicario",
+    club_display_name: "Tottenham Hotspur",
+    summary: "",
+    value: "≈£20m",
+    from: "Tottenham Hotspur", to: "Juventus",
+    direction: "out",
+    prob: 36, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Lamine Camara",
+    club_display_name: "Aston Villa",
+    summary: "",
+    value: "~€50m",
+    from: "Monaco", to: "Aston Villa",
+    direction: "in",
+    prob: 35, trend: 'up',
+    tier: 2, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Ousmane Dembélé",
+    club_display_name: "Olympique de Marseille",
+    summary: "Hawkins reports Marseille interest in PSG winger. PSG not motivated to sell.",
+    value: "€50m+",
+    from: "PSG", to: "Olympique de Marseille",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "olympique-marseille",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Brahim Díaz",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "€45m buy-back clause",
+    from: "Real Madrid", to: "AC Milan (return interest)",
+    direction: "out",
+    prob: 35, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Moussa Diaby",
+    club_display_name: "Borussia Dortmund",
+    summary: "German media reports Dortmund as one of several clubs interested in Leverkusen w",
+    value: "€40m",
+    from: "Bayer Leverkusen", to: "Borussia Dortmund",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "borussia-dortmund",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Orkun Kökçü",
+    club_display_name: "AFC Ajax",
+    summary: "Sky reports Ajax monitoring Benfica midfielder.",
+    value: "€30m",
+    from: "Benfica", to: "AFC Ajax",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "ajax",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Villarreal winger",
+    club_display_name: "Atlético Madrid",
+    summary: "Moretto reports Atlético monitoring Villarreal's attacking options as squad dept",
+    value: "€20m+",
+    from: "Villarreal", to: "Atlético Madrid",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "atletico-madrid",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Giorgio Scalvini",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "≈€45-50m (£38-40m)",
+    from: "Atalanta", to: "Newcastle United",
+    direction: "in",
+    prob: 34, trend: 'flat',
+    tier: 2, coverage: 3, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Jonathan David",
+    club_display_name: "RC Lens",
+    summary: "Sky reports Lens interest in Lille striker; deal unlikely from Ligue 1 rivals.",
+    value: "€45m",
+    from: "LOSC Lille", to: "RC Lens",
+    direction: "in",
+    prob: 32, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "rc-lens",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Liam Delap",
+    club_display_name: "Nottingham Forest",
+    summary: "",
+    value: "Fee unclear (cost Chelsea £30m in 2025)",
+    from: "Chelsea", to: "Nottingham Forest",
+    direction: "in",
+    prob: 32, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "nottingham-forest",
+    updated: "2026-07-30T14:00:00Z"
+  },
+  {
+    headline: "Adam Wharton",
+    club_display_name: "Crystal Palace",
+    summary: "",
+    value: "£60m+",
+    from: "Crystal Palace", to: "Elite interest",
+    direction: "out",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "crystal-palace",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Elliot Anderson",
+    club_display_name: "Manchester City",
+    summary: "",
+    value: "£50-70m",
+    from: "(discussed)", to: "Manchester City",
+    direction: "in",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Riccardo Calafiori",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£35-45m",
+    from: "Arsenal", to: "Juventus",
+    direction: "out",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Milan Skriniar",
+    club_display_name: "LOSC Lille",
+    summary: "L'Équipe reports Lille interest in PSG centre-back; PSG not eager to sell.",
+    value: "€30m",
+    from: "Paris Saint-Germain", to: "LOSC Lille",
+    direction: "in",
+    prob: 30, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "losc-lille",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Leandro Trossard",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£12-18m",
+    from: "Arsenal", to: "Open to offers",
+    direction: "out",
+    prob: 30, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Christian Nørgaard",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£8-12m",
+    from: "Arsenal", to: "Listening to offers",
+    direction: "out",
+    prob: 30, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Nick Pope",
+    club_display_name: "Newcastle United",
+    summary: "",
+    value: "Undisclosed",
+    from: "Newcastle United", to: "Ipswich Town (interest)",
+    direction: "out",
+    prob: 30, trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "newcastle-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Éder Militão",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "€90m (PSG valuation)",
+    from: "Real Madrid", to: "Paris Saint-Germain (interest)",
+    direction: "out",
+    prob: 28, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-07-29T00:00:00Z"
+  },
+];
+
+const NATIONS = [
+  {
+    name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    stories_count: 100, league_count: 2
+  },
+  {
+    name: "France", slug: "france", flag_emoji: "🇫🇷",
+    stories_count: 8, league_count: 1
+  },
+  {
+    name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
+    stories_count: 7, league_count: 1
+  },
+  {
+    name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
+    stories_count: 6, league_count: 1
+  },
+  {
+    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
+    stories_count: 6, league_count: 1
+  },
+  {
+    name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
+    stories_count: 5, league_count: 1
+  },
+  {
+    name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
+    stories_count: 3, league_count: 1
+  },
+  {
+    name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
+    stories_count: 3, league_count: 1
+  },
+  {
+    name: "Greece", slug: "greece", flag_emoji: "🇬🇷",
+    stories_count: 2, league_count: 1
+  },
+  {
+    name: "Turkey", slug: "turkey", flag_emoji: "🇹🇷",
+    stories_count: 2, league_count: 1
+  },
+  {
+    name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
+    stories_count: 1, league_count: 1
+  },
+  {
+    name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    stories_count: 0, league_count: 0
+  },
+];
+
+const STATS = {
+  global_spend: "£5.2bn estimated",
+  top_league: "Premier League",
+  most_active_club: "Manchester City",
+  nations_covered: 13,
+  leagues_covered: 28
+};
+
+const REPORT_META = {
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T15:36:37.154570Z",
+  label: "Global aggregation from all clubs"
+};
+
+/*==DATA==*/
+
+/* window-close dates are the one thing this page hardcodes rather than derives,
+   since they change once a year, not per refresh. Edit here when windows shift. */
+const LEAGUE_WINDOWS = [
+  { name: "Premier League", closes: "2026-09-01T22:00:00Z" },
+  { name: "Championship",   closes: "2026-09-01T22:00:00Z" },
+  { name: "La Liga",        closes: "2026-09-01T22:00:00Z" },
+  { name: "Serie A",        closes: "2026-09-01T22:00:00Z" },
+  { name: "Bundesliga",     closes: "2026-09-01T21:00:00Z" },
+  { name: "Ligue 1",        closes: "2026-09-01T22:00:00Z" },
+];
+
+function slugify(s){ return (s||'').toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-'); }
+const lightColor = { g: 'var(--green)', y: 'var(--yellow)', o: 'var(--orange)', r: 'var(--crit)' };
+function lightFor(v){ return v > 50 ? 'g' : v >= 30 ? 'y' : v >= 15 ? 'o' : 'r'; }
+
+/* A window reads "Transfer Window" (open, green) right up until its final 24 hours,
+   when it flips to "Deadline Day" (red, urgent). Past close it reads "Window Closed". */
+function windowStatus(win){
+  const closeMs = new Date(win.closes).getTime();
+  const diffMs = closeMs - Date.now();
+  if(diffMs <= 0) return { state: 'closed', cls: 'closed', label: 'Closed' };
+  if(diffMs <= 86400000) return { state: 'deadline', cls: 'deadline', label: 'Deadline Day' };
+  return { state: 'open', cls: 'open', label: 'Open' };
+}
+
+function renderHeadlines(){
+  const grid = document.getElementById('headlines-grid');
+  if(!HEADLINES.length){ grid.innerHTML = '<div class="empty-note">No headlines yet. Run engine/aggregate.py after the first club refresh.</div>'; return; }
+  grid.innerHTML = HEADLINES.slice(0, 24).map(hl => {
+    const light = lightFor(hl.prob || 0);
+    const tier = hl.tier || 3;
+    const tierBadge = `<span class="hb t${tier}">TIER ${tier}</span>`;
+    const href = hl.club_link ? (hl.club_link + '.html') : '#';
+    const clubsLine = (hl.from || hl.to) ? `<div class="hclubs"><span class="from">${hl.from || '?'}</span><span class="arrow">&rarr;</span><span class="to">${hl.to || '?'}</span></div>` : '';
+    const leagueSlug = slugify(hl.league || '');
+    const nationSlug = slugify(hl.nation || '');
+    const leagueLink = hl.league ? `<a href="leagues/${leagueSlug}.html" onclick="event.stopPropagation()">${hl.league}</a>` : '';
+    const nationLink = hl.nation ? `<a href="nations/${nationSlug}.html" onclick="event.stopPropagation()">${hl.nation}</a>` : '';
+    const clubLink = hl.club_link ? `<a href="${href}" onclick="event.stopPropagation()">${hl.club_display_name || ''}</a>` : (hl.club_display_name || '');
+    return `<div class="hcard" data-href="${href}" onclick="if(!event.target.closest('a'))window.location.href=this.dataset.href" tabindex="0" role="link">
+        <div class="hbadges">${tierBadge}</div>
+        <div class="hplayer">${hl.headline || ''}</div>
+        <div class="hclub">${clubLink}</div>
+        ${clubsLine}
+        <div class="hctx">${nationLink}${nationLink && leagueLink ? ' &middot; ' : ''}${leagueLink} &middot; ${hl.value || ''}</div>
+        <div class="hfoot">
+          <span class="age">${hl.updated ? timeAgo(hl.updated) : (hl.report || '')}</span>
+          <span class="hprob"><span class="ldot" style="background:${lightColor[light]};box-shadow:0 0 6px ${lightColor[light]}"></span><span class="val" style="color:${lightColor[light]}">${hl.prob || 0}%</span></span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function renderRail(){
+  const rail = document.getElementById('nation-rail');
+  const list = Array.isArray(NATIONS) ? NATIONS : [];
+  const eyebrow = '<span class="rail-eyebrow">SELECT A NATION</span>';
+  if(!list.length){
+    rail.innerHTML = eyebrow + '<div class="rail-empty">Nations appear here once engine/aggregate.py has run across at least one club.</div>';
+  } else {
+    rail.innerHTML = eyebrow + list.map(n => `
+      <a class="rail-item" href="nations/${n.slug}.html">
+        <span class="flag">${n.flag_emoji || '\u{1F30D}'}</span>
+        <span class="info"><span class="nm">${n.name}</span><span class="ct">${n.stories_count || 0} ${n.stories_count === 1 ? 'story' : 'stories'}</span></span>
+        <span class="arrow">&rarr;</span>
+      </a>`).join('') + (list.length < 2 ? '<span class="rail-empty">More nations appear here as they\'re brought under live tracking.</span>' : '');
+  }
+}
+
+/* Trending = everything not shown on Breaking (which takes HEADLINES.slice(0,24)), re-sorted
+   by source coverage rather than tier/probability. The arrow reflects a real week-on-week
+   delta computed in engine/aggregate.py (this run's source count vs the last refresh's),
+   not a simulated signal. */
+const coverageArrow = { up: '&#9650;', down: '&#9660;', flat: '&#9679;' };
+function renderTrending(){
+  const breaking = new Set(HEADLINES.slice(0, 24));
+  const rest = HEADLINES.filter(h => !breaking.has(h));
+  const sorted = rest.slice().sort((a, b) => (b.coverage || 1) - (a.coverage || 1) || (b.prob || 0) - (a.prob || 0));
+  const rankRow = (h) => {
+    const trend = h.coverage_trend || 'flat';
+    const covLabel = (h.coverage || 1) === 1 ? '1 source' : `${h.coverage || 1} sources`;
+    return `<div class="rank"><span class="n"></span><span class="nm">${h.headline}<small>${h.club_display_name || ''} &middot; ${h.nation || ''}</small></span><span class="pct"><span class="cov-arrow ${trend}">${coverageArrow[trend]}</span> ${covLabel}</span></div>`;
+  };
+  document.getElementById('trending-list').innerHTML = sorted.length
+    ? sorted.map(rankRow).join('')
+    : '<div class="empty-note">Nothing trending outside Breaking right now: every tracked story is already on the front tab.</div>';
+}
+
+function renderDeadlines(){
+  document.getElementById('deadline-grid').innerHTML = LEAGUE_WINDOWS.map(w => {
+    const st = windowStatus(w);
+    const label = st.state === 'open' ? '&#128994; Open' : st.state === 'deadline' ? '&#128308; Deadline Day' : '&#9899; Closed';
+    return `<div class="dl-card"><div class="dl-league">${w.name}</div><span class="dl-status ${st.cls}">${label}</span></div>`;
+  }).join('');
+}
+
+/* The prominent banner right under the hero always tracks the earliest-closing
+   window among leagues we actually have live data for today (Premier League). */
+function renderWindowBanner(){
+  const primary = LEAGUE_WINDOWS.find(w => w.name === STATS.top_league) || LEAGUE_WINDOWS[0];
+  const el = document.getElementById('windowBanner');
+  const tabBtn = document.getElementById('windowsTabBtn');
+  function paint(){
+    const st = windowStatus(primary);
+    el.className = 'window-banner' + (st.state !== 'open' ? ' ' + st.cls : '');
+    const closeMs = new Date(primary.closes).getTime();
+    const ms = Math.max(0, closeMs - Date.now());
+    const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
+    const eyebrow = st.state === 'open' ? '&#128994; Open' : st.state === 'deadline' ? '&#128308; Deadline Day' : '&#9899; Closed';
+    const cd = st.state === 'closed'
+      ? '<div class="wb-unit"><div class="v">-</div><div class="l">Closed</div></div>'
+      : [[d,'DAYS'],[h,'HRS'],[m,'MIN'],[s,'SEC']].map(([v,l]) => `<div class="wb-unit"><div class="v">${String(v).padStart(2,'0')}</div><div class="l">${l}</div></div>`).join('');
+    el.innerHTML = `
+      <div>
+        <div class="wb-label">${eyebrow}</div>
+        <div class="wb-title"><a href="leagues/${slugify(primary.name)}.html" style="color:inherit;text-decoration:none;border-bottom:1px dotted currentColor">${primary.name}</a> &middot; ${st.label}</div>
+      </div>
+      <div class="wb-cd">${cd}</div>`;
+    if(tabBtn){
+      tabBtn.textContent = st.state === 'deadline' ? '\u{1F534} Deadline Day' : 'Transfer Windows';
+      tabBtn.classList.toggle('lead', st.state === 'deadline');
+    }
+  }
+  paint();
+  setInterval(paint, 1000);
+}
+
+function renderStats(){
+  document.getElementById('statStrip').innerHTML = `
+    <div class="stat gold"><div class="l">Est. Global Spend</div><div class="v">${STATS.global_spend || 'TBC'}</div></div>
+    <div class="stat"><div class="l">Most Active League</div><div class="v" style="font-size:20px">${STATS.top_league || 'TBC'}</div></div>
+    <div class="stat"><div class="l">Nations Tracked</div><div class="v">${STATS.nations_covered || 0}</div></div>
+    <div class="stat"><div class="l">Leagues Tracked</div><div class="v">${STATS.leagues_covered || 0}</div></div>`;
+}
+
+function timeAgo(iso){
+  const ms = Date.now() - new Date(iso).getTime();
+  if(isNaN(ms)) return '';
+  const s = Math.floor(ms/1000), m = Math.floor(s/60), h = Math.floor(m/60), d = Math.floor(h/24);
+  if(s < 60) return 'just now';
+  if(m < 60) return m+'m ago';
+  if(h < 24) return h+'h ago';
+  return d+'d ago';
+}
+
+/* Header status pill doubles as the freshness ticker (the old, taller hero
+   stamp was removed to keep the hero compact): "AS OF <date> · updated Xm ago". */
+(function(){
+  const t0 = new Date(REPORT_META.updated).getTime();
+  const pillTxt = document.getElementById('asofPill');
+  const pillDot = document.querySelector('.status-pill .dot');
+  function fmt(ms){
+    if(isNaN(ms) || ms < 0) return ['CURRENT', 'var(--green)'];
+    const s=Math.floor(ms/1000), m=Math.floor(s/60), h=Math.floor(m/60), d=Math.floor(h/24);
+    let txt;
+    if(s < 60) txt = s+'s';
+    else if(m < 60) txt = m+'m '+(s%60)+'s';
+    else if(h < 24) txt = h+'h '+(m%60)+'m';
+    else txt = d+'d '+(h%24)+'h';
+    const col = h<1 ? 'var(--green)' : d<1 ? 'var(--yellow)' : d<3 ? 'var(--orange)' : 'var(--crit)';
+    return [txt+' ago', col];
+  }
+  function tick(){
+    const [txt, col] = fmt(Date.now() - t0);
+    pillTxt.innerHTML = `AS OF <b style="color:var(--white)">${REPORT_META.asof || ''}</b> &middot; updated <b style="color:${col}">${txt}</b>`;
+    if(pillDot){ pillDot.style.background = col; pillDot.style.boxShadow = '0 0 10px '+col; }
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+renderStats();
+renderHeadlines();
+renderRail();
+renderTrending();
+renderDeadlines();
+renderWindowBanner();
+
+/* ===== TAB + PAGER ENGINE (identical pattern to the club dashboards) ===== */
+(function(){
+  const tabOrder = ['breaking','trending','windows','method'];
+  const tabBtns = Array.from(document.querySelectorAll('.tabbtn'));
+  const meterEl = document.getElementById('pgMeter');
+  const prevBtn = document.getElementById('pgPrev');
+  const nextBtn = document.getElementById('pgNext');
+  let curIdx = 0;
+
+  meterEl.innerHTML = tabOrder.map((t,i) => `<span class="pg-dot${i===0?' on':''}" data-i="${i}" title="${t}"></span>`).join('');
+  const dots = Array.from(meterEl.querySelectorAll('.pg-dot'));
+
+  /* scroll: only true for a real user interaction (tab click, dot click, pager, CTA,
+     or landing directly on a #tab-xxx hash). Never true on the default initial paint,
+     so the hero / nation rail / transfer-window banner stay in view on first load. */
+  function showTab(idx, push, scroll){
+    if(idx < 0 || idx >= tabOrder.length) return;
+    curIdx = idx;
+    const key = tabOrder[idx];
+    document.querySelectorAll('.tabpanel').forEach(p => p.classList.toggle('active', p.id === 'panel-'+key));
+    tabBtns.forEach(b => {
+      const on = b.dataset.go === key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    dots.forEach((d,i) => d.classList.toggle('on', i === idx));
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === tabOrder.length - 1;
+    if(push !== false){ try{ window.history.replaceState(null,'','#tab-'+key); }catch(e){} }
+    if(scroll){ try{ document.getElementById('sec-'+key).scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){} }
+  }
+
+  tabBtns.forEach(b => b.addEventListener('click', () => showTab(tabOrder.indexOf(b.dataset.go), true, true)));
+  dots.forEach(d => d.addEventListener('click', () => showTab(parseInt(d.dataset.i,10), true, true)));
+  prevBtn.addEventListener('click', () => showTab(curIdx-1, true, true));
+  nextBtn.addEventListener('click', () => showTab(curIdx+1, true, true));
+  document.addEventListener('keydown', e => {
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    if(e.key === 'ArrowRight') showTab(curIdx+1, true, true);
+    if(e.key === 'ArrowLeft') showTab(curIdx-1, true, true);
+  });
+  document.getElementById('ctaBreaking').addEventListener('click', () => showTab(0, true, true));
+
+  const h = (window.location.hash||'').replace('#tab-','');
+  const start = tabOrder.indexOf(h);
+  showTab(start >= 0 ? start : 0, false, start >= 0);
+})();
+</script>
+</body>
+</html>
