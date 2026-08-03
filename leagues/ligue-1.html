@@ -236,19 +236,26 @@
 
 const LEAGUE = {
   name: "Ligue 1",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "France",
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Vinicius Jr", prob: 95,
+    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
+    from: "Al-Nassr (Saudi Arabia)", to: "Paris Saint-Germain",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "€500m (structured)", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"paris-saint-germain": 1};
 
-const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0}, {"slug": "as-monaco", "name": "AS Monaco", "count": 0}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0}, {"slug": "olympique-lyonnais", "name": "Olympique Lyonnais", "count": 0}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 0}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 0}, {"slug": "rc-lens", "name": "RC Lens", "count": 0}, {"slug": "stade-brest", "name": "Stade Brest", "count": 0}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 0}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 0}];
+const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0}, {"slug": "as-monaco", "name": "AS Monaco", "count": 0}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0}, {"slug": "olympique-lyonnais", "name": "Olympique Lyonnais", "count": 0}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 0}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 1}, {"slug": "rc-lens", "name": "RC Lens", "count": 0}, {"slug": "stade-brest", "name": "Stade Brest", "count": 0}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 0}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.749724Z",
+  updated: "2026-08-03T15:00:41.063810Z",
   label: "League aggregation"
 };
 

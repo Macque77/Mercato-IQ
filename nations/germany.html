@@ -223,18 +223,32 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 0
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Mats Wieffer",prob: 45,
+    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
+    from: "AZ Alkmaar", to: "Borussia Dortmund",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€25m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
+  {
+    name: "Moussa Diaby",prob: 35,
+    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
+    from: "Bayer Leverkusen", to: "Borussia Dortmund",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€40m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Bundesliga": 2};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 2}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.745727Z",
+  updated: "2026-08-03T15:00:41.058894Z",
   label: "Nation aggregation"
 };
 

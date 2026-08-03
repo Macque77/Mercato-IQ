@@ -237,7 +237,7 @@
 const LEAGUE = {
   name: "Premier League",
   nation: "England",
-  stories_count: 61
+  stories_count: 60
 };
 
 const TOP_STORIES = [  {
@@ -353,13 +353,6 @@ const TOP_STORIES = [  {
     value: "~€50m", updated: "2026-06-06T12:00:00Z"
   },
   {
-    name: "Gabriel Jesus", prob: 35,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
-    from: "Arsenal", to: "Open to offers",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "£25-35m", updated: "2026-08-03T12:48:44Z"
-  },
-  {
     name: "Giorgio Scalvini", prob: 34,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
     from: "Atalanta", to: "Newcastle United",
@@ -380,15 +373,22 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£60m+", updated: "2026-08-03T12:48:44Z"
   },
+  {
+    name: "Elliot Anderson", prob: 30,
+    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "in",
+    from: "(discussed)", to: "Manchester City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "£50-70m", updated: "2026-08-03T12:48:44Z"
+  },
 ];
 
-const BY_CLUB = {"nottingham-forest": 7, "newcastle-united": 7, "tottenham-hotspur": 10, "arsenal": 11, "manchester-united": 10, "aston-villa": 3, "crystal-palace": 1, "manchester-city": 2, "fulham": 1, "bournemouth": 3, "liverpool": 4, "everton": 1, "ipswich-town": 1};
+const BY_CLUB = {"nottingham-forest": 7, "newcastle-united": 7, "tottenham-hotspur": 10, "arsenal": 10, "manchester-united": 10, "aston-villa": 3, "crystal-palace": 1, "manchester-city": 2, "fulham": 1, "bournemouth": 3, "liverpool": 4, "everton": 1, "ipswich-town": 1};
 
-const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 11}, {"slug": "aston-villa", "name": "Aston Villa", "count": 3}, {"slug": "bournemouth", "name": "Bournemouth", "count": 3}, {"slug": "brentford", "name": "Brentford", "count": 0}, {"slug": "brighton", "name": "Brighton", "count": 0}, {"slug": "chelsea", "name": "Chelsea", "count": 0}, {"slug": "crystal-palace", "name": "Crystal Palace", "count": 1}, {"slug": "everton", "name": "Everton", "count": 1}, {"slug": "fulham", "name": "Fulham", "count": 1}, {"slug": "ipswich-town", "name": "Ipswich Town", "count": 1}, {"slug": "liverpool", "name": "Liverpool", "count": 4}, {"slug": "manchester-city", "name": "Manchester City", "count": 2}, {"slug": "manchester-united", "name": "Manchester United", "count": 10}, {"slug": "newcastle-united", "name": "Newcastle United", "count": 7}, {"slug": "nottingham-forest", "name": "Nottingham Forest", "count": 7}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 0}, {"slug": "tottenham-hotspur", "name": "Tottenham Hotspur", "count": 10}, {"slug": "tottenham", "name": "Tottenham Hotspur", "count": 0}, {"slug": "west-ham", "name": "West Ham United", "count": 0}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 0}];
+const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 10}, {"slug": "aston-villa", "name": "Aston Villa", "count": 3}, {"slug": "bournemouth", "name": "Bournemouth", "count": 3}, {"slug": "brentford", "name": "Brentford", "count": 0}, {"slug": "brighton", "name": "Brighton", "count": 0}, {"slug": "chelsea", "name": "Chelsea", "count": 0}, {"slug": "crystal-palace", "name": "Crystal Palace", "count": 1}, {"slug": "everton", "name": "Everton", "count": 1}, {"slug": "fulham", "name": "Fulham", "count": 1}, {"slug": "ipswich-town", "name": "Ipswich Town", "count": 1}, {"slug": "liverpool", "name": "Liverpool", "count": 4}, {"slug": "manchester-city", "name": "Manchester City", "count": 2}, {"slug": "manchester-united", "name": "Manchester United", "count": 10}, {"slug": "newcastle-united", "name": "Newcastle United", "count": 7}, {"slug": "nottingham-forest", "name": "Nottingham Forest", "count": 7}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 0}, {"slug": "tottenham-hotspur", "name": "Tottenham Hotspur", "count": 10}, {"slug": "tottenham", "name": "Tottenham Hotspur", "count": 0}, {"slug": "west-ham", "name": "West Ham United", "count": 0}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.750124Z",
+  updated: "2026-08-03T15:00:41.064238Z",
   label: "League aggregation"
 };
 

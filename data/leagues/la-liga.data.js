@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "La Liga",
   nation: "Spain",
-  stories_count: 5
+  stories_count: 7
 };
 
 const TOP_STORIES = [  {
@@ -17,11 +17,25 @@ const TOP_STORIES = [  {
     value: "€130m (Dortmund asking price)", updated: "2026-07-29T00:00:00Z"
   },
   {
+    name: "Gabriel Jesus", prob: 42,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
+    from: "Manchester City", to: "Atlético Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'down',
+    value: "€45m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
     name: "Brahim Díaz", prob: 35,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
     from: "Real Madrid", to: "AC Milan (return interest)",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€45m buy-back clause", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Villarreal winger", prob: 35,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
+    from: "Villarreal", to: "Atlético Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€20m+", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Éder Militão", prob: 28,
@@ -46,12 +60,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"real-madrid": 5};
+const BY_CLUB = {"real-madrid": 5, "atletico-madrid": 2};
 
-const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 0}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 0}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0}, {"slug": "osasuna", "name": "CA Osasuna", "count": 0}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 0}, {"slug": "barcelona", "name": "FC Barcelona", "count": 0}, {"slug": "celta-vigo", "name": "RC Celta", "count": 0}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 0}, {"slug": "real-betis", "name": "Real Betis", "count": 0}, {"slug": "real-madrid", "name": "Real Madrid", "count": 5}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 0}, {"slug": "sevilla", "name": "Sevilla", "count": 0}, {"slug": "valencia", "name": "Valencia", "count": 0}, {"slug": "villarreal", "name": "Villarreal", "count": 0}];
+const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 0}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 2}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0}, {"slug": "osasuna", "name": "CA Osasuna", "count": 0}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 0}, {"slug": "barcelona", "name": "FC Barcelona", "count": 0}, {"slug": "celta-vigo", "name": "RC Celta", "count": 0}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 0}, {"slug": "real-betis", "name": "Real Betis", "count": 0}, {"slug": "real-madrid", "name": "Real Madrid", "count": 5}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 0}, {"slug": "sevilla", "name": "Sevilla", "count": 0}, {"slug": "valencia", "name": "Valencia", "count": 0}, {"slug": "villarreal", "name": "Villarreal", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.748860Z",
+  updated: "2026-08-03T15:00:41.062909Z",
   label: "League aggregation"
 };

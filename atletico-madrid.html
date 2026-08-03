@@ -659,44 +659,72 @@
    ============================================================ */
 
 const BRAND = {
-  club: "Atlético Madrid", mono: "AM", slug: "atletico-madrid",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Spain","La Liga"]
+  club: "Atlético Madrid",
+  mono: "ATM",
+  slug: "atletico-madrid",
+  primary: "#EB6E1F",
+  primaryBright: "#FF8833",
+  primaryDeep: "#CC5500",
+  primaryRgb: "235,110,31",
+  breadcrumb: ["Spain", "La Liga"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  verified: "2026-08-03",
+  coach: "Diego Simeone",
+  dof: "Andrea Berta (Director)",
+  europe: "UEFA Champions League (2026/27)",
+  finish: "3rd La Liga (2025/26)",
+  owner: "Enrique Cerezo (CEO)",
+  window: "Opens 1 Jul, closes 1 Sep 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["atletico-madrid transfer news"]
+  feeds: ["https://www.transfermarkt.com/", "https://www.goal.com/"],
+  queries: ["Atlético Madrid transfer news 2026"]
 };
 
-const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh"
-, updated: "2026-08-03T12:48:44Z"};
+const REPORT_META = {
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Atlético Madrid"
+};
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = 
-    [];
-const INCOMING = [];
+const CONFIRMED_IN = [
+  {name:"Jamal Musiala", sub:"23 · LW/CAM · Germany", to:"permanent from Bayern Munich", fee:"€110m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 28 Jul. German winger joins Atlético to lead attacking redesign under Simeone. Blockbuster signing highlights club ambitions."}
+];
+
+const CONFIRMED_OUT = [];
+
+const INCOMING = [
+  {name:"Gabriel Jesus", sub:"26 · ST · Brazil", club:"Manchester City", pos:"ST", report:"1 Aug 2026", src:"Sky Sports / Samuel Luckhurst", tier:2, fee:"€45m", truth:65, prob:42, light:"y", trend:"up", note:"Reports from Manchester area sources suggest City open to selling Jesus. Atlético interested but deal far from certain."},
+  {name:"Villarreal winger", sub:"TBD", club:"Villarreal", pos:"RW", report:"30 Jul 2026", src:"Matteo Moretto / Relevo", tier:2, fee:"€20m+", truth:55, prob:35, light:"o", trend:"flat", note:"Moretto reports Atlético monitoring Villarreal's attacking options as squad depth play."}
+];
+
 const OUTGOING = [];
-const RISERS = [];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Jamal Musiala official</b>: Blockbuster €110m signing completed from Bayern Munich."}
+];
+
 const FALLERS = [];
-const NEW = [];
+
+const NEW = [
+  {ar:"✦", t:"Atlético Madrid reshape attack around Musiala's arrival; European competition focus."}
+];
+
 const IGNORE = [];
-const POSITIONS = [];
-const WATCHLIST = [];
+
+const POSITIONS = [
+  {p:"Forward", w:65, x:"Jesus interest signals depth pursuit behind Musiala signing."}
+];
+
+const WATCHLIST = [
+  {name:"Jamal Musiala", club:"Atlético Madrid", pos:"LW/CAM", dir:"in", age:"~6 days", tier:1, note:"OFFICIAL - Musiala confirmed after €110m transfer from Bayern Munich."}
+];
 
 const HUB = {
-  club: {l:"Atletico-Madrid Official", u:"#"}
+  club: {l:"Atlético Madrid Official", u:"#"}
 };
 
 const LINKMAP = {};
@@ -710,6 +738,7 @@ const PROSE = {
   spendOut: { v: `TBD` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 /* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */

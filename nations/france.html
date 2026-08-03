@@ -223,18 +223,25 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 0
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Vinicius Jr",prob: 95,
+    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
+    from: "Al-Nassr (Saudi Arabia)", to: "Paris Saint-Germain",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "€500m (structured)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Ligue 1": 1};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 1}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.745605Z",
+  updated: "2026-08-03T15:00:41.058641Z",
   label: "Nation aggregation"
 };
 

@@ -5,18 +5,32 @@
 
 const LEAGUE = {
   name: "Bundesliga",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Germany",
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Mats Wieffer", prob: 45,
+    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
+    from: "AZ Alkmaar", to: "Borussia Dortmund",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€25m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Moussa Diaby", prob: 35,
+    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
+    from: "Bayer Leverkusen", to: "Borussia Dortmund",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€40m", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"borussia-dortmund": 2};
 
-const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 0}, {"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 0}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 0}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 0}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 0}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 0}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 0}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 0}, {"slug": "sv-werder-bremen", "name": "SV Werder Bremen", "count": 0}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 0}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 0}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 0}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0}];
+const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 0}, {"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 0}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 0}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 0}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 2}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 0}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 0}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 0}, {"slug": "sv-werder-bremen", "name": "SV Werder Bremen", "count": 0}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 0}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 0}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 0}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.747586Z",
+  updated: "2026-08-03T15:00:41.061393Z",
   label: "League aggregation"
 };

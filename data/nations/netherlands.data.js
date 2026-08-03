@@ -6,17 +6,24 @@
 const NATION = {
   name: "Netherlands",
   flag_emoji: "🇳🇱",
-  stories_count: 0
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Xavi Simons",prob: 65,
+    club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
+    from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan + option", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Eredivisie": 1};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 1}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.746220Z",
+  updated: "2026-08-03T15:00:41.059497Z",
   label: "Nation aggregation"
 };

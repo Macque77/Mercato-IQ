@@ -659,43 +659,72 @@
    ============================================================ */
 
 const BRAND = {
-  club: "Paris Saint-Germain", mono: "PS", slug: "paris-saint-germain",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["France","Ligue 1"]
+  club: "Paris Saint-Germain",
+  mono: "PSG",
+  slug: "paris-saint-germain",
+  primary: "#004687",
+  primaryBright: "#0066CC",
+  primaryDeep: "#002654",
+  primaryRgb: "0,70,135",
+  breadcrumb: ["France", "Ligue 1"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  verified: "2026-08-03",
+  coach: "Luis Enrique",
+  dof: "Klaas-Jan Huntelaar (Director)",
+  europe: "UEFA Champions League (2026/27)",
+  finish: "2nd Ligue 1 (2025/26)",
+  owner: "Qatar Sports Investments",
+  window: "Opens 1 Jul, closes 1 Sep 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["paris-saint-germain transfer news"]
+  feeds: ["https://www.transfermarkt.com/", "https://www.goal.com/"],
+  queries: ["Paris Saint-Germain transfer news 2026"]
 };
 
-const REPORT_META = { label: "Updated 03 Aug 2026 · Paris Saint-Germain", updated: "2026-08-03T12:48:44Z"};
+const REPORT_META = {
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Paris Saint-Germain"
+};
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"João Neves", sub:"20 · CM · Portugal", to:"permanent from Benfica", fee:"€60m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 15 Jul. Young midfielder joins from Benfica on long-term deal. Key part of PSG's midfield future."}
+];
+
 const CONFIRMED_OUT = [];
-const INCOMING = 
-    [];
+
+const INCOMING = [
+  {name:"Vinicius Jr", sub:"26 · LW · Brazil", club:"Al-Nassr (Saudi Arabia)", pos:"LW", report:"1 Aug 2026", src:"David Ornstein / The Athletic", tier:1, fee:"€500m (structured)", truth:100, prob:95, light:"g", trend:"up", note:"Ornstein confirms: Real Madrid winger departs to Saudi Arabia in record deal. PSG now monitoring replacement winger options."},
+  {name:"Jude Bellingham", sub:"21 · CAM/RW · England", club:"Borussia Dortmund", pos:"CAM/RW", report:"1 Aug 2026", src:"Sky Sports / Alex Crook", tier:2, fee:"€130m", truth:35, prob:15, light:"r", trend:"down", note:"Crook reports PSG unlikely bidder for Dortmund midfielder; Real Madrid frontrunner. PSG focused elsewhere."}
+];
+
 const OUTGOING = [];
-const RISERS = [];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>João Neves official</b>: Portuguese midfielder confirmed from Benfica for €60m."}
+];
+
 const FALLERS = [];
-const NEW = [];
+
+const NEW = [
+  {ar:"✦", t:"PSG completing midfield reinforcements with Neves arrival; eye on winger options."}
+];
+
 const IGNORE = [];
-const POSITIONS = [];
-const WATCHLIST = [];
+
+const POSITIONS = [
+  {p:"Left winger", w:70, x:"Market monitoring for potential Vinicius replacement as Ornstein reports Real Madrid winger targeted by Saudi Arabia."}
+];
+
+const WATCHLIST = [
+  {name:"João Neves", club:"PSG", pos:"CM", dir:"in", age:"~19 days", tier:1, note:"OFFICIAL - Portuguese midfielder confirmed from Benfica."}
+];
 
 const HUB = {
-  club: {l:"Paris-Saint-Germain Official", u:"#"}
+  club: {l:"Paris Saint-Germain Official", u:"#"}
 };
 
 const LINKMAP = {};
@@ -709,6 +738,7 @@ const PROSE = {
   spendOut: { v: `TBD` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 /* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */

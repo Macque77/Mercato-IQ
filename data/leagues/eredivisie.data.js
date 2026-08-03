@@ -5,18 +5,25 @@
 
 const LEAGUE = {
   name: "Eredivisie",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Netherlands",
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Xavi Simons", prob: 65,
+    club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
+    from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan + option", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"psv-eindhoven": 1};
 
-const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 0}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 0}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 0}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 0}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 0}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 0}];
+const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 0}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 0}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 0}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 1}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 0}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.748486Z",
+  updated: "2026-08-03T15:00:41.062407Z",
   label: "League aggregation"
 };

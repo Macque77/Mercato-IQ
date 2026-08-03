@@ -6,10 +6,17 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 2
+  stories_count: 6
 };
 
 const TOP_STORIES = [  {
+    name: "Tammy Abraham",prob: 58,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "AS Roma", to: "AC Milan",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
     name: "Nicolò Barella",prob: 95,
     club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
     from: "Inter Milan", to: "Inter Milan",
@@ -23,14 +30,35 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
+  {
+    name: "Serhou Guirassy",prob: 40,
+    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
+    from: "RB Leipzig", to: "AS Roma",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Jeremie Freuler",prob: 28,
+    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
+    from: "Atalanta", to: "AS Roma",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€15m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Dusan Vlahović",prob: 25,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Juventus", to: "AC Milan",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€70m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
 ];
 
-const BY_LEAGUE = {"Serie A": 2};
+const BY_LEAGUE = {"Serie A": 6};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 2}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 6}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.746023Z",
+  updated: "2026-08-03T15:00:41.059299Z",
   label: "Nation aggregation"
 };

@@ -223,7 +223,7 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 5
+  stories_count: 7
 };
 
 const TOP_STORIES = [  {
@@ -234,11 +234,25 @@ const TOP_STORIES = [  {
     value: "€130m (Dortmund asking price)", updated: "2026-07-29T00:00:00Z", league: "La Liga"
   },
   {
+    name: "Gabriel Jesus",prob: 42,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
+    from: "Manchester City", to: "Atlético Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'down',
+    value: "€45m", updated: "2026-08-03T14:30:00Z", league: "La Liga"
+  },
+  {
     name: "Brahim Díaz",prob: 35,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
     from: "Real Madrid", to: "AC Milan (return interest)",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€45m buy-back clause", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Villarreal winger",prob: 35,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
+    from: "Villarreal", to: "Atlético Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€20m+", updated: "2026-08-03T14:30:00Z", league: "La Liga"
   },
   {
     name: "Éder Militão",prob: 28,
@@ -263,13 +277,13 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"La Liga": 5};
+const BY_LEAGUE = {"La Liga": 7};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 5}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 7}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.746522Z",
+  updated: "2026-08-03T15:00:41.059914Z",
   label: "Nation aggregation"
 };
 

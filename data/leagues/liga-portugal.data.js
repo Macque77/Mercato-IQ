@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Liga Portugal",
   nation: "Portugal",
-  stories_count: 1
+  stories_count: 3
 };
 
 const TOP_STORIES = [  {
@@ -16,14 +16,28 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Todibo from Nice", prob: 42,
+    club_origin: "sl-benfica", club_display_name: "SL Benfica", direction: "in",
+    from: "OGC Nice", to: "SL Benfica",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€20m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Sérgio Conceição", prob: 22,
+    club_origin: "sl-benfica", club_display_name: "SL Benfica", direction: "in",
+    from: "Free agent", to: "SL Benfica",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free agent", updated: "2026-08-03T14:30:00Z"
+  },
 ];
 
-const BY_CLUB = {"fc-porto": 1};
+const BY_CLUB = {"fc-porto": 1, "sl-benfica": 2};
 
-const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0}, {"slug": "tondela", "name": "CD Tondela", "count": 0}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0}, {"slug": "estoril", "name": "Estoril Praia", "count": 0}, {"slug": "arouca", "name": "FC Arouca", "count": 0}, {"slug": "porto", "name": "FC Porto", "count": 0}, {"slug": "fc-porto", "name": "FC Porto", "count": 1}, {"slug": "chaves", "name": "GD Chaves", "count": 0}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0}, {"slug": "braga", "name": "SC Braga", "count": 0}, {"slug": "benfica", "name": "SL Benfica", "count": 0}, {"slug": "santa-clara", "name": "Santa Clara", "count": 0}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 0}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 0}];
+const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0}, {"slug": "tondela", "name": "CD Tondela", "count": 0}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0}, {"slug": "estoril", "name": "Estoril Praia", "count": 0}, {"slug": "arouca", "name": "FC Arouca", "count": 0}, {"slug": "porto", "name": "FC Porto", "count": 0}, {"slug": "fc-porto", "name": "FC Porto", "count": 1}, {"slug": "chaves", "name": "GD Chaves", "count": 0}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0}, {"slug": "braga", "name": "SC Braga", "count": 0}, {"slug": "sl-benfica", "name": "SL Benfica", "count": 2}, {"slug": "benfica", "name": "SL Benfica", "count": 0}, {"slug": "santa-clara", "name": "Santa Clara", "count": 0}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 0}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:34:32.749406Z",
+  updated: "2026-08-03T15:00:41.063442Z",
   label: "League aggregation"
 };
