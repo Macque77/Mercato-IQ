@@ -72,8 +72,10 @@
     text-transform:uppercase;
   }
 
-  .logo-icon {
-    font-size:14px;
+  .logo img {
+    width:18px;
+    height:18px;
+    display:block;
   }
 
   .nav-links {
@@ -135,8 +137,8 @@
   .nation-tag {
     display:flex;
     align-items:center;
-    gap:3px;
-    padding:4px 10px;
+    gap:6px;
+    padding:4px 10px 4px 4px;
     background:var(--bg);
     border:1px solid var(--border);
     border-radius:999px;
@@ -145,13 +147,35 @@
     white-space:nowrap;
     transition:all 150ms ease;
     cursor:pointer;
-    font-size:12px;
+    font-size:11px;
+    font-family:var(--mono);
+    text-transform:uppercase;
   }
 
   .nation-tag:hover {
     border-color:var(--accent-gold);
     background:rgba(232,194,73,0.1);
     color:var(--accent-gold);
+  }
+
+  .nation-tag img {
+    width:20px;
+    height:14px;
+    object-fit:cover;
+    border-radius:2px;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.15);
+  }
+
+  .nation-tag .flag-fallback-text {
+    display:none;
+    width:20px;
+    height:14px;
+    align-items:center;
+    justify-content:center;
+    font-size:8px;
+    font-weight:700;
+    background:var(--surface);
+    border-radius:2px;
   }
 
   /* ===== CONTAINER ===== */
@@ -386,7 +410,7 @@
 <header>
   <div class="header-inner">
     <a href="/" class="logo">
-      <span class="logo-icon">⚡</span>
+      <img src="mercato-mark.svg" alt="">
       <span>Mercato IQ</span>
     </a>
     <div class="nav-links">
@@ -1270,22 +1294,37 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:48:43.212464Z",
+  updated: "2026-08-03T16:41:03.662984Z",
   label: "Global aggregation from all clubs"
 };
 
 /*==ENDDATA==*/
 
+// flagcdn.com codes, mirrored from engine/build_extended.py's FLAG_CODES. Real flag images
+// instead of unicode flag emoji -- Windows Chrome/Edge deliberately render regional-indicator
+// emoji as plain two-letter codes (no flag glyphs), so emoji-only flags looked broken there.
+const FLAG_CODES = {
+  england: 'gb-eng', scotland: 'gb-sct', wales: 'gb-wls', spain: 'es', france: 'fr',
+  italy: 'it', germany: 'de', netherlands: 'nl', portugal: 'pt', belgium: 'be',
+  greece: 'gr', turkey: 'tr', sweden: 'se'
+};
+
 (function(){
   // Populate nations bar
   if(typeof NATIONS !== 'undefined' && NATIONS && NATIONS.length > 0) {
     const bar = document.getElementById('nations-bar');
-    bar.innerHTML = NATIONS.map(n => `
-      <a href="nations/${n.slug}.html" class="nation-tag">
-        <span>${n.flag_emoji}</span>
-        <span style="display:none">${n.name}</span>
-      </a>
-    `).join('');
+    bar.innerHTML = NATIONS.map(n => {
+      const code = FLAG_CODES[n.slug];
+      const img = code
+        ? `<img src="https://flagcdn.com/${code}.svg" alt="${n.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : '';
+      const fallback = (code ? code.split('-').pop() : n.slug.slice(0,2)).toUpperCase();
+      return `<a href="nations/${n.slug}.html" class="nation-tag">
+        ${img}
+        <span class="flag-fallback-text" style="display:${code ? 'none' : 'flex'}">${fallback}</span>
+        <span>${n.name}</span>
+      </a>`;
+    }).join('');
   }
 
   // Populate headlines feed

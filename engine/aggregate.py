@@ -439,8 +439,10 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
     stories_js += ']'
     nation_flag = FLAG_EMOJI.get(nation_name, '\U0001F30D')
 
+    # NOTE: league html files are named via `league.lower().replace(' ', '-')` (see main()),
+    # NOT via slugify() (which strips accents) -- must match exactly or these links 404.
     leagues_list = sorted(
-        [{'slug': slugify(name), 'name': name, 'count': count} for name, count in leagues.items()],
+        [{'slug': name.lower().replace(' ', '-'), 'name': name, 'count': count} for name, count in leagues.items()],
         key=lambda l: l['name']
     )
     leagues_list_js = json.dumps(leagues_list)

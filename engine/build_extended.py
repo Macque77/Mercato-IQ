@@ -11,6 +11,34 @@ Gates: markers, JS syntax, ISO timestamp, no edition token."""
 import re, sys, os, base64, subprocess, json, glob
 from pathlib import Path
 
+# Nation slug -> flagcdn.com code. flagcdn serves reliable flag SVGs so we don't
+# depend on the viewer's OS/browser rendering flag emoji (Windows/Chrome show
+# two-letter codes instead of real flags for regional-indicator emoji).
+FLAG_CODES = {
+    'england': 'gb-eng',
+    'scotland': 'gb-sct',
+    'wales': 'gb-wls',
+    'spain': 'es',
+    'france': 'fr',
+    'italy': 'it',
+    'germany': 'de',
+    'netherlands': 'nl',
+    'portugal': 'pt',
+    'belgium': 'be',
+    'greece': 'gr',
+    'turkey': 'tr',
+    'sweden': 'se',
+}
+
+def flag_img_url(nation_slug):
+    code = FLAG_CODES.get(nation_slug)
+    return f'https://flagcdn.com/{code}.svg' if code else ''
+
+def flag_code_label(nation_slug):
+    code = FLAG_CODES.get(nation_slug, '')
+    return code.split('-')[-1].upper() if code else '?'
+
+
 def build_club(slug):
     """Build a club page (original logic)."""
     tpl = open('template.html').read()
@@ -35,9 +63,25 @@ def build_club(slug):
             print(f'WARN: badge file invalid ({e}); falling back to png reference')
 
     club = re.search(r'club:\s*"([^"]+)"', data).group(1)
+    mono_match = re.search(r'mono:\s*"([^"]+)"', data)
+    mono = mono_match.group(1) if mono_match else club[:3].upper()
     assert '/*==DATA==*/' in tpl and '/*==ENDDATA==*/' in tpl, 'template markers missing'
 
+    # Real breadcrumb: BRAND.breadcrumb = ["England","Premier League"] -> proper linked path
+    # back through nation/league pages instead of the old dead "/" placeholder links.
+    breadcrumb_match = re.search(r'breadcrumb:\s*\[\s*"([^"]+)"\s*,\s*"([^"]+)"\s*\]', data)
+    nation_name = breadcrumb_match.group(1) if breadcrumb_match else ''
+    league_name = breadcrumb_match.group(2) if breadcrumb_match else ''
+    nation_slug = nation_name.lower().replace(' ', '-') if nation_name else ''
+    league_slug = league_name.lower().replace(' ', '-') if league_name else ''
+    flag_img = flag_img_url(nation_slug)
+    flag_code = flag_code_label(nation_slug)
+
     out = tpl.replace('{{BADGE_URI}}', badge).replace('{{TITLE}}', 'Mercato IQ: ' + club)
+    out = out.replace('{{CLUB}}', club).replace('{{CLUB_MONO}}', mono)
+    out = out.replace('{{NATION}}', nation_name).replace('{{NATION_SLUG}}', nation_slug)
+    out = out.replace('{{LEAGUE_NAME}}', league_name).replace('{{LEAGUE_SLUG}}', league_slug)
+    out = out.replace('{{FLAG_IMG}}', flag_img).replace('{{FLAG_CODE}}', flag_code)
     out = re.sub(r'^/\*==DATA==\*/$[\s\S]*?^/\*==ENDDATA==\*/$',
                   '/*==DATA==*/\n' + data.replace('\\', '\\\\') + '\n/*==ENDDATA==*/',
                   out, count=1, flags=re.M)
@@ -99,22 +143,30 @@ def build_nation(slug):
     asof_match = re.search(r'asof:\s*"([^"]+)"', data)
     asof = asof_match.group(1) if asof_match else ''
 
+    flag_img = flag_img_url(slug)
+    flag_code = flag_code_label(slug)
+
     out = tpl
     out = out.replace('{{LEAGUE_NAME}}', nation_name)
     out = out.replace('{{NATION}}', nation_name)
     out = out.replace('{{FLAG}}', flag_emoji)
+    out = out.replace('{{FLAG_IMG}}', flag_img)
+    out = out.replace('{{FLAG_CODE}}', flag_code)
     out = out.replace('{{STORY_COUNT}}', story_count)
     out = out.replace('{{UPDATED}}', updated)
     out = out.replace('{{ASOF}}', asof)
 
-    # Inject data
-    out = re.sub(r'/\*==DATA==\*/$[\s\S]*?/\*==DATA==\*/',
-                  '/*==DATA==*/\n' + data.replace('\\', '\\\\') + '\n/*==DATA==*/',
+    # Inject data. BUG FIX: this used to close on a second '/*==DATA==*/' marker, which
+    # never matches the template's actual '/*==ENDDATA==*/' closer -- re.sub found no match
+    # and silently left the data block empty, so every nation page rendered with zero data.
+    out = re.sub(r'^/\*==DATA==\*/$[\s\S]*?^/\*==ENDDATA==\*/$',
+                  '/*==DATA==*/\n' + data.replace('\\', '\\\\') + '\n/*==ENDDATA==*/',
                   out, count=1, flags=re.M)
 
     # Validate
     assert 'edition' not in out.lower(), 'forbidden edition token'
     assert updated, 'ISO timestamp required'
+    assert 'const TOP_STORIES' in out, 'data injection failed -- TOP_STORIES missing from output'
 
     js = re.search(r'<script>([\s\S]*)</script>', out).group(1)
     chk = f'.build_check_{slug}.js'
@@ -167,22 +219,29 @@ def build_league(slug):
     asof_match = re.search(r'asof:\s*"([^"]+)"', data)
     asof = asof_match.group(1) if asof_match else ''
 
+    flag_img = flag_img_url(nation_slug)
+    flag_code = flag_code_label(nation_slug)
+
     out = tpl
     out = out.replace('{{LEAGUE_NAME}}', league_name)
     out = out.replace('{{NATION}}', nation_name)
     out = out.replace('{{NATION_SLUG}}', nation_slug)
+    out = out.replace('{{FLAG_IMG}}', flag_img)
+    out = out.replace('{{FLAG_CODE}}', flag_code)
     out = out.replace('{{STORY_COUNT}}', story_count)
     out = out.replace('{{UPDATED}}', updated)
     out = out.replace('{{ASOF}}', asof)
 
-    # Inject data
-    out = re.sub(r'/\*==DATA==\*/$[\s\S]*?/\*==DATA==\*/',
-                  '/*==DATA==*/\n' + data.replace('\\', '\\\\') + '\n/*==DATA==*/',
+    # Inject data. BUG FIX: same broken closing-marker issue as build_nation() -- see comment
+    # there. This was silently producing league pages with zero clubs and zero stories.
+    out = re.sub(r'^/\*==DATA==\*/$[\s\S]*?^/\*==ENDDATA==\*/$',
+                  '/*==DATA==*/\n' + data.replace('\\', '\\\\') + '\n/*==ENDDATA==*/',
                   out, count=1, flags=re.M)
 
     # Validate
     assert 'edition' not in out.lower(), 'forbidden edition token'
     assert updated, 'ISO timestamp required'
+    assert 'const TOP_STORIES' in out, 'data injection failed -- TOP_STORIES missing from output'
 
     js = re.search(r'<script>([\s\S]*)</script>', out).group(1)
     chk = f'.build_check_{slug}.js'
@@ -219,14 +278,18 @@ def build_global():
     out = out.replace('{{UPDATED}}', updated)
     out = out.replace('{{ASOF}}', asof)
 
-    # Inject data
-    out = re.sub(r'/\*==DATA==\*/$[\s\S]*?/\*==DATA==\*/',
-                  '/*==DATA==*/\n' + data.replace('\\', '\\\\') + '\n/*==DATA==*/',
+    # Inject data. BUG FIX: same broken closing-marker issue as build_nation()/build_league() --
+    # this used to close on a second '/*==DATA==*/' instead of '/*==ENDDATA==*/', so the
+    # substitution silently never matched and the landing page kept whatever data (or none)
+    # was already sitting between the markers.
+    out = re.sub(r'^/\*==DATA==\*/$[\s\S]*?^/\*==ENDDATA==\*/$',
+                  '/*==DATA==*/\n' + data.replace('\\', '\\\\') + '\n/*==ENDDATA==*/',
                   out, count=1, flags=re.M)
 
     # Validate
     assert 'edition' not in out.lower(), 'forbidden edition token'
     assert updated, 'ISO timestamp required'
+    assert 'const HEADLINES' in out, 'data injection failed -- HEADLINES missing from output'
 
     js = re.search(r'<script>([\s\S]*)</script>', out).group(1)
     chk = '.build_check_global.js'
