@@ -6,7 +6,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 7
+  stories_count: 6
 };
 
 const TOP_STORIES = [  {
@@ -51,21 +51,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€55m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
-  {
-    name: "",prob: 50,
-    club_origin: "bayern-munich", club_display_name: "Bayern Munich", direction: "in",
-    from: "TBD", to: "Bayern Munich",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 7};
+const BY_LEAGUE = {"Bundesliga": 6};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 7}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 6}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.509377Z",
+  updated: "2026-08-03T17:47:03.885664Z",
   label: "Nation aggregation"
 };
