@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "coun
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T23:00:54.238947Z",
+  updated: "2026-08-03T23:03:21.070696Z",
   label: "League aggregation"
 };

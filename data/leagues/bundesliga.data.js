@@ -55,7 +55,7 @@ const TOP_STORIES = [  {
     name: "Mats Wieffer", prob: 45, bullshit: false,
     club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
     from: "AZ Alkmaar", to: "Borussia Dortmund",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€25m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -87,6 +87,6 @@ const CLUBS_LIST = [{"slug": "union-berlin", "name": "1. FC Union Berlin", "coun
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T23:00:54.230975Z",
+  updated: "2026-08-03T23:03:21.062276Z",
   label: "League aggregation"
 };
