@@ -707,19 +707,6 @@ const HEADLINES = [
     updated: "2026-06-06T00:00:00Z"
   },
   {
-    headline: "Jack Grealish",
-    club_display_name: "Everton",
-    summary: "A stay (loan-to-permanent) is reported as a concrete possibility after his spell",
-    value: "Loan/perm",
-    from: "Man City", to: "Everton",
-    direction: "in",
-    prob: 35, trend: 'flat',
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "everton",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
     headline: "Jadon Sancho",
     club_display_name: "Aston Villa",
     summary: "",
@@ -730,6 +717,19 @@ const HEADLINES = [
     tier: 3, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Jack Grealish",
+    club_display_name: "Everton",
+    summary: "A stay (loan-to-permanent) is reported as a concrete possibility after his spell",
+    value: "Loan/perm",
+    from: "Man City", to: "Everton",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "everton",
     updated: "2026-06-06T12:00:00Z"
   },
   {
@@ -791,18 +791,62 @@ const NATIONS = [
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     stories_count: 102, league_count: 2
   },
+  {
+    name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "France", slug: "france", flag_emoji: "🇫🇷",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Greece", slug: "greece", flag_emoji: "🇬🇷",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Turkey", slug: "turkey", flag_emoji: "🇹🇷",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+    stories_count: 0, league_count: 0
+  },
+  {
+    name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
+    stories_count: 0, league_count: 0
+  },
 ];
 
 const STATS = {
   global_spend: "£5.2bn estimated",
   top_league: "Premier League",
   most_active_club: "Manchester City",
-  nations_covered: 1,
-  leagues_covered: 2
+  nations_covered: 12,
+  leagues_covered: 24
 };
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T13:30:11.205674Z",
+  updated: "2026-08-03T14:07:05.684073Z",
   label: "Global aggregation from all clubs"
 };

@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "thanatos-aspropyrgos", "name": "Thanatos Aspropyrg
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T13:30:11.211839Z",
+  updated: "2026-08-03T14:07:05.690375Z",
   label: "League aggregation"
 };

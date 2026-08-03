@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "ucl-albanova", "name": "UC Albanova", "count": 0}]
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T13:30:11.208097Z",
+  updated: "2026-08-03T14:07:05.686447Z",
   label: "League aggregation"
 };

@@ -272,17 +272,38 @@ def emit_global_data(all_stories):
     leaders and Trending can show everything else, re-sorted by coverage."""
     top_stories = all_stories[:GLOBAL_STORY_CAP]
 
-    nations = {}
-    leagues = {}
+    # Initialize all 13 tracked nations with 0 stories
+    nations = {
+        'England': 0, 'Spain': 0, 'Italy': 0, 'Germany': 0, 'France': 0,
+        'Portugal': 0, 'Greece': 0, 'Turkey': 0, 'Belgium': 0,
+        'Netherlands': 0, 'Wales': 0, 'Sweden': 0
+    }
+
+    # Initialize all 28 tracked leagues with 0 stories
+    leagues = {
+        'Premier League': 0, 'Championship': 0,
+        'La Liga': 0, 'La Liga 2': 0,
+        'Serie A': 0, 'Serie B': 0, 'Serie C': 0,
+        'Bundesliga': 0, '2. Bundesliga': 0,
+        'Ligue 1': 0, 'Ligue 2': 0,
+        'Liga Portugal': 0, 'Liga Portugal 2': 0,
+        'Eredivisie': 0, 'Eerste Divisie': 0,
+        'Super League': 0, 'Super League 2': 0, 'Super League U19': 0,
+        'Super Lig': 0,
+        'Pro League': 0,
+        'Allsvenskan': 0,
+        'Regionalliga': 0,
+        'Championnat National': 0,
+        'Segunda División B': 0
+    }
+
     for story in all_stories:
         nation = story.get('nation', 'Unknown')
         league = story.get('league', 'Unknown')
-        if nation not in nations:
-            nations[nation] = 0
-        if league not in leagues:
-            leagues[league] = 0
-        nations[nation] += 1
-        leagues[league] += 1
+        if nation in nations:
+            nations[nation] += 1
+        if league in leagues:
+            leagues[league] += 1
 
     top_league = max(leagues.items(), key=lambda x: x[1])[0] if leagues else 'Unknown'
 
