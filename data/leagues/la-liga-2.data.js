@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "albacete", "name": "Albacete Balompi\u00e9", "count": 0, "badge": false}, {"slug": "cd-castellon", "name": "CD Castell\u00f3n", "count": 0, "badge": false}, {"slug": "tenerife", "name": "CD Tenerife", "count": 0, "badge": false}, {"slug": "cf-eldense", "name": "CF Eldense", "count": 0, "badge": false}, {"slug": "sabadell", "name": "CF Sabadell", "count": 0, "badge": false}, {"slug": "cordoba", "name": "C\u00f3rdoba CF", "count": 0, "badge": false}, {"slug": "real-valladolid", "name": "Real Valladolid", "count": 0, "badge": false}, {"slug": "eibar", "name": "SD Eibar", "count": 0, "badge": false}, {"slug": "sporting-gijon", "name": "Sporting Gij\u00f3n", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "albacete", "name": "Albacete Balompi\u00e9", "count": 0, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "cd-castellon", "name": "CD Castell\u00f3n", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "tenerife", "name": "CD Tenerife", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "cf-eldense", "name": "CF Eldense", "count": 0, "badge": false, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "sabadell", "name": "CF Sabadell", "count": 0, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "cordoba", "name": "C\u00f3rdoba CF", "count": 0, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "real-valladolid", "name": "Real Valladolid", "count": 0, "badge": false, "primary": "#6B0F1A", "primaryBright": "#B0475A"}, {"slug": "eibar", "name": "SD Eibar", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "sporting-gijon", "name": "Sporting Gij\u00f3n", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.472016Z",
+  updated: "2026-08-03T23:00:54.233775Z",
   label: "League aggregation"
 };

@@ -10,28 +10,28 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Pascalau & McJannet", prob: 55,
+    name: "Pascalau & McJannet", prob: 55, bullshit: false,
     club_origin: "cosenza", club_display_name: "Cosenza", direction: "in",
     from: "Undisclosed", to: "Cosenza",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Michele Castagnetti", prob: 35,
+    name: "Michele Castagnetti", prob: 35, bullshit: false,
     club_origin: "reggiana", club_display_name: "Reggiana", direction: "in",
     from: "Undisclosed", to: "Reggiana",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Reinhart", prob: 35,
+    name: "Reinhart", prob: 35, bullshit: false,
     club_origin: "reggiana", club_display_name: "Reggiana", direction: "out",
     from: "Reggiana", to: "Undisclosed",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Arena", prob: 30,
+    name: "Arena", prob: 30, bullshit: false,
     club_origin: "salernitana", club_display_name: "US Salernitana", direction: "out",
     from: "US Salernitana", to: "Trento / Treviso",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -41,10 +41,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"cosenza": 1, "reggiana": 2, "salernitana": 1};
 
-const CLUBS_LIST = [{"slug": "cidadela", "name": "A.S. Cittadella 1973", "count": 0, "badge": false}, {"slug": "calcio-catania", "name": "Calcio Catania", "count": 0, "badge": false}, {"slug": "cosenza", "name": "Cosenza", "count": 1, "badge": false}, {"slug": "perugia", "name": "Perugia", "count": 0, "badge": false}, {"slug": "reggiana", "name": "Reggiana", "count": 2, "badge": false}, {"slug": "ternana", "name": "Ternana", "count": 0, "badge": false}, {"slug": "treviso", "name": "Treviso", "count": 0, "badge": false}, {"slug": "alessandria", "name": "UPL Alessandria", "count": 0, "badge": false}, {"slug": "avellino", "name": "US Avellino", "count": 0, "badge": false}, {"slug": "salernitana", "name": "US Salernitana", "count": 1, "badge": false}, {"slug": "brescia", "name": "Union Brescia", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "cidadela", "name": "A.S. Cittadella 1973", "count": 0, "badge": false, "primary": "#7A1F2B", "primaryBright": "#C0485A"}, {"slug": "calcio-catania", "name": "Calcio Catania", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "cosenza", "name": "Cosenza", "count": 1, "badge": false, "primary": "#B30000", "primaryBright": "#FF6259"}, {"slug": "perugia", "name": "Perugia", "count": 0, "badge": false, "primary": "#B30000", "primaryBright": "#FF6259"}, {"slug": "reggiana", "name": "Reggiana", "count": 2, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "ternana", "name": "Ternana", "count": 0, "badge": false, "primary": "#B30000", "primaryBright": "#FF6259"}, {"slug": "treviso", "name": "Treviso", "count": 0, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "alessandria", "name": "UPL Alessandria", "count": 0, "badge": false, "primary": "#4A4A4A", "primaryBright": "#B0B0B0"}, {"slug": "avellino", "name": "US Avellino", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "salernitana", "name": "US Salernitana", "count": 1, "badge": false, "primary": "#7A1F2B", "primaryBright": "#B0475A"}, {"slug": "brescia", "name": "Union Brescia", "count": 0, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.478506Z",
+  updated: "2026-08-03T23:00:54.238029Z",
   label: "League aggregation"
 };

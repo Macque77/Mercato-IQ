@@ -5,18 +5,25 @@
 
 const LEAGUE = {
   name: "2. Bundesliga",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Germany",
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Elia Caprile", prob: 44, bullshit: false,
+    club_origin: "vfl-bochum", club_display_name: "VfL Bochum", direction: "in",
+    from: "Empoli", to: "VfL Bochum",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€12m", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"vfl-bochum": 1};
 
-const CLUBS_LIST = [{"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "count": 0, "badge": false}, {"slug": "dynamo-dresden", "name": "Dynamo Dresden", "count": 0, "badge": false}, {"slug": "st-pauli", "name": "FC St. Pauli", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 0, "badge": false, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "count": 0, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "dynamo-dresden", "name": "Dynamo Dresden", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "st-pauli", "name": "FC St. Pauli", "count": 0, "badge": false, "primary": "#5B3A29", "primaryBright": "#8F6A54"}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 1, "badge": false, "primary": "#00427A", "primaryBright": "#00427A"}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0, "badge": false, "primary": "#65B32E", "primaryBright": "#8FE05C"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.466687Z",
+  updated: "2026-08-03T23:00:54.230234Z",
   label: "League aggregation"
 };

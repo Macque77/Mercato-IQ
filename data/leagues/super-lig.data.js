@@ -10,14 +10,14 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Mehmet Topal", prob: 85,
+    name: "Mehmet Topal", prob: 85, bullshit: false,
     club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
     from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Contract renewal", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Álvaro Soler", prob: 42,
+    name: "Álvaro Soler", prob: 42, bullshit: false,
     club_origin: "galatasaray", club_display_name: "Galatasaray SK", direction: "in",
     from: "Montpellier", to: "Galatasaray SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -27,10 +27,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"fenerbahce": 1, "galatasaray": 1};
 
-const CLUBS_LIST = [{"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 1, "badge": false}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1, "badge": false}];
+const CLUBS_LIST = [{"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 1, "badge": false, "primary": "#FDB913", "primaryBright": "#FDB913"}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1, "badge": false, "primary": "#DC2426", "primaryBright": "#DC2426"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.479368Z",
+  updated: "2026-08-03T23:00:54.238681Z",
   label: "League aggregation"
 };

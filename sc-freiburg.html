@@ -229,6 +229,17 @@
     box-shadow:0 12px 24px rgba(0,0,0,0.3);
   }
 
+  .transfer-card.card-highlight {
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 2px rgba(232,194,73,0.35), 0 12px 28px rgba(0,0,0,0.35);
+    animation:highlight-pulse 1.8s ease-out 2;
+  }
+
+  @keyframes highlight-pulse {
+    0% { box-shadow:0 0 0 2px rgba(232,194,73,0.7), 0 12px 28px rgba(0,0,0,0.35); }
+    100% { box-shadow:0 0 0 2px rgba(232,194,73,0.15), 0 12px 28px rgba(0,0,0,0.35); }
+  }
+
   .card-header {
     padding:20px;
     border-bottom:1px solid var(--border);
@@ -488,7 +499,7 @@
   <div class="hero-inner">
     <div class="club-badge-large">
       <img id="club-badge-img" src="scfreiburg.png" alt="SC Freiburg badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
-      <div id="club-badge-fallback" class="badge-fallback" style="display:none">SF</div>
+      <div id="club-badge-fallback" class="badge-fallback" style="display:none">SCF</div>
     </div>
     <div class="hero-text">
       <h2>SC Freiburg</h2>
@@ -539,59 +550,98 @@
    ============================================================ */
 
 const BRAND = {
-  club: "SC Freiburg", mono: "SF", slug: "sc-freiburg",
+  club: "SC Freiburg", mono: "SCF", slug: "sc-freiburg",
   primary: "#E2001A", primaryBright: "#FF6259", primaryDeep: "#800010",
   primaryRgb: "226,0,26",
   breadcrumb: ["Germany","Bundesliga"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  verified: "2026-08-03",
+  coach: "Julian Schuster",
+  dof: "Jochen Saier (Sporting CEO)",
+  europe: "UEFA Conference League (2026/27)",
+  finish: "7th Bundesliga (2025/26)",
+  owner: "Member-owned (SC Freiburg e.V.)",
+  window: "Opens 1 Jul, closes 1 Sep 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["sc-freiburg transfer news"]
+  feeds: ["https://www.transfermarkt.com/", "https://www.scfreiburg.com/en/"],
+  queries: ["SC Freiburg transfer news 2026", "Johan Manzambi Aston Villa", "Freiburg Yannik Engelhardt"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · SC Freiburg"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Mio Backhaus", sub:"20 · GK · Germany", to:"permanent from Werder Bremen", fee:"~€12m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young German goalkeeper signed as the long-term successor in goal."},
+  {name:"Keisuke Goto", sub:"23 · CM · Japan", to:"permanent from RSC Anderlecht", fee:"~€10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Japanese midfielder brought in for squad depth and creativity."},
+  {name:"Yannik Engelhardt", sub:"25 · DM · Germany", to:"permanent from Como 1907", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul: defensive midfielder returns to Freiburg, where he previously played for the U23s (2021-23), after a loan spell at Borussia Mönchengladbach (33 apps in 2025/26). Sporting director Klemens Hartenbach: 'Yannik has very much caught our attention in his first spell here.'"}
+];
+
+const CONFIRMED_OUT = [
+  {name:"Johan Manzambi", sub:"19 · CM/W · Switzerland", to:"permanent to Aston Villa", fee:"£59.5m (~€60m, club-record)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed late Jul via Fabrizio Romano and Freiburg's official channels: a club-record sale for the highly-rated Swiss talent, beating out Newcastle's interest. A major statement fee for a club known for developing and selling young players."},
+  {name:"Junior Adamu", sub:"25 · ST · Austria", to:"permanent to FC Schalke 04", fee:"~€800k", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 11 Jun: Austrian forward, who joined in 2023, transfers to newly-promoted Schalke following a loan at Celtic. Hartenbach: 'Junior is a wonderful person we'll remember fondly.'"},
+  {name:"Daniel-Kofi Kyereh", sub:"27 · AM · Ghana", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; attacking midfielder departs on a free transfer."},
+  {name:"Nicolas Höfler", sub:"34 · DM · Germany", to:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving club captain retires from professional football."}
+];
+
 const INCOMING = [];
+
 const OUTGOING = [];
-const RISERS = [];
-const FALLERS = [];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Manzambi's club-record sale to Aston Villa confirmed</b>: another example of Freiburg's develop-and-sell model funding the squad."}
+];
+
+const FALLERS = [
+  {ar:"⬇", t:"<b>Höfler retires</b>: the long-time captain's exit closes a chapter, with Engelhardt returning to help fill the defensive-midfield gap."}
+];
+
 const NEW = [];
+
 const IGNORE = [];
-const POSITIONS = [];
+
+const POSITIONS = [
+  {p:"Central/attacking midfield", w:35, x:"Manzambi's sale and Höfler's retirement leave notable midfield gaps only partly addressed by Goto and Engelhardt."},
+  {p:"Goalkeeper", w:20, x:"Backhaus signed as a long-term successor in goal."}
+];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Sc-Freiburg Official", u:"#"}
+  sky: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11677/13564492/johan-manzambi-aston-villa-sign-newcastle-target-from-freiburg-in-club-record-lb59-5m-deal"},
+  club: {l:"SC Freiburg Official", u:"https://www.scfreiburg.com/en/latest/first-team/news/2026-27/johan-manzambi-joins-aston-villa/"},
+  baden24: {l:"Baden24", u:"https://www.baden24.de/sport/sc-freiburg/transfer-ticker-sport-club-scf-sommer-neuzugang-abgang-wechsel-infos-news-94318691.html"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Johan Manzambi": ["sky","club"],
+  "Yannik Engelhardt": ["baden24"],
+  "Junior Adamu": ["baden24"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `SC Freiburg · 2026/27 Season`,
-  heroLede: `Transfer window active. SC Freiburg preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Club-record Manzambi sale to Aston Villa headlines a busy, profitable summer`,
+  heroLede: `Julian Schuster's Freiburg, into the Conference League after a 7th-place finish, have banked a club-record £59.5m sale of 19-year-old Swiss talent <b>Johan Manzambi</b> to Aston Villa, beating Newcastle to the deal. Goalkeeper of the future <b>Mio Backhaus</b> arrives from Werder Bremen, while <b>Yannik Engelhardt</b> returns to the club that developed him after a loan year at Borussia Mönchengladbach. Long-serving captain <b>Nicolas Höfler</b> has retired, and forward Junior Adamu has joined newly-promoted Schalke.`,
+  metaRow: `<span>DECISION-MAKER: <b>Jochen Saier</b> (Sporting CEO)</span> <span>HEAD COACH: <b>Julian Schuster</b></span> <span>WINDOW: <b>1 Jul – 1 Sep</b></span>`,
+  stats: `<div class="stat"><div class="l">2025/26 Finish</div><div class="v">7<small>th</small></div></div><div class="stat"><div class="l">2026/27 Europe</div><div class="v">UECL</div></div><div class="stat"><div class="l">Confirmed Out</div><div class="v">4</div></div>`,
+  positionPanel: ``,
+  confirmedPending: ``,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Manzambi's sale is the standout piece of business; Höfler's retirement closes out a captain's career.`,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `~€22m+ committed`, x: `Backhaus (€12m) and Goto (€10m) confirmed; Engelhardt's fee undisclosed.` },
+  spendOut: { v: `~€60.8m banked`, x: `Manzambi's club-record £59.5m sale to Villa dwarfs the rest of the outgoing business.` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -655,11 +705,38 @@ var __cardSeq = 0;
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
+  // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
+  focusCardFromHash();
+  window.addEventListener('hashchange', focusCardFromHash);
 })();
 
 function toggleCard(id) {
   const el = document.getElementById(id);
   if(el) el.classList.toggle('expanded');
+}
+
+// Shared with index.html / template-nation.html / template-league.html so a rumour card
+// clicked on any landing page can deep-link straight to the matching card on this club page.
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function focusCardFromHash() {
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#t-')) return;
+  const slug = hash.slice(3);
+  const target = document.querySelector(`.transfer-card[data-name-slug="${slug}"]`);
+  if (!target) return;
+  target.classList.add('card-highlight');
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toggle = target.querySelector('.sources-toggle');
+  if (toggle && !target.classList.contains('expanded-src')) {
+    toggle.click();
+  }
 }
 
 function buildSourcesPanel(name, linkMap, hub) {
@@ -706,7 +783,7 @@ function renderCard(t, linkMap, hub) {
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -739,7 +816,7 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
@@ -770,7 +847,7 @@ function renderWatchlistCard(t, wlLinkMap, hub) {
   const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>

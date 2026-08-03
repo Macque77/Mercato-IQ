@@ -231,6 +231,17 @@
     overflow:hidden;
   }
 
+  /* Fallback crest tile for clubs with no real badge artwork: a small monogram
+     rendered in the club's own brand colour so it reads as a deliberate crest
+     rather than a missing-image placeholder. */
+  .club-badge.mono-crest {
+    background: linear-gradient(135deg, var(--crest-a, rgba(232,194,73,0.28)), var(--crest-b, rgba(255,255,255,0.05)));
+    border-color: var(--crest-border, rgba(232,194,73,0.4));
+    color: var(--crest-ink, var(--accent-gold));
+    font-weight:600;
+    text-shadow:0 1px 2px rgba(0,0,0,0.35);
+  }
+
   .club-badge img {
     width:100%;
     height:100%;
@@ -536,21 +547,21 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "David Njoku", prob: 45,
+    name: "David Njoku", prob: 45, bullshit: false,
     club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
     from: "Udinese", to: "Club Brugge",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€18m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Andi Zeqiri", prob: 38,
+    name: "Andi Zeqiri", prob: 38, bullshit: false,
     club_origin: "standard-liege", club_display_name: "Standard Liège", direction: "in",
     from: "Augsburg", to: "Standard Liège",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€12m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Denzel Dumfries", prob: 22,
+    name: "Denzel Dumfries", prob: 22, bullshit: false,
     club_origin: "rsc-anderlecht", club_display_name: "RSC Anderlecht", direction: "in",
     from: "Inter Milan", to: "RSC Anderlecht",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -560,11 +571,11 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"club-brugge": 1, "standard-liege": 1, "rsc-anderlecht": 1};
 
-const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 0, "badge": false}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1, "badge": false}, {"slug": "eupen", "name": "KAS Eupen", "count": 0, "badge": false}, {"slug": "westerlo", "name": "KVC Westerlo", "count": 0, "badge": false}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 0, "badge": false}, {"slug": "charleroi", "name": "R Charleroi SC", "count": 0, "badge": false}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 1, "badge": false}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 0, "badge": false}, {"slug": "waasland-beveren", "name": "Waasland-Beveren", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1, "badge": false, "primary": "#2E5CC8", "primaryBright": "#2E5CC8"}, {"slug": "eupen", "name": "KAS Eupen", "count": 0, "badge": false, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "westerlo", "name": "KVC Westerlo", "count": 0, "badge": false, "primary": "#FFCC00", "primaryBright": "#FFE066"}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "charleroi", "name": "R Charleroi SC", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 1, "badge": false, "primary": "#8B0000", "primaryBright": "#8B0000"}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false, "primary": "#FF0000", "primaryBright": "#FF0000"}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "waasland-beveren", "name": "Waasland-Beveren", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.476551Z",
+  updated: "2026-08-03T23:00:54.236662Z",
   label: "League aggregation"
 };
 
@@ -574,20 +585,53 @@ function initials(name) {
   return (name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
 }
 
+function hexToRgba(hex, alpha) {
+  const h = (hex || '#E8C249').replace('#', '');
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  if (isNaN(n)) return `rgba(232,194,73,${alpha})`;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+// Relative luminance (0-1) of a hex colour, used to guard legibility on the dark
+// fallback crest tile -- clubs whose real colours are near-black (Juventus, Udinese)
+// would otherwise render an unreadable ink colour against the dark card background.
+function luminance(hex) {
+  const h = (hex || '#E8C249').replace('#', '');
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  if (isNaN(n)) return 0.6;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+}
+
+// Pick a legible ink colour for the mono-crest tile: the club's bright brand colour
+// when it reads clearly on a dark background, otherwise a neutral light fallback.
+function crestInk(primary, primaryBright) {
+  const candidate = primaryBright || primary;
+  return luminance(candidate) < 0.38 ? '#E9E9EE' : candidate;
+}
+
 (function(){
   // Populate clubs grid. aggregate.py emits this array as CLUBS_LIST with a
-  // {slug,name,count,badge} shape -- NOT "CLUBS" (that mismatch used to leave this grid
-  // permanently empty even when club data existed). badge=true means a thumbnail exists
-  // in badges-thumb/<slug>.png; clubs without real artwork fall back to an initials tile.
+  // {slug,name,count,badge,primary,primaryBright} shape -- NOT "CLUBS" (that mismatch used
+  // to leave this grid permanently empty even when club data existed). badge=true means a
+  // thumbnail exists in badges-thumb/<slug>.png; clubs without real artwork fall back to a
+  // monogram tile rendered in the club's own brand colour, so it reads as a deliberate crest
+  // rather than a missing-image placeholder.
   if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
     const container = document.getElementById('clubs-grid');
     container.innerHTML = CLUBS_LIST.map(c => {
+      const ink = crestInk(c.primary, c.primaryBright);
+      const crestStyle = `--crest-a:${hexToRgba(c.primary, 0.32)};--crest-b:${hexToRgba(c.primaryBright || c.primary, 0.08)};--crest-border:${hexToRgba(c.primary, 0.55)};--crest-ink:${ink}`;
       const badgeInner = c.badge
-        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.textContent='${initials(c.name)}'">`
+        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.classList.add('mono-crest'); this.parentElement.textContent='${initials(c.name)}'">`
         : initials(c.name);
+      const badgeClass = c.badge ? 'club-badge' : 'club-badge mono-crest';
       return `
       <a href="../${c.slug}.html" class="club-card">
-        <div class="club-badge">${badgeInner}</div>
+        <div class="${badgeClass}" style="${crestStyle}">${badgeInner}</div>
         <div class="club-name">${c.name}</div>
       </a>
     `;
@@ -607,15 +651,21 @@ function initials(name) {
   }
 })();
 
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
-  const isBullshit = prob < 35;
+  const isBullshit = s.bullshit === true;
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
-  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
+  const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
   return `<a href="${href}" class="transfer-card">
     ${bullTag}

@@ -6,7 +6,7 @@ const BRAND = {
   club: "Montpellier HSC", mono: "MH", slug: "asm-montpellier",
   primary: "#FF6C00", primaryBright: "#FFA55C", primaryDeep: "#8F3C00",
   primaryRgb: "255,108,0",
-  breadcrumb: ["France","Ligue 1"]
+  breadcrumb: ["France","Ligue 2"]
 };
 
 const VOLATILE = {

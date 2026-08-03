@@ -229,6 +229,17 @@
     box-shadow:0 12px 24px rgba(0,0,0,0.3);
   }
 
+  .transfer-card.card-highlight {
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 2px rgba(232,194,73,0.35), 0 12px 28px rgba(0,0,0,0.35);
+    animation:highlight-pulse 1.8s ease-out 2;
+  }
+
+  @keyframes highlight-pulse {
+    0% { box-shadow:0 0 0 2px rgba(232,194,73,0.7), 0 12px 28px rgba(0,0,0,0.35); }
+    100% { box-shadow:0 0 0 2px rgba(232,194,73,0.15), 0 12px 28px rgba(0,0,0,0.35); }
+  }
+
   .card-header {
     padding:20px;
     border-bottom:1px solid var(--border);
@@ -546,50 +557,79 @@ const BRAND = {
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
+  verified: "2026-08-03",
+  coach: "Beñat San José",
+  dof: "Francisco Rodríguez (Sporting Director)",
+  europe: "None for 2026/27",
+  finish: "8th La Liga (2025/26), 50pts",
+  owner: "Raúl Martín Presa (President)",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["rayo-vallecano transfer news"]
+  feeds: ["https://www.rayovallecano.es/etiqueta/fichaje", "https://www.elgoldigital.com/tag/fichajes-rayo-vallecano/"],
+  queries: ["Rayo Vallecano fichajes 2026"]
 };
 
-const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh"
-, updated: "2026-08-03T12:48:44Z"};
+const REPORT_META = {
+  label: "Updated 03 Aug 2026 · Rayo Vallecano",
+  updated: "2026-08-03T18:00:00Z"
+};
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = 
-    [];
+
+const INCOMING = [
+  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation."}
+];
+
+const OUTGOING = [];
+
 const RISERS = [];
+
 const FALLERS = [];
-const NEW = [];
+
+const NEW = [
+  {ar:"✦", t:"Rayo's clearest live thread is the Ilias Akhomach interest, though conflicting reports mean it isn't yet a fully settled story."}
+];
+
 const IGNORE = [];
-const POSITIONS = [];
-const WATCHLIST = [];
+
+const POSITIONS = [
+  {p:"Wide attacking options", w:40, x:"Akhomach interest points to Rayo looking to add width if the move firms up."}
+];
+
+const WATCHLIST = [
+  {name:"Ilias Akhomach", club:"Villarreal", pos:"W", dir:"in", age:"~2 weeks", tier:2, note:"Conflicting reports on destination (Rayo vs Sevilla/Espanyol loan interest) - unresolved as of 3 Aug 2026."}
+];
 
 const HUB = {
-  club: {l:"Rayo-Vallecano Official", u:"#"}
+  "rayo-official-fichaje": {l:"Rayo Vallecano - official transfer news tag", u:"https://www.rayovallecano.es/etiqueta/fichaje"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Ilias Akhomach": ["rayo-official-fichaje"]
+};
+const WL_LINKMAP = {
+  "Ilias Akhomach": ["rayo-official-fichaje"]
+};
 
 const PROSE = {
-  heroH2: `Rayo Vallecano · 2026/27 Season`,
-  heroLede: `Transfer window active. Rayo Vallecano preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `An unresolved winger saga is the summer's live story`,
+  heroLede: `Under <b>Beñat San José</b>, Rayo's clearest transfer thread is interest in Villarreal winger <b>Ilias Akhomach</b> - though reports disagree on whether Rayo have actually won the race or whether Sevilla and Espanyol remain in contention for a loan.`,
+  metaRow: `<span>COACH: <b>Beñat San José</b></span> <span>WINDOW: <b>15 Jun – 1 Sep</b></span>`,
+  stats: `<div class="stat"><div class="l">Confirmed In</div><div class="v">0</div></div><div class="stat"><div class="l">Confirmed Out</div><div class="v">0</div></div>`,
+  positionPanel: ``,
+  confirmedPending: ``,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: ``,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `€0 confirmed`, x: `Akhomach reporting unresolved` },
+  spendOut: { v: `€0 confirmed`, x: `No completed departures found as of 3 Aug 2026` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -653,11 +693,38 @@ var __cardSeq = 0;
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
+  // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
+  focusCardFromHash();
+  window.addEventListener('hashchange', focusCardFromHash);
 })();
 
 function toggleCard(id) {
   const el = document.getElementById(id);
   if(el) el.classList.toggle('expanded');
+}
+
+// Shared with index.html / template-nation.html / template-league.html so a rumour card
+// clicked on any landing page can deep-link straight to the matching card on this club page.
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function focusCardFromHash() {
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#t-')) return;
+  const slug = hash.slice(3);
+  const target = document.querySelector(`.transfer-card[data-name-slug="${slug}"]`);
+  if (!target) return;
+  target.classList.add('card-highlight');
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toggle = target.querySelector('.sources-toggle');
+  if (toggle && !target.classList.contains('expanded-src')) {
+    toggle.click();
+  }
 }
 
 function buildSourcesPanel(name, linkMap, hub) {
@@ -704,7 +771,7 @@ function renderCard(t, linkMap, hub) {
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -737,7 +804,7 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
@@ -768,7 +835,7 @@ function renderWatchlistCard(t, wlLinkMap, hub) {
   const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>

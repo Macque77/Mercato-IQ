@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "cd-numancia", "name": "CD Numancia", "count": 0, "badge": false}, {"slug": "sevillilla", "name": "Sevilla Atl\u00e9tico", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "cd-numancia", "name": "CD Numancia", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "sevillilla", "name": "Sevilla Atl\u00e9tico", "count": 0, "badge": false, "primary": "#003DA5", "primaryBright": "#3399FF"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.477306Z",
+  updated: "2026-08-03T23:00:54.237225Z",
   label: "League aggregation"
 };

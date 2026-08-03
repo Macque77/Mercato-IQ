@@ -10,113 +10,109 @@ const BRAND = {
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
+  verified: "2026-08-03",
+  coach: "José Mourinho (appointed June 2026, replacing Álvaro Arbeloa)",
+  dof: "José Ángel Sánchez (General Director) · Juni Calafat (Sporting Director)",
+  europe: "UEFA Champions League (2026/27)",
+  finish: "2nd La Liga (2025/26), 86pts - runners-up to Barcelona",
+  owner: "Member-owned (Real Madrid CF), Florentino Pérez President",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["real-madrid transfer news"]
+  feeds: ["https://www.managingmadrid.com/", "https://www.realmadrid.com/en-US/news"],
+  queries: ["Real Madrid transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:00:00Z",
+  label: "Updated 03 Aug 2026 · Real Madrid - corrected from earlier draft"
 };
 
 const CONFIRMED_IN = [
-  {name:"Ferran Torres", sub:"26 · RW/LW · Spain", to:"permanent from Barcelona", fee:"€55m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
-   note:"Announced 22 July as Madrid secure a proven La Liga pedigree to bolster the wings. Torres brings Champions League experience and immediate readiness for Spanish football, fitting Carlo Ancelotti's squad rotation plans."},
+  {name:"Ibrahima Konaté", sub:"27 · CB · France", to:"permanent from Liverpool", fee:"Undisclosed (multi-year deal)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 June 2026. Konaté leaves Liverpool on the expiry of his contract to sign a multi-year deal at the Bernabéu, giving Mourinho a ready-made Champions League centre-back."},
+  {name:"Bernardo Silva", sub:"31 · CM · Portugal", to:"free transfer from Manchester City", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 13 June 2026. The City great joins on a free transfer after his contract expired, reuniting with José Mourinho's midfield plans ahead of the 2026 World Cup."},
+  {name:"Denzel Dumfries", sub:"30 · RB · Netherlands", to:"permanent from Inter Milan", fee:"~£17.1m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Four-year deal bringing Champions League-winning experience at right-back."},
+  {name:"Marc Cucurella", sub:"27 · LB · Spain", to:"permanent from Chelsea", fee:"~£51.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Six-year deal - a big-money left-back addition as Madrid rebuild the back line around Mourinho's system."},
+  {name:"Carlos Espí", sub:"21 · FW · Spain", to:"permanent from Levante", fee:"~£21.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Five-year contract for the young forward, one of the standout performers in La Liga last season."}
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Vinícius Júnior", sub:"26 · LW · Brazil", club:"Al-Nassr (Saudi Arabia)", pos:"LW", fee:"€500m (structured deal)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
-   note:"Shock departure on 1 August - the Brazilian winger departs for a record-breaking Saudi deal worth an estimated €500m over the contract term. Madrid receive €150m upfront with performance bonuses. Sources: Fabrizio Romano, Sky Sports."},
-  {name:"Nacho Fernández", sub:"35 · CB · Spain", club:"Released - free agent", pos:"CB", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED",
-   note:"The club captain leaves Madrid after 16 years at the Bernabéu, exiting on expiry of his contract. Nacho departs as one of the club's most decorated defenders."},
+  {name:"Fran García", sub:"26 · LB · Spain", club:"Real Betis", pos:"LB", fee:"~£3.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Made surplus by the Cucurella signing; joins Betis on a permanent deal."},
+  {name:"Dani Ceballos", sub:"29 · CM · Spain", club:"Released - free agent", pos:"CM", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED", note:"Contract expired; leaves the Bernabéu as a free agent."},
+  {name:"Dani Carvajal", sub:"34 · RB · Spain", club:"Released - free agent", pos:"RB", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED", note:"Long-serving right-back leaves on the expiry of his contract, succeeded in the role by Dumfries."},
+  {name:"David Alaba", sub:"33 · CB · Austria", club:"Released - free agent", pos:"CB", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED", note:"Contract expired; departs after a spell disrupted by long-term injuries."}
 ];
 
-const INCOMING = [
-  {name:"Florian Wirtz", sub:"22 · LW/CAM · Germany", club:"Bayer Leverkusen", pos:"LW/CAM", report:"25 Jul 2026", src:"Bild / Sport Bild", tier:2, fee:"€150m+ asking price", truth:45, prob:22, light:'o', trend:'flat',
-   note:"German media (Bild, Sky Sport Germany via Plettenberg) report Madrid have enquired about Wirtz's availability ahead of Leverkusen's Champions League qualification. Bayer are reluctant to sell their generational talent and any deal would require extraordinary compensation. OBSTACLES: Leverkusen's firm resistance, Wirtz's contentment, astronomical fee."},
-  {name:"Rodrygo Goes", sub:"23 · RW · Brazil", club:"Manchester City", pos:"RW", report:"02 Aug 2026", src:"Goal.com / CaughtOffside", tier:3, fee:"€100m (speculation)", truth:25, prob:8, light:'r', trend:'down',
-   note:"Tabloid speculation only - Goal.com runs a piece suggesting Madrid could offer Rodrygo-plus-cash to City for a theoretical Grealish deal, which has no credible sourcing and contradicts every recent statement from both clubs about their midfield plans. OBSTACLES: pure speculation, no Tier-1 corroboration, both clubs publicly satisfied with their squads."},
-];
+const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Éder Militão", sub:"27 · CB · Brazil", club:"Paris Saint-Germain (interest)", pos:"CB", report:"28 Jul 2026", src:"Le Parisien", tier:2, fee:"€90m (PSG valuation)", truth:50, prob:28, light:'o', trend:'flat',
-   note:"French media report PSG are monitoring Madrid's defensive depth after Nacho's release, with Militão flagged as an option should Marquinhos depart. Madrid have given no indication of willingness to sell their primary centre-back. SOURCES: Le Parisien (France primary), L'Équipe, Relevo (cross-market corroboration)."},
-  {name:"Brahim Díaz", sub:"26 · CAM/RW · Spain", club:"AC Milan (return interest)", pos:"CAM/RW", report:"15 Jul 2026", src:"Gazzetta dello Sport", tier:2, fee:"€45m buy-back clause", truth:55, prob:35, light:'y', trend:'up',
-   note:"Milan, who previously loaned Díaz to Madrid, have triggered interest in a permanent return as they rebuild their attacking options. Ancelotti has not confirmed whether Díaz remains in his plans as an alternative wide creator. SOURCES: Gazzetta dello Sport (Italy primary), Tuttomercatoweb, Sky Italia."},
+  {name:"Vinícius Júnior", sub:"26 · LW · Brazil", club:"Arsenal (interest)", pos:"LW", report:"02 Aug 2026", src:"FootballTransfers / TeamTalk", tier:2, fee:"TBD - loan or permanent structure discussed", truth:55, prob:30, light:"y", trend:"up", note:"CORRECTED 03 Aug: an earlier version of this record wrongly logged a completed €500m Vinícius sale to Al-Nassr - that never happened. The real, live story is Arsenal's interest, with reports of a partial agreement on structure and Vinícius reportedly softening his stance on a Premier League move after Mourinho's arrival reshuffled his standing in the side. Nothing signed; treat as an ongoing saga, not a done deal."}
 ];
 
 const RISERS = [
-  {ar:"⬆", t:"<b>Ferran Torres</b>: Official. Signing from Barcelona completed 22 July, now in full integration with squad."},
-  {ar:"⬆", t:"<b>Vinícius Júnior departure</b>: Shock Saudi deal materialized on 1 August; massive financial windfall for the club."},
+  {ar:"⬆", t:"<b>Five permanent/free arrivals confirmed</b>: Konaté, Bernardo Silva, Dumfries, Cucurella and Espí give Mourinho a rebuilt spine before the window's final month."},
+  {ar:"⬆", t:"<b>Vinícius-Arsenal momentum</b>: reports of a partial agreement on personal terms mark the clearest sign yet that a move away is being seriously discussed."}
 ];
 
-const FALLERS = [
-  {ar:"⬇", t:"<b>Florian Wirtz</b>: Leverkusen's public stance remains that he is not for sale; fee required would be astronomical."},
-  {ar:"⬇", t:"<b>Rodrygo speculation</b>: Goal.com tabloid piece lacks any Tier-1 sourcing; both clubs satisfied with their squads."},
-];
+const FALLERS = [];
 
 const NEW = [
-  {ar:"✦", t:"Ferran Torres' arrival from Barcelona is the summer's marquee incoming business so far, reshaping the wing rotation around an established front line."},
-  {ar:"✦", t:"Vinícius Júnior's surprise departure to Saudi Arabia on 1 August creates a need for additional attacking depth in the final weeks of the window."},
+  {ar:"✦", t:"Real Madrid's summer business is essentially a defensive and midfield rebuild: Konaté, Cucurella and Dumfries overhaul the back four, while Bernardo Silva adds a ready-made World Cup-year midfielder."},
+  {ar:"✦", t:"Four squad players (Ceballos, Carvajal, Alaba, Fran García) have left as contracts expired or the squad was reshaped, freeing wages ahead of any Vinícius decision."}
 ];
 
 const IGNORE = [
-  {ar:"✕", t:"<b>Rodrygo-Manchester City swap</b>: Pure speculation with no Tier-1 sourcing; both clubs publicly deny any appetite for a deal."},
-  {ar:"✕", t:"<b>Éder Militão to PSG</b>: Madrid have not indicated any willingness to sell their first-choice centre-back; PSG interest is background monitoring only."},
+  {ar:"✕", t:"<b>Ferran Torres to Real Madrid, €55m 'done deal'</b>: this appeared in an earlier version of this record and was fabricated - Torres has remained at Barcelona throughout this window, which as of 3 Aug 2026 is publicly saying he is not for sale."},
+  {ar:"✕", t:"<b>Vinícius Júnior to Al-Nassr for €500m, 'done deal'</b>: also fabricated in an earlier version of this record. Vinícius has not left Real Madrid; the genuine story this window is Arsenal interest, not a completed Saudi transfer."}
 ];
 
 const POSITIONS = [
-  {p:"Right wing / attacking width", w:60, x:"Vinícius' departure opens a need for width - Torres' arrival and Wirtz interest address this."},
-  {p:"Centre-back", w:35, x:"Nacho's release leaves Madrid needing young depth; no active pursuit yet but monitoring continues."},
+  {p:"Left wing / Vinícius succession planning", w:55, x:"If the Arsenal saga concludes with a sale, Madrid will need a direct wide replacement before deadline day."}
 ];
 
 const WATCHLIST = [
-  {name:"Vinícius Júnior", club:"Al-Nassr", pos:"LW", dir:"out", age:"~0 days", tier:1, note:"CONFIRMED DEPARTURE - Saudi deal worth €500m structure completed 1 August. Board decision to accept creates squad reshuffling."},
-  {name:"Florian Wirtz", club:"Bayer Leverkusen", pos:"LW/CAM", dir:"in", age:"~8 days", tier:2, note:"Enquiry only; Leverkusen have publicly refused to sell. Any deal would require extraordinary fee (€150m+)."},
+  {name:"Vinícius Júnior", club:"Arsenal (interest)", pos:"LW", dir:"out", age:"~1 day", tier:2, note:"Reports of a partial personal-terms agreement; no club-to-club fee agreed. Genuinely live story, not resolved."}
 ];
 
 const HUB = {
-  "gnews-ferrantorres": {l:"Related news search: Ferran Torres", u:"https://news.google.com/search?q=Real%20Madrid%20Ferran%20Torres%20transfer&hl=en-GB&gl=GB"},
-  "gnews-vinciusjnior": {l:"Related news search: Vinícius Júnior", u:"https://news.google.com/search?q=Real%20Madrid%20Vin%C3%ADcius%20J%C3%BAnior%20transfer&hl=en-GB&gl=GB"},
-  "gnews-nachofernndez": {l:"Related news search: Nacho Fernández", u:"https://news.google.com/search?q=Real%20Madrid%20Nacho%20Fern%C3%A1ndez%20transfer&hl=en-GB&gl=GB"},
-  "bild": {l:"Bild", u:"https://www.bild.de/sport/fussball/"},
-  "goal": {l:"Goal.com", u:"https://www.goal.com/en"},
-  "caughtoffside": {l:"CaughtOffside", u:"https://www.caughtoffside.com/"},
-  "leparisien": {l:"Le Parisien", u:"https://www.leparisien.fr/sports/football/"},
-  "gazzetta": {l:"Gazzetta dello Sport", u:"https://www.gazzetta.it/"},
-  "gnews-florianwirtz": {l:"Related news search: Florian Wirtz", u:"https://news.google.com/search?q=Real%20Madrid%20Florian%20Wirtz%20transfer&hl=en-GB&gl=GB"}
+  "espn-konate": {l:"ESPN - Konaté completes Real Madrid move", u:"https://www.espn.com/soccer/story/_/id/48956684/ibrahima-konate-completes-switch-real-madrid-liverpool"},
+  "skysports-bsilva": {l:"Sky Sports - Bernardo Silva signs for Real Madrid", u:"https://www.skysports.com/football/news/11095/13554908/bernardo-silva-real-madrid-sign-manchester-city-midfielder-on-free-transfer-as-jose-mourinho-impact-continues"},
+  "teamtalk-rmdone": {l:"TeamTalk - every completed Real Madrid transfer, summer 2026", u:"https://www.teamtalk.com/news/every-completed-real-madrid-transfer-summer-2026-signings-sales-loans"},
+  "managingmadrid-frangarcia": {l:"Managing Madrid - Fran García/Betis fee agreement", u:"https://www.managingmadrid.com/109880/betis-real-madrid-fran-garcia-2026-news"},
+  "footballtransfers-vinijr": {l:"FootballTransfers - Vinícius Jr to Arsenal reporting", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/vinicius-jr-to-arsenal-real-madrid-quietly-unlock-transfer-possibility"},
+  "barcablaugranes-torres": {l:"Barca Blaugranes - Ferran Torres not for sale (3 Aug 2026)", u:"https://www.barcablaugranes.com/barcelona-news/128091/fc-barcelona-news-3-august-2026-ferran-torres-not-for-sale-joao-cancelo-signing-very-close"}
 };
 
 const LINKMAP = {
-  "Ferran Torres": ["gnews-ferrantorres"],
-  "Vinícius Júnior": ["gnews-vinciusjnior"],
-  "Nacho Fernández": ["gnews-nachofernndez"],
-  "Florian Wirtz": ["bild"],
-  "Rodrygo Goes": ["goal", "caughtoffside"],
-  "Éder Militão": ["leparisien"],
-  "Brahim Díaz": ["gazzetta"]
+  "Ibrahima Konaté": ["espn-konate"],
+  "Bernardo Silva": ["skysports-bsilva"],
+  "Denzel Dumfries": ["teamtalk-rmdone"],
+  "Marc Cucurella": ["teamtalk-rmdone"],
+  "Carlos Espí": ["teamtalk-rmdone"],
+  "Fran García": ["managingmadrid-frangarcia"],
+  "Dani Ceballos": ["teamtalk-rmdone"],
+  "Dani Carvajal": ["teamtalk-rmdone"],
+  "David Alaba": ["teamtalk-rmdone"],
+  "Vinícius Júnior": ["footballtransfers-vinijr"]
 };
 const WL_LINKMAP = {
-  "Vinícius Júnior": ["gnews-vinciusjnior"],
-  "Florian Wirtz": ["gnews-florianwirtz"]
+  "Vinícius Júnior": ["footballtransfers-vinijr"]
 };
 
 const PROSE = {
-  heroH2: `Real Madrid · 2026/27 Season`,
-  heroLede: `Transfer window active. Real Madrid preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Mourinho's rebuilt spine, and the unresolved Vinícius question`,
+  heroLede: `Real Madrid's summer has been a genuine defensive and midfield reconstruction under new coach <b>José Mourinho</b>: <b>Ibrahima Konaté</b> and <b>Marc Cucurella</b> arrive to remake the back four alongside <b>Denzel Dumfries</b>, while <b>Bernardo Silva</b> joins for free in midfield. The one unresolved thread is <b>Vinícius Júnior</b>, who is genuinely being talked about in connection with Arsenal - but nothing is signed.`,
+  metaRow: `<span>COACH: <b>José Mourinho</b></span> <span>DIRECTOR: <b>José Ángel Sánchez</b></span> <span>WINDOW: <b>15 Jun – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">Confirmed In</div><div class="v">5</div></div><div class="stat"><div class="l">Confirmed Out</div><div class="v">4</div></div>`,
+  positionPanel: ``,
+  confirmedPending: ``,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `The Vinícius Júnior situation is the one live, unresolved thread of the window - watch this space.`,
+  pricingBanner: ``,
+  excludedNote: `Two fabricated stories (Ferran Torres "signing", Vinícius "€500m Al-Nassr sale") from an earlier draft of this page have been corrected and are logged in Ignored below for transparency.`,
+  spendIn: { v: `~£93m committed`, x: `Konaté, Bernardo Silva, Dumfries, Cucurella, Espí` },
+  spendOut: { v: `~£3.4m received`, x: `Fran García fee; Ceballos, Carvajal, Alaba left as free agents` },
   methodLegend: ``
 };

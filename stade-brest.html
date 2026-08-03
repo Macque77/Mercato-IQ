@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercato IQ: Stade Brest</title>
+<title>Mercato IQ: Stade Brestois 29</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --primary:#D71920;
-    --primary-bright:#FF6B6B;
-    --primary-rgb:215,25,32;
+    --primary:#D2001C;
+    --primary-bright:#FF5C6C;
+    --primary-rgb:210,0,28;
     --bg:#0a0e17;
     --surface:#1a2332;
     --border:#3a4452;
@@ -227,6 +227,17 @@
     border-color:var(--primary-bright);
     transform:translateY(-4px);
     box-shadow:0 12px 24px rgba(0,0,0,0.3);
+  }
+
+  .transfer-card.card-highlight {
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 2px rgba(232,194,73,0.35), 0 12px 28px rgba(0,0,0,0.35);
+    animation:highlight-pulse 1.8s ease-out 2;
+  }
+
+  @keyframes highlight-pulse {
+    0% { box-shadow:0 0 0 2px rgba(232,194,73,0.7), 0 12px 28px rgba(0,0,0,0.35); }
+    100% { box-shadow:0 0 0 2px rgba(232,194,73,0.15), 0 12px 28px rgba(0,0,0,0.35); }
   }
 
   .card-header {
@@ -479,7 +490,7 @@
       <span>/</span>
       <a href="leagues/ligue-1.html">Ligue 1</a>
       <span>/</span>
-      <span style="color:var(--primary-bright)">Stade Brest</span>
+      <span style="color:var(--primary-bright)">Stade Brestois 29</span>
     </div>
   </div>
 </header>
@@ -487,11 +498,11 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="club-badge-large">
-      <img id="club-badge-img" src="stadebrest.png" alt="Stade Brest badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
-      <div id="club-badge-fallback" class="badge-fallback" style="display:none">SB</div>
+      <img id="club-badge-img" src="stadebrest.png" alt="Stade Brestois 29 badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
+      <div id="club-badge-fallback" class="badge-fallback" style="display:none">SB29</div>
     </div>
     <div class="hero-text">
-      <h2>Stade Brest</h2>
+      <h2>Stade Brestois 29</h2>
       <div class="subtitle" id="club-subtitle"></div>
     </div>
   </div>
@@ -535,63 +546,79 @@
 <script>
 /*==DATA==*/
 /* ============================================================
-   MERCATO IQ · CLUB DATA · STADE BREST · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · STADE BRESTOIS 29 · STATE OF RECORD
    ============================================================ */
 
 const BRAND = {
-  club: "Stade Brest", mono: "SB", slug: "stade-brest",
-  primary: "#D71920", primaryBright: "#FF6B6B", primaryDeep: "#7A0E12",
-  primaryRgb: "215,25,32",
+  club: "Stade Brestois 29", mono: "SB29", slug: "stade-brest",
+  primary: "#D2001C", primaryBright: "#FF5C6C", primaryDeep: "#7A0011",
+  primaryRgb: "210,0,28",
   breadcrumb: ["France","Ligue 1"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
+  verified: "2026-08-03",
+  coach: "Julien Lachuer (promoted internally 24 Jun 2026, following the sudden passing of Eric Roy on 17 Jun 2026)",
+  dof: "Vacant - Grégory Lorenzi left after a decade at the club to become Olympique de Marseille's Sporting Director (28 May 2026)",
+  europe: "None (2026/27)",
+  finish: "12th Ligue 1 (2025/26)",
+  owner: "Denis Le Saint (President/Chairman since 10 May 2016)",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["stade-brest transfer news"]
+  feeds: ["https://www.getfootballnewsfrance.com/tag/brest/"],
+  queries: ["Stade Brestois transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Stade Brestois 29"
 };
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];
+
 const RISERS = [];
+
 const FALLERS = [];
-const NEW = [];
+
+const NEW = [
+  {ar:"✦", t:"Brest are rebuilding their entire football department this summer: long-serving head coach <b>Eric Roy</b> passed away suddenly in June, with assistant <b>Julien Lachuer</b> promoted to replace him, while sporting director <b>Grégory Lorenzi</b> left the same month to take the equivalent role at Marseille."}
+];
+
 const IGNORE = [];
+
 const POSITIONS = [];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Stade-Brest Official", u:"#"}
+  "gffn-brest": {l:"Get French Football News · Brest", u:"https://www.getfootballnewsfrance.com/tag/brest/"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Stade Brest · 2026/27 Season`,
-  heroLede: `Transfer window active. Stade Brest preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `A club in mourning, rebuilding its leadership before the market moves`,
+  heroLede: `Stade Brestois enter this window still processing the loss of long-serving head coach <b>Eric Roy</b>, who passed away in June at 58. Assistant <b>Julien Lachuer</b> has been promoted to succeed him, while sporting director <b>Grégory Lorenzi</b>, in the role for a decade, departed the same month to join Olympique de Marseille. No transfer business has been reported yet as the new-look football department settles in.`,
+  metaRow: `<span>DECISION-MAKER: <b>Denis Le Saint</b> (President)</span> <span>HEAD COACH: <b>Julien Lachuer</b></span> <span>WINDOW: <b>15 Jun – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">12<small>th</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">None</div></div><div class="stat gold"><div class="l">Confirmed Moves</div><div class="v">0</div></div>`,
+  positionPanel: ``,
+  confirmedPending: `No transfer deals reported as agreed this window; the sporting director post remains vacant.`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: ``,
+  pricingBanner: ``,
+  excludedNote: `No genuine transfer rumours have surfaced for Brest at time of writing - the honest state of the market for this club right now.`,
+  spendIn: { v: `None reported`, x: `No incoming deals confirmed this window.` },
+  spendOut: { v: `None reported`, x: `No outgoing deals confirmed this window.` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -655,11 +682,38 @@ var __cardSeq = 0;
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
+  // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
+  focusCardFromHash();
+  window.addEventListener('hashchange', focusCardFromHash);
 })();
 
 function toggleCard(id) {
   const el = document.getElementById(id);
   if(el) el.classList.toggle('expanded');
+}
+
+// Shared with index.html / template-nation.html / template-league.html so a rumour card
+// clicked on any landing page can deep-link straight to the matching card on this club page.
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function focusCardFromHash() {
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#t-')) return;
+  const slug = hash.slice(3);
+  const target = document.querySelector(`.transfer-card[data-name-slug="${slug}"]`);
+  if (!target) return;
+  target.classList.add('card-highlight');
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toggle = target.querySelector('.sources-toggle');
+  if (toggle && !target.classList.contains('expanded-src')) {
+    toggle.click();
+  }
 }
 
 function buildSourcesPanel(name, linkMap, hub) {
@@ -706,7 +760,7 @@ function renderCard(t, linkMap, hub) {
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -739,7 +793,7 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
@@ -770,7 +824,7 @@ function renderWatchlistCard(t, wlLinkMap, hub) {
   const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>

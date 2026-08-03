@@ -4,27 +4,27 @@
 
 const BRAND = {
   club: "Olympique de Marseille",
-  mono: "OLY",
+  mono: "OM",
   slug: "olympique-marseille",
   primary: "#00A8E1",
-  primaryBright: "#00A8E1",
-  primaryDeep: "#00A8E1",
-  primaryRgb: "100,100,100",
+  primaryBright: "#5CD0FF",
+  primaryDeep: "#004E6B",
+  primaryRgb: "0,168,225",
   breadcrumb: ["France", "Ligue 1"]
 };
 
 const VOLATILE = {
   verified: "2026-08-03",
-  coach: "Jérôme Gasset",
-  dof: "TBD (Director)",
-  europe: "TBD",
+  coach: "Habib Beye (appointed 19 Feb 2026, succeeding the sacked Roberto De Zerbi)",
+  dof: "Grégory Lorenzi (Sporting Director, appointed 28 May 2026 after a decade at Stade Brestois)",
+  europe: "UEFA Europa League (2026/27)",
   finish: "5th Ligue 1 (2025/26)",
-  owner: "TBD",
+  owner: "Frank McCourt (95% stake); Pablo Longoria (President)",
   window: "Opens 1 Jul, closes 31 Aug 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.transfermarkt.com/"],
+  feeds: ["https://www.transfermarkt.com/", "https://www.getfootballnewsfrance.com/tag/marseille/"],
   queries: ["Olympique de Marseille transfer news 2026"]
 };
 
@@ -35,49 +35,82 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Matteo Guendouzi", sub:"24 · CM · France/Italy", to:"permanent from Lazio", fee:"€18m", status:"done", note:"Confirmed 1 Aug. Midfielder joins from Lazio to strengthen midfield."}
+  {name:"Matteo Guendouzi", sub:"27 · CM · France/Italy", to:"permanent from Lazio", fee:"€18m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Aug 2026. Midfielder joins from Lazio to strengthen the engine room."}
 ];
 
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Ousmane Dembélé", sub:"27 · RW · France", club:"PSG", pos:"RW", report:"2 Aug 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€50m+", truth:55, prob:35, note:"Hawkins reports Marseille interest in PSG winger. PSG not motivated to sell."},
-  {name:"Luis Díaz", sub:"26 · LW · Colombia", club:"Liverpool", pos:"LW", report:"30 Jul 2026", src:"Sky Sports News", tier:2, fee:"€60m", truth:48, prob:28, note:"Sky reports Marseille monitoring; Liverpool unlikely to sell to Ligue 1 rival."}
+  {name:"Ousmane Dembélé", sub:"29 · RW · France", club:"PSG", pos:"RW", report:"2 Aug 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€50m+", truth:55, prob:35, light:"y", trend:"flat", note:"Hawkins reports Marseille interest in the PSG winger; PSG are not motivated to sell."},
+  {name:"Luis Díaz", sub:"29 · LW · Colombia", club:"Liverpool", pos:"LW", report:"30 Jul 2026", src:"Sky Sports News", tier:2, fee:"€60m", truth:48, prob:28, light:"o", trend:"flat", note:"Sky reports Marseille are monitoring; Liverpool are unlikely to sell to a Ligue 1 rival."},
+  {name:"Martin Terrier", sub:"29 · FW · France", club:"Bayer Leverkusen", pos:"FW", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:30, light:"y", trend:"flat", note:"Marseille are competing with Rennes, Terrier's former club, to sign the striker."},
+  {name:"Moris Valinčić", sub:"22 · RB · Croatia", club:"Dinamo Zagreb", pos:"RB", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:22, light:"o", trend:"flat", note:"Marseille have made an enquiry over the Croatian right-back."},
+  {name:"Djibril Sidibé", sub:"33 · RB · France", club:"Free agent", pos:"RB", report:"22 Jul 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:40, prob:16, light:"o", trend:"flat", note:"The 2018 World Cup winner has been mentioned as a possible experienced free-agent option."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Igor Paixão", sub:"25 · W · Brazil", club:"Leeds United", pos:"W", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:18, light:"o", trend:"flat", note:"Leeds United reported to have included the winger on their shortlist, though nothing concrete has emerged."},
+  {name:"Nayef Aguerd", sub:"29 · CB · Morocco", club:"Stade Rennais", pos:"CB", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:26, light:"o", trend:"flat", note:"Former club Stade Rennais are exploring bringing the defender back."},
+  {name:"Gerónimo Rulli", sub:"34 · GK · Argentina", club:"Manchester City", pos:"GK", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:20, light:"o", trend:"flat", note:"Manchester City reported to have submitted an offer for the veteran shot-stopper."},
+  {name:"Pierre-Emile Højbjerg", sub:"30 · CM · Denmark", club:"AC Milan", pos:"CM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:42, prob:14, light:"r", trend:"flat", note:"AC Milan reported to have considered the Danish midfielder as an option."}
+];
 
-const RISERS = [];
+const RISERS = [
+  {ar:"⬆", t:"<b>Guendouzi arrives from Lazio</b>: €18m midfield signing completed 1 Aug."}
+];
 
 const FALLERS = [];
 
-const NEW = [];
+const NEW = [
+  {ar:"✦", t:"Grégory Lorenzi joins as Sporting Director from Brest, bringing a decade of recruitment experience to Habib Beye's rebuild."}
+];
 
 const IGNORE = [];
 
-const POSITIONS = [];
+const POSITIONS = [
+  {p:"Forward reinforcement", w:65, x:"Dembélé, Díaz and Terrier links all point to a wide-forward priority as Beye reshapes the attack for Europa League football."}
+];
 
-const WATCHLIST = [];
+const WATCHLIST = [
+  {name:"Martin Terrier", club:"Bayer Leverkusen", pos:"FW", dir:"in", age:"~4 days", tier:2, note:"Competing with Rennes, his former club, for the striker's signature."}
+];
 
 const HUB = {
   "gnews-matteoguendouzi": {l:"Related news search: Matteo Guendouzi", u:"https://news.google.com/search?q=Olympique%20de%20Marseille%20Matteo%20Guendouzi%20transfer&hl=en-GB&gl=GB"},
   "hawkins": {l:"Fabrice Hawkins (L'Équipe)", u:"https://x.com/HawkinsFabrice"},
   "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"},
-  "skynews": {l:"Sky Sports News", u:"https://www.skysports.com/football/news"}
+  "skynews": {l:"Sky Sports News", u:"https://www.skysports.com/football/news"},
+  "gffn-marseille": {l:"Get French Football News · Marseille", u:"https://www.getfootballnewsfrance.com/tag/marseille/"}
 };
 
 const LINKMAP = {
   "Matteo Guendouzi": ["gnews-matteoguendouzi"],
   "Ousmane Dembélé": ["hawkins", "lequipe"],
-  "Luis Díaz": ["skynews"]
+  "Luis Díaz": ["skynews"],
+  "Martin Terrier": ["gffn-marseille"],
+  "Moris Valinčić": ["gffn-marseille"],
+  "Djibril Sidibé": ["gffn-marseille"],
+  "Igor Paixão": ["gffn-marseille"],
+  "Nayef Aguerd": ["gffn-marseille"],
+  "Gerónimo Rulli": ["gffn-marseille"],
+  "Pierre-Emile Højbjerg": ["gffn-marseille"]
 };
-const WL_LINKMAP = {};
+const WL_LINKMAP = {
+  "Martin Terrier": ["gffn-marseille"]
+};
 
 const PROSE = {
-  heroH2: `Olympique de Marseille · 2026/27 Season`,
-  heroLede: `Transfer window active. Olympique de Marseille preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Beye and new sporting director Lorenzi weigh up a busy squad reshuffle`,
+  heroLede: `Marseille's only confirmed arrival so far is midfielder <b>Matteo Guendouzi</b> from Lazio, but the rumour mill is working overtime under new Sporting Director <b>Grégory Lorenzi</b>, freshly arrived from Brest. Forward reinforcements dominate the incoming links - <b>Ousmane Dembélé</b>, <b>Luis Díaz</b> and <b>Martin Terrier</b> all mentioned - while question marks hang over <b>Igor Paixão</b>, <b>Nayef Aguerd</b> and goalkeeper <b>Gerónimo Rulli</b> amid outside interest.`,
+  metaRow: `<span>DECISION-MAKER: <b>Pablo Longoria</b> (President)</span> <span>HEAD COACH: <b>Habib Beye</b></span> <span>WINDOW: <b>1 Jul – 31 Aug</b></span>`,
+  stats: `<div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">5<small>th</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">Europa League</div></div><div class="stat gold"><div class="l">Confirmed In</div><div class="v">1</div></div>`,
+  positionPanel: ``,
+  confirmedPending: ``,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Rulli, Paixão and Aguerd are all attracting interest, though none of the links look close to completion yet.`,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `€18m confirmed`, x: `Guendouzi's arrival is the only fee confirmed to date.` },
+  spendOut: { v: `None confirmed`, x: `No departures confirmed this window despite several live enquiries.` },
   methodLegend: ``
 };

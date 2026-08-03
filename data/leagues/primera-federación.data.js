@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "alcorcon", "name": "AD Alcorc\u00f3n", "count": 0, "badge": false}, {"slug": "cartagena", "name": "FC Cartagena", "count": 0, "badge": false}, {"slug": "sd-huesca", "name": "SD Huesca", "count": 0, "badge": false}, {"slug": "ponferradina", "name": "SD Ponferradina", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "alcorcon", "name": "AD Alcorc\u00f3n", "count": 0, "badge": false, "primary": "#FFC72C", "primaryBright": "#FFE066"}, {"slug": "cartagena", "name": "FC Cartagena", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "sd-huesca", "name": "SD Huesca", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "ponferradina", "name": "SD Ponferradina", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.476187Z",
+  updated: "2026-08-03T23:00:54.236399Z",
   label: "League aggregation"
 };

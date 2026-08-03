@@ -539,7 +539,7 @@ const LEAGUES_LIST = [{"slug": "your-league", "name": "Your League", "count": 0}
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.466317Z",
+  updated: "2026-08-03T23:00:54.229985Z",
   label: "Nation aggregation"
 };
 
@@ -572,15 +572,21 @@ const REPORT_META = {
   }
 })();
 
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
-  const isBullshit = prob < 35;
+  const isBullshit = s.bullshit === true;
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
-  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
+  const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
   return `<a href="${href}" class="transfer-card">
     ${bullTag}

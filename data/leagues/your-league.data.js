@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "as-saint-\u00e9tienne", "name": "AS Saint-\u00c9tienne", "count": 0, "badge": false}, {"slug": "acad\u00e9mica", "name": "Associa\u00e7\u00e3o Acad\u00e9mica", "count": 0, "badge": false}, {"slug": "borussia-m\u00f6nchengladbach", "name": "Borussia M\u00f6nchengladbach", "count": 0, "badge": false}, {"slug": "preu\u00dfen-m\u00fcnster", "name": "Preu\u00dfen M\u00fcnster", "count": 0, "badge": false}, {"slug": "osnabr\u00fcck", "name": "VfL Osnabr\u00fcck", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "as-saint-\u00e9tienne", "name": "AS Saint-\u00c9tienne", "count": 0, "badge": false, "primary": "#1E7A3F", "primaryBright": "#3FCB8C"}, {"slug": "acad\u00e9mica", "name": "Associa\u00e7\u00e3o Acad\u00e9mica", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "preu\u00dfen-m\u00fcnster", "name": "Preu\u00dfen M\u00fcnster", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "osnabr\u00fcck", "name": "VfL Osnabr\u00fcck", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.480068Z",
+  updated: "2026-08-03T23:00:54.239180Z",
   label: "League aggregation"
 };

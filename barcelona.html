@@ -229,6 +229,17 @@
     box-shadow:0 12px 24px rgba(0,0,0,0.3);
   }
 
+  .transfer-card.card-highlight {
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 2px rgba(232,194,73,0.35), 0 12px 28px rgba(0,0,0,0.35);
+    animation:highlight-pulse 1.8s ease-out 2;
+  }
+
+  @keyframes highlight-pulse {
+    0% { box-shadow:0 0 0 2px rgba(232,194,73,0.7), 0 12px 28px rgba(0,0,0,0.35); }
+    100% { box-shadow:0 0 0 2px rgba(232,194,73,0.15), 0 12px 28px rgba(0,0,0,0.35); }
+  }
+
   .card-header {
     padding:20px;
     border-bottom:1px solid var(--border);
@@ -546,98 +557,107 @@ const BRAND = {
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
+  verified: "2026-08-03",
+  coach: "Hansi Flick (contract runs through 2027/28 after extension agreed May 2026)",
+  dof: "Deco (Sporting Director)",
+  europe: "UEFA Champions League (2026/27) - as champions",
+  finish: "1st La Liga (2025/26), 94pts - champions",
+  owner: "Member-owned (FC Barcelona), Joan Laporta President",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["barcelona transfer news"]
+  feeds: ["https://www.barcablaugranes.com/", "https://barcauniversal.com/"],
+  queries: ["FC Barcelona transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:00:00Z",
+  label: "Updated 03 Aug 2026 · FC Barcelona - corrected from earlier draft"
 };
 
 const CONFIRMED_IN = [
-  {name:"Robert Lewandowski", sub:"36 · ST · Poland", to:"contract extension", fee:"Restructured", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 22 Jul. Barcelona secure their primary goalscorer with renewed terms through 2027."}
+  {name:"Anthony Gordon", sub:"25 · RW/LW · England", to:"permanent from Newcastle United", fee:"~£69m + £8.6m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Five-year deal - Barcelona's marquee summer signing, adding pace and directness out wide."},
+  {name:"Karim Adeyemi", sub:"24 · FW · Germany", to:"permanent from Borussia Dortmund", fee:"~€29m (incl. add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Five-year contract for the left-footed forward, signed off by Hansi Flick."},
+  {name:"Jesse Bisiwu", sub:"18 · W · Belgium", to:"permanent from Club Brugge", fee:"~€8.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Belgian youth international joining primarily for the Barça Atlètic pathway."},
+  {name:"João Cancelo", sub:"32 · RB/LB · Portugal", to:"loan (with obligation to buy tied to objectives) from Al-Hilal", fee:"~€10m obligation", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed in January 2026 and already integrated; flagged here for completeness rather than as new summer business."}
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Ferran Torres", sub:"26 · RW/LW · Spain", club:"Real Madrid", pos:"RW/LW", fee:"€55m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced 22 July - Torres leaves for Real Madrid on a permanent deal, a rare direct Barcelona-to-Madrid sale that bolsters Ancelotti's wing rotation."}
+  {name:"Robert Lewandowski", sub:"37 · ST · Poland", club:"Chicago Fire (MLS)", pos:"ST", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"CORRECTED 03 Aug: an earlier version of this record wrongly stated Lewandowski had signed a Barcelona contract extension. In fact he departed as a free agent for Chicago Fire on a deal through 2028, ending his Barça spell."},
+  {name:"Ansu Fati", sub:"23 · W · Spain", club:"Monaco", pos:"W", fee:"€11m (permanent option exercised)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Monaco convert last season's loan into a permanent transfer."},
+  {name:"Iñaki Peña", sub:"27 · GK · Spain", club:"Panathinaikos", pos:"GK", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Backup goalkeeper departs for regular first-team football in Greece."}
 ];
 
-const INCOMING = [
-  {name:"Sergiño Dest", sub:"23 · LW · USA", club:"PSV Eindhoven (loan return)", pos:"LW", report:"01 Aug 2026", src:"Gerard Romero", tier:1, fee:"Loan to buy", truth:88, prob:85, light:"g", trend:"up", note:"Barcelona preparing final push to secure American winger on permanent deal after successful loan spell."},
-  {name:"Vinícius Gabias", sub:"20 · CM · Brazil", club:"Flamengo", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€18m", truth:75, prob:68, light:"g", trend:"up", note:"Brazilian prospect attracting serious interest; negotiations ongoing with Rio club."},
-  {name:"Ederson", sub:"45 · RB · Spain", club:"Sevilla", pos:"RB", report:"26 Jul 2026", src:"Twitter Gossip Account #47", tier:4, fee:"€2.5m", truth:12, prob:8, light:"r", trend:"down", bullshit:true, note:"An anonymous, uncredentialed account claiming Barcelona want a 45-year-old centre-back who is, in fact, a retired goalkeeper. Fake source, impossible claim."}
-];
+const INCOMING = [];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Ferran Torres", sub:"26 · RW/LW · Spain", club:"Real Madrid / PSG (interest)", pos:"RW/LW", report:"03 Aug 2026", src:"Barca Blaugranes", tier:2, fee:"Speculative", truth:40, prob:15, light:"o", trend:"down", note:"CORRECTED 03 Aug: an earlier version of this record wrongly logged a completed €55m Torres sale to Real Madrid - that never happened. As of 3 August, Barcelona's own line is that Torres is 'not for sale', even as PSG and Madrid are credited with background interest. Treat as live speculation only."}
+];
 
 const RISERS = [
-  {ar:"⬆", t:"<b>Lewandowski secured</b>: Barcelona tie down top scorer through 2027."},
-  {ar:"⬆", t:"<b>Dest return likely</b>: American winger set to make Nou Camp move permanent."}
+  {ar:"⬆", t:"<b>Anthony Gordon</b>: marquee wing signing from Newcastle, now official and integrated into Flick's pre-season plans."},
+  {ar:"⬆", t:"<b>Karim Adeyemi</b>: five-year deal from Dortmund adds directness to the front line."}
 ];
 
 const FALLERS = [
-  {ar:"⬇", t:"<b>Ferran Torres</b>: permanent departure to Real Madrid now done and official."}
+  {ar:"⬇", t:"<b>Ferran Torres exit rumours</b>: Barcelona are publicly maintaining he is not for sale, cooling the Real Madrid/PSG links."}
 ];
 
 const NEW = [
-  {ar:"✦", t:"Barcelona consolidating midfield and wing depth after Ferran Torres' permanent exit to Real Madrid."}
+  {ar:"✦", t:"Gordon and Adeyemi arrive as the two headline attacking signings of the champions' summer, alongside Lewandowski's surprise free departure to Chicago Fire."},
+  {ar:"✦", t:"Ferran Torres remains at the club for now, with Barcelona publicly resisting Real Madrid/PSG interest as the window enters its final month."}
 ];
 
 const IGNORE = [
-  "Barcelona linked with every available player on Earth",
-  "Twitter ITK accounts promoting their Fantasy Football teams"
+  {ar:"✕", t:"<b>Robert Lewandowski 'contract extension', 'done deal'</b>: this appeared in an earlier version of this record and was wrong - he in fact left as a free agent for Chicago Fire."},
+  {ar:"✕", t:"<b>Ferran Torres to Real Madrid, €55m 'done deal'</b>: also fabricated in an earlier version of this record; Torres has not left Barcelona and the club says he is not for sale."},
+  {ar:"✕", t:"<b>Sergiño Dest permanent return / Vinícius Gabias / Ederson to Barcelona</b>: unverifiable entries from an earlier draft with no corroborating real reporting found; removed rather than carried forward unverified."}
 ];
 
 const POSITIONS = [
-  {p:"Left winger", w:65, x:"Dest return would complete Barcelona's attacking rotation."},
-  {p:"Central midfield", w:50, x:"Young talent acquisitions to complement established stars."}
+  {p:"Centre-forward depth", w:45, x:"Lewandowski's exit leaves a senior No.9 vacancy behind the front line Flick already has in Gordon and Adeyemi."}
 ];
 
 const WATCHLIST = [
-  {name:"Sergiño Dest", club:"PSV Eindhoven", pos:"LW", dir:"in", age:"~3 days", tier:1, note:"Loan-to-buy agreement progressing. Expected completion before window closes."},
-  {name:"Vinícius Gabias", club:"Flamengo", pos:"CM", dir:"in", age:"~6 days", tier:1, note:"Brazilian midfielder emerging as priority target."}
+  {name:"Ferran Torres", club:"Real Madrid / PSG (interest)", pos:"RW/LW", dir:"out", age:"~1 day", tier:2, note:"Barcelona's public stance remains 'not for sale' as of 3 Aug 2026; genuinely live background interest from two major clubs."}
 ];
 
 const HUB = {
-  "gnews-robertlewandowski": {l:"Related news search: Robert Lewandowski", u:"https://news.google.com/search?q=FC%20Barcelona%20Robert%20Lewandowski%20transfer&hl=en-GB&gl=GB"},
-  "gnews-ferrantorres": {l:"Related news search: Ferran Torres", u:"https://news.google.com/search?q=FC%20Barcelona%20Ferran%20Torres%20transfer&hl=en-GB&gl=GB"},
-  "gromero": {l:"Gerard Romero", u:"https://x.com/gerardromero"},
-  "romano": {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"},
-  "gnews-ederson": {l:"Related news search: Ederson", u:"https://news.google.com/search?q=FC%20Barcelona%20Ederson%20transfer&hl=en-GB&gl=GB"},
-  "gnews-sergiodest": {l:"Related news search: Sergiño Dest", u:"https://news.google.com/search?q=FC%20Barcelona%20Sergi%C3%B1o%20Dest%20transfer&hl=en-GB&gl=GB"},
-  "gnews-vinciusgabias": {l:"Related news search: Vinícius Gabias", u:"https://news.google.com/search?q=FC%20Barcelona%20Vin%C3%ADcius%20Gabias%20transfer&hl=en-GB&gl=GB"}
+  "barcablaugranes-3aug": {l:"Barca Blaugranes - Ferran Torres not for sale, Cancelo close (3 Aug 2026)", u:"https://www.barcablaugranes.com/barcelona-news/128091/fc-barcelona-news-3-august-2026-ferran-torres-not-for-sale-joao-cancelo-signing-very-close"},
+  "teamtalk-fcbdone": {l:"TeamTalk - every completed Barcelona transfer, summer 2026", u:"https://www.teamtalk.com/news/every-completed-barcelona-transfer-summer-2026-signings-sales-loans"},
+  "espn-lewandowski": {l:"ESPN - Chicago Fire complete signing of Robert Lewandowski", u:"https://www.espn.com/soccer/story/_/id/49218680/chicago-fire-complete-signing-robert-lewandowski"},
+  "beinsports-cancelo": {l:"beIN Sports - Barcelona make Cancelo signing official", u:"https://www.beinsports.com/en-us/soccer/la-liga/articles/welcome-home-barcelona-makes-the-signing-of-joao-cancelo-official-2026-01-13"}
 };
 
 const LINKMAP = {
-  "Robert Lewandowski": ["gnews-robertlewandowski"],
-  "Ferran Torres": ["gnews-ferrantorres"],
-  "Sergiño Dest": ["gromero"],
-  "Vinícius Gabias": ["romano"],
-  "Ederson": ["gnews-ederson"]
+  "Anthony Gordon": ["teamtalk-fcbdone"],
+  "Karim Adeyemi": ["teamtalk-fcbdone"],
+  "Jesse Bisiwu": ["teamtalk-fcbdone"],
+  "João Cancelo": ["beinsports-cancelo"],
+  "Robert Lewandowski": ["espn-lewandowski"],
+  "Ansu Fati": ["teamtalk-fcbdone"],
+  "Iñaki Peña": ["teamtalk-fcbdone"],
+  "Ferran Torres": ["barcablaugranes-3aug"]
 };
 const WL_LINKMAP = {
-  "Sergiño Dest": ["gnews-sergiodest"],
-  "Vinícius Gabias": ["gnews-vinciusgabias"]
+  "Ferran Torres": ["barcablaugranes-3aug"]
 };
 
 const PROSE = {
-  heroH2: `FC Barcelona · 2026/27 Season`,
-  heroLede: `Transfer window active. FC Barcelona preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Champions rebuild the wings, lose Lewandowski to MLS`,
+  heroLede: `Barcelona's title-winning summer has brought two genuine attacking signings in <b>Anthony Gordon</b> and <b>Karim Adeyemi</b>, while <b>Robert Lewandowski</b>'s Barça career ended not with a new contract but with a free move to Chicago Fire. The live thread heading into August is whether <b>Ferran Torres</b> stays - the club says yes, Real Madrid and PSG are said to disagree.`,
+  metaRow: `<span>COACH: <b>Hansi Flick</b></span> <span>DIRECTOR: <b>Deco</b></span> <span>WINDOW: <b>15 Jun – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">Confirmed In</div><div class="v">4</div></div><div class="stat"><div class="l">Confirmed Out</div><div class="v">3</div></div>`,
+  positionPanel: ``,
+  confirmedPending: ``,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Ferran Torres is the one live outgoing storyline - everything else this window is done and official.`,
+  pricingBanner: ``,
+  excludedNote: `Several fabricated or unverifiable entries from an earlier draft of this page (Lewandowski "extension", Ferran Torres "sale", Dest/Gabias/Ederson rumours) have been corrected or removed - see Ignored below.`,
+  spendIn: { v: `~£85m committed`, x: `Gordon, Adeyemi, Bisiwu` },
+  spendOut: { v: `~€14m received`, x: `Ansu Fati, Peña fees; Lewandowski left for free` },
   methodLegend: ``
 };
 /*==ENDDATA==*/
@@ -703,11 +723,38 @@ var __cardSeq = 0;
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
+  // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
+  focusCardFromHash();
+  window.addEventListener('hashchange', focusCardFromHash);
 })();
 
 function toggleCard(id) {
   const el = document.getElementById(id);
   if(el) el.classList.toggle('expanded');
+}
+
+// Shared with index.html / template-nation.html / template-league.html so a rumour card
+// clicked on any landing page can deep-link straight to the matching card on this club page.
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function focusCardFromHash() {
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#t-')) return;
+  const slug = hash.slice(3);
+  const target = document.querySelector(`.transfer-card[data-name-slug="${slug}"]`);
+  if (!target) return;
+  target.classList.add('card-highlight');
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toggle = target.querySelector('.sources-toggle');
+  if (toggle && !target.classList.contains('expanded-src')) {
+    toggle.click();
+  }
 }
 
 function buildSourcesPanel(name, linkMap, hub) {
@@ -754,7 +801,7 @@ function renderCard(t, linkMap, hub) {
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -787,7 +834,7 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
@@ -818,7 +865,7 @@ function renderWatchlistCard(t, wlLinkMap, hub) {
   const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>

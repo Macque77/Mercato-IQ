@@ -231,6 +231,17 @@
     overflow:hidden;
   }
 
+  /* Fallback crest tile for clubs with no real badge artwork: a small monogram
+     rendered in the club's own brand colour so it reads as a deliberate crest
+     rather than a missing-image placeholder. */
+  .club-badge.mono-crest {
+    background: linear-gradient(135deg, var(--crest-a, rgba(232,194,73,0.28)), var(--crest-b, rgba(255,255,255,0.05)));
+    border-color: var(--crest-border, rgba(232,194,73,0.4));
+    color: var(--crest-ink, var(--accent-gold));
+    font-weight:600;
+    text-shadow:0 1px 2px rgba(0,0,0,0.35);
+  }
+
   .club-badge img {
     width:100%;
     height:100%;
@@ -536,98 +547,98 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Florentino Luis", prob: 90,
+    name: "Florentino Luis", prob: 90, bullshit: false,
     club_origin: "burnley", club_display_name: "Burnley", direction: "out",
     from: "Burnley", to: "Ipswich Town",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£16m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "João Gomes", prob: 60,
+    name: "João Gomes", prob: 60, bullshit: false,
     club_origin: "wolverhampton", club_display_name: "Wolverhampton Wanderers", direction: "out",
     from: "Wolverhampton Wanderers", to: "Atlético Madrid",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£39-40m", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Daniel Jebbison", prob: 55,
+    name: "Daniel Jebbison", prob: 55, bullshit: false,
     club_origin: "preston-north-end", club_display_name: "Preston North End", direction: "out",
     from: "Preston North End", to: "Blackburn Rovers",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan + option", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Eseosa Sule", prob: 55,
+    name: "Eseosa Sule", prob: 55, bullshit: false,
     club_origin: "west-bromwich-albion", club_display_name: "West Bromwich Albion", direction: "out",
     from: "West Bromwich Albion", to: "Undisclosed",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Divin Mubama", prob: 50,
+    name: "Divin Mubama", prob: 50, bullshit: false,
     club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
     from: "Manchester City", to: "Derby County",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "George Hirst", prob: 35,
+    name: "George Hirst", prob: 35, bullshit: false,
     club_origin: "stoke-city", club_display_name: "Stoke City", direction: "in",
     from: "Ipswich Town", to: "Stoke City",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan + option", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Michael Smith", prob: 30,
+    name: "Michael Smith", prob: 30, bullshit: false,
     club_origin: "preston-north-end", club_display_name: "Preston North End", direction: "out",
     from: "Preston North End", to: "Mansfield Town",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Andreas Hountondji", prob: 45,
+    name: "Andreas Hountondji", prob: 45, bullshit: false,
     club_origin: "burnley", club_display_name: "Burnley", direction: "in",
     from: "Frosinone", to: "Burnley",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Rio Cardines", prob: 45,
+    name: "Rio Cardines", prob: 45, bullshit: false,
     club_origin: "bristol-city", club_display_name: "Bristol City", direction: "in",
     from: "Crystal Palace", to: "Bristol City",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Kalvin Phillips", prob: 35,
+    name: "Kalvin Phillips", prob: 35, bullshit: false,
     club_origin: "sheffield-united", club_display_name: "Sheffield United", direction: "in",
     from: "Manchester City", to: "Sheffield United",
-    tier: 3, coverage: 2, coverage_trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Stephen Mfuni", prob: 30,
+    name: "Stephen Mfuni", prob: 30, bullshit: false,
     club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
     from: "Manchester City", to: "Derby County",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Nicolas Valentini", prob: 25,
+    name: "Nicolas Valentini", prob: 25, bullshit: false,
     club_origin: "sheffield-united", club_display_name: "Sheffield United", direction: "in",
     from: "Fiorentina", to: "Sheffield United",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Rabbi Matondo", prob: 20,
+    name: "Rabbi Matondo", prob: 20, bullshit: false,
     club_origin: "sheffield-united", club_display_name: "Sheffield United", direction: "in",
     from: "SK Brann", to: "Sheffield United",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Ty Livesey", prob: 20,
+    name: "Ty Livesey", prob: 20, bullshit: false,
     club_origin: "blackburn-rovers", club_display_name: "Blackburn Rovers", direction: "out",
     from: "Blackburn Rovers", to: "Man City / Man Utd + 4 more",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -637,11 +648,11 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"burnley": 2, "wolverhampton": 1, "preston-north-end": 2, "west-bromwich-albion": 1, "derby-county": 2, "stoke-city": 1, "bristol-city": 1, "sheffield-united": 3, "blackburn-rovers": 1};
 
-const CLUBS_LIST = [{"slug": "blackburn-rovers", "name": "Blackburn Rovers", "count": 1, "badge": false}, {"slug": "bristol-city", "name": "Bristol City", "count": 1, "badge": false}, {"slug": "burnley", "name": "Burnley", "count": 2, "badge": false}, {"slug": "cardiff-city", "name": "Cardiff City", "count": 0, "badge": false}, {"slug": "derby-county", "name": "Derby County", "count": 2, "badge": false}, {"slug": "preston-north-end", "name": "Preston North End", "count": 2, "badge": false}, {"slug": "qpr", "name": "Queens Park Rangers", "count": 0, "badge": false}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 3, "badge": false}, {"slug": "southampton", "name": "Southampton", "count": 0, "badge": false}, {"slug": "stoke-city", "name": "Stoke City", "count": 1, "badge": false}, {"slug": "swansea-city", "name": "Swansea City", "count": 0, "badge": false}, {"slug": "watford", "name": "Watford", "count": 0, "badge": false}, {"slug": "west-bromwich-albion", "name": "West Bromwich Albion", "count": 1, "badge": false}, {"slug": "west-ham", "name": "West Ham United", "count": 0, "badge": false}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 1, "badge": false}, {"slug": "wrexham", "name": "Wrexham", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "blackburn-rovers", "name": "Blackburn Rovers", "count": 1, "badge": false, "primary": "#009EE0", "primaryBright": "#5CD2FF"}, {"slug": "bristol-city", "name": "Bristol City", "count": 1, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "burnley", "name": "Burnley", "count": 2, "badge": false, "primary": "#6C1D45", "primaryBright": "#8C2D5F"}, {"slug": "cardiff-city", "name": "Cardiff City", "count": 0, "badge": false, "primary": "#0070B8", "primaryBright": "#5CA9FF"}, {"slug": "derby-county", "name": "Derby County", "count": 2, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "preston-north-end", "name": "Preston North End", "count": 2, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "qpr", "name": "Queens Park Rangers", "count": 0, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 3, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "southampton", "name": "Southampton", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "stoke-city", "name": "Stoke City", "count": 1, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "swansea-city", "name": "Swansea City", "count": 0, "badge": false, "primary": "#1E1E1E", "primaryBright": "#FFFFFF"}, {"slug": "watford", "name": "Watford", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "west-bromwich-albion", "name": "West Bromwich Albion", "count": 1, "badge": false, "primary": "#00448C", "primaryBright": "#5CA9FF"}, {"slug": "west-ham", "name": "West Ham United", "count": 0, "badge": false, "primary": "#7A263A", "primaryBright": "#C9AB7C"}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 1, "badge": false, "primary": "#FDB913", "primaryBright": "#FFE066"}, {"slug": "wrexham", "name": "Wrexham", "count": 0, "badge": false, "primary": "#C8102E", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.469487Z",
+  updated: "2026-08-03T23:00:54.232016Z",
   label: "League aggregation"
 };
 
@@ -651,20 +662,53 @@ function initials(name) {
   return (name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
 }
 
+function hexToRgba(hex, alpha) {
+  const h = (hex || '#E8C249').replace('#', '');
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  if (isNaN(n)) return `rgba(232,194,73,${alpha})`;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+// Relative luminance (0-1) of a hex colour, used to guard legibility on the dark
+// fallback crest tile -- clubs whose real colours are near-black (Juventus, Udinese)
+// would otherwise render an unreadable ink colour against the dark card background.
+function luminance(hex) {
+  const h = (hex || '#E8C249').replace('#', '');
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  if (isNaN(n)) return 0.6;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+}
+
+// Pick a legible ink colour for the mono-crest tile: the club's bright brand colour
+// when it reads clearly on a dark background, otherwise a neutral light fallback.
+function crestInk(primary, primaryBright) {
+  const candidate = primaryBright || primary;
+  return luminance(candidate) < 0.38 ? '#E9E9EE' : candidate;
+}
+
 (function(){
   // Populate clubs grid. aggregate.py emits this array as CLUBS_LIST with a
-  // {slug,name,count,badge} shape -- NOT "CLUBS" (that mismatch used to leave this grid
-  // permanently empty even when club data existed). badge=true means a thumbnail exists
-  // in badges-thumb/<slug>.png; clubs without real artwork fall back to an initials tile.
+  // {slug,name,count,badge,primary,primaryBright} shape -- NOT "CLUBS" (that mismatch used
+  // to leave this grid permanently empty even when club data existed). badge=true means a
+  // thumbnail exists in badges-thumb/<slug>.png; clubs without real artwork fall back to a
+  // monogram tile rendered in the club's own brand colour, so it reads as a deliberate crest
+  // rather than a missing-image placeholder.
   if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
     const container = document.getElementById('clubs-grid');
     container.innerHTML = CLUBS_LIST.map(c => {
+      const ink = crestInk(c.primary, c.primaryBright);
+      const crestStyle = `--crest-a:${hexToRgba(c.primary, 0.32)};--crest-b:${hexToRgba(c.primaryBright || c.primary, 0.08)};--crest-border:${hexToRgba(c.primary, 0.55)};--crest-ink:${ink}`;
       const badgeInner = c.badge
-        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.textContent='${initials(c.name)}'">`
+        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.classList.add('mono-crest'); this.parentElement.textContent='${initials(c.name)}'">`
         : initials(c.name);
+      const badgeClass = c.badge ? 'club-badge' : 'club-badge mono-crest';
       return `
       <a href="../${c.slug}.html" class="club-card">
-        <div class="club-badge">${badgeInner}</div>
+        <div class="${badgeClass}" style="${crestStyle}">${badgeInner}</div>
         <div class="club-name">${c.name}</div>
       </a>
     `;
@@ -684,15 +728,21 @@ function initials(name) {
   }
 })();
 
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
-  const isBullshit = prob < 35;
+  const isBullshit = s.bullshit === true;
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
-  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
+  const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
   return `<a href="${href}" class="transfer-card">
     ${bullTag}

@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "badge": false}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 0, "badge": false}, {"slug": "dijon", "name": "Dijon FCO", "count": 0, "badge": false}, {"slug": "annecy", "name": "FC Annecy", "count": 0, "badge": false}, {"slug": "sb-metz", "name": "FC Metz", "count": 0, "badge": false}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "dijon", "name": "Dijon FCO", "count": 0, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "annecy", "name": "FC Annecy", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sb-metz", "name": "FC Metz", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 0, "badge": false, "primary": "#F4CD1E", "primaryBright": "#FFE666"}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0, "badge": false, "primary": "#FF6C00", "primaryBright": "#FFA55C"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.474498Z",
+  updated: "2026-08-03T23:00:54.235325Z",
   label: "League aggregation"
 };

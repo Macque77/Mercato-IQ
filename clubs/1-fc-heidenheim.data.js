@@ -6,7 +6,7 @@ const BRAND = {
   club: "1. FC Heidenheim", mono: "1FH", slug: "1-fc-heidenheim",
   primary: "#004B87", primaryBright: "#5CA9FF", primaryDeep: "#002E52",
   primaryRgb: "0,75,135",
-  breadcrumb: ["Germany","Bundesliga"]
+  breadcrumb: ["Germany","2. Bundesliga"]
 };
 
 const VOLATILE = {

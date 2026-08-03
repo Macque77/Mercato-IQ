@@ -6,7 +6,7 @@ const BRAND = {
   club: "AC Ajaccio", mono: "AA", slug: "as-acn-ajaccio",
   primary: "#D71920", primaryBright: "#FF6B6B", primaryDeep: "#7A0E12",
   primaryRgb: "215,25,32",
-  breadcrumb: ["France","Ligue 1"]
+  breadcrumb: ["France","Ligue 3"]
 };
 
 const VOLATILE = {

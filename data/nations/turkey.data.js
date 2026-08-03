@@ -10,14 +10,14 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Mehmet Topal",prob: 85,
+    name: "Mehmet Topal",prob: 85, bullshit: false,
     club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
     from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Contract renewal", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Álvaro Soler",prob: 42,
+    name: "Álvaro Soler",prob: 42, bullshit: false,
     club_origin: "galatasaray", club_display_name: "Galatasaray SK", direction: "in",
     from: "Montpellier", to: "Galatasaray SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -31,6 +31,6 @@ const LEAGUES_LIST = [{"slug": "super-lig", "name": "Super Lig", "count": 2}, {"
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.465781Z",
+  updated: "2026-08-03T23:00:54.229601Z",
   label: "Nation aggregation"
 };

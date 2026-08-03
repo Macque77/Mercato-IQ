@@ -6,66 +6,157 @@
 const LEAGUE = {
   name: "Ligue 1",
   nation: "France",
-  stories_count: 7
+  stories_count: 39
 };
 
 const TOP_STORIES = [  {
-    name: "Madison Ingram", prob: 55,
+    name: "Madison Ingram", prob: 55, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Florian Thauvin", prob: 48,
+    name: "Maghnes Akliouche", prob: 62, bullshit: false,
+    club_origin: "as-monaco", club_display_name: "AS Monaco", direction: "out",
+    from: "AS Monaco", to: "Paris Saint-Germain",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€50m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Mohamed-Ali Cho", prob: 58, bullshit: false,
+    club_origin: "ogc-nice", club_display_name: "OGC Nice", direction: "out",
+    from: "OGC Nice", to: "Hull City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€20m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Loïs Openda", prob: 52, bullshit: false,
+    club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
+    from: "Juventus", to: "Olympique Lyonnais",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Timothée Pembélé", prob: 52, bullshit: false,
+    club_origin: "le-havre-ac", club_display_name: "Le Havre AC", direction: "out",
+    from: "Le Havre AC", to: "Sunderland",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Başar Önal", prob: 48, bullshit: false,
+    club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
+    from: "NEC Nijmegen", to: "LOSC Lille",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€9.5m + add-ons", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Florian Thauvin", prob: 48, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Free agent (Udinese)", to: "Olympique Lyonnais",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Gonçalo Inácio", prob: 40,
+    name: "Cluver Sambi Mbungu", prob: 45, bullshit: false,
+    club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
+    from: "SM Caen", to: "Olympique Lyonnais",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Nicolas Lemaître", prob: 42, bullshit: false,
+    club_origin: "stade-rennais", club_display_name: "Stade Rennais FC", direction: "in",
+    from: "ES Troyes AC", to: "Stade Rennais FC",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Gonçalo Inácio", prob: 40, bullshit: false,
     club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
     from: "Sporting CP", to: "LOSC Lille",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€35m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Ousmane Dembélé", prob: 35,
+    name: "Felix Bacher", prob: 38, bullshit: false,
+    club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
+    from: "Estoril", to: "Olympique Lyonnais",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Ousmane Dembélé", prob: 35, bullshit: false,
     club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
     from: "PSG", to: "Olympique de Marseille",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€50m+", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Jonathan David", prob: 32,
+    name: "Kévin Danois", prob: 34, bullshit: false,
+    club_origin: "aj-auxerre", club_display_name: "AJ Auxerre", direction: "out",
+    from: "AJ Auxerre", to: "Multiple (unspecified)",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Jonathan David", prob: 32, bullshit: false,
     club_origin: "rc-lens", club_display_name: "RC Lens", direction: "in",
     from: "LOSC Lille", to: "RC Lens",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€45m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Milan Skriniar", prob: 30,
+    name: "Mykhailo Mudryk", prob: 32, bullshit: false,
+    club_origin: "rc-strasbourg", club_display_name: "RC Strasbourg Alsace", direction: "in",
+    from: "Chelsea", to: "RC Strasbourg Alsace",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Milan Skriniar", prob: 30, bullshit: false,
     club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
     from: "Paris Saint-Germain", to: "LOSC Lille",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Luis Díaz", prob: 28,
+    name: "Martin Terrier", prob: 30, bullshit: false,
+    club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
+    from: "Bayer Leverkusen", to: "Olympique de Marseille",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Filip Jörgensen", prob: 30, bullshit: false,
+    club_origin: "rc-strasbourg", club_display_name: "RC Strasbourg Alsace", direction: "in",
+    from: "Chelsea", to: "RC Strasbourg Alsace",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Luis Díaz", prob: 28, bullshit: false,
     club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
     from: "Liverpool", to: "Olympique de Marseille",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€60m", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Mathys Detourbet", prob: 28, bullshit: false,
+    club_origin: "aj-auxerre", club_display_name: "AJ Auxerre", direction: "in",
+    from: "Manchester City", to: "AJ Auxerre",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "TBD", updated: "2026-08-03T14:30:00Z"
+  },
 ];
 
-const BY_CLUB = {"olympique-lyon": 2, "losc-lille": 2, "olympique-marseille": 2, "rc-lens": 1};
+const BY_CLUB = {"olympique-lyon": 6, "as-monaco": 3, "ogc-nice": 4, "le-havre-ac": 1, "losc-lille": 5, "stade-rennais": 2, "olympique-marseille": 9, "aj-auxerre": 2, "rc-lens": 1, "rc-strasbourg": 4, "paris-fc": 1, "toulouse-fc": 1};
 
-const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0, "badge": false}, {"slug": "as-monaco", "name": "AS Monaco", "count": 0, "badge": false}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0, "badge": false}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0, "badge": false}, {"slug": "losc-lille", "name": "LOSC Lille", "count": 2, "badge": false}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0, "badge": false}, {"slug": "olympique-lyon", "name": "Olympique Lyonnais", "count": 2, "badge": false}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 2, "badge": false}, {"slug": "paris-fc", "name": "Paris FC", "count": 0, "badge": false}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 0, "badge": false}, {"slug": "rc-lens", "name": "RC Lens", "count": 1, "badge": false}, {"slug": "stade-brest", "name": "Stade Brest", "count": 0, "badge": false}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 0, "badge": false}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "aj-auxerre", "name": "AJ Auxerre", "count": 2, "badge": false, "primary": "#003D7C", "primaryBright": "#4E8FDE"}, {"slug": "as-monaco", "name": "AS Monaco", "count": 3, "badge": false, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0, "badge": false, "primary": "#0A0A0A", "primaryBright": "#8C8C8C"}, {"slug": "es-troyes-ac", "name": "ES Troyes AC", "count": 0, "badge": false, "primary": "#0033A0", "primaryBright": "#5CA9FF"}, {"slug": "fc-lorient", "name": "FC Lorient", "count": 0, "badge": false, "primary": "#FF6600", "primaryBright": "#FF9640"}, {"slug": "losc-lille", "name": "LOSC Lille", "count": 5, "badge": false, "primary": "#C8102E", "primaryBright": "#FF4C5E"}, {"slug": "le-havre-ac", "name": "Le Havre AC", "count": 1, "badge": false, "primary": "#4169E1", "primaryBright": "#7FA8FF"}, {"slug": "le-mans-fc", "name": "Le Mans FC", "count": 0, "badge": false, "primary": "#8B0000", "primaryBright": "#D4A017"}, {"slug": "ogc-nice", "name": "OGC Nice", "count": 4, "badge": false, "primary": "#ED1C24", "primaryBright": "#FF6B6B"}, {"slug": "olympique-lyon", "name": "Olympique Lyonnais", "count": 6, "badge": false, "primary": "#0056A8", "primaryBright": "#5CA9FF"}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 9, "badge": false, "primary": "#00A8E1", "primaryBright": "#5CD0FF"}, {"slug": "paris-fc", "name": "Paris FC", "count": 1, "badge": false, "primary": "#001E62", "primaryBright": "#3D6BC4"}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 0, "badge": false, "primary": "#004687", "primaryBright": "#0066CC"}, {"slug": "rc-lens", "name": "RC Lens", "count": 1, "badge": false, "primary": "#C8102E", "primaryBright": "#FDB927"}, {"slug": "rc-strasbourg", "name": "RC Strasbourg Alsace", "count": 4, "badge": false, "primary": "#0072CE", "primaryBright": "#5CB3FF"}, {"slug": "stade-brest", "name": "Stade Brestois 29", "count": 0, "badge": false, "primary": "#D2001C", "primaryBright": "#FF5C6C"}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 2, "badge": false, "primary": "#DA020E", "primaryBright": "#FF4C4C"}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 1, "badge": false, "primary": "#5B2A70", "primaryBright": "#9A5FC0"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.473770Z",
+  updated: "2026-08-03T23:00:54.235065Z",
   label: "League aggregation"
 };

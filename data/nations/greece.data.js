@@ -10,14 +10,14 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Chiquinho",prob: 48,
+    name: "Chiquinho",prob: 48, bullshit: false,
     club_origin: "olympiacos", club_display_name: "Olympiacos FC", direction: "in",
     from: "Guimarães", to: "Olympiacos FC",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8m", updated: "2026-08-03T14:30:00Z", league: "Super League"
   },
   {
-    name: "Oussama El Khannouss",prob: 40,
+    name: "Oussama El Khannouss",prob: 40, bullshit: false,
     club_origin: "aek-athens", club_display_name: "AEK Athens", direction: "in",
     from: "Leicester City", to: "AEK Athens",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -31,6 +31,6 @@ const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.463606Z",
+  updated: "2026-08-03T23:00:54.227922Z",
   label: "Nation aggregation"
 };

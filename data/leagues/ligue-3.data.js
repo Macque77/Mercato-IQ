@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "amiens-sc", "name": "Amiens SC", "count": 0, "badge": false}, {"slug": "caen", "name": "Stade Malherbe Caen", "count": 0, "badge": false}, {"slug": "valenciennes-fc", "name": "Valenciennes FC", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "amiens-sc", "name": "Amiens SC", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "caen", "name": "Stade Malherbe Caen", "count": 0, "badge": false, "primary": "#B7161C", "primaryBright": "#FF6B6B"}, {"slug": "valenciennes-fc", "name": "Valenciennes FC", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.474832Z",
+  updated: "2026-08-03T23:00:54.235541Z",
   label: "League aggregation"
 };

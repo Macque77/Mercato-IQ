@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "roda-jc", "name": "Roda JC Kerkrade", "count": 0, "badge": false}, {"slug": "vitesse", "name": "Vitesse", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "roda-jc", "name": "Roda JC Kerkrade", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "vitesse", "name": "Vitesse", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.470489Z",
+  updated: "2026-08-03T23:00:54.232741Z",
   label: "League aggregation"
 };

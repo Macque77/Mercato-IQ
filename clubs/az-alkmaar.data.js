@@ -38,9 +38,7 @@ const CONFIRMED_IN = [];
 
 const CONFIRMED_OUT = [];
 
-const INCOMING = [
-  {name:"Mats Wieffer", sub:"24 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"2 Aug 2026", src:"ESPN", tier:2, fee:"Contract renewal", truth:80, prob:88, note:"ESPN reports AZ close to Wieffer extension before Dortmund move."}
-];
+const INCOMING = [];
 
 const OUTGOING = [];
 
@@ -48,7 +46,9 @@ const RISERS = [];
 
 const FALLERS = [];
 
-const NEW = [];
+const NEW = [
+  {ar:"✦", t:"ESPN reports AZ close to tying <b>Mats Wieffer</b> down to a contract extension even as Borussia Dortmund are separately reported to be pursuing the midfielder - a retention story rather than a confirmed transfer either way."}
+];
 
 const IGNORE = [];
 

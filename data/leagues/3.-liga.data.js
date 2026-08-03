@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "rostock", "name": "Hansa Rostock", "count": 0, "badge": false}, {"slug": "duisburg", "name": "MSV Duisburg", "count": 0, "badge": false}, {"slug": "regensburg", "name": "SSV Jahn Regensburg", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "rostock", "name": "Hansa Rostock", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "duisburg", "name": "MSV Duisburg", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "regensburg", "name": "SSV Jahn Regensburg", "count": 0, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.467095Z",
+  updated: "2026-08-03T23:00:54.230474Z",
   label: "League aggregation"
 };

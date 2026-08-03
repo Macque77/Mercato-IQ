@@ -17,8 +17,8 @@ const VOLATILE = {
   verified: "2026-08-03",
   coach: "Ruben Amorim (since pre-season 2026/27, replacing Massimiliano Allegri)",
   dof: "Geoffrey Moncada (Director)",
-  europe: "UEFA Champions League (2026/27)",
-  finish: "2nd Serie A (2025/26)",
+  europe: "UEFA Europa League (2026/27)",
+  finish: "5th Serie A (2025/26)",
   owner: "Gerry Cardinale / RedBird Capital",
   window: "Opens 1 Jul, closes 1 Sep 2026"
 };
@@ -87,9 +87,9 @@ const WL_LINKMAP = {};
 
 const PROSE = {
   heroH2: `Amorim's first window: Gonçalo Ramos and Mario Gila arrive for over €100m combined`,
-  heroLede: `AC Milan enter the new season under <b>Ruben Amorim</b>, hired to replace Massimiliano Allegri after a 2nd-place finish secured Champions League football. The headline business is a genuine statement: <b>Gonçalo Ramos</b> arrives from PSG for upwards of €80m to lead the line, and <b>Mario Gila</b> joins from direct Serie A rival Lazio for around €30m to add defensive steel. With <b>Jadon Sancho</b> already in on a free from Manchester United, the remaining work is creative: Milan are said to favour Genk's teenage playmaker <b>Konstantinos Karetsas</b>, with Kerim Alajbegović and Can Uzun as alternates, most likely funded by selling <b>Rafael Leão</b>.`,
+  heroLede: `AC Milan enter the new season under <b>Ruben Amorim</b>, hired to replace Massimiliano Allegri after a below-par 5th-place finish left the club in the Europa League rather than the Champions League (Allegri has since resurfaced at Napoli). The headline business is a genuine statement: <b>Gonçalo Ramos</b> arrives from PSG for upwards of €80m to lead the line, and <b>Mario Gila</b> joins from direct Serie A rival Lazio for around €30m to add defensive steel (50% of the fee owed to Real Madrid under a sell-on clause). With <b>Jadon Sancho</b> already in on a free from Manchester United, the remaining work is creative: Milan are said to favour Genk's teenage playmaker <b>Konstantinos Karetsas</b>, with Kerim Alajbegović and Can Uzun as alternates, most likely funded by selling <b>Rafael Leão</b>.`,
   metaRow: `<span>DECISION-MAKER: <b>Geoffrey Moncada</b> (Director)</span> <span>HEAD COACH: <b>Ruben Amorim</b></span> <span>WINDOW: <b>1 Jul – 1 Sep</b></span>`,
-  stats: `<div class="stat"><div class="l">2025/26 Finish</div><div class="v">2<small>nd</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">UCL</div></div><div class="stat gold"><div class="l">Confirmed In</div><div class="v">3</div></div>`,
+  stats: `<div class="stat"><div class="l">2025/26 Finish</div><div class="v">5<small>th</small></div></div><div class="stat"><div class="l">2026/27 Europe</div><div class="v">Europa Lg</div></div><div class="stat gold"><div class="l">Confirmed In</div><div class="v">3</div></div>`,
   positionPanel: ``,
   confirmedPending: `Karetsas, Alajbegović and Can Uzun are all reported at exploratory-to-advanced stages for the same creative-midfield role; expect only one to actually land.`,
   incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,

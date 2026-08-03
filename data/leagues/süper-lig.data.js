@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 0, "badge": false}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 0, "badge": false}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 0, "badge": false}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 0, "badge": false}, {"slug": "rizespor", "name": "Rizespor", "count": 0, "badge": false}, {"slug": "samsunspor", "name": "Samsunspor", "count": 0, "badge": false}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 0, "badge": false, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "rizespor", "name": "Rizespor", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "samsunspor", "name": "Samsunspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0, "badge": false, "primary": "#7A1F2B", "primaryBright": "#B0475A"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.479783Z",
+  updated: "2026-08-03T23:00:54.238947Z",
   label: "League aggregation"
 };

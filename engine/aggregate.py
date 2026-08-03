@@ -357,6 +357,7 @@ def emit_global_data(all_stories):
         tier = story.get('tier', 3)
         coverage = story.get('coverage', 1)
         coverage_trend = story.get('coverage_trend', 'flat')
+        bullshit = 'true' if story.get('bullshit') is True else 'false'
 
         headlines_js += f'''  {{
     headline: "{headline}",
@@ -365,7 +366,7 @@ def emit_global_data(all_stories):
     value: "{value}",
     from: "{from_club}", to: "{to_club}",
     direction: "{direction}",
-    prob: {prob}, trend: '{trend}',
+    prob: {prob}, trend: '{trend}', bullshit: {bullshit},
     tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
     nation: "{nation}", league: "{league}",
     club_link: "{club_link}",
@@ -373,6 +374,27 @@ def emit_global_data(all_stories):
   }},
 '''
     headlines_js += ']'
+
+    # Honest, computed-from-data stats -- no placeholder/fabricated figures. all_stories is the
+    # full deduplicated set (not capped to GLOBAL_STORY_CAP), so these counts reflect everything
+    # actually being tracked, not just the top-N shown in the Breaking feed.
+    total_stories = len(all_stories)
+    clubs_with_stories = {s.get('club_origin') for s in all_stories if s.get('club_origin')}
+    club_counts = {}
+    for s in all_stories:
+        origin = s.get('club_origin')
+        if origin:
+            club_counts[origin] = club_counts.get(origin, 0) + 1
+    if club_counts:
+        most_active_slug = max(club_counts.items(), key=lambda x: x[1])[0]
+        most_active_name = next(
+            (s.get('club_origin_name', most_active_slug) for s in all_stories if s.get('club_origin') == most_active_slug),
+            most_active_slug
+        )
+    else:
+        most_active_name = 'Unknown'
+    most_active_name_esc = most_active_name.replace('"', '\\"')
+    tier1_count = sum(1 for s in all_stories if s.get('tier') == 1)
 
     data_js = f'''/* ============================================================
    MERCATO IQ · GLOBAL DATA · STATE OF RECORD
@@ -384,9 +406,11 @@ const HEADLINES = {headlines_js};
 const NATIONS = {nations_js};
 
 const STATS = {{
-  global_spend: "£5.2bn estimated",
+  total_stories: {total_stories},
+  clubs_covered: {len(clubs_with_stories)},
+  tier1_count: {tier1_count},
   top_league: "{top_league}",
-  most_active_club: "Manchester City",
+  most_active_club: "{most_active_name_esc}",
   nations_covered: {len(nations)},
   leagues_covered: {len(leagues)}
 }};
@@ -436,8 +460,9 @@ def emit_nation_data(all_stories, nation_slug, nation_name, nation_leagues=None)
         tier = story.get('tier', 3)
         coverage = story.get('coverage', 1)
         coverage_trend = story.get('coverage_trend', 'flat')
+        bullshit = 'true' if story.get('bullshit') is True else 'false'
         stories_js += f'''  {{
-    name: "{story.get('name', '')}",prob: {story.get('prob', 50)},
+    name: "{story.get('name', '')}",prob: {story.get('prob', 50)}, bullshit: {bullshit},
     club_origin: "{club_link}", club_display_name: "{origin_name}", direction: "{direction}",
     from: "{from_club}", to: "{to_club}",
     tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
@@ -511,8 +536,9 @@ def emit_league_data(all_stories, league_slug, league_name, league_clubs=None):
         tier = story.get('tier', 3)
         coverage = story.get('coverage', 1)
         coverage_trend = story.get('coverage_trend', 'flat')
+        bullshit = 'true' if story.get('bullshit') is True else 'false'
         stories_js += f'''  {{
-    name: "{story.get('name', '')}", prob: {story.get('prob', 50)},
+    name: "{story.get('name', '')}", prob: {story.get('prob', 50)}, bullshit: {bullshit},
     club_origin: "{club_link}", club_display_name: "{origin_name}", direction: "{direction}",
     from: "{from_club}", to: "{to_club}",
     tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
@@ -526,12 +552,14 @@ def emit_league_data(all_stories, league_slug, league_name, league_clubs=None):
 
     if league_clubs:
         clubs_list = sorted(
-            [{'slug': c['slug'], 'name': c['name'], 'count': clubs.get(c['slug'], 0), 'badge': has_badge(c['slug'])} for c in league_clubs],
+            [{'slug': c['slug'], 'name': c['name'], 'count': clubs.get(c['slug'], 0), 'badge': has_badge(c['slug']),
+              'primary': c.get('primary', '#E8C249'), 'primaryBright': c.get('primaryBright', '#E8C249')} for c in league_clubs],
             key=lambda c: c['name']
         )
     else:
         clubs_list = sorted(
-            ({'slug': slug, 'name': next((s.get('club_origin_name', slug) for s in league_stories if s.get('club_origin') == slug), slug), 'count': count, 'badge': has_badge(slug)}
+            ({'slug': slug, 'name': next((s.get('club_origin_name', slug) for s in league_stories if s.get('club_origin') == slug), slug), 'count': count, 'badge': has_badge(slug),
+              'primary': '#E8C249', 'primaryBright': '#E8C249'}
              for slug, count in clubs.items()),
             key=lambda c: c['name']
         )
@@ -589,6 +617,8 @@ def main():
                         'name': club_data['brand'].get('club', club_slug),
                         'nation': breadcrumb[0],
                         'league': breadcrumb[1],
+                        'primary': club_data['brand'].get('primary', '#E8C249'),
+                        'primaryBright': club_data['brand'].get('primaryBright', '#E8C249'),
                     })
 
     print(f'AGGREGATE: {len(all_stories)} total stories found across all clubs')

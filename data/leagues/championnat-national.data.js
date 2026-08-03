@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "psg-b", "name": "Paris Saint-Germain B", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "psg-b", "name": "Paris Saint-Germain B", "count": 0, "badge": false, "primary": "#004170", "primaryBright": "#5CA9FF"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.468789Z",
+  updated: "2026-08-03T23:00:54.231570Z",
   label: "League aggregation"
 };

@@ -10,7 +10,7 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Sotirios Papagiannopoulos", prob: 40,
+    name: "Sotirios Papagiannopoulos", prob: 40, bullshit: false,
     club_origin: "aik-fotboll", club_display_name: "AIK Fotboll", direction: "in",
     from: "AEK Athens", to: "AIK Fotboll",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -20,10 +20,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"aik-fotboll": 1};
 
-const CLUBS_LIST = [{"slug": "aik-fotboll", "name": "AIK Fotboll", "count": 1, "badge": false}];
+const CLUBS_LIST = [{"slug": "aik-fotboll", "name": "AIK Fotboll", "count": 1, "badge": false, "primary": "#000000", "primaryBright": "#000000"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.467441Z",
+  updated: "2026-08-03T23:00:54.230679Z",
   label: "League aggregation"
 };

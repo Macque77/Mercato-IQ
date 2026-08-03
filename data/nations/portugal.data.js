@@ -10,21 +10,21 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Pepe",prob: 80,
+    name: "Pepe",prob: 80, bullshit: false,
     club_origin: "fc-porto", club_display_name: "FC Porto", direction: "in",
     from: "Free agent (Real Madrid exit)", to: "FC Porto",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z", league: "Liga Portugal"
   },
   {
-    name: "Todibo from Nice",prob: 42,
+    name: "Todibo from Nice",prob: 42, bullshit: false,
     club_origin: "sl-benfica", club_display_name: "SL Benfica", direction: "in",
     from: "OGC Nice", to: "SL Benfica",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€20m", updated: "2026-08-03T14:30:00Z", league: "Liga Portugal"
   },
   {
-    name: "Sérgio Conceição",prob: 22,
+    name: "Sérgio Conceição",prob: 22, bullshit: false,
     club_origin: "sl-benfica", club_display_name: "SL Benfica", direction: "in",
     from: "Free agent", to: "SL Benfica",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -38,6 +38,6 @@ const LEAGUES_LIST = [{"slug": "liga-portugal", "name": "Liga Portugal", "count"
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.464505Z",
+  updated: "2026-08-03T23:00:54.228696Z",
   label: "Nation aggregation"
 };

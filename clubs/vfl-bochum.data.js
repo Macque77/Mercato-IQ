@@ -10,15 +10,15 @@ const BRAND = {
   primaryBright: "#00427A",
   primaryDeep: "#00427A",
   primaryRgb: "100,100,100",
-  breadcrumb: ["Germany", "Bundesliga"]
+  breadcrumb: ["Germany", "2. Bundesliga"]
 };
 
 const VOLATILE = {
   verified: "2026-08-03",
   coach: "Dieter Hecking",
   dof: "TBD (Director)",
-  europe: "TBD",
-  finish: "18th Bundesliga (2025/26)",
+  europe: "None (2. Bundesliga)",
+  finish: "10th 2. Bundesliga (2025/26) - not promoted",
   owner: "TBD",
   window: "Opens 1 Jul, closes 31 Aug 2026"
 };

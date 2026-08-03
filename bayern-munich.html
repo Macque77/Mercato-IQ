@@ -229,6 +229,17 @@
     box-shadow:0 12px 24px rgba(0,0,0,0.3);
   }
 
+  .transfer-card.card-highlight {
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 2px rgba(232,194,73,0.35), 0 12px 28px rgba(0,0,0,0.35);
+    animation:highlight-pulse 1.8s ease-out 2;
+  }
+
+  @keyframes highlight-pulse {
+    0% { box-shadow:0 0 0 2px rgba(232,194,73,0.7), 0 12px 28px rgba(0,0,0,0.35); }
+    100% { box-shadow:0 0 0 2px rgba(232,194,73,0.15), 0 12px 28px rgba(0,0,0,0.35); }
+  }
+
   .card-header {
     padding:20px;
     border-bottom:1px solid var(--border);
@@ -588,7 +599,12 @@ const CONFIRMED_IN = [
   {name:"Nathaniel Brown", sub:"22 · LB · Germany", to:"permanent from Eintracht Frankfurt", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul. One of the Bundesliga's most sought-after young full-backs, praised publicly by Antonio Rüdiger ahead of the move, joins to add left-back depth and competition."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Noel Aseko Nkili", sub:"20 · CM · Germany/Cameroon", to:"permanent to Eintracht Frankfurt", fee:"~€12-13m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul, after a loan at Hannover 96. Academy midfielder cashes in for Bayern as Frankfurt's second confirmed midfield addition of the summer."},
+  {name:"Alexander Nübel", sub:"29 · GK · Germany", to:"permanent to Besiktas", fee:"~€6.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time backup goalkeeper behind Neuer/Urbig finally departs permanently."},
+  {name:"Leon Goretzka", sub:"31 · CM · Germany", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; the long-serving midfielder leaves Bayern as a free agent after eight seasons."},
+  {name:"Raphael Guerreiro", sub:"32 · LB/CM · Portugal", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; versatile Portuguese full-back/midfielder departs on a free."}
+];
 
 const INCOMING = [];
 
@@ -713,11 +729,38 @@ var __cardSeq = 0;
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
+  // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
+  focusCardFromHash();
+  window.addEventListener('hashchange', focusCardFromHash);
 })();
 
 function toggleCard(id) {
   const el = document.getElementById(id);
   if(el) el.classList.toggle('expanded');
+}
+
+// Shared with index.html / template-nation.html / template-league.html so a rumour card
+// clicked on any landing page can deep-link straight to the matching card on this club page.
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function focusCardFromHash() {
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#t-')) return;
+  const slug = hash.slice(3);
+  const target = document.querySelector(`.transfer-card[data-name-slug="${slug}"]`);
+  if (!target) return;
+  target.classList.add('card-highlight');
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toggle = target.querySelector('.sources-toggle');
+  if (toggle && !target.classList.contains('expanded-src')) {
+    toggle.click();
+  }
 }
 
 function buildSourcesPanel(name, linkMap, hub) {
@@ -764,7 +807,7 @@ function renderCard(t, linkMap, hub) {
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -797,7 +840,7 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
@@ -828,7 +871,7 @@ function renderWatchlistCard(t, wlLinkMap, hub) {
   const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>

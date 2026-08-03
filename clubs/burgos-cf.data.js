@@ -6,7 +6,7 @@ const BRAND = {
   club: "Burgos CF", mono: "BC", slug: "burgos-cf",
   primary: "#000000", primaryBright: "#C0C0C0", primaryDeep: "#000000",
   primaryRgb: "40,40,40",
-  breadcrumb: ["Spain","La Liga"]
+  breadcrumb: ["Spain","La Liga 2"]
 };
 
 const VOLATILE = {

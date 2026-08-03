@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --primary:#000000;
-    --primary-bright:#C0C0C0;
-    --primary-rgb:20,20,20;
+    --primary:#0A0A0A;
+    --primary-bright:#8C8C8C;
+    --primary-rgb:10,10,10;
     --bg:#0a0e17;
     --surface:#1a2332;
     --border:#3a4452;
@@ -227,6 +227,17 @@
     border-color:var(--primary-bright);
     transform:translateY(-4px);
     box-shadow:0 12px 24px rgba(0,0,0,0.3);
+  }
+
+  .transfer-card.card-highlight {
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 2px rgba(232,194,73,0.35), 0 12px 28px rgba(0,0,0,0.35);
+    animation:highlight-pulse 1.8s ease-out 2;
+  }
+
+  @keyframes highlight-pulse {
+    0% { box-shadow:0 0 0 2px rgba(232,194,73,0.7), 0 12px 28px rgba(0,0,0,0.35); }
+    100% { box-shadow:0 0 0 2px rgba(232,194,73,0.15), 0 12px 28px rgba(0,0,0,0.35); }
   }
 
   .card-header {
@@ -488,7 +499,7 @@
   <div class="hero-inner">
     <div class="club-badge-large">
       <img id="club-badge-img" src="angerssco.png" alt="Angers SCO badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
-      <div id="club-badge-fallback" class="badge-fallback" style="display:none">AS</div>
+      <div id="club-badge-fallback" class="badge-fallback" style="display:none">SCO</div>
     </div>
     <div class="hero-text">
       <h2>Angers SCO</h2>
@@ -539,59 +550,84 @@
    ============================================================ */
 
 const BRAND = {
-  club: "Angers SCO", mono: "AS", slug: "angers-sco",
-  primary: "#000000", primaryBright: "#C0C0C0", primaryDeep: "#000000",
-  primaryRgb: "20,20,20",
+  club: "Angers SCO", mono: "SCO", slug: "angers-sco",
+  primary: "#0A0A0A", primaryBright: "#8C8C8C", primaryDeep: "#000000",
+  primaryRgb: "10,10,10",
   breadcrumb: ["France","Ligue 1"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
+  verified: "2026-08-03",
+  coach: "Stéphane Gilli (strongly linked since 4 Jun 2026 following Alexandre Dujeux's exit; not yet fully confirmed in the latest reporting)",
+  dof: "Laurent Boissier (Director of Sport)",
+  europe: "None (2026/27)",
+  finish: "13th Ligue 1 (2025/26)",
+  owner: "Chabane family; Romain Chabane (President)",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["angers-sco transfer news"]
+  feeds: ["https://www.getfootballnewsfrance.com/tag/angers/"],
+  queries: ["Angers SCO transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Angers SCO"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Branco van den Boomen", sub:"27 · CM · Netherlands", to:"free transfer after terminating Ajax contract", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Jul 2026. Experienced Ligue 1-tested midfielder returns to France after his Ajax spell was cut short."}
+];
+
 const CONFIRMED_OUT = [];
+
 const INCOMING = [];
+
 const OUTGOING = [];
-const RISERS = [];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Van den Boomen signs as a free agent</b>: experienced midfielder arrives after leaving Ajax by mutual consent."}
+];
+
 const FALLERS = [];
-const NEW = [];
+
+const NEW = [
+  {ar:"✦", t:"Angers' coaching search continues: Stéphane Gilli, available since his February exit from Paris FC, is the reported frontrunner to replace Alexandre Dujeux."}
+];
+
 const IGNORE = [];
+
 const POSITIONS = [];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Angers-Sco Official", u:"#"}
+  "gffn-angers": {l:"Get French Football News · Angers", u:"https://www.getfootballnewsfrance.com/tag/angers/"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Branco van den Boomen": ["gffn-angers"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Angers SCO · 2026/27 Season`,
-  heroLede: `Transfer window active. Angers SCO preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `A new coach search and one seasoned free-agent arrival`,
+  heroLede: `Angers finished a comfortable 13th in their return season and enter this window still resolving their bench: <b>Alexandre Dujeux</b> departed in June and <b>Stéphane Gilli</b> - out of work since leaving Paris FC in February - is the reported favourite to replace him. On the pitch, free-agent midfielder <b>Branco van den Boomen</b> has already arrived after terminating his Ajax contract.`,
+  metaRow: `<span>DECISION-MAKER: <b>Romain Chabane</b> (President)</span> <span>HEAD COACH: <b>TBC</b></span> <span>WINDOW: <b>15 Jun – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">13<small>th</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">None</div></div><div class="stat gold"><div class="l">Confirmed In</div><div class="v">1</div></div>`,
+  positionPanel: ``,
+  confirmedPending: `Head coach appointment still to be finalised; Stéphane Gilli remains the most strongly linked candidate.`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: ``,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `Free transfer`, x: `Van den Boomen arrives on a free after his Ajax exit.` },
+  spendOut: { v: `None reported`, x: `No confirmed departures this window.` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -655,11 +691,38 @@ var __cardSeq = 0;
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
+  // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
+  focusCardFromHash();
+  window.addEventListener('hashchange', focusCardFromHash);
 })();
 
 function toggleCard(id) {
   const el = document.getElementById(id);
   if(el) el.classList.toggle('expanded');
+}
+
+// Shared with index.html / template-nation.html / template-league.html so a rumour card
+// clicked on any landing page can deep-link straight to the matching card on this club page.
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function focusCardFromHash() {
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#t-')) return;
+  const slug = hash.slice(3);
+  const target = document.querySelector(`.transfer-card[data-name-slug="${slug}"]`);
+  if (!target) return;
+  target.classList.add('card-highlight');
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toggle = target.querySelector('.sources-toggle');
+  if (toggle && !target.classList.contains('expanded-src')) {
+    toggle.click();
+  }
 }
 
 function buildSourcesPanel(name, linkMap, hub) {
@@ -706,7 +769,7 @@ function renderCard(t, linkMap, hub) {
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -739,7 +802,7 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
@@ -770,7 +833,7 @@ function renderWatchlistCard(t, wlLinkMap, hub) {
   const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>

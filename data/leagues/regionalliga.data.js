@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "erzgebirge-aue", "name": "FC Erzgebirge Aue", "count": 0, "badge": false}, {"slug": "sandhausen", "name": "SV Sandhausen", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "erzgebirge-aue", "name": "FC Erzgebirge Aue", "count": 0, "badge": false, "primary": "#5B2C82", "primaryBright": "#A87FD6"}, {"slug": "sandhausen", "name": "SV Sandhausen", "count": 0, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.476795Z",
+  updated: "2026-08-03T23:00:54.236854Z",
   label: "League aggregation"
 };

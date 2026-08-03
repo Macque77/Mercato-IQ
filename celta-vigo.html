@@ -229,6 +229,17 @@
     box-shadow:0 12px 24px rgba(0,0,0,0.3);
   }
 
+  .transfer-card.card-highlight {
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 2px rgba(232,194,73,0.35), 0 12px 28px rgba(0,0,0,0.35);
+    animation:highlight-pulse 1.8s ease-out 2;
+  }
+
+  @keyframes highlight-pulse {
+    0% { box-shadow:0 0 0 2px rgba(232,194,73,0.7), 0 12px 28px rgba(0,0,0,0.35); }
+    100% { box-shadow:0 0 0 2px rgba(232,194,73,0.15), 0 12px 28px rgba(0,0,0,0.35); }
+  }
+
   .card-header {
     padding:20px;
     border-bottom:1px solid var(--border);
@@ -546,52 +557,83 @@ const BRAND = {
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
+  verified: "2026-08-03",
+  coach: "Claudio Giráldez",
+  dof: "Marián Mouriño (President) · Ángel Falcón (Sporting Director)",
+  europe: "UEFA Europa League (2026/27)",
+  finish: "6th La Liga (2025/26), 54pts",
+  owner: "Celta de Vigo SAD, Marián Mouriño President",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["celta-vigo transfer news"]
+  feeds: ["https://thehardtackle.com/", "https://www.fichajes.com/equipo/real-club-celta-de-vigo/altas-bajas/"],
+  queries: ["Celta Vigo fichajes 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:00:00Z",
+  label: "Updated 03 Aug 2026 · RC Celta"
 };
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+
+const INCOMING = [
+  {name:"Altay Bayindir", sub:"28 · GK · Turkey", club:"Manchester United", pos:"GK", report:"03 Aug 2026", src:"Faro de Vigo / Sport Witness", tier:2, fee:"Season-long loan, no fee", truth:75, prob:65, light:"g", trend:"up", note:"Bayindir was set to undergo his medical 'within hours' of this report, with completion expected by Monday at the latest. Coach Claudio Giráldez wants an experienced back-up goalkeeper after Ionut Radu's injury concerns; Bayindir lost his United starting spot to Senne Lammens after a poor run of six Premier League games without a clean sheet."}
+];
+
 const OUTGOING = [];
-const RISERS = [];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Altay Bayindir loan</b>: medical being lined up, with completion expected imminently."}
+];
+
 const FALLERS = [];
-const NEW = [];
+
+const NEW = [
+  {ar:"✦", t:"Celta's one live incoming story is a season-long loan for Manchester United goalkeeper Altay Bayindir, addressing a goalkeeping injury concern behind Ionut Radu."}
+];
+
 const IGNORE = [];
-const POSITIONS = [];
-const WATCHLIST = [];
+
+const POSITIONS = [
+  {p:"Goalkeeper depth", w:55, x:"Radu's injury concerns are driving the Bayindir loan pursuit as senior cover."}
+];
+
+const WATCHLIST = [
+  {name:"Altay Bayindir", club:"Manchester United", pos:"GK", dir:"in", age:"~0 days", tier:2, note:"Medical being arranged; loan expected to be completed imminently per Faro de Vigo."}
+];
 
 const HUB = {
-  club: {l:"Celta-Vigo Official", u:"#"}
+  "hardtackle-bayindir1": {l:"The Hard Tackle - Celta eyeing loan for Bayindir", u:"https://thehardtackle.com/transfer-news/2026/08/02/celta-vigo-eyeing-loan-move-for-altay-bayindir/"},
+  "hardtackle-bayindir2": {l:"The Hard Tackle - Bayindir closing in, medical lined up", u:"https://thehardtackle.com/transfer-news/2026/08/03/altay-bayindir-closing-in-on-joining-celta-vigo-medical-lined-up/"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Altay Bayindir": ["hardtackle-bayindir1", "hardtackle-bayindir2"]
+};
+const WL_LINKMAP = {
+  "Altay Bayindir": ["hardtackle-bayindir2"]
+};
 
 const PROSE = {
-  heroH2: `RC Celta · 2026/27 Season`,
-  heroLede: `Transfer window active. RC Celta preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `A goalkeeping loan is Celta's live deadline-window story`,
+  heroLede: `Fresh off a Europa League-qualifying sixth-place finish, <b>Claudio Giráldez</b>'s side are moving to add senior goalkeeping cover: <b>Altay Bayindir</b> is closing in on a season-long loan from Manchester United, with a medical understood to be imminent.`,
+  metaRow: `<span>COACH: <b>Claudio Giráldez</b></span> <span>EUROPE: <b>Europa League</b></span> <span>WINDOW: <b>15 Jun – 1 Sep</b></span>`,
+  stats: `<div class="stat"><div class="l">Confirmed In</div><div class="v">0</div></div><div class="stat gold"><div class="l">Live Loan</div><div class="v">Bayindir</div></div>`,
+  positionPanel: ``,
+  confirmedPending: ``,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: ``,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `€0 fee`, x: `Bayindir move structured as a loan` },
+  spendOut: { v: `€0 confirmed`, x: `No completed departures found as of 3 Aug 2026` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -655,11 +697,38 @@ var __cardSeq = 0;
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
+  // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
+  focusCardFromHash();
+  window.addEventListener('hashchange', focusCardFromHash);
 })();
 
 function toggleCard(id) {
   const el = document.getElementById(id);
   if(el) el.classList.toggle('expanded');
+}
+
+// Shared with index.html / template-nation.html / template-league.html so a rumour card
+// clicked on any landing page can deep-link straight to the matching card on this club page.
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function focusCardFromHash() {
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#t-')) return;
+  const slug = hash.slice(3);
+  const target = document.querySelector(`.transfer-card[data-name-slug="${slug}"]`);
+  if (!target) return;
+  target.classList.add('card-highlight');
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const toggle = target.querySelector('.sources-toggle');
+  if (toggle && !target.classList.contains('expanded-src')) {
+    toggle.click();
+  }
 }
 
 function buildSourcesPanel(name, linkMap, hub) {
@@ -706,7 +775,7 @@ function renderCard(t, linkMap, hub) {
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -739,7 +808,7 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
@@ -770,7 +839,7 @@ function renderWatchlistCard(t, wlLinkMap, hub) {
   const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
 
-  return `<div class="transfer-card" id="${acc.id}">
+  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>

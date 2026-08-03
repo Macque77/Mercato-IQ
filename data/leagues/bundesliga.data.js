@@ -6,59 +6,87 @@
 const LEAGUE = {
   name: "Bundesliga",
   nation: "Germany",
-  stories_count: 6
+  stories_count: 10
 };
 
 const TOP_STORIES = [  {
-    name: "Niclas Füllkrug", prob: 82,
-    club_origin: "werder-bremen", club_display_name: "Werder Bremen", direction: "in",
-    from: "Free agent (Werder)", to: "Werder Bremen",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Contract renewal", updated: "2026-08-03T14:30:00Z"
+    name: "Mikey Moore", prob: 72, bullshit: false,
+    club_origin: "fc-cologne", club_display_name: "FC Cologne", direction: "in",
+    from: "Tottenham Hotspur", to: "FC Cologne",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Loan (no fee)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Mateo Kvasina", prob: 48,
+    name: "Yan Diomandé", prob: 72, bullshit: false,
+    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "out",
+    from: "RB Leipzig", to: "Real Madrid",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (fee TBC)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Raphael Onyedika", prob: 70, bullshit: false,
+    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
+    from: "Club Brugge", to: "Eintracht Frankfurt",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€9m + bonuses", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Fisnik Asllani", prob: 65, bullshit: false,
+    club_origin: "tsg-hoffenheim", club_display_name: "TSG Hoffenheim", direction: "out",
+    from: "TSG Hoffenheim", to: "RB Leipzig",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Below €35m valuation via contract clause", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Stefan Posch", prob: 55, bullshit: false,
+    club_origin: "mainz-05", club_display_name: "1. FSV Mainz 05", direction: "in",
+    from: "Como 1907", to: "1. FSV Mainz 05",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Fee TBC (Como paid ~€5.5m for him in Jan)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Mateo Kvasina", prob: 48, bullshit: false,
     club_origin: "fc-cologne", club_display_name: "FC Cologne", direction: "in",
     from: "Borussia Mönchengladbach", to: "FC Cologne",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Elia Caprile", prob: 44,
-    club_origin: "vfl-bochum", club_display_name: "VfL Bochum", direction: "in",
-    from: "Empoli", to: "VfL Bochum",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€12m", updated: "2026-08-03T14:30:00Z"
+    name: "Mats Wieffer", prob: 45, bullshit: false,
+    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
+    from: "AZ Alkmaar", to: "Borussia Dortmund",
+    tier: 2, coverage: 2, coverage_trend: 'up',
+    value: "€25m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Sam Lammers", prob: 38,
-    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
-    from: "PSV Eindhoven", to: "Eintracht Frankfurt",
+    name: "Jamie Leweling", prob: 40, bullshit: false,
+    club_origin: "vfb-stuttgart", club_display_name: "VfB Stuttgart", direction: "out",
+    from: "VfB Stuttgart", to: "Bournemouth / Everton",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€20m", updated: "2026-08-03T14:30:00Z"
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Moussa Diaby", prob: 35,
+    name: "Moussa Diaby", prob: 35, bullshit: false,
     club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
     from: "Bayer Leverkusen", to: "Borussia Dortmund",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€40m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Trent Alexander-Arnold", prob: 18,
-    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
-    from: "Liverpool", to: "Eintracht Frankfurt",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€55m", updated: "2026-08-03T14:30:00Z"
+    name: "Ermedin Demirović", prob: 22, bullshit: false,
+    club_origin: "vfb-stuttgart", club_display_name: "VfB Stuttgart", direction: "in",
+    from: "Unspecified", to: "VfB Stuttgart",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
 ];
 
-const BY_CLUB = {"werder-bremen": 1, "fc-cologne": 1, "vfl-bochum": 1, "eintracht-frankfurt": 2, "borussia-dortmund": 1};
+const BY_CLUB = {"fc-cologne": 2, "rb-leipzig": 1, "eintracht-frankfurt": 1, "tsg-hoffenheim": 1, "mainz-05": 1, "borussia-dortmund": 2, "vfb-stuttgart": 2};
 
-const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 0, "badge": false}, {"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 0, "badge": false}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 0, "badge": false}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 0, "badge": false}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 1, "badge": false}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 2, "badge": false}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 0, "badge": false}, {"slug": "fc-cologne", "name": "FC Cologne", "count": 1, "badge": false}, {"slug": "schalke-04", "name": "FC Schalke 04", "count": 0, "badge": false}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 0, "badge": false}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 0, "badge": false}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 0, "badge": false}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 1, "badge": false}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0, "badge": false}, {"slug": "werder-bremen", "name": "Werder Bremen", "count": 1, "badge": false}];
+const CLUBS_LIST = [{"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 0, "badge": false, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "mainz-05", "name": "1. FSV Mainz 05", "count": 1, "badge": false, "primary": "#C3141E", "primaryBright": "#FF5A62"}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 0, "badge": false, "primary": "#E32219", "primaryBright": "#FF6259"}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 0, "badge": false, "primary": "#DC143C", "primaryBright": "#FF4444"}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 2, "badge": false, "primary": "#FFD700", "primaryBright": "#FFED4E"}, {"slug": "borussia-m\u00f6nchengladbach", "name": "Borussia M\u00f6nchengladbach", "count": 0, "badge": false, "primary": "#00923F", "primaryBright": "#1EC85C"}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 1, "badge": false, "primary": "#E20E0E", "primaryBright": "#FF5252"}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 0, "badge": false, "primary": "#BA3733", "primaryBright": "#FF6259"}, {"slug": "fc-cologne", "name": "FC Cologne", "count": 2, "badge": false, "primary": "#EC2029", "primaryBright": "#FF5A62"}, {"slug": "schalke-04", "name": "FC Schalke 04", "count": 0, "badge": false, "primary": "#004B9F", "primaryBright": "#5CA9FF"}, {"slug": "hamburger-sv", "name": "Hamburger SV", "count": 0, "badge": false, "primary": "#00295B", "primaryBright": "#1E5FBF"}, {"slug": "rb-leipzig", "name": "RB Leipzig", "count": 1, "badge": false, "primary": "#DD0741", "primaryBright": "#FF4D77"}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 0, "badge": false, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "sc-paderborn", "name": "SC Paderborn 07", "count": 0, "badge": false, "primary": "#0055A4", "primaryBright": "#3D8FDD"}, {"slug": "sv-elversberg", "name": "SV 07 Elversberg", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#3D8FDD"}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 1, "badge": false, "primary": "#1C63B7", "primaryBright": "#5CA9FF"}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 2, "badge": false, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "werder-bremen", "name": "Werder Bremen", "count": 0, "badge": false, "primary": "#033D0B", "primaryBright": "#033D0B"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.467924Z",
+  updated: "2026-08-03T23:00:54.230975Z",
   label: "League aggregation"
 };

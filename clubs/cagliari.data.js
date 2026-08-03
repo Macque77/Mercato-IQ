@@ -3,56 +3,104 @@
    ============================================================ */
 
 const BRAND = {
-  club: "Cagliari", mono: "C", slug: "cagliari",
+  club: "Cagliari", mono: "CAG", slug: "cagliari",
   primary: "#B30000", primaryBright: "#FF6259", primaryDeep: "#6B0000",
   primaryRgb: "179,0,0",
   breadcrumb: ["Italy","Serie A"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
-  owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  verified: "2026-08-03",
+  coach: "Fabio Pisacane (contract extended to 2028)",
+  dof: "Vacant - Nereo Bonato departed; President Giulini leading the search for a new sporting director",
+  europe: "None for 2026/27",
+  finish: "14th Serie A (2025/26)",
+  owner: "Tommaso Giulini (President)",
+  window: "Opens 1 Jul, closes 1 Sep 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["cagliari transfer news"]
+  feeds: ["https://www.transfermarkt.com/", "https://football-italia.net/category/teams/cagliari/", "https://cagliaricalcio.com/en/news/"],
+  queries: ["Cagliari transfer news 2026", "Cagliari Winks Fazzini Romano", "Cagliari Gaetano Atalanta"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Cagliari"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Harry Winks", sub:"29 · CM · England", to:"permanent from Leicester City", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 13 Jul. The former Tottenham midfielder returns to Italian football, saying he's 'really happy to be back in Italy.'"},
+  {name:"Jacopo Fazzini", sub:"22 · AM · Italy", to:"loan from Fiorentina, €8m total option to buy", fee:"€8m (loan + option)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 13 Jul. Creative addition on loan with a route to a permanent deal."},
+  {name:"Alessandro Romano", sub:"20 · CB · Italy", to:"loan from AS Roma with obligation to buy", fee:"€5m plus add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Jul. Young centre-back joins with an obligation to buy attached once conditions are met."},
+  {name:"Demi Akarakiri", sub:"18 · CM · England", to:"free transfer from Everton", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 4 Jul. Teenage midfielder signed as a free agent for the development pathway."}
+];
+
+const CONFIRMED_OUT = [
+  {name:"Gianluca Gaetano", sub:"23 · AM · Italy", club:"Atalanta", pos:"AM", fee:"~€14m (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 9 Jul. Sold to Atalanta at the direct request of new coach Maurizio Sarri."}
+];
+
 const INCOMING = [];
-const OUTGOING = [];
-const RISERS = [];
-const FALLERS = [];
-const NEW = [];
-const IGNORE = [];
-const POSITIONS = [];
-const WATCHLIST = [];
+
+const OUTGOING = [
+  {name:"Yerry Mina", sub:"31 · CB · Colombia", club:"Fenerbahce (rumoured)", pos:"CB", report:"9 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Turkish interest reported in the experienced centre-back, but nothing beyond exploratory contact confirmed."}
+];
+
+const RISERS = [
+  {ar:"⬆", t:"<b>Harry Winks, Jacopo Fazzini, Alessandro Romano and Demi Akarakiri all arrive</b>: a busy month of squad-building across midfield and defence."}
+];
+
+const FALLERS = [
+  {ar:"⬇", t:"<b>Gianluca Gaetano departs</b>: creative midfielder sold to Atalanta for around €14m."}
+];
+
+const NEW = [
+  {ar:"✦", t:"Cagliari have been among Serie A's most active clubs on incomings this window, with four confirmed additions balanced by Gaetano's exit to Atalanta - all while the club searches for a permanent replacement for outgoing sporting director Nereo Bonato."}
+];
+
+const IGNORE = [
+  {ar:"✕", t:"<b>Thomas Berenbruch loan</b>: fell through - the Inter youngster opted for Utrecht instead of Cagliari."}
+];
+
+const POSITIONS = [
+  {p:"Central defence", w:35, x:"Romano's loan addresses depth, though Mina's future adds a small question mark at the other end of the defensive spectrum."},
+  {p:"Central/attacking midfield", w:30, x:"Winks and Fazzini both arrived to freshen the middle of the park after Gaetano's departure."}
+];
+
+const WATCHLIST = [
+  {name:"Yerry Mina", club:"Fenerbahce", pos:"CB", dir:"out", age:"~3 weeks", tier:3, note:"Turkish interest reported but nothing advanced."}
+];
 
 const HUB = {
-  club: {l:"Cagliari Official", u:"#"}
+  footballItalia: {l:"Football Italia · Cagliari", u:"https://football-italia.net/category/teams/cagliari/"},
+  club: {l:"Cagliari Calcio Official", u:"https://cagliaricalcio.com/en/news/"}
 };
 
-const LINKMAP = {};
-const WL_LINKMAP = {};
+const LINKMAP = {
+  "Harry Winks": ["footballItalia","club"],
+  "Jacopo Fazzini": ["footballItalia","club"],
+  "Alessandro Romano": ["footballItalia","club"],
+  "Demi Akarakiri": ["footballItalia","club"],
+  "Gianluca Gaetano": ["footballItalia"],
+  "Yerry Mina": ["footballItalia"]
+};
+const WL_LINKMAP = {
+  "Yerry Mina": ["footballItalia"]
+};
 
 const PROSE = {
-  heroH2: `Cagliari · 2026/27 Season`,
-  heroLede: `Transfer window active. Cagliari preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Pisacane's rebuild: four fresh faces in as Gaetano cashes out to Atalanta`,
+  heroLede: `Cagliari head into 2026/27 with coach <b>Fabio Pisacane</b> rewarded with a contract extension to 2028 after steering the club to 14th place, even as the sporting-director chair sits vacant following <b>Nereo Bonato's</b> exit. On the pitch it has been a genuinely busy window: <b>Harry Winks</b>, <b>Jacopo Fazzini</b>, <b>Alessandro Romano</b> and <b>Demi Akarakiri</b> have all arrived to refresh the midfield and defence, funded in part by <b>Gianluca Gaetano's</b> sale to Atalanta - a deal made directly at new Atalanta coach Maurizio Sarri's request. <b>Yerry Mina's</b> future carries some Turkish interest, but nothing beyond speculation so far.`,
+  metaRow: `<span>DECISION-MAKER: <b>Tommaso Giulini</b> (President)</span> <span>HEAD COACH: <b>Fabio Pisacane</b></span> <span>WINDOW: <b>1 Jul – 1 Sep</b></span>`,
+  stats: `<div class="stat"><div class="l">2025/26 Finish</div><div class="v">14<small>th</small></div></div><div class="stat"><div class="l">2026/27 Europe</div><div class="v">None</div></div><div class="stat gold"><div class="l">Confirmed In</div><div class="v">4</div></div>`,
+  positionPanel: ``,
+  confirmedPending: `No further deals reported as agreed-but-unannounced this window.`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Mina's situation is speculative rather than an active sale process.`,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `~€13m+ committed`, x: `Fazzini (€8m loan+option) and Romano (€5m) carry fees; Winks and Akarakiri arrived free/undisclosed.` },
+  spendOut: { v: `~€14m banked`, x: `Gaetano's sale to Atalanta is the major outgoing fee of the window so far.` },
   methodLegend: ``
 };

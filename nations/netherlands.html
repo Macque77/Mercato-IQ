@@ -491,7 +491,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">5</span>
+          <span class="stat-value">4</span>
         </div>
       </div>
     </div>
@@ -528,39 +528,32 @@
 const NATION = {
   name: "Netherlands",
   flag_emoji: "🇳🇱",
-  stories_count: 5
+  stories_count: 4
 };
 
 const TOP_STORIES = [  {
-    name: "Mats Wieffer",prob: 88,
-    club_origin: "az-alkmaar", club_display_name: "AZ Alkmaar", direction: "in",
-    from: "AZ Alkmaar", to: "AZ Alkmaar",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Contract renewal", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
-  },
-  {
-    name: "Xavi Simons",prob: 65,
+    name: "Xavi Simons",prob: 65, bullshit: false,
     club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
     from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Loan + option", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
-    name: "Jarrad Branthwaite",prob: 42,
+    name: "Jarrad Branthwaite",prob: 42, bullshit: false,
     club_origin: "feyenoord", club_display_name: "Feyenoord Rotterdam", direction: "in",
     from: "Everton", to: "Feyenoord Rotterdam",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€40m loan option", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
-    name: "Tomás Bisuma",prob: 40,
+    name: "Tomás Bisuma",prob: 40, bullshit: false,
     club_origin: "sc-heerenveen", club_display_name: "SC Heerenveen", direction: "in",
     from: "Fiorentina", to: "SC Heerenveen",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€15m", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
-    name: "Orkun Kökçü",prob: 35,
+    name: "Orkun Kökçü",prob: 35, bullshit: false,
     club_origin: "ajax", club_display_name: "AFC Ajax", direction: "in",
     from: "Benfica", to: "AFC Ajax",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -568,13 +561,13 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Eredivisie": 5, "Eerste Divisie": 0};
+const BY_LEAGUE = {"Eredivisie": 4, "Eerste Divisie": 0};
 
-const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 5}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
+const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 4}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.464276Z",
+  updated: "2026-08-03T23:00:54.228485Z",
   label: "Nation aggregation"
 };
 
@@ -607,15 +600,21 @@ const REPORT_META = {
   }
 })();
 
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
-  const isBullshit = prob < 35;
+  const isBullshit = s.bullshit === true;
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
-  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
+  const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
   return `<a href="${href}" class="transfer-card">
     ${bullTag}

@@ -231,6 +231,17 @@
     overflow:hidden;
   }
 
+  /* Fallback crest tile for clubs with no real badge artwork: a small monogram
+     rendered in the club's own brand colour so it reads as a deliberate crest
+     rather than a missing-image placeholder. */
+  .club-badge.mono-crest {
+    background: linear-gradient(135deg, var(--crest-a, rgba(232,194,73,0.28)), var(--crest-b, rgba(255,255,255,0.05)));
+    border-color: var(--crest-border, rgba(232,194,73,0.4));
+    color: var(--crest-ink, var(--accent-gold));
+    font-weight:600;
+    text-shadow:0 1px 2px rgba(0,0,0,0.35);
+  }
+
   .club-badge img {
     width:100%;
     height:100%;
@@ -539,11 +550,11 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "amiens-sc", "name": "Amiens SC", "count": 0, "badge": false}, {"slug": "caen", "name": "Stade Malherbe Caen", "count": 0, "badge": false}, {"slug": "valenciennes-fc", "name": "Valenciennes FC", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "amiens-sc", "name": "Amiens SC", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "caen", "name": "Stade Malherbe Caen", "count": 0, "badge": false, "primary": "#B7161C", "primaryBright": "#FF6B6B"}, {"slug": "valenciennes-fc", "name": "Valenciennes FC", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.474832Z",
+  updated: "2026-08-03T23:00:54.235541Z",
   label: "League aggregation"
 };
 
@@ -553,20 +564,53 @@ function initials(name) {
   return (name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
 }
 
+function hexToRgba(hex, alpha) {
+  const h = (hex || '#E8C249').replace('#', '');
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  if (isNaN(n)) return `rgba(232,194,73,${alpha})`;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+// Relative luminance (0-1) of a hex colour, used to guard legibility on the dark
+// fallback crest tile -- clubs whose real colours are near-black (Juventus, Udinese)
+// would otherwise render an unreadable ink colour against the dark card background.
+function luminance(hex) {
+  const h = (hex || '#E8C249').replace('#', '');
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  if (isNaN(n)) return 0.6;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+}
+
+// Pick a legible ink colour for the mono-crest tile: the club's bright brand colour
+// when it reads clearly on a dark background, otherwise a neutral light fallback.
+function crestInk(primary, primaryBright) {
+  const candidate = primaryBright || primary;
+  return luminance(candidate) < 0.38 ? '#E9E9EE' : candidate;
+}
+
 (function(){
   // Populate clubs grid. aggregate.py emits this array as CLUBS_LIST with a
-  // {slug,name,count,badge} shape -- NOT "CLUBS" (that mismatch used to leave this grid
-  // permanently empty even when club data existed). badge=true means a thumbnail exists
-  // in badges-thumb/<slug>.png; clubs without real artwork fall back to an initials tile.
+  // {slug,name,count,badge,primary,primaryBright} shape -- NOT "CLUBS" (that mismatch used
+  // to leave this grid permanently empty even when club data existed). badge=true means a
+  // thumbnail exists in badges-thumb/<slug>.png; clubs without real artwork fall back to a
+  // monogram tile rendered in the club's own brand colour, so it reads as a deliberate crest
+  // rather than a missing-image placeholder.
   if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
     const container = document.getElementById('clubs-grid');
     container.innerHTML = CLUBS_LIST.map(c => {
+      const ink = crestInk(c.primary, c.primaryBright);
+      const crestStyle = `--crest-a:${hexToRgba(c.primary, 0.32)};--crest-b:${hexToRgba(c.primaryBright || c.primary, 0.08)};--crest-border:${hexToRgba(c.primary, 0.55)};--crest-ink:${ink}`;
       const badgeInner = c.badge
-        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.textContent='${initials(c.name)}'">`
+        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.classList.add('mono-crest'); this.parentElement.textContent='${initials(c.name)}'">`
         : initials(c.name);
+      const badgeClass = c.badge ? 'club-badge' : 'club-badge mono-crest';
       return `
       <a href="../${c.slug}.html" class="club-card">
-        <div class="club-badge">${badgeInner}</div>
+        <div class="${badgeClass}" style="${crestStyle}">${badgeInner}</div>
         <div class="club-name">${c.name}</div>
       </a>
     `;
@@ -586,15 +630,21 @@ function initials(name) {
   }
 })();
 
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
-  const isBullshit = prob < 35;
+  const isBullshit = s.bullshit === true;
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
-  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
+  const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
   return `<a href="${href}" class="transfer-card">
     ${bullTag}

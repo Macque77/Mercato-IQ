@@ -532,14 +532,14 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Mehmet Topal",prob: 85,
+    name: "Mehmet Topal",prob: 85, bullshit: false,
     club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
     from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Contract renewal", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Álvaro Soler",prob: 42,
+    name: "Álvaro Soler",prob: 42, bullshit: false,
     club_origin: "galatasaray", club_display_name: "Galatasaray SK", direction: "in",
     from: "Montpellier", to: "Galatasaray SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -553,7 +553,7 @@ const LEAGUES_LIST = [{"slug": "super-lig", "name": "Super Lig", "count": 2}, {"
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.465781Z",
+  updated: "2026-08-03T23:00:54.229601Z",
   label: "Nation aggregation"
 };
 
@@ -586,15 +586,21 @@ const REPORT_META = {
   }
 })();
 
+function slugifyName(s) {
+  return (s || '').toString().toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
-  const isBullshit = prob < 35;
+  const isBullshit = s.bullshit === true;
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
-  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
+  const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
   return `<a href="${href}" class="transfer-card">
     ${bullTag}

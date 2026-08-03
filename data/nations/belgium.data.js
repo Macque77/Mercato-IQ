@@ -10,21 +10,21 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "David Njoku",prob: 45,
+    name: "David Njoku",prob: 45, bullshit: false,
     club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
     from: "Udinese", to: "Club Brugge",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€18m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
-    name: "Andi Zeqiri",prob: 38,
+    name: "Andi Zeqiri",prob: 38, bullshit: false,
     club_origin: "standard-liege", club_display_name: "Standard Liège", direction: "in",
     from: "Augsburg", to: "Standard Liège",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€12m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
-    name: "Denzel Dumfries",prob: 22,
+    name: "Denzel Dumfries",prob: 22, bullshit: false,
     club_origin: "rsc-anderlecht", club_display_name: "RSC Anderlecht", direction: "in",
     from: "Inter Milan", to: "RSC Anderlecht",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -38,6 +38,6 @@ const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 3}, 
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.461836Z",
+  updated: "2026-08-03T23:00:54.226659Z",
   label: "Nation aggregation"
 };

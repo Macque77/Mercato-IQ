@@ -10,14 +10,14 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Chiquinho", prob: 48,
+    name: "Chiquinho", prob: 48, bullshit: false,
     club_origin: "olympiacos", club_display_name: "Olympiacos FC", direction: "in",
     from: "Guimarães", to: "Olympiacos FC",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Oussama El Khannouss", prob: 40,
+    name: "Oussama El Khannouss", prob: 40, bullshit: false,
     club_origin: "aek-athens", club_display_name: "AEK Athens", direction: "in",
     from: "Leicester City", to: "AEK Athens",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -27,10 +27,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"olympiacos": 1, "aek-athens": 1};
 
-const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1, "badge": false}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0, "badge": false}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 0, "badge": false}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0, "badge": false}, {"slug": "atromitos", "name": "Atromitos", "count": 0, "badge": false}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0, "badge": false}, {"slug": "olympiacos", "name": "Olympiacos FC", "count": 1, "badge": false}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 0, "badge": false}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 0, "badge": false}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 0, "badge": false}, {"slug": "peristeri", "name": "Peristeri", "count": 0, "badge": false}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1, "badge": false, "primary": "#FDB900", "primaryBright": "#FDB900"}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "atromitos", "name": "Atromitos", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "olympiacos", "name": "Olympiacos FC", "count": 1, "badge": false, "primary": "#CC0000", "primaryBright": "#CC0000"}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "peristeri", "name": "Peristeri", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.479132Z",
+  updated: "2026-08-03T23:00:54.238481Z",
   label: "League aggregation"
 };

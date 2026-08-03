@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "aydin-sk", "name": "Ayd\u0131nspor 1923", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "aydin-sk", "name": "Ayd\u0131nspor 1923", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.468203Z",
+  updated: "2026-08-03T23:00:54.231188Z",
   label: "League aggregation"
 };
