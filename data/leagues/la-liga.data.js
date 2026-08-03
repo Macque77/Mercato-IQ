@@ -27,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Gabriel Jesus", prob: 42,
     club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
     from: "Manchester City", to: "Atlético Madrid",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€45m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -41,7 +41,7 @@ const TOP_STORIES = [  {
     name: "Villarreal winger", prob: 35,
     club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
     from: "Villarreal", to: "Atlético Madrid",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€20m+", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -62,7 +62,7 @@ const TOP_STORIES = [  {
     name: "Rodrygo Goes", prob: 8,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
     from: "Manchester City", to: "Real Madrid",
-    tier: 3, coverage: 2, coverage_trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
     value: "€100m (speculation)", updated: "2026-07-29T00:00:00Z"
   },
   {
@@ -80,6 +80,6 @@ const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "coun
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.471571Z",
+  updated: "2026-08-03T19:53:59.449234Z",
   label: "League aggregation"
 };

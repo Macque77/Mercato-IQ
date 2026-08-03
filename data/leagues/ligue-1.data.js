@@ -34,7 +34,7 @@ const TOP_STORIES = [  {
     name: "Ousmane Dembélé", prob: 35,
     club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
     from: "PSG", to: "Olympique de Marseille",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€50m+", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -66,6 +66,6 @@ const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0,
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.473770Z",
+  updated: "2026-08-03T19:53:59.450757Z",
   label: "League aggregation"
 };

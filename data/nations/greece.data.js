@@ -31,6 +31,6 @@ const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:52:45.463606Z",
+  updated: "2026-08-03T19:53:59.444192Z",
   label: "Nation aggregation"
 };
