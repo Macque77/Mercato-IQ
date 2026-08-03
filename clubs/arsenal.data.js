@@ -59,7 +59,7 @@ const SWEEP = {
 
 /* ── EDIT THESE EACH REFRESH ──────────────────────────
    asof: human display date · updated: full ISO timestamp (drives live ticker) */
-const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label: "Champions' window build: Hincapié permanent secured, Morgan Rogers the marquee chase, fringe churn to fund it (migrated to v2, awaiting live refresh)" };
+const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , updated: "2026-08-03T12:48:44Z"};
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
@@ -78,6 +78,7 @@ const INCOMING = [
    note:"A recurring centre-forward option as Arsenal weigh succession for Gabriel Jesus; reporting has Arsenal registering interest. OBSTACLES: T3 sourcing, a crowded market for elite young strikers, and the cost-cap maths on another big fee."},
   {name:"Julián Álvarez", sub:"26 · Argentina · ST", club:"Atlético Madrid", pos:"ST", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£120m+", truth:45, prob:10, light:'r', trend:'flat',
    note:"Listed by the BBC as an attacking target but flagged as 'highly complex': a valuation north of £120m would almost certainly require a major sale first, and Atlético hold all the leverage. An aspirational, low-probability swing rather than a likely deal."},
+
 ];
 
 const OUTGOING = [

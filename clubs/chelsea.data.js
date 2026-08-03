@@ -69,7 +69,7 @@ const SWEEP = {
 
 /* ── EDIT THESE EACH REFRESH ──────────────────────────
    asof: human display date · updated: full ISO timestamp (drives live ticker) */
-const REPORT_META = { asof: "3 Aug 2026", updated: "2026-08-03T17:00:00Z", label: "Morgan Rogers confirmed from Aston Villa for record £117m (August 2026); Emegha move from Strasbourg still pending formal announcement" };
+const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , updated: "2026-08-03T12:48:44Z"};
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
@@ -78,6 +78,7 @@ const CONFIRMED_IN = [
    note:"Confirmed August 2026: a record transfer for the England international, Rogers becomes Chelsea's marquee attacking addition under Xabi Alonso. The fee ranks among the highest in European football for a wide playmaker, reflecting Alonso's determination to build an attacking midfield core after arriving from Bayer Leverkusen. Rogers scored 8 goals and assisted 7 in 34 Premier League appearances for Villa last season and carries a full international cap."},
   {name:"Emmanuel Emegha", sub:"ST · Netherlands", to:"agreed from Strasbourg", fee:"Undisclosed", free:false, status:"pending", statusTxt:"AGREED, AWAITING ANNOUNCEMENT",
    note:"The Strasbourg captain and striker remains agreed to join via the BlueCo cross-club pipeline this summer. A direct, on-model young centre-forward; formal completion expected imminently once international commitments clear."},
+
 ];
 const CONFIRMED_OUT = [];
 
@@ -88,6 +89,7 @@ const INCOMING = [
    note:"Carried from the v1 positions board (heat 55): an Alonso-shaped defensive structure is a stated priority of the rebuild. Thread-level only; the v1 state held no named defensive targets, so names attach at the next refresh."},
   {name:"Midfield control", sub:"Positional thread", club:"Market", pos:"CM", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Within £120-200m gross", truth:55, prob:50, light:'y', trend:'flat',
    note:"Carried from the v1 positions board (heat 50): tactical fit for Alonso in central midfield is a flagged need. Thread-level only; no named midfield targets were held in the v1 state."},
+
 ];
 
 const OUTGOING = [

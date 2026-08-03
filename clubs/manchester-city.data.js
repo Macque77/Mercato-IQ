@@ -48,7 +48,7 @@ const SWEEP = {
 
 /* ── EDIT THESE EACH REFRESH ──────────────────────────
    asof: human display date · updated: full ISO timestamp (drives live ticker) */
-const REPORT_META = { asof: "3 Aug 2026", updated: "2026-08-03T17:15:00Z", label: "Elliot Anderson confirmed from Nottingham Forest for £116m (3 Aug); Maresca midfield reset accelerating; senior departures (Silva, Stones, Ederson) in motion" };
+const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , updated: "2026-08-03T12:48:44Z"};
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
@@ -78,6 +78,7 @@ const OUTGOING = [
    note:"The clearest business: a generational refresh sees several Guardiola-era seniors moved on (see ledger). PRICING: contract length and age set modest fees; the value is squad-list and wage relief."},
   {name:"Fringe & loan army", sub:"Squad depth · framing thread", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Expect the usual City churn of loanees and fringe players to balance the books and the cost ratio under a new coach."},
+
 ];
 
 const RISERS = [

@@ -27,7 +27,7 @@ const SWEEP = {
   queries: ["Manchester United transfer news 2026", "Manchester United bid OR medical OR 'here we go'", "Man Utd Wilcox Carrick INEOS transfer"],
   note: "Man Utd-specialist sites (The Peoples Person, United In Focus, Stretty News, Sky Sports' MUFC desk) sit alongside Italian (Gazzetta dello Sport, Football Italia) and Spanish (AS, Fichajes) outlets for the Rashford/Kone, Tchouameni and Mainoo strands; Turkish press (Akşam Spor) covers the Ugarte-to-Galatasaray angle."
 };
-const REPORT_META = { asof: "29 Jul 2026", updated: "2026-07-29T18:00:00Z", label: "Midfield rebuild banked with Santos and Tielemans; Éderson collapse forces a reset as Rashford edges toward a Roma exit and the Kone swap chatter builds" };
+const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , updated: "2026-08-03T12:48:44Z"};
 
 const CONFIRMED_IN = [
   {name:"Andrey Santos", sub:"22 · CDM/CM · Brazil", to:"permanent from Chelsea", fee:"£50m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
@@ -38,6 +38,7 @@ const CONFIRMED_IN = [
    note:"A pure squad-balance move rather than a statement of intent: Darlow arrives on a free as experienced cover behind the No.1 spot, filling the gap left by André Onana's loan return to Trabzonspor. Confirmed via the club's own announcement, it carries no fee and minimal footballing risk, but underlines how thin United's goalkeeping department had become before the market opened."},
   {name:"Tynan Thompson", sub:"18 · LW · England", to:"permanent from Tottenham", fee:"£4m (up to £8m with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Confirmed 21 July per Stretty News and the club, this is a bet on a highly-rated England youth winger who impressed Spurs' academy staff enough that they retained matching and sell-on rights in the deal. Thompson joins the first-team squad under Carrick immediately rather than going straight into the academy, with the add-ons tied to senior appearances and international recognition."},
+
 ];
 
 const CONFIRMED_OUT = [

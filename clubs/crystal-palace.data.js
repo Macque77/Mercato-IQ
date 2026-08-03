@@ -69,7 +69,7 @@ const SWEEP = {
 
 /* ── EDIT THESE EACH REFRESH ──────────────────────────
    asof: human display date · updated: full ISO timestamp (drives live ticker) */
-const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label: "Build · Conf League winners, manager pending (migrated to v2, awaiting live refresh)" };
+const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , updated: "2026-08-03T12:48:44Z"};
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
@@ -77,6 +77,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [
   {name:"Oliver Glasner", sub:"Manager · departed", to:"Left as deal expired", fee:"n/a", free:true, status:"exit", statusTxt:"DEPARTED",
    note:"The club's greatest modern manager left as planned after winning the Conference League; his contract expired on 30 June. A successor is not yet confirmed. Flagged so no planning item treats him as the current coach."},
+
 ];
 
 const INCOMING = [
