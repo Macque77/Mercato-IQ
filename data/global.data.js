@@ -447,6 +447,19 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
+    headline: "Daniel Jebbison",
+    club_display_name: "Blackburn Rovers",
+    summary: "",
+    value: "Loan + option",
+    from: "Preston North End", to: "Blackburn Rovers",
+    direction: "in",
+    prob: 55, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "blackburn-rovers",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Eseosa Sule",
     club_display_name: "West Bromwich Albion",
     summary: "",

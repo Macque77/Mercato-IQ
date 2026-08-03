@@ -114,6 +114,13 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
+  {
+    name: "De Luca",prob: 30,
+    club_origin: "benevento", club_display_name: "Benevento", direction: "in",
+    from: "Undisclosed", to: "Benevento",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie B"
+  },
 ];
 
 const BY_LEAGUE = {"Serie A": 46, "Serie C": 4, "Serie B": 7, "Serie D": 0};
