@@ -276,7 +276,7 @@ def emit_global_data(all_stories):
     nations = {
         'England': 0, 'Spain': 0, 'Italy': 0, 'Germany': 0, 'France': 0,
         'Portugal': 0, 'Greece': 0, 'Turkey': 0, 'Belgium': 0,
-        'Netherlands': 0, 'Wales': 0, 'Sweden': 0
+        'Netherlands': 0, 'Wales': 0, 'Sweden': 0, 'Scotland': 0
     }
 
     # Initialize all 28 tracked leagues with 0 stories
@@ -294,7 +294,12 @@ def emit_global_data(all_stories):
         'Allsvenskan': 0,
         'Regionalliga': 0,
         'Championnat National': 0,
-        'Segunda División B': 0
+        'Segunda División B': 0,
+        'Cymru Premier': 0,
+        'Scottish Premiership': 0,
+        'Eerste Divisie': 0,
+        'Championship Play-offs': 0,
+        'Ligue 2 Play-offs': 0
     }
 
     for story in all_stories:

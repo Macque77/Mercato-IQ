@@ -835,18 +835,22 @@ const NATIONS = [
     name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
     stories_count: 0, league_count: 0
   },
+  {
+    name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    stories_count: 0, league_count: 0
+  },
 ];
 
 const STATS = {
   global_spend: "£5.2bn estimated",
   top_league: "Premier League",
   most_active_club: "Manchester City",
-  nations_covered: 12,
-  leagues_covered: 24
+  nations_covered: 13,
+  leagues_covered: 28
 };
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:07:05.684073Z",
+  updated: "2026-08-03T14:11:21.438518Z",
   label: "Global aggregation from all clubs"
 };

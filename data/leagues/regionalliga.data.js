@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "duisburg", "name": "MSV Duisburg", "count": 0}, {"
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:07:05.689347Z",
+  updated: "2026-08-03T14:11:21.445117Z",
   label: "League aggregation"
 };
