@@ -82,6 +82,12 @@ const PROSE = {
     crumbParts.push({ label: x, href });
   });
   document.getElementById('crumb').innerHTML=crumbParts.map(p=>`<a href="${p.href}">${p.label}</a><span class="sep">›</span>`).join('')+`<b>${BRAND.club}</b>`;
+  // Also render in header for easy navigation
+  const headerBreadEl = document.getElementById('headerBreadcrumbs');
+  if(headerBreadEl) {
+    const headerBread = crumbParts.map((p,i) => `<a href="${p.href}">${p.label}</a>` + (i < crumbParts.length - 1 ? `<span class="sep">/</span>` : '')).join('');
+    headerBreadEl.innerHTML = headerBread + `<span class="sep">/</span><span class="current">${BRAND.club}</span>`;
+  }
   const set=(id,h)=>{const el=document.getElementById(id); if(el) el.innerHTML=h||'';};
   set('heroH2',PROSE.heroH2); set('heroLede',PROSE.heroLede); set('metaRow',PROSE.metaRow);
   set('statStrip',PROSE.stats); set('panel-position',PROSE.positionPanel);
