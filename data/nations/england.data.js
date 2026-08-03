@@ -21,63 +21,63 @@ const TOP_STORIES = [  {
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Arsenal",
     tier: 1, coverage: 4, coverage_trend: 'flat',
-    value: "£70-85m (gap narrowing)", updated: "2026-08-03T16:45:00Z", league: "Premier League"
+    value: "£70-85m (gap narrowing)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Cristian Romero",prob: 62,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
     tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "≈€40m (£35m)", updated: "2026-07-30T14:00:00Z", league: "Premier League"
+    value: "≈€40m (£35m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Savinho",prob: 55,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Manchester City", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "£60m", updated: "2026-07-30T14:00:00Z", league: "Premier League"
+    value: "£60m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Lucas Bergvall",prob: 45,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Not yet tested", updated: "2026-07-30T14:00:00Z", league: "Premier League"
+    value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Morgan Rogers",prob: 35,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Aston Villa", to: "Arsenal",
     tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "£80m+", updated: "2026-06-06T12:00:00Z", league: "Premier League"
+    value: "£80m+", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Mateus Fernandes",prob: 34,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "West Ham United", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "£80m (West Ham valuation)", updated: "2026-07-29T18:00:00Z", league: "Premier League"
+    value: "£80m (West Ham valuation)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Lewis Hall",prob: 32,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "Newcastle United", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-07-29T18:00:00Z", league: "Premier League"
+    value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Rafael Leão",prob: 26,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "AC Milan", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-30T14:00:00Z", league: "Premier League"
+    value: "TBC", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Cody Gakpo",prob: 20,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Liverpool", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Not yet tested", updated: "2026-07-30T14:00:00Z", league: "Premier League"
+    value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Dayann Methalie",prob: 52,
@@ -91,28 +91,28 @@ const TOP_STORIES = [  {
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
     from: "Manchester United", to: "AS Roma (or open market)",
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "£40m release clause (all clubs bar Man City & Liverpool)", updated: "2026-07-29T18:00:00Z", league: "Premier League"
+    value: "£40m release clause (all clubs bar Man City & Liverpool)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Djed Spence",prob: 42,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "TBD",
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "≈£40m / €40m", updated: "2026-07-30T14:00:00Z", league: "Premier League"
+    value: "≈£40m / €40m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Abde Ezzalzouli",prob: 38,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
     from: "Real Betis", to: "Newcastle United",
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "≈£43-52m (release clause ≈€60m)", updated: "2026-08-03T16:45:00Z", league: "Premier League"
+    value: "≈£43-52m (release clause ≈€60m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Joe Willock",prob: 38,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Besiktas",
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "£10m bid rejected", updated: "2026-08-03T16:45:00Z", league: "Premier League"
+    value: "£10m bid rejected", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
 ];
 
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "coun
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T12:17:46.172057Z",
+  updated: "2026-08-03T12:50:16.912597Z",
   label: "Nation aggregation"
 };

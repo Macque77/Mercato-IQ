@@ -28,7 +28,7 @@ const HEADLINES = [
     tier: 1, coverage: 4, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "newcastle-united",
-    updated: "2026-08-03T16:45:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Cristian Romero",
@@ -41,7 +41,7 @@ const HEADLINES = [
     tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Savinho",
@@ -54,7 +54,7 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Lucas Bergvall",
@@ -67,7 +67,7 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Morgan Rogers",
@@ -80,7 +80,7 @@ const HEADLINES = [
     tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Mateus Fernandes",
@@ -93,7 +93,7 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
-    updated: "2026-07-29T18:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Lewis Hall",
@@ -106,7 +106,7 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
-    updated: "2026-07-29T18:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Rafael Leão",
@@ -119,7 +119,7 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Cody Gakpo",
@@ -132,7 +132,7 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Dayann Methalie",
@@ -158,7 +158,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
-    updated: "2026-07-29T18:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Djed Spence",
@@ -171,7 +171,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Abde Ezzalzouli",
@@ -184,7 +184,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "newcastle-united",
-    updated: "2026-08-03T16:45:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Joe Willock",
@@ -197,7 +197,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "newcastle-united",
-    updated: "2026-08-03T16:45:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Guglielmo Vicario",
@@ -210,7 +210,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
-    updated: "2026-07-30T14:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Lamine Camara",
@@ -236,7 +236,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Giorgio Scalvini",
@@ -249,7 +249,7 @@ const HEADLINES = [
     tier: 2, coverage: 3, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "newcastle-united",
-    updated: "2026-08-03T16:45:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Liam Delap",
@@ -275,7 +275,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "crystal-palace",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Elliot Anderson",
@@ -288,7 +288,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-city",
-    updated: "2026-08-03T17:15:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Riccardo Calafiori",
@@ -301,7 +301,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Leandro Trossard",
@@ -314,7 +314,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Christian Nørgaard",
@@ -327,7 +327,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Nick Pope",
@@ -340,7 +340,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "newcastle-united",
-    updated: "2026-08-03T16:45:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Manu Kone",
@@ -353,7 +353,7 @@ const HEADLINES = [
     tier: 2, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
-    updated: "2026-07-29T18:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Gabriel Martinelli",
@@ -366,7 +366,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Ben White",
@@ -379,7 +379,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Iliman Ndiaye",
@@ -392,7 +392,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
-    updated: "2026-07-29T18:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Curtis Jones",
@@ -418,7 +418,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Enzo Fernández",
@@ -431,7 +431,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-city",
-    updated: "2026-08-03T17:15:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Noah Sadiki",
@@ -470,7 +470,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
-    updated: "2026-06-06T12:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Matthis Abline",
@@ -496,7 +496,7 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
-    updated: "2026-07-29T18:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Granit Xhaka",
@@ -587,7 +587,7 @@ const HEADLINES = [
     tier: 3, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
-    updated: "2026-07-29T18:00:00Z"
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Ao Tanaka",
@@ -803,6 +803,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T12:17:46.171611Z",
+  updated: "2026-08-03T12:50:16.912211Z",
   label: "Global aggregation from all clubs"
 };
