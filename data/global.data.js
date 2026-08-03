@@ -187,19 +187,6 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
-    headline: "Mehmet Topal",
-    club_display_name: "Fenerbahçe SK",
-    summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
-    value: "Contract renewal",
-    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
-    direction: "in",
-    prob: 85, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Turkey", league: "Super Lig",
-    club_link: "fenerbahce",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Udoka Godwin-Malife",
     club_display_name: "Reading",
     summary: "",
@@ -211,6 +198,19 @@ const HEADLINES = [
     nation: "England", league: "League One",
     club_link: "reading",
     updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Mehmet Topal",
+    club_display_name: "Fenerbahçe SK",
+    summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
+    value: "Contract renewal",
+    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
+    direction: "in",
+    prob: 85, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Super Lig",
+    club_link: "fenerbahce",
+    updated: "2026-08-03T14:30:00Z"
   },
   {
     headline: "Niclas Füllkrug",
@@ -343,19 +343,6 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
-    headline: "Daniel Jebbison",
-    club_display_name: "Preston North End",
-    summary: "",
-    value: "Loan + option",
-    from: "Preston North End", to: "Blackburn Rovers",
-    direction: "out",
-    prob: 55, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "preston-north-end",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
     headline: "Jahnoah Markelo",
     club_display_name: "Rangers",
     summary: "Rangers reportedly in talks for the defender.",
@@ -367,6 +354,19 @@ const HEADLINES = [
     nation: "Scotland", league: "Premiership",
     club_link: "rangers",
     updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Daniel Jebbison",
+    club_display_name: "Blackburn Rovers",
+    summary: "",
+    value: "Loan + option",
+    from: "Preston North End", to: "Blackburn Rovers",
+    direction: "in",
+    prob: 55, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "blackburn-rovers",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Eseosa Sule",
@@ -746,19 +746,6 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
-    headline: "Konstantinos Karetsas",
-    club_display_name: "AC Milan",
-    summary: "",
-    value: "~€40m",
-    from: "Genk", to: "AC Milan",
-    direction: "in",
-    prob: 35, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "ac-milan",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Moussa Diaby",
     club_display_name: "Borussia Dortmund",
     summary: "German media reports Dortmund as one of several clubs interested in Leverkusen w",
@@ -769,6 +756,19 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "Germany", league: "Bundesliga",
     club_link: "borussia-dortmund",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Konstantinos Karetsas",
+    club_display_name: "AC Milan",
+    summary: "",
+    value: "~€40m",
+    from: "Genk", to: "AC Milan",
+    direction: "in",
+    prob: 35, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "ac-milan",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:39:01.923080Z",
+  updated: "2026-08-03T19:40:10.499513Z",
   label: "Global aggregation from all clubs"
 };

@@ -52,16 +52,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Claudio Braga", prob: 30,
-    club_origin: "celtic", club_display_name: "Celtic", direction: "in",
-    from: "Heart of Midlothian", to: "Celtic",
+    name: "Mikey Moore", prob: 30,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
+    from: "Tottenham Hotspur", to: "Rangers",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Mikey Moore", prob: 30,
-    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
-    from: "Tottenham Hotspur", to: "Rangers",
+    name: "Claudio Braga", prob: 30,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "in",
+    from: "Heart of Midlothian", to: "Celtic",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
@@ -115,6 +115,6 @@ const CLUBS_LIST = [{"slug": "aberdeen", "name": "Aberdeen", "count": 0, "badge"
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:39:01.933287Z",
+  updated: "2026-08-03T19:40:10.509544Z",
   label: "League aggregation"
 };

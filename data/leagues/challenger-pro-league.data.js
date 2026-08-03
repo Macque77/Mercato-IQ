@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "beerschot", "name": "K Beerschot VA", "count": 0, 
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:39:01.928303Z",
+  updated: "2026-08-03T19:40:10.504291Z",
   label: "League aggregation"
 };
