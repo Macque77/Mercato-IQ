@@ -236,19 +236,54 @@
 
 const LEAGUE = {
   name: "La Liga",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Spain",
+  stories_count: 5
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Jude Bellingham", prob: 78,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
+    from: "Borussia Dortmund", to: "Real Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€130m (Dortmund asking price)", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Brahim Díaz", prob: 35,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
+    from: "Real Madrid", to: "AC Milan (return interest)",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€45m buy-back clause", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Éder Militão", prob: 28,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
+    from: "Real Madrid", to: "Paris Saint-Germain (interest)",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€90m (PSG valuation)", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Florian Wirtz", prob: 22,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
+    from: "Bayer Leverkusen", to: "Real Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€150m+ asking price", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Rodrygo Goes", prob: 8,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
+    from: "Manchester City", to: "Real Madrid",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "€100m (speculation)", updated: "2026-07-29T00:00:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"real-madrid": 5};
 
-const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 0}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 0}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0}, {"slug": "osasuna", "name": "CA Osasuna", "count": 0}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 0}, {"slug": "barcelona", "name": "FC Barcelona", "count": 0}, {"slug": "celta-vigo", "name": "RC Celta", "count": 0}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 0}, {"slug": "real-betis", "name": "Real Betis", "count": 0}, {"slug": "real-madrid", "name": "Real Madrid", "count": 0}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 0}, {"slug": "sevilla", "name": "Sevilla", "count": 0}, {"slug": "valencia", "name": "Valencia", "count": 0}, {"slug": "villarreal", "name": "Villarreal", "count": 0}];
+const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 0}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 0}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0}, {"slug": "osasuna", "name": "CA Osasuna", "count": 0}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 0}, {"slug": "barcelona", "name": "FC Barcelona", "count": 0}, {"slug": "celta-vigo", "name": "RC Celta", "count": 0}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 0}, {"slug": "real-betis", "name": "Real Betis", "count": 0}, {"slug": "real-madrid", "name": "Real Madrid", "count": 5}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 0}, {"slug": "sevilla", "name": "Sevilla", "count": 0}, {"slug": "valencia", "name": "Valencia", "count": 0}, {"slug": "villarreal", "name": "Villarreal", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:11:21.443402Z",
+  updated: "2026-08-03T14:23:26.742643Z",
   label: "League aggregation"
 };
 
@@ -335,6 +370,7 @@ const REPORT_META = {
     if(!list.length){ rail.innerHTML = eyebrow + '<div class="rail-empty">No clubs tracked yet.</div>'; return; }
     rail.innerHTML = eyebrow + list.map(c => `
       <a class="rail-item" href="../${c.slug}.html">
+        <span class="flag">⚽</span>
         <span class="info"><span class="nm">${c.name}</span><span class="ct">${c.count} ${c.count === 1 ? 'story' : 'stories'}</span></span>
         <span class="arrow">&rarr;</span>
       </a>`).join('');

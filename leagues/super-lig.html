@@ -248,7 +248,7 @@ const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "coun
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:11:21.446486Z",
+  updated: "2026-08-03T14:23:26.747079Z",
   label: "League aggregation"
 };
 
@@ -335,6 +335,7 @@ const REPORT_META = {
     if(!list.length){ rail.innerHTML = eyebrow + '<div class="rail-empty">No clubs tracked yet.</div>'; return; }
     rail.innerHTML = eyebrow + list.map(c => `
       <a class="rail-item" href="../${c.slug}.html">
+        <span class="flag">⚽</span>
         <span class="info"><span class="nm">${c.name}</span><span class="ct">${c.count} ${c.count === 1 ? 'story' : 'stories'}</span></span>
         <span class="arrow">&rarr;</span>
       </a>`).join('');

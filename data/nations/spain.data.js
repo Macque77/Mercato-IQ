@@ -6,17 +6,52 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 0
+  stories_count: 5
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Jude Bellingham",prob: 78,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
+    from: "Borussia Dortmund", to: "Real Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€130m (Dortmund asking price)", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Brahim Díaz",prob: 35,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
+    from: "Real Madrid", to: "AC Milan (return interest)",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€45m buy-back clause", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Éder Militão",prob: 28,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
+    from: "Real Madrid", to: "Paris Saint-Germain (interest)",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€90m (PSG valuation)", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Florian Wirtz",prob: 22,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
+    from: "Bayer Leverkusen", to: "Real Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€150m+ asking price", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Rodrygo Goes",prob: 8,
+    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
+    from: "Manchester City", to: "Real Madrid",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "€100m (speculation)", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"La Liga": 5};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 5}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:11:21.440873Z",
+  updated: "2026-08-03T14:23:26.739524Z",
   label: "Nation aggregation"
 };

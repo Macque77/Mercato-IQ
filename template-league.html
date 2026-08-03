@@ -312,6 +312,7 @@
     if(!list.length){ rail.innerHTML = eyebrow + '<div class="rail-empty">No clubs tracked yet.</div>'; return; }
     rail.innerHTML = eyebrow + list.map(c => `
       <a class="rail-item" href="../${c.slug}.html">
+        <span class="flag">⚽</span>
         <span class="info"><span class="nm">${c.name}</span><span class="ct">${c.count} ${c.count === 1 ? 'story' : 'stories'}</span></span>
         <span class="arrow">&rarr;</span>
       </a>`).join('');

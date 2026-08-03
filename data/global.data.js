@@ -135,6 +135,19 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
+    headline: "Jude Bellingham",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "€130m (Dortmund asking price)",
+    from: "Borussia Dortmund", to: "Real Madrid",
+    direction: "in",
+    prob: 78, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Dayann Methalie",
     club_display_name: "Sunderland",
     summary: "",
@@ -224,6 +237,19 @@ const HEADLINES = [
     nation: "England", league: "Premier League",
     club_link: "aston-villa",
     updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Brahim Díaz",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "€45m buy-back clause",
+    from: "Real Madrid", to: "AC Milan (return interest)",
+    direction: "out",
+    prob: 35, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Gabriel Jesus",
@@ -343,6 +369,19 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
+    headline: "Éder Militão",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "€90m (PSG valuation)",
+    from: "Real Madrid", to: "Paris Saint-Germain (interest)",
+    direction: "out",
+    prob: 28, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Manu Kone",
     club_display_name: "Manchester United",
     summary: "",
@@ -393,6 +432,19 @@ const HEADLINES = [
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
     updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Florian Wirtz",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "€150m+ asking price",
+    from: "Bayer Leverkusen", to: "Real Madrid",
+    direction: "in",
+    prob: 22, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Curtis Jones",
@@ -732,58 +784,6 @@ const HEADLINES = [
     club_link: "everton",
     updated: "2026-06-06T12:00:00Z"
   },
-  {
-    headline: "Ernest Poku",
-    club_display_name: "Sunderland",
-    summary: "",
-    value: "~£21m (€25m)",
-    from: "Bayer Leverkusen", to: "Sunderland",
-    direction: "in",
-    prob: 32, trend: 'up',
-    tier: 3, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "sunderland",
-    updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    headline: "Crysencio Summerville",
-    club_display_name: "Leeds United",
-    summary: "",
-    value: "£20-30m",
-    from: "West Ham", to: "Leeds United",
-    direction: "in",
-    prob: 30, trend: 'up',
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "leeds-united",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Hayden Hackney",
-    club_display_name: "Leeds United",
-    summary: "",
-    value: "£18-20m",
-    from: "Middlesbrough", to: "Leeds United",
-    direction: "in",
-    prob: 30, trend: 'up',
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "leeds-united",
-    updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "Tim Iroegbunam",
-    club_display_name: "Ipswich Town",
-    summary: "Reportedly on Ipswich's radar; one year left on his Everton deal makes a move fe",
-    value: "£10-18m",
-    from: "Everton", to: "Ipswich Town",
-    direction: "in",
-    prob: 30, trend: 'flat',
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "ipswich-town",
-    updated: "2026-06-06T00:00:00Z"
-  },
 ];
 
 const NATIONS = [
@@ -793,7 +793,7 @@ const NATIONS = [
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 0, league_count: 0
+    stories_count: 5, league_count: 1
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:11:21.438518Z",
+  updated: "2026-08-03T14:23:26.737194Z",
   label: "Global aggregation from all clubs"
 };

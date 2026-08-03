@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "ascoli", "name": "Ascoli", "count": 0}, {"slug": "
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T14:11:21.445622Z",
+  updated: "2026-08-03T14:23:26.745915Z",
   label: "League aggregation"
 };
