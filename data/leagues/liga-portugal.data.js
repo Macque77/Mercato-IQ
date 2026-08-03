@@ -38,6 +38,6 @@ const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0}, {"s
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:21:00.852169Z",
+  updated: "2026-08-03T15:36:37.159257Z",
   label: "League aggregation"
 };
