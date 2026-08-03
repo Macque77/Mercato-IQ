@@ -4,9 +4,9 @@
 
 const BRAND = {
   club: "Reading", mono: "R", slug: "reading",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["England","Championship"]
+  primary: "#004494", primaryBright: "#5CA9FF", primaryDeep: "#00285C",
+  primaryRgb: "0,68,148",
+  breadcrumb: ["England","League One"]
 };
 
 const VOLATILE = {

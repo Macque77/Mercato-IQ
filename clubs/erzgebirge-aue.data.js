@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "FC Erzgebirge Aue", mono: "FEA", slug: "erzgebirge-aue",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#5B2C82", primaryBright: "#A87FD6", primaryDeep: "#331A49",
+  primaryRgb: "91,44,130",
   breadcrumb: ["Germany","2. Bundesliga"]
 };
 

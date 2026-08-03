@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Ascoli Picchio", mono: "AP", slug: "ascoli-picchio",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#FFFFFF", primaryBright: "#FFFFFF", primaryDeep: "#B0B0B0",
+  primaryRgb: "255,255,255",
   breadcrumb: ["Italy","Serie B"]
 };
 

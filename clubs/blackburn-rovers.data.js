@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Blackburn Rovers", mono: "BR", slug: "blackburn-rovers",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#009EE0", primaryBright: "#5CD2FF", primaryDeep: "#005E85",
+  primaryRgb: "0,158,224",
   breadcrumb: ["England","Championship"]
 };
 

@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "bristol-rovers", "name": "Bristol Rovers", "count": 0, "badge": false}, {"slug": "cambridge-united", "name": "Cambridge United", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "bristol-rovers", "name": "Bristol Rovers", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.512349Z",
+  updated: "2026-08-03T18:15:43.719450Z",
   label: "League aggregation"
 };

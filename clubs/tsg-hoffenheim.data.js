@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "TSG Hoffenheim", mono: "TH", slug: "tsg-hoffenheim",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#1C63B7", primaryBright: "#5CA9FF", primaryDeep: "#0E3868",
+  primaryRgb: "28,99,183",
   breadcrumb: ["Germany","Bundesliga"]
 };
 

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Valencia", mono: "V", slug: "valencia",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#EE8707", primaryBright: "#FFAD4D", primaryDeep: "#8F5104",
+  primaryRgb: "238,135,7",
   breadcrumb: ["Spain","La Liga"]
 };
 

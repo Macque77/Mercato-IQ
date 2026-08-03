@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "RC Celta", mono: "RC", slug: "celta-vigo",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#8AC3EE", primaryBright: "#C9E6FF", primaryDeep: "#3E7EA8",
+  primaryRgb: "138,195,238",
   breadcrumb: ["Spain","La Liga"]
 };
 

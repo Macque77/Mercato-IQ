@@ -6,10 +6,8 @@ const BRAND = {
   club: "Olympique Lyonnais",
   mono: "OLY",
   slug: "olympique-lyon",
-  primary: "#003DA5",
-  primaryBright: "#003DA5",
-  primaryDeep: "#003DA5",
-  primaryRgb: "100,100,100",
+  primary: "#0056A8", primaryBright: "#5CA9FF", primaryDeep: "#00325F",
+  primaryRgb: "0,86,168",
   breadcrumb: ["France", "Ligue 1"]
 };
 

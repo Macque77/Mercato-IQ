@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Rayo Vallecano", mono: "RV", slug: "rayo-vallecano",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#E2001A", primaryBright: "#FF6259", primaryDeep: "#800010",
+  primaryRgb: "226,0,26",
   breadcrumb: ["Spain","La Liga"]
 };
 

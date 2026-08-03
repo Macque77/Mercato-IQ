@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Villarreal", mono: "V", slug: "villarreal",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#FFE667", primaryBright: "#FFF3B0", primaryDeep: "#C7A800",
+  primaryRgb: "255,230,103",
   breadcrumb: ["Spain","La Liga"]
 };
 

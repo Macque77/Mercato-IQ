@@ -11,12 +11,12 @@ const NATION = {
 
 const TOP_STORIES = [];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Your League": 0};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "your-league", "name": "Your League", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.510486Z",
+  updated: "2026-08-03T18:15:43.717143Z",
   label: "Nation aggregation"
 };

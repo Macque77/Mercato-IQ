@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Atalanta", mono: "A", slug: "atalanta",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#1B5AA5", primaryBright: "#5CA9FF", primaryDeep: "#0E3560",
+  primaryRgb: "27,90,165",
   breadcrumb: ["Italy","Serie A"]
 };
 

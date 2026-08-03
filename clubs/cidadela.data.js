@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Cittadella", mono: "C", slug: "cidadela",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#B30000", primaryBright: "#FF6259", primaryDeep: "#6B0000",
+  primaryRgb: "179,0,0",
   breadcrumb: ["Portugal","Liga Portugal 2"]
 };
 

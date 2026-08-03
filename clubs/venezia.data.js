@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Venezia", mono: "V", slug: "venezia",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#FF7900", primaryBright: "#FFA85C", primaryDeep: "#8F4400",
+  primaryRgb: "255,121,0",
   breadcrumb: ["Italy","Serie A"]
 };
 

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Stade Malherbe Caen", mono: "SMC", slug: "caen",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#B7161C", primaryBright: "#FF6B6B", primaryDeep: "#6E0D11",
+  primaryRgb: "183,22,28",
   breadcrumb: ["France","Ligue 2"]
 };
 

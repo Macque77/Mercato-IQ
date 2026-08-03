@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "US Sassuolo", mono: "US", slug: "sassuolo",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#00A650", primaryBright: "#63E6A0", primaryDeep: "#00602E",
+  primaryRgb: "0,166,80",
   breadcrumb: ["Italy","Serie A"]
 };
 

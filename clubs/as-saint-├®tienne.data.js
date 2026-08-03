@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "AS Saint-Étienne", mono: "AS", slug: "as-saint-étienne",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#1E7A3F", primaryBright: "#3FCB8C", primaryDeep: "#0F4A26",
+  primaryRgb: "30,122,63",
   breadcrumb: ["Your Nation","Your League"]
 };
 

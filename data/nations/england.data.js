@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Premier League": 93};
+const BY_LEAGUE = {"Premier League": 93, "Championship": 0, "League One": 0, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 93}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 93}, {"slug": "championship", "name": "Championship", "count": 0}, {"slug": "league-one", "name": "League One", "count": 0}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.509037Z",
+  updated: "2026-08-03T18:15:43.715016Z",
   label: "Nation aggregation"
 };

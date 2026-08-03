@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Treviso", mono: "T", slug: "treviso",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#1E3A8A", primaryBright: "#6FA8FF", primaryDeep: "#0F1F4A",
+  primaryRgb: "30,58,138",
   breadcrumb: ["Italy","Serie C"]
 };
 

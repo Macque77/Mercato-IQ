@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Wolverhampton Wanderers", mono: "WW", slug: "wolverhampton",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#FDB913", primaryBright: "#FFE066", primaryDeep: "#8F6900",
+  primaryRgb: "253,185,19",
   breadcrumb: ["England","Championship"]
 };
 

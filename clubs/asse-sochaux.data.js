@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "FC Sochaux-Montbéliard", mono: "FS", slug: "asse-sochaux",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#F4CD1E", primaryBright: "#FFE666", primaryDeep: "#8F7800",
+  primaryRgb: "244,205,30",
   breadcrumb: ["France","Ligue 2"]
 };
 

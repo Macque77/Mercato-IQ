@@ -46,12 +46,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Eredivisie": 5};
+const BY_LEAGUE = {"Eredivisie": 5, "Eerste Divisie": 0};
 
-const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 5}];
+const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 5}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.509808Z",
+  updated: "2026-08-03T18:15:43.716004Z",
   label: "Nation aggregation"
 };

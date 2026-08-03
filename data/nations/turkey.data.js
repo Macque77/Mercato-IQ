@@ -25,12 +25,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Super Lig": 2};
+const BY_LEAGUE = {"Super Lig": 2, "S\u00fcper Lig 1": 0};
 
-const LEAGUES_LIST = [{"slug": "super-lig", "name": "Super Lig", "count": 2}];
+const LEAGUES_LIST = [{"slug": "super-lig", "name": "Super Lig", "count": 2}, {"slug": "s\u00fcper-lig-1", "name": "S\u00fcper Lig 1", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.510268Z",
+  updated: "2026-08-03T18:15:43.716826Z",
   label: "Nation aggregation"
 };

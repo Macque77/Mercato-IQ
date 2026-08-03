@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Paris FC", mono: "PF", slug: "paris-fc",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#0033A0", primaryBright: "#5CA9FF", primaryDeep: "#001F4D",
+  primaryRgb: "0,51,160",
   breadcrumb: ["France","Ligue 2"]
 };
 

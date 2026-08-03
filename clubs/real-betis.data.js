@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Real Betis", mono: "RB", slug: "real-betis",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#00954C", primaryBright: "#2ECC71", primaryDeep: "#005A2E",
+  primaryRgb: "0,149,76",
   breadcrumb: ["Spain","La Liga"]
 };
 

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "FC St. Pauli", mono: "FSP", slug: "st-pauli",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#5B3A29", primaryBright: "#8F6A54", primaryDeep: "#331F16",
+  primaryRgb: "91,58,41",
   breadcrumb: ["Germany","2. Bundesliga"]
 };
 

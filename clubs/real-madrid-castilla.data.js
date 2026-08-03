@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "RM Castilla", mono: "RC", slug: "real-madrid-castilla",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#FEBE10", primaryBright: "#FFFFFF", primaryDeep: "#8A6B00",
+  primaryRgb: "254,190,16",
   breadcrumb: ["Spain","Segunda División B"]
 };
 

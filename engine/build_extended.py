@@ -65,6 +65,12 @@ def build_club(slug):
     club = re.search(r'club:\s*"([^"]+)"', data).group(1)
     mono_match = re.search(r'mono:\s*"([^"]+)"', data)
     mono = mono_match.group(1) if mono_match else club[:3].upper()
+    primary_match = re.search(r'primary:\s*"([^"]+)"', data)
+    primary = primary_match.group(1) if primary_match else '#3399FF'
+    primary_bright_match = re.search(r'primaryBright:\s*"([^"]+)"', data)
+    primary_bright = primary_bright_match.group(1) if primary_bright_match else '#66B2FF'
+    primary_rgb_match = re.search(r'primaryRgb:\s*"([^"]+)"', data)
+    primary_rgb = primary_rgb_match.group(1) if primary_rgb_match else '51,153,255'
     assert '/*==DATA==*/' in tpl and '/*==ENDDATA==*/' in tpl, 'template markers missing'
 
     # Real breadcrumb: BRAND.breadcrumb = ["England","Premier League"] -> proper linked path
@@ -79,6 +85,8 @@ def build_club(slug):
 
     out = tpl.replace('{{BADGE_URI}}', badge).replace('{{TITLE}}', 'Mercato IQ: ' + club)
     out = out.replace('{{CLUB}}', club).replace('{{CLUB_MONO}}', mono)
+    out = out.replace('{{PRIMARY}}', primary).replace('{{PRIMARY_BRIGHT}}', primary_bright)
+    out = out.replace('{{PRIMARY_RGB}}', primary_rgb)
     out = out.replace('{{NATION}}', nation_name).replace('{{NATION_SLUG}}', nation_slug)
     out = out.replace('{{LEAGUE_NAME}}', league_name).replace('{{LEAGUE_SLUG}}', league_slug)
     out = out.replace('{{FLAG_IMG}}', flag_img).replace('{{FLAG_CODE}}', flag_code)

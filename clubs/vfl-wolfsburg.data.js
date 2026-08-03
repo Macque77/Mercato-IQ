@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "VfL Wolfsburg", mono: "VW", slug: "vfl-wolfsburg",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#65B32E", primaryBright: "#8FE05C", primaryDeep: "#3B6B1A",
+  primaryRgb: "101,179,46",
   breadcrumb: ["Germany","Bundesliga"]
 };
 

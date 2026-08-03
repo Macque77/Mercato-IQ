@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercato IQ: Falkirk</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#001E62;
+    --primary-bright:#5C7CFF;
+    --primary-rgb:0,30,98;
+    --bg:#0a0e17;
+    --surface:#1a2332;
+    --border:#3a4452;
+    --text:#f0f2f5;
+    --text-secondary:#a8adb8;
+    --text-muted:#7a8291;
+    --accent-gold:#e8c249;
+    --accent-red:#ff3d47;
+    --accent-green:#2ecc71;
+    --tier1:#2ecc71;
+    --tier2:#e8c249;
+    --tier3:#f39c12;
+    --bullshit:#ff6b6b;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:linear-gradient(180deg, rgba(10,14,23,0.98), rgba(10,14,23,0.88));
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    padding:16px 24px;
+  }
+
+  .header-inner {
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+  }
+
+  .logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:inherit;
+  }
+
+  .logo img {
+    width:36px;
+    height:36px;
+    display:block;
+  }
+
+  .logo h1 {
+    font-family:var(--display);
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+
+  .breadcrumb {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--mono);
+    font-size:10px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+  }
+
+  .breadcrumb a {
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    color:var(--text-secondary);
+    text-decoration:none;
+  }
+
+  .breadcrumb a:hover {
+    color:var(--primary-bright);
+  }
+
+  .flag-mini {
+    width:14px;
+    height:10px;
+    object-fit:cover;
+    border-radius:2px;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.15);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(255,61,71,0.05));
+    border-bottom:1px solid var(--border);
+    padding:40px 24px;
+  }
+
+  .hero-inner {
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    gap:32px;
+  }
+
+  .club-badge-large {
+    position:relative;
+    width:80px;
+    height:80px;
+    background:var(--surface);
+    border:2px solid var(--primary);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    overflow:hidden;
+  }
+
+  .club-badge-large img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:8px;
+  }
+
+  .badge-fallback {
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--display);
+    font-size:26px;
+    font-weight:bold;
+    letter-spacing:1px;
+    background:linear-gradient(135deg, rgba(var(--primary-rgb),0.25), rgba(0,0,0,0.2));
+    color:var(--primary-bright);
+  }
+
+  .hero-text h2 {
+    font-family:var(--display);
+    font-size:clamp(28px, 4vw, 44px);
+    font-weight:400;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+
+  .hero-text .subtitle {
+    color:var(--text-secondary);
+    font-size:14px;
+    font-family:var(--mono);
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .hero-text .subtitle span { white-space:nowrap; }
+  .hero-text .subtitle b { color:var(--accent-gold); font-weight:600; }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width:1400px;
+    margin:0 auto;
+    padding:48px 24px;
+  }
+
+  /* ===== TRANSFER FEED ===== */
+  .section {
+    margin-bottom:48px;
+  }
+
+  .section-title {
+    font-family:var(--display);
+    font-size:24px;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    margin-bottom:24px;
+    padding-bottom:12px;
+    border-bottom:2px solid var(--primary);
+  }
+
+  .transfer-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(370px, 1fr));
+    gap:22px;
+  }
+
+  .transfer-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    transition:all 300ms ease;
+    position:relative;
+  }
+
+  .transfer-card:hover {
+    border-color:var(--primary-bright);
+    transform:translateY(-4px);
+    box-shadow:0 12px 24px rgba(0,0,0,0.3);
+  }
+
+  .card-header {
+    padding:20px;
+    border-bottom:1px solid var(--border);
+    background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.04));
+  }
+
+  .card-player {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:14px;
+  }
+
+  .player-name {
+    font-family:var(--display);
+    font-size:18px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+
+  .tier-badge {
+    display:inline-block;
+    padding:5px 10px;
+    background:var(--bg);
+    border:1px solid;
+    border-radius:4px;
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  .tier-badge.t1 { color:var(--tier1); border-color:var(--tier1); }
+  .tier-badge.t2 { color:var(--tier2); border-color:var(--tier2); }
+  .tier-badge.t3 { color:var(--tier3); border-color:var(--tier3); }
+  .tier-badge.bullshit { color:var(--bullshit); border-color:var(--bullshit); }
+
+  .source-info {
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text-secondary);
+  }
+
+  .card-body {
+    padding:20px;
+  }
+
+  .note {
+    background:rgba(232,194,73,0.08);
+    border-left:3px solid var(--accent-gold);
+    padding:14px;
+    border-radius:6px;
+    font-size:15px;
+    line-height:1.65;
+    color:var(--text-secondary);
+  }
+
+  .note.bullshit {
+    background:rgba(255,107,107,0.08);
+    border-left-color:var(--bullshit);
+    color:var(--text);
+  }
+
+  .card-footer {
+    padding:18px 20px;
+    border-top:1px solid var(--border);
+    display:flex;
+    gap:18px;
+  }
+
+  .metric {
+    flex:1;
+  }
+
+  .metric-label {
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:6px;
+  }
+
+  .metric-bar {
+    height:5px;
+    background:rgba(0,0,0,0.2);
+    border-radius:999px;
+    overflow:hidden;
+    margin-bottom:4px;
+  }
+
+  .metric-fill {
+    height:100%;
+    background:linear-gradient(90deg, var(--accent-gold), var(--primary-bright));
+    border-radius:999px;
+  }
+
+  .metric-value {
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:600;
+    color:var(--text);
+  }
+
+  /* ===== SOURCES ACCORDION ===== */
+  .sources-toggle {
+    width:100%;
+    padding:12px 20px;
+    background:rgba(255,255,255,0.02);
+    border:none;
+    border-top:1px solid var(--border);
+    color:var(--text-secondary);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:color 150ms ease, background 150ms ease;
+  }
+
+  .sources-toggle:hover {
+    color:var(--text);
+    background:rgba(255,255,255,0.04);
+  }
+
+  .sources-toggle .chev {
+    display:inline-block;
+    transition:transform 200ms ease;
+    font-size:9px;
+  }
+
+  .transfer-card.expanded .sources-toggle .chev {
+    transform:rotate(180deg);
+  }
+
+  .sources-panel {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 260ms ease;
+    background:rgba(0,0,0,0.15);
+  }
+
+  .transfer-card.expanded .sources-panel {
+    max-height:400px;
+  }
+
+  .sources-panel-inner {
+    padding:14px 20px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .sources-panel-inner a {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--primary-bright);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .sources-panel-inner a:hover {
+    text-decoration:underline;
+  }
+
+  .sources-panel-empty {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+    font-style:italic;
+  }
+
+  /* ===== BULLSHIT CALLOUT ===== */
+  .bullshit-tag {
+    position:absolute;
+    top:12px;
+    right:12px;
+    background:var(--bullshit);
+    color:white;
+    padding:6px 10px;
+    border-radius:6px;
+    font-family:var(--mono);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    animation:shake 3s ease-in-out infinite;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform:rotate(-2deg); }
+    50% { transform:rotate(2deg); }
+  }
+
+  /* ===== EMPTY STATE ===== */
+  .empty {
+    text-align:center;
+    padding:60px 24px;
+    color:var(--text-muted);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top:1px solid var(--border);
+    padding:48px 24px;
+    text-align:center;
+    color:var(--text-muted);
+    font-family:var(--mono);
+    font-size:12px;
+  }
+
+  @media(max-width:768px) {
+    .transfer-grid {
+      grid-template-columns:1fr;
+    }
+
+    .hero-inner {
+      flex-direction:column;
+      text-align:center;
+      gap:24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="mercato-mark.svg" alt="">
+      <h1>Mercato IQ</h1>
+    </a>
+    <div class="breadcrumb">
+      <a href="/">Global</a>
+      <span>/</span>
+      <a href="nations/scotland.html">
+        <img class="flag-mini" src="https://flagcdn.com/gb-sct.svg" alt="" onerror="this.style.display='none'">
+        Scotland
+      </a>
+      <span>/</span>
+      <a href="leagues/premiership.html">Premiership</a>
+      <span>/</span>
+      <span style="color:var(--primary-bright)">Falkirk</span>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="club-badge-large">
+      <img id="club-badge-img" src="falkirk.png" alt="Falkirk badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
+      <div id="club-badge-fallback" class="badge-fallback" style="display:none">FAL</div>
+    </div>
+    <div class="hero-text">
+      <h2>Falkirk</h2>
+      <div class="subtitle" id="club-subtitle"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section">
+    <h3 class="section-title">Confirmed Transfers</h3>
+    <div class="transfer-grid" id="confirmed">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Incoming Rumours &amp; Reports</h3>
+    <div class="transfer-grid" id="rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Outgoing Rumours &amp; Reports</h3>
+    <div class="transfer-grid" id="outgoing-rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Long-Tail Watchlist</h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-14px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
+    <div class="transfer-grid" id="watchlist-grid">
+      <!-- Populated by data -->
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2026 Mercato IQ · Transfer Intelligence · <a href="/">About Our Sources</a></p>
+</footer>
+
+<script>
+/*==DATA==*/
+/* ============================================================
+   MERCATO IQ · CLUB DATA · FALKIRK · STATE OF RECORD
+   ============================================================ */
+
+const BRAND = {
+  club: "Falkirk", mono: "FAL", slug: "falkirk",
+  primary: "#001E62", primaryBright: "#5C7CFF", primaryDeep: "#000F31",
+  primaryRgb: "0,30,98",
+  breadcrumb: ["Scotland","Premiership"]
+};
+
+const VOLATILE = {
+  verified: "2026-08-03",
+  coach: "TBD",
+  dof: "TBD",
+  europe: "None (2026/27)",
+  finish: "Promoted from Championship (2025/26)",
+  owner: "TBD",
+  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+};
+
+const SWEEP = {
+  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
+  queries: ["falkirk transfer news"]
+};
+
+const REPORT_META = {
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:00:00Z",
+  label: "Transfer window active; pending updates"
+};
+
+const CONFIRMED_IN = [];
+const CONFIRMED_OUT = [];
+const INCOMING = [];
+const OUTGOING = [];
+const RISERS = [];
+const FALLERS = [];
+const NEW = [];
+const IGNORE = [];
+const POSITIONS = [];
+const WATCHLIST = [];
+
+const HUB = {
+  club: {l:"Falkirk Official", u:"#"}
+};
+
+const LINKMAP = {};
+const WL_LINKMAP = {};
+
+const PROSE = {
+  heroH2: `Falkirk · 2026/27 Season`,
+  heroLede: `Transfer window active. Falkirk preparing squad for next season.`,
+  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
+  spendIn: { v: `TBD` },
+  spendOut: { v: `TBD` },
+  methodLegend: ``
+};
+
+/*==ENDDATA==*/
+
+var __cardSeq = 0;
+
+(function(){
+  const rs = document.documentElement.style;
+  if(typeof BRAND !== 'undefined') {
+    rs.setProperty('--primary', BRAND.primary);
+    rs.setProperty('--primary-bright', BRAND.primaryBright);
+    if(BRAND.primaryRgb) rs.setProperty('--primary-rgb', BRAND.primaryRgb);
+  }
+  document.title = 'Mercato IQ: ' + (BRAND ? BRAND.club : 'Transfers');
+
+  // Populate hero subtitle from BRAND/VOLATILE (avoids baking these into the static
+  // template -- they vary per club and some fields are occasionally absent).
+  const subEl = document.getElementById('club-subtitle');
+  if(subEl) {
+    const bits = [];
+    if(typeof BRAND !== 'undefined' && BRAND.breadcrumb && BRAND.breadcrumb.length === 2) {
+      bits.push(`<span>${BRAND.breadcrumb[1]} &middot; ${BRAND.breadcrumb[0]}</span>`);
+    }
+    if(typeof VOLATILE !== 'undefined' && VOLATILE.coach) {
+      bits.push(`<span>Manager: <b>${VOLATILE.coach}</b></span>`);
+    }
+    if(typeof VOLATILE !== 'undefined' && VOLATILE.window) {
+      bits.push(`<span>${VOLATILE.window}</span>`);
+    }
+    subEl.innerHTML = bits.join('');
+  }
+
+  const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};
+  const _WLM = (typeof WL_LINKMAP !== 'undefined') ? WL_LINKMAP : {};
+  const _HUB = (typeof HUB !== 'undefined') ? HUB : {};
+
+  // Render confirmed (in + out together, direction-tagged)
+  const confirmed = document.getElementById('confirmed');
+  if(confirmed) {
+    const ins = (typeof CONFIRMED_IN !== 'undefined' ? CONFIRMED_IN : []).map(t => renderConfirmedCard(t, 'in', _LM, _HUB));
+    const outs = (typeof CONFIRMED_OUT !== 'undefined' ? CONFIRMED_OUT : []).map(t => renderConfirmedCard(t, 'out', _LM, _HUB));
+    const all = ins.concat(outs);
+    confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
+  }
+
+  // Render incoming rumours
+  const rumors = document.getElementById('rumors');
+  if(rumors) {
+    const items = (typeof INCOMING !== 'undefined') ? INCOMING : [];
+    rumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active incoming rumours yet</div>';
+  }
+
+  // Render outgoing rumours
+  const outRumors = document.getElementById('outgoing-rumors');
+  if(outRumors) {
+    const items = (typeof OUTGOING !== 'undefined') ? OUTGOING : [];
+    outRumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active outgoing rumours yet</div>';
+  }
+
+  // Render long-tail watchlist
+  const wlGrid = document.getElementById('watchlist-grid');
+  if(wlGrid) {
+    const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
+    wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+})();
+
+function toggleCard(id) {
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('expanded');
+}
+
+function buildSourcesPanel(name, linkMap, hub) {
+  const keys = (linkMap && linkMap[name]) || [];
+  const list = Array.isArray(keys) ? keys : [keys];
+  const links = list
+    .map(k => hub && hub[k])
+    .filter(Boolean)
+    .map(h => (h.u && h.u !== '#')
+      ? `<a href="${h.u}" target="_blank" rel="noopener">${h.l} ↗</a>`
+      : `<span class="sources-panel-empty">${h.l}</span>`);
+  return links.length
+    ? links.join('')
+    : '<div class="sources-panel-empty">No linked source on file for this item yet.</div>';
+}
+
+function sourcesAccordion(name, linkMap, hub) {
+  __cardSeq++;
+  const id = 'src-card-' + __cardSeq;
+  return { id, html: `
+    <button type="button" class="sources-toggle" onclick="toggleCard('${id}')">
+      <span>Sources &amp; links</span>
+      <span class="chev">▾</span>
+    </button>
+    <div class="sources-panel">
+      <div class="sources-panel-inner">${buildSourcesPanel(name, linkMap, hub)}</div>
+    </div>
+  ` };
+}
+
+function renderCard(t, linkMap, hub) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const truth = t.truth || 50;
+  const prob = t.prob || 50;
+  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
+  const noteClass = isBullshit ? ' bullshit' : '';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    ${bullTag}
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
+      </div>
+      <div class="source-info">${t.src || 'Unknown'}${t.club ? ' &middot; ' + t.club : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note${noteClass}">${t.note || 'No details'}</div>
+    </div>
+    <div class="card-footer">
+      <div class="metric">
+        <div class="metric-label">Truth</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%"></div></div>
+        <div class="metric-value">${truth}%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Probability</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
+        <div class="metric-value">${prob}%</div>
+      </div>
+    </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderConfirmedCard(t, dir, linkMap, hub) {
+  const destination = dir === 'in' ? (t.to || '') : (t.club || '');
+  const dirLabel = dir === 'in' ? 'IN' : 'OUT';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge ${dir === 'in' ? 't1' : 't2'}">${dirLabel}${t.free ? ' &middot; FREE' : ''}</span>
+      </div>
+      <div class="source-info">${destination}${t.sub ? ' &middot; ' + t.sub : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    <div class="card-footer">
+      <div class="metric">
+        <div class="metric-label">Fee</div>
+        <div class="metric-value" style="font-size:14px">${t.fee || 'Undisclosed'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Status</div>
+        <div class="metric-value" style="font-size:14px;color:var(--accent-gold)">${t.statusTxt || 'DONE'}</div>
+      </div>
+    </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderWatchlistCard(t, wlLinkMap, hub) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, wlLinkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
+      </div>
+      <div class="source-info">${dirLabel}${t.club ? ' &middot; ' + t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}${t.age ? ' &middot; ' + t.age : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    ${acc.html}
+  </div>`;
+}
+</script>
+
+</body>
+</html>

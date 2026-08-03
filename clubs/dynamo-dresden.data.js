@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Dynamo Dresden", mono: "DD", slug: "dynamo-dresden",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#FFD700", primaryBright: "#FFE666", primaryDeep: "#8F7800",
+  primaryRgb: "255,215,0",
   breadcrumb: ["Germany","2. Bundesliga"]
 };
 

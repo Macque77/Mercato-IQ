@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "US Salernitana", mono: "US", slug: "salernitana",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#7A1F2B", primaryBright: "#B0475A", primaryDeep: "#4A121A",
+  primaryRgb: "122,31,43",
   breadcrumb: ["Italy","Serie B"]
 };
 

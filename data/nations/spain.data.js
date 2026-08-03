@@ -74,12 +74,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"La Liga": 9};
+const BY_LEAGUE = {"La Liga": 9, "La Liga 2": 0, "Segunda Divisi\u00f3n B": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 9}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 9}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.510054Z",
+  updated: "2026-08-03T18:15:43.716515Z",
   label: "Nation aggregation"
 };

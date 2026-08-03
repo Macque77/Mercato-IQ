@@ -10,8 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --primary:{{PRIMARY}};
-    --primary-bright:{{PRIMARY_BRIGHT}};
+    --primary:#8B1E3F;
+    --primary-bright:#C0526A;
+    --primary-rgb:139,30,63;
     --bg:#0a0e17;
     --surface:#1a2332;
     --border:#3a4452;
@@ -115,7 +116,7 @@
 
   /* ===== HERO ===== */
   .hero {
-    background:linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(255,61,71,0.05));
+    background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(255,61,71,0.05));
     border-bottom:1px solid var(--border);
     padding:40px 24px;
   }
@@ -159,7 +160,7 @@
     font-size:26px;
     font-weight:bold;
     letter-spacing:1px;
-    background:linear-gradient(135deg, rgba(var(--primary),0.25), rgba(0,0,0,0.2));
+    background:linear-gradient(135deg, rgba(var(--primary-rgb),0.25), rgba(0,0,0,0.2));
     color:var(--primary-bright);
   }
 
@@ -231,7 +232,7 @@
   .card-header {
     padding:20px;
     border-bottom:1px solid var(--border);
-    background:linear-gradient(135deg, rgba(var(--primary), 0.08), rgba(255,61,71,0.04));
+    background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.04));
   }
 
   .card-player {
@@ -539,8 +540,8 @@
 
 const BRAND = {
   club: "Reggiana", mono: "R", slug: "reggiana",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#8B1E3F", primaryBright: "#C0526A", primaryDeep: "#4A0F21",
+  primaryRgb: "139,30,63",
   breadcrumb: ["Italy","Serie B"]
 };
 
@@ -593,11 +594,14 @@ const PROSE = {
 };
 /*==ENDDATA==*/
 
+var __cardSeq = 0;
+
 (function(){
   const rs = document.documentElement.style;
   if(typeof BRAND !== 'undefined') {
     rs.setProperty('--primary', BRAND.primary);
     rs.setProperty('--primary-bright', BRAND.primaryBright);
+    if(BRAND.primaryRgb) rs.setProperty('--primary-rgb', BRAND.primaryRgb);
   }
   document.title = 'Mercato IQ: ' + (BRAND ? BRAND.club : 'Transfers');
 
@@ -652,8 +656,6 @@ const PROSE = {
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
 })();
-
-let __cardSeq = 0;
 
 function toggleCard(id) {
   const el = document.getElementById(id);

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Erzurumspor", mono: "E", slug: "erzurumspor",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#00539F", primaryBright: "#5CA9FF", primaryDeep: "#003060",
+  primaryRgb: "0,83,159",
   breadcrumb: ["Turkey","Super Lig"]
 };
 

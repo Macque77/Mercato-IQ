@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Amiens SC", mono: "AS", slug: "amiens-sc",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#0057A8", primaryBright: "#5CA9FF", primaryDeep: "#00335F",
+  primaryRgb: "0,87,168",
   breadcrumb: ["France","Ligue 2"]
 };
 

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Athletic Bilbao", mono: "AB", slug: "athletic-bilbao",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#EE2523", primaryBright: "#FF6259", primaryDeep: "#8F0E0D",
+  primaryRgb: "238,37,35",
   breadcrumb: ["Spain","La Liga"]
 };
 

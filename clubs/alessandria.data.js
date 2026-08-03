@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "UPL Alessandria", mono: "UA", slug: "alessandria",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#4A4A4A", primaryBright: "#B0B0B0", primaryDeep: "#2A2A2A",
+  primaryRgb: "74,74,74",
   breadcrumb: ["Italy","Serie B"]
 };
 

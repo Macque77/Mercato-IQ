@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "1. FC Union Berlin", mono: "1FUB", slug: "union-berlin",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#E2001A", primaryBright: "#FF6259", primaryDeep: "#800010",
+  primaryRgb: "226,0,26",
   breadcrumb: ["Germany","Bundesliga"]
 };
 

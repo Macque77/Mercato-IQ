@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Swansea City", mono: "SC", slug: "swansea-city",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#1E1E1E", primaryBright: "#FFFFFF", primaryDeep: "#000000",
+  primaryRgb: "30,30,30",
   breadcrumb: ["Wales","Championship"]
 };
 

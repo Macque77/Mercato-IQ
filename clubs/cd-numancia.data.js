@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "CD Numancia", mono: "CN", slug: "cd-numancia",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#8B1E3F", primaryBright: "#C0526A", primaryDeep: "#4A0F21",
+  primaryRgb: "139,30,63",
   breadcrumb: ["Spain","La Liga 2"]
 };
 

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "CA Osasuna", mono: "CO", slug: "osasuna",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#D2001C", primaryBright: "#FF6259", primaryDeep: "#7A0011",
+  primaryRgb: "210,0,28",
   breadcrumb: ["Spain","La Liga"]
 };
 

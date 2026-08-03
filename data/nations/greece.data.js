@@ -25,12 +25,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Super League": 2};
+const BY_LEAGUE = {"Super League": 2, "Super League 2": 0, "Super League U19": 0};
 
-const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 2}];
+const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 2}, {"slug": "super-league-2", "name": "Super League 2", "count": 0}, {"slug": "super-league-u19", "name": "Super League U19", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.509550Z",
+  updated: "2026-08-03T18:15:43.715611Z",
   label: "Nation aggregation"
 };

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "FC Cartagena", mono: "FC", slug: "cartagena",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#0057A8", primaryBright: "#5CA9FF", primaryDeep: "#00335F",
+  primaryRgb: "0,87,168",
   breadcrumb: ["Spain","La Liga 2"]
 };
 

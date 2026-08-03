@@ -32,12 +32,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Pro League": 3};
+const BY_LEAGUE = {"Pro League": 3, "First Division A": 0};
 
-const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 3}];
+const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 3}, {"slug": "first-division-a", "name": "First Division A", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T17:43:15.508811Z",
+  updated: "2026-08-03T18:15:43.714763Z",
   label: "Nation aggregation"
 };

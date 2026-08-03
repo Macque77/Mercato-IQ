@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "CD Tondela", mono: "CT", slug: "tondela",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#000000", primaryBright: "#C0C0C0", primaryDeep: "#000000",
+  primaryRgb: "20,20,20",
   breadcrumb: ["Portugal","Liga Portugal"]
 };
 

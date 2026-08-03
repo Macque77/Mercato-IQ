@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "AD Alcorcón", mono: "AA", slug: "alcorcon",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#FFC72C", primaryBright: "#FFE066", primaryDeep: "#8F6E00",
+  primaryRgb: "255,199,44",
   breadcrumb: ["Spain","La Liga 2"]
 };
 

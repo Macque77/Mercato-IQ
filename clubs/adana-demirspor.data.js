@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Adana Demirspor", mono: "AD", slug: "adana-demirspor",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#001489", primaryBright: "#5C7CFF", primaryDeep: "#000A45",
+  primaryRgb: "0,20,137",
   breadcrumb: ["Turkey","Super Lig"]
 };
 

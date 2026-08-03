@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Real Sociedad", mono: "RS", slug: "real-sociedad",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#0067B1", primaryBright: "#5CA9FF", primaryDeep: "#00396A",
+  primaryRgb: "0,103,177",
   breadcrumb: ["Spain","La Liga"]
 };
 

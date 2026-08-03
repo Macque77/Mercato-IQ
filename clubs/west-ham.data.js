@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "West Ham United", mono: "WHU", slug: "west-ham",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#7A263A", primaryBright: "#C9AB7C", primaryDeep: "#4A1723",
+  primaryRgb: "122,38,58",
   breadcrumb: ["England","Championship"]
 };
 

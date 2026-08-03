@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Empoli FC", mono: "EF", slug: "empoli",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#1E4FA0", primaryBright: "#5CA9FF", primaryDeep: "#0F2A5C",
+  primaryRgb: "30,79,160",
   breadcrumb: ["Italy","Serie A"]
 };
 

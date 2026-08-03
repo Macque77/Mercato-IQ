@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "CD Castellón", mono: "CC", slug: "cd-castellon",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#00843D", primaryBright: "#3FCB8C", primaryDeep: "#00532A",
+  primaryRgb: "0,132,61",
   breadcrumb: ["Spain","La Liga 2"]
 };
 

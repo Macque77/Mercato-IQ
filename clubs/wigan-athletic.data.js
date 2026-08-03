@@ -4,9 +4,9 @@
 
 const BRAND = {
   club: "Wigan Athletic", mono: "WA", slug: "wigan-athletic",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["England","Championship"]
+  primary: "#1B458F", primaryBright: "#6FA0FF", primaryDeep: "#0D2650",
+  primaryRgb: "27,69,143",
+  breadcrumb: ["England","League One"]
 };
 
 const VOLATILE = {

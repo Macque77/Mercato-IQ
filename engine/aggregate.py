@@ -403,8 +403,11 @@ const REPORT_META = {{
         f.write(data_js)
     print(f'EMIT: data/global.data.js ({len(top_stories)} top stories)')
 
-def emit_nation_data(all_stories, nation_slug, nation_name):
-    """Emit data/nations/<slug>.data.js for a single nation."""
+def emit_nation_data(all_stories, nation_slug, nation_name, nation_leagues=None):
+    """Emit data/nations/<slug>.data.js for a single nation. nation_leagues (optional) is the
+    full set of league names known to exist within this nation (from club breadcrumbs),
+    regardless of whether any club in that league currently has a surviving story -- so a
+    nation with zero active rumours still lists its leagues instead of showing none at all."""
     nation_stories = [s for s in all_stories if s.get('nation') == nation_name]
     top_stories = nation_stories[:15]
 
@@ -414,6 +417,11 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
         if league not in leagues:
             leagues[league] = 0
         leagues[league] += 1
+
+    if nation_leagues:
+        for league in nation_leagues:
+            if league not in leagues:
+                leagues[league] = 0
 
     stories_js = '['
     for story in top_stories:
@@ -612,7 +620,8 @@ def main():
 
     for nation in sorted(nations_set):
         nation_slug = nation.lower().replace(' ', '-')
-        emit_nation_data(sorted_stories, nation_slug, nation)
+        nation_leagues = sorted({c['league'] for c in all_clubs if c['nation'] == nation})
+        emit_nation_data(sorted_stories, nation_slug, nation, nation_leagues)
 
     for league in sorted(leagues_set):
         league_slug = league.lower().replace(' ', '-')

@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Burgos CF", mono: "BC", slug: "burgos-cf",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#000000", primaryBright: "#C0C0C0", primaryDeep: "#000000",
+  primaryRgb: "40,40,40",
   breadcrumb: ["Spain","La Liga"]
 };
 

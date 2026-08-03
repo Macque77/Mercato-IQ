@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Bayer Leverkusen", mono: "BL", slug: "bayer-leverkusen",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#E32219", primaryBright: "#FF6259", primaryDeep: "#8A0F0A",
+  primaryRgb: "227,34,25",
   breadcrumb: ["Germany","Bundesliga"]
 };
 

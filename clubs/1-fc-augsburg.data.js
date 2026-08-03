@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "FC Augsburg", mono: "FA", slug: "1-fc-augsburg",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#BA3733", primaryBright: "#FF6259", primaryDeep: "#6E1F1C",
+  primaryRgb: "186,55,51",
   breadcrumb: ["Germany","Bundesliga"]
 };
 

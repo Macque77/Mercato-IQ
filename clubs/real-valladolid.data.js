@@ -4,8 +4,8 @@
 
 const BRAND = {
   club: "Real Valladolid", mono: "RV", slug: "real-valladolid",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
+  primary: "#6B0F1A", primaryBright: "#B0475A", primaryDeep: "#3E0A10",
+  primaryRgb: "107,15,26",
   breadcrumb: ["Spain","La Liga 2"]
 };
 
