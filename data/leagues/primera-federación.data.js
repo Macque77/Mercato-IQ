@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "alcorcon", "name": "AD Alcorc\u00f3n", "count": 0,
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:53:59.451962Z",
+  updated: "2026-08-03T21:50:04.997662Z",
   label: "League aggregation"
 };
