@@ -69,13 +69,15 @@ const SWEEP = {
 
 /* ── EDIT THESE EACH REFRESH ──────────────────────────
    asof: human display date · updated: full ISO timestamp (drives live ticker) */
-const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label: "Build · Alonso era, no Europe (migrated to v2, awaiting live refresh)" };
+const REPORT_META = { asof: "3 Aug 2026", updated: "2026-08-03T17:00:00Z", label: "Morgan Rogers confirmed from Aston Villa for record £117m (August 2026); Emegha move from Strasbourg still pending formal announcement" };
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
-  {name:"Emmanuel Emegha", sub:"ST · Netherlands", to:"agreed from Strasbourg", fee:"Undisclosed", free:false, status:"done", statusTxt:"AGREED",
-   note:"The Strasbourg captain and striker is reported as long agreed to join via the BlueCo cross-club pipeline this summer. A direct, on-model young centre-forward; awaiting formal completion."},
+  {name:"Morgan Rogers", sub:"25 · AM/RW · England", to:"permanent from Aston Villa", fee:"£117m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+   note:"Confirmed August 2026: a record transfer for the England international, Rogers becomes Chelsea's marquee attacking addition under Xabi Alonso. The fee ranks among the highest in European football for a wide playmaker, reflecting Alonso's determination to build an attacking midfield core after arriving from Bayer Leverkusen. Rogers scored 8 goals and assisted 7 in 34 Premier League appearances for Villa last season and carries a full international cap."},
+  {name:"Emmanuel Emegha", sub:"ST · Netherlands", to:"agreed from Strasbourg", fee:"Undisclosed", free:false, status:"pending", statusTxt:"AGREED, AWAITING ANNOUNCEMENT",
+   note:"The Strasbourg captain and striker remains agreed to join via the BlueCo cross-club pipeline this summer. A direct, on-model young centre-forward; formal completion expected imminently once international commitments clear."},
 ];
 const CONFIRMED_OUT = [];
 
@@ -261,7 +263,7 @@ const PROSE = {
   </section>
 `,
   confirmedPending: `<b>Window opens 15 June; nothing is registered yet.</b> The settled business is the dugout: <b>Xabi Alonso</b> begins on 1 July. Striker <b>Emmanuel Emegha</b> is already agreed to arrive from sister club Strasbourg. Other moves enter the ledger only on announcement.`,
-  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, BlueCo network 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the last refresh.`,
+  incomingSub: `Every link carries two independent readings. <b style="colour:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="colour:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, BlueCo network 15%, finance 10%, competition 5%. <b style="colour:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the last refresh.`,
   outgoingSub: `Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.`,
   pricingBanner: `
       <b>Pricing principle: Chelsea sell from a vast, churn-heavy squad.</b> With a bloated roster and no Europe, surplus and loan-army names move at softer floors, while genuine first-team assets hold a holder's premium. BlueCo's model is constant trading, so expect both sizeable sales and buys.
@@ -285,9 +287,9 @@ const PROSE = {
         </div>
         <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
         <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
-        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom and Hadj Moussa fall on this basis.</span></div>
-        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b>: the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
-        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window: fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="colour:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom and Hadj Moussa fall on this basis.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="colour:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b>: the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="colour:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window: fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
         <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
       </div>`
 };

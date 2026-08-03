@@ -48,11 +48,14 @@ const SWEEP = {
 
 /* ── EDIT THESE EACH REFRESH ──────────────────────────
    asof: human display date · updated: full ISO timestamp (drives live ticker) */
-const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label: "Build · Maresca era begins (migrated to v2, awaiting live refresh)" };
+const REPORT_META = { asof: "3 Aug 2026", updated: "2026-08-03T17:15:00Z", label: "Elliot Anderson confirmed from Nottingham Forest for £116m (3 Aug); Maresca midfield reset accelerating; senior departures (Silva, Stones, Ederson) in motion" };
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Elliot Anderson", sub:"22 · CM · England", to:"permanent from Nottingham Forest", fee:"£116m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+   note:"Confirmed 3 August per multiple outlets: a club-record midfield signing that reflects Maresca's priority to build a ball-progressing, press-resistant core at the base. Anderson becomes the first major arrival of Maresca's rebuild, paired with ongoing work to refresh an ageing senior spine (Silva, Stones, Ederson). A technically excellent young English midfielder who has flourished under Nuno at Forest; the fee underlines City's commitment to reset central midfield immediately."},
+];
 const CONFIRMED_OUT = [
   {name:"Bernardo Silva", sub:"31 · CM/W", to:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Reported among the senior departures as the squad refreshes under the new regime; an influential but ageing creator moving on."},
@@ -238,7 +241,7 @@ const PROSE = {
   </section>
 `,
   confirmedPending: `<b>Window opens 15 June; deals are not yet registered.</b> The defining business is managerial: Maresca's appointment is set to be confirmed in the coming days, and several Guardiola-era departures (Bernardo Silva, John Stones, Ederson) are in train. Incoming targets enter the ledger only once announced.`,
-  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Viana network 15%, finance 10%, competition 5%, not fan desire.`,
+  incomingSub: `Every link carries two independent readings. <b style="colour:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="colour:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Viana network 15%, finance 10%, competition 5%, not fan desire.`,
   outgoingSub: `Sales feed both affordability and SCR headroom; with the cost cap in play, clearing the fringe is what unlocks a marquee arrival.`,
   pricingBanner: `
       <b>Pricing principle: City sell from strength, at a holder's price.</b> Four multipliers stack above consensus value: long contracts remove buyer leverage, heavy minutes prove the asset, multi-club interest inflates the fee, and elite suitors pay a premium. With a managerial transition under way, some churn of the ageing core is logical, which softens the floor on those names while prime assets stay priced to deter.
@@ -262,9 +265,9 @@ const PROSE = {
         </div>
         <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
         <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
-        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom &amp; Hadj Moussa fall on this basis.</span></div>
-        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b> - the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
-        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window - fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="colour:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Avom &amp; Hadj Moussa fall on this basis.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="colour:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b> - the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="colour:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window - fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
         <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
       </div>`
 };
