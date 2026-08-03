@@ -59,6 +59,6 @@ const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 2}, {"slug
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:47:01.986006Z",
+  updated: "2026-08-03T15:48:43.219026Z",
   label: "League aggregation"
 };
