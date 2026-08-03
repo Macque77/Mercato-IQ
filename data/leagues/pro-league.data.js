@@ -38,6 +38,6 @@ const CLUBS_LIST = [{"slug": "beerschot", "name": "AS Eupen", "count": 0, "badge
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.599766Z",
+  updated: "2026-08-03T18:17:39.699530Z",
   label: "League aggregation"
 };

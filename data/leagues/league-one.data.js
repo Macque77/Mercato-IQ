@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "afc-wimbledon", "name": "AFC Wimbledon", "count": 
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.597839Z",
+  updated: "2026-08-03T18:17:39.668530Z",
   label: "League aggregation"
 };
