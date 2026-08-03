@@ -24,8 +24,7 @@ const SWEEP = {
   queries: ["paris-saint-germain transfer news"]
 };
 
-const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh
-, updated: "2026-08-03T12:48:44Z"};
+const REPORT_META = { label: "Updated 03 Aug 2026 · Paris Saint-Germain", updated: "2026-08-03T12:48:44Z"};
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];

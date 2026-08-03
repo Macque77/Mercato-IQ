@@ -26,7 +26,7 @@ const SWEEP = {
   queries: ["Tottenham transfer news 2026", "Spurs bid OR medical OR 'here we go'", "Tottenham Hotspur exclusive Romano OR Ornstein"],
   note: "Italian desks (Gazzetta, Longari, Schira) tracked closely for the Romero/Vicario Serie A angles; Norwegian and Bosnian outlets checked for the Schjelderup/Alajbegovic winger links; Dutch press monitored for Troy Parrott's AZ Alkmaar situation."
 };
-const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh , updated: "2026-08-03T12:48:44Z"};
+const REPORT_META = { label: "Updated 03 Aug 2026", updated: "2026-08-03T12:48:44Z"};
 
 const CONFIRMED_IN = [
   {name:"Sandro Tonali", sub:"26 · CM · Italy", to:"permanent from Newcastle United", fee:"£100m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",

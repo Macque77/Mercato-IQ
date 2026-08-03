@@ -48,7 +48,7 @@
   .mark{width:46px;height:46px;flex:none;filter:drop-shadow(0 0 10px rgba(232,194,73,0.25))}
   .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
   .brand h1 b{color:var(--gold)}
-  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold);margin-top:3px;font-weight:600}
   .status-pill{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap}
   .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -169,7 +169,7 @@
       </svg>
       <div>
         <h1 id="brandName">Mercato <b>IQ</b></h1>
-        <div class="sub">The transfer market, decoded</div>
+        <div class="sub">Live transfer rumours · Rated on two metrics that actually matter</div>
       </div>
     </div>
     <div class="status-pill"><span class="dot" id="windowDot"></span> <span id="windowLabel">Open</span> &middot; <span id="asofPill"></span></div>
@@ -201,13 +201,13 @@
 
   <section id="sec-stories">
     <div class="sec-head"><h3>Live Transfer Stories</h3><span class="num" id="storyCount"></span></div>
-    <p class="sec-sub">Every named-player rumour and confirmed move tracked across this league right now, ranked by how likely each is to happen. Click through to a club page for full sourcing.</p>
+    <p class="sec-sub">Every named-player rumour and confirmed move tracked across this league right now, ranked by what actually predicts reality. Click any move for the full sourcing trail.</p>
     <div class="hgrid" id="stories-grid"></div>
   </section>
 
   <section id="sec-clubs">
     <div class="sec-head"><h3>All Clubs</h3><span class="num" id="clubGridCount"></span></div>
-    <p class="sec-sub">Every club in this league: jump straight to any club's full transfer dashboard.</p>
+    <p class="sec-sub">Every club in this league. Pick one and see what's moving in and out right now.</p>
     <div class="club-grid" id="all-clubs-grid"></div>
   </section>
 

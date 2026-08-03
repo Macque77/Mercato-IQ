@@ -1,0 +1,1050 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-08-03",
+    "scope": "13 European Nations",
+    "author": "Mercato IQ",
+    "purpose": "Breaking transfer news source prioritization and probability scoring across major European football markets"
+  },
+  "globalReporters": {
+    "tier1": [
+      {
+        "name": "Fabrizio Romano",
+        "twitter": "FabrizioRomano",
+        "outlets": ["Sky Italia", "The Athletic", "Sky Germany"],
+        "primaryMarkets": ["All Europe", "South America"],
+        "specialisation": "Multi-market institutional correspondent; official confirmations",
+        "notableFeature": "\"Here we go\" standard for deal completion"
+      },
+      {
+        "name": "David Ornstein",
+        "twitter": "David_Ornstein",
+        "outlets": ["The Athletic", "The Times"],
+        "primaryMarkets": ["England/PL", "Continental Europe"],
+        "specialisation": "Multi-club networks; official institutional verification",
+        "notableFeature": "First-call for formal confirmations; club statement traces"
+      }
+    ],
+    "tier2": [
+      {
+        "name": "Matteo Moretto",
+        "twitter": "MatteMoretto",
+        "outlets": ["Relevo"],
+        "primaryMarkets": ["Spain", "Italy", "Germany"],
+        "specialisation": "Spain-Italy-Germany multi-axis transfers",
+        "notableFeature": "Relevo's primary European correspondent; real-time breaking"
+      },
+      {
+        "name": "Florian Plettenberg",
+        "twitter": "Plettigoal",
+        "outlets": ["Sky Sport Germany"],
+        "primaryMarkets": ["Germany", "Cross-border links"],
+        "specialisation": "Bundesliga primary; European connections",
+        "notableFeature": "First to break German-bound transfers; institutional Sky reach"
+      },
+      {
+        "name": "Gianluca Di Marzio",
+        "twitter": "DiMarzio",
+        "outlets": ["Sky Italia", "GianlucaDiMarzio.com"],
+        "primaryMarkets": ["Italy", "European club network"],
+        "specialisation": "Italian institutional reach; multi-league connections",
+        "notableFeature": "Legacy credibility in Italian football; club network depth"
+      },
+      {
+        "name": "Sacha Tavolieri",
+        "twitter": "sachatavolieri",
+        "outlets": ["Talksport", "Freelance"],
+        "primaryMarkets": ["Belgium", "France"],
+        "specialisation": "Belgium-France axis; multi-market reach",
+        "notableFeature": "Ex-player network; Belgium specialist; some Africa links"
+      },
+      {
+        "name": "Nicolò Schira",
+        "twitter": "NicoSchira",
+        "outlets": ["Freelance (Twitter/Telegram)"],
+        "primaryMarkets": ["Italy", "Free-agent market"],
+        "specialisation": "Contract structures; multi-league free agents",
+        "notableFeature": "Focus on player wages and contract details; European connections"
+      },
+      {
+        "name": "Ben Jacobs",
+        "twitter": "JacobsBen",
+        "outlets": ["CBS Sports", "Freelance"],
+        "primaryMarkets": ["England/PL", "Gulf clubs"],
+        "specialisation": "Transfer fee structures; ownership angles",
+        "notableFeature": "Gulf club expertise; PL multi-club network"
+      }
+    ],
+    "tier3": [
+      {
+        "name": "Rudy Galetti",
+        "twitter": "RudyGaletti",
+        "outlets": ["Calciomercato.com"],
+        "primaryMarkets": ["Multi-market aggregation"],
+        "specialisation": "Aggregation layer; compilation of source network",
+        "notableFeature": "Useful for trend detection; cites other sources"
+      },
+      {
+        "name": "Ekrem Konur",
+        "twitter": "Ekremkonur",
+        "outlets": ["Social (Twitter/Telegram)"],
+        "primaryMarkets": ["Turkey", "Multi-market", "Middle East"],
+        "specialisation": "Early-stage rumour breaking; discovery layer",
+        "notableFeature": "Often first to break emerging stories; lower-tier verification"
+      },
+      {
+        "name": "Graeme Bailey",
+        "twitter": "GraemeBailey",
+        "outlets": ["HITC", "TEAMtalk"],
+        "primaryMarkets": ["Multi-market", "PL-adjacent"],
+        "specialisation": "Secondary confirmation layer",
+        "notableFeature": "Follower of major stories; aggregation-adjacent"
+      }
+    ]
+  },
+  "nations": {
+    "england": {
+      "countryCode": "EN",
+      "primaryLeague": "Premier League",
+      "secondaryLeagues": ["Championship", "League One", "League Two"],
+      "tier1": [
+        {
+          "name": "David Ornstein",
+          "type": "journalist",
+          "outlet": "The Athletic / The Times",
+          "twitter": "David_Ornstein",
+          "specialisation": "Multi-club official confirmations"
+        },
+        {
+          "name": "Fabrizio Romano",
+          "type": "journalist",
+          "outlet": "Multiple (Sky Italia, The Athletic, Sky Germany)",
+          "twitter": "FabrizioRomano",
+          "specialisation": "Cross-market; 'here we go' standard"
+        },
+        {
+          "name": "BBC Sport",
+          "type": "institution",
+          "outlet": "https://www.bbc.com/sport/football",
+          "twitter": null,
+          "specialisation": "Official verification, institutional credibility"
+        },
+        {
+          "name": "Sky Sports",
+          "type": "institution",
+          "outlet": "https://www.skysports.com/transfer-centre",
+          "twitter": null,
+          "specialisation": "Broadcast credibility, live announcements"
+        }
+      ],
+      "tier2": {
+        "clubCorrespondents": {
+          "arsenal": {
+            "reporter": "Charles Watts",
+            "twitter": "charles_watts",
+            "outlet": "Athletic + Independent",
+            "tier": "T2"
+          },
+          "astonVilla": {
+            "reporter": "John Percy",
+            "twitter": "JPercyTelegraph",
+            "outlet": "Telegraph",
+            "tier": "T2"
+          },
+          "bournemouth": {
+            "reporter": "Mark McAdam",
+            "twitter": "markmcadamtv",
+            "outlet": "Independent",
+            "tier": "T2"
+          },
+          "brentford": {
+            "reporter": "Jay Harris",
+            "twitter": "JayHarris85",
+            "outlet": "Beesotted",
+            "tier": "T2"
+          },
+          "brighton": {
+            "reporter": "Andy Naylor",
+            "twitter": "AndyNaylorBHAFC",
+            "outlet": "Telegraph",
+            "tier": "T2"
+          },
+          "chelsea": {
+            "reporters": [
+              {"name": "Matt Law", "twitter": "Matt_Law_DT"},
+              {"name": "Nizaar Kinsella", "twitter": "NizaarKinsella"},
+              {"name": "Simon Phillips", "twitter": "siphillipssport"}
+            ],
+            "outlet": "Telegraph / Evening Standard / Goal.com",
+            "tier": "T2"
+          },
+          "crystalPalace": {
+            "reporter": "Matt Woosnam",
+            "twitter": "MattWoosnie",
+            "outlet": "South London Press",
+            "tier": "T2"
+          },
+          "everton": {
+            "reporters": [
+              {"name": "Paul Joyce", "twitter": "_pauljoyce", "tier": "T1-2"},
+              {"name": "Joe Thomas", "twitter": "JoeThomasSport"}
+            ],
+            "outlet": "The Times / Liverpool Echo",
+            "tier": "T2"
+          },
+          "fulham": {
+            "reporter": "Peter Rutzler",
+            "twitter": "peterrutzler",
+            "outlet": "Independent",
+            "tier": "T2"
+          },
+          "leeds": {
+            "reporter": "Phil Hay",
+            "twitter": "PhilHay_",
+            "outlet": "Athletic",
+            "tier": "T2"
+          },
+          "liverpool": {
+            "reporters": [
+              {"name": "Paul Joyce", "twitter": "_pauljoyce", "tier": "T1-2"},
+              {"name": "James Pearce", "twitter": "JamesPearceLFC"},
+              {"name": "David Lynch", "twitter": "dmlynchlfc"}
+            ],
+            "outlet": "The Times / Athletic / Independent",
+            "tier": "T2"
+          },
+          "manchesterCity": {
+            "reporters": [
+              {"name": "Sam Lee", "twitter": "SamLee"},
+              {"name": "Jack Gaughan", "twitter": "Jack_Gaughan"},
+              {"name": "Simon Bajkowski", "twitter": "spbajko"}
+            ],
+            "outlet": "Athletic / Daily Mail / Independent",
+            "tier": "T2"
+          },
+          "manchesterUnited": {
+            "reporters": [
+              {"name": "Laurie Whitwell", "twitter": "lauriewhitwell"},
+              {"name": "Samuel Luckhurst", "twitter": "samuelluckhurst"},
+              {"name": "Simon Stone", "twitter": "sistoney67"}
+            ],
+            "outlet": "Athletic / Manchester Evening News / BBC",
+            "tier": "T2"
+          },
+          "newcastle": {
+            "reporters": [
+              {"name": "Chris Waugh", "twitter": "ChrisDHWaugh"},
+              {"name": "Craig Hope", "twitter": "CraigHope_DM"}
+            ],
+            "outlet": "Evening Chronicle / Daily Mail",
+            "tier": "T2"
+          },
+          "nottinghamForest": {
+            "reporter": "Paul Taylor",
+            "twitter": "nottmtails",
+            "outlet": "Nottinghamshire Live",
+            "tier": "T2"
+          },
+          "tottenham": {
+            "reporters": [
+              {"name": "Alasdair Gold", "twitter": "AlasdairGold"},
+              {"name": "Dan Kilpatrick", "twitter": "Dan_KP"}
+            ],
+            "outlet": "Spurs Web / Evening Standard",
+            "tier": "T2"
+          },
+          "westHam": {
+            "reporters": [
+              {"name": "ExWHUEmployee", "twitter": "ExWHUEmployee"},
+              {"name": "Jacob Steinberg", "twitter": "JacobSteinberg"}
+            ],
+            "outlet": "Independent / Guardian",
+            "tier": "T2"
+          },
+          "wolverhampton": {
+            "reporter": "Nathan Judah",
+            "twitter": "NathanJudah",
+            "outlet": "Athletic",
+            "tier": "T2"
+          }
+        }
+      },
+      "tier3": [
+        "TEAMtalk",
+        "Football Insider",
+        "Daily Mail (sports section)",
+        "Bournemouth Echo",
+        "Leeds Live",
+        "Chronicle Live",
+        "Liverpool Echo"
+      ],
+      "foreignPressMandatorySweep": [
+        "Italy (selling club press): Di Marzio, Tuttomercatoweb, Calciomercato, local beats",
+        "Spain (La Liga): Relevo, Marca, AS, local beats",
+        "France (Ligue 1): L'Équipe, RMC, Foot Mercato",
+        "Germany (Bundesliga): Sky Sport Germany, Bild, Kicker",
+        "Portugal (Primeira Liga): A Bola, Record, O Jogo",
+        "Benelux (Eredivisie/Belgium): Voetbal International, De Telegraaf, HLN"
+      ]
+    },
+    "spain": {
+      "countryCode": "ES",
+      "primaryLeague": "La Liga",
+      "secondaryLeagues": ["Segunda División"],
+      "tier1": [
+        {
+          "name": "Relevo",
+          "type": "institution",
+          "outlet": "https://www.relevo.com/futbol/",
+          "twitter": "relevo",
+          "specialisation": "La Liga primary source; Matteo Moretto editor"
+        },
+        {
+          "name": "Fabrizio Romano",
+          "type": "journalist",
+          "outlet": "Multiple",
+          "twitter": "FabrizioRomano",
+          "specialisation": "Cross-market Spanish desk"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Matteo Moretto",
+          "twitter": "MatteMoretto",
+          "outlet": "Relevo",
+          "specialisation": "La Liga correspondent; multi-market axis",
+          "tier": "T2"
+        },
+        {
+          "name": "Nicolò Schira",
+          "twitter": "NicoSchira",
+          "outlet": "Freelance",
+          "specialisation": "Free agents, contract structures",
+          "tier": "T2"
+        },
+        {
+          "name": "Marc Carrió",
+          "twitter": "marccarrio",
+          "outlet": "Sport",
+          "specialisation": "Barcelona specialist",
+          "tier": "T2"
+        },
+        {
+          "name": "Fernando Polo",
+          "twitter": "fernandopolo",
+          "outlet": "Mundo Deportivo",
+          "specialisation": "Barcelona specialist",
+          "tier": "T2"
+        }
+      ],
+      "tier3": [
+        "Marca",
+        "Diario AS",
+        "Mundo Deportivo",
+        "Sport"
+      ],
+      "localBeats": {
+        "realMadrid": {"outlet": "Marca", "reporters": ["Paco García Caridad", "Óscar Rodríguez"], "language": "Spanish"},
+        "barcelona": {"outlets": ["Mundo Deportivo", "Sport"], "reporters": ["Fernando Polo", "Marc Carrió"], "language": "Spanish/Catalan"},
+        "atleticoMadrid": {"outlet": "Marca", "language": "Spanish"},
+        "realSociedad": {"outlet": "Diario de Noticias de Gipuzkoa", "language": "Spanish/Basque"},
+        "athleticBilbao": {"outlet": "El Correo", "language": "Spanish/Basque"},
+        "realBetis": {"outlet": "Diario de Sevilla", "language": "Spanish"},
+        "sevilla": {"outlet": "Estadio Deportivo", "reporter": "Diego Míguez", "language": "Spanish"},
+        "valencia": {"outlet": "Superdeporte", "language": "Spanish"},
+        "villarreal": {"outlet": "Diario de Castellón", "language": "Spanish"},
+        "celta": {"outlet": "Faro de Vigo", "reporter": "Xosé Ramil", "language": "Spanish/Galician"},
+        "osasuna": {"outlet": "Diario de Navarra", "reporter": "Diego Latre", "language": "Spanish/Basque"}
+      },
+      "foreignPressMandatorySweep": [
+        "Italy (selling club): Di Marzio, Tuttomercatoweb, Calciomercato, local beats",
+        "France (Ligue 1): L'Équipe, RMC, Foot Mercato",
+        "Germany (Bundesliga): Sky Sport Germany, Bild, Kicker",
+        "Portugal (Primeira Liga): A Bola, Record, O Jogo",
+        "England (Premier League): Ornstein, Romano, club correspondents"
+      ]
+    },
+    "italy": {
+      "countryCode": "IT",
+      "primaryLeague": "Serie A",
+      "secondaryLeagues": ["Serie B"],
+      "tier1": [
+        {
+          "name": "Fabrizio Romano",
+          "type": "journalist",
+          "outlet": "Multiple",
+          "twitter": "FabrizioRomano",
+          "specialisation": "Italian desk; official confirmations"
+        },
+        {
+          "name": "Gianluca Di Marzio",
+          "type": "journalist/institution",
+          "outlet": "https://gianlucadimarzio.com",
+          "twitter": "DiMarzio",
+          "specialisation": "Institutional reach in Italian football"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Nicolò Schira",
+          "twitter": "NicoSchira",
+          "outlet": "Freelance",
+          "specialisation": "Contract structures, free-agent market",
+          "tier": "T2"
+        },
+        {
+          "name": "Matteo Moretto",
+          "twitter": "MatteMoretto",
+          "outlet": "Relevo",
+          "specialisation": "Italy-Spain multi-axis",
+          "tier": "T2"
+        }
+      ],
+      "tier3": [
+        "Tuttomercatoweb",
+        "Calciomercato.com",
+        "Corriere dello Sport",
+        "La Gazzetta dello Sport",
+        "Tuttosport"
+      ],
+      "localBeats": {
+        "juventus": {"outlet": "Tuttosport", "language": "Italian"},
+        "acMilan": {"outlet": "Gazzetta dello Sport", "language": "Italian"},
+        "inter": {"outlet": "Corriere dello Sport", "language": "Italian"},
+        "napoli": {"outlet": "Il Mattino", "language": "Italian"},
+        "lazio": {"outlet": "Corriere dello Sport", "language": "Italian"},
+        "roma": {"outlet": "Il Romanista", "language": "Italian"},
+        "fiorentina": {"outlet": "La Nazione", "language": "Italian"},
+        "atalanta": {"outlet": "TuttoAtalanta", "language": "Italian"},
+        "parma": {"outlet": "Parmalive / ParmaToday", "note": "FIRST source for Parma developments", "language": "Italian"},
+        "como": {"outlet": "Calcio Como", "language": "Italian"},
+        "verona": {"outlet": "L'Arena", "language": "Italian"},
+        "lecce": {"outlet": "Lecce Calcio Notizie", "language": "Italian"}
+      },
+      "foreignPressMandatorySweep": [
+        "Spain (La Liga): Relevo, Marca, AS, Moretto, local beats",
+        "England (Premier League): Ornstein, Romano, club correspondents",
+        "Germany (Bundesliga): Plettenberg, Bild, Kicker",
+        "France (Ligue 1): L'Équipe, RMC, Foot Mercato",
+        "Portugal (Primeira Liga): A Bola, Record, O Jogo"
+      ]
+    },
+    "germany": {
+      "countryCode": "DE",
+      "primaryLeague": "Bundesliga",
+      "secondaryLeagues": ["2. Bundesliga"],
+      "tier1": [
+        {
+          "name": "Sky Sport Germany",
+          "type": "institution",
+          "outlet": "https://www.skysportde.de",
+          "twitter": "SkySportDE",
+          "specialisation": "Institutional credibility; official announcements"
+        },
+        {
+          "name": "Fabrizio Romano",
+          "type": "journalist",
+          "outlet": "Multiple",
+          "twitter": "FabrizioRomano",
+          "specialisation": "Cross-market German desk"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Florian Plettenberg",
+          "twitter": "Plettigoal",
+          "outlet": "Sky Sport Germany",
+          "specialisation": "Bundesliga primary correspondent; cross-market links",
+          "tier": "T2"
+        },
+        {
+          "name": "Philipp Hinze",
+          "twitter": "philipphinze24",
+          "outlet": "Sky Sport Germany",
+          "specialisation": "Backup Bundesliga correspondent",
+          "tier": "T3"
+        },
+        {
+          "name": "Christian Falk",
+          "twitter": "cfbayern",
+          "outlet": "Bild / Sport Bild",
+          "specialisation": "Bayern Munich specialist; multi-market connections",
+          "tier": "T2"
+        }
+      ],
+      "tier3": [
+        "Bild",
+        "Sport Bild",
+        "Kicker",
+        "RevierSport"
+      ],
+      "localBeats": {
+        "bayernMunich": {"outlet": "Bild / Sport Bild", "reporter": "Christian Falk", "language": "German"},
+        "borussiadortmund": {"outlet": "RevierSport", "language": "German"},
+        "bayerLeverkusen": {"outlet": "Kölner Stadt-Anzeiger", "language": "German"},
+        "rbLeipzig": {"outlet": "Bild", "language": "German"},
+        "eintrachtFrankfurt": {"outlet": "Frankfurter Rundschau", "language": "German"},
+        "vfbStuttgart": {"outlet": "Stuttgarter Zeitung", "language": "German"},
+        "fcCologne": {"outlet": "Kölner Stadt-Anzeiger", "language": "German"},
+        "schalke04": {"outlet": "RevierSport", "language": "German"},
+        "unionBerlin": {"outlet": "Berliner Zeitung", "language": "German"}
+      },
+      "foreignPressMandatorySweep": [
+        "Spain (La Liga): Relevo, Marca, AS, Moretto",
+        "Italy (Serie A): Di Marzio, Tuttomercatoweb, Calciomercato, local beats",
+        "England (Premier League): Ornstein, Romano, club correspondents",
+        "France (Ligue 1): L'Équipe, RMC, Foot Mercato",
+        "Austria (Red Bull Salzburg): Sky Sport Austria, Salzburger Nachrichten"
+      ]
+    },
+    "france": {
+      "countryCode": "FR",
+      "primaryLeague": "Ligue 1",
+      "secondaryLeagues": ["Ligue 2"],
+      "tier1": [
+        {
+          "name": "L'Équipe",
+          "type": "institution",
+          "outlet": "https://www.lequipe.fr/Football/",
+          "twitter": "lequipe",
+          "specialisation": "Institutional French football authority"
+        },
+        {
+          "name": "RMC Sport",
+          "type": "institution",
+          "outlet": "https://rmcsport.bfmtv.com",
+          "twitter": "RMCsport",
+          "specialisation": "Broadcast credibility; official announcements"
+        },
+        {
+          "name": "Fabrizio Romano",
+          "type": "journalist",
+          "outlet": "Multiple",
+          "twitter": "FabrizioRomano",
+          "specialisation": "Cross-market French desk"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Sacha Tavolieri",
+          "twitter": "sachatavolieri",
+          "outlet": "Talksport / Freelance",
+          "specialisation": "Belgium-France axis; Lyon connections",
+          "tier": "T2"
+        },
+        {
+          "name": "Santi Aouna",
+          "twitter": "Santi_J_FM",
+          "outlet": "Foot Mercato",
+          "specialisation": "Ligue 1 correspondent; tabloid style",
+          "tier": "T2-3"
+        },
+        {
+          "name": "Sebastien Denis",
+          "twitter": "sebastiendenis",
+          "outlet": "RMC Sport",
+          "specialisation": "RMC's primary Ligue 1 correspondent",
+          "tier": "T3"
+        }
+      ],
+      "tier3": [
+        "Foot Mercato",
+        "Get French Football News",
+        "Ouest-France",
+        "Marca (PSG spillover)"
+      ],
+      "localBeats": {
+        "psg": {"outlet": "L'Équipe", "language": "French"},
+        "marseille": {"outlet": "La Provence", "language": "French"},
+        "lyon": {"outlet": "Le Progrès", "language": "French"},
+        "nantes": {"outlet": "Ouest-France", "language": "French"},
+        "rennes": {"outlet": "Ouest-France", "language": "French"},
+        "lille": {"outlet": "La Voix du Nord", "language": "French"},
+        "lens": {"outlet": "La Voix du Nord", "language": "French"},
+        "monaco": {"outlet": "Nice-Matin", "language": "French"},
+        "nice": {"outlet": "Nice-Matin", "language": "French"}
+      },
+      "foreignPressMandatorySweep": [
+        "Spain (La Liga): Relevo, Marca, AS, Moretto",
+        "Italy (Serie A): Di Marzio, Tuttomercatoweb, Calciomercato",
+        "England (Premier League): Ornstein, Romano, club correspondents",
+        "Belgium (Pro League): Sacha Tavolieri, HLN",
+        "Germany (Bundesliga): Plettenberg, Bild, Kicker"
+      ]
+    },
+    "portugal": {
+      "countryCode": "PT",
+      "primaryLeague": "Primeira Liga",
+      "tier1": [
+        {
+          "name": "A Bola",
+          "type": "institution",
+          "outlet": "https://www.abola.pt",
+          "twitter": "abolapt",
+          "specialisation": "Portuguese football authority"
+        },
+        {
+          "name": "Record",
+          "type": "institution",
+          "outlet": "https://www.record.pt",
+          "twitter": "record_pt",
+          "specialisation": "Portuguese sports daily"
+        },
+        {
+          "name": "O Jogo",
+          "type": "institution",
+          "outlet": "https://www.ojogo.pt",
+          "twitter": "OJogo",
+          "specialisation": "Northern Portugal press; Porto-focused"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Pedro Sepulveda",
+          "twitter": "pedrosepulveda",
+          "outlet": "SIC / Freelance",
+          "specialisation": "Portuguese TV correspondent; multi-market",
+          "tier": "T2-3"
+        },
+        {
+          "name": "Bruno Andrade",
+          "twitter": "Bruno__Andrade_",
+          "outlet": "Freelance",
+          "specialisation": "Secondary Portuguese correspondent",
+          "tier": "T3"
+        }
+      ],
+      "tier3": [
+        "Maisfutebol",
+        "Goal.com Portugal"
+      ],
+      "localBeats": {
+        "benfica": {"outlet": "A Bola / Record", "language": "Portuguese"},
+        "porto": {"outlet": "O Jogo / A Bola", "language": "Portuguese"},
+        "sporting": {"outlet": "A Bola / Record", "language": "Portuguese"},
+        "braga": {"outlet": "O Jogo", "language": "Portuguese"},
+        "setubal": {"outlet": "A Bola", "language": "Portuguese"}
+      },
+      "foreignPressMandatorySweep": [
+        "England (Premier League): Ornstein, Romano, club correspondents",
+        "Spain (La Liga): Relevo, Marca, AS, Moretto",
+        "Italy (Serie A): Di Marzio, Tuttomercatoweb, Calciomercato",
+        "France (Ligue 1): L'Équipe, RMC, Foot Mercato",
+        "Brazil (if Brazilian player): Globo Esporte, UOL, TyC Sports"
+      ]
+    },
+    "greece": {
+      "countryCode": "GR",
+      "primaryLeague": "Super League Greece",
+      "tier1": [
+        {
+          "name": "Gazzetta (Greece)",
+          "type": "institution",
+          "outlet": "https://www.gazzetta.gr",
+          "twitter": "gazzetta_gr",
+          "specialisation": "Greek football authority"
+        },
+        {
+          "name": "Onsports",
+          "type": "institution",
+          "outlet": "https://www.onsports.gr",
+          "twitter": "onsportsne",
+          "specialisation": "Greek sports digital outlet"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Real FM (Greece)",
+          "type": "broadcast",
+          "outlet": "Real FM",
+          "twitter": null,
+          "specialisation": "Greek sports radio; transfer coverage"
+        }
+      ],
+      "tier3": [
+        "Newsbomb Sports",
+        "Eurohoops"
+      ],
+      "localBeats": {
+        "olympiacos": {"outlet": "Gazzetta / Onsports", "language": "Greek"},
+        "panathinaikos": {"outlet": "Gazzetta / Onsports", "language": "Greek"},
+        "aekAthens": {"outlet": "Gazzetta / Onsports", "language": "Greek"},
+        "paok": {"outlet": "Gazzetta", "language": "Greek"}
+      },
+      "foreignPressMandatorySweep": [
+        "Italy (Serie A): Di Marzio, Tuttomercatoweb (Serie A-Greece links)",
+        "Spain (La Liga): Relevo, Marca",
+        "Turkey (Süper Lig): Ekrem Konur, local Turkish outlets",
+        "Balkans (if Balkan player): SportSport.ba, B92"
+      ]
+    },
+    "turkey": {
+      "countryCode": "TR",
+      "primaryLeague": "Süper Lig",
+      "tier1": [
+        {
+          "name": "Ekrem Konur",
+          "type": "journalist",
+          "outlet": "Social (Twitter/Telegram)",
+          "twitter": "Ekremkonur",
+          "specialisation": "Turkey-specialised correspondent; multi-market (Middle East, Greece)"
+        },
+        {
+          "name": "Fanatik",
+          "type": "institution",
+          "outlet": "https://www.fanatik.com.tr",
+          "twitter": "fanatik",
+          "specialisation": "Turkish sports daily"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Yagiz Sabuncuoglu",
+          "twitter": "yagosabuncuoglu",
+          "outlet": "Turkish sports media",
+          "specialisation": "Süper Lig correspondent",
+          "tier": "T2"
+        },
+        {
+          "name": "Sabah Sports",
+          "type": "outlet",
+          "outlet": "https://www.sabah.com.tr",
+          "twitter": null,
+          "specialisation": "Turkish national sports"
+        }
+      ],
+      "tier3": [
+        "A Spor",
+        "Hurriyet Sports",
+        "Milliyet Sports"
+      ],
+      "localBeats": {
+        "galatasaray": {"outlet": "Fanatik", "language": "Turkish"},
+        "fenerbahce": {"outlet": "Fanatik", "language": "Turkish"},
+        "besiktas": {"outlet": "Fanatik", "language": "Turkish"},
+        "trabzonspor": {"outlet": "Sabah", "language": "Turkish"},
+        "antalyaspor": {"outlet": "Regional press", "language": "Turkish"}
+      },
+      "foreignPressMandatorySweep": [
+        "Italy (Serie A): Di Marzio, Tuttomercatoweb (Italian loanees to Turkey)",
+        "Spain (La Liga): Relevo, Marca",
+        "Germany (Bundesliga): Plettenberg, Bild (German-Turkey diaspora links)",
+        "Greece (Super League): Gazzetta Greece, Onsports",
+        "Middle East (if Gulf interest): Local Saudi/UAE/Qatar outlets"
+      ]
+    },
+    "belgium": {
+      "countryCode": "BE",
+      "primaryLeague": "Pro League",
+      "tier1": [
+        {
+          "name": "Voetbal International",
+          "type": "institution",
+          "outlet": "https://www.vi.nl",
+          "twitter": "VI_nl",
+          "specialisation": "Benelux primary (Neth.-based, covers Belgium)"
+        },
+        {
+          "name": "Sacha Tavolieri",
+          "type": "journalist",
+          "outlet": "Talksport / Freelance",
+          "twitter": "sachatavolieri",
+          "specialisation": "Belgium specialist; multi-market reach"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Het Laatste Nieuws",
+          "type": "outlet",
+          "outlet": "https://www.hln.be/sport",
+          "twitter": "HLNsport",
+          "specialisation": "Flemish Belgian press; Club Brugge, Anderlecht coverage"
+        },
+        {
+          "name": "Sudinfo",
+          "type": "outlet",
+          "outlet": "Sudinfo",
+          "twitter": null,
+          "specialisation": "Walloon Belgium press (Southern region)"
+        }
+      ],
+      "tier3": [
+        "Het Nieuwsblad",
+        "RTBF (Belgian Broadcasting)",
+        "Sporza (VRT)"
+      ],
+      "localBeats": {
+        "clubBrugge": {"outlet": "HLN / Voetbal International", "language": "Dutch/Flemish"},
+        "rscAnderlecht": {"outlet": "HLN / Het Nieuwsblad", "language": "Dutch/Flemish"},
+        "unionSG": {"outlet": "Voetbal International / HLN", "language": "Dutch/Flemish"},
+        "standardLiege": {"outlet": "Sudinfo / RTBF", "language": "French"},
+        "sportingCharleroi": {"outlet": "Sudinfo", "language": "French"}
+      },
+      "foreignPressMandatorySweep": [
+        "Netherlands (Eredivisie): Voetbal International, De Telegraaf, Mike Verweij",
+        "France (Ligue 1): L'Équipe, Sacha Tavolieri (Belgium-France axis)",
+        "Spain (La Liga): Relevo, Marca",
+        "Germany (Bundesliga): Plettenberg, Bild",
+        "England (Premier League): Ornstein, Romano, Sacha Tavolieri (Belgium-PL)"
+      ]
+    },
+    "netherlands": {
+      "countryCode": "NL",
+      "primaryLeague": "Eredivisie",
+      "tier1": [
+        {
+          "name": "Voetbal International",
+          "type": "institution",
+          "outlet": "https://www.vi.nl",
+          "twitter": "VI_nl",
+          "specialisation": "Dutch football authority; Benelux primary"
+        },
+        {
+          "name": "De Telegraaf",
+          "type": "institution",
+          "outlet": "https://www.telegraaf.nl/sport",
+          "twitter": "telegraaf",
+          "specialisation": "Dutch sports daily; institutional credibility"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Mike Verweij",
+          "twitter": "MikeVerweij",
+          "outlet": "De Telegraaf",
+          "specialisation": "Eredivisie correspondent; multi-market (England, Spain, Germany)",
+          "tier": "T2"
+        },
+        {
+          "name": "Rik Elfrink",
+          "twitter": "RikElfrink",
+          "outlet": "Eindhovens Dagblad / PSV specialist",
+          "specialisation": "PSV specialist; Dutch football expert",
+          "tier": "T2"
+        }
+      ],
+      "tier3": [
+        "Voetbalnieuws",
+        "Crooky Nieuws"
+      ],
+      "localBeats": {
+        "afcAjax": {"outlet": "De Telegraaf / Voetbal International", "language": "Dutch"},
+        "psvEindhoven": {"outlet": "Eindhovens Dagblad / Voetbal International", "language": "Dutch"},
+        "feyenoordRotterdam": {"outlet": "NRC / Voetbal International", "language": "Dutch"},
+        "azAlkmaar": {"outlet": "Noordhollands Dagblad", "language": "Dutch"},
+        "fcGroningen": {"outlet": "Dagblad van het Noorden", "language": "Dutch"}
+      },
+      "foreignPressMandatorySweep": [
+        "Belgium (Pro League): HLN, Sacha Tavolieri (Benelux axis)",
+        "Germany (Bundesliga): Plettenberg, Bild (PSV-Bundesliga links)",
+        "France (Ligue 1): L'Équipe, Foot Mercato",
+        "Spain (La Liga): Relevo, Marca",
+        "England (Premier League): Ornstein, Romano (Ajax-PL link strong)"
+      ]
+    },
+    "wales": {
+      "countryCode": "WLS",
+      "primaryLeague": "Cymru Premier",
+      "tier1": [
+        {
+          "name": "BBC Wales Sport",
+          "type": "institution",
+          "outlet": "https://www.bbc.com/sport/wales",
+          "twitter": "BBCWalesSport",
+          "specialisation": "Welsh football authority"
+        },
+        {
+          "name": "WalesOnline (Cardiff Live)",
+          "type": "institution",
+          "outlet": "https://www.walesonline.co.uk/sport/",
+          "twitter": "CardiffLive",
+          "specialisation": "South Wales regional press"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "The Athletic Wales",
+          "type": "outlet",
+          "outlet": "The Athletic (Wales section)",
+          "twitter": null,
+          "specialisation": "Wales-focused coverage (if available)"
+        }
+      ],
+      "tier3": [
+        "South Wales Echo",
+        "North Wales Chronicle",
+        "Wrexham.com"
+      ],
+      "localBeats": {
+        "theNewSaints": {"outlet": "BBC Wales / North Wales Chronicle", "language": "English/Welsh"},
+        "wrexham": {"outlet": "Wrexham.com / BBC Wales", "language": "English/Welsh"},
+        "cardiffCity": {"outlet": "South Wales Echo / WalesOnline / BBC Wales", "language": "English/Welsh"},
+        "swanseaCity": {"outlet": "South Wales Echo / WalesOnline", "language": "English/Welsh"},
+        "newportCounty": {"outlet": "South Wales Echo", "language": "English/Welsh"}
+      },
+      "foreignPressMandatorySweep": [
+        "England (Premier League & EFL): Ornstein, Romano, club correspondents (Welsh players to England common)",
+        "Scotland (if Scottish club interest): Daily Record, Sky Sports Scotland",
+        "Italy (Serie A): Di Marzio (rare Welsh-Italy links)",
+        "Spain (La Liga): Relevo (Gareth Bale legacy; modern links rare)"
+      ]
+    },
+    "sweden": {
+      "countryCode": "SE",
+      "primaryLeague": "Allsvenskan",
+      "tier1": [
+        {
+          "name": "Fotbollskanalen",
+          "type": "institution",
+          "outlet": "https://www.fotbollskanalen.se",
+          "twitter": "fotbollskanalen",
+          "specialisation": "Swedish football authority"
+        },
+        {
+          "name": "Expressen Sport",
+          "type": "institution",
+          "outlet": "https://www.expressen.se/sport/fotboll/",
+          "twitter": "Expressen_Sport",
+          "specialisation": "Swedish sports daily"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Aftonbladet Sport",
+          "type": "outlet",
+          "outlet": "https://www.aftonbladet.se/sport/",
+          "twitter": "AftonbladetSport",
+          "specialisation": "Swedish tabloid; mixed tier by correspondent"
+        }
+      ],
+      "tier3": [
+        "Sportbladet",
+        "VG (Norway spillover)"
+      ],
+      "localBeats": {
+        "malmoFF": {"outlet": "Fotbollskanalen / Sydsvenskan", "language": "Swedish"},
+        "aik": {"outlet": "Expressen / Fotbollskanalen", "language": "Swedish"},
+        "djurgardens": {"outlet": "Expressen / Fotbollskanalen", "language": "Swedish"},
+        "hammarby": {"outlet": "Expressen / Fotbollskanalen", "language": "Swedish"}
+      },
+      "foreignPressMandatorySweep": [
+        "Denmark (Superliga): Tipsbladet (Scandinavian feeder market)",
+        "Norway (Eliteserien): VG (Scandinavian feeder market)",
+        "Italy (Serie A): Di Marzio (rare Swedish-Italy links)",
+        "Germany (Bundesliga): Plettenberg, Bild (Swedish diaspora)",
+        "England (Premier League): Ornstein, Romano (Ibrahimovic legacy; Kulusevski history)"
+      ]
+    },
+    "scotland": {
+      "countryCode": "SC",
+      "primaryLeague": "Premiership",
+      "note": "Bonus 13th nation",
+      "tier1": [
+        {
+          "name": "Sky Sports Scotland",
+          "type": "institution",
+          "outlet": "https://www.skysports.com",
+          "twitter": "SkySportsSCO",
+          "specialisation": "Institutional credibility; official announcements"
+        },
+        {
+          "name": "BBC Sport Scotland",
+          "type": "institution",
+          "outlet": "https://www.bbc.com/sport/scotland/football",
+          "twitter": "BBCSport",
+          "specialisation": "Scottish football authority"
+        },
+        {
+          "name": "Daily Record",
+          "type": "institution",
+          "outlet": "https://www.dailyrecord.co.uk/sport/football",
+          "twitter": "Daily_Record",
+          "specialisation": "Scottish sports daily"
+        }
+      ],
+      "tier2": [
+        {
+          "name": "Scott Burns",
+          "twitter": "sburnsy",
+          "outlet": "Daily Record",
+          "specialisation": "Rangers correspondent",
+          "tier": "T2"
+        },
+        {
+          "name": "Gavin Berry",
+          "twitter": "GavinBerryDR",
+          "outlet": "Daily Record",
+          "specialisation": "Celtic correspondent",
+          "tier": "T2"
+        },
+        {
+          "name": "Fraser Fletcher",
+          "twitter": "Fraser_Fletcher",
+          "outlet": "Independent / Freelance",
+          "specialisation": "Scottish football correspondent",
+          "tier": "T3"
+        }
+      ],
+      "tier3": [
+        "The Scottish Sun",
+        "STV Sport",
+        "Glasgow World"
+      ],
+      "localBeats": {
+        "rangers": {"outlet": "Daily Record / Sky Sports Scotland", "language": "English/Scottish"},
+        "celtic": {"outlet": "Daily Record / Sky Sports Scotland", "language": "English/Scottish"},
+        "aberdeen": {"outlet": "Press and Journal", "language": "English/Scottish"},
+        "hibernian": {"outlet": "Edinburgh Evening News", "language": "English/Scottish"},
+        "hearts": {"outlet": "Edinburgh Evening News", "language": "English/Scottish"}
+      },
+      "foreignPressMandatorySweep": [
+        "England (Premier League & EFL): Ornstein, Romano, club correspondents (Rangers/Celtic-England links strong)",
+        "Belgium (Pro League): Sacha Tavolieri, HLN (Rangers in EL)",
+        "Germany (Bundesliga): Plettenberg (Rangers/Celtic EL runs)",
+        "Italy (Serie A): Di Marzio (Rangers/Celtic EL/CL)",
+        "France (Ligue 1): L'Équipe (Rangers/Celtic EL)",
+        "Balkans (EL competitors): SportSport.ba, B92 (Rangers especially)"
+      ]
+    }
+  },
+  "operationalRules": {
+    "refreshProtocol": [
+      "Check Tier 1 sources first (official press, major institutional outlets)",
+      "Query Tier 2 club correspondents and national desks",
+      "Trace Tier 3 aggregations back to original reporters",
+      "Run mandatory foreign-press sweep for each nation"
+    ],
+    "foreignPressSweepChecklist": [
+      "For every linked player: search their current club's local press in the native language",
+      "For every club profile: sweep selling markets the club habitually buys from",
+      "Trace aggregator links (Sport Witness, Football Italia, TransferFeed) to original outlet",
+      "Prioritize local beat reporters within their specialism (tier rises)",
+      "Document original source, not translation/aggregator"
+    ],
+    "sourceQualityHierarchy": [
+      "Weight Tier 1 single-source verification over 5 Tier 3 sources saying the same thing",
+      "A Romano confirmation outweighs 10 fan accounts",
+      "A club correspondent carries more weight than national sports desk for that club's business",
+      "Local press in player's current-club market often breaks story first"
+    ],
+    "probabilityScoringBands": {
+      "90-100%": "Tier 1 confirmation (Ornstein, Romano 'here we go', official club statement)",
+      "75-90%": "Multiple Tier 2 sources OR single Tier 1 without full 'here we go'",
+      "65-75%": "Tier 2 single source + supporting secondary evidence",
+      "50-65%": "Emerging story (Tier 3 + Tier 2, or multi-Tier 3)",
+      "30-50%": "Single Tier 3 or unconfirmed Tier 2",
+      "0-30%": "Anonymous ITK, single-fan source, or highly speculative"
+    },
+    "editorialStandards": [
+      "Write in British English (favour, not favor; match, not game)",
+      "No em dashes (—) anywhere; use commas, colons, or plain hyphens",
+      "Journalistic tone (lead with news, not throat-clearing; short, direct sentences)",
+      "Editorial scepticism on thin sourcing: When a rumour rests on a single Tier 3 source or anonymous ITK, state it plainly in the note. Skew the language toward scepticism."
+    ],
+    "confirmedTransferGate": [
+      "Do not add to CONFIRMED_IN/CONFIRMED_OUT until FootballTransfers.com lists the deal",
+      "Once confirmed there, remove instantly from INCOMING/OUTGOING/WATCHLIST in the same refresh",
+      "A player appears exactly once, in exactly one table"
+    ]
+  }
+}

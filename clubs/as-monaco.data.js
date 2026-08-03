@@ -24,8 +24,7 @@ const SWEEP = {
   queries: ["as-monaco transfer news"]
 };
 
-const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh
-, updated: "2026-08-03T12:48:44Z"};
+const REPORT_META = { label: "Updated 03 Aug 2026 · AS Monaco", updated: "2026-08-03T12:48:44Z"};
 
 const CONFIRMED_IN = 
     [];
