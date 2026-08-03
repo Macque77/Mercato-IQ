@@ -85,9 +85,9 @@
   }
   .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
   .crest svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
-  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,42px);letter-spacing:.6px;text-transform:uppercase;line-height:.95}
   .brand h1 b{color:var(--red-bright)}
-  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .brand .sub{font-size:12px;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold);margin-top:5px;font-weight:600}
   .status-pill{
     display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
     color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
@@ -628,9 +628,9 @@
   </div>
 
   <footer class="reveal">
-    <b id="updatedFoot"></b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <b id="updatedFoot"></b> Ratings are evidence-weighted estimates based on source credibility, not guarantees. They change as new reporting emerges.
     <div class="disclaimer">
-      Built from publicly reported sources retrieved on <span id="discDate"></span>, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+      Built from publicly reported sources tracked on <span id="discDate"></span>, weighted by reliability and recency. Transfer reporting evolves daily—fees, valuations and interest can change. Nothing here is financial advice.
     </div>
   </footer>
 </div>
@@ -690,7 +690,7 @@ const SWEEP = {
 
 /* ── EDIT THESE EACH REFRESH ──────────────────────────
    asof: human display date · updated: full ISO timestamp (drives live ticker) */
-const REPORT_META = { asof: "31 Jul 2026", updated: "2026-07-31T09:00:00Z", label: "Poku's Leverkusen deadline looms; Rusyn, Pembélé and Neil now confirmed" };
+const REPORT_META = { asof: "31 Jul 2026", updated: "2026-07-31T09:00:00Z", label: "FootballTransfers-gated refresh: Rusyn's Karpaty Lviv exit and Pembélé's Le Havre move now confirmed, Dan Neil's Rangers destination locked in; Poku faces a 1 Aug Leverkusen deadline, Masuaku's Konyaspor exit is contested, and Soulé's interest has petered out entirely" };
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
@@ -1041,7 +1041,7 @@ const PROSE = {
   </section>
 `,
   confirmedPending: `<b>Pending / context:</b> Meunier is confirmed but links up in August after a post-World Cup break. <b>Melker Ellborg</b> (signed in January) is the goalkeeping cover behind Robin Roefs, so a Patterson sale does not require a replacement keeper. <b>Geertruida</b> has returned to RB Leipzig after Sunderland let the ~€23m loan option lapse; any permanent is now a fresh, lower-priority negotiation. On the striker line, Le Bris's "two-and-a-half strikers" comment suggests an out-and-out No.9 may <b>not</b> be signed at all if Brobbey and Isidor both stay.`,
-  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Ghisolfi network 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the last refresh.`,
+  incomingSub: `Every link carries two independent readings. <b style="colour:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="colour:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Ghisolfi network 15%, finance 10%, competition 5%. <b style="colour:var(--gold)">NEW</b> flags a link that surfaced or materially moved since the last refresh.`,
   outgoingSub: `Sales feed affordability and SCR headroom. The Sadiki decision alone swings the entire budget.`,
   pricingBanner: `
       <b>Pricing principle: outgoings sell at a holder's price, not market value.</b> Because Sunderland are under no pressure to sell, every fee below is anchored <i>above</i> consensus valuation. Four multipliers stack: <b>(1)</b> long contracts remove all buyer leverage; <b>(2)</b> near-ever-present minutes prove the asset; <b>(3)</b> a multi-club bidding war inflates the number; <b>(4)</b> elite suitors pay a premium for proven youth. <b>Homegrown players (Patterson, Mundle) carry a further premium</b>: pure profit on the books and scarce squad-list value. Treat the listed fees as <i>floors</i>; the no-need-to-sell stance is also why a higher price often <i>lowers</i> completion probability rather than raising the fee at the margin.
@@ -1065,9 +1065,9 @@ const PROSE = {
         </div>
         <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
         <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
-        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Carry-over links with no fresh late-July reporting (Marlon Gomes, Boyomo, Camara) decay on this basis and sit in the Rumour Mill.</span></div>
-        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b> - the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
-        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window - fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="colour:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Carry-over links with no fresh late-July reporting (Marlon Gomes, Boyomo, Camara) decay on this basis and sit in the Rumour Mill.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="colour:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b> - the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="colour:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window - fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
         <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
       </div>`
 };
@@ -1297,7 +1297,7 @@ function windowStatus(closesIso){
     `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
   document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
   const foot = document.getElementById('updatedFoot');
-  if(foot) foot.textContent = `Living tracker - last refreshed ${REPORT_META.asof}.`;
+  if(foot) foot.textContent = `Live transfer tracker - updated ${REPORT_META.asof}.`;
 
   const t0 = new Date(REPORT_META.updated).getTime();
   const stamp = document.getElementById('stamp');

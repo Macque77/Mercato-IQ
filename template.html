@@ -85,9 +85,9 @@
   }
   .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
   .crest svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
-  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,42px);letter-spacing:.6px;text-transform:uppercase;line-height:.95}
   .brand h1 b{color:var(--red-bright)}
-  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .brand .sub{font-size:12px;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold);margin-top:5px;font-weight:600}
   .status-pill{
     display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
     color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
@@ -628,9 +628,9 @@
   </div>
 
   <footer class="reveal">
-    <b id="updatedFoot"></b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <b id="updatedFoot"></b> Ratings are evidence-weighted estimates based on source credibility, not guarantees. They change as new reporting emerges.
     <div class="disclaimer">
-      Built from publicly reported sources retrieved on <span id="discDate"></span>, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+      Built from publicly reported sources tracked on <span id="discDate"></span>, weighted by reliability and recency. Transfer reporting evolves daily—fees, valuations and interest can change. Nothing here is financial advice.
     </div>
   </footer>
 </div>
@@ -867,7 +867,7 @@ function windowStatus(closesIso){
     `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
   document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
   const foot = document.getElementById('updatedFoot');
-  if(foot) foot.textContent = `Living tracker - last refreshed ${REPORT_META.asof}.`;
+  if(foot) foot.textContent = `Live transfer tracker - updated ${REPORT_META.asof}.`;
 
   const t0 = new Date(REPORT_META.updated).getTime();
   const stamp = document.getElementById('stamp');

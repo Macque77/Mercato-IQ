@@ -85,9 +85,9 @@
   }
   .crest img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;box-sizing:border-box;z-index:2}
   .crest svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
-  .brand h1{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.4px;text-transform:uppercase;line-height:.95}
+  .brand h1{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,42px);letter-spacing:.6px;text-transform:uppercase;line-height:.95}
   .brand h1 b{color:var(--red-bright)}
-  .brand .sub{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .brand .sub{font-size:12px;letter-spacing:2.8px;text-transform:uppercase;color:var(--gold);margin-top:5px;font-weight:600}
   .status-pill{
     display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;
     color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;white-space:nowrap
@@ -628,9 +628,9 @@
   </div>
 
   <footer class="reveal">
-    <b id="updatedFoot"></b> Probabilities are evidence-weighted estimates, not predictions of preferred signings. They will move: rising on credible reinforcement or growing need, falling on silence, stronger rivals entering, or fading sources.
+    <b id="updatedFoot"></b> Ratings are evidence-weighted estimates based on source credibility, not guarantees. They change as new reporting emerges.
     <div class="disclaimer">
-      Built from publicly reported sources retrieved on <span id="discDate"></span>, weighted by tier and recency. Transfer reporting is inherently uncertain and figures are estimates. Fees, valuations and interest can change daily; nothing here is financial advice or a guarantee of any outcome. To refresh: request an update and the rumour set, probabilities and briefing will be re-evaluated against the latest reporting.
+      Built from publicly reported sources tracked on <span id="discDate"></span>, weighted by reliability and recency. Transfer reporting evolves daily—fees, valuations and interest can change. Nothing here is financial advice.
     </div>
   </footer>
 </div>
@@ -688,7 +688,7 @@ const SWEEP = {
   note: "NUFC-specific beat prioritised: Chronicle Live (Lee Ryder), Shields Gazette/NUFC The Mag, The Athletic (Chris Waugh). Foreign desks per profile: Italy (Tutto Atalanta/Gazzetta for Scalvini and Ederson), Spain (Marca/AS/Relevo for Oso, Real Betis local press for Ezzalzouli), Czech/Portugal (for Hornicek). Coaching-search sweep runs in parallel given the 30 Jul vacancy. Trace every aggregator hit (TransferFeed, NewsNow) to its original reporter, never link the aggregator itself."
 };
 
-const REPORT_META = { asof: "31 Jul 2026", updated: "2026-07-31T09:30:00Z", label: "Jaissle 'here we go', Bruno-to-Arsenal closing, Bamba move confirmed" };
+const REPORT_META = { asof: "3 Aug 2026", updated: "2026-08-03T16:45:00Z", label: "Lukáš Horníček now confirmed official (€30.6m release clause triggered, 3 Aug), closing the senior goalkeeper position; Bruno Guimaraes-to-Arsenal momentum continues through late July chatter but deal not yet signed; Jaissle arrival expected Saturday 1 Aug" };
 
 const CONFIRMED_IN = [
   {name:"Sean Steur", sub:"20 · CM/DM · Netherlands", to:"permanent from Ajax", fee:"£23m", free:false, status:"done", statusTxt:"DONE, SIGNED",
@@ -699,8 +699,8 @@ const CONFIRMED_IN = [
    note:"Fabrizio Romano's 'here we go': a long-term deal to June 2030 for a 34-appearance, 15-clean-sheet Ligue 2 season. Signed as a development goalkeeper behind the senior pecking order, not an immediate Nick Pope replacement - that role is being addressed separately via the live Lukáš Horníček pursuit below."},
   {name:"Kyle Healy", sub:"16 · RB", to:"West Ham United academy", fee:"Undisclosed (academy fee)", free:false, status:"done", statusTxt:"DONE, SIGNED",
    note:"Romano confirmed the academy switch on 23 Jul: six U18 Premier League appearances at West Ham last season. A future-facing addition with zero first-team implication this window, included for completeness of the state of record."},
-  {name:"Lukáš Horníček", sub:"24 · GK · Czech Republic", to:"from SC Braga", fee:"≈£24.5-30m (release clause)", free:false, status:"pending", statusTxt:"AGREED, RELEASE CLAUSE TRIGGERED",
-   note:"Multiple outlets (TeamTalk, Shields Gazette, Football365) report the £24.5m-30m release clause has been triggered and personal terms are close, positioning Horníček as the senior alternative to Nick Pope after Newcastle again missed out on James Trafford (now signing for Leeds). Still described as 'advancing towards completion' rather than officially announced as of this refresh - held here pending, not moved to fully-confirmed, per the FootballTransfers.com gating rule; expect a formal unveiling within days."},
+  {name:"Lukáš Horníček", sub:"24 · GK · Czech Republic", to:"from SC Braga", fee:"€30.6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+   note:"Confirmed 3 August per FootballTransfers and multiple outlets: the €30.6m release clause has been formally triggered and Horníček has completed his medical ahead of an imminent unveiling at St James' Park. This closes Newcastle's senior goalkeeper position after the Jaouen arrival was explicitly positioned as a long-term development signing rather than an immediate Pope replacement. Horníček becomes the senior cover on a long-term deal."},
   {name:"Aladji Bamba", sub:"21 · DM · Ivory Coast", to:"from AS Monaco", fee:"£35.5m (€40m, incl. add-ons)", free:false, status:"done", statusTxt:"DONE, SIGNED",
    note:"Confirmed by Sky Sports, the Newcastle official site and AS Monaco (24 Jul): a five-year deal for the highly-rated defensive midfielder, No.8 shirt assigned. Landed while the Bruno Guimarães saga was still unresolved, positioning Bamba as a like-for-like contingency in central midfield if the captain does leave for Arsenal. Was missing from the previous refresh's tracked list entirely - picked up this cycle via the FootballTransfers.com confirmed-deals cross-check."},
 ];
@@ -855,8 +855,8 @@ const WL_LINKMAP = {
 };
 
 const PROSE = {
-  heroH2: `<em>Jaissle "here we go"</em>, Bruno-to-Arsenal closing in`,
-  heroLede: `<b>Matthias Jaissle</b> has gone from advanced talks to Fabrizio Romano's <b>"here we go"</b>, due in Newcastle <b>Saturday 1 August</b> to be unveiled. The <b>Bruno Guimarães</b> sale to Arsenal is now "close to finalising", fee edging past £70m. Every other live thread, plus this refresh's confirmed-deals catch-up, is below.`,
+  heroH2: `A coach lands, a captain edges closer to the exit: <em>Jaissle "here we go"</em>, Bruno-to-Arsenal "close to finalising", and a hidden Bamba signing surfaces on the confirmed-deals check`,
+  heroLede: `A day on from the chaos of Eddie Howe's departure, Newcastle's picture is sharpening rather than calming. <b>Matthias Jaissle</b> has gone from "advanced discussions" to Fabrizio Romano's <b>"here we go"</b>, with Sky Germany and Goal.com both reporting a contract to 2030 already agreed and Jaissle due in Newcastle on <b>Saturday 1 August</b> to be unveiled - still not a formal club statement, but about as close as reporting gets before one. The <b>Bruno Guimarães</b> saga has moved too: The Sun's Jack Rosser and FootballTransfers both now describe Arsenal as <b>"close to finalising"</b> a deal, fee reports converging somewhere north of £70m against Newcastle's earlier £85m ask. This refresh's FootballTransfers.com confirmed-deals cross-check also surfaced a genuine gap in the previous state of record: <b>Aladji Bamba</b>, a £35.5m defensive midfielder from Monaco, completed his move on 24 July but was never added to the tracked confirmed list - he's in now, alongside five further confirmed exits (Ruddy, Targett, an Ashby loan to Luton, Hernes and two academy departures) that had drifted out of view. Beneath the headline moves, <b>Giorgio Scalvini</b> (CB) remains live but now faces Tottenham as a competing suitor, <b>Joaquín Oso</b> (FB) appears to have swung decisively toward Nottingham Forest, and <b>Ederson</b> of Atalanta has signed a new contract there and is off the board entirely. Outgoing, <b>Joe Willock</b> gained real shape this week - a £10m Besiktas bid was rejected, but his agent has travelled to Istanbul - while <b>Lewis Hall</b> now has Chelsea circling alongside Manchester United.`,
   metaRow: `
       <span>DECISION-MAKER: <b>Ross Wilson</b> (Sporting Director) &amp; David Hopkinson (CEO)</span>
       <span>HEAD COACH: <b>Vacant</b> (Howe departed 30 Jul)</span>
@@ -953,7 +953,7 @@ const PROSE = {
   </section>
 `,
   confirmedPending: `<b>Horníček's £24.5-30m release-clause move is agreed in principle but not yet formally announced</b> - expect confirmation within days once terms and a medical are finalised. <b>Matthias Jaissle's head-coach appointment</b> is now at Romano "here we go" status with a reported Saturday arrival date, but likewise awaits an official club statement, so it stays in Incoming rather than Confirmed. There is, as of writing, <b>no contract-renewal story to report for Bruno Guimarães</b>; reporting continues to suggest Newcastle expect to sell rather than retain their captain, with Arsenal now described as close to finalising terms.`,
-  incomingSub: `Every link carries two independent readings. <b style="color:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="color:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Wilson network 15%, finance 10%, competition 5%. <b style="color:var(--gold)">NEW</b> flags a link that surfaced or materially moved since Howe's departure broke this afternoon.`,
+  incomingSub: `Every link carries two independent readings. <b style="colour:var(--gold)">True?</b> = how credible the reported interest is (source tier, corroboration, recency). <b style="colour:var(--gold)">Happens?</b> = how likely the move completes this window (fee realism, club stance, player will, competition, need). A link can be near-certainly real yet unlikely to complete. Weighting: recency 30%, source 25%, tactical fit 15%, Wilson network 15%, finance 10%, competition 5%. <b style="colour:var(--gold)">NEW</b> flags a link that surfaced or materially moved since Howe's departure broke this afternoon.`,
   outgoingSub: `Three confirmed sales (Gordon, Tonali, plus last deadline day's Isak deal) have already banked close to £300m combined; a fourth, Bruno Guimarães, would fund the head-coach transition and a marquee winger in one move.`,
   pricingBanner: `
       <b>Pricing principle: with sales already funding a rebuild, Newcastle are pragmatic rather than reluctant sellers this summer.</b> Three multipliers push fees up regardless: <b>(1)</b> genuine first-team quality (Guimarães, Willock) draws Premier League and European interest; <b>(2)</b> contract length gives Newcastle leverage on Guimarães specifically (two years plus an option); <b>(3)</b> a competitive market (Man Utd on Hall, Everton on Murphy) supports the asking price. The one softener: out-of-contract-adjacent players (Pope, entering the final stages of his Newcastle career) are priced to move rather than to deter.
@@ -977,9 +977,9 @@ const PROSE = {
         </div>
         <div class="row" style="margin-top:16px"><span class="k">0-7d</span><span>Very strong · <span class="k">8-14d</span> strong · <span class="k">15-30d</span> moderate</span></div>
         <div class="row"><span class="k">31-60d</span><span>weak · <span class="k">60d+</span> heavily discounted unless freshly re-reported.</span></div>
-        <div class="row" style="margin-top:10px"><span class="k" style="color:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Manzambi, Trafford and Muñoz links fall on this basis post-resolution.</span></div>
-        <div class="row" style="margin-top:14px"><span class="k" style="color:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b>: the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
-        <div class="row"><span class="k" style="color:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window: fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
+        <div class="row" style="margin-top:10px"><span class="k" style="colour:var(--gold)">NB</span><span>Recycled aggregator repetition does <b>not</b> refresh recency. Manzambi, Trafford and Muñoz links fall on this basis post-resolution.</span></div>
+        <div class="row" style="margin-top:14px"><span class="k" style="colour:var(--gold)">TRUE?</span><span>Probability the reported interest is <b>real and accurately sourced</b>: the credibility of the link itself, driven by tier, corroboration and recency.</span></div>
+        <div class="row"><span class="k" style="colour:var(--gold)">HAPPENS?</span><span>Probability the move <b>actually completes</b> this window: fee realism, club stance, player will, competition and need. The two move independently: a widely-reported link can read high on True yet low on Happens.</span></div>
         <div class="row" style="margin-top:8px"><span class="k">Lights</span><span>🟢 &gt;50% · 🟡 30-50% · 🟠 15-30% · 🔴 &lt;15% (applied to each metric separately).</span></div>
       </div>`
 };
@@ -1209,7 +1209,7 @@ function windowStatus(closesIso){
     `${REPORT_META.label} · Data as of ${REPORT_META.asof}`;
   document.getElementById('asof').textContent = REPORT_META.asof.toUpperCase();
   const foot = document.getElementById('updatedFoot');
-  if(foot) foot.textContent = `Living tracker - last refreshed ${REPORT_META.asof}.`;
+  if(foot) foot.textContent = `Live transfer tracker - updated ${REPORT_META.asof}.`;
 
   const t0 = new Date(REPORT_META.updated).getTime();
   const stamp = document.getElementById('stamp');
