@@ -15,17 +15,17 @@ const BRAND = {
 
 const VOLATILE = {
   verified: "2026-08-03",
-  coach: "Simone Inzaghi",
+  coach: "Cristian Chivu (Serie A Coach of the Season 2025/26)",
   dof: "Piero Ausilio (Director)",
   europe: "UEFA Champions League (2026/27)",
-  finish: "1st Serie A (2025/26)",
-  owner: "Suning Group (Steven Zhang, CEO)",
+  finish: "1st Serie A (2025/26) - 21st league title, clinched with 3 games to spare",
+  owner: "Oaktree Capital Management",
   window: "Opens 1 Jul, closes 1 Sep 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.transfermarkt.com/"],
-  queries: ["Inter Milan transfer news 2026"]
+  feeds: ["https://www.transfermarkt.com/", "https://sempreinter.com/", "https://football-italia.net/category/teams/inter/"],
+  queries: ["Inter Milan transfer news 2026", "Inter Milan Bonny Diouf official", "Inter Milan Chivu transfer plans"]
 };
 
 const REPORT_META = {
@@ -34,48 +34,69 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Inter Milan"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Ange-Yoan Bonny", sub:"21 · ST · France U21", to:"permanent from Parma", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed - Bonny reunites with Cristian Chivu, who coached him for his breakout final three months at Parma (6 goals, 4 assists, helped Parma beat relegation). Stuttgart tried to hijack the move but Inter won out."},
+  {name:"Andy Diouf", sub:"22 · CM · France", to:"permanent from RC Lens", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed midfield addition from Lens, adding energy and ball-carrying to Chivu's engine room."}
+];
 
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Nicolò Barella", sub:"27 · CM · Italy", club:"Inter Milan", pos:"CM", report:"18 Jul 2026", src:"Sky Italia", tier:2, fee:"New long-term deal", truth:90, prob:95, light:"g", trend:"up", note:"Inter securing midfield lynchpin Barella with fresh contract through 2031. Talks at advanced stage with expected completion within days."}
+  {name:"Ademola Lookman", sub:"28 · W · Nigeria", club:"Atalanta", pos:"W", report:"2 Aug 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:40, prob:15, light:"r", trend:"down", note:"A recurring name, but Inter are reported to have pulled out of the race for the Atalanta winger, with the club now weighing alternatives instead."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Filip Stanković", sub:"21 · GK · Serbia", club:"Multiple (loan/permanent options discussed)", pos:"GK", report:"16 Apr 2026", src:"SempreInter", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Inter reportedly weighing offering the young goalkeeper as makeweight in a deal involving Andy Diouf-type midfield business; more squad management than an active sale process."}
+];
 
 const RISERS = [
-  {ar:"⬆", t:"<b>Nicolò Barella extension</b>: Contract talks progressing well; deal expected to secure midfielder through 2031."}
+  {ar:"⬆", t:"<b>Ange-Yoan Bonny official</b>: reunion with Chivu completed from Parma for ~€25m after Inter beat Stuttgart to the deal."},
+  {ar:"⬆", t:"<b>Andy Diouf official</b>: midfield reinforcement arrives from Lens."}
 ];
 
-const FALLERS = [];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Ademola Lookman</b>: Inter reported to have pulled out of the race for the Atalanta winger."}
+];
 
 const NEW = [
-  {ar:"✦", t:"Inter consolidating midfield with Barella extension as champions prepare for European campaign."}
+  {ar:"✦", t:"Reigning champions add Bonny (reunited with Chivu from Parma) and Diouf in midfield; a winger pursuit (Lookman) appears to have cooled."}
 ];
 
 const IGNORE = [];
 
 const POSITIONS = [
-  {p:"Central midfield", w:40, x:"Barella's renewal secures the department; no major additions planned."}
+  {p:"Forward depth", w:45, x:"Bonny's arrival covers rotation behind the senior strikers under Chivu."},
+  {p:"Central midfield", w:40, x:"Diouf adds energy; Barella remains the on-field lynchpin."}
 ];
 
-const WATCHLIST = [
-  {name:"Nicolò Barella", club:"Inter Milan", pos:"CM", dir:"in", age:"~16 days", tier:2, note:"Contract extension near completion. Expected announcement within a week according to Sky Italia."}
-];
+const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Inter Milan Official", u:"#"}
+  sempreinter: {l:"SempreInter · Transfer News", u:"https://sempreinter.com/"},
+  footballItalia: {l:"Football Italia · Inter", u:"https://football-italia.net/category/teams/inter/"},
+  club: {l:"Inter Official · Transfer News", u:"https://www.inter.it/en/news/category/transfer-news"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Ange-Yoan Bonny": ["footballItalia","club"],
+  "Andy Diouf": ["club"],
+  "Ademola Lookman": ["footballItalia"],
+  "Filip Stanković": ["sempreinter"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Inter Milan · 2026/27 Season`,
-  heroLede: `Transfer window active. Inter Milan preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Champions reload: Bonny reunites with Chivu, Diouf adds midfield legs after a title won with three games to spare`,
+  heroLede: `Inter Milan enter this window as reigning Serie A champions, having clinched their 21st league title under first-season coach <b>Cristian Chivu</b> with three games still to play - a title win that earned Chivu Serie A's Coach of the Season award. The summer business so far reflects continuity rather than upheaval: <b>Ange-Yoan Bonny</b> arrives from Parma for around €25m, reuniting with Chivu after the pair worked together during Bonny's breakout final months there, while <b>Andy Diouf</b> joins from Lens to add midfield legs. A reported interest in Atalanta's Ademola Lookman appears to have cooled, with Inter said to have pulled out of that race.`,
+  metaRow: `<span>DECISION-MAKER: <b>Piero Ausilio</b> (Director)</span> <span>HEAD COACH: <b>Cristian Chivu</b></span> <span>WINDOW: <b>1 Jul – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">1<small>st</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">UCL</div></div><div class="stat gold"><div class="l">Confirmed In</div><div class="v">2</div></div>`,
+  positionPanel: ``,
+  confirmedPending: `No further deals reported as agreed-but-unannounced this window.`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Squad management (Stanković) rather than a pressing need to sell defines Inter's outgoing business as champions.`,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `~€25m+ committed`, x: `Bonny (~€25m) and Diouf (undisclosed) are done; no further major incomings reported as advanced.` },
+  spendOut: { v: `Limited`, x: `No confirmed sales; Stanković's future is a squad-management question rather than an active process.` },
   methodLegend: ``
 };

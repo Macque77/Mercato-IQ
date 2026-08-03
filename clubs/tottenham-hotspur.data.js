@@ -68,8 +68,6 @@ const INCOMING = [
    note:"Spurs were reportedly 24 hours from a £80m+ bid before Kroupi broke his foot and now needs surgery, ruling him out into the new year. De Zerbi remains 'a huge admirer' and the plan is to revisit next summer once fit - but for this window the move is dead, and the injury is precisely why the striker shortlist below has suddenly expanded."},
   {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"Hoffenheim", pos:"ST", report:"29 Jul 2026", src:"TeamTalk", tier:3, fee:"Not yet tested", truth:40, prob:27, light:'o', trend:'up',
    note:"Emerged as a direct fallback once Kroupi's injury forced a rethink, with RB Leipzig and Barcelona also credited with interest. Nothing beyond shortlist-level exclusive reporting so far, but the timing (named within hours of the Kroupi news breaking) suggests genuine internal discussion at Spurs rather than pure speculation."},
-  {name:"Ferran Torres", sub:"26 · ST/W · Spain", club:"Barcelona", pos:"ST", report:"29 Jul 2026", src:"TeamTalk", tier:3, fee:"Contract-expiry fallback, no fee agreed", truth:36, prob:16, light:'o', trend:'down',
-   note:"Framed as available only if his Barcelona contract talks collapse, and PSG are reported to be further along in that scenario than Spurs, who have so far only held soft discussions through intermediaries. A break-glass option rather than a live target."},
 ];
 
 const OUTGOING = [
@@ -93,7 +91,6 @@ const RISERS = [
 ];
 const FALLERS = [
   {ar:"⬇", t:"<b>Eli Junior Kroupi</b>: a broken foot needing surgery has shelved what was set to be an £80m+ marquee bid, ruling him out until the new year."},
-  {ar:"⬇", t:"<b>Ferran Torres</b>: reported as a fallback-only option, and PSG are said to be further advanced if his Barcelona deal collapses."},
   {ar:"⬇", t:"<b>Micky van de Ven to Manchester United</b>: once a live United target, now fading fast as Spurs push through a new long-term contract off the back of the summer rebuild."},
 ];
 const NEW = [

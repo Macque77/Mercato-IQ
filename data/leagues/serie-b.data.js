@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "ascoli", "name": "Ascoli", "count": 0}, {"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count": 0}, {"slug": "benevento", "name": "Benevento", "count": 0}, {"slug": "brescia", "name": "Brescia", "count": 0}, {"slug": "cosenza", "name": "Cosenza", "count": 0}, {"slug": "perugia", "name": "Perugia", "count": 0}, {"slug": "pisa", "name": "Pisa", "count": 0}, {"slug": "reggiana", "name": "Reggiana", "count": 0}, {"slug": "reggina", "name": "Reggina", "count": 0}, {"slug": "ternana", "name": "Ternana", "count": 0}, {"slug": "alessandria", "name": "UPL Alessandria", "count": 0}, {"slug": "cremonese", "name": "US Cremonese", "count": 0}, {"slug": "salernitana", "name": "US Salernitana", "count": 0}];
+const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count": 0, "badge": false}, {"slug": "benevento", "name": "Benevento", "count": 0, "badge": false}, {"slug": "brescia", "name": "Brescia", "count": 0, "badge": false}, {"slug": "cosenza", "name": "Cosenza", "count": 0, "badge": false}, {"slug": "perugia", "name": "Perugia", "count": 0, "badge": false}, {"slug": "pisa", "name": "Pisa", "count": 0, "badge": false}, {"slug": "reggiana", "name": "Reggiana", "count": 0, "badge": false}, {"slug": "reggina", "name": "Reggina", "count": 0, "badge": false}, {"slug": "ternana", "name": "Ternana", "count": 0, "badge": false}, {"slug": "alessandria", "name": "UPL Alessandria", "count": 0, "badge": false}, {"slug": "cremonese", "name": "US Cremonese", "count": 0, "badge": false}, {"slug": "salernitana", "name": "US Salernitana", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.671058Z",
+  updated: "2026-08-03T17:41:25.400392Z",
   label: "League aggregation"
 };

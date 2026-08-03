@@ -52,11 +52,11 @@ const CONFIRMED_OUT = [
    note:"Released as part of the same early-June clear-out as Sancho and Casemiro, having never fully recovered his place after long-term injury and a loan spell at PSV. His departure leaves Luke Shaw as United's only recognised senior left-back, driving the Lewis Hall/Antonee Robinson interest below."},
   {name:"André Onana", sub:"30 · GK · Cameroon", club:"Trabzonspor (season-long loan)", pos:"GK", fee:"Loan, no fee", free:false, status:"done", statusTxt:"DONE, LOAN CONFIRMED",
    note:"Confirmed by the club in July as a second consecutive season-long loan back to Trabzonspor after a difficult first spell there failed to fully restore his stock. United retain his registration and a large chunk of his wages remain covered as part of the agreement, with the goalkeeper position now a live monitoring item for the rest of the window."},
+  {name:"Joshua Zirkzee", sub:"25 · ST · Netherlands", club:"Juventus", pos:"ST", fee:"€42.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+   note:"Confirmed 15 Jul as a straight permanent sale, not the loan-with-option structure earlier reports described. Zirkzee managed just 5 goals in 56 Premier League appearances since his £36.5m move from Bologna and was squeezed for minutes behind Benjamin Šeško and Matheus Cunha; Juventus get a reset opportunity for a player United had already priced for an exit."},
 ];
 
 const INCOMING = [
-  {name:"Mateus Fernandes", sub:"21 · CDM · Portugal", club:"West Ham United", pos:"CDM", report:"18 Jul 2026", src:"Sky Sports News", tier:1, fee:"£80m (West Ham valuation)", truth:72, prob:34, light:'y', trend:'flat',
-   note:"Sky Sports reports United are preparing an opening bid for a 21-year-old West Ham see as their generational asset, comparing his profile to Declan Rice's before his £105m move to Arsenal. West Ham signed him from Southampton for £38m only a year ago and are in no rush to sell, with Arsenal and PSG also credited with interest. United are unlikely to meet the full £80m ask, meaning any deal needs a structure with add-ons and staged payments. OBSTACLES: West Ham's leverage, a three-way auction, and Fernandes having plenty of football left to prove at a lower level of competition first."},
   {name:"Iliman Ndiaye", sub:"26 · RW/AM · Senegal", club:"Everton", pos:"RW/AM", report:"29 Jul 2026", src:"Mirror / CaughtOffside (Ahad Shaukat)", tier:2, fee:"£70m ask, United want ≈£50m", truth:60, prob:25, light:'o', trend:'down',
    note:"Everton have set a £70m price on a winger who scored 6 and assisted 3 in 32 Premier League games last season, with three years still on his contract giving them full leverage. United have him on their attacking shortlist as a potential Garnacho-void filler but are reportedly angling closer to £50m rather than meeting the asking price. Al-Hilal have now entered the picture and Ndiaye's camp would reportedly welcome a Saudi offer, which is the single biggest threat to any Premier League move materialising. OBSTACLES: valuation gap, Saudi competition, and Everton having rejected his contract-extension pushback rather than sanctioning a cut-price exit."},
   {name:"Manu Kone", sub:"25 · CM/DM · France", club:"AS Roma", pos:"CM/DM", report:"27 Jul 2026", src:"Gazzetta dello Sport / Football Italia (via CaughtOffside)", tier:2, fee:"€60m ask; cash-plus-Rashford structure discussed", truth:50, prob:28, light:'o', trend:'up',
@@ -72,8 +72,6 @@ const INCOMING = [
 const OUTGOING = [
   {name:"Marcus Rashford", sub:"28 · RW/LW · England", club:"AS Roma (or open market)", pos:"RW/LW", report:"27 Jul 2026", src:"Gazzetta dello Sport / Football Italia", tier:2, fee:"£40m release clause (all clubs bar Man City & Liverpool)", truth:65, prob:42, light:'y', trend:'up',
    note:"Rashford's contract carries a £40m release clause applicable to any club other than Manchester City or Liverpool, and United's stated preference is a European move over a domestic one. The Roma links have hardened through the Kone swap speculation, with Gazzetta and Football Italia both running variations of the story through late July. A straight cash sale remains more likely to actually close than the swap structure given the complexity of bundling two deals, but the direction of travel is clearly toward a European exit before deadline day."},
-  {name:"Joshua Zirkzee", sub:"25 · ST · Netherlands", club:"Juventus (loan)", pos:"ST", report:"28 Jul 2026", src:"SportsCafe / CaughtOffside", tier:3, fee:"Season loan + £30m option to buy", truth:55, prob:45, light:'y', trend:'up',
-   note:"Juventus are reported to be in advanced talks for a season-long loan with a £30m obligation-to-buy option, days after separate reports claimed INEOS had blocked a permanent exit following a bright pre-season. Zirkzee has managed just 5 goals in 56 Premier League appearances since his £36.5m move from Bologna and faces a squeeze for minutes behind Benjamin Šeško and Matheus Cunha, with Rashford's situation adding further competition if he stays. Roma are credited as a fallback suitor after PSG's interest in Randal Kolo Muani stalled their own striker plans."},
   {name:"Manuel Ugarte", sub:"24 · CDM · Uruguay", club:"Galatasaray", pos:"CDM", report:"29 May 2026", src:"Akşam Spor (Turkey)", tier:3, fee:"≈£24m", truth:30, prob:22, light:'o', trend:'flat',
    note:"Turkish outlet Akşam Spor reports Galatasaray have stepped up their pursuit of a player squeezed further down the pecking order by the Santos and Tielemans arrivals, with Atlético Madrid and Napoli also said to be monitoring. The story has gone quiet since late May with no fresh corroboration from a tier-1 outlet, and United have not been reported as actively shopping him, though a squad short of midfield minutes for Ugarte makes an exit logical business given the new arrivals."},
   {name:"Kobbie Mainoo", sub:"21 · CM · England", club:"Real Madrid (monitoring)", pos:"CM", report:"5 Jul 2026", src:"Fichajes (via TheHardTackle)", tier:3, fee:"Valuation gap - United see him as a 'long-term project'", truth:30, prob:8, light:'r', trend:'down',
@@ -84,8 +82,6 @@ const OUTGOING = [
 
 const RISERS = [
   {ar:"⬆", t:"<b>Marcus Rashford</b>: Roma swap/Kone chatter gaining traction across Italian outlets, release clause makes any European move mechanically simple."},
-  {ar:"⬆", t:"<b>Joshua Zirkzee</b>: Juventus talks described as 'advanced' just two days after reports United had blocked an exit - momentum has swung sharply."},
-  {ar:"⬆", t:"<b>Mateus Fernandes</b>: Sky Sports elevates him to priority-target status with a formal opening bid being prepared, despite the price gap."},
 ];
 
 const FALLERS = [
@@ -98,6 +94,7 @@ const NEW = [
   {ar:"✦", t:"Midfield rebuild banked: Andrey Santos (£50m, Chelsea) and Youri Tielemans (≈£36m, Aston Villa) both completed and announced within a fortnight of each other in mid-July."},
   {ar:"✦", t:"Éderson (Atalanta) collapsed after a delayed medical - complicated by a World Cup call-up - flagged an issue; United withdrew and Éderson signed a new Atalanta deal instead, freeing budget that flowed into Santos and Tielemans."},
   {ar:"✦", t:"Rashford-to-Roma speculation has crystallised into a specific Manu Kone swap idea from the Italian press over the past week, alongside fresh Bruno Fernandes-to-Al-Nassr reporting that confirms that move is now dead."},
+  {ar:"✦", t:"Joshua Zirkzee's Juventus exit is now done and official - a straight €42.5m permanent sale rather than the loan-with-option structure earlier reports described."},
 ];
 
 const IGNORE = [

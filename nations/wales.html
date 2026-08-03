@@ -61,19 +61,19 @@
   .logo {
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     text-decoration:none;
     color:inherit;
     font-family:var(--display);
-    font-size:13px;
+    font-size:15px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
   }
 
   .logo img {
-    width:20px;
-    height:20px;
+    width:36px;
+    height:36px;
     display:block;
   }
 
@@ -264,6 +264,13 @@
     border-color:var(--accent-gold);
     transform:translateY(-2px);
     box-shadow:0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  a.transfer-card {
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
   }
 
   .bullshit-tag {
@@ -532,7 +539,7 @@ const LEAGUES_LIST = [];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.666005Z",
+  updated: "2026-08-03T17:41:25.395592Z",
   label: "Nation aggregation"
 };
 
@@ -573,8 +580,9 @@ function renderStory(s) {
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
+  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
 
-  return `<div class="transfer-card">
+  return `<a href="${href}" class="transfer-card">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -599,7 +607,7 @@ function renderStory(s) {
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
-  </div>`;
+  </a>`;
 }
 </script>
 

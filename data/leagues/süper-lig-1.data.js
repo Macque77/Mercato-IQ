@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "aydin-sk", "name": "Giresunspor", "count": 0}, {"slug": "rize-kk", "name": "Karag\u00fcmr\u00fck", "count": 0}, {"slug": "rajon-sports", "name": "Rajon Sports", "count": 0}];
+const CLUBS_LIST = [{"slug": "aydin-sk", "name": "Giresunspor", "count": 0, "badge": false}, {"slug": "rize-kk", "name": "Karag\u00fcmr\u00fck", "count": 0, "badge": false}, {"slug": "rajon-sports", "name": "Rajon Sports", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.672459Z",
+  updated: "2026-08-03T17:41:25.401353Z",
   label: "League aggregation"
 };

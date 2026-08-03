@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "as-monaco-b", "name": "KAA Gent", "count": 0}, {"slug": "psg-b", "name": "Paris Saint-Germain B", "count": 0}];
+const CLUBS_LIST = [{"slug": "as-monaco-b", "name": "KAA Gent", "count": 0, "badge": false}, {"slug": "psg-b", "name": "Paris Saint-Germain B", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.667196Z",
+  updated: "2026-08-03T17:41:25.396872Z",
   label: "League aggregation"
 };

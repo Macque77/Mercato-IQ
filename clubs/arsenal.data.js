@@ -70,8 +70,6 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Morgan Rogers", sub:"23 · England · AM", club:"Aston Villa", pos:"AM/W", report:"2 Jun 2026", src:"BBC (Sami Mokbel) / Jamie Dickenson", tier:1, fee:"£80m+", truth:75, prob:35, light:'y', trend:'up',
-   note:"The marquee pursuit and best-sourced of the attacking targets: the BBC names Rogers an Arsenal priority and the player has reportedly given the thumbs up to the move. PFA Young Player profile, versatile creator, fits the 'win-now plus resale' brief. OBSTACLES: an £80m-plus fee, a six-year Villa deal to 2031, a Villa side now in the Champions League and reluctant to sell, and direct competition from Manchester United, Chelsea and Liverpool."},
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£80m+", truth:55, prob:20, light:'o', trend:'flat',
    note:"Named by the BBC among Arsenal's three main attacking targets after a strong season. On-profile (young, high ceiling, resale) and a forward, which is a stated need. OBSTACLE: a fee reported in excess of £80m for a teenager, and Bournemouth under no pressure to sell."},
   {name:"Benjamin Šeško", sub:"22 · Slovenia · ST", club:"RB Leipzig", pos:"ST", report:"~2 wks ago", src:"Aggregated / sportskeeda", tier:3, fee:"£60-70m", truth:40, prob:15, light:'o', trend:'flat',
@@ -100,7 +98,6 @@ const OUTGOING = [
 
 const RISERS = [
   {ar:"⬆", t:"<b>Hincapié</b>: permanent confirmed, Arsenal's first summer signing."},
-  {ar:"⬆", t:"<b>Morgan Rogers</b>: BBC names him a priority; player reported to favour the move."},
   {ar:"⬆", t:"<b>Calafiori</b>: Juventus push hard; a possible funding sale."},
   {ar:"⬆", t:"<b>Trossard</b>: 12 months left makes a sale this window logical."},
 ];
@@ -110,18 +107,19 @@ const FALLERS = [
   {ar:"⬇", t:"<b>2025 names</b>: Zubimendi, Nico Williams, Joan García already resolved last window."},
 ];
 const NEW = [
-  {ar:"✦", t:"Confirmed: <b>Hincapié</b> permanent. In: <b>Rogers</b> (prime target), <b>Kroupi</b>, <b>Álvarez</b>, <b>Šeško</b> on the forward/creator board."},
+  {ar:"✦", t:"Confirmed: <b>Hincapié</b> permanent. In: <b>Kroupi</b>, <b>Álvarez</b>, <b>Šeško</b> on the forward/creator board."},
   {ar:"✦", t:"Out: fringe churn to fund deals, <b>Jesus</b>, <b>Martinelli</b>, <b>Trossard</b>, <b>Nørgaard</b>, <b>White</b>; <b>Calafiori to Juve</b> live."},
 ];
 const IGNORE = [
   {ar:"✕", t:"<b>Eberechi Eze</b>: already an Arsenal player (signed 2025); not a target."},
   {ar:"✕", t:"<b>Zubimendi · Nico Williams · Joan García</b>: 2025-window business, resolved; recycled links are stale."},
   {ar:"✕", t:"<b>'£300m, seven signings'</b>: last summer's plan, not this disciplined, sales-funded window."},
+  {ar:"✕", t:"<b>Morgan Rogers to Arsenal</b>: he completed a club-record £117m move to Chelsea instead; any 'here we go' framing for Arsenal is stale."},
 ];
 
 const POSITIONS = [
   {p:"Forward / striker", w:85, x:"Stated need; Kroupi, Šeško, Álvarez + Jesus possibly out"},
-  {p:"Attacking mid / creator", w:78, x:"Morgan Rogers the prime, best-sourced pursuit"},
+  {p:"Attacking mid / creator", w:60, x:"Still a stated need after missing out on Morgan Rogers, who signed for Chelsea instead"},
   {p:"Full-back", w:62, x:"A stated target area; Calafiori and White could move on"},
   {p:"Central midfield", w:52, x:"BBC lists a CM among the needs; Nørgaard may leave"},
   {p:"Centre-back", w:28, x:"Hincapié done; depth only, Saliba retained"},
@@ -179,8 +177,8 @@ const WL_LINKMAP = {
 
 /* ── PROSE (derived outputs; REWRITE per master §9b on every refresh, never carry over) ── */
 const PROSE = {
-  heroH2: `Champions at last, Hincapié secured: the marquee chase is <em>Morgan Rogers</em>`,
-  heroLede: `Arsenal enter the summer as <b>Premier League champions</b> for the first time in 22 years and back in the <b>2026/27 Champions League</b>, but carrying the sting of a penalty-shootout defeat to PSG in the Champions League final. After a heavy 2025 outlay, title bonuses, and a tighter <b>70% Squad Cost Ratio cap</b> that comes with European football, this reads as a <b>measured, value-led window funded partly by sales</b>, not another splurge. The first business is the confirmed permanent signing of <b>Piero Hincapié</b>; the headline pursuit is Aston Villa's <b>Morgan Rogers</b> (the player is receptive, but it is an £80m-plus deal with Manchester United, Chelsea and Liverpool also circling). A forward and a full-back are the other stated priorities. Nothing on the incoming side beyond Hincapié yet carries a Tier 1 "here we go".`,
+  heroH2: `Champions at last, Hincapié secured: the search shifts to a forward and a creator`,
+  heroLede: `Arsenal enter the summer as <b>Premier League champions</b> for the first time in 22 years and back in the <b>2026/27 Champions League</b>, but carrying the sting of a penalty-shootout defeat to PSG in the Champions League final. After a heavy 2025 outlay, title bonuses, and a tighter <b>70% Squad Cost Ratio cap</b> that comes with European football, this reads as a <b>measured, value-led window funded partly by sales</b>, not another splurge. The first business is the confirmed permanent signing of <b>Piero Hincapié</b>; the headline attacking target, Aston Villa's Morgan Rogers, instead completed a club-record move to Chelsea, leaving Arsenal to weigh Bournemouth's Eli Junior Kroupi and Atlético's Julián Álvarez as forward/creator alternatives. A forward and a full-back remain the other stated priorities. Nothing on the incoming side beyond Hincapié yet carries a Tier 1 "here we go".`,
   metaRow: `
       <span>DECISION-MAKER: <b>Andrea Berta</b> (Sporting Director)</span>
       <span>HEAD COACH: <b>Mikel Arteta</b></span>
@@ -236,7 +234,7 @@ const PROSE = {
     <div class="cards" style="margin-bottom:18px">
       <div class="card">
         <h4>Reputational Standing</h4>
-        <p>Champions of England and Champions League finalists: Arsenal can now offer elite players a title-winning side and a genuine European platform. That standing is real <b>leverage</b> in a deal like Morgan Rogers, where the player is reported receptive despite rival interest.</p>
+        <p>Champions of England and Champions League finalists: Arsenal can now offer elite players a title-winning side and a genuine European platform. That standing is real <b>leverage</b> in the forward and creator pursuits still to come, even after missing out on Morgan Rogers, who chose Chelsea's club-record offer instead.</p>
         <ul>
           <li>Arteta is the first Arsenal manager to win the league in 22 years.</li>
           <li>The pull on top young talent is at its strongest in two decades.</li>

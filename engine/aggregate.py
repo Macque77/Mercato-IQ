@@ -443,7 +443,7 @@ def emit_nation_data(all_stories, nation_slug, nation_name):
     # NOT via slugify() (which strips accents) -- must match exactly or these links 404.
     leagues_list = sorted(
         [{'slug': name.lower().replace(' ', '-'), 'name': name, 'count': count} for name, count in leagues.items()],
-        key=lambda l: l['name']
+        key=lambda l: (-l['count'], l['name'])
     )
     leagues_list_js = json.dumps(leagues_list)
 
@@ -513,14 +513,17 @@ def emit_league_data(all_stories, league_slug, league_name, league_clubs=None):
 '''
     stories_js += ']'
 
+    def has_badge(slug):
+        return os.path.exists(f'badges-thumb/{slug}.png')
+
     if league_clubs:
         clubs_list = sorted(
-            [{'slug': c['slug'], 'name': c['name'], 'count': clubs.get(c['slug'], 0)} for c in league_clubs],
+            [{'slug': c['slug'], 'name': c['name'], 'count': clubs.get(c['slug'], 0), 'badge': has_badge(c['slug'])} for c in league_clubs],
             key=lambda c: c['name']
         )
     else:
         clubs_list = sorted(
-            ({'slug': slug, 'name': next((s.get('club_origin_name', slug) for s in league_stories if s.get('club_origin') == slug), slug), 'count': count}
+            ({'slug': slug, 'name': next((s.get('club_origin_name', slug) for s in league_stories if s.get('club_origin') == slug), slug), 'count': count, 'badge': has_badge(slug)}
              for slug, count in clubs.items()),
             key=lambda c: c['name']
         )

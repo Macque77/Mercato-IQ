@@ -11,7 +11,7 @@ const BRAND = {
   club: "Hull City", mono: "HCFC", slug: "hull-city",
   primary: "#F18A01", primaryBright: "#f4a740", primaryDeep: "#905200",
   primaryRgb: "241,138,1",
-  breadcrumb: ["England","Championship"]
+  breadcrumb: ["England","Premier League"]
 };
 
 /* ── VOLATILE FACTS (machine-readable; verification cadence per runbook) ── */

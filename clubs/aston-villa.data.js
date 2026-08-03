@@ -66,7 +66,10 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Morgan Rogers", sub:"23 · AM · England", club:"Chelsea", pos:"AM", fee:"£117m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+   note:"Confirmed August 2026 - a club-record sale for Villa as Rogers completes a record move to Chelsea under Xabi Alonso. Rogers scored 8 and assisted 7 in 34 Premier League games last season; the fee ranks among the highest ever paid for a wide playmaker."},
+];
 
 const INCOMING = [
   {name:"Lamine Camara", sub:"DM/CM · Senegal", club:"Monaco", pos:"CM", report:"~1 day ago", src:"OneFootball / Yahoo", tier:2, fee:"~€50m", truth:70, prob:35, light:'y', trend:'up',
@@ -78,10 +81,6 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Morgan Rogers", sub:"23 · AM · England", club:"Arsenal / Man Utd / Chelsea / Liverpool", pos:"AM", report:"~5 days ago", src:"BBC / The Athletic", tier:1, fee:"£80m+", truth:85, prob:30, light:'y', trend:'up',
-   note:"Villa's prized asset, with elite interest. PRICING: a six-year deal to 2031 plus Champions League status means a holder's price north of £80m; Villa do not need to sell, so only a premium bid moves him, which both lowers probability and lifts the fee."},
-  {name:"Jadon Sancho", sub:"W · loan flop", club:"Seeking exit", pos:"W", report:"~4 days ago", src:"Aston Villa News (aggregated)", tier:3, fee:"Low / wages", truth:55, prob:35, light:'y', trend:'flat',
-   note:"An unsuccessful loan; unlikely to return unless wages drop drastically. PRICING: little leverage, so the priority is clearing the books."},
   {name:"Fringe & loan returns", sub:"Squad trim", club:"Various", pos:"-", report:"~4 days ago", src:"Aston Villa News (aggregated)", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio."},
 ];
@@ -91,12 +90,11 @@ const RISERS = [
   {ar:"⬆", t:"<b>Lamine Camara</b>: primary midfield target; player open to Villa."},
 ];
 const FALLERS = [
-  {ar:"⬇", t:"<b>Sancho</b>: loan flop, unlikely to return."},
   {ar:"⬇", t:"<b>Emery-exit talk</b>: ended by the renewal."},
 ];
 const NEW = [
   {ar:"✦", t:"Context: <b>Europa League winners</b>, back in the <b>Champions League</b>."},
-  {ar:"✦", t:"In: <b>Camara</b>, <b>Moriba</b> midfield options. Out: fringe; <b>Rogers</b> the prized-asset watch."},
+  {ar:"✦", t:"In: <b>Camara</b>, <b>Moriba</b> midfield options. Out: fringe pieces; <b>Rogers</b>' club-record £117m sale to Chelsea is now done and official."},
 ];
 const IGNORE = [
   {ar:"✕", t:"<b>Emery-to-Bayern</b> type links: void after the 2029 renewal."},
@@ -115,8 +113,6 @@ const POSITIONS = [
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
   {name:"Lamine Camara", club:"Monaco", pos:"CM", dir:"in", age:"~1d", tier:2, note:"(Also in main table.) Primary midfield target; player favours Villa or Spurs."},
-  {name:"Morgan Rogers", club:"Aston Villa", pos:"AM", dir:"out", age:"~5d", tier:1, note:"(Also in main table.) Prized asset; Arsenal and others circling, £80m-plus holder's price."},
-  {name:"Loan flops", club:"Aston Villa", pos:"-", dir:"out", age:"~4d", tier:3, note:"Sancho and others from a disappointing 2025 window to be moved on."},
 ];
 
 /* ---------- SOURCE LINKS ----------

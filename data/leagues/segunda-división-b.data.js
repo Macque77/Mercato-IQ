@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "almeria-b", "name": "Almer\u00eda B", "count": 0}, {"slug": "real-madrid-castilla", "name": "RM Castilla", "count": 0}, {"slug": "sevillilla", "name": "Sevilla Atl\u00e9tico", "count": 0}];
+const CLUBS_LIST = [{"slug": "almeria-b", "name": "Almer\u00eda B", "count": 0, "badge": false}, {"slug": "real-madrid-castilla", "name": "RM Castilla", "count": 0, "badge": false}, {"slug": "sevillilla", "name": "Sevilla Atl\u00e9tico", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.670683Z",
+  updated: "2026-08-03T17:41:25.400007Z",
   label: "League aggregation"
 };

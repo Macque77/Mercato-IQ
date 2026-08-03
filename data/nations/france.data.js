@@ -6,17 +6,10 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 8
+  stories_count: 7
 };
 
 const TOP_STORIES = [  {
-    name: "Vinicius Jr",prob: 95,
-    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
-    from: "Al-Nassr (Saudi Arabia)", to: "Paris Saint-Germain",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "€500m (structured)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
     name: "Madison Ingram",prob: 55,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
@@ -67,12 +60,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 8};
+const BY_LEAGUE = {"Ligue 1": 7};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 8}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 7}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.664213Z",
+  updated: "2026-08-03T17:41:25.393744Z",
   label: "Nation aggregation"
 };

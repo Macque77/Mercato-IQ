@@ -31,12 +31,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Kylian Mbappé", sub:"25 · RW/ST · France", to:"permanent from Paris Saint-Germain", fee:"€180m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
-   note:"Confirmed by Real Madrid on 3 June 2026. Mbappé completes his move to the Bernabéu on a six-year deal after his PSG contract expired. The transfer caps a multi-year pursuit by Madrid and represents one of the landmark signings of the window."},
   {name:"Ferran Torres", sub:"26 · RW/LW · Spain", to:"permanent from Barcelona", fee:"€55m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Announced 22 July as Madrid secure a proven La Liga pedigree to bolster the wings. Torres brings Champions League experience and immediate readiness for Spanish football, fitting Carlo Ancelotti's squad rotation plans."},
-  {name:"Aurélien Tchouaméni", sub:"26 · CDM · France", to:"permanent from Liverpool", fee:"€80m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
-   note:"Tchouaméni arrives on 18 July to complete Madrid's midfield reinforcements. Liverpool accepted the offer as part of their summer restructuring, with the French midfielder bringing defensive steel and Champions League experience to Los Blancos' engine room."},
 ];
 
 const CONFIRMED_OUT = [
@@ -47,8 +43,6 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Jude Bellingham", sub:"21 · CAM/RW · England", club:"Borussia Dortmund", pos:"CAM/RW", report:"20 Jul 2026", src:"Relevo / Matteo Moretto", tier:2, fee:"€130m (Dortmund asking price)", truth:75, prob:78, light:'g', trend:'up',
-   note:"Relevo's Matteo Moretto reports Madrid are in advanced talks with Dortmund for the English midfielder, with negotiations intensifying after the Mbappé announcement. Bellingham's profile fits Ancelotti's attacking midfield needs. SOURCES: Relevo (Spain primary), Sky Sports Germany (Plettenberg), Fabrizio Romano (global confirmation)."},
   {name:"Florian Wirtz", sub:"22 · LW/CAM · Germany", club:"Bayer Leverkusen", pos:"LW/CAM", report:"25 Jul 2026", src:"Bild / Sport Bild", tier:2, fee:"€150m+ asking price", truth:45, prob:22, light:'o', trend:'flat',
    note:"German media (Bild, Sky Sport Germany via Plettenberg) report Madrid have enquired about Wirtz's availability ahead of Leverkusen's Champions League qualification. Bayer are reluctant to sell their generational talent and any deal would require extraordinary compensation. OBSTACLES: Leverkusen's firm resistance, Wirtz's contentment, astronomical fee."},
   {name:"Rodrygo Goes", sub:"23 · RW · Brazil", club:"Manchester City", pos:"RW", report:"02 Aug 2026", src:"Goal.com / CaughtOffside", tier:3, fee:"€100m (speculation)", truth:25, prob:8, light:'r', trend:'down',
@@ -63,8 +57,7 @@ const OUTGOING = [
 ];
 
 const RISERS = [
-  {ar:"⬆", t:"<b>Kylian Mbappé</b>: Official. Signing completed in June, now in full integration with squad."},
-  {ar:"⬆", t:"<b>Jude Bellingham</b>: Talks with Dortmund intensifying after latest Relevo update; Sky Sports Germany also running the story."},
+  {ar:"⬆", t:"<b>Ferran Torres</b>: Official. Signing from Barcelona completed 22 July, now in full integration with squad."},
   {ar:"⬆", t:"<b>Vinícius Júnior departure</b>: Shock Saudi deal materialized on 1 August; massive financial windfall for the club."},
 ];
 
@@ -74,9 +67,8 @@ const FALLERS = [
 ];
 
 const NEW = [
-  {ar:"✦", t:"Mbappé, Torres, and Tchouaméni complete Madrid's main summer business - three marquee signings that reshape the squad profile around the French forward."},
+  {ar:"✦", t:"Ferran Torres' arrival from Barcelona is the summer's marquee incoming business so far, reshaping the wing rotation around an established front line."},
   {ar:"✦", t:"Vinícius Júnior's surprise departure to Saudi Arabia on 1 August creates a need for additional attacking depth in the final weeks of the window."},
-  {ar:"✦", t:"Jude Bellingham represents the club's contingency plan for attacking midfield depth, with negotiations now at an advanced stage according to Relevo."},
 ];
 
 const IGNORE = [
@@ -85,14 +77,11 @@ const IGNORE = [
 ];
 
 const POSITIONS = [
-  {p:"Right winger", w:85, x:"Mbappé arrival fulfills this role, but Vinícius' departure opens a secondary need for width - Bellingham and potential additional signings address this."},
-  {p:"Attacking midfield", w:70, x:"Bellingham negotiations indicate the club is seeking a creative midfielder; Brahim Díaz's future role remains under review."},
-  {p:"Central midfield", w:50, x:"Tchouaméni completed; main priority addressed. Squad depth here is now solid."},
+  {p:"Right wing / attacking width", w:60, x:"Vinícius' departure opens a need for width - Torres' arrival and Wirtz interest address this."},
   {p:"Centre-back", w:35, x:"Nacho's release leaves Madrid needing young depth; no active pursuit yet but monitoring continues."},
 ];
 
 const WATCHLIST = [
-  {name:"Jude Bellingham", club:"Borussia Dortmund", pos:"CAM/RW", dir:"in", age:"~1 wk", tier:2, note:"Advanced talks for the English midfielder; Relevo and Sky Sports running near-identical timelines suggesting formal negotiations with Dortmund."},
   {name:"Vinícius Júnior", club:"Al-Nassr", pos:"LW", dir:"out", age:"~0 days", tier:1, note:"CONFIRMED DEPARTURE - Saudi deal worth €500m structure completed 1 August. Board decision to accept creates squad reshuffling."},
   {name:"Florian Wirtz", club:"Bayer Leverkusen", pos:"LW/CAM", dir:"in", age:"~8 days", tier:2, note:"Enquiry only; Leverkusen have publicly refused to sell. Any deal would require extraordinary fee (€150m+)."},
 ];

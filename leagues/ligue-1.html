@@ -61,19 +61,19 @@
   .logo {
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     text-decoration:none;
     color:inherit;
     font-family:var(--display);
-    font-size:13px;
+    font-size:15px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
   }
 
   .logo img {
-    width:20px;
-    height:20px;
+    width:36px;
+    height:36px;
     display:block;
   }
 
@@ -228,6 +228,14 @@
     color:var(--accent-gold);
     background:linear-gradient(135deg, rgba(232,194,73,0.18), rgba(255,255,255,0.04));
     border:1px solid rgba(232,194,73,0.35);
+    overflow:hidden;
+  }
+
+  .club-badge img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:4px;
   }
 
   .empty {
@@ -270,6 +278,13 @@
     border-color:var(--accent-gold);
     transform:translateY(-2px);
     box-shadow:0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  a.transfer-card {
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
   }
 
   .bullshit-tag {
@@ -480,7 +495,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">8</span>
+          <span class="stat-value">7</span>
         </div>
       </div>
     </div>
@@ -517,17 +532,10 @@
 const LEAGUE = {
   name: "Ligue 1",
   nation: "France",
-  stories_count: 8
+  stories_count: 7
 };
 
 const TOP_STORIES = [  {
-    name: "Vinicius Jr", prob: 95,
-    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
-    from: "Al-Nassr (Saudi Arabia)", to: "Paris Saint-Germain",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "€500m (structured)", updated: "2026-08-03T14:30:00Z"
-  },
-  {
     name: "Madison Ingram", prob: 55,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
@@ -578,13 +586,13 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"paris-saint-germain": 1, "olympique-lyon": 2, "losc-lille": 2, "olympique-marseille": 2, "rc-lens": 1};
+const BY_CLUB = {"olympique-lyon": 2, "losc-lille": 2, "olympique-marseille": 2, "rc-lens": 1};
 
-const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0}, {"slug": "as-monaco", "name": "AS Monaco", "count": 0}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0}, {"slug": "losc-lille", "name": "LOSC Lille", "count": 2}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0}, {"slug": "olympique-lyonnais", "name": "Olympique Lyonnais", "count": 0}, {"slug": "olympique-lyon", "name": "Olympique Lyonnais", "count": 2}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 2}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 1}, {"slug": "rc-lens", "name": "RC Lens", "count": 1}, {"slug": "stade-brest", "name": "Stade Brest", "count": 0}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 0}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 0}];
+const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0, "badge": false}, {"slug": "as-monaco", "name": "AS Monaco", "count": 0, "badge": false}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0, "badge": false}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0, "badge": false}, {"slug": "losc-lille", "name": "LOSC Lille", "count": 2, "badge": false}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0, "badge": false}, {"slug": "olympique-lyon", "name": "Olympique Lyonnais", "count": 2, "badge": false}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 2, "badge": false}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 0, "badge": false}, {"slug": "rc-lens", "name": "RC Lens", "count": 1, "badge": false}, {"slug": "stade-brest", "name": "Stade Brest", "count": 0, "badge": false}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 0, "badge": false}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.669671Z",
+  updated: "2026-08-03T17:41:25.399062Z",
   label: "League aggregation"
 };
 
@@ -596,17 +604,22 @@ function initials(name) {
 
 (function(){
   // Populate clubs grid. aggregate.py emits this array as CLUBS_LIST with a
-  // {slug,name,count} shape -- NOT "CLUBS" (that mismatch used to leave this grid
-  // permanently empty even when club data existed). No badge images exist for most
-  // European clubs yet, so render a clean initials tile instead of a broken image/glyph.
+  // {slug,name,count,badge} shape -- NOT "CLUBS" (that mismatch used to leave this grid
+  // permanently empty even when club data existed). badge=true means a thumbnail exists
+  // in badges-thumb/<slug>.png; clubs without real artwork fall back to an initials tile.
   if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
     const container = document.getElementById('clubs-grid');
-    container.innerHTML = CLUBS_LIST.map(c => `
+    container.innerHTML = CLUBS_LIST.map(c => {
+      const badgeInner = c.badge
+        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.textContent='${initials(c.name)}'">`
+        : initials(c.name);
+      return `
       <a href="../${c.slug}.html" class="club-card">
-        <div class="club-badge">${initials(c.name)}</div>
+        <div class="club-badge">${badgeInner}</div>
         <div class="club-name">${c.name}</div>
       </a>
-    `).join('');
+    `;
+    }).join('');
   } else {
     const container = document.getElementById('clubs-grid');
     if(container) container.innerHTML = '<div class="empty">No club data yet</div>';
@@ -630,8 +643,9 @@ function renderStory(s) {
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
+  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
 
-  return `<div class="transfer-card">
+  return `<a href="${href}" class="transfer-card">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -656,7 +670,7 @@ function renderStory(s) {
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
-  </div>`;
+  </a>`;
 }
 </script>
 

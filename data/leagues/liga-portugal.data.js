@@ -34,10 +34,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"fc-porto": 1, "sl-benfica": 2};
 
-const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0}, {"slug": "tondela", "name": "CD Tondela", "count": 0}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0}, {"slug": "estoril", "name": "Estoril Praia", "count": 0}, {"slug": "arouca", "name": "FC Arouca", "count": 0}, {"slug": "porto", "name": "FC Porto", "count": 0}, {"slug": "fc-porto", "name": "FC Porto", "count": 1}, {"slug": "chaves", "name": "GD Chaves", "count": 0}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0}, {"slug": "braga", "name": "SC Braga", "count": 0}, {"slug": "sl-benfica", "name": "SL Benfica", "count": 2}, {"slug": "benfica", "name": "SL Benfica", "count": 0}, {"slug": "santa-clara", "name": "Santa Clara", "count": 0}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 0}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 0}];
+const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0, "badge": false}, {"slug": "tondela", "name": "CD Tondela", "count": 0, "badge": false}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0, "badge": false}, {"slug": "estoril", "name": "Estoril Praia", "count": 0, "badge": false}, {"slug": "arouca", "name": "FC Arouca", "count": 0, "badge": false}, {"slug": "fc-porto", "name": "FC Porto", "count": 1, "badge": false}, {"slug": "chaves", "name": "GD Chaves", "count": 0, "badge": false}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0, "badge": false}, {"slug": "braga", "name": "SC Braga", "count": 0, "badge": false}, {"slug": "sl-benfica", "name": "SL Benfica", "count": 2, "badge": false}, {"slug": "santa-clara", "name": "Santa Clara", "count": 0, "badge": false}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 0, "badge": false}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.669254Z",
+  updated: "2026-08-03T17:41:25.398643Z",
   label: "League aggregation"
 };

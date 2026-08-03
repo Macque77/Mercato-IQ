@@ -39,7 +39,7 @@ const BRAND = {
   club: "Coventry City", mono: "CCFC", slug: "coventry-city",
   primary: "#6CADDF", primaryBright: "#90c1e7", primaryDeep: "#406785",
   primaryRgb: "108,173,223",
-  breadcrumb: ["England","Championship"]
+  breadcrumb: ["England","Premier League"]
 };
 
 /* ── VOLATILE FACTS (machine-readable; verification cadence per runbook)

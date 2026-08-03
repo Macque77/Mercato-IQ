@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 0}, {"slug": "amiens-sc", "name": "Amiens SC", "count": 0}, {"slug": "dijon", "name": "Dijon FCO", "count": 0}, {"slug": "annecy", "name": "FC Annecy", "count": 0}, {"slug": "sb-metz", "name": "FC Metz", "count": 0}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 0}, {"slug": "paris-fc", "name": "Paris FC", "count": 0}, {"slug": "caen", "name": "Stade Malherbe Caen", "count": 0}, {"slug": "valenciennes-fc", "name": "Valenciennes FC", "count": 0}];
+const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "badge": false}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 0, "badge": false}, {"slug": "amiens-sc", "name": "Amiens SC", "count": 0, "badge": false}, {"slug": "dijon", "name": "Dijon FCO", "count": 0, "badge": false}, {"slug": "annecy", "name": "FC Annecy", "count": 0, "badge": false}, {"slug": "sb-metz", "name": "FC Metz", "count": 0, "badge": false}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 0, "badge": false}, {"slug": "paris-fc", "name": "Paris FC", "count": 0, "badge": false}, {"slug": "caen", "name": "Stade Malherbe Caen", "count": 0, "badge": false}, {"slug": "valenciennes-fc", "name": "Valenciennes FC", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.669851Z",
+  updated: "2026-08-03T17:41:25.399235Z",
   label: "League aggregation"
 };

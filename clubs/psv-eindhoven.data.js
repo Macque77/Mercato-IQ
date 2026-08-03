@@ -34,11 +34,11 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · PSV Eindhoven"
 };
 
-const CONFIRMED_IN = [
-  {name:"Hirving Lozano", sub:"28 · RW · Mexico", to:"permanent from Bayern Munich (on loan)", fee:"€21m (purchase)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25 Jun. Mexican winger returns on permanent deal after loan spell. Bayern Munich exit finalized."}
-];
+const CONFIRMED_IN = [];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Hirving Lozano", sub:"28 · RW · Mexico", club:"Bayern Munich", pos:"RW", fee:"€21m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25 Jun as a permanent departure. Bayern take the Mexican winger for a fresh push on the right flank."}
+];
 
 const INCOMING = [
   {name:"Xavi Simons", sub:"21 · CAM · Netherlands", club:"PSV Eindhoven (loan from Leipzig)", pos:"CAM", report:"1 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"Loan + option", truth:75, prob:65, light:"y", trend:"up", note:"Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented Dutch playmaker."}
@@ -46,14 +46,14 @@ const INCOMING = [
 
 const OUTGOING = [];
 
-const RISERS = [
-  {ar:"⬆", t:"<b>Hirving Lozano permanent</b>: Mexican winger official signing from Bayern Munich."}
+const RISERS = [];
+
+const FALLERS = [
+  {ar:"⬇", t:"<b>Hirving Lozano</b>: permanent departure to Bayern Munich now done and official."}
 ];
 
-const FALLERS = [];
-
 const NEW = [
-  {ar:"✦", t:"PSV securing attacking depth with Lozano purchase and Simons loan extension."}
+  {ar:"✦", t:"PSV's attacking rebuild centres on the Simons loan extension after Lozano's permanent Bayern Munich exit."}
 ];
 
 const IGNORE = [];
@@ -63,7 +63,6 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Hirving Lozano", club:"PSV Eindhoven", pos:"RW", dir:"in", age:"~39 days", tier:1, note:"OFFICIAL - Mexican winger confirmed permanent signing from Bayern Munich."},
   {name:"Xavi Simons", club:"PSV Eindhoven (loan)", pos:"CAM", dir:"in", age:"~2 days", tier:2, note:"Christian Falk: PSV negotiating loan extension with RB Leipzig for Dutch talent."}
 ];
 

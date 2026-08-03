@@ -51,7 +51,9 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."}
+];
 
 const INCOMING = [
   {name:"Yan Diomande", sub:"young · winger", club:"(target)", pos:"W", report:"~2 days ago", src:"TEAMtalk", tier:3, fee:"£20-30m", truth:55, prob:35, light:'y', trend:'up',
@@ -102,7 +104,6 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Andy Robertson", club:"Tottenham", pos:"LB", dir:"out", age:"~3d", tier:2, note:"Departed: confirmed to join Spurs on a free when his contract expires, opening a left-back depth question."},
   {name:"Rio Ngumoha", club:"Liverpool", pos:"W", dir:"out", age:"~20h", tier:3, note:"Not for sale by intent: Bayern Munich keen on the teenager, but Liverpool see him as a future star and want to keep him."},
   {name:"Iliman Ndiaye", club:"Everton", pos:"W", dir:"in", age:"~2d", tier:3, note:"(Also in main table.) Contract dispute at Everton makes a move plausible."},
 ];

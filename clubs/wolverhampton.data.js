@@ -6,15 +6,15 @@ const BRAND = {
   club: "Wolverhampton Wanderers", mono: "WW", slug: "wolverhampton",
   primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
   primaryRgb: "0,61,165",
-  breadcrumb: ["England","Premier League"]
+  breadcrumb: ["England","Championship"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
+  verified: "2026-08-03",
   coach: "TBD",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "19th Premier League (2025/26) - relegated",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };

@@ -17,8 +17,8 @@ const VOLATILE = {
   verified: "2026-08-03",
   coach: "Luis Enrique",
   dof: "Klaas-Jan Huntelaar (Director)",
-  europe: "UEFA Champions League (2026/27)",
-  finish: "2nd Ligue 1 (2025/26)",
+  europe: "UEFA Champions League (2026/27) - back-to-back title holders",
+  finish: "1st Ligue 1 (2025/26) - champions",
   owner: "Qatar Sports Investments",
   window: "Opens 1 Jul, closes 1 Sep 2026"
 };
@@ -38,11 +38,12 @@ const CONFIRMED_IN = [
   {name:"João Neves", sub:"20 · CM · Portugal", to:"permanent from Benfica", fee:"€60m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 15 Jul. Young midfielder joins from Benfica on long-term deal. Key part of PSG's midfield future."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Randal Kolo Muani", sub:"27 · ST · France", club:"Juventus", pos:"ST", fee:"Loan fee + ~€43-50m mandatory obligation", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departs on a loan-to-buy after a saga running back to his original January 2025 loan spell at Juventus - now converted into a permanent-track deal."},
+  {name:"Gonçalo Ramos", sub:"25 · ST · Portugal", club:"AC Milan", pos:"ST", fee:"€80m+ (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Portugal international departs for Milan in a marquee sale that funds further PSG business, as back-to-back Champions League winners reshape their forward line."}
+];
 
 const INCOMING = [
-  {name:"Vinicius Jr", sub:"26 · LW · Brazil", club:"Al-Nassr (Saudi Arabia)", pos:"LW", report:"1 Aug 2026", src:"David Ornstein / The Athletic", tier:1, fee:"€500m (structured)", truth:100, prob:95, light:"g", trend:"up", note:"Ornstein confirms: Real Madrid winger departs to Saudi Arabia in record deal. PSG now monitoring replacement winger options."},
-  {name:"Jude Bellingham", sub:"21 · CAM/RW · England", club:"Borussia Dortmund", pos:"CAM/RW", report:"1 Aug 2026", src:"Sky Sports / Alex Crook", tier:2, fee:"€130m", truth:35, prob:15, light:"r", trend:"down", note:"Crook reports PSG unlikely bidder for Dortmund midfielder; Real Madrid frontrunner. PSG focused elsewhere."}
 ];
 
 const OUTGOING = [];
@@ -51,10 +52,12 @@ const RISERS = [
   {ar:"⬆", t:"<b>João Neves official</b>: Portuguese midfielder confirmed from Benfica for €60m."}
 ];
 
-const FALLERS = [];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Kolo Muani and Gonçalo Ramos depart</b>: both forwards move on (Juventus, AC Milan respectively) as PSG reshape their attacking options after back-to-back European titles."}
+];
 
 const NEW = [
-  {ar:"✦", t:"PSG completing midfield reinforcements with Neves arrival; eye on winger options."}
+  {ar:"✦", t:"Back-to-back Champions League winners reshape the forward line, moving on both Kolo Muani (Juventus) and Gonçalo Ramos (Milan) as Neves solidifies the midfield."}
 ];
 
 const IGNORE = [];
@@ -75,10 +78,17 @@ const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Paris Saint-Germain · 2026/27 Season`,
-  heroLede: `Transfer window active. Paris Saint-Germain preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Back-to-back European champions reshape the forward line around João Neves`,
+  heroLede: `PSG enter this window as both reigning Ligue 1 champions and back-to-back Champions League winners under <b>Luis Enrique</b>. With the trophy cabinet full, the summer's business has been about squad reshaping rather than a spending spree: <b>João Neves</b> arrives from Benfica for €60m to anchor the midfield long-term, while both <b>Randal Kolo Muani</b> (to Juventus, loan-to-buy) and <b>Gonçalo Ramos</b> (to AC Milan, €80m+) depart to make room and raise funds.`,
+  metaRow: `<span>DECISION-MAKER: <b>Klaas-Jan Huntelaar</b> (Director)</span> <span>HEAD COACH: <b>Luis Enrique</b></span> <span>WINDOW: <b>1 Jul – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">1<small>st</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">UCL x2</div></div><div class="stat gold"><div class="l">Confirmed Out</div><div class="v">2</div></div>`,
+  positionPanel: ``,
+  confirmedPending: `No further deals reported as agreed-but-unannounced this window.`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Kolo Muani and Ramos departures reflect squad reshaping after a trophy-laden two seasons, not a financial need to sell.`,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `€60m committed`, x: `Neves' arrival is the headline incoming business; no further deals reported as advanced.` },
+  spendOut: { v: `€120m+ banked`, x: `Kolo Muani and Ramos departures raise significant funds while reshaping the forward line.` },
   methodLegend: ``
 };

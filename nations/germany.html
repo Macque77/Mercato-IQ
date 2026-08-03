@@ -61,19 +61,19 @@
   .logo {
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     text-decoration:none;
     color:inherit;
     font-family:var(--display);
-    font-size:13px;
+    font-size:15px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
   }
 
   .logo img {
-    width:20px;
-    height:20px;
+    width:36px;
+    height:36px;
     display:block;
   }
 
@@ -264,6 +264,13 @@
     border-color:var(--accent-gold);
     transform:translateY(-2px);
     box-shadow:0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  a.transfer-card {
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
   }
 
   .bullshit-tag {
@@ -484,7 +491,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">6</span>
+          <span class="stat-value">7</span>
         </div>
       </div>
     </div>
@@ -521,7 +528,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 6
+  stories_count: 7
 };
 
 const TOP_STORIES = [  {
@@ -566,15 +573,22 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€55m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
+  {
+    name: "",prob: 50,
+    club_origin: "bayern-munich", club_display_name: "Bayern Munich", direction: "in",
+    from: "TBD", to: "Bayern Munich",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 6};
+const BY_LEAGUE = {"Bundesliga": 7};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 6}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 7}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.664478Z",
+  updated: "2026-08-03T17:41:25.393973Z",
   label: "Nation aggregation"
 };
 
@@ -615,8 +629,9 @@ function renderStory(s) {
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
+  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
 
-  return `<div class="transfer-card">
+  return `<a href="${href}" class="transfer-card">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
@@ -641,7 +656,7 @@ function renderStory(s) {
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
-  </div>`;
+  </a>`;
 }
 </script>
 

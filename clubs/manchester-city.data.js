@@ -66,8 +66,6 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Elliot Anderson", sub:"CM · England", club:"(discussed)", pos:"CM", report:"~6 days ago", src:"Manchester Evening News", tier:2, fee:"£50-70m", truth:70, prob:30, light:'y', trend:'up',
-   note:"Named among targets discussed by Maresca and Viana for the new midfield. A press-resistant, ball-progressing English midfielder fits a reset around control. OBSTACLE: a steep fee and competition for one of the league's standout young mids."},
   {name:"Enzo Fernández", sub:"CM · Argentina", club:"(discussed)", pos:"CM", report:"~6 days ago", src:"Manchester Evening News", tier:2, fee:"£70m+", truth:70, prob:18, light:'o', trend:'flat',
    note:"Discussed as a midfield-control option for Maresca, who knows him from Chelsea. OBSTACLES: a large fee and wages, and whether a sale materialises at the selling club."},
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"~6 days ago", src:"Manchester Evening News", tier:2, fee:"£80m+", truth:70, prob:14, light:'r', trend:'flat',
@@ -84,7 +82,7 @@ const OUTGOING = [
 const RISERS = [
   {ar:"⬆", t:"<b>Maresca</b> - appointment imminent; three-year deal reported."},
   {ar:"⬆", t:"<b>Senior departures</b> - Silva, Stones, Ederson moving on."},
-  {ar:"⬆", t:"<b>Elliot Anderson</b> - among the first midfield targets discussed."},
+  {ar:"⬆", t:"<b>Elliot Anderson</b> - club-record £116m arrival from Nottingham Forest now done and official."},
 ];
 const FALLERS = [
   {ar:"⬇", t:"<b>Marquee splurge</b> - early signals point to structure-first, not a spree."},
@@ -92,7 +90,7 @@ const FALLERS = [
 ];
 const NEW = [
   {ar:"✦", t:"Manager: <b>Enzo Maresca</b> in for <b>Guardiola</b>; backroom largely rebuilt."},
-  {ar:"✦", t:"Targets discussed: <b>Anderson</b>, <b>Enzo Fernández</b>, <b>Kroupi</b>. Out: senior core refresh."},
+  {ar:"✦", t:"Elliot Anderson's club-record move from Nottingham Forest is done; Enzo Fernández and Kroupi remain discussed targets. Out: senior core refresh."},
 ];
 const IGNORE = [
   {ar:"✕", t:"<b>Any 'Guardiola signing' link</b> - Pep has departed; such items are stale."},
@@ -100,7 +98,7 @@ const IGNORE = [
 ];
 
 const POSITIONS = [
-  {p:"Central midfield", w:80, x:"Maresca's control profile; Anderson, Enzo Fernández discussed"},
+  {p:"Central midfield", w:80, x:"Maresca's control profile; Anderson signed for a club-record £116m, Enzo Fernández still discussed"},
   {p:"Goalkeeper", w:62, x:"Ederson exit opens a succession question"},
   {p:"Centre-back", w:58, x:"Stones among departures; depth and age refresh"},
   {p:"Forward", w:50, x:"Kroupi-type youth option weighed"},
@@ -110,7 +108,6 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Elliot Anderson", club:"(discussed)", pos:"CM", dir:"in", age:"~6d", tier:2, note:"(Also in main table.) First-choice midfield profile for the reset."},
   {name:"Backroom rebuild", club:"Man City", pos:"-", dir:"out", age:"~2 wks", tier:1, note:"Most of Guardiola's staff (Lijnders, Buenaventura, Estiarte and others) have left; tracked as context, not a transfer."},
   {name:"Loan returns", club:"Man City", pos:"-", dir:"out", age:"~3 wks", tier:3, note:"City's large loan group will be assessed and traded under the new coach."},
 ];

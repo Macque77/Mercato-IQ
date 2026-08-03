@@ -27,10 +27,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"olympiacos": 1, "aek-athens": 1};
 
-const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 0}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0}, {"slug": "atromitos", "name": "Atromitos", "count": 0}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0}, {"slug": "olympiacos", "name": "Olympiacos FC", "count": 1}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 0}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 0}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 0}, {"slug": "peristeri", "name": "Peristeri", "count": 0}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0}];
+const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1, "badge": false}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0, "badge": false}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 0, "badge": false}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0, "badge": false}, {"slug": "atromitos", "name": "Atromitos", "count": 0, "badge": false}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0, "badge": false}, {"slug": "olympiacos", "name": "Olympiacos FC", "count": 1, "badge": false}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 0, "badge": false}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 0, "badge": false}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 0, "badge": false}, {"slug": "peristeri", "name": "Peristeri", "count": 0, "badge": false}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.671473Z",
+  updated: "2026-08-03T17:41:25.400752Z",
   label: "League aggregation"
 };

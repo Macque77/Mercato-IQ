@@ -48,10 +48,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"az-alkmaar": 1, "psv-eindhoven": 1, "feyenoord": 1, "sc-heerenveen": 1, "ajax": 1};
 
-const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 1}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 1}, {"slug": "feyenoord", "name": "Feyenoord Rotterdam", "count": 1}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 0}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 1}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 1}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 0}];
+const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 1, "badge": false}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 1, "badge": false}, {"slug": "feyenoord", "name": "Feyenoord Rotterdam", "count": 1, "badge": false}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 0, "badge": false}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 1, "badge": false}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0, "badge": false}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 1, "badge": false}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.668050Z",
+  updated: "2026-08-03T17:41:25.397630Z",
   label: "League aggregation"
 };

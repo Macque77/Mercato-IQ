@@ -64,20 +64,20 @@
   .logo {
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     text-decoration:none;
     color:inherit;
   }
 
   .logo img {
-    width:20px;
-    height:20px;
+    width:36px;
+    height:36px;
     display:block;
   }
 
   .logo h1 {
     font-family:var(--display);
-    font-size:13px;
+    font-size:15px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
@@ -209,8 +209,8 @@
 
   .transfer-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fill, minmax(370px, 1fr));
+    gap:22px;
   }
 
   .transfer-card {
@@ -229,7 +229,7 @@
   }
 
   .card-header {
-    padding:16px;
+    padding:20px;
     border-bottom:1px solid var(--border);
     background:linear-gradient(135deg, rgba(var(--primary), 0.08), rgba(255,61,71,0.04));
   }
@@ -238,12 +238,12 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:12px;
+    margin-bottom:14px;
   }
 
   .player-name {
     font-family:var(--display);
-    font-size:16px;
+    font-size:18px;
     font-weight:400;
     text-transform:uppercase;
     letter-spacing:0.5px;
@@ -251,12 +251,12 @@
 
   .tier-badge {
     display:inline-block;
-    padding:4px 8px;
+    padding:5px 10px;
     background:var(--bg);
     border:1px solid;
     border-radius:4px;
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:1px;
     text-transform:uppercase;
@@ -269,21 +269,21 @@
 
   .source-info {
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--text-secondary);
   }
 
   .card-body {
-    padding:16px;
+    padding:20px;
   }
 
   .note {
     background:rgba(232,194,73,0.08);
     border-left:3px solid var(--accent-gold);
-    padding:12px;
+    padding:14px;
     border-radius:6px;
-    font-size:14px;
-    line-height:1.6;
+    font-size:15px;
+    line-height:1.65;
     color:var(--text-secondary);
   }
 
@@ -294,10 +294,10 @@
   }
 
   .card-footer {
-    padding:16px;
+    padding:18px 20px;
     border-top:1px solid var(--border);
     display:flex;
-    gap:16px;
+    gap:18px;
   }
 
   .metric {
@@ -306,7 +306,7 @@
 
   .metric-label {
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     letter-spacing:1px;
     text-transform:uppercase;
     color:var(--text-muted);
@@ -314,7 +314,7 @@
   }
 
   .metric-bar {
-    height:4px;
+    height:5px;
     background:rgba(0,0,0,0.2);
     border-radius:999px;
     overflow:hidden;
@@ -329,9 +329,83 @@
 
   .metric-value {
     font-family:var(--mono);
-    font-size:11px;
+    font-size:12px;
     font-weight:600;
     color:var(--text);
+  }
+
+  /* ===== SOURCES ACCORDION ===== */
+  .sources-toggle {
+    width:100%;
+    padding:12px 20px;
+    background:rgba(255,255,255,0.02);
+    border:none;
+    border-top:1px solid var(--border);
+    color:var(--text-secondary);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:color 150ms ease, background 150ms ease;
+  }
+
+  .sources-toggle:hover {
+    color:var(--text);
+    background:rgba(255,255,255,0.04);
+  }
+
+  .sources-toggle .chev {
+    display:inline-block;
+    transition:transform 200ms ease;
+    font-size:9px;
+  }
+
+  .transfer-card.expanded .sources-toggle .chev {
+    transform:rotate(180deg);
+  }
+
+  .sources-panel {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 260ms ease;
+    background:rgba(0,0,0,0.15);
+  }
+
+  .transfer-card.expanded .sources-panel {
+    max-height:400px;
+  }
+
+  .sources-panel-inner {
+    padding:14px 20px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .sources-panel-inner a {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--primary-bright);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .sources-panel-inner a:hover {
+    text-decoration:underline;
+  }
+
+  .sources-panel-empty {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+    font-style:italic;
   }
 
   /* ===== BULLSHIT CALLOUT ===== */
@@ -431,8 +505,23 @@
   </section>
 
   <section class="section">
-    <h3 class="section-title">Active Rumors & Reports</h3>
+    <h3 class="section-title">Incoming Rumours &amp; Reports</h3>
     <div class="transfer-grid" id="rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Outgoing Rumours &amp; Reports</h3>
+    <div class="transfer-grid" id="outgoing-rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Long-Tail Watchlist</h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-14px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
+    <div class="transfer-grid" id="watchlist-grid">
       <!-- Populated by data -->
     </div>
   </section>
@@ -463,8 +552,8 @@ const VOLATILE = {
   verified: "2026-08-03",
   coach: "Luis Enrique",
   dof: "Klaas-Jan Huntelaar (Director)",
-  europe: "UEFA Champions League (2026/27)",
-  finish: "2nd Ligue 1 (2025/26)",
+  europe: "UEFA Champions League (2026/27) - back-to-back title holders",
+  finish: "1st Ligue 1 (2025/26) - champions",
   owner: "Qatar Sports Investments",
   window: "Opens 1 Jul, closes 1 Sep 2026"
 };
@@ -484,11 +573,12 @@ const CONFIRMED_IN = [
   {name:"João Neves", sub:"20 · CM · Portugal", to:"permanent from Benfica", fee:"€60m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 15 Jul. Young midfielder joins from Benfica on long-term deal. Key part of PSG's midfield future."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Randal Kolo Muani", sub:"27 · ST · France", club:"Juventus", pos:"ST", fee:"Loan fee + ~€43-50m mandatory obligation", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departs on a loan-to-buy after a saga running back to his original January 2025 loan spell at Juventus - now converted into a permanent-track deal."},
+  {name:"Gonçalo Ramos", sub:"25 · ST · Portugal", club:"AC Milan", pos:"ST", fee:"€80m+ (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Portugal international departs for Milan in a marquee sale that funds further PSG business, as back-to-back Champions League winners reshape their forward line."}
+];
 
 const INCOMING = [
-  {name:"Vinicius Jr", sub:"26 · LW · Brazil", club:"Al-Nassr (Saudi Arabia)", pos:"LW", report:"1 Aug 2026", src:"David Ornstein / The Athletic", tier:1, fee:"€500m (structured)", truth:100, prob:95, light:"g", trend:"up", note:"Ornstein confirms: Real Madrid winger departs to Saudi Arabia in record deal. PSG now monitoring replacement winger options."},
-  {name:"Jude Bellingham", sub:"21 · CAM/RW · England", club:"Borussia Dortmund", pos:"CAM/RW", report:"1 Aug 2026", src:"Sky Sports / Alex Crook", tier:2, fee:"€130m", truth:35, prob:15, light:"r", trend:"down", note:"Crook reports PSG unlikely bidder for Dortmund midfielder; Real Madrid frontrunner. PSG focused elsewhere."}
 ];
 
 const OUTGOING = [];
@@ -497,10 +587,12 @@ const RISERS = [
   {ar:"⬆", t:"<b>João Neves official</b>: Portuguese midfielder confirmed from Benfica for €60m."}
 ];
 
-const FALLERS = [];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Kolo Muani and Gonçalo Ramos depart</b>: both forwards move on (Juventus, AC Milan respectively) as PSG reshape their attacking options after back-to-back European titles."}
+];
 
 const NEW = [
-  {ar:"✦", t:"PSG completing midfield reinforcements with Neves arrival; eye on winger options."}
+  {ar:"✦", t:"Back-to-back Champions League winners reshape the forward line, moving on both Kolo Muani (Juventus) and Gonçalo Ramos (Milan) as Neves solidifies the midfield."}
 ];
 
 const IGNORE = [];
@@ -521,11 +613,18 @@ const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Paris Saint-Germain · 2026/27 Season`,
-  heroLede: `Transfer window active. Paris Saint-Germain preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Back-to-back European champions reshape the forward line around João Neves`,
+  heroLede: `PSG enter this window as both reigning Ligue 1 champions and back-to-back Champions League winners under <b>Luis Enrique</b>. With the trophy cabinet full, the summer's business has been about squad reshaping rather than a spending spree: <b>João Neves</b> arrives from Benfica for €60m to anchor the midfield long-term, while both <b>Randal Kolo Muani</b> (to Juventus, loan-to-buy) and <b>Gonçalo Ramos</b> (to AC Milan, €80m+) depart to make room and raise funds.`,
+  metaRow: `<span>DECISION-MAKER: <b>Klaas-Jan Huntelaar</b> (Director)</span> <span>HEAD COACH: <b>Luis Enrique</b></span> <span>WINDOW: <b>1 Jul – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">1<small>st</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">UCL x2</div></div><div class="stat gold"><div class="l">Confirmed Out</div><div class="v">2</div></div>`,
+  positionPanel: ``,
+  confirmedPending: `No further deals reported as agreed-but-unannounced this window.`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Kolo Muani and Ramos departures reflect squad reshaping after a trophy-laden two seasons, not a financial need to sell.`,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `€60m committed`, x: `Neves' arrival is the headline incoming business; no further deals reported as advanced.` },
+  spendOut: { v: `€120m+ banked`, x: `Kolo Muani and Ramos departures raise significant funds while reshaping the forward line.` },
   methodLegend: ``
 };
 
@@ -556,32 +655,77 @@ const PROSE = {
     subEl.innerHTML = bits.join('');
   }
 
-  // Render confirmed IN
-  if(typeof CONFIRMED_IN !== 'undefined') {
-    const confirmed = document.getElementById('confirmed');
-    if(confirmed) {
-      if(CONFIRMED_IN.length > 0) {
-        confirmed.innerHTML = CONFIRMED_IN.map(t => renderCard(t)).join('');
-      } else {
-        confirmed.innerHTML = '<div class="empty">No confirmed transfers yet</div>';
-      }
-    }
+  const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};
+  const _WLM = (typeof WL_LINKMAP !== 'undefined') ? WL_LINKMAP : {};
+  const _HUB = (typeof HUB !== 'undefined') ? HUB : {};
+
+  // Render confirmed (in + out together, direction-tagged)
+  const confirmed = document.getElementById('confirmed');
+  if(confirmed) {
+    const ins = (typeof CONFIRMED_IN !== 'undefined' ? CONFIRMED_IN : []).map(t => renderConfirmedCard(t, 'in', _LM, _HUB));
+    const outs = (typeof CONFIRMED_OUT !== 'undefined' ? CONFIRMED_OUT : []).map(t => renderConfirmedCard(t, 'out', _LM, _HUB));
+    const all = ins.concat(outs);
+    confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
   }
 
-  // Render rumors/incoming
-  if(typeof INCOMING !== 'undefined') {
-    const rumors = document.getElementById('rumors');
-    if(rumors) {
-      if(INCOMING.length > 0) {
-        rumors.innerHTML = INCOMING.map(t => renderCard(t)).join('');
-      } else {
-        rumors.innerHTML = '<div class="empty">No active rumors yet</div>';
-      }
-    }
+  // Render incoming rumours
+  const rumors = document.getElementById('rumors');
+  if(rumors) {
+    const items = (typeof INCOMING !== 'undefined') ? INCOMING : [];
+    rumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active incoming rumours yet</div>';
+  }
+
+  // Render outgoing rumours
+  const outRumors = document.getElementById('outgoing-rumors');
+  if(outRumors) {
+    const items = (typeof OUTGOING !== 'undefined') ? OUTGOING : [];
+    outRumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active outgoing rumours yet</div>';
+  }
+
+  // Render long-tail watchlist
+  const wlGrid = document.getElementById('watchlist-grid');
+  if(wlGrid) {
+    const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
+    wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
 })();
 
-function renderCard(t) {
+let __cardSeq = 0;
+
+function toggleCard(id) {
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('expanded');
+}
+
+function buildSourcesPanel(name, linkMap, hub) {
+  const keys = (linkMap && linkMap[name]) || [];
+  const list = Array.isArray(keys) ? keys : [keys];
+  const links = list
+    .map(k => hub && hub[k])
+    .filter(Boolean)
+    .map(h => (h.u && h.u !== '#')
+      ? `<a href="${h.u}" target="_blank" rel="noopener">${h.l} ↗</a>`
+      : `<span class="sources-panel-empty">${h.l}</span>`);
+  return links.length
+    ? links.join('')
+    : '<div class="sources-panel-empty">No linked source on file for this item yet.</div>';
+}
+
+function sourcesAccordion(name, linkMap, hub) {
+  __cardSeq++;
+  const id = 'src-card-' + __cardSeq;
+  return { id, html: `
+    <button type="button" class="sources-toggle" onclick="toggleCard('${id}')">
+      <span>Sources &amp; links</span>
+      <span class="chev">▾</span>
+    </button>
+    <div class="sources-panel">
+      <div class="sources-panel-inner">${buildSourcesPanel(name, linkMap, hub)}</div>
+    </div>
+  ` };
+}
+
+function renderCard(t, linkMap, hub) {
   const tier = t.tier || 3;
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
@@ -589,15 +733,16 @@ function renderCard(t) {
   const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card">
+  return `<div class="transfer-card" id="${acc.id}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="source-info">${t.src || 'Unknown'}</div>
+      <div class="source-info">${t.src || 'Unknown'}${t.club ? ' &middot; ' + t.club : ''}</div>
     </div>
     <div class="card-body">
       <div class="note${noteClass}">${t.note || 'No details'}</div>
@@ -614,6 +759,58 @@ function renderCard(t) {
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderConfirmedCard(t, dir, linkMap, hub) {
+  const destination = dir === 'in' ? (t.to || '') : (t.club || '');
+  const dirLabel = dir === 'in' ? 'IN' : 'OUT';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge ${dir === 'in' ? 't1' : 't2'}">${dirLabel}${t.free ? ' &middot; FREE' : ''}</span>
+      </div>
+      <div class="source-info">${destination}${t.sub ? ' &middot; ' + t.sub : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    <div class="card-footer">
+      <div class="metric">
+        <div class="metric-label">Fee</div>
+        <div class="metric-value" style="font-size:14px">${t.fee || 'Undisclosed'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Status</div>
+        <div class="metric-value" style="font-size:14px;color:var(--accent-gold)">${t.statusTxt || 'DONE'}</div>
+      </div>
+    </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderWatchlistCard(t, wlLinkMap, hub) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, wlLinkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
+      </div>
+      <div class="source-info">${dirLabel}${t.club ? ' &middot; ' + t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}${t.age ? ' &middot; ' + t.age : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    ${acc.html}
   </div>`;
 }
 </script>

@@ -35,37 +35,37 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Jamal Musiala", sub:"23 · LW/CAM · Germany", to:"permanent from Bayern Munich", fee:"€110m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 28 Jul. German winger joins Atlético to lead attacking redesign under Simeone. Blockbuster signing highlights club ambitions."}
+  {name:"Johnny Cardoso", sub:"24 · CDM · USA", to:"permanent from Real Betis", fee:"€30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 10 Jul. The USMNT holding midfielder joins to add defensive-midfield depth and physicality behind Koke and De Paul."}
 ];
 
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Gabriel Jesus", sub:"26 · ST · Brazil", club:"Manchester City", pos:"ST", report:"1 Aug 2026", src:"Sky Sports / Samuel Luckhurst", tier:2, fee:"€45m", truth:65, prob:42, light:"y", trend:"up", note:"Reports from Manchester area sources suggest City open to selling Jesus. Atlético interested but deal far from certain."},
-  {name:"Villarreal winger", sub:"TBD", club:"Villarreal", pos:"RW", report:"30 Jul 2026", src:"Matteo Moretto / Relevo", tier:2, fee:"€20m+", truth:55, prob:35, light:"o", trend:"flat", note:"Moretto reports Atlético monitoring Villarreal's attacking options as squad depth play."}
+  {name:"Gabriel Jesus", sub:"26 · ST · Brazil", club:"Manchester City", pos:"ST", report:"1 Aug 2026", src:"Sky Sports / Samuel Luckhurst", tier:2, fee:"€45m", truth:65, prob:42, light:"y", trend:"up", note:"Reports from Manchester-area sources suggest City are open to selling Jesus. Atlético are interested, but a deal is far from certain."},
+  {name:"Villarreal winger", sub:"TBD", club:"Villarreal", pos:"RW", report:"30 Jul 2026", src:"Matteo Moretto / Relevo", tier:2, fee:"€20m+", truth:55, prob:35, light:"o", trend:"flat", note:"Moretto reports Atlético monitoring Villarreal's attacking options as a squad-depth play."}
 ];
 
 const OUTGOING = [];
 
 const RISERS = [
-  {ar:"⬆", t:"<b>Jamal Musiala official</b>: Blockbuster €110m signing completed from Bayern Munich."}
+  {ar:"⬆", t:"<b>Johnny Cardoso official</b>: €30m arrival from Real Betis adds midfield steel for Simeone."}
 ];
 
 const FALLERS = [];
 
 const NEW = [
-  {ar:"✦", t:"Atlético Madrid reshape attack around Musiala's arrival; European competition focus."}
+  {ar:"✦", t:"Atlético add defensive-midfield depth with Cardoso; a forward addition (Jesus or a Villarreal winger) remains the live thread."}
 ];
 
-const IGNORE = [];
+const IGNORE = [
+  {ar:"✕", t:"<b>Jamal Musiala to Atlético Madrid</b>: a fabricated/anachronistic link - Musiala is recovering at Bayern Munich from the serious ankle injury sustained at the 2025 Club World Cup and has not been transferred anywhere."}
+];
 
 const POSITIONS = [
-  {p:"Forward", w:65, x:"Jesus interest signals depth pursuit behind Musiala signing."}
+  {p:"Forward", w:65, x:"Jesus interest signals a depth pursuit up front after Cardoso's midfield signing."}
 ];
 
-const WATCHLIST = [
-  {name:"Jamal Musiala", club:"Atlético Madrid", pos:"LW/CAM", dir:"in", age:"~6 days", tier:1, note:"OFFICIAL - Musiala confirmed after €110m transfer from Bayern Munich."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   club: {l:"Atlético Madrid Official", u:"#"}

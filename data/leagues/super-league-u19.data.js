@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "pg-asteras", "name": "PAS Giannina", "count": 0}];
+const CLUBS_LIST = [{"slug": "pg-asteras", "name": "PAS Giannina", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.671854Z",
+  updated: "2026-08-03T17:41:25.401032Z",
   label: "League aggregation"
 };

@@ -34,7 +34,9 @@ const CONFIRMED_IN = [
   {name:"Robert Lewandowski", sub:"36 · ST · Poland", to:"contract extension", fee:"Restructured", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 22 Jul. Barcelona secure their primary goalscorer with renewed terms through 2027."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Ferran Torres", sub:"26 · RW/LW · Spain", club:"Real Madrid", pos:"RW/LW", fee:"€55m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced 22 July - Torres leaves for Real Madrid on a permanent deal, a rare direct Barcelona-to-Madrid sale that bolsters Ancelotti's wing rotation."}
+];
 
 const INCOMING = [
   {name:"Sergiño Dest", sub:"23 · LW · USA", club:"PSV Eindhoven (loan return)", pos:"LW", report:"01 Aug 2026", src:"Gerard Romero", tier:1, fee:"Loan to buy", truth:88, prob:85, light:"g", trend:"up", note:"Barcelona preparing final push to secure American winger on permanent deal after successful loan spell."},
@@ -49,10 +51,12 @@ const RISERS = [
   {ar:"⬆", t:"<b>Dest return likely</b>: American winger set to make Nou Camp move permanent."}
 ];
 
-const FALLERS = [];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Ferran Torres</b>: permanent departure to Real Madrid now done and official."}
+];
 
 const NEW = [
-  {ar:"✦", t:"Barcelona consolidating midfield and wing depth as Champions League preparations continue."}
+  {ar:"✦", t:"Barcelona consolidating midfield and wing depth after Ferran Torres' permanent exit to Real Madrid."}
 ];
 
 const IGNORE = [

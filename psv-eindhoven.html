@@ -64,20 +64,20 @@
   .logo {
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     text-decoration:none;
     color:inherit;
   }
 
   .logo img {
-    width:20px;
-    height:20px;
+    width:36px;
+    height:36px;
     display:block;
   }
 
   .logo h1 {
     font-family:var(--display);
-    font-size:13px;
+    font-size:15px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
@@ -209,8 +209,8 @@
 
   .transfer-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fill, minmax(370px, 1fr));
+    gap:22px;
   }
 
   .transfer-card {
@@ -229,7 +229,7 @@
   }
 
   .card-header {
-    padding:16px;
+    padding:20px;
     border-bottom:1px solid var(--border);
     background:linear-gradient(135deg, rgba(var(--primary), 0.08), rgba(255,61,71,0.04));
   }
@@ -238,12 +238,12 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:12px;
+    margin-bottom:14px;
   }
 
   .player-name {
     font-family:var(--display);
-    font-size:16px;
+    font-size:18px;
     font-weight:400;
     text-transform:uppercase;
     letter-spacing:0.5px;
@@ -251,12 +251,12 @@
 
   .tier-badge {
     display:inline-block;
-    padding:4px 8px;
+    padding:5px 10px;
     background:var(--bg);
     border:1px solid;
     border-radius:4px;
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:1px;
     text-transform:uppercase;
@@ -269,21 +269,21 @@
 
   .source-info {
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--text-secondary);
   }
 
   .card-body {
-    padding:16px;
+    padding:20px;
   }
 
   .note {
     background:rgba(232,194,73,0.08);
     border-left:3px solid var(--accent-gold);
-    padding:12px;
+    padding:14px;
     border-radius:6px;
-    font-size:14px;
-    line-height:1.6;
+    font-size:15px;
+    line-height:1.65;
     color:var(--text-secondary);
   }
 
@@ -294,10 +294,10 @@
   }
 
   .card-footer {
-    padding:16px;
+    padding:18px 20px;
     border-top:1px solid var(--border);
     display:flex;
-    gap:16px;
+    gap:18px;
   }
 
   .metric {
@@ -306,7 +306,7 @@
 
   .metric-label {
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     letter-spacing:1px;
     text-transform:uppercase;
     color:var(--text-muted);
@@ -314,7 +314,7 @@
   }
 
   .metric-bar {
-    height:4px;
+    height:5px;
     background:rgba(0,0,0,0.2);
     border-radius:999px;
     overflow:hidden;
@@ -329,9 +329,83 @@
 
   .metric-value {
     font-family:var(--mono);
-    font-size:11px;
+    font-size:12px;
     font-weight:600;
     color:var(--text);
+  }
+
+  /* ===== SOURCES ACCORDION ===== */
+  .sources-toggle {
+    width:100%;
+    padding:12px 20px;
+    background:rgba(255,255,255,0.02);
+    border:none;
+    border-top:1px solid var(--border);
+    color:var(--text-secondary);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:color 150ms ease, background 150ms ease;
+  }
+
+  .sources-toggle:hover {
+    color:var(--text);
+    background:rgba(255,255,255,0.04);
+  }
+
+  .sources-toggle .chev {
+    display:inline-block;
+    transition:transform 200ms ease;
+    font-size:9px;
+  }
+
+  .transfer-card.expanded .sources-toggle .chev {
+    transform:rotate(180deg);
+  }
+
+  .sources-panel {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 260ms ease;
+    background:rgba(0,0,0,0.15);
+  }
+
+  .transfer-card.expanded .sources-panel {
+    max-height:400px;
+  }
+
+  .sources-panel-inner {
+    padding:14px 20px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .sources-panel-inner a {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--primary-bright);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .sources-panel-inner a:hover {
+    text-decoration:underline;
+  }
+
+  .sources-panel-empty {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+    font-style:italic;
   }
 
   /* ===== BULLSHIT CALLOUT ===== */
@@ -431,8 +505,23 @@
   </section>
 
   <section class="section">
-    <h3 class="section-title">Active Rumors & Reports</h3>
+    <h3 class="section-title">Incoming Rumours &amp; Reports</h3>
     <div class="transfer-grid" id="rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Outgoing Rumours &amp; Reports</h3>
+    <div class="transfer-grid" id="outgoing-rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Long-Tail Watchlist</h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-14px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
+    <div class="transfer-grid" id="watchlist-grid">
       <!-- Populated by data -->
     </div>
   </section>
@@ -480,11 +569,11 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · PSV Eindhoven"
 };
 
-const CONFIRMED_IN = [
-  {name:"Hirving Lozano", sub:"28 · RW · Mexico", to:"permanent from Bayern Munich (on loan)", fee:"€21m (purchase)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25 Jun. Mexican winger returns on permanent deal after loan spell. Bayern Munich exit finalized."}
-];
+const CONFIRMED_IN = [];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Hirving Lozano", sub:"28 · RW · Mexico", club:"Bayern Munich", pos:"RW", fee:"€21m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25 Jun as a permanent departure. Bayern take the Mexican winger for a fresh push on the right flank."}
+];
 
 const INCOMING = [
   {name:"Xavi Simons", sub:"21 · CAM · Netherlands", club:"PSV Eindhoven (loan from Leipzig)", pos:"CAM", report:"1 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"Loan + option", truth:75, prob:65, light:"y", trend:"up", note:"Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented Dutch playmaker."}
@@ -492,14 +581,14 @@ const INCOMING = [
 
 const OUTGOING = [];
 
-const RISERS = [
-  {ar:"⬆", t:"<b>Hirving Lozano permanent</b>: Mexican winger official signing from Bayern Munich."}
+const RISERS = [];
+
+const FALLERS = [
+  {ar:"⬇", t:"<b>Hirving Lozano</b>: permanent departure to Bayern Munich now done and official."}
 ];
 
-const FALLERS = [];
-
 const NEW = [
-  {ar:"✦", t:"PSV securing attacking depth with Lozano purchase and Simons loan extension."}
+  {ar:"✦", t:"PSV's attacking rebuild centres on the Simons loan extension after Lozano's permanent Bayern Munich exit."}
 ];
 
 const IGNORE = [];
@@ -509,7 +598,6 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Hirving Lozano", club:"PSV Eindhoven", pos:"RW", dir:"in", age:"~39 days", tier:1, note:"OFFICIAL - Mexican winger confirmed permanent signing from Bayern Munich."},
   {name:"Xavi Simons", club:"PSV Eindhoven (loan)", pos:"CAM", dir:"in", age:"~2 days", tier:2, note:"Christian Falk: PSV negotiating loan extension with RB Leipzig for Dutch talent."}
 ];
 
@@ -556,32 +644,77 @@ const PROSE = {
     subEl.innerHTML = bits.join('');
   }
 
-  // Render confirmed IN
-  if(typeof CONFIRMED_IN !== 'undefined') {
-    const confirmed = document.getElementById('confirmed');
-    if(confirmed) {
-      if(CONFIRMED_IN.length > 0) {
-        confirmed.innerHTML = CONFIRMED_IN.map(t => renderCard(t)).join('');
-      } else {
-        confirmed.innerHTML = '<div class="empty">No confirmed transfers yet</div>';
-      }
-    }
+  const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};
+  const _WLM = (typeof WL_LINKMAP !== 'undefined') ? WL_LINKMAP : {};
+  const _HUB = (typeof HUB !== 'undefined') ? HUB : {};
+
+  // Render confirmed (in + out together, direction-tagged)
+  const confirmed = document.getElementById('confirmed');
+  if(confirmed) {
+    const ins = (typeof CONFIRMED_IN !== 'undefined' ? CONFIRMED_IN : []).map(t => renderConfirmedCard(t, 'in', _LM, _HUB));
+    const outs = (typeof CONFIRMED_OUT !== 'undefined' ? CONFIRMED_OUT : []).map(t => renderConfirmedCard(t, 'out', _LM, _HUB));
+    const all = ins.concat(outs);
+    confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
   }
 
-  // Render rumors/incoming
-  if(typeof INCOMING !== 'undefined') {
-    const rumors = document.getElementById('rumors');
-    if(rumors) {
-      if(INCOMING.length > 0) {
-        rumors.innerHTML = INCOMING.map(t => renderCard(t)).join('');
-      } else {
-        rumors.innerHTML = '<div class="empty">No active rumors yet</div>';
-      }
-    }
+  // Render incoming rumours
+  const rumors = document.getElementById('rumors');
+  if(rumors) {
+    const items = (typeof INCOMING !== 'undefined') ? INCOMING : [];
+    rumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active incoming rumours yet</div>';
+  }
+
+  // Render outgoing rumours
+  const outRumors = document.getElementById('outgoing-rumors');
+  if(outRumors) {
+    const items = (typeof OUTGOING !== 'undefined') ? OUTGOING : [];
+    outRumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active outgoing rumours yet</div>';
+  }
+
+  // Render long-tail watchlist
+  const wlGrid = document.getElementById('watchlist-grid');
+  if(wlGrid) {
+    const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
+    wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
 })();
 
-function renderCard(t) {
+let __cardSeq = 0;
+
+function toggleCard(id) {
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('expanded');
+}
+
+function buildSourcesPanel(name, linkMap, hub) {
+  const keys = (linkMap && linkMap[name]) || [];
+  const list = Array.isArray(keys) ? keys : [keys];
+  const links = list
+    .map(k => hub && hub[k])
+    .filter(Boolean)
+    .map(h => (h.u && h.u !== '#')
+      ? `<a href="${h.u}" target="_blank" rel="noopener">${h.l} ↗</a>`
+      : `<span class="sources-panel-empty">${h.l}</span>`);
+  return links.length
+    ? links.join('')
+    : '<div class="sources-panel-empty">No linked source on file for this item yet.</div>';
+}
+
+function sourcesAccordion(name, linkMap, hub) {
+  __cardSeq++;
+  const id = 'src-card-' + __cardSeq;
+  return { id, html: `
+    <button type="button" class="sources-toggle" onclick="toggleCard('${id}')">
+      <span>Sources &amp; links</span>
+      <span class="chev">▾</span>
+    </button>
+    <div class="sources-panel">
+      <div class="sources-panel-inner">${buildSourcesPanel(name, linkMap, hub)}</div>
+    </div>
+  ` };
+}
+
+function renderCard(t, linkMap, hub) {
   const tier = t.tier || 3;
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
@@ -589,15 +722,16 @@ function renderCard(t) {
   const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card">
+  return `<div class="transfer-card" id="${acc.id}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="source-info">${t.src || 'Unknown'}</div>
+      <div class="source-info">${t.src || 'Unknown'}${t.club ? ' &middot; ' + t.club : ''}</div>
     </div>
     <div class="card-body">
       <div class="note${noteClass}">${t.note || 'No details'}</div>
@@ -614,6 +748,58 @@ function renderCard(t) {
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderConfirmedCard(t, dir, linkMap, hub) {
+  const destination = dir === 'in' ? (t.to || '') : (t.club || '');
+  const dirLabel = dir === 'in' ? 'IN' : 'OUT';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge ${dir === 'in' ? 't1' : 't2'}">${dirLabel}${t.free ? ' &middot; FREE' : ''}</span>
+      </div>
+      <div class="source-info">${destination}${t.sub ? ' &middot; ' + t.sub : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    <div class="card-footer">
+      <div class="metric">
+        <div class="metric-label">Fee</div>
+        <div class="metric-value" style="font-size:14px">${t.fee || 'Undisclosed'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Status</div>
+        <div class="metric-value" style="font-size:14px;color:var(--accent-gold)">${t.statusTxt || 'DONE'}</div>
+      </div>
+    </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderWatchlistCard(t, wlLinkMap, hub) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, wlLinkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
+      </div>
+      <div class="source-info">${dirLabel}${t.club ? ' &middot; ' + t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}${t.age ? ' &middot; ' + t.age : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    ${acc.html}
   </div>`;
 }
 </script>

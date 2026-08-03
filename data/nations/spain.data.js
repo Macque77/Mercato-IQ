@@ -6,7 +6,7 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 11
+  stories_count: 9
 };
 
 const TOP_STORIES = [  {
@@ -22,13 +22,6 @@ const TOP_STORIES = [  {
     from: "Flamengo", to: "FC Barcelona",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "€18m", updated: "2026-07-29T00:00:00Z", league: "La Liga"
-  },
-  {
-    name: "Jude Bellingham",prob: 78,
-    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
-    from: "Borussia Dortmund", to: "Real Madrid",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€130m (Dortmund asking price)", updated: "2026-07-29T00:00:00Z", league: "La Liga"
   },
   {
     name: "Gabriel Jesus",prob: 42,
@@ -79,21 +72,14 @@ const TOP_STORIES = [  {
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "€2.5m", updated: "2026-07-29T00:00:00Z", league: "La Liga"
   },
-  {
-    name: "",prob: 50,
-    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "out",
-    from: "FC Barcelona", to: "TBD",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-29T00:00:00Z", league: "La Liga"
-  },
 ];
 
-const BY_LEAGUE = {"La Liga": 11};
+const BY_LEAGUE = {"La Liga": 9};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 11}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 9}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.665531Z",
+  updated: "2026-08-03T17:41:25.395031Z",
   label: "Nation aggregation"
 };

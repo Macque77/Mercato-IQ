@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "count": 0}, {"slug": "dynamo-dresden", "name": "Dynamo Dresden", "count": 0}, {"slug": "erzgebirge-aue", "name": "FC Erzgebirge Aue", "count": 0}, {"slug": "schalke-04", "name": "FC Schalke 04", "count": 0}, {"slug": "st-pauli", "name": "FC St. Pauli", "count": 0}, {"slug": "rostock", "name": "Hansa Rostock", "count": 0}, {"slug": "regensburg", "name": "SSV Jahn Regensburg", "count": 0}, {"slug": "sandhausen", "name": "SV Sandhausen", "count": 0}];
+const CLUBS_LIST = [{"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "count": 0, "badge": false}, {"slug": "dynamo-dresden", "name": "Dynamo Dresden", "count": 0, "badge": false}, {"slug": "erzgebirge-aue", "name": "FC Erzgebirge Aue", "count": 0, "badge": false}, {"slug": "schalke-04", "name": "FC Schalke 04", "count": 0, "badge": false}, {"slug": "st-pauli", "name": "FC St. Pauli", "count": 0, "badge": false}, {"slug": "rostock", "name": "Hansa Rostock", "count": 0, "badge": false}, {"slug": "regensburg", "name": "SSV Jahn Regensburg", "count": 0, "badge": false}, {"slug": "sandhausen", "name": "SV Sandhausen", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.666446Z",
+  updated: "2026-08-03T17:41:25.396104Z",
   label: "League aggregation"
 };

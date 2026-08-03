@@ -11,7 +11,7 @@ const BRAND = {
   club: "Sunderland", mono: "SAFC", slug: "sunderland",
   primary: "#e21f26", primaryBright: "#ff2b24", primaryDeep: "#a3151a",
   primaryRgb: "226,31,38",
-  breadcrumb: ["England","Championship"]
+  breadcrumb: ["England","Premier League"]
 };
 
 /* ── VOLATILE FACTS (machine-readable; verification cadence per runbook) ── */

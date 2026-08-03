@@ -6,7 +6,7 @@ const BRAND = {
   club: "Sheffield United", mono: "SU", slug: "sheffield-united",
   primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
   primaryRgb: "0,61,165",
-  breadcrumb: ["England","Premier League"]
+  breadcrumb: ["England","Championship"]
 };
 
 const VOLATILE = {

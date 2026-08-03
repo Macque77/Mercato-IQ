@@ -6,36 +6,29 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 6
+  stories_count: 8
 };
 
 const TOP_STORIES = [  {
-    name: "Tammy Abraham",prob: 58,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "AS Roma", to: "AC Milan",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Nicolò Barella",prob: 95,
-    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
-    from: "Inter Milan", to: "Inter Milan",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "New long-term deal", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Paulo Dybala",prob: 92,
-    club_origin: "juventus", club_display_name: "Juventus", direction: "in",
-    from: "AS Roma", to: "Juventus",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Free agent", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
     name: "Serhou Guirassy",prob: 40,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "RB Leipzig", to: "AS Roma",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Kerim Alajbegović",prob: 38,
+    club_origin: "juventus", club_display_name: "Juventus", direction: "in",
+    from: "Bayer Leverkusen", to: "Juventus",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "€25-30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Konstantinos Karetsas",prob: 35,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Genk", to: "AC Milan",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€40m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
     name: "Jeremie Freuler",prob: 28,
@@ -45,20 +38,41 @@ const TOP_STORIES = [  {
     value: "€15m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Dusan Vlahović",prob: 25,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "Juventus", to: "AC Milan",
+    name: "Dušan Vlahović",prob: 20,
+    club_origin: "juventus", club_display_name: "Juventus", direction: "out",
+    from: "Juventus", to: "AC Milan (rumoured)",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€70m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    value: "€70m (speculative)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Ademola Lookman",prob: 15,
+    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
+    from: "Atalanta", to: "Inter Milan",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Filip Stanković",prob: 25,
+    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "out",
+    from: "Inter Milan", to: "Multiple (loan/permanent options discussed)",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Can Uzun",prob: 18,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Eintracht Frankfurt", to: "AC Milan",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "~€25m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
 ];
 
-const BY_LEAGUE = {"Serie A": 6};
+const BY_LEAGUE = {"Serie A": 8};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 6}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 8}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.664882Z",
+  updated: "2026-08-03T17:41:25.394399Z",
   label: "Nation aggregation"
 };

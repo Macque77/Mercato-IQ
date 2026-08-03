@@ -36,9 +36,7 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 
-const CONFIRMED_OUT = [
-  {name:"Jude Bellingham", sub:"21 · CAM/RW · England", club:"Real Madrid (interest)", pos:"CAM/RW", fee:"€130m", free:false, status:"done", statusTxt:"LIKELY EXIT", note:"Advanced talks with Real Madrid. Deal expected to be completed before transfer window closes."}
-];
+const CONFIRMED_OUT = [];
 
 const INCOMING = [
   {name:"Mats Wieffer", sub:"24 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"2 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"€25m", truth:62, prob:45, light:"y", trend:"up", note:"Falk reports Dortmund pursuing Dutch midfielder from AZ Alkmaar. Talks progressing steadily."},
@@ -52,17 +50,18 @@ const RISERS = [];
 const FALLERS = [];
 
 const NEW = [
-  {ar:"✦", t:"Dortmund rebuild after Bellingham's anticipated Real Madrid move; pursuit of Wieffer and Diaby."}
+  {ar:"✦", t:"Midfield rebuild continues with the Wieffer and Diaby pursuits as Dortmund look to add depth ahead of deadline day."}
 ];
 
-const IGNORE = [];
+const IGNORE = [
+  {ar:"✕", t:"<b>Jude Bellingham to Real Madrid</b>: a recurring but outdated link - Bellingham completed his move to Real Madrid in 2023 and has been a first-team fixture there since; any 'in talks' framing is a recycled misattribution."}
+];
 
 const POSITIONS = [
-  {p:"Attacking midfield", w:85, x:"Bellingham's expected exit creates immediate need for creative midfielder."}
+  {p:"Attacking midfield", w:55, x:"Wieffer and Diaby pursuits point to a squad still looking to add creative/defensive-midfield depth."}
 ];
 
 const WATCHLIST = [
-  {name:"Jude Bellingham", club:"Real Madrid", pos:"CAM/RW", dir:"out", age:"~13 days", tier:2, note:"Advanced Real Madrid talks; completion expected before window close."},
   {name:"Mats Wieffer", club:"AZ Alkmaar", pos:"CM", dir:"in", age:"~1 day", tier:2, note:"Christian Falk: Dortmund pursuing Dutch midfielder from AZ."}
 ];
 

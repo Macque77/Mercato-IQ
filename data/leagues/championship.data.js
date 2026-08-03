@@ -5,158 +5,18 @@
 
 const LEAGUE = {
   name: "Championship",
-  nation: "England",
-  stories_count: 40
+  nation: "Unknown",
+  stories_count: 0
 };
 
-const TOP_STORIES = [  {
-    name: "Dayann Methalie", prob: 52,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
-    from: "Toulouse", to: "Sunderland",
-    tier: 2, coverage: 5, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Noah Sadiki", prob: 18,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "out",
-    from: "Sunderland", to: "Man Utd / City / Chelsea / Arsenal",
-    tier: 2, coverage: 3, coverage_trend: 'flat',
-    value: "£55-65m+", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Matthis Abline", prob: 10,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
-    from: "Nantes", to: "Sunderland",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "€20m bid rejected (~€50m ask)", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Granit Xhaka", prob: 5,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "out",
-    from: "Sunderland", to: "Chelsea / Man Utd",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "£8m bid rejected", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Joel Piroe", prob: 58,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "PSV / Boro / Rangers / Ipswich",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£8-10m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Joe Gelhardt", prob: 50,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "Hull / Rangers / Celtic",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "£4-8m / loan", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Anthony Patterson", prob: 48,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "out",
-    from: "Sunderland", to: "Wrexham / Millwall / Wolves",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£7-10m", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Ao Tanaka", prob: 45,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "Newcastle / Everton / Bundesliga",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£12-18m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Illan Meslier", prob: 45,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "Birmingham / Championship",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£5-10m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Wilfried Gnonto", prob: 40,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "SC Freiburg",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£20-28m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Jack Harrison", prob: 40,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "Fiorentina",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "€8m option", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Arthur Masuaku", prob: 40,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "out",
-    from: "Sunderland", to: "Konyaspor (Turkey)",
-    tier: 3, coverage: 3, coverage_trend: 'flat',
-    value: "Free/undisclosed", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Largie Ramazani", prob: 38,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "Valencia",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "£8-12m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Simon Adingra", prob: 36,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "out",
-    from: "Sunderland", to: "AS Roma / West Ham",
-    tier: 3, coverage: 3, coverage_trend: 'flat',
-    value: "~£30m (€35m)", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Ernest Poku", prob: 32,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
-    from: "Bayer Leverkusen", to: "Sunderland",
-    tier: 3, coverage: 3, coverage_trend: 'flat',
-    value: "~£21m (€25m)", updated: "2026-07-31T09:00:00Z"
-  },
-  {
-    name: "Crysencio Summerville", prob: 30,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "in",
-    from: "West Ham", to: "Leeds United",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£20-30m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Hayden Hackney", prob: 30,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "in",
-    from: "Middlesbrough", to: "Leeds United",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£18-20m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Danilho Doekhi", prob: 30,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "in",
-    from: "Union Berlin", to: "Leeds United",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£8-12m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Lucas Perri", prob: 30,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "out",
-    from: "Leeds United", to: "Brazilian clubs",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "£6-10m", updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    name: "Roony Bardghji", prob: 25,
-    club_origin: "leeds-united", club_display_name: "Leeds United", direction: "in",
-    from: "Barcelona", to: "Leeds United",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "£15-25m / loan", updated: "2026-06-06T12:00:00Z"
-  },
-];
+const TOP_STORIES = [];
 
-const BY_CLUB = {"sunderland": 18, "leeds-united": 22};
+const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "blackburn-rovers", "name": "Blackburn Rovers", "count": 0}, {"slug": "bristol-city", "name": "Bristol City", "count": 0}, {"slug": "cardiff-city", "name": "Cardiff City", "count": 0}, {"slug": "coventry-city", "name": "Coventry City", "count": 0}, {"slug": "derby-county", "name": "Derby County", "count": 0}, {"slug": "hull-city", "name": "Hull City", "count": 0}, {"slug": "leeds-united", "name": "Leeds United", "count": 22}, {"slug": "plymouth-argyle", "name": "Plymouth Argyle", "count": 0}, {"slug": "preston-north-end", "name": "Preston North End", "count": 0}, {"slug": "qpr", "name": "Queens Park Rangers", "count": 0}, {"slug": "reading", "name": "Reading", "count": 0}, {"slug": "southampton", "name": "Southampton", "count": 0}, {"slug": "stoke-city", "name": "Stoke City", "count": 0}, {"slug": "sunderland", "name": "Sunderland", "count": 18}, {"slug": "swansea-city", "name": "Swansea City", "count": 0}, {"slug": "watford", "name": "Watford", "count": 0}, {"slug": "west-bromwich-albion", "name": "West Bromwich Albion", "count": 0}, {"slug": "wigan-athletic", "name": "Wigan Athletic", "count": 0}];
+const CLUBS_LIST = [{"slug": "blackburn-rovers", "name": "Blackburn Rovers", "count": 0, "badge": false}, {"slug": "bristol-city", "name": "Bristol City", "count": 0, "badge": false}, {"slug": "burnley", "name": "Burnley", "count": 0, "badge": false}, {"slug": "cardiff-city", "name": "Cardiff City", "count": 0, "badge": false}, {"slug": "derby-county", "name": "Derby County", "count": 0, "badge": false}, {"slug": "plymouth-argyle", "name": "Plymouth Argyle", "count": 0, "badge": false}, {"slug": "preston-north-end", "name": "Preston North End", "count": 0, "badge": false}, {"slug": "qpr", "name": "Queens Park Rangers", "count": 0, "badge": false}, {"slug": "reading", "name": "Reading", "count": 0, "badge": false}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 0, "badge": false}, {"slug": "southampton", "name": "Southampton", "count": 0, "badge": false}, {"slug": "stoke-city", "name": "Stoke City", "count": 0, "badge": false}, {"slug": "swansea-city", "name": "Swansea City", "count": 0, "badge": false}, {"slug": "watford", "name": "Watford", "count": 0, "badge": false}, {"slug": "west-bromwich-albion", "name": "West Bromwich Albion", "count": 0, "badge": false}, {"slug": "west-ham", "name": "West Ham United", "count": 0, "badge": false}, {"slug": "wigan-athletic", "name": "Wigan Athletic", "count": 0, "badge": false}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.667484Z",
+  updated: "2026-08-03T17:41:25.397159Z",
   label: "League aggregation"
 };

@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Premier League",
   nation: "England",
-  stories_count: 60
+  stories_count: 93
 };
 
 const TOP_STORIES = [  {
@@ -45,20 +45,6 @@ const TOP_STORIES = [  {
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Morgan Rogers", prob: 35,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
-    from: "Aston Villa", to: "Arsenal",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "£80m+", updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    name: "Mateus Fernandes", prob: 34,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
-    from: "West Ham United", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "£80m (West Ham valuation)", updated: "2026-08-03T12:48:44Z"
-  },
-  {
     name: "Lewis Hall", prob: 32,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "Newcastle United", to: "Manchester United",
@@ -78,6 +64,13 @@ const TOP_STORIES = [  {
     from: "Liverpool", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    name: "Dayann Methalie", prob: 52,
+    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
+    from: "Toulouse", to: "Sunderland",
+    tier: 2, coverage: 5, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-07-31T09:00:00Z"
   },
   {
     name: "Marcus Rashford", prob: 42,
@@ -143,20 +136,27 @@ const TOP_STORIES = [  {
     value: "£60m+", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Elliot Anderson", prob: 30,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "in",
-    from: "(discussed)", to: "Manchester City",
+    name: "Riccardo Calafiori", prob: 30,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Juventus",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "£50-70m", updated: "2026-08-03T12:48:44Z"
+    value: "£35-45m", updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    name: "Leandro Trossard", prob: 30,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Open to offers",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "£12-18m", updated: "2026-08-03T12:48:44Z"
   },
 ];
 
-const BY_CLUB = {"nottingham-forest": 7, "newcastle-united": 7, "tottenham-hotspur": 10, "arsenal": 10, "manchester-united": 10, "aston-villa": 3, "crystal-palace": 1, "manchester-city": 2, "fulham": 1, "bournemouth": 3, "liverpool": 4, "everton": 1, "ipswich-town": 1};
+const BY_CLUB = {"nottingham-forest": 7, "newcastle-united": 7, "tottenham-hotspur": 9, "manchester-united": 8, "sunderland": 18, "aston-villa": 2, "crystal-palace": 1, "arsenal": 9, "manchester-city": 1, "fulham": 1, "leeds-united": 21, "bournemouth": 3, "liverpool": 4, "everton": 1, "ipswich-town": 1};
 
-const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 10}, {"slug": "aston-villa", "name": "Aston Villa", "count": 3}, {"slug": "bournemouth", "name": "Bournemouth", "count": 3}, {"slug": "brentford", "name": "Brentford", "count": 0}, {"slug": "brighton", "name": "Brighton", "count": 0}, {"slug": "chelsea", "name": "Chelsea", "count": 0}, {"slug": "crystal-palace", "name": "Crystal Palace", "count": 1}, {"slug": "everton", "name": "Everton", "count": 1}, {"slug": "fulham", "name": "Fulham", "count": 1}, {"slug": "ipswich-town", "name": "Ipswich Town", "count": 1}, {"slug": "liverpool", "name": "Liverpool", "count": 4}, {"slug": "manchester-city", "name": "Manchester City", "count": 2}, {"slug": "manchester-united", "name": "Manchester United", "count": 10}, {"slug": "newcastle-united", "name": "Newcastle United", "count": 7}, {"slug": "nottingham-forest", "name": "Nottingham Forest", "count": 7}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 0}, {"slug": "tottenham-hotspur", "name": "Tottenham Hotspur", "count": 10}, {"slug": "tottenham", "name": "Tottenham Hotspur", "count": 0}, {"slug": "west-ham", "name": "West Ham United", "count": 0}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 0}];
+const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 9, "badge": true}, {"slug": "aston-villa", "name": "Aston Villa", "count": 2, "badge": true}, {"slug": "bournemouth", "name": "Bournemouth", "count": 3, "badge": true}, {"slug": "brentford", "name": "Brentford", "count": 0, "badge": true}, {"slug": "brighton", "name": "Brighton", "count": 0, "badge": true}, {"slug": "chelsea", "name": "Chelsea", "count": 0, "badge": true}, {"slug": "coventry-city", "name": "Coventry City", "count": 0, "badge": true}, {"slug": "crystal-palace", "name": "Crystal Palace", "count": 1, "badge": true}, {"slug": "everton", "name": "Everton", "count": 1, "badge": true}, {"slug": "fulham", "name": "Fulham", "count": 1, "badge": true}, {"slug": "hull-city", "name": "Hull City", "count": 0, "badge": true}, {"slug": "ipswich-town", "name": "Ipswich Town", "count": 1, "badge": true}, {"slug": "leeds-united", "name": "Leeds United", "count": 21, "badge": true}, {"slug": "liverpool", "name": "Liverpool", "count": 4, "badge": true}, {"slug": "manchester-city", "name": "Manchester City", "count": 1, "badge": true}, {"slug": "manchester-united", "name": "Manchester United", "count": 8, "badge": true}, {"slug": "newcastle-united", "name": "Newcastle United", "count": 7, "badge": true}, {"slug": "nottingham-forest", "name": "Nottingham Forest", "count": 7, "badge": true}, {"slug": "sunderland", "name": "Sunderland", "count": 18, "badge": true}, {"slug": "tottenham-hotspur", "name": "Tottenham Hotspur", "count": 9, "badge": true}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.670090Z",
+  updated: "2026-08-03T17:41:25.399502Z",
   label: "League aggregation"
 };

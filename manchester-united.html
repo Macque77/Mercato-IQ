@@ -64,20 +64,20 @@
   .logo {
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     text-decoration:none;
     color:inherit;
   }
 
   .logo img {
-    width:20px;
-    height:20px;
+    width:36px;
+    height:36px;
     display:block;
   }
 
   .logo h1 {
     font-family:var(--display);
-    font-size:13px;
+    font-size:15px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
@@ -209,8 +209,8 @@
 
   .transfer-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fill, minmax(370px, 1fr));
+    gap:22px;
   }
 
   .transfer-card {
@@ -229,7 +229,7 @@
   }
 
   .card-header {
-    padding:16px;
+    padding:20px;
     border-bottom:1px solid var(--border);
     background:linear-gradient(135deg, rgba(var(--primary), 0.08), rgba(255,61,71,0.04));
   }
@@ -238,12 +238,12 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:12px;
+    margin-bottom:14px;
   }
 
   .player-name {
     font-family:var(--display);
-    font-size:16px;
+    font-size:18px;
     font-weight:400;
     text-transform:uppercase;
     letter-spacing:0.5px;
@@ -251,12 +251,12 @@
 
   .tier-badge {
     display:inline-block;
-    padding:4px 8px;
+    padding:5px 10px;
     background:var(--bg);
     border:1px solid;
     border-radius:4px;
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:1px;
     text-transform:uppercase;
@@ -269,21 +269,21 @@
 
   .source-info {
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--text-secondary);
   }
 
   .card-body {
-    padding:16px;
+    padding:20px;
   }
 
   .note {
     background:rgba(232,194,73,0.08);
     border-left:3px solid var(--accent-gold);
-    padding:12px;
+    padding:14px;
     border-radius:6px;
-    font-size:14px;
-    line-height:1.6;
+    font-size:15px;
+    line-height:1.65;
     color:var(--text-secondary);
   }
 
@@ -294,10 +294,10 @@
   }
 
   .card-footer {
-    padding:16px;
+    padding:18px 20px;
     border-top:1px solid var(--border);
     display:flex;
-    gap:16px;
+    gap:18px;
   }
 
   .metric {
@@ -306,7 +306,7 @@
 
   .metric-label {
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     letter-spacing:1px;
     text-transform:uppercase;
     color:var(--text-muted);
@@ -314,7 +314,7 @@
   }
 
   .metric-bar {
-    height:4px;
+    height:5px;
     background:rgba(0,0,0,0.2);
     border-radius:999px;
     overflow:hidden;
@@ -329,9 +329,83 @@
 
   .metric-value {
     font-family:var(--mono);
-    font-size:11px;
+    font-size:12px;
     font-weight:600;
     color:var(--text);
+  }
+
+  /* ===== SOURCES ACCORDION ===== */
+  .sources-toggle {
+    width:100%;
+    padding:12px 20px;
+    background:rgba(255,255,255,0.02);
+    border:none;
+    border-top:1px solid var(--border);
+    color:var(--text-secondary);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:color 150ms ease, background 150ms ease;
+  }
+
+  .sources-toggle:hover {
+    color:var(--text);
+    background:rgba(255,255,255,0.04);
+  }
+
+  .sources-toggle .chev {
+    display:inline-block;
+    transition:transform 200ms ease;
+    font-size:9px;
+  }
+
+  .transfer-card.expanded .sources-toggle .chev {
+    transform:rotate(180deg);
+  }
+
+  .sources-panel {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 260ms ease;
+    background:rgba(0,0,0,0.15);
+  }
+
+  .transfer-card.expanded .sources-panel {
+    max-height:400px;
+  }
+
+  .sources-panel-inner {
+    padding:14px 20px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .sources-panel-inner a {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--primary-bright);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .sources-panel-inner a:hover {
+    text-decoration:underline;
+  }
+
+  .sources-panel-empty {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+    font-style:italic;
   }
 
   /* ===== BULLSHIT CALLOUT ===== */
@@ -431,8 +505,23 @@
   </section>
 
   <section class="section">
-    <h3 class="section-title">Active Rumors & Reports</h3>
+    <h3 class="section-title">Incoming Rumours &amp; Reports</h3>
     <div class="transfer-grid" id="rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Outgoing Rumours &amp; Reports</h3>
+    <div class="transfer-grid" id="outgoing-rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Long-Tail Watchlist</h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-14px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
+    <div class="transfer-grid" id="watchlist-grid">
       <!-- Populated by data -->
     </div>
   </section>
@@ -498,11 +587,11 @@ const CONFIRMED_OUT = [
    note:"Released as part of the same early-June clear-out as Sancho and Casemiro, having never fully recovered his place after long-term injury and a loan spell at PSV. His departure leaves Luke Shaw as United's only recognised senior left-back, driving the Lewis Hall/Antonee Robinson interest below."},
   {name:"André Onana", sub:"30 · GK · Cameroon", club:"Trabzonspor (season-long loan)", pos:"GK", fee:"Loan, no fee", free:false, status:"done", statusTxt:"DONE, LOAN CONFIRMED",
    note:"Confirmed by the club in July as a second consecutive season-long loan back to Trabzonspor after a difficult first spell there failed to fully restore his stock. United retain his registration and a large chunk of his wages remain covered as part of the agreement, with the goalkeeper position now a live monitoring item for the rest of the window."},
+  {name:"Joshua Zirkzee", sub:"25 · ST · Netherlands", club:"Juventus", pos:"ST", fee:"€42.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+   note:"Confirmed 15 Jul as a straight permanent sale, not the loan-with-option structure earlier reports described. Zirkzee managed just 5 goals in 56 Premier League appearances since his £36.5m move from Bologna and was squeezed for minutes behind Benjamin Šeško and Matheus Cunha; Juventus get a reset opportunity for a player United had already priced for an exit."},
 ];
 
 const INCOMING = [
-  {name:"Mateus Fernandes", sub:"21 · CDM · Portugal", club:"West Ham United", pos:"CDM", report:"18 Jul 2026", src:"Sky Sports News", tier:1, fee:"£80m (West Ham valuation)", truth:72, prob:34, light:'y', trend:'flat',
-   note:"Sky Sports reports United are preparing an opening bid for a 21-year-old West Ham see as their generational asset, comparing his profile to Declan Rice's before his £105m move to Arsenal. West Ham signed him from Southampton for £38m only a year ago and are in no rush to sell, with Arsenal and PSG also credited with interest. United are unlikely to meet the full £80m ask, meaning any deal needs a structure with add-ons and staged payments. OBSTACLES: West Ham's leverage, a three-way auction, and Fernandes having plenty of football left to prove at a lower level of competition first."},
   {name:"Iliman Ndiaye", sub:"26 · RW/AM · Senegal", club:"Everton", pos:"RW/AM", report:"29 Jul 2026", src:"Mirror / CaughtOffside (Ahad Shaukat)", tier:2, fee:"£70m ask, United want ≈£50m", truth:60, prob:25, light:'o', trend:'down',
    note:"Everton have set a £70m price on a winger who scored 6 and assisted 3 in 32 Premier League games last season, with three years still on his contract giving them full leverage. United have him on their attacking shortlist as a potential Garnacho-void filler but are reportedly angling closer to £50m rather than meeting the asking price. Al-Hilal have now entered the picture and Ndiaye's camp would reportedly welcome a Saudi offer, which is the single biggest threat to any Premier League move materialising. OBSTACLES: valuation gap, Saudi competition, and Everton having rejected his contract-extension pushback rather than sanctioning a cut-price exit."},
   {name:"Manu Kone", sub:"25 · CM/DM · France", club:"AS Roma", pos:"CM/DM", report:"27 Jul 2026", src:"Gazzetta dello Sport / Football Italia (via CaughtOffside)", tier:2, fee:"€60m ask; cash-plus-Rashford structure discussed", truth:50, prob:28, light:'o', trend:'up',
@@ -518,8 +607,6 @@ const INCOMING = [
 const OUTGOING = [
   {name:"Marcus Rashford", sub:"28 · RW/LW · England", club:"AS Roma (or open market)", pos:"RW/LW", report:"27 Jul 2026", src:"Gazzetta dello Sport / Football Italia", tier:2, fee:"£40m release clause (all clubs bar Man City & Liverpool)", truth:65, prob:42, light:'y', trend:'up',
    note:"Rashford's contract carries a £40m release clause applicable to any club other than Manchester City or Liverpool, and United's stated preference is a European move over a domestic one. The Roma links have hardened through the Kone swap speculation, with Gazzetta and Football Italia both running variations of the story through late July. A straight cash sale remains more likely to actually close than the swap structure given the complexity of bundling two deals, but the direction of travel is clearly toward a European exit before deadline day."},
-  {name:"Joshua Zirkzee", sub:"25 · ST · Netherlands", club:"Juventus (loan)", pos:"ST", report:"28 Jul 2026", src:"SportsCafe / CaughtOffside", tier:3, fee:"Season loan + £30m option to buy", truth:55, prob:45, light:'y', trend:'up',
-   note:"Juventus are reported to be in advanced talks for a season-long loan with a £30m obligation-to-buy option, days after separate reports claimed INEOS had blocked a permanent exit following a bright pre-season. Zirkzee has managed just 5 goals in 56 Premier League appearances since his £36.5m move from Bologna and faces a squeeze for minutes behind Benjamin Šeško and Matheus Cunha, with Rashford's situation adding further competition if he stays. Roma are credited as a fallback suitor after PSG's interest in Randal Kolo Muani stalled their own striker plans."},
   {name:"Manuel Ugarte", sub:"24 · CDM · Uruguay", club:"Galatasaray", pos:"CDM", report:"29 May 2026", src:"Akşam Spor (Turkey)", tier:3, fee:"≈£24m", truth:30, prob:22, light:'o', trend:'flat',
    note:"Turkish outlet Akşam Spor reports Galatasaray have stepped up their pursuit of a player squeezed further down the pecking order by the Santos and Tielemans arrivals, with Atlético Madrid and Napoli also said to be monitoring. The story has gone quiet since late May with no fresh corroboration from a tier-1 outlet, and United have not been reported as actively shopping him, though a squad short of midfield minutes for Ugarte makes an exit logical business given the new arrivals."},
   {name:"Kobbie Mainoo", sub:"21 · CM · England", club:"Real Madrid (monitoring)", pos:"CM", report:"5 Jul 2026", src:"Fichajes (via TheHardTackle)", tier:3, fee:"Valuation gap - United see him as a 'long-term project'", truth:30, prob:8, light:'r', trend:'down',
@@ -530,8 +617,6 @@ const OUTGOING = [
 
 const RISERS = [
   {ar:"⬆", t:"<b>Marcus Rashford</b>: Roma swap/Kone chatter gaining traction across Italian outlets, release clause makes any European move mechanically simple."},
-  {ar:"⬆", t:"<b>Joshua Zirkzee</b>: Juventus talks described as 'advanced' just two days after reports United had blocked an exit - momentum has swung sharply."},
-  {ar:"⬆", t:"<b>Mateus Fernandes</b>: Sky Sports elevates him to priority-target status with a formal opening bid being prepared, despite the price gap."},
 ];
 
 const FALLERS = [
@@ -544,6 +629,7 @@ const NEW = [
   {ar:"✦", t:"Midfield rebuild banked: Andrey Santos (£50m, Chelsea) and Youri Tielemans (≈£36m, Aston Villa) both completed and announced within a fortnight of each other in mid-July."},
   {ar:"✦", t:"Éderson (Atalanta) collapsed after a delayed medical - complicated by a World Cup call-up - flagged an issue; United withdrew and Éderson signed a new Atalanta deal instead, freeing budget that flowed into Santos and Tielemans."},
   {ar:"✦", t:"Rashford-to-Roma speculation has crystallised into a specific Manu Kone swap idea from the Italian press over the past week, alongside fresh Bruno Fernandes-to-Al-Nassr reporting that confirms that move is now dead."},
+  {ar:"✦", t:"Joshua Zirkzee's Juventus exit is now done and official - a straight €42.5m permanent sale rather than the loan-with-option structure earlier reports described."},
 ];
 
 const IGNORE = [
@@ -702,32 +788,77 @@ const PROSE = {
     subEl.innerHTML = bits.join('');
   }
 
-  // Render confirmed IN
-  if(typeof CONFIRMED_IN !== 'undefined') {
-    const confirmed = document.getElementById('confirmed');
-    if(confirmed) {
-      if(CONFIRMED_IN.length > 0) {
-        confirmed.innerHTML = CONFIRMED_IN.map(t => renderCard(t)).join('');
-      } else {
-        confirmed.innerHTML = '<div class="empty">No confirmed transfers yet</div>';
-      }
-    }
+  const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};
+  const _WLM = (typeof WL_LINKMAP !== 'undefined') ? WL_LINKMAP : {};
+  const _HUB = (typeof HUB !== 'undefined') ? HUB : {};
+
+  // Render confirmed (in + out together, direction-tagged)
+  const confirmed = document.getElementById('confirmed');
+  if(confirmed) {
+    const ins = (typeof CONFIRMED_IN !== 'undefined' ? CONFIRMED_IN : []).map(t => renderConfirmedCard(t, 'in', _LM, _HUB));
+    const outs = (typeof CONFIRMED_OUT !== 'undefined' ? CONFIRMED_OUT : []).map(t => renderConfirmedCard(t, 'out', _LM, _HUB));
+    const all = ins.concat(outs);
+    confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
   }
 
-  // Render rumors/incoming
-  if(typeof INCOMING !== 'undefined') {
-    const rumors = document.getElementById('rumors');
-    if(rumors) {
-      if(INCOMING.length > 0) {
-        rumors.innerHTML = INCOMING.map(t => renderCard(t)).join('');
-      } else {
-        rumors.innerHTML = '<div class="empty">No active rumors yet</div>';
-      }
-    }
+  // Render incoming rumours
+  const rumors = document.getElementById('rumors');
+  if(rumors) {
+    const items = (typeof INCOMING !== 'undefined') ? INCOMING : [];
+    rumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active incoming rumours yet</div>';
+  }
+
+  // Render outgoing rumours
+  const outRumors = document.getElementById('outgoing-rumors');
+  if(outRumors) {
+    const items = (typeof OUTGOING !== 'undefined') ? OUTGOING : [];
+    outRumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active outgoing rumours yet</div>';
+  }
+
+  // Render long-tail watchlist
+  const wlGrid = document.getElementById('watchlist-grid');
+  if(wlGrid) {
+    const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
+    wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
 })();
 
-function renderCard(t) {
+let __cardSeq = 0;
+
+function toggleCard(id) {
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('expanded');
+}
+
+function buildSourcesPanel(name, linkMap, hub) {
+  const keys = (linkMap && linkMap[name]) || [];
+  const list = Array.isArray(keys) ? keys : [keys];
+  const links = list
+    .map(k => hub && hub[k])
+    .filter(Boolean)
+    .map(h => (h.u && h.u !== '#')
+      ? `<a href="${h.u}" target="_blank" rel="noopener">${h.l} ↗</a>`
+      : `<span class="sources-panel-empty">${h.l}</span>`);
+  return links.length
+    ? links.join('')
+    : '<div class="sources-panel-empty">No linked source on file for this item yet.</div>';
+}
+
+function sourcesAccordion(name, linkMap, hub) {
+  __cardSeq++;
+  const id = 'src-card-' + __cardSeq;
+  return { id, html: `
+    <button type="button" class="sources-toggle" onclick="toggleCard('${id}')">
+      <span>Sources &amp; links</span>
+      <span class="chev">▾</span>
+    </button>
+    <div class="sources-panel">
+      <div class="sources-panel-inner">${buildSourcesPanel(name, linkMap, hub)}</div>
+    </div>
+  ` };
+}
+
+function renderCard(t, linkMap, hub) {
   const tier = t.tier || 3;
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
@@ -735,15 +866,16 @@ function renderCard(t) {
   const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card">
+  return `<div class="transfer-card" id="${acc.id}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="source-info">${t.src || 'Unknown'}</div>
+      <div class="source-info">${t.src || 'Unknown'}${t.club ? ' &middot; ' + t.club : ''}</div>
     </div>
     <div class="card-body">
       <div class="note${noteClass}">${t.note || 'No details'}</div>
@@ -760,6 +892,58 @@ function renderCard(t) {
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderConfirmedCard(t, dir, linkMap, hub) {
+  const destination = dir === 'in' ? (t.to || '') : (t.club || '');
+  const dirLabel = dir === 'in' ? 'IN' : 'OUT';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge ${dir === 'in' ? 't1' : 't2'}">${dirLabel}${t.free ? ' &middot; FREE' : ''}</span>
+      </div>
+      <div class="source-info">${destination}${t.sub ? ' &middot; ' + t.sub : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    <div class="card-footer">
+      <div class="metric">
+        <div class="metric-label">Fee</div>
+        <div class="metric-value" style="font-size:14px">${t.fee || 'Undisclosed'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Status</div>
+        <div class="metric-value" style="font-size:14px;color:var(--accent-gold)">${t.statusTxt || 'DONE'}</div>
+      </div>
+    </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderWatchlistCard(t, wlLinkMap, hub) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, wlLinkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
+      </div>
+      <div class="source-info">${dirLabel}${t.club ? ' &middot; ' + t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}${t.age ? ' &middot; ' + t.age : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    ${acc.html}
   </div>`;
 }
 </script>

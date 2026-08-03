@@ -64,20 +64,20 @@
   .logo {
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     text-decoration:none;
     color:inherit;
   }
 
   .logo img {
-    width:20px;
-    height:20px;
+    width:36px;
+    height:36px;
     display:block;
   }
 
   .logo h1 {
     font-family:var(--display);
-    font-size:13px;
+    font-size:15px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
@@ -209,8 +209,8 @@
 
   .transfer-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fill, minmax(370px, 1fr));
+    gap:22px;
   }
 
   .transfer-card {
@@ -229,7 +229,7 @@
   }
 
   .card-header {
-    padding:16px;
+    padding:20px;
     border-bottom:1px solid var(--border);
     background:linear-gradient(135deg, rgba(var(--primary), 0.08), rgba(255,61,71,0.04));
   }
@@ -238,12 +238,12 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:12px;
+    margin-bottom:14px;
   }
 
   .player-name {
     font-family:var(--display);
-    font-size:16px;
+    font-size:18px;
     font-weight:400;
     text-transform:uppercase;
     letter-spacing:0.5px;
@@ -251,12 +251,12 @@
 
   .tier-badge {
     display:inline-block;
-    padding:4px 8px;
+    padding:5px 10px;
     background:var(--bg);
     border:1px solid;
     border-radius:4px;
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:1px;
     text-transform:uppercase;
@@ -269,21 +269,21 @@
 
   .source-info {
     font-family:var(--mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--text-secondary);
   }
 
   .card-body {
-    padding:16px;
+    padding:20px;
   }
 
   .note {
     background:rgba(232,194,73,0.08);
     border-left:3px solid var(--accent-gold);
-    padding:12px;
+    padding:14px;
     border-radius:6px;
-    font-size:14px;
-    line-height:1.6;
+    font-size:15px;
+    line-height:1.65;
     color:var(--text-secondary);
   }
 
@@ -294,10 +294,10 @@
   }
 
   .card-footer {
-    padding:16px;
+    padding:18px 20px;
     border-top:1px solid var(--border);
     display:flex;
-    gap:16px;
+    gap:18px;
   }
 
   .metric {
@@ -306,7 +306,7 @@
 
   .metric-label {
     font-family:var(--mono);
-    font-size:9px;
+    font-size:10px;
     letter-spacing:1px;
     text-transform:uppercase;
     color:var(--text-muted);
@@ -314,7 +314,7 @@
   }
 
   .metric-bar {
-    height:4px;
+    height:5px;
     background:rgba(0,0,0,0.2);
     border-radius:999px;
     overflow:hidden;
@@ -329,9 +329,83 @@
 
   .metric-value {
     font-family:var(--mono);
-    font-size:11px;
+    font-size:12px;
     font-weight:600;
     color:var(--text);
+  }
+
+  /* ===== SOURCES ACCORDION ===== */
+  .sources-toggle {
+    width:100%;
+    padding:12px 20px;
+    background:rgba(255,255,255,0.02);
+    border:none;
+    border-top:1px solid var(--border);
+    color:var(--text-secondary);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:color 150ms ease, background 150ms ease;
+  }
+
+  .sources-toggle:hover {
+    color:var(--text);
+    background:rgba(255,255,255,0.04);
+  }
+
+  .sources-toggle .chev {
+    display:inline-block;
+    transition:transform 200ms ease;
+    font-size:9px;
+  }
+
+  .transfer-card.expanded .sources-toggle .chev {
+    transform:rotate(180deg);
+  }
+
+  .sources-panel {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 260ms ease;
+    background:rgba(0,0,0,0.15);
+  }
+
+  .transfer-card.expanded .sources-panel {
+    max-height:400px;
+  }
+
+  .sources-panel-inner {
+    padding:14px 20px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .sources-panel-inner a {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--primary-bright);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .sources-panel-inner a:hover {
+    text-decoration:underline;
+  }
+
+  .sources-panel-empty {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+    font-style:italic;
   }
 
   /* ===== BULLSHIT CALLOUT ===== */
@@ -431,8 +505,23 @@
   </section>
 
   <section class="section">
-    <h3 class="section-title">Active Rumors & Reports</h3>
+    <h3 class="section-title">Incoming Rumours &amp; Reports</h3>
     <div class="transfer-grid" id="rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Outgoing Rumours &amp; Reports</h3>
+    <div class="transfer-grid" id="outgoing-rumors">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Long-Tail Watchlist</h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-14px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
+    <div class="transfer-grid" id="watchlist-grid">
       <!-- Populated by data -->
     </div>
   </section>
@@ -461,17 +550,17 @@ const BRAND = {
 
 const VOLATILE = {
   verified: "2026-08-03",
-  coach: "Simone Inzaghi",
+  coach: "Cristian Chivu (Serie A Coach of the Season 2025/26)",
   dof: "Piero Ausilio (Director)",
   europe: "UEFA Champions League (2026/27)",
-  finish: "1st Serie A (2025/26)",
-  owner: "Suning Group (Steven Zhang, CEO)",
+  finish: "1st Serie A (2025/26) - 21st league title, clinched with 3 games to spare",
+  owner: "Oaktree Capital Management",
   window: "Opens 1 Jul, closes 1 Sep 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.transfermarkt.com/"],
-  queries: ["Inter Milan transfer news 2026"]
+  feeds: ["https://www.transfermarkt.com/", "https://sempreinter.com/", "https://football-italia.net/category/teams/inter/"],
+  queries: ["Inter Milan transfer news 2026", "Inter Milan Bonny Diouf official", "Inter Milan Chivu transfer plans"]
 };
 
 const REPORT_META = {
@@ -480,49 +569,70 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Inter Milan"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Ange-Yoan Bonny", sub:"21 · ST · France U21", to:"permanent from Parma", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed - Bonny reunites with Cristian Chivu, who coached him for his breakout final three months at Parma (6 goals, 4 assists, helped Parma beat relegation). Stuttgart tried to hijack the move but Inter won out."},
+  {name:"Andy Diouf", sub:"22 · CM · France", to:"permanent from RC Lens", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed midfield addition from Lens, adding energy and ball-carrying to Chivu's engine room."}
+];
 
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Nicolò Barella", sub:"27 · CM · Italy", club:"Inter Milan", pos:"CM", report:"18 Jul 2026", src:"Sky Italia", tier:2, fee:"New long-term deal", truth:90, prob:95, light:"g", trend:"up", note:"Inter securing midfield lynchpin Barella with fresh contract through 2031. Talks at advanced stage with expected completion within days."}
+  {name:"Ademola Lookman", sub:"28 · W · Nigeria", club:"Atalanta", pos:"W", report:"2 Aug 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:40, prob:15, light:"r", trend:"down", note:"A recurring name, but Inter are reported to have pulled out of the race for the Atalanta winger, with the club now weighing alternatives instead."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Filip Stanković", sub:"21 · GK · Serbia", club:"Multiple (loan/permanent options discussed)", pos:"GK", report:"16 Apr 2026", src:"SempreInter", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Inter reportedly weighing offering the young goalkeeper as makeweight in a deal involving Andy Diouf-type midfield business; more squad management than an active sale process."}
+];
 
 const RISERS = [
-  {ar:"⬆", t:"<b>Nicolò Barella extension</b>: Contract talks progressing well; deal expected to secure midfielder through 2031."}
+  {ar:"⬆", t:"<b>Ange-Yoan Bonny official</b>: reunion with Chivu completed from Parma for ~€25m after Inter beat Stuttgart to the deal."},
+  {ar:"⬆", t:"<b>Andy Diouf official</b>: midfield reinforcement arrives from Lens."}
 ];
 
-const FALLERS = [];
+const FALLERS = [
+  {ar:"⬇", t:"<b>Ademola Lookman</b>: Inter reported to have pulled out of the race for the Atalanta winger."}
+];
 
 const NEW = [
-  {ar:"✦", t:"Inter consolidating midfield with Barella extension as champions prepare for European campaign."}
+  {ar:"✦", t:"Reigning champions add Bonny (reunited with Chivu from Parma) and Diouf in midfield; a winger pursuit (Lookman) appears to have cooled."}
 ];
 
 const IGNORE = [];
 
 const POSITIONS = [
-  {p:"Central midfield", w:40, x:"Barella's renewal secures the department; no major additions planned."}
+  {p:"Forward depth", w:45, x:"Bonny's arrival covers rotation behind the senior strikers under Chivu."},
+  {p:"Central midfield", w:40, x:"Diouf adds energy; Barella remains the on-field lynchpin."}
 ];
 
-const WATCHLIST = [
-  {name:"Nicolò Barella", club:"Inter Milan", pos:"CM", dir:"in", age:"~16 days", tier:2, note:"Contract extension near completion. Expected announcement within a week according to Sky Italia."}
-];
+const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Inter Milan Official", u:"#"}
+  sempreinter: {l:"SempreInter · Transfer News", u:"https://sempreinter.com/"},
+  footballItalia: {l:"Football Italia · Inter", u:"https://football-italia.net/category/teams/inter/"},
+  club: {l:"Inter Official · Transfer News", u:"https://www.inter.it/en/news/category/transfer-news"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Ange-Yoan Bonny": ["footballItalia","club"],
+  "Andy Diouf": ["club"],
+  "Ademola Lookman": ["footballItalia"],
+  "Filip Stanković": ["sempreinter"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Inter Milan · 2026/27 Season`,
-  heroLede: `Transfer window active. Inter Milan preparing squad for next season.`,
-  stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
-  spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  heroH2: `Champions reload: Bonny reunites with Chivu, Diouf adds midfield legs after a title won with three games to spare`,
+  heroLede: `Inter Milan enter this window as reigning Serie A champions, having clinched their 21st league title under first-season coach <b>Cristian Chivu</b> with three games still to play - a title win that earned Chivu Serie A's Coach of the Season award. The summer business so far reflects continuity rather than upheaval: <b>Ange-Yoan Bonny</b> arrives from Parma for around €25m, reuniting with Chivu after the pair worked together during Bonny's breakout final months there, while <b>Andy Diouf</b> joins from Lens to add midfield legs. A reported interest in Atalanta's Ademola Lookman appears to have cooled, with Inter said to have pulled out of that race.`,
+  metaRow: `<span>DECISION-MAKER: <b>Piero Ausilio</b> (Director)</span> <span>HEAD COACH: <b>Cristian Chivu</b></span> <span>WINDOW: <b>1 Jul – 1 Sep</b></span>`,
+  stats: `<div class="stat gold"><div class="l">2025/26 Finish</div><div class="v">1<small>st</small></div></div><div class="stat gold"><div class="l">2026/27 Europe</div><div class="v">UCL</div></div><div class="stat gold"><div class="l">Confirmed In</div><div class="v">2</div></div>`,
+  positionPanel: ``,
+  confirmedPending: `No further deals reported as agreed-but-unannounced this window.`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `Squad management (Stanković) rather than a pressing need to sell defines Inter's outgoing business as champions.`,
+  pricingBanner: ``,
+  excludedNote: ``,
+  spendIn: { v: `~€25m+ committed`, x: `Bonny (~€25m) and Diouf (undisclosed) are done; no further major incomings reported as advanced.` },
+  spendOut: { v: `Limited`, x: `No confirmed sales; Stanković's future is a squad-management question rather than an active process.` },
   methodLegend: ``
 };
 
@@ -553,32 +663,77 @@ const PROSE = {
     subEl.innerHTML = bits.join('');
   }
 
-  // Render confirmed IN
-  if(typeof CONFIRMED_IN !== 'undefined') {
-    const confirmed = document.getElementById('confirmed');
-    if(confirmed) {
-      if(CONFIRMED_IN.length > 0) {
-        confirmed.innerHTML = CONFIRMED_IN.map(t => renderCard(t)).join('');
-      } else {
-        confirmed.innerHTML = '<div class="empty">No confirmed transfers yet</div>';
-      }
-    }
+  const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};
+  const _WLM = (typeof WL_LINKMAP !== 'undefined') ? WL_LINKMAP : {};
+  const _HUB = (typeof HUB !== 'undefined') ? HUB : {};
+
+  // Render confirmed (in + out together, direction-tagged)
+  const confirmed = document.getElementById('confirmed');
+  if(confirmed) {
+    const ins = (typeof CONFIRMED_IN !== 'undefined' ? CONFIRMED_IN : []).map(t => renderConfirmedCard(t, 'in', _LM, _HUB));
+    const outs = (typeof CONFIRMED_OUT !== 'undefined' ? CONFIRMED_OUT : []).map(t => renderConfirmedCard(t, 'out', _LM, _HUB));
+    const all = ins.concat(outs);
+    confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
   }
 
-  // Render rumors/incoming
-  if(typeof INCOMING !== 'undefined') {
-    const rumors = document.getElementById('rumors');
-    if(rumors) {
-      if(INCOMING.length > 0) {
-        rumors.innerHTML = INCOMING.map(t => renderCard(t)).join('');
-      } else {
-        rumors.innerHTML = '<div class="empty">No active rumors yet</div>';
-      }
-    }
+  // Render incoming rumours
+  const rumors = document.getElementById('rumors');
+  if(rumors) {
+    const items = (typeof INCOMING !== 'undefined') ? INCOMING : [];
+    rumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active incoming rumours yet</div>';
+  }
+
+  // Render outgoing rumours
+  const outRumors = document.getElementById('outgoing-rumors');
+  if(outRumors) {
+    const items = (typeof OUTGOING !== 'undefined') ? OUTGOING : [];
+    outRumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active outgoing rumours yet</div>';
+  }
+
+  // Render long-tail watchlist
+  const wlGrid = document.getElementById('watchlist-grid');
+  if(wlGrid) {
+    const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
+    wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
 })();
 
-function renderCard(t) {
+let __cardSeq = 0;
+
+function toggleCard(id) {
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('expanded');
+}
+
+function buildSourcesPanel(name, linkMap, hub) {
+  const keys = (linkMap && linkMap[name]) || [];
+  const list = Array.isArray(keys) ? keys : [keys];
+  const links = list
+    .map(k => hub && hub[k])
+    .filter(Boolean)
+    .map(h => (h.u && h.u !== '#')
+      ? `<a href="${h.u}" target="_blank" rel="noopener">${h.l} ↗</a>`
+      : `<span class="sources-panel-empty">${h.l}</span>`);
+  return links.length
+    ? links.join('')
+    : '<div class="sources-panel-empty">No linked source on file for this item yet.</div>';
+}
+
+function sourcesAccordion(name, linkMap, hub) {
+  __cardSeq++;
+  const id = 'src-card-' + __cardSeq;
+  return { id, html: `
+    <button type="button" class="sources-toggle" onclick="toggleCard('${id}')">
+      <span>Sources &amp; links</span>
+      <span class="chev">▾</span>
+    </button>
+    <div class="sources-panel">
+      <div class="sources-panel-inner">${buildSourcesPanel(name, linkMap, hub)}</div>
+    </div>
+  ` };
+}
+
+function renderCard(t, linkMap, hub) {
   const tier = t.tier || 3;
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
@@ -586,15 +741,16 @@ function renderCard(t) {
   const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
 
-  return `<div class="transfer-card">
+  return `<div class="transfer-card" id="${acc.id}">
     ${bullTag}
     <div class="card-header">
       <div class="card-player">
         <span class="player-name">${t.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="source-info">${t.src || 'Unknown'}</div>
+      <div class="source-info">${t.src || 'Unknown'}${t.club ? ' &middot; ' + t.club : ''}</div>
     </div>
     <div class="card-body">
       <div class="note${noteClass}">${t.note || 'No details'}</div>
@@ -611,6 +767,58 @@ function renderCard(t) {
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderConfirmedCard(t, dir, linkMap, hub) {
+  const destination = dir === 'in' ? (t.to || '') : (t.club || '');
+  const dirLabel = dir === 'in' ? 'IN' : 'OUT';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge ${dir === 'in' ? 't1' : 't2'}">${dirLabel}${t.free ? ' &middot; FREE' : ''}</span>
+      </div>
+      <div class="source-info">${destination}${t.sub ? ' &middot; ' + t.sub : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    <div class="card-footer">
+      <div class="metric">
+        <div class="metric-label">Fee</div>
+        <div class="metric-value" style="font-size:14px">${t.fee || 'Undisclosed'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Status</div>
+        <div class="metric-value" style="font-size:14px;color:var(--accent-gold)">${t.statusTxt || 'DONE'}</div>
+      </div>
+    </div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderWatchlistCard(t, wlLinkMap, hub) {
+  const tier = t.tier || 3;
+  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, wlLinkMap, hub);
+
+  return `<div class="transfer-card" id="${acc.id}">
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${t.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
+      </div>
+      <div class="source-info">${dirLabel}${t.club ? ' &middot; ' + t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}${t.age ? ' &middot; ' + t.age : ''}</div>
+    </div>
+    <div class="card-body">
+      <div class="note">${t.note || 'No details'}</div>
+    </div>
+    ${acc.html}
   </div>`;
 }
 </script>

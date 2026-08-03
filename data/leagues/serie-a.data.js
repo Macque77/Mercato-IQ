@@ -6,36 +6,29 @@
 const LEAGUE = {
   name: "Serie A",
   nation: "Italy",
-  stories_count: 6
+  stories_count: 8
 };
 
 const TOP_STORIES = [  {
-    name: "Tammy Abraham", prob: 58,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "AS Roma", to: "AC Milan",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "€35m", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Nicolò Barella", prob: 95,
-    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
-    from: "Inter Milan", to: "Inter Milan",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "New long-term deal", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Paulo Dybala", prob: 92,
-    club_origin: "juventus", club_display_name: "Juventus", direction: "in",
-    from: "AS Roma", to: "Juventus",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Free agent", updated: "2026-08-03T14:30:00Z"
-  },
-  {
     name: "Serhou Guirassy", prob: 40,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "RB Leipzig", to: "AS Roma",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Kerim Alajbegović", prob: 38,
+    club_origin: "juventus", club_display_name: "Juventus", direction: "in",
+    from: "Bayer Leverkusen", to: "Juventus",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "€25-30m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Konstantinos Karetsas", prob: 35,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Genk", to: "AC Milan",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€40m", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Jeremie Freuler", prob: 28,
@@ -45,20 +38,41 @@ const TOP_STORIES = [  {
     value: "€15m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Dusan Vlahović", prob: 25,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "Juventus", to: "AC Milan",
+    name: "Dušan Vlahović", prob: 20,
+    club_origin: "juventus", club_display_name: "Juventus", direction: "out",
+    from: "Juventus", to: "AC Milan (rumoured)",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€70m", updated: "2026-08-03T14:30:00Z"
+    value: "€70m (speculative)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Ademola Lookman", prob: 15,
+    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
+    from: "Atalanta", to: "Inter Milan",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Filip Stanković", prob: 25,
+    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "out",
+    from: "Inter Milan", to: "Multiple (loan/permanent options discussed)",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Can Uzun", prob: 18,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Eintracht Frankfurt", to: "AC Milan",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "~€25m", updated: "2026-08-03T14:30:00Z"
   },
 ];
 
-const BY_CLUB = {"ac-milan": 2, "inter-milan": 1, "juventus": 1, "as-roma": 2};
+const BY_CLUB = {"as-roma": 2, "juventus": 2, "ac-milan": 2, "inter-milan": 2};
 
-const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 2}, {"slug": "as-roma", "name": "AS Roma", "count": 2}, {"slug": "atalanta", "name": "Atalanta", "count": 0}, {"slug": "bologna", "name": "Bologna", "count": 0}, {"slug": "cagliari", "name": "Cagliari", "count": 0}, {"slug": "como", "name": "Como 1907", "count": 0}, {"slug": "empoli", "name": "Empoli FC", "count": 0}, {"slug": "inter-milan", "name": "Inter Milan", "count": 1}, {"slug": "juventus", "name": "Juventus", "count": 1}, {"slug": "parma", "name": "Parma", "count": 0}, {"slug": "torino", "name": "Torino", "count": 0}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 0}, {"slug": "venezia", "name": "Venezia", "count": 0}];
+const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 2, "badge": false}, {"slug": "as-roma", "name": "AS Roma", "count": 2, "badge": false}, {"slug": "atalanta", "name": "Atalanta", "count": 0, "badge": false}, {"slug": "bologna", "name": "Bologna", "count": 0, "badge": false}, {"slug": "cagliari", "name": "Cagliari", "count": 0, "badge": false}, {"slug": "como", "name": "Como 1907", "count": 0, "badge": false}, {"slug": "empoli", "name": "Empoli FC", "count": 0, "badge": false}, {"slug": "inter-milan", "name": "Inter Milan", "count": 2, "badge": false}, {"slug": "juventus", "name": "Juventus", "count": 2, "badge": false}, {"slug": "parma", "name": "Parma", "count": 0, "badge": false}, {"slug": "torino", "name": "Torino", "count": 0, "badge": false}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 0, "badge": false}, {"slug": "venezia", "name": "Venezia", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.670873Z",
+  updated: "2026-08-03T17:41:25.400211Z",
   label: "League aggregation"
 };

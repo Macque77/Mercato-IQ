@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 100
+  stories_count: 93
 };
 
 const TOP_STORIES = [  {
@@ -45,20 +45,6 @@ const TOP_STORIES = [  {
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Morgan Rogers",prob: 35,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
-    from: "Aston Villa", to: "Arsenal",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "£80m+", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Mateus Fernandes",prob: 34,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
-    from: "West Ham United", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "£80m (West Ham valuation)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
     name: "Lewis Hall",prob: 32,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "Newcastle United", to: "Manchester United",
@@ -84,7 +70,7 @@ const TOP_STORIES = [  {
     club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
     from: "Toulouse", to: "Sunderland",
     tier: 2, coverage: 5, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-31T09:00:00Z", league: "Championship"
+    value: "TBC", updated: "2026-07-31T09:00:00Z", league: "Premier League"
   },
   {
     name: "Marcus Rashford",prob: 42,
@@ -114,14 +100,28 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£10m bid rejected", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
+  {
+    name: "Guglielmo Vicario",prob: 36,
+    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Juventus",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "≈£20m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "Lamine Camara",prob: 35,
+    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
+    from: "Monaco", to: "Aston Villa",
+    tier: 2, coverage: 3, coverage_trend: 'flat',
+    value: "~€50m", updated: "2026-06-06T12:00:00Z", league: "Premier League"
+  },
 ];
 
-const BY_LEAGUE = {"Premier League": 60, "Championship": 40};
+const BY_LEAGUE = {"Premier League": 93};
 
-const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 40}, {"slug": "premier-league", "name": "Premier League", "count": 60}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 93}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.663890Z",
+  updated: "2026-08-03T17:41:25.393495Z",
   label: "Nation aggregation"
 };
