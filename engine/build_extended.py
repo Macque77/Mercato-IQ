@@ -74,14 +74,23 @@ def build_nation(slug):
 
     data = open(data_path).read()
 
-    # Extract nation name from data
+    # Extract nation name and flag from data
     nation_match = re.search(r'const NATION = ({[^}]+})', data)
+    nation_name = slug.replace('-', ' ').title()
+    flag_emoji = '🌍'
+    story_count = '0'
+
     if nation_match:
         nation_obj_str = nation_match.group(1)
         nation_name_match = re.search(r'name:\s*"([^"]+)"', nation_obj_str)
-        nation_name = nation_name_match.group(1) if nation_name_match else slug.replace('-', ' ').title()
-    else:
-        nation_name = slug.replace('-', ' ').title()
+        if nation_name_match:
+            nation_name = nation_name_match.group(1)
+        flag_match = re.search(r'flag_emoji:\s*"([^"]+)"', nation_obj_str)
+        if flag_match:
+            flag_emoji = flag_match.group(1)
+        count_match = re.search(r'stories_count:\s*(\d+)', nation_obj_str)
+        if count_match:
+            story_count = count_match.group(1)
 
     # Extract timestamp
     updated_match = re.search(r'updated:\s*"([^"]+)"', data)
@@ -93,6 +102,8 @@ def build_nation(slug):
     out = tpl
     out = out.replace('{{LEAGUE_NAME}}', nation_name)
     out = out.replace('{{NATION}}', nation_name)
+    out = out.replace('{{FLAG}}', flag_emoji)
+    out = out.replace('{{STORY_COUNT}}', story_count)
     out = out.replace('{{UPDATED}}', updated)
     out = out.replace('{{ASOF}}', asof)
 
@@ -130,16 +141,24 @@ def build_league(slug):
     data = open(data_path).read()
 
     # Extract league name and nation from data
+    league_name = slug.replace('-', ' ').title()
+    nation_name = 'International'
+    nation_slug = 'international'
+    story_count = '0'
+
     league_match = re.search(r'const LEAGUE = ({[^}]+})', data)
     if league_match:
         league_obj_str = league_match.group(1)
         league_name_match = re.search(r'name:\s*"([^"]+)"', league_obj_str)
-        league_name = league_name_match.group(1) if league_name_match else slug.replace('-', ' ').title()
+        if league_name_match:
+            league_name = league_name_match.group(1)
         nation_match = re.search(r'nation:\s*"([^"]+)"', league_obj_str)
-        nation_name = nation_match.group(1) if nation_match else 'International'
-    else:
-        league_name = slug.replace('-', ' ').title()
-        nation_name = 'International'
+        if nation_match:
+            nation_name = nation_match.group(1)
+            nation_slug = nation_name.lower().replace(' ', '-')
+        count_match = re.search(r'stories_count:\s*(\d+)', league_obj_str)
+        if count_match:
+            story_count = count_match.group(1)
 
     # Extract timestamp
     updated_match = re.search(r'updated:\s*"([^"]+)"', data)
@@ -151,6 +170,8 @@ def build_league(slug):
     out = tpl
     out = out.replace('{{LEAGUE_NAME}}', league_name)
     out = out.replace('{{NATION}}', nation_name)
+    out = out.replace('{{NATION_SLUG}}', nation_slug)
+    out = out.replace('{{STORY_COUNT}}', story_count)
     out = out.replace('{{UPDATED}}', updated)
     out = out.replace('{{ASOF}}', asof)
 
