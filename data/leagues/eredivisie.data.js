@@ -45,6 +45,6 @@ const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 1, "badge": fa
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T23:03:21.064391Z",
+  updated: "2026-08-03T23:04:23.253693Z",
   label: "League aggregation"
 };
