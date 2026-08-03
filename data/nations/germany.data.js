@@ -59,6 +59,6 @@ const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 6}, 
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:36:42.461010Z",
+  updated: "2026-08-03T19:39:01.924312Z",
   label: "Nation aggregation"
 };

@@ -6,7 +6,7 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 10
+  stories_count: 9
 };
 
 const TOP_STORIES = [  {
@@ -72,13 +72,6 @@ const TOP_STORIES = [  {
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "€2.5m", updated: "2026-07-29T00:00:00Z", league: "La Liga"
   },
-  {
-    name: "",prob: 50,
-    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "out",
-    from: "FC Barcelona", to: "TBD",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-29T00:00:00Z", league: "La Liga"
-  },
 ];
 
 const BY_LEAGUE = {"La Liga": 9, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
@@ -87,6 +80,6 @@ const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 9}, {"slug
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:36:42.462936Z",
+  updated: "2026-08-03T19:39:01.925802Z",
   label: "Nation aggregation"
 };

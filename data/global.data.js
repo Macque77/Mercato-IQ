@@ -746,19 +746,6 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
-    headline: "Moussa Diaby",
-    club_display_name: "Borussia Dortmund",
-    summary: "German media reports Dortmund as one of several clubs interested in Leverkusen w",
-    value: "€40m",
-    from: "Bayer Leverkusen", to: "Borussia Dortmund",
-    direction: "in",
-    prob: 35, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Germany", league: "Bundesliga",
-    club_link: "borussia-dortmund",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Konstantinos Karetsas",
     club_display_name: "AC Milan",
     summary: "",
@@ -769,6 +756,19 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "Italy", league: "Serie A",
     club_link: "ac-milan",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Moussa Diaby",
+    club_display_name: "Borussia Dortmund",
+    summary: "German media reports Dortmund as one of several clubs interested in Leverkusen w",
+    value: "€40m",
+    from: "Bayer Leverkusen", to: "Borussia Dortmund",
+    direction: "in",
+    prob: 35, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "borussia-dortmund",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -801,7 +801,7 @@ const NATIONS = [
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 10, league_count: 1
+    stories_count: 9, league_count: 1
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T19:36:42.459356Z",
+  updated: "2026-08-03T19:39:01.923080Z",
   label: "Global aggregation from all clubs"
 };
