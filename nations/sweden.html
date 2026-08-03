@@ -34,7 +34,7 @@
     background:var(--bg);
     color:var(--text);
     font-family:var(--body);
-    line-height:1.6;
+    line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
 
@@ -46,7 +46,7 @@
     background:linear-gradient(180deg, rgba(10,14,23,0.98), rgba(10,14,23,0.88));
     backdrop-filter:blur(12px);
     border-bottom:1px solid var(--border);
-    padding:16px 24px;
+    padding:10px 20px;
   }
 
   .header-inner {
@@ -55,28 +55,37 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:24px;
+    gap:20px;
   }
 
   .logo {
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:6px;
     text-decoration:none;
     color:inherit;
     font-family:var(--display);
-    font-size:16px;
+    font-size:13px;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:0.5px;
     text-transform:uppercase;
+  }
+
+  .logo-icon {
+    width:20px;
+    height:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
   }
 
   .breadcrumb {
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:8px;
     font-family:var(--mono);
-    font-size:11px;
+    font-size:10px;
     text-transform:uppercase;
     color:var(--text-muted);
   }
@@ -95,7 +104,7 @@
   .hero {
     background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
     border-bottom:1px solid var(--border);
-    padding:40px 24px;
+    padding:24px 20px;
   }
 
   .hero-inner {
@@ -103,36 +112,36 @@
     margin:0 auto;
     display:flex;
     align-items:center;
-    gap:32px;
+    gap:20px;
   }
 
   .flag-display {
-    font-size:64px;
+    font-size:48px;
     line-height:1;
+    flex-shrink:0;
   }
 
   .hero-text h2 {
     font-family:var(--display);
-    font-size:clamp(28px, 4vw, 44px);
+    font-size:32px;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:0.5px;
     text-transform:uppercase;
-    margin-bottom:12px;
+    margin-bottom:6px;
   }
 
   .hero-text .subtitle {
     color:var(--text-secondary);
-    font-size:16px;
+    font-size:13px;
     display:flex;
-    gap:24px;
-    margin-bottom:16px;
+    gap:16px;
   }
 
   .stat {
     display:flex;
-    gap:8px;
+    gap:4px;
     font-family:var(--mono);
-    font-size:12px;
+    font-size:11px;
   }
 
   .stat-label {
@@ -149,101 +158,103 @@
   .container {
     max-width:1400px;
     margin:0 auto;
-    padding:48px 24px;
+    padding:28px 20px;
   }
 
   /* ===== LEAGUES SECTION ===== */
   .section {
-    margin-bottom:48px;
+    margin-bottom:28px;
   }
 
   .section-title {
     font-family:var(--display);
-    font-size:24px;
+    font-size:18px;
     font-weight:400;
-    letter-spacing:0.5px;
+    letter-spacing:0.3px;
     text-transform:uppercase;
-    margin-bottom:24px;
-    padding-bottom:12px;
+    margin-bottom:12px;
+    padding-bottom:8px;
     border-bottom:2px solid var(--accent-gold);
   }
 
   .leagues-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
-    gap:16px;
-    margin-bottom:48px;
+    grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
+    gap:10px;
+    margin-bottom:24px;
   }
 
   .league-card {
     background:var(--surface);
     border:1px solid var(--border);
-    border-radius:12px;
-    padding:20px;
+    border-radius:8px;
+    padding:12px;
     text-align:center;
     cursor:pointer;
-    transition:all 300ms ease;
+    transition:all 200ms ease;
     text-decoration:none;
     color:inherit;
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:6px;
+    min-height:70px;
+    justify-content:center;
   }
 
   .league-card:hover {
     border-color:var(--accent-gold);
-    transform:translateY(-4px);
-    box-shadow:0 12px 24px rgba(0,0,0,0.3);
+    transform:translateY(-2px);
+    box-shadow:0 6px 12px rgba(0,0,0,0.3);
   }
 
   .league-name {
     font-family:var(--display);
-    font-size:14px;
+    font-size:12px;
     font-weight:400;
     text-transform:uppercase;
-    letter-spacing:0.5px;
+    letter-spacing:0.2px;
   }
 
   .league-meta {
     font-family:var(--mono);
-    font-size:11px;
+    font-size:10px;
     color:var(--text-muted);
   }
 
   /* ===== TRANSFER CARDS ===== */
   .transfer-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:12px;
   }
 
   .transfer-card {
     background:var(--surface);
     border:1px solid var(--border);
-    border-radius:12px;
+    border-radius:8px;
     overflow:hidden;
-    transition:all 300ms ease;
+    transition:all 200ms ease;
     position:relative;
   }
 
   .transfer-card:hover {
     border-color:var(--accent-gold);
-    transform:translateY(-4px);
-    box-shadow:0 12px 24px rgba(0,0,0,0.3);
+    transform:translateY(-2px);
+    box-shadow:0 6px 12px rgba(0,0,0,0.3);
   }
 
   .bullshit-tag {
     position:absolute;
-    top:12px;
-    right:12px;
+    top:8px;
+    right:8px;
     background:var(--accent-red);
     color:white;
-    padding:6px 10px;
-    border-radius:6px;
+    padding:4px 8px;
+    border-radius:4px;
     font-family:var(--mono);
-    font-size:9px;
+    font-size:8px;
     font-weight:700;
-    letter-spacing:1px;
+    letter-spacing:0.5px;
     text-transform:uppercase;
     animation:shake 3s ease-in-out infinite;
     z-index:1;
@@ -255,7 +266,7 @@
   }
 
   .card-header {
-    padding:16px;
+    padding:10px;
     border-bottom:1px solid var(--border);
     background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
   }
@@ -264,28 +275,31 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:8px;
+    margin-bottom:4px;
+    gap:6px;
   }
 
   .player-name {
     font-family:var(--display);
-    font-size:16px;
+    font-size:13px;
     font-weight:400;
     text-transform:uppercase;
-    letter-spacing:0.5px;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
   }
 
   .tier-badge {
     display:inline-block;
-    padding:4px 8px;
+    padding:2px 6px;
     background:var(--bg);
     border:1px solid;
-    border-radius:4px;
+    border-radius:3px;
     font-family:var(--mono);
-    font-size:9px;
+    font-size:8px;
     font-weight:700;
-    letter-spacing:1px;
+    letter-spacing:0.5px;
     text-transform:uppercase;
+    white-space:nowrap;
   }
 
   .tier-badge.t1 { color:var(--tier1); border-color:var(--tier1); }
@@ -294,24 +308,24 @@
 
   .club-name {
     font-family:var(--mono);
-    font-size:12px;
-    color:var(--text-secondary);
+    font-size:10px;
+    color:var(--text-muted);
   }
 
   .card-body {
-    padding:16px;
+    padding:10px;
   }
 
   .transfer-direction {
     display:flex;
     align-items:center;
-    gap:8px;
-    margin-bottom:12px;
-    font-size:12px;
+    gap:6px;
+    margin-bottom:6px;
+    font-size:11px;
   }
 
   .direction-icon {
-    font-size:16px;
+    font-size:14px;
   }
 
   .direction-icon.in { color:var(--accent-green); }
@@ -319,16 +333,21 @@
 
   .transfer-details {
     font-family:var(--mono);
-    font-size:11px;
+    font-size:10px;
     color:var(--text-muted);
-    line-height:1.5;
+    line-height:1.4;
+  }
+
+  .transfer-details div:last-child {
+    color:var(--accent-gold);
+    margin-top:3px;
   }
 
   .card-footer {
-    padding:16px;
+    padding:10px;
     border-top:1px solid var(--border);
     display:flex;
-    gap:16px;
+    gap:10px;
   }
 
   .metric {
@@ -337,19 +356,19 @@
 
   .metric-label {
     font-family:var(--mono);
-    font-size:9px;
-    letter-spacing:1px;
+    font-size:8px;
+    letter-spacing:0.5px;
     text-transform:uppercase;
     color:var(--text-muted);
-    margin-bottom:6px;
+    margin-bottom:3px;
   }
 
   .metric-bar {
-    height:4px;
-    background:rgba(0,0,0,0.2);
+    height:3px;
+    background:rgba(0,0,0,0.3);
     border-radius:999px;
     overflow:hidden;
-    margin-bottom:4px;
+    margin-bottom:2px;
   }
 
   .metric-fill {
@@ -360,36 +379,30 @@
 
   .metric-value {
     font-family:var(--mono);
-    font-size:11px;
+    font-size:9px;
     font-weight:600;
     color:var(--text);
   }
 
-  .empty {
-    text-align:center;
-    padding:60px 24px;
-    color:var(--text-muted);
-  }
-
   footer {
     border-top:1px solid var(--border);
-    padding:48px 24px;
+    padding:20px 24px;
     text-align:center;
     color:var(--text-muted);
     font-family:var(--mono);
-    font-size:12px;
+    font-size:10px;
   }
 
   @media(max-width:768px) {
     .hero-inner {
       flex-direction:column;
       text-align:center;
-      gap:24px;
+      gap:16px;
     }
 
     .hero-text .subtitle {
       flex-direction:column;
-      gap:12px;
+      gap:10px;
     }
 
     .transfer-grid {
@@ -397,7 +410,15 @@
     }
 
     .leagues-grid {
-      grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .logo {
+      font-size:11px;
+    }
+
+    .hero-text h2 {
+      font-size:24px;
     }
   }
 </style>
@@ -406,7 +427,10 @@
 
 <header>
   <div class="header-inner">
-    <a href="/" class="logo">Mercato IQ</a>
+    <a href="/" class="logo">
+      <div class="logo-icon">⚡</div>
+      <span>Mercato IQ</span>
+    </a>
     <div class="breadcrumb">
       <a href="/">Global</a>
       <span>/</span>
@@ -417,13 +441,13 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="flag-display">{{FLAG}}</div>
+    <div class="flag-display">🇸🇪</div>
     <div class="hero-text">
       <h2>Sweden</h2>
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">{{STORY_COUNT}}</span>
+          <span class="stat-value">1</span>
         </div>
       </div>
     </div>
@@ -475,12 +499,12 @@
 
 function renderStory(s) {
   const tier = s.tier || 3;
-  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
   const isBullshit = prob < 35;
   const direction = s.direction === 'out' ? '→' : '←';
   const dirClass = s.direction === 'out' ? 'out' : 'in';
-  const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
+  const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
 
   return `<div class="transfer-card">
     ${bullTag}
@@ -496,13 +520,13 @@ function renderStory(s) {
         <span class="direction-icon ${dirClass}">${direction}</span>
         <div class="transfer-details">
           <div>${s.from} → ${s.to}</div>
-          <div style="margin-top:4px;color:var(--accent-gold)">${s.value}</div>
+          <div>${s.value}</div>
         </div>
       </div>
     </div>
     <div class="card-footer">
       <div class="metric">
-        <div class="metric-label">Probability</div>
+        <div class="metric-label">Prob</div>
         <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
         <div class="metric-value">${prob}%</div>
       </div>

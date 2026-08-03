@@ -74,23 +74,23 @@ def build_nation(slug):
 
     data = open(data_path).read()
 
-    # Extract nation name and flag from data
-    nation_match = re.search(r'const NATION = ({[^}]+})', data)
+    # Extract nation metadata directly from data string
     nation_name = slug.replace('-', ' ').title()
     flag_emoji = '🌍'
     story_count = '0'
 
-    if nation_match:
-        nation_obj_str = nation_match.group(1)
-        nation_name_match = re.search(r'name:\s*"([^"]+)"', nation_obj_str)
-        if nation_name_match:
-            nation_name = nation_name_match.group(1)
-        flag_match = re.search(r'flag_emoji:\s*"([^"]+)"', nation_obj_str)
-        if flag_match:
-            flag_emoji = flag_match.group(1)
-        count_match = re.search(r'stories_count:\s*(\d+)', nation_obj_str)
-        if count_match:
-            story_count = count_match.group(1)
+    # Extract individual fields from data
+    name_match = re.search(r'const NATION = \{[^}]*name:\s*"([^"]+)"', data, re.DOTALL)
+    if name_match:
+        nation_name = name_match.group(1)
+
+    flag_match = re.search(r'const NATION = \{[^}]*flag_emoji:\s*"([^"]+)"', data, re.DOTALL)
+    if flag_match:
+        flag_emoji = flag_match.group(1)
+
+    count_match = re.search(r'const NATION = \{[^}]*stories_count:\s*(\d+)', data, re.DOTALL)
+    if count_match:
+        story_count = count_match.group(1)
 
     # Extract timestamp
     updated_match = re.search(r'updated:\s*"([^"]+)"', data)
@@ -140,25 +140,25 @@ def build_league(slug):
 
     data = open(data_path).read()
 
-    # Extract league name and nation from data
+    # Extract league metadata directly from data string
     league_name = slug.replace('-', ' ').title()
     nation_name = 'International'
     nation_slug = 'international'
     story_count = '0'
 
-    league_match = re.search(r'const LEAGUE = ({[^}]+})', data)
-    if league_match:
-        league_obj_str = league_match.group(1)
-        league_name_match = re.search(r'name:\s*"([^"]+)"', league_obj_str)
-        if league_name_match:
-            league_name = league_name_match.group(1)
-        nation_match = re.search(r'nation:\s*"([^"]+)"', league_obj_str)
-        if nation_match:
-            nation_name = nation_match.group(1)
-            nation_slug = nation_name.lower().replace(' ', '-')
-        count_match = re.search(r'stories_count:\s*(\d+)', league_obj_str)
-        if count_match:
-            story_count = count_match.group(1)
+    # Extract individual fields from data
+    league_name_match = re.search(r'const LEAGUE = \{[^}]*name:\s*"([^"]+)"', data, re.DOTALL)
+    if league_name_match:
+        league_name = league_name_match.group(1)
+
+    nation_match = re.search(r'const LEAGUE = \{[^}]*nation:\s*"([^"]+)"', data, re.DOTALL)
+    if nation_match:
+        nation_name = nation_match.group(1)
+        nation_slug = nation_name.lower().replace(' ', '-')
+
+    count_match = re.search(r'const LEAGUE = \{[^}]*stories_count:\s*(\d+)', data, re.DOTALL)
+    if count_match:
+        story_count = count_match.group(1)
 
     # Extract timestamp
     updated_match = re.search(r'updated:\s*"([^"]+)"', data)
