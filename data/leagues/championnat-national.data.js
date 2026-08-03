@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "as-monaco-b", "name": "KAA Gent", "count": 0}, {"s
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T16:41:03.667196Z",
+  updated: "2026-08-03T17:17:21.417986Z",
   label: "League aggregation"
 };
