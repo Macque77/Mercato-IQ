@@ -6,7 +6,7 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 9
+  stories_count: 10
 };
 
 const TOP_STORIES = [  {
@@ -71,6 +71,13 @@ const TOP_STORIES = [  {
     from: "Sevilla", to: "FC Barcelona",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "€2.5m", updated: "2026-07-29T00:00:00Z", league: "La Liga"
+  },
+  {
+    name: "",prob: 50,
+    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "out",
+    from: "FC Barcelona", to: "TBD",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-07-29T00:00:00Z", league: "La Liga"
   },
 ];
 
