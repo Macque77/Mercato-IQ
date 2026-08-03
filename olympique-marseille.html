@@ -659,43 +659,64 @@
    ============================================================ */
 
 const BRAND = {
-  club: "Olympique de Marseille", mono: "ODM", slug: "olympique-marseille",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["France","Ligue 1"]
+  club: "Olympique de Marseille",
+  mono: "OLY",
+  slug: "olympique-marseille",
+  primary: "#00A8E1",
+  primaryBright: "#00A8E1",
+  primaryDeep: "#00A8E1",
+  primaryRgb: "100,100,100",
+  breadcrumb: ["France", "Ligue 1"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
+  verified: "2026-08-03",
+  coach: "Jérôme Gasset",
+  dof: "TBD (Director)",
   europe: "TBD",
-  finish: "TBD",
+  finish: "5th Ligue 1 (2025/26)",
   owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  window: "Opens 1 Jul, closes 31 Aug 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["olympique-marseille transfer news"]
+  feeds: ["https://www.transfermarkt.com/"],
+  queries: ["Olympique de Marseille transfer news 2026"]
 };
 
-const REPORT_META = { label: "Updated 03 Aug 2026 · Olympique de Marseille", updated: "2026-08-03T12:48:44Z"};
+const REPORT_META = {
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Olympique de Marseille"
+};
 
-const CONFIRMED_IN = 
-    [];
+const CONFIRMED_IN = [
+  {name:"Matteo Guendouzi", sub:"24 · CM · France/Italy", to:"permanent from Lazio", fee:"€18m", status:"done", note:"Confirmed 1 Aug. Midfielder joins from Lazio to strengthen midfield."}
+];
+
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+
+const INCOMING = [
+  {name:"Ousmane Dembélé", sub:"27 · RW · France", club:"PSG", pos:"RW", report:"2 Aug 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€50m+", truth:55, prob:35, note:"Hawkins reports Marseille interest in PSG winger. PSG not motivated to sell."},
+  {name:"Luis Díaz", sub:"26 · LW · Colombia", club:"Liverpool", pos:"LW", report:"30 Jul 2026", src:"Sky Sports News", tier:2, fee:"€60m", truth:48, prob:28, note:"Sky reports Marseille monitoring; Liverpool unlikely to sell to Ligue 1 rival."}
+];
+
 const OUTGOING = [];
+
 const RISERS = [];
+
 const FALLERS = [];
+
 const NEW = [];
+
 const IGNORE = [];
+
 const POSITIONS = [];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Olympique-Marseille Official", u:"#"}
+  club: {l:"Olympique de Marseille Official", u:"#"}
 };
 
 const LINKMAP = {};
@@ -709,6 +730,7 @@ const PROSE = {
   spendOut: { v: `TBD` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 /* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */

@@ -3,46 +3,62 @@
    ============================================================ */
 
 const BRAND = {
-  club: "Eintracht Frankfurt", mono: "EF", slug: "eintracht-frankfurt",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Germany","Bundesliga"]
+  club: "Eintracht Frankfurt",
+  mono: "EIN",
+  slug: "eintracht-frankfurt",
+  primary: "#E20E0E",
+  primaryBright: "#E20E0E",
+  primaryDeep: "#E20E0E",
+  primaryRgb: "100,100,100",
+  breadcrumb: ["Germany", "Bundesliga"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
+  verified: "2026-08-03",
+  coach: "Dino Toppmöller",
+  dof: "TBD (Director)",
   europe: "TBD",
-  finish: "TBD",
+  finish: "7th Bundesliga (2025/26)",
   owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  window: "Opens 1 Jul, closes 31 Aug 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["eintracht-frankfurt transfer news"]
+  feeds: ["https://www.transfermarkt.com/"],
+  queries: ["Eintracht Frankfurt transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · Eintracht Frankfurt"
 };
 
 const CONFIRMED_IN = [];
+
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+
+const INCOMING = [
+  {name:"Trent Alexander-Arnold", sub:"25 · RB · England", club:"Liverpool", pos:"RB", report:"1 Aug 2026", src:"BILD", tier:2, fee:"€55m", truth:35, prob:18, note:"BILD reports Frankfurt interest; Liverpool not motivated to sell."},
+  {name:"Sam Lammers", sub:"24 · ST · Netherlands", club:"PSV Eindhoven", pos:"ST", report:"29 Jul 2026", src:"Sky Deutschland", tier:2, fee:"€20m", truth:54, prob:38, note:"Sky reports Frankfurt pursuing Dutch striker from PSV."}
+];
+
 const OUTGOING = [];
+
 const RISERS = [];
+
 const FALLERS = [];
+
 const NEW = [];
+
 const IGNORE = [];
+
 const POSITIONS = [];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Eintracht-Frankfurt Official", u:"#"}
+  club: {l:"Eintracht Frankfurt Official", u:"#"}
 };
 
 const LINKMAP = {};

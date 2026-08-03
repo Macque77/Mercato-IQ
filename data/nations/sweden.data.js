@@ -6,17 +6,24 @@
 const NATION = {
   name: "Sweden",
   flag_emoji: "🇸🇪",
-  stories_count: 0
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Sotirios Papagiannopoulos",prob: 40,
+    club_origin: "aik-fotboll", club_display_name: "AIK Fotboll", direction: "in",
+    from: "AEK Athens", to: "AIK Fotboll",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€6m", updated: "2026-08-03T14:30:00Z", league: "Allsvenskan"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Allsvenskan": 1};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "allsvenskan", "name": "Allsvenskan", "count": 1}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:01:37.251711Z",
+  updated: "2026-08-03T15:19:55.124448Z",
   label: "Nation aggregation"
 };

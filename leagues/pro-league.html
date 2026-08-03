@@ -236,19 +236,40 @@
 
 const LEAGUE = {
   name: "Pro League",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Belgium",
+  stories_count: 3
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "David Njoku", prob: 45,
+    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
+    from: "Udinese", to: "Club Brugge",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€18m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Andi Zeqiri", prob: 38,
+    club_origin: "standard-liege", club_display_name: "Standard Liège", direction: "in",
+    from: "Augsburg", to: "Standard Liège",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€12m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Denzel Dumfries", prob: 22,
+    club_origin: "rsc-anderlecht", club_display_name: "RSC Anderlecht", direction: "in",
+    from: "Inter Milan", to: "RSC Anderlecht",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€35m", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"club-brugge": 1, "standard-liege": 1, "rsc-anderlecht": 1};
 
-const CLUBS_LIST = [{"slug": "beerschot", "name": "AS Eupen", "count": 0}, {"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 0}, {"slug": "club-brugge", "name": "Club Brugge", "count": 0}, {"slug": "westerlo", "name": "K Beerschot VA", "count": 0}, {"slug": "eupen", "name": "KAS Eupen", "count": 0}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 0}, {"slug": "charleroi", "name": "RAEC Mons", "count": 0}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 0}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 0}];
+const CLUBS_LIST = [{"slug": "beerschot", "name": "AS Eupen", "count": 0}, {"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 0}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1}, {"slug": "westerlo", "name": "K Beerschot VA", "count": 0}, {"slug": "eupen", "name": "KAS Eupen", "count": 0}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 0}, {"slug": "charleroi", "name": "RAEC Mons", "count": 0}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 1}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:00:41.064452Z",
+  updated: "2026-08-03T15:19:28.838325Z",
   label: "League aggregation"
 };
 

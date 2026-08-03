@@ -237,25 +237,53 @@
 const LEAGUE = {
   name: "Eredivisie",
   nation: "Netherlands",
-  stories_count: 1
+  stories_count: 5
 };
 
 const TOP_STORIES = [  {
+    name: "Mats Wieffer", prob: 88,
+    club_origin: "az-alkmaar", club_display_name: "AZ Alkmaar", direction: "in",
+    from: "AZ Alkmaar", to: "AZ Alkmaar",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Contract renewal", updated: "2026-08-03T14:30:00Z"
+  },
+  {
     name: "Xavi Simons", prob: 65,
     club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
     from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan + option", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Jarrad Branthwaite", prob: 42,
+    club_origin: "feyenoord", club_display_name: "Feyenoord Rotterdam", direction: "in",
+    from: "Everton", to: "Feyenoord Rotterdam",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€40m loan option", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Tomás Bisuma", prob: 40,
+    club_origin: "sc-heerenveen", club_display_name: "SC Heerenveen", direction: "in",
+    from: "Fiorentina", to: "SC Heerenveen",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€15m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Orkun Kökçü", prob: 35,
+    club_origin: "ajax", club_display_name: "AFC Ajax", direction: "in",
+    from: "Benfica", to: "AFC Ajax",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€30m", updated: "2026-08-03T14:30:00Z"
+  },
 ];
 
-const BY_CLUB = {"psv-eindhoven": 1};
+const BY_CLUB = {"az-alkmaar": 1, "psv-eindhoven": 1, "feyenoord": 1, "sc-heerenveen": 1, "ajax": 1};
 
-const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 0}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 0}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 0}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 1}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 0}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 0}];
+const CLUBS_LIST = [{"slug": "ajax", "name": "AFC Ajax", "count": 1}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 1}, {"slug": "feyenoord", "name": "Feyenoord Rotterdam", "count": 1}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 0}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 1}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 1}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:00:41.062407Z",
+  updated: "2026-08-03T15:19:28.836517Z",
   label: "League aggregation"
 };
 

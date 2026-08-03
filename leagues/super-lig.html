@@ -236,19 +236,33 @@
 
 const LEAGUE = {
   name: "Super Lig",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Turkey",
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Mehmet Topal", prob: 85,
+    club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
+    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Contract renewal", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Álvaro Soler", prob: 42,
+    club_origin: "galatasaray", club_display_name: "Galatasaray SK", direction: "in",
+    from: "Montpellier", to: "Galatasaray SK",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€10m", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"fenerbahce": 1, "galatasaray": 1};
 
-const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 0}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 0}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 0}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 0}, {"slug": "rizespor", "name": "Rizespor", "count": 0}, {"slug": "samsunspor", "name": "Samsunspor", "count": 0}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0}];
+const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 0}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 0}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 0}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 0}, {"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 1}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1}, {"slug": "rizespor", "name": "Rizespor", "count": 0}, {"slug": "samsunspor", "name": "Samsunspor", "count": 0}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:00:41.065730Z",
+  updated: "2026-08-03T15:19:28.839775Z",
   label: "League aggregation"
 };
 

@@ -237,15 +237,36 @@
 const LEAGUE = {
   name: "Bundesliga",
   nation: "Germany",
-  stories_count: 2
+  stories_count: 6
 };
 
 const TOP_STORIES = [  {
-    name: "Mats Wieffer", prob: 45,
-    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
-    from: "AZ Alkmaar", to: "Borussia Dortmund",
+    name: "Niclas Füllkrug", prob: 82,
+    club_origin: "werder-bremen", club_display_name: "Werder Bremen", direction: "in",
+    from: "Free agent (Werder)", to: "Werder Bremen",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€25m", updated: "2026-08-03T14:30:00Z"
+    value: "Contract renewal", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Mateo Kvasina", prob: 48,
+    club_origin: "fc-cologne", club_display_name: "FC Cologne", direction: "in",
+    from: "Borussia Mönchengladbach", to: "FC Cologne",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€8m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Elia Caprile", prob: 44,
+    club_origin: "vfl-bochum", club_display_name: "VfL Bochum", direction: "in",
+    from: "Empoli", to: "VfL Bochum",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€12m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Sam Lammers", prob: 38,
+    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
+    from: "PSV Eindhoven", to: "Eintracht Frankfurt",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€20m", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Moussa Diaby", prob: 35,
@@ -254,15 +275,22 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€40m", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Trent Alexander-Arnold", prob: 18,
+    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
+    from: "Liverpool", to: "Eintracht Frankfurt",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€55m", updated: "2026-08-03T14:30:00Z"
+  },
 ];
 
-const BY_CLUB = {"borussia-dortmund": 2};
+const BY_CLUB = {"werder-bremen": 1, "fc-cologne": 1, "vfl-bochum": 1, "eintracht-frankfurt": 2, "borussia-dortmund": 1};
 
-const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 0}, {"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 0}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 0}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 0}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 2}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 0}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 0}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 0}, {"slug": "sv-werder-bremen", "name": "SV Werder Bremen", "count": 0}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 0}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 0}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 0}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0}];
+const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 0}, {"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 0}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 0}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 0}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 1}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 2}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 0}, {"slug": "fc-cologne", "name": "FC Cologne", "count": 1}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 0}, {"slug": "sv-werder-bremen", "name": "SV Werder Bremen", "count": 0}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 0}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 0}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 1}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0}, {"slug": "werder-bremen", "name": "Werder Bremen", "count": 1}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:00:41.061393Z",
+  updated: "2026-08-03T15:19:28.835522Z",
   label: "League aggregation"
 };
 

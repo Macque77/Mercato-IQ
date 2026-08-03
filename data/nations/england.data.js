@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 101
+  stories_count: 100
 };
 
 const TOP_STORIES = [  {
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Premier League": 60, "Championship": 41};
+const BY_LEAGUE = {"Premier League": 60, "Championship": 40};
 
-const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 41}, {"slug": "premier-league", "name": "Premier League", "count": 60}];
+const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 40}, {"slug": "premier-league", "name": "Premier League", "count": 60}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:01:37.250144Z",
+  updated: "2026-08-03T15:19:55.123178Z",
   label: "Nation aggregation"
 };

@@ -5,18 +5,32 @@
 
 const LEAGUE = {
   name: "Super League",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Greece",
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Chiquinho", prob: 48,
+    club_origin: "olympiacos", club_display_name: "Olympiacos FC", direction: "in",
+    from: "Guimarães", to: "Olympiacos FC",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€8m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Oussama El Khannouss", prob: 40,
+    club_origin: "aek-athens", club_display_name: "AEK Athens", direction: "in",
+    from: "Leicester City", to: "AEK Athens",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€15m", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"olympiacos": 1, "aek-athens": 1};
 
-const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 0}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 0}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0}, {"slug": "atromitos", "name": "Atromitos", "count": 0}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0}, {"slug": "olympiacos", "name": "Olympiacos", "count": 0}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 0}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 0}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 0}, {"slug": "peristeri", "name": "Peristeri", "count": 0}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0}];
+const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 0}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0}, {"slug": "atromitos", "name": "Atromitos", "count": 0}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0}, {"slug": "olympiacos", "name": "Olympiacos FC", "count": 1}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 0}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 0}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 0}, {"slug": "peristeri", "name": "Peristeri", "count": 0}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:01:37.257047Z",
+  updated: "2026-08-03T15:19:55.129015Z",
   label: "League aggregation"
 };

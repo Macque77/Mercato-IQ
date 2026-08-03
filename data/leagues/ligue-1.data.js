@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Ligue 1",
   nation: "France",
-  stories_count: 1
+  stories_count: 8
 };
 
 const TOP_STORIES = [  {
@@ -16,14 +16,63 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "€500m (structured)", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Madison Ingram", prob: 55,
+    club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
+    from: "Chelsea", to: "Olympique Lyonnais",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "€30m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Florian Thauvin", prob: 48,
+    club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
+    from: "Free agent (Udinese)", to: "Olympique Lyonnais",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free agent", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Gonçalo Inácio", prob: 40,
+    club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
+    from: "Sporting CP", to: "LOSC Lille",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€35m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Ousmane Dembélé", prob: 35,
+    club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
+    from: "PSG", to: "Olympique de Marseille",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€50m+", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Jonathan David", prob: 32,
+    club_origin: "rc-lens", club_display_name: "RC Lens", direction: "in",
+    from: "LOSC Lille", to: "RC Lens",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€45m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Milan Skriniar", prob: 30,
+    club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
+    from: "Paris Saint-Germain", to: "LOSC Lille",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€30m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Luis Díaz", prob: 28,
+    club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
+    from: "Liverpool", to: "Olympique de Marseille",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€60m", updated: "2026-08-03T14:30:00Z"
+  },
 ];
 
-const BY_CLUB = {"paris-saint-germain": 1};
+const BY_CLUB = {"paris-saint-germain": 1, "olympique-lyon": 2, "losc-lille": 2, "olympique-marseille": 2, "rc-lens": 1};
 
-const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0}, {"slug": "as-monaco", "name": "AS Monaco", "count": 0}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0}, {"slug": "olympique-lyonnais", "name": "Olympique Lyonnais", "count": 0}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 0}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 1}, {"slug": "rc-lens", "name": "RC Lens", "count": 0}, {"slug": "stade-brest", "name": "Stade Brest", "count": 0}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 0}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 0}];
+const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0}, {"slug": "as-monaco", "name": "AS Monaco", "count": 0}, {"slug": "angers-sco", "name": "Angers SCO", "count": 0}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 0}, {"slug": "losc-lille", "name": "LOSC Lille", "count": 2}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0}, {"slug": "olympique-lyonnais", "name": "Olympique Lyonnais", "count": 0}, {"slug": "olympique-lyon", "name": "Olympique Lyonnais", "count": 2}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 2}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 1}, {"slug": "rc-lens", "name": "RC Lens", "count": 1}, {"slug": "stade-brest", "name": "Stade Brest", "count": 0}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 0}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:01:37.255198Z",
+  updated: "2026-08-03T15:19:55.127438Z",
   label: "League aggregation"
 };

@@ -3,46 +3,62 @@
    ============================================================ */
 
 const BRAND = {
-  club: "RC Lens", mono: "RL", slug: "rc-lens",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["France","Ligue 1"]
+  club: "RC Lens",
+  mono: "RC ",
+  slug: "rc-lens",
+  primary: "#FDB400",
+  primaryBright: "#FDB400",
+  primaryDeep: "#FDB400",
+  primaryRgb: "100,100,100",
+  breadcrumb: ["France", "Ligue 1"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
+  verified: "2026-08-03",
+  coach: "Will Still",
+  dof: "TBD (Director)",
   europe: "TBD",
-  finish: "TBD",
+  finish: "4th Ligue 1 (2025/26)",
   owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  window: "Opens 1 Jul, closes 31 Aug 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["rc-lens transfer news"]
+  feeds: ["https://www.transfermarkt.com/"],
+  queries: ["RC Lens transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · RC Lens"
 };
 
 const CONFIRMED_IN = [];
+
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+
+const INCOMING = [
+  {name:"Rafael Leão", sub:"24 · LW · Portugal", club:"AC Milan", pos:"LW", report:"1 Aug 2026", src:"L'Équipe", tier:2, fee:"€70m", truth:45, prob:22, note:"L'Équipe reports Lens monitoring; Milan unlikely to sell star winger."},
+  {name:"Jonathan David", sub:"24 · ST · Canada", club:"LOSC Lille", pos:"ST", report:"31 Jul 2026", src:"Sky Sports France", tier:2, fee:"€45m", truth:52, prob:32, note:"Sky reports Lens interest in Lille striker; deal unlikely from Ligue 1 rivals."}
+];
+
 const OUTGOING = [];
+
 const RISERS = [];
+
 const FALLERS = [];
+
 const NEW = [];
+
 const IGNORE = [];
+
 const POSITIONS = [];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Rc-Lens Official", u:"#"}
+  club: {l:"RC Lens Official", u:"#"}
 };
 
 const LINKMAP = {};

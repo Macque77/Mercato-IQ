@@ -6,17 +6,31 @@
 const NATION = {
   name: "Greece",
   flag_emoji: "🇬🇷",
-  stories_count: 0
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Chiquinho",prob: 48,
+    club_origin: "olympiacos", club_display_name: "Olympiacos FC", direction: "in",
+    from: "Guimarães", to: "Olympiacos FC",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€8m", updated: "2026-08-03T14:30:00Z", league: "Super League"
+  },
+  {
+    name: "Oussama El Khannouss",prob: 40,
+    club_origin: "aek-athens", club_display_name: "AEK Athens", direction: "in",
+    from: "Leicester City", to: "AEK Athens",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€15m", updated: "2026-08-03T14:30:00Z", league: "Super League"
+  },
+];
 
-const BY_LEAGUE = {};
+const BY_LEAGUE = {"Super League": 2};
 
-const LEAGUES_LIST = [];
+const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 2}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:01:37.250713Z",
+  updated: "2026-08-03T15:19:55.123699Z",
   label: "Nation aggregation"
 };

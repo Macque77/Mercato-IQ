@@ -5,18 +5,25 @@
 
 const LEAGUE = {
   name: "Allsvenskan",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Sweden",
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Sotirios Papagiannopoulos", prob: 40,
+    club_origin: "aik-fotboll", club_display_name: "AIK Fotboll", direction: "in",
+    from: "AEK Athens", to: "AIK Fotboll",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€6m", updated: "2026-08-03T14:30:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"aik-fotboll": 1};
 
-const CLUBS_LIST = [{"slug": "ucl-albanova", "name": "UC Albanova", "count": 0}];
+const CLUBS_LIST = [{"slug": "aik-fotboll", "name": "AIK Fotboll", "count": 1}, {"slug": "ucl-albanova", "name": "UC Albanova", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:01:37.252694Z",
+  updated: "2026-08-03T15:19:55.125264Z",
   label: "League aggregation"
 };

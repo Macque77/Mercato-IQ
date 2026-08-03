@@ -3,46 +3,61 @@
    ============================================================ */
 
 const BRAND = {
-  club: "AZ Alkmaar", mono: "AA", slug: "az-alkmaar",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Netherlands","Eredivisie"]
+  club: "AZ Alkmaar",
+  mono: "AZ ",
+  slug: "az-alkmaar",
+  primary: "#FFEB3B",
+  primaryBright: "#FFEB3B",
+  primaryDeep: "#FFEB3B",
+  primaryRgb: "100,100,100",
+  breadcrumb: ["Netherlands", "Eredivisie"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
+  verified: "2026-08-03",
+  coach: "Maarten Martens",
+  dof: "TBD (Director)",
   europe: "TBD",
-  finish: "TBD",
+  finish: "4th Eredivisie (2025/26)",
   owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  window: "Opens 1 Jul, closes 31 Aug 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["az-alkmaar transfer news"]
+  feeds: ["https://www.transfermarkt.com/"],
+  queries: ["AZ Alkmaar transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · AZ Alkmaar"
 };
 
 const CONFIRMED_IN = [];
+
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+
+const INCOMING = [
+  {name:"Mats Wieffer", sub:"24 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"2 Aug 2026", src:"ESPN", tier:2, fee:"Contract renewal", truth:80, prob:88, note:"ESPN reports AZ close to Wieffer extension before Dortmund move."}
+];
+
 const OUTGOING = [];
+
 const RISERS = [];
+
 const FALLERS = [];
+
 const NEW = [];
+
 const IGNORE = [];
+
 const POSITIONS = [];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Az-Alkmaar Official", u:"#"}
+  club: {l:"AZ Alkmaar Official", u:"#"}
 };
 
 const LINKMAP = {};

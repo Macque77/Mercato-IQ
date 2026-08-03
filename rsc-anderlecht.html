@@ -659,46 +659,61 @@
    ============================================================ */
 
 const BRAND = {
-  club: "RSC Anderlecht", mono: "RA", slug: "rsc-anderlecht",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Belgium","Pro League"]
+  club: "RSC Anderlecht",
+  mono: "RSC",
+  slug: "rsc-anderlecht",
+  primary: "#8B0000",
+  primaryBright: "#8B0000",
+  primaryDeep: "#8B0000",
+  primaryRgb: "100,100,100",
+  breadcrumb: ["Belgium", "Pro League"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
-  dof: "TBD",
+  verified: "2026-08-03",
+  coach: "Elias Cobbaut",
+  dof: "TBD (Director)",
   europe: "TBD",
-  finish: "TBD",
+  finish: "2nd Pro League (2025/26)",
   owner: "TBD",
-  window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
+  window: "Opens 1 Jul, closes 31 Aug 2026"
 };
 
 const SWEEP = {
-  feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["rsc-anderlecht transfer news"]
+  feeds: ["https://www.transfermarkt.com/"],
+  queries: ["RSC Anderlecht transfer news 2026"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 · RSC Anderlecht"
 };
 
 const CONFIRMED_IN = [];
+
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+
+const INCOMING = [
+  {name:"Denzel Dumfries", sub:"28 · RB · Netherlands", club:"Inter Milan", pos:"RB", report:"2 Aug 2026", src:"VRT", tier:2, fee:"€35m", truth:45, prob:22, note:"VRT reports Anderlecht interest; Inter unlikely to sell key defender."}
+];
+
 const OUTGOING = [];
+
 const RISERS = [];
+
 const FALLERS = [];
+
 const NEW = [];
+
 const IGNORE = [];
+
 const POSITIONS = [];
+
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Rsc-Anderlecht Official", u:"#"}
+  club: {l:"RSC Anderlecht Official", u:"#"}
 };
 
 const LINKMAP = {};
@@ -712,6 +727,7 @@ const PROSE = {
   spendOut: { v: `TBD` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 /* ---------- BOOT: apply club brand + prose (data-driven shell) ---------- */
