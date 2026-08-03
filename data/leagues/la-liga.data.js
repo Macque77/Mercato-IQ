@@ -20,7 +20,7 @@ const TOP_STORIES = [  {
     name: "Gabriel Jesus", prob: 42,
     club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
     from: "Manchester City", to: "Atlético Madrid",
-    tier: 2, coverage: 1, coverage_trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€45m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -66,6 +66,6 @@ const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "coun
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:00:41.062909Z",
+  updated: "2026-08-03T15:01:37.254274Z",
   label: "League aggregation"
 };

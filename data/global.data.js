@@ -259,7 +259,7 @@ const HEADLINES = [
     from: "Manchester City", to: "Atlético Madrid",
     direction: "in",
     prob: 42, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "Spain", league: "La Liga",
     club_link: "atletico-madrid",
     updated: "2026-08-03T14:30:00Z"
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T15:00:41.057580Z",
+  updated: "2026-08-03T15:01:37.249516Z",
   label: "Global aggregation from all clubs"
 };
