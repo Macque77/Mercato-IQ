@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "La Liga",
   nation: "Spain",
-  stories_count: 10
+  stories_count: 9
 };
 
 const TOP_STORIES = [  {
@@ -72,21 +72,14 @@ const TOP_STORIES = [  {
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "€2.5m", updated: "2026-07-29T00:00:00Z"
   },
-  {
-    name: "", prob: 50,
-    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "out",
-    from: "FC Barcelona", to: "TBD",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-29T00:00:00Z"
-  },
 ];
 
-const BY_CLUB = {"barcelona": 4, "atletico-madrid": 2, "real-madrid": 4};
+const BY_CLUB = {"barcelona": 3, "atletico-madrid": 2, "real-madrid": 4};
 
-const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 0, "badge": false}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 2, "badge": false}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0, "badge": false}, {"slug": "osasuna", "name": "CA Osasuna", "count": 0, "badge": false}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 0, "badge": false}, {"slug": "barcelona", "name": "FC Barcelona", "count": 4, "badge": false}, {"slug": "celta-vigo", "name": "RC Celta", "count": 0, "badge": false}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 0, "badge": false}, {"slug": "real-betis", "name": "Real Betis", "count": 0, "badge": false}, {"slug": "real-madrid", "name": "Real Madrid", "count": 4, "badge": false}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 0, "badge": false}, {"slug": "sevilla", "name": "Sevilla", "count": 0, "badge": false}, {"slug": "valencia", "name": "Valencia", "count": 0, "badge": false}, {"slug": "villarreal", "name": "Villarreal", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 0, "badge": false}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 2, "badge": false}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0, "badge": false}, {"slug": "osasuna", "name": "CA Osasuna", "count": 0, "badge": false}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 0, "badge": false}, {"slug": "barcelona", "name": "FC Barcelona", "count": 3, "badge": false}, {"slug": "celta-vigo", "name": "RC Celta", "count": 0, "badge": false}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 0, "badge": false}, {"slug": "real-betis", "name": "Real Betis", "count": 0, "badge": false}, {"slug": "real-madrid", "name": "Real Madrid", "count": 4, "badge": false}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 0, "badge": false}, {"slug": "sevilla", "name": "Sevilla", "count": 0, "badge": false}, {"slug": "valencia", "name": "Valencia", "count": 0, "badge": false}, {"slug": "villarreal", "name": "Villarreal", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:15:43.718867Z",
+  updated: "2026-08-03T18:16:48.597304Z",
   label: "League aggregation"
 };

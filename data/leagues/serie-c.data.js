@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "calcio-catania", "name": "Calcio Catania", "count"
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:15:43.721691Z",
+  updated: "2026-08-03T18:16:48.600909Z",
   label: "League aggregation"
 };

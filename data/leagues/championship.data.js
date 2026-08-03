@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "blackburn-rovers", "name": "Blackburn Rovers", "co
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:15:43.718167Z",
+  updated: "2026-08-03T18:16:48.596395Z",
   label: "League aggregation"
 };

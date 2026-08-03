@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "waasland-beveren", "name": "Waasland-Beveren", "co
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:15:43.718665Z",
+  updated: "2026-08-03T18:16:48.597018Z",
   label: "League aggregation"
 };
