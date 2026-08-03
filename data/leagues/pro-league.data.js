@@ -34,10 +34,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"club-brugge": 1, "standard-liege": 1, "rsc-anderlecht": 1};
 
-const CLUBS_LIST = [{"slug": "beerschot", "name": "AS Eupen", "count": 0, "badge": false}, {"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 0, "badge": false}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1, "badge": false}, {"slug": "westerlo", "name": "K Beerschot VA", "count": 0, "badge": false}, {"slug": "eupen", "name": "KAS Eupen", "count": 0, "badge": false}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 0, "badge": false}, {"slug": "charleroi", "name": "RAEC Mons", "count": 0, "badge": false}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 1, "badge": false}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 0, "badge": false}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1, "badge": false}, {"slug": "eupen", "name": "KAS Eupen", "count": 0, "badge": false}, {"slug": "westerlo", "name": "KVC Westerlo", "count": 0, "badge": false}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 0, "badge": false}, {"slug": "charleroi", "name": "R Charleroi SC", "count": 0, "badge": false}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 1, "badge": false}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 0, "badge": false}, {"slug": "waasland-beveren", "name": "Waasland-Beveren", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.599766Z",
+  updated: "2026-08-03T19:36:42.473765Z",
   label: "League aggregation"
 };

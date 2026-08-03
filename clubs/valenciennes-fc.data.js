@@ -6,7 +6,7 @@ const BRAND = {
   club: "Valenciennes FC", mono: "VF", slug: "valenciennes-fc",
   primary: "#8B1E3F", primaryBright: "#C0526A", primaryDeep: "#4A0F21",
   primaryRgb: "139,30,63",
-  breadcrumb: ["France","Ligue 2"]
+  breadcrumb: ["France","Ligue 3"]
 };
 
 const VOLATILE = {

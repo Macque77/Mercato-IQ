@@ -6,7 +6,7 @@ const BRAND = {
   club: "Paris FC", mono: "PF", slug: "paris-fc",
   primary: "#0033A0", primaryBright: "#5CA9FF", primaryDeep: "#001F4D",
   primaryRgb: "0,51,160",
-  breadcrumb: ["France","Ligue 2"]
+  breadcrumb: ["France","Ligue 1"]
 };
 
 const VOLATILE = {

@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "alcorcon", "name": "AD Alcorc\u00f3n", "count": 0, "badge": false}, {"slug": "arco-sd", "name": "ARCO Zaragoza", "count": 0, "badge": false}, {"slug": "albacete", "name": "Albacete Balompi\u00e9", "count": 0, "badge": false}, {"slug": "cd-castellon", "name": "CD Castell\u00f3n", "count": 0, "badge": false}, {"slug": "cd-numancia", "name": "CD Numancia", "count": 0, "badge": false}, {"slug": "tenerife", "name": "CD Tenerife", "count": 0, "badge": false}, {"slug": "cf-eldense", "name": "CF Eldense", "count": 0, "badge": false}, {"slug": "sabadell", "name": "CF Sabadell", "count": 0, "badge": false}, {"slug": "cordoba", "name": "C\u00f3rdoba CF", "count": 0, "badge": false}, {"slug": "elche", "name": "Elche CF", "count": 0, "badge": false}, {"slug": "cartagena", "name": "FC Cartagena", "count": 0, "badge": false}, {"slug": "real-valladolid", "name": "Real Valladolid", "count": 0, "badge": false}, {"slug": "eibar", "name": "SD Eibar", "count": 0, "badge": false}, {"slug": "sd-huesca", "name": "SD Huesca", "count": 0, "badge": false}, {"slug": "ponferradina", "name": "SD Ponferradina", "count": 0, "badge": false}, {"slug": "sporting-gijon", "name": "Sporting Gij\u00f3n", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "albacete", "name": "Albacete Balompi\u00e9", "count": 0, "badge": false}, {"slug": "cd-castellon", "name": "CD Castell\u00f3n", "count": 0, "badge": false}, {"slug": "tenerife", "name": "CD Tenerife", "count": 0, "badge": false}, {"slug": "cf-eldense", "name": "CF Eldense", "count": 0, "badge": false}, {"slug": "sabadell", "name": "CF Sabadell", "count": 0, "badge": false}, {"slug": "cordoba", "name": "C\u00f3rdoba CF", "count": 0, "badge": false}, {"slug": "real-valladolid", "name": "Real Valladolid", "count": 0, "badge": false}, {"slug": "eibar", "name": "SD Eibar", "count": 0, "badge": false}, {"slug": "sporting-gijon", "name": "Sporting Gij\u00f3n", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.597552Z",
+  updated: "2026-08-03T19:36:42.469274Z",
   label: "League aggregation"
 };

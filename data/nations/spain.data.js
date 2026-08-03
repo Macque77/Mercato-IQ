@@ -69,17 +69,17 @@ const TOP_STORIES = [  {
     name: "Ederson",prob: 8,
     club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
     from: "Sevilla", to: "FC Barcelona",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
+    tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "€2.5m", updated: "2026-07-29T00:00:00Z", league: "La Liga"
   },
 ];
 
-const BY_LEAGUE = {"La Liga": 9, "La Liga 2": 0, "Segunda Divisi\u00f3n B": 0};
+const BY_LEAGUE = {"La Liga": 9, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 9}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 9}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.594340Z",
+  updated: "2026-08-03T19:36:42.462936Z",
   label: "Nation aggregation"
 };

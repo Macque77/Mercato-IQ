@@ -6,7 +6,7 @@ const BRAND = {
   club: "Cosenza", mono: "C", slug: "cosenza",
   primary: "#B30000", primaryBright: "#FF6259", primaryDeep: "#6B0000",
   primaryRgb: "179,0,0",
-  breadcrumb: ["Italy","Serie B"]
+  breadcrumb: ["Italy","Serie C"]
 };
 
 const VOLATILE = {
@@ -30,9 +30,13 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Quieto", sub:"MF", club:"Inter Milan", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival of the attacking midfielder."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Pascalau & McJannet", sub:"Various", club:"Undisclosed", pos:"VAR", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Reported as an imminent double signing for the Girone C promotion-playoff side."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

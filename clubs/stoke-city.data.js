@@ -30,9 +30,14 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Ethan Galbraith", sub:"MF", club:"Swansea City", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
+  {name:"Lewis Koumas", sub:"18 · FW", club:"Liverpool", pos:"FW", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"BBC Sport confirms the loan; already ineligible for the season opener due to being registered too late."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"George Hirst", sub:"27 · ST · Scotland", club:"Ipswich Town", pos:"ST", report:"~3 days ago", src:"Football Insider (Pete O'Rourke)", tier:2, fee:"Loan + option", truth:65, prob:35, light:'y', trend:'flat', note:"O'Rourke is a genuine EFL-focused reporter, described as an approach expected in the coming days rather than a live negotiation."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

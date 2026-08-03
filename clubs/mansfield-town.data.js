@@ -32,7 +32,9 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"David McGoldrick", sub:"ST", club:"Barnsley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:35, prob:20, light:'o', trend:'flat', note:"Barnsley reportedly confident he stays, so treat as a long shot."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

@@ -6,7 +6,7 @@ const BRAND = {
   club: "MSV Duisburg", mono: "MD", slug: "duisburg",
   primary: "#0057A8", primaryBright: "#5CA9FF", primaryDeep: "#00335F",
   primaryRgb: "0,87,168",
-  breadcrumb: ["Germany","Regionalliga"]
+  breadcrumb: ["Germany","3. Liga"]
 };
 
 const VOLATILE = {
@@ -30,7 +30,9 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Peter Remmert", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing, described as athletic and strong in running."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];

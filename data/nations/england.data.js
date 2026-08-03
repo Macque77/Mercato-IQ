@@ -6,10 +6,17 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 93
+  stories_count: 162
 };
 
 const TOP_STORIES = [  {
+    name: "Florentino Luis",prob: 90,
+    club_origin: "burnley", club_display_name: "Burnley", direction: "out",
+    from: "Burnley", to: "Ipswich Town",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "£16m", updated: "2026-08-03T14:30:00Z", league: "Championship"
+  },
+  {
     name: "Ousmane Diomande",prob: 80,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest",
@@ -66,62 +73,55 @@ const TOP_STORIES = [  {
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Dayann Methalie",prob: 52,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
-    from: "Toulouse", to: "Sunderland",
-    tier: 2, coverage: 5, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-07-31T09:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Marcus Rashford",prob: 42,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
-    from: "Manchester United", to: "AS Roma (or open market)",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "£40m release clause (all clubs bar Man City & Liverpool)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Djed Spence",prob: 42,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "TBD",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "≈£40m / €40m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Abde Ezzalzouli",prob: 38,
-    club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
-    from: "Real Betis", to: "Newcastle United",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "≈£43-52m (release clause ≈€60m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Joe Willock",prob: 38,
-    club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
-    from: "Newcastle United", to: "Besiktas",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "£10m bid rejected", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Guglielmo Vicario",prob: 36,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "Juventus",
+    name: "Admir Bristric",prob: 85,
+    club_origin: "leicester-city", club_display_name: "Leicester City", direction: "in",
+    from: "Olimpija Ljubljana (on loan at Bravo)", to: "Leicester City",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "≈£20m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+    value: "€1.7-2m", updated: "2026-08-03T18:00:00Z", league: "League One"
   },
   {
-    name: "Lamine Camara",prob: 35,
-    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
-    from: "Monaco", to: "Aston Villa",
-    tier: 2, coverage: 3, coverage_trend: 'flat',
-    value: "~€50m", updated: "2026-06-06T12:00:00Z", league: "Premier League"
+    name: "Udoka Godwin-Malife",prob: 85,
+    club_origin: "reading", club_display_name: "Reading", direction: "in",
+    from: "Burton Albion", to: "Reading",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "League One"
+  },
+  {
+    name: "Tommy Watson",prob: 75,
+    club_origin: "leicester-city", club_display_name: "Leicester City", direction: "in",
+    from: "Brighton", to: "Leicester City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T18:00:00Z", league: "League One"
+  },
+  {
+    name: "Adam Phillips",prob: 70,
+    club_origin: "barnsley", club_display_name: "Barnsley", direction: "out",
+    from: "Barnsley", to: "Bradford City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "League One"
+  },
+  {
+    name: "Luke Molyneux",prob: 70,
+    club_origin: "doncaster-rovers", club_display_name: "Doncaster Rovers", direction: "out",
+    from: "Doncaster Rovers", to: "Salford City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "League One"
+  },
+  {
+    name: "Ike Ugbo",prob: 65,
+    club_origin: "sheffield-wednesday", club_display_name: "Sheffield Wednesday", direction: "out",
+    from: "Sheffield Wednesday", to: "Various EFL/European clubs",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "League One"
   },
 ];
 
-const BY_LEAGUE = {"Premier League": 93, "Championship": 0, "League One": 0, "League Two": 0};
+const BY_LEAGUE = {"Championship": 14, "Premier League": 93, "League One": 55, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 93}, {"slug": "championship", "name": "Championship", "count": 0}, {"slug": "league-one", "name": "League One", "count": 0}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 93}, {"slug": "league-one", "name": "League One", "count": 55}, {"slug": "championship", "name": "Championship", "count": 14}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.592550Z",
+  updated: "2026-08-03T19:36:42.460340Z",
   label: "Nation aggregation"
 };

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercato IQ: Cittadella</title>
+<title>Mercato IQ: A.S. Cittadella 1973</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --primary:#B30000;
-    --primary-bright:#FF6259;
-    --primary-rgb:179,0,0;
+    --primary:#7A1F2B;
+    --primary-bright:#C0485A;
+    --primary-rgb:122,31,43;
     --bg:#0a0e17;
     --surface:#1a2332;
     --border:#3a4452;
@@ -472,14 +472,14 @@
     <div class="breadcrumb">
       <a href="/">Global</a>
       <span>/</span>
-      <a href="nations/portugal.html">
-        <img class="flag-mini" src="https://flagcdn.com/pt.svg" alt="" onerror="this.style.display='none'">
-        Portugal
+      <a href="nations/italy.html">
+        <img class="flag-mini" src="https://flagcdn.com/it.svg" alt="" onerror="this.style.display='none'">
+        Italy
       </a>
       <span>/</span>
-      <a href="leagues/liga-portugal-2.html">Liga Portugal 2</a>
+      <a href="leagues/serie-c.html">Serie C</a>
       <span>/</span>
-      <span style="color:var(--primary-bright)">Cittadella</span>
+      <span style="color:var(--primary-bright)">A.S. Cittadella 1973</span>
     </div>
   </div>
 </header>
@@ -487,11 +487,11 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="club-badge-large">
-      <img id="club-badge-img" src="cidadela.png" alt="Cittadella badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
-      <div id="club-badge-fallback" class="badge-fallback" style="display:none">C</div>
+      <img id="club-badge-img" src="cidadela.png" alt="A.S. Cittadella 1973 badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
+      <div id="club-badge-fallback" class="badge-fallback" style="display:none">AC</div>
     </div>
     <div class="hero-text">
-      <h2>Cittadella</h2>
+      <h2>A.S. Cittadella 1973</h2>
       <div class="subtitle" id="club-subtitle"></div>
     </div>
   </div>
@@ -535,35 +535,41 @@
 <script>
 /*==DATA==*/
 /* ============================================================
-   MERCATO IQ · CLUB DATA · CITTADELLA · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · A.S. CITTADELLA 1973 · STATE OF RECORD
+   ------------------------------------------------------------
+   CORRECTION (03 Aug 2026, verified via live search): this entry
+   was mistagged as a Portuguese club. Cittadella is in fact the
+   Italian club A.S. Cittadella 1973, based in Veneto, playing in
+   Serie C Group A following relegation from Serie B in 2024/25.
+   Country and league corrected accordingly.
    ============================================================ */
 
 const BRAND = {
-  club: "Cittadella", mono: "C", slug: "cidadela",
-  primary: "#B30000", primaryBright: "#FF6259", primaryDeep: "#6B0000",
-  primaryRgb: "179,0,0",
-  breadcrumb: ["Portugal","Liga Portugal 2"]
+  club: "A.S. Cittadella 1973", mono: "AC", slug: "cidadela",
+  primary: "#7A1F2B", primaryBright: "#C0485A", primaryDeep: "#4A0F17",
+  primaryRgb: "122,31,43",
+  breadcrumb: ["Italy","Serie C"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
+  verified: "2026-08-03",
   coach: "TBD",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "Relegated from Serie B, 2024/25",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
   feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["cidadela transfer news"]
+  queries: ["cittadella transfer news"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
-  label: "Transfer window active; pending updates"
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T14:30:00Z",
+  label: "Updated 03 Aug 2026 - A.S. Cittadella 1973 (corrected from Portugal mistag)"
 };
 
 const CONFIRMED_IN = [];
@@ -572,26 +578,29 @@ const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
-const NEW = [];
+const NEW = [
+  {ar:"✦", t:"Database correction: this entry now correctly reflects A.S. Cittadella 1973 of Veneto, Italy (Serie C), not a Portuguese club."}
+];
 const IGNORE = [];
 const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Cidadela Official", u:"#"}
+  club: {l:"Cittadella Official", u:"#"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Cittadella · 2026/27 Season`,
-  heroLede: `Transfer window active. Cittadella preparing squad for next season.`,
+  heroH2: `A.S. Cittadella 1973 · 2026/27 Season`,
+  heroLede: `Serie C, Group A. Cittadella preparing squad for next season after relegation from Serie B.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
   spendIn: { v: `TBD` },
   spendOut: { v: `TBD` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -695,7 +704,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

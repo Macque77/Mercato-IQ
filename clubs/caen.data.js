@@ -6,7 +6,7 @@ const BRAND = {
   club: "Stade Malherbe Caen", mono: "SMC", slug: "caen",
   primary: "#B7161C", primaryBright: "#FF6B6B", primaryDeep: "#6E0D11",
   primaryRgb: "183,22,28",
-  breadcrumb: ["France","Ligue 2"]
+  breadcrumb: ["France","Ligue 3"]
 };
 
 const VOLATILE = {

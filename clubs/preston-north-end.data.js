@@ -30,10 +30,17 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Lee Nicholls", sub:"33 · GK · England", club:"Huddersfield Town", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Alan Nixon reports the deal agreed, reliable on lower-league specifics and reads as done barring paperwork."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:20, light:'o', trend:'flat', note:"One of six clubs credited with interest in a loan, genuinely early-stage with Brighton yet to decide anything."}
+];
+const OUTGOING = [
+  {name:"Daniel Jebbison", sub:"FW · Canada", club:"Blackburn Rovers", pos:"FW", report:"~1 wk ago", src:"Lancashire Post", tier:2, fee:"Loan + option", truth:65, prob:55, light:'g', trend:'up', note:"Specific and cross-corroborated by Blackburn's own reporting, but no medical or here-we-go yet."},
+  {name:"Michael Smith", sub:"FW", club:"Mansfield Town", pos:"FW", report:"~2 wks ago", src:"Lancashire Post", tier:2, fee:"Undisclosed", truth:60, prob:30, light:'y', trend:'flat', note:"Explicitly reported that the numbers do not work for all parties, so this is stalling rather than advancing."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

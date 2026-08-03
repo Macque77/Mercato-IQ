@@ -31,9 +31,13 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Dylan Tait", sub:"MF", club:"Dundee United", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent exit on a three-year deal."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Calvin Miller", sub:"Undisclosed", club:"Celtic", pos:"N/A", report:"~5 months ago", src:"MSN", tier:4, fee:"Undisclosed", truth:20, prob:10, light:'r', trend:'flat', note:"Manager John McGlynn has denied the link as nonsense, effectively dead."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

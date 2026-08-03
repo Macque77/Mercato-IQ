@@ -6,7 +6,7 @@ const BRAND = {
   club: "Trabzonspor", mono: "T", slug: "trabzonspor",
   primary: "#7A1F2B", primaryBright: "#B0475A", primaryDeep: "#4A121A",
   primaryRgb: "122,31,43",
-  breadcrumb: ["Turkey","Super Lig"]
+  breadcrumb: ["Turkey","Süper Lig"]
 };
 
 const VOLATILE = {

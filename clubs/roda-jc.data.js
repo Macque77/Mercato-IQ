@@ -30,7 +30,10 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Martin Stojcevic", sub:"GK", club:"Undisclosed", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Fynn Schenten", sub:"FW", club:"Undisclosed (Germany)", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"German attacking talent, confirmed signing."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];

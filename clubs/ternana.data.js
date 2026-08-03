@@ -1,20 +1,27 @@
 /* ============================================================
    MERCATO IQ · CLUB DATA · TERNANA · STATE OF RECORD
+   ------------------------------------------------------------
+   FLAG (03 Aug 2026, single-source, needs re-verification): one
+   source indicates Ternana was officially liquidated on 28 May
+   2026, with no successor/phoenix club information available.
+   Treated as an unconfirmed lead rather than established fact
+   pending a second source - retained in the database with this
+   note rather than removed outright.
    ============================================================ */
 
 const BRAND = {
   club: "Ternana", mono: "T", slug: "ternana",
   primary: "#B30000", primaryBright: "#FF6259", primaryDeep: "#6B0000",
   primaryRgb: "179,0,0",
-  breadcrumb: ["Italy","Serie B"]
+  breadcrumb: ["Italy","Serie C"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
+  verified: "2026-08-03",
   coach: "TBD",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "UNVERIFIED: one source reports club liquidated 28 May 2026 - pending re-verification",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };

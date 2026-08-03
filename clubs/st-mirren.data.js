@@ -30,10 +30,19 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Samuel Ramos", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First summer signing."},
+  {name:"Ryan Carr", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Second summer signing."},
+  {name:"Chris Mochrie", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Justin Thomas", sub:"W", club:"Undisclosed", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed citing a shared vision with the head coach."}
+];
+const CONFIRMED_OUT = [
+  {name:"Tunmise Sobowale", sub:"DF", club:"Shamrock Rovers", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move after an earlier loan spell."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Sule, Mallan and Reid", sub:"Various", club:"Undisclosed", pos:"VAR", report:"~1 wk ago", src:"Daily Record", tier:3, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Developing situations referenced in a transfer-latest piece, direction unclear."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

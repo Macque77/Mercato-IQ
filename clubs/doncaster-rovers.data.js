@@ -30,10 +30,15 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Alfie May", sub:"ST", club:"Huddersfield Town", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal agreed per credible reporting, pending formal announcement."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Luke Molyneux", sub:"W", club:"Salford City", pos:"W", report:"~1 wk ago", src:"Ben Wignall / FLW", tier:2, fee:"Undisclosed", truth:75, prob:70, light:'g', trend:'up', note:"Exclusive reporting describes the move as closing in."},
+  {name:"Owen Bailey", sub:"MF", club:"Sheffield Wednesday / Bradford City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Contested by two rival League One clubs."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

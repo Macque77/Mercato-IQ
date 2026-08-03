@@ -6,7 +6,7 @@ const BRAND = {
   club: "AD Alcorcón", mono: "AA", slug: "alcorcon",
   primary: "#FFC72C", primaryBright: "#FFE066", primaryDeep: "#8F6E00",
   primaryRgb: "255,199,44",
-  breadcrumb: ["Spain","La Liga 2"]
+  breadcrumb: ["Spain","Primera Federación"]
 };
 
 const VOLATILE = {

@@ -6,7 +6,7 @@ const BRAND = {
   club: "Sivasspor", mono: "S", slug: "sivasspor",
   primary: "#D71920", primaryBright: "#FF6B6B", primaryDeep: "#7A0E12",
   primaryRgb: "215,25,32",
-  breadcrumb: ["Turkey","Super Lig"]
+  breadcrumb: ["Turkey","Süper Lig"]
 };
 
 const VOLATILE = {

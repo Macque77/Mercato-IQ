@@ -32,7 +32,12 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Admir Bristric", sub:"ST", club:"Olimpija Ljubljana (on loan at Bravo)", pos:"ST", report:"~2 wks ago", src:"Planet Nogomet / FLW", tier:2, fee:"€1.7-2m", truth:80, prob:85, light:'g', trend:'up', note:"Player already in England for a medical per reporting."},
+  {name:"Tommy Watson", sub:"W", club:"Brighton", pos:"W", report:"~3 days ago", src:"@SportsPeteO / FLW", tier:2, fee:"Loan", truth:75, prob:75, light:'g', trend:'up', note:"Loan agreement reportedly reached."},
+  {name:"Liam Cullen", sub:"ST", club:"Swansea City", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Departure described as imminent."},
+  {name:"Dom Ballard", sub:"FW", club:"Leyton Orient", pos:"FW", report:"~1 wk ago", src:"FLW", tier:3, fee:"£5m+", truth:45, prob:35, light:'y', trend:'flat', note:"Contested with Bristol City, valuation a sticking point."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

@@ -6,7 +6,7 @@ const BRAND = {
   club: "Waasland-Beveren", mono: "W", slug: "waasland-beveren",
   primary: "#D71920", primaryBright: "#FF6B6B", primaryDeep: "#7A0E12",
   primaryRgb: "215,25,32",
-  breadcrumb: ["Belgium","First Division A"]
+  breadcrumb: ["Belgium","Pro League"]
 };
 
 const VOLATILE = {

@@ -30,8 +30,12 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Catello Amendola", sub:"MF", club:"Sassuolo", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."}
+];
+const CONFIRMED_OUT = [
+  {name:"Gregorio Luperini", sub:"MF", club:"Undisclosed", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure, destination not specified."}
+];
 const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];

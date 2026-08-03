@@ -30,10 +30,20 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_IN = [
+  {name:"Emile Acquah", sub:"ST", club:"Dundee FC", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Two-year deal, sealed and confirmed."}
+];
+const CONFIRMED_OUT = [
+  {name:"Matthew Dennis", sub:"ST", club:"Burton Albion", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Burton Albion entry."}
+];
+const INCOMING = [
+  {name:"Tommi O'Reilly", sub:"MF", club:"Aston Villa", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:50, light:'y', trend:'up', note:"Notts reportedly set to beat Sheffield Wednesday to the signing."},
+  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Racing Plymouth Argyle for the striker's signature."},
+  {name:"Devon Matthews", sub:"DF", club:"Undisclosed", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Competing with Wigan Athletic."}
+];
+const OUTGOING = [
+  {name:"Alassana Jatta", sub:"ST", club:"Undisclosed (Danish top flight)", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"£425k", truth:55, prob:40, light:'y', trend:'flat', note:"Bolton Wanderers and Bradford City reportedly trying to hijack the move."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercato IQ: UC Albanova</title>
+<title>Mercato IQ: Cambrian United</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --primary:#003DA5;
-    --primary-bright:#3399FF;
-    --primary-rgb:0,61,165;
+    --primary:#6CACE4;
+    --primary-bright:#A8D0F0;
+    --primary-rgb:108,172,228;
     --bg:#0a0e17;
     --surface:#1a2332;
     --border:#3a4452;
@@ -472,14 +472,14 @@
     <div class="breadcrumb">
       <a href="/">Global</a>
       <span>/</span>
-      <a href="nations/sweden.html">
-        <img class="flag-mini" src="https://flagcdn.com/se.svg" alt="" onerror="this.style.display='none'">
-        Sweden
+      <a href="nations/wales.html">
+        <img class="flag-mini" src="https://flagcdn.com/gb-wls.svg" alt="" onerror="this.style.display='none'">
+        Wales
       </a>
       <span>/</span>
-      <a href="leagues/allsvenskan.html">Allsvenskan</a>
+      <a href="leagues/cymru-premier.html">Cymru Premier</a>
       <span>/</span>
-      <span style="color:var(--primary-bright)">UC Albanova</span>
+      <span style="color:var(--primary-bright)">Cambrian United</span>
     </div>
   </div>
 </header>
@@ -487,11 +487,11 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="club-badge-large">
-      <img id="club-badge-img" src="uclalbanova.png" alt="UC Albanova badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
-      <div id="club-badge-fallback" class="badge-fallback" style="display:none">UA</div>
+      <img id="club-badge-img" src="cambrianunited.png" alt="Cambrian United badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
+      <div id="club-badge-fallback" class="badge-fallback" style="display:none">CU</div>
     </div>
     <div class="hero-text">
-      <h2>UC Albanova</h2>
+      <h2>Cambrian United</h2>
       <div class="subtitle" id="club-subtitle"></div>
     </div>
   </div>
@@ -535,34 +535,34 @@
 <script>
 /*==DATA==*/
 /* ============================================================
-   MERCATO IQ · CLUB DATA · UC ALBANOVA · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · CAMBRIAN UNITED · STATE OF RECORD
    ============================================================ */
 
 const BRAND = {
-  club: "UC Albanova", mono: "UA", slug: "ucl-albanova",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Sweden","Allsvenskan"]
+  club: "Cambrian United", mono: "CU", slug: "cambrian-united",
+  primary: "#6CACE4", primaryBright: "#A8D0F0", primaryDeep: "#3A6A8F",
+  primaryRgb: "108,172,228",
+  breadcrumb: ["Wales","Cymru Premier"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
+  verified: "2026-08-03",
+  coach: "Liam Williams",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "Promoted, Cymru South runners-up (2025/26)",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
   feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["ucl-albanova transfer news"]
+  queries: ["cambrian-united transfer news"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:35:00Z",
   label: "Transfer window active; pending updates"
 };
 
@@ -578,20 +578,21 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Ucl-Albanova Official", u:"#"}
+  club: {l:"Cambrian United Official", u:"#"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `UC Albanova · 2026/27 Season`,
-  heroLede: `Transfer window active. UC Albanova preparing squad for next season.`,
+  heroH2: `Cambrian United · 2026/27 Season`,
+  heroLede: `Transfer window active. Cambrian United preparing squad for next season.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
   spendIn: { v: `TBD` },
   spendOut: { v: `TBD` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -695,7 +696,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

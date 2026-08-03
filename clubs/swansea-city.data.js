@@ -30,8 +30,19 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Tiago Parente", sub:"W", club:"Benfica", pos:"W", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed season-long loan from Benfica."},
+  {name:"Elijah Just", sub:"W", club:"Groningen", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent arrival."},
+  {name:"Joseph Opoku", sub:"LB", club:"Fortuna Sittard", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent arrival."},
+  {name:"Moussa Yeo", sub:"CB", club:"Dynamo Kyiv", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent arrival."},
+  {name:"Stephen Welsh", sub:"CB", club:"Celtic", pos:"CB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed free transfer."}
+];
+const CONFIRMED_OUT = [
+  {name:"Ollie Cooper", sub:"MF", club:"Notts County", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed season-long loan exit."},
+  {name:"Cameron Congreve", sub:"W", club:"KVC Westerlo", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."},
+  {name:"Liam Cullen", sub:"ST", club:"Leicester City", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."},
+  {name:"Ethan Galbraith", sub:"MF", club:"Stoke City", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
+];
 const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];

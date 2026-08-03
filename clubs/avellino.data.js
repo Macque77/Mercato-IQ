@@ -30,8 +30,14 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Filippo Scotti", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."}
+];
+const CONFIRMED_OUT = [
+  {name:"Giuseppe Panico", sub:"Undisclosed", club:"Foggia", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."},
+  {name:"Gianmarco Todisco", sub:"Undisclosed", club:"Foggia", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."},
+  {name:"Andrea Cagnano", sub:"Undisclosed", club:"Arezzo", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."}
+];
 const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];

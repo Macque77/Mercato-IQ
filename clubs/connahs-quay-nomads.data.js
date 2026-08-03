@@ -1,32 +1,32 @@
 /* ============================================================
-   MERCATO IQ · CLUB DATA · RAJON SPORTS · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · CONNAH'S QUAY NOMADS · STATE OF RECORD
    ============================================================ */
 
 const BRAND = {
-  club: "Rajon Sports", mono: "RS", slug: "rajon-sports",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Turkey","Süper Lig 1"]
+  club: "Connah's Quay Nomads", mono: "CQN", slug: "connahs-quay-nomads",
+  primary: "#C8102E", primaryBright: "#FF6B6B", primaryDeep: "#6E0A1A",
+  primaryRgb: "200,16,46",
+  breadcrumb: ["Wales","Cymru Premier"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
+  verified: "2026-08-03",
+  coach: "John Disney",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "TBD (2025/26)",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
   feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["rajon-sports transfer news"]
+  queries: ["connahs-quay-nomads transfer news"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:35:00Z",
   label: "Transfer window active; pending updates"
 };
 
@@ -42,15 +42,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Rajon-Sports Official", u:"#"}
+  club: {l:"Connah's Quay Nomads Official", u:"#"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Rajon Sports · 2026/27 Season`,
-  heroLede: `Transfer window active. Rajon Sports preparing squad for next season.`,
+  heroH2: `Connah's Quay Nomads · 2026/27 Season`,
+  heroLede: `Transfer window active. Connah's Quay Nomads preparing squad for next season.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
   spendIn: { v: `TBD` },
   spendOut: { v: `TBD` },

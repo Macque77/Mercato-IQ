@@ -30,8 +30,13 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Kerr", sub:"Undisclosed", club:"Wigan Athletic", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Nathan Lowe", sub:"DF", club:"Undisclosed", pos:"DF", fee:"Initial loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wing-back, arrived initially on loan."}
+];
+const CONFIRMED_OUT = [
+  {name:"Chris Cadden", sub:"DF", club:"Aberdeen", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Aberdeen entry."}
+];
 const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];

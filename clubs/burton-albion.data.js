@@ -30,10 +30,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Matthew Dennis", sub:"ST", club:"Notts County", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed incoming alongside Notts County's own reported departure."}
+];
+const CONFIRMED_OUT = [
+  {name:"Udoka Godwin-Malife", sub:"DF", club:"Reading", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Captain's move to Reading, medical reported underway."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Jake Beesley", sub:"ST", club:"Bradford City", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"See Bradford City entry, competing with Stockport County."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

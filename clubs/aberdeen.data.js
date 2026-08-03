@@ -30,7 +30,12 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Connor Ronan", sub:"MF", club:"Colorado Rapids", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer confirmed."},
+  {name:"Marius Muller", sub:"GK", club:"VfL Wolfsburg", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent signing, competing with Dimitar Mitov for the gloves."},
+  {name:"Chris Cadden", sub:"DF", club:"Hibernian", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move, already made his debut in a win over Hearts."},
+  {name:"Ayoub Mouloua", sub:"ST", club:"Undisclosed", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moroccan striker, permanent signing."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];

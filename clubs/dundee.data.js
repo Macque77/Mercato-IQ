@@ -31,9 +31,13 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Aaron Donnelly", sub:"DF", club:"Dunfermline Athletic", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed exit, described as leaving the side short at the back."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Luke Graham", sub:"DF", club:"Rangers", pos:"DF", report:"~4 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Reported fresh scouting interest, but the source is several months old."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

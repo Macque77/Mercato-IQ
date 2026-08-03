@@ -30,9 +30,15 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Matt Doherty", sub:"34 · RB · Ireland", club:"Wolverhampton Wanderers", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer, one-year deal plus option, already unveiled with a manager quote."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Nicolas Valentini", sub:"25 · CB · Argentina", club:"Fiorentina", pos:"CB", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Explicitly framed as United exploring with no official approach lodged yet."},
+  {name:"Kalvin Phillips", sub:"30 · MF · England", club:"Manchester City", pos:"MF", report:"~1 wk ago", src:"City Xtra / The Star", tier:3, fee:"Loan", truth:55, prob:35, light:'y', trend:'up', note:"Player reportedly keen and City want to trim wages, gives this more legs than the average kite-flying loan link."},
+  {name:"Rabbi Matondo", sub:"W", club:"SK Brann", pos:"W", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:20, light:'o', trend:'flat', note:"Described as under consideration only, nothing concrete."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

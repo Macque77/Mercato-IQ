@@ -6,7 +6,7 @@ const BRAND = {
   club: "UPL Alessandria", mono: "UA", slug: "alessandria",
   primary: "#4A4A4A", primaryBright: "#B0B0B0", primaryDeep: "#2A2A2A",
   primaryRgb: "74,74,74",
-  breadcrumb: ["Italy","Serie B"]
+  breadcrumb: ["Italy","Serie C"]
 };
 
 const VOLATILE = {

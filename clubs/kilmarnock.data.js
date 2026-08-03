@@ -30,10 +30,20 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Ieuan Owen", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Calum Ferrie", sub:"GK", club:"Undisclosed", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Roshaun Mathurin", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Mark O'Hara", sub:"MF", club:"Undisclosed", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned to the club."},
+  {name:"Bailey Rice", sub:"MF", club:"Rangers", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan signing from Rangers."},
+  {name:"Findlay Curtis", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined in the January window."},
+  {name:"Johnly Yfeko", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Made his debut against St Johnstone."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Unnamed Kilmarnock player", sub:"Undisclosed", club:"Rangers", pos:"N/A", report:"~1 wk ago", src:"Yahoo Sports opinion", tier:4, fee:"Undisclosed", truth:30, prob:20, light:'o', trend:'flat', note:"Suggested as a follow-up Rangers target after the Bailey Rice loan, opinion-based."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

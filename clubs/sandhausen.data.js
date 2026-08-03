@@ -6,7 +6,7 @@ const BRAND = {
   club: "SV Sandhausen", mono: "SS", slug: "sandhausen",
   primary: "#1E3A8A", primaryBright: "#6FA8FF", primaryDeep: "#0F1F4A",
   primaryRgb: "30,58,138",
-  breadcrumb: ["Germany","2. Bundesliga"]
+  breadcrumb: ["Germany","Regionalliga"]
 };
 
 const VOLATILE = {

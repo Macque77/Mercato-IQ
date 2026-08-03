@@ -30,10 +30,19 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Jesse Randall", sub:"W", club:"Undisclosed", pos:"W", fee:"Pre-contract", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"New Zealand international, pre-contract agreed."},
+  {name:"Joshua Rawlins", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Lachlan Rose", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Summer switch agreed."},
+  {name:"Dylan Tait", sub:"MF", club:"Falkirk", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Three-year deal."},
+  {name:"Jack Walton", sub:"GK", club:"Undisclosed", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned to the club on a three-year deal."},
+  {name:"Michael Forbes", sub:"DF/MF", club:"Undisclosed", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Northern Ireland international signing."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Bowie", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", report:"~1 wk ago", src:"The Scotsman", tier:4, fee:"Undisclosed", truth:30, prob:20, light:'o', trend:'flat', note:"Referenced only in a headline alongside Celtic/Rangers news, insufficient detail to confirm further."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

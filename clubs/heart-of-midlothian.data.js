@@ -30,10 +30,22 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Beau Reus", sub:"GK", club:"Undisclosed (Netherlands)", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed following Craig Gordon's retirement."},
+  {name:"Kamson-Kamara", sub:"Undisclosed", club:"Lincoln City", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Guendouz", sub:"FW", club:"Beerschot", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Mato", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Initial loan, now permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan converted to a permanent deal."}
+];
+const CONFIRMED_OUT = [
+  {name:"Lawrence Shankland", sub:"FW", club:"Rangers", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit to a direct rival."},
+  {name:"Cammy Devlin", sub:"MF", club:"Rangers", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed exit, moderate-confidence detail."},
+  {name:"Adam Forrester", sub:"DF", club:"Ross County", pos:"DF", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned out for the season."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Claudio Braga", sub:"FW", club:"Celtic", pos:"FW", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Early-stage interest reported from Celtic."},
+  {name:"Unnamed Hearts striker", sub:"ST", club:"Undisclosed", pos:"ST", report:"~1 wk ago", src:"The Scotsman", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Reported to be nearing an exit, player not named."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

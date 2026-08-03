@@ -491,7 +491,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">0</span>
+          <span class="stat-value">14</span>
         </div>
       </div>
     </div>
@@ -528,18 +528,116 @@
 const NATION = {
   name: "Scotland",
   flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-  stories_count: 0
+  stories_count: 14
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Gvidas Gineitis",prob: 60,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "in",
+    from: "Torino", to: "Celtic",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~£12m", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Alistair Johnston",prob: 60,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "out",
+    from: "Celtic", to: "Everton / Fulham",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Jahnoah Markelo",prob: 55,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
+    from: "Coventry City", to: "Rangers",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Unnamed Rangers attacker",prob: 45,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "out",
+    from: "Rangers", to: "Undisclosed",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Nico Raskin",prob: 40,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "out",
+    from: "Rangers", to: "Undisclosed (managed by Danny Rohl)",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Unnamed Hearts striker",prob: 40,
+    club_origin: "heart-of-midlothian", club_display_name: "Heart of Midlothian", direction: "in",
+    from: "Undisclosed", to: "Heart of Midlothian",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Claudio Braga",prob: 30,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "in",
+    from: "Heart of Midlothian", to: "Celtic",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Mikey Moore",prob: 30,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
+    from: "Tottenham Hotspur", to: "Rangers",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "",prob: 25,
+    club_origin: "st-mirren", club_display_name: "St Mirren", direction: "out",
+    from: "St Mirren", to: "Undisclosed",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Reo Hatate",prob: 30,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "out",
+    from: "Celtic", to: "Undisclosed",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Luke Graham",prob: 30,
+    club_origin: "dundee", club_display_name: "Dundee", direction: "out",
+    from: "Dundee", to: "Rangers",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Unnamed Kilmarnock player",prob: 20,
+    club_origin: "kilmarnock", club_display_name: "Kilmarnock", direction: "out",
+    from: "Kilmarnock", to: "Rangers",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Bowie",prob: 20,
+    club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
+    from: "Dundee United", to: "Undisclosed",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Calvin Miller",prob: 10,
+    club_origin: "falkirk", club_display_name: "Falkirk", direction: "out",
+    from: "Falkirk", to: "Celtic",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+];
 
-const BY_LEAGUE = {"Premiership": 0};
+const BY_LEAGUE = {"Premiership": 14};
 
-const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 14}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.594105Z",
+  updated: "2026-08-03T19:36:42.462518Z",
   label: "Nation aggregation"
 };
 

@@ -6,7 +6,7 @@ const BRAND = {
   club: "FC Schalke 04", mono: "FS0", slug: "schalke-04",
   primary: "#004B9F", primaryBright: "#5CA9FF", primaryDeep: "#002E5E",
   primaryRgb: "0,75,159",
-  breadcrumb: ["Germany","2. Bundesliga"]
+  breadcrumb: ["Germany","Bundesliga"]
 };
 
 const VOLATILE = {

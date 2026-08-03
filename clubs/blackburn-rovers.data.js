@@ -32,8 +32,12 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Daniel Jebbison", sub:"FW · Canada", club:"Preston North End", pos:"FW", report:"~1 wk ago", src:"Lancashire Post", tier:2, fee:"Loan + option", truth:65, prob:55, light:'g', trend:'up', note:"Consistent with Preston's own reporting on the same story, decent cross-corroboration."}
+];
+const OUTGOING = [
+  {name:"Ty Livesey", sub:"Winger", club:"Man City / Man Utd + 4 more", pos:"W", report:"~5 days ago", src:"Graeme Bailey", tier:3, fee:"Undisclosed", truth:55, prob:20, light:'o', trend:'flat', note:"Eye-catching six-club race claims should be read with real scepticism this early, no club has made a move yet."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

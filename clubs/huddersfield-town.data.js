@@ -30,10 +30,18 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_IN = [
+  {name:"Derensili Sanches Fernandes", sub:"W", club:"Excelsior (Netherlands)", pos:"W", fee:"Multi-million fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported close to completion pending visa formalities."}
+];
+const CONFIRMED_OUT = [
+  {name:"Alfie May", sub:"ST", club:"Doncaster Rovers", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Doncaster entry."}
+];
+const INCOMING = [
+  {name:"Archie Collins", sub:"MF", club:"Free agent", pos:"MF", report:"~1 wk ago", src:"FLW", tier:3, fee:"Free", truth:55, prob:35, light:'y', trend:'flat', note:"Seven-club race for the free agent including Millwall, Sheffield Wednesday and Leicester."}
+];
+const OUTGOING = [
+  {name:"Brodie Spencer", sub:"DF", club:"QPR / West Brom", pos:"DF", report:"~1 wk ago", src:"FLW exclusive", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Two Championship clubs reportedly interested."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

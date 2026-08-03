@@ -566,10 +566,21 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Mason Burstow", sub:"ST", club:"Hull City", pos:"ST", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan completed and confirmed."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Mark O'Mahony", sub:"FW", club:"Brighton (youth)", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Young attacker linked, early stage."},
+  {name:"Tyler Onyango", sub:"MF", club:"Free agent (ex-Everton)", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:50, prob:40, light:'y', trend:'flat', note:"Reported on trial with the club."},
+  {name:"Reece James", sub:"W", club:"Free agent (ex-Wednesday)", pos:"W", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:45, prob:35, light:'y', trend:'flat', note:"Trial return, fans keen on a re-signing."},
+  {name:"Davis Keillor-Dunn", sub:"FW", club:"Wrexham", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Wednesday reportedly want a deal for the forward."}
+];
+const OUTGOING = [
+  {name:"Ike Ugbo", sub:"FW", club:"Various EFL/European clubs", pos:"FW", report:"~4 days ago", src:"Darren Witcoop", tier:2, fee:"Undisclosed", truth:70, prob:65, light:'g', trend:'up', note:"Club reportedly willing to sell or loan before the 1 September deadline."},
+  {name:"Owen Bailey", sub:"MF", club:"Doncaster Rovers", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Reportedly missed out amid a complication over Callum Paterson."},
+  {name:"Tommi O'Reilly", sub:"MF", club:"Notts County", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reportedly lost the race for the Aston Villa target to Notts County."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -696,7 +707,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

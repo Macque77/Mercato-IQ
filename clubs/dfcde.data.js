@@ -6,7 +6,7 @@ const BRAND = {
   club: "RWDM Brussels FC", mono: "RBF", slug: "dfcde",
   primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
   primaryRgb: "0,61,165",
-  breadcrumb: ["Germany","Regionalliga"]
+  breadcrumb: ["Belgium","Division 1"]
 };
 
 const VOLATILE = {

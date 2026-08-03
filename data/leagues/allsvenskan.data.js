@@ -20,10 +20,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"aik-fotboll": 1};
 
-const CLUBS_LIST = [{"slug": "aik-fotboll", "name": "AIK Fotboll", "count": 1, "badge": false}, {"slug": "ucl-albanova", "name": "UC Albanova", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "aik-fotboll", "name": "AIK Fotboll", "count": 1, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.595570Z",
+  updated: "2026-08-03T19:36:42.464864Z",
   label: "League aggregation"
 };

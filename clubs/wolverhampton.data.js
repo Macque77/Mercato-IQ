@@ -30,10 +30,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Kieran Trippier", sub:"35 · RB · England", club:"Newcastle United", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer, medical completed 8 June 2026 on a two-year deal with an optional third."}
+];
+const CONFIRMED_OUT = [
+  {name:"Matt Doherty", sub:"34 · RB · Ireland", club:"Sheffield United", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released on a free transfer, confirmed by Sheffield United's own unveiling."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"João Gomes", sub:"MF · Brazil", club:"Atlético Madrid", pos:"MF", report:"~1 wk ago", src:"BBC / Molineux News", tier:2, fee:"£39-40m", truth:70, prob:60, light:'g', trend:'up', note:"Fee reportedly agreed, though one outlet says Atlético have put the bid on hold, live but not over the line."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

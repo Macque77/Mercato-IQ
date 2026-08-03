@@ -32,8 +32,13 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Tyrese Shade / Jayden Wareham", sub:"FW", club:"Undisclosed / Exeter City", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:30, prob:20, light:'o', trend:'flat', note:"Floated as possible replacements if Adama Sidibeh departs."},
+  {name:"Ossama Ashley", sub:"MF", club:"Free agent", pos:"MF", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:40, prob:30, light:'y', trend:'flat', note:"Competing with Barnsley for the free agent."}
+];
+const OUTGOING = [
+  {name:"Adama Sidibeh", sub:"ST", club:"Middlesbrough / Rangers / Blackburn Rovers / Bristol City", pos:"ST", report:"~1 wk ago", src:"Alan Nixon", tier:3, fee:"Relatively low cost", truth:60, prob:50, light:'y', trend:'flat', note:"Four clubs credited with interest in the Gambia international."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

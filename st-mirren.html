@@ -566,10 +566,19 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Samuel Ramos", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First summer signing."},
+  {name:"Ryan Carr", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Second summer signing."},
+  {name:"Chris Mochrie", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing."},
+  {name:"Justin Thomas", sub:"W", club:"Undisclosed", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed citing a shared vision with the head coach."}
+];
+const CONFIRMED_OUT = [
+  {name:"Tunmise Sobowale", sub:"DF", club:"Shamrock Rovers", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move after an earlier loan spell."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Sule, Mallan and Reid", sub:"Various", club:"Undisclosed", pos:"VAR", report:"~1 wk ago", src:"Daily Record", tier:3, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Developing situations referenced in a transfer-latest piece, direction unclear."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -696,7 +705,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

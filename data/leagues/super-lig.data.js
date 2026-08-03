@@ -27,10 +27,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"fenerbahce": 1, "galatasaray": 1};
 
-const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 0, "badge": false}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 0, "badge": false}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 0, "badge": false}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 0, "badge": false}, {"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 1, "badge": false}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1, "badge": false}, {"slug": "rizespor", "name": "Rizespor", "count": 0, "badge": false}, {"slug": "samsunspor", "name": "Samsunspor", "count": 0, "badge": false}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 1, "badge": false}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.601772Z",
+  updated: "2026-08-03T19:36:42.476155Z",
   label: "League aggregation"
 };

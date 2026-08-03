@@ -30,9 +30,15 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Bobby Clark", sub:"MF", club:"Free agent", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Derby's only confirmed incoming so far this summer; fee and full position detail were not specified in available reporting."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Loan", truth:65, prob:50, light:'y', trend:'up', note:"O'Rourke is a credible EFL-focused reporter and the logic stacks up given Derby's thin attacking options so far."},
+  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"~2 wks ago", src:"Football League World", tier:3, fee:"Loan", truth:50, prob:30, light:'y', trend:'flat', note:"Sensible fit being floated but still City's decision to make, nothing close yet."},
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:15, light:'o', trend:'flat', note:"Very early and one of six clubs in a crowded field, do not back Derby specifically to land him."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

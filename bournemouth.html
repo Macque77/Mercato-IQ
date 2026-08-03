@@ -596,8 +596,8 @@ const INCOMING = [
    note:"Bournemouth are credited with joining the race for the USMNT attacker, who would link up with Tyler Adams. OBSTACLE: a reported ~€35m clause for Bayern could shape the price; competition exists."},
   {name:"Young press-fit additions", sub:"Rose-system talent", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:55, prob:40, light:'y', trend:'up',
    note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens."},
-  {name:"Avom & Hadj Moussa", sub:"Recycled aggregator links", club:"Aggregated feeds", pos:"-", report:"~60d+ / recycled", tier:4, fee:"n/a", truth:25, prob:8, light:'r', trend:'down',
-   note:"Carried from the last build's method note: recycled aggregator repetition does not refresh recency, and both links fall on this basis. Not treated as live unless freshly re-reported by a named original source."},
+  {name:"Avom & Hadj Moussa", sub:"Recycled aggregator links", club:"Aggregated feeds", pos:"-", report:"~60d+ / recycled", tier:4, fee:"n/a", truth:25, prob:8, light:'r', trend:'down', bullshit:true,
+   note:"Recycled aggregator repetition with no named original source behind it, resurfacing every few weeks without ever being freshly re-reported. Carried only to show it's been discounted, not as live business."},
 ];
 const OUTGOING = [
   {name:"Prized young asset", sub:"The model in action", club:"Elite suitors", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40m+", truth:55, prob:50, light:'y', trend:'up',
@@ -899,7 +899,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

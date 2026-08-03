@@ -6,7 +6,7 @@ const BRAND = {
   club: "Adana Demirspor", mono: "AD", slug: "adana-demirspor",
   primary: "#001489", primaryBright: "#5C7CFF", primaryDeep: "#000A45",
   primaryRgb: "0,20,137",
-  breadcrumb: ["Turkey","Super Lig"]
+  breadcrumb: ["Turkey","Süper Lig"]
 };
 
 const VOLATILE = {

@@ -572,10 +572,20 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Burnley"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Lluc Castell", sub:"LW", club:"Espanyol", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival as Burnley rebuild for an immediate promotion push."}
+];
+const CONFIRMED_OUT = [
+  {name:"Martin Dubravka", sub:"GK", club:"Tottenham Hotspur", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released on a free transfer."},
+  {name:"Jaidon Anthony", sub:"LW", club:"Brentford", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."},
+  {name:"Loum Tchaouna", sub:"LW", club:"Coventry City", pos:"LW", fee:"£20m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale as part of Burnley's post-relegation rebuild."},
+  {name:"Maxime Esteve", sub:"CB", club:"RB Leipzig", pos:"CB", fee:"£27.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale, one of the bigger fees of Burnley's summer clear-out."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Florentino Luis", sub:"26 · MF · Portugal", club:"Ipswich Town", pos:"MF", report:"~3 days ago", src:"Fabrizio Romano / East Anglian Daily Times", tier:1, fee:"£16m", truth:92, prob:90, light:'g', trend:'up', note:"Romano-level sourcing with agreement reached language, about as close to done as it gets before the medical."},
+  {name:"Andreas Hountondji", sub:"24 · ST · Benin", club:"Frosinone", pos:"ST", report:"~1 wk ago", src:"Nicolò Schira", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Schira has a mixed but not terrible track record here, edging closer language suggests it is real but terms are still to be nailed down."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [
@@ -704,7 +714,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

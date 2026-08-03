@@ -30,9 +30,13 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Sam Nombe", sub:"ST", club:"Rotherham United", pos:"ST", fee:"£600k (+£1m add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed permanent transfer, confirmed by both club and local press."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Matty Young", sub:"DF/W", club:"Sunderland", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Loan", truth:50, prob:40, light:'y', trend:'flat', note:"MK Dons competing with Sheffield Wednesday, Leicester and Cardiff for the loan."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

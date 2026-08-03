@@ -30,9 +30,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_IN = [
+  {name:"Sam Tickle", sub:"GK", club:"Wigan Athletic", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
+  {name:"Brad Collins", sub:"GK", club:"Coventry City", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed free transfer."}
+];
+const CONFIRMED_OUT = [
+  {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
+];
+const INCOMING = [
+  {name:"Rio Cardines", sub:"Full-back", club:"Crystal Palace", pos:"FB", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Loan", truth:55, prob:45, light:'y', trend:'flat', note:"Manager Michael Skubala's own still open for business quote lends this some weight, but nothing official and he stressed there is no rush."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

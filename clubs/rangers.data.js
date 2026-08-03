@@ -30,10 +30,22 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_IN = [
+  {name:"Lawrence Shankland", sub:"FW", club:"Heart of Midlothian", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing from a direct rival."},
+  {name:"Danilo", sub:"DF", club:"NEC Nijmegen", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned after NEC declined to make his loan permanent."},
+  {name:"Godfrey", sub:"DF", club:"Atalanta", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Everton defender, loan signing."}
+];
+const CONFIRMED_OUT = [
+  {name:"James Tavernier", sub:"DF", club:"Released", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released as a free agent after MLS talks with Charlotte FC stalled."}
+];
+const INCOMING = [
+  {name:"Jahnoah Markelo", sub:"DF", club:"Coventry City", pos:"DF", report:"~1 wk ago", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:65, prob:55, light:'g', trend:'up', note:"Rangers reportedly in talks for the defender."},
+  {name:"Mikey Moore", sub:"W", club:"Tottenham Hotspur", pos:"W", report:"~1 wk ago", src:"The Scotsman", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Competing with Bundesliga interest, player reportedly told to make a decision."}
+];
+const OUTGOING = [
+  {name:"Nico Raskin", sub:"MF", club:"Undisclosed (managed by Danny Rohl)", pos:"MF", report:"~1 wk ago", src:"Daily Record", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Reported interest described as jeopardised by a special request."},
+  {name:"Unnamed Rangers attacker", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"GlasgowWorld", tier:3, fee:"Undisclosed", truth:50, prob:45, light:'y', trend:'flat', note:"Described as one step away from an Ibrox exit, terms reportedly clear."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

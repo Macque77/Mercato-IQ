@@ -6,7 +6,7 @@ const BRAND = {
   club: "PAS Giannina", mono: "PG", slug: "pg-asteras",
   primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
   primaryRgb: "0,61,165",
-  breadcrumb: ["Greece","Super League U19"]
+  breadcrumb: ["Greece","Gamma Ethniki"]
 };
 
 const VOLATILE = {

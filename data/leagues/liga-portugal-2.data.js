@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "cidadela", "name": "Cittadella", "count": 0, "badge": false}, {"slug": "penafiel", "name": "FC Penafiel", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "penafiel", "name": "FC Penafiel", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.598429Z",
+  updated: "2026-08-03T19:36:42.471112Z",
   label: "League aggregation"
 };

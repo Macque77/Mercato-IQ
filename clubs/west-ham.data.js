@@ -32,7 +32,9 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [
-  {name:"Mateus Fernandes", sub:"21 · CM · Portugal", club:"Tottenham Hotspur", pos:"CM", fee:"£85m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed as part of Spurs' summer rebuild - a club-record sale for West Ham as Fernandes completes a £85m move to Tottenham alongside their Sandro Tonali deal."}
+  {name:"Mateus Fernandes", sub:"21 · CM · Portugal", club:"Tottenham Hotspur", pos:"CM", fee:"£85m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed as part of Spurs' summer rebuild - a club-record sale for West Ham as Fernandes completes a £85m move to Tottenham alongside their Sandro Tonali deal."},
+  {name:"Freddie Potts", sub:"MF", club:"Club Brugge", pos:"MF", fee:"£10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Given permission to undergo a medical, per Ben Jacobs, about as advanced as it gets short of the unveiling."},
+  {name:"Freddie Potts", sub:"MF", club:"Club Brugge", pos:"MF", fee:"£10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Given permission to undergo a medical, per Ben Jacobs, about as advanced as it gets short of the unveiling."}
 ];
 const INCOMING = [];
 const OUTGOING = [];

@@ -478,8 +478,8 @@
     <div class="breadcrumb">
       <a href="/">Global</a>
       <span>/</span>
-      <a href="../nations/unknown.html">
-        <img class="flag-mini" src="" alt="" onerror="this.style.display='none'">Unknown
+      <a href="../nations/italy.html">
+        <img class="flag-mini" src="https://flagcdn.com/it.svg" alt="" onerror="this.style.display='none'">Italy
       </a>
       <span>/</span>
       <span style="color:var(--accent-gold)">Serie B</span>
@@ -495,7 +495,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">0</span>
+          <span class="stat-value">7</span>
         </div>
       </div>
     </div>
@@ -531,19 +531,68 @@
 
 const LEAGUE = {
   name: "Serie B",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Italy",
+  stories_count: 7
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Loyola", prob: 45,
+    club_origin: "pisa", club_display_name: "Pisa", direction: "in",
+    from: "Independiente (Argentina)", to: "Pisa",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Simone Soleri", prob: 40,
+    club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
+    from: "Spezia", to: "Ascoli Picchio",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Kurminowski", prob: 35,
+    club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
+    from: "Free agent", to: "Ascoli Picchio",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Andrea Sottil", prob: 35,
+    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
+    from: "Undisclosed", to: "US Cremonese",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "N/A", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Cherubini", prob: 30,
+    club_origin: "benevento", club_display_name: "Benevento", direction: "in",
+    from: "Roma", to: "Benevento",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "De Luca", prob: 30,
+    club_origin: "benevento", club_display_name: "Benevento", direction: "in",
+    from: "Undisclosed", to: "Benevento",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Merkaj", prob: 30,
+    club_origin: "benevento", club_display_name: "Benevento", direction: "in",
+    from: "Sudtirol", to: "Benevento",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"pisa": 1, "ascoli-picchio": 2, "cremonese": 1, "benevento": 3};
 
-const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count": 0, "badge": false}, {"slug": "benevento", "name": "Benevento", "count": 0, "badge": false}, {"slug": "brescia", "name": "Brescia", "count": 0, "badge": false}, {"slug": "cosenza", "name": "Cosenza", "count": 0, "badge": false}, {"slug": "perugia", "name": "Perugia", "count": 0, "badge": false}, {"slug": "pisa", "name": "Pisa", "count": 0, "badge": false}, {"slug": "reggiana", "name": "Reggiana", "count": 0, "badge": false}, {"slug": "reggina", "name": "Reggina", "count": 0, "badge": false}, {"slug": "ternana", "name": "Ternana", "count": 0, "badge": false}, {"slug": "alessandria", "name": "UPL Alessandria", "count": 0, "badge": false}, {"slug": "cremonese", "name": "US Cremonese", "count": 0, "badge": false}, {"slug": "salernitana", "name": "US Salernitana", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count": 2, "badge": false}, {"slug": "benevento", "name": "Benevento", "count": 3, "badge": false}, {"slug": "pisa", "name": "Pisa", "count": 1, "badge": false}, {"slug": "cremonese", "name": "US Cremonese", "count": 1, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.600717Z",
+  updated: "2026-08-03T19:36:42.475050Z",
   label: "League aggregation"
 };
 

@@ -6,7 +6,7 @@ const BRAND = {
   club: "Erzurumspor", mono: "E", slug: "erzurumspor",
   primary: "#00539F", primaryBright: "#5CA9FF", primaryDeep: "#003060",
   primaryRgb: "0,83,159",
-  breadcrumb: ["Turkey","Super Lig"]
+  breadcrumb: ["Turkey","Süper Lig"]
 };
 
 const VOLATILE = {

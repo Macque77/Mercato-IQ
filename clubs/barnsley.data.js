@@ -31,9 +31,16 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_OUT = [
+  {name:"Callum Brittain", sub:"DF", club:"Blackburn Rovers", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."}
+];
+const INCOMING = [
+  {name:"Unnamed 24yo midfielder", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Charlie Gregory / FLW", tier:3, fee:"Undisclosed", truth:45, prob:45, light:'y', trend:'flat', note:"Reported as set to seal a deal, but the player has not been named."}
+];
+const OUTGOING = [
+  {name:"Adam Phillips", sub:"MF", club:"Bradford City", pos:"MF", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Undisclosed", truth:75, prob:70, light:'g', trend:'up', note:"Described as imminent by a credible EFL-focused reporter."},
+  {name:"David McGoldrick", sub:"ST", club:"Mansfield Town", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:25, light:'o', trend:'flat', note:"Barnsley reportedly confident the veteran striker wants to stay."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

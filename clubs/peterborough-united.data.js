@@ -32,7 +32,10 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Kyreece Lisbie", sub:"W", club:"Colchester United", pos:"W", report:"~1 wk ago", src:"Various", tier:3, fee:"Six-figure fee", truth:55, prob:45, light:'y', trend:'flat', note:"Peterborough reportedly leading Reading in the race for the 11-goal winger."},
+  {name:"Harry Ashfield", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Competing with Barnsley, with a Wrexham complication reported."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

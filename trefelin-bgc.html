@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercato IQ: Rajon Sports</title>
+<title>Mercato IQ: Trefelin BGC</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --primary:#003DA5;
-    --primary-bright:#3399FF;
-    --primary-rgb:0,61,165;
+    --primary:#DA291C;
+    --primary-bright:#FF6259;
+    --primary-rgb:218,41,28;
     --bg:#0a0e17;
     --surface:#1a2332;
     --border:#3a4452;
@@ -472,14 +472,14 @@
     <div class="breadcrumb">
       <a href="/">Global</a>
       <span>/</span>
-      <a href="nations/turkey.html">
-        <img class="flag-mini" src="https://flagcdn.com/tr.svg" alt="" onerror="this.style.display='none'">
-        Turkey
+      <a href="nations/wales.html">
+        <img class="flag-mini" src="https://flagcdn.com/gb-wls.svg" alt="" onerror="this.style.display='none'">
+        Wales
       </a>
       <span>/</span>
-      <a href="leagues/süper-lig-1.html">Süper Lig 1</a>
+      <a href="leagues/cymru-premier.html">Cymru Premier</a>
       <span>/</span>
-      <span style="color:var(--primary-bright)">Rajon Sports</span>
+      <span style="color:var(--primary-bright)">Trefelin BGC</span>
     </div>
   </div>
 </header>
@@ -487,11 +487,11 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="club-badge-large">
-      <img id="club-badge-img" src="rajonsports.png" alt="Rajon Sports badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
-      <div id="club-badge-fallback" class="badge-fallback" style="display:none">RS</div>
+      <img id="club-badge-img" src="trefelinbgc.png" alt="Trefelin BGC badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
+      <div id="club-badge-fallback" class="badge-fallback" style="display:none">TBG</div>
     </div>
     <div class="hero-text">
-      <h2>Rajon Sports</h2>
+      <h2>Trefelin BGC</h2>
       <div class="subtitle" id="club-subtitle"></div>
     </div>
   </div>
@@ -535,34 +535,34 @@
 <script>
 /*==DATA==*/
 /* ============================================================
-   MERCATO IQ · CLUB DATA · RAJON SPORTS · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · TREFELIN BGC · STATE OF RECORD
    ============================================================ */
 
 const BRAND = {
-  club: "Rajon Sports", mono: "RS", slug: "rajon-sports",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Turkey","Süper Lig 1"]
+  club: "Trefelin BGC", mono: "TBG", slug: "trefelin-bgc",
+  primary: "#DA291C", primaryBright: "#FF6259", primaryDeep: "#7A150F",
+  primaryRgb: "218,41,28",
+  breadcrumb: ["Wales","Cymru Premier"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
+  verified: "2026-08-03",
+  coach: "Andy Hill",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "Promoted, Cymru South champions (2025/26)",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
   feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["rajon-sports transfer news"]
+  queries: ["trefelin-bgc transfer news"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:35:00Z",
   label: "Transfer window active; pending updates"
 };
 
@@ -578,20 +578,21 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Rajon-Sports Official", u:"#"}
+  club: {l:"Trefelin BGC Official", u:"#"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Rajon Sports · 2026/27 Season`,
-  heroLede: `Transfer window active. Rajon Sports preparing squad for next season.`,
+  heroH2: `Trefelin BGC · 2026/27 Season`,
+  heroLede: `Transfer window active. Trefelin BGC preparing squad for next season.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
   spendIn: { v: `TBD` },
   spendOut: { v: `TBD` },
   methodLegend: ``
 };
+
 /*==ENDDATA==*/
 
 var __cardSeq = 0;
@@ -695,7 +696,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

@@ -566,9 +566,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_IN = [
+  {name:"Sam Tickle", sub:"GK", club:"Wigan Athletic", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
+  {name:"Brad Collins", sub:"GK", club:"Coventry City", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed free transfer."}
+];
+const CONFIRMED_OUT = [
+  {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
+];
+const INCOMING = [
+  {name:"Rio Cardines", sub:"Full-back", club:"Crystal Palace", pos:"FB", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Loan", truth:55, prob:45, light:'y', trend:'flat', note:"Manager Michael Skubala's own still open for business quote lends this some weight, but nothing official and he stressed there is no rush."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -695,7 +702,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

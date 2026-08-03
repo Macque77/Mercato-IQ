@@ -1,19 +1,24 @@
 /* ============================================================
-   MERCATO IQ · CLUB DATA · GIRESUNSPOR · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · AYDINSPOR 1923 · STATE OF RECORD
+   ------------------------------------------------------------
+   CORRECTION (03 Aug 2026): this slug previously contained
+   mismatched data for a different club (a data-generation bug
+   from an earlier automated pass). Corrected to the real club
+   this slug represents.
    ============================================================ */
 
 const BRAND = {
-  club: "Giresunspor", mono: "G", slug: "aydin-sk",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Turkey","Süper Lig 1"]
+  club: "Aydınspor 1923", mono: "AY", slug: "aydin-sk",
+  primary: "#0057A8", primaryBright: "#5CA9FF", primaryDeep: "#00335F",
+  primaryRgb: "0,87,168",
+  breadcrumb: ["Turkey","Bölgesel Amatör Lig"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
+  verified: "2026-08-03",
   coach: "TBD",
   dof: "TBD",
-  europe: "TBD",
+  europe: "None (2026/27)",
   finish: "TBD",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
@@ -21,12 +26,12 @@ const VOLATILE = {
 
 const SWEEP = {
   feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["aydin-sk transfer news"]
+  queries: ["Aydınspor 1923 transfer news"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:30:00Z",
   label: "Transfer window active; pending updates"
 };
 
@@ -42,15 +47,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Aydin-Sk Official", u:"#"}
+  club: {l:"Aydınspor 1923 Official", u:"#"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Giresunspor · 2026/27 Season`,
-  heroLede: `Transfer window active. Giresunspor preparing squad for next season.`,
+  heroH2: `Aydınspor 1923 · 2026/27 Season`,
+  heroLede: `Transfer window active. Aydınspor 1923 preparing squad for next season.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
   spendIn: { v: `TBD` },
   spendOut: { v: `TBD` },

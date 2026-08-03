@@ -6,7 +6,7 @@ const BRAND = {
   club: "Beşiktaş", mono: "B", slug: "besiktas",
   primary: "#000000", primaryBright: "#C0C0C0", primaryDeep: "#000000",
   primaryRgb: "20,20,20",
-  breadcrumb: ["Turkey","Super Lig"]
+  breadcrumb: ["Turkey","Süper Lig"]
 };
 
 const VOLATILE = {

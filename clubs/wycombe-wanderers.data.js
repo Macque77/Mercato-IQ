@@ -32,8 +32,13 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Joel Randall", sub:"FW", club:"Free agent (released by Bolton)", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:40, prob:30, light:'y', trend:'flat', note:"Wycombe among suitors along with Blackpool and Reading."},
+  {name:"Conor Hazard", sub:"GK", club:"Free agent (ex-Plymouth Argyle)", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:55, prob:45, light:'y', trend:'flat', note:"Wycombe reportedly set to make a move."}
+];
+const OUTGOING = [
+  {name:"Fred Onyedinma", sub:"W", club:"Reading", pos:"W", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Reading reportedly plotting a move, Oxford United also circling."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

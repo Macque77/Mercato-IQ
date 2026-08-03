@@ -6,7 +6,7 @@ const BRAND = {
   club: "SSV Jahn Regensburg", mono: "SJR", slug: "regensburg",
   primary: "#FFFFFF", primaryBright: "#FFFFFF", primaryDeep: "#B0B0B0",
   primaryRgb: "255,255,255",
-  breadcrumb: ["Germany","2. Bundesliga"]
+  breadcrumb: ["Germany","3. Liga"]
 };
 
 const VOLATILE = {

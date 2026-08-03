@@ -1,32 +1,32 @@
 /* ============================================================
-   MERCATO IQ · CLUB DATA · THANATOS ASPROPYRGOS · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · PENYBONT · STATE OF RECORD
    ============================================================ */
 
 const BRAND = {
-  club: "Thanatos Aspropyrgos", mono: "TA", slug: "thanatos-aspropyrgos",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Greece","Super League 2"]
+  club: "Penybont", mono: "PEN", slug: "penybont",
+  primary: "#002D72", primaryBright: "#5C7CFF", primaryDeep: "#001A45",
+  primaryRgb: "0,45,114",
+  breadcrumb: ["Wales","Cymru Premier"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
+  verified: "2026-08-03",
+  coach: "Rhys Griffiths",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "TBD (2025/26)",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
   feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["thanatos-aspropyrgos transfer news"]
+  queries: ["penybont transfer news"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:35:00Z",
   label: "Transfer window active; pending updates"
 };
 
@@ -42,15 +42,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Thanatos-Aspropyrgos Official", u:"#"}
+  club: {l:"Penybont Official", u:"#"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `Thanatos Aspropyrgos · 2026/27 Season`,
-  heroLede: `Transfer window active. Thanatos Aspropyrgos preparing squad for next season.`,
+  heroH2: `Penybont · 2026/27 Season`,
+  heroLede: `Transfer window active. Penybont preparing squad for next season.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
   spendIn: { v: `TBD` },
   spendOut: { v: `TBD` },

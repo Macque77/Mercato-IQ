@@ -6,7 +6,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 8
+  stories_count: 19
 };
 
 const TOP_STORIES = [  {
@@ -52,27 +52,76 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Filip Stanković",prob: 25,
-    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "out",
-    from: "Inter Milan", to: "Multiple (loan/permanent options discussed)",
+    name: "Pascalau & McJannet",prob: 55,
+    club_origin: "cosenza", club_display_name: "Cosenza", direction: "in",
+    from: "Undisclosed", to: "Cosenza",
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie C"
   },
   {
-    name: "Can Uzun",prob: 18,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "Eintracht Frankfurt", to: "AC Milan",
+    name: "Loyola",prob: 45,
+    club_origin: "pisa", club_display_name: "Pisa", direction: "in",
+    from: "Independiente (Argentina)", to: "Pisa",
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "~€25m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie B"
+  },
+  {
+    name: "Simone Soleri",prob: 40,
+    club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
+    from: "Spezia", to: "Ascoli Picchio",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie B"
+  },
+  {
+    name: "Michele Castagnetti",prob: 35,
+    club_origin: "reggiana", club_display_name: "Reggiana", direction: "in",
+    from: "Undisclosed", to: "Reggiana",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie C"
+  },
+  {
+    name: "Reinhart",prob: 35,
+    club_origin: "reggiana", club_display_name: "Reggiana", direction: "out",
+    from: "Reggiana", to: "Undisclosed",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie C"
+  },
+  {
+    name: "Kurminowski",prob: 35,
+    club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
+    from: "Free agent", to: "Ascoli Picchio",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z", league: "Serie B"
+  },
+  {
+    name: "Andrea Sottil",prob: 35,
+    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
+    from: "Undisclosed", to: "US Cremonese",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "N/A", updated: "2026-07-29T00:00:00Z", league: "Serie B"
+  },
+  {
+    name: "Arena",prob: 30,
+    club_origin: "salernitana", club_display_name: "US Salernitana", direction: "out",
+    from: "US Salernitana", to: "Trento / Treviso",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie C"
+  },
+  {
+    name: "Cherubini",prob: 30,
+    club_origin: "benevento", club_display_name: "Benevento", direction: "in",
+    from: "Roma", to: "Benevento",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Serie B"
   },
 ];
 
-const BY_LEAGUE = {"Serie A": 8, "Serie B": 0, "Serie C": 0};
+const BY_LEAGUE = {"Serie A": 8, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 8}, {"slug": "serie-b", "name": "Serie B", "count": 0}, {"slug": "serie-c", "name": "Serie C", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 8}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.593461Z",
+  updated: "2026-08-03T19:36:42.461729Z",
   label: "Nation aggregation"
 };

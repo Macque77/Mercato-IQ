@@ -6,7 +6,7 @@ const BRAND = {
   club: "Perugia", mono: "P", slug: "perugia",
   primary: "#B30000", primaryBright: "#FF6259", primaryDeep: "#6B0000",
   primaryRgb: "179,0,0",
-  breadcrumb: ["Italy","Serie B"]
+  breadcrumb: ["Italy","Serie C"]
 };
 
 const VOLATILE = {
@@ -30,7 +30,9 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Borsoi", sub:"LB", club:"Pineto", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back reinforcement, date attribution inconsistent across sources so treat as recent."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];

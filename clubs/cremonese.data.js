@@ -31,8 +31,12 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_OUT = [
+  {name:"Leonardo Sernicola", sub:"DF", club:"Benevento", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to Benevento on a deal through 2029."}
+];
+const INCOMING = [
+  {name:"Andrea Sottil", sub:"Manager", club:"Undisclosed", pos:"MGR", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"N/A", truth:50, prob:35, light:'y', trend:'flat', note:"Managerial candidate reported for the vacant post following the sporting director's departure, not yet confirmed."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

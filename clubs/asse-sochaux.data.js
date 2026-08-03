@@ -42,7 +42,7 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Asse-Sochaux Official", u:"#"}
+  club: {l:"Sochaux Official", u:"#"}
 };
 
 const LINKMAP = {};

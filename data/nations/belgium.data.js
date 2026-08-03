@@ -32,12 +32,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Pro League": 3, "First Division A": 0};
+const BY_LEAGUE = {"Pro League": 3, "Challenger Pro League": 0, "Division 1": 0};
 
-const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 3}, {"slug": "first-division-a", "name": "First Division A", "count": 0}];
+const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 3}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.592269Z",
+  updated: "2026-08-03T19:36:42.459889Z",
   label: "Nation aggregation"
 };

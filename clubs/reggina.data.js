@@ -6,7 +6,7 @@ const BRAND = {
   club: "Reggina", mono: "R", slug: "reggina",
   primary: "#8B1E3F", primaryBright: "#C0526A", primaryDeep: "#4A0F21",
   primaryRgb: "139,30,63",
-  breadcrumb: ["Italy","Serie B"]
+  breadcrumb: ["Italy","Serie D"]
 };
 
 const VOLATILE = {
@@ -30,8 +30,23 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Mady Abonckelet", sub:"DF", club:"Free agent", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
+  {name:"Giuliano Alma", sub:"MF", club:"Free agent", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
+  {name:"Riccardo Rotulo", sub:"DF", club:"Free agent", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
+  {name:"Michele Guida", sub:"MF", club:"Free agent", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
+  {name:"Edoardo De Mori", sub:"GK", club:"Free agent", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"2007-born signing."},
+  {name:"Ernesto Runza", sub:"MF", club:"Free agent", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"2007-born signing."},
+  {name:"Simone Franchini", sub:"FW", club:"Free agent", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returning to the club."},
+  {name:"Palmieri", sub:"DF", club:"Free agent", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"2008-born full-back."},
+  {name:"Toscano", sub:"MF", club:"Genoa", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2008-born, on loan."},
+  {name:"Specker", sub:"FW", club:"Juventus", pos:"FW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2008-born, on loan."},
+  {name:"Fazio", sub:"DF", club:"Genoa", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2008-born, on loan."},
+  {name:"Piras", sub:"GK", club:"Fasano", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Goalkeeper signing."}
+];
+const CONFIRMED_OUT = [
+  {name:"Palumbo", sub:"MF", club:"Released", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed the club."}
+];
 const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];

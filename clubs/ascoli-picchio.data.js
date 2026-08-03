@@ -30,9 +30,19 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_IN = [
+  {name:"Gian Marco Crespi", sub:"GK", club:"Free agent", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed to 2027."},
+  {name:"Andrea Oliveri", sub:"MF", club:"Atalanta", pos:"MF", fee:"Loan (option to buy)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan with right of redemption."}
+];
+const CONFIRMED_OUT = [
+  {name:"Emanuele Ndoj", sub:"MF", club:"Released", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract terminated."},
+  {name:"Gabriele Pagliai", sub:"FW", club:"Calcio Catania", pos:"FW", fee:"Loan (option to buy)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned out with a purchase option."},
+  {name:"Simone Corazza", sub:"ST", club:"Released", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract resolved."}
+];
+const INCOMING = [
+  {name:"Kurminowski", sub:"FW", club:"Free agent", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Free", truth:50, prob:35, light:'y', trend:'flat', note:"Monitoring stage only, nothing advanced."},
+  {name:"Simone Soleri", sub:"ST", club:"Spezia", pos:"ST", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Reported interest, no figures attached yet."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

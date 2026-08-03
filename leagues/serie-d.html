@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serie D · Mercato IQ</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0e17;
+    --surface:#1a2332;
+    --border:#3a4452;
+    --text:#f0f2f5;
+    --text-secondary:#a8adb8;
+    --text-muted:#7a8291;
+    --accent-gold:#e8c249;
+    --accent-red:#ff3d47;
+    --accent-green:#2ecc71;
+    --tier1:#2ecc71;
+    --tier2:#e8c249;
+    --tier3:#f39c12;
+    --display:'Anton',sans-serif;
+    --body:'Archivo',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:linear-gradient(180deg, rgba(10,14,23,0.98), rgba(10,14,23,0.88));
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    padding:10px 20px;
+  }
+
+  .header-inner {
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+  }
+
+  .logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:inherit;
+    font-family:var(--display);
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+  }
+
+  .logo img {
+    width:36px;
+    height:36px;
+    display:block;
+  }
+
+  .flag-mini {
+    width:16px;
+    height:12px;
+    object-fit:cover;
+    border-radius:2px;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.15);
+    vertical-align:middle;
+    margin-right:4px;
+  }
+
+  .breadcrumb {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--mono);
+    font-size:10px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+  }
+
+  .breadcrumb a {
+    color:var(--text-secondary);
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .breadcrumb a:hover {
+    color:var(--accent-gold);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
+    border-bottom:1px solid var(--border);
+    padding:24px 20px;
+  }
+
+  .hero-inner {
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+
+  .hero-icon {
+    font-size:40px;
+    line-height:1;
+    flex-shrink:0;
+  }
+
+  .hero-text h2 {
+    font-family:var(--display);
+    font-size:32px;
+    font-weight:400;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+
+  .hero-text .subtitle {
+    color:var(--text-secondary);
+    font-size:13px;
+    display:flex;
+    gap:16px;
+  }
+
+  .stat {
+    display:flex;
+    gap:4px;
+    font-family:var(--mono);
+    font-size:11px;
+  }
+
+  .stat-label {
+    color:var(--text-muted);
+    text-transform:uppercase;
+  }
+
+  .stat-value {
+    color:var(--accent-gold);
+    font-weight:700;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width:1400px;
+    margin:0 auto;
+    padding:28px 20px;
+  }
+
+  /* ===== CLUBS SECTION ===== */
+  .section {
+    margin-bottom:28px;
+  }
+
+  .section-title {
+    font-family:var(--display);
+    font-size:18px;
+    font-weight:400;
+    letter-spacing:0.3px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--accent-gold);
+  }
+
+  .clubs-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(110px, 1fr));
+    gap:8px;
+    margin-bottom:24px;
+  }
+
+  .club-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:8px;
+    text-align:center;
+    cursor:pointer;
+    transition:all 200ms ease;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    min-height:90px;
+    justify-content:center;
+  }
+
+  .club-card:hover {
+    border-color:var(--accent-gold);
+    transform:translateY(-2px);
+    box-shadow:0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  .club-badge {
+    width:36px;
+    height:36px;
+    margin:0 auto;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--display);
+    font-size:12px;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
+    background:linear-gradient(135deg, rgba(232,194,73,0.18), rgba(255,255,255,0.04));
+    border:1px solid rgba(232,194,73,0.35);
+    overflow:hidden;
+  }
+
+  .club-badge img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:4px;
+  }
+
+  .empty {
+    grid-column:1/-1;
+    text-align:center;
+    padding:32px 20px;
+    color:var(--text-muted);
+    font-family:var(--mono);
+    font-size:12px;
+    border:1px dashed var(--border);
+    border-radius:8px;
+  }
+
+  .club-name {
+    font-family:var(--display);
+    font-size:10px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.2px;
+    word-wrap:break-word;
+  }
+
+  /* ===== TRANSFER CARDS ===== */
+  .transfer-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:12px;
+  }
+
+  .transfer-card {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    transition:all 200ms ease;
+    position:relative;
+  }
+
+  .transfer-card:hover {
+    border-color:var(--accent-gold);
+    transform:translateY(-2px);
+    box-shadow:0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  a.transfer-card {
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .bullshit-tag {
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:var(--accent-red);
+    color:white;
+    padding:4px 8px;
+    border-radius:4px;
+    font-family:var(--mono);
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    animation:shake 3s ease-in-out infinite;
+    z-index:1;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform:rotate(-2deg); }
+    50% { transform:rotate(2deg); }
+  }
+
+  .card-header {
+    padding:10px;
+    border-bottom:1px solid var(--border);
+    background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
+  }
+
+  .card-player {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:4px;
+    gap:6px;
+  }
+
+  .player-name {
+    font-family:var(--display);
+    font-size:13px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
+  }
+
+  .tier-badge {
+    display:inline-block;
+    padding:2px 6px;
+    background:var(--bg);
+    border:1px solid;
+    border-radius:3px;
+    font-family:var(--mono);
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  .tier-badge.t1 { color:var(--tier1); border-color:var(--tier1); }
+  .tier-badge.t2 { color:var(--tier2); border-color:var(--tier2); }
+  .tier-badge.t3 { color:var(--tier3); border-color:var(--tier3); }
+
+  .club-name-card {
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--text-muted);
+  }
+
+  .card-body {
+    padding:10px;
+  }
+
+  .transfer-direction {
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-bottom:6px;
+    font-size:11px;
+  }
+
+  .direction-icon {
+    font-size:14px;
+  }
+
+  .direction-icon.in { color:var(--accent-green); }
+  .direction-icon.out { color:var(--accent-red); }
+
+  .transfer-details {
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--text-muted);
+    line-height:1.4;
+  }
+
+  .transfer-details div:last-child {
+    color:var(--accent-gold);
+    margin-top:3px;
+  }
+
+  .card-footer {
+    padding:10px;
+    border-top:1px solid var(--border);
+    display:flex;
+    gap:10px;
+  }
+
+  .metric {
+    flex:1;
+  }
+
+  .metric-label {
+    font-family:var(--mono);
+    font-size:8px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:3px;
+  }
+
+  .metric-bar {
+    height:3px;
+    background:rgba(0,0,0,0.3);
+    border-radius:999px;
+    overflow:hidden;
+    margin-bottom:2px;
+  }
+
+  .metric-fill {
+    height:100%;
+    background:linear-gradient(90deg, var(--accent-gold), var(--accent-red));
+    border-radius:999px;
+  }
+
+  .metric-value {
+    font-family:var(--mono);
+    font-size:9px;
+    font-weight:600;
+    color:var(--text);
+  }
+
+  footer {
+    border-top:1px solid var(--border);
+    padding:20px 24px;
+    text-align:center;
+    color:var(--text-muted);
+    font-family:var(--mono);
+    font-size:10px;
+  }
+
+  @media(max-width:768px) {
+    .hero-inner {
+      flex-direction:column;
+      text-align:center;
+      gap:16px;
+    }
+
+    .hero-text .subtitle {
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .transfer-grid {
+      grid-template-columns:1fr;
+    }
+
+    .clubs-grid {
+      grid-template-columns:repeat(auto-fill, minmax(90px, 1fr));
+    }
+
+    .logo {
+      font-size:11px;
+    }
+
+    .hero-text h2 {
+      font-size:24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="../mercato-mark.svg" alt="">
+      <span>Mercato IQ</span>
+    </a>
+    <div class="breadcrumb">
+      <a href="/">Global</a>
+      <span>/</span>
+      <a href="../nations/unknown.html">
+        <img class="flag-mini" src="" alt="" onerror="this.style.display='none'">Unknown
+      </a>
+      <span>/</span>
+      <span style="color:var(--accent-gold)">Serie D</span>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-icon">🏆</div>
+    <div class="hero-text">
+      <h2>Serie D</h2>
+      <div class="subtitle">
+        <div class="stat">
+          <span class="stat-label">Stories:</span>
+          <span class="stat-value">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section">
+    <h3 class="section-title">Clubs</h3>
+    <div class="clubs-grid" id="clubs-grid">
+      <!-- Populated by data -->
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="section-title">Top Transfer Stories</h3>
+    <div class="transfer-grid" id="stories">
+      <!-- Populated by data -->
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2026 Mercato IQ · Transfer Intelligence · No Bullshit</p>
+</footer>
+
+<script>
+/*==DATA==*/
+/* ============================================================
+   MERCATO IQ · LEAGUE DATA · Serie D
+   Generated by engine/aggregate.py. Never hand-edit.
+   ============================================================ */
+
+const LEAGUE = {
+  name: "Serie D",
+  nation: "Unknown",
+  stories_count: 0
+};
+
+const TOP_STORIES = [];
+
+const BY_CLUB = {};
+
+const CLUBS_LIST = [{"slug": "reggina", "name": "Reggina", "count": 0, "badge": false}];
+
+const REPORT_META = {
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T19:36:42.475525Z",
+  label: "League aggregation"
+};
+
+/*==ENDDATA==*/
+
+function initials(name) {
+  return (name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+}
+
+(function(){
+  // Populate clubs grid. aggregate.py emits this array as CLUBS_LIST with a
+  // {slug,name,count,badge} shape -- NOT "CLUBS" (that mismatch used to leave this grid
+  // permanently empty even when club data existed). badge=true means a thumbnail exists
+  // in badges-thumb/<slug>.png; clubs without real artwork fall back to an initials tile.
+  if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
+    const container = document.getElementById('clubs-grid');
+    container.innerHTML = CLUBS_LIST.map(c => {
+      const badgeInner = c.badge
+        ? `<img src="../badges-thumb/${c.slug}.png" alt="${c.name} badge" loading="lazy" onerror="this.parentElement.textContent='${initials(c.name)}'">`
+        : initials(c.name);
+      return `
+      <a href="../${c.slug}.html" class="club-card">
+        <div class="club-badge">${badgeInner}</div>
+        <div class="club-name">${c.name}</div>
+      </a>
+    `;
+    }).join('');
+  } else {
+    const container = document.getElementById('clubs-grid');
+    if(container) container.innerHTML = '<div class="empty">No club data yet</div>';
+  }
+
+  // Populate transfer stories
+  if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
+    const container = document.getElementById('stories');
+    container.innerHTML = TOP_STORIES.map(s => renderStory(s)).join('');
+  } else {
+    const container = document.getElementById('stories');
+    if(container) container.innerHTML = '<div class="empty">No stories yet</div>';
+  }
+})();
+
+function renderStory(s) {
+  const tier = s.tier || 3;
+  const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
+  const prob = s.prob || 50;
+  const isBullshit = prob < 35;
+  const direction = s.direction === 'out' ? '→' : '←';
+  const dirClass = s.direction === 'out' ? 'out' : 'in';
+  const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
+  const href = s.club_origin ? `../${s.club_origin}.html` : '#';
+
+  return `<a href="${href}" class="transfer-card">
+    ${bullTag}
+    <div class="card-header">
+      <div class="card-player">
+        <span class="player-name">${s.name}</span>
+        <span class="tier-badge t${tier}">${tierLabel}</span>
+      </div>
+      <div class="club-name-card">${s.club_display_name}</div>
+    </div>
+    <div class="card-body">
+      <div class="transfer-direction">
+        <span class="direction-icon ${dirClass}">${direction}</span>
+        <div class="transfer-details">
+          <div>${s.from} → ${s.to}</div>
+          <div>${s.value}</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="metric">
+        <div class="metric-label">Prob</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
+        <div class="metric-value">${prob}%</div>
+      </div>
+    </div>
+  </a>`;
+}
+</script>
+
+</body>
+</html>

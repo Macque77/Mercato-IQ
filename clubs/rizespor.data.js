@@ -6,7 +6,7 @@ const BRAND = {
   club: "Rizespor", mono: "R", slug: "rizespor",
   primary: "#00843D", primaryBright: "#3FCB8C", primaryDeep: "#00532A",
   primaryRgb: "0,132,61",
-  breadcrumb: ["Turkey","Super Lig"]
+  breadcrumb: ["Turkey","Süper Lig"]
 };
 
 const VOLATILE = {

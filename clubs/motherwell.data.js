@@ -31,7 +31,9 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Elijah Just", sub:"W", club:"Swansea City", pos:"W", fee:"Club-record fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit, a record fee for the club, three-year deal plus option for Swansea."}
+];
 const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];

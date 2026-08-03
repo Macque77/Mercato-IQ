@@ -13,10 +13,10 @@ const TOP_STORIES = [];
 
 const BY_CLUB = {};
 
-const CLUBS_LIST = [{"slug": "duisburg", "name": "MSV Duisburg", "count": 0, "badge": false}, {"slug": "dfcde", "name": "RWDM Brussels FC", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "erzgebirge-aue", "name": "FC Erzgebirge Aue", "count": 0, "badge": false}, {"slug": "sandhausen", "name": "SV Sandhausen", "count": 0, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.599928Z",
+  updated: "2026-08-03T19:36:42.473997Z",
   label: "League aggregation"
 };

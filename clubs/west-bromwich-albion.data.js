@@ -30,10 +30,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Matt Ingram", sub:"GK", club:"Free agent", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival among a batch of summer signings."}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:15, light:'o', trend:'flat', note:"Very early, Brighton have not decided their plan for him yet, background noise for now."}
+];
+const OUTGOING = [
+  {name:"Eseosa Sule", sub:"Winger", club:"Undisclosed", pos:"W", report:"~4 days ago", src:"West Brom News", tier:2, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Club's own dedicated transfer reporter using strong imminent language, worth some credence."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

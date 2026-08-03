@@ -6,7 +6,7 @@ const BRAND = {
   club: "Reggiana", mono: "R", slug: "reggiana",
   primary: "#8B1E3F", primaryBright: "#C0526A", primaryDeep: "#4A0F21",
   primaryRgb: "139,30,63",
-  breadcrumb: ["Italy","Serie B"]
+  breadcrumb: ["Italy","Serie C"]
 };
 
 const VOLATILE = {
@@ -32,8 +32,12 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Michele Castagnetti", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Eyed as a potential replacement for Reinhart amid Reggiana's post-relegation rebuild in Serie C."}
+];
+const OUTGOING = [
+  {name:"Reinhart", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Possible departure reported, nothing confirmed."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

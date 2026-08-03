@@ -566,7 +566,11 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Cyle Larin", sub:"ST", club:"Mallorca", pos:"ST", fee:"£3.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent signing."},
+  {name:"Daniel Peretz", sub:"GK", club:"Bayern Munich", pos:"GK", fee:"£6.05m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent signing."},
+  {name:"Lewis Dobbin", sub:"23 · FW/W", club:"Aston Villa", pos:"FW", fee:"£9m + add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Athletic reports a medical already underway, effectively done, just awaiting the announcement."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];
@@ -695,7 +699,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

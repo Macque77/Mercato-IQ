@@ -6,7 +6,7 @@ const BRAND = {
   club: "Hansa Rostock", mono: "HR", slug: "rostock",
   primary: "#FFD700", primaryBright: "#FFE666", primaryDeep: "#8F7800",
   primaryRgb: "255,215,0",
-  breadcrumb: ["Germany","2. Bundesliga"]
+  breadcrumb: ["Germany","3. Liga"]
 };
 
 const VOLATILE = {

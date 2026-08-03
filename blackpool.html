@@ -568,8 +568,13 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"~2 wks ago", src:"FLW opinion", tier:4, fee:"Free", truth:30, prob:20, light:'o', trend:'flat', note:"Speculative return suggested in an opinion piece, nothing reported."}
+];
+const OUTGOING = [
+  {name:"Franco Ravizzoli", sub:"GK", club:"Leicester City", pos:"GK", report:"~1 wk ago", src:"FLW", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Russell Martin connection cited, monitoring stage."},
+  {name:"Josh Bowler", sub:"W", club:"Nottingham Forest", pos:"W", report:"~2 wks ago", src:"FLW", tier:3, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Status unclear, treat as speculative."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -696,7 +701,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

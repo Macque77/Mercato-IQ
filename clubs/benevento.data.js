@@ -30,9 +30,25 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_IN = [
+  {name:"Simone Verdi", sub:"FW", club:"Free agent", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Annual deal with option to extend to 2028."},
+  {name:"Leonardo Sernicola", sub:"DF", club:"Cremonese", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract to 2029."},
+  {name:"Pietro Beruatto", sub:"DF", club:"Pisa", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract to 2029."},
+  {name:"Sylla", sub:"GK", club:"Free agent", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Two-year deal plus option to 2029."},
+  {name:"Logan Gaspar", sub:"W", club:"Free agent", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Brazilian winger, three-year deal."},
+  {name:"Siatounis", sub:"MF", club:"Potenza", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Three-year deal."},
+  {name:"Schimmenti", sub:"FW", club:"Free agent", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Three-year deal."}
+];
+const CONFIRMED_OUT = [
+  {name:"Viscardi", sub:"DF", club:"Audace Cerignola", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit to Serie C."},
+  {name:"Starita", sub:"FW", club:"Sorrento", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit to Serie C."},
+  {name:"Castaldi", sub:"MF", club:"Sorrento", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned out to Serie C."}
+];
+const INCOMING = [
+  {name:"Cherubini", sub:"FW", club:"Roma", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Interest reported, competition from Las Palmas noted."},
+  {name:"De Luca", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"General attacking reinforcement target, nothing firm."},
+  {name:"Merkaj", sub:"FW", club:"Sudtirol", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Being monitored only."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];

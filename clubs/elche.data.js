@@ -6,7 +6,7 @@ const BRAND = {
   club: "Elche CF", mono: "EC", slug: "elche",
   primary: "#00A650", primaryBright: "#63E6A0", primaryDeep: "#00602E",
   primaryRgb: "0,166,80",
-  breadcrumb: ["Spain","La Liga 2"]
+  breadcrumb: ["Spain","La Liga"]
 };
 
 const VOLATILE = {

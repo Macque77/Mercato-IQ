@@ -5,6 +5,19 @@
 
 const HEADLINES = [
   {
+    headline: "Florentino Luis",
+    club_display_name: "Burnley",
+    summary: "",
+    value: "£16m",
+    from: "Burnley", to: "Ipswich Town",
+    direction: "out",
+    prob: 90, trend: 'up',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "burnley",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Sergiño Dest",
     club_display_name: "FC Barcelona",
     summary: "Barcelona preparing final push to secure American winger on permanent deal after",
@@ -161,6 +174,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Admir Bristric",
+    club_display_name: "Leicester City",
+    summary: "Player already in England for a medical per reporting.",
+    value: "€1.7-2m",
+    from: "Olimpija Ljubljana (on loan at Bravo)", to: "Leicester City",
+    direction: "in",
+    prob: 85, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "leicester-city",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
     headline: "Mehmet Topal",
     club_display_name: "Fenerbahçe SK",
     summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
@@ -172,6 +198,19 @@ const HEADLINES = [
     nation: "Turkey", league: "Super Lig",
     club_link: "fenerbahce",
     updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Udoka Godwin-Malife",
+    club_display_name: "Reading",
+    summary: "",
+    value: "Undisclosed",
+    from: "Burton Albion", to: "Reading",
+    direction: "in",
+    prob: 85, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "reading",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Niclas Füllkrug",
@@ -200,6 +239,58 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Tommy Watson",
+    club_display_name: "Leicester City",
+    summary: "Loan agreement reportedly reached.",
+    value: "Loan",
+    from: "Brighton", to: "Leicester City",
+    direction: "in",
+    prob: 75, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "leicester-city",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Adam Phillips",
+    club_display_name: "Barnsley",
+    summary: "Described as imminent by a credible EFL-focused reporter.",
+    value: "Undisclosed",
+    from: "Barnsley", to: "Bradford City",
+    direction: "out",
+    prob: 70, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "barnsley",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Luke Molyneux",
+    club_display_name: "Doncaster Rovers",
+    summary: "Exclusive reporting describes the move as closing in.",
+    value: "Undisclosed",
+    from: "Doncaster Rovers", to: "Salford City",
+    direction: "out",
+    prob: 70, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "doncaster-rovers",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Ike Ugbo",
+    club_display_name: "Sheffield Wednesday",
+    summary: "Club reportedly willing to sell or loan before the 1 September deadline.",
+    value: "Undisclosed",
+    from: "Sheffield Wednesday", to: "Various EFL/European clubs",
+    direction: "out",
+    prob: 65, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "sheffield-wednesday",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
     headline: "Xavi Simons",
     club_display_name: "PSV Eindhoven",
     summary: "Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented D",
@@ -213,6 +304,84 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "João Gomes",
+    club_display_name: "Wolverhampton Wanderers",
+    summary: "",
+    value: "£39-40m",
+    from: "Wolverhampton Wanderers", to: "Atlético Madrid",
+    direction: "out",
+    prob: 60, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "wolverhampton",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Gvidas Gineitis",
+    club_display_name: "Celtic",
+    summary: "",
+    value: "~£12m",
+    from: "Torino", to: "Celtic",
+    direction: "in",
+    prob: 60, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Scotland", league: "Premiership",
+    club_link: "celtic",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Alistair Johnston",
+    club_display_name: "Celtic",
+    summary: "",
+    value: "Undisclosed",
+    from: "Celtic", to: "Everton / Fulham",
+    direction: "out",
+    prob: 60, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Scotland", league: "Premiership",
+    club_link: "celtic",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Daniel Jebbison",
+    club_display_name: "Preston North End",
+    summary: "",
+    value: "Loan + option",
+    from: "Preston North End", to: "Blackburn Rovers",
+    direction: "out",
+    prob: 55, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "preston-north-end",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Jahnoah Markelo",
+    club_display_name: "Rangers",
+    summary: "Rangers reportedly in talks for the defender.",
+    value: "Undisclosed",
+    from: "Coventry City", to: "Rangers",
+    direction: "in",
+    prob: 55, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Scotland", league: "Premiership",
+    club_link: "rangers",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Eseosa Sule",
+    club_display_name: "West Bromwich Albion",
+    summary: "",
+    value: "Undisclosed",
+    from: "West Bromwich Albion", to: "Undisclosed",
+    direction: "out",
+    prob: 55, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "west-bromwich-albion",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Dayann Methalie",
     club_display_name: "Sunderland",
     summary: "",
@@ -224,6 +393,32 @@ const HEADLINES = [
     nation: "England", league: "Premier League",
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
+  },
+  {
+    headline: "Dom Ballard",
+    club_display_name: "Leyton Orient",
+    summary: "Bristol City have had two bids rejected; Leicester City also interested; Orient ",
+    value: "£5m+",
+    from: "Leyton Orient", to: "Bristol City",
+    direction: "out",
+    prob: 50, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "leyton-orient",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Divin Mubama",
+    club_display_name: "Derby County",
+    summary: "O'Rourke is a credible EFL-focused reporter and the logic stacks up given Derby'",
+    value: "Loan",
+    from: "Manchester City", to: "Derby County",
+    direction: "in",
+    prob: 50, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "derby-county",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Mateo Kvasina",
@@ -589,223 +784,32 @@ const HEADLINES = [
     club_link: "ajax",
     updated: "2026-08-03T14:30:00Z"
   },
-  {
-    headline: "Villarreal winger",
-    club_display_name: "Atlético Madrid",
-    summary: "Moretto reports Atlético monitoring Villarreal's attacking options as a squad-de",
-    value: "€20m+",
-    from: "Villarreal", to: "Atlético Madrid",
-    direction: "in",
-    prob: 35, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "atletico-madrid",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Giorgio Scalvini",
-    club_display_name: "Newcastle United",
-    summary: "",
-    value: "≈€45-50m (£38-40m)",
-    from: "Atalanta", to: "Newcastle United",
-    direction: "in",
-    prob: 34, trend: 'flat',
-    tier: 2, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "newcastle-united",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Jonathan David",
-    club_display_name: "RC Lens",
-    summary: "Sky reports Lens interest in Lille striker; deal unlikely from Ligue 1 rivals.",
-    value: "€45m",
-    from: "LOSC Lille", to: "RC Lens",
-    direction: "in",
-    prob: 32, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "rc-lens",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Liam Delap",
-    club_display_name: "Nottingham Forest",
-    summary: "",
-    value: "Fee unclear (cost Chelsea £30m in 2025)",
-    from: "Chelsea", to: "Nottingham Forest",
-    direction: "in",
-    prob: 32, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "nottingham-forest",
-    updated: "2026-07-30T14:00:00Z"
-  },
-  {
-    headline: "Adam Wharton",
-    club_display_name: "Crystal Palace",
-    summary: "",
-    value: "£60m+",
-    from: "Crystal Palace", to: "Elite interest",
-    direction: "out",
-    prob: 30, trend: 'up',
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "crystal-palace",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Riccardo Calafiori",
-    club_display_name: "Arsenal",
-    summary: "",
-    value: "£35-45m",
-    from: "Arsenal", to: "Juventus",
-    direction: "out",
-    prob: 30, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Milan Skriniar",
-    club_display_name: "LOSC Lille",
-    summary: "L'Équipe reports Lille interest in PSG centre-back; PSG not eager to sell.",
-    value: "€30m",
-    from: "Paris Saint-Germain", to: "LOSC Lille",
-    direction: "in",
-    prob: 30, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "losc-lille",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Leandro Trossard",
-    club_display_name: "Arsenal",
-    summary: "",
-    value: "£12-18m",
-    from: "Arsenal", to: "Open to offers",
-    direction: "out",
-    prob: 30, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Christian Nørgaard",
-    club_display_name: "Arsenal",
-    summary: "",
-    value: "£8-12m",
-    from: "Arsenal", to: "Listening to offers",
-    direction: "out",
-    prob: 30, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Nick Pope",
-    club_display_name: "Newcastle United",
-    summary: "",
-    value: "Undisclosed",
-    from: "Newcastle United", to: "Ipswich Town (interest)",
-    direction: "out",
-    prob: 30, trend: 'flat',
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "newcastle-united",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Éder Militão",
-    club_display_name: "Real Madrid",
-    summary: "",
-    value: "€90m (PSG valuation)",
-    from: "Real Madrid", to: "Paris Saint-Germain (interest)",
-    direction: "out",
-    prob: 28, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "real-madrid",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    headline: "Luis Díaz",
-    club_display_name: "Olympique de Marseille",
-    summary: "Sky reports Marseille monitoring; Liverpool unlikely to sell to Ligue 1 rival.",
-    value: "€60m",
-    from: "Liverpool", to: "Olympique de Marseille",
-    direction: "in",
-    prob: 28, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "olympique-marseille",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Manu Kone",
-    club_display_name: "Manchester United",
-    summary: "",
-    value: "€60m ask; cash-plus-Rashford structure discussed",
-    from: "AS Roma", to: "Manchester United",
-    direction: "in",
-    prob: 28, trend: 'up',
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "manchester-united",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Gabriel Martinelli",
-    club_display_name: "Arsenal",
-    summary: "",
-    value: "£35-50m",
-    from: "Arsenal", to: "Available",
-    direction: "out",
-    prob: 28, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Jeremie Freuler",
-    club_display_name: "AS Roma",
-    summary: "Roma monitoring Atalanta's midfielder as squad depth option. Atalanta not eager ",
-    value: "€15m",
-    from: "Atalanta", to: "AS Roma",
-    direction: "in",
-    prob: 28, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "as-roma",
-    updated: "2026-08-03T14:30:00Z"
-  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 93, league_count: 1
+    stories_count: 162, league_count: 3
+  },
+  {
+    name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
+    stories_count: 19, league_count: 3
+  },
+  {
+    name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    stories_count: 14, league_count: 1
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
     stories_count: 9, league_count: 1
   },
   {
-    name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 8, league_count: 1
+    name: "France", slug: "france", flag_emoji: "🇫🇷",
+    stories_count: 7, league_count: 1
   },
   {
     name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
-    stories_count: 7, league_count: 1
-  },
-  {
-    name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 7, league_count: 1
+    stories_count: 6, league_count: 1
   },
   {
     name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
@@ -835,10 +839,6 @@ const NATIONS = [
     name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
     stories_count: 0, league_count: 0
   },
-  {
-    name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-    stories_count: 0, league_count: 0
-  },
 ];
 
 const STATS = {
@@ -851,6 +851,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.591835Z",
+  updated: "2026-08-03T19:36:42.459356Z",
   label: "Global aggregation from all clubs"
 };

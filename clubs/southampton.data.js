@@ -30,7 +30,11 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Cyle Larin", sub:"ST", club:"Mallorca", pos:"ST", fee:"£3.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent signing."},
+  {name:"Daniel Peretz", sub:"GK", club:"Bayern Munich", pos:"GK", fee:"£6.05m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent signing."},
+  {name:"Lewis Dobbin", sub:"23 · FW/W", club:"Aston Villa", pos:"FW", fee:"£9m + add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Athletic reports a medical already underway, effectively done, just awaiting the announcement."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];

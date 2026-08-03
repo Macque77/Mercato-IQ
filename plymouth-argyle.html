@@ -567,9 +567,18 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_OUT = [
+  {name:"Lorent Tolaj", sub:"ST", club:"Bristol City", pos:"ST", fee:"£4m + add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Described as advanced and imminent."}
+];
+const INCOMING = [
+  {name:"Murphy Cooper", sub:"GK", club:"QPR", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"~£500k", truth:65, prob:55, light:'g', trend:'up', note:"Plymouth reportedly set to beat Sheffield Wednesday and MK Dons to the signing."},
+  {name:"Jayden Wareham", sub:"FW", club:"Exeter City", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Fan-backed target as a possible Tolaj replacement."},
+  {name:"Callum Robinson", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Alternate Tolaj replacement option floated."},
+  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Competing with Notts County for the striker."}
+];
+const OUTGOING = [
+  {name:"Bim Pepple", sub:"FW", club:"Portsmouth", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Release clause", truth:55, prob:45, light:'y', trend:'flat', note:"Release clause reportedly likely to be triggered."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -695,7 +704,13 @@ function renderCard(t, linkMap, hub) {
   const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
-  const isBullshit = t.light === 'r' && truth < 40 && prob < 35;
+  // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
+  // score threshold. Reserved for rumours where the source itself is fake/uncredentialed and
+  // unverifiable, or the claim is beyond the realms of possibility -- NOT merely "unlikely to
+  // happen" (a credible Tier 1-2 source reporting a genuine long-shot is not bullshit, just a
+  // low-probability real rumour). A widely-repeated but demonstrably false claim also qualifies.
+  // This should be rare; most weak sourcing is handled by the ordinary tier/probability scoring.
+  const isBullshit = t.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);

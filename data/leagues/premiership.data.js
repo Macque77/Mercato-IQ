@@ -5,18 +5,116 @@
 
 const LEAGUE = {
   name: "Premiership",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Scotland",
+  stories_count: 14
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Gvidas Gineitis", prob: 60,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "in",
+    from: "Torino", to: "Celtic",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~£12m", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Alistair Johnston", prob: 60,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "out",
+    from: "Celtic", to: "Everton / Fulham",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Jahnoah Markelo", prob: 55,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
+    from: "Coventry City", to: "Rangers",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Unnamed Rangers attacker", prob: 45,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "out",
+    from: "Rangers", to: "Undisclosed",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Nico Raskin", prob: 40,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "out",
+    from: "Rangers", to: "Undisclosed (managed by Danny Rohl)",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Unnamed Hearts striker", prob: 40,
+    club_origin: "heart-of-midlothian", club_display_name: "Heart of Midlothian", direction: "in",
+    from: "Undisclosed", to: "Heart of Midlothian",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Claudio Braga", prob: 30,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "in",
+    from: "Heart of Midlothian", to: "Celtic",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Mikey Moore", prob: 30,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
+    from: "Tottenham Hotspur", to: "Rangers",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "", prob: 25,
+    club_origin: "st-mirren", club_display_name: "St Mirren", direction: "out",
+    from: "St Mirren", to: "Undisclosed",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Reo Hatate", prob: 30,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "out",
+    from: "Celtic", to: "Undisclosed",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Luke Graham", prob: 30,
+    club_origin: "dundee", club_display_name: "Dundee", direction: "out",
+    from: "Dundee", to: "Rangers",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Unnamed Kilmarnock player", prob: 20,
+    club_origin: "kilmarnock", club_display_name: "Kilmarnock", direction: "out",
+    from: "Kilmarnock", to: "Rangers",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Bowie", prob: 20,
+    club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
+    from: "Dundee United", to: "Undisclosed",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Calvin Miller", prob: 10,
+    club_origin: "falkirk", club_display_name: "Falkirk", direction: "out",
+    from: "Falkirk", to: "Celtic",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"celtic": 4, "rangers": 4, "heart-of-midlothian": 1, "st-mirren": 1, "dundee": 1, "kilmarnock": 1, "dundee-united": 1, "falkirk": 1};
 
-const CLUBS_LIST = [{"slug": "aberdeen", "name": "Aberdeen", "count": 0, "badge": false}, {"slug": "celtic", "name": "Celtic", "count": 0, "badge": false}, {"slug": "dundee", "name": "Dundee", "count": 0, "badge": false}, {"slug": "dundee-united", "name": "Dundee United", "count": 0, "badge": false}, {"slug": "falkirk", "name": "Falkirk", "count": 0, "badge": false}, {"slug": "heart-of-midlothian", "name": "Heart of Midlothian", "count": 0, "badge": false}, {"slug": "hibernian", "name": "Hibernian", "count": 0, "badge": false}, {"slug": "kilmarnock", "name": "Kilmarnock", "count": 0, "badge": false}, {"slug": "motherwell", "name": "Motherwell", "count": 0, "badge": false}, {"slug": "rangers", "name": "Rangers", "count": 0, "badge": false}, {"slug": "st-johnstone", "name": "St Johnstone", "count": 0, "badge": false}, {"slug": "st-mirren", "name": "St Mirren", "count": 0, "badge": false}];
+const CLUBS_LIST = [{"slug": "aberdeen", "name": "Aberdeen", "count": 0, "badge": false}, {"slug": "celtic", "name": "Celtic", "count": 4, "badge": false}, {"slug": "dundee", "name": "Dundee", "count": 1, "badge": false}, {"slug": "dundee-united", "name": "Dundee United", "count": 1, "badge": false}, {"slug": "falkirk", "name": "Falkirk", "count": 1, "badge": false}, {"slug": "heart-of-midlothian", "name": "Heart of Midlothian", "count": 1, "badge": false}, {"slug": "hibernian", "name": "Hibernian", "count": 0, "badge": false}, {"slug": "kilmarnock", "name": "Kilmarnock", "count": 1, "badge": false}, {"slug": "motherwell", "name": "Motherwell", "count": 0, "badge": false}, {"slug": "rangers", "name": "Rangers", "count": 4, "badge": false}, {"slug": "st-johnstone", "name": "St Johnstone", "count": 0, "badge": false}, {"slug": "st-mirren", "name": "St Mirren", "count": 1, "badge": false}];
 
 const REPORT_META = {
   asof: "03 Aug 2026",
-  updated: "2026-08-03T18:16:48.599503Z",
+  updated: "2026-08-03T19:36:42.473124Z",
   label: "League aggregation"
 };

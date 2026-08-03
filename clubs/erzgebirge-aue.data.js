@@ -6,7 +6,7 @@ const BRAND = {
   club: "FC Erzgebirge Aue", mono: "FEA", slug: "erzgebirge-aue",
   primary: "#5B2C82", primaryBright: "#A87FD6", primaryDeep: "#331A49",
   primaryRgb: "91,44,130",
-  breadcrumb: ["Germany","2. Bundesliga"]
+  breadcrumb: ["Germany","Regionalliga"]
 };
 
 const VOLATILE = {

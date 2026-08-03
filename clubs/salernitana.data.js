@@ -6,7 +6,7 @@ const BRAND = {
   club: "US Salernitana", mono: "US", slug: "salernitana",
   primary: "#7A1F2B", primaryBright: "#B0475A", primaryDeep: "#4A121A",
   primaryRgb: "122,31,43",
-  breadcrumb: ["Italy","Serie B"]
+  breadcrumb: ["Italy","Serie C"]
 };
 
 const VOLATILE = {
@@ -30,10 +30,17 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Mastrovito", sub:"Youth", club:"Martina", pos:"YTH", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young prospect, beat competition from Bari for his signature."},
+  {name:"Heinz", sub:"MF", club:"Free agent", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Three-year deal."}
+];
+const CONFIRMED_OUT = [
+  {name:"Corriere", sub:"DF", club:"Real Aversa", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned out."}
+];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Arena", sub:"DF", club:"Trento / Treviso", pos:"DF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reported interest from both Serie C clubs, no bid confirmed yet."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

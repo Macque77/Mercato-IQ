@@ -1,32 +1,32 @@
 /* ============================================================
-   MERCATO IQ · CLUB DATA · UC ALBANOVA · STATE OF RECORD
+   MERCATO IQ · CLUB DATA · BRITON FERRY LLANSAWEL · STATE OF RECORD
    ============================================================ */
 
 const BRAND = {
-  club: "UC Albanova", mono: "UA", slug: "ucl-albanova",
-  primary: "#003DA5", primaryBright: "#3399FF", primaryDeep: "#001F4D",
-  primaryRgb: "0,61,165",
-  breadcrumb: ["Sweden","Allsvenskan"]
+  club: "Briton Ferry Llansawel", mono: "BFL", slug: "briton-ferry-llansawel",
+  primary: "#DA291C", primaryBright: "#FF6259", primaryDeep: "#7A150F",
+  primaryRgb: "218,41,28",
+  breadcrumb: ["Wales","Cymru Premier"]
 };
 
 const VOLATILE = {
-  verified: "2026-07-29",
-  coach: "TBD",
+  verified: "2026-08-03",
+  coach: "Andy Dyer",
   dof: "TBD",
-  europe: "TBD",
-  finish: "TBD",
+  europe: "None (2026/27)",
+  finish: "TBD (2025/26)",
   owner: "TBD",
   window: "Opens 15 Jun; closes 1 Sep 2026, 11pm UK"
 };
 
 const SWEEP = {
   feeds: ["https://www.newsnow.co.uk/h/Sport/Football/"],
-  queries: ["ucl-albanova transfer news"]
+  queries: ["briton-ferry-llansawel transfer news"]
 };
 
 const REPORT_META = {
-  asof: "29 Jul 2026",
-  updated: "2026-07-29T00:00:00Z",
+  asof: "03 Aug 2026",
+  updated: "2026-08-03T18:35:00Z",
   label: "Transfer window active; pending updates"
 };
 
@@ -42,15 +42,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Ucl-Albanova Official", u:"#"}
+  club: {l:"Briton Ferry Llansawel Official", u:"#"}
 };
 
 const LINKMAP = {};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `UC Albanova · 2026/27 Season`,
-  heroLede: `Transfer window active. UC Albanova preparing squad for next season.`,
+  heroH2: `Briton Ferry Llansawel · 2026/27 Season`,
+  heroLede: `Transfer window active. Briton Ferry Llansawel preparing squad for next season.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
   spendIn: { v: `TBD` },
   spendOut: { v: `TBD` },

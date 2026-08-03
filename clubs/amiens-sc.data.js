@@ -6,7 +6,7 @@ const BRAND = {
   club: "Amiens SC", mono: "AS", slug: "amiens-sc",
   primary: "#0057A8", primaryBright: "#5CA9FF", primaryDeep: "#00335F",
   primaryRgb: "0,87,168",
-  breadcrumb: ["France","Ligue 2"]
+  breadcrumb: ["France","Ligue 3"]
 };
 
 const VOLATILE = {

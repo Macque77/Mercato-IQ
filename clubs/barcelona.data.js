@@ -41,7 +41,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Sergiño Dest", sub:"23 · LW · USA", club:"PSV Eindhoven (loan return)", pos:"LW", report:"01 Aug 2026", src:"Gerard Romero", tier:1, fee:"Loan to buy", truth:88, prob:85, light:"g", trend:"up", note:"Barcelona preparing final push to secure American winger on permanent deal after successful loan spell."},
   {name:"Vinícius Gabias", sub:"20 · CM · Brazil", club:"Flamengo", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€18m", truth:75, prob:68, light:"y", trend:"up", note:"Brazilian prospect attracting serious interest; negotiations ongoing with Rio club."},
-  {name:"Ederson", sub:"45 · RB · Spain", club:"Sevilla", pos:"RB", report:"26 Jul 2026", src:"Twitter Gossip Account #47", tier:3, fee:"€2.5m", truth:12, prob:8, light:"r", trend:"down", note:"Some bloke on Twitter reckons Barcelona want a 45-year-old centre-back. He's actually a goalkeeper and retired. This is complete nonsense."}
+  {name:"Ederson", sub:"45 · RB · Spain", club:"Sevilla", pos:"RB", report:"26 Jul 2026", src:"Twitter Gossip Account #47", tier:4, fee:"€2.5m", truth:12, prob:8, light:"r", trend:"down", bullshit:true, note:"An anonymous, uncredentialed account claiming Barcelona want a 45-year-old centre-back who is, in fact, a retired goalkeeper. Fake source, impossible claim."}
 ];
 
 const OUTGOING = [];
