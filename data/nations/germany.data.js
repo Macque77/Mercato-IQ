@@ -6,7 +6,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 7
+  stories_count: 6
 };
 
 const TOP_STORIES = [  {
@@ -50,13 +50,6 @@ const TOP_STORIES = [  {
     from: "Liverpool", to: "Eintracht Frankfurt",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€55m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
-  {
-    name: "",prob: 50,
-    club_origin: "bayern-munich", club_display_name: "Bayern Munich", direction: "in",
-    from: "TBD", to: "Bayern Munich",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
 ];
 

@@ -551,19 +551,6 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
-    headline: "Konstantinos Karetsas",
-    club_display_name: "AC Milan",
-    summary: "",
-    value: "~€40m",
-    from: "Genk", to: "AC Milan",
-    direction: "in",
-    prob: 35, trend: 'up',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "ac-milan",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Moussa Diaby",
     club_display_name: "Borussia Dortmund",
     summary: "German media reports Dortmund as one of several clubs interested in Leverkusen w",
@@ -574,6 +561,19 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "Germany", league: "Bundesliga",
     club_link: "borussia-dortmund",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Konstantinos Karetsas",
+    club_display_name: "AC Milan",
+    summary: "",
+    value: "~€40m",
+    from: "Genk", to: "AC Milan",
+    direction: "in",
+    prob: 35, trend: 'up',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "ac-milan",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -733,19 +733,6 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
-    headline: "Luis Díaz",
-    club_display_name: "Olympique de Marseille",
-    summary: "Sky reports Marseille monitoring; Liverpool unlikely to sell to Ligue 1 rival.",
-    value: "€60m",
-    from: "Liverpool", to: "Olympique de Marseille",
-    direction: "in",
-    prob: 28, trend: 'flat',
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "olympique-marseille",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Manu Kone",
     club_display_name: "Manchester United",
     summary: "",
@@ -757,6 +744,19 @@ const HEADLINES = [
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
     updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Luis Díaz",
+    club_display_name: "Olympique de Marseille",
+    summary: "Sky reports Marseille monitoring; Liverpool unlikely to sell to Ligue 1 rival.",
+    value: "€60m",
+    from: "Liverpool", to: "Olympique de Marseille",
+    direction: "in",
+    prob: 28, trend: 'flat',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "olympique-marseille",
+    updated: "2026-08-03T14:30:00Z"
   },
   {
     headline: "Gabriel Martinelli",
@@ -793,19 +793,19 @@ const NATIONS = [
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 9, league_count: 1
+    stories_count: 10, league_count: 1
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
     stories_count: 8, league_count: 1
   },
   {
-    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
+    name: "France", slug: "france", flag_emoji: "🇫🇷",
     stories_count: 7, league_count: 1
   },
   {
-    name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 7, league_count: 1
+    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
+    stories_count: 6, league_count: 1
   },
   {
     name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
