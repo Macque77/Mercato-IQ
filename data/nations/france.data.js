@@ -24,18 +24,18 @@ const TOP_STORIES = [  {
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Joris Chotard",prob: 55, truth: 65, bullshit: false,
-    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
-    from: "Stade Brestois 29", to: "Stade Brest",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
     name: "Yahia Jlidi",prob: 55, truth: 75, bullshit: false,
     club_origin: "angers-sco", club_display_name: "Angers SCO", direction: "out",
     from: "Angers SCO", to: "Lyon / Roma (Monaco also interested)",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Angers value at ~€7m (rejected Monaco's €4m bid)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Joris Chotard",prob: 55, truth: 65, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
     name: "Harouna Djibirin",prob: 35, truth: 65, bullshit: false,
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 46}, {"slu
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:54:20.913065Z",
+  updated: "2026-08-04T11:56:32.421142Z",
   label: "Nation aggregation"
 };

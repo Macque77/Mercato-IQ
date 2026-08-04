@@ -143,6 +143,6 @@ const CLUBS_LIST = [{"slug": "aberdeen", "name": "Aberdeen", "count": 0, "badge"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:54:20.920747Z",
+  updated: "2026-08-04T11:56:32.431248Z",
   label: "League aggregation"
 };

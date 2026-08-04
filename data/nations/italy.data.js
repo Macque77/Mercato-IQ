@@ -81,7 +81,7 @@ const TOP_STORIES = [  {
   },
   {
     name: "Santiago Castro",prob: 35, truth: 55, bullshit: false,
-    club_origin: "bologna", club_display_name: "Bologna", direction: "out",
+    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "Bologna", to: "AS Roma",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
@@ -94,25 +94,25 @@ const TOP_STORIES = [  {
     value: "~€15m (asking price)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Ricardo Mangas",prob: 35, truth: 55, bullshit: false,
-    club_origin: "monza", club_display_name: "AC Monza", direction: "in",
-    from: "Sporting CP", to: "AC Monza",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan with conditional obligation to buy", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Pietro Comuzzo",prob: 35, truth: 52, bullshit: false,
-    club_origin: "torino", club_display_name: "Torino", direction: "in",
-    from: "Fiorentina", to: "Torino",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
     name: "Sergi Dominguez",prob: 35, truth: 55, bullshit: false,
     club_origin: "lazio", club_display_name: "Lazio", direction: "in",
     from: "Dinamo Zagreb", to: "Lazio",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Pietro Comuzzo",prob: 35, truth: 52, bullshit: false,
+    club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "out",
+    from: "Fiorentina", to: "Torino",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Ricardo Mangas",prob: 35, truth: 55, bullshit: false,
+    club_origin: "monza", club_display_name: "AC Monza", direction: "in",
+    from: "Sporting CP", to: "AC Monza",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan with conditional obligation to buy", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
 ];
 
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 46}, {"slu
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:54:20.913853Z",
+  updated: "2026-08-04T11:56:32.421949Z",
   label: "Nation aggregation"
 };
