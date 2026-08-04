@@ -6,7 +6,7 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 46
+  stories_count: 48
 };
 
 const TOP_STORIES = [  {
@@ -24,13 +24,6 @@ const TOP_STORIES = [  {
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Yahia Jlidi",prob: 55, truth: 75, bullshit: false,
-    club_origin: "angers-sco", club_display_name: "Angers SCO", direction: "out",
-    from: "Angers SCO", to: "Lyon / Roma (Monaco also interested)",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Angers value at ~€7m (rejected Monaco's €4m bid)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
     name: "Joris Chotard",prob: 55, truth: 65, bullshit: false,
     club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
     from: "Stade Brestois 29", to: "Stade Brest",
@@ -38,11 +31,32 @@ const TOP_STORIES = [  {
     value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
+    name: "Yahia Jlidi",prob: 55, truth: 75, bullshit: false,
+    club_origin: "angers-sco", club_display_name: "Angers SCO", direction: "out",
+    from: "Angers SCO", to: "Lyon / Roma (Monaco also interested)",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Angers value at ~€7m (rejected Monaco's €4m bid)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
     name: "Harouna Djibirin",prob: 35, truth: 65, bullshit: false,
     club_origin: "angers-sco", club_display_name: "Angers SCO", direction: "out",
     from: "Angers SCO", to: "Club Brugge",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~€15m asking price", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Bradley Barcola",prob: 30, truth: 58, bullshit: false,
+    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "out",
+    from: "Paris Saint-Germain", to: "Liverpool",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Liverpool ~€100m offer vs PSG demanding €150-170m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Diego Moreira",prob: 30, truth: 50, bullshit: false,
+    club_origin: "rc-strasbourg", club_display_name: "RC Strasbourg Alsace", direction: "out",
+    from: "RC Strasbourg Alsace", to: "AS Roma",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
     name: "Maghnes Akliouche",prob: 62, truth: 70, bullshit: false,
@@ -100,28 +114,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "TBD", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
-  {
-    name: "Gonçalo Inácio",prob: 40, truth: 58, bullshit: false,
-    club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
-    from: "Sporting CP", to: "LOSC Lille",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
-    name: "Ousmane Dembélé",prob: 35, truth: 55, bullshit: false,
-    club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
-    from: "PSG", to: "Olympique de Marseille",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "€50m+", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 46, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 48, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 46}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 48}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:56:32.421142Z",
+  updated: "2026-08-04T12:44:46.875067Z",
   label: "Nation aggregation"
 };

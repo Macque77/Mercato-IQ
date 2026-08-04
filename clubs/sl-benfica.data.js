@@ -37,7 +37,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 
 const CONFIRMED_OUT = [
-  {name:"João Neves", sub:"20 · CM · Portugal", club:"PSG", pos:"CM", fee:"€60m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 15 Jul. Midfielder sold to PSG for €60m. Major financial windfall for Portuguese club."}
+  {name:"João Neves", sub:"20 · CM · Portugal", club:"PSG", pos:"CM", fee:"€60m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 15 Jul. Midfielder sold to PSG for €60m. Major financial windfall for Portuguese club."},
+  {name:"Antonio Silva", sub:"22 · CB · Portugal", club:"permanent to Bournemouth", pos:"CB", fee:"€25m + €5m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Independently reported by Romano, Di Marzio and Schira within days of each other."}
 ];
 
 const INCOMING = [
@@ -71,14 +72,14 @@ const HUB = {
   "gnews-jooneves": {l:"Related news search: João Neves", u:"https://news.google.com/search?q=SL%20Benfica%20Jo%C3%A3o%20Neves%20transfer&hl=en-GB&gl=GB"},
   "hawkins": {l:"Fabrice Hawkins (L'Équipe)", u:"https://x.com/HawkinsFabrice"},
   "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"},
-  "gnews-srgioconceio": {l:"Related news search: Sérgio Conceição", u:"https://news.google.com/search?q=SL%20Benfica%20S%C3%A9rgio%20Concei%C3%A7%C3%A3o%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-srgioconceio": {l:"Related news search: Sérgio Conceição", u:"https://news.google.com/search?q=SL%20Benfica%20S%C3%A9rgio%20Concei%C3%A7%C3%A3o%20transfer&hl=en-GB&gl=GB"},
+  eSPNcitingNicoloSchiraAntonioSilva: {l:"ESPN (citing Nicolo Schira)", u:"https://www.espn.com/soccer/story/_/id/49506377/bournemouth-transfers-premier-league-antonio-silva-benfica"}};
 
 const LINKMAP = {
   "João Neves": ["gnews-jooneves"],
   "Todibo from Nice": ["hawkins", "lequipe"],
-  "Sérgio Conceição": ["gnews-srgioconceio"]
-};
+  "Sérgio Conceição": ["gnews-srgioconceio"],
+  "Antonio Silva": ["eSPNcitingNicoloSchiraAntonioSilva"]};
 const WL_LINKMAP = {
   "João Neves": ["gnews-jooneves"]
 };

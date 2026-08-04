@@ -67,6 +67,7 @@ const INCOMING = [
    note:"United have scouted Murillo extensively as part of the 'Operation Wall' centre-back search reported by Football365, with his left-footed profile fitting Carrick's build-out patterns. TeamTalk's 'locked in talks' framing traces to a single X account with a mixed accuracy record rather than a tier-1 name, and even TeamTalk's own report says it is awaiting further sourcing before treating it as live. A Brazilian outlet has separately corroborated the £61m-plus valuation, and Forest's willingness to sell may hinge on their own league finish. OBSTACLES: single-source framing, Forest's reluctance to sell a key asset mid-season form permitting, and Chelsea also credited with interest."},
   {name:"Aurélien Tchouaméni", sub:"26 · CDM · France", club:"Real Madrid", pos:"CDM", report:"8 Jul 2026", src:"AS (José Félix Díaz, via Ruben Martín)", tier:3, fee:"~£68m mentioned", truth:30, prob:10, light:'r', trend:'down',
    note:"Spanish reporter José Félix Díaz says United have tabled a five-year contract offer that Tchouaméni 'hasn't rejected', with INEOS said to be structuring salary payments across the deal to close the gap with Madrid pay scales. But Real Madrid boss José Mourinho wants to keep his only senior defensive midfielder and Madrid are reluctant to sell without a ready replacement, with the player contracted until 2028. OBSTACLES: Mourinho's resistance, Madrid's lack of a like-for-like alternative, and the fee gap between what United would pay and what Madrid consider a serious offer."},
+  {name:"Francisco Conceição", sub:"23 · W · Portugal", club:"Juventus", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~£25m", truth:45, prob:15, light:"o", trend:"flat", note:"Schira describes this as enquiry stage only — Manchester United 'have asked for information', not yet a bid."}
 ];
 
 const OUTGOING = [
@@ -135,7 +136,7 @@ const HUB = {
   bbcMUFC: {l:"BBC Sport · Manchester United", u:"https://www.bbc.co.uk/sport/football/teams/manchester-united"},
   unitedInFocus: {l:"United In Focus", u:"https://www.unitedinfocus.com/"},
   strettyNews: {l:"Stretty News", u:"https://strettynews.com/"},
-};
+  nicoloSchiraFranciscoConceio: {l:"Nicolo Schira", u:"https://x.com/NicoSchira/status/2082963665632833569"}};
 
 const LINKMAP = {
   "Andrey Santos": ["skyMUFC","manUtdNews"],
@@ -158,7 +159,7 @@ const LINKMAP = {
   "Manuel Ugarte": ["unitedInFocus"],
   "Kobbie Mainoo": ["hardtackle"],
   "Bruno Fernandes": ["bbcMUFC"],
-};
+  "Francisco Conceição": ["nicoloSchiraFranciscoConceio"]};
 
 const WL_LINKMAP = {
   "Antonee Robinson": "skyMUFC",

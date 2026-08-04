@@ -851,17 +851,22 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · AS Roma"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Konstantinos Koulierakis", sub:"CB · Greece", club:"permanent from Wolfsburg", pos:"CB", fee:"€17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Di Marzio posted arrival images; official signing with medicals and signature to follow."}
+];
 
 const CONFIRMED_OUT = [
   {name:"Paulo Dybala", sub:"30 · CAM/ST · Argentina", club:"Juventus", pos:"CAM/ST", fee:"Free agent", free:true, status:"done", statusTxt:"DONE, EXIT", note:"Contract expired 30 Jun. Dybala departs as free agent; Juventus completed signing."},
-  {name:"Alessandro Romano", sub:"20 · CB · Italy", club:"Cagliari", pos:"CB", fee:"Loan, €5m plus add-ons obligation to buy", free:false, status:"done", statusTxt:"DONE, LOAN OUT", note:"Confirmed 1 Jul. Young centre-back sent out on loan with an obligation to buy attached, a squad-management move as Roma trims its defensive numbers."}
+  {name:"Alessandro Romano", sub:"20 · CB · Italy", club:"Cagliari", pos:"CB", fee:"Loan, €5m plus add-ons obligation to buy", free:false, status:"done", statusTxt:"DONE, LOAN OUT", note:"Confirmed 1 Jul. Young centre-back sent out on loan with an obligation to buy attached, a squad-management move as Roma trims its defensive numbers."},
+  {name:"Mattia Viti", sub:"CB · Italy", club:"permanent to Sampdoria", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move after a loan spell, four-year contract, medicals confirmed via Di Marzio."}
 ];
 
 const INCOMING = [
   {name:"Serhou Guirassy", sub:"24 · ST · Guinea", club:"RB Leipzig", pos:"ST", report:"31 Jul 2026", src:"Matteo Moretto / Fabrizio Romano (Sky Italia)", tier:2, fee:"€30m", truth:58, prob:40, light:"y", trend:"up", note:"Romano and Moretto report Roma in talks with Leipzig for young striker. Deal not finalised but discussions advanced."},
   {name:"Santiago Castro", sub:"21 · ST · Argentina", club:"Bologna", pos:"ST", report:"2 Aug 2026", src:"Football Italia", tier:2, fee:"€35m", truth:55, prob:35, light:"y", trend:"up", note:"Roma reported in negotiations for Bologna's young striker, with Artem Dovbyk potentially moving the opposite way on loan as part of the same conversation - though Genoa are also chasing Dovbyk, complicating any swap."},
-  {name:"Jeremie Freuler", sub:"29 · CM · Switzerland", club:"Atalanta", pos:"CM", report:"28 Jul 2026", src:"Corriere della Sera", tier:2, fee:"€15m", truth:45, prob:28, light:"o", trend:"flat", note:"Roma monitoring Atalanta's midfielder as squad depth option. Atalanta not eager sellers."}
+  {name:"Jeremie Freuler", sub:"29 · CM · Switzerland", club:"Atalanta", pos:"CM", report:"28 Jul 2026", src:"Corriere della Sera", tier:2, fee:"€15m", truth:45, prob:28, light:"o", trend:"flat", note:"Roma monitoring Atalanta's midfielder as squad depth option. Atalanta not eager sellers."},
+  {name:"Richard Ríos", sub:"CDM · Colombia", club:"Palmeiras", pos:"CDM", report:"Jul 2026", src:"Gianluca Di Marzio", tier:2, fee:"Roma offer €25m vs Palmeiras ask ~€30m", truth:55, prob:40, light:"y", trend:"flat", note:"Di Marzio: gap between the clubs is 'just 5 million euros'; Manchester United also inquiring."},
+  {name:"Diego Moreira", sub:"21 · LWB · Portugal", club:"Strasbourg", pos:"LWB", report:"15 Jul 2026", src:"Nicolo Schira", tier:1, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma have reportedly offered a contract to 2031, with direct talks expected between the clubs."}
 ];
 
 const OUTGOING = [
@@ -897,8 +902,11 @@ const HUB = {
   "corriere": {l:"Corriere della Sera", u:"https://www.corriere.it/sport/"},
   "footballItalia": {l:"Football Italia · AS Roma", u:"https://football-italia.net/category/teams/roma/"},
   "cagliariclub": {l:"Cagliari Calcio Official", u:"https://cagliaricalcio.com/en/news/"},
-  "gnews-serhouguirassy": {l:"Related news search: Serhou Guirassy", u:"https://news.google.com/search?q=AS%20Roma%20Serhou%20Guirassy%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-serhouguirassy": {l:"Related news search: Serhou Guirassy", u:"https://news.google.com/search?q=AS%20Roma%20Serhou%20Guirassy%20transfer&hl=en-GB&gl=GB"},
+  gianlucaDiMarzioviaGiallorossinetRichardRos: {l:"Gianluca Di Marzio (via Giallorossi.net)", u:"https://www.giallorossi.net/calciomercato-roma-di-marzio-offerta-di-25-milioni-per-rios-distanza-di-soli-5-col-palmeiras/"},
+  nicoloSchiraviaSportingpediaDiegoMoreira: {l:"Nicolo Schira (via Sportingpedia)", u:"https://www.sportingpedia.com/2026/07/15/diego-moreira-set-to-swap-strasbourg-for-as-roma/"},
+  gianlucaDiMarzioKonstantinosKoulierakis: {l:"Gianluca Di Marzio", u:"https://x.com/DiMarzio/status/2083512575757594801"},
+  gianlucaDiMarzioMattiaViti: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-30-luglio-495350"}};
 
 const LINKMAP = {
   "Paulo Dybala": ["gnews-paulodybala"],
@@ -906,8 +914,11 @@ const LINKMAP = {
   "Jeremie Freuler": ["corriere"],
   "Santiago Castro": ["footballItalia"],
   "Artem Dovbyk": ["footballItalia"],
-  "Alessandro Romano": ["cagliariclub"]
-};
+  "Alessandro Romano": ["cagliariclub"],
+  "Richard Ríos": ["gianlucaDiMarzioviaGiallorossinetRichardRos"],
+  "Diego Moreira": ["nicoloSchiraviaSportingpediaDiegoMoreira"],
+  "Konstantinos Koulierakis": ["gianlucaDiMarzioKonstantinosKoulierakis"],
+  "Mattia Viti": ["gianlucaDiMarzioMattiaViti"]};
 const WL_LINKMAP = {
   "Serhou Guirassy": ["gnews-serhouguirassy"],
   "Paulo Dybala": ["gnews-paulodybala"],

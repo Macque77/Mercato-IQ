@@ -30,10 +30,15 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Jordan Zemura", sub:"LB · Zimbabwe", club:"loan from Bournemouth", pos:"LB", fee:"Loan to 30 Jun 2027", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan from Bournemouth, confirmed via Di Marzio's live mercato digest."},
+  {name:"Iker Bravo", sub:"ST · Spain", club:"permanent from Udinese", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer confirmed via Di Marzio's live mercato digest."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Nestory Irankunda", sub:"20 · W · Australia", club:"Sporting CP", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~€22m (bonuses included)", truth:55, prob:45, light:"y", trend:"flat", note:"Schira: agreement in principle on personal terms to 2031, with Sporting racing other suitors to close the deal."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -42,10 +47,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Watford Official", u:"#"}
-};
+  club: {l:"Watford Official", u:"#"},
+  nicoloSchiraNestoryIrankunda: {l:"Nicolo Schira", u:"https://www.transferfeed.com/transfers/nestory-irankunda-watford-sporting-cp/43982109"},
+  gianlucaDiMarzioJordanZemura: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"},
+  gianlucaDiMarzioIkerBravo: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-news-24-luglio-2026-495120"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Nestory Irankunda": ["nicoloSchiraNestoryIrankunda"],
+  "Jordan Zemura": ["gianlucaDiMarzioJordanZemura"],
+  "Iker Bravo": ["gianlucaDiMarzioIkerBravo"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -40,7 +40,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Robert Lewandowski", sub:"37 · ST · Poland", club:"Chicago Fire (MLS)", pos:"ST", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"CORRECTED 03 Aug: an earlier version of this record wrongly stated Lewandowski had signed a Barcelona contract extension. In fact he departed as a free agent for Chicago Fire on a deal through 2028, ending his Barça spell."},
   {name:"Ansu Fati", sub:"23 · W · Spain", club:"Monaco", pos:"W", fee:"€11m (permanent option exercised)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Monaco convert last season's loan into a permanent transfer."},
-  {name:"Iñaki Peña", sub:"27 · GK · Spain", club:"Panathinaikos", pos:"GK", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Backup goalkeeper departs for regular first-team football in Greece."}
+  {name:"Iñaki Peña", sub:"27 · GK · Spain", club:"Panathinaikos", pos:"GK", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Backup goalkeeper departs for regular first-team football in Greece."},
+  {name:"Marc-André ter Stegen", sub:"34 · GK · Germany", club:"free to Ajax", pos:"GK", fee:"Free (Ajax covers a share of salary)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time Barcelona No.1 leaves as his contract situation resolves; Romano reported him already travelling to join Ajax."}
 ];
 
 const INCOMING = [];
@@ -81,8 +82,8 @@ const HUB = {
   "barcablaugranes-3aug": {l:"Barca Blaugranes - Ferran Torres not for sale, Cancelo close (3 Aug 2026)", u:"https://www.barcablaugranes.com/barcelona-news/128091/fc-barcelona-news-3-august-2026-ferran-torres-not-for-sale-joao-cancelo-signing-very-close"},
   "teamtalk-fcbdone": {l:"TeamTalk - every completed Barcelona transfer, summer 2026", u:"https://www.teamtalk.com/news/every-completed-barcelona-transfer-summer-2026-signings-sales-loans"},
   "espn-lewandowski": {l:"ESPN - Chicago Fire complete signing of Robert Lewandowski", u:"https://www.espn.com/soccer/story/_/id/49218680/chicago-fire-complete-signing-robert-lewandowski"},
-  "beinsports-cancelo": {l:"beIN Sports - Barcelona make Cancelo signing official", u:"https://www.beinsports.com/en-us/soccer/la-liga/articles/welcome-home-barcelona-makes-the-signing-of-joao-cancelo-official-2026-01-13"}
-};
+  "beinsports-cancelo": {l:"beIN Sports - Barcelona make Cancelo signing official", u:"https://www.beinsports.com/en-us/soccer/la-liga/articles/welcome-home-barcelona-makes-the-signing-of-joao-cancelo-official-2026-01-13"},
+  fabrizioRomanoviaFootballTransfersMarcAndrterStegen: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-bruno-guimaraes-enzo-fernandez-mykhailo-mudryk"}};
 
 const LINKMAP = {
   "Anthony Gordon": ["teamtalk-fcbdone"],
@@ -92,8 +93,8 @@ const LINKMAP = {
   "Robert Lewandowski": ["espn-lewandowski"],
   "Ansu Fati": ["teamtalk-fcbdone"],
   "Iñaki Peña": ["teamtalk-fcbdone"],
-  "Ferran Torres": ["barcablaugranes-3aug"]
-};
+  "Ferran Torres": ["barcablaugranes-3aug"],
+  "Marc-André ter Stegen": ["fabrizioRomanoviaFootballTransfersMarcAndrterStegen"]};
 const WL_LINKMAP = {
   "Ferran Torres": ["barcablaugranes-3aug"]
 };

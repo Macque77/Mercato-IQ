@@ -78,11 +78,13 @@ const INCOMING = [
    note:"Considered as a midfield option, a cheaper alternative to Camara. OBSTACLE: a step down in ceiling; more of a depth/value play."},
   {name:"Marcus Rashford", sub:"W/ST · England", club:"(tracked)", pos:"W", report:"~1 day ago", src:"Aggregated roundup", tier:3, fee:"£40m+", truth:55, prob:15, light:'o', trend:'flat',
    note:"Tracked alongside Spurs and Newcastle in a transfer roundup. OBSTACLES: wages, fee and a crowded field; an opportunistic link rather than a concrete move."},
+  {name:"Alejandro Garnacho", sub:"22 · W · Argentina", club:"Chelsea", pos:"W", report:"22 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Loan + conditional buy option", truth:60, prob:45, light:"y", trend:"flat", note:"Villa have submitted an official loan bid with Garnacho's salary covered by the club, per Romano."}
 ];
 
 const OUTGOING = [
   {name:"Fringe & loan returns", sub:"Squad trim", club:"Various", pos:"-", report:"~4 days ago", src:"Aston Villa News (aggregated)", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio."},
+  {name:"Emiliano Martínez", sub:"33 · GK · Argentina", club:"Juventus", pos:"GK", report:"2 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:50, prob:8, light:"r", trend:"flat", note:"Romano reported Juventus have informed Villa they will not proceed with a move — costs were judged too high, so this rumour has effectively collapsed for now."}
 ];
 
 const RISERS = [
@@ -131,7 +133,8 @@ const HUB = {
   lequipe:   {l:"L'Équipe · football", u:"https://www.lequipe.fr/Football/"},
   footmercato:{l:"Foot Mercato", u:"https://www.footmercato.net/"},
   avfc:      {l:"Aston Villa Official · news", u:"https://www.avfc.co.uk/news/"},
-};
+  fabrizioRomanoviaFootballTransfersAlejandroGarnacho: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/fabrizio-romano-alejandro-garnacho-warren-zaire-emery-ousmane-diomande"},
+  fabrizioRomanoviaReadTottenhamEmilianoMartnez: {l:"Fabrizio Romano (via Read Tottenham)", u:"https://readtottenham.com/2026/08/03/fabrizio-romano-tottenham-transfer-news-juventus/"}};
 const LINKMAP = {
   "Lamine Camara": ["onefootball","yahoo","lequipe"],
   "Ilaix Moriba": ["onefootball"],
@@ -139,7 +142,8 @@ const LINKMAP = {
   "Morgan Rogers": ["bbcVilla","athletic"],
   "Jadon Sancho": ["bmail","townley"],
   "Fringe & loan returns": ["bmail"],
-};
+  "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho"],
+  "Emiliano Martínez": ["fabrizioRomanoviaReadTottenhamEmilianoMartnez"]};
 const WL_LINKMAP = {
   "Lamine Camara":"onefootball","Morgan Rogers":"bbcVilla","Loan flops":"bmail",
 };

@@ -893,8 +893,10 @@ const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , update
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = 
-    [];
+const CONFIRMED_OUT =
+    [
+  {name:"Danny Welbeck", sub:"35 · ST · England", club:"free to Chelsea", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran forward leaves as a free agent, contract to 2028 at Chelsea, confirmed via Di Marzio's live mercato digest."}
+];
 
 const INCOMING = [
   {name:"Young data-model targets", sub:"Value recruitment", club:"Market", pos:"ANY", report:"window framing", src:"Model-based", tier:3, fee:"£50-90m total", truth:55, prob:45, light:'y', trend:'up',
@@ -956,14 +958,14 @@ const HUB = {
   sky:      {l:"Sky Sports · Brighton", u:"https://www.skysports.com/brighton-and-hove-albion"},
   sussex:   {l:"Sussex Express · Albion", u:"https://www.sussexexpress.co.uk/sport/football/brighton-hove-albion"},
   bbcGossip:{l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
-};
+  gianlucaDiMarzioDannyWelbeck: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-trattative-1-agosto-2026-495391"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
   "Forward options": ["athletic","bbcGossip"],
   "Prized asset (premium sale)": ["naylor","athletic","sky"],
   "Fringe & squad trim": ["argus","sussex"],
-};
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck"]};
 const WL_LINKMAP = {
   "Data-model targets":"athletic","Prized asset":"naylor",
 };

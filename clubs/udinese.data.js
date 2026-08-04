@@ -44,7 +44,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Arthur Atta", sub:"20 · CM · France", club:"Fiorentina", pos:"CM", fee:"€40m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 11 Jul after medicals on the 9th. A major fee for the highly-rated young midfielder, headlining Udinese's summer business."},
   {name:"Martin Payero", sub:"27 · CM · Argentina", club:"Watford", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Further midfield departure to Watford."},
-  {name:"Simone Pafundi", sub:"20 · AM · Italy", club:"Catanzaro", pos:"AM", fee:"Loan with option to buy", free:false, status:"done", statusTxt:"DONE, LOAN OUT", note:"Confirmed 31 Jul. Young playmaker loaned out for regular football."}
+  {name:"Simone Pafundi", sub:"20 · AM · Italy", club:"Catanzaro", pos:"AM", fee:"Loan with option to buy", free:false, status:"done", statusTxt:"DONE, LOAN OUT", note:"Confirmed 31 Jul. Young playmaker loaned out for regular football."},
+  {name:"Iker Bravo", sub:"ST · Spain", club:"permanent to Watford", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer confirmed via Di Marzio's live mercato digest."}
 ];
 
 const INCOMING = [
@@ -81,8 +82,8 @@ const WATCHLIST = [
 
 const HUB = {
   footballItalia: {l:"Football Italia · Udinese", u:"https://football-italia.net/category/teams/udinese/"},
-  footitalia: {l:"FootItalia.com", u:"https://www.footitalia.com/"}
-};
+  footitalia: {l:"FootItalia.com", u:"https://www.footitalia.com/"},
+  gianlucaDiMarzioIkerBravo: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-news-24-luglio-2026-495120"}};
 
 const LINKMAP = {
   "Unai Gómez": ["footballItalia"],
@@ -93,8 +94,8 @@ const LINKMAP = {
   "Martin Payero": ["footballItalia"],
   "Simone Pafundi": ["footballItalia"],
   "Ognjen Ugresic": ["footballItalia"],
-  "Nicolò Zaniolo": ["footitalia"]
-};
+  "Nicolò Zaniolo": ["footitalia"],
+  "Iker Bravo": ["gianlucaDiMarzioIkerBravo"]};
 const WL_LINKMAP = {
   "Nicolò Zaniolo": ["footitalia"]
 };

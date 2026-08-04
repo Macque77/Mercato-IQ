@@ -49,7 +49,8 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Rafael Leão", sub:"27 · LW · Portugal", club:"Multiple (unspecified)", pos:"LW", report:"1 Aug 2026", src:"Football Italia", tier:2, fee:"€60-80m (expected)", truth:55, prob:32, light:"y", trend:"up", note:"Milan are expected to sell Leão and other first-team fringe pieces to help fund the Karetsas/Alajbegović/Uzun pursuit and further defensive reinforcement."}
+  {name:"Rafael Leão", sub:"27 · LW · Portugal", club:"Multiple (unspecified)", pos:"LW", report:"1 Aug 2026", src:"Football Italia", tier:2, fee:"€60-80m (expected)", truth:55, prob:32, light:"y", trend:"up", note:"Milan are expected to sell Leão and other first-team fringe pieces to help fund the Karetsas/Alajbegović/Uzun pursuit and further defensive reinforcement."},
+  {name:"Yunus Musah", sub:"23 · CM · USA", club:"Unnamed Premier League clubs", pos:"CM", report:"18 Jul 2026", src:"Nicolo Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Schira: early-stage interest only from two unnamed Premier League clubs — could leave Milan this summer."}
 ];
 
 const RISERS = [
@@ -75,14 +76,14 @@ const WATCHLIST = [];
 const HUB = {
   sempremilan: {l:"SempreMilan · Transfer News", u:"https://sempremilan.com/category/transfer-news"},
   footballItalia: {l:"Football Italia · AC Milan", u:"https://football-italia.net/category/teams/milan/"},
-  club: {l:"AC Milan Official · Transfer Window", u:"https://www.acmilan.com/en/transfer-window"}
-};
+  club: {l:"AC Milan Official · Transfer Window", u:"https://www.acmilan.com/en/transfer-window"},
+  nicoloSchiraviaNapoliMagazineYunusMusah: {l:"Nicolo Schira (via Napoli Magazine)", u:"https://www.napolimagazine.com/calcio/articolo/mercato-schira-milan-interesse-di-due-club-di-premier-per-il-centrocampista-musah-19-07-2026"}};
 
 const LINKMAP = {
   "Jadon Sancho": ["club"],
   "Gonçalo Ramos": ["footballItalia","club"],
-  "Mario Gila": ["footballItalia","club"]
-};
+  "Mario Gila": ["footballItalia","club"],
+  "Yunus Musah": ["nicoloSchiraviaNapoliMagazineYunusMusah"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

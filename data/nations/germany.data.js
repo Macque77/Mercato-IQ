@@ -6,7 +6,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 13
+  stories_count: 14
 };
 
 const TOP_STORIES = [  {
@@ -22,6 +22,13 @@ const TOP_STORIES = [  {
     from: "RB Leipzig", to: "Real Madrid",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed (fee TBC)", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
+  {
+    name: "Michael Olise",prob: 15, truth: 45, bullshit: false,
+    club_origin: "bayern-munich", club_display_name: "Bayern Munich", direction: "out",
+    from: "Bayern Munich", to: "Real Madrid",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "~€150m mooted", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
     name: "Raphael Onyedika",prob: 70, truth: 78, bullshit: false,
@@ -102,12 +109,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 12, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
+const BY_LEAGUE = {"Bundesliga": 13, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 12}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 13}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:56:32.421413Z",
+  updated: "2026-08-04T12:44:46.875369Z",
   label: "Nation aggregation"
 };

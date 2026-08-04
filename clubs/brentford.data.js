@@ -73,7 +73,9 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Mamadou Sangaré", sub:"RC Lens", club:"permanent from RC Lens", pos:"MF", fee:"£41m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record signing for Brentford; Romano reported a verbal agreement with medical the same day."}
+];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
@@ -137,14 +139,14 @@ const HUB = {
   wls:       {l:"West London Sport · Brentford", u:"https://www.westlondonsport.com/brentford"},
   sky:       {l:"Sky Sports · Brentford", u:"https://www.skysports.com/brentford"},
   bfc:       {l:"Brentford FC Official · news", u:"https://www.brentfordfc.com/en/news"},
-};
+  fabrizioRomanoviaEmpireoftheKopMamadouSangar: {l:"Fabrizio Romano (via Empire of the Kop)", u:"https://www.empireofthekop.com/2026/07/31/medical-booked-for-liverpool-target-ahead-of-41m-transfer-fabrizio-romano/"}};
 const LINKMAP = {
   "Value & successor targets": ["bbcBees","athletic","wls"],
   "Forward depth options": ["bbcBees","wls"],
   "Midfield value options": ["bbcBees","wls"],
   "Prized asset (premium sale)": ["bbcBees","athletic"],
   "Fringe & squad trim": ["wls","sky"],
-};
+  "Mamadou Sangaré": ["fabrizioRomanoviaEmpireoftheKopMamadouSangar"]};
 const WL_LINKMAP = {
   "Data-model targets":"bbcBees","Prized asset":"athletic",
 };

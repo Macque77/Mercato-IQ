@@ -41,7 +41,9 @@ const CONFIRMED_IN = [
   {name:"Jeff Ekhator", sub:"19 · ST · Italy", to:"permanent from Genoa", fee:"€16m plus bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Jul. The teenage striker, who had recently made his senior Italy debut, joins from Genoa as a long-term development signing for the Next Gen/first-team pathway."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"João Mário", sub:"Juventus academy", club:"permanent to Fiorentina", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed via Di Marzio's live mercato digest, days after medicals were reported as imminent."}
+];
 
 const INCOMING = [
   {name:"Kerim Alajbegović", sub:"18 · W · Bosnia", club:"Bayer Leverkusen", pos:"W", report:"2 Aug 2026", src:"Football Director Carnevali / Black & White & Read All Over", tier:2, fee:"€25-30m", truth:60, prob:38, light:"y", trend:"up", note:"Talks ongoing per club sources; the young Bosnian winger has also been linked with Tottenham and Chelsea, so competition remains a live obstacle even with Juventus reportedly in advanced discussions."}
@@ -49,7 +51,8 @@ const INCOMING = [
 
 const OUTGOING = [
   {name:"Dušan Vlahović", sub:"26 · ST · Serbia", club:"AC Milan (rumoured)", pos:"ST", report:"31 Jul 2026", src:"Nico Schira / Rudy Galetti", tier:2, fee:"€70m (speculative)", truth:45, prob:20, light:"o", trend:"flat", note:"Recurring Serie A rivalry link, but Juventus have shown no willingness to sell to a direct domestic competitor, and a club spokesperson explicitly denied any meeting has taken place over the player. Kolo Muani's arrival adds competition for his spot regardless of any sale."},
-  {name:"Dušan Vlahović", sub:"26 · ST · Serbia", club:"Napoli (contingency)", pos:"ST", report:"25 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Napoli reportedly view Vlahović as a contingency plan only if Romelu Lukaku's push to leave succeeds; presented as a fallback scenario rather than an active Napoli approach to Juventus."}
+  {name:"Dušan Vlahović", sub:"26 · ST · Serbia", club:"Napoli (contingency)", pos:"ST", report:"25 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Napoli reportedly view Vlahović as a contingency plan only if Romelu Lukaku's push to leave succeeds; presented as a fallback scenario rather than an active Napoli approach to Juventus."},
+  {name:"Francisco Conceição", sub:"23 · W · Portugal", club:"Manchester United", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~£25m", truth:45, prob:15, light:"o", trend:"flat", note:"Schira describes this as enquiry stage only — Manchester United 'have asked for information', not yet a bid."}
 ];
 
 const RISERS = [
@@ -80,8 +83,9 @@ const HUB = {
   bwrao: {l:"Black & White & Read All Over", u:"https://www.blackwhitereadallover.com/"},
   footballItalia: {l:"Football Italia · Juventus", u:"https://football-italia.net/category/teams/juventus/"},
   beinJuve: {l:"beIN Sports · Serie A", u:"https://www.beinsports.com/en-us/soccer/serie-a/"},
-  club: {l:"Juventus Official", u:"https://www.juventus.com/en/news/"}
-};
+  club: {l:"Juventus Official", u:"https://www.juventus.com/en/news/"},
+  nicoloSchiraFranciscoConceio: {l:"Nicolo Schira", u:"https://x.com/NicoSchira/status/2082963665632833569"},
+  gianlucaDiMarzioJooMrio: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/joao-mario-fiorentina-juventus-trattativa-news-495419"}};
 
 const LINKMAP = {
   "Randal Kolo Muani": ["juvefc","bwrao"],
@@ -89,8 +93,9 @@ const LINKMAP = {
   "Dušan Vlahović": ["footballItalia"],
   "Joshua Zirkzee": ["club"],
   "Paulo Dybala": ["footballItalia","club"],
-  "Jeff Ekhator": ["footballItalia","club"]
-};
+  "Jeff Ekhator": ["footballItalia","club"],
+  "Francisco Conceição": ["nicoloSchiraFranciscoConceio"],
+  "João Mário": ["gianlucaDiMarzioJooMrio"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

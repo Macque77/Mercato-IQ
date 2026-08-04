@@ -39,7 +39,9 @@ const CONFIRMED_OUT = [
   {name:"Ange-Yoan Bonny", sub:"21 · ST · France U21", club:"Inter Milan", pos:"ST", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure - Bonny reunites with Cristian Chivu at Inter after his breakout final months at Parma (6 goals, 4 assists, helped the club beat relegation). Stuttgart tried to hijack the move but Inter won out."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"El Bilal Touré", sub:"24 · ST · Mali", club:"Atalanta", pos:"ST", report:"2 Aug 2026", src:"Gianluca Di Marzio", tier:2, fee:"Loan with conditional mandatory purchase", truth:55, prob:50, light:"y", trend:"flat", note:"Di Marzio describes the loan as in its closing stages."}
+];
 
 const OUTGOING = [
   {name:"Zion Suzuki", sub:"24 · GK · Japan", club:"Multiple (Juventus, Aston Villa, Leeds, Newcastle linked)", pos:"GK", report:"1-3 Jul 2026", src:"Football Italia", tier:2, fee:"~€30m (asking price)", truth:55, prob:30, light:"y", trend:"up", note:"Genuinely for sale with several Premier League and Serie A clubs credited with interest, though Daffara's arrival suggests Parma are already planning for his exit."},
@@ -70,16 +72,16 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  footballItalia: {l:"Football Italia · Parma", u:"https://football-italia.net/category/teams/parma/"}
-};
+  footballItalia: {l:"Football Italia · Parma", u:"https://football-italia.net/category/teams/parma/"},
+  gianlucaDiMarzioElBilalTour: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"}};
 
 const LINKMAP = {
   "Giovanni Daffara": ["footballItalia"],
   "Franco Ezequiel Carboni": ["footballItalia"],
   "Ange-Yoan Bonny": ["footballItalia"],
   "Zion Suzuki": ["footballItalia"],
-  "Mateo Pellegrino": ["footballItalia"]
-};
+  "Mateo Pellegrino": ["footballItalia"],
+  "El Bilal Touré": ["gianlucaDiMarzioElBilalTour"]};
 const WL_LINKMAP = {
   "Zion Suzuki": ["footballItalia"]
 };

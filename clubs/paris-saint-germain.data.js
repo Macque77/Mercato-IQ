@@ -44,9 +44,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
+  {name:"Mika Godts", sub:"20 · W · Belgium", club:"Ajax", pos:"W", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Romano says the move is 'progressing well' with a player agreement reportedly reached, though no club-to-club fee is confirmed."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Bradley Barcola", sub:"23 · W · France", club:"Liverpool", pos:"W", report:"27 Jul – 2 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Liverpool ~€100m offer vs PSG demanding €150-170m", truth:58, prob:30, light:"y", trend:"flat", note:"Personal terms reportedly agreed in principle, but Romano says he doesn't expect an imminent move given the clubs remain far apart on fee."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>João Neves official</b>: Portuguese midfielder confirmed from Benfica for €60m."}
@@ -73,14 +76,16 @@ const WATCHLIST = [
 const HUB = {
   "gnews-jooneves": {l:"Related news search: João Neves", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Jo%C3%A3o%20Neves%20transfer&hl=en-GB&gl=GB"},
   "gnews-randalkolomuani": {l:"Related news search: Randal Kolo Muani", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Randal%20Kolo%20Muani%20transfer&hl=en-GB&gl=GB"},
-  "gnews-gonaloramos": {l:"Related news search: Gonçalo Ramos", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Gon%C3%A7alo%20Ramos%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-gonaloramos": {l:"Related news search: Gonçalo Ramos", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Gon%C3%A7alo%20Ramos%20transfer&hl=en-GB&gl=GB"},
+  fabrizioRomanoviaFootballTransfersMikaGodts: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"},
+  fabrizioRomanoviaCaughtOffsideBradleyBarcola: {l:"Fabrizio Romano (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/02/fabrizio-romano-bradley-barcola-liverpool-transfer-update-not-imminent/"}};
 
 const LINKMAP = {
   "João Neves": ["gnews-jooneves"],
   "Randal Kolo Muani": ["gnews-randalkolomuani"],
-  "Gonçalo Ramos": ["gnews-gonaloramos"]
-};
+  "Gonçalo Ramos": ["gnews-gonaloramos"],
+  "Mika Godts": ["fabrizioRomanoviaFootballTransfersMikaGodts"],
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola"]};
 const WL_LINKMAP = {
   "João Neves": ["gnews-jooneves"]
 };

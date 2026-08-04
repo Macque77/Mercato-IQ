@@ -40,7 +40,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Adrien Thomasson", sub:"29 · AM · France", club:"Stade Rennais", pos:"AM", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed 28 May 2026 on a three-year deal after his contract expired."}
+  {name:"Adrien Thomasson", sub:"29 · AM · France", club:"Stade Rennais", pos:"AM", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed 28 May 2026 on a three-year deal after his contract expired."},
+  {name:"Mamadou Sangaré", sub:"RC Lens", club:"permanent to Brentford", pos:"MF", fee:"£41m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record sale to Brentford; Romano reported a verbal agreement with medical the same day."}
 ];
 
 const INCOMING = [
@@ -74,16 +75,16 @@ const WATCHLIST = [
 const HUB = {
   "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"},
   "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
-  "gffn-lens": {l:"Get French Football News · Lens", u:"https://www.getfootballnewsfrance.com/tag/lens/"}
-};
+  "gffn-lens": {l:"Get French Football News · Lens", u:"https://www.getfootballnewsfrance.com/tag/lens/"},
+  fabrizioRomanoviaEmpireoftheKopMamadouSangar: {l:"Fabrizio Romano (via Empire of the Kop)", u:"https://www.empireofthekop.com/2026/07/31/medical-booked-for-liverpool-target-ahead-of-41m-transfer-fabrizio-romano/"}};
 
 const LINKMAP = {
   "Rafael Leão": ["lequipe"],
   "Jonathan David": ["sky"],
   "Michaël Cuisance": ["gffn-lens"],
   "Saud Abdulhamid": ["gffn-lens"],
-  "Adrien Thomasson": ["gffn-lens"]
-};
+  "Adrien Thomasson": ["gffn-lens"],
+  "Mamadou Sangaré": ["fabrizioRomanoviaEmpireoftheKopMamadouSangar"]};
 const WL_LINKMAP = {
   "Jonathan David": ["sky"]
 };

@@ -42,7 +42,9 @@ const INCOMING = [
   {name:"Chiquinho", sub:"26 · LB · Portugal", club:"Guimarães", pos:"LB", report:"1 Aug 2026", src:"Sky Sports", tier:2, fee:"€8m", truth:62, prob:48, note:"Sky reports Olympiacos interest in Portuguese left-back."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Francisco Ortega", sub:"27 · LB", club:"River Plate", pos:"LB", report:"23 Jul 2026", src:"Nicolo Schira", tier:2, fee:"~€7m asking price", truth:45, prob:20, light:"o", trend:"flat", note:"Early-stage talks opened; Ortega's contract with Olympiacos runs to 2028."}
+];
 
 const RISERS = [];
 
@@ -57,12 +59,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"}
-};
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
+  nicoloSchiraviaSporting24NewsFranciscoOrtega: {l:"Nicolo Schira (via Sporting24News)", u:"https://sporting24news.gr/"}};
 
 const LINKMAP = {
-  "Chiquinho": ["sky"]
-};
+  "Chiquinho": ["sky"],
+  "Francisco Ortega": ["nicoloSchiraviaSporting24NewsFranciscoOrtega"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

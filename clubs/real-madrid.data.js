@@ -42,13 +42,18 @@ const CONFIRMED_OUT = [
   {name:"Fran García", sub:"26 · LB · Spain", club:"Real Betis", pos:"LB", fee:"~£3.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Made surplus by the Cucurella signing; joins Betis on a permanent deal."},
   {name:"Dani Ceballos", sub:"29 · CM · Spain", club:"Released - free agent", pos:"CM", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED", note:"Contract expired; leaves the Bernabéu as a free agent."},
   {name:"Dani Carvajal", sub:"34 · RB · Spain", club:"Released - free agent", pos:"RB", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED", note:"Long-serving right-back leaves on the expiry of his contract, succeeded in the role by Dumfries."},
-  {name:"David Alaba", sub:"33 · CB · Austria", club:"Released - free agent", pos:"CB", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED", note:"Contract expired; departs after a spell disrupted by long-term injuries."}
+  {name:"David Alaba", sub:"33 · CB · Austria", club:"Released - free agent", pos:"CB", fee:"Free (released)", free:true, status:"done", statusTxt:"DONE, RELEASED", note:"Contract expired; departs after a spell disrupted by long-term injuries."},
+  {name:"Gonzalo García", sub:"21 · ST · Spain", club:"permanent to Fulham", pos:"ST", fee:"€40m + €2m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Castilla graduate and breakout 2024/25 first-team forward sold to Fulham, with Real Madrid retaining a 30% sell-on clause and matching rights."},
+  {name:"César Palacios", sub:"Real Madrid academy", club:"permanent to Fulham", pos:"MF", fee:"€10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Academy midfielder sold to Fulham alongside the García deal; Real Madrid again keep a sell-on clause and matching rights."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Rodri", sub:"30 · CDM · Spain", club:"Manchester City", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee."}
+];
 
 const OUTGOING = [
-  {name:"Vinícius Júnior", sub:"26 · LW · Brazil", club:"Arsenal (interest)", pos:"LW", report:"02 Aug 2026", src:"FootballTransfers / TeamTalk", tier:2, fee:"TBD - loan or permanent structure discussed", truth:55, prob:30, light:"y", trend:"up", note:"CORRECTED 03 Aug: an earlier version of this record wrongly logged a completed €500m Vinícius sale to Al-Nassr - that never happened. The real, live story is Arsenal's interest, with reports of a partial agreement on structure and Vinícius reportedly softening his stance on a Premier League move after Mourinho's arrival reshuffled his standing in the side. Nothing signed; treat as an ongoing saga, not a done deal."}
+  {name:"Vinícius Júnior", sub:"26 · LW · Brazil", club:"Arsenal (interest)", pos:"LW", report:"02 Aug 2026", src:"FootballTransfers / TeamTalk", tier:2, fee:"TBD - loan or permanent structure discussed", truth:55, prob:30, light:"y", trend:"up", note:"CORRECTED 03 Aug: an earlier version of this record wrongly logged a completed €500m Vinícius sale to Al-Nassr - that never happened. The real, live story is Arsenal's interest, with reports of a partial agreement on structure and Vinícius reportedly softening his stance on a Premier League move after Mourinho's arrival reshuffled his standing in the side. Nothing signed; treat as an ongoing saga, not a done deal."},
+  {name:"Franco Mastantuono", sub:"19 · AM · Argentina", club:"Fiorentina", pos:"AM", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:55, prob:35, light:"y", trend:"flat", note:"A loan exit is 'progressing' per Romano, with Mastantuono leading the race to leave Madrid for regular football at Fiorentina."}
 ];
 
 const RISERS = [
@@ -82,8 +87,8 @@ const HUB = {
   "teamtalk-rmdone": {l:"TeamTalk - every completed Real Madrid transfer, summer 2026", u:"https://www.teamtalk.com/news/every-completed-real-madrid-transfer-summer-2026-signings-sales-loans"},
   "managingmadrid-frangarcia": {l:"Managing Madrid - Fran García/Betis fee agreement", u:"https://www.managingmadrid.com/109880/betis-real-madrid-fran-garcia-2026-news"},
   "footballtransfers-vinijr": {l:"FootballTransfers - Vinícius Jr to Arsenal reporting", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/vinicius-jr-to-arsenal-real-madrid-quietly-unlock-transfer-possibility"},
-  "barcablaugranes-torres": {l:"Barca Blaugranes - Ferran Torres not for sale (3 Aug 2026)", u:"https://www.barcablaugranes.com/barcelona-news/128091/fc-barcelona-news-3-august-2026-ferran-torres-not-for-sale-joao-cancelo-signing-very-close"}
-};
+  "barcablaugranes-torres": {l:"Barca Blaugranes - Ferran Torres not for sale (3 Aug 2026)", u:"https://www.barcablaugranes.com/barcelona-news/128091/fc-barcelona-news-3-august-2026-ferran-torres-not-for-sale-joao-cancelo-signing-very-close"},
+  fabrizioRomanoviaFootballTransfersRodri: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"}};
 
 const LINKMAP = {
   "Ibrahima Konaté": ["espn-konate"],
@@ -95,8 +100,11 @@ const LINKMAP = {
   "Dani Ceballos": ["teamtalk-rmdone"],
   "Dani Carvajal": ["teamtalk-rmdone"],
   "David Alaba": ["teamtalk-rmdone"],
-  "Vinícius Júnior": ["footballtransfers-vinijr"]
-};
+  "Vinícius Júnior": ["footballtransfers-vinijr"],
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri"],
+  "Franco Mastantuono": ["fabrizioRomanoviaFootballTransfersRodri"],
+  "Gonzalo García": ["fabrizioRomanoviaFootballTransfersRodri"],
+  "César Palacios": ["fabrizioRomanoviaFootballTransfersRodri"]};
 const WL_LINKMAP = {
   "Vinícius Júnior": ["footballtransfers-vinijr"]
 };

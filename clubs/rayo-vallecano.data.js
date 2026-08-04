@@ -30,7 +30,9 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Pep Chavarría", sub:"LB · Spain", club:"permanent to Chelsea", pos:"LB", fee:"€25m + €5m bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Schira calls it a done deal, personal terms agreed to 2032."}
+];
 
 const INCOMING = [
   {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation."}
@@ -57,12 +59,12 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  "rayo-official-fichaje": {l:"Rayo Vallecano - official transfer news tag", u:"https://www.rayovallecano.es/etiqueta/fichaje"}
-};
+  "rayo-official-fichaje": {l:"Rayo Vallecano - official transfer news tag", u:"https://www.rayovallecano.es/etiqueta/fichaje"},
+  nicoloSchiraviaCaughtOffsidePepChavarra: {l:"Nicolo Schira (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/03/journalist-terms-chelsea-transfer-done-deal-contract/"}};
 
 const LINKMAP = {
-  "Ilias Akhomach": ["rayo-official-fichaje"]
-};
+  "Ilias Akhomach": ["rayo-official-fichaje"],
+  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra"]};
 const WL_LINKMAP = {
   "Ilias Akhomach": ["rayo-official-fichaje"]
 };

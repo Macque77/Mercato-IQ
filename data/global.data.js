@@ -148,19 +148,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Yahia Jlidi",
-    club_display_name: "Angers SCO",
-    summary: "Monaco's €4m bid was rejected in July; by early August Lyon and AS Roma were bot",
-    value: "Angers value at ~€7m (rejected Monaco's €4m bid)",
-    from: "Angers SCO", to: "Lyon / Roma (Monaco also interested)",
-    direction: "out",
-    prob: 55, truth: 75, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "angers-sco",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Joris Chotard",
     club_display_name: "Stade Brestois 29",
     summary: "Brest's second-most valuable player has accepted Saudi side Neom SC's proposal; ",
@@ -174,17 +161,69 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Jasper Schendelaar",
-    club_display_name: "PEC Zwolle",
-    summary: "Sparta Rotterdam's top keeper target following Joël Drommel's PSV return; PEC ar",
-    value: "~€1.5m (Transfermarkt est.)",
-    from: "PEC Zwolle", to: "PEC Zwolle",
+    headline: "Yahia Jlidi",
+    club_display_name: "Angers SCO",
+    summary: "Monaco's €4m bid was rejected in July; by early August Lyon and AS Roma were bot",
+    value: "Angers value at ~€7m (rejected Monaco's €4m bid)",
+    from: "Angers SCO", to: "Lyon / Roma (Monaco also interested)",
     direction: "out",
+    prob: 55, truth: 75, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "angers-sco",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Nestory Irankunda",
+    club_display_name: "Watford",
+    summary: "",
+    value: "~€22m (bonuses included)",
+    from: "Watford", to: "Sporting CP",
+    direction: "out",
+    prob: 45, truth: 55, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "watford",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Mason Greenwood",
+    club_display_name: "Fenerbahçe SK",
+    summary: "",
+    value: "Undisclosed (Man Utd retains 10%+ sell-on)",
+    from: "Marseille", to: "Fenerbahçe SK",
+    direction: "in",
+    prob: 45, truth: 60, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Super Lig",
+    club_link: "fenerbahce",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Jasper Schendelaar",
+    club_display_name: "Sparta Rotterdam",
+    summary: "Identified as Sparta's No.1 goalkeeper target to challenge Filip Bednarek; talks",
+    value: "~€1.5m (Transfermarkt est.)",
+    from: "PEC Zwolle", to: "Sparta Rotterdam",
+    direction: "in",
     prob: 45, truth: 70, trend: 'flat', bullshit: false,
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Netherlands", league: "Eredivisie",
-    club_link: "pec-zwolle",
+    club_link: "rotterdam-sparta",
     updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Alejandro Garnacho",
+    club_display_name: "Aston Villa",
+    summary: "",
+    value: "Loan + conditional buy option",
+    from: "Chelsea", to: "Aston Villa",
+    direction: "in",
+    prob: 45, truth: 60, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
   },
   {
     headline: "Lucas Bergvall",
@@ -211,6 +250,19 @@ const HEADLINES = [
     nation: "England", league: "Championship",
     club_link: "west-ham",
     updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Rodri",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "Opening bid €50-60m (City value ~€80m)",
+    from: "Manchester City", to: "Real Madrid",
+    direction: "in",
+    prob: 40, truth: 65, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-08-03T18:00:00Z"
   },
   {
     headline: "Troy Parrott",
@@ -265,6 +317,32 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Mika Godts",
+    club_display_name: "AFC Ajax",
+    summary: "",
+    value: "Undisclosed",
+    from: "AFC Ajax", to: "Paris Saint-Germain",
+    direction: "out",
+    prob: 35, truth: 55, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "ajax",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Franco Mastantuono",
+    club_display_name: "Real Madrid",
+    summary: "",
+    value: "Loan",
+    from: "Real Madrid", to: "Fiorentina",
+    direction: "out",
+    prob: 35, truth: 55, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
     headline: "Matteo Prati",
     club_display_name: "Racing de Santander",
     summary: "Schira reports Racing chasing the Italy U21 midfielder as Cagliari and Torino di",
@@ -291,6 +369,19 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
+    headline: "Bradley Barcola",
+    club_display_name: "Paris Saint-Germain",
+    summary: "",
+    value: "Liverpool ~€100m offer vs PSG demanding €150-170m",
+    from: "Paris Saint-Germain", to: "Liverpool",
+    direction: "out",
+    prob: 30, truth: 58, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "paris-saint-germain",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Davis Opoku",
     club_display_name: "OH Leuven",
     summary: "",
@@ -301,6 +392,32 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Belgium", league: "Pro League",
     club_link: "oh-leuven",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Diego Moreira",
+    club_display_name: "RC Strasbourg Alsace",
+    summary: "",
+    value: "Undisclosed",
+    from: "RC Strasbourg Alsace", to: "AS Roma",
+    direction: "out",
+    prob: 30, truth: 50, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "rc-strasbourg",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Dirk Proper",
+    club_display_name: "Sparta Rotterdam",
+    summary: "",
+    value: "Undisclosed",
+    from: "NEC Nijmegen", to: "Sparta Rotterdam",
+    direction: "in",
+    prob: 30, truth: 55, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "rotterdam-sparta",
     updated: "2026-07-29T00:00:00Z"
   },
   {
@@ -315,19 +432,6 @@ const HEADLINES = [
     nation: "Belgium", league: "Pro League",
     club_link: "westerlo",
     updated: "2026-08-03T18:30:00Z"
-  },
-  {
-    headline: "Dirk Proper",
-    club_display_name: "Sparta Rotterdam",
-    summary: "",
-    value: "Undisclosed",
-    from: "NEC Nijmegen", to: "Sparta Rotterdam",
-    direction: "in",
-    prob: 30, truth: 55, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Netherlands", league: "Eredivisie",
-    club_link: "rotterdam-sparta",
-    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Rafael Leão",
@@ -353,6 +457,32 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Michael Olise",
+    club_display_name: "Bayern Munich",
+    summary: "",
+    value: "~€150m mooted",
+    from: "Bayern Munich", to: "Real Madrid",
+    direction: "out",
+    prob: 15, truth: 45, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "bayern-munich",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Francisco Conceição",
+    club_display_name: "Manchester United",
+    summary: "",
+    value: "~£25m",
+    from: "Juventus", to: "Manchester United",
+    direction: "in",
+    prob: 15, truth: 45, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-united",
     updated: "2026-08-03T12:48:44Z"
   },
   {
@@ -382,6 +512,19 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
+    headline: "Emiliano Martínez",
+    club_display_name: "Aston Villa",
+    summary: "",
+    value: "Undisclosed",
+    from: "Aston Villa", to: "Juventus",
+    direction: "out",
+    prob: 8, truth: 50, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "aston-villa",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
     headline: "Ahmed Sidibé",
     club_display_name: "Vitória SC",
     summary: "In Portugal undergoing medical examinations after flying in to complete a season",
@@ -408,19 +551,6 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
-    headline: "Udoka Godwin-Malife",
-    club_display_name: "Reading",
-    summary: "",
-    value: "Undisclosed",
-    from: "Burton Albion", to: "Reading",
-    direction: "in",
-    prob: 85, truth: 85, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "League One",
-    club_link: "reading",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
     headline: "Mehmet Topal",
     club_display_name: "Fenerbahçe SK",
     summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
@@ -434,6 +564,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Udoka Godwin-Malife",
+    club_display_name: "Reading",
+    summary: "",
+    value: "Undisclosed",
+    from: "Burton Albion", to: "Reading",
+    direction: "in",
+    prob: 85, truth: 85, trend: 'up', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "reading",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Cameron Congreve",
     club_display_name: "KVC Westerlo",
     summary: "",
@@ -445,6 +588,19 @@ const HEADLINES = [
     nation: "Belgium", league: "Pro League",
     club_link: "westerlo",
     updated: "2026-08-03T18:30:00Z"
+  },
+  {
+    headline: "Iván Cedric",
+    club_display_name: "Alanyaspor",
+    summary: "",
+    value: "Undisclosed",
+    from: "Vanspor FK", to: "Alanyaspor",
+    direction: "in",
+    prob: 80, truth: 85, trend: 'flat', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Süper Lig",
+    club_link: "alanyaspor",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Nariman Akhundzada",
@@ -471,19 +627,6 @@ const HEADLINES = [
     nation: "Portugal", league: "Liga Portugal",
     club_link: "fc-porto",
     updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Iván Cedric",
-    club_display_name: "Alanyaspor",
-    summary: "",
-    value: "Undisclosed",
-    from: "Vanspor FK", to: "Alanyaspor",
-    direction: "in",
-    prob: 80, truth: 85, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Turkey", league: "Süper Lig",
-    club_link: "alanyaspor",
-    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Tommy Watson",
@@ -551,19 +694,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Altay Bayindir",
-    club_display_name: "RC Celta",
-    summary: "",
-    value: "TBC",
-    from: "Manchester United", to: "RC Celta",
-    direction: "in",
-    prob: 65, truth: 75, trend: 'up', bullshit: false,
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "celta-vigo",
-    updated: "2026-08-03T18:00:00Z"
-  },
-  {
     headline: "Ike Ugbo",
     club_display_name: "Sheffield Wednesday",
     summary: "Club reportedly willing to sell or loan before the 1 September deadline.",
@@ -588,6 +718,19 @@ const HEADLINES = [
     nation: "Netherlands", league: "Eredivisie",
     club_link: "psv-eindhoven",
     updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Altay Bayindir",
+    club_display_name: "RC Celta",
+    summary: "",
+    value: "TBC",
+    from: "Manchester United", to: "RC Celta",
+    direction: "in",
+    prob: 65, truth: 75, trend: 'up', bullshit: false,
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "celta-vigo",
+    updated: "2026-08-03T18:00:00Z"
   },
   {
     headline: "Maghnes Akliouche",
@@ -641,167 +784,24 @@ const HEADLINES = [
     club_link: "celtic",
     updated: "2026-08-03T18:00:00Z"
   },
-  {
-    headline: "Domingos Duarte",
-    club_display_name: "RC Deportivo",
-    summary: "",
-    value: "Free (contract expired at Getafe)",
-    from: "Getafe (free agent)", to: "RC Deportivo",
-    direction: "in",
-    prob: 60, truth: 70, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "deportivo-la-coruna",
-    updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    headline: "Mohamed-Ali Cho",
-    club_display_name: "OGC Nice",
-    summary: "Hull City's reported €20m offer is described as 'on the verge of finalising' - a",
-    value: "€20m",
-    from: "OGC Nice", to: "Hull City",
-    direction: "out",
-    prob: 58, truth: 65, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "ogc-nice",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Gustavo Puerta",
-    club_display_name: "Racing de Santander",
-    summary: "Bologna are leading suitors for the Colombia international midfielder; Racing co",
-    value: "€16m bid (Racing want more)",
-    from: "Racing de Santander", to: "Racing Santander",
-    direction: "out",
-    prob: 55, truth: 70, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "racing-santander",
-    updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    headline: "Kieron Bowie",
-    club_display_name: "US Sassuolo",
-    summary: "Sassuolo's interest was reported in early July with Verona demanding around €12m",
-    value: "~€12m (Verona's asking price)",
-    from: "Hellas Verona", to: "US Sassuolo",
-    direction: "in",
-    prob: 55, truth: 60, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "sassuolo",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Stefan Posch",
-    club_display_name: "1. FSV Mainz 05",
-    summary: "",
-    value: "Fee TBC (Como paid ~€5.5m for him in Jan)",
-    from: "Como 1907", to: "1. FSV Mainz 05",
-    direction: "in",
-    prob: 55, truth: 68, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Germany", league: "Bundesliga",
-    club_link: "mainz-05",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Jahnoah Markelo",
-    club_display_name: "Rangers",
-    summary: "Rangers reportedly in talks for the defender.",
-    value: "Undisclosed",
-    from: "Coventry City", to: "Rangers",
-    direction: "in",
-    prob: 55, truth: 65, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Scotland", league: "Premiership",
-    club_link: "rangers",
-    updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    headline: "Daniel Jebbison",
-    club_display_name: "Blackburn Rovers",
-    summary: "",
-    value: "Loan + option",
-    from: "Preston North End", to: "Blackburn Rovers",
-    direction: "in",
-    prob: 55, truth: 65, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "blackburn-rovers",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    headline: "Ilias Kostis",
-    club_display_name: "Estoril Praia",
-    summary: "",
-    value: "Loan or permanent (TBD)",
-    from: "Atlético Madrid", to: "Estoril Praia",
-    direction: "in",
-    prob: 55, truth: 60, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Portugal", league: "Liga Portugal",
-    club_link: "estoril",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    headline: "Eseosa Sule",
-    club_display_name: "West Bromwich Albion",
-    summary: "",
-    value: "Undisclosed",
-    from: "West Bromwich Albion", to: "Undisclosed",
-    direction: "out",
-    prob: 55, truth: 60, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "west-bromwich-albion",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    headline: "Loïs Openda",
-    club_display_name: "Olympique Lyonnais",
-    summary: "Reported to be set to join Lyon as the club looks to freshen up its attack.",
-    value: "TBD",
-    from: "Juventus", to: "Olympique Lyonnais",
-    direction: "in",
-    prob: 52, truth: 60, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "olympique-lyon",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Dayann Methalie",
-    club_display_name: "Sunderland",
-    summary: "",
-    value: "TBC",
-    from: "Toulouse", to: "Sunderland",
-    direction: "in",
-    prob: 52, truth: 76, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 5, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "sunderland",
-    updated: "2026-07-31T09:00:00Z"
-  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 162, league_count: 3
+    stories_count: 166, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 57, league_count: 3
+    stories_count: 60, league_count: 3
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 46, league_count: 1
+    stories_count: 48, league_count: 1
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 23, league_count: 1
+    stories_count: 25, league_count: 1
   },
   {
     name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
@@ -813,23 +813,23 @@ const NATIONS = [
   },
   {
     name: "Turkey", slug: "turkey", flag_emoji: "🇹🇷",
-    stories_count: 15, league_count: 2
+    stories_count: 16, league_count: 2
+  },
+  {
+    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
+    stories_count: 14, league_count: 2
   },
   {
     name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
     stories_count: 14, league_count: 1
   },
   {
-    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
-    stories_count: 13, league_count: 2
-  },
-  {
     name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
-    stories_count: 12, league_count: 1
+    stories_count: 13, league_count: 1
   },
   {
     name: "Greece", slug: "greece", flag_emoji: "🇬🇷",
-    stories_count: 9, league_count: 1
+    stories_count: 10, league_count: 1
   },
   {
     name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
@@ -842,9 +842,9 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 387,
-  clubs_covered: 153,
-  tier1_count: 29,
+  total_stories: 402,
+  clubs_covered: 156,
+  tier1_count: 40,
   top_league: "Premier League",
   most_active_club: "Leeds United",
   nations_covered: 13,
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:56:32.420120Z",
+  updated: "2026-08-04T12:44:46.873815Z",
   label: "Global aggregation from all clubs"
 };

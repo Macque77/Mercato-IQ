@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Afonso Moreira", sub:"21 · W · Portugal", to:"permanent from Olympique Lyon", fee:"~€29.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Leverkusen's marquee summer arrival, brought in to add width and directness following Grimaldo's exit."},
   {name:"Kennet Eichhorn", sub:"19 · CB · Germany", to:"permanent from Hertha BSC", fee:"~€9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young German centre-back for squad depth and future development."},
-  {name:"Aleksa Damjanović", sub:"20 · ST · Serbia", to:"permanent from Crvena Zvezda (Roter Stern Belgrad)", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Serbian forward signed as a long-term striker option."}
+  {name:"Aleksa Damjanović", sub:"20 · ST · Serbia", to:"permanent from Crvena Zvezda (Roter Stern Belgrad)", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Serbian forward signed as a long-term striker option."},
+  {name:"Miguel Gutiérrez", sub:"24 · LB · Spain", club:"permanent from Napoli", pos:"LB", fee:"~€25-30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Di Marzio reports the deal as agreed, positioned as the successor to Alejandro Grimaldo."}
 ];
 
 const CONFIRMED_OUT = [
@@ -69,16 +70,16 @@ const HUB = {
   gfn: {l:"Get German Football News", u:"https://www.getfootballnewsgermany.com/"},
   espn: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49227873/spain-alex-grimaldo-joins-atletico-madrid-bayer-leverkusen"},
   bein: {l:"beIN Sports", u:"https://www.beinsports.com/en-us/soccer/bundesliga/articles/everkusen-set-for-historic-kerim-alajbegovic-transfer-2026-07-31"},
-  yahoo: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/juventus-beat-chelsea-race-sign-152500320.html"}
-};
+  yahoo: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/juventus-beat-chelsea-race-sign-152500320.html"},
+  gianlucaDiMarzioMiguelGutirrez: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-30-luglio-495350"}};
 
 const LINKMAP = {
   "Kerim Alajbegović": ["bundesliga","bein","yahoo"],
   "Alejandro Grimaldo": ["bundesliga2","espn"],
   "Afonso Moreira": ["gfn"],
   "Kennet Eichhorn": ["gfn"],
-  "Aleksa Damjanović": ["gfn"]
-};
+  "Aleksa Damjanović": ["gfn"],
+  "Miguel Gutiérrez": ["gianlucaDiMarzioMiguelGutirrez"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

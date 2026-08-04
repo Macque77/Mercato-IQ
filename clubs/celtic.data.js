@@ -36,7 +36,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Josh Clarke", sub:"GK", club:"Partick Thistle", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer."},
   {name:"Ben McPherson", sub:"DF", club:"Partick Thistle", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer."},
-  {name:"Ben Summers", sub:"MF", club:"Ayr United", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer."}
+  {name:"Ben Summers", sub:"MF", club:"Ayr United", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer."},
+  {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent to Liverpool", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect departs on a 5-year contract; Romano confirmed with 'Here We Go'."}
 ];
 const INCOMING = [
   {name:"Gvidas Gineitis", sub:"MF", club:"Torino", pos:"MF", report:"~1 wk ago", src:"BBC / Football Insider / Daily Record", tier:2, fee:"~£12m", truth:75, prob:60, light:'g', trend:'up', note:"Agent contact reportedly made, Torino want around £12m and Celtic are said to be preparing an improved offer."},
@@ -68,8 +69,8 @@ const HUB = {
   "scottishsun": {l:"The Scottish Sun", u:"https://www.thescottishsun.co.uk/sport/"},
   "teamtalkGhedjemis": {l:"TEAMtalk · Ghedjemis", u:"https://www.teamtalk.com/news/celtic-transfer-news-fares-ghedjemis-bid-rejected-next-move"},
   "hailhailTaylor": {l:"67 Hail Hail · Taylor", u:"https://www.67hailhail.com/transfers/greg-taylor-set-for-significant-developments-with-paok-ready-to-allow-celtic-return/"},
-  "skySportsEngels": {l:"Sky Sports · Engels", u:"https://www.skysports.com/football/news/11095/13568688/west-ham-transfer-news-hammers-in-talks-to-sign-celtic-midfielder-arne-engels-amid-premier-league-interest"}
-};
+  "skySportsEngels": {l:"Sky Sports · Engels", u:"https://www.skysports.com/football/news/11095/13568688/west-ham-transfer-news-hammers-in-talks-to-sign-celtic-midfielder-arne-engels-amid-premier-league-interest"},
+  fabrizioRomanoviaRoundtableDaraJikiemi: {l:"Fabrizio Romano (via Roundtable)", u:"https://roundtable.io/sports/soccer/scottish-premiership/celtic/news/here-we-go---fabrizio-romano-confirms-celtic-transfer"}};
 
 const LINKMAP = {
   "Kasper Hogh": ["gnews-kasperhogh"],
@@ -82,8 +83,8 @@ const LINKMAP = {
   "Reo Hatate": ["scottishsun"],
   "Fares Ghedjemis": ["teamtalkGhedjemis"],
   "Greg Taylor": ["hailhailTaylor"],
-  "Arne Engels": ["skySportsEngels"]
-};
+  "Arne Engels": ["skySportsEngels"],
+  "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

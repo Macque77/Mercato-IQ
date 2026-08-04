@@ -6,10 +6,17 @@
 const LEAGUE = {
   name: "Super Lig",
   nation: "Turkey",
-  stories_count: 2
+  stories_count: 3
 };
 
 const TOP_STORIES = [  {
+    name: "Mason Greenwood", prob: 45, truth: 60, bullshit: false,
+    club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
+    from: "Marseille", to: "Fenerbahçe SK",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (Man Utd retains 10%+ sell-on)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
     name: "Mehmet Topal", prob: 85, truth: 78, bullshit: false,
     club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
     from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
@@ -25,12 +32,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"fenerbahce": 1, "galatasaray": 1};
+const BY_CLUB = {"fenerbahce": 2, "galatasaray": 1};
 
-const CLUBS_LIST = [{"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 1, "badge": true, "primary": "#FDB913", "primaryBright": "#FDB913"}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1, "badge": true, "primary": "#DC2426", "primaryBright": "#DC2426"}];
+const CLUBS_LIST = [{"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 2, "badge": true, "primary": "#FDB913", "primaryBright": "#FDB913"}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1, "badge": true, "primary": "#DC2426", "primaryBright": "#DC2426"}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:56:32.434353Z",
+  updated: "2026-08-04T12:44:46.886083Z",
   label: "League aggregation"
 };

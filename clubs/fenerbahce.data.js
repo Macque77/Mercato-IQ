@@ -39,7 +39,8 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Mehmet Topal", sub:"36 · CM · Turkey", club:"Free agent (Fenerbahçe)", pos:"CM", report:"2 Aug 2026", src:"Sky Sports Turkey", tier:2, fee:"Contract renewal", truth:78, prob:85, note:"Sky reports Fenerbahçe close to veteran midfield legend extension."}
+  {name:"Mehmet Topal", sub:"36 · CM · Turkey", club:"Free agent (Fenerbahçe)", pos:"CM", report:"2 Aug 2026", src:"Sky Sports Turkey", tier:2, fee:"Contract renewal", truth:78, prob:85, note:"Sky reports Fenerbahçe close to veteran midfield legend extension."},
+  {name:"Mason Greenwood", sub:"24 · ST · England", club:"Marseille", pos:"ST", report:"14 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed (Man Utd retains 10%+ sell-on)", truth:60, prob:45, light:"y", trend:"flat", note:"Romano described the move as in its final stages, with no buy-back clause activation from Manchester United."}
 ];
 
 const OUTGOING = [];
@@ -57,12 +58,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"}
-};
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
+  fabrizioRomanoviaFootballTransfersMasonGreenwood: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/fabrizio-romano-transfer-news-arsenal-leandro-trossard-man-utd-youri-tielemans-real-madrid-michael-olise"}};
 
 const LINKMAP = {
-  "Mehmet Topal": ["sky"]
-};
+  "Mehmet Topal": ["sky"],
+  "Mason Greenwood": ["fabrizioRomanoviaFootballTransfersMasonGreenwood"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -895,7 +895,8 @@ const CONFIRMED_IN = [
    note:"Confirmed August 2026: a record transfer for the England international, Rogers becomes Chelsea's marquee attacking addition under Xabi Alonso. The fee ranks among the highest in European football for a wide playmaker, reflecting Alonso's determination to build an attacking midfield core after arriving from Bayer Leverkusen. Rogers scored 8 goals and assisted 7 in 34 Premier League appearances for Villa last season and carries a full international cap."},
   {name:"Emmanuel Emegha", sub:"ST · Netherlands", to:"agreed from Strasbourg", fee:"Undisclosed", free:false, status:"pending", statusTxt:"AGREED, AWAITING ANNOUNCEMENT",
    note:"The Strasbourg captain and striker remains agreed to join via the BlueCo cross-club pipeline this summer. A direct, on-model young centre-forward; formal completion expected imminently once international commitments clear."},
-
+  {name:"Pep Chavarría", sub:"LB · Spain", club:"permanent from Rayo Vallecano", pos:"LB", fee:"€25m + €5m bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Schira calls it a done deal, personal terms agreed to 2032, positioned as Marc Cucurella's long-term replacement."},
+  {name:"Danny Welbeck", sub:"35 · ST · England", club:"free from Brighton", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran forward signs a free transfer with a contract to 2028, confirmed via Di Marzio's live mercato digest."}
 ];
 const CONFIRMED_OUT = [];
 
@@ -914,6 +915,7 @@ const OUTGOING = [
    note:"The defining business: a vast roster trimmed for balance and cost-rule profit. PRICING: fringe and academy names move at varied floors; book profit on homegrown sales."},
   {name:"High earners", sub:"Wage & ratio relief", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Expect some bigger names to move on as Alonso reshapes the side and BlueCo manage the cost ratio."},
+  {name:"Alejandro Garnacho", sub:"22 · W · Argentina", club:"Aston Villa", pos:"W", report:"22 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Loan + conditional buy option", truth:60, prob:45, light:"y", trend:"flat", note:"Villa have submitted an official loan bid with Garnacho's salary covered by the club, per Romano."}
 ];
 
 const RISERS = [
@@ -968,7 +970,9 @@ const HUB = {
   standard:  {l:"Evening Standard · Chelsea", u:"https://www.standard.co.uk/sport/football/chelsea"},
   lequipe:   {l:"L'Équipe · football", u:"https://www.lequipe.fr/Football/"},
   cfc:       {l:"Chelsea Official · news", u:"https://www.chelseafc.com/en/news"},
-};
+  fabrizioRomanoviaFootballTransfersAlejandroGarnacho: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/fabrizio-romano-alejandro-garnacho-warren-zaire-emery-ousmane-diomande"},
+  nicoloSchiraviaCaughtOffsidePepChavarra: {l:"Nicolo Schira (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/03/journalist-terms-chelsea-transfer-done-deal-contract/"},
+  gianlucaDiMarzioDannyWelbeck: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-trattative-1-agosto-2026-495391"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -976,7 +980,9 @@ const LINKMAP = {
   "Squad rationalisation": ["espn","athletic","kinsella"],
   "High earners": ["bbcChe","law"],
   "Emmanuel Emegha": ["romano","lequipe","cfc"],
-};
+  "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho"],
+  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra"],
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck"]};
 const WL_LINKMAP = {
   "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };
