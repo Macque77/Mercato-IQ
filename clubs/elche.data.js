@@ -40,7 +40,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Álvaro Rodríguez", sub:"22 · FW · Uruguay", club:"Bournemouth", pos:"FW", fee:"€25m + €5m variables (Real Madrid receive 50%)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 14 July 2026 - the club's biggest sale of the summer."},
   {name:"André Silva", sub:"30 · FW · Portugal", club:"Porto", pos:"FW", fee:"Free (contract expired)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 12 June 2026 on a deal through 2027."},
-  {name:"Éder Sarabia", sub:"Coach", club:"Departed", pos:"Manager", fee:"N/A", free:true, status:"done", statusTxt:"DONE, DEPARTED", note:"Left on 27 May 2026 after guiding Elche to survival in their first season back in La Liga; replaced by Martín Anselmi."}
+  {name:"Éder Sarabia", sub:"Coach", club:"Departed", pos:"Manager", fee:"N/A", free:true, status:"done", statusTxt:"DONE, DEPARTED", note:"Left on 27 May 2026 after guiding Elche to survival in their first season back in La Liga; replaced by Martín Anselmi."},
+  {name:"Léo Pétrot", sub:"French left-back/centre-back", club:"Free agent", pos:"LB", fee:"Free (contract expired)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Pétrot, Elche's own first signing of the previous season, did not renew and left as their first departure of the 2026-27 cycle."}
 ];
 
 const INCOMING = [
@@ -77,7 +78,9 @@ const HUB = {
   teleElxDeiverMachado: {l:"TeleElx", u:"https://teleelx.es/2026/07/22/deiver-machado-apunta-a-ser-el-primer-fichaje-del-elche-c-f/"},
   dorsal16BubaSangar: {l:"Dorsal16", u:"https://www.dorsal16.com/se-cierra-el-primer-movimiento-en-el-mercado-de-fichajes-del-elche-45-kilos-van-directos-a-la-as-roma/"},
   alicantePlazaFerNio: {l:"Alicante Plaza", u:"https://alicanteplaza.es/alicanteplaza/deportesalicante/otro-fernando-nino-para-el-elche-cf-que-eleva-por-encima-de-los-10-millones-de-euros-su-inversion-en-este-mercado-de-fichajes"},
-  elEspaollvaroRodrguez: {l:"El Español", u:"https://www.elespanol.com/alicante/deporte/elche-cf/20260714/elche-traspasa-alvaro-rodriguez-bournemouth-operacion-millones/1003744321409_0.html"}};
+  elEspaollvaroRodrguez: {l:"El Español", u:"https://www.elespanol.com/alicante/deporte/elche-cf/20260714/elche-traspasa-alvaro-rodriguez-bournemouth-operacion-millones/1003744321409_0.html"},
+  aScomEstadioDeportivoFerNio: {l:"AS.com / Estadio Deportivo", u:"https://as.com/futbol/"},
+  mundoDeportivoLoPtrot: {l:"Mundo Deportivo", u:"https://www.mundodeportivo.com/futbol/laliga/20250627/1004200031/"}};
 
 const LINKMAP = {
   "Gonzalo Villar": ["futbolfantasy-elche"],
@@ -88,7 +91,8 @@ const LINKMAP = {
   "Éder Sarabia": ["yahoo-sarabia-exit"],
   "Arnau Tenas": ["futbolfantasy-elche"],
   "Deiver Machado": ["teleElxDeiverMachado"],
-  "Fer Niño": ["alicantePlazaFerNio"]};
+  "Fer Niño": ["alicantePlazaFerNio", "aScomEstadioDeportivoFerNio"],
+  "Léo Pétrot": ["mundoDeportivoLoPtrot"]};
 const WL_LINKMAP = {
   "Arnau Tenas": ["futbolfantasy-elche"]
 };

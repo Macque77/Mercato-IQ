@@ -664,7 +664,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">54</span>
+          <span class="stat-value">81</span>
         </div>
       </div>
     </div>
@@ -701,14 +701,14 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 54
+  stories_count: 81
 };
 
 const TOP_STORIES = [  {
     name: "Rodri",prob: 40, truth: 65, bullshit: false,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
     from: "Manchester City", to: "Real Madrid",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     value: "Opening bid €50-60m (City value ~€80m)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
@@ -747,6 +747,13 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
+    name: "Sergio Escudero",prob: 95, truth: 90, bullshit: false,
+    club_origin: "deportivo-la-coruna", club_display_name: "RC Deportivo", direction: "out",
+    from: "RC Deportivo", to: "Real Zaragoza",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
     name: "Akor Adams",prob: 65, truth: 65, bullshit: false,
     club_origin: "sevilla", club_display_name: "Sevilla", direction: "out",
     from: "Sevilla", to: "Venezia",
@@ -782,6 +789,13 @@ const TOP_STORIES = [  {
     value: "~€25m asking price", updated: "2026-08-03T14:30:00Z", league: "La Liga"
   },
   {
+    name: "Nobel Mendy",prob: 55, truth: 65, bullshit: false,
+    club_origin: "rayo-vallecano", club_display_name: "Rayo Vallecano", direction: "out",
+    from: "Rayo Vallecano", to: "Hull City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€18-25m (reports vary)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
     name: "Gustavo Puerta",prob: 55, truth: 70, bullshit: false,
     club_origin: "racing-santander", club_display_name: "Racing de Santander", direction: "out",
     from: "Racing de Santander", to: "Racing Santander",
@@ -795,29 +809,15 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8m bid vs €16m release clause", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
-  {
-    name: "Ilias Akhomach",prob: 50, truth: 55, bullshit: false,
-    club_origin: "rayo-vallecano", club_display_name: "Rayo Vallecano", direction: "in",
-    from: "Villarreal", to: "Rayo Vallecano",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
-    name: "Jonathan Dubasin",prob: 45, truth: 65, bullshit: false,
-    club_origin: "osasuna", club_display_name: "CA Osasuna", direction: "in",
-    from: "Sporting Gijón", to: "CA Osasuna",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€2.6m+€0.4m bid (Sporting want ~€10m clause)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
 ];
 
-const BY_LEAGUE = {"La Liga": 54, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
+const BY_LEAGUE = {"La Liga": 81, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 54}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 81}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:26:37.072008Z",
+  updated: "2026-08-04T17:47:42.700011Z",
   label: "Nation aggregation"
 };
 

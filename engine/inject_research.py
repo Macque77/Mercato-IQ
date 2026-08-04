@@ -77,7 +77,15 @@ def esc(s):
 
 def slugify_key(label, name):
     base = re.sub(r'[^a-zA-Z0-9]', '', (label or '') + name)
-    return base[0].lower() + base[1:] if base else 'src'
+    if not base:
+        return 'src'
+    key = base[0].lower() + base[1:]
+    # BUGFIX 4: a JS object key used unquoted (as HUB/LINKMAP keys are) must not
+    # start with a digit -- e.g. label "67 Hail Hail" -> "67HailHail..." is an
+    # invalid identifier and breaks node --check. Prefix with 's' in that case.
+    if key[0].isdigit():
+        key = 's' + key
+    return key
 
 
 def existing_names(content, arrname):

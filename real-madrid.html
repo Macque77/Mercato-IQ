@@ -869,12 +869,15 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Rodri", sub:"30 · CDM · Spain", club:"Manchester City", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee."}
+  {name:"Rodri", sub:"30 · CDM · Spain", club:"Manchester City", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee."},
+  {name:"Yan Diomandé", sub:"Winger/forward", club:"RB Leipzig", pos:"RW", report:"Romano gave a 'here we go' on a reported £113m deal, but the announcement has stalled after agent Max Gradel filed a FIFA complaint in a representation dispute; Leipzig's sporting director says it won't be held up by the agency battle, while other reports say Madrid has stepped back from finalising terms.", src:"Fabrizio Romano", tier:1, fee:"~£113m reported", truth:62, prob:50, light:"y", trend:"flat", note:"Genuinely messy situation - Here We Go status undermined by an active FIFA complaint and conflicting club statements."},
+  {name:"Michael Olise", sub:"Winger", club:"Bayern Munich", pos:"RW", report:"Speculative reporting links Madrid with Olise as further attacking reinforcement.", src:"Various (aggregated)", tier:3, fee:"Speculative", truth:30, prob:12, light:"r", trend:"flat", note:"No direct sourcing beyond aggregator-level chatter; treat as background noise, not an active pursuit."}
 ];
 
 const OUTGOING = [
   {name:"Vinícius Júnior", sub:"26 · LW · Brazil", club:"Arsenal (interest)", pos:"LW", report:"02 Aug 2026", src:"FootballTransfers / TeamTalk", tier:2, fee:"TBD - loan or permanent structure discussed", truth:55, prob:30, light:"y", trend:"up", note:"CORRECTED 03 Aug: an earlier version of this record wrongly logged a completed €500m Vinícius sale to Al-Nassr - that never happened. The real, live story is Arsenal's interest, with reports of a partial agreement on structure and Vinícius reportedly softening his stance on a Premier League move after Mourinho's arrival reshuffled his standing in the side. Nothing signed; treat as an ongoing saga, not a done deal."},
-  {name:"Franco Mastantuono", sub:"19 · AM · Argentina", club:"Fiorentina", pos:"AM", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:55, prob:35, light:"y", trend:"flat", note:"A loan exit is 'progressing' per Romano, with Mastantuono leading the race to leave Madrid for regular football at Fiorentina."}
+  {name:"Franco Mastantuono", sub:"19 · AM · Argentina", club:"Fiorentina", pos:"AM", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:55, prob:35, light:"y", trend:"flat", note:"A loan exit is 'progressing' per Romano, with Mastantuono leading the race to leave Madrid for regular football at Fiorentina."},
+  {name:"Endrick", sub:"20 · ST · Brazil", club:"AS Roma (loan interest)", pos:"ST", report:"Roma have shown loan interest, though Madrid are reportedly hesitant to negotiate terms; his game-time squeeze worsened after Carlos Espí's arrival.", src:"Aggregated Spanish/Italian reporting", tier:2, fee:"Loan", truth:50, prob:30, light:"y", trend:"flat", note:"Mourinho is said to be weighing loaning out Endrick or Gonzalo García (the latter has since been sold to Fulham) as the attack is reshaped."}
 ];
 
 const RISERS = [
@@ -909,23 +912,36 @@ const HUB = {
   "managingmadrid-frangarcia": {l:"Managing Madrid - Fran García/Betis fee agreement", u:"https://www.managingmadrid.com/109880/betis-real-madrid-fran-garcia-2026-news"},
   "footballtransfers-vinijr": {l:"FootballTransfers - Vinícius Jr to Arsenal reporting", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/vinicius-jr-to-arsenal-real-madrid-quietly-unlock-transfer-possibility"},
   "barcablaugranes-torres": {l:"Barca Blaugranes - Ferran Torres not for sale (3 Aug 2026)", u:"https://www.barcablaugranes.com/barcelona-news/128091/fc-barcelona-news-3-august-2026-ferran-torres-not-for-sale-joao-cancelo-signing-very-close"},
-  fabrizioRomanoviaFootballTransfersRodri: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"}};
+  fabrizioRomanoviaFootballTransfersRodri: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"},
+  forbesRodri: {l:"Forbes", u:"https://www.forbes.com/sites/tomsanderson/2026/08/02/manchester-city-lets-real-madrid-know-new-price-for-signing-rodri/"},
+  oneFootballYanDiomand: {l:"OneFootball", u:"https://onefootball.com/en/news/yan-diomande-to-join-real-madrid-deal-stalls-after-max-gradel-files-fifa-complaint-43226565"},
+  aggregatednewssearchMichaelOlise: {l:"Aggregated news search", u:"https://www.bing.com/news/search?q=Real+Madrid+fichajes+rumores+agosto+2026"},
+  yahooSportsVinciusJnior: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/rb-leipzig-sporting-director-provides-063500702.html"},
+  aggregatednewssearchEndrick: {l:"Aggregated news search", u:"https://www.bing.com/news/search?q=Endrick+Real+Madrid+loan+2026"},
+  eSPNIbrahimaKonat: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/48956684/ibrahima-konate-completes-switch-real-madrid-liverpool"},
+  skySportsBernardoSilva: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13554908/bernardo-silva-real-madrid-sign-manchester-city-midfielder-on-free-transfer-as-jose-mourinho-impact-continues"},
+  teamTalkDenzelDumfries: {l:"TeamTalk", u:"https://www.teamtalk.com/news/every-completed-real-madrid-transfer-summer-2026-signings-sales-loans"},
+  managingMadridFranGarca: {l:"Managing Madrid", u:"https://www.managingmadrid.com/109880/betis-real-madrid-fran-garcia-2026-news"},
+  mundoBetisDaniCeballos: {l:"MundoBetis", u:"https://mundobetis.com/2026/06/26/oficial-dani-ceballos-deja-el-real-madrid-para-volver-al-real-betis/"}};
 
 const LINKMAP = {
-  "Ibrahima Konaté": ["espn-konate"],
-  "Bernardo Silva": ["skysports-bsilva"],
-  "Denzel Dumfries": ["teamtalk-rmdone"],
-  "Marc Cucurella": ["teamtalk-rmdone"],
-  "Carlos Espí": ["teamtalk-rmdone"],
-  "Fran García": ["managingmadrid-frangarcia"],
-  "Dani Ceballos": ["teamtalk-rmdone"],
-  "Dani Carvajal": ["teamtalk-rmdone"],
-  "David Alaba": ["teamtalk-rmdone"],
-  "Vinícius Júnior": ["footballtransfers-vinijr"],
-  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri"],
+  "Ibrahima Konaté": ["espn-konate", "eSPNIbrahimaKonat"],
+  "Bernardo Silva": ["skysports-bsilva", "skySportsBernardoSilva"],
+  "Denzel Dumfries": ["teamtalk-rmdone", "teamTalkDenzelDumfries"],
+  "Marc Cucurella": ["teamtalk-rmdone", "teamTalkDenzelDumfries"],
+  "Carlos Espí": ["teamtalk-rmdone", "teamTalkDenzelDumfries"],
+  "Fran García": ["managingmadrid-frangarcia", "managingMadridFranGarca"],
+  "Dani Ceballos": ["teamtalk-rmdone", "mundoBetisDaniCeballos"],
+  "Dani Carvajal": ["teamtalk-rmdone", "teamTalkDenzelDumfries"],
+  "David Alaba": ["teamtalk-rmdone", "teamTalkDenzelDumfries"],
+  "Vinícius Júnior": ["footballtransfers-vinijr", "yahooSportsVinciusJnior"],
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "forbesRodri"],
   "Franco Mastantuono": ["fabrizioRomanoviaFootballTransfersRodri"],
   "Gonzalo García": ["fabrizioRomanoviaFootballTransfersRodri"],
-  "César Palacios": ["fabrizioRomanoviaFootballTransfersRodri"]};
+  "César Palacios": ["fabrizioRomanoviaFootballTransfersRodri"],
+  "Yan Diomandé": ["oneFootballYanDiomand"],
+  "Michael Olise": ["aggregatednewssearchMichaelOlise"],
+  "Endrick": ["aggregatednewssearchEndrick"]};
 const WL_LINKMAP = {
   "Vinícius Júnior": ["footballtransfers-vinijr"]
 };

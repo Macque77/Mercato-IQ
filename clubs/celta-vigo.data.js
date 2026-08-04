@@ -30,7 +30,9 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · RC Celta"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Abdoulaye Faye", sub:"Senegalese left-back, 21", club:"Bayer Leverkusen", pos:"LB", fee:"Loan, €300,000 loan fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Second consecutive season out on loan after a spell at Lorient; Leverkusen extended his contract before sending him to Vigo."}
+];
 const CONFIRMED_OUT = [
   {name:"Miguel Rodríguez", sub:"Academy winger sold", club:"Deportivo Alavés", pos:"FW", fee:"€2.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Celta academy prospect who spent two seasons at Utrecht (15 goals in 50+ games) moves to Alavés under Quique Sánchez Flores, in a deal frustrating some Celta fans given his development elsewhere."}
 ];
@@ -46,7 +48,8 @@ const INCOMING = [
 const OUTGOING = [
   {name:"Ilaix Moriba", sub:"Sale needed for FFP", club:"Aston Villa", pos:"MF", report:"Aston Villa (Unai Emery) and Brighton are both credited with interest in Moriba, who Celta view as their most sellable asset this summer.", src:"El Desmarque", tier:2, fee:"Villa reportedly around €20m, Brighton around €25m", truth:70, prob:40, light:"y", trend:"flat", note:"Celta reportedly need roughly €18m in sales to balance the books, making a Moriba exit financially attractive despite his form."},
   {name:"Williot Swedberg", sub:"Prized winger attracting suitors", club:"Atalanta", pos:"FW", report:"Atalanta have been credited with interest in Swedberg, Celta's most valuable asset, as a possible squad sale this summer.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Swedberg recently signed a new deal to 2029, which suggests Celta would only sell for a significant fee rather than being desperate to offload him."},
-  {name:"Borja Iglesias", sub:"Big-money Liga MX offer", club:"Club América", pos:"FW", report:"Club América are reported to have set Borja Iglesias's exit price at around $10m (approx €9m) and want to meet him during Spain's World Cup stay in the US.", src:"AS (via Fichajes.net)", tier:2, fee:"Approx €9m / $10m", truth:68, prob:25, light:"o", trend:"flat", note:"Iglesias only returned to Celta from Betis relatively recently and is a fan favourite, so a swift exit to Mexico this summer looks far from certain."}
+  {name:"Borja Iglesias", sub:"Big-money Liga MX offer", club:"Club América", pos:"FW", report:"Club América are reported to have set Borja Iglesias's exit price at around $10m (approx €9m) and want to meet him during Spain's World Cup stay in the US.", src:"AS (via Fichajes.net)", tier:2, fee:"Approx €9m / $10m", truth:68, prob:25, light:"o", trend:"flat", note:"Iglesias only returned to Celta from Betis relatively recently and is a fan favourite, so a swift exit to Mexico this summer looks far from certain."},
+  {name:"Unai Núñez", sub:"Spanish centre-back, 27", club:"Unattached / TBD", pos:"CB", report:"Celta had hoped to sell Núñez this summer but received no offers with a transfer fee attached; club is resigning itself to keeping him unless a club agrees to cover 60-70% of his wages.", src:"ElDesmarque", tier:2, fee:"", truth:65, prob:20, light:"o", trend:"flat", note:"No suitor has emerged willing to meet wage conditions; departure now considered unlikely before deadline day."}
 ];
 
 const RISERS = [
@@ -79,18 +82,24 @@ const HUB = {
   elDesmarqueIlaixMoriba: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/liga-1a-division/20260520/celta-vigo-aston-villa-unai-emery-interes-ilaix-moriba_18_019209190.html"},
   elDesmarqueWilliotSwedberg: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260115/celta-vigo-atalanta-interesado-fichaje-williot-swedberg_18_018070655.html"},
   aSFichajesnetBorjaIglesias: {l:"AS / Fichajes.net", u:"https://www.fichajes.net/noticias/oferton-borja-iglesias-adios-celta-20260708.html"},
-  galiciaPressMiguelRodrguez: {l:"Galicia Press", u:"https://www.galiciapress.es/articulo/deportes/2026-07-27/5966700-futuro-deportivista-exjoya-celta-vigo-marca-actualidad-fichajes-balaidos"}};
+  galiciaPressMiguelRodrguez: {l:"Galicia Press", u:"https://www.galiciapress.es/articulo/deportes/2026-07-27/5966700-futuro-deportivista-exjoya-celta-vigo-marca-actualidad-fichajes-balaidos"},
+  galiciaPressDenisSurez: {l:"Galicia Press", u:"https://www.galiciapress.es/articulo/deportes/2026-07-22/5961199-alaves-deja-denis-suarez-minutos-pretemporada-alimenta-ilusion-fichaje-celta"},
+  mSNDeportesBorjaIglesias: {l:"MSN Deportes", u:"https://www.msn.com/es-mx/noticias/other/club-am%C3%A9rica-va-por-borja-iglesias-pero-el-celta-pone-un-precio-millonario-se-aleja-el-fichaje-de-las-%C3%A1guilas/ar-AA27EMOb"},
+  elDesmarqueUnaiNez: {l:"ElDesmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260804/celta-vigo-asume-realidad-unai-nunez-cambia-guion-completo-ultima-opcion_18_019886663.html"},
+  yahooSportsSkySportsAbdoulayeFaye: {l:"Yahoo Sports / Sky Sports", u:"https://sports.yahoo.com/articles/official-bayer-leverkusen-pocket-300-151500694.html"}};
 
 const LINKMAP = {
   "Altay Bayindir": ["hardtackle-bayindir1", "hardtackle-bayindir2"],
   "Fer López": ["elDesmarqueFerLpez"],
   "Hugo Bueno": ["galiciaPressHugoBueno"],
-  "Denis Suárez": ["elDesmarqueDenisSurez"],
+  "Denis Suárez": ["elDesmarqueDenisSurez", "galiciaPressDenisSurez"],
   "Giorgi Kochorashvili": ["galiciaPressGiorgiKochorashvili"],
   "Ilaix Moriba": ["elDesmarqueIlaixMoriba"],
   "Williot Swedberg": ["elDesmarqueWilliotSwedberg"],
-  "Borja Iglesias": ["aSFichajesnetBorjaIglesias"],
-  "Miguel Rodríguez": ["galiciaPressMiguelRodrguez"]};
+  "Borja Iglesias": ["aSFichajesnetBorjaIglesias", "mSNDeportesBorjaIglesias"],
+  "Miguel Rodríguez": ["galiciaPressMiguelRodrguez"],
+  "Unai Núñez": ["elDesmarqueUnaiNez"],
+  "Abdoulaye Faye": ["yahooSportsSkySportsAbdoulayeFaye"]};
 const WL_LINKMAP = {
   "Altay Bayindir": ["hardtackle-bayindir2"]
 };

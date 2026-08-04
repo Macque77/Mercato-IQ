@@ -862,10 +862,14 @@ const CONFIRMED_OUT = [
   {name:"Robert Lewandowski", sub:"37 · ST · Poland", club:"Chicago Fire (MLS)", pos:"ST", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"CORRECTED 03 Aug: an earlier version of this record wrongly stated Lewandowski had signed a Barcelona contract extension. In fact he departed as a free agent for Chicago Fire on a deal through 2028, ending his Barça spell."},
   {name:"Ansu Fati", sub:"23 · W · Spain", club:"Monaco", pos:"W", fee:"€11m (permanent option exercised)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Monaco convert last season's loan into a permanent transfer."},
   {name:"Iñaki Peña", sub:"27 · GK · Spain", club:"Panathinaikos", pos:"GK", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Backup goalkeeper departs for regular first-team football in Greece."},
-  {name:"Marc-André ter Stegen", sub:"34 · GK · Germany", club:"free to Ajax", pos:"GK", fee:"Free (Ajax covers a share of salary)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time Barcelona No.1 leaves as his contract situation resolves; Romano reported him already travelling to join Ajax."}
+  {name:"Marc-André ter Stegen", sub:"34 · GK · Germany", club:"free to Ajax", pos:"GK", fee:"Free (Ajax covers a share of salary)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time Barcelona No.1 leaves as his contract situation resolves; Romano reported him already travelling to join Ajax."},
+  {name:"Marcus Rashford", sub:"Forward, English, 28", club:"Manchester United", pos:"LW", fee:"Loan expired — returned to parent club", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan from Manchester United concluded after 14 goals in all competitions in 2025-26; a permanent deal was pursued by Barcelona but reported to have fallen through, and Rashford is back at Old Trafford."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Julián Álvarez", sub:"Striker, Argentine, 26", club:"Atlético Madrid", pos:"ST", report:"Barcelona are pursuing Álvarez as their primary striker target following Lewandowski's exit, with the player publicly stating his desire to join; Atlético are resisting and Barça's reported offers (~€100m) remain below Atlético's demands.", src:"Multiple (Goal.com, Yahoo Sports, La Gaceta)", tier:2, fee:"", truth:70, prob:35, light:"y", trend:"flat", note:"Álvarez's representatives were reported to be meeting with Barcelona to plan a joint strategy, and Barça were said to be preparing a new bid; deal complicated by Atlético's refusal to sell to a domestic rival and the window closing 1 Sept."},
+  {name:"Eli Junior Kroupi", sub:"Forward, French, 20", club:"Bournemouth", pos:"ST", report:"Barcelona have identified the Bournemouth forward as a backup/Plan B striker target amid their pursuit of a marquee No.9, though he also draws interest from Manchester City, PSG, Arsenal and Tottenham.", src:"Multiple aggregated reports", tier:3, fee:"", truth:40, prob:15, light:"o", trend:"flat", note:"Reports indicate an injury setback has complicated this route, and heavy competition from richer Premier League/PSG suitors makes a Barça move unlikely without Álvarez falling through entirely."}
+];
 
 const OUTGOING = [
   {name:"Ferran Torres", sub:"26 · RW/LW · Spain", club:"Real Madrid / PSG (interest)", pos:"RW/LW", report:"03 Aug 2026", src:"Barca Blaugranes", tier:2, fee:"Speculative", truth:40, prob:15, light:"o", trend:"down", note:"CORRECTED 03 Aug: an earlier version of this record wrongly logged a completed €55m Torres sale to Real Madrid - that never happened. As of 3 August, Barcelona's own line is that Torres is 'not for sale', even as PSG and Madrid are credited with background interest. Treat as live speculation only."}
@@ -904,18 +908,27 @@ const HUB = {
   "teamtalk-fcbdone": {l:"TeamTalk - every completed Barcelona transfer, summer 2026", u:"https://www.teamtalk.com/news/every-completed-barcelona-transfer-summer-2026-signings-sales-loans"},
   "espn-lewandowski": {l:"ESPN - Chicago Fire complete signing of Robert Lewandowski", u:"https://www.espn.com/soccer/story/_/id/49218680/chicago-fire-complete-signing-robert-lewandowski"},
   "beinsports-cancelo": {l:"beIN Sports - Barcelona make Cancelo signing official", u:"https://www.beinsports.com/en-us/soccer/la-liga/articles/welcome-home-barcelona-makes-the-signing-of-joao-cancelo-official-2026-01-13"},
-  fabrizioRomanoviaFootballTransfersMarcAndrterStegen: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-bruno-guimaraes-enzo-fernandez-mykhailo-mudryk"}};
+  fabrizioRomanoviaFootballTransfersMarcAndrterStegen: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-bruno-guimaraes-enzo-fernandez-mykhailo-mudryk"},
+  goalcomJulinlvarez: {l:"Goal.com", u:"https://www.goal.com/en-in/news/a-new-move-from-alvarez-s-agents-to-seal-his-transfer-to-barcelona/bltef0b96c9a8e72a05"},
+  aggregatednewsreportsEliJuniorKroupi: {l:"Aggregated news reports", u:"https://www.bing.com/news/search?q=Eli+Junior+Kroupi+Barcelona+fichaje"},
+  mSNForbesFerranTorres: {l:"MSN / Forbes", u:"https://www.msn.com/en-ca/sports/soccer/arsenal-and-tottenham-target-ferran-torres-speaks-out-on-uncertain-barcelona-future/ar-AA29mRzt?ocid=BingNewsVerp"},
+  aPNewsGoalcomKarimAdeyemi: {l:"AP News / Goal.com", u:"https://www.goal.com/"},
+  beINSportsRobertLewandowski: {l:"beIN Sports", u:"https://www.beinsports.com/"},
+  yahooSportsMarcusRashford: {l:"Yahoo Sports", u:"https://sports.yahoo.com/"}};
 
 const LINKMAP = {
   "Anthony Gordon": ["teamtalk-fcbdone"],
-  "Karim Adeyemi": ["teamtalk-fcbdone"],
+  "Karim Adeyemi": ["teamtalk-fcbdone", "aPNewsGoalcomKarimAdeyemi"],
   "Jesse Bisiwu": ["teamtalk-fcbdone"],
   "João Cancelo": ["beinsports-cancelo"],
-  "Robert Lewandowski": ["espn-lewandowski"],
+  "Robert Lewandowski": ["espn-lewandowski", "beINSportsRobertLewandowski"],
   "Ansu Fati": ["teamtalk-fcbdone"],
   "Iñaki Peña": ["teamtalk-fcbdone"],
-  "Ferran Torres": ["barcablaugranes-3aug"],
-  "Marc-André ter Stegen": ["fabrizioRomanoviaFootballTransfersMarcAndrterStegen"]};
+  "Ferran Torres": ["barcablaugranes-3aug", "mSNForbesFerranTorres"],
+  "Marc-André ter Stegen": ["fabrizioRomanoviaFootballTransfersMarcAndrterStegen"],
+  "Julián Álvarez": ["goalcomJulinlvarez"],
+  "Eli Junior Kroupi": ["aggregatednewsreportsEliJuniorKroupi"],
+  "Marcus Rashford": ["yahooSportsMarcusRashford"]};
 const WL_LINKMAP = {
   "Ferran Torres": ["barcablaugranes-3aug"]
 };

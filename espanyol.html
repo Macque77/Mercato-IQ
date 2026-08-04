@@ -854,7 +854,9 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Álex Calatrava", sub:"26 · AM/W · Spain", to:"permanent from CD Castellón", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 July 2026 as Espanyol's first signing of the summer. The deal was structured to close before 1 July, taking advantage of his release clause dropping from €10m to €5m after that date."},
   {name:"Quilindschy Hartman", sub:"Left-back reinforcement", club:"Burnley", pos:"DF", fee:"Loan with purchase option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Premier League-experienced left-back arrives to replace Carlos Romero, though he's still working back from injury."},
-  {name:"Gabriel Moscardó", sub:"Midfield pivot on loan", club:"Paris Saint-Germain", pos:"MF", fee:"Loan (via Braga) until 2027", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Brazilian pivot arrives on loan to add physicality and depth in central midfield at low cost."}
+  {name:"Gabriel Moscardó", sub:"Midfield pivot on loan", club:"Paris Saint-Germain", pos:"MF", fee:"Loan (via Braga) until 2027", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Brazilian pivot arrives on loan to add physicality and depth in central midfield at low cost."},
+  {name:"Àlex Calatrava", sub:"Spanish/Catalan midfielder", club:"CD Castellón", pos:"CM", fee:"Release clause paid", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Monchi's first signing as Espanyol sporting director; signed through June 2031."},
+  {name:"Clemens Riedel", sub:"German centre-back, 22", club:"SV Darmstadt 98", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Fourth signing; had previously featured on loan with Espanyol B and captained Darmstadt before this permanent move; signed through 2029."}
 ];
 
 const CONFIRMED_OUT = [
@@ -870,7 +872,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Igor Julio", sub:"Priority centre-back target", club:"Brighton & Hove Albion", pos:"DF", report:"Monchi's Espanyol are negotiating for Brazilian centre-back Igor Julio, but Brighton have rejected the proposed loan-with-obligation structure as insufficient.", src:"Matteo Moretto", tier:1, fee:"Loan with buy option proposed; Brighton want more guaranteed money upfront", truth:85, prob:40, light:"y", trend:"flat", note:"Sky Sports' Christopher Reidy says English sources consider Espanyol's current offer unrealistic, meaning a deal likely requires a restructured proposal to progress."},
   {name:"Oğuz Aydın", sub:"Turkish international winger", club:"Fenerbahçe", pos:"FW", report:"Moretto lists Espanyol among several European clubs (alongside Feyenoord, Hamburg and Rangers) tracking Fenerbahçe winger Oğuz Aydın after his World Cup form.", src:"Matteo Moretto", tier:1, fee:"Undisclosed", truth:80, prob:15, light:"o", trend:"flat", note:"Aydın is under contract to 2028 and Turkish clubs are reluctant to sell key domestic-slot players cheaply, so this looks like an early, competitive scouting situation rather than an advanced deal."},
-  {name:"Bryan Zaragoza", sub:"Loan move eyed for the wing", club:"Bayern Munich", pos:"FW", report:"Monchi is said to be pushing for a loan deal for Bayern winger Bryan Zaragoza to bolster the attacking flanks.", src:"Fichajes.net", tier:3, fee:"Loan proposed; wage-sharing (~€4m salary) the main obstacle", truth:55, prob:20, light:"o", trend:"flat", note:"Zaragoza reportedly has multiple European suitors and Bayern would need to subsidise his salary for a loan to work, making this a longer-shot target."}
+  {name:"Bryan Zaragoza", sub:"Loan move eyed for the wing", club:"Bayern Munich", pos:"FW", report:"Monchi is said to be pushing for a loan deal for Bayern winger Bryan Zaragoza to bolster the attacking flanks.", src:"Fichajes.net", tier:3, fee:"Loan proposed; wage-sharing (~€4m salary) the main obstacle", truth:55, prob:20, light:"o", trend:"flat", note:"Zaragoza reportedly has multiple European suitors and Bayern would need to subsidise his salary for a loan to work, making this a longer-shot target."},
+  {name:"Viktor Tsygankov", sub:"Ukrainian winger, 25", club:"Girona", pos:"RW", report:"Espanyol director Monchi held direct contact with Tsygankov's representatives over a move, with the player keen to leave relegated Girona, but talks have since reached an impasse over Girona's demands.", src:"AS.com", tier:2, fee:"", truth:55, prob:35, light:"y", trend:"flat", note:"Described as a stalemate as of early August 2026; one year left on his Girona contract."}
 ];
 
 const OUTGOING = [
@@ -908,7 +911,10 @@ const HUB = {
   fichajesnetFernandoCalero: {l:"Fichajes.net", u:"https://www.fichajes.net/noticias/malaga-oficializa-primer-fichaje-regreso-primera-20260714.html"},
   laGradaJosSalinas: {l:"La Grada", u:"https://lagrada.org/jose-salinas-cedido-malaga-espanyol/"},
   laGradaJosGragera: {l:"La Grada", u:"https://lagrada.org/balance-mercado-espanyol-fichajes-salidas-piezas-pendientes-2026/"},
-  futbolFantasyJustinSmith: {l:"FutbolFantasy", u:"https://www.futbolfantasy.com/laliga/equipos/espanyol/mercado-fichajes/verano-2026"}};
+  futbolFantasyJustinSmith: {l:"FutbolFantasy", u:"https://www.futbolfantasy.com/laliga/equipos/espanyol/mercado-fichajes/verano-2026"},
+  aScomViktorTsygankov: {l:"AS.com", u:"https://as.com/"},
+  mundoDeportivolexCalatrava: {l:"Mundo Deportivo", u:"https://www.mundodeportivo.com/"},
+  aScomClemensRiedel: {l:"AS.com", u:"https://as.com/futbol/primera/el-cuarto-fichaje-es-riedel-f202608-n/"}};
 
 const LINKMAP = {
   "Álex Calatrava": ["lagrada-calatrava", "laGradalexCalatrava"],
@@ -918,14 +924,17 @@ const LINKMAP = {
   "Bryan Zaragoza": ["fichajesnetBryanZaragoza"],
   "Miguel Rubio": ["radioMARCAviaPericosesMiguelRubio"],
   "Pablo Ramón": ["laGradaPabloRamn"],
-  "Quilindschy Hartman": ["laGradalexCalatrava"],
-  "Gabriel Moscardó": ["laGradalexCalatrava"],
+  "Quilindschy Hartman": ["laGradalexCalatrava", "mundoDeportivolexCalatrava"],
+  "Gabriel Moscardó": ["laGradalexCalatrava", "mundoDeportivolexCalatrava"],
   "Carlos Romero": ["infobaeCarlosRomero"],
   "Cyril Ngonge": ["laGradaCyrilNgonge"],
   "Fernando Calero": ["fichajesnetFernandoCalero"],
   "José Gragera": ["laGradaJosGragera"],
   "Justin Smith": ["futbolFantasyJustinSmith"],
-  "Omar Sadik": ["futbolFantasyJustinSmith"]};
+  "Omar Sadik": ["futbolFantasyJustinSmith"],
+  "Viktor Tsygankov": ["aScomViktorTsygankov"],
+  "Àlex Calatrava": ["mundoDeportivolexCalatrava"],
+  "Clemens Riedel": ["aScomClemensRiedel"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -857,7 +857,9 @@ const CONFIRMED_IN = [
   {name:"Martín Satriano", sub:"Permanent striker signing", club:"Olympique Lyonnais", pos:"FW", fee:"Permanent deal completed after loan spell", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Uruguayan forward's loan was converted into a permanent transfer, signing through 2030."},
   {name:"Zaid Romero", sub:"Defensive reinforcement", club:"Club Brugge", pos:"DF", fee:"€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Argentine centre-back joins on a deal through June 2029 to bolster Bordalás's back line."},
   {name:"Mario Martín", sub:"Buy-option exercised", club:"Real Madrid", pos:"DF", fee:"€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Getafe triggered their purchase option on the Real Madrid loanee, tying him down through 2030."},
-  {name:"Sebastián Boselli", sub:"Uruguayan centre-back", club:"River Plate", pos:"DF", fee:"Signed from River Plate (initial loan made permanent)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Uruguayan international defender arrived from River Plate to add depth and physicality centrally."}
+  {name:"Sebastián Boselli", sub:"Uruguayan centre-back", club:"River Plate", pos:"DF", fee:"Signed from River Plate (initial loan made permanent)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Uruguayan international defender arrived from River Plate to add depth and physicality centrally."},
+  {name:"Saba Sazonov", sub:"CB, Georgian international, 24", club:"Torino", pos:"CB", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed until June 2027 with a one-year extension option; Bordalas' fifth summer signing as Getafe prepare for Conference League football."},
+  {name:"Andres Garcia", sub:"RB, Spanish", club:"Unattached (returning from Greece)", pos:"RB", fee:"n/a", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported to have completed his return to Spanish football with Getafe; limited independent corroboration found beyond initial report."}
 ];
 
 const CONFIRMED_OUT = [
@@ -872,7 +874,9 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Matías Galarza", sub:"Paraguayan midfield target", club:"River Plate", pos:"MF", report:"Getafe made an early move and formal bid (reported around €4m) for Galarza, with coach José Bordalás keen, but Racing Strasbourg are said to hold the advantage.", src:"Tuttomercato / El Intransigente", tier:3, fee:"Approx €4m offered", truth:60, prob:30, light:"y", trend:"flat", note:"Seen as Getafe's answer to Arambarri's departure, but French competition means the move is far from secured."},
   {name:"Mounsef Bakrar", sub:"Forward reinforcement", club:"Dinamo Zagreb", pos:"FW", report:"Getafe have tabled an offer of around €3.5m for Algerian forward Bakrar, but he reportedly prefers a move to Egyptian giants Al Ahly.", src:"Africafoot (via FutbolFantasy)", tier:3, fee:"€3.5m offered", truth:55, prob:20, light:"o", trend:"flat", note:"Even with a concrete bid on the table, the player's stated preference for Al Ahly makes this a tough sell for Getafe."},
-  {name:"Giorgi Kochorashvili", sub:"Midfield depth option", club:"Sporting CP", pos:"MF", report:"Getafe are named among several clubs (with Sevilla, Levante and Deportivo) tracking Kochorashvili's potential exit from Sporting.", src:"El Desmarque / Galicia Press", tier:3, fee:"Undisclosed", truth:50, prob:12, light:"r", trend:"flat", note:"Reports suggest Deportivo currently lead the race, leaving Getafe as one of several distant suitors rather than favourites."}
+  {name:"Giorgi Kochorashvili", sub:"Midfield depth option", club:"Sporting CP", pos:"MF", report:"Getafe are named among several clubs (with Sevilla, Levante and Deportivo) tracking Kochorashvili's potential exit from Sporting.", src:"El Desmarque / Galicia Press", tier:3, fee:"Undisclosed", truth:50, prob:12, light:"r", trend:"flat", note:"Reports suggest Deportivo currently lead the race, leaving Getafe as one of several distant suitors rather than favourites."},
+  {name:"Luis Vazquez", sub:"ST, Argentine, 25", club:"Anderlecht", pos:"ST", report:"Getafe want to re-sign the loan striker who impressed in the second half of last season, but Birmingham City have entered the race with a higher wage offer.", src:"AS", tier:2, fee:"~€2m", truth:65, prob:35, light:"y", trend:"flat", note:"Vazquez scored 3 goals and added 1 assist in 17 games on loan at Getafe previously; Bordalas wants him back but faces Championship competition."},
+  {name:"Enes Unal", sub:"ST, Turkish international, 28", club:"Bournemouth", pos:"ST", report:"Getafe are one of three La Liga clubs (with Sevilla and Alaves) asking Bournemouth about a loan for Unal, who wants regular minutes after a quiet season on the south coast.", src:"FutbolFantasy / Marca", tier:2, fee:"Loan", truth:60, prob:30, light:"y", trend:"flat", note:"Three-way competition for the same loan makes any single move less likely."}
 ];
 
 const OUTGOING = [];
@@ -908,7 +912,11 @@ const HUB = {
   flashscoreLuisMilla: {l:"Flashscore", u:"https://www.flashscore.es/noticias/futbol-fichajes-luis-milla-traspasado-por-el-getafe-al-como/MBCIEeOO/"},
   futbolFantasyCobaGomes: {l:"FutbolFantasy", u:"https://www.futbolfantasy.com/mercado-de-fichajes-del-getafe-altas-bajas/verano-2026"},
   elDesmarqueJuanIglesias: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260611/sevilla-fc-oficial-llegada-juan-iglesias_18_019418467.html"},
-  getafeCFofficialPeterFederico: {l:"Getafe CF (official)", u:"https://www.getafecf.com/noticias/peter-federico-se-marcha-traspasado-al-gornik-zabrze"}};
+  getafeCFofficialPeterFederico: {l:"Getafe CF (official)", u:"https://www.getafecf.com/noticias/peter-federico-se-marcha-traspasado-al-gornik-zabrze"},
+  yahooDeportesviaASLuisVazquez: {l:"Yahoo Deportes (via AS)", u:"https://es-us.noticias.yahoo.com/deportes/getafe-volver-apostar-argentino-luis-152000646.html"},
+  fichajescomGetafehubGiorgiKochorashvili: {l:"Fichajes.com (Getafe hub)", u:"https://www.fichajes.com/equipo/getafe-cf/"},
+  futbolFantasyEnesUnal: {l:"FutbolFantasy", u:"https://www.futbolfantasy.com/laliga/noticias/148192-sevilla-getafe-y-alaves-piden-la-cesion-de-enes-unal"},
+  marcaSabaSazonov: {l:"Marca", u:"https://www.marca.com/futbol/getafe.html"}};
 
 const LINKMAP = {
   "Ramón Terrats": ["futbolfantasy-villarreal", "infobaeRamnTerrats"],
@@ -916,7 +924,7 @@ const LINKMAP = {
   "Domingos Duarte": ["fichajesnet-duarte"],
   "Matías Galarza": ["todoMercadoWebMatasGalarza"],
   "Mounsef Bakrar": ["futbolFantasyAfricafootMounsefBakrar"],
-  "Giorgi Kochorashvili": ["elDesmarqueGiorgiKochorashvili"],
+  "Giorgi Kochorashvili": ["elDesmarqueGiorgiKochorashvili", "fichajescomGetafehubGiorgiKochorashvili"],
   "Martín Satriano": ["infobaeMartnSatriano"],
   "Zaid Romero": ["getafeNewsZaidRomero"],
   "Mario Martín": ["infobaeMarioMartn"],
@@ -925,7 +933,11 @@ const LINKMAP = {
   "Luis Milla": ["flashscoreLuisMilla"],
   "Coba Gomes": ["futbolFantasyCobaGomes"],
   "Juan Iglesias": ["elDesmarqueJuanIglesias"],
-  "Peter Federico": ["getafeCFofficialPeterFederico"]};
+  "Peter Federico": ["getafeCFofficialPeterFederico"],
+  "Luis Vazquez": ["yahooDeportesviaASLuisVazquez"],
+  "Enes Unal": ["futbolFantasyEnesUnal"],
+  "Saba Sazonov": ["marcaSabaSazonov"],
+  "Andres Garcia": ["fichajescomGetafehubGiorgiKochorashvili"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

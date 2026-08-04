@@ -852,7 +852,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Ryunosuke Sato", sub:"Forward, Japan international", club:"FC Tokyo", pos:"FW", fee:"Around €4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The 19-year-old Japan international's move reportedly broke the transfer-fee record previously held by countryman Take Kubo, and he has signed through 2031."}
+  {name:"Ryunosuke Sato", sub:"Forward, Japan international", club:"FC Tokyo", pos:"FW", fee:"Around €4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The 19-year-old Japan international's move reportedly broke the transfer-fee record previously held by countryman Take Kubo, and he has signed through 2031."},
+  {name:"Aliou Dieng", sub:"CM/CDM, Mali, 28", club:"Al-Ahly", pos:"CDM", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a three-year contract after arriving as a free agent once the 2025-26 season concluded."}
 ];
 
 const CONFIRMED_OUT = [
@@ -864,7 +865,8 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Hugo Duro", sub:"Striker made available", club:"Unspecified suitors", pos:"FW", report:"Valencia have set a €12m price tag on Duro to help balance the books, though the club's own reporting suggests few clubs have been willing to meet that valuation.", src:"Fichajes.net / Deporte Valenciano", tier:3, fee:"€12m (asking price)", truth:45, prob:15, light:"o", trend:"flat", note:"This reads more like a financial necessity being floated by the club than a live approach from any specific suitor, and Duro is not believed to be pushing to leave himself."}
+  {name:"Hugo Duro", sub:"Striker made available", club:"Unspecified suitors", pos:"FW", report:"Valencia have set a €12m price tag on Duro to help balance the books, though the club's own reporting suggests few clubs have been willing to meet that valuation.", src:"Fichajes.net / Deporte Valenciano", tier:3, fee:"€12m (asking price)", truth:45, prob:15, light:"o", trend:"flat", note:"This reads more like a financial necessity being floated by the club than a live approach from any specific suitor, and Duro is not believed to be pushing to leave himself."},
+  {name:"Javi Guerra", sub:"CM, Spain, 22", club:"Barcelona", pos:"CM", report:"Barcelona had until 1 August 2026 to trigger Javi Guerra's 40m euro release clause before it rose to 60m; Hansi Flick was said to be keen amid Barca's midfield injury/rift issues, but the club had taken no concrete steps as the deadline neared.", src:"Barca Blaugranes", tier:3, fee:"€40-60m release clause", truth:40, prob:25, light:"o", trend:"flat", note:"Guerra said in May: \"I have a contract. I renewed last year, so I think it's clear that I want to stay here.\" Unclear as of early August whether Barcelona acted before the 1 August deadline; unnamed Italian and English clubs also reportedly monitoring him."}
 ];
 
 const RISERS = [];
@@ -887,13 +889,17 @@ const HUB = {
   "fichajes-valencia": {l:"Fichajes.com - Valencia CF altas y bajas 2026/27", u:"https://www.fichajes.com/equipo/valencia-cf/altas-bajas/"},
   elDesmarqueKingsleyEhizibue: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260714/primera-oferta-chirino-rechazada-negociacion_18_019716572.html"},
   fichajesnetHugoDuro: {l:"Fichajes.net", u:"https://www.fichajes.net/noticias/hugo-duro-rampa-salida-mestalla-20260603.html"},
-  valenciaCFofficialRyunosukeSato: {l:"Valencia CF (official)", u:"https://www.valenciacf.com/official-statement-ryunosuke-sato"}};
+  valenciaCFofficialRyunosukeSato: {l:"Valencia CF (official)", u:"https://www.valenciacf.com/official-statement-ryunosuke-sato"},
+  footballEspanaviaBarcaBlaugranesJaviGuerra: {l:"Football Espana (via Barca Blaugranes)", u:"https://www.football-espana.net/2026/07/30/javi-guerra-barcelona-transfer-deadline"},
+  footballEspanaviaMarcaAliouDieng: {l:"Football Espana (via Marca)", u:"https://www.football-espana.net/2026/04/03/la-liga-transfer-round-up-valencia-seal-free-transfer-of-mali-international"}};
 
 const LINKMAP = {
   "Baptiste Santamaría": ["fichajes-valencia"],
   "Kingsley Ehizibue": ["elDesmarqueKingsleyEhizibue"],
   "Hugo Duro": ["fichajesnetHugoDuro"],
-  "Ryunosuke Sato": ["valenciaCFofficialRyunosukeSato"]};
+  "Ryunosuke Sato": ["valenciaCFofficialRyunosukeSato"],
+  "Javi Guerra": ["footballEspanaviaBarcaBlaugranesJaviGuerra"],
+  "Aliou Dieng": ["footballEspanaviaMarcaAliouDieng"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

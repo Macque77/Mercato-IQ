@@ -324,7 +324,7 @@ const HEADLINES = [
     from: "Manchester City", to: "Real Madrid",
     direction: "in",
     prob: 40, truth: 65, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     nation: "Spain", league: "La Liga",
     club_link: "real-madrid",
     updated: "2026-08-03T18:00:00Z"
@@ -792,12 +792,12 @@ const NATIONS = [
     stories_count: 186, league_count: 3
   },
   {
-    name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 57, league_count: 3
+    name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
+    stories_count: 81, league_count: 1
   },
   {
-    name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 54, league_count: 1
+    name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
+    stories_count: 57, league_count: 3
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
@@ -842,7 +842,7 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 468,
+  total_stories: 495,
   clubs_covered: 172,
   tier1_count: 61,
   top_league: "Premier League",
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:26:37.065371Z",
+  updated: "2026-08-04T17:47:42.694430Z",
   label: "Global aggregation from all clubs"
 };

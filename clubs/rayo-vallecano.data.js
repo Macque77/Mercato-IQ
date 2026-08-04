@@ -35,10 +35,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation."}
+  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation."},
+  {name:"Iker Luque", sub:"21 · W · Spain", club:"Atlético Madrid", pos:"RW", report:"Rayo have been negotiating since January for the young Atlético winger on a four-year deal.", src:"El Gol Digital", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Long-running, low-profile interest rather than a fresh development."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Nobel Mendy", sub:"23 · CB · Senegal/France", club:"Hull City", pos:"CB", report:"Mendy has skipped training twice to push through a move after Hull City's revised bid; Rayo have reportedly changed the terms, stalling the deal.", src:"Sport Witness", tier:2, fee:"€18-25m (reports vary)", truth:65, prob:55, light:"g", trend:"flat", note:"Real Betis, who developed and previously sold Mendy, stand to earn a €4-5m sell-on if this completes."}
+];
 
 const RISERS = [];
 
@@ -60,11 +63,16 @@ const WATCHLIST = [
 
 const HUB = {
   "rayo-official-fichaje": {l:"Rayo Vallecano - official transfer news tag", u:"https://www.rayovallecano.es/etiqueta/fichaje"},
-  nicoloSchiraviaCaughtOffsidePepChavarra: {l:"Nicolo Schira (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/03/journalist-terms-chelsea-transfer-done-deal-contract/"}};
+  nicoloSchiraviaCaughtOffsidePepChavarra: {l:"Nicolo Schira (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/03/journalist-terms-chelsea-transfer-done-deal-contract/"},
+  oneFootballviaclubtagpageIliasAkhomach: {l:"OneFootball (via club tag page)", u:"https://www.rayovallecano.es/etiqueta/fichaje"},
+  elGolDigitalIkerLuque: {l:"El Gol Digital", u:"https://www.elgoldigital.com/futbol/"},
+  sportWitnessNobelMendy: {l:"Sport Witness", u:"https://sportwitness.co.uk/player-skips-training-for-second-day-after-hull-citys-e18m-bid-pushing-through-transfer/"}};
 
 const LINKMAP = {
-  "Ilias Akhomach": ["rayo-official-fichaje"],
-  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra"]};
+  "Ilias Akhomach": ["rayo-official-fichaje", "oneFootballviaclubtagpageIliasAkhomach"],
+  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra"],
+  "Iker Luque": ["elGolDigitalIkerLuque"],
+  "Nobel Mendy": ["sportWitnessNobelMendy"]};
 const WL_LINKMAP = {
   "Ilias Akhomach": ["rayo-official-fichaje"]
 };

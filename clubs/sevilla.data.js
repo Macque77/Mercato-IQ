@@ -42,7 +42,9 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Antonio Raíllo", sub:"Free-agent centre-back", club:"Mallorca (free agent)", pos:"DF", report:"Sevilla have been strongly linked with the free-agent centre-back to lead a rebuilt defense after conceding 60 goals last season, though reports are contradictory on how advanced talks are.", src:"Vamos Mi Sevilla / El Chiringuito", tier:3, fee:"Free transfer", truth:45, prob:35, light:"y", trend:"flat", note:"Some outlets called the move imminent in late June while others insisted there was 'nothing' agreed with Raíllo, reflecting how unsettled Sevilla's central-defensive plans still are."},
-  {name:"David Romero", sub:"Tigre striker, losing race to Parma", club:"Tigre (Argentina)", pos:"FW", report:"Sevilla have pushed for weeks to sign the Argentine forward for their attack, but Parma have reportedly gained the upper hand in the race for his signature.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Sevilla's interest is genuine, but the player now looks more likely to end up in Italy after Parma stepped up their pursuit in early August."}
+  {name:"David Romero", sub:"Tigre striker, losing race to Parma", club:"Tigre (Argentina)", pos:"FW", report:"Sevilla have pushed for weeks to sign the Argentine forward for their attack, but Parma have reportedly gained the upper hand in the race for his signature.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Sevilla's interest is genuine, but the player now looks more likely to end up in Italy after Parma stepped up their pursuit in early August."},
+  {name:"Toni Fernandez", sub:"Winger, Spain, 17", club:"Barcelona (Barca Atletic)", pos:"RW", report:"Sevilla were lining up the La Masia winger as the first signing of the incoming Sergio Ramos ownership era, with the youngster keen on regular first-team football.", src:"Mundo Deportivo", tier:2, fee:"", truth:55, prob:20, light:"o", trend:"flat", note:"This move was tied directly to the Sergio Ramos takeover, which collapsed the very next day (28 May 2026) amid consortium uncertainty - status of the pursuit is unclear now the ownership deal has fallen through."},
+  {name:"David Affengruber", sub:"CB, Austria, 25", club:"Elche", pos:"CB", report:"Sevilla are among a cluster of clubs, alongside Manchester United, Atletico Madrid, Juventus and Milan, monitoring the Elche centre-back whose contract expires in 2027.", src:"Sky Sports Germany", tier:2, fee:"~€30m", truth:55, prob:15, light:"o", trend:"flat", note:"Originally valued near 30m euros, though that figure could fall given his contract situation. Man Utd's interest reportedly dates back to December 2025; Affengruber is an Austria international heading to the 2026 World Cup."}
 ];
 
 const OUTGOING = [
@@ -77,7 +79,9 @@ const HUB = {
   elPespunteAkorAdams: {l:"El Pespunte", u:"https://www.elpespunte.es/articulo/deportes/akor-adams-paso-venezia-sevilla-ultima-primera-gran-venta-verano/20260720210902142017.html"},
   elDesmarqueJulioDaz: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260728/sevilla-fc-oficial-confirma-fichaje-julio-diaz-detalles_18_019831952.html"},
   vamosMiSevillaFranGonzlez: {l:"Vamos Mi Sevilla", u:"https://www.vamosmisevillafc.com/el-sevilla-fc-hace-oficial-su-sexto-fichaje-cifras-y-detalles-del-traspaso-de-fean-gonzalez/"},
-  sevillaFCofficialTanguyNianzou: {l:"Sevilla FC (official)", u:"https://sevillafc.es/actualidad/noticias/acuerdo-traspaso-nianzou-lille-julio-2026"}};
+  sevillaFCofficialTanguyNianzou: {l:"Sevilla FC (official)", u:"https://sevillafc.es/actualidad/noticias/acuerdo-traspaso-nianzou-lille-julio-2026"},
+  footballEspanaviaMundoDeportivoToniFernandez: {l:"Football Espana (via Mundo Deportivo)", u:"https://www.football-espana.net/2026/05/27/sevilla-barcelona-forward-signing"},
+  footballEspanaviaSkySportsGermanyDavidAffengruber: {l:"Football Espana (via Sky Sports Germany)", u:"https://www.football-espana.net/2026/05/09/man-united-atletico-madrid-la-liga-defender"}};
 
 const LINKMAP = {
   "Julio Díaz": ["eldesmarque-juliodiaz", "elsevillista-juliodiaz", "elDesmarqueJulioDaz"],
@@ -87,7 +91,9 @@ const LINKMAP = {
   "Isaac Romero": ["vamosMiSevillaIsaacRomero"],
   "Akor Adams": ["elPespunteAkorAdams"],
   "Fran González": ["vamosMiSevillaFranGonzlez"],
-  "Tanguy Nianzou": ["sevillaFCofficialTanguyNianzou"]};
+  "Tanguy Nianzou": ["sevillaFCofficialTanguyNianzou"],
+  "Toni Fernandez": ["footballEspanaviaMundoDeportivoToniFernandez"],
+  "David Affengruber": ["footballEspanaviaSkySportsGermanyDavidAffengruber"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

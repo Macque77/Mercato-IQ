@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Ville Koski", sub:"GK · Finland", club:"NK Istra 1961", pos:"GK", fee:"€3m (option to buy)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing."},
   {name:"Mikel Rodríguez", sub:"DF · Spain", club:"Real Sociedad", pos:"DF", fee:"€2m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing — distinct player from winger Miguel Rodríguez."},
-  {name:"Miguel Rodríguez", sub:"23 · RW · Spain", club:"FC Utrecht", pos:"RW", fee:"~€2.5m, 5-year deal", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing through 2031; Celta academy product, scored 5 goals in 39 games last season at Utrecht."}
+  {name:"Miguel Rodríguez", sub:"23 · RW · Spain", club:"FC Utrecht", pos:"RW", fee:"~€2.5m, 5-year deal", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing through 2031; Celta academy product, scored 5 goals in 39 games last season at Utrecht."},
+  {name:"Hugo Martínez", sub:"Striker, Spanish, 21", club:"Náxara", pos:"ST", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins Alavés' reserve/B team after a 34-appearance Segunda RFEF campaign."}
 ];
 const CONFIRMED_OUT = [
   {name:"Víctor Parada", sub:"DF · Argentina", club:"Spartak Moscow", pos:"DF", fee:"€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure."},
@@ -43,7 +44,10 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Bryan Zaragoza", sub:"24 · RW · Spain", club:"Bayern Munich", pos:"RW", report:"14 Jul 2026", src:"Andrés Guzmán / El Gol Digital", tier:2, fee:"Loan (Bayern value ~€8m)", truth:55, prob:25, light:"o", trend:"flat", note:"Alavés have contacted Bayern and the player directly but Zaragoza reportedly prefers a move to Sevilla to be closer to home."},
   {name:"Aarón Martín", sub:"29 · LB · Spain", club:"Genoa CFC", pos:"LB", report:"4 Aug 2026", src:"Noticias de Álava", tier:2, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Named as an option to solve Alavés' left-back spot; early-stage interest with no formal bid reported yet."},
-  {name:"Pablo García", sub:"20 · LW/RW · Spain", club:"Real Betis", pos:"W", report:"23 Jun 2026", src:"Flavio Pace / El Gol Digital", tier:2, fee:"€10m+ demanded / €30m clause", truth:45, prob:12, light:"r", trend:"flat", note:"Betis academy winger wanted by a crowded field (Alavés, Osasuna, Ajax, Club Brugge, Stuttgart, Inter Miami); Betis in no rush to sell."}
+  {name:"Pablo García", sub:"20 · LW/RW · Spain", club:"Real Betis", pos:"W", report:"23 Jun 2026", src:"Flavio Pace / El Gol Digital", tier:2, fee:"€10m+ demanded / €30m clause", truth:45, prob:12, light:"r", trend:"flat", note:"Betis academy winger wanted by a crowded field (Alavés, Osasuna, Ajax, Club Brugge, Stuttgart, Inter Miami); Betis in no rush to sell."},
+  {name:"Enes Ünal", sub:"Striker, Turkish, 29", club:"Getafe (on loan from Girona)", pos:"ST", report:"Alavés are competing with Getafe and Sevilla to sign the Turkish striker this summer as Quique Sánchez Flores looks to add a proven No.9.", src:"Superdeporte", tier:3, fee:"", truth:45, prob:30, light:"y", trend:"flat", note:"Three-way competition reported by regional Valencian outlet; no formal bid confirmed by any of the three clubs yet."},
+  {name:"Unai Núñez", sub:"Centre-back, Spanish, 28", club:"Celta Vigo", pos:"CB", report:"Alavés are monitoring the Celta defender, who has a contract through 2029, as a potential reinforcement for the back line.", src:"El Gol Digital", tier:3, fee:"", truth:40, prob:25, light:"o", trend:"flat", note:"Described as early-stage 'monitoring' rather than an active approach; Celta not thought to be willing sellers of a starter."},
+  {name:"Erik Lira", sub:"Central midfielder, Mexican, 26", club:"Cruz Azul", pos:"CM", report:"Alavés made an approach for the Cruz Azul midfielder but had their opening offer rejected by the Liga MX club.", src:"Juanfutbol (MSN)", tier:3, fee:"", truth:40, prob:20, light:"o", trend:"flat", note:"Rejected bid suggests Alavés would need to substantially improve terms to revive interest; Cruz Azul reportedly reluctant to sell mid-season."}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -65,7 +69,11 @@ const HUB = {
   noticiasdelavaAarnMartn: {l:"Noticias de Álava", u:"https://www.noticiasdealava.eus/alaves/2026/08/04/aaron-martin-opcion-lateral-alaves-fichaje-11404379.html"},
   elGolDigitalPabloGarca: {l:"El Gol Digital", u:"https://www.elgoldigital.com/futbol/real-betis-balompie/pablo-garcia-betis-osasuna-brujas-ajax-inter-miami-mercado-10-millones-2026/"},
   ftbolFantasyVilleKoski: {l:"FútbolFantasy", u:"https://www.futbolfantasy.com/mercado-de-fichajes-del-alaves-altas-bajas/verano-2026"},
-  vavelMiguelRodrguez: {l:"Vavel", u:"https://www.vavel.com/es/futbol/2026/07/27/alaves/1266637-miguel-rodriguez-ficha-por-el-deportivo-alaves-hasta-2031.html"}};
+  vavelMiguelRodrguez: {l:"Vavel", u:"https://www.vavel.com/es/futbol/2026/07/27/alaves/1266637-miguel-rodriguez-ficha-por-el-deportivo-alaves-hasta-2031.html"},
+  superdeporteEnesnal: {l:"Superdeporte", u:"https://www.superdeporte.es/"},
+  elGolDigitalUnaiNez: {l:"El Gol Digital", u:"https://www.elgoldigital.com/"},
+  juanfutbolviaMSNErikLira: {l:"Juanfutbol via MSN", u:"https://www.msn.com/"},
+  elCorreoEstadioDeportivoMarcaMiguelRodrguez: {l:"El Correo / Estadio Deportivo / Marca", u:"https://www.elcorreo.com/"}};
 
 const LINKMAP = {
   "Bryan Zaragoza": ["elGolDigitalBryanZaragoza"],
@@ -73,10 +81,14 @@ const LINKMAP = {
   "Pablo García": ["elGolDigitalPabloGarca"],
   "Ville Koski": ["ftbolFantasyVilleKoski"],
   "Mikel Rodríguez": ["ftbolFantasyVilleKoski"],
-  "Miguel Rodríguez": ["vavelMiguelRodrguez"],
+  "Miguel Rodríguez": ["vavelMiguelRodrguez", "elCorreoEstadioDeportivoMarcaMiguelRodrguez"],
   "Víctor Parada": ["ftbolFantasyVilleKoski"],
   "Asier Villalibre": ["ftbolFantasyVilleKoski"],
-  "Jon Guridi": ["ftbolFantasyVilleKoski"]};
+  "Jon Guridi": ["ftbolFantasyVilleKoski"],
+  "Enes Ünal": ["superdeporteEnesnal"],
+  "Unai Núñez": ["elGolDigitalUnaiNez"],
+  "Erik Lira": ["juanfutbolviaMSNErikLira"],
+  "Hugo Martínez": ["elCorreoEstadioDeportivoMarcaMiguelRodrguez"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

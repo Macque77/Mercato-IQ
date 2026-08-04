@@ -31,10 +31,13 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [
   {name:"Ramón Terrats", sub:"25 · CM · Spain", club:"Getafe", pos:"CM", fee:"~€2.5-3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit to Getafe."},
   {name:"Diego Conde", sub:"25 · GK · Spain", club:"Real Betis", pos:"GK", fee:"Loan with ~€3.5m purchase option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Closed as a loan move with a purchase option attached."},
-  {name:"Jean Ives Valou", sub:"20 · CB · France", club:"Getafe", pos:"CB", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official loan exit to Getafe."}
+  {name:"Jean Ives Valou", sub:"20 · CB · France", club:"Getafe", pos:"CB", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official loan exit to Getafe."},
+  {name:"Dani Parejo", sub:"CM, Spain, veteran", club:"Unattached (destination not yet reported)", pos:"CM", fee:"Free / contract expired", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club confirmed the exit of the veteran midfielder after six years at Villarreal (announced 21 May 2026); his next destination had not been reported as of the latest coverage."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Luis Milla", sub:"CM, Spain", club:"Getafe", pos:"CM", report:"Villarreal have identified Getafe's Luis Milla as their preferred replacement for the departing Dani Parejo, with Milla entering the final year of his contract and available cheaply.", src:"Diario AS", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Reported before Villarreal's managerial change (Marcelino out, Inigo Perez in from Rayo Vallecano), which could affect summer recruitment plans."}
+];
 
 const OUTGOING = [
   {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Mallorca (interest)", pos:"GK", report:"Jul 2026", src:"FútbolFantasy", tier:3, fee:"Loan, wages co-funded", truth:45, prob:35, light:"y", trend:"up", note:"Mallorca reported as advancing negotiations for a goalkeeper loan with Villarreal helping fund wages; Elche also credited with background interest."},
@@ -64,8 +67,9 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  "futbolfantasy-villarreal": {l:"FútbolFantasy - Villarreal transfer tracker", u:"https://www.futbolfantasy.com/laliga/equipos/villarreal/mercado-fichajes/verano-2026"}
-};
+  "futbolfantasy-villarreal": {l:"FútbolFantasy - Villarreal transfer tracker", u:"https://www.futbolfantasy.com/laliga/equipos/villarreal/mercado-fichajes/verano-2026"},
+  footballEspanaviaDiarioASLuisMilla: {l:"Football Espana (via Diario AS)", u:"https://www.football-espana.net/2026/05/08/villarreal-line-up-dani-parejo-replacement-this-summer"},
+  footballEspanaDaniParejo: {l:"Football Espana", u:"https://www.football-espana.net/2026/05/21/villarreal-legend-announces-exit-from-club-after"}};
 
 const LINKMAP = {
   "Ramón Terrats": ["futbolfantasy-villarreal"],
@@ -73,8 +77,9 @@ const LINKMAP = {
   "Jean Ives Valou": ["futbolfantasy-villarreal"],
   "Arnau Tenas": ["futbolfantasy-villarreal"],
   "Ilias Akhomach": ["futbolfantasy-villarreal"],
-  "Pape Gueye": ["futbolfantasy-villarreal"]
-};
+  "Pape Gueye": ["futbolfantasy-villarreal"],
+  "Luis Milla": ["footballEspanaviaDiarioASLuisMilla"],
+  "Dani Parejo": ["footballEspanaDaniParejo"]};
 const WL_LINKMAP = {
   "Arnau Tenas": ["futbolfantasy-villarreal"],
   "Pape Gueye": ["futbolfantasy-villarreal"]

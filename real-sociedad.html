@@ -862,7 +862,10 @@ const INCOMING = [
 
 const OUTGOING = [
   {name:"Arsen Zakharyan", sub:"22 · AM · Russia", club:"Exit options being explored", pos:"AM", report:"Jun 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:40, prob:25, light:"o", trend:"flat", note:"Club reportedly open to Zakharyan leaving after limited game-time; no concrete club interest confirmed."},
-  {name:"Álex Remiro", sub:"31 · GK · Spain", club:"Aston Villa (interest)", pos:"GK", report:"Jun 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:30, prob:15, light:"o", trend:"flat", note:"Background Premier League interest reported; nothing advanced."}
+  {name:"Álex Remiro", sub:"31 · GK · Spain", club:"Aston Villa (interest)", pos:"GK", report:"Jun 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:30, prob:15, light:"o", trend:"flat", note:"Background Premier League interest reported; nothing advanced."},
+  {name:"Alex Remiro", sub:"GK, Spain, 31", club:"Barcelona", pos:"GK", report:"Real Sociedad are ready to sell Remiro for 8-10m euros this summer, with Barcelona keen to add competition for Joan Garcia, though any Barca move depends on first offloading Ter Stegen and Inaki Pena.", src:"Mundo Deportivo", tier:2, fee:"€8-10m", truth:70, prob:40, light:"y", trend:"flat", note:"Newcastle, Aston Villa and Inter Milan are also credited with interest. Remiro is prioritising his World Cup place before deciding on his future."},
+  {name:"Jon Martin", sub:"CB, Spain, 20", club:"Real Madrid / Barcelona", pos:"CB", report:"Real Madrid and Barcelona have been informed Jon Martin's release clause stands at 50m euros, with Deco said to have met the defender's agent in April, though the player has publicly ruled out leaving.", src:"Diario AS", tier:2, fee:"€50m release clause", truth:65, prob:20, light:"o", trend:"flat", note:"Martin: \"My plan is what I've already said: to focus on Real Sociedad.\" Spain U21 international, key part of the club's Copa del Rey win."},
+  {name:"Mikel Oyarzabal", sub:"Forward, Spain, captain", club:"Barcelona", pos:"ST", report:"Barcelona speculation resurfaced around the Real Sociedad captain, who publicly shut it down saying he is 'where he wants to be'.", src:"Football Espana", tier:2, fee:"", truth:55, prob:10, light:"r", trend:"flat", note:"Oyarzabal also stonewalled earlier Barcelona attempts (reported 1 May 2026) to sign three Real Sociedad players at once."}
 ];
 
 const RISERS = [
@@ -887,15 +890,19 @@ const WATCHLIST = [
 
 const HUB = {
   "aljazeera-copadelrey": {l:"Al Jazeera - Real Sociedad win Copa del Rey", u:"https://www.aljazeera.com/sports/2026/4/19/real-sociedad-upset-atletico-madrid-to-win-fourth-copa-del-rey-title"},
-  "futbolfantasy-realsociedad": {l:"FútbolFantasy - Real Sociedad transfer tracker", u:"https://www.futbolfantasy.com/laliga/equipos/real-sociedad/mercado-fichajes/verano-2026"}
-};
+  "futbolfantasy-realsociedad": {l:"FútbolFantasy - Real Sociedad transfer tracker", u:"https://www.futbolfantasy.com/laliga/equipos/real-sociedad/mercado-fichajes/verano-2026"},
+  footballEspanaviaMundoDeportivoAlexRemiro: {l:"Football Espana (via Mundo Deportivo)", u:"https://www.football-espana.net/2026/05/28/real-sociedad-accept-e8m-sale-barcelona"},
+  footballEspanaviaDiarioASJonMartin: {l:"Football Espana (via Diario AS)", u:"https://www.football-espana.net/2026/05/03/jon-martin-real-sociedad-future"},
+  footballEspanaMikelOyarzabal: {l:"Football Espana", u:"https://www.football-espana.net/2026/07/10/oyarzabal-barcelona-transfer-rejection"}};
 
 const LINKMAP = {
   "Aritz Elustondo": ["futbolfantasy-realsociedad"],
   "Hidemasa Morita successor / Kamada": ["futbolfantasy-realsociedad"],
   "Arsen Zakharyan": ["futbolfantasy-realsociedad"],
-  "Álex Remiro": ["futbolfantasy-realsociedad"]
-};
+  "Álex Remiro": ["futbolfantasy-realsociedad"],
+  "Alex Remiro": ["footballEspanaviaMundoDeportivoAlexRemiro"],
+  "Jon Martin": ["footballEspanaviaDiarioASJonMartin"],
+  "Mikel Oyarzabal": ["footballEspanaMikelOyarzabal"]};
 const WL_LINKMAP = {
   "Arsen Zakharyan": ["futbolfantasy-realsociedad"]
 };

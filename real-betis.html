@@ -860,11 +860,13 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Fábio Silva", sub:"Forward, exit push from Dortmund", club:"Borussia Dortmund", pos:"FW", report:"Betis named as one of five La Liga clubs (with Villarreal, Celta, Real Sociedad, Espanyol) monitoring Silva as he pushes to leave Dortmund and return to Spain.", src:"Fichajes.net (via Rudy Galletti)", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Silva is reportedly unsettled in Germany and keen on a return to Spanish football, with Betis just one of several suitors circling and nothing concrete advanced yet."}
+  {name:"Fábio Silva", sub:"Forward, exit push from Dortmund", club:"Borussia Dortmund", pos:"FW", report:"Betis named as one of five La Liga clubs (with Villarreal, Celta, Real Sociedad, Espanyol) monitoring Silva as he pushes to leave Dortmund and return to Spain.", src:"Fichajes.net (via Rudy Galletti)", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Silva is reportedly unsettled in Germany and keen on a return to Spanish football, with Betis just one of several suitors circling and nothing concrete advanced yet."},
+  {name:"Franjo Ivanović", sub:"Croatia international · ST", club:"Benfica", pos:"ST", report:"Ivanović has reportedly rejected Hull City to prioritise Betis, with Pellegrini using Champions League football as a recruiting pitch, but Benfica insist on an outright sale rather than a loan.", src:"Estadio Deportivo / OneFootball", tier:2, fee:"Permanent deal demanded by Benfica; fee TBD", truth:58, prob:35, light:"y", trend:"flat", note:"Troy Parrott is a named alternative if the Ivanović deal structure can't be resolved."}
 ];
 
 const OUTGOING = [
-  {name:"Ez Abde", sub:"Winger wanted by Roma and Newcastle", club:"AS Roma", pos:"FW", report:"Roma have bid around €35m plus add-ons and Newcastle have also shown interest, but Betis are refusing to drop below Abde's €60m release clause.", src:"Fichajes.net", tier:2, fee:"€60m release clause (Betis will not negotiate below it)", truth:60, prob:20, light:"o", trend:"flat", note:"Betis sporting director Manu Fajardo is holding firm on the full release clause, and Newcastle's lack of Champions League football is also working against a deal, so a sale looks unlikely at current prices."}
+  {name:"Ez Abde", sub:"Winger wanted by Roma and Newcastle", club:"AS Roma", pos:"FW", report:"Roma have bid around €35m plus add-ons and Newcastle have also shown interest, but Betis are refusing to drop below Abde's €60m release clause.", src:"Fichajes.net", tier:2, fee:"€60m release clause (Betis will not negotiate below it)", truth:60, prob:20, light:"o", trend:"flat", note:"Betis sporting director Manu Fajardo is holding firm on the full release clause, and Newcastle's lack of Champions League football is also working against a deal, so a sale looks unlikely at current prices."},
+  {name:"Rodrigo Marina", sub:"Striker", club:"US Avellino (Serie B, interest)", pos:"ST", report:"Betis are negotiating Marina's sale as part of a wider forward-line reshuffle alongside the Ivanović pursuit.", src:"Estadio Deportivo", tier:2, fee:"Undisclosed", truth:55, prob:38, light:"y", trend:"flat", note:"No agreement reached as of early Aug; part of Betis freeing squad space for a marquee forward arrival."}
 ];
 
 const RISERS = [
@@ -892,14 +894,19 @@ const HUB = {
   fichajesnetEzAbde: {l:"Fichajes.net", u:"https://www.fichajes.net/noticias/roma-no-llega-pide-betis-abde-20260729.html"},
   realMadridofficialFranGarca: {l:"Real Madrid (official)", u:"https://www.realmadrid.com/en-US/news/club/announcements/comunicado-oficial-fran-garcia-08-07-2026"},
   mundoBetisDaniCeballos: {l:"MundoBetis", u:"https://mundobetis.com/2026/06/26/oficial-dani-ceballos-deja-el-real-madrid-para-volver-al-real-betis/"},
-  getSpanishFootballNewsDiegoConde: {l:"Get Spanish Football News", u:"https://getfootballnewsspain.com/official-real-betis-sign-villarreal-star/"}};
+  getSpanishFootballNewsDiegoConde: {l:"Get Spanish Football News", u:"https://getfootballnewsspain.com/official-real-betis-sign-villarreal-star/"},
+  estadioDeportivoFranjoIvanovi: {l:"Estadio Deportivo", u:"https://www.estadiodeportivo.com/futbol/betis/posible-solucion-fichaje-ivanovic-baza-favor-del-betis-20260731-543477.html"},
+  estadioDeportivoRodrigoMarina: {l:"Estadio Deportivo", u:"https://www.estadiodeportivo.com/futbol/betis/movimientos-del-betis-delantera-aparece-tapado-negocia-venta-rodrigo-marina-20260730-543371.html"},
+  managingMadridFranGarca: {l:"Managing Madrid", u:"https://www.managingmadrid.com/109880/betis-real-madrid-fran-garcia-2026-news"}};
 
 const LINKMAP = {
-  "Fran García": ["managingmadrid-frangarcia", "teamtalk-rmdone", "realMadridofficialFranGarca"],
+  "Fran García": ["managingmadrid-frangarcia", "teamtalk-rmdone", "realMadridofficialFranGarca", "managingMadridFranGarca"],
   "Fábio Silva": ["fichajesnetFbioSilva"],
   "Ez Abde": ["fichajesnetEzAbde"],
   "Dani Ceballos": ["mundoBetisDaniCeballos"],
-  "Diego Conde": ["getSpanishFootballNewsDiegoConde"]};
+  "Diego Conde": ["getSpanishFootballNewsDiegoConde"],
+  "Franjo Ivanović": ["estadioDeportivoFranjoIvanovi"],
+  "Rodrigo Marina": ["estadioDeportivoRodrigoMarina"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
