@@ -1,0 +1,10 @@
+{
+  "_comment": "Transfer window dates used to decide whether a scheduled sync should spend research effort (live window / near a deadline) or just do a lightweight republish (off-season). Update summer_open/close and add winter dates each year -- see engine/check_window.py for how this is read.",
+  "windows": {
+    "Premier League":  { "nation": "England", "summer_open": "2026-06-15", "summer_close": "2026-08-31", "summer_deadline": "2026-08-31", "winter_open": "2027-01-01", "winter_close": "2027-02-02", "winter_deadline": "2027-02-02" },
+    "La Liga":         { "nation": "Spain",   "summer_open": "2026-07-01", "summer_close": "2026-09-01", "summer_deadline": "2026-09-01", "winter_open": "2027-01-01", "winter_close": "2027-02-02", "winter_deadline": "2027-02-02" },
+    "Serie A":         { "nation": "Italy",   "summer_open": "2026-06-29", "summer_close": "2026-09-01", "summer_deadline": "2026-09-01", "winter_open": "2027-01-01", "winter_close": "2027-02-02", "winter_deadline": "2027-02-02" },
+    "Bundesliga":      { "nation": "Germany", "summer_open": "2026-07-01", "summer_close": "2026-08-31", "summer_deadline": "2026-08-31", "winter_open": "2027-01-01", "winter_close": "2027-02-02", "winter_deadline": "2027-02-02" },
+    "Ligue 1":         { "nation": "France",  "summer_open": "2026-07-01", "summer_close": "2026-08-31", "summer_deadline": "2026-08-31", "winter_open": "2027-01-01", "winter_close": "2027-02-02", "winter_deadline": "2027-02-02" }
+  }
+}
