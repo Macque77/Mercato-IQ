@@ -5,18 +5,46 @@
 
 const LEAGUE = {
   name: "Süper Lig",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "Turkey",
+  stories_count: 4
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Mohamed Salah", prob: 46, bullshit: false,
+    club_origin: "trabzonspor", club_display_name: "Trabzonspor", direction: "in",
+    from: "Free agent (ex-Liverpool)", to: "Trabzonspor",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€34m total (2-yr deal)", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Darwin Nunez", prob: 28, bullshit: false,
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Al-Hilal", to: "Beşiktaş",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Dusan Vlahovic", prob: 12, bullshit: false,
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Juventus", to: "Beşiktaş",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Mauro Icardi", prob: 10, bullshit: false,
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Free agent (ex-Galatasaray)", to: "Beşiktaş",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"trabzonspor": 1, "besiktas": 3};
 
-const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 0, "badge": true, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 0, "badge": true, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "rizespor", "name": "Rizespor", "count": 0, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "samsunspor", "name": "Samsunspor", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}];
+const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 3, "badge": true, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 0, "badge": true, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "rizespor", "name": "Rizespor", "count": 0, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "samsunspor", "name": "Samsunspor", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 1, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T09:13:24.094681Z",
+  updated: "2026-08-04T10:32:37.950216Z",
   label: "League aggregation"
 };

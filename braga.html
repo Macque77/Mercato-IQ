@@ -824,29 +824,42 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_OUT = [
+  {name:"Lukas Hornicek", sub:"GK · Slovakia", club:"Newcastle United", fee:"€30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 3 Aug 2026: Braga's goalkeeper departs for the Premier League in a €30m deal."}
+];
+const INCOMING = [
+  {name:"Andrew", sub:"GK · Brazil", club:"Gil Vicente", pos:"GK", report:"3 Aug 2026", src:"Record / Bolanarede", tier:3, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"With Hornicek sold to Newcastle, Braga are reportedly eyeing Gil Vicente's in-form Brazilian goalkeeper as his successor."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
-const NEW = [];
+const NEW = [
+  {ar:"✦", t:"Braga bank €30m as goalkeeper Lukas Hornicek completes his move to Newcastle United, and immediately turn to Gil Vicente's Andrew as a possible successor."}
+];
 const IGNORE = [];
-const POSITIONS = [];
+const POSITIONS = [
+  {p:"Goalkeeper", w:30, x:"Hornicek's sale to Newcastle leaves an immediate vacancy; Gil Vicente's Andrew is the early name in the frame."}
+];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Braga Official", u:"#"}
+  recordHornicek: {l:"Record · Hornicek official", u:"https://www.record.pt/futebol/futebol-nacional/liga-betclic/sp--braga/detalhe/oficial-lukas-hornicek-deixa-sp-braga-e-ruma-ao-newcastle"},
+  recordAndrew: {l:"Record · Andrew", u:"https://www.record.pt/futebol/futebol-nacional/liga-betclic/sp--braga/detalhe/sucessao-de-hornicek-andrew-no-radar-do-sp-braga"}
 };
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Andrew": ["recordAndrew"]
+};
 const WL_LINKMAP = {};
 
 const PROSE = {
-  heroH2: `SC Braga · 2026/27 Season`,
-  heroLede: `Transfer window active. SC Braga preparing squad for next season.`,
+  heroH2: `Braga bank €30m on Hornicek and turn straight to a replacement`,
+  heroLede: `SC Braga have confirmed the sale of goalkeeper <b>Lukas Hornicek</b> to Newcastle United for €30m, and have wasted little time identifying a successor - Gil Vicente's Brazilian goalkeeper <b>Andrew</b> is the early name being linked as his replacement.`,
   stats: `<div class="stat"><div class="l">Window Status</div><div class="v">Active</div></div>`,
+  incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
+  outgoingSub: `No further departures reported as advanced this window.`,
   spendIn: { v: `TBD` },
-  spendOut: { v: `TBD` },
+  spendOut: { v: `€30m`, x: `Hornicek's confirmed sale to Newcastle United.` },
   methodLegend: ``
 };
 /*==ENDDATA==*/

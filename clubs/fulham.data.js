@@ -74,7 +74,7 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [
-  {name:"Marco Silva", sub:"Head coach · departed", to:"Joined Benfica", fee:"Free (deal expired)", free:true, status:"exit", statusTxt:"DEPARTED",
+  {name:"Marco Silva", sub:"Head coach · departed", to:"Joined Benfica", club:"Joined Benfica", fee:"Free (deal expired)", free:true, status:"exit", statusTxt:"DEPARTED",
    note:"Left after five years to replace Mourinho at Benfica; his Fulham deal expired. A successor is not yet confirmed. Flagged so no planning item treats him as the current coach."},
 ];
 

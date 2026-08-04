@@ -57,11 +57,11 @@ const CONFIRMED_IN = [
    note:"Confirmed 3 August per multiple outlets: a club-record midfield signing that reflects Maresca's priority to build a ball-progressing, press-resistant core at the base. Anderson becomes the first major arrival of Maresca's rebuild, paired with ongoing work to refresh an ageing senior spine (Silva, Stones, Ederson). A technically excellent young English midfielder who has flourished under Nuno at Forest; the fee underlines City's commitment to reset central midfield immediately."},
 ];
 const CONFIRMED_OUT = [
-  {name:"Bernardo Silva", sub:"31 · CM/W", to:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
+  {name:"Bernardo Silva", sub:"31 · CM/W", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Reported among the senior departures as the squad refreshes under the new regime; an influential but ageing creator moving on."},
-  {name:"John Stones", sub:"CB", to:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
+  {name:"John Stones", sub:"CB", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Injury-hit defender named among those leaving this summer as City reshape the spine."},
-  {name:"Ederson", sub:"GK", to:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
+  {name:"Ederson", sub:"GK", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Long-serving goalkeeper reported on his way out, opening a succession question between the posts."},
 ];
 

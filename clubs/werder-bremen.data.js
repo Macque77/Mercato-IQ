@@ -46,8 +46,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Mio Backhaus", sub:"20 · GK · Germany", to:"permanent to SC Freiburg", fee:"~€12m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young goalkeeper sold to a fellow Bundesliga side, prompting the Schlager signing."},
-  {name:"Leonardo Bittencourt", sub:"32 · AM · Germany", to:"free to Energie Cottbus", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced attacking midfielder drops down to 3. Liga."}
+  {name:"Mio Backhaus", sub:"20 · GK · Germany", to:"permanent to SC Freiburg", club:"SC Freiburg", fee:"~€12m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young goalkeeper sold to a fellow Bundesliga side, prompting the Schlager signing."},
+  {name:"Leonardo Bittencourt", sub:"32 · AM · Germany", to:"free to Energie Cottbus", club:"Energie Cottbus", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced attacking midfielder drops down to 3. Liga."}
 ];
 
 const INCOMING = [];

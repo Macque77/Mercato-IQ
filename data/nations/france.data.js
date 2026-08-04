@@ -6,7 +6,7 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 39
+  stories_count: 38
 };
 
 const TOP_STORIES = [  {
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 39, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 38, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 39}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 38}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T09:13:24.086477Z",
+  updated: "2026-08-04T10:32:37.941684Z",
   label: "Nation aggregation"
 };

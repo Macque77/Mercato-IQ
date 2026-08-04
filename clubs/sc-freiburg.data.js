@@ -37,10 +37,10 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Johan Manzambi", sub:"19 · CM/W · Switzerland", to:"permanent to Aston Villa", fee:"£59.5m (~€60m, club-record)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed late Jul via Fabrizio Romano and Freiburg's official channels: a club-record sale for the highly-rated Swiss talent, beating out Newcastle's interest. A major statement fee for a club known for developing and selling young players."},
-  {name:"Junior Adamu", sub:"25 · ST · Austria", to:"permanent to FC Schalke 04", fee:"~€800k", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 11 Jun: Austrian forward, who joined in 2023, transfers to newly-promoted Schalke following a loan at Celtic. Hartenbach: 'Junior is a wonderful person we'll remember fondly.'"},
-  {name:"Daniel-Kofi Kyereh", sub:"27 · AM · Ghana", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; attacking midfielder departs on a free transfer."},
-  {name:"Nicolas Höfler", sub:"34 · DM · Germany", to:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving club captain retires from professional football."}
+  {name:"Johan Manzambi", sub:"19 · CM/W · Switzerland", to:"permanent to Aston Villa", club:"Aston Villa", fee:"£59.5m (~€60m, club-record)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed late Jul via Fabrizio Romano and Freiburg's official channels: a club-record sale for the highly-rated Swiss talent, beating out Newcastle's interest. A major statement fee for a club known for developing and selling young players."},
+  {name:"Junior Adamu", sub:"25 · ST · Austria", to:"permanent to FC Schalke 04", club:"FC Schalke 04", fee:"~€800k", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 11 Jun: Austrian forward, who joined in 2023, transfers to newly-promoted Schalke following a loan at Celtic. Hartenbach: 'Junior is a wonderful person we'll remember fondly.'"},
+  {name:"Daniel-Kofi Kyereh", sub:"27 · AM · Ghana", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; attacking midfielder departs on a free transfer."},
+  {name:"Nicolas Höfler", sub:"34 · DM · Germany", to:"retired", club:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving club captain retires from professional football."}
 ];
 
 const INCOMING = [];

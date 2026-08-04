@@ -41,11 +41,11 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Karim Adeyemi", sub:"24 · W · Germany", to:"permanent to FC Barcelona", fee:"€22m + €7m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Presented at Barcelona 21 Jul on a deal through 2031. A significant departure of first-team pace and directness out wide, prompting the Karetsas pursuit."},
-  {name:"Julian Brandt", sub:"30 · AM/CM · Germany", to:"free to Ajax", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; turned down Leeds United and Real Sociedad to sign a three-year deal in Amsterdam, confirmed early Aug. Sporting director Jordi Cruyff said Ajax 'had been working on the transfer for several months.'"},
-  {name:"Cole Campbell", sub:"18 · CM · England", to:"permanent to SV Elversberg", fee:"~€6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy midfielder sold to the newly-promoted side."},
-  {name:"Salih Özcan", sub:"28 · DM · Turkey/Germany", to:"free to Besiktas", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; defensive midfielder departs on a free transfer."},
-  {name:"Niklas Süle", sub:"30 · CB · Germany", to:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back retires from professional football."}
+  {name:"Karim Adeyemi", sub:"24 · W · Germany", to:"permanent to FC Barcelona", club:"FC Barcelona", fee:"€22m + €7m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Presented at Barcelona 21 Jul on a deal through 2031. A significant departure of first-team pace and directness out wide, prompting the Karetsas pursuit."},
+  {name:"Julian Brandt", sub:"30 · AM/CM · Germany", to:"free to Ajax", club:"Ajax", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; turned down Leeds United and Real Sociedad to sign a three-year deal in Amsterdam, confirmed early Aug. Sporting director Jordi Cruyff said Ajax 'had been working on the transfer for several months.'"},
+  {name:"Cole Campbell", sub:"18 · CM · England", to:"permanent to SV Elversberg", club:"SV Elversberg", fee:"~€6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy midfielder sold to the newly-promoted side."},
+  {name:"Salih Özcan", sub:"28 · DM · Turkey/Germany", to:"free to Besiktas", club:"Besiktas", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; defensive midfielder departs on a free transfer."},
+  {name:"Niklas Süle", sub:"30 · CB · Germany", to:"retired", club:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back retires from professional football."}
 ];
 
 const INCOMING = [

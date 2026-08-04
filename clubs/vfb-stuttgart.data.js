@@ -37,8 +37,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Pascal Stenzel", sub:"29 · RB · Germany", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; right-back departs as a free agent."},
-  {name:"Noah Darvich", sub:"20 · CM · Germany", to:"loan to SV Elversberg", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young midfielder loaned out for first-team experience at the newly-promoted side."}
+  {name:"Pascal Stenzel", sub:"29 · RB · Germany", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; right-back departs as a free agent."},
+  {name:"Noah Darvich", sub:"20 · CM · Germany", to:"loan to SV Elversberg", club:"SV Elversberg", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young midfielder loaned out for first-team experience at the newly-promoted side."}
 ];
 
 const INCOMING = [];

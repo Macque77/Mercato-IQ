@@ -17,6 +17,6 @@ const LEAGUES_LIST = [{"slug": "your-league", "name": "Your League", "count": 0}
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T09:13:24.088592Z",
+  updated: "2026-08-04T10:32:37.943713Z",
   label: "Nation aggregation"
 };

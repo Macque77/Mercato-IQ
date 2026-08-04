@@ -40,9 +40,9 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Jakub Kamiński", sub:"23 · W · Poland", to:"permanent to SL Benfica", fee:"~€17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Polish winger's sale is Köln's largest confirmed fee banked this summer."},
-  {name:"Florian Kainz", sub:"33 · AM · Austria", to:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving Austrian playmaker retires from professional football."},
-  {name:"Dominique Heintz", sub:"32 · CB · Germany", to:"free to Fortuna Düsseldorf", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced centre-back departs on a free transfer."}
+  {name:"Jakub Kamiński", sub:"23 · W · Poland", to:"permanent to SL Benfica", club:"SL Benfica", fee:"~€17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Polish winger's sale is Köln's largest confirmed fee banked this summer."},
+  {name:"Florian Kainz", sub:"33 · AM · Austria", to:"retired", club:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving Austrian playmaker retires from professional football."},
+  {name:"Dominique Heintz", sub:"32 · CB · Germany", to:"free to Fortuna Düsseldorf", club:"Fortuna Düsseldorf", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced centre-back departs on a free transfer."}
 ];
 
 const INCOMING = [

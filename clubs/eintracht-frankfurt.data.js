@@ -41,9 +41,9 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Nathaniel Brown", sub:"22 · LB · Germany", to:"permanent to Bayern Munich", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul: one of the Bundesliga's most sought-after young full-backs departs for the champions, praised publicly by Antonio Rüdiger ahead of the move."},
-  {name:"Rasmus Kristensen", sub:"29 · RB · Denmark", to:"permanent to FC Midtjylland", fee:"~€6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Danish right-back departs for a return to Midtjylland."},
-  {name:"Mahmoud Dahoud", sub:"29 · CM · Germany", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder leaves as a free agent."}
+  {name:"Nathaniel Brown", sub:"22 · LB · Germany", to:"permanent to Bayern Munich", club:"Bayern Munich", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul: one of the Bundesliga's most sought-after young full-backs departs for the champions, praised publicly by Antonio Rüdiger ahead of the move."},
+  {name:"Rasmus Kristensen", sub:"29 · RB · Denmark", to:"permanent to FC Midtjylland", club:"FC Midtjylland", fee:"~€6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Danish right-back departs for a return to Midtjylland."},
+  {name:"Mahmoud Dahoud", sub:"29 · CM · Germany", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder leaves as a free agent."}
 ];
 
 const INCOMING = [

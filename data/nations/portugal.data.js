@@ -6,7 +6,7 @@
 const NATION = {
   name: "Portugal",
   flag_emoji: "🇵🇹",
-  stories_count: 3
+  stories_count: 7
 };
 
 const TOP_STORIES = [  {
@@ -24,20 +24,48 @@ const TOP_STORIES = [  {
     value: "€20m", updated: "2026-08-03T14:30:00Z", league: "Liga Portugal"
   },
   {
+    name: "Daniel Braganca",prob: 40, bullshit: false,
+    club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "out",
+    from: "Sporting CP", to: "Olympiacos",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€10m bid tabled", updated: "2026-07-29T00:00:00Z", league: "Liga Portugal"
+  },
+  {
     name: "Sérgio Conceição",prob: 22, bullshit: false,
     club_origin: "sl-benfica", club_display_name: "SL Benfica", direction: "in",
     from: "Free agent", to: "SL Benfica",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z", league: "Liga Portugal"
   },
+  {
+    name: "Morten Hjulmand",prob: 15, bullshit: false,
+    club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "out",
+    from: "Sporting CP", to: "Real Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "No formal bid reported", updated: "2026-07-29T00:00:00Z", league: "Liga Portugal"
+  },
+  {
+    name: "Andrew",prob: 25, bullshit: false,
+    club_origin: "braga", club_display_name: "SC Braga", direction: "in",
+    from: "Gil Vicente", to: "SC Braga",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Liga Portugal"
+  },
+  {
+    name: "Yeremay Hernandez",prob: 20, bullshit: false,
+    club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "in",
+    from: "Deportivo La Coruna", to: "Sporting CP",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (two bids already rejected)", updated: "2026-07-29T00:00:00Z", league: "Liga Portugal"
+  },
 ];
 
-const BY_LEAGUE = {"Liga Portugal": 3, "Liga Portugal 2": 0};
+const BY_LEAGUE = {"Liga Portugal": 7, "Liga Portugal 2": 0};
 
-const LEAGUES_LIST = [{"slug": "liga-portugal", "name": "Liga Portugal", "count": 3}, {"slug": "liga-portugal-2", "name": "Liga Portugal 2", "count": 0}];
+const LEAGUES_LIST = [{"slug": "liga-portugal", "name": "Liga Portugal", "count": 7}, {"slug": "liga-portugal-2", "name": "Liga Portugal 2", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T09:13:24.087462Z",
+  updated: "2026-08-04T10:32:37.942626Z",
   label: "Nation aggregation"
 };

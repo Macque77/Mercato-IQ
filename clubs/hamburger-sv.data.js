@@ -37,8 +37,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Ransford Königsdörffer", sub:"24 · W · Germany", to:"free to 1. FSV Mainz 05", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; winger departs on a free transfer for a fellow Bundesliga side."},
-  {name:"Robert Glatzel", sub:"32 · ST · Germany", to:"permanent to VfL Wolfsburg", fee:"~€1.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran striker and club's all-time modern-era top scorer departs for Wolfsburg."}
+  {name:"Ransford Königsdörffer", sub:"24 · W · Germany", to:"free to 1. FSV Mainz 05", club:"1. FSV Mainz 05", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; winger departs on a free transfer for a fellow Bundesliga side."},
+  {name:"Robert Glatzel", sub:"32 · ST · Germany", to:"permanent to VfL Wolfsburg", club:"VfL Wolfsburg", fee:"~€1.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran striker and club's all-time modern-era top scorer departs for Wolfsburg."}
 ];
 
 const INCOMING = [];

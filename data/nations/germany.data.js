@@ -6,7 +6,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 11
+  stories_count: 13
 };
 
 const TOP_STORIES = [  {
@@ -17,7 +17,7 @@ const TOP_STORIES = [  {
     value: "Loan (no fee)", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
-    name: "Yan Diomandé",prob: 72, bullshit: false,
+    name: "Yan Diomandé",prob: 62, bullshit: false,
     club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "out",
     from: "RB Leipzig", to: "Real Madrid",
     tier: 1, coverage: 1, coverage_trend: 'flat',
@@ -80,20 +80,34 @@ const TOP_STORIES = [  {
     value: "€40m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
+    name: "Antonio Nusa",prob: 30, bullshit: false,
+    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "out",
+    from: "RB Leipzig", to: "AS Roma",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€60m demanded", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
+  {
     name: "Ermedin Demirović",prob: 22, bullshit: false,
     club_origin: "vfb-stuttgart", club_display_name: "VfB Stuttgart", direction: "in",
     from: "Unspecified", to: "VfB Stuttgart",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
+  {
+    name: "Assan Ouedraogo",prob: 12, bullshit: false,
+    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "out",
+    from: "RB Leipzig", to: "Real Madrid / Man Utd / Chelsea",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 10, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
+const BY_LEAGUE = {"Bundesliga": 12, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 10}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 12}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T09:13:24.086712Z",
+  updated: "2026-08-04T10:32:37.941892Z",
   label: "Nation aggregation"
 };

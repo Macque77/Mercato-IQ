@@ -37,9 +37,9 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Nikolas Veratschnig", sub:"20 · W · Austria", to:"permanent to RB Salzburg", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young Austrian winger's sale is Mainz's largest confirmed fee banked this summer."},
-  {name:"Daniel Batz", sub:"32 · GK · Germany", to:"free to Borussia Mönchengladbach", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced goalkeeper moves to Gladbach as depth."},
-  {name:"Maxim Leitsch", sub:"27 · CB", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; centre-back departs as a free agent."}
+  {name:"Nikolas Veratschnig", sub:"20 · W · Austria", to:"permanent to RB Salzburg", club:"RB Salzburg", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young Austrian winger's sale is Mainz's largest confirmed fee banked this summer."},
+  {name:"Daniel Batz", sub:"32 · GK · Germany", to:"free to Borussia Mönchengladbach", club:"Borussia Mönchengladbach", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced goalkeeper moves to Gladbach as depth."},
+  {name:"Maxim Leitsch", sub:"27 · CB", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; centre-back departs as a free agent."}
 ];
 
 const INCOMING = [

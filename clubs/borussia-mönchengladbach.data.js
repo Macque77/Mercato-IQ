@@ -37,9 +37,9 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Rocco Reitz", sub:"24 · CM · Germany", to:"permanent to RB Leipzig", fee:"~€20-21m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club captain and academy graduate departs for a Bundesliga rival in a deal agreed in principle back in March and completed this summer - a significant loss for Polanski's midfield."},
-  {name:"Marvin Friedrich", sub:"30 · CB · Germany", to:"free to 1. FC Union Berlin", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back returns to a former club on a free transfer after his Gladbach contract expired."},
-  {name:"Jonas Omlin", sub:"32 · GK · Switzerland", to:"free to FC Basel", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving goalkeeper leaves on a free transfer, returning to Switzerland."}
+  {name:"Rocco Reitz", sub:"24 · CM · Germany", to:"permanent to RB Leipzig", club:"RB Leipzig", fee:"~€20-21m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club captain and academy graduate departs for a Bundesliga rival in a deal agreed in principle back in March and completed this summer - a significant loss for Polanski's midfield."},
+  {name:"Marvin Friedrich", sub:"30 · CB · Germany", to:"free to 1. FC Union Berlin", club:"1. FC Union Berlin", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back returns to a former club on a free transfer after his Gladbach contract expired."},
+  {name:"Jonas Omlin", sub:"32 · GK · Switzerland", to:"free to FC Basel", club:"FC Basel", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving goalkeeper leaves on a free transfer, returning to Switzerland."}
 ];
 
 const INCOMING = [];

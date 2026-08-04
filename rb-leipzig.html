@@ -829,7 +829,7 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Xaver Schlager", sub:"27 · CM · Austria", to:"free to Nottingham Forest", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Austrian international midfielder departs for the Premier League on a free transfer."}
+  {name:"Xaver Schlager", sub:"27 · CM · Austria", to:"free to Nottingham Forest", club:"Nottingham Forest", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Austrian international midfielder departs for the Premier League on a free transfer."}
 ];
 
 const INCOMING = [
@@ -837,8 +837,10 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Yan Diomandé", sub:"19 · W · Ivory Coast", club:"Real Madrid", pos:"W", report:"27 Jul 2026", src:"BBC Sport / Al Jazeera", tier:1, fee:"Undisclosed (fee TBC)", truth:80, prob:72, light:"g", trend:"up", note:"BBC reports personal terms agreed, modelled on a Jude Bellingham-style performance-incentivised contract, after both PSG (£102.5m bid rejected) and Liverpool withdrew from the race. Diomandé was Bundesliga's best young player in 2025/26 and impressed for Ivory Coast at the 2026 World Cup - fee between the two clubs is still to be finalised."},
-  {name:"Serhou Guirassy", sub:"24 · ST · Guinea", club:"AS Roma", pos:"ST", report:"31 Jul 2026", src:"Matteo Moretto / Fabrizio Romano (Sky Italia)", tier:2, fee:"~€30m", truth:58, prob:40, light:"y", trend:"up", note:"Romano and Moretto report Roma in advanced talks for the striker; nothing finalised yet but discussions have progressed."}
+  {name:"Yan Diomandé", sub:"19 · W · Ivory Coast", club:"Real Madrid", pos:"W", report:"27 Jul 2026", src:"BBC Sport / Al Jazeera", tier:1, fee:"Undisclosed (fee TBC)", truth:72, prob:62, light:"g", trend:"flat", note:"BBC reports personal terms agreed, modelled on a Jude Bellingham-style performance-incentivised contract, after both PSG (£102.5m bid rejected) and Liverpool withdrew from the race. Diomandé was Bundesliga's best young player in 2025/26 and impressed for Ivory Coast at the 2026 World Cup - fee between the two clubs is still to be finalised. Leipzig's own sporting director has since publicly disputed Fabrizio Romano's 'Here We Go' report, calling it premature - a live source-vs-club standoff worth tracking."},
+  {name:"Serhou Guirassy", sub:"24 · ST · Guinea", club:"AS Roma", pos:"ST", report:"31 Jul 2026", src:"Matteo Moretto / Fabrizio Romano (Sky Italia)", tier:2, fee:"~€30m", truth:58, prob:40, light:"y", trend:"up", note:"Romano and Moretto report Roma in advanced talks for the striker; nothing finalised yet but discussions have progressed."},
+  {name:"Antonio Nusa", sub:"21 · W · Norway", club:"AS Roma", pos:"W", report:"29 Jul 2026", src:"Sky (Germany/Italy)", tier:2, fee:"€60m demanded", truth:50, prob:30, light:"y", trend:"flat", note:"Roma opened talks after missing out on Crysencio Summerville (to Al-Hilal); Leipzig are demanding around €60m and have so far resisted a sale."},
+  {name:"Assan Ouedraogo", sub:"19 · MF · Germany", club:"Real Madrid / Man Utd / Chelsea", pos:"MF", report:"Jul 2026", src:"TeamTalk", tier:3, fee:"Undisclosed", truth:30, prob:12, light:"r", trend:"flat", note:"Real Madrid reportedly made informal contact with the midfielder's representatives, with Manchester United and Chelsea also credited with interest - an ongoing, lower-confidence speculation thread rather than a fresh breaking story."}
 ];
 
 const RISERS = [
@@ -866,13 +868,17 @@ const HUB = {
   aljazeera: {l:"Al Jazeera", u:"https://www.aljazeera.com/sports/2026/7/27/yan-diomande-real-madrid-agree-terms-transfer-deal-football-leipzig"},
   gfn: {l:"Get German Football News", u:"https://www.getfootballnewsgermany.com/2026/rb-leipzig-rocco-reitz/"},
   rbl: {l:"RB Leipzig Official", u:"https://rbleipzig.com/en/news/rocco-reitz-transfer-new-signing-summer-gladbach-rb-leipzig"},
-  yahoo: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/hoffenheim-striker-fisnik-asllani-transfer-173500596.html"}
+  yahoo: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/hoffenheim-striker-fisnik-asllani-transfer-173500596.html"},
+  getfootballnewsitalyNusa: {l:"Get Football News Italy · Nusa", u:"https://www.getfootballnewsitaly.com/2026/roma-open-talks-for-antonio-nusa-leipzig-demand-e60-million/"},
+  teamtalkOuedraogo: {l:"TeamTalk · Ouedraogo", u:"https://www.teamtalk.com/news/real-madrid-want-rb-leipzig-midfielder-assan-ouedraogo-the-new-jude-bellingham"}
 };
 
 const LINKMAP = {
   "Rocco Reitz": ["gfn","rbl"],
   "Yan Diomandé": ["aljazeera"],
-  "Fisnik Asllani": ["yahoo"]
+  "Fisnik Asllani": ["yahoo"],
+  "Antonio Nusa": ["getfootballnewsitalyNusa"],
+  "Assan Ouedraogo": ["teamtalkOuedraogo"]
 };
 const WL_LINKMAP = {
   "Yan Diomandé": ["aljazeera"],

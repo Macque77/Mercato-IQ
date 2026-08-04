@@ -53,10 +53,10 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Noel Aseko Nkili", sub:"20 · CM · Germany/Cameroon", to:"permanent to Eintracht Frankfurt", fee:"~€12-13m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul, after a loan at Hannover 96. Academy midfielder cashes in for Bayern as Frankfurt's second confirmed midfield addition of the summer."},
-  {name:"Alexander Nübel", sub:"29 · GK · Germany", to:"permanent to Besiktas", fee:"~€6.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time backup goalkeeper behind Neuer/Urbig finally departs permanently."},
-  {name:"Leon Goretzka", sub:"31 · CM · Germany", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; the long-serving midfielder leaves Bayern as a free agent after eight seasons."},
-  {name:"Raphael Guerreiro", sub:"32 · LB/CM · Portugal", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; versatile Portuguese full-back/midfielder departs on a free."}
+  {name:"Noel Aseko Nkili", sub:"20 · CM · Germany/Cameroon", to:"permanent to Eintracht Frankfurt", club:"Eintracht Frankfurt", fee:"~€12-13m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul, after a loan at Hannover 96. Academy midfielder cashes in for Bayern as Frankfurt's second confirmed midfield addition of the summer."},
+  {name:"Alexander Nübel", sub:"29 · GK · Germany", to:"permanent to Besiktas", club:"Besiktas", fee:"~€6.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time backup goalkeeper behind Neuer/Urbig finally departs permanently."},
+  {name:"Leon Goretzka", sub:"31 · CM · Germany", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; the long-serving midfielder leaves Bayern as a free agent after eight seasons."},
+  {name:"Raphael Guerreiro", sub:"32 · LB/CM · Portugal", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; versatile Portuguese full-back/midfielder departs on a free."}
 ];
 
 const INCOMING = [];

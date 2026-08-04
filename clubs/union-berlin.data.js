@@ -37,9 +37,9 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Danilho Doekhi", sub:"27 · CB · Netherlands", to:"free to Lazio", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 14 Jul: long-serving Dutch centre-back and former club captain leaves Union for Serie A on a free transfer after his contract expired."},
-  {name:"Diogo Leite", sub:"27 · CB · Portugal", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Portuguese centre-back departs as a free agent."},
-  {name:"Alex Kral", sub:"25 · DM · Czech Republic", to:"free to FC København", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Czech midfielder moves to Denmark on a free transfer."}
+  {name:"Danilho Doekhi", sub:"27 · CB · Netherlands", to:"free to Lazio", club:"Lazio", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 14 Jul: long-serving Dutch centre-back and former club captain leaves Union for Serie A on a free transfer after his contract expired."},
+  {name:"Diogo Leite", sub:"27 · CB · Portugal", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Portuguese centre-back departs as a free agent."},
+  {name:"Alex Kral", sub:"25 · DM · Czech Republic", to:"free to FC København", club:"FC København", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Czech midfielder moves to Denmark on a free transfer."}
 ];
 
 const INCOMING = [];

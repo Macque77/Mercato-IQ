@@ -51,13 +51,13 @@ const CONFIRMED_IN = [
    note:"Done (25 Jun): a Scotland U16 international midfielder signed through 2029, beating reported interest from Southampton, Crystal Palace, Tottenham, Celtic and Rangers. A pure academy bet, but the calibre of the chasing pack for a 16-year-old says something about how the recruitment department is casting its net this window."},
 ];
 const CONFIRMED_OUT = [
-  {name:"Elliot Anderson", sub:"23 · CM · England", to:"Manchester City", fee:"£116m", free:false, status:"exit", statusTxt:"CLUB-RECORD SALE", isNew:true,
+  {name:"Elliot Anderson", sub:"23 · CM · England", to:"Manchester City", club:"Manchester City", fee:"£116m", free:false, status:"exit", statusTxt:"CLUB-RECORD SALE", isNew:true,
    note:"Done (2 Jul): a club-record sale that shattered expectations - City met Forest's number in full, with Anderson completing a medical in Kansas during England's World Cup campaign before the move was announced. This single fee is now funding the bulk of Glasner's rebuild and is the reason Forest can chase Diomande, Bergvall and Read simultaneously without needing to sell anyone else."},
-  {name:"David Carmo", sub:"25 · CB · Portugal", to:"Olympiacos (permanent)", fee:"Undisclosed", free:false, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"David Carmo", sub:"25 · CB · Portugal", to:"Olympiacos (permanent)", club:"Olympiacos (permanent)", fee:"Undisclosed", free:false, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Done (~1 Jul): the centre-back, who spent last season out on loan at Olympiacos, was made permanent - a straightforward move within Marinakis's two-club ownership pipeline rather than an open-market sale."},
-  {name:"Jota Silva", sub:"24 · FW · Portugal", to:"Olympiacos", fee:"Undisclosed", free:false, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Jota Silva", sub:"24 · FW · Portugal", to:"Olympiacos", club:"Olympiacos", fee:"Undisclosed", free:false, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Done (9 Jul): a second player moving down the same Marinakis-owned pipeline to Piraeus, freeing an attacking squad slot as Forest reshapes the forward line around Delap-type targets."},
-  {name:"Angus Gunn, Stefan Ortega & Willy Boly", sub:"GK / GK / CB", to:"Free agents (contracts expired)", fee:"FREE", free:true, status:"exit", statusTxt:"RETAINED LIST - OUT",
+  {name:"Angus Gunn, Stefan Ortega & Willy Boly", sub:"GK / GK / CB", to:"Free agents (contracts expired)", club:"Free agents (contracts expired)", fee:"FREE", free:true, status:"exit", statusTxt:"RETAINED LIST - OUT",
    note:"Confirmed on the retained list (1 Jul): both senior goalkeepers who covered for Matz Sels leave on Bosmans, alongside veteran centre-back Willy Boly. It leaves only the 34-year-old Sels and young John Victor as senior keepers on the books - the single biggest hole nobody has yet moved to fill."},
 ];
 

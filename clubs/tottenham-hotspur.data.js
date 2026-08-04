@@ -45,15 +45,15 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Luka Vuskovic", sub:"19 · CB · Croatia", to:"permanent to Brighton & Hove Albion", fee:"£46m (£50m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Luka Vuskovic", sub:"19 · CB · Croatia", to:"permanent to Brighton & Hove Albion", club:"Brighton & Hove Albion", fee:"£46m (£50m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"The single biggest outgoing fee of the window, funding a large chunk of the defensive rebuild - a striking reversal given Vuskovic was signed as a long-term captaincy prospect barely 18 months earlier."},
-  {name:"Yves Bissouma", sub:"29 · DM · Mali", to:"released, free transfer", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Yves Bissouma", sub:"29 · DM · Mali", to:"released, free transfer", club:"released, free transfer", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Let go on a free at contract expiry, with Tonali and Fernandes' arrivals rendering him surplus to De Zerbi's midfield plans."},
-  {name:"Radu Dragusin", sub:"24 · CB · Romania", to:"loan (permanent on conditions) to Fiorentina", fee:"Loan, conditional permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Radu Dragusin", sub:"24 · CB · Romania", to:"loan (permanent on conditions) to Fiorentina", club:"Fiorentina", fee:"Loan, conditional permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"A season-long loan with a permanent trigger, easing Dragusin out of a centre-back pool that now includes van Hecke, Senesi, Porro-adjacent cover and (for now) Romero."},
-  {name:"Tynan Thompson", sub:"18 · LW · England", to:"permanent to Manchester United", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Tynan Thompson", sub:"18 · LW · England", to:"permanent to Manchester United", club:"Manchester United", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"A promising academy sale to a Premier League rival - modest business by this summer's standards but a clean, undisputed fee for a fringe prospect."},
-  {name:"Will Lankshear", sub:"21 · ST · England", to:"permanent to Middlesbrough", fee:"£10m (£20m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Will Lankshear", sub:"21 · ST · England", to:"permanent to Middlesbrough", club:"Middlesbrough", fee:"£10m (£20m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Lankshear drops into the Championship for regular football, with a healthy add-on structure protecting Spurs' upside if he develops into a Premier League-standard striker."},
 ];
 

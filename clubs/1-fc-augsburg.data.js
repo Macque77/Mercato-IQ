@@ -36,8 +36,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Cedric Zesiger", sub:"27 · CB · Switzerland", to:"permanent to BSC Young Boys", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swiss centre-back returns to his homeland, Augsburg's largest confirmed sale of the summer."},
-  {name:"Elvis Rexhbecaj", sub:"28 · CM", to:"free to VfL Wolfsburg", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder departs on a free transfer."}
+  {name:"Cedric Zesiger", sub:"27 · CB · Switzerland", to:"permanent to BSC Young Boys", club:"BSC Young Boys", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swiss centre-back returns to his homeland, Augsburg's largest confirmed sale of the summer."},
+  {name:"Elvis Rexhbecaj", sub:"28 · CM", to:"free to VfL Wolfsburg", club:"VfL Wolfsburg", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder departs on a free transfer."}
 ];
 
 const INCOMING = [];

@@ -75,7 +75,7 @@ const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , update
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [
-  {name:"Oliver Glasner", sub:"Manager · departed", to:"Left as deal expired", fee:"n/a", free:true, status:"exit", statusTxt:"DEPARTED",
+  {name:"Oliver Glasner", sub:"Manager · departed", to:"Left as deal expired", club:"Left as deal expired", fee:"n/a", free:true, status:"exit", statusTxt:"DEPARTED",
    note:"The club's greatest modern manager left as planned after winning the Conference League; his contract expired on 30 June. A successor is not yet confirmed. Flagged so no planning item treats him as the current coach."},
 
 ];

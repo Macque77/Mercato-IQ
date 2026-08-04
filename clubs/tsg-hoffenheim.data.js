@@ -37,11 +37,11 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Bazoumana Touré", sub:"20 · W · Ivory Coast", to:"permanent to Newcastle United", fee:"£42m (~€50m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 5 Jul: a club-record sale for the Ivorian winger, with Hoffenheim confirming the record fee publicly. Daghim's arrival directly replaces him."},
-  {name:"Grischa Prömel", sub:"31 · CM · Germany", to:"free to VfB Stuttgart", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced midfielder moves on a free transfer."},
-  {name:"Kevin Akpoguma", sub:"30 · CB", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; long-serving centre-back departs on a free."},
-  {name:"Ihlas Bebou", sub:"30 · W/ST · Togo", to:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; attacker leaves as a free agent after several injury-hit seasons."},
-  {name:"Hennes Behrens", sub:"20 · CB", to:"permanent to FC Augsburg", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young centre-back sold to a fellow Bundesliga side."}
+  {name:"Bazoumana Touré", sub:"20 · W · Ivory Coast", to:"permanent to Newcastle United", club:"Newcastle United", fee:"£42m (~€50m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 5 Jul: a club-record sale for the Ivorian winger, with Hoffenheim confirming the record fee publicly. Daghim's arrival directly replaces him."},
+  {name:"Grischa Prömel", sub:"31 · CM · Germany", to:"free to VfB Stuttgart", club:"VfB Stuttgart", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; experienced midfielder moves on a free transfer."},
+  {name:"Kevin Akpoguma", sub:"30 · CB", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; long-serving centre-back departs on a free."},
+  {name:"Ihlas Bebou", sub:"30 · W/ST · Togo", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; attacker leaves as a free agent after several injury-hit seasons."},
+  {name:"Hennes Behrens", sub:"20 · CB", to:"permanent to FC Augsburg", club:"FC Augsburg", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young centre-back sold to a fellow Bundesliga side."}
 ];
 
 const INCOMING = [];

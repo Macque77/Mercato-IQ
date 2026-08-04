@@ -836,11 +836,14 @@ const INCOMING = [
   {name:"Aaron Ramsdale", sub:"28 · GK · England", club:"Southampton", pos:"GK", report:"14 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Reportedly pushed for by Torino, but appears to be the least advanced of the club's three goalkeeper targets given Perri's more developed situation."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Gvidas Gineitis", sub:"22 · CM · Lithuania", club:"Celtic", pos:"CM", report:"2 Aug 2026", src:"Nicolo Schira / FootballTransfers", tier:2, fee:"~€14-15m", truth:58, prob:42, light:"y", trend:"up", note:"Schira reports Celtic preparing an improved offer for the midfielder, which would be a club-record Celtic signing; Torino are said to value him at around €15m."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Lucas Perri pursuit advances</b>: goalkeeper move described as 'closing in', with Leeds' own replacement search the only holdup."},
-  {ar:"⬆", t:"<b>Cyril Ngonge talks progress</b>: winger has already approved the move and skipped Napoli training."}
+  {ar:"⬆", t:"<b>Cyril Ngonge talks progress</b>: winger has already approved the move and skipped Napoli training."},
+  {ar:"⬆", t:"<b>Gvidas Gineitis linked with Celtic exit</b>: Scottish champions reportedly preparing an improved, club-record bid for the midfielder."}
 ];
 
 const FALLERS = [];
@@ -859,12 +862,14 @@ const POSITIONS = [
 
 const WATCHLIST = [
   {name:"Lucas Perri", club:"Leeds United", pos:"GK", dir:"in", age:"~10 days", tier:2, note:"Described as closing in; only Leeds' own goalkeeper business is delaying the medical."},
-  {name:"Cyril Ngonge", club:"Napoli", pos:"W", dir:"in", age:"~3 weeks", tier:2, note:"Player has approved the move and skipped Napoli's pre-season training."}
+  {name:"Cyril Ngonge", club:"Napoli", pos:"W", dir:"in", age:"~3 weeks", tier:2, note:"Player has approved the move and skipped Napoli's pre-season training."},
+  {name:"Gvidas Gineitis", club:"Celtic", pos:"CM", dir:"out", age:"~2 days", tier:2, note:"Celtic reportedly preparing an improved, club-record bid; Torino want around €15m."}
 ];
 
 const HUB = {
   footballItalia: {l:"Football Italia · Torino", u:"https://football-italia.net/category/teams/torino/"},
-  footitalia: {l:"FootItalia.com", u:"https://www.footitalia.com/"}
+  footitalia: {l:"FootItalia.com", u:"https://www.footitalia.com/"},
+  footballtransfersGineitis: {l:"FootballTransfers · Gineitis", u:"https://www.footballtransfers.com/en/transfer-news/gb-sct-premier-league/2026/08/celtic-transfer-news-gvidas-gineitis-torino-offer-summer-2026"}
 };
 
 const LINKMAP = {
@@ -873,11 +878,13 @@ const LINKMAP = {
   "Pietro Comuzzo": ["footballItalia"],
   "Eray Comert": ["footballItalia"],
   "Dominik Livakovic": ["footballItalia"],
-  "Aaron Ramsdale": ["footballItalia"]
+  "Aaron Ramsdale": ["footballItalia"],
+  "Gvidas Gineitis": ["footballtransfersGineitis"]
 };
 const WL_LINKMAP = {
   "Lucas Perri": ["footballItalia"],
-  "Cyril Ngonge": ["footitalia"]
+  "Cyril Ngonge": ["footitalia"],
+  "Gvidas Gineitis": ["footballtransfersGineitis"]
 };
 
 const PROSE = {
@@ -888,7 +895,7 @@ const PROSE = {
   positionPanel: ``,
   confirmedPending: `No signings officially confirmed yet; Perri and Ngonge are the most advanced pursuits.`,
   incomingSub: `Every link carries two independent readings: True? (credibility) and Happens? (completion likelihood this window).`,
-  outgoingSub: `No departures reported as advanced this window.`,
+  outgoingSub: `Midfielder Gvidas Gineitis is drawing a club-record bid from Celtic; no other departures reported as advanced this window.`,
   pricingBanner: ``,
   excludedNote: ``,
   spendIn: { v: `TBD - none confirmed`, x: `Perri, Ngonge, Comuzzo and Comert are all advancing but unsigned.` },

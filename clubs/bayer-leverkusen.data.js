@@ -37,8 +37,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Kerim Alajbegović", sub:"18 · AM/W · Bosnia", to:"permanent to Juventus", fee:"~€33-40m (reports vary)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Aug: a Bundesliga record fee for a teenager never having played a first-team minute for Leverkusen, following a breakout loan at RB Salzburg and a Goal-of-the-Tournament nomination at the 2026 World Cup. Sporting director Simon Rolfes cited 'fierce competition' in his positions. Chelsea also pursued him before Juventus won the race."},
-  {name:"Alejandro Grimaldo", sub:"30 · LB", to:"permanent to Atlético Madrid", fee:"~€22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun: the Spain left-back returns home to Atlético after three trophy-laden years in Leverkusen, prompting the Afonso Moreira signing on the opposite flank."}
+  {name:"Kerim Alajbegović", sub:"18 · AM/W · Bosnia", to:"permanent to Juventus", club:"Juventus", fee:"~€33-40m (reports vary)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Aug: a Bundesliga record fee for a teenager never having played a first-team minute for Leverkusen, following a breakout loan at RB Salzburg and a Goal-of-the-Tournament nomination at the 2026 World Cup. Sporting director Simon Rolfes cited 'fierce competition' in his positions. Chelsea also pursued him before Juventus won the race."},
+  {name:"Alejandro Grimaldo", sub:"30 · LB", to:"permanent to Atlético Madrid", club:"Atlético Madrid", fee:"~€22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun: the Spain left-back returns home to Atlético after three trophy-laden years in Leverkusen, prompting the Afonso Moreira signing on the opposite flank."}
 ];
 
 const INCOMING = [];

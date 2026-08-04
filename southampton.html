@@ -826,11 +826,14 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Cyle Larin", sub:"ST", club:"Mallorca", pos:"ST", fee:"£3.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent signing."},
   {name:"Daniel Peretz", sub:"GK", club:"Bayern Munich", pos:"GK", fee:"£6.05m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent signing."},
-  {name:"Lewis Dobbin", sub:"23 · FW/W", club:"Aston Villa", pos:"FW", fee:"£9m + add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Athletic reports a medical already underway, effectively done, just awaiting the announcement."}
+  {name:"Lewis Dobbin", sub:"23 · FW/W", club:"Aston Villa", pos:"FW", fee:"£9m + add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Athletic reports a medical already underway, effectively done, just awaiting the announcement."},
+  {name:"Aaron Ramsdale", sub:"GK · England", club:"Newcastle United", pos:"GK", fee:"Free (loan return)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Newcastle declined to make his loan permanent after failing to qualify for Europe, so he returns to Southampton on a free."}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Shea Charles", sub:"23 · MF · Northern Ireland", club:"Leeds United", pos:"MF", report:"22 Jul 2026", src:"Graham Smyth / Yorkshire Evening Post", tier:2, fee:"~£30m valuation", truth:60, prob:40, light:"y", trend:"up", note:"Leeds have lodged what they're calling their 'best and final' bid after two rejected offers; Southampton are holding out for closer to their valuation. Crystal Palace and Fulham also linked."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -841,13 +844,17 @@ const WATCHLIST = [];
 const HUB = {
   "gnews-cylelarin": {l:"Related news search: Cyle Larin", u:"https://news.google.com/search?q=Southampton%20Cyle%20Larin%20transfer&hl=en-GB&gl=GB"},
   "gnews-danielperetz": {l:"Related news search: Daniel Peretz", u:"https://news.google.com/search?q=Southampton%20Daniel%20Peretz%20transfer&hl=en-GB&gl=GB"},
-  "gnews-lewisdobbin": {l:"Related news search: Lewis Dobbin", u:"https://news.google.com/search?q=Southampton%20Lewis%20Dobbin%20transfer&hl=en-GB&gl=GB"}
+  "gnews-lewisdobbin": {l:"Related news search: Lewis Dobbin", u:"https://news.google.com/search?q=Southampton%20Lewis%20Dobbin%20transfer&hl=en-GB&gl=GB"},
+  beinRamsdale: {l:"beIN Sports · Ramsdale", u:"https://www.beinsports.com/en-us/soccer/premier-league/articles/newcastle-let-ramsdale-return-to-southampton-as-schar-signs-new-contract-2026-06-02"},
+  yorkshireeveningpostCharles: {l:"Yorkshire Evening Post · Charles", u:"https://www.yorkshireeveningpost.co.uk/sport/football/leeds-united/leeds-united-transfers-shea-charles-southampton-8815706"}
 };
 
 const LINKMAP = {
   "Cyle Larin": ["gnews-cylelarin"],
   "Daniel Peretz": ["gnews-danielperetz"],
-  "Lewis Dobbin": ["gnews-lewisdobbin"]
+  "Lewis Dobbin": ["gnews-lewisdobbin"],
+  "Aaron Ramsdale": ["beinRamsdale"],
+  "Shea Charles": ["yorkshireeveningpostCharles"]
 };
 const WL_LINKMAP = {};
 

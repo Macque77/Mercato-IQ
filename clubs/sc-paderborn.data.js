@@ -38,8 +38,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Calvin Brackelmann", sub:"22 · CB", to:"free to FC Augsburg", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; centre-back departs for a fellow Bundesliga side."},
-  {name:"Filip Bilbija", sub:"23 · W", to:"free to Derby County", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; winger moves to the EFL Championship."}
+  {name:"Calvin Brackelmann", sub:"22 · CB", to:"free to FC Augsburg", club:"FC Augsburg", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; centre-back departs for a fellow Bundesliga side."},
+  {name:"Filip Bilbija", sub:"23 · W", to:"free to Derby County", club:"Derby County", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; winger moves to the EFL Championship."}
 ];
 
 const INCOMING = [];
