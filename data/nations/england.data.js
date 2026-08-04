@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 162
+  stories_count: 163
 };
 
 const TOP_STORIES = [  {
@@ -45,11 +45,11 @@ const TOP_STORIES = [  {
     value: "£60m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
-    from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
+    name: "Nestory Irankunda",prob: 45, truth: 55, bullshit: false,
+    club_origin: "watford", club_display_name: "Watford", direction: "out",
+    from: "Watford", to: "Sporting CP",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+    value: "~€22m (bonuses included)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
     name: "Alejandro Garnacho",prob: 45, truth: 60, bullshit: false,
@@ -57,6 +57,13 @@ const TOP_STORIES = [  {
     from: "Chelsea", to: "Aston Villa",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Loan + conditional buy option", updated: "2026-06-06T12:00:00Z", league: "Premier League"
+  },
+  {
+    name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
+    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Simon Adingra",prob: 42, truth: 60, bullshit: false,
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€1.7-2m", updated: "2026-08-03T18:00:00Z", league: "League One"
   },
-  {
-    name: "Udoka Godwin-Malife",prob: 85, truth: 85, bullshit: false,
-    club_origin: "reading", club_display_name: "Reading", direction: "in",
-    from: "Burton Albion", to: "Reading",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "League One"
-  },
 ];
 
-const BY_LEAGUE = {"Championship": 20, "Premier League": 87, "League One": 55, "League Two": 0};
+const BY_LEAGUE = {"Championship": 21, "Premier League": 87, "League One": 55, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 87}, {"slug": "league-one", "name": "League One", "count": 55}, {"slug": "championship", "name": "Championship", "count": 20}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 87}, {"slug": "league-one", "name": "League One", "count": 55}, {"slug": "championship", "name": "Championship", "count": 21}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T14:46:40.117982Z",
+  updated: "2026-08-04T14:47:43.075204Z",
   label: "Nation aggregation"
 };

@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "reggina", "name": "Reggina", "count": 0, "badge": 
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T14:46:40.133323Z",
+  updated: "2026-08-04T14:47:43.090154Z",
   label: "League aggregation"
 };
