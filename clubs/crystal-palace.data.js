@@ -73,11 +73,16 @@ const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , update
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Yeremy Pino", sub:"Permanent, five-year deal", club:"Villarreal", pos:"FW", fee:"€30m + add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish winger signed as an Eze-esque creative replacement"},
+  {name:"Jaydee Canvot", sub:"Permanent, four-year deal, no.23", club:"Toulouse", pos:"DF", fee:"£20.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"19-year-old French centre-back, part of the post-Guehi defensive rebuild"},
+  {name:"Borna Sosa", sub:"Permanent", club:"Torino (on loan from Ajax)", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Croatian wing-back, Palace's second summer signing"}
+];
 const CONFIRMED_OUT = [
   {name:"Oliver Glasner", sub:"Manager · departed", to:"Left as deal expired", club:"Left as deal expired", fee:"n/a", free:true, status:"exit", statusTxt:"DEPARTED",
    note:"The club's greatest modern manager left as planned after winning the Conference League; his contract expired on 30 June. A successor is not yet confirmed. Flagged so no planning item treats him as the current coach."},
-
+  {name:"Marc Guéhi", sub:"Permanent", club:"Manchester City", pos:"DF", fee:"£20m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Captain departs for Manchester City after long transfer saga"},
+  {name:"Maxence Lacroix", sub:"Permanent", club:"Chelsea", pos:"DF", fee:"£52m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back sold to Chelsea as part of squad rebuild"}
 ];
 
 const INCOMING = [
@@ -89,6 +94,8 @@ const INCOMING = [
    note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged forward depth (support for Mateta) as a likely strengthening area once the manager is appointed; no named target was in circulation at the 6 Jun data date."},
   {name:"Midfield cover (framing)", sub:"Insurance against a Wharton bid", club:"Market", pos:"CM", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:22, light:'o', trend:'flat',
    note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged midfield cover as a strengthening area, insurance in case an elite bid lands for Wharton; no named target was in circulation at the 6 Jun data date."},
+  {name:"Ousmane Diao", sub:"Identified as top defensive target", club:"FC Midtjylland", pos:"DF", report:"Palace have identified the Senegalese centre-back as their leading option to help replace Marc Guehi and are set to hold talks now the season has finished.", src:"Sports Boom", tier:3, fee:"~€20m", truth:45, prob:30, light:"y", trend:"flat", note:"Competition reported from other Premier League and Bundesliga clubs"},
+  {name:"Igor Julio", sub:"Talks reported to be underway", club:"Brighton", pos:"DF", report:"The young Brighton centre-back has emerged as a target to help fill the defensive gap left by Guehi's departure, with talks said to be under way.", src:"BBC Sport", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Fee not yet reported; competition for defensive reinforcements ongoing"}
 ];
 
 const OUTGOING = [
@@ -96,6 +103,7 @@ const OUTGOING = [
    note:"A prized young midfielder with persistent big-club interest. PRICING: youth, England pedigree and a long deal mean a steep holder's premium; Palace need not sell given Europa revenue, lowering probability and lifting the fee."},
   {name:"Prized defenders", sub:"Richards / Lacroix watch", club:"Various", pos:"CB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£30m+ each", truth:55, prob:30, light:'y', trend:'flat',
    note:"Central defenders who shone in the European run will draw interest. PRICING: holder's premium; only strong bids move them."},
+  {name:"Jean-Philippe Mateta", sub:"Contract offer on the table, no extension signed yet", club:"Interest previously from Juventus / Aston Villa / Chelsea", pos:"FW", report:"After a January transfer request and prior interest from Juventus, Aston Villa and Chelsea, Palace have instead offered Mateta a new long-term contract; as of mid-July no agreement had been signed, keeping his long-term future unresolved.", src:"Yahoo Sports / GOAL.com", tier:2, fee:"£35m (prior valuation)", truth:50, prob:20, light:"o", trend:"flat", note:"Club's current priority is a new deal, not a sale, but situation remains fluid"}
 ];
 
 const RISERS = [
@@ -146,7 +154,14 @@ const HUB = {
   teamtalk:  {l:"TEAMtalk · Crystal Palace", u:"https://www.teamtalk.com/crystal-palace"},
   lequipe:   {l:"L'Équipe · football", u:"https://www.lequipe.fr/Football/"},
   rmc:       {l:"RMC Sport · football", u:"https://rmcsport.bfmtv.com/football/"},
-};
+  footballFanCastOusmaneDiao: {l:"Football FanCast", u:"https://www.footballfancast.com/crystal-palace-set-to-hold-transfer-talks-ousmane-diao-top-target/"},
+  bBCSportIgorJulio: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/cp3ev0d14n6o"},
+  yahooSportsJeanPhilippeMateta: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/crystal-palace-offer-contract-jean-141030698.html"},
+  crystalPalaceFCofficialYeremyPino: {l:"Crystal Palace FC official", u:"https://www.cpfc.co.uk/news/announcement/crystal-palace-sign-yeremy-pino-villarreal/"},
+  crystalPalaceFCofficialJaydeeCanvot: {l:"Crystal Palace FC official", u:"https://www.cpfc.co.uk/news/announcement/jaydee-canvot-signs-for-crystal-palace/"},
+  crystalPalaceFCofficialBornaSosa: {l:"Crystal Palace FC official", u:"https://www.cpfc.co.uk/news/announcement/borna-sosa-joins-crystal-palace-announcement/"},
+  skySportsMarcGuhi: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13495114/marc-guehi-man-city-sign-defender-from-crystal-palace-for-an-initial-lb20m-as-spending-reaches-lb425m-in-12-months"},
+  teamTalkMaxenceLacroix: {l:"TeamTalk", u:"https://www.teamtalk.com/chelsea/every-completed-chelsea-transfer-summer-2026-signings-sales-loans"}};
 const LINKMAP = {
   "Manager appointment": ["teamtalk","lequipe","rmc"],
   "Europa-ready depth": ["bbcGossip","slp"],
@@ -155,7 +170,14 @@ const LINKMAP = {
   "Adam Wharton": ["athletic","woosnam"],
   "Prized defenders": ["bbcGossip","palaceWay"],
   "Oliver Glasner": ["cpfc","bbcPalace"],
-};
+  "Ousmane Diao": ["footballFanCastOusmaneDiao"],
+  "Igor Julio": ["bBCSportIgorJulio"],
+  "Jean-Philippe Mateta": ["yahooSportsJeanPhilippeMateta"],
+  "Yeremy Pino": ["crystalPalaceFCofficialYeremyPino"],
+  "Jaydee Canvot": ["crystalPalaceFCofficialJaydeeCanvot"],
+  "Borna Sosa": ["crystalPalaceFCofficialBornaSosa"],
+  "Marc Guéhi": ["skySportsMarcGuhi"],
+  "Maxence Lacroix": ["teamTalkMaxenceLacroix"]};
 const WL_LINKMAP = {
   "Pierre Sage":"lequipe","Adam Wharton":"athletic",
 };

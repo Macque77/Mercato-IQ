@@ -55,6 +55,9 @@ const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , update
 const CONFIRMED_IN = [
   {name:"Elliot Anderson", sub:"22 · CM · England", to:"permanent from Nottingham Forest", fee:"£116m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Confirmed 3 August per multiple outlets: a club-record midfield signing that reflects Maresca's priority to build a ball-progressing, press-resistant core at the base. Anderson becomes the first major arrival of Maresca's rebuild, paired with ongoing work to refresh an ageing senior spine (Silva, Stones, Ederson). A technically excellent young English midfielder who has flourished under Nuno at Forest; the fee underlines City's commitment to reset central midfield immediately."},
+  {name:"Mathys Detourbet", sub:"Signed then loaned back out", club:"Troyes", pos:"FW", fee:"£21.7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Immediately loaned to Monaco for the season"},
+  {name:"Jeremy Monga", sub:"Teenage winger", club:"Leicester City", pos:"FW", fee:"£12.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Pierce Charles", sub:"Signed then loaned to QPR", club:"Sheffield Wednesday", pos:"GK", fee:"£3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 const CONFIRMED_OUT = [
   {name:"Bernardo Silva", sub:"31 · CM/W", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
@@ -63,6 +66,9 @@ const CONFIRMED_OUT = [
    note:"Injury-hit defender named among those leaving this summer as City reshape the spine."},
   {name:"Ederson", sub:"GK", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Long-serving goalkeeper reported on his way out, opening a succession question between the posts."},
+  {name:"Manuel Akanji", sub:"Permanent exit", club:"Inter Milan", pos:"DF", fee:"£13m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Nathan Ake", sub:"Permanent exit", club:"Fenerbahce", pos:"DF", fee:"£7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Jahmai Simpson-Pusey", sub:"Academy product sold", club:"Köln", pos:"DF", fee:"£4.65m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 
 const INCOMING = [
@@ -70,13 +76,17 @@ const INCOMING = [
    note:"Discussed as a midfield-control option for Maresca, who knows him from Chelsea. OBSTACLES: a large fee and wages, and whether a sale materialises at the selling club."},
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"~6 days ago", src:"Manchester Evening News", tier:2, fee:"£80m+", truth:70, prob:14, light:'r', trend:'flat',
    note:"On the discussed list as City weigh forward refresh; also an Arsenal target, so a contested, expensive teenager. Early-stage."},
+  {name:"Ayyoub Bouaddi", sub:"Direct talks ongoing, deadline decision looms", club:"Lille", pos:"MF", report:"City remain in direct club-to-club talks with Lille over the 18-year-old, having overtaken Arsenal as favourites, though Lille's president insists there is a strong chance he stays another year.", src:"Fabrizio Romano", tier:1, fee:"€90-100m", truth:70, prob:45, light:"y", trend:"flat", note:"Deadline for a 2026 vs 2027 move reportedly September 1"},
+  {name:"Gerónimo Rulli", sub:"Backup goalkeeper, personal terms agreed", club:"Marseille", pos:"GK", report:"Rulli has agreed personal terms with City as a backup option and Romano expects the clubs to reach agreement within days.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed (~€5m)", truth:80, prob:75, light:"g", trend:"flat", note:""}
 ];
 const OUTGOING = [
   {name:"Senior core review", sub:"Silva / Stones / Ederson · framing thread", club:"Various", pos:"-", report:"~1 wk ago", src:"The Athletic", tier:1, fee:"Mixed", truth:85, prob:70, light:'g', trend:'up',
    note:"The clearest business: a generational refresh sees several Guardiola-era seniors moved on (see ledger). PRICING: contract length and age set modest fees; the value is squad-list and wage relief."},
   {name:"Fringe & loan army", sub:"Squad depth · framing thread", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Expect the usual City churn of loanees and fringe players to balance the books and the cost ratio under a new coach."},
-  {name:"Rodri", sub:"30 · CDM · Spain", club:"Real Madrid", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee."}
+  {name:"Rodri", sub:"30 · CDM · Spain", club:"Real Madrid", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee."},
+  {name:"Savinho", sub:"Requested exit, Spurs given deadline", club:"Tottenham Hotspur", pos:"FW", report:"Savinho has told City he wants to leave for more playing time; Tottenham hold priority interest and were reportedly given a deadline to complete a deal, with Liverpool an alternative suitor as a Salah replacement.", src:"Fabrizio Romano", tier:1, fee:"~£60m", truth:75, prob:65, light:"g", trend:"flat", note:""},
+  {name:"James Trafford", sub:"Leeds keen once Perri deal completes", club:"Leeds United", pos:"GK", report:"Leeds intend to move for academy product Trafford once they sell Lucas Perri to Torino; the player is described as keen on the switch, though no fee is agreed yet.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:""}
 ];
 
 const RISERS = [
@@ -124,16 +134,33 @@ const HUB = {
   bbcGossip:{l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
   romano:   {l:"Fabrizio Romano · X", u:"https://x.com/FabrizioRomano"},
   ornstein: {l:"David Ornstein · X", u:"https://x.com/David_Ornstein"},
-  fabrizioRomanoviaFootballTransfersRodri: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"}};
+  fabrizioRomanoviaFootballTransfersRodri: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"},
+  footballTransferscomAyyoubBouaddi: {l:"FootballTransfers.com", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/man-city-transfer-news-ayyoub-bouaddi-lille-fabrizio-romano-update-summer-2026"},
+  footballTransferscomRomanoGernimoRulli: {l:"FootballTransfers.com (Romano)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/fabrizio-romano-carlos-espi-bradley-barcola-rodri"},
+  yahooSportsviaRomanoTEAMtalkSavinho: {l:"Yahoo Sports (via Romano/TEAMtalk)", u:"https://sports.yahoo.com/articles/man-city-dithering-opens-door-071000765.html"},
+  readManCitycomviaRomanoJamesTrafford: {l:"ReadManCity.com (via Romano)", u:"https://readmancity.com/2026/07/25/fabrizio-romano-confirms-leeds-united-move-manchester-city-goalkeeper/"},
+  eSPNElliotAnderson: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49433223/elliot-anderson-completes-move-manchester-city-nottingham-forest"},
+  tEAMtalkMathysDetourbet: {l:"TEAMtalk", u:"https://www.teamtalk.com/manchester-city/every-completed-man-city-transfer-summer-2026-signings-exits-loans"},
+  footballFanCastManuelAkanji: {l:"FootballFanCast", u:"https://www.footballfancast.com/manchester-city-transfers-signings/"}};
 const LINKMAP = {
-  "Elliot Anderson": ["men"],
+  "Elliot Anderson": ["men", "eSPNElliotAnderson"],
   "Enzo Fernández": ["men"],
   "Eli Junior Kroupi": ["men"],
   "Senior core review": ["athletic","men"],
-  "Bernardo Silva": ["athletic","mcfc"],
-  "John Stones": ["athletic","mcfc"],
+  "Bernardo Silva": ["athletic","mcfc", "footballFanCastManuelAkanji"],
+  "John Stones": ["athletic","mcfc", "tEAMtalkMathysDetourbet"],
   "Ederson": ["athletic","mcfc"],
-  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri"]};
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli"],
+  "Ayyoub Bouaddi": ["footballTransferscomAyyoubBouaddi"],
+  "Gerónimo Rulli": ["footballTransferscomRomanoGernimoRulli"],
+  "Savinho": ["yahooSportsviaRomanoTEAMtalkSavinho"],
+  "James Trafford": ["readManCitycomviaRomanoJamesTrafford"],
+  "Mathys Detourbet": ["tEAMtalkMathysDetourbet"],
+  "Jeremy Monga": ["tEAMtalkMathysDetourbet"],
+  "Pierce Charles": ["tEAMtalkMathysDetourbet"],
+  "Manuel Akanji": ["footballFanCastManuelAkanji"],
+  "Nathan Ake": ["tEAMtalkMathysDetourbet"],
+  "Jahmai Simpson-Pusey": ["footballFanCastManuelAkanji"]};
 const WL_LINKMAP = {
   "Elliot Anderson":"men","Backroom rebuild":"athletic","Loan returns":"men",
 };

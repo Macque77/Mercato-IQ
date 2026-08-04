@@ -913,6 +913,7 @@ const INCOMING = [
    note:"Still framed by TeamTalk as the direct Anthony Gordon replacement, with Betis 'fully expecting' to lose him and a 'clear pathway to a prominent attacking role' cited as Newcastle's edge. Barcelona hold a 20% sell-on. One genuine positive shift this refresh: Aston Villa are reported to have pulled back from the race (FootballPlace), thinning the competition slightly even though Chelsea, Man City, Everton, Dortmund, Leipzig and Napoli remain credited."},
   {name:"Joaquín Oso", sub:"21 · RB/LB · Spain", club:"Sevilla", pos:"FB", report:"14 Jul 2026 (no fresher update found)", src:"TEAMtalk / Sport Witness", tier:3, fee:"≈€15m (Sevilla's price)", truth:38, prob:8, light:'r', trend:'down',
    note:"Cooling sharply and possibly gone. Sport Witness's most recent substantive update (14 Jul) has Nottingham Forest 'intending to finalise' the deal, in direct contact with Sevilla and meeting their ~€15m price - with no mention of Newcastle at all. Fiorentina's earlier acceleration has itself stalled. Kept in the table at a low probability rather than moved to Ignore, since no explicit Newcastle withdrawal has been reported, but this now reads as very unlikely."},
+  {name:"Angelo Stiller", sub:"Eyed as Tonali replacement", club:"VfB Stuttgart", pos:"MF", report:"Newcastle have added Stiller to their shortlist and held talks, viewing him as a possible successor to Sandro Tonali; his contract includes an accessible release clause.", src:"Sport BILD / Kicker", tier:2, fee:"~£44m (release clause)", truth:50, prob:35, light:"y", trend:"flat", note:""}
 ];
 
 const OUTGOING = [
@@ -998,20 +999,26 @@ const HUB = {
   hallCO:     {l:"CaughtOffside (Simon Phillips) · Chelsea hovering for Hall", u:"https://www.caughtoffside.com/"},
   willockNW:  {l:"Newcastle World · Besiktas £10m bid for Willock rejected", u:"https://www.newcastleworld.com/sport/football/newcastle-united"},
   edersonYahoo:{l:"Yahoo Sports · Ederson signs new Atalanta contract", u:"https://sports.yahoo.com/"},
-};
+  yahooSportsviaSportBILDKickerAngeloStiller: {l:"Yahoo Sports (via Sport BILD/Kicker)", u:"https://sports.yahoo.com/articles/newcastle-targets-44-million-bundesliga-120000430.html"},
+  skySportsSeanSteur: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13561944/sean-steur-newcastle-sign-midfielder-from-ajax-for-lb23m-on-five-year-deal-after-sandro-tonali-exit"},
+  eSPNBazoumanaTour: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49279207/newcastle-sign-winger-bazoumana-toure-hoffenheim"},
+  newcastleUnitedofficialEwenJaouen: {l:"Newcastle United official", u:"https://www.newcastleunited.com/en/news/ewen-jaouen-signs-for-newcastle-united"},
+  skySportsAnthonyGordon: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13548577/anthony-gordon-transfer-news-barcelona-reach-agreement-with-newcastle-for-england-international-winger"},
+  eSPNSandroTonali: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49246543/sandro-tonali-completes-record-transfer-tottenham-newcastle-united"},
+  footballFanCastKieranTrippier: {l:"FootballFanCast", u:"https://www.footballfancast.com/newcastle-transfers-signings/"}};
 const LINKMAP = {
-  "Sean Steur": ["skyNUFC","nufcOfficial"],
-  "Bazoumana Touré": ["skyNUFC","nufcOfficial"],
-  "Ewen Jaouen": ["romano","nufcOfficial"],
+  "Sean Steur": ["skyNUFC","nufcOfficial", "skySportsSeanSteur"],
+  "Bazoumana Touré": ["skyNUFC","nufcOfficial", "eSPNBazoumanaTour"],
+  "Ewen Jaouen": ["romano","nufcOfficial", "newcastleUnitedofficialEwenJaouen"],
   "Kyle Healy": ["romano"],
   "Lukáš Horníček": ["teamtalk","shieldsGaz"],
   "Aladji Bamba": ["bambaSky","bambaNUFC","bambaGFFN"],
-  "Anthony Gordon": ["skyNUFC"],
-  "Sandro Tonali": ["skyNUFC"],
-  "Kieran Trippier": ["skyNUFC"],
-  "Emil Krafth": ["chronicle"],
+  "Anthony Gordon": ["skyNUFC", "skySportsAnthonyGordon"],
+  "Sandro Tonali": ["skyNUFC", "eSPNSandroTonali"],
+  "Kieran Trippier": ["skyNUFC", "footballFanCastKieranTrippier"],
+  "Emil Krafth": ["chronicle", "footballFanCastKieranTrippier"],
   "John Ruddy": ["chronicle"],
-  "Matt Targett": ["chronicle"],
+  "Matt Targett": ["chronicle", "footballFanCastKieranTrippier"],
   "Harrison Ashby": ["shieldsGaz"],
   "Travis Hernes": ["chronicle"],
   "Joe White": ["shieldsGaz"],
@@ -1025,7 +1032,7 @@ const LINKMAP = {
   "Lewis Hall": ["hallCO"],
   "Nick Pope": ["shieldsGaz","leeRyder"],
   "Joe Willock": ["willockNW","shieldsGaz"],
-};
+  "Angelo Stiller": ["yahooSportsviaSportBILDKickerAngeloStiller"]};
 const WL_LINKMAP = {
   "Nick Woltemade":"athletic","Yoane Wissa":"athletic",
   "Dan Burn & Fabian Schär":"teamtalk","Kieran McKenna / Antonio Conte":"khelnow",

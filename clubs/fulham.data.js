@@ -74,11 +74,15 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
   {name:"Gonzalo García", sub:"21 · ST · Spain", club:"permanent from Real Madrid", pos:"ST", fee:"€40m + €2m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Real Madrid's breakout Castilla forward joins Fulham; Madrid keep a 30% sell-on clause and matching rights."},
-  {name:"César Palacios", sub:"Real Madrid academy", club:"permanent from Real Madrid", pos:"MF", fee:"€10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Academy midfielder joins Fulham as part of the same round of Real Madrid academy sales as Gonzalo García."}
+  {name:"César Palacios", sub:"Real Madrid academy", club:"permanent from Real Madrid", pos:"MF", fee:"€10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Academy midfielder joins Fulham as part of the same round of Real Madrid academy sales as Gonzalo García."},
+  {name:"Jonah Kusi-Asare", sub:"18 · ST · Sweden", club:"Bayern Munich", pos:"FW", fee:"£5.2m (Bayern hold a buy-back clause)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Highly-rated Swedish teenage striker completes a permanent move after his loan spell."}
 ];
 const CONFIRMED_OUT = [
   {name:"Marco Silva", sub:"Head coach · departed", to:"Joined Benfica", club:"Joined Benfica", fee:"Free (deal expired)", free:true, status:"exit", statusTxt:"DEPARTED",
    note:"Left after five years to replace Mourinho at Benfica; his Fulham deal expired. A successor is not yet confirmed. Flagged so no planning item treats him as the current coach."},
+  {name:"Raúl Jiménez", sub:"35 · ST · Mexico", club:"Wolverhampton Wanderers", pos:"FW", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"World Cup-bound Mexico striker leaves on a free and rejoins Wolves, where he spent six years before his Fulham switch."},
+  {name:"Issa Diop", sub:"29 · CB · France", club:"Ipswich Town", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Fulham's fringe centre-back completes a permanent move to newly-promoted Ipswich, the first of two raids by Kieran McKenna's side on the Cottagers this summer."},
+  {name:"Harry Wilson", sub:"29 · AM · Wales", club:"Leeds United", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wales international leaves on a free at contract expiry and signs a four-year deal at Elland Road."}
 ];
 
 const INCOMING = [
@@ -90,6 +94,7 @@ const INCOMING = [
    note:"FRAMING ROW split from this page's own Positions board (not a named rumour): midfield quality and depth flagged as a likely strengthening area once the head coach is appointed."},
   {name:"Full-back addition", sub:"Framing row · no named target", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:22, light:'o', trend:'flat',
    note:"FRAMING ROW split from this page's own Positions board (not a named rumour): full-back balance for the new system, paced to the incoming coach's preferences."},
+  {name:"Chibuike Nwaiwu", sub:"23 · CB/DM · Nigeria", club:"Trabzonspor", pos:"DF", report:"Fulham went furthest of three Premier League suitors (also Tottenham and Crystal Palace), agreeing personal terms on a four-year deal, but two improved bids have both been rejected with Trabzonspor holding firm on valuation.", src:"Soccernet NG / Hasan Tuncel", tier:3, fee:"€30-35m (asking price)", truth:55, prob:30, light:"y", trend:"flat", note:"A prolonged saga: Fulham had a 'preliminary agreement' in mid-July, but by 3 Aug both an initial and an improved offer (with bonuses) had been turned down. Move stalls unless Fulham raise their bid."}
 ];
 
 const OUTGOING = [
@@ -97,6 +102,8 @@ const OUTGOING = [
    note:"Out of contract at the end of June and set to leave (Everton among those linked). PRICING: a free departure; the priority becomes replacing his goals."},
   {name:"Ageing spine & fringe", sub:"Squad refresh", club:"Various", pos:"SQD", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
    note:"A refresh of older players is likely under a new coach, balanced against the cost rules."},
+  {name:"Kevin", sub:"23 · W · Brazil", club:"AS Roma", pos:"FW", report:"Roma's €50m bid has been rejected as too low, with Fulham demanding more for the Brazilian winger; an improved Roma offer is expected imminently.", src:"Globo Esporte (via TheHardTackle)", tier:2, fee:"€50m+ (bid rejected)", truth:65, prob:45, light:"y", trend:"flat", note:"Kevin cost Fulham €45m from Shakhtar Donetsk last summer but managed only 1,469 minutes across 31 games; Roma want him as a direct replacement winger."},
+  {name:"Sasa Lukic", sub:"29 · CM · Serbia", club:"Ipswich Town", pos:"MF", report:"Sky Sports News reports Ipswich are targeting a second raid on Fulham after signing Issa Diop, with Gary O'Neil keen to add the Serbian midfielder to strengthen his engine room.", src:"Sky Sports News", tier:2, fee:"Undisclosed (12 months left on contract)", truth:55, prob:25, light:"o", trend:"flat", note:"Early stage: report says no club-to-club contact has been established yet, but it is 'one to keep an eye on'."}
 ];
 
 const RISERS = [
@@ -142,7 +149,16 @@ const HUB = {
   hammy:     {l:"Hammy End · Fulham beat", u:"https://hammyend.com/"},
   ffc:       {l:"Fulham FC Official", u:"https://www.fulhamfc.com/news/"},
   itimes:    {l:"Irish Times · soccer", u:"https://www.irishtimes.com/sport/soccer/"},
-  fabrizioRomanoviaFootballTransfersGonzaloGarca: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"}};
+  fabrizioRomanoviaFootballTransfersGonzaloGarca: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"},
+  soccernetNGChibuikeNwaiwu: {l:"Soccernet NG", u:"https://soccernet.ng/2026/08/tottenham-crystal-fulham-super-eagles.html"},
+  theHardTackleviaGloboEsporteKevin: {l:"TheHardTackle (via Globo Esporte)", u:"https://thehardtackle.com/transfer-news/2026/08/04/as-roma-offer-e50-million-to-sign-kevin-fulham-want-more/"},
+  sportsMoleSkySportsNewsSasaLukic: {l:"Sports Mole (Sky Sports News)", u:"https://www.sportsmole.co.uk/football/fulham/transfer-talk/news/potential-fulham-exit-lukic-emerges-as-target-for-premier-league-club_601956.html"},
+  eSPNGonzaloGarca: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49523499/fulham-sign-gonzalo-garcia-real-madrid"},
+  fulhamFCofficialCsarPalacios: {l:"Fulham FC (official)", u:"https://www.fulhamfc.com/news/2026/august/03/palacios-joins-fulham/"},
+  fulhamFCofficialJonahKusiAsare: {l:"Fulham FC (official)", u:"https://www.fulhamfc.com/news/2026/june/27/kusi-asare-signs-permanently/"},
+  fulhamFCofficialRalJimnez: {l:"Fulham FC (official)", u:"https://www.fulhamfc.com/news/2026/june/09/raul-leaves-fulham/"},
+  fulhamFCofficialIssaDiop: {l:"Fulham FC (official)", u:"https://www.fulhamfc.com/news/2026/july/22/diop-departs/"},
+  skySportsHarryWilson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13561731/harry-wilson-to-leeds-united-wales-international-makes-elland-road-switch-after-leaving-fulham"}};
 const LINKMAP = {
   "Manager appointment": ["sky","itimes","athletic"],
   "Striker (Jimenez replacement)": ["bbcGossip","athletic"],
@@ -151,8 +167,15 @@ const LINKMAP = {
   "Raul Jimenez": ["sky","bbc"],
   "Ageing spine & fringe": ["athletic","bbc"],
   "Marco Silva": ["sky","bbc","ffc"],
-  "Gonzalo García": ["fabrizioRomanoviaFootballTransfersGonzaloGarca"],
-  "César Palacios": ["fabrizioRomanoviaFootballTransfersGonzaloGarca"]};
+  "Gonzalo García": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "eSPNGonzaloGarca"],
+  "César Palacios": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "fulhamFCofficialCsarPalacios"],
+  "Chibuike Nwaiwu": ["soccernetNGChibuikeNwaiwu"],
+  "Kevin": ["theHardTackleviaGloboEsporteKevin"],
+  "Sasa Lukic": ["sportsMoleSkySportsNewsSasaLukic"],
+  "Jonah Kusi-Asare": ["fulhamFCofficialJonahKusiAsare"],
+  "Raúl Jiménez": ["fulhamFCofficialRalJimnez"],
+  "Issa Diop": ["fulhamFCofficialIssaDiop"],
+  "Harry Wilson": ["skySportsHarryWilson"]};
 const WL_LINKMAP = {
   "Kieran McKenna":"sky","Raul Jimenez":"bbc",
 };

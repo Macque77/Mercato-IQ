@@ -41,7 +41,8 @@ const CONFIRMED_IN = [
    note:"Robertson's Anfield exit on a free lands him competition and cover at left-back, and gives De Zerbi a proven leader to help stabilise a squad that went through three head coaches in a single season."},
   {name:"Martin Dubravka", sub:"37 · GK · Slovakia", to:"free transfer from Burnley", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Pure squad depth behind Antonin Kinsky and (for now) Guglielmo Vicario - low-cost, low-risk, and consistent with Lange's pattern of using free transfers to preserve fee spend for the difference-makers."},
-
+  {name:"Jan Paul van Hecke", sub:"Centre-back reinforcement", club:"Brighton & Hove Albion", pos:"DF", fee:"£52m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as defensive cover ahead of expected Romero exit"},
+  {name:"Martin Dúbravka", sub:"Free-transfer goalkeeper", club:"Burnley", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by the club and reflected on ESPN's transfer tracker"}
 ];
 
 const CONFIRMED_OUT = [
@@ -68,6 +69,7 @@ const INCOMING = [
    note:"Spurs were reportedly 24 hours from a £80m+ bid before Kroupi broke his foot and now needs surgery, ruling him out into the new year. De Zerbi remains 'a huge admirer' and the plan is to revisit next summer once fit - but for this window the move is dead, and the injury is precisely why the striker shortlist below has suddenly expanded."},
   {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"Hoffenheim", pos:"ST", report:"29 Jul 2026", src:"TeamTalk", tier:3, fee:"Not yet tested", truth:40, prob:27, light:'o', trend:'up',
    note:"Emerged as a direct fallback once Kroupi's injury forced a rethink, with RB Leipzig and Barcelona also credited with interest. Nothing beyond shortlist-level exclusive reporting so far, but the timing (named within hours of the Kroupi news breaking) suggests genuine internal discussion at Spurs rather than pure speculation."},
+  {name:"Ferran Torres", sub:"Attacker weighing his options as contract runs down", club:"Barcelona", pos:"FW", report:"With under a year left on his Barcelona deal, Torres is being pursued by PSG, Liverpool and Tottenham, though PSG appear best placed if he decides to leave, leaving Spurs as an outsider.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:70, prob:15, light:"o", trend:"flat", note:"Barcelona hope to retain him; decision described as in the player's hands"}
 ];
 
 const OUTGOING = [
@@ -81,6 +83,7 @@ const OUTGOING = [
    note:"Gazzetta reports Vicario 'quietly edging closer' to Juventus as their fallback should the Emi Martínez pursuit fail, with Inter Milan previously sniffing too. The key domestic detail: De Zerbi has made Antonin Kinsky his No.1, which is precisely what has freed the club to sanction Vicario's departure if the £20m valuation is met."},
   {name:"Richarlison", sub:"29 · ST/W · Brazil", club:"Juventus or Fenerbahce", pos:"ST", report:"24 Jul 2026", src:"CaughtOffside", tier:3, fee:"€20-25m (£17-21m)", truth:45, prob:28, light:'o', trend:'flat',
    note:"Talks are described as open rather than advanced, with Juventus eyeing him as a Kolo Muani alternative and Fenerbahce also credited with interest - Richarlison reportedly prefers Serie A. A single-source story at this stage, worth tracking rather than trusting outright, and complicated by an earlier scout claim (now discounted, see Ignore list) that he'd move as part of a Tonali part-exchange."},
+  {name:"Mikey Moore", sub:"Loan to Bundesliga advancing fast", club:"FC Köln", pos:"FW", report:"Köln have sent an official bid to sign the winger on loan, with negotiations at an advanced stage and Moore open to the move; several clubs were keen but Köln are now clear favourites.", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:85, prob:70, light:"g", trend:"flat", note:"Romano: deal could be completed within a week"}
 ];
 
 const RISERS = [
@@ -137,32 +140,41 @@ const HUB = {
   caughtOffside: {l:"CaughtOffside", u:"https://www.caughtoffside.com/"},
   gazzetta: {l:"Gazzetta dello Sport", u:"https://www.gazzetta.it/"},
   sportsMole: {l:"Sports Mole · Spurs", u:"https://www.sportsmole.co.uk/football/spurs/"},
-};
+  tEAMtalkSimonJonesDailyMailFabrizioRomanoSavinho: {l:"TEAMtalk (Simon Jones/Daily Mail, Fabrizio Romano)", u:"https://www.teamtalk.com/tottenham-hotspur/spurs-transfer-news-savinho-deal-close-man-city-sale"},
+  caughtOffsideFabrizioRomanoCodyGakpo: {l:"CaughtOffside (Fabrizio Romano)", u:"https://www.caughtoffside.com/2026/08/02/fabrizio-romano-reveals-tottenham-plan-to-sign-two-more-stars-including-attacker-with-50-goals-and-23-assists/"},
+  readTottenhamFabrizioRomanoFerranTorres: {l:"Read Tottenham (Fabrizio Romano)", u:"https://readtottenham.com/2026/08/03/fabrizio-romano-tottenham-transfer-news-torres-psg-barcelona-liverpool/"},
+  readTottenhamFabrizioRomanoCristianRomero: {l:"Read Tottenham (Fabrizio Romano)", u:"https://readtottenham.com/2026/08/03/fabrizio-romano-cristian-romero-tottenham-inter-milan/"},
+  football365FabrizioRomanoDjedSpence: {l:"Football365 (Fabrizio Romano)", u:"https://www.football365.com/news/tottenham-transfer-news-fabrizio-romano-cristian-romero-djed-spence-liverpool"},
+  readTottenhamFabrizioRomanoMikeyMoore: {l:"Read Tottenham (Fabrizio Romano)", u:"https://readtottenham.com/2026/08/02/fabrizio-romano-confirms-mikey-moore-leaving-tottenham/"},
+  teamTalkSandroTonali: {l:"TeamTalk", u:"https://www.teamtalk.com/tottenham-hotspur/every-completed-tottenham-transfer-summer-2026-signings-sales-loans"},
+  eSPNMartinDbravka: {l:"ESPN", u:"https://www.espn.com/soccer/team/transfers/_/id/367/tottenham-hotspur"}};
 
 const LINKMAP = {
-  "Sandro Tonali": ["teamtalk","sportsMole"],
-  "Mateus Fernandes": ["teamtalk","sportsMole"],
+  "Sandro Tonali": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
+  "Mateus Fernandes": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
   "Jan-Paul van Hecke": ["teamtalk","sportsMole"],
-  "Marcos Senesi": ["teamtalk","sportsMole"],
-  "Andy Robertson": ["teamtalk","sportsMole"],
+  "Marcos Senesi": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
+  "Andy Robertson": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
   "Martin Dubravka": ["teamtalk","sportsMole"],
-  "Luka Vuskovic": ["teamtalk","sportsMole"],
-  "Yves Bissouma": ["teamtalk","sportsMole"],
-  "Radu Dragusin": ["teamtalk","sportsMole"],
+  "Luka Vuskovic": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
+  "Yves Bissouma": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
+  "Radu Dragusin": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
   "Tynan Thompson": ["sportsMole"],
-  "Will Lankshear": ["teamtalk","sportsMole"],
-  "Savinho": ["romano"],
+  "Will Lankshear": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
+  "Savinho": ["romano", "tEAMtalkSimonJonesDailyMailFabrizioRomanoSavinho"],
   "Rafael Leão": ["romano"],
-  "Cody Gakpo": ["romano"],
+  "Cody Gakpo": ["romano", "caughtOffsideFabrizioRomanoCodyGakpo"],
   "Eli Junior Kroupi": ["teamtalk"],
   "Fisnik Asllani": ["teamtalk"],
-  "Ferran Torres": ["teamtalk"],
-  "Cristian Romero": ["longari","romano"],
+  "Ferran Torres": ["teamtalk", "readTottenhamFabrizioRomanoFerranTorres"],
+  "Cristian Romero": ["longari","romano", "readTottenhamFabrizioRomanoCristianRomero"],
   "Lucas Bergvall": ["ornstein"],
-  "Djed Spence": ["graemeBailey","georgeSessions"],
+  "Djed Spence": ["graemeBailey","georgeSessions", "football365FabrizioRomanoDjedSpence"],
   "Guglielmo Vicario": ["gazzetta"],
   "Richarlison": ["caughtOffside"],
-};
+  "Mikey Moore": ["readTottenhamFabrizioRomanoMikeyMoore"],
+  "Jan Paul van Hecke": ["teamTalkSandroTonali"],
+  "Martin Dúbravka": ["eSPNMartinDbravka"]};
 const WL_LINKMAP = {
   "Martin Baturina": "teamtalk",
   "Kerim Alajbegovic": "schira",

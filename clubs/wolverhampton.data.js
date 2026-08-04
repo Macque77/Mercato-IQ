@@ -42,7 +42,6 @@ const INCOMING = [
   {name:"Brayan Medina", sub:"24 · CB · Colombia", club:"CD Tondela", pos:"CB", report:"29 Jul 2026", src:"Pipe Sierra (via The72)", tier:3, fee:"Undisclosed", truth:28, prob:10, light:"r", trend:"down", note:"New manager Cesar Peixoto has enquired about the 195cm defender following Tondela's relegation, competing with Genoa and Olympiacos; Medina has since signed a contract extension with Tondela through 2030, reducing near-term likelihood."}
 ];
 const OUTGOING = [
-  {name:"João Gomes", sub:"MF · Brazil", club:"Atlético Madrid", pos:"MF", report:"~1 wk ago", src:"BBC / Molineux News", tier:2, fee:"£39-40m", truth:70, prob:60, light:'g', trend:'up', note:"Fee reportedly agreed, though one outlet says Atlético have put the bid on hold, live but not over the line."},
   {name:"Jose Sa", sub:"33 · GK · Portugal", club:"Olympiacos", pos:"GK", report:"15 Jul 2026", src:"Konstantinos Lianos (The72)", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Olympiacos are eyeing Sa as a replacement for their departing keeper Tzolakis; Sa (170 Wolves appearances, contract to 2027) is reportedly open to a fresh challenge following relegation."}
 ];
 const RISERS = [];

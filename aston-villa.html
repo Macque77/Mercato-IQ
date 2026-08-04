@@ -886,10 +886,19 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Johan Manzambi", sub:"Club-record midfield/wing-back capture", club:"SC Freiburg", pos:"MF", fee:"£59.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record signing after strong World Cup showing for Switzerland"},
+  {name:"João Gomes", sub:"Midfield reinforcement from Wolves", club:"Wolverhampton Wanderers", pos:"MF", fee:"£38m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a long-term deal as part of Villa's midfield rebuild"},
+  {name:"Alejandro Garnacho", sub:"Season-long loan with conditional obligation to buy", club:"Chelsea", pos:"FW", fee:"£42.6m (loan + obligation package)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Garnacho moved to Chelsea from Man Utd in 2025; now on a structured loan to Villa to satisfy UEFA financial rules alongside the Morgan Rogers sale"}
+];
 const CONFIRMED_OUT = [
   {name:"Morgan Rogers", sub:"23 · AM · England", club:"Chelsea", pos:"AM", fee:"£117m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Confirmed August 2026 - a club-record sale for Villa as Rogers completes a record move to Chelsea under Xabi Alonso. Rogers scored 8 and assisted 7 in 34 Premier League games last season; the fee ranks among the highest ever paid for a wide playmaker."},
+  {name:"Youri Tielemans", sub:"Release clause triggered", club:"Manchester United", pos:"MF", fee:"£35m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Lucas Digne", sub:"Release clause triggered", club:"Paris Saint-Germain", pos:"DF", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Donyell Malen", sub:"Forward sold to Serie A", club:"Roma", pos:"FW", fee:"£21.6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Enzo Barrenechea", sub:"Midfielder departs for Portugal", club:"Benfica", pos:"MF", fee:"£10.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Lewis Dobbin", sub:"Squad player sold to Southampton", club:"Southampton", pos:"MF", fee:"£9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 
 const INCOMING = [
@@ -899,13 +908,14 @@ const INCOMING = [
    note:"Considered as a midfield option, a cheaper alternative to Camara. OBSTACLE: a step down in ceiling; more of a depth/value play."},
   {name:"Marcus Rashford", sub:"W/ST · England", club:"(tracked)", pos:"W", report:"~1 day ago", src:"Aggregated roundup", tier:3, fee:"£40m+", truth:55, prob:15, light:'o', trend:'flat',
    note:"Tracked alongside Spurs and Newcastle in a transfer roundup. OBSTACLES: wages, fee and a crowded field; an opportunistic link rather than a concrete move."},
-  {name:"Alejandro Garnacho", sub:"22 · W · Argentina", club:"Chelsea", pos:"W", report:"22 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Loan + conditional buy option", truth:60, prob:45, light:"y", trend:"flat", note:"Villa have submitted an official loan bid with Garnacho's salary covered by the club, per Romano."}
+  {name:"Igor Paixão", sub:"Brazilian winger linked after strong Marseille season", club:"Marseille", pos:"FW", report:"Villa are exploring a move for the 26-year-old after he scored 12 goals with 7 assists last season; Champions League qualification seen as a selling point.", src:"L'Équipe (via Sports Mole)", tier:2, fee:"£30m", truth:55, prob:30, light:"y", trend:"flat", note:""}
 ];
 
 const OUTGOING = [
   {name:"Fringe & loan returns", sub:"Squad trim", club:"Various", pos:"-", report:"~4 days ago", src:"Aston Villa News (aggregated)", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio."},
-  {name:"Emiliano Martínez", sub:"33 · GK · Argentina", club:"Juventus", pos:"GK", report:"2 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:50, prob:8, light:"r", trend:"flat", note:"Romano reported Juventus have informed Villa they will not proceed with a move — costs were judged too high, so this rumour has effectively collapsed for now."}
+  {name:"Emiliano Martínez", sub:"33 · GK · Argentina", club:"Juventus", pos:"GK", report:"2 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:50, prob:8, light:"r", trend:"flat", note:"Romano reported Juventus have informed Villa they will not proceed with a move — costs were judged too high, so this rumour has effectively collapsed for now."},
+  {name:"Ezri Konsa", sub:"Arsenal circling as Saliba cover", club:"Arsenal", pos:"DF", report:"Villa have received a bid in the region of £60-65m from Arsenal; Konsa open to talks but Champions League football may keep him at Villa Park.", src:"Read Aston Villa / CaughtOffside", tier:2, fee:"£60-65m", truth:55, prob:30, light:"y", trend:"flat", note:""}
 ];
 
 const RISERS = [
@@ -955,16 +965,32 @@ const HUB = {
   footmercato:{l:"Foot Mercato", u:"https://www.footmercato.net/"},
   avfc:      {l:"Aston Villa Official · news", u:"https://www.avfc.co.uk/news/"},
   fabrizioRomanoviaFootballTransfersAlejandroGarnacho: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/fabrizio-romano-alejandro-garnacho-warren-zaire-emery-ousmane-diomande"},
-  fabrizioRomanoviaReadTottenhamEmilianoMartnez: {l:"Fabrizio Romano (via Read Tottenham)", u:"https://readtottenham.com/2026/08/03/fabrizio-romano-tottenham-transfer-news-juventus/"}};
+  fabrizioRomanoviaReadTottenhamEmilianoMartnez: {l:"Fabrizio Romano (via Read Tottenham)", u:"https://readtottenham.com/2026/08/03/fabrizio-romano-tottenham-transfer-news-juventus/"},
+  sportsMoleviaLquipeIgorPaixo: {l:"Sports Mole (via L'Équipe)", u:"https://www.sportsmole.co.uk/football/aston-villa/transfer-talk/news/aston-villa-transfer-news-villans-weigh-up-move-for-brazilian-scoring-12-goals-last-season_602373.html"},
+  readAstonVillaEzriKonsa: {l:"Read Aston Villa", u:"https://readastonvilla.com/2026/08/02/aston-villa-receive-65m-arsenal-bid-for-ezri-konsa/"},
+  skySportsJohanManzambi: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11677/13564492/johan-manzambi-aston-villa-sign-newcastle-target-from-freiburg-in-club-record-lb59-5m-deal"},
+  eSPNDailyPostJooGomes: {l:"ESPN / Daily Post", u:"https://www.dailypost-uk.com/2026/07/aston-villa-confirm-signing-joao-gomes_089466516.html"},
+  skySportsAlejandroGarnacho: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13566112/alejandro-garnacho-transfer-news-aston-villa-sign-chelsea-winger-on-initial-loan-deal-with-conditional-obligation-to-buy"},
+  readAstonVillaMyOldManSaidMorganRogers: {l:"Read Aston Villa / My Old Man Said", u:"https://myoldmansaid.com/the-good-bad-and-ugly-aston-villas-summer-transfer-window-so-far/"},
+  sportsMoleDonyellMalen: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/aston-villa/transfer-talk/feature/aston-villa-summer-transfers-all-confirmed-ins-and-outs-for-2026_598979.html"}};
 const LINKMAP = {
   "Lamine Camara": ["onefootball","yahoo","lequipe"],
   "Ilaix Moriba": ["onefootball"],
   "Marcus Rashford": ["bbcGossip"],
-  "Morgan Rogers": ["bbcVilla","athletic"],
+  "Morgan Rogers": ["bbcVilla","athletic", "readAstonVillaMyOldManSaidMorganRogers"],
   "Jadon Sancho": ["bmail","townley"],
   "Fringe & loan returns": ["bmail"],
-  "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho"],
-  "Emiliano Martínez": ["fabrizioRomanoviaReadTottenhamEmilianoMartnez"]};
+  "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "skySportsAlejandroGarnacho"],
+  "Emiliano Martínez": ["fabrizioRomanoviaReadTottenhamEmilianoMartnez"],
+  "Igor Paixão": ["sportsMoleviaLquipeIgorPaixo"],
+  "Ezri Konsa": ["readAstonVillaEzriKonsa"],
+  "Johan Manzambi": ["skySportsJohanManzambi"],
+  "João Gomes": ["eSPNDailyPostJooGomes"],
+  "Youri Tielemans": ["readAstonVillaMyOldManSaidMorganRogers"],
+  "Lucas Digne": ["readAstonVillaMyOldManSaidMorganRogers"],
+  "Donyell Malen": ["sportsMoleDonyellMalen"],
+  "Enzo Barrenechea": ["sportsMoleDonyellMalen"],
+  "Lewis Dobbin": ["sportsMoleDonyellMalen"]};
 const WL_LINKMAP = {
   "Lamine Camara":"onefootball","Morgan Rogers":"bbcVilla","Loan flops":"bmail",
 };

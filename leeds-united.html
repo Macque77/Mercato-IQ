@@ -890,16 +890,19 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label
 const CONFIRMED_IN = [
   {name:"Ethan Ampadu", sub:"25 · CM/CB · captain", to:"Stays, new deal to 2030", fee:"NEW DEAL", free:true, status:"done", statusTxt:"NEW DEAL SIGNED",
    note:"Confirmed 4 Jun: the club captain signs a fresh four-year contract to 2030, ending uncertainty over a deal that had been ticking toward its final year (2027 plus an option). Chairman Paraag Marathe called it a signal to the market ahead of the window. Not a transfer, but the summer's first locked-in piece of business and the spine of the consolidation plan, securing the squad's most-used outfield player (most tackles, duels and passes last season)."},
+  {name:"Tarik Muharemović", sub:"23 · CB · Bosnia & Herzegovina", club:"Sassuolo", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"6ft 4in World Cup defender signs a five-year deal after a Serie B title-winning loan spell at Sassuolo; 17 senior Bosnia caps."},
+  {name:"Harry Wilson", sub:"29 · AM · Wales", club:"Fulham", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wales international arrives on a free transfer on a four-year deal after leaving Fulham at contract expiry."}
 ];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Pascal Struijk", sub:"26 · CB · Netherlands", club:"Brighton & Hove Albion", pos:"DF", fee:"£18m (reported breakdown £15m + £3m add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"A surprise sale given Farke had told the board he should not be sold; Leeds retain a sell-on clause."},
+  {name:"Karl Darlow", sub:"35 · GK · Wales", club:"Manchester United", pos:"GK", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Established as first-choice for much of the promotion/survival season, Darlow leaves on a free for a back-up role at Old Trafford."}
+];
 
 const INCOMING = [
   {name:"Crysencio Summerville", sub:"24 · W · ex-Leeds", club:"West Ham", pos:"W", report:"~6h ago", src:"Leeds Live", tier:3, fee:"£20-30m", truth:55, prob:30, light:'y', trend:'up',
    note:"Rising on a fresh thread: West Ham, relegated, have reportedly made a decision on his future and an Elland Road return is 'on the cards'. Leeds' 2023/24 Championship Player of the Season already knows the club and Farke's system, an exact tactical and emotional fit. OBSTACLE: West Ham will want a fee recouping much of their outlay, plus his wages, but he is on-model as a proven, resale-age wide forward."},
   {name:"Roony Bardghji", sub:"20 · Sweden · RW", club:"Barcelona", pos:"RW", report:"3 Jun 2026", src:"TEAMtalk / Yorkshire Post", tier:3, fee:"£15-25m / loan", truth:50, prob:25, light:'o', trend:'up',
    note:"Fresh and rising: with Barcelona's summer plans set to squeeze the 20-year-old out, Leeds are reported ready to follow up a long-standing interest and are credited as a leading suitor. On-profile (young, high-ceiling, resale). OBSTACLES: a crowded six-club PL scramble (Sunderland, Villa, Brighton, Brentford, Everton also in), and the player's reported preference for a loan-back to Barcelona, which would give Leeds development value but no resale upside."},
-  {name:"Hayden Hackney", sub:"23 · England · CM", club:"Middlesbrough", pos:"CM", report:"~5 days ago", src:"Alan Nixon", tier:3, fee:"£18-20m", truth:55, prob:30, light:'y', trend:'up',
-   note:"Young British central midfielder, exactly the resale-friendly profile, and useful cover if Tanaka leaves. Obstacle: Boro want ~£20m for a Championship player and six PL clubs are reportedly monitoring."},
   {name:"Jonathan David", sub:"ST · Canada", club:"Juventus", pos:"ST", report:"~2 days ago", src:"TEAMtalk", tier:3, fee:"Loan", truth:53, prob:28, light:'o', trend:'up',
    note:"Juventus are prepared to approve a loan exit and Leeds are interested, a high-profile fix for the No.9 need. Obstacle: a loan only (no resale upside), wages, and 'amid interest from others' means a competitive field. No T1 confirmation."},
   {name:"Lois Openda", sub:"ST · Belgium", club:"RB Leipzig", pos:"ST", report:"~2 days ago", src:"TEAMtalk", tier:3, fee:"£25-35m", truth:47, prob:22, light:'o', trend:'down',
@@ -927,8 +930,6 @@ const OUTGOING = [
    note:"One year left on his deal, so a decision is forced this window. Newly-promoted Hull could pay a fee; Rangers' move is described as 'difficult'; Celtic also keen. The short contract erodes Leeds' leverage."},
   {name:"Ao Tanaka", sub:"27 · Japan · CM", club:"Newcastle / Everton / Bundesliga", pos:"CM", report:"~4 wks", src:"F. Plettenberg", tier:3, fee:"£12-18m", truth:70, prob:45, light:'y', trend:'up',
    note:"Open to leaving after reduced minutes, with a long suitor list (Newcastle, Everton, Man Utd checks, plus Freiburg, Union Berlin, Southampton). PRICING: PL/Bundesliga demand holds a floor, but a player pushing to go softens it. A sale would trigger a midfield buy (Hackney/Charles)."},
-  {name:"Illan Meslier", sub:"GK · France", club:"Birmingham / Championship", pos:"GK", report:"~5 days ago", src:"Aggregated", tier:3, fee:"£5-10m", truth:70, prob:45, light:'y', trend:'up',
-   note:"Expected to leave Elland Road after losing the No.1 spot; Birmingham could move for a fee. His exit is the trigger for the goalkeeper hunt (Trafford/Pope/Rushworth)."},
   {name:"Wilfried Gnonto", sub:"W · Italy", club:"SC Freiburg", pos:"W", report:"~2 days ago", src:"S. Vidal", tier:3, fee:"£20-28m", truth:65, prob:40, light:'y', trend:'up',
    note:"Freiburg are keen and Leeds have SET a transfer fee, a holder's stance on a genuine resale asset. PRICING: still a saleable talent, so the price is firm; an exit here is the most likely funder of a 'blockbuster' incoming."},
   {name:"Jack Harrison", sub:"W · England", club:"Fiorentina", pos:"W", report:"~5 wks", src:"Aggregated", tier:3, fee:"€8m option", truth:65, prob:40, light:'y', trend:'flat',
@@ -938,9 +939,7 @@ const OUTGOING = [
   {name:"Lucas Perri", sub:"GK · Brazil", club:"Brazilian clubs", pos:"GK", report:"~6 wks", src:"Jorge Nicola", tier:3, fee:"£6-10m", truth:55, prob:30, light:'y', trend:'flat',
    note:"A summer exit is being considered, with Brazilian clubs understood to be interested. Part of clearing a crowded goalkeeping department."},
   {name:"Mateo Joseph", sub:"22 · Spain · ST", club:"Mallorca / Leicester / Wrexham", pos:"ST", report:"~4 wks", src:"TEAMtalk", tier:3, fee:"£6-10m", truth:50, prob:25, light:'o', trend:'down',
-   note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles."},
-  {name:"Pascal Struijk", sub:"CB · Netherlands", club:"Aston Villa / Newcastle / Spurs", pos:"CB", report:"~4 wks", src:"Football Insider", tier:3, fee:"£30m+ (resisting)", truth:40, prob:15, light:'o', trend:'down',
-   note:"Villa, Newcastle and Spurs are all credited with interest, BUT Farke has told the board Struijk should NOT be sold. PRICING: a key player Leeds will price prohibitively, the high ask is designed to deter, not invite."},
+   note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles."}
 ];
 
 const RISERS = [
@@ -1026,7 +1025,12 @@ const HUB = {
   kicker:    {l:"Kicker", u:"https://www.kicker.de/"},
   tmw:       {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/"},
   sportsboom:{l:"SportsBoom · transfer news", u:"https://www.sportsboom.co.uk/football/transfer-news/"},
-};
+  yorkshireEveningPostJamesTrafford: {l:"Yorkshire Evening Post", u:"https://www.yorkshireeveningpost.co.uk/sport/football/leeds-united/leeds-united-transfers-james-trafford-man-city-8838021"},
+  leedsAllOverLucasPerri: {l:"Leeds All Over", u:"https://www.leedsallover.com/leeds-united-agree-lucas-perri-loan-transfer-to-torino/"},
+  leedsUnitedofficialTarikMuharemovi: {l:"Leeds United (official)", u:"https://www.leedsunited.com/en/news/tarik-muharemovic-signs-for-leeds-united"},
+  skySportsHarryWilson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13561731/harry-wilson-to-leeds-united-wales-international-makes-elland-road-switch-after-leaving-fulham"},
+  leedsUnitedofficialPascalStruijk: {l:"Leeds United (official)", u:"https://www.leedsunited.com/en/news/pascal-struijk-joins-brighton-and-hove-albion"},
+  tSNKarlDarlow: {l:"TSN", u:"https://www.tsn.ca/soccer/article/wales-keeper-darlow-joins-united-on-free-from-leeds/"}};
 const LINKMAP = {
   "Crysencio Summerville": ["leedslive","yep"],
   "Roony Bardghji": ["teamtalk","ypost"],
@@ -1034,7 +1038,7 @@ const LINKMAP = {
   "Hayden Hackney": ["nixon","teamtalk"],
   "Jonathan David": ["teamtalk"],
   "Lois Openda": ["teamtalk","leedslive"],
-  "James Trafford": ["teamtalk","yep"],
+  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford"],
   "Shea Charles": ["leedslive"],
   "Lutsharel Geertruida": ["yep"],
   "Liam Delap": ["bbcGossip","leedslive"],
@@ -1049,11 +1053,13 @@ const LINKMAP = {
   "Wilfried Gnonto": ["yep","leedslive"],
   "Jack Harrison": ["leedslive"],
   "Largie Ramazani": ["leedslive"],
-  "Lucas Perri": ["leedslive"],
+  "Lucas Perri": ["leedslive", "leedsAllOverLucasPerri"],
   "Mateo Joseph": ["teamtalk"],
-  "Pascal Struijk": ["fInsider","yep"],
+  "Pascal Struijk": ["fInsider","yep", "leedsUnitedofficialPascalStruijk"],
   "Ethan Ampadu": ["lufc","philhay"],
-};
+  "Tarik Muharemović": ["leedsUnitedofficialTarikMuharemovi"],
+  "Harry Wilson": ["skySportsHarryWilson"],
+  "Karl Darlow": ["tSNKarlDarlow"]};
 const WL_LINKMAP = {
   "Haris Tabakovic":"kicker","Leo Scienza":"leedslive","Zian Flemming":"leedslive","Mikey Moore":"talksport",
   "Finn Azaz":"leedslive","Tammy Abraham":"bbcGossip","Ladislav Krejci":"teamtalk","Yassine Titraoui":"leedslive",

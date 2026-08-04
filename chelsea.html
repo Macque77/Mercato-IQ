@@ -900,9 +900,18 @@ const CONFIRMED_IN = [
   {name:"Emmanuel Emegha", sub:"ST · Netherlands", to:"agreed from Strasbourg", fee:"Undisclosed", free:false, status:"pending", statusTxt:"AGREED, AWAITING ANNOUNCEMENT",
    note:"The Strasbourg captain and striker remains agreed to join via the BlueCo cross-club pipeline this summer. A direct, on-model young centre-forward; formal completion expected imminently once international commitments clear."},
   {name:"Pep Chavarría", sub:"LB · Spain", club:"permanent from Rayo Vallecano", pos:"LB", fee:"€25m + €5m bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Schira calls it a done deal, personal terms agreed to 2032, positioned as Marc Cucurella's long-term replacement."},
-  {name:"Danny Welbeck", sub:"35 · ST · England", club:"free from Brighton", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran forward signs a free transfer with a contract to 2028, confirmed via Di Marzio's live mercato digest."}
+  {name:"Danny Welbeck", sub:"35 · ST · England", club:"free from Brighton", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran forward signs a free transfer with a contract to 2028, confirmed via Di Marzio's live mercato digest."},
+  {name:"Geovany Quenda", sub:"Permanent, contract to 2034", club:"Sporting CP", pos:"FW", fee:"£43m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Portuguese wing prospect, one of Chelsea's marquee summer additions"},
+  {name:"Maxence Lacroix", sub:"Permanent", club:"Crystal Palace", pos:"DF", fee:"£52m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back reinforcement for Xabi Alonso's back line"},
+  {name:"Marco Palestra", sub:"Permanent, contract to 2033", club:"Atalanta", pos:"DF", fee:"£47m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young Italian right-back"},
+  {name:"Valentin Barco", sub:"Permanent, 7-year deal to 2033", club:"Strasbourg", pos:"MF", fee:"£34m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Chelsea's 9th summer signing; may be loaned out immediately"}
 ];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Marc Cucurella", sub:"Permanent", club:"Real Madrid", pos:"DF", fee:"£51.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back departs for Real Madrid"},
+  {name:"Andrey Santos", sub:"Permanent", club:"Manchester United", pos:"MF", fee:"£48m-£50m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Brazilian midfielder moves to Old Trafford"},
+  {name:"Tyrique George", sub:"Permanent", club:"Everton", pos:"FW", fee:"£18m-£24m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young winger heads to Goodison Park"},
+  {name:"Alejandro Garnacho", sub:"Season-long loan", club:"Aston Villa", pos:"FW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Winger sent out on loan for regular football"}
+];
 
 const INCOMING = [
   {name:"Alonso-fit additions", sub:"System pieces", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£60-120m total", truth:55, prob:40, light:'y', trend:'flat',
@@ -911,7 +920,7 @@ const INCOMING = [
    note:"Carried from the v1 positions board (heat 55): an Alonso-shaped defensive structure is a stated priority of the rebuild. Thread-level only; the v1 state held no named defensive targets, so names attach at the next refresh."},
   {name:"Midfield control", sub:"Positional thread", club:"Market", pos:"CM", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Within £120-200m gross", truth:55, prob:50, light:'y', trend:'flat',
    note:"Carried from the v1 positions board (heat 50): tactical fit for Alonso in central midfield is a flagged need. Thread-level only; no named midfield targets were held in the v1 state."},
-
+  {name:"Victor Osimhen", sub:"Linked but Tottenham reported as favourites", club:"Napoli", pos:"FW", report:"Chelsea have been credited with interest in the Nigerian striker but multiple reports now say Tottenham are leading the race at a fee north of €75m.", src:"CaughtOffside", tier:3, fee:"€75m+", truth:40, prob:15, light:"o", trend:"flat", note:"Spurs reported to be in pole position, cooling Chelsea's chances"}
 ];
 
 const OUTGOING = [
@@ -919,7 +928,7 @@ const OUTGOING = [
    note:"The defining business: a vast roster trimmed for balance and cost-rule profit. PRICING: fringe and academy names move at varied floors; book profit on homegrown sales."},
   {name:"High earners", sub:"Wage & ratio relief", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Expect some bigger names to move on as Alonso reshapes the side and BlueCo manage the cost ratio."},
-  {name:"Alejandro Garnacho", sub:"22 · W · Argentina", club:"Aston Villa", pos:"W", report:"22 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Loan + conditional buy option", truth:60, prob:45, light:"y", trend:"flat", note:"Villa have submitted an official loan bid with Garnacho's salary covered by the club, per Romano."}
+  {name:"Mykhailo Mudryk", sub:"Loan exit being planned after doping ban expired", club:"Coventry City / Strasbourg (multiple suitors)", pos:"FW", report:"Now free to play again after his doping suspension, Chelsea are weighing a loan to help restore his fitness and value; Coventry are among several Premier League and European clubs registering interest, with Strasbourg also in the mix.", src:"Ben Jacobs / Ahad Shaukat", tier:1, fee:"Loan", truth:65, prob:40, light:"y", trend:"flat", note:"Xabi Alonso to assess him in pre-season before a final decision on his future"}
 ];
 
 const RISERS = [
@@ -976,7 +985,12 @@ const HUB = {
   cfc:       {l:"Chelsea Official · news", u:"https://www.chelseafc.com/en/news"},
   fabrizioRomanoviaFootballTransfersAlejandroGarnacho: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/fabrizio-romano-alejandro-garnacho-warren-zaire-emery-ousmane-diomande"},
   nicoloSchiraviaCaughtOffsidePepChavarra: {l:"Nicolo Schira (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/03/journalist-terms-chelsea-transfer-done-deal-contract/"},
-  gianlucaDiMarzioDannyWelbeck: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-trattative-1-agosto-2026-495391"}};
+  gianlucaDiMarzioDannyWelbeck: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-trattative-1-agosto-2026-495391"},
+  footballTransfersRomanoMorettoPepChavarra: {l:"FootballTransfers (Romano/Moretto)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/chelsea-transfer-news-today-victor-osimhen-pep-chavarria-2-august"},
+  caughtOffsideMykhailoMudryk: {l:"CaughtOffside", u:"https://www.caughtoffside.com/2026/08/04/chelsea-consider-loaning-out-mudryk-shock-club/"},
+  chelseaFCofficialGeovanyQuenda: {l:"Chelsea FC official", u:"https://www.chelseafc.com/en/news/article/summer-transfers-2026-all-the-chelsea-ins-outs-and-new-contracts-so-far"},
+  teamTalkMorganRogers: {l:"TeamTalk", u:"https://www.teamtalk.com/chelsea/every-completed-chelsea-transfer-summer-2026-signings-sales-loans"},
+  yahooSportsTyriqueGeorge: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-everton-sign-tyrique-george-153951753.html"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -984,9 +998,19 @@ const LINKMAP = {
   "Squad rationalisation": ["espn","athletic","kinsella"],
   "High earners": ["bbcChe","law"],
   "Emmanuel Emegha": ["romano","lequipe","cfc"],
-  "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho"],
-  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra"],
-  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck"]};
+  "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "teamTalkMorganRogers"],
+  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra", "footballTransfersRomanoMorettoPepChavarra"],
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "teamTalkMorganRogers"],
+  "Victor Osimhen": ["footballTransfersRomanoMorettoPepChavarra"],
+  "Mykhailo Mudryk": ["caughtOffsideMykhailoMudryk"],
+  "Geovany Quenda": ["chelseaFCofficialGeovanyQuenda"],
+  "Morgan Rogers": ["teamTalkMorganRogers"],
+  "Maxence Lacroix": ["teamTalkMorganRogers"],
+  "Marco Palestra": ["chelseaFCofficialGeovanyQuenda"],
+  "Valentin Barco": ["teamTalkMorganRogers"],
+  "Marc Cucurella": ["teamTalkMorganRogers"],
+  "Andrey Santos": ["teamTalkMorganRogers"],
+  "Tyrique George": ["yahooSportsTyriqueGeorge"]};
 const WL_LINKMAP = {
   "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };

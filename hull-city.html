@@ -871,8 +871,20 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Jack Butland", sub:"33 · GK · England", club:"Rangers", pos:"GK", fee:"£3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Part of a straight goalkeeper swap: Butland moves to Hull as Ivor Pandur heads the other way to Rangers."},
+  {name:"Oscar Zambrano", sub:"22 · DM · Ecuador", club:"NK Maribor", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent return for the Ecuadorian after a 2024 loan spell at Hull; signs a four-year deal with a further 12-month option."},
+  {name:"Matt Targett", sub:"30 · LB · England", club:"Newcastle United", pos:"DF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back joins on a free after being released by Newcastle, following a loan spell at Middlesbrough."},
+  {name:"Hidemasa Morita", sub:"31 · DM · Japan", club:"Sporting CP", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Experienced Japan international joins as a free agent, adding European top-flight experience to the midfield."},
+  {name:"Oli McBurnie", sub:"29 · ST · Scotland", club:"Las Palmas", pos:"FW", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Scotland striker returns to England after a season in La Liga on a three-year deal; head coach Sergej Jakirovic's first ask was 'can you score me 15 goals?'."},
+  {name:"Semi Ajayi", sub:"31 · CB · Nigeria", club:"West Bromwich Albion", pos:"DF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signs a two-year deal after being released by West Brom, adding Premier League-proven centre-back depth."}
+];
+const CONFIRMED_OUT = [
+  {name:"Akin Famewo", sub:"27 · CB · England", club:"Bolton Wanderers", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back departs as Hull trims its promotion-winning squad."},
+  {name:"Ivor Pandur", sub:"24 · GK · Croatia", club:"Rangers", pos:"GK", fee:"£6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Croatian goalkeeper moves to Rangers in the swap deal that brought Jack Butland to Hull."},
+  {name:"Kasey Palmer", sub:"27 · AM · England", club:"Luton Town", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Attacking midfielder moves on as Hull reshapes its squad for the top flight."},
+  {name:"Kyle Joseph", sub:"23 · ST · England", club:"Middlesbrough", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young striker departs for Championship side Middlesbrough."}
+];
 
 /* NOTE (migration): the prior page predates the window opening and carried NO sourced
    player rumours, only survival-rebuild framing. The rows below are that framing split
@@ -888,6 +900,8 @@ const INCOMING = [
    note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted."},
   {name:"Goalkeeper / depth", sub:"Framing · position need, no named target", club:"Market", pos:"GK", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:28, light:'o', trend:'flat',
    note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted."},
+  {name:"Konstantinos Tzolakis", sub:"22 · GK · Greece", club:"Olympiacos", pos:"GK", report:"Owner Acun Ilicali has publicly confirmed personal terms are agreed, but the club-to-club deal with Olympiacos is taking longer than hoped and has hit a late snag.", src:"Yorkshire/multiple + owner confirmation", tier:2, fee:"~€20m", truth:70, prob:55, light:"g", trend:"flat", note:"Would be a club-record fee for Hull; Ilicali has confirmed the pursuit publicly despite the delay."},
+  {name:"Sorba Thomas", sub:"26 · W · Wales", club:"Nantes (on loan from Huddersfield Town)", pos:"FW", report:"HullLive/BBC Sport name Thomas as Hull's 'number one' target; he was left out of Nantes' squad amid ongoing loan-recall talks, with Huddersfield holding his registration.", src:"HullLive / BBC Sport", tier:2, fee:"Undisclosed (loan-recall / fee to Huddersfield)", truth:60, prob:40, light:"y", trend:"flat", note:"Later reports describe 'optimism' over reaching agreement despite Nantes' resistance to cutting the loan short."}
 ];
 
 const OUTGOING = [
@@ -938,7 +952,15 @@ const HUB = {
   sky:        {l:"Sky Sports · Hull City", u:"https://www.skysports.com/hull-city"},
   official:   {l:"Hull City Official · news", u:"https://www.wearehullcity.co.uk/news/"},
   fanatik:    {l:"Fanatik", u:"https://www.fanatik.com.tr/"},
-};
+  yahooSportsIlicaliconfirmationKonstantinosTzolakis: {l:"Yahoo Sports (Ilicali confirmation)", u:"https://sports.yahoo.com/articles/hull-owner-ilicali-confirms-tzolakis-150022197.html"},
+  bBCSportHullLiveSorbaThomas: {l:"BBC Sport (HullLive)", u:"https://feeds.bbci.co.uk/sport/football/articles/c0lzk0e9xlgo"},
+  skySportsJackButland: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13559364/ivor-pandur-rangers-sign-croatia-goalkeeper-from-hull-city-with-jack-butland-close-to-joining-tigers"},
+  tribalFootballOscarZambrano: {l:"TribalFootball", u:"https://www.tribalfootball.com/article/soccer-premier-league-done-deal-hull-city-confirm-permanent-oscar-zambrano-return-beb3d0b7-01ce-4d93-b27f-a6ffae4e813f"},
+  theYorkshirePostMattTargett: {l:"The Yorkshire Post", u:"https://www.yorkshirepost.co.uk/sport/football/middlesbrough-fc/hull-city-transfer-latest-ex-middlesbrough-fc-loanee-matt-targett-joins-from-newcastle-united-8816927"},
+  theYorkshirePostHidemasaMorita: {l:"The Yorkshire Post", u:"https://www.yorkshirepost.co.uk/sport/football/hull-city-transfer-latest-japanese-international-midfielder-becomes-fourth-summer-signing-8821096"},
+  bBCSportOliMcBurnie: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/c87ejdnxqrlo"},
+  bBCSportSemiAjayi: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/cly2z964jy0o"},
+  sportsMoleAkinFamewo: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/hull-city/transfer-talk/feature/hull-summer-transfers-all-confirmed-ins-and-outs-for-2026_599295.html"}};
 const LINKMAP = {
   "PL-experienced rebuild": ["hullLive","bbcHull","sky"],
   "Goalscorer": ["hullLive","bbcGossip"],
@@ -946,7 +968,18 @@ const LINKMAP = {
   "Midfield control": ["hullLive","bbcGossip"],
   "Goalkeeper / depth": ["hullLive","bbcGossip"],
   "Championship-level players": ["hullLive","official"],
-};
+  "Konstantinos Tzolakis": ["yahooSportsIlicaliconfirmationKonstantinosTzolakis"],
+  "Sorba Thomas": ["bBCSportHullLiveSorbaThomas"],
+  "Jack Butland": ["skySportsJackButland"],
+  "Oscar Zambrano": ["tribalFootballOscarZambrano"],
+  "Matt Targett": ["theYorkshirePostMattTargett"],
+  "Hidemasa Morita": ["theYorkshirePostHidemasaMorita"],
+  "Oli McBurnie": ["bBCSportOliMcBurnie"],
+  "Semi Ajayi": ["bBCSportSemiAjayi"],
+  "Akin Famewo": ["sportsMoleAkinFamewo"],
+  "Ivor Pandur": ["skySportsJackButland"],
+  "Kasey Palmer": ["sportsMoleAkinFamewo"],
+  "Kyle Joseph": ["sportsMoleAkinFamewo"]};
 const WL_LINKMAP = {
   "PL-ready targets":"hullLive","Squad-trim sales":"official",
 };

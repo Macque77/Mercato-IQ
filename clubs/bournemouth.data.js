@@ -56,7 +56,8 @@ const CONFIRMED_IN = [
   {name:"Antonio Silva", sub:"22 · CB · Portugal", club:"permanent from Benfica", pos:"CB", fee:"€25m + €5m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Independently reported by Romano, Di Marzio and Schira within days of each other; medical and signing were in progress as of 31 Jul."}
 ];
 const CONFIRMED_OUT = [
-  {name:"Jordan Zemura", sub:"LB · Zimbabwe", club:"loan to Watford", pos:"LB", fee:"Loan to 30 Jun 2027", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official season-long loan to Watford, confirmed via Di Marzio's live mercato digest."}
+  {name:"Jordan Zemura", sub:"LB · Zimbabwe", club:"loan to Watford", pos:"LB", fee:"Loan to 30 Jun 2027", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official season-long loan to Watford, confirmed via Di Marzio's live mercato digest."},
+  {name:"Marcos Senesi", sub:"Free transfer to London rivals", club:"Tottenham Hotspur", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 
 const INCOMING = [
@@ -66,12 +67,17 @@ const INCOMING = [
    note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens."},
   {name:"Avom & Hadj Moussa", sub:"Recycled aggregator links", club:"Aggregated feeds", pos:"-", report:"~60d+ / recycled", tier:4, fee:"n/a", truth:25, prob:8, light:'r', trend:'down', bullshit:true,
    note:"Recycled aggregator repetition with no named original source behind it, resurfacing every few weeks without ever being freshly re-reported. Carried only to show it's been discounted, not as live business."},
+  {name:"Arthur Theate", sub:"Defensive reinforcement option", club:"Eintracht Frankfurt", pos:"DF", report:"Bournemouth continue to be linked with defensive cover as Marco Rose reshapes his backline ahead of the new season.", src:"The Athletic", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:""},
+  {name:"Tiago Gabriel", sub:"Centre-back shortlist name", club:"Lecce", pos:"DF", report:"Young Italian-based centre-back named among Bournemouth's defensive targets.", src:"Gianluca Di Marzio", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:""},
+  {name:"Jhon Lucumí", sub:"Colombian centre-back option", club:"Bologna", pos:"DF", report:"Linked as defensive cover option amid Bournemouth's search for centre-back depth.", src:"Nicolò Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:""}
 ];
 const OUTGOING = [
   {name:"Prized young asset", sub:"The model in action", club:"Elite suitors", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40m+", truth:55, prob:50, light:'y', trend:'up',
    note:"Bournemouth's best young players always attract bigger clubs (Huijsen to Real Madrid, Kerkez to Liverpool last year). PRICING: a holder's premium applies; a sale funds the next intake."},
   {name:"Fringe & squad trim", sub:"Reinvestment churn", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Standard churn to balance the squad for a European campaign and keep the cost ratio healthy."},
+  {name:"Rayan", sub:"Breakout Brazilian winger attracting suitors", club:"Multiple (Arsenal/Liverpool linked)", pos:"FW", report:"20-year-old right winger has scored 7 goals since a January move from Vasco da Gama; Bournemouth want £85m and a move this window is seen as unlikely.", src:"The Sun / OneFootball", tier:3, fee:"£85m", truth:45, prob:15, light:"o", trend:"flat", note:""},
+  {name:"Antoine Semenyo", sub:"New contract signed, release clause active from January", club:"Multiple PL clubs previously linked", pos:"FW", report:"Semenyo committed his future to Bournemouth with a new deal that includes a £65m release clause only active from January 2027; no active move this summer.", src:"BBC Sport", tier:1, fee:"£65m release clause (Jan 2027)", truth:60, prob:10, light:"r", trend:"flat", note:"Not a live summer target given new contract terms"}
 ];
 
 const RISERS = [
@@ -121,15 +127,26 @@ const HUB = {
   espn:     {l:"ESPN · football", u:"https://www.espn.co.uk/football/"},
   athletic: {l:"The Athletic · football", u:"https://www.nytimes.com/athletic/football/"},
   eSPNcitingNicoloSchiraAntonioSilva: {l:"ESPN (citing Nicolo Schira)", u:"https://www.espn.com/soccer/story/_/id/49506377/bournemouth-transfers-premier-league-antonio-silva-benfica"},
-  gianlucaDiMarzioJordanZemura: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"}};
+  gianlucaDiMarzioJordanZemura: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"},
+  theAthleticviaRoundtableArthurTheate: {l:"The Athletic (via Roundtable)", u:"https://roundtable.io/sports/soccer/premier-league/afc-bournemouth/news/six-new-bournemouth-transfer-links-emerge-ahead-of-pre-season"},
+  nowArsenalviaTheSunRayan: {l:"Now Arsenal (via The Sun)", u:"https://www.nowarsenal.com/transfer-news/bournemouth-demand-85million-for-star-with-arsenal-interested/"},
+  bBCSportAntoineSemenyo: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/cwy543n274wo"},
+  skySportsAntonioSilva: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11743/13569014/antonio-silva-bournemouth-clinch-signing-of-portugal-international-defender-from-benfica"},
+  sportsMoleMarcosSenesi: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/bournemouth/transfer-talk/feature/bournemouth-summer-transfers-all-confirmed-ins-and-outs-for-2026_599225.html"}};
 const LINKMAP = {
   "Malik Tillman": ["teamtalk","espn"],
   "Young press-fit additions": ["echo","bbcGossip"],
   "Prized young asset": ["sky","athletic"],
   "Fringe & squad trim": ["echo"],
   "Avom & Hadj Moussa": [],
-  "Antonio Silva": ["eSPNcitingNicoloSchiraAntonioSilva"],
-  "Jordan Zemura": ["gianlucaDiMarzioJordanZemura"]};
+  "Antonio Silva": ["eSPNcitingNicoloSchiraAntonioSilva", "skySportsAntonioSilva"],
+  "Jordan Zemura": ["gianlucaDiMarzioJordanZemura"],
+  "Arthur Theate": ["theAthleticviaRoundtableArthurTheate"],
+  "Tiago Gabriel": ["theAthleticviaRoundtableArthurTheate"],
+  "Jhon Lucumí": ["theAthleticviaRoundtableArthurTheate"],
+  "Rayan": ["nowArsenalviaTheSunRayan"],
+  "Antoine Semenyo": ["bBCSportAntoineSemenyo"],
+  "Marcos Senesi": ["sportsMoleMarcosSenesi"]};
 const WL_LINKMAP = {
   "Malik Tillman":"teamtalk","Prized young assets":"sky",
 };

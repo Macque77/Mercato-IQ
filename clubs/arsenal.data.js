@@ -66,8 +66,14 @@ const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , update
 const CONFIRMED_IN = [
   {name:"Piero Hincapié", sub:"24 · CB/LB · Ecuador", to:"permanent from Bayer Leverkusen", fee:"≈£45m", free:false, status:"done", statusTxt:"DONE, AWAITING ANNOUNCEMENT",
    note:"Romano 'here we go': the season-long loan converts to a permanent on a pre-agreed deal. A five-year contract is already signed, the fee is around €52m and Leverkusen keep a 10% sell-on. Arsenal's first business of summer 2026, using the same loan-to-buy structure as the Raya deal from Brentford. A genuine purchase, not a loan: real squad value across centre-back and left-back."},
+  {name:"Illan Meslier", sub:"Free transfer goalkeeper", club:"Leeds United", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as backup/competition for the number one jersey"},
+  {name:"Christos Tzolis", sub:"Left-sided attacker signed from Belgium", club:"Club Brugge", pos:"FW", fee:"£34m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed July 23, 2026"}
 ];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Karl Hein", sub:"Backup goalkeeper departs", club:"Werder Bremen", pos:"GK", fee:"£2.6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Jakub Kiwior", sub:"Squad defender sold to Portugal", club:"Porto", pos:"DF", fee:"£14.7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Leandro Trossard", sub:"Winger exits after Tzolis arrival", club:"Beşiktaş", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Some outlets reported a fee around €20m"}
+];
 
 const INCOMING = [
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£80m+", truth:55, prob:20, light:'o', trend:'flat',
@@ -76,7 +82,9 @@ const INCOMING = [
    note:"A recurring centre-forward option as Arsenal weigh succession for Gabriel Jesus; reporting has Arsenal registering interest. OBSTACLES: T3 sourcing, a crowded market for elite young strikers, and the cost-cap maths on another big fee."},
   {name:"Julián Álvarez", sub:"26 · Argentina · ST", club:"Atlético Madrid", pos:"ST", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£120m+", truth:45, prob:10, light:'r', trend:'flat',
    note:"Listed by the BBC as an attacking target but flagged as 'highly complex': a valuation north of £120m would almost certainly require a major sale first, and Atlético hold all the leverage. An aspirational, low-probability swing rather than a likely deal."},
-
+  {name:"Bruno Guimarães", sub:"Deal advancing fast, medical stage reported", club:"Newcastle United", pos:"MF", report:"Talks accelerated in early August with personal terms agreed; Romano reports the move is 'expected shortly' with a medical set for August 3 and Newcastle already planning a replacement.", src:"Fabrizio Romano", tier:1, fee:"£80m (£70m + £10m add-ons)", truth:85, prob:78, light:"g", trend:"flat", note:"The Times reported the fee breakdown"},
+  {name:"Ezri Konsa", sub:"Targeted as Saliba injury cover", club:"Aston Villa", pos:"DF", report:"Arsenal have had a £60-65m bid in talks with Villa as they seek defensive reinforcement after William Saliba's back injury; Konsa is open to discussing a move but may prefer to stay for Champions League football.", src:"CaughtOffside / Sports Mole", tier:2, fee:"£60m", truth:55, prob:35, light:"y", trend:"flat", note:"Villa under financial pressure but Konsa reportedly leaning toward staying"},
+  {name:"Rayan", sub:"Audacious move for breakout Brazilian winger", club:"Bournemouth", pos:"FW", report:"20-year-old Brazilian right winger has impressed since a January move from Vasco da Gama; Bournemouth want £85m and Arsenal are seen as unlikely to pursue given depth on the right flank.", src:"The Sun", tier:3, fee:"£85m", truth:40, prob:15, light:"o", trend:"flat", note:"Arsenal's greater need is reportedly a left-sided attacker after Trossard's exit"}
 ];
 
 const OUTGOING = [
@@ -84,16 +92,13 @@ const OUTGOING = [
    note:"Among those who could be sold to fund arrivals, with his recent campaign disrupted by a cruciate injury. PRICING: an injury record and contract length soften the floor, but a proven PL forward retains value. A sale helps the cost ratio and clears a striker slot."},
   {name:"Riccardo Calafiori", sub:"23 · LB/CB · Italy", club:"Juventus", pos:"LB/CB", report:"~1 wk ago", src:"Gazzetta dello Sport", tier:2, fee:"£35-45m", truth:65, prob:30, light:'y', trend:'up',
    note:"Juventus are credited with strong interest and reportedly see him as a first-choice target to add Italy internationals. PRICING: under contract with no need to sell, so Arsenal hold a holder's price; the report notes any deal may hinge on whether Calafiori himself pushes to leave."},
-  {name:"Leandro Trossard", sub:"31 · W · Belgium", club:"Open to offers", pos:"W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£12-18m", truth:65, prob:30, light:'y', trend:'up',
-   note:"With around 12 months left on his deal, this is a sell-or-risk-a-free decision. PRICING: the short contract caps the fee and makes a sale this window logical to bank value and trim wages."},
-  {name:"Christian Nørgaard", sub:"DM · Denmark", club:"Listening to offers", pos:"DM", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£8-12m", truth:65, prob:30, light:'y', trend:'flat',
-   note:"Arsenal are set to listen to offers as part of squad churn. A depth midfielder rather than a starter, so a clean, headroom-extending sale."},
   {name:"Gabriel Martinelli", sub:"24 · LW · Brazil", club:"Available", pos:"LW", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£35-50m", truth:63, prob:28, light:'o', trend:'flat',
    note:"Named among those who could be made available to fund incomings. PRICING: still a saleable resale asset, so the price is firm; a sale would likely be tied to landing a wide/creative upgrade."},
   {name:"Ben White", sub:"RB/CB · England", club:"Listening to offers", pos:"RB/CB", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£25-35m", truth:60, prob:25, light:'o', trend:'flat',
    note:"Among the names Arsenal will listen on. Versatile and experienced; a sale would open a full-back refresh that is itself a stated target area."},
   {name:"William Saliba", sub:"24 · CB · France", club:"Real Madrid", pos:"CB", report:"~1 wk ago", src:"Marca / BBC gossip", tier:3, fee:"£80m+ (resisting)", truth:35, prob:10, light:'r', trend:'down',
    note:"Real Madrid are reported to have made him a top defensive target. PRICING: Arsenal have worked to secure his long-term future and would price a sale prohibitively. The high ask is designed to deter, not invite; very low probability."},
+  {name:"Myles Lewis-Skelly", sub:"Man Utd exploring feasibility of a raid", club:"Manchester United", pos:"MF", report:"United are reported to be looking into a move for the 19-year-old academy product; Arsenal value him at £38.5m and are not actively selling.", src:"Sky Sports", tier:2, fee:"£38.5m (valuation)", truth:35, prob:12, light:"r", trend:"flat", note:"Arsenal would only consider offers well above valuation"}
 ];
 
 const RISERS = [
@@ -155,21 +160,34 @@ const HUB = {
   cbs:       {l:"CBS Sports · football", u:"https://www.cbssports.com/soccer/"},
   standard:  {l:"Evening Standard · Arsenal", u:"https://www.standard.co.uk/sport/football/arsenal"},
   afc:       {l:"Arsenal Official · news", u:"https://www.arsenal.com/news"},
-};
+  football365viaFabrizioRomanoBrunoGuimares: {l:"Football365 (via Fabrizio Romano)", u:"https://www.football365.com/news/arsenal-romano-reveals-guimaraes-expected-shortly-update-newcastle-start-plans-medical"},
+  sportsMoleviaCaughtOffsideEzriKonsa: {l:"Sports Mole (via CaughtOffside)", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/news/konsa-arsenal-stance-revealed-amid-transfer-interest_602295.html"},
+  nowArsenalviaTheSunRayan: {l:"Now Arsenal (via The Sun)", u:"https://www.nowarsenal.com/transfer-news/bournemouth-demand-85million-for-star-with-arsenal-interested/"},
+  caughtOffsideGabrielJesus: {l:"CaughtOffside", u:"https://www.caughtoffside.com/2026/06/24/arsenal-gabriel-jesus-transfer-fee/"},
+  skySportsMylesLewisSkelly: {l:"Sky Sports", u:"https://www.skysports.com/football/transfer-paper-talk/12709/13569111/myles-lewis-skelly-transfer-news-man-utd-considering-move-for-arsenal-player-paper-talk"},
+  arseblogNewsPieroHincapi: {l:"Arseblog News", u:"https://arseblog.news/2026/06/confirmed-arsenal-sign-piero-hincapie-on-permanent-deal/"},
+  sportsMoleIllanMeslier: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/feature/arsenal-summer-transfers-all-confirmed-ins-and-outs-for-2026_599109.html"}};
 const LINKMAP = {
   "Morgan Rogers": ["bbcArs","mokbel"],
   "Eli Junior Kroupi": ["bbcArs"],
   "Benjamin Šeško": ["bbcGossip"],
   "Julián Álvarez": ["bbcArs"],
-  "Gabriel Jesus": ["bbcArs","cbs"],
+  "Gabriel Jesus": ["bbcArs","cbs", "caughtOffsideGabrielJesus"],
   "Riccardo Calafiori": ["gazzetta"],
-  "Leandro Trossard": ["bbcArs"],
+  "Leandro Trossard": ["bbcArs", "sportsMoleIllanMeslier"],
   "Christian Nørgaard": ["bbcArs"],
   "Gabriel Martinelli": ["bbcArs"],
   "Ben White": ["bbcArs"],
   "William Saliba": ["marca","bbcGossip"],
-  "Piero Hincapié": ["romano","afc"],
-};
+  "Piero Hincapié": ["romano","afc", "arseblogNewsPieroHincapi"],
+  "Bruno Guimarães": ["football365viaFabrizioRomanoBrunoGuimares"],
+  "Ezri Konsa": ["sportsMoleviaCaughtOffsideEzriKonsa"],
+  "Rayan": ["nowArsenalviaTheSunRayan"],
+  "Myles Lewis-Skelly": ["skySportsMylesLewisSkelly"],
+  "Illan Meslier": ["sportsMoleIllanMeslier"],
+  "Christos Tzolis": ["sportsMoleIllanMeslier"],
+  "Karl Hein": ["sportsMoleIllanMeslier"],
+  "Jakub Kiwior": ["sportsMoleIllanMeslier"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
   "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",

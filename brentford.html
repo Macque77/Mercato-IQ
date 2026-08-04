@@ -895,9 +895,14 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
-  {name:"Mamadou Sangaré", sub:"RC Lens", club:"permanent from RC Lens", pos:"MF", fee:"£41m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record signing for Brentford; Romano reported a verbal agreement with medical the same day."}
+  {name:"Mamadou Sangaré", sub:"RC Lens", club:"permanent from RC Lens", pos:"MF", fee:"£41m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record signing for Brentford; Romano reported a verbal agreement with medical the same day."},
+  {name:"Jannik Schuster", sub:"Austrian centre-back", club:"Red Bull Salzburg", pos:"DF", fee:"£12m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First summer signing"},
+  {name:"Jaidon Anthony", sub:"Winger returns to the Premier League", club:"Burnley", pos:"FW", fee:"£17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Second summer signing, four-year deal with option for a fifth"},
+  {name:"Callum Wilson", sub:"Free transfer striker cover", club:"West Ham United", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Frank Onyeka", sub:"Midfielder drops to the Championship", club:"Coventry City", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
+];
 
 const INCOMING = [
   {name:"Value & successor targets", sub:"Data-model intake", club:"Market", pos:"-", report:"window framing", src:"Model-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',
@@ -906,6 +911,8 @@ const INCOMING = [
    note:"Framing row split out of the old dashboard's positions heat during migration: support for Igor Thiago (22 PL goals) and Kevin Schade is the clearest depth need. No specific player asserted; candidates surface via the data model once the window opens."},
   {name:"Midfield value options", sub:"Data-model profiles", club:"Market", pos:"CM", report:"window framing", src:"Pattern-based", tier:3, fee:"Value fees", truth:55, prob:35, light:'y', trend:'flat',
    note:"Framing row split out of the old dashboard's positions heat during migration: midfield value profiles identified by the analytics network, typically from Scandinavia, the lower divisions or France. No specific player asserted."},
+  {name:"El Hadji Malick Diouf", sub:"Rejected opening bid for West Ham right-winger", club:"West Ham United", pos:"DF", report:"Brentford's £15-18m offer was rejected as 'almost insulting' by West Ham, who value the 21-year-old higher after paying £19m for him from Slavia Prague; West Ham say he's not for sale at any price.", src:"The 4th Official (via West Ham Zone/Yahoo)", tier:2, fee:"£15-18m (rejected bid)", truth:55, prob:15, light:"o", trend:"flat", note:""},
+  {name:"Pape Matar Sarr", sub:"Offered by Spurs amid midfield overcrowding", club:"Tottenham Hotspur", pos:"MF", report:"Tottenham offered the midfielder to Brentford as they manage squad depth following the arrivals of Sandro Tonali and Mateus Fernandes; Brentford were initially cool but could revisit before deadline day.", src:"Paul O'Keefe (X)", tier:2, fee:"~£50m valuation", truth:45, prob:12, light:"r", trend:"flat", note:"Bigger clubs including Bayern Munich, Real Madrid and PSG also linked"}
 ];
 
 const OUTGOING = [
@@ -913,6 +920,7 @@ const OUTGOING = [
    note:"A recurring summer feature: a developed star sold at a premium, but only with a successor lined up (the Toney, Mbeumo, Wissa pattern). PRICING: holder's premium; proceeds fund the next intake."},
   {name:"Fringe & squad trim", sub:"Reinvestment churn", club:"Various", pos:"-", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
    note:"Routine churn to keep the squad balanced and the cost ratio healthy."},
+  {name:"Igor Thiago", sub:"Record sale being monitored by Chelsea", club:"Chelsea", pos:"FW", report:"Chelsea are among clubs monitoring the Brazilian striker after his prolific breakout season; Brentford have set an £80m valuation that would surpass the £71m received for Bryan Mbeumo.", src:"ESPN Brasil (via Football Muse)", tier:2, fee:"£80m (valuation)", truth:45, prob:20, light:"o", trend:"flat", note:"Thiago signed an improved contract through 2031 in February, suggesting no rush to sell"}
 ];
 
 const RISERS = [
@@ -960,14 +968,27 @@ const HUB = {
   wls:       {l:"West London Sport · Brentford", u:"https://www.westlondonsport.com/brentford"},
   sky:       {l:"Sky Sports · Brentford", u:"https://www.skysports.com/brentford"},
   bfc:       {l:"Brentford FC Official · news", u:"https://www.brentfordfc.com/en/news"},
-  fabrizioRomanoviaEmpireoftheKopMamadouSangar: {l:"Fabrizio Romano (via Empire of the Kop)", u:"https://www.empireofthekop.com/2026/07/31/medical-booked-for-liverpool-target-ahead-of-41m-transfer-fabrizio-romano/"}};
+  fabrizioRomanoviaEmpireoftheKopMamadouSangar: {l:"Fabrizio Romano (via Empire of the Kop)", u:"https://www.empireofthekop.com/2026/07/31/medical-booked-for-liverpool-target-ahead-of-41m-transfer-fabrizio-romano/"},
+  westHamZoneYahooSportsElHadjiMalickDiouf: {l:"West Ham Zone / Yahoo Sports", u:"https://sports.yahoo.com/articles/insulting-offer-brentford-made-west-173354996.html"},
+  toTheLaneAndBackPapeMatarSarr: {l:"To The Lane And Back", u:"https://tothelaneandback.com/2026/07/29/tottenham-offer-pape-matar-sarr-brentford/"},
+  yahooSportsviaESPNBrasilIgorThiago: {l:"Yahoo Sports (via ESPN Brasil)", u:"https://sports.yahoo.com/articles/brentford-slap-80m-price-igor-103500967.html"},
+  roundtableBrentfordFCJannikSchuster: {l:"Roundtable / Brentford FC", u:"https://roundtable.io/sports/soccer/premier-league/brentford/news/brentford-confirm-jannik-schuster-signing-from-red-bull-salzburg"},
+  yahooSportsJaidonAnthony: {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/news/jaidon-anthony-brentford-confirm-second-160627350.html"},
+  sportsMoleCallumWilson: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/brentford/transfer-talk/feature/brentford-summer-transfers-all-confirmed-ins-and-outs-for-2026_599228.html"}};
 const LINKMAP = {
   "Value & successor targets": ["bbcBees","athletic","wls"],
   "Forward depth options": ["bbcBees","wls"],
   "Midfield value options": ["bbcBees","wls"],
   "Prized asset (premium sale)": ["bbcBees","athletic"],
   "Fringe & squad trim": ["wls","sky"],
-  "Mamadou Sangaré": ["fabrizioRomanoviaEmpireoftheKopMamadouSangar"]};
+  "Mamadou Sangaré": ["fabrizioRomanoviaEmpireoftheKopMamadouSangar"],
+  "El Hadji Malick Diouf": ["westHamZoneYahooSportsElHadjiMalickDiouf"],
+  "Pape Matar Sarr": ["toTheLaneAndBackPapeMatarSarr"],
+  "Igor Thiago": ["yahooSportsviaESPNBrasilIgorThiago"],
+  "Jannik Schuster": ["roundtableBrentfordFCJannikSchuster"],
+  "Jaidon Anthony": ["yahooSportsJaidonAnthony"],
+  "Callum Wilson": ["sportsMoleCallumWilson"],
+  "Frank Onyeka": ["sportsMoleCallumWilson"]};
 const WL_LINKMAP = {
   "Data-model targets":"bbcBees","Prized asset":"athletic",
 };
