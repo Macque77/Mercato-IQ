@@ -858,13 +858,16 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Noel Aseko Nkili", sub:"20 · CM · Germany/Cameroon", to:"permanent from Bayern Munich", fee:"~€12-13m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul, after a loan at Hannover 96. Frankfurt's first confirmed midfield reinforcement of the summer."},
   {name:"Otávio", sub:"22 · W · Portugal", to:"permanent from Estrela Amadora", fee:"~€4.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Portuguese winger signed for attacking depth."},
-  {name:"Malick Pimpong", sub:"20 · ST · Ghana", to:"permanent from FC Midtjylland", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young Ghanaian forward brought in as a striker development option."}
+  {name:"Malick Pimpong", sub:"20 · ST · Ghana", to:"permanent from FC Midtjylland", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young Ghanaian forward brought in as a striker development option."},
+  {name:"Malik Pimpong", sub:"Forward", club:"Undisclosed", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed 30 June 2026, handed squad number 35."},
+  {name:"Noel Aseko", sub:"Germany U21 international midfielder", club:"Bayern Munich", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined 8 July 2026 having impressed on loan at Hannover 96 the previous season."}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Nathaniel Brown", sub:"22 · LB · Germany", to:"permanent to Bayern Munich", club:"Bayern Munich", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul: one of the Bundesliga's most sought-after young full-backs departs for the champions, praised publicly by Antonio Rüdiger ahead of the move."},
   {name:"Rasmus Kristensen", sub:"29 · RB · Denmark", to:"permanent to FC Midtjylland", club:"FC Midtjylland", fee:"~€6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Danish right-back departs for a return to Midtjylland."},
-  {name:"Mahmoud Dahoud", sub:"29 · CM · Germany", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder leaves as a free agent."}
+  {name:"Mahmoud Dahoud", sub:"29 · CM · Germany", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder leaves as a free agent."},
+  {name:"Aurèle Amenda", sub:"Switzerland international centre-back", club:"Coventry City", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 17 July 2026 after two years at Frankfurt."}
 ];
 
 const INCOMING = [
@@ -900,15 +903,21 @@ const HUB = {
   gfnbaum: {l:"Get German Football News · Baum", u:"https://www.getfootballnewsgermany.com/2026/elias-baum-frankfurt-remain/"},
   sportde: {l:"Sport.de", u:"https://www.sport.de/news/ne17024782/eintracht-frankfurt-erzielt-offenbar-transfer-einigung/"},
   bundesliga: {l:"Bundesliga.com · Official", u:"https://www.bundesliga.com/en/bundesliga/news/eintracht-frankfurt-sign-noel-aseko-bayern-munich-38162"},
-  club: {l:"Eintracht Frankfurt Official", u:"https://en.eintracht.de/"}
-};
+  club: {l:"Eintracht Frankfurt Official", u:"https://en.eintracht.de/"},
+  bundesligacomRaphaelOnyedika: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/eintracht-frankfurt/transfers"},
+  wikipediaclubtransferlogMalikPimpong: {l:"Wikipedia (club transfer log)", u:"https://en.wikipedia.org/wiki/2026%E2%80%9327_Eintracht_Frankfurt_season"},
+  bundesligacomNoelAseko: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/eintracht-frankfurt/news"}};
 
 const LINKMAP = {
   "Noel Aseko Nkili": ["bundesliga","gfn"],
-  "Raphael Onyedika": ["sportde"],
-  "Nathaniel Brown": ["bundesliga"],
-  "Elias Baum": ["gfnbaum"]
-};
+  "Raphael Onyedika": ["sportde", "bundesligacomRaphaelOnyedika"],
+  "Nathaniel Brown": ["bundesliga", "bundesligacomNoelAseko"],
+  "Elias Baum": ["gfnbaum"],
+  "Otávio": ["bundesligacomRaphaelOnyedika"],
+  "Malik Pimpong": ["wikipediaclubtransferlogMalikPimpong"],
+  "Noel Aseko": ["bundesligacomNoelAseko"],
+  "Aurèle Amenda": ["bundesligacomNoelAseko"],
+  "Rasmus Kristensen": ["wikipediaclubtransferlogMalikPimpong"]};
 const WL_LINKMAP = {
   "Elias Baum": ["gfnbaum"]
 };

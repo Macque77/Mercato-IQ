@@ -861,7 +861,9 @@ const CONFIRMED_IN = [
 
 const CONFIRMED_OUT = [];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Elias Egouli", sub:"Centre-back", club:"Fortuna Düsseldorf", pos:"CB", report:"A move via an exit clause looked to be agreed, with reports the towering 23-year-old defender would join newly-promoted Elversberg, but the transfer was subsequently reported to have collapsed.", src:"BILD", tier:3, fee:"Reported exit clause", truth:60, prob:15, light:"o", trend:"flat", note:"Transfermarkt.de and BILD first reported the move as being completed via an exit clause; later coverage said the transfer had fallen through and Egouli suffered an injury afterwards."}
+];
 
 const OUTGOING = [];
 
@@ -882,10 +884,15 @@ const POSITIONS = [
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"SV Elversberg Official", u:"https://www.sv-elversberg.de/"}
-};
+  club: {l:"SV Elversberg Official", u:"https://www.sv-elversberg.de/"},
+  bILDTransfermarktdeEliasEgouli: {l:"BILD / Transfermarkt.de", u:"https://www.transfermarkt.de/"},
+  yahooSportsLucaSirch: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-elversberg-snap-kaiserslautern-defensive-080500796.html"},
+  eSPNColeCampbell: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49315578/us-cole-campbell-joins-elversberg-borussia-dortmund"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Elias Egouli": ["bILDTransfermarktdeEliasEgouli"],
+  "Luca Sirch": ["yahooSportsLucaSirch"],
+  "Cole Campbell": ["eSPNColeCampbell"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

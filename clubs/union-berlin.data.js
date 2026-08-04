@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Latte Lath", sub:"23 · ST · Ivory Coast", to:"loan from Atlanta United (with buy option)", fee:"Loan, salary covered by Union", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Aug: Atlanta United loan the forward for 2026/27 with a permanent option at the end of the deal, freeing up an MLS Designated Player slot. Previously at Middlesbrough, Atalanta and FC St. Gallen before MLS."},
   {name:"Marvin Friedrich", sub:"30 · CB · Germany", to:"free from Borussia Mönchengladbach", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back returns to a familiar Bundesliga environment on a free transfer."},
-  {name:"Zeno Van Den Bosch", sub:"20 · DM · Belgium", to:"free from Royal Antwerp", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Belgian midfielder signed on a free transfer for squad depth."}
+  {name:"Zeno Van Den Bosch", sub:"20 · DM · Belgium", to:"free from Royal Antwerp", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Belgian midfielder signed on a free transfer for squad depth."},
+  {name:"Emmanuel Latte Lath", sub:"Striker", club:"Atlanta United", pos:"ST", fee:"Loan with purchase option (~€21m reported)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ivorian international and former Middlesbrough forward joins on loan from Atlanta United's record signing, with Union Berlin holding an option to make the move permanent."}
 ];
 
 const CONFIRMED_OUT = [
@@ -68,13 +69,15 @@ const WATCHLIST = [];
 const HUB = {
   atlutd: {l:"Atlanta United Official", u:"https://www.atlutd.com/news/atlanta-united-loans-forward-latte-lath-union-berlin-august-2026"},
   bundesliga: {l:"Bundesliga.com · Official", u:"https://www.bundesliga.com/de/bundesliga/news/danilho-doekhi-lazio-rom-transfer-ehemaliger-union-berlin-spieler-38250"},
-  laziali: {l:"The Laziali", u:"https://thelaziali.com/2026/07/14/official-lazio-sign-danilho-doekhi-on-a-free-transfer/"}
-};
+  laziali: {l:"The Laziali", u:"https://thelaziali.com/2026/07/14/official-lazio-sign-danilho-doekhi-on-a-free-transfer/"},
+  yahooSportsEmmanuelLatteLath: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-union-berlin-ivorian-striker-171500636.html"},
+  insideFutbolviaMSNDiogoLeite: {l:"Inside Futbol (via MSN)", u:"https://www.msn.com/en-gb/sport/other/everton-and-leeds-united-poised-to-miss-out-on-diogo-leite/ar-AA27CBNE?ocid=BingNewsVerp"}};
 
 const LINKMAP = {
   "Latte Lath": ["atlutd"],
-  "Danilho Doekhi": ["bundesliga","laziali"]
-};
+  "Danilho Doekhi": ["bundesliga","laziali"],
+  "Emmanuel Latte Lath": ["yahooSportsEmmanuelLatteLath"],
+  "Diogo Leite": ["insideFutbolviaMSNDiogoLeite"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

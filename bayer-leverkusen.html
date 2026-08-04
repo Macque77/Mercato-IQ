@@ -860,10 +860,14 @@ const CONFIRMED_IN = [
 
 const CONFIRMED_OUT = [
   {name:"Kerim Alajbegović", sub:"18 · AM/W · Bosnia", to:"permanent to Juventus", club:"Juventus", fee:"~€33-40m (reports vary)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Aug: a Bundesliga record fee for a teenager never having played a first-team minute for Leverkusen, following a breakout loan at RB Salzburg and a Goal-of-the-Tournament nomination at the 2026 World Cup. Sporting director Simon Rolfes cited 'fierce competition' in his positions. Chelsea also pursued him before Juventus won the race."},
-  {name:"Alejandro Grimaldo", sub:"30 · LB", to:"permanent to Atlético Madrid", club:"Atlético Madrid", fee:"~€22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun: the Spain left-back returns home to Atlético after three trophy-laden years in Leverkusen, prompting the Afonso Moreira signing on the opposite flank."}
+  {name:"Alejandro Grimaldo", sub:"30 · LB", to:"permanent to Atlético Madrid", club:"Atlético Madrid", fee:"~€22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun: the Spain left-back returns home to Atlético after three trophy-laden years in Leverkusen, prompting the Afonso Moreira signing on the opposite flank."},
+  {name:"Abdoulaye Faye", sub:"Loaned to Celta Vigo after contract extension", club:"Celta Vigo", pos:"CB", fee:"€300,000 loan fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Senegalese centre-back's contract was extended to June 2031 before he was sent out on loan to LaLiga's Celta Vigo."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Moussa Diaby", sub:"Talk of sensational Bundesliga return", club:"Al-Ittihad", pos:"RW", report:"Leverkusen are reportedly plotting a €30m reunion with Diaby, who scored 96 goals in 172 appearances for the club before his 2023 move to Aston Villa.", src:"Goal.com", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Speculative reunion story with no indication Al-Ittihad are willing sellers."},
+  {name:"Zakaria El Ouahdi", sub:"Identified as alternative to Medina at right-back", club:"KRC Genk", pos:"RB", report:"Leverkusen have identified the Morocco international full-back as a fallback option to Facundo Medina, with Genk said to be demanding a fee that makes 'top clubs swallow hard'.", src:"Kicker", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Reported as secondary target behind Medina; Genk resisting a cut-price sale."}
+];
 
 const OUTGOING = [];
 
@@ -892,15 +896,23 @@ const HUB = {
   espn: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49227873/spain-alex-grimaldo-joins-atletico-madrid-bayer-leverkusen"},
   bein: {l:"beIN Sports", u:"https://www.beinsports.com/en-us/soccer/bundesliga/articles/everkusen-set-for-historic-kerim-alajbegovic-transfer-2026-07-31"},
   yahoo: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/juventus-beat-chelsea-race-sign-152500320.html"},
-  gianlucaDiMarzioMiguelGutirrez: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-30-luglio-495350"}};
+  gianlucaDiMarzioMiguelGutirrez: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-30-luglio-495350"},
+  yahooSportsCanadaMiguelGutirrez: {l:"Yahoo Sports Canada", u:"https://ca.sports.yahoo.com/news/bayer-leverkusen-fullback-search-remains-110000039.html"},
+  goalcomMoussaDiaby: {l:"Goal.com", u:"https://www.goal.com/en/news/96-goalscorer-in-172-games-bayer-leverkusen-are-on-the-verge-of-a-spectacular-return-for-30-million/bltf840c2f7000b45a5"},
+  yahooSportsZakariaElOuahdi: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/leverkusen-identify-genk-full-back-070600034.html"},
+  footballItaliaKerimAlajbegovi: {l:"Football Italia", u:"https://football-italia.net/official-juventus-sign-alajbegovic-leverkusen/"},
+  bayer04LeverkusenOfficialAbdoulayeFaye: {l:"Bayer 04 Leverkusen Official", u:"https://www.leverkusen.com/en"}};
 
 const LINKMAP = {
-  "Kerim Alajbegović": ["bundesliga","bein","yahoo"],
+  "Kerim Alajbegović": ["bundesliga","bein","yahoo", "footballItaliaKerimAlajbegovi"],
   "Alejandro Grimaldo": ["bundesliga2","espn"],
   "Afonso Moreira": ["gfn"],
   "Kennet Eichhorn": ["gfn"],
   "Aleksa Damjanović": ["gfn"],
-  "Miguel Gutiérrez": ["gianlucaDiMarzioMiguelGutirrez"]};
+  "Miguel Gutiérrez": ["gianlucaDiMarzioMiguelGutirrez", "yahooSportsCanadaMiguelGutirrez"],
+  "Moussa Diaby": ["goalcomMoussaDiaby"],
+  "Zakaria El Ouahdi": ["yahooSportsZakariaElOuahdi"],
+  "Abdoulaye Faye": ["bayer04LeverkusenOfficialAbdoulayeFaye"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

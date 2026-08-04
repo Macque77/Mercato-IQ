@@ -853,17 +853,30 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Hennes Behrens", sub:"20 · CB · Germany", to:"permanent from TSG Hoffenheim", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young centre-back signed as a squad-depth addition."},
-  {name:"Sima Suso", sub:"22 · W", to:"permanent from Fortuna Düsseldorf", fee:"~€1.7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Winger signed to bolster attacking options."}
+  {name:"Sima Suso", sub:"22 · W", to:"permanent from Fortuna Düsseldorf", fee:"~€1.7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Winger signed to bolster attacking options."},
+  {name:"Fabian Rieder", sub:"Swiss international midfielder completes move", club:"Stade Rennais", pos:"CAM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"23-year-old Switzerland international signed after Augsburg won out in a late transfer battle; previously on loan at Stuttgart."},
+  {name:"Michael Gregoritsch", sub:"Austria international rejoins on permanent deal", club:"Brøndby IF", pos:"ST", fee:"€500,000", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Augsburg exercised a permanent option on the Austrian forward, who previously played for the club until 2022 before Freiburg and a loan at Brøndby."},
+  {name:"Tom Wisbereit", sub:"Germany youth international goalkeeper joins", club:"Unattached/Youth", pos:"GK", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Germany youth international goalkeeper confirmed by the club's official transfer list, dated 14.07.2026."},
+  {name:"Calvin Brackelmann", sub:"Centre-back signed from Arminia Bielefeld", club:"Arminia Bielefeld", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed on Augsburg's official transfer list, dated 29.05.2026."},
+  {name:"Rodrigo Ribeiro", sub:"Loan-to-permanent option exercised", club:"Sporting CP", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Portuguese forward's loan spell converted into a permanent transfer, confirmed 27.05.2026."}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Cedric Zesiger", sub:"27 · CB · Switzerland", to:"permanent to BSC Young Boys", club:"BSC Young Boys", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swiss centre-back returns to his homeland, Augsburg's largest confirmed sale of the summer."},
-  {name:"Elvis Rexhbecaj", sub:"28 · CM", to:"free to VfL Wolfsburg", club:"VfL Wolfsburg", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder departs on a free transfer."}
+  {name:"Elvis Rexhbecaj", sub:"28 · CM", to:"free to VfL Wolfsburg", club:"VfL Wolfsburg", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder departs on a free transfer."},
+  {name:"Cédric Zesiger", sub:"Returns to Switzerland", club:"BSC Young Boys", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swiss centre-back left to return to Bern, confirmed 03.07.2026."},
+  {name:"Henri Koudossou", sub:"Permanent move completed", club:"Arminia Bielefeld", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure to Arminia Bielefeld, dated 25.06.2026."},
+  {name:"Maximilian Bauer", sub:"Joins Arminia Bielefeld permanently", club:"Arminia Bielefeld", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25.05.2026 on the club's official departures list."},
+  {name:"Elias Saad", sub:"Loaned to MLS side", club:"Nashville SC", pos:"LW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 16.07.2026."},
+  {name:"Kyliane Dong", sub:"Loaned to Championship side", club:"Bolton Wanderers", pos:"CM", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 07.07.2026."},
+  {name:"Felix Meiser", sub:"Joins fellow German second-tier side", club:"Fortuna Düsseldorf", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure dated 10.07.2026."}
 ];
 
 const INCOMING = [];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Mert Kömür", sub:"Hull City 'making progress'; Galatasaray also circling", club:"Hull City", pos:"RW", report:"Hull City have reportedly made progress in talks over the winger, with head coach Manuel Baum also fielding questions on his future amid Galatasaray interest.", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Described as 'positive talks' by Hull's camp; Galatasaray interest adds competition."}
+];
 
 const RISERS = [];
 
@@ -880,10 +893,25 @@ const POSITIONS = [
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"FC Augsburg Official", u:"https://www.fcaugsburg.de/en/"}
-};
+  club: {l:"FC Augsburg Official", u:"https://www.fcaugsburg.de/en/"},
+  bBCSportMertKmr: {l:"BBC Sport", u:"https://www.bbc.com/sport/football/articles/c4gx0z9z6vpo"},
+  yahooSportsFabianRieder: {l:"Yahoo Sports", u:"https://sports.yahoo.com/article/official-rennes-fabian-rieder-signs-162400632.html"},
+  yahooSportsMichaelGregoritsch: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-augsburg-confirm-permanent-signing-113000240.html"},
+  fCAugsburgOfficialTomWisbereit: {l:"FC Augsburg Official", u:"https://www.fcaugsburg.de/en/news"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Mert Kömür": ["bBCSportMertKmr"],
+  "Fabian Rieder": ["yahooSportsFabianRieder"],
+  "Michael Gregoritsch": ["yahooSportsMichaelGregoritsch"],
+  "Tom Wisbereit": ["fCAugsburgOfficialTomWisbereit"],
+  "Calvin Brackelmann": ["fCAugsburgOfficialTomWisbereit"],
+  "Rodrigo Ribeiro": ["fCAugsburgOfficialTomWisbereit"],
+  "Cédric Zesiger": ["fCAugsburgOfficialTomWisbereit"],
+  "Henri Koudossou": ["fCAugsburgOfficialTomWisbereit"],
+  "Maximilian Bauer": ["fCAugsburgOfficialTomWisbereit"],
+  "Elias Saad": ["fCAugsburgOfficialTomWisbereit"],
+  "Kyliane Dong": ["fCAugsburgOfficialTomWisbereit"],
+  "Felix Meiser": ["fCAugsburgOfficialTomWisbereit"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

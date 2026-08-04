@@ -858,9 +858,14 @@ const CONFIRMED_IN = [
   {name:"Robin Gosens", sub:"32 · LB/WB · Germany", to:"loan from AC Fiorentina", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Experienced Germany international full-back joins on loan, adding significant top-flight experience for the newly-promoted squad."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Tim Dietrich", sub:"Defender", club:"Preußen Münster", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"23-year-old academy product left Schalke for 3. Liga side Preußen Münster following the club's promotion."}
+];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Jesper Lindström", sub:"Winger/Attacking Midfielder", club:"SSC Napoli", pos:"CAM", report:"A loan move with a reported €5m purchase option looked done and Lindström was set for an early introduction at Schalke, but the deal reportedly collapsed at the last moment, with Napoli said to be threatening legal action over the breakdown.", src:"BILD / Sport Bild", tier:2, fee:"Loan, €5m option (deal disputed)", truth:70, prob:20, light:"o", trend:"flat", note:"Multiple outlets (Sport.de, Fussballdaten, OneFootball) first reported the move as done, then BILD reported it had collapsed with Napoli threatening legal steps."},
+  {name:"Diogo Leite", sub:"Free agent centre-back", club:"Union Berlin (released)", pos:"CB", report:"Schalke were reportedly willing to push their financial limits to land the free-agent centre-back, but he is now said to be closing in on a move to Saudi side Al-Diriyah, with Everton and Leeds also poised to miss out.", src:"Inside Futbol", tier:3, fee:"Free transfer", truth:55, prob:15, light:"o", trend:"flat", note:"Leite left Union Berlin as a free agent; Schalke were linked but he is reported close to agreeing terms with Al-Diriyah in Saudi Arabia instead."}
+];
 
 const OUTGOING = [];
 
@@ -883,13 +888,18 @@ const WATCHLIST = [];
 
 const HUB = {
   newsde: {l:"news.de", u:"https://www.news.de/sport/859647837/transferticker-fussball-bundesliga-sommer-2026-hsv-daka-wechsel-zugaenge-abgaenge-saison-26-27-adeyemi-bvb-woeber-schalke/1/"},
-  baden24: {l:"Baden24", u:"https://www.baden24.de/sport/sc-freiburg/transfer-ticker-sport-club-scf-sommer-neuzugang-abgang-wechsel-infos-news-94318691.html"}
-};
+  baden24: {l:"Baden24", u:"https://www.baden24.de/sport/sc-freiburg/transfer-ticker-sport-club-scf-sommer-neuzugang-abgang-wechsel-infos-news-94318691.html"},
+  bILDdeJesperLindstrm: {l:"BILD.de", u:"https://www.bild.de/sport/fussball/fc-schalke-04-mega-transfer-so-gut-wie-geplatzt-6a6fb309dd06dd5ef2e428aa"},
+  insideFutbolviaMSNDiogoLeite: {l:"Inside Futbol (via MSN)", u:"https://www.msn.com/en-gb/sport/other/everton-and-leeds-united-poised-to-miss-out-on-diogo-leite/ar-AA27CBNE?ocid=BingNewsVerp"},
+  yahooSportsMaximilianWber: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-leeds-allow-maximilian-w-213500539.html"},
+  mSNviaDerWestendeTimDietrich: {l:"MSN (via DerWesten.de)", u:"https://www.msn.com/de-ch/sport/fussball/schalke-verk%C3%BCndet-abgang-spieler-geht-nach-aufstieg-in-die-3-liga/ar-AA26ThCv?ocid=BingNewsVerp"}};
 
 const LINKMAP = {
-  "Maximilian Wöber": ["newsde"],
-  "Junior Adamu": ["baden24"]
-};
+  "Maximilian Wöber": ["newsde", "yahooSportsMaximilianWber"],
+  "Junior Adamu": ["baden24"],
+  "Jesper Lindström": ["bILDdeJesperLindstrm"],
+  "Diogo Leite": ["insideFutbolviaMSNDiogoLeite"],
+  "Tim Dietrich": ["mSNviaDerWestendeTimDietrich"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

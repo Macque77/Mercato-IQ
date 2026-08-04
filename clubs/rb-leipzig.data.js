@@ -32,22 +32,26 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Rocco Reitz", sub:"24 · CM · Germany", to:"permanent from Borussia Mönchengladbach", fee:"~€20-21m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed via official club channels: Gladbach's captain and academy graduate joins on a deal agreed in principle back in March and completed this summer - a significant midfield upgrade."},
-  {name:"Maxime Esteve", sub:"23 · CB · France", to:"permanent from Burnley", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"French centre-back signed as a significant defensive investment."}
+  {name:"Maxime Esteve", sub:"23 · CB · France", to:"permanent from Burnley", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"French centre-back signed as a significant defensive investment."},
+  {name:"Ørjan Nyland", sub:"Norwegian goalkeeper, free agent return", club:"Sevilla", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free-agent goalkeeper sealed a return to RB Leipzig on a contract running through 2028, following the exit of long-time No.1 Péter Gulácsi."}
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Xaver Schlager", sub:"27 · CM · Austria", to:"free to Nottingham Forest", club:"Nottingham Forest", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Austrian international midfielder departs for the Premier League on a free transfer."}
+  {name:"Xaver Schlager", sub:"27 · CM · Austria", to:"free to Nottingham Forest", club:"Nottingham Forest", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Austrian international midfielder departs for the Premier League on a free transfer."},
+  {name:"Péter Gulácsi", sub:"Veteran Hungary international goalkeeper departs", club:"Villarreal", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving Leipzig No.1 signed a two-year contract with Villarreal after his departure from the club."}
 ];
 
 const INCOMING = [
-  {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"TSG Hoffenheim", pos:"ST", report:"2 Aug 2026", src:"Sport Bild / Sky Deutschland", tier:2, fee:"Below €35m valuation via contract clause", truth:70, prob:65, light:"g", trend:"up", note:"Reported imminent: Sport Bild says Leipzig could activate a release clause well below Asllani's freshly risen €35m market value, with the move possibly completing during Hoffenheim's Austrian training camp (2-9 Aug). Leipzig reportedly want to sell one of their current strikers first before finalising."}
+  {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"TSG Hoffenheim", pos:"ST", report:"2 Aug 2026", src:"Sport Bild / Sky Deutschland", tier:2, fee:"Below €35m valuation via contract clause", truth:70, prob:65, light:"g", trend:"up", note:"Reported imminent: Sport Bild says Leipzig could activate a release clause well below Asllani's freshly risen €35m market value, with the move possibly completing during Hoffenheim's Austrian training camp (2-9 Aug). Leipzig reportedly want to sell one of their current strikers first before finalising."},
+  {name:"Unnamed Sunderland academy forward", sub:"Youth player on Leipzig's scouting list", club:"Sunderland", pos:"ST", report:"RB Leipzig have placed an unnamed Sunderland youngster on their list of potential summer targets as they continue to mine the club's academy pipeline.", src:"Sunderland Echo", tier:3, fee:"Unknown", truth:40, prob:25, light:"o", trend:"flat", note:"Player not yet named publicly; speculative early-stage interest only."}
 ];
 
 const OUTGOING = [
   {name:"Yan Diomandé", sub:"19 · W · Ivory Coast", club:"Real Madrid", pos:"W", report:"27 Jul 2026", src:"BBC Sport / Al Jazeera", tier:1, fee:"Undisclosed (fee TBC)", truth:72, prob:62, light:"g", trend:"flat", note:"BBC reports personal terms agreed, modelled on a Jude Bellingham-style performance-incentivised contract, after both PSG (£102.5m bid rejected) and Liverpool withdrew from the race. Diomandé was Bundesliga's best young player in 2025/26 and impressed for Ivory Coast at the 2026 World Cup - fee between the two clubs is still to be finalised. Leipzig's own sporting director has since publicly disputed Fabrizio Romano's 'Here We Go' report, calling it premature - a live source-vs-club standoff worth tracking."},
   {name:"Serhou Guirassy", sub:"24 · ST · Guinea", club:"AS Roma", pos:"ST", report:"31 Jul 2026", src:"Matteo Moretto / Fabrizio Romano (Sky Italia)", tier:2, fee:"~€30m", truth:58, prob:40, light:"y", trend:"up", note:"Romano and Moretto report Roma in advanced talks for the striker; nothing finalised yet but discussions have progressed."},
   {name:"Antonio Nusa", sub:"21 · W · Norway", club:"AS Roma", pos:"W", report:"29 Jul 2026", src:"Sky (Germany/Italy)", tier:2, fee:"€60m demanded", truth:50, prob:30, light:"y", trend:"flat", note:"Roma opened talks after missing out on Crysencio Summerville (to Al-Hilal); Leipzig are demanding around €60m and have so far resisted a sale."},
-  {name:"Assan Ouedraogo", sub:"19 · MF · Germany", club:"Real Madrid / Man Utd / Chelsea", pos:"MF", report:"Jul 2026", src:"TeamTalk", tier:3, fee:"Undisclosed", truth:30, prob:12, light:"r", trend:"flat", note:"Real Madrid reportedly made informal contact with the midfielder's representatives, with Manchester United and Chelsea also credited with interest - an ongoing, lower-confidence speculation thread rather than a fresh breaking story."}
+  {name:"Assan Ouedraogo", sub:"19 · MF · Germany", club:"Real Madrid / Man Utd / Chelsea", pos:"MF", report:"Jul 2026", src:"TeamTalk", tier:3, fee:"Undisclosed", truth:30, prob:12, light:"r", trend:"flat", note:"Real Madrid reportedly made informal contact with the midfielder's representatives, with Manchester United and Chelsea also credited with interest - an ongoing, lower-confidence speculation thread rather than a fresh breaking story."},
+  {name:"Yan Diomande", sub:"Ivorian winger wanted by Real Madrid", club:"Real Madrid", pos:"RW", report:"Real Madrid are pushing to complete a move worth around €120m for Diomande; Leipzig sporting director Marcel Schäfer has publicly denied any deal is finalised, though talks continue and the player was absent from the pre-season training camp.", src:"Fabrizio Romano / Yahoo Sports / Goal.com", tier:1, fee:"~€120m reported asking/offer", truth:70, prob:55, light:"g", trend:"flat", note:"Leipzig management has mocked reports of a completed deal, calling premature claims from 'self-proclaimed transfer experts' inaccurate, but confirm negotiations are ongoing."}
 ];
 
 const RISERS = [
@@ -77,16 +81,21 @@ const HUB = {
   rbl: {l:"RB Leipzig Official", u:"https://rbleipzig.com/en/news/rocco-reitz-transfer-new-signing-summer-gladbach-rb-leipzig"},
   yahoo: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/hoffenheim-striker-fisnik-asllani-transfer-173500596.html"},
   getfootballnewsitalyNusa: {l:"Get Football News Italy · Nusa", u:"https://www.getfootballnewsitaly.com/2026/roma-open-talks-for-antonio-nusa-leipzig-demand-e60-million/"},
-  teamtalkOuedraogo: {l:"TeamTalk · Ouedraogo", u:"https://www.teamtalk.com/news/real-madrid-want-rb-leipzig-midfielder-assan-ouedraogo-the-new-jude-bellingham"}
-};
+  teamtalkOuedraogo: {l:"TeamTalk · Ouedraogo", u:"https://www.teamtalk.com/news/real-madrid-want-rb-leipzig-midfielder-assan-ouedraogo-the-new-jude-bellingham"},
+  sunderlandEchoUnnamedSunderlandacademyforward: {l:"Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football"},
+  yahooSportsviaFabrizioRomanoYanDiomande: {l:"Yahoo Sports (via Fabrizio Romano)", u:"https://sports.yahoo.com/"},
+  uNIIndiaPterGulcsi: {l:"UNI India", u:"https://www.uniindia.com/"}};
 
 const LINKMAP = {
   "Rocco Reitz": ["gfn","rbl"],
   "Yan Diomandé": ["aljazeera"],
   "Fisnik Asllani": ["yahoo"],
   "Antonio Nusa": ["getfootballnewsitalyNusa"],
-  "Assan Ouedraogo": ["teamtalkOuedraogo"]
-};
+  "Assan Ouedraogo": ["teamtalkOuedraogo"],
+  "Unnamed Sunderland academy forward": ["sunderlandEchoUnnamedSunderlandacademyforward"],
+  "Yan Diomande": ["yahooSportsviaFabrizioRomanoYanDiomande"],
+  "Ørjan Nyland": ["yahooSportsviaFabrizioRomanoYanDiomande"],
+  "Péter Gulácsi": ["uNIIndiaPterGulcsi"]};
 const WL_LINKMAP = {
   "Yan Diomandé": ["aljazeera"],
   "Serhou Guirassy": ["yahoo"]

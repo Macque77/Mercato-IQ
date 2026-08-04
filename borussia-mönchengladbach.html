@@ -854,13 +854,22 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"David Herold", sub:"22 · CB · Germany", to:"permanent from Karlsruher SC", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young centre-back signed as squad depth following captain Rocco Reitz's departure to RB Leipzig."},
   {name:"Isac Lidberg", sub:"25 · ST · Sweden", to:"permanent from SV Darmstadt 98", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swedish forward brought in for attacking depth."},
-  {name:"Yukhym Konoplya", sub:"24 · RB · Ukraine", to:"free from Shakhtar Donetsk", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Experienced Ukraine international right-back joins on a free transfer."}
+  {name:"Yukhym Konoplya", sub:"24 · RB · Ukraine", to:"free from Shakhtar Donetsk", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Experienced Ukraine international right-back joins on a free transfer."},
+  {name:"Daiki Hashioka", sub:"Japan international full-back", club:"Slavia Prague", pos:"RB", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan from Slavia Prague, announced 30 July 2026."},
+  {name:"Zento Uno", sub:"Japan international midfielder", club:"Unattached/JPN club (pre-move)", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed 18 June 2026, described by the club as its new Japan international midfielder."},
+  {name:"Enzo Leopold", sub:"Young forward", club:"Hannover 96", pos:"RW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 27 May 2026."},
+  {name:"Yukhym Konoplia", sub:"Ukrainian right-back", club:"Undisclosed", pos:"RB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 29 May 2026."},
+  {name:"Hugo Bolin", sub:"Midfielder", club:"Undisclosed", pos:"CM", fee:"Permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 18 March 2026, ahead of the summer window."},
+  {name:"Daniel Batz", sub:"Goalkeeper", club:"Undisclosed", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 18 May 2026."}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Rocco Reitz", sub:"24 · CM · Germany", to:"permanent to RB Leipzig", club:"RB Leipzig", fee:"~€20-21m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club captain and academy graduate departs for a Bundesliga rival in a deal agreed in principle back in March and completed this summer - a significant loss for Polanski's midfield."},
   {name:"Marvin Friedrich", sub:"30 · CB · Germany", to:"free to 1. FC Union Berlin", club:"1. FC Union Berlin", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back returns to a former club on a free transfer after his Gladbach contract expired."},
-  {name:"Jonas Omlin", sub:"32 · GK · Switzerland", to:"free to FC Basel", club:"FC Basel", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving goalkeeper leaves on a free transfer, returning to Switzerland."}
+  {name:"Jonas Omlin", sub:"32 · GK · Switzerland", to:"free to FC Basel", club:"FC Basel", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving goalkeeper leaves on a free transfer, returning to Switzerland."},
+  {name:"Giovanni Reyna", sub:"USA international attacking midfielder", club:"RC Strasbourg", pos:"CAM", fee:"€3M", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 4 August 2026 ('Fix!' per Sport1 transfer ticker) after a single Bundesliga season at Gladbach."},
+  {name:"Shio Fukuda", sub:"Japanese full-back", club:"Karlsruher SC", pos:"LB", fee:"Permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 12 June 2026."},
+  {name:"Yannik Engelhardt", sub:"Midfielder (loan return)", club:"SC Freiburg", pos:"CM", fee:"N/A (loan return)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned to parent club Freiburg permanently on 15 July 2026 after a 2025/26 loan spell at Gladbach."}
 ];
 
 const INCOMING = [];
@@ -890,17 +899,27 @@ const HUB = {
   bundesliga: {l:"Bundesliga.com · Official", u:"https://www.bundesliga.com/en/bundesliga"},
   gfn: {l:"Get German Football News", u:"https://www.getfootballnewsgermany.com/"},
   rbl: {l:"RB Leipzig Official", u:"https://rbleipzig.com/en/news/rocco-reitz-transfer-new-signing-summer-gladbach-rb-leipzig"},
-  club: {l:"Borussia Mönchengladbach Official", u:"https://www.borussia.de/en"}
-};
+  club: {l:"Borussia Mönchengladbach Official", u:"https://www.borussia.de/en"},
+  bundesligacomDaikiHashioka: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/borussia-moenchengladbach/news"},
+  wikipediaclubtransferlogEnzoLeopold: {l:"Wikipedia (club transfer log)", u:"https://en.wikipedia.org/wiki/2026%E2%80%9327_Borussia_M%C3%B6nchengladbach_season"},
+  sport1TransfertickerGiovanniReyna: {l:"Sport1 Transferticker", u:"https://www.sport1.de/transfermarkt"}};
 
 const LINKMAP = {
-  "Rocco Reitz": ["gfn","rbl"],
-  "Marvin Friedrich": ["bundesliga"],
-  "David Herold": ["club"],
-  "Isac Lidberg": ["club"],
+  "Rocco Reitz": ["gfn","rbl", "wikipediaclubtransferlogEnzoLeopold"],
+  "Marvin Friedrich": ["bundesliga", "wikipediaclubtransferlogEnzoLeopold"],
+  "David Herold": ["club", "wikipediaclubtransferlogEnzoLeopold"],
+  "Isac Lidberg": ["club", "wikipediaclubtransferlogEnzoLeopold"],
   "Yukhym Konoplya": ["club"],
-  "Jonas Omlin": ["club"]
-};
+  "Jonas Omlin": ["club", "wikipediaclubtransferlogEnzoLeopold"],
+  "Daiki Hashioka": ["bundesligacomDaikiHashioka"],
+  "Zento Uno": ["bundesligacomDaikiHashioka"],
+  "Enzo Leopold": ["wikipediaclubtransferlogEnzoLeopold"],
+  "Yukhym Konoplia": ["wikipediaclubtransferlogEnzoLeopold"],
+  "Hugo Bolin": ["wikipediaclubtransferlogEnzoLeopold"],
+  "Daniel Batz": ["wikipediaclubtransferlogEnzoLeopold"],
+  "Giovanni Reyna": ["sport1TransfertickerGiovanniReyna"],
+  "Shio Fukuda": ["wikipediaclubtransferlogEnzoLeopold"],
+  "Yannik Engelhardt": ["bundesligacomDaikiHashioka"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

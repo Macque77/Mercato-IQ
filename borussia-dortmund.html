@@ -871,10 +871,15 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Mats Wieffer", sub:"24 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"2 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"€25m", truth:62, prob:45, light:"y", trend:"up", note:"Falk reports Dortmund pursuing Dutch midfielder from AZ Alkmaar. Talks progressing steadily."},
-  {name:"Moussa Diaby", sub:"25 · LW · France", club:"Bayer Leverkusen", pos:"LW", report:"1 Aug 2026", src:"Bild / Sky Deutschland", tier:2, fee:"€40m", truth:55, prob:35, light:"y", trend:"flat", note:"German media reports Dortmund as one of several clubs interested in Leverkusen winger. Deal unlikely given Leverkusen's asking price."}
+  {name:"Moussa Diaby", sub:"25 · LW · France", club:"Bayer Leverkusen", pos:"LW", report:"1 Aug 2026", src:"Bild / Sky Deutschland", tier:2, fee:"€40m", truth:55, prob:35, light:"y", trend:"flat", note:"German media reports Dortmund as one of several clubs interested in Leverkusen winger. Deal unlikely given Leverkusen's asking price."},
+  {name:"Said El Mala", sub:"Protracted, rocky negotiations with Köln", club:"1. FC Köln", pos:"RW", report:"Talks have repeatedly stalled over the fee, with Köln reportedly ending negotiations after an 'insulting' offer and RB Leipzig and Roma both joining the race for the winger.", src:"Yahoo Sports (Sky Germany feed)", tier:2, fee:"Undisclosed", truth:60, prob:25, light:"o", trend:"flat", note:"Multiple reports of collapsed negotiations; deal now seen as genuinely in doubt with rivals circling."},
+  {name:"Gilberto Mora", sub:"Early-stage interest in Mexican wonderkid", club:"Club Tijuana (Xolos)", pos:"CAM", report:"Dortmund and Benfica have officially reached out to explore signing the highly-rated 18-year-old, in a club long known for developing young talents like Bellingham and Haaland.", src:"Soy Fútbol", tier:3, fee:"Undisclosed", truth:50, prob:15, light:"o", trend:"flat", note:"Very early-stage interest; several European clubs reportedly circling the Mexican international."},
+  {name:"Fisnik Asllani", sub:"On shortlist, but RB Leipzig now favourites", club:"TSG Hoffenheim", pos:"ST", report:"Asllani remains on Dortmund's shortlist of attacking targets and is 'open' to the move, though recent reporting points to RB Leipzig as the frontrunner for the €30m-rated striker.", src:"Yahoo Sports UK", tier:2, fee:"Undisclosed", truth:55, prob:15, light:"o", trend:"flat", note:"Leipzig reported to have overtaken Dortmund in the race for this target."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Yan Couto", sub:"Loan to Como nearing completion", club:"Como 1907", pos:"RB", report:"Couto is now set for a loan move to Serie A side Como, with a purchase option reportedly included after several weeks of difficult negotiations.", src:"Yahoo Sports", tier:2, fee:"Undisclosed", truth:75, prob:80, light:"g", trend:"flat", note:"Described as close to completion, with Como manager Fabregas confirming continued market activity."}
+];
 
 const RISERS = [];
 
@@ -904,21 +909,30 @@ const HUB = {
   "sport1": {l:"Sport1", u:"https://www.sport1.de/news/fussball/bundesliga/2026/08/offiziell-bvb-verpflichtet-wunschspieler-konstantinos-karetsas"},
   "bein": {l:"beIN Sports", u:"https://www.beinsports.com/en-us/soccer/eredivisie/articles/julian-brandt-stuns-the-market-and-joins-ajax-after-leaving-borussia-dortmund-2026-08-01"},
   "ajax": {l:"AFC Ajax Official", u:"https://english.ajax.nl/articles/ajax-signs-julian-brandt"},
-  "90min": {l:"90min · Bundesliga Summer Transfers", u:"https://www.90min.de/sommer-transfers-in-der-bundesliga-2026-alle-offiziellen-wechsel-im-uberblick"}
-};
+  "90min": {l:"90min · Bundesliga Summer Transfers", u:"https://www.90min.de/sommer-transfers-in-der-bundesliga-2026-alle-offiziellen-wechsel-im-uberblick"},
+  yahooSportsSaidElMala: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/k-ln-reportedly-end-negotiations-103900759.html"},
+  soyFtbolGilbertoMora: {l:"Soy Fútbol", u:"https://www.soyfutbol.com/en/trends/borussia-dortmund-and-benfica-lead-the-race-for-gilberto-mora-the-bidding-war-for-xolos-rising-star-heats-up-20260802-0028.html"},
+  yahooSportsUKFisnikAsllani: {l:"Yahoo Sports UK", u:"https://uk.sports.yahoo.com/news/bvb-news-rumours-talks-resumed-020314737.html"},
+  yahooSportsYanCouto: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/borussia-dortmund-yan-couto-now-130500459.html"},
+  bundesligacomKonstantinosKaretsas: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/news/borussia-dortmund-sign-konstantinos-karetsas-genk-greece-38222"},
+  theAthleticKarimAdeyemi: {l:"The Athletic", u:"https://www.nytimes.com/athletic/7440435/2026/07/23/karim-adeyemi-barcelona-borussia-dortmund/"},
+  yahooSportsJulianBrandt: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-julian-brandt-joins-ajax-190700872.html"}};
 
 const LINKMAP = {
   "Mats Wieffer": ["skydeutschland", "falk"],
   "Moussa Diaby": ["bild", "skydeutschland"],
-  "Konstantinos Karetsas": ["sport1"],
+  "Konstantinos Karetsas": ["sport1", "bundesligacomKonstantinosKaretsas"],
   "Joane Gadou": ["90min"],
   "Kauã Prates": ["90min"],
-  "Karim Adeyemi": ["90min"],
-  "Julian Brandt": ["bein","ajax"],
+  "Karim Adeyemi": ["90min", "theAthleticKarimAdeyemi"],
+  "Julian Brandt": ["bein","ajax", "yahooSportsJulianBrandt"],
   "Cole Campbell": ["90min"],
   "Salih Özcan": ["90min"],
-  "Niklas Süle": ["90min"]
-};
+  "Niklas Süle": ["90min"],
+  "Said El Mala": ["yahooSportsSaidElMala"],
+  "Gilberto Mora": ["soyFtbolGilbertoMora"],
+  "Fisnik Asllani": ["yahooSportsUKFisnikAsllani"],
+  "Yan Couto": ["yahooSportsYanCouto"]};
 const WL_LINKMAP = {
   "Mats Wieffer": ["gnews-matswieffer"]
 };

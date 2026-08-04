@@ -59,10 +59,14 @@ const CONFIRMED_OUT = [
   {name:"Raphael Guerreiro", sub:"32 · LB/CM · Portugal", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; versatile Portuguese full-back/midfielder departs on a free."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Bradley Barcola", sub:"Bayern make contact but Liverpool lead the race", club:"Paris Saint-Germain", pos:"LW", report:"Bayern have made contact over the PSG winger as a contingency plan should Michael Olise depart, but Liverpool are widely reported to be leading the race for his signature.", src:"CaughtOffside", tier:2, fee:"Undisclosed", truth:60, prob:25, light:"o", trend:"flat", note:"Bayern viewed as a backup option; Liverpool reported to have 'no chance' rivals per some outlets."},
+  {name:"Benjamin Sesko", sub:"Shock long-term interest as Kane succession plan", club:"Manchester United", pos:"ST", report:"Bayern are reported to retain long-term interest in Manchester United's Sesko as a surprise alternative to Harry Kane, with Kane potentially shifted into a new role.", src:"Christian Falk (Bild)", tier:2, fee:"Undisclosed", truth:55, prob:15, light:"o", trend:"flat", note:"Described as a shock/long-term interest; Manchester United considered unlikely sellers this summer."}
+];
 
 const OUTGOING = [
-  {name:"Michael Olise", sub:"24 · W · France", club:"Real Madrid", pos:"W", report:"Jul 2026", src:"Fabrizio Romano", tier:1, fee:"~€150m mooted", truth:45, prob:15, light:"o", trend:"flat", note:"Real Madrid interest is real, but Romano's read is that 'the feeling is he stays at Bayern' — the club has firmly refused to sell."}
+  {name:"Michael Olise", sub:"24 · W · France", club:"Real Madrid", pos:"W", report:"Jul 2026", src:"Fabrizio Romano", tier:1, fee:"~€150m mooted", truth:45, prob:15, light:"o", trend:"flat", note:"Real Madrid interest is real, but Romano's read is that 'the feeling is he stays at Bayern' — the club has firmly refused to sell."},
+  {name:"João Palhinha", sub:"Publicly transfer-listed by sporting director Max Eberl", club:"Unattached suitors", pos:"CDM", report:"Bayern's Max Eberl has confirmed Palhinha is not part of the club's plans, with the midfielder one of three players publicly transfer-listed this summer.", src:"GOAL", tier:2, fee:"Undisclosed", truth:85, prob:55, light:"g", trend:"flat", note:"Confirmed directly by club sporting director; no destination club yet reported."}
 ];
 
 const RISERS = [
@@ -95,12 +99,19 @@ const HUB = {
   bein: {l:"beIN Sports · Bundesliga", u:"https://www.beinsports.com/en-us/soccer/bundesliga/"},
   bundesliga: {l:"Bundesliga.com · Official", u:"https://www.bundesliga.com/en/bundesliga"},
   club: {l:"FC Bayern Official", u:"https://fcbayern.com/en/news"},
-  fabrizioRomanoviaTeamTalkMichaelOlise: {l:"Fabrizio Romano (via TeamTalk)", u:"https://www.teamtalk.com/news/bayern-munich-firm-decision-selling-michael-olise-real-madrid-e150m-transfer"}};
+  fabrizioRomanoviaTeamTalkMichaelOlise: {l:"Fabrizio Romano (via TeamTalk)", u:"https://www.teamtalk.com/news/bayern-munich-firm-decision-selling-michael-olise-real-madrid-e150m-transfer"},
+  caughtOffsideviaMSNBradleyBarcola: {l:"CaughtOffside (via MSN)", u:"https://www.msn.com/en-gb/sport/football/expert-confirms-liverpool-lead-race-for-winger-signing-despite-bayern-also-making-contact/ar-AA298esW"},
+  yahooSportsChristianFalkBenjaminSesko: {l:"Yahoo Sports (Christian Falk)", u:"https://sports.yahoo.com/articles/bayern-retain-long-term-interest-151000791.html"},
+  yahooSportsFabrizioRomanoMichaelOlise: {l:"Yahoo Sports (Fabrizio Romano)", u:"https://sports.yahoo.com/articles/real-madrid-rule-michael-olise-082000726.html"},
+  gOALviaMSNJooPalhinha: {l:"GOAL (via MSN)", u:"https://www.msn.com/en-us/sports/soccer/bayern-munich-transfer-list-three-stars-as-max-eberl-warns-joao-palhinha-he-has-no-future-at-the-club/ar-AA29b9gu"}};
 
 const LINKMAP = {
   "Ismael Saibari": ["bfw","club"],
   "Nathaniel Brown": ["bein","bfw"],
-  "Michael Olise": ["fabrizioRomanoviaTeamTalkMichaelOlise"]};
+  "Michael Olise": ["fabrizioRomanoviaTeamTalkMichaelOlise", "yahooSportsFabrizioRomanoMichaelOlise"],
+  "Bradley Barcola": ["caughtOffsideviaMSNBradleyBarcola"],
+  "Benjamin Sesko": ["yahooSportsChristianFalkBenjaminSesko"],
+  "João Palhinha": ["gOALviaMSNJooPalhinha"]};
 const WL_LINKMAP = {
   "Jamal Musiala": "bein"
 };

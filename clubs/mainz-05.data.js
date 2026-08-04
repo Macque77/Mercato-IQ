@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Fabio Gruber", sub:"21 · AM · Germany", to:"permanent from 1. FC Nürnberg", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Attacking midfielder signed for creative depth."},
   {name:"Ransford Königsdörffer", sub:"24 · W · Germany", to:"free from Hamburger SV", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Winger arrives on a free transfer after his HSV contract expired."},
-  {name:"Eric Martel", sub:"20 · CM", to:"free from 1. FC Köln", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young midfielder signed as squad depth."}
+  {name:"Eric Martel", sub:"20 · CM", to:"free from 1. FC Köln", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young midfielder signed as squad depth."},
+  {name:"Otto Ruoppi", sub:"Finnish attacking midfielder", club:"KuPS (Kuopion Palloseura)", pos:"CAM", fee:"~€1.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"20-year-old signed for a fee described as a KuPS all-time record sale; scored on debut in an 11-0 friendly win."}
 ];
 
 const CONFIRMED_OUT = [
@@ -46,7 +47,9 @@ const INCOMING = [
   {name:"Stefan Posch", sub:"29 · CB/RB · Austria", club:"Como 1907", pos:"CB/RB", report:"3 Aug 2026", src:"Get German Football News", tier:2, fee:"Fee TBC (Como paid ~€5.5m for him in Jan)", truth:68, prob:55, light:"g", trend:"up", note:"Mainz are pushing to make permanent a hugely successful six-month loan (started 16 straight Bundesliga starts, key to their Conference League run). CEO Christian Heidel: 'This is definitely still on the table... we would like to make this happen.' Posch himself wants to return; fee and structure still to be agreed with Como, who are yet to have him report back for pre-season."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Paul Nebel", sub:"Attacking midfielder/winger, will not extend contract", club:"Undisclosed suitors", pos:"CAM", report:"Nebel has told Mainz he does not want to extend his expiring contract, opening the door to a summer departure, per sporting director Christian Heidel.", src:"Christian Heidel via Yahoo Sports (Mainz sporting director)", tier:2, fee:"N/A - contract situation", truth:70, prob:45, light:"y", trend:"flat", note:"No concrete destination club named yet; situation described as an 'agreement' between player and club over a likely exit."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Posch return pursued</b>: Mainz prepared to 'stretch financial limits' to make last season's loan star permanent, with the player himself keen to return."},
@@ -71,13 +74,20 @@ const WATCHLIST = [
 
 const HUB = {
   gfn: {l:"Get German Football News · Posch", u:"https://www.getfootballnewsgermany.com/2026/stefan-posch-mainz-como/"},
-  gfnamiri: {l:"Get German Football News · Amiri", u:"https://www.getfootballnewsgermany.com/2026/nadiem-amiri-mainz-promise/"}
-};
+  gfnamiri: {l:"Get German Football News · Amiri", u:"https://www.getfootballnewsgermany.com/2026/nadiem-amiri-mainz-promise/"},
+  skySportsGermanyStefanPosch: {l:"Sky Sports Germany", u:"https://www.skysports.com/football/news"},
+  yahooSportsPaulNebel: {l:"Yahoo Sports", u:"https://sports.yahoo.com/"},
+  zeitdeSportschauRansfordKnigsdrffer: {l:"Zeit.de / Sportschau", u:"https://www.zeit.de/news"},
+  sportschauEricMartel: {l:"Sportschau", u:"https://www.sportschau.de/"},
+  allgemeineZeitungOttoRuoppi: {l:"Allgemeine Zeitung", u:"https://www.allgemeine-zeitung.de/"}};
 
 const LINKMAP = {
-  "Stefan Posch": ["gfn"],
-  "Nadiem Amiri": ["gfnamiri"]
-};
+  "Stefan Posch": ["gfn", "skySportsGermanyStefanPosch"],
+  "Nadiem Amiri": ["gfnamiri"],
+  "Paul Nebel": ["yahooSportsPaulNebel"],
+  "Ransford Königsdörffer": ["zeitdeSportschauRansfordKnigsdrffer"],
+  "Eric Martel": ["sportschauEricMartel"],
+  "Otto Ruoppi": ["allgemeineZeitungOttoRuoppi"]};
 const WL_LINKMAP = {
   "Nadiem Amiri": ["gfnamiri"]
 };

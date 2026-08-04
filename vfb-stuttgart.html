@@ -862,11 +862,17 @@ const CONFIRMED_OUT = [
   {name:"Noah Darvich", sub:"20 · CM · Germany", to:"loan to SV Elversberg", club:"SV Elversberg", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young midfielder loaned out for first-team experience at the newly-promoted side."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Dzenan Pejcinovic", sub:"Striker linked as Stuttgart chase attacking reinforcement", club:"VfL Wolfsburg", pos:"ST", report:"Stuttgart are locked in 'difficult' talks with Wolfsburg for the 21-year-old striker, who scored 12 goals last season, but the two clubs remain far apart on valuation.", src:"Goal.com (Christian Guinin)", tier:1, fee:"Wolfsburg want €25m+, Stuttgart yet to match", truth:75, prob:45, light:"y", trend:"flat", note:"Sporting director Fabian Wohlgemuth confirmed talks are ongoing but said a deal is 'a long way off'; Wolfsburg under no financial pressure to sell after the €17m Koulierakis sale to Roma."},
+  {name:"Radek Vitek", sub:"Goalkeeper eyed amid Stuttgart injury crisis", club:"Manchester United", pos:"GK", report:"Stuttgart are exploring a move for the uncapped Manchester United goalkeeper after Alexander Nübel's understudy Dennis Seimen was ruled out for at least two months.", src:"Bild", tier:2, fee:"Valued around €6m (Transfermarkt)", truth:65, prob:40, light:"y", trend:"flat", note:"Vitek, 22, has made no senior United appearances but impressed on loan at Bristol City (41 apps); Hull City and Celtic are also credited with interest."}
+];
 
 const OUTGOING = [
   {name:"Jamie Leweling", sub:"24 · W · Germany", club:"Bournemouth / Everton", pos:"W", report:"3 Aug 2026", src:"Kicker (via Bulinews/Yahoo)", tier:2, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"up", note:"Kicker reports Stuttgart may need to sell to balance the books, with 'no star considered unsellable.' Bournemouth have made a fresh approach that Leweling reportedly rejected last month; Everton and Roma are also credited with interest."},
-  {name:"Ermedin Demirović", sub:"26 · ST · Bosnia", club:"Unspecified", pos:"ST", report:"3 Aug 2026", src:"Kicker (via Bulinews/Yahoo)", tier:3, fee:"Undisclosed", truth:45, prob:22, light:"o", trend:"flat", note:"Named by Kicker among Stuttgart's potential sale candidates as the club looks to balance its books; no concrete club interest specified yet."}
+  {name:"Ermedin Demirović", sub:"26 · ST · Bosnia", club:"Unspecified", pos:"ST", report:"3 Aug 2026", src:"Kicker (via Bulinews/Yahoo)", tier:3, fee:"Undisclosed", truth:45, prob:22, light:"o", trend:"flat", note:"Named by Kicker among Stuttgart's potential sale candidates as the club looks to balance its books; no concrete club interest specified yet."},
+  {name:"Ermedin Demirovic", sub:"Bosnian striker admired by Leeds United", club:"Leeds United", pos:"ST", report:"Leeds United have identified Demirovic as an attacking target for Daniel Farke's Premier League survival push, but the striker is reportedly content in Stuttgart.", src:"Slobodna Bosna", tier:2, fee:"Not specified", truth:55, prob:25, light:"o", trend:"flat", note:"Demirovic contributed to 20 goals last season and is not pushing for an exit, giving Stuttgart a strong negotiating position; other unnamed European clubs are also monitoring him."},
+  {name:"Alexander Nübel", sub:"Number one goalkeeper drawing Turkish interest", club:"Besiktas", pos:"GK", report:"Besiktas have been credited with surprise interest in Nübel as they look to strengthen their goalkeeping options this summer.", src:"A Spor", tier:2, fee:"Not specified", truth:55, prob:30, light:"y", trend:"flat", note:"Reported as part of a wider look at Besiktas's defensive and goalkeeping targets from the Bundesliga."},
+  {name:"Jeff Chabot", sub:"Defender floated as alternative Besiktas target", club:"Besiktas", pos:"CB", report:"Besiktas are said to view the 23-year-old Chabot as a defensive alternative after missing out on their primary target, Flamengo's Leo Pereira.", src:"A Spor", tier:3, fee:"Not specified", truth:45, prob:20, light:"o", trend:"flat", note:"Chabot is under contract at Stuttgart until 2028 and remains a key player under Sebastian Hoeneß, making a move unlikely without a significant offer."}
 ];
 
 const RISERS = [];
@@ -889,13 +895,22 @@ const WATCHLIST = [
 
 const HUB = {
   yahoo: {l:"Yahoo Sports (via Bulinews/Kicker)", u:"https://sports.yahoo.com/articles/stuttgart-could-cash-premier-league-081200457.html"},
-  sport1: {l:"Sport1", u:"https://www.sport1.de/news/transfermarkt/2026/07/grosser-vfb-transfer-auf-der-zielgeraende"}
-};
+  sport1: {l:"Sport1", u:"https://www.sport1.de/news/transfermarkt/2026/07/grosser-vfb-transfer-auf-der-zielgeraende"},
+  goalcomDzenanPejcinovic: {l:"Goal.com", u:"https://www.goal.com/en/news/club-boss-on-difficult-negotiations-vfb-stuttgart-far-away-from-signing-their-desired-player/bltbb139d9cd16ddea9"},
+  bildviaTheHardTackleRadekVitek: {l:"Bild (via The Hard Tackle)", u:"https://thehardtackle.com/transfer-news/2026/07/25/vfb-stuttgart-eyeing-summer-move-for-radek-vitek/"},
+  slobodnaBosnaviaTheHardTackleErmedinDemirovic: {l:"Slobodna Bosna (via The Hard Tackle)", u:"https://thehardtackle.com/transfer-news/2026/07/24/ermedin-demirovic-happy-at-vfb-stuttgart-amid-leeds-united-links/"},
+  aSporviaGoalcomAlexanderNbel: {l:"A Spor (via Goal.com)", u:"https://www.goal.com/en-in/news/after-the-surprise-involving-alexander-nuebel-besiktas-are-reportedly-also-keeping-tabs-on-another-vfb-stuttgart-first-team-regular/blt4a5bcf46eeb6619f"},
+  bulinewsviaYahooSportsLeoSauer: {l:"Bulinews (via Yahoo Sports)", u:"https://sports.yahoo.com/articles/confirmed-vfb-stuttgart-announce-leo-141800582.html"}};
 
 const LINKMAP = {
   "Jamie Leweling": ["yahoo"],
-  "Ermedin Demirović": ["yahoo"]
-};
+  "Ermedin Demirović": ["yahoo"],
+  "Dzenan Pejcinovic": ["goalcomDzenanPejcinovic"],
+  "Radek Vitek": ["bildviaTheHardTackleRadekVitek"],
+  "Ermedin Demirovic": ["slobodnaBosnaviaTheHardTackleErmedinDemirovic"],
+  "Alexander Nübel": ["aSporviaGoalcomAlexanderNbel"],
+  "Jeff Chabot": ["aSporviaGoalcomAlexanderNbel"],
+  "Leo Sauer": ["bulinewsviaYahooSportsLeoSauer"]};
 const WL_LINKMAP = {
   "Jamie Leweling": ["yahoo"]
 };

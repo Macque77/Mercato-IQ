@@ -863,7 +863,9 @@ const CONFIRMED_OUT = [
   {name:"Filip Bilbija", sub:"23 · W", to:"free to Derby County", club:"Derby County", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; winger moves to the EFL Championship."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Deniz Zeitler", sub:"Highly-rated attacking prospect", club:"TSG Hoffenheim", pos:"CAM", report:"Newly promoted Paderborn have opened talks with Hoffenheim over a move for young attacking prospect Zeitler, described as young, versatile and developable, fitting the club's recruitment profile.", src:"Sky Sports Germany / Neue Westfälische", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage talks reported; no fee or medical scheduled yet."}
+];
 
 const OUTGOING = [];
 
@@ -885,12 +887,16 @@ const WATCHLIST = [];
 
 const HUB = {
   bundesliga: {l:"Bundesliga.com · Official", u:"https://www.bundesliga.com/en/bundesliga/news/welcome-back-paderborn-promotion-play-off-win-37266"},
-  sport1: {l:"Sport1", u:"https://www.sport1.de/news/fussball/bundesliga/2026/05/aufsteiger-paderborn-holt-baack-aus-nuernberg"}
-};
+  sport1: {l:"Sport1", u:"https://www.sport1.de/news/fussball/bundesliga/2026/05/aufsteiger-paderborn-holt-baack-aus-nuernberg"},
+  neueWestflischeDenizZeitler: {l:"Neue Westfälische", u:"https://www.nw.de/sport/"},
+  skyGermanyZEITOliverBatistaMeier: {l:"Sky Germany / ZEIT", u:"https://www.zeit.de/"},
+  tribalFootballYahooSportsFilipBilbija: {l:"Tribal Football / Yahoo Sports", u:"https://www.onefootball.com/"}};
 
 const LINKMAP = {
-  "Tom Baack": ["sport1"]
-};
+  "Tom Baack": ["sport1"],
+  "Deniz Zeitler": ["neueWestflischeDenizZeitler"],
+  "Oliver Batista Meier": ["skyGermanyZEITOliverBatistaMeier"],
+  "Filip Bilbija": ["tribalFootballYahooSportsFilipBilbija"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

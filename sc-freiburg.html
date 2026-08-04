@@ -854,7 +854,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Mio Backhaus", sub:"20 · GK · Germany", to:"permanent from Werder Bremen", fee:"~€12m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young German goalkeeper signed as the long-term successor in goal."},
   {name:"Keisuke Goto", sub:"23 · CM · Japan", to:"permanent from RSC Anderlecht", fee:"~€10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Japanese midfielder brought in for squad depth and creativity."},
-  {name:"Yannik Engelhardt", sub:"25 · DM · Germany", to:"permanent from Como 1907", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul: defensive midfielder returns to Freiburg, where he previously played for the U23s (2021-23), after a loan spell at Borussia Mönchengladbach (33 apps in 2025/26). Sporting director Klemens Hartenbach: 'Yannik has very much caught our attention in his first spell here.'"}
+  {name:"Yannik Engelhardt", sub:"25 · DM · Germany", to:"permanent from Como 1907", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul: defensive midfielder returns to Freiburg, where he previously played for the U23s (2021-23), after a loan spell at Borussia Mönchengladbach (33 apps in 2025/26). Sporting director Klemens Hartenbach: 'Yannik has very much caught our attention in his first spell here.'"},
+  {name:"Yannick Engelhardt", sub:"Defender/midfielder returning to Freiburg", club:"Como 1907", pos:"LB", fee:"~€7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Borussia Mönchengladbach player returns to Freiburg after three years away, signed as a primary incoming piece following Manzambi's sale."}
 ];
 
 const CONFIRMED_OUT = [
@@ -866,7 +867,9 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Noah Atubolu", sub:"Germany U21 goalkeeper wanted abroad", club:"Olympique Marseille / Premier League interest", pos:"GK", report:"Atubolu is looking to make a big move away from Freiburg this summer, with Marseille showing concrete interest alongside continued Premier League links; report also floats an unnamed German 'Rekordmeister' (record champion, i.e. Bayern Munich) entering the race.", src:"Sky Sports Germany / Sport1 / Fussball Transfers", tier:2, fee:"Unknown", truth:60, prob:45, light:"y", trend:"flat", note:"Multiple clubs credited with interest but no advanced negotiations confirmed publicly yet; Atubolu was left out of a recent Germany squad in favour of Bayern's Jonas Urbig."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Manzambi's club-record sale to Aston Villa confirmed</b>: another example of Freiburg's develop-and-sell model funding the squad."}
@@ -890,14 +893,16 @@ const WATCHLIST = [];
 const HUB = {
   sky: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11677/13564492/johan-manzambi-aston-villa-sign-newcastle-target-from-freiburg-in-club-record-lb59-5m-deal"},
   club: {l:"SC Freiburg Official", u:"https://www.scfreiburg.com/en/latest/first-team/news/2026-27/johan-manzambi-joins-aston-villa/"},
-  baden24: {l:"Baden24", u:"https://www.baden24.de/sport/sc-freiburg/transfer-ticker-sport-club-scf-sommer-neuzugang-abgang-wechsel-infos-news-94318691.html"}
-};
+  baden24: {l:"Baden24", u:"https://www.baden24.de/sport/sc-freiburg/transfer-ticker-sport-club-scf-sommer-neuzugang-abgang-wechsel-infos-news-94318691.html"},
+  skySportsGermanyNoahAtubolu: {l:"Sky Sports Germany", u:"https://sports.yahoo.com/"},
+  s90minSportschauYannickEngelhardt: {l:"90min / Sportschau", u:"https://www.90min.com/"}};
 
 const LINKMAP = {
-  "Johan Manzambi": ["sky","club"],
+  "Johan Manzambi": ["sky","club", "skySportsGermanyNoahAtubolu"],
   "Yannik Engelhardt": ["baden24"],
-  "Junior Adamu": ["baden24"]
-};
+  "Junior Adamu": ["baden24"],
+  "Noah Atubolu": ["skySportsGermanyNoahAtubolu"],
+  "Yannick Engelhardt": ["s90minSportschauYannickEngelhardt"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -919,6 +919,19 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
+    headline: "Yan Diomande",
+    club_display_name: "RB Leipzig",
+    summary: "",
+    value: "~€120m reported asking/offer",
+    from: "RB Leipzig", to: "Real Madrid",
+    direction: "out",
+    prob: 55, truth: 70, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "rb-leipzig",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Madison Ingram",
     club_display_name: "Olympique Lyonnais",
     summary: "Romano reports Chelsea are open to a loan move for the young midfielder to Lyon.",
@@ -955,6 +968,19 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "France", league: "Ligue 1",
     club_link: "angers-sco",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Tomas Bobcek",
+    club_display_name: "Werder Bremen",
+    summary: "",
+    value: "TBC",
+    from: "Lechia Gdansk", to: "Werder Bremen",
+    direction: "in",
+    prob: 55, truth: 70, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "werder-bremen",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -1072,6 +1098,19 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Italy", league: "Serie A",
     club_link: "atalanta",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Dzenan Pejcinovic",
+    club_display_name: "VfB Stuttgart",
+    summary: "Sporting director Fabian Wohlgemuth confirmed talks are ongoing but said a deal ",
+    value: "TBC",
+    from: "VfL Wolfsburg", to: "VfB Stuttgart",
+    direction: "in",
+    prob: 45, truth: 75, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "vfb-stuttgart",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -1477,55 +1516,16 @@ const HEADLINES = [
     club_link: "sunderland",
     updated: "2026-07-31T09:00:00Z"
   },
-  {
-    headline: "Francisco Conceicao",
-    club_display_name: "Juventus",
-    summary: "",
-    value: "Undisclosed",
-    from: "Juventus", to: "Manchester United",
-    direction: "out",
-    prob: 20, truth: 55, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "juventus",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Michael Olise",
-    club_display_name: "Bayern Munich",
-    summary: "",
-    value: "~€150m mooted",
-    from: "Bayern Munich", to: "Real Madrid",
-    direction: "out",
-    prob: 15, truth: 45, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Germany", league: "Bundesliga",
-    club_link: "bayern-munich",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Francisco Conceição",
-    club_display_name: "Manchester United",
-    summary: "",
-    value: "~£25m",
-    from: "Juventus", to: "Manchester United",
-    direction: "in",
-    prob: 15, truth: 45, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "manchester-united",
-    updated: "2026-08-03T12:48:44Z"
-  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 182, league_count: 3
+    stories_count: 181, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 140, league_count: 3
+    stories_count: 139, league_count: 3
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
@@ -1540,6 +1540,10 @@ const NATIONS = [
     stories_count: 38, league_count: 1
   },
   {
+    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
+    stories_count: 35, league_count: 2
+  },
+  {
     name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
     stories_count: 17, league_count: 1
   },
@@ -1550,10 +1554,6 @@ const NATIONS = [
   {
     name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     stories_count: 16, league_count: 1
-  },
-  {
-    name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
-    stories_count: 14, league_count: 2
   },
   {
     name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
@@ -1574,9 +1574,9 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 570,
-  clubs_covered: 174,
-  tier1_count: 67,
+  total_stories: 589,
+  clubs_covered: 180,
+  tier1_count: 70,
   top_league: "Serie A",
   most_active_club: "Sunderland",
   nations_covered: 13,
@@ -1585,7 +1585,7 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:00:01.327655Z",
+  updated: "2026-08-04T18:13:46.694941Z",
   label: "Global aggregation from all clubs"
 };
 
