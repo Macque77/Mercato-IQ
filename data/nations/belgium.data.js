@@ -10,98 +10,98 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Anan Khalaili",prob: 40, bullshit: false,
+    name: "Anan Khalaili",prob: 40, truth: 75, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
     from: "Union Saint-Gilloise", to: "Nottingham Forest",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£17m bid rejected", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Davis Opoku",prob: 30, bullshit: false,
+    name: "Davis Opoku",prob: 30, truth: 70, bullshit: false,
     club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "out",
     from: "OH Leuven", to: "Feyenoord",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Issiaka Kamate",prob: 30, bullshit: false,
+    name: "Issiaka Kamate",prob: 30, truth: 55, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
     from: "Inter Milan", to: "KVC Westerlo",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
-    name: "Cameron Congreve",prob: 80, bullshit: false,
+    name: "Cameron Congreve",prob: 80, truth: 75, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
     from: "Swansea City", to: "KVC Westerlo",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed (7-figure)", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
-    name: "David Njoku",prob: 45, bullshit: false,
+    name: "David Njoku",prob: 45, truth: 60, bullshit: false,
     club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
     from: "Udinese", to: "Club Brugge",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€18m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
-    name: "Andi Zeqiri",prob: 38, bullshit: false,
+    name: "Andi Zeqiri",prob: 38, truth: 56, bullshit: false,
     club_origin: "standard-liege", club_display_name: "Standard Liège", direction: "in",
     from: "Augsburg", to: "Standard Liège",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€12m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
-    name: "Aiham Ousou",prob: 30, bullshit: false,
+    name: "Aiham Ousou",prob: 30, truth: 55, bullshit: false,
     club_origin: "charleroi", club_display_name: "R Charleroi SC", direction: "out",
     from: "R Charleroi SC", to: "Ludogorets",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
-    name: "Jelle Van Neck",prob: 30, bullshit: false,
+    name: "Jelle Van Neck",prob: 30, truth: 55, bullshit: false,
     club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "in",
     from: "Olympique de Marseille", to: "OH Leuven",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Denzel Dumfries",prob: 22, bullshit: false,
+    name: "Denzel Dumfries",prob: 22, truth: 45, bullshit: false,
     club_origin: "rsc-anderlecht", club_display_name: "RSC Anderlecht", direction: "in",
     from: "Inter Milan", to: "RSC Anderlecht",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
-    name: "Anouar Ait El-Hadj",prob: 20, bullshit: false,
+    name: "Anouar Ait El-Hadj",prob: 20, truth: 45, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
     from: "Union Saint-Gilloise", to: "Undisclosed",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Milan Hokke",prob: 35, bullshit: false,
+    name: "Milan Hokke",prob: 35, truth: 55, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "in",
     from: "ADO Den Haag", to: "Union Saint-Gilloise",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Below asking price", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Étienne Camara",prob: 25, bullshit: false,
+    name: "Étienne Camara",prob: 25, truth: 45, bullshit: false,
     club_origin: "charleroi", club_display_name: "R Charleroi SC", direction: "in",
     from: "Panathinaikos", to: "R Charleroi SC",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
-    name: "Mamadou Barry",prob: 20, bullshit: false,
+    name: "Mamadou Barry",prob: 20, truth: 40, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
     from: "Union Saint-Gilloise", to: "Saudi Pro League club",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Claudio Katunda",prob: 20, bullshit: false,
+    name: "Claudio Katunda",prob: 20, truth: 50, bullshit: false,
     club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "in",
     from: "Schalke 04", to: "Cercle Brugge",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -115,6 +115,6 @@ const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 14},
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.357227Z",
+  updated: "2026-08-04T11:54:20.912387Z",
   label: "Nation aggregation"
 };

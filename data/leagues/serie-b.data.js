@@ -10,49 +10,49 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Loyola", prob: 45, bullshit: false,
+    name: "Loyola", prob: 45, truth: 55, bullshit: false,
     club_origin: "pisa", club_display_name: "Pisa", direction: "in",
     from: "Independiente (Argentina)", to: "Pisa",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Simone Soleri", prob: 40, bullshit: false,
+    name: "Simone Soleri", prob: 40, truth: 55, bullshit: false,
     club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
     from: "Spezia", to: "Ascoli Picchio",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Andrea Sottil", prob: 35, bullshit: false,
-    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
-    from: "Undisclosed", to: "US Cremonese",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "N/A", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Kurminowski", prob: 35, bullshit: false,
+    name: "Kurminowski", prob: 35, truth: 50, bullshit: false,
     club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
     from: "Free agent", to: "Ascoli Picchio",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Free", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Cherubini", prob: 30, bullshit: false,
+    name: "Andrea Sottil", prob: 35, truth: 50, bullshit: false,
+    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
+    from: "Undisclosed", to: "US Cremonese",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "N/A", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Cherubini", prob: 30, truth: 50, bullshit: false,
     club_origin: "benevento", club_display_name: "Benevento", direction: "in",
     from: "Roma", to: "Benevento",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "De Luca", prob: 30, bullshit: false,
+    name: "De Luca", prob: 30, truth: 45, bullshit: false,
     club_origin: "benevento", club_display_name: "Benevento", direction: "in",
     from: "Undisclosed", to: "Benevento",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Merkaj", prob: 30, bullshit: false,
+    name: "Merkaj", prob: 30, truth: 45, bullshit: false,
     club_origin: "benevento", club_display_name: "Benevento", direction: "in",
     from: "Sudtirol", to: "Benevento",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -66,6 +66,6 @@ const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.363343Z",
+  updated: "2026-08-04T11:54:20.922450Z",
   label: "League aggregation"
 };

@@ -10,7 +10,7 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Elia Caprile", prob: 44, bullshit: false,
+    name: "Elia Caprile", prob: 44, truth: 58, bullshit: false,
     club_origin: "vfl-bochum", club_display_name: "VfL Bochum", direction: "in",
     from: "Empoli", to: "VfL Bochum",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -24,6 +24,6 @@ const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "cou
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.359020Z",
+  updated: "2026-08-04T11:54:20.915627Z",
   label: "League aggregation"
 };

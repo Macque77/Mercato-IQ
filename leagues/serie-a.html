@@ -114,6 +114,37 @@
     color:var(--accent-gold);
   }
 
+  /* ===== LEAGUE IDENTITY (top bar) =====
+     Compact icon + name, living in the sticky header row itself rather than a
+     separate hero banner below -- keeps the whole header to one slim strip. */
+  .league-identity {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:none;
+    padding-left:12px;
+    border-left:1px solid var(--border);
+  }
+
+  .league-identity .league-icon {
+    font-size:18px;
+    line-height:1;
+  }
+
+  .league-identity .league-name {
+    font-family:var(--display);
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+    color:var(--accent-gold);
+    white-space:nowrap;
+  }
+
+  @media(max-width:640px) {
+    .league-identity .league-name { display:none; }
+  }
+
   /* ===== BREAKING TICKER (Sky Sports News style) ===== */
   .ticker-bar {
     display:none;
@@ -219,60 +250,6 @@
     .ticker-label { font-size:9px; padding:6px 9px; }
     .ticker-item { font-size:10px; padding:6px 14px; gap:6px; }
     .ticker-item .t-club { display:none; }
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
-    border-bottom:1px solid var(--border);
-    padding:24px 20px;
-  }
-
-  .hero-inner {
-    max-width:1400px;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    gap:20px;
-  }
-
-  .hero-icon {
-    font-size:40px;
-    line-height:1;
-    flex-shrink:0;
-  }
-
-  .hero-text h2 {
-    font-family:var(--display);
-    font-size:32px;
-    font-weight:400;
-    letter-spacing:0.5px;
-    text-transform:uppercase;
-    margin-bottom:6px;
-  }
-
-  .hero-text .subtitle {
-    color:var(--text-secondary);
-    font-size:13px;
-    display:flex;
-    gap:16px;
-  }
-
-  .stat {
-    display:flex;
-    gap:4px;
-    font-family:var(--mono);
-    font-size:11px;
-  }
-
-  .stat-label {
-    color:var(--text-muted);
-    text-transform:uppercase;
-  }
-
-  .stat-value {
-    color:var(--accent-gold);
-    font-weight:700;
   }
 
   /* ===== CONTAINER ===== */
@@ -564,18 +541,54 @@
     font-size:10px;
   }
 
+  /* ===== LEAGUE STATS STRIP =====
+     Compact summary row -- money spent, in/out counts, most active club --
+     replacing the old hero banner's real estate with something informative
+     instead of decorative. Wraps cleanly, never scrolls horizontally. */
+  .stats-strip {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:10px;
+    margin-bottom:24px;
+  }
+
+  .stats-tile {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+
+  .stats-tile .stats-label {
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:5px;
+  }
+
+  .stats-tile .stats-value {
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:400;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .stats-tile .stats-value small {
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-secondary);
+    font-weight:400;
+    letter-spacing:0;
+    text-transform:none;
+  }
+
   @media(max-width:768px) {
-    .hero-inner {
-      flex-direction:column;
-      text-align:center;
-      gap:16px;
-    }
-
-    .hero-text .subtitle {
-      flex-direction:column;
-      gap:10px;
-    }
-
     .transfer-grid {
       grid-template-columns:1fr;
     }
@@ -588,9 +601,7 @@
       font-size:11px;
     }
 
-    .hero-text h2 {
-      font-size:24px;
-    }
+    .league-identity .league-icon { font-size:16px; }
   }
 </style>
 </head>
@@ -611,6 +622,10 @@
       <span>/</span>
       <span style="color:var(--accent-gold)">Serie A</span>
     </div>
+    <div class="league-identity">
+      <span class="league-icon">🏆</span>
+      <span class="league-name">Serie A</span>
+    </div>
   </div>
 </header>
 
@@ -621,22 +636,11 @@
   </div>
 </div>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-icon">🏆</div>
-    <div class="hero-text">
-      <h2>Serie A</h2>
-      <div class="subtitle">
-        <div class="stat">
-          <span class="stat-label">Stories:</span>
-          <span class="stat-value">46</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container">
+  <div class="stats-strip" id="stats-strip">
+    <!-- Populated by data -->
+  </div>
+
   <section class="section">
     <h3 class="section-title">Clubs</h3>
     <div class="clubs-grid" id="clubs-grid">
@@ -670,140 +674,140 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Kieron Bowie", prob: 55, bullshit: false,
+    name: "Kieron Bowie", prob: 55, truth: 60, bullshit: false,
     club_origin: "sassuolo", club_display_name: "US Sassuolo", direction: "in",
     from: "Hellas Verona", to: "US Sassuolo",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€12m (Verona's asking price)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Gustavo Varela", prob: 48, bullshit: false,
+    name: "Gustavo Varela", prob: 48, truth: 62, bullshit: false,
     club_origin: "monza", club_display_name: "AC Monza", direction: "in",
     from: "Benfica", to: "AC Monza",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€2m plus up to €1.5m add-ons", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Lucas Perri", prob: 48, bullshit: false,
+    name: "Lucas Perri", prob: 48, truth: 62, bullshit: false,
     club_origin: "torino", club_display_name: "Torino", direction: "in",
     from: "Leeds United", to: "Torino",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Akor Adams", prob: 45, bullshit: false,
+    name: "Akor Adams", prob: 45, truth: 60, bullshit: false,
     club_origin: "venezia", club_display_name: "Venezia", direction: "in",
     from: "Sevilla", to: "Venezia",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€16m plus bonuses", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Hamed Junior Traore", prob: 42, bullshit: false,
+    name: "Hamed Junior Traore", prob: 42, truth: 58, bullshit: false,
     club_origin: "genoa", club_display_name: "Genoa", direction: "in",
     from: "Olympique Marseille", to: "Genoa",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8-10m (loan with option to buy)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Serhou Guirassy", prob: 40, bullshit: false,
+    name: "Serhou Guirassy", prob: 40, truth: 58, bullshit: false,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "RB Leipzig", to: "AS Roma",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Trevoh Chalobah", prob: 38, bullshit: false,
+    name: "Trevoh Chalobah", prob: 38, truth: 60, bullshit: false,
     club_origin: "como", club_display_name: "Como 1907", direction: "in",
     from: "Chelsea", to: "Como 1907",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€30-35m (Chelsea holding out for €35m)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Kerim Alajbegović", prob: 38, bullshit: false,
+    name: "Kerim Alajbegović", prob: 38, truth: 60, bullshit: false,
     club_origin: "juventus", club_display_name: "Juventus", direction: "in",
     from: "Bayer Leverkusen", to: "Juventus",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€25-30m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Cyril Ngonge", prob: 38, bullshit: false,
+    name: "Cyril Ngonge", prob: 38, truth: 55, bullshit: false,
     club_origin: "torino", club_display_name: "Torino", direction: "in",
     from: "Napoli", to: "Torino",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan with €8m option to buy", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Konstantinos Karetsas", prob: 35, bullshit: false,
+    name: "Konstantinos Karetsas", prob: 35, truth: 60, bullshit: false,
     club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
     from: "Genk", to: "AC Milan",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€40m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Santiago Castro", prob: 35, bullshit: false,
-    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
+    name: "Santiago Castro", prob: 35, truth: 55, bullshit: false,
+    club_origin: "bologna", club_display_name: "Bologna", direction: "out",
     from: "Bologna", to: "AS Roma",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€35m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Kristian Thorstvedt", prob: 35, bullshit: false,
+    name: "Kristian Thorstvedt", prob: 35, truth: 55, bullshit: false,
     club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "in",
     from: "Sassuolo", to: "Fiorentina",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€15m (asking price)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Sergi Dominguez", prob: 35, bullshit: false,
-    club_origin: "lazio", club_display_name: "Lazio", direction: "in",
-    from: "Dinamo Zagreb", to: "Lazio",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Pietro Comuzzo", prob: 35, bullshit: false,
-    club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "out",
-    from: "Fiorentina", to: "Torino",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Ricardo Mangas", prob: 35, bullshit: false,
+    name: "Ricardo Mangas", prob: 35, truth: 55, bullshit: false,
     club_origin: "monza", club_display_name: "AC Monza", direction: "in",
     from: "Sporting CP", to: "AC Monza",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan with conditional obligation to buy", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Nicolò Zaniolo", prob: 32, bullshit: false,
+    name: "Pietro Comuzzo", prob: 35, truth: 52, bullshit: false,
+    club_origin: "torino", club_display_name: "Torino", direction: "in",
+    from: "Fiorentina", to: "Torino",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Sergi Dominguez", prob: 35, truth: 55, bullshit: false,
+    club_origin: "lazio", club_display_name: "Lazio", direction: "in",
+    from: "Dinamo Zagreb", to: "Lazio",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Nicolò Zaniolo", prob: 32, truth: 58, bullshit: false,
     club_origin: "udinese", club_display_name: "Udinese", direction: "out",
     from: "Udinese", to: "AC Milan / Lazio (rumoured)",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Romelu Lukaku", prob: 32, bullshit: false,
+    name: "Romelu Lukaku", prob: 32, truth: 55, bullshit: false,
     club_origin: "napoli", club_display_name: "Napoli", direction: "out",
     from: "Napoli", to: "Multiple (unspecified)",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Zion Suzuki", prob: 30, bullshit: false,
+    name: "Zion Suzuki", prob: 30, truth: 55, bullshit: false,
     club_origin: "parma", club_display_name: "Parma", direction: "out",
     from: "Parma", to: "TBD",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€30m (asking price)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Jhon Lucumi", prob: 30, bullshit: false,
+    name: "Jhon Lucumi", prob: 30, truth: 55, bullshit: false,
     club_origin: "bologna", club_display_name: "Bologna", direction: "out",
     from: "Bologna", to: "TBD",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€25m (asking price)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Edinson Cavani", prob: 30, bullshit: false,
+    name: "Edinson Cavani", prob: 30, truth: 55, bullshit: false,
     club_origin: "lecce", club_display_name: "US Lecce", direction: "in",
     from: "Free agent (ex-Boca Juniors)", to: "US Lecce",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -811,13 +815,13 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"sassuolo": 3, "monza": 4, "torino": 5, "venezia": 2, "genoa": 1, "as-roma": 4, "como": 2, "juventus": 2, "ac-milan": 2, "fiorentina": 7, "lazio": 1, "udinese": 1, "napoli": 4, "parma": 2, "bologna": 2, "lecce": 2, "inter-milan": 1, "cagliari": 1};
+const BY_CLUB = {"sassuolo": 3, "monza": 4, "torino": 6, "venezia": 2, "genoa": 1, "as-roma": 2, "como": 1, "juventus": 2, "ac-milan": 2, "bologna": 4, "fiorentina": 7, "lazio": 1, "udinese": 1, "napoli": 4, "parma": 2, "lecce": 2, "inter-milan": 1, "cagliari": 1};
 
-const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 2, "badge": true, "primary": "#DC143C", "primaryBright": "#FF3333"}, {"slug": "monza", "name": "AC Monza", "count": 4, "badge": true, "primary": "#E4032E", "primaryBright": "#FF4D6D"}, {"slug": "as-roma", "name": "AS Roma", "count": 4, "badge": true, "primary": "#FDBF08", "primaryBright": "#FFD000"}, {"slug": "atalanta", "name": "Atalanta", "count": 0, "badge": true, "primary": "#1B5AA5", "primaryBright": "#5CA9FF"}, {"slug": "bologna", "name": "Bologna", "count": 2, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "cagliari", "name": "Cagliari", "count": 1, "badge": true, "primary": "#B30000", "primaryBright": "#FF6259"}, {"slug": "como", "name": "Como 1907", "count": 2, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "fiorentina", "name": "Fiorentina", "count": 7, "badge": true, "primary": "#5B2A83", "primaryBright": "#8B4FC4"}, {"slug": "frosinone", "name": "Frosinone", "count": 0, "badge": true, "primary": "#00539C", "primaryBright": "#4D8FD1"}, {"slug": "genoa", "name": "Genoa", "count": 1, "badge": true, "primary": "#C8102E", "primaryBright": "#FF4D5E"}, {"slug": "inter-milan", "name": "Inter Milan", "count": 1, "badge": true, "primary": "#0066CC", "primaryBright": "#0080FF"}, {"slug": "juventus", "name": "Juventus", "count": 2, "badge": true, "primary": "#000000", "primaryBright": "#333333"}, {"slug": "lazio", "name": "Lazio", "count": 1, "badge": true, "primary": "#6CACE4", "primaryBright": "#A8D8FF"}, {"slug": "napoli", "name": "Napoli", "count": 4, "badge": true, "primary": "#0090D0", "primaryBright": "#4DC3FF"}, {"slug": "parma", "name": "Parma", "count": 2, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "torino", "name": "Torino", "count": 5, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}, {"slug": "lecce", "name": "US Lecce", "count": 2, "badge": true, "primary": "#FFE500", "primaryBright": "#FFF066"}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 3, "badge": true, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "udinese", "name": "Udinese", "count": 1, "badge": true, "primary": "#1A1A1A", "primaryBright": "#595959"}, {"slug": "venezia", "name": "Venezia", "count": 2, "badge": true, "primary": "#FF7900", "primaryBright": "#FFA85C"}];
+const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 2, "badge": true, "primary": "#DC143C", "primaryBright": "#FF3333"}, {"slug": "monza", "name": "AC Monza", "count": 4, "badge": true, "primary": "#E4032E", "primaryBright": "#FF4D6D"}, {"slug": "as-roma", "name": "AS Roma", "count": 2, "badge": true, "primary": "#FDBF08", "primaryBright": "#FFD000"}, {"slug": "atalanta", "name": "Atalanta", "count": 0, "badge": true, "primary": "#1B5AA5", "primaryBright": "#5CA9FF"}, {"slug": "bologna", "name": "Bologna", "count": 4, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "cagliari", "name": "Cagliari", "count": 1, "badge": true, "primary": "#B30000", "primaryBright": "#FF6259"}, {"slug": "como", "name": "Como 1907", "count": 1, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "fiorentina", "name": "Fiorentina", "count": 7, "badge": true, "primary": "#5B2A83", "primaryBright": "#8B4FC4"}, {"slug": "frosinone", "name": "Frosinone", "count": 0, "badge": true, "primary": "#00539C", "primaryBright": "#4D8FD1"}, {"slug": "genoa", "name": "Genoa", "count": 1, "badge": true, "primary": "#C8102E", "primaryBright": "#FF4D5E"}, {"slug": "inter-milan", "name": "Inter Milan", "count": 1, "badge": true, "primary": "#0066CC", "primaryBright": "#0080FF"}, {"slug": "juventus", "name": "Juventus", "count": 2, "badge": true, "primary": "#000000", "primaryBright": "#333333"}, {"slug": "lazio", "name": "Lazio", "count": 1, "badge": true, "primary": "#6CACE4", "primaryBright": "#A8D8FF"}, {"slug": "napoli", "name": "Napoli", "count": 4, "badge": true, "primary": "#0090D0", "primaryBright": "#4DC3FF"}, {"slug": "parma", "name": "Parma", "count": 2, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "torino", "name": "Torino", "count": 6, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}, {"slug": "lecce", "name": "US Lecce", "count": 2, "badge": true, "primary": "#FFE500", "primaryBright": "#FFF066"}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 3, "badge": true, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "udinese", "name": "Udinese", "count": 1, "badge": true, "primary": "#1A1A1A", "primaryBright": "#595959"}, {"slug": "venezia", "name": "Venezia", "count": 2, "badge": true, "primary": "#FF7900", "primaryBright": "#FFA85C"}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.363226Z",
+  updated: "2026-08-04T11:54:20.922252Z",
   label: "League aggregation"
 };
 
@@ -879,6 +883,36 @@ function crestInk(primary, primaryBright) {
   // thumbnail exists in badges-thumb/<slug>.png; clubs without real artwork fall back to a
   // monogram tile rendered in the club's own brand colour, so it reads as a deliberate crest
   // rather than a missing-image placeholder.
+  // League stats strip -- built entirely from data already aggregated for this page
+  // (LEAGUE.stories_count and CLUBS_LIST's per-club counts), so every figure here is
+  // real and honest, never a placeholder.
+  (function(){
+    const strip = document.getElementById('stats-strip');
+    if(!strip) return;
+    const tiles = [];
+    if(typeof LEAGUE !== 'undefined' && LEAGUE) {
+      tiles.push({ label: 'Live Stories', value: `${LEAGUE.stories_count || 0}` });
+    }
+    if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
+      tiles.push({ label: 'Clubs Tracked', value: `${CLUBS_LIST.length}` });
+      const mostActive = CLUBS_LIST.slice().sort((a, b) => (b.count || 0) - (a.count || 0))[0];
+      if(mostActive && mostActive.count > 0) {
+        tiles.push({ label: 'Most Active Club', value: mostActive.name, small: `${mostActive.count} ${mostActive.count === 1 ? 'story' : 'stories'}` });
+      }
+    }
+    if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
+      const tier1 = TOP_STORIES.filter(s => (s.tier || 3) === 1).length;
+      tiles.push({ label: 'Tier 1 Stories', value: `${tier1}` });
+    }
+    if(tiles.length === 0) return;
+    strip.innerHTML = tiles.map(t => `
+      <div class="stats-tile">
+        <div class="stats-label">${t.label}</div>
+        <div class="stats-value">${t.value}${t.small ? ` <small>${t.small}</small>` : ''}</div>
+      </div>
+    `).join('');
+  })();
+
   if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
     const container = document.getElementById('clubs-grid');
     container.innerHTML = CLUBS_LIST.map(c => {
@@ -962,6 +996,7 @@ function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
+  const truth = s.truth || 50;
   const isBullshit = s.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
@@ -973,12 +1008,11 @@ function renderStory(s) {
         <span class="player-name">${s.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="club-name-card">${s.club_display_name}</div>
+      <div class="club-name-card">${s.from} → ${s.to}</div>
     </div>
     <div class="card-body">
       <div class="transfer-direction">
         <div class="transfer-details">
-          <div>${s.from} → ${s.to}</div>
           <div>${s.value}</div>
         </div>
       </div>
@@ -988,6 +1022,11 @@ function renderStory(s) {
         <div class="metric-label">Prob</div>
         <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">True</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
+        <div class="metric-value">${truth}%</div>
       </div>
     </div>
   </a>`;

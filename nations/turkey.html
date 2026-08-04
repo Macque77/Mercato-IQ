@@ -365,6 +365,52 @@
     border-bottom:2px solid var(--accent-gold);
   }
 
+  /* ===== NATION STATS STRIP =====
+     Compact summary row -- live stories, leagues tracked, most active league --
+     built entirely from data already aggregated for this page. */
+  .stats-strip {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:10px;
+    margin-bottom:24px;
+  }
+
+  .stats-tile {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+
+  .stats-tile .stats-label {
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:5px;
+  }
+
+  .stats-tile .stats-value {
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:400;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .stats-tile .stats-value small {
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-secondary);
+    font-weight:400;
+    letter-spacing:0;
+    text-transform:none;
+  }
+
   /* ===== TRANSFER CARDS ===== */
   .transfer-grid {
     display:grid;
@@ -628,6 +674,10 @@
 </div>
 
 <div class="container">
+  <div class="stats-strip" id="stats-strip">
+    <!-- Populated by data -->
+  </div>
+
   <section class="section">
     <h3 class="section-title">Top Transfer Stories</h3>
     <div class="transfer-grid" id="stories">
@@ -654,105 +704,105 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "İbrahim Kaya",prob: 15, bullshit: false,
+    name: "İbrahim Kaya",prob: 15, truth: 40, bullshit: false,
     club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "out",
     from: "Alanyaspor", to: "Alanyaspor",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Mehmet Topal",prob: 85, bullshit: false,
+    name: "Mehmet Topal",prob: 85, truth: 78, bullshit: false,
     club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
     from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Contract renewal", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Nariman Akhundzada",prob: 80, bullshit: false,
-    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
-    from: "Columbus Crew", to: "Erzurumspor",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
-  },
-  {
-    name: "Iván Cedric",prob: 80, bullshit: false,
+    name: "Iván Cedric",prob: 80, truth: 85, bullshit: false,
     club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
     from: "Vanspor FK", to: "Alanyaspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Mohamed Salah",prob: 46, bullshit: false,
+    name: "Nariman Akhundzada",prob: 80, truth: 90, bullshit: false,
+    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
+    from: "Columbus Crew", to: "Erzurumspor",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
+  },
+  {
+    name: "Mohamed Salah",prob: 46, truth: 60, bullshit: false,
     club_origin: "trabzonspor", club_display_name: "Trabzonspor", direction: "in",
     from: "Free agent (ex-Liverpool)", to: "Trabzonspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€34m total (2-yr deal)", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Álvaro Soler",prob: 42, bullshit: false,
+    name: "Álvaro Soler",prob: 42, truth: 56, bullshit: false,
     club_origin: "galatasaray", club_display_name: "Galatasaray SK", direction: "in",
     from: "Montpellier", to: "Galatasaray SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€10m", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Kartal Kayra",prob: 30, bullshit: false,
+    name: "Kartal Kayra",prob: 30, truth: 50, bullshit: false,
     club_origin: "rizespor", club_display_name: "Rizespor", direction: "in",
     from: "Beşiktaş", to: "Rizespor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Darwin Nunez",prob: 28, bullshit: false,
+    name: "Darwin Nunez",prob: 28, truth: 50, bullshit: false,
     club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
     from: "Al-Hilal", to: "Beşiktaş",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Kevin Carlos",prob: 25, bullshit: false,
+    name: "Kevin Carlos",prob: 25, truth: 45, bullshit: false,
     club_origin: "samsunspor", club_display_name: "Samsunspor", direction: "in",
     from: "OGC Nice", to: "Samsunspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Ali Diabaté",prob: 8, bullshit: false,
+    name: "Ali Diabaté",prob: 8, truth: 80, bullshit: false,
     club_origin: "samsunspor", club_display_name: "Samsunspor", direction: "out",
     from: "Samsunspor", to: "Samsunspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8m offer rejected", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Samuel Ballet",prob: 55, bullshit: false,
+    name: "Samuel Ballet",prob: 55, truth: 70, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "out",
     from: "Antalyaspor", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Francis Nzaba",prob: 35, bullshit: false,
+    name: "Francis Nzaba",prob: 35, truth: 85, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
     from: "İstanbul Başakşehir", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Güray Vural",prob: 15, bullshit: false,
+    name: "Güray Vural",prob: 15, truth: 55, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
     from: "Free agent (ex-Iğdır FK)", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Free", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Dusan Vlahovic",prob: 12, bullshit: false,
+    name: "Dusan Vlahovic",prob: 12, truth: 30, bullshit: false,
     club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
     from: "Juventus", to: "Beşiktaş",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Mauro Icardi",prob: 10, bullshit: false,
+    name: "Mauro Icardi",prob: 10, truth: 25, bullshit: false,
     club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
     from: "Free agent (ex-Galatasaray)", to: "Beşiktaş",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -766,7 +816,7 @@ const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.358755Z",
+  updated: "2026-08-04T11:54:20.915097Z",
   label: "Nation aggregation"
 };
 
@@ -790,6 +840,35 @@ function metricGradient(v) {
 }
 
 (function(){
+  // Nation stats strip -- built entirely from data already aggregated for this page
+  // (NATION.stories_count, LEAGUES_LIST's per-league counts), so every figure is real.
+  (function(){
+    const strip = document.getElementById('stats-strip');
+    if(!strip) return;
+    const tiles = [];
+    if(typeof NATION !== 'undefined' && NATION) {
+      tiles.push({ label: 'Live Stories', value: `${NATION.stories_count || 0}` });
+    }
+    if(typeof LEAGUES_LIST !== 'undefined' && LEAGUES_LIST && LEAGUES_LIST.length > 0) {
+      tiles.push({ label: 'Leagues Tracked', value: `${LEAGUES_LIST.length}` });
+      const topLeague = LEAGUES_LIST.slice().sort((a, b) => (b.count || 0) - (a.count || 0))[0];
+      if(topLeague && topLeague.count > 0) {
+        tiles.push({ label: 'Most Active League', value: topLeague.name, small: `${topLeague.count} ${topLeague.count === 1 ? 'story' : 'stories'}` });
+      }
+    }
+    if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
+      const tier1 = TOP_STORIES.filter(s => (s.tier || 3) === 1).length;
+      tiles.push({ label: 'Tier 1 Stories', value: `${tier1}` });
+    }
+    if(tiles.length === 0) return;
+    strip.innerHTML = tiles.map(t => `
+      <div class="stats-tile">
+        <div class="stats-label">${t.label}</div>
+        <div class="stats-value">${t.value}${t.small ? ` <small>${t.small}</small>` : ''}</div>
+      </div>
+    `).join('');
+  })();
+
   // Populate league pills in the hero banner. aggregate.py emits this array as
   // LEAGUES_LIST with a {slug,name,count} shape -- NOT "LEAGUES" / "club_count" (that
   // mismatch used to leave this permanently empty even when data existed).
@@ -868,6 +947,7 @@ function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
+  const truth = s.truth || 50;
   const isBullshit = s.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
@@ -879,12 +959,11 @@ function renderStory(s) {
         <span class="player-name">${s.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="club-name">${s.club_display_name}</div>
+      <div class="club-name">${s.from} → ${s.to}</div>
     </div>
     <div class="card-body">
       <div class="transfer-direction">
         <div class="transfer-details">
-          <div>${s.from} → ${s.to}</div>
           <div>${s.value}</div>
         </div>
       </div>
@@ -894,6 +973,11 @@ function renderStory(s) {
         <div class="metric-label">Prob</div>
         <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">True</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
+        <div class="metric-value">${truth}%</div>
       </div>
     </div>
   </a>`;

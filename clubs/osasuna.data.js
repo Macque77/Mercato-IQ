@@ -67,10 +67,10 @@ const LINKMAP = {
   "Jonathan Dubasin": ["ftbolFantasyJonathanDubasin"],
   "Pablo García": ["elGolDigitalPabloGarca"],
   "Abel Ruiz": ["todoMercadoWebAbelRuiz"],
-  "César Tárrega": ["todoMercadoWebCsarTrrega"],
+  "César Tárrega": ["todoMercadoWebAbelRuiz"],
   "Víctor Muñoz": ["ftbolFantasyVctorMuoz"],
-  "Sheraldo Becker": ["ftbolFantasySheraldoBecker"],
-  "Javi Galán": ["ftbolFantasyJaviGaln"]};
+  "Sheraldo Becker": ["ftbolFantasyJonathanDubasin"],
+  "Javi Galán": ["ftbolFantasyJonathanDubasin"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

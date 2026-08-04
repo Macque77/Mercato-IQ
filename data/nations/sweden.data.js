@@ -10,7 +10,7 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Sotirios Papagiannopoulos",prob: 40, bullshit: false,
+    name: "Sotirios Papagiannopoulos",prob: 40, truth: 54, bullshit: false,
     club_origin: "aik-fotboll", club_display_name: "AIK Fotboll", direction: "in",
     from: "AEK Athens", to: "AIK Fotboll",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -24,6 +24,6 @@ const LEAGUES_LIST = [{"slug": "allsvenskan", "name": "Allsvenskan", "count": 1}
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.358637Z",
+  updated: "2026-08-04T11:54:20.914851Z",
   label: "Nation aggregation"
 };

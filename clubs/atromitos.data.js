@@ -57,7 +57,7 @@ const LINKMAP = {
   "Lefteris Lyratzis": ["lefterisLyratzis"],
   "Aitor García": ["atromitosFCgrAitorGarca"],
   "Núñez": ["gazzettagrNez"],
-  "Christos Karandrikas": ["gazzettagrChristosKarandrikas"]};
+  "Christos Karandrikas": ["gazzettagrNez"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

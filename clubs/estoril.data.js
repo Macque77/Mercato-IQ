@@ -58,10 +58,10 @@ const HUB = {
 
 const LINKMAP = {
   "Ilias Kostis": ["recordviaBolanaRedeIliasKostis"],
-  "Felix Bacher": ["recordviaBolanaRedeFelixBacher"],
+  "Felix Bacher": ["recordviaBolanaRedeIliasKostis"],
   "Yanis Begraoui": ["oJogoviaBolanaRedeYanisBegraoui"],
   "Fernando Medrano": ["matteoMorettoviaBolanaRedeFernandoMedrano"],
-  "Kévin Boma": ["recordviaBolanaRedeKvinBoma"]};
+  "Kévin Boma": ["recordviaBolanaRedeIliasKostis"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

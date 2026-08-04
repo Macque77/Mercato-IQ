@@ -10,140 +10,140 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Ousmane Diomande", prob: 80, bullshit: false,
+    name: "Ousmane Diomande", prob: 80, truth: 90, bullshit: false,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest",
     tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "~£37m + £5m add-ons", updated: "2026-07-30T14:00:00Z"
   },
   {
-    name: "Bruno Guimarães", prob: 62, bullshit: false,
+    name: "Bruno Guimarães", prob: 62, truth: 82, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Arsenal",
     tier: 1, coverage: 4, coverage_trend: 'flat',
     value: "£70-85m (gap narrowing)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Cristian Romero", prob: 62, bullshit: false,
+    name: "Cristian Romero", prob: 62, truth: 80, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "≈€40m (£35m)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Savinho", prob: 55, bullshit: false,
+    name: "Savinho", prob: 55, truth: 78, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Manchester City", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£60m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Lucas Bergvall", prob: 45, bullshit: false,
+    name: "Lucas Bergvall", prob: 45, truth: 82, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Lewis Hall", prob: 32, bullshit: false,
+    name: "Lewis Hall", prob: 32, truth: 65, bullshit: false,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "Newcastle United", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Rafael Leão", prob: 26, bullshit: false,
+    name: "Rafael Leão", prob: 26, truth: 48, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "AC Milan", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "TBC", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Cody Gakpo", prob: 20, bullshit: false,
+    name: "Cody Gakpo", prob: 20, truth: 52, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Liverpool", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Dayann Methalie", prob: 52, bullshit: false,
+    name: "Dayann Methalie", prob: 52, truth: 76, bullshit: false,
     club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
     from: "Toulouse", to: "Sunderland",
     tier: 2, coverage: 5, coverage_trend: 'flat',
     value: "TBC", updated: "2026-07-31T09:00:00Z"
   },
   {
-    name: "Marcus Rashford", prob: 42, bullshit: false,
+    name: "Marcus Rashford", prob: 42, truth: 65, bullshit: false,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
     from: "Manchester United", to: "AS Roma (or open market)",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£40m release clause (all clubs bar Man City & Liverpool)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Djed Spence", prob: 42, bullshit: false,
+    name: "Djed Spence", prob: 42, truth: 60, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "TBD",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "≈£40m / €40m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Abde Ezzalzouli", prob: 38, bullshit: false,
+    name: "Abde Ezzalzouli", prob: 38, truth: 62, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
     from: "Real Betis", to: "Newcastle United",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "≈£43-52m (release clause ≈€60m)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Joe Willock", prob: 38, bullshit: false,
+    name: "Joe Willock", prob: 38, truth: 66, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Besiktas",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£10m bid rejected", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Guglielmo Vicario", prob: 36, bullshit: false,
+    name: "Guglielmo Vicario", prob: 36, truth: 55, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Juventus",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "≈£20m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Lamine Camara", prob: 35, bullshit: false,
+    name: "Lamine Camara", prob: 35, truth: 70, bullshit: false,
     club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
     from: "Monaco", to: "Aston Villa",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "~€50m", updated: "2026-06-06T12:00:00Z"
   },
   {
-    name: "Giorgio Scalvini", prob: 34, bullshit: false,
+    name: "Giorgio Scalvini", prob: 34, truth: 58, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
     from: "Atalanta", to: "Newcastle United",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "≈€45-50m (£38-40m)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Liam Delap", prob: 32, bullshit: false,
+    name: "Liam Delap", prob: 32, truth: 55, bullshit: false,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Chelsea", to: "Nottingham Forest",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Fee unclear (cost Chelsea £30m in 2025)", updated: "2026-07-30T14:00:00Z"
   },
   {
-    name: "Adam Wharton", prob: 30, bullshit: false,
+    name: "Adam Wharton", prob: 30, truth: 65, bullshit: false,
     club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "out",
     from: "Crystal Palace", to: "Elite interest",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£60m+", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Riccardo Calafiori", prob: 30, bullshit: false,
+    name: "Riccardo Calafiori", prob: 30, truth: 65, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
     from: "Arsenal", to: "Juventus",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "£35-45m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Leandro Trossard", prob: 30, bullshit: false,
+    name: "Leandro Trossard", prob: 30, truth: 65, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
     from: "Arsenal", to: "Open to offers",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 9, "badge": 
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.362301Z",
+  updated: "2026-08-04T11:54:20.920322Z",
   label: "League aggregation"
 };

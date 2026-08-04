@@ -365,6 +365,52 @@
     border-bottom:2px solid var(--accent-gold);
   }
 
+  /* ===== NATION STATS STRIP =====
+     Compact summary row -- live stories, leagues tracked, most active league --
+     built entirely from data already aggregated for this page. */
+  .stats-strip {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:10px;
+    margin-bottom:24px;
+  }
+
+  .stats-tile {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+
+  .stats-tile .stats-label {
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:5px;
+  }
+
+  .stats-tile .stats-value {
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:400;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .stats-tile .stats-value small {
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-secondary);
+    font-weight:400;
+    letter-spacing:0;
+    text-transform:none;
+  }
+
   /* ===== TRANSFER CARDS ===== */
   .transfer-grid {
     display:grid;
@@ -628,6 +674,10 @@
 </div>
 
 <div class="container">
+  <div class="stats-strip" id="stats-strip">
+    <!-- Populated by data -->
+  </div>
+
   <section class="section">
     <h3 class="section-title">Top Transfer Stories</h3>
     <div class="transfer-grid" id="stories">
@@ -661,7 +711,7 @@ const LEAGUES_LIST = [{"slug": "your-league", "name": "Your League", "count": 0}
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.358904Z",
+  updated: "2026-08-04T11:54:20.915390Z",
   label: "Nation aggregation"
 };
 
@@ -685,6 +735,35 @@ function metricGradient(v) {
 }
 
 (function(){
+  // Nation stats strip -- built entirely from data already aggregated for this page
+  // (NATION.stories_count, LEAGUES_LIST's per-league counts), so every figure is real.
+  (function(){
+    const strip = document.getElementById('stats-strip');
+    if(!strip) return;
+    const tiles = [];
+    if(typeof NATION !== 'undefined' && NATION) {
+      tiles.push({ label: 'Live Stories', value: `${NATION.stories_count || 0}` });
+    }
+    if(typeof LEAGUES_LIST !== 'undefined' && LEAGUES_LIST && LEAGUES_LIST.length > 0) {
+      tiles.push({ label: 'Leagues Tracked', value: `${LEAGUES_LIST.length}` });
+      const topLeague = LEAGUES_LIST.slice().sort((a, b) => (b.count || 0) - (a.count || 0))[0];
+      if(topLeague && topLeague.count > 0) {
+        tiles.push({ label: 'Most Active League', value: topLeague.name, small: `${topLeague.count} ${topLeague.count === 1 ? 'story' : 'stories'}` });
+      }
+    }
+    if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
+      const tier1 = TOP_STORIES.filter(s => (s.tier || 3) === 1).length;
+      tiles.push({ label: 'Tier 1 Stories', value: `${tier1}` });
+    }
+    if(tiles.length === 0) return;
+    strip.innerHTML = tiles.map(t => `
+      <div class="stats-tile">
+        <div class="stats-label">${t.label}</div>
+        <div class="stats-value">${t.value}${t.small ? ` <small>${t.small}</small>` : ''}</div>
+      </div>
+    `).join('');
+  })();
+
   // Populate league pills in the hero banner. aggregate.py emits this array as
   // LEAGUES_LIST with a {slug,name,count} shape -- NOT "LEAGUES" / "club_count" (that
   // mismatch used to leave this permanently empty even when data existed).
@@ -763,6 +842,7 @@ function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
+  const truth = s.truth || 50;
   const isBullshit = s.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
@@ -774,12 +854,11 @@ function renderStory(s) {
         <span class="player-name">${s.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="club-name">${s.club_display_name}</div>
+      <div class="club-name">${s.from} → ${s.to}</div>
     </div>
     <div class="card-body">
       <div class="transfer-direction">
         <div class="transfer-details">
-          <div>${s.from} → ${s.to}</div>
           <div>${s.value}</div>
         </div>
       </div>
@@ -789,6 +868,11 @@ function renderStory(s) {
         <div class="metric-label">Prob</div>
         <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">True</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
+        <div class="metric-value">${truth}%</div>
       </div>
     </div>
   </a>`;

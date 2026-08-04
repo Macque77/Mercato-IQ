@@ -10,119 +10,119 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Ahmed Sidibé", prob: 88, bullshit: false,
+    name: "Ahmed Sidibé", prob: 88, truth: 85, bullshit: false,
     club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "in",
     from: "Venezia", to: "Vitória SC",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan + option to buy", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Pepe", prob: 80, bullshit: false,
+    name: "Pepe", prob: 80, truth: 85, bullshit: false,
     club_origin: "fc-porto", club_display_name: "FC Porto", direction: "in",
     from: "Free agent (Real Madrid exit)", to: "FC Porto",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Ilias Kostis", prob: 55, bullshit: false,
+    name: "Ilias Kostis", prob: 55, truth: 60, bullshit: false,
     club_origin: "estoril", club_display_name: "Estoril Praia", direction: "in",
     from: "Atlético Madrid", to: "Estoril Praia",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan or permanent (TBD)", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Felix Bacher", prob: 50, bullshit: false,
+    name: "Felix Bacher", prob: 50, truth: 55, bullshit: false,
     club_origin: "estoril", club_display_name: "Estoril Praia", direction: "out",
     from: "Estoril Praia", to: "Estoril Praia",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€4m+", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Todibo from Nice", prob: 42, bullshit: false,
+    name: "Todibo from Nice", prob: 42, truth: 58, bullshit: false,
     club_origin: "sl-benfica", club_display_name: "SL Benfica", direction: "in",
     from: "OGC Nice", to: "SL Benfica",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€20m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Daniel Braganca", prob: 40, bullshit: false,
+    name: "Daniel Braganca", prob: 40, truth: 55, bullshit: false,
     club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "out",
     from: "Sporting CP", to: "Olympiacos",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€10m bid tabled", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Taichi Fukui", prob: 30, bullshit: false,
+    name: "Taichi Fukui", prob: 30, truth: 55, bullshit: false,
     club_origin: "arouca", club_display_name: "FC Arouca", direction: "out",
     from: "FC Arouca", to: "Arouca",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€10m (near release clause)", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Sérgio Conceição", prob: 22, bullshit: false,
+    name: "Sérgio Conceição", prob: 22, truth: 40, bullshit: false,
     club_origin: "sl-benfica", club_display_name: "SL Benfica", direction: "in",
     from: "Free agent", to: "SL Benfica",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Morten Hjulmand", prob: 15, bullshit: false,
+    name: "Morten Hjulmand", prob: 15, truth: 45, bullshit: false,
     club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "out",
     from: "Sporting CP", to: "Real Madrid",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "No formal bid reported", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Rômulo Júnior", prob: 40, bullshit: false,
+    name: "Rômulo Júnior", prob: 40, truth: 72, bullshit: false,
     club_origin: "santa-clara", club_display_name: "Santa Clara", direction: "in",
     from: "Atlético Mineiro", to: "Santa Clara",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Loan + €4m option (80% economic rights)", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Yanis Begraoui", prob: 40, bullshit: false,
+    name: "Yanis Begraoui", prob: 40, truth: 50, bullshit: false,
     club_origin: "estoril", club_display_name: "Estoril Praia", direction: "out",
     from: "Estoril Praia", to: "Estoril Praia",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Valuation rising", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Noah Saviolo", prob: 30, bullshit: false,
+    name: "Noah Saviolo", prob: 30, truth: 45, bullshit: false,
     club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
     from: "Vitória SC", to: "Vitória Guimarães",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Gonçalo Nogueira", prob: 30, bullshit: false,
+    name: "Gonçalo Nogueira", prob: 30, truth: 40, bullshit: false,
     club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
     from: "Vitória SC", to: "Vitória Guimarães",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Oumar Camara", prob: 25, bullshit: false,
-    club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
-    from: "Vitória SC", to: "Vitória Guimarães",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Andrew", prob: 25, bullshit: false,
+    name: "Andrew", prob: 25, truth: 40, bullshit: false,
     club_origin: "braga", club_display_name: "SC Braga", direction: "in",
     from: "Gil Vicente", to: "SC Braga",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Yeremay Hernandez", prob: 20, bullshit: false,
+    name: "Oumar Camara", prob: 25, truth: 40, bullshit: false,
+    club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
+    from: "Vitória SC", to: "Vitória Guimarães",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Yeremay Hernandez", prob: 20, truth: 40, bullshit: false,
     club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "in",
     from: "Deportivo La Coruna", to: "Sporting CP",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed (two bids already rejected)", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Daniel Fuzato", prob: 12, bullshit: false,
+    name: "Daniel Fuzato", prob: 12, truth: 50, bullshit: false,
     club_origin: "santa-clara", club_display_name: "Santa Clara", direction: "in",
     from: "Vasco da Gama", to: "Santa Clara",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -136,6 +136,6 @@ const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0, "bad
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.361593Z",
+  updated: "2026-08-04T11:54:20.919077Z",
   label: "League aggregation"
 };

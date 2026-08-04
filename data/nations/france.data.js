@@ -6,122 +6,122 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 42
+  stories_count: 46
 };
 
 const TOP_STORIES = [  {
-    name: "Joseph Nonge",prob: 60, bullshit: false,
+    name: "Joseph Nonge",prob: 60, truth: 75, bullshit: false,
     club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
     from: "Kocaelispor", to: "Stade Brestois 29",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~€2.5m valuation", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Madison Ingram",prob: 55, bullshit: false,
+    name: "Madison Ingram",prob: 55, truth: 71, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Joris Chotard",prob: 55, bullshit: false,
+    name: "Joris Chotard",prob: 55, truth: 65, bullshit: false,
     club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
     from: "Stade Brestois 29", to: "Stade Brest",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Maghnes Akliouche",prob: 62, bullshit: false,
+    name: "Yahia Jlidi",prob: 55, truth: 75, bullshit: false,
+    club_origin: "angers-sco", club_display_name: "Angers SCO", direction: "out",
+    from: "Angers SCO", to: "Lyon / Roma (Monaco also interested)",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Angers value at ~€7m (rejected Monaco's €4m bid)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Harouna Djibirin",prob: 35, truth: 65, bullshit: false,
+    club_origin: "angers-sco", club_display_name: "Angers SCO", direction: "out",
+    from: "Angers SCO", to: "Club Brugge",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "~€15m asking price", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Maghnes Akliouche",prob: 62, truth: 70, bullshit: false,
     club_origin: "as-monaco", club_display_name: "AS Monaco", direction: "out",
     from: "AS Monaco", to: "Paris Saint-Germain",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€50m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Mohamed-Ali Cho",prob: 58, bullshit: false,
+    name: "Mohamed-Ali Cho",prob: 58, truth: 65, bullshit: false,
     club_origin: "ogc-nice", club_display_name: "OGC Nice", direction: "out",
     from: "OGC Nice", to: "Hull City",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€20m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Loïs Openda",prob: 52, bullshit: false,
+    name: "Loïs Openda",prob: 52, truth: 60, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Juventus", to: "Olympique Lyonnais",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "TBD", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Timothée Pembélé",prob: 52, bullshit: false,
+    name: "Timothée Pembélé",prob: 52, truth: 60, bullshit: false,
     club_origin: "le-havre-ac", club_display_name: "Le Havre AC", direction: "out",
     from: "Le Havre AC", to: "Sunderland",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "TBD", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Başar Önal",prob: 48, bullshit: false,
+    name: "Başar Önal",prob: 48, truth: 60, bullshit: false,
     club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
     from: "NEC Nijmegen", to: "LOSC Lille",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€9.5m + add-ons", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Florian Thauvin",prob: 48, bullshit: false,
+    name: "Florian Thauvin",prob: 48, truth: 62, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Free agent (Udinese)", to: "Olympique Lyonnais",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Free agent", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Cluver Sambi Mbungu",prob: 45, bullshit: false,
+    name: "Cluver Sambi Mbungu",prob: 45, truth: 55, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "SM Caen", to: "Olympique Lyonnais",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "TBD", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Nicolas Lemaître",prob: 42, bullshit: false,
+    name: "Nicolas Lemaître",prob: 42, truth: 55, bullshit: false,
     club_origin: "stade-rennais", club_display_name: "Stade Rennais FC", direction: "in",
     from: "ES Troyes AC", to: "Stade Rennais FC",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "TBD", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Gonçalo Inácio",prob: 40, bullshit: false,
+    name: "Gonçalo Inácio",prob: 40, truth: 58, bullshit: false,
     club_origin: "losc-lille", club_display_name: "LOSC Lille", direction: "in",
     from: "Sporting CP", to: "LOSC Lille",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Ousmane Dembélé",prob: 35, bullshit: false,
+    name: "Ousmane Dembélé",prob: 35, truth: 55, bullshit: false,
     club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
     from: "PSG", to: "Olympique de Marseille",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€50m+", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
-  {
-    name: "Kévin Danois",prob: 34, bullshit: false,
-    club_origin: "aj-auxerre", club_display_name: "AJ Auxerre", direction: "out",
-    from: "AJ Auxerre", to: "Multiple (unspecified)",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
-    name: "Jonathan David",prob: 32, bullshit: false,
-    club_origin: "rc-lens", club_display_name: "RC Lens", direction: "in",
-    from: "LOSC Lille", to: "RC Lens",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€45m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 42, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 46, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 42}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 46}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.357616Z",
+  updated: "2026-08-04T11:54:20.913065Z",
   label: "Nation aggregation"
 };

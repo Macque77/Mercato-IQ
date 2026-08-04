@@ -10,126 +10,126 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Daisuke Yokota", prob: 80, bullshit: false,
+    name: "Daisuke Yokota", prob: 80, truth: 88, bullshit: false,
     club_origin: "rangers", club_display_name: "Rangers", direction: "in",
     from: "Hannover 96", to: "Rangers",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~€3.3m + €0.7m add-ons", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Arne Engels", prob: 58, bullshit: false,
+    name: "Arne Engels", prob: 58, truth: 75, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "out",
     from: "Celtic", to: "West Ham United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Gvidas Gineitis", prob: 60, bullshit: false,
+    name: "Gvidas Gineitis", prob: 60, truth: 75, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "in",
     from: "Torino", to: "Celtic",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "~£12m", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Alistair Johnston", prob: 60, bullshit: false,
+    name: "Alistair Johnston", prob: 60, truth: 65, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "out",
     from: "Celtic", to: "Everton / Fulham",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Jahnoah Markelo", prob: 55, bullshit: false,
+    name: "Jahnoah Markelo", prob: 55, truth: 65, bullshit: false,
     club_origin: "rangers", club_display_name: "Rangers", direction: "in",
     from: "Coventry City", to: "Rangers",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Fares Ghedjemis", prob: 35, bullshit: false,
+    name: "Fares Ghedjemis", prob: 35, truth: 55, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "in",
     from: "Frosinone", to: "Celtic",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "£6-8m", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Greg Taylor", prob: 33, bullshit: false,
+    name: "Greg Taylor", prob: 33, truth: 50, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "in",
     from: "PAOK", to: "Celtic",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Nicolas Raskin", prob: 32, bullshit: false,
+    name: "Nicolas Raskin", prob: 32, truth: 55, bullshit: false,
     club_origin: "rangers", club_display_name: "Rangers", direction: "out",
     from: "Rangers", to: "Real Betis",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "~€23.5m asking price", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Unnamed Rangers attacker", prob: 45, bullshit: false,
+    name: "Unnamed Rangers attacker", prob: 45, truth: 50, bullshit: false,
     club_origin: "rangers", club_display_name: "Rangers", direction: "out",
     from: "Rangers", to: "Undisclosed",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Unnamed Hearts striker", prob: 40, bullshit: false,
+    name: "Unnamed Hearts striker", prob: 40, truth: 50, bullshit: false,
     club_origin: "heart-of-midlothian", club_display_name: "Heart of Midlothian", direction: "in",
     from: "Undisclosed", to: "Heart of Midlothian",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Claudio Braga", prob: 30, bullshit: false,
+    name: "Claudio Braga", prob: 30, truth: 50, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "in",
     from: "Heart of Midlothian", to: "Celtic",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "", prob: 25, bullshit: false,
+    name: "", prob: 25, truth: 35, bullshit: false,
     club_origin: "st-mirren", club_display_name: "St Mirren", direction: "out",
     from: "St Mirren", to: "Undisclosed",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Camilo Mena", prob: 15, bullshit: false,
+    name: "Camilo Mena", prob: 15, truth: 35, bullshit: false,
     club_origin: "rangers", club_display_name: "Rangers", direction: "in",
     from: "Lechia Gdansk", to: "Rangers",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "~£3.4m", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Reo Hatate", prob: 30, bullshit: false,
+    name: "Reo Hatate", prob: 30, truth: 40, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "out",
     from: "Celtic", to: "Undisclosed",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Luke Graham", prob: 30, bullshit: false,
+    name: "Luke Graham", prob: 30, truth: 50, bullshit: false,
     club_origin: "dundee", club_display_name: "Dundee", direction: "out",
     from: "Dundee", to: "Rangers",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Unnamed Kilmarnock player", prob: 20, bullshit: false,
+    name: "Unnamed Kilmarnock player", prob: 20, truth: 30, bullshit: false,
     club_origin: "kilmarnock", club_display_name: "Kilmarnock", direction: "out",
     from: "Kilmarnock", to: "Rangers",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Bowie", prob: 20, bullshit: false,
+    name: "Bowie", prob: 20, truth: 30, bullshit: false,
     club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
     from: "Dundee United", to: "Undisclosed",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Calvin Miller", prob: 10, bullshit: false,
+    name: "Calvin Miller", prob: 10, truth: 20, bullshit: false,
     club_origin: "falkirk", club_display_name: "Falkirk", direction: "out",
     from: "Falkirk", to: "Celtic",
     tier: 4, coverage: 1, coverage_trend: 'flat',
@@ -143,6 +143,6 @@ const CLUBS_LIST = [{"slug": "aberdeen", "name": "Aberdeen", "count": 0, "badge"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.362515Z",
+  updated: "2026-08-04T11:54:20.920747Z",
   label: "League aggregation"
 };

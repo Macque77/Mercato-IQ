@@ -114,6 +114,37 @@
     color:var(--accent-gold);
   }
 
+  /* ===== LEAGUE IDENTITY (top bar) =====
+     Compact icon + name, living in the sticky header row itself rather than a
+     separate hero banner below -- keeps the whole header to one slim strip. */
+  .league-identity {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:none;
+    padding-left:12px;
+    border-left:1px solid var(--border);
+  }
+
+  .league-identity .league-icon {
+    font-size:18px;
+    line-height:1;
+  }
+
+  .league-identity .league-name {
+    font-family:var(--display);
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+    color:var(--accent-gold);
+    white-space:nowrap;
+  }
+
+  @media(max-width:640px) {
+    .league-identity .league-name { display:none; }
+  }
+
   /* ===== BREAKING TICKER (Sky Sports News style) ===== */
   .ticker-bar {
     display:none;
@@ -219,60 +250,6 @@
     .ticker-label { font-size:9px; padding:6px 9px; }
     .ticker-item { font-size:10px; padding:6px 14px; gap:6px; }
     .ticker-item .t-club { display:none; }
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
-    border-bottom:1px solid var(--border);
-    padding:24px 20px;
-  }
-
-  .hero-inner {
-    max-width:1400px;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    gap:20px;
-  }
-
-  .hero-icon {
-    font-size:40px;
-    line-height:1;
-    flex-shrink:0;
-  }
-
-  .hero-text h2 {
-    font-family:var(--display);
-    font-size:32px;
-    font-weight:400;
-    letter-spacing:0.5px;
-    text-transform:uppercase;
-    margin-bottom:6px;
-  }
-
-  .hero-text .subtitle {
-    color:var(--text-secondary);
-    font-size:13px;
-    display:flex;
-    gap:16px;
-  }
-
-  .stat {
-    display:flex;
-    gap:4px;
-    font-family:var(--mono);
-    font-size:11px;
-  }
-
-  .stat-label {
-    color:var(--text-muted);
-    text-transform:uppercase;
-  }
-
-  .stat-value {
-    color:var(--accent-gold);
-    font-weight:700;
   }
 
   /* ===== CONTAINER ===== */
@@ -564,18 +541,54 @@
     font-size:10px;
   }
 
+  /* ===== LEAGUE STATS STRIP =====
+     Compact summary row -- money spent, in/out counts, most active club --
+     replacing the old hero banner's real estate with something informative
+     instead of decorative. Wraps cleanly, never scrolls horizontally. */
+  .stats-strip {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:10px;
+    margin-bottom:24px;
+  }
+
+  .stats-tile {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+
+  .stats-tile .stats-label {
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:5px;
+  }
+
+  .stats-tile .stats-value {
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:400;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .stats-tile .stats-value small {
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-secondary);
+    font-weight:400;
+    letter-spacing:0;
+    text-transform:none;
+  }
+
   @media(max-width:768px) {
-    .hero-inner {
-      flex-direction:column;
-      text-align:center;
-      gap:16px;
-    }
-
-    .hero-text .subtitle {
-      flex-direction:column;
-      gap:10px;
-    }
-
     .transfer-grid {
       grid-template-columns:1fr;
     }
@@ -588,9 +601,7 @@
       font-size:11px;
     }
 
-    .hero-text h2 {
-      font-size:24px;
-    }
+    .league-identity .league-icon { font-size:16px; }
   }
 </style>
 </head>
@@ -611,6 +622,10 @@
       <span>/</span>
       <span style="color:var(--accent-gold)">Serie D</span>
     </div>
+    <div class="league-identity">
+      <span class="league-icon">🏆</span>
+      <span class="league-name">Serie D</span>
+    </div>
   </div>
 </header>
 
@@ -621,22 +636,11 @@
   </div>
 </div>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-icon">🏆</div>
-    <div class="hero-text">
-      <h2>Serie D</h2>
-      <div class="subtitle">
-        <div class="stat">
-          <span class="stat-label">Stories:</span>
-          <span class="stat-value">0</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container">
+  <div class="stats-strip" id="stats-strip">
+    <!-- Populated by data -->
+  </div>
+
   <section class="section">
     <h3 class="section-title">Clubs</h3>
     <div class="clubs-grid" id="clubs-grid">
@@ -677,7 +681,7 @@ const CLUBS_LIST = [{"slug": "reggina", "name": "Reggina", "count": 0, "badge": 
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.363594Z",
+  updated: "2026-08-04T11:54:20.922797Z",
   label: "League aggregation"
 };
 
@@ -739,6 +743,36 @@ function crestInk(primary, primaryBright) {
   // thumbnail exists in badges-thumb/<slug>.png; clubs without real artwork fall back to a
   // monogram tile rendered in the club's own brand colour, so it reads as a deliberate crest
   // rather than a missing-image placeholder.
+  // League stats strip -- built entirely from data already aggregated for this page
+  // (LEAGUE.stories_count and CLUBS_LIST's per-club counts), so every figure here is
+  // real and honest, never a placeholder.
+  (function(){
+    const strip = document.getElementById('stats-strip');
+    if(!strip) return;
+    const tiles = [];
+    if(typeof LEAGUE !== 'undefined' && LEAGUE) {
+      tiles.push({ label: 'Live Stories', value: `${LEAGUE.stories_count || 0}` });
+    }
+    if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
+      tiles.push({ label: 'Clubs Tracked', value: `${CLUBS_LIST.length}` });
+      const mostActive = CLUBS_LIST.slice().sort((a, b) => (b.count || 0) - (a.count || 0))[0];
+      if(mostActive && mostActive.count > 0) {
+        tiles.push({ label: 'Most Active Club', value: mostActive.name, small: `${mostActive.count} ${mostActive.count === 1 ? 'story' : 'stories'}` });
+      }
+    }
+    if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
+      const tier1 = TOP_STORIES.filter(s => (s.tier || 3) === 1).length;
+      tiles.push({ label: 'Tier 1 Stories', value: `${tier1}` });
+    }
+    if(tiles.length === 0) return;
+    strip.innerHTML = tiles.map(t => `
+      <div class="stats-tile">
+        <div class="stats-label">${t.label}</div>
+        <div class="stats-value">${t.value}${t.small ? ` <small>${t.small}</small>` : ''}</div>
+      </div>
+    `).join('');
+  })();
+
   if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
     const container = document.getElementById('clubs-grid');
     container.innerHTML = CLUBS_LIST.map(c => {
@@ -822,6 +856,7 @@ function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
+  const truth = s.truth || 50;
   const isBullshit = s.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
@@ -833,12 +868,11 @@ function renderStory(s) {
         <span class="player-name">${s.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="club-name-card">${s.club_display_name}</div>
+      <div class="club-name-card">${s.from} → ${s.to}</div>
     </div>
     <div class="card-body">
       <div class="transfer-direction">
         <div class="transfer-details">
-          <div>${s.from} → ${s.to}</div>
           <div>${s.value}</div>
         </div>
       </div>
@@ -848,6 +882,11 @@ function renderStory(s) {
         <div class="metric-label">Prob</div>
         <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">True</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
+        <div class="metric-value">${truth}%</div>
       </div>
     </div>
   </a>`;

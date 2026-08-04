@@ -72,11 +72,11 @@ const LINKMAP = {
   "Aarón Martín": ["noticiasdelavaAarnMartn"],
   "Pablo García": ["elGolDigitalPabloGarca"],
   "Ville Koski": ["ftbolFantasyVilleKoski"],
-  "Mikel Rodríguez": ["ftbolFantasyMikelRodrguez"],
+  "Mikel Rodríguez": ["ftbolFantasyVilleKoski"],
   "Miguel Rodríguez": ["vavelMiguelRodrguez"],
-  "Víctor Parada": ["ftbolFantasyVctorParada"],
-  "Asier Villalibre": ["ftbolFantasyAsierVillalibre"],
-  "Jon Guridi": ["ftbolFantasyJonGuridi"]};
+  "Víctor Parada": ["ftbolFantasyVilleKoski"],
+  "Asier Villalibre": ["ftbolFantasyVilleKoski"],
+  "Jon Guridi": ["ftbolFantasyVilleKoski"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -57,7 +57,7 @@ const LINKMAP = {
   "Jasper Schendelaar": ["voetbalInternationalJasperSchendelaar"],
   "Dirk Proper": ["voetbalPrimeurnlVIDirkProper"],
   "Pelle Clement": ["footballTransferscomPelleClement"],
-  "Joshua Kitolano": ["footballTransferscomJoshuaKitolano"]};
+  "Joshua Kitolano": ["footballTransferscomPelleClement"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

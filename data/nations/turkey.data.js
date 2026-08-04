@@ -10,105 +10,105 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "İbrahim Kaya",prob: 15, bullshit: false,
+    name: "İbrahim Kaya",prob: 15, truth: 40, bullshit: false,
     club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "out",
     from: "Alanyaspor", to: "Alanyaspor",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Mehmet Topal",prob: 85, bullshit: false,
+    name: "Mehmet Topal",prob: 85, truth: 78, bullshit: false,
     club_origin: "fenerbahce", club_display_name: "Fenerbahçe SK", direction: "in",
     from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Contract renewal", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Nariman Akhundzada",prob: 80, bullshit: false,
-    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
-    from: "Columbus Crew", to: "Erzurumspor",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
-  },
-  {
-    name: "Iván Cedric",prob: 80, bullshit: false,
+    name: "Iván Cedric",prob: 80, truth: 85, bullshit: false,
     club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
     from: "Vanspor FK", to: "Alanyaspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Mohamed Salah",prob: 46, bullshit: false,
+    name: "Nariman Akhundzada",prob: 80, truth: 90, bullshit: false,
+    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
+    from: "Columbus Crew", to: "Erzurumspor",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
+  },
+  {
+    name: "Mohamed Salah",prob: 46, truth: 60, bullshit: false,
     club_origin: "trabzonspor", club_display_name: "Trabzonspor", direction: "in",
     from: "Free agent (ex-Liverpool)", to: "Trabzonspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€34m total (2-yr deal)", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Álvaro Soler",prob: 42, bullshit: false,
+    name: "Álvaro Soler",prob: 42, truth: 56, bullshit: false,
     club_origin: "galatasaray", club_display_name: "Galatasaray SK", direction: "in",
     from: "Montpellier", to: "Galatasaray SK",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€10m", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Kartal Kayra",prob: 30, bullshit: false,
+    name: "Kartal Kayra",prob: 30, truth: 50, bullshit: false,
     club_origin: "rizespor", club_display_name: "Rizespor", direction: "in",
     from: "Beşiktaş", to: "Rizespor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Darwin Nunez",prob: 28, bullshit: false,
+    name: "Darwin Nunez",prob: 28, truth: 50, bullshit: false,
     club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
     from: "Al-Hilal", to: "Beşiktaş",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Kevin Carlos",prob: 25, bullshit: false,
+    name: "Kevin Carlos",prob: 25, truth: 45, bullshit: false,
     club_origin: "samsunspor", club_display_name: "Samsunspor", direction: "in",
     from: "OGC Nice", to: "Samsunspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Ali Diabaté",prob: 8, bullshit: false,
+    name: "Ali Diabaté",prob: 8, truth: 80, bullshit: false,
     club_origin: "samsunspor", club_display_name: "Samsunspor", direction: "out",
     from: "Samsunspor", to: "Samsunspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8m offer rejected", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Samuel Ballet",prob: 55, bullshit: false,
+    name: "Samuel Ballet",prob: 55, truth: 70, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "out",
     from: "Antalyaspor", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Francis Nzaba",prob: 35, bullshit: false,
+    name: "Francis Nzaba",prob: 35, truth: 85, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
     from: "İstanbul Başakşehir", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Güray Vural",prob: 15, bullshit: false,
+    name: "Güray Vural",prob: 15, truth: 55, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
     from: "Free agent (ex-Iğdır FK)", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Free", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Dusan Vlahovic",prob: 12, bullshit: false,
+    name: "Dusan Vlahovic",prob: 12, truth: 30, bullshit: false,
     club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
     from: "Juventus", to: "Beşiktaş",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Mauro Icardi",prob: 10, bullshit: false,
+    name: "Mauro Icardi",prob: 10, truth: 25, bullshit: false,
     club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
     from: "Free agent (ex-Galatasaray)", to: "Beşiktaş",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.358755Z",
+  updated: "2026-08-04T11:54:20.915097Z",
   label: "Nation aggregation"
 };

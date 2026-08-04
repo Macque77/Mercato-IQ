@@ -50,7 +50,7 @@ const HUB = {
 
 const LINKMAP = {
   "Marvelous Nakamba": ["agrinioCulturegrMarvelousNakamba"],
-  "Moussa Djenepo": ["agrinioCulturegrMoussaDjenepo"]};
+  "Moussa Djenepo": ["agrinioCulturegrMarvelousNakamba"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

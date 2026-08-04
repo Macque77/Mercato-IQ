@@ -10,105 +10,105 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Florentino Luis",prob: 90, bullshit: false,
+    name: "Florentino Luis",prob: 90, truth: 92, bullshit: false,
     club_origin: "burnley", club_display_name: "Burnley", direction: "out",
     from: "Burnley", to: "Ipswich Town",
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£16m", updated: "2026-08-03T14:30:00Z", league: "Championship"
   },
   {
-    name: "Ousmane Diomande",prob: 80, bullshit: false,
+    name: "Ousmane Diomande",prob: 80, truth: 90, bullshit: false,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest",
     tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "~£37m + £5m add-ons", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
-    name: "Bruno Guimarães",prob: 62, bullshit: false,
+    name: "Bruno Guimarães",prob: 62, truth: 82, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Arsenal",
     tier: 1, coverage: 4, coverage_trend: 'flat',
     value: "£70-85m (gap narrowing)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Cristian Romero",prob: 62, bullshit: false,
+    name: "Cristian Romero",prob: 62, truth: 80, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "≈€40m (£35m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Savinho",prob: 55, bullshit: false,
+    name: "Savinho",prob: 55, truth: 78, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Manchester City", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£60m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Lucas Bergvall",prob: 45, bullshit: false,
+    name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Simon Adingra",prob: 42, bullshit: false,
+    name: "Simon Adingra",prob: 42, truth: 60, bullshit: false,
     club_origin: "west-ham", club_display_name: "West Ham United", direction: "in",
     from: "Sunderland", to: "West Ham United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Loan (poss. obligation to buy)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
-    name: "Lewis Hall",prob: 32, bullshit: false,
+    name: "Lewis Hall",prob: 32, truth: 65, bullshit: false,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "Newcastle United", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Rafael Leão",prob: 26, bullshit: false,
+    name: "Rafael Leão",prob: 26, truth: 48, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "AC Milan", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "TBC", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Cody Gakpo",prob: 20, bullshit: false,
+    name: "Cody Gakpo",prob: 20, truth: 52, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Liverpool", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Admir Bristric",prob: 85, bullshit: false,
+    name: "Admir Bristric",prob: 85, truth: 80, bullshit: false,
     club_origin: "leicester-city", club_display_name: "Leicester City", direction: "in",
     from: "Olimpija Ljubljana (on loan at Bravo)", to: "Leicester City",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€1.7-2m", updated: "2026-08-03T18:00:00Z", league: "League One"
   },
   {
-    name: "Udoka Godwin-Malife",prob: 85, bullshit: false,
+    name: "Udoka Godwin-Malife",prob: 85, truth: 85, bullshit: false,
     club_origin: "reading", club_display_name: "Reading", direction: "in",
     from: "Burton Albion", to: "Reading",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "League One"
   },
   {
-    name: "Tommy Watson",prob: 75, bullshit: false,
+    name: "Tommy Watson",prob: 75, truth: 75, bullshit: false,
     club_origin: "leicester-city", club_display_name: "Leicester City", direction: "in",
     from: "Brighton", to: "Leicester City",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Loan", updated: "2026-08-03T18:00:00Z", league: "League One"
   },
   {
-    name: "Adam Phillips",prob: 70, bullshit: false,
+    name: "Adam Phillips",prob: 70, truth: 75, bullshit: false,
     club_origin: "barnsley", club_display_name: "Barnsley", direction: "out",
     from: "Barnsley", to: "Bradford City",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "League One"
   },
   {
-    name: "Luke Molyneux",prob: 70, bullshit: false,
+    name: "Luke Molyneux",prob: 70, truth: 75, bullshit: false,
     club_origin: "doncaster-rovers", club_display_name: "Doncaster Rovers", direction: "out",
     from: "Doncaster Rovers", to: "Salford City",
     tier: 2, coverage: 2, coverage_trend: 'flat',
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.357428Z",
+  updated: "2026-08-04T11:54:20.912712Z",
   label: "Nation aggregation"
 };

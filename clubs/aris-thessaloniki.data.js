@@ -62,15 +62,15 @@ const HUB = {
 
 const LINKMAP = {
   "Rafael Mir": ["foxbetgrRafaelMir"],
-  "Lubomír Šatka": ["foxbetgrLubomratka"],
+  "Lubomír Šatka": ["foxbetgrRafaelMir"],
   "Sebastián Palacios": ["beSoccercomSebastinPalacios"],
-  "Dele-Bashiru": ["beSoccercomDeleBashiru"],
-  "Martin Hongla": ["beSoccercomMartinHongla"],
-  "N. Sonko-Sundberg": ["beSoccercomNSonkoSundberg"],
-  "Clayton Diandy": ["beSoccercomClaytonDiandy"],
-  "Álvaro Tejero": ["beSoccercomlvaroTejero"],
+  "Dele-Bashiru": ["beSoccercomSebastinPalacios"],
+  "Martin Hongla": ["beSoccercomSebastinPalacios"],
+  "N. Sonko-Sundberg": ["beSoccercomSebastinPalacios"],
+  "Clayton Diandy": ["beSoccercomSebastinPalacios"],
+  "Álvaro Tejero": ["beSoccercomSebastinPalacios"],
   "Hamza Mendil": ["hamzaMendil"],
-  "Giorgos Athanasiadis": ["beSoccercomGiorgosAthanasiadis"]};
+  "Giorgos Athanasiadis": ["beSoccercomSebastinPalacios"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

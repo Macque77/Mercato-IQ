@@ -359,6 +359,7 @@ def emit_global_data(all_stories):
         coverage_trend = story.get('coverage_trend', 'flat')
         bullshit = 'true' if story.get('bullshit') is True else 'false'
 
+        truth = story.get('truth', 50)
         headlines_js += f'''  {{
     headline: "{headline}",
     club_display_name: "{origin_name}",
@@ -366,7 +367,7 @@ def emit_global_data(all_stories):
     value: "{value}",
     from: "{from_club}", to: "{to_club}",
     direction: "{direction}",
-    prob: {prob}, trend: '{trend}', bullshit: {bullshit},
+    prob: {prob}, truth: {truth}, trend: '{trend}', bullshit: {bullshit},
     tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
     nation: "{nation}", league: "{league}",
     club_link: "{club_link}",
@@ -461,8 +462,9 @@ def emit_nation_data(all_stories, nation_slug, nation_name, nation_leagues=None)
         coverage = story.get('coverage', 1)
         coverage_trend = story.get('coverage_trend', 'flat')
         bullshit = 'true' if story.get('bullshit') is True else 'false'
+        truth = story.get('truth', 50)
         stories_js += f'''  {{
-    name: "{story.get('name', '')}",prob: {story.get('prob', 50)}, bullshit: {bullshit},
+    name: "{story.get('name', '')}",prob: {story.get('prob', 50)}, truth: {truth}, bullshit: {bullshit},
     club_origin: "{club_link}", club_display_name: "{origin_name}", direction: "{direction}",
     from: "{from_club}", to: "{to_club}",
     tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',
@@ -537,8 +539,9 @@ def emit_league_data(all_stories, league_slug, league_name, league_clubs=None):
         coverage = story.get('coverage', 1)
         coverage_trend = story.get('coverage_trend', 'flat')
         bullshit = 'true' if story.get('bullshit') is True else 'false'
+        truth = story.get('truth', 50)
         stories_js += f'''  {{
-    name: "{story.get('name', '')}", prob: {story.get('prob', 50)}, bullshit: {bullshit},
+    name: "{story.get('name', '')}", prob: {story.get('prob', 50)}, truth: {truth}, bullshit: {bullshit},
     club_origin: "{club_link}", club_display_name: "{origin_name}", direction: "{direction}",
     from: "{from_club}", to: "{to_club}",
     tier: {tier}, coverage: {coverage}, coverage_trend: '{coverage_trend}',

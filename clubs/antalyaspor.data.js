@@ -52,8 +52,8 @@ const HUB = {
 
 const LINKMAP = {
   "Francis Nzaba": ["yeniAlanyaFrancisNzaba"],
-  "Güray Vural": ["yeniAlanyaGrayVural"],
-  "Samuel Ballet": ["yeniAlanyaSamuelBallet"]};
+  "Güray Vural": ["yeniAlanyaFrancisNzaba"],
+  "Samuel Ballet": ["yeniAlanyaFrancisNzaba"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

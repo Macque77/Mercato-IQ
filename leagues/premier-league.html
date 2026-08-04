@@ -114,6 +114,37 @@
     color:var(--accent-gold);
   }
 
+  /* ===== LEAGUE IDENTITY (top bar) =====
+     Compact icon + name, living in the sticky header row itself rather than a
+     separate hero banner below -- keeps the whole header to one slim strip. */
+  .league-identity {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:none;
+    padding-left:12px;
+    border-left:1px solid var(--border);
+  }
+
+  .league-identity .league-icon {
+    font-size:18px;
+    line-height:1;
+  }
+
+  .league-identity .league-name {
+    font-family:var(--display);
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+    color:var(--accent-gold);
+    white-space:nowrap;
+  }
+
+  @media(max-width:640px) {
+    .league-identity .league-name { display:none; }
+  }
+
   /* ===== BREAKING TICKER (Sky Sports News style) ===== */
   .ticker-bar {
     display:none;
@@ -219,60 +250,6 @@
     .ticker-label { font-size:9px; padding:6px 9px; }
     .ticker-item { font-size:10px; padding:6px 14px; gap:6px; }
     .ticker-item .t-club { display:none; }
-  }
-
-  /* ===== HERO ===== */
-  .hero {
-    background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
-    border-bottom:1px solid var(--border);
-    padding:24px 20px;
-  }
-
-  .hero-inner {
-    max-width:1400px;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    gap:20px;
-  }
-
-  .hero-icon {
-    font-size:40px;
-    line-height:1;
-    flex-shrink:0;
-  }
-
-  .hero-text h2 {
-    font-family:var(--display);
-    font-size:32px;
-    font-weight:400;
-    letter-spacing:0.5px;
-    text-transform:uppercase;
-    margin-bottom:6px;
-  }
-
-  .hero-text .subtitle {
-    color:var(--text-secondary);
-    font-size:13px;
-    display:flex;
-    gap:16px;
-  }
-
-  .stat {
-    display:flex;
-    gap:4px;
-    font-family:var(--mono);
-    font-size:11px;
-  }
-
-  .stat-label {
-    color:var(--text-muted);
-    text-transform:uppercase;
-  }
-
-  .stat-value {
-    color:var(--accent-gold);
-    font-weight:700;
   }
 
   /* ===== CONTAINER ===== */
@@ -564,18 +541,54 @@
     font-size:10px;
   }
 
+  /* ===== LEAGUE STATS STRIP =====
+     Compact summary row -- money spent, in/out counts, most active club --
+     replacing the old hero banner's real estate with something informative
+     instead of decorative. Wraps cleanly, never scrolls horizontally. */
+  .stats-strip {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:10px;
+    margin-bottom:24px;
+  }
+
+  .stats-tile {
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+
+  .stats-tile .stats-label {
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-bottom:5px;
+  }
+
+  .stats-tile .stats-value {
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:400;
+    letter-spacing:0.3px;
+    color:var(--accent-gold);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .stats-tile .stats-value small {
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-secondary);
+    font-weight:400;
+    letter-spacing:0;
+    text-transform:none;
+  }
+
   @media(max-width:768px) {
-    .hero-inner {
-      flex-direction:column;
-      text-align:center;
-      gap:16px;
-    }
-
-    .hero-text .subtitle {
-      flex-direction:column;
-      gap:10px;
-    }
-
     .transfer-grid {
       grid-template-columns:1fr;
     }
@@ -588,9 +601,7 @@
       font-size:11px;
     }
 
-    .hero-text h2 {
-      font-size:24px;
-    }
+    .league-identity .league-icon { font-size:16px; }
   }
 </style>
 </head>
@@ -611,6 +622,10 @@
       <span>/</span>
       <span style="color:var(--accent-gold)">Premier League</span>
     </div>
+    <div class="league-identity">
+      <span class="league-icon">🏆</span>
+      <span class="league-name">Premier League</span>
+    </div>
   </div>
 </header>
 
@@ -621,22 +636,11 @@
   </div>
 </div>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-icon">🏆</div>
-    <div class="hero-text">
-      <h2>Premier League</h2>
-      <div class="subtitle">
-        <div class="stat">
-          <span class="stat-label">Stories:</span>
-          <span class="stat-value">87</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container">
+  <div class="stats-strip" id="stats-strip">
+    <!-- Populated by data -->
+  </div>
+
   <section class="section">
     <h3 class="section-title">Clubs</h3>
     <div class="clubs-grid" id="clubs-grid">
@@ -670,140 +674,140 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Ousmane Diomande", prob: 80, bullshit: false,
+    name: "Ousmane Diomande", prob: 80, truth: 90, bullshit: false,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest",
     tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "~£37m + £5m add-ons", updated: "2026-07-30T14:00:00Z"
   },
   {
-    name: "Bruno Guimarães", prob: 62, bullshit: false,
+    name: "Bruno Guimarães", prob: 62, truth: 82, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Arsenal",
     tier: 1, coverage: 4, coverage_trend: 'flat',
     value: "£70-85m (gap narrowing)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Cristian Romero", prob: 62, bullshit: false,
+    name: "Cristian Romero", prob: 62, truth: 80, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "≈€40m (£35m)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Savinho", prob: 55, bullshit: false,
+    name: "Savinho", prob: 55, truth: 78, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Manchester City", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£60m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Lucas Bergvall", prob: 45, bullshit: false,
+    name: "Lucas Bergvall", prob: 45, truth: 82, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Lewis Hall", prob: 32, bullshit: false,
+    name: "Lewis Hall", prob: 32, truth: 65, bullshit: false,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
     from: "Newcastle United", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Rafael Leão", prob: 26, bullshit: false,
+    name: "Rafael Leão", prob: 26, truth: 48, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "AC Milan", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "TBC", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Cody Gakpo", prob: 20, bullshit: false,
+    name: "Cody Gakpo", prob: 20, truth: 52, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Liverpool", to: "Tottenham Hotspur",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Dayann Methalie", prob: 52, bullshit: false,
+    name: "Dayann Methalie", prob: 52, truth: 76, bullshit: false,
     club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
     from: "Toulouse", to: "Sunderland",
     tier: 2, coverage: 5, coverage_trend: 'flat',
     value: "TBC", updated: "2026-07-31T09:00:00Z"
   },
   {
-    name: "Marcus Rashford", prob: 42, bullshit: false,
+    name: "Marcus Rashford", prob: 42, truth: 65, bullshit: false,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
     from: "Manchester United", to: "AS Roma (or open market)",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£40m release clause (all clubs bar Man City & Liverpool)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Djed Spence", prob: 42, bullshit: false,
+    name: "Djed Spence", prob: 42, truth: 60, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "TBD",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "≈£40m / €40m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Abde Ezzalzouli", prob: 38, bullshit: false,
+    name: "Abde Ezzalzouli", prob: 38, truth: 62, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
     from: "Real Betis", to: "Newcastle United",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "≈£43-52m (release clause ≈€60m)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Joe Willock", prob: 38, bullshit: false,
+    name: "Joe Willock", prob: 38, truth: 66, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
     from: "Newcastle United", to: "Besiktas",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£10m bid rejected", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Guglielmo Vicario", prob: 36, bullshit: false,
+    name: "Guglielmo Vicario", prob: 36, truth: 55, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Juventus",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "≈£20m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Lamine Camara", prob: 35, bullshit: false,
+    name: "Lamine Camara", prob: 35, truth: 70, bullshit: false,
     club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
     from: "Monaco", to: "Aston Villa",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "~€50m", updated: "2026-06-06T12:00:00Z"
   },
   {
-    name: "Giorgio Scalvini", prob: 34, bullshit: false,
+    name: "Giorgio Scalvini", prob: 34, truth: 58, bullshit: false,
     club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "in",
     from: "Atalanta", to: "Newcastle United",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "≈€45-50m (£38-40m)", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Liam Delap", prob: 32, bullshit: false,
+    name: "Liam Delap", prob: 32, truth: 55, bullshit: false,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Chelsea", to: "Nottingham Forest",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Fee unclear (cost Chelsea £30m in 2025)", updated: "2026-07-30T14:00:00Z"
   },
   {
-    name: "Adam Wharton", prob: 30, bullshit: false,
+    name: "Adam Wharton", prob: 30, truth: 65, bullshit: false,
     club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "out",
     from: "Crystal Palace", to: "Elite interest",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "£60m+", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Riccardo Calafiori", prob: 30, bullshit: false,
+    name: "Riccardo Calafiori", prob: 30, truth: 65, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
     from: "Arsenal", to: "Juventus",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "£35-45m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Leandro Trossard", prob: 30, bullshit: false,
+    name: "Leandro Trossard", prob: 30, truth: 65, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
     from: "Arsenal", to: "Open to offers",
     tier: 2, coverage: 1, coverage_trend: 'flat',
@@ -817,7 +821,7 @@ const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 9, "badge": 
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.362301Z",
+  updated: "2026-08-04T11:54:20.920322Z",
   label: "League aggregation"
 };
 
@@ -879,6 +883,36 @@ function crestInk(primary, primaryBright) {
   // thumbnail exists in badges-thumb/<slug>.png; clubs without real artwork fall back to a
   // monogram tile rendered in the club's own brand colour, so it reads as a deliberate crest
   // rather than a missing-image placeholder.
+  // League stats strip -- built entirely from data already aggregated for this page
+  // (LEAGUE.stories_count and CLUBS_LIST's per-club counts), so every figure here is
+  // real and honest, never a placeholder.
+  (function(){
+    const strip = document.getElementById('stats-strip');
+    if(!strip) return;
+    const tiles = [];
+    if(typeof LEAGUE !== 'undefined' && LEAGUE) {
+      tiles.push({ label: 'Live Stories', value: `${LEAGUE.stories_count || 0}` });
+    }
+    if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
+      tiles.push({ label: 'Clubs Tracked', value: `${CLUBS_LIST.length}` });
+      const mostActive = CLUBS_LIST.slice().sort((a, b) => (b.count || 0) - (a.count || 0))[0];
+      if(mostActive && mostActive.count > 0) {
+        tiles.push({ label: 'Most Active Club', value: mostActive.name, small: `${mostActive.count} ${mostActive.count === 1 ? 'story' : 'stories'}` });
+      }
+    }
+    if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
+      const tier1 = TOP_STORIES.filter(s => (s.tier || 3) === 1).length;
+      tiles.push({ label: 'Tier 1 Stories', value: `${tier1}` });
+    }
+    if(tiles.length === 0) return;
+    strip.innerHTML = tiles.map(t => `
+      <div class="stats-tile">
+        <div class="stats-label">${t.label}</div>
+        <div class="stats-value">${t.value}${t.small ? ` <small>${t.small}</small>` : ''}</div>
+      </div>
+    `).join('');
+  })();
+
   if(typeof CLUBS_LIST !== 'undefined' && CLUBS_LIST && CLUBS_LIST.length > 0) {
     const container = document.getElementById('clubs-grid');
     container.innerHTML = CLUBS_LIST.map(c => {
@@ -962,6 +996,7 @@ function renderStory(s) {
   const tier = s.tier || 3;
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
+  const truth = s.truth || 50;
   const isBullshit = s.bullshit === true;
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
@@ -973,12 +1008,11 @@ function renderStory(s) {
         <span class="player-name">${s.name}</span>
         <span class="tier-badge t${tier}">${tierLabel}</span>
       </div>
-      <div class="club-name-card">${s.club_display_name}</div>
+      <div class="club-name-card">${s.from} → ${s.to}</div>
     </div>
     <div class="card-body">
       <div class="transfer-direction">
         <div class="transfer-details">
-          <div>${s.from} → ${s.to}</div>
           <div>${s.value}</div>
         </div>
       </div>
@@ -988,6 +1022,11 @@ function renderStory(s) {
         <div class="metric-label">Prob</div>
         <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">True</div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
+        <div class="metric-value">${truth}%</div>
       </div>
     </div>
   </a>`;

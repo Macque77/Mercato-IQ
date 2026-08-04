@@ -10,28 +10,28 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Pascalau & McJannet", prob: 55, bullshit: false,
+    name: "Pascalau & McJannet", prob: 55, truth: 60, bullshit: false,
     club_origin: "cosenza", club_display_name: "Cosenza", direction: "in",
     from: "Undisclosed", to: "Cosenza",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Michele Castagnetti", prob: 35, bullshit: false,
+    name: "Michele Castagnetti", prob: 35, truth: 45, bullshit: false,
     club_origin: "reggiana", club_display_name: "Reggiana", direction: "in",
     from: "Undisclosed", to: "Reggiana",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Reinhart", prob: 35, bullshit: false,
+    name: "Reinhart", prob: 35, truth: 45, bullshit: false,
     club_origin: "reggiana", club_display_name: "Reggiana", direction: "out",
     from: "Reggiana", to: "Undisclosed",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Arena", prob: 30, bullshit: false,
+    name: "Arena", prob: 30, truth: 45, bullshit: false,
     club_origin: "salernitana", club_display_name: "US Salernitana", direction: "out",
     from: "US Salernitana", to: "Trento / Treviso",
     tier: 3, coverage: 1, coverage_trend: 'flat',
@@ -45,6 +45,6 @@ const CLUBS_LIST = [{"slug": "cidadela", "name": "A.S. Cittadella 1973", "count"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:13:48.363515Z",
+  updated: "2026-08-04T11:54:20.922643Z",
   label: "League aggregation"
 };
