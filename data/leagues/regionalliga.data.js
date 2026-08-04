@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "erzgebirge-aue", "name": "FC Erzgebirge Aue", "cou
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T12:44:46.884635Z",
+  updated: "2026-08-04T12:46:29.281980Z",
   label: "League aggregation"
 };

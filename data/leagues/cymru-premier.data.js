@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "airbus-uk-broughton", "name": "Airbus UK Broughton
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T12:44:46.880606Z",
+  updated: "2026-08-04T12:46:29.278297Z",
   label: "League aggregation"
 };

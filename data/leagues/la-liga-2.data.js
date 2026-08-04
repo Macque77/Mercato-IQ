@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "albacete", "name": "Albacete Balompi\u00e9", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T12:44:46.881969Z",
+  updated: "2026-08-04T12:46:29.279356Z",
   label: "League aggregation"
 };
