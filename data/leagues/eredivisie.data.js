@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "ado-den-haag", "name": "ADO Den Haag", "count": 0,
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T16:53:25.575381Z",
+  updated: "2026-08-04T16:55:27.002693Z",
   label: "League aggregation"
 };

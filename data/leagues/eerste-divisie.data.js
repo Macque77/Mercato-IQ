@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "roda-jc", "name": "Roda JC Kerkrade", "count": 0, 
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T16:53:25.574626Z",
+  updated: "2026-08-04T16:55:27.002250Z",
   label: "League aggregation"
 };
