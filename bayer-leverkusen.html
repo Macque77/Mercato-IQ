@@ -135,6 +135,26 @@
     background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.03));
   }
 
+  /* Compact summary strip -- a one-to-two-line synopsis of where transfer
+     business stands, kept deliberately short so it never grows the header. */
+  .hero-summary {
+    background:rgba(255,255,255,0.015);
+    border-bottom:1px solid var(--border);
+  }
+
+  .hero-summary p {
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 24px;
+    font-size:13px;
+    line-height:1.5;
+    max-height:39px;
+    color:var(--text-secondary);
+    overflow:hidden;
+  }
+
+  .hero-summary p b { color:var(--text); font-weight:600; }
+
   .club-bar-inner {
     max-width:1400px;
     margin:0 auto;
@@ -754,6 +774,10 @@
   </div>
 </header>
 
+<div class="hero-summary" id="hero-summary" style="display:none">
+  <p id="hero-summary-text"></p>
+</div>
+
 <div class="container">
   <section class="section" id="confirmed-section">
     <h3 class="section-title">Confirmed Transfers <span class="section-count" id="confirmed-count"></span></h3>
@@ -830,8 +854,8 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Kerim Alajbegović", sub:"18 · AM/W · Bosnia", to:"permanent to Juventus", fee:"~€33-40m (reports vary)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Aug: a Bundesliga record fee for a teenager never having played a first-team minute for Leverkusen, following a breakout loan at RB Salzburg and a Goal-of-the-Tournament nomination at the 2026 World Cup. Sporting director Simon Rolfes cited 'fierce competition' in his positions. Chelsea also pursued him before Juventus won the race."},
-  {name:"Alejandro Grimaldo", sub:"30 · LB", to:"permanent to Atlético Madrid", fee:"~€22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun: the Spain left-back returns home to Atlético after three trophy-laden years in Leverkusen, prompting the Afonso Moreira signing on the opposite flank."}
+  {name:"Kerim Alajbegović", sub:"18 · AM/W · Bosnia", to:"permanent to Juventus", club:"Juventus", fee:"~€33-40m (reports vary)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Aug: a Bundesliga record fee for a teenager never having played a first-team minute for Leverkusen, following a breakout loan at RB Salzburg and a Goal-of-the-Tournament nomination at the 2026 World Cup. Sporting director Simon Rolfes cited 'fierce competition' in his positions. Chelsea also pursued him before Juventus won the race."},
+  {name:"Alejandro Grimaldo", sub:"30 · LB", to:"permanent to Atlético Madrid", club:"Atlético Madrid", fee:"~€22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun: the Spain left-back returns home to Atlético after three trophy-laden years in Leverkusen, prompting the Afonso Moreira signing on the opposite flank."}
 ];
 
 const INCOMING = [];
@@ -946,6 +970,22 @@ const SECTION_NAV_DEFS = [
       bits.push(`<span>${VOLATILE.window}</span>`);
     }
     subEl.innerHTML = bits.join('');
+  }
+
+  // Compact hero summary -- one short paragraph on where transfer business
+  // stands, sourced from PROSE.heroLede (falls back to heroH2 alone).
+  const heroSummaryEl = document.getElementById('hero-summary');
+  const heroSummaryText = document.getElementById('hero-summary-text');
+  if(heroSummaryEl && heroSummaryText && typeof PROSE !== 'undefined') {
+    const lede = PROSE.heroLede || '';
+    const heading = PROSE.heroH2 || '';
+    if(lede) {
+      heroSummaryText.innerHTML = lede;
+      heroSummaryEl.style.display = '';
+    } else if(heading) {
+      heroSummaryText.innerHTML = `<b>${heading}</b>`;
+      heroSummaryEl.style.display = '';
+    }
   }
 
   const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};

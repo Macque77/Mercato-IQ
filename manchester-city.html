@@ -135,6 +135,26 @@
     background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.03));
   }
 
+  /* Compact summary strip -- a one-to-two-line synopsis of where transfer
+     business stands, kept deliberately short so it never grows the header. */
+  .hero-summary {
+    background:rgba(255,255,255,0.015);
+    border-bottom:1px solid var(--border);
+  }
+
+  .hero-summary p {
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 24px;
+    font-size:13px;
+    line-height:1.5;
+    max-height:39px;
+    color:var(--text-secondary);
+    overflow:hidden;
+  }
+
+  .hero-summary p b { color:var(--text); font-weight:600; }
+
   .club-bar-inner {
     max-width:1400px;
     margin:0 auto;
@@ -754,6 +774,10 @@
   </div>
 </header>
 
+<div class="hero-summary" id="hero-summary" style="display:none">
+  <p id="hero-summary-text"></p>
+</div>
+
 <div class="container">
   <section class="section" id="confirmed-section">
     <h3 class="section-title">Confirmed Transfers <span class="section-count" id="confirmed-count"></span></h3>
@@ -850,11 +874,11 @@ const CONFIRMED_IN = [
    note:"Confirmed 3 August per multiple outlets: a club-record midfield signing that reflects Maresca's priority to build a ball-progressing, press-resistant core at the base. Anderson becomes the first major arrival of Maresca's rebuild, paired with ongoing work to refresh an ageing senior spine (Silva, Stones, Ederson). A technically excellent young English midfielder who has flourished under Nuno at Forest; the fee underlines City's commitment to reset central midfield immediately."},
 ];
 const CONFIRMED_OUT = [
-  {name:"Bernardo Silva", sub:"31 · CM/W", to:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
+  {name:"Bernardo Silva", sub:"31 · CM/W", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Reported among the senior departures as the squad refreshes under the new regime; an influential but ageing creator moving on."},
-  {name:"John Stones", sub:"CB", to:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
+  {name:"John Stones", sub:"CB", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Injury-hit defender named among those leaving this summer as City reshape the spine."},
-  {name:"Ederson", sub:"GK", to:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
+  {name:"Ederson", sub:"GK", to:"Departing", club:"Departing", fee:"TBC", free:false, status:"exit", statusTxt:"LEAVING",
    note:"Long-serving goalkeeper reported on his way out, opening a succession question between the posts."},
 ];
 
@@ -1119,6 +1143,22 @@ const SECTION_NAV_DEFS = [
       bits.push(`<span>${VOLATILE.window}</span>`);
     }
     subEl.innerHTML = bits.join('');
+  }
+
+  // Compact hero summary -- one short paragraph on where transfer business
+  // stands, sourced from PROSE.heroLede (falls back to heroH2 alone).
+  const heroSummaryEl = document.getElementById('hero-summary');
+  const heroSummaryText = document.getElementById('hero-summary-text');
+  if(heroSummaryEl && heroSummaryText && typeof PROSE !== 'undefined') {
+    const lede = PROSE.heroLede || '';
+    const heading = PROSE.heroH2 || '';
+    if(lede) {
+      heroSummaryText.innerHTML = lede;
+      heroSummaryEl.style.display = '';
+    } else if(heading) {
+      heroSummaryText.innerHTML = `<b>${heading}</b>`;
+      heroSummaryEl.style.display = '';
+    }
   }
 
   const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};

@@ -135,6 +135,26 @@
     background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.03));
   }
 
+  /* Compact summary strip -- a one-to-two-line synopsis of where transfer
+     business stands, kept deliberately short so it never grows the header. */
+  .hero-summary {
+    background:rgba(255,255,255,0.015);
+    border-bottom:1px solid var(--border);
+  }
+
+  .hero-summary p {
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 24px;
+    font-size:13px;
+    line-height:1.5;
+    max-height:39px;
+    color:var(--text-secondary);
+    overflow:hidden;
+  }
+
+  .hero-summary p b { color:var(--text); font-weight:600; }
+
   .club-bar-inner {
     max-width:1400px;
     margin:0 auto;
@@ -754,6 +774,10 @@
   </div>
 </header>
 
+<div class="hero-summary" id="hero-summary" style="display:none">
+  <p id="hero-summary-text"></p>
+</div>
+
 <div class="container">
   <section class="section" id="confirmed-section">
     <h3 class="section-title">Confirmed Transfers <span class="section-count" id="confirmed-count"></span></h3>
@@ -848,25 +872,25 @@ const CONFIRMED_IN = [
    note:"Done (15 Jul): the Belgium international right-back joins on a free from Lille on a two-year deal, medical passed. He is taking a post-World Cup break and links up with the squad in August. A veteran exception rather than a value buy, but ready-made, Europa-tested cover at right-back after Cirkin's exit and with Geertruida back at Leipzig."},
 ];
 const CONFIRMED_OUT = [
-  {name:"Eliezer Mayenda", sub:"21 · ST · Spain U21", to:"Stade Rennais", fee:"~€20m (£17m)", status:"done", statusTxt:"SALE CONFIRMED",
+  {name:"Eliezer Mayenda", sub:"21 · ST · Spain U21", to:"Stade Rennais", club:"Stade Rennais", fee:"~€20m (£17m)", status:"done", statusTxt:"SALE CONFIRMED",
    note:"Done (5 Jul): the first big sale of the window, a permanent move to Stade Rennais on a five-year deal for a reported €20m. Rennes won a tug-of-war with Porto and Betis. With Brobbey ahead of him and a starting role in France on offer, both sides were willing; the cash eases the SCR position but sharpened the striker question, since eased again by the two-striker plan."},
-  {name:"Milan Aleksić", sub:"20 · DM", to:"Partizan (loan)", fee:"LOAN", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Milan Aleksić", sub:"20 · DM", to:"Partizan (loan)", club:"Partizan (loan)", fee:"LOAN", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Confirmed: the 20-year-old Serbian midfielder has rejoined Partizan Belgrade, where he developed, on loan (with an option, per B92). A fringe development player heading out for minutes."},
-  {name:"Harrison Jones", sub:"21 · MF · academy", to:"Peterborough United", fee:"Undisclosed", status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Harrison Jones", sub:"21 · MF · academy", to:"Peterborough United", club:"Peterborough United", fee:"Undisclosed", status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Confirmed: the academy graduate has joined Peterborough United on a permanent deal, ending more than 15 years with the club. A squad-list departure that trims the fringe."},
-  {name:"Dan Neil", sub:"24 · CM · academy", to:"Rangers", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Dan Neil", sub:"24 · CM · academy", to:"Rangers", club:"Rangers", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Destination now locked in: Sky Sports confirms the captain who led the club back to the Premier League across 200-plus appearances has signed a three-year deal at Rangers on a Bosman free, seeing off Southampton's interest along the way."},
-  {name:"Dennis Cirkin", sub:"LB · academy era", to:"Free agent (Middlesbrough linked)", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Dennis Cirkin", sub:"LB · academy era", to:"Free agent (Middlesbrough linked)", club:"Free agent (Middlesbrough linked)", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Confirmed on the official retained list. Five years and 120-plus appearances on Wearside end on a free; the exit opens a left-back depth slot that Meunier does not fill, driving the Methalie pursuit."},
-  {name:"Bertrand Traoré", sub:"30 · winger", to:"Free agent (Ajax linked)", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Bertrand Traoré", sub:"30 · winger", to:"Free agent (Ajax linked)", club:"Free agent (Ajax linked)", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"The retained list confirmed the one-year option was not taken up, and he leaves a free agent after an injury-hit campaign; Africafoot reported Ajax weighing a move. His exit is a big reason wide attack is now the priority."},
-  {name:"Niall Huggins", sub:"25 · RB/LB", to:"Free agent", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Niall Huggins", sub:"25 · RB/LB", to:"Free agent", club:"Free agent", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Named on the official retained list after an injury-hit spell since 2021, leaves on expiry."},
-  {name:"Nazariy Rusyn", sub:"27 · ST · Ukraine", to:"Karpaty Lviv", fee:"Free/nominal", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Nazariy Rusyn", sub:"27 · ST · Ukraine", to:"Karpaty Lviv", club:"Karpaty Lviv", fee:"Free/nominal", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Confirmed by SAFC (1 Jul): a permanent, free-or-nominal-fee move back to Ukraine on a four-year deal at Karpaty. A fringe forward exit that had been tracked as a rumour for weeks; now off the board entirely."},
-  {name:"Timothée Pembélé", sub:"22 · LB/RB · France", to:"Le Havre", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Timothée Pembélé", sub:"22 · LB/RB · France", to:"Le Havre", club:"Le Havre", fee:"FREE", free:true, status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Confirmed by SAFC (16 Jul): a free, permanent move to Le Havre. Corrects an earlier tracking error - a prior refresh had him watchlisted as a possible incoming full-back target; he was in fact already a Sunderland player heading out the door. Picked up this cycle via the FootballTransfers.com confirmed-deals cross-check."},
-  {name:"Zak Johnson", sub:"20 · CB", to:"York City", fee:"Undisclosed", status:"exit", statusTxt:"EXIT CONFIRMED",
+  {name:"Zak Johnson", sub:"20 · CB", to:"York City", club:"York City", fee:"Undisclosed", status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Confirmed by York City FC: a permanent return to League Two after being tracked in earlier refreshes only as an Oxford United rumour. A fringe academy centre-back exit."},
 ];
 
@@ -1277,6 +1301,22 @@ const SECTION_NAV_DEFS = [
       bits.push(`<span>${VOLATILE.window}</span>`);
     }
     subEl.innerHTML = bits.join('');
+  }
+
+  // Compact hero summary -- one short paragraph on where transfer business
+  // stands, sourced from PROSE.heroLede (falls back to heroH2 alone).
+  const heroSummaryEl = document.getElementById('hero-summary');
+  const heroSummaryText = document.getElementById('hero-summary-text');
+  if(heroSummaryEl && heroSummaryText && typeof PROSE !== 'undefined') {
+    const lede = PROSE.heroLede || '';
+    const heading = PROSE.heroH2 || '';
+    if(lede) {
+      heroSummaryText.innerHTML = lede;
+      heroSummaryEl.style.display = '';
+    } else if(heading) {
+      heroSummaryText.innerHTML = `<b>${heading}</b>`;
+      heroSummaryEl.style.display = '';
+    }
   }
 
   const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};

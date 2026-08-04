@@ -135,6 +135,26 @@
     background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.03));
   }
 
+  /* Compact summary strip -- a one-to-two-line synopsis of where transfer
+     business stands, kept deliberately short so it never grows the header. */
+  .hero-summary {
+    background:rgba(255,255,255,0.015);
+    border-bottom:1px solid var(--border);
+  }
+
+  .hero-summary p {
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 24px;
+    font-size:13px;
+    line-height:1.5;
+    max-height:39px;
+    color:var(--text-secondary);
+    overflow:hidden;
+  }
+
+  .hero-summary p b { color:var(--text); font-weight:600; }
+
   .club-bar-inner {
     max-width:1400px;
     margin:0 auto;
@@ -754,6 +774,10 @@
   </div>
 </header>
 
+<div class="hero-summary" id="hero-summary" style="display:none">
+  <p id="hero-summary-text"></p>
+</div>
+
 <div class="container">
   <section class="section" id="confirmed-section">
     <h3 class="section-title">Confirmed Transfers <span class="section-count" id="confirmed-count"></span></h3>
@@ -854,25 +878,25 @@ const CONFIRMED_IN = [
    note:"Confirmed by Sky Sports, the Newcastle official site and AS Monaco (24 Jul): a five-year deal for the highly-rated defensive midfielder, No.8 shirt assigned. Landed while the Bruno Guimarães saga was still unresolved, positioning Bamba as a like-for-like contingency in central midfield if the captain does leave for Arsenal. Was missing from the previous refresh's tracked list entirely - picked up this cycle via the FootballTransfers.com confirmed-deals cross-check."},
 ];
 const CONFIRMED_OUT = [
-  {name:"Anthony Gordon", sub:"25 · LW · England", to:"Barcelona (permanent)", fee:"£69m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Anthony Gordon", sub:"25 · LW · England", to:"Barcelona (permanent)", club:"Barcelona (permanent)", fee:"£69m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Confirmed by Sky Sports: the England winger completes a move to Barcelona, one of three marquee departures (with Tonali and Isak's move last transfer deadline day) that funded this summer's rebuild after a 12th-place finish and no European football. Newcastle immediately opened a chase for a direct like-for-like in Abde Ezzalzouli (see Incoming)."},
-  {name:"Sandro Tonali", sub:"26 · CM · Italy", to:"Tottenham Hotspur (permanent)", fee:"£100m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Sandro Tonali", sub:"26 · CM · Italy", to:"Tottenham Hotspur (permanent)", club:"Tottenham Hotspur (permanent)", fee:"£100m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
    note:"A Tottenham club-record fee, confirmed by Sky Sports and ESPN. A landmark sale that reshapes the midfield picture and materially strengthens Newcastle's Squad Cost Ratio headroom heading into a summer already featuring the Bruno Guimaraes saga."},
-  {name:"Kieran Trippier", sub:"35 · RB · England", to:"Wolverhampton Wanderers", fee:"Free transfer", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Kieran Trippier", sub:"35 · RB · England", to:"Wolverhampton Wanderers", club:"Wolverhampton Wanderers", fee:"Free transfer", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Confirmed by Sky Sports: the veteran right-back leaves on a free at the end of his contract after four years and a League Cup winner's medal, ending his second spell on Tyneside."},
-  {name:"Emil Krafth", sub:"31 · RB · Sweden", to:"Released, free agent", fee:"Free (contract expired)", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Emil Krafth", sub:"31 · RB · Sweden", to:"Released, free agent", club:"Released, free agent", fee:"Free (contract expired)", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Contract-expiry departure confirmed in early summer reporting; a squad-depth exit with no fee, freeing a wage-bill slot rather than driving strategy."},
-  {name:"John Ruddy", sub:"39 · GK", to:"Released, free agent", fee:"Free (contract expired)", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"John Ruddy", sub:"39 · GK", to:"Released, free agent", club:"Released, free agent", fee:"Free (contract expired)", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Veteran goalkeeping cover released on contract expiry; picked up this refresh via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
-  {name:"Matt Targett", sub:"26 · LB", to:"Hull City", fee:"Free", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Matt Targett", sub:"26 · LB", to:"Hull City", club:"Hull City", fee:"Free", free:true, status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Confirmed free move to Hull City; picked up this refresh via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
-  {name:"Harrison Ashby", sub:"23 · RB/LWB", to:"Luton Town (loan)", fee:"LOAN", free:true, status:"exit", statusTxt:"LOAN CONFIRMED",
+  {name:"Harrison Ashby", sub:"23 · RB/LWB", to:"Luton Town (loan)", club:"Luton Town (loan)", fee:"LOAN", free:true, status:"exit", statusTxt:"LOAN CONFIRMED",
    note:"A season-long loan to Luton Town, confirmed this window. Corrects the previous refresh's watchlist framing, which only had a permanent exit as likely rather than a done loan."},
-  {name:"Travis Hernes", sub:"22 · CM", to:"FC Groningen", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Travis Hernes", sub:"22 · CM", to:"FC Groningen", club:"FC Groningen", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Confirmed permanent move to Eredivisie side Groningen; picked up this refresh via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
-  {name:"Joe White", sub:"20 · CM · academy", to:"Crewe Alexandra", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Joe White", sub:"20 · CM · academy", to:"Crewe Alexandra", club:"Crewe Alexandra", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Confirmed permanent exit to Crewe Alexandra for 'a fresh start' after a disappointing loan spell at Bradford City. Corrects the previous refresh's watchlist entry, which had the destination as still open."},
-  {name:"Charlie McArthur", sub:"19 · academy", to:"York City", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
+  {name:"Charlie McArthur", sub:"19 · academy", to:"York City", club:"York City", fee:"Undisclosed", status:"exit", statusTxt:"DONE, DEPARTED",
    note:"Academy departure to York City, confirmed this window; picked up via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
 ];
 
@@ -1189,6 +1213,22 @@ const SECTION_NAV_DEFS = [
       bits.push(`<span>${VOLATILE.window}</span>`);
     }
     subEl.innerHTML = bits.join('');
+  }
+
+  // Compact hero summary -- one short paragraph on where transfer business
+  // stands, sourced from PROSE.heroLede (falls back to heroH2 alone).
+  const heroSummaryEl = document.getElementById('hero-summary');
+  const heroSummaryText = document.getElementById('hero-summary-text');
+  if(heroSummaryEl && heroSummaryText && typeof PROSE !== 'undefined') {
+    const lede = PROSE.heroLede || '';
+    const heading = PROSE.heroH2 || '';
+    if(lede) {
+      heroSummaryText.innerHTML = lede;
+      heroSummaryEl.style.display = '';
+    } else if(heading) {
+      heroSummaryText.innerHTML = `<b>${heading}</b>`;
+      heroSummaryEl.style.display = '';
+    }
   }
 
   const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};

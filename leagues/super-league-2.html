@@ -95,7 +95,14 @@
     font-size:10px;
     text-transform:uppercase;
     color:var(--text-muted);
+    flex:1 1 auto;
+    min-width:0;
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
   }
+
+  .breadcrumb::-webkit-scrollbar { display:none; }
 
   .breadcrumb a {
     color:var(--text-secondary);

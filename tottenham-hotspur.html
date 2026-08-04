@@ -135,6 +135,26 @@
     background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.03));
   }
 
+  /* Compact summary strip -- a one-to-two-line synopsis of where transfer
+     business stands, kept deliberately short so it never grows the header. */
+  .hero-summary {
+    background:rgba(255,255,255,0.015);
+    border-bottom:1px solid var(--border);
+  }
+
+  .hero-summary p {
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 24px;
+    font-size:13px;
+    line-height:1.5;
+    max-height:39px;
+    color:var(--text-secondary);
+    overflow:hidden;
+  }
+
+  .hero-summary p b { color:var(--text); font-weight:600; }
+
   .club-bar-inner {
     max-width:1400px;
     margin:0 auto;
@@ -754,6 +774,10 @@
   </div>
 </header>
 
+<div class="hero-summary" id="hero-summary" style="display:none">
+  <p id="hero-summary-text"></p>
+</div>
+
 <div class="container">
   <section class="section" id="confirmed-section">
     <h3 class="section-title">Confirmed Transfers <span class="section-count" id="confirmed-count"></span></h3>
@@ -838,15 +862,15 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Luka Vuskovic", sub:"19 · CB · Croatia", to:"permanent to Brighton & Hove Albion", fee:"£46m (£50m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Luka Vuskovic", sub:"19 · CB · Croatia", to:"permanent to Brighton & Hove Albion", club:"Brighton & Hove Albion", fee:"£46m (£50m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"The single biggest outgoing fee of the window, funding a large chunk of the defensive rebuild - a striking reversal given Vuskovic was signed as a long-term captaincy prospect barely 18 months earlier."},
-  {name:"Yves Bissouma", sub:"29 · DM · Mali", to:"released, free transfer", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Yves Bissouma", sub:"29 · DM · Mali", to:"released, free transfer", club:"released, free transfer", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Let go on a free at contract expiry, with Tonali and Fernandes' arrivals rendering him surplus to De Zerbi's midfield plans."},
-  {name:"Radu Dragusin", sub:"24 · CB · Romania", to:"loan (permanent on conditions) to Fiorentina", fee:"Loan, conditional permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Radu Dragusin", sub:"24 · CB · Romania", to:"loan (permanent on conditions) to Fiorentina", club:"Fiorentina", fee:"Loan, conditional permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"A season-long loan with a permanent trigger, easing Dragusin out of a centre-back pool that now includes van Hecke, Senesi, Porro-adjacent cover and (for now) Romero."},
-  {name:"Tynan Thompson", sub:"18 · LW · England", to:"permanent to Manchester United", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Tynan Thompson", sub:"18 · LW · England", to:"permanent to Manchester United", club:"Manchester United", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"A promising academy sale to a Premier League rival - modest business by this summer's standards but a clean, undisputed fee for a fringe prospect."},
-  {name:"Will Lankshear", sub:"21 · ST · England", to:"permanent to Middlesbrough", fee:"£10m (£20m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
+  {name:"Will Lankshear", sub:"21 · ST · England", to:"permanent to Middlesbrough", club:"Middlesbrough", fee:"£10m (£20m w/ add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Lankshear drops into the Championship for regular football, with a healthy add-on structure protecting Spurs' upside if he develops into a Premier League-standard striker."},
 ];
 
@@ -1050,6 +1074,22 @@ const SECTION_NAV_DEFS = [
       bits.push(`<span>${VOLATILE.window}</span>`);
     }
     subEl.innerHTML = bits.join('');
+  }
+
+  // Compact hero summary -- one short paragraph on where transfer business
+  // stands, sourced from PROSE.heroLede (falls back to heroH2 alone).
+  const heroSummaryEl = document.getElementById('hero-summary');
+  const heroSummaryText = document.getElementById('hero-summary-text');
+  if(heroSummaryEl && heroSummaryText && typeof PROSE !== 'undefined') {
+    const lede = PROSE.heroLede || '';
+    const heading = PROSE.heroH2 || '';
+    if(lede) {
+      heroSummaryText.innerHTML = lede;
+      heroSummaryEl.style.display = '';
+    } else if(heading) {
+      heroSummaryText.innerHTML = `<b>${heading}</b>`;
+      heroSummaryEl.style.display = '';
+    }
   }
 
   const _LM = (typeof LINKMAP !== 'undefined') ? LINKMAP : {};
