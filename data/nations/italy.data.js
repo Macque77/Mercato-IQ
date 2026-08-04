@@ -6,7 +6,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 140
+  stories_count: 142
 };
 
 const TOP_STORIES = [  {
@@ -31,6 +31,13 @@ const TOP_STORIES = [  {
     value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
+    name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
+    club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
+    from: "Glasgow Rangers", to: "Atalanta",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
     name: "Noa Lang",prob: 45, truth: 70, bullshit: false,
     club_origin: "napoli", club_display_name: "Napoli", direction: "out",
     from: "Napoli", to: "Ajax",
@@ -38,9 +45,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
-    club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
-    from: "Glasgow Rangers", to: "Atalanta",
+    name: "Franco Mastantuono",prob: 35, truth: 55, bullshit: false,
+    club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "in",
+    from: "Real Madrid", to: "Fiorentina",
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Diego Moreira",prob: 30, truth: 50, bullshit: false,
+    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
+    from: "Strasbourg", to: "AS Roma",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
@@ -100,28 +114,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed (loan/permanent details still being finalized)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
-  {
-    name: "Sebastiano Esposito",prob: 60, truth: 75, bullshit: false,
-    club_origin: "cagliari", club_display_name: "Cagliari", direction: "out",
-    from: "Cagliari", to: "Atalanta",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Asking price approx. €18m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Fares Ghedjemis",prob: 55, truth: 70, bullshit: false,
-    club_origin: "frosinone", club_display_name: "Frosinone", direction: "out",
-    from: "Frosinone", to: "Celtic / Rangers",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Asking price €15-20m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
 ];
 
-const BY_LEAGUE = {"Serie A": 129, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 131, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 129}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 131}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:00:01.330069Z",
+  updated: "2026-08-04T18:01:15.857885Z",
   label: "Nation aggregation"
 };
