@@ -85,7 +85,7 @@ if [ "${NO_COMMIT:-0}" = "1" ]; then
 fi
 
 echo "=== [6/6] Commit + push (push is automatic via post-commit hook) ==="
+rm -f .last_injected_slugs
 git add -A
 git commit -m "Research sync: update $(echo $SLUGS | tr '\n' ' ')" || echo "Nothing to commit (rebuild produced no diff)."
-rm -f .last_injected_slugs
 echo "Done."
