@@ -855,9 +855,15 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · SC Heerenveen"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Darling Bladi", sub:"Forward/Attacker", club:"Real Betis (Spain)", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from the La Liga club."}
+];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Eser Gürbüz", sub:"AM (Right)/FW (Left)", club:"Willem II (loan)", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned out without a buy option attached."},
+  {name:"Joris van Overeem", sub:"MF/DM (Centre)", club:"FC Utrecht", pos:"MF", fee:"€0.7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Described as an 'oude bekende' (familiar face) returning to Utrecht after four years away."},
+  {name:"Nordin Bakker", sub:"GK", club:"FC Midtjylland (Denmark)", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure to the Danish Superliga."}
+];
 
 const INCOMING = [
   {name:"Tomás Bisuma", sub:"23 · CM · Uruguay", club:"Fiorentina", pos:"CM", report:"30 Jul 2026", src:"Sky Sports", tier:2, fee:"€15m", truth:54, prob:40, note:"Sky reports Heerenveen interest in Fiorentina midfielder."}
@@ -878,12 +884,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"}
-};
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
+  fCUpdatenlDarlingBladi: {l:"FCUpdate.nl", u:"https://www.fcupdate.nl/voetbalteams/nederland/heerenveen/transfers"}};
 
 const LINKMAP = {
-  "Tomás Bisuma": ["sky"]
-};
+  "Tomás Bisuma": ["sky"],
+  "Darling Bladi": ["fCUpdatenlDarlingBladi"],
+  "Eser Gürbüz": ["fCUpdatenlDarlingBladi"],
+  "Joris van Overeem": ["fCUpdatenlDarlingBladi"],
+  "Nordin Bakker": ["fCUpdatenlDarlingBladi"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

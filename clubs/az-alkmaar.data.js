@@ -34,10 +34,14 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · AZ Alkmaar"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Calvin Stengs", sub:"FW/Winger, 27, from Feyenoord", club:"Feyenoord", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Return to AZ after leaving Feyenoord; discussed targeting a top-three Eredivisie finish in his first interview as an AZ player."}
+];
 
 const CONFIRMED_OUT = [
-  {name:"Alexandre Penetra", sub:"DF · Portugal", club:"AZ Alkmaar", pos:"DF", fee:"Loan + option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially loaned out to Turkish side Çorum FK with a purchase option attached."}
+  {name:"Alexandre Penetra", sub:"DF · Portugal", club:"AZ Alkmaar", pos:"DF", fee:"Loan + option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially loaned out to Turkish side Çorum FK with a purchase option attached."},
+  {name:"Zico Buurmeester", sub:"Squad player", club:"Leganés", pos:"N/A", fee:"€1m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure listed 5 July 2026 in club transfer records."},
+  {name:"Kristijan Belic", sub:"Squad player", club:"Maccabi Tel Aviv", pos:"N/A", fee:"€1.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure listed 30 June 2026 in club transfer records."}
 ];
 
 const INCOMING = [
@@ -68,15 +72,22 @@ const HUB = {
   "espn": {l:"ESPN", u:"https://www.espn.com/soccer/"},
   voetbalPrimeurnlVIThomvanBergen: {l:"VoetbalPrimeur.nl (VI)", u:"https://www.voetbalprimeur.nl/clubs/az"},
   footballTransferscomKeesSmit: {l:"FootballTransfers.com", u:"https://www.footballtransfers.com/en/teams/nl/az/transfer-news"},
-  voetbalPrimeurnlPeerKoopmeiners: {l:"VoetbalPrimeur.nl", u:"https://www.voetbalprimeur.nl/nieuws/2118763/echteld-komt-met-duidelijk-nieuws-over-goes-en-koopmeiners.html"}};
+  voetbalPrimeurnlPeerKoopmeiners: {l:"VoetbalPrimeur.nl", u:"https://www.voetbalprimeur.nl/nieuws/2118763/echteld-komt-met-duidelijk-nieuws-over-goes-en-koopmeiners.html"},
+  voetbalPrimeurnlADTroyParrott: {l:"VoetbalPrimeur.nl (AD)", u:"https://www.voetbalprimeur.nl/nieuws/2119084/west-ham-united-wil-troy-parrott-en-wil-vraagprijs-van-az-betalen.html"},
+  voetbalPrimeurnlCalvinStengs: {l:"VoetbalPrimeur.nl", u:"https://www.voetbalprimeur.nl/videos/2118760/stengs-mikt-met-az-op-aanval-van-traditionele-top-drie.html"},
+  voetbalPrimeurnlAlexandrePenetra: {l:"VoetbalPrimeur.nl", u:"https://www.voetbalprimeur.nl/nieuws/2119077/az-verhuurt-alexandre-penetra-aan-corum-fk-met-optie-tot-koop.html"},
+  dailySportsnetZicoBuurmeester: {l:"DailySports.net", u:"https://dailysports.net/team/az-alkmaar/transfers/"}};
 
 const LINKMAP = {
   "Mats Wieffer": ["espn"],
   "Thom van Bergen": ["voetbalPrimeurnlVIThomvanBergen"],
-  "Troy Parrott": ["voetbalPrimeurnlVIThomvanBergen"],
+  "Troy Parrott": ["voetbalPrimeurnlVIThomvanBergen", "voetbalPrimeurnlADTroyParrott"],
   "Kees Smit": ["footballTransferscomKeesSmit"],
   "Peer Koopmeiners": ["voetbalPrimeurnlPeerKoopmeiners"],
-  "Alexandre Penetra": ["voetbalPrimeurnlVIThomvanBergen"]};
+  "Alexandre Penetra": ["voetbalPrimeurnlVIThomvanBergen", "voetbalPrimeurnlAlexandrePenetra"],
+  "Calvin Stengs": ["voetbalPrimeurnlCalvinStengs"],
+  "Zico Buurmeester": ["dailySportsnetZicoBuurmeester"],
+  "Kristijan Belic": ["dailySportsnetZicoBuurmeester"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

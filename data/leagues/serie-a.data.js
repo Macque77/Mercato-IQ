@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 3, "badge"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T14:47:43.089358Z",
+  updated: "2026-08-04T15:47:58.949558Z",
   label: "League aggregation"
 };
