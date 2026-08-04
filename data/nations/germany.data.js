@@ -93,7 +93,7 @@ const BY_LEAGUE = {"Bundesliga": 10, "2. Bundesliga": 1, "3. Liga": 0, "Regional
 const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 10}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
-  asof: "03 Aug 2026",
-  updated: "2026-08-03T23:03:21.058814Z",
+  asof: "04 Aug 2026",
+  updated: "2026-08-04T07:48:19.918585Z",
   label: "Nation aggregation"
 };
