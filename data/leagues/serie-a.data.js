@@ -13,7 +13,7 @@ const TOP_STORIES = [  {
     name: "Cristian Romero", prob: 75, truth: 85, bullshit: false,
     club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
     from: "Tottenham Hotspur", to: "Inter Milan",
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~€40m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -41,7 +41,7 @@ const TOP_STORIES = [  {
     name: "Nicolas Raskin", prob: 45, truth: 70, bullshit: false,
     club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
     from: "Glasgow Rangers", to: "Atalanta",
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -132,7 +132,7 @@ const TOP_STORIES = [  {
     name: "El Bilal Touré", prob: 50, truth: 55, bullshit: false,
     club_origin: "parma", club_display_name: "Parma", direction: "in",
     from: "Atalanta", to: "Parma",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Loan with conditional mandatory purchase", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 5, "badge"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:58:37.350885Z",
+  updated: "2026-08-04T18:00:01.343902Z",
   label: "League aggregation"
 };
