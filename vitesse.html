@@ -454,15 +454,18 @@
     margin-bottom:0;
   }
 
+  /* Full note text, always -- no truncation. Truncating this (nowrap+ellipsis,
+     or a height-capped line-clamp) has broken twice before in this codebase
+     (once here, once on the hero summary), so the row simply grows to fit
+     instead: whatever the note says, all of it is visible. */
   .cr-note-preview {
     padding:0 16px 12px 60px;
     margin-top:-6px;
     font-size:12.5px;
     line-height:1.5;
     color:var(--text-secondary);
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+    white-space:normal;
+    overflow-wrap:break-word;
   }
 
   .cr-note-preview.bullshit { color:var(--bullshit); }
@@ -473,7 +476,7 @@
     .confirmed-row-main { flex-wrap:wrap; }
     .cr-figures { width:calc(100% - 44px); justify-content:space-between; margin-left:44px; }
     .cr-metric { width:auto; flex:1; max-width:140px; }
-    .cr-note-preview { padding-left:16px; white-space:normal; }
+    .cr-note-preview { padding-left:16px; }
   }
 
   .transfer-grid {
