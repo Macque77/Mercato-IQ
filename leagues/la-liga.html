@@ -107,6 +107,113 @@
     color:var(--accent-gold);
   }
 
+  /* ===== BREAKING TICKER (Sky Sports News style) ===== */
+  .ticker-bar {
+    display:none;
+    align-items:stretch;
+    background:linear-gradient(90deg, #2c0a0d, #1a2332 55%);
+    border-bottom:1px solid var(--border);
+    overflow:hidden;
+    position:relative;
+  }
+
+  .ticker-label {
+    flex:none;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent-red);
+    color:#0a0e17;
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    padding:7px 14px;
+    text-transform:uppercase;
+    z-index:2;
+    box-shadow:6px 0 10px -2px rgba(0,0,0,0.45);
+  }
+
+  .ticker-dot {
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#0a0e17;
+    animation:ticker-pulse 1.3s infinite;
+    flex:none;
+  }
+
+  @keyframes ticker-pulse {
+    0%, 100% { opacity:1; }
+    50% { opacity:0.25; }
+  }
+
+  .ticker-viewport {
+    flex:1;
+    overflow:hidden;
+    position:relative;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+  }
+
+  .ticker-track {
+    display:flex;
+    align-items:center;
+    width:max-content;
+    animation-name:ticker-scroll;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    animation-duration:40s;
+  }
+
+  .ticker-bar:hover .ticker-track,
+  .ticker-bar:focus-within .ticker-track {
+    animation-play-state:paused;
+  }
+
+  @keyframes ticker-scroll {
+    from { transform:translateX(0); }
+    to { transform:translateX(-50%); }
+  }
+
+  .ticker-item {
+    flex:none;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:7px 22px;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--text-secondary);
+    text-decoration:none;
+    border-right:1px solid rgba(255,255,255,0.08);
+    white-space:nowrap;
+    transition:color 0.15s;
+  }
+
+  .ticker-item:hover { color:var(--text); }
+  .ticker-item .t-name { color:var(--text); font-weight:700; }
+  .ticker-item .t-route { color:var(--text-muted); }
+  .ticker-item .t-prob { font-weight:700; }
+  .ticker-item .t-prob.g { color:var(--accent-green); }
+  .ticker-item .t-prob.y { color:var(--accent-gold); }
+  .ticker-item .t-prob.o { color:#f39c12; }
+  .ticker-item .t-prob.r { color:var(--accent-red); }
+  .ticker-item .t-tier {
+    font-size:8px;
+    padding:1px 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track { animation:none; overflow-x:auto; }
+  }
+
+  @media(max-width:768px) {
+    .ticker-label { font-size:9px; padding:6px 9px; }
+    .ticker-item { font-size:10px; padding:6px 14px; gap:6px; }
+    .ticker-item .t-club { display:none; }
+  }
+
   /* ===== HERO ===== */
   .hero {
     background:linear-gradient(135deg, rgba(232,194,73,0.08), rgba(255,61,71,0.04));
@@ -500,6 +607,13 @@
   </div>
 </header>
 
+<div class="ticker-bar" id="ticker-bar">
+  <div class="ticker-label"><span class="ticker-dot"></span>La Liga</div>
+  <div class="ticker-viewport">
+    <div class="ticker-track" id="ticker-track"></div>
+  </div>
+</div>
+
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-icon">🏆</div>
@@ -739,6 +853,12 @@ function crestInk(primary, primaryBright) {
     const container = document.getElementById('stories');
     if(container) container.innerHTML = '<div class="empty">No stories yet</div>';
   }
+
+  // Breaking ticker: latest/highest-likelihood stories for this scope, excluding
+  // flagged-bullshit claims.
+  if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
+    initTicker(TOP_STORIES.filter(s => !s.bullshit), renderTickerStory);
+  }
 })();
 
 function slugifyName(s) {
@@ -746,6 +866,40 @@ function slugifyName(s) {
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
+
+// Sky Sports-style breaking ticker: a small, ranked snapshot (not the full feed),
+// auto-scrolling via CSS transform (no real horizontal scrollbar), paused on hover
+// and honouring prefers-reduced-motion. renderFn maps one story to a <a class="ticker-item">.
+function initTicker(items, renderFn, limit) {
+  const bar = document.getElementById('ticker-bar');
+  const track = document.getElementById('ticker-track');
+  if (!bar || !track || !items || items.length === 0) return;
+  const top = items.slice().sort((a, b) => (b.prob || 0) - (a.prob || 0)).slice(0, limit || 15);
+  if (top.length === 0) return;
+  const html = top.map(renderFn).join('');
+  track.innerHTML = html + html; // duplicated once for a seamless loop
+  bar.style.display = 'flex';
+  requestAnimationFrame(() => {
+    const halfWidth = track.scrollWidth / 2;
+    const duration = Math.max(22, Math.round(halfWidth / 55)); // ~55px/sec, floor for very short lists
+    track.style.animationDuration = duration + 's';
+  });
+}
+
+function renderTickerStory(s) {
+  const tier = s.tier || 3;
+  const prob = s.prob || 0;
+  const band = metricBand(prob);
+  const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
+  return `<a href="${href}" class="ticker-item">
+    <span class="tier-badge t${tier} t-tier">T${tier}</span>
+    <span class="t-name">${s.name}</span>
+    <span class="t-club">${s.club_display_name}</span>
+    <span class="t-route">${s.from} → ${s.to}</span>
+    <span class="t-prob ${band}">${prob}%</span>
+  </a>`;
+}
+
 
 
 function renderStory(s) {
