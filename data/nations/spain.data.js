@@ -6,7 +6,7 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 80
+  stories_count: 79
 };
 
 const TOP_STORIES = [  {
@@ -22,13 +22,6 @@ const TOP_STORIES = [  {
     from: "Brighton & Hove Albion", to: "RCD Espanyol",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Loan with buy option proposed; Brighton want more guaranteed money upfront", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
-    name: "Franco Mastantuono",prob: 35, truth: 55, bullshit: false,
-    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
-    from: "Real Madrid", to: "Fiorentina",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
     name: "Matteo Prati",prob: 35, truth: 70, bullshit: false,
@@ -59,18 +52,18 @@ const TOP_STORIES = [  {
     value: "", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
-    name: "Miguel Rubio",prob: 65, truth: 78, bullshit: false,
-    club_origin: "espanyol", club_display_name: "RCD Espanyol", direction: "out",
-    from: "RCD Espanyol", to: "Real Valladolid",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
     name: "Altay Bayindir",prob: 65, truth: 75, bullshit: false,
     club_origin: "celta-vigo", club_display_name: "RC Celta", direction: "in",
     from: "Manchester United", to: "RC Celta",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "TBC", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Miguel Rubio",prob: 65, truth: 78, bullshit: false,
+    club_origin: "espanyol", club_display_name: "RCD Espanyol", direction: "out",
+    from: "RCD Espanyol", to: "Real Valladolid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
     name: "Domingos Duarte",prob: 60, truth: 70, bullshit: false,
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "~€2-2.5m", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
+  {
+    name: "Ilias Akhomach",prob: 50, truth: 55, bullshit: false,
+    club_origin: "rayo-vallecano", club_display_name: "Rayo Vallecano", direction: "in",
+    from: "Villarreal", to: "Rayo Vallecano",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
 ];
 
-const BY_LEAGUE = {"La Liga": 80, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
+const BY_LEAGUE = {"La Liga": 79, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 80}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 79}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T19:11:19.720310Z",
+  updated: "2026-08-04T19:13:02.041822Z",
   label: "Nation aggregation"
 };

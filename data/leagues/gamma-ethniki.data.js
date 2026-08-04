@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "pg-asteras", "name": "PAS Giannina", "count": 0, "
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T19:11:19.726211Z",
+  updated: "2026-08-04T19:13:02.047008Z",
   label: "League aggregation"
 };

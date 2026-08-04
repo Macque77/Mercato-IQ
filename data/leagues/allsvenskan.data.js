@@ -24,6 +24,6 @@ const CLUBS_LIST = [{"slug": "aik-fotboll", "name": "AIK Fotboll", "count": 1, "
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T19:11:19.722136Z",
+  updated: "2026-08-04T19:13:02.043644Z",
   label: "League aggregation"
 };
