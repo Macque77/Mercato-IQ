@@ -50,7 +50,6 @@
     background:linear-gradient(180deg, rgba(10,14,23,0.98), rgba(10,14,23,0.88));
     backdrop-filter:blur(12px);
     border-bottom:1px solid var(--border);
-    padding:16px 24px;
   }
 
   .header-inner {
@@ -60,6 +59,7 @@
     justify-content:space-between;
     align-items:center;
     gap:24px;
+    padding:10px 24px;
   }
 
   .logo {
@@ -84,6 +84,8 @@
     text-transform:uppercase;
   }
 
+  .logo { flex:none; }
+
   .breadcrumb {
     display:flex;
     align-items:center;
@@ -92,7 +94,16 @@
     font-size:10px;
     text-transform:uppercase;
     color:var(--text-muted);
+    /* Contained horizontal scroll, not page overflow, if it doesn't fit a narrow
+       viewport -- the breadcrumb itself may scroll, the page never does. */
+    flex:1 1 auto;
+    min-width:0;
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
   }
+
+  .breadcrumb::-webkit-scrollbar { display:none; }
 
   .breadcrumb a {
     display:inline-flex;
@@ -114,28 +125,32 @@
     box-shadow:0 0 0 1px rgba(255,255,255,0.15);
   }
 
-  /* ===== HERO ===== */
-  .hero {
-    background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(255,61,71,0.05));
-    border-bottom:1px solid var(--border);
-    padding:40px 24px;
+  /* ===== CLUB IDENTITY BAR =====
+     Compact by design: a slim strip inside the sticky header, not a full banner.
+     Badge + name + key context on the left, section navigation on the right, so
+     the whole thing (breadcrumb + identity + nav) sticks as one unit and never
+     eats more than ~90px of vertical space on desktop. */
+  .club-bar {
+    border-top:1px solid rgba(255,255,255,0.06);
+    background:linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(255,61,71,0.03));
   }
 
-  .hero-inner {
+  .club-bar-inner {
     max-width:1400px;
     margin:0 auto;
+    padding:10px 24px;
     display:flex;
     align-items:center;
-    gap:32px;
+    gap:16px;
   }
 
   .club-badge-large {
     position:relative;
-    width:80px;
-    height:80px;
+    width:44px;
+    height:44px;
     background:var(--surface);
     border:2px solid var(--primary);
-    border-radius:12px;
+    border-radius:10px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -147,7 +162,7 @@
     width:100%;
     height:100%;
     object-fit:contain;
-    padding:8px;
+    padding:5px;
   }
 
   .badge-fallback {
@@ -157,55 +172,256 @@
     align-items:center;
     justify-content:center;
     font-family:var(--display);
-    font-size:26px;
+    font-size:15px;
     font-weight:bold;
-    letter-spacing:1px;
+    letter-spacing:0.5px;
     background:linear-gradient(135deg, rgba(var(--primary-rgb),0.25), rgba(0,0,0,0.2));
     color:var(--primary-bright);
   }
 
+  .hero-text { min-width:0; flex-shrink:1; }
+
   .hero-text h2 {
     font-family:var(--display);
-    font-size:clamp(28px, 4vw, 44px);
+    font-size:clamp(16px, 2vw, 21px);
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:0.5px;
     text-transform:uppercase;
-    margin-bottom:12px;
+    line-height:1.2;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
   }
 
   .hero-text .subtitle {
     color:var(--text-secondary);
-    font-size:14px;
+    font-size:11px;
     font-family:var(--mono);
     display:flex;
-    gap:16px;
+    gap:12px;
     flex-wrap:wrap;
+    margin-top:2px;
   }
 
   .hero-text .subtitle span { white-space:nowrap; }
   .hero-text .subtitle b { color:var(--accent-gold); font-weight:600; }
 
+  /* ===== SECTION NAVIGATION =====
+     Sticky pill nav so the user can flip between Confirmed / Incoming / Outgoing /
+     Watchlist without scrolling past sections they don't want. Lives in the same
+     sticky header block as the identity bar; the active pill tracks scroll position
+     via IntersectionObserver (see script). */
+  .section-nav {
+    display:flex;
+    gap:6px;
+    flex-shrink:0;
+    margin-left:auto;
+    overflow-x:auto;
+    scrollbar-width:none;
+    -webkit-mask-image:linear-gradient(90deg, #000 90%, transparent);
+    mask-image:linear-gradient(90deg, #000 90%, transparent);
+  }
+
+  .section-nav::-webkit-scrollbar { display:none; }
+
+  .section-nav a {
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 12px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,0.02);
+    color:var(--text-secondary);
+    text-decoration:none;
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    text-transform:uppercase;
+    white-space:nowrap;
+    transition:all 150ms ease;
+  }
+
+  .section-nav a:hover {
+    color:var(--text);
+    border-color:var(--primary-bright);
+  }
+
+  .section-nav a.active {
+    color:var(--bg);
+    background:var(--primary-bright);
+    border-color:var(--primary-bright);
+  }
+
+  .section-nav a .nav-count {
+    font-size:9px;
+    opacity:0.75;
+    background:rgba(0,0,0,0.2);
+    border-radius:999px;
+    padding:1px 6px;
+  }
+
+  .section-nav a.active .nav-count {
+    background:rgba(0,0,0,0.25);
+  }
+
+  @media(max-width:768px) {
+    .club-bar-inner { flex-wrap:wrap; }
+    .section-nav { width:100%; margin-left:0; }
+    .hero-text .subtitle span:not(:first-child) { display:none; }
+  }
+
   /* ===== CONTAINER ===== */
   .container {
     max-width:1400px;
     margin:0 auto;
-    padding:48px 24px;
+    padding:32px 24px 48px;
   }
 
-  /* ===== TRANSFER FEED ===== */
+  /* Anchor targets sit under the sticky header+identity+nav block, so jumping to a
+     section (via nav pill or #hash) doesn't tuck the heading underneath it. */
   .section {
-    margin-bottom:48px;
+    margin-bottom:40px;
+    scroll-margin-top:112px;
   }
 
   .section-title {
+    display:flex;
+    align-items:baseline;
+    gap:10px;
     font-family:var(--display);
-    font-size:24px;
+    font-size:22px;
     font-weight:400;
     letter-spacing:0.5px;
     text-transform:uppercase;
-    margin-bottom:24px;
-    padding-bottom:12px;
+    margin-bottom:18px;
+    padding-bottom:10px;
     border-bottom:2px solid var(--primary);
+  }
+
+  .section-title .section-count {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+    font-weight:400;
+    letter-spacing:0;
+    text-transform:none;
+  }
+
+  /* ===== CONFIRMED TRANSFERS: compact row, not a full card =====
+     Done deals are important but shouldn't dominate the top of the page the way a
+     tall rumour card does. A single-line summary plus a one-line note preview fits
+     4-5 confirmed deals in the space one old card used to take; the existing
+     .transfer-card.expanded sources-accordion mechanics are reused as-is (the row
+     carries both classes) so "Sources & links" behaves identically everywhere. */
+  .confirmed-list {
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .confirmed-row.transfer-card {
+    border-radius:10px;
+  }
+
+  .confirmed-row-main {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px 16px;
+  }
+
+  .cr-dir {
+    flex:none;
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:10px;
+  }
+
+  .cr-dir.in { background:rgba(46,204,113,0.15); color:var(--tier1); }
+  .cr-dir.out { background:rgba(255,61,71,0.15); color:var(--accent-red); }
+
+  .cr-main {
+    flex:1;
+    min-width:0;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+
+  .cr-name {
+    font-family:var(--display);
+    font-size:15px;
+    letter-spacing:0.3px;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  .cr-dest {
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-muted);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .cr-free {
+    font-family:var(--mono);
+    font-size:9px;
+    font-weight:700;
+    color:var(--accent-gold);
+    border:1px solid var(--accent-gold);
+    border-radius:4px;
+    padding:1px 5px;
+    letter-spacing:0.5px;
+  }
+
+  .cr-figures {
+    flex:none;
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+
+  .cr-fee, .cr-status {
+    text-align:right;
+    font-family:var(--mono);
+  }
+
+  .cr-fee .cr-label, .cr-status .cr-label {
+    font-size:9px;
+    color:var(--text-muted);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+
+  .cr-fee .cr-value { font-size:13px; }
+  .cr-status .cr-value { font-size:13px; color:var(--accent-gold); }
+
+  .cr-note-preview {
+    padding:0 16px 12px 60px;
+    margin-top:-6px;
+    font-size:12.5px;
+    line-height:1.5;
+    color:var(--text-secondary);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  @media(max-width:768px) {
+    .confirmed-row-main { flex-wrap:wrap; }
+    .cr-figures { width:calc(100% - 44px); justify-content:space-between; margin-left:44px; }
+    .cr-note-preview { padding-left:16px; white-space:normal; }
   }
 
   .transfer-grid {
@@ -465,12 +681,6 @@
     .transfer-grid {
       grid-template-columns:1fr;
     }
-
-    .hero-inner {
-      flex-direction:column;
-      text-align:center;
-      gap:24px;
-    }
   }
 </style>
 </head>
@@ -495,46 +705,49 @@
       <span style="color:var(--primary-bright)">Panathinaikos</span>
     </div>
   </div>
-</header>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="club-badge-large">
-      <img id="club-badge-img" src="panathinaikos.png" alt="Panathinaikos badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
-      <div id="club-badge-fallback" class="badge-fallback" style="display:none">P</div>
-    </div>
-    <div class="hero-text">
-      <h2>Panathinaikos</h2>
-      <div class="subtitle" id="club-subtitle"></div>
+  <div class="club-bar">
+    <div class="club-bar-inner">
+      <div class="club-badge-large">
+        <img id="club-badge-img" src="panathinaikos.png" alt="Panathinaikos badge" onerror="this.style.display='none'; document.getElementById('club-badge-fallback').style.display='flex'">
+        <div id="club-badge-fallback" class="badge-fallback" style="display:none">P</div>
+      </div>
+      <div class="hero-text">
+        <h2>Panathinaikos</h2>
+        <div class="subtitle" id="club-subtitle"></div>
+      </div>
+      <nav class="section-nav" id="section-nav" aria-label="Jump to section">
+        <!-- Populated by data: only sections with content are shown -->
+      </nav>
     </div>
   </div>
-</div>
+</header>
 
 <div class="container">
-  <section class="section">
-    <h3 class="section-title">Confirmed Transfers</h3>
-    <div class="transfer-grid" id="confirmed">
+  <section class="section" id="confirmed-section">
+    <h3 class="section-title">Confirmed Transfers <span class="section-count" id="confirmed-count"></span></h3>
+    <div class="confirmed-list" id="confirmed">
       <!-- Populated by data -->
     </div>
   </section>
 
-  <section class="section">
-    <h3 class="section-title">Incoming Rumours &amp; Reports</h3>
+  <section class="section" id="incoming-section">
+    <h3 class="section-title">Incoming Rumours &amp; Reports <span class="section-count" id="incoming-count"></span></h3>
     <div class="transfer-grid" id="rumors">
       <!-- Populated by data -->
     </div>
   </section>
 
-  <section class="section">
-    <h3 class="section-title">Outgoing Rumours &amp; Reports</h3>
+  <section class="section" id="outgoing-section">
+    <h3 class="section-title">Outgoing Rumours &amp; Reports <span class="section-count" id="outgoing-count"></span></h3>
     <div class="transfer-grid" id="outgoing-rumors">
       <!-- Populated by data -->
     </div>
   </section>
 
-  <section class="section">
-    <h3 class="section-title">Long-Tail Watchlist</h3>
-    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-14px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
+  <section class="section" id="watchlist-section">
+    <h3 class="section-title">Long-Tail Watchlist <span class="section-count" id="watchlist-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
     <div class="transfer-grid" id="watchlist-grid">
       <!-- Populated by data -->
     </div>
@@ -628,6 +841,15 @@ function metricGradient(v) {
   return `linear-gradient(90deg, rgba(${rgb},0.45), rgb(${rgb}))`;
 }
 
+// Declared before the render IIFE (same reason as METRIC_BAND_COLORS above): buildSectionNav()
+// is called synchronously from inside that IIFE and reads this constant immediately.
+const SECTION_NAV_DEFS = [
+  { key: 'confirmed', id: 'confirmed-section', label: 'Confirmed' },
+  { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
+  { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
+  { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+];
+
 (function(){
   const rs = document.documentElement.style;
   if(typeof BRAND !== 'undefined') {
@@ -658,12 +880,17 @@ function metricGradient(v) {
   const _WLM = (typeof WL_LINKMAP !== 'undefined') ? WL_LINKMAP : {};
   const _HUB = (typeof HUB !== 'undefined') ? HUB : {};
 
-  // Render confirmed (in + out together, direction-tagged)
+  // Section counts, filled in as each section renders below, then used to build the
+  // sticky nav pills -- a section with zero items doesn't get a pill at all.
+  const sectionCounts = {};
+
+  // Render confirmed (in + out together, direction-tagged) as compact rows, not full cards
   const confirmed = document.getElementById('confirmed');
   if(confirmed) {
     const ins = (typeof CONFIRMED_IN !== 'undefined' ? CONFIRMED_IN : []).map(t => renderConfirmedCard(t, 'in', _LM, _HUB));
     const outs = (typeof CONFIRMED_OUT !== 'undefined' ? CONFIRMED_OUT : []).map(t => renderConfirmedCard(t, 'out', _LM, _HUB));
     const all = ins.concat(outs);
+    sectionCounts.confirmed = all.length;
     confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
   }
 
@@ -671,6 +898,7 @@ function metricGradient(v) {
   const rumors = document.getElementById('rumors');
   if(rumors) {
     const items = ((typeof INCOMING !== 'undefined') ? INCOMING : []).slice().sort((a, b) => (b.prob || 0) - (a.prob || 0));
+    sectionCounts.incoming = items.length;
     rumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active incoming rumours yet</div>';
   }
 
@@ -678,6 +906,7 @@ function metricGradient(v) {
   const outRumors = document.getElementById('outgoing-rumors');
   if(outRumors) {
     const items = ((typeof OUTGOING !== 'undefined') ? OUTGOING : []).slice().sort((a, b) => (b.prob || 0) - (a.prob || 0));
+    sectionCounts.outgoing = items.length;
     outRumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active outgoing rumours yet</div>';
   }
 
@@ -685,14 +914,52 @@ function metricGradient(v) {
   const wlGrid = document.getElementById('watchlist-grid');
   if(wlGrid) {
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
+    sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
   }
+
+  // Section count badges in each heading (e.g. "Confirmed Transfers 4")
+  Object.keys(sectionCounts).forEach(key => {
+    const el = document.getElementById(key + '-count');
+    if (el && sectionCounts[key] > 0) el.textContent = sectionCounts[key];
+  });
+
+  // Sticky section nav: one pill per section that actually has content, so the user
+  // can flip straight to Incoming/Outgoing/Watchlist without scrolling past Confirmed.
+  buildSectionNav(sectionCounts);
 
   // Deep-link support: a rumour card clicked on a landing page (global/nation/league)
   // points here with a #t-<slug> hash so this exact card scrolls into view, expanded.
   focusCardFromHash();
   window.addEventListener('hashchange', focusCardFromHash);
 })();
+
+function buildSectionNav(counts) {
+  const nav = document.getElementById('section-nav');
+  if (!nav) return;
+  const present = SECTION_NAV_DEFS.filter(d => (counts[d.key] || 0) > 0);
+  if (present.length === 0) { nav.style.display = 'none'; return; }
+  nav.innerHTML = present.map(d =>
+    `<a href="#${d.id}" data-section="${d.id}">${d.label}<span class="nav-count">${counts[d.key]}</span></a>`
+  ).join('');
+
+  const links = Array.from(nav.querySelectorAll('a'));
+  const sections = present.map(d => document.getElementById(d.id)).filter(Boolean);
+  if (sections.length === 0) return;
+
+  const setActive = (id) => {
+    links.forEach(a => a.classList.toggle('active', a.dataset.section === id));
+  };
+  setActive(present[0].id);
+
+  // Scrollspy: highlight whichever section is currently most in view. Header + club-bar
+  // + nav together are ~104px tall, so bias the observation band below that.
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    if (visible.length > 0) setActive(visible[0].target.id);
+  }, { rootMargin: '-112px 0px -70% 0px', threshold: [0, 0.1, 0.5, 1] });
+  sections.forEach(s => observer.observe(s));
+}
 
 function toggleCard(id) {
   const el = document.getElementById(id);
@@ -797,28 +1064,28 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
   const destination = dir === 'in' ? (t.to || '') : (t.club || '');
   const dirLabel = dir === 'in' ? 'IN' : 'OUT';
   const acc = sourcesAccordion(t.name, linkMap, hub);
+  const note = t.note || 'No details';
 
-  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
-    <div class="card-header">
-      <div class="card-player">
-        <span class="player-name">${t.name}</span>
-        <span class="tier-badge ${dir === 'in' ? 't1' : 't2'}">${dirLabel}${t.free ? ' &middot; FREE' : ''}</span>
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name">${t.name}</span>
+        <span class="cr-dest">${destination}${t.sub ? ' &middot; ' + t.sub : ''}</span>
+        ${t.free ? '<span class="cr-free">FREE</span>' : ''}
       </div>
-      <div class="source-info">${destination}${t.sub ? ' &middot; ' + t.sub : ''}</div>
-    </div>
-    <div class="card-body">
-      <div class="note">${t.note || 'No details'}</div>
-    </div>
-    <div class="card-footer">
-      <div class="metric">
-        <div class="metric-label">Fee</div>
-        <div class="metric-value" style="font-size:14px">${t.fee || 'Undisclosed'}</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Status</div>
-        <div class="metric-value" style="font-size:14px;color:var(--accent-gold)">${t.statusTxt || 'DONE'}</div>
+      <div class="cr-figures">
+        <div class="cr-fee">
+          <div class="cr-label">Fee</div>
+          <div class="cr-value">${t.fee || 'Undisclosed'}</div>
+        </div>
+        <div class="cr-status">
+          <div class="cr-label">Status</div>
+          <div class="cr-value">${t.statusTxt || 'DONE'}</div>
+        </div>
       </div>
     </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
     ${acc.html}
   </div>`;
 }
