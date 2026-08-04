@@ -855,16 +855,22 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · AJ Auxerre"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Sekou Fofana", sub:"Franco-Ivorian left-back signed from Lausanne-Sport", club:"Lausanne-Sport", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a four-year deal after 50 appearances for Lausanne since 2021."},
+  {name:"Romain Faivre", sub:"Loan spell renewed for a second consecutive season", club:"AFC Bournemouth", pos:"CAM", fee:"Loan, no purchase option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Bournemouth and Auxerre agreed a fresh season-long loan without a buy option, extending Faivre's stay after his 2025-26 loan spell."}
+];
 
 const CONFIRMED_OUT = [
   {name:"Lassine Sinayoko", sub:"26 · ST · Mali", club:"Paris FC", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed 21 Jul 2026 on a three-year deal, after skipping training to force the move through."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Tim Meyer", sub:"Swiss revelation targeted as defensive midfield reinforcement", club:"Grasshopper Zurich", pos:"CDM", report:"Auxerre have moved into the acquisition phase for the Swiss defensive midfielder, who impressed for Grasshoppers last season.", src:"TOP Mercato", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage interest reported by an aggregator outlet; no formal bid confirmed yet."}
+];
 
 const OUTGOING = [
-  {name:"Kévin Danois", sub:"26 · CB · France", club:"Multiple (unspecified)", pos:"CB", report:"Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:34, light:"y", trend:"flat", note:"New Sporting Director David Wantier is reported to be targeting over €30m combined from sales of Danois and Sinayoko to fund the rebuild under Will Still."}
+  {name:"Kévin Danois", sub:"26 · CB · France", club:"Multiple (unspecified)", pos:"CB", report:"Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:34, light:"y", trend:"flat", note:"New Sporting Director David Wantier is reported to be targeting over €30m combined from sales of Danois and Sinayoko to fund the rebuild under Will Still."},
+  {name:"Kevin Danois", sub:"West Ham and Newcastle monitoring, Hull City bid rejected", club:"West Ham United / Newcastle United (interest)", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old midfielder closely after Hull City's ~€15m offer was seen as below Auxerre's €20m valuation.", src:"Les Transferts", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Danois is contracted through June 2029, giving Auxerre strong leverage; a departure this window looks unlikely unless valuation is met."}
 ];
 
 const RISERS = [];
@@ -886,14 +892,21 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  "gffn-auxerre": {l:"Get French Football News · Auxerre", u:"https://www.getfootballnewsfrance.com/tag/auxerre/"}
-};
+  "gffn-auxerre": {l:"Get French Football News · Auxerre", u:"https://www.getfootballnewsfrance.com/tag/auxerre/"},
+  tOPMercatoTimMeyer: {l:"TOP Mercato", u:"https://www.msn.com/fr-fr/sport/football/mercato-auxerre-passe-%C3%A0-l-action-pour-la-r%C3%A9v%C3%A9lation-suisse-tim-meyer/ar-AA29bvFJ"},
+  lesTransfertsKevinDanois: {l:"Les Transferts", u:"https://www.les-transferts.com/rumeurs-transferts/aj-auxerre-deux-clubs-anglais-viseraient-kevin-danois/"},
+  lquipeSekouFofana: {l:"L'Équipe", u:"https://www.lequipe.fr/Football/Actualites/Transferts-venant-de-lausanne-sport-le-lateral-gauche-sekou-fofana-va-signer-a-auxerre/1702581"},
+  lquipeRomainFaivre: {l:"L'Équipe", u:"https://www.lequipe.fr/Football/Actualites/Mercato-romain-faivre-repart-sur-un-pret-avec-l-aj-auxerre/1700937"},
+  maliactuLassineSinayoko: {l:"Maliactu", u:"https://maliactu.net/mercato-lassine-sinayoko-quitte-auxerre-et-sengage-pour-trois-ans-avec-le-paris-fc/"}};
 
 const LINKMAP = {
-  "Lassine Sinayoko": ["gffn-auxerre"],
+  "Lassine Sinayoko": ["gffn-auxerre", "maliactuLassineSinayoko"],
   "Kévin Danois": ["gffn-auxerre"],
-  "Mathys Detourbet": ["gffn-auxerre"]
-};
+  "Mathys Detourbet": ["gffn-auxerre"],
+  "Tim Meyer": ["tOPMercatoTimMeyer"],
+  "Kevin Danois": ["lesTransfertsKevinDanois"],
+  "Sekou Fofana": ["lquipeSekouFofana"],
+  "Romain Faivre": ["lquipeRomainFaivre"]};
 const WL_LINKMAP = {
   "Mathys Detourbet": ["gffn-auxerre"]
 };

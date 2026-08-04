@@ -41,7 +41,8 @@ const CONFIRMED_IN = [
 
 const CONFIRMED_OUT = [
   {name:"Sankhoun Diawara", sub:"20 · MF · Mali", club:"AC Milan", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed for Serie A giants AC Milan, confirmed 29 Jul 2026 - Troyes' most significant sale of the window."},
-  {name:"Thierno Baldé", sub:"MF", club:"TBD", pos:"MF", fee:"TBD", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure announced 3 Aug 2026."}
+  {name:"Thierno Baldé", sub:"MF", club:"TBD", pos:"MF", fee:"TBD", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure announced 3 Aug 2026."},
+  {name:"Mathys Detourbet", sub:"Winger sold to Manchester City, loaned straight to Monaco", club:"Manchester City", pos:"RW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The 19-year-old was sold via the City Football Group network before immediately being loaned to AS Monaco for 2026-27."}
 ];
 
 const INCOMING = [];
@@ -71,15 +72,18 @@ const WATCHLIST = [
 
 const HUB = {
   "gffn-troyes": {l:"Get French Football News · Troyes", u:"https://www.getfootballnewsfrance.com/tag/troyes/"},
-  "estac": {l:"ESTAC Official News", u:"https://www.estac.fr/actualites"}
-};
+  "estac": {l:"ESTAC Official News", u:"https://www.estac.fr/actualites"},
+  footMercatoviaLEstclairPatrickBeach: {l:"Foot Mercato (via L'Est Éclair)", u:"https://www.footmercato.net/a8676576281722061817-troyes-va-soffrir-lune-des-revelations-de-la-coupe-du-monde-2026"},
+  ouestFranceIronGomis: {l:"Ouest-France", u:"https://www.ouest-france.fr/sport/football/ea-guingamp/mercato-ea-guingamp-iron-gomis-sest-engage-a-troyes-d4ed9866-812e-11f1-9d8e-98fb5a42b8f3"},
+  sFGateAPMathysDetourbet: {l:"SFGate (AP)", u:"https://www.sfgate.com/sports/article/promoted-troyes-sells-forward-detourbet-to-22323461.php"},
+  yahooSportsSankhounDiawara: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-milan-sign-diawara-troyes-111000761.html"}};
 
 const LINKMAP = {
-  "Patrick Beach": ["estac"],
-  "Iron Gomis": ["estac"],
-  "Sankhoun Diawara": ["gffn-troyes"],
+  "Patrick Beach": ["estac", "footMercatoviaLEstclairPatrickBeach"],
+  "Iron Gomis": ["estac", "ouestFranceIronGomis"],
+  "Sankhoun Diawara": ["gffn-troyes", "yahooSportsSankhounDiawara"],
   "Thierno Baldé": ["estac"],
-  "Mathys Detourbet": ["gffn-troyes"]
+  "Mathys Detourbet": ["gffn-troyes", "sFGateAPMathysDetourbet"]
 };
 const WL_LINKMAP = {
   "Mathys Detourbet": ["gffn-troyes"]

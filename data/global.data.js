@@ -57,6 +57,19 @@ const HEADLINES = [
     updated: "2026-07-30T14:00:00Z"
   },
   {
+    headline: "Lucas Digne",
+    club_display_name: "Paris Saint-Germain",
+    summary: "Would provide cover for Nuno Mendes; Digne previously at PSG 2013-15",
+    value: "€10m (release clause)",
+    from: "Aston Villa", to: "Paris Saint-Germain",
+    direction: "in",
+    prob: 80, truth: 85, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "paris-saint-germain",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Daisuke Yokota",
     club_display_name: "Rangers",
     summary: "",
@@ -109,6 +122,19 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
+    headline: "Yanis Zouaoui",
+    club_display_name: "Le Havre AC",
+    summary: "Described as 'very advanced' negotiations; not yet officially completed.",
+    value: "Undisclosed",
+    from: "FC Nantes", to: "Le Havre AC",
+    direction: "in",
+    prob: 75, truth: 80, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "le-havre-ac",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Mikey Moore",
     club_display_name: "FC Cologne",
     summary: "",
@@ -119,6 +145,19 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Germany", league: "Bundesliga",
     club_link: "fc-cologne",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Zion Suzuki",
+    club_display_name: "Paris Saint-Germain",
+    summary: "PSG want competition for Chevalier/Safonov; Juventus also interested",
+    value: "€33m + bonuses",
+    from: "Parma", to: "Paris Saint-Germain",
+    direction: "in",
+    prob: 68, truth: 78, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "paris-saint-germain",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -135,6 +174,19 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
+    headline: "Loic Openda",
+    club_display_name: "Olympique Lyonnais",
+    summary: "",
+    value: "Undisclosed",
+    from: "Juventus", to: "Olympique Lyonnais",
+    direction: "in",
+    prob: 65, truth: 75, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "olympique-lyon",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Guglielmo Vicario",
     club_display_name: "Juventus",
     summary: "Juventus previously eyed Emiliano Martinez but judged him too costly; coach Spal",
@@ -145,6 +197,19 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Italy", league: "Serie A",
     club_link: "juventus",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Ferran Torres",
+    club_display_name: "Paris Saint-Germain",
+    summary: "One of several forward targets alongside Monaco's Akliouche and Leipzig's Dioman",
+    value: "Undisclosed",
+    from: "Barcelona", to: "Paris Saint-Germain",
+    direction: "in",
+    prob: 62, truth: 70, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'down',
+    nation: "France", league: "Ligue 1",
+    club_link: "paris-saint-germain",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -249,6 +314,19 @@ const HEADLINES = [
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Germany", league: "Bundesliga",
     club_link: "werder-bremen",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Geronimo Rulli",
+    club_display_name: "Olympique de Marseille",
+    summary: "Marseille reportedly want a replacement (e.g. Restes) lined up before sanctionin",
+    value: "Undisclosed",
+    from: "Olympique de Marseille", to: "Manchester City",
+    direction: "out",
+    prob: 55, truth: 70, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "olympique-marseille",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -636,7 +714,7 @@ const HEADLINES = [
     from: "Paris Saint-Germain", to: "Liverpool",
     direction: "out",
     prob: 30, truth: 58, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     nation: "France", league: "Ligue 1",
     club_link: "paris-saint-germain",
     updated: "2026-08-03T14:30:00Z"
@@ -675,7 +753,7 @@ const HEADLINES = [
     from: "RC Strasbourg Alsace", to: "AS Roma",
     direction: "out",
     prob: 30, truth: 50, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     nation: "France", league: "Ligue 1",
     club_link: "rc-strasbourg",
     updated: "2026-08-03T14:30:00Z"
@@ -706,94 +784,16 @@ const HEADLINES = [
     club_link: "bournemouth",
     updated: "2026-06-06T00:00:00Z"
   },
-  {
-    headline: "Issiaka Kamate",
-    club_display_name: "KVC Westerlo",
-    summary: "Nico Schira reported Westerlo closing in on an agreement with Inter for the play",
-    value: "Undisclosed",
-    from: "Inter Milan", to: "KVC Westerlo",
-    direction: "in",
-    prob: 30, truth: 55, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Belgium", league: "Pro League",
-    club_link: "westerlo",
-    updated: "2026-08-03T18:30:00Z"
-  },
-  {
-    headline: "Andrea Pinamonti",
-    club_display_name: "US Sassuolo",
-    summary: "Contact established between the clubs but Lazio's real priority lies elsewhere.",
-    value: "Undisclosed",
-    from: "US Sassuolo", to: "Lazio",
-    direction: "out",
-    prob: 30, truth: 60, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "sassuolo",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Rafael Leão",
-    club_display_name: "Tottenham Hotspur",
-    summary: "",
-    value: "TBC",
-    from: "AC Milan", to: "Tottenham Hotspur",
-    direction: "in",
-    prob: 26, truth: 48, trend: 'up', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "tottenham-hotspur",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Julián Álvarez",
-    club_display_name: "Atlético Madrid",
-    summary: "",
-    value: "€500m release clause",
-    from: "Atlético Madrid", to: "Barcelona",
-    direction: "out",
-    prob: 20, truth: 90, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "atletico-madrid",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Cody Gakpo",
-    club_display_name: "Tottenham Hotspur",
-    summary: "",
-    value: "Not yet tested",
-    from: "Liverpool", to: "Tottenham Hotspur",
-    direction: "in",
-    prob: 20, truth: 52, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "tottenham-hotspur",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Abdul Fatawu",
-    club_display_name: "Sunderland",
-    summary: "Deal seen as unlikely if the Eze/El Khannouss domino plays out",
-    value: "Undisclosed",
-    from: "Leicester City", to: "Sunderland",
-    direction: "in",
-    prob: 20, truth: 65, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "sunderland",
-    updated: "2026-07-31T09:00:00Z"
-  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 181, league_count: 3
+    stories_count: 179, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 139, league_count: 3
+    stories_count: 136, league_count: 3
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
@@ -801,7 +801,7 @@ const NATIONS = [
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 43, league_count: 1
+    stories_count: 78, league_count: 1
   },
   {
     name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
@@ -816,12 +816,12 @@ const NATIONS = [
     stories_count: 17, league_count: 1
   },
   {
-    name: "Turkey", slug: "turkey", flag_emoji: "🇹🇷",
-    stories_count: 16, league_count: 2
-  },
-  {
     name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     stories_count: 16, league_count: 1
+  },
+  {
+    name: "Turkey", slug: "turkey", flag_emoji: "🇹🇷",
+    stories_count: 15, league_count: 2
   },
   {
     name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
@@ -842,9 +842,9 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 589,
-  clubs_covered: 180,
-  tier1_count: 70,
+  total_stories: 618,
+  clubs_covered: 182,
+  tier1_count: 75,
   top_league: "Serie A",
   most_active_club: "Sunderland",
   nations_covered: 13,
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:14:55.954028Z",
+  updated: "2026-08-04T18:23:14.954331Z",
   label: "Global aggregation from all clubs"
 };

@@ -36,10 +36,14 @@ const CONFIRMED_OUT = [
   {name:"Charlie Cresswell", sub:"23 · CB · England", club:"Stade Rennais", pos:"CB", fee:"€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreed 1 Aug 2026 - Toulouse's biggest sale of the window."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Gift Orban", sub:"Nigerian striker resurfaces as a cut-price target", club:"Olympique Lyonnais", pos:"ST", report:"Toulouse are ready to move for the Lyon flop at a reduced price, almost a year after a move nearly happened in the previous summer window before collapsing.", src:"MSN Sport", tier:3, fee:"Undisclosed (reduced price)", truth:40, prob:30, light:"y", trend:"flat", note:"Previous transfer attempt fell through last summer; Orban has struggled for minutes at Lyon since."}
+];
 
 const OUTGOING = [
-  {name:"Guillaume Restes", sub:"22 · GK · France", club:"Marseille / Aston Villa (competing)", pos:"GK", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:26, light:"o", trend:"flat", note:"Marseille and Aston Villa are both reported to be competing for the young goalkeeper."}
+  {name:"Guillaume Restes", sub:"22 · GK · France", club:"Marseille / Aston Villa (competing)", pos:"GK", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:26, light:"o", trend:"flat", note:"Marseille and Aston Villa are both reported to be competing for the young goalkeeper."},
+  {name:"Cristian Casseres Jr.", sub:"Venezuelan midfielder wanted by multiple suitors", club:"Olympique Lyonnais / RC Lens", pos:"CDM", report:"Lyon are reportedly trying to beat Lens to the signature of the Toulouse midfielder, the latest twist after Sevilla had an earlier bid rejected and Genoa also showed renewed Serie A interest.", src:"Les Transferts (via Nova Sports)", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Casseres is under contract to 2027; Toulouse have previously rejected a Sevilla bid and fought off Genoa interest, but Ligue 1 rivals Lyon and Lens are now competing for him."},
+  {name:"Yann Gboho", sub:"Ivorian winger drawing foreign interest", club:"Unnamed English club", pos:"LW", report:"An English club has reportedly positioned itself for Ligue 1's top dribbler this summer, after an unnamed Italian side previously showed winter interest.", src:"MSN Sport", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"No club has been formally named; Gboho joined Toulouse from Cercle Bruges in January 2024 for around €2.5m."}
 ];
 
 const RISERS = [];
@@ -61,13 +65,18 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  "gffn-toulouse": {l:"Get French Football News · Toulouse", u:"https://www.getfootballnewsfrance.com/tag/toulouse/"}
-};
+  "gffn-toulouse": {l:"Get French Football News · Toulouse", u:"https://www.getfootballnewsfrance.com/tag/toulouse/"},
+  mSNSportGiftOrban: {l:"MSN Sport", u:"https://www.msn.com/fr-fr/sport/football/mercato-toulouse-le-t%C3%A9f%C3%A9c%C3%A9-pr%C3%AAt-%C3%A0-s-offrir-un-ancien-flop-de-l-ol-%C3%A0-prix-cass%C3%A9/ar-AA288cab"},
+  lesTransfertsCristianCasseresJr: {l:"Les Transferts", u:"https://www.les-transferts.com/rumeurs-transferts/lol-veut-doubler-lens-pour-ce-milieu-de-toulouse/"},
+  mSNSportYannGboho: {l:"MSN Sport", u:"https://www.msn.com"},
+  laDepecheMaxifootCharlieCresswell: {l:"La Depeche / Maxifoot", u:"https://news.maxifoot.fr/rennes/"}};
 
 const LINKMAP = {
-  "Charlie Cresswell": ["gffn-toulouse"],
-  "Guillaume Restes": ["gffn-toulouse"]
-};
+  "Charlie Cresswell": ["gffn-toulouse", "laDepecheMaxifootCharlieCresswell"],
+  "Guillaume Restes": ["gffn-toulouse"],
+  "Gift Orban": ["mSNSportGiftOrban"],
+  "Cristian Casseres Jr.": ["lesTransfertsCristianCasseresJr"],
+  "Yann Gboho": ["mSNSportYannGboho"]};
 const WL_LINKMAP = {
   "Guillaume Restes": ["gffn-toulouse"]
 };

@@ -6,7 +6,7 @@
 const NATION = {
   name: "Turkey",
   flag_emoji: "🇹🇷",
-  stories_count: 16
+  stories_count: 15
 };
 
 const TOP_STORIES = [  {
@@ -73,13 +73,6 @@ const TOP_STORIES = [  {
     value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Kevin Carlos",prob: 25, truth: 45, bullshit: false,
-    club_origin: "samsunspor", club_display_name: "Samsunspor", direction: "in",
-    from: "OGC Nice", to: "Samsunspor",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
-  },
-  {
     name: "Ali Diabaté",prob: 8, truth: 80, bullshit: false,
     club_origin: "samsunspor", club_display_name: "Samsunspor", direction: "out",
     from: "Samsunspor", to: "Samsunspor",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
+  {
+    name: "Mauro Icardi",prob: 10, truth: 25, bullshit: false,
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Free agent (ex-Galatasaray)", to: "Beşiktaş",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
+  },
 ];
 
-const BY_LEAGUE = {"Super Lig": 3, "S\u00fcper Lig": 13, "B\u00f6lgesel Amat\u00f6r Lig": 0};
+const BY_LEAGUE = {"Super Lig": 3, "S\u00fcper Lig": 12, "B\u00f6lgesel Amat\u00f6r Lig": 0};
 
-const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "count": 13}, {"slug": "super-lig", "name": "Super Lig", "count": 3}, {"slug": "b\u00f6lgesel-amat\u00f6r-lig", "name": "B\u00f6lgesel Amat\u00f6r Lig", "count": 0}];
+const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "count": 12}, {"slug": "super-lig", "name": "Super Lig", "count": 3}, {"slug": "b\u00f6lgesel-amat\u00f6r-lig", "name": "B\u00f6lgesel Amat\u00f6r Lig", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:14:55.959345Z",
+  updated: "2026-08-04T18:23:14.961492Z",
   label: "Nation aggregation"
 };

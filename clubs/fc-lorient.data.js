@@ -44,9 +44,12 @@ const CONFIRMED_OUT = [
   {name:"Isaac Monnier", sub:"DF", club:"SC Bastia", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sent out on loan to the Ligue 2 side."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Bamba Dieng", sub:"Striker, still without a club end of July", club:"Hull City / Middlesbrough (linked)", pos:"ST", report:"Dieng has left Lorient and remains a free agent; English Championship sides Hull City and Middlesbrough are reported to be competing for his signature.", src:"Foot Mercato", tier:3, fee:"Free agent", truth:45, prob:35, light:"y", trend:"flat", note:"No destination confirmed as of early August; a prior move to a Turkish club fell through."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Pagis sale to Paris FC banked</b>: €15m fee funds further business as Lorient prepare for a new head coach era."}
@@ -68,15 +71,17 @@ const WATCHLIST = [];
 
 const HUB = {
   "gffn-lorient": {l:"Get French Football News · Lorient", u:"https://www.getfootballnewsfrance.com/tag/lorient/"},
-  "fclorient": {l:"FC Lorient Official News", u:"https://www.fclorient.bzh/actualites"}
-};
+  "fclorient": {l:"FC Lorient Official News", u:"https://www.fclorient.bzh/actualites"},
+  leTelegrammeSouleymaneFaye: {l:"Le Telegramme", u:"https://www.letelegramme.fr/sports/football/fc-lorient/clause-liberatoire-a-80-millions-deuros-espagne-et-senegal-qui-est-souleymane-faye-troisieme-recrue-du-fc-lorient-7094260.php"},
+  oneFootballFootMercatoBambaDieng: {l:"OneFootball / Foot Mercato", u:"https://onefootball.com"},
+  footMercatoPabloPagis: {l:"Foot Mercato", u:"https://www.footmercato.net"}};
 
 const LINKMAP = {
-  "Souleymane Faye": ["fclorient"],
+  "Souleymane Faye": ["fclorient", "leTelegrammeSouleymaneFaye"],
   "Gabin Bernardeau": ["fclorient"],
-  "Pablo Pagis": ["gffn-lorient"],
-  "Isaac Monnier": ["fclorient"]
-};
+  "Pablo Pagis": ["gffn-lorient", "footMercatoPabloPagis"],
+  "Isaac Monnier": ["fclorient"],
+  "Bamba Dieng": ["oneFootballFootMercatoBambaDieng"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

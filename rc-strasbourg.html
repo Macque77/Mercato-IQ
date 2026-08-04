@@ -856,7 +856,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Genesis Antwi", sub:"DF", to:"loan from Chelsea", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 3 Aug 2026 - the first Chelsea player to move to Strasbourg under the BlueCo multi-club structure."}
+  {name:"Genesis Antwi", sub:"DF", to:"loan from Chelsea", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 3 Aug 2026 - the first Chelsea player to move to Strasbourg under the BlueCo multi-club structure."},
+  {name:"Giovanni Reyna", sub:"Confirmed five-year deal", club:"Borussia Mönchengladbach", pos:"CAM", fee:"€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"USMNT international signs through 2031"}
 ];
 
 const CONFIRMED_OUT = [
@@ -865,14 +866,15 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Mykhailo Mudryk", sub:"25 · W · Ukraine", club:"Chelsea", pos:"W", report:"3 Aug 2026", src:"Get French Football News", tier:2, fee:"Loan", truth:50, prob:32, light:"y", trend:"flat", note:"Chelsea are reported to be considering loaning the winger to their sister club."},
-  {name:"Giovanni Reyna", sub:"24 · AM · USA", club:"Borussia Mönchengladbach", pos:"AM", report:"31 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:26, light:"o", trend:"flat", note:"Talks are reported to be underway over the American international's future."},
   {name:"Filip Jörgensen", sub:"24 · GK · Denmark", club:"Chelsea", pos:"GK", report:"28 Jul 2026", src:"Get French Football News", tier:2, fee:"Loan", truth:52, prob:30, light:"y", trend:"flat", note:"Reported as a potential third Chelsea player to join Strasbourg on loan this window."},
   {name:"Ibrahima Ba", sub:"DF · Senegal", club:"Famalicão", pos:"CB", report:"16 Jul 2026", src:"Get French Football News", tier:3, fee:"TBD", truth:45, prob:24, light:"o", trend:"flat", note:"Reported to be rejecting Benfica in order to join Strasbourg instead."},
   {name:"Robbie Ure", sub:"FW", club:"IK Sirius", pos:"FW", report:"4 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:20, light:"o", trend:"flat", note:"The Allsvenskan top scorer is being tracked by Strasbourg alongside Nice and Lyon."}
 ];
 
 const OUTGOING = [
-  {name:"Diego Moreira", sub:"21 · LWB · Portugal", club:"AS Roma", pos:"LWB", report:"15 Jul 2026", src:"Nicolo Schira", tier:1, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma have reportedly offered a contract to 2031, with direct talks expected between the clubs."}
+  {name:"Diego Moreira", sub:"21 · LWB · Portugal", club:"AS Roma", pos:"LWB", report:"15 Jul 2026", src:"Nicolo Schira", tier:1, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma have reportedly offered a contract to 2031, with direct talks expected between the clubs."},
+  {name:"Guéla Doué", sub:"PSG interest as Hakimi cover", club:"Paris Saint-Germain", pos:"RB", report:"PSG have registered early interest in Doué as a long-term option behind Achraf Hakimi, though no concrete progress has been made.", src:"L'Équipe", tier:2, fee:"€20m (valuation)", truth:52, prob:32, light:"y", trend:"flat", note:"Under contract until 2029; brother of PSG's Désiré Doué"},
+  {name:"Julio Enciso", sub:"Ipswich want reunion with former loanee", club:"Ipswich Town", pos:"CAM", report:"Ipswich are pursuing a return for Enciso, whom new boss Gary O'Neil previously worked with, following his loan spell at Portman Road.", src:"Sky Sports", tier:2, fee:"€25m (valuation)", truth:55, prob:40, light:"y", trend:"flat", note:"12 goals, 9 assists in 42 appearances for Strasbourg; also linked with Galatasaray"}
 ];
 
 const RISERS = [
@@ -899,17 +901,26 @@ const WATCHLIST = [
 
 const HUB = {
   "gffn-strasbourg": {l:"Get French Football News · Strasbourg", u:"https://www.getfootballnewsfrance.com/tag/strasbourg/"},
-  nicoloSchiraviaSportingpediaDiegoMoreira: {l:"Nicolo Schira (via Sportingpedia)", u:"https://www.sportingpedia.com/2026/07/15/diego-moreira-set-to-swap-strasbourg-for-as-roma/"}};
+  nicoloSchiraviaSportingpediaDiegoMoreira: {l:"Nicolo Schira (via Sportingpedia)", u:"https://www.sportingpedia.com/2026/07/15/diego-moreira-set-to-swap-strasbourg-for-as-roma/"},
+  getFrenchFootballNewsLoAschiGiovanniReyna: {l:"Get French Football News (Léo Aschi)", u:"https://www.getfootballnewsfrance.com/2026/official-strasbourg-sign-borussia-monchengladbach-attacking-midfielder-giovanni-reyna/"},
+  getFrenchFootballNewsFootMercatoBastienChevalMykhailoMudryk: {l:"Get French Football News (Foot Mercato / Bastien Cheval)", u:"https://www.getfootballnewsfrance.com/2026/chelsea-considering-strasbourg-loan-for-mykhailo-mudryk/"},
+  getFrenchFootballNewsDNABastienChevalFilipJrgensen: {l:"Get French Football News (DNA / Bastien Cheval)", u:"https://www.getfootballnewsfrance.com/2026/chelsea-goalkeeper-filip-jorgensen-set-to-join-strasbourg-on-loan/"},
+  getFrenchFootballNewsLquipeLoAschiGulaDou: {l:"Get French Football News (L'Équipe / Léo Aschi)", u:"https://www.getfootballnewsfrance.com/2026/psg-take-interest-in-strasbourgs-guela-doue/"},
+  getFrenchFootballNewsSkySportsJulioEnciso: {l:"Get French Football News (Sky Sports)", u:"https://www.getfootballnewsfrance.com/2026/strasbourgs-julio-enciso-targeted-by-ipswich-town/"},
+  getFrenchFootballNewsSachaTavolieriGianlucaDiMarzioDiegoMoreira: {l:"Get French Football News (Sacha Tavolieri / Gianluca Di Marzio)", u:"https://www.getfootballnewsfrance.com/2026/strasbourgs-diego-moreira-agrees-to-as-roma-move/"},
+  getFrenchFootballNewsBastienChevalGenesisAntwi: {l:"Get French Football News (Bastien Cheval)", u:"https://www.getfootballnewsfrance.com/2026/official-strasbourg-sign-genesis-antwi-on-loan-from-chelsea/"}};
 
 const LINKMAP = {
-  "Genesis Antwi": ["gffn-strasbourg"],
+  "Genesis Antwi": ["gffn-strasbourg", "getFrenchFootballNewsBastienChevalGenesisAntwi"],
   "Valentín Barco": ["gffn-strasbourg"],
-  "Mykhailo Mudryk": ["gffn-strasbourg"],
-  "Giovanni Reyna": ["gffn-strasbourg"],
-  "Filip Jörgensen": ["gffn-strasbourg"],
+  "Mykhailo Mudryk": ["gffn-strasbourg", "getFrenchFootballNewsFootMercatoBastienChevalMykhailoMudryk"],
+  "Giovanni Reyna": ["gffn-strasbourg", "getFrenchFootballNewsLoAschiGiovanniReyna"],
+  "Filip Jörgensen": ["gffn-strasbourg", "getFrenchFootballNewsDNABastienChevalFilipJrgensen"],
   "Ibrahima Ba": ["gffn-strasbourg"],
   "Robbie Ure": ["gffn-strasbourg"],
-  "Diego Moreira": ["nicoloSchiraviaSportingpediaDiegoMoreira"]};
+  "Diego Moreira": ["nicoloSchiraviaSportingpediaDiegoMoreira", "getFrenchFootballNewsSachaTavolieriGianlucaDiMarzioDiegoMoreira"],
+  "Guéla Doué": ["getFrenchFootballNewsLquipeLoAschiGulaDou"],
+  "Julio Enciso": ["getFrenchFootballNewsSkySportsJulioEnciso"]};
 const WL_LINKMAP = {
   "Mykhailo Mudryk": ["gffn-strasbourg"]
 };

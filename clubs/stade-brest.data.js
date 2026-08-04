@@ -32,7 +32,8 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [
-  {name:"Pierre Lees-Melou", sub:"32 · CM · France", club:"Paris FC", pos:"CM", fee:"~€6.5m + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure to newly-promoted Paris FC on a deal through June 2027, their fourth signing of the summer."}
+  {name:"Pierre Lees-Melou", sub:"32 · CM · France", club:"Paris FC", pos:"CM", fee:"~€6.5m + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure to newly-promoted Paris FC on a deal through June 2027, their fourth signing of the summer."},
+  {name:"Daouda Guindo", sub:"Free transfer after contract expiry", club:"Stade de Reims", pos:"CM", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Midfielder joins Ligue 2 side Reims on a free transfer following his Brest contract expiration"}
 ];
 const INCOMING = [
   {name:"Joseph Nonge", sub:"21 · CM · Belgium", club:"Kocaelispor", pos:"CM", report:"2 Aug 2026", src:"Sacha Tavolieri", tier:1, fee:"~€2.5m valuation", truth:75, prob:60, light:"g", trend:"flat", note:"Tavolieri reports personal terms are already agreed with the player; Brest are now negotiating a permanent fee with the Turkish club."},
@@ -42,7 +43,9 @@ const INCOMING = [
 const OUTGOING = [
   {name:"Joris Chotard", sub:"24 · CM · France", club:"Stade Brest", pos:"CM", report:"31 Jul 2026", src:"L'Équipe", tier:1, fee:"Undisclosed (valued ~€7m)", truth:65, prob:55, light:"g", trend:"flat", note:"Brest's second-most valuable player has accepted Saudi side Neom SC's proposal; clubs are still negotiating the fee."},
   {name:"Kamory Doumbia", sub:"23 · AM · Mali", club:"Stade Brest", pos:"AM", report:"2 Aug 2026", src:"Sport.fr / BFM Marseille", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"New Marseille sporting director Grégory Lorenzi is monitoring the playmaker, but Brest are working to keep him after an injury-hit season."},
-  {name:"Ludovic Ajorque", sub:"32 · ST · France", club:"Stade Brest", pos:"ST", report:"1 Aug 2026", src:"Sport.fr (But!)", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Lorenzi knows Ajorque from his own Brest days and has flagged the veteran forward as a possible reinforcement for Marseille's attack."}
+  {name:"Ludovic Ajorque", sub:"32 · ST · France", club:"Stade Brest", pos:"ST", report:"1 Aug 2026", src:"Sport.fr (But!)", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Lorenzi knows Ajorque from his own Brest days and has flagged the veteran forward as a possible reinforcement for Marseille's attack."},
+  {name:"Romain Del Castillo", sub:"Attracting Ligue 1 interest amid club upheaval", club:"Ligue 1 rivals (unspecified)", pos:"RW", report:"Del Castillo, who contributed 13 goal involvements last season, is attracting interest from unspecified Ligue 1 rivals amid instability at Brest.", src:"Get French Football News", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Contract runs to 2027; interest described as not yet concrete"},
+  {name:"Hugo Magnetti", sub:"Weighing a new challenge", club:"Ligue 1 rivals (unspecified)", pos:"CM", report:"Magnetti is reportedly evaluating his options this summer with a preference to seek a new challenge away from Brest.", src:"Get French Football News", tier:3, fee:"Undisclosed", truth:42, prob:30, light:"y", trend:"flat", note:"Contract runs to 2027; part of wider unrest following Éric Roy's death and sale of the club being explored"}
 ];
 
 const RISERS = [];
@@ -65,7 +68,9 @@ const HUB = {
   tOPMercatocomMoussaKon: {l:"TOPMercato.com", u:"https://www.topmercato.com/club/stade-brestois-29/"},
   bUTFootballClubfrTochukwuNnadi: {l:"BUTFootballClub.fr", u:"https://lesnouvellesdufoot.fr/france/sb29/"},
   lquipeviaTOPMercatoJorisChotard: {l:"L'Équipe (via TOPMercato)", u:"https://www.topmercato.com/2123948-mercato-le-2e-joueur-le-plus-cher-de-brest-dit-oui-a-une-destination-exotique/"},
-  soccerwayPierreLeesMelou: {l:"Soccerway", u:"https://fr.soccerway.com/actualites/football-ligue-1-pierre-lees-melou-quitte-brest-et-s-engage-avec-le-paris-fc-jusqu-en-2027/Ot0NHKS7"}};
+  soccerwayPierreLeesMelou: {l:"Soccerway", u:"https://fr.soccerway.com/actualites/football-ligue-1-pierre-lees-melou-quitte-brest-et-s-engage-avec-le-paris-fc-jusqu-en-2027/Ot0NHKS7"},
+  getFrenchFootballNewsLukeEntwistleRomainDelCastillo: {l:"Get French Football News (Luke Entwistle)", u:"https://www.getfootballnewsfrance.com/2026/exclusive-romain-del-castillo-and-hugo-magnetti-could-leave-brest/"},
+  getFrenchFootballNewsDaoudaGuindo: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-daouda-guindo-completes-reims-switch/"}};
 
 const LINKMAP = {
   "Joseph Nonge": ["sachaTavolieriviaMorningFootJosephNonge"],
@@ -74,7 +79,10 @@ const LINKMAP = {
   "Joris Chotard": ["lquipeviaTOPMercatoJorisChotard"],
   "Kamory Doumbia": ["sportfrBFMMarseilleKamoryDoumbia"],
   "Ludovic Ajorque": ["sportfrLudovicAjorque"],
-  "Pierre Lees-Melou": ["soccerwayPierreLeesMelou"]};
+  "Pierre Lees-Melou": ["soccerwayPierreLeesMelou"],
+  "Romain Del Castillo": ["getFrenchFootballNewsLukeEntwistleRomainDelCastillo"],
+  "Hugo Magnetti": ["getFrenchFootballNewsLukeEntwistleRomainDelCastillo"],
+  "Daouda Guindo": ["getFrenchFootballNewsDaoudaGuindo"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

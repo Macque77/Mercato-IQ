@@ -852,21 +852,24 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Matthis Abline", sub:"23 · ST · France", to:"permanent from FC Nantes", fee:"€30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official 30 Jul 2026. Monaco's marquee attacking signing of the window, brought in to add firepower up front."}
+  {name:"Matthis Abline", sub:"23 · ST · France", to:"permanent from FC Nantes", fee:"€30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official 30 Jul 2026. Monaco's marquee attacking signing of the window, brought in to add firepower up front."},
+  {name:"Mathys Detourbet", sub:"Manchester City winger arrives on a season-long loan", club:"Manchester City", pos:"RW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The 19-year-old, sold by Troyes to Manchester City this summer via the City Football Group network, has been immediately loaned to Monaco for 2026-27."}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Aladji Bamba", sub:"20 · W · Ivory Coast", club:"Newcastle United", pos:"W", fee:"€40m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 24 Jul 2026 on a five-year deal - a big sale that funds further business."},
-  {name:"Boubakar Dembaga", sub:"21 · FW · France", club:"Sporting Charleroi", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Fringe forward departs for regular football in Belgium."}
+  {name:"Boubakar Dembaga", sub:"21 · FW · France", club:"Sporting Charleroi", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Fringe forward departs for regular football in Belgium."},
+  {name:"Maghnes Akliouche", sub:"France international completes big-money move to PSG", club:"Paris Saint-Germain", pos:"CAM", fee:"€50m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal in preparation for roughly two years finally completed; Akliouche signs a five-year contract at PSG after Liverpool also monitored the situation."}
 ];
 
 const INCOMING = [
   {name:"Erik Lira", sub:"26 · CM · Mexico", club:"Cruz Azul", pos:"CM", report:"29 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:24, light:"o", trend:"flat", note:"Monaco have shown concrete interest in the Cruz Azul midfielder as squad depth is assessed."},
-  {name:"Simon Adingra", sub:"24 · W · Ivory Coast", club:"Brighton (on loan at Sunderland)", pos:"W", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"Loan", truth:48, prob:20, light:"o", trend:"flat", note:"Monaco explored re-signing the winger on loan; talks described as preliminary."}
+  {name:"Simon Adingra", sub:"24 · W · Ivory Coast", club:"Brighton (on loan at Sunderland)", pos:"W", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"Loan", truth:48, prob:20, light:"o", trend:"flat", note:"Monaco explored re-signing the winger on loan; talks described as preliminary."},
+  {name:"Fares Ghedjemis", sub:"Algerian winger eyed as an Akliouche-style replacement", club:"Frosinone", pos:"RW", report:"Monaco are reportedly interested in the Algeria international winger, who scored 15 goals in Serie B last season to help Frosinone win promotion; Lille are also said to be keen.", src:"Yahoo Sports (via agency reporting)", tier:2, fee:"", truth:55, prob:35, light:"y", trend:"flat", note:"Competition from Lille and the early stage of talks make this speculative for now."}
 ];
 
 const OUTGOING = [
-  {name:"Maghnes Akliouche", sub:"24 · AM · France", club:"Paris Saint-Germain", pos:"AM", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"€50m", truth:70, prob:62, light:"g", trend:"up", note:"PSG's improved €50m bid was accepted after Monaco rejected an initial €45m offer on 29 Jul - a breakthrough in talks was reported the same day."}
+  {name:"Folarin Balogun", sub:"American striker's Monaco exit looks increasingly likely", club:"Everton (interest)", pos:"ST", report:"Monaco face financial pressure after missing out on the Champions League and could sell the striker for around €50m this summer, with Everton among the sides considering a move.", src:"Yahoo Sports / MSN France", tier:2, fee:"", truth:60, prob:45, light:"y", trend:"flat", note:"Monaco have already brought in Matthis Abline as a like-for-like forward, which supports the likelihood of a Balogun sale materialising."}
 ];
 
 const RISERS = [
@@ -894,17 +897,24 @@ const WATCHLIST = [
 
 const HUB = {
   "gffn-monaco": {l:"Get French Football News · Monaco", u:"https://www.getfootballnewsfrance.com/tag/monaco/"},
-  "asmonaco": {l:"AS Monaco Official News", u:"https://www.asmonaco.com/en/news"}
-};
+  "asmonaco": {l:"AS Monaco Official News", u:"https://www.asmonaco.com/en/news"},
+  yahooSportsFaresGhedjemis: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/lille-monaco-interested-algeria-international-075500162.html"},
+  yahooSportsFolarinBalogun: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/folarin-balogun-everton-now-advance-131733247.html"},
+  yahooSportsMatthisAbline: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-monaco-sign-matthis-abline-081000502.html"},
+  yahooSportsMathysDetourbet: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-manchester-city-mathys-detourbet-152000102.html"},
+  sportfrMaghnesAkliouche: {l:"Sport.fr", u:"https://www.msn.com/fr-ch/sport/football/psg-akliouche-s-engage-pour-cinq-ans-monaco-obtient-ses-50-millions/ar-AA299kOb"},
+  theGuardianAladjiBamba: {l:"The Guardian", u:"https://www.theguardian.com/football/2026/jul/24/transfers-newcastle-sign-aladji-bamba-monaco"}};
 
 const LINKMAP = {
-  "Matthis Abline": ["asmonaco", "gffn-monaco"],
-  "Aladji Bamba": ["gffn-monaco"],
+  "Matthis Abline": ["asmonaco", "gffn-monaco", "yahooSportsMatthisAbline"],
+  "Aladji Bamba": ["gffn-monaco", "theGuardianAladjiBamba"],
   "Boubakar Dembaga": ["gffn-monaco"],
   "Erik Lira": ["gffn-monaco"],
   "Simon Adingra": ["gffn-monaco"],
-  "Maghnes Akliouche": ["gffn-monaco"]
-};
+  "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche"],
+  "Fares Ghedjemis": ["yahooSportsFaresGhedjemis"],
+  "Folarin Balogun": ["yahooSportsFolarinBalogun"],
+  "Mathys Detourbet": ["yahooSportsMathysDetourbet"]};
 const WL_LINKMAP = {
   "Maghnes Akliouche": ["gffn-monaco"]
 };
