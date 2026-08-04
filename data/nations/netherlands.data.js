@@ -6,7 +6,7 @@
 const NATION = {
   name: "Netherlands",
   flag_emoji: "🇳🇱",
-  stories_count: 42
+  stories_count: 39
 };
 
 const TOP_STORIES = [  {
@@ -41,7 +41,7 @@ const TOP_STORIES = [  {
     name: "Troy Parrott",prob: 40, truth: 65, bullshit: false,
     club_origin: "az-alkmaar", club_display_name: "AZ Alkmaar", direction: "out",
     from: "AZ Alkmaar", to: "AZ Alkmaar",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed (ETV ~€20m)", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
@@ -87,13 +87,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Eredivisie"
   },
   {
-    name: "Calvin Twigt",prob: 30, truth: 75, bullshit: false,
-    club_origin: "go-ahead-eagles", club_display_name: "Go Ahead Eagles", direction: "out",
-    from: "Go Ahead Eagles", to: "Willem II",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-04T14:30:00Z", league: "Eredivisie"
-  },
-  {
     name: "Dirk Proper",prob: 30, truth: 55, bullshit: false,
     club_origin: "rotterdam-sparta", club_display_name: "Sparta Rotterdam", direction: "in",
     from: "NEC Nijmegen", to: "Sparta Rotterdam",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~€10m (mooted)", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
+  {
+    name: "In-beom Hwang",prob: 80, truth: 75, bullshit: false,
+    club_origin: "feyenoord", club_display_name: "Feyenoord Rotterdam", direction: "out",
+    from: "Feyenoord Rotterdam", to: "FC Porto",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+  },
 ];
 
-const BY_LEAGUE = {"Eredivisie": 42, "Eerste Divisie": 0};
+const BY_LEAGUE = {"Eredivisie": 39, "Eerste Divisie": 0};
 
-const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 42}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
+const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 39}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T15:47:58.922206Z",
+  updated: "2026-08-04T16:48:29.196748Z",
   label: "Nation aggregation"
 };

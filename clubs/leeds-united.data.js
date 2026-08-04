@@ -77,8 +77,6 @@ const INCOMING = [
    note:"Rising on a fresh thread: West Ham, relegated, have reportedly made a decision on his future and an Elland Road return is 'on the cards'. Leeds' 2023/24 Championship Player of the Season already knows the club and Farke's system, an exact tactical and emotional fit. OBSTACLE: West Ham will want a fee recouping much of their outlay, plus his wages, but he is on-model as a proven, resale-age wide forward."},
   {name:"Roony Bardghji", sub:"20 · Sweden · RW", club:"Barcelona", pos:"RW", report:"3 Jun 2026", src:"TEAMtalk / Yorkshire Post", tier:3, fee:"£15-25m / loan", truth:50, prob:25, light:'o', trend:'up',
    note:"Fresh and rising: with Barcelona's summer plans set to squeeze the 20-year-old out, Leeds are reported ready to follow up a long-standing interest and are credited as a leading suitor. On-profile (young, high-ceiling, resale). OBSTACLES: a crowded six-club PL scramble (Sunderland, Villa, Brighton, Brentford, Everton also in), and the player's reported preference for a loan-back to Barcelona, which would give Leeds development value but no resale upside."},
-  {name:"Danilho Doekhi", sub:"CB · Netherlands", club:"Union Berlin", pos:"CB", report:"~2 days ago", src:"Aggregated / German press", tier:3, fee:"£8-12m", truth:55, prob:30, light:'y', trend:'up',
-   note:"Fresh and on-model: a departing Union Berlin centre-back, Leeds 'prominently mentioned'. Addresses a clear CB need at a sensible fee. Obstacle: only T3 sourcing, other clubs in the mix, window shut until 15 Jun."},
   {name:"Hayden Hackney", sub:"23 · England · CM", club:"Middlesbrough", pos:"CM", report:"~5 days ago", src:"Alan Nixon", tier:3, fee:"£18-20m", truth:55, prob:30, light:'y', trend:'up',
    note:"Young British central midfielder, exactly the resale-friendly profile, and useful cover if Tanaka leaves. Obstacle: Boro want ~£20m for a Championship player and six PL clubs are reportedly monitoring."},
   {name:"Jonathan David", sub:"ST · Canada", club:"Juventus", pos:"ST", report:"~2 days ago", src:"TEAMtalk", tier:3, fee:"Loan", truth:53, prob:28, light:'o', trend:'up',
@@ -98,9 +96,7 @@ const INCOMING = [
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
    note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh."},
   {name:"Troy Parrott", sub:"ST · Ireland", club:"AZ Alkmaar", pos:"ST", report:"~7 wks", src:"Aggregated", tier:3, fee:"£12-16m", truth:41, prob:16, light:'o', trend:'down',
-   note:"Earlier framed as a 'key target' for the striker hunt, but the link has gone quiet for weeks. Stays alive only on the strength of the underlying need."},
-  {name:"Konstantinos Karetsas", sub:"AM · Belgium/Greece", club:"Genk", pos:"AM", report:"~4 wks", src:"TEAMtalk", tier:3, fee:"£10-15m", truth:41, prob:16, light:'o', trend:'flat',
-   note:"TEAMtalk reports a 'firm interest' in the young playmaker, who would get earlier game-time at Leeds than at bigger suitors. Obstacle: a developmental rather than first-XI signing, no progression reported."},
+   note:"Earlier framed as a 'key target' for the striker hunt, but the link has gone quiet for weeks. Stays alive only on the strength of the underlying need."}
 ];
 
 const OUTGOING = [

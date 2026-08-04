@@ -54,7 +54,6 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Nils Rossen", sub:"MF, 21", club:"Telstar", pos:"MF", report:"Willem II have tabled a bid with Telstar for the young midfielder as they look to add competition centrally.", src:"Brabants Dagblad (via Tilbo transfer blog)", tier:3, fee:"Bid submitted, undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Late Jul 2026."},
-  {name:"Calvin Twigt", sub:"MF, 22", club:"Go Ahead Eagles", pos:"MF", report:"Willem II have had several offers turned down by Go Ahead Eagles, who are reluctant to sell.", src:"Tilbo transfer blog", tier:3, fee:"Multiple bids rejected", truth:55, prob:20, light:"o", trend:"flat", note:"Late Jul 2026."},
   {name:"Gijs Besselink", sub:"MF", club:"FC Twente", pos:"MF", report:"Named as a target but Twente have shown no willingness to let him leave.", src:"Tilbo transfer blog", tier:3, fee:"N/A, Twente unwilling to sell", truth:45, prob:15, light:"o", trend:"flat", note:"Late Jul 2026."}
 ];
 

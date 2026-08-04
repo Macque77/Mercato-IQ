@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Serie A",
   nation: "Italy",
-  stories_count: 48
+  stories_count: 46
 };
 
 const TOP_STORIES = [  {
@@ -80,13 +80,6 @@ const TOP_STORIES = [  {
     value: "Loan with €8m option to buy", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Konstantinos Karetsas", prob: 35, truth: 60, bullshit: false,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "Genk", to: "AC Milan",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "~€40m", updated: "2026-08-03T14:30:00Z"
-  },
-  {
     name: "Santiago Castro", prob: 35, truth: 55, bullshit: false,
     club_origin: "bologna", club_display_name: "Bologna", direction: "out",
     from: "Bologna", to: "AS Roma",
@@ -149,14 +142,21 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€25m (asking price)", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Edinson Cavani", prob: 30, truth: 55, bullshit: false,
+    club_origin: "lecce", club_display_name: "US Lecce", direction: "in",
+    from: "Free agent (ex-Boca Juniors)", to: "US Lecce",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-08-03T14:30:00Z"
+  },
 ];
 
-const BY_CLUB = {"sassuolo": 3, "parma": 3, "monza": 4, "torino": 6, "genoa": 1, "as-roma": 3, "como": 1, "juventus": 2, "ac-milan": 3, "bologna": 4, "fiorentina": 7, "lazio": 1, "udinese": 1, "napoli": 4, "lecce": 2, "venezia": 1, "inter-milan": 1, "cagliari": 1};
+const BY_CLUB = {"sassuolo": 3, "parma": 3, "monza": 4, "torino": 5, "genoa": 1, "as-roma": 3, "como": 1, "juventus": 2, "bologna": 4, "fiorentina": 7, "lazio": 1, "udinese": 1, "napoli": 4, "lecce": 2, "ac-milan": 2, "venezia": 1, "inter-milan": 1, "cagliari": 1};
 
-const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 3, "badge": true, "primary": "#DC143C", "primaryBright": "#FF3333"}, {"slug": "monza", "name": "AC Monza", "count": 4, "badge": true, "primary": "#E4032E", "primaryBright": "#FF4D6D"}, {"slug": "as-roma", "name": "AS Roma", "count": 3, "badge": true, "primary": "#FDBF08", "primaryBright": "#FFD000"}, {"slug": "atalanta", "name": "Atalanta", "count": 0, "badge": true, "primary": "#1B5AA5", "primaryBright": "#5CA9FF"}, {"slug": "bologna", "name": "Bologna", "count": 4, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "cagliari", "name": "Cagliari", "count": 1, "badge": true, "primary": "#B30000", "primaryBright": "#FF6259"}, {"slug": "como", "name": "Como 1907", "count": 1, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "fiorentina", "name": "Fiorentina", "count": 7, "badge": true, "primary": "#5B2A83", "primaryBright": "#8B4FC4"}, {"slug": "frosinone", "name": "Frosinone", "count": 0, "badge": true, "primary": "#00539C", "primaryBright": "#4D8FD1"}, {"slug": "genoa", "name": "Genoa", "count": 1, "badge": true, "primary": "#C8102E", "primaryBright": "#FF4D5E"}, {"slug": "inter-milan", "name": "Inter Milan", "count": 1, "badge": true, "primary": "#0066CC", "primaryBright": "#0080FF"}, {"slug": "juventus", "name": "Juventus", "count": 2, "badge": true, "primary": "#000000", "primaryBright": "#333333"}, {"slug": "lazio", "name": "Lazio", "count": 1, "badge": true, "primary": "#6CACE4", "primaryBright": "#A8D8FF"}, {"slug": "napoli", "name": "Napoli", "count": 4, "badge": true, "primary": "#0090D0", "primaryBright": "#4DC3FF"}, {"slug": "parma", "name": "Parma", "count": 3, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "torino", "name": "Torino", "count": 6, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}, {"slug": "lecce", "name": "US Lecce", "count": 2, "badge": true, "primary": "#FFE500", "primaryBright": "#FFF066"}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 3, "badge": true, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "udinese", "name": "Udinese", "count": 1, "badge": true, "primary": "#1A1A1A", "primaryBright": "#595959"}, {"slug": "venezia", "name": "Venezia", "count": 1, "badge": true, "primary": "#FF7900", "primaryBright": "#FFA85C"}];
+const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 2, "badge": true, "primary": "#DC143C", "primaryBright": "#FF3333"}, {"slug": "monza", "name": "AC Monza", "count": 4, "badge": true, "primary": "#E4032E", "primaryBright": "#FF4D6D"}, {"slug": "as-roma", "name": "AS Roma", "count": 3, "badge": true, "primary": "#FDBF08", "primaryBright": "#FFD000"}, {"slug": "atalanta", "name": "Atalanta", "count": 0, "badge": true, "primary": "#1B5AA5", "primaryBright": "#5CA9FF"}, {"slug": "bologna", "name": "Bologna", "count": 4, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "cagliari", "name": "Cagliari", "count": 1, "badge": true, "primary": "#B30000", "primaryBright": "#FF6259"}, {"slug": "como", "name": "Como 1907", "count": 1, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "fiorentina", "name": "Fiorentina", "count": 7, "badge": true, "primary": "#5B2A83", "primaryBright": "#8B4FC4"}, {"slug": "frosinone", "name": "Frosinone", "count": 0, "badge": true, "primary": "#00539C", "primaryBright": "#4D8FD1"}, {"slug": "genoa", "name": "Genoa", "count": 1, "badge": true, "primary": "#C8102E", "primaryBright": "#FF4D5E"}, {"slug": "inter-milan", "name": "Inter Milan", "count": 1, "badge": true, "primary": "#0066CC", "primaryBright": "#0080FF"}, {"slug": "juventus", "name": "Juventus", "count": 2, "badge": true, "primary": "#000000", "primaryBright": "#333333"}, {"slug": "lazio", "name": "Lazio", "count": 1, "badge": true, "primary": "#6CACE4", "primaryBright": "#A8D8FF"}, {"slug": "napoli", "name": "Napoli", "count": 4, "badge": true, "primary": "#0090D0", "primaryBright": "#4DC3FF"}, {"slug": "parma", "name": "Parma", "count": 3, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "torino", "name": "Torino", "count": 5, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}, {"slug": "lecce", "name": "US Lecce", "count": 2, "badge": true, "primary": "#FFE500", "primaryBright": "#FFF066"}, {"slug": "sassuolo", "name": "US Sassuolo", "count": 3, "badge": true, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "udinese", "name": "Udinese", "count": 1, "badge": true, "primary": "#1A1A1A", "primaryBright": "#595959"}, {"slug": "venezia", "name": "Venezia", "count": 1, "badge": true, "primary": "#FF7900", "primaryBright": "#FFA85C"}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T15:47:58.949558Z",
+  updated: "2026-08-04T16:48:29.225284Z",
   label: "League aggregation"
 };

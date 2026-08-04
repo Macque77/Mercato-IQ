@@ -7,7 +7,14 @@
 # the schema documented at the top of engine/inject_research.py.
 #
 # This script is Phase 2: given that JSON, get it live on the site.
-#   inject -> node --check (syntax gate) -> aggregate -> rebuild -> verify -> commit
+#   inject -> node --check (syntax gate) -> stale-rumour scan -> aggregate -> rebuild -> verify -> commit
+#
+# The stale-rumour scan (engine/detect_stale_rumours.py, added 2026-08-04) runs
+# site-wide every time, not just on the clubs this batch touched -- a newly-injected
+# CONFIRMED_IN on one club can kill a still-live rumour on a completely different
+# club's page (e.g. Player X confirmed signing for Club A should retire any other
+# club's "targeting Player X" rumour), so it has to check the whole site, not just
+# what this batch changed.
 # (push is automatic: .git/hooks/post-commit pushes to origin/main on every commit)
 #
 # Usage:
@@ -53,17 +60,27 @@ if [ "$FAILED" -eq 1 ]; then
   exit 2
 fi
 
-echo "=== [3/6] Re-aggregate (global/nation/league data) ==="
+echo "=== [3/7] Stale-rumour scan (site-wide: catches rumours a NEW confirmed deal just killed, on this club or any other) ==="
+rm -f .stale_touched_slugs
+python3 engine/detect_stale_rumours.py
+if [ -f .stale_touched_slugs ]; then
+  STALE_SLUGS=$(cat .stale_touched_slugs)
+  echo "(stale-rumour cleanup touched: $(echo $STALE_SLUGS | tr '\n' ' '))"
+  SLUGS=$(printf '%s\n%s\n' "$SLUGS" "$STALE_SLUGS" | sort -u | sed '/^$/d')
+  rm -f .stale_touched_slugs
+fi
+
+echo "=== [4/7] Re-aggregate (global/nation/league data) ==="
 python3 engine/aggregate.py
 
-echo "=== [4/6] Rebuild touched club pages + all landing pages ==="
+echo "=== [5/7] Rebuild touched club pages + all landing pages ==="
 for slug in $SLUGS; do
   python3 engine/build_extended.py "$slug"
 done
 python3 engine/build_extended.py --batch-landing-pages
 
 if [ "${SKIP_VERIFY:-0}" != "1" ]; then
-  echo "=== [5/6] Verify (Playwright sweep) ==="
+  echo "=== [6/7] Verify (Playwright sweep) ==="
   if [ "${FULL_VERIFY:-0}" = "1" ]; then
     node engine/verify_site.js
   else
@@ -75,16 +92,16 @@ if [ "${SKIP_VERIFY:-0}" != "1" ]; then
     exit 3
   fi
 else
-  echo "=== [5/6] Verify -- SKIPPED (SKIP_VERIFY=1) ==="
+  echo "=== [6/7] Verify -- SKIPPED (SKIP_VERIFY=1) ==="
 fi
 
 if [ "${NO_COMMIT:-0}" = "1" ]; then
-  echo "=== [6/6] Commit -- SKIPPED (NO_COMMIT=1). Changes are staged in the working tree only. ==="
+  echo "=== [7/7] Commit -- SKIPPED (NO_COMMIT=1). Changes are staged in the working tree only. ==="
   rm -f .last_injected_slugs
   exit 0
 fi
 
-echo "=== [6/6] Commit + push (push is automatic via post-commit hook) ==="
+echo "=== [7/7] Commit + push (push is automatic via post-commit hook) ==="
 rm -f .last_injected_slugs
 git add -A
 git commit -m "Research sync: update $(echo $SLUGS | tr '\n' ' ')" || echo "Nothing to commit (rebuild produced no diff)."

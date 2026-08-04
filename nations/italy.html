@@ -505,8 +505,9 @@
 
   .club-name {
     font-family:var(--mono);
-    font-size:10px;
-    color:var(--text-muted);
+    font-size:12px;
+    font-weight:600;
+    color:var(--text);
   }
 
   .card-body {
@@ -663,7 +664,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">59</span>
+          <span class="stat-value">57</span>
         </div>
       </div>
     </div>
@@ -700,7 +701,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 59
+  stories_count: 57
 };
 
 const TOP_STORIES = [  {
@@ -774,13 +775,6 @@ const TOP_STORIES = [  {
     value: "Loan with €8m option to buy", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Konstantinos Karetsas",prob: 35, truth: 60, bullshit: false,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "Genk", to: "AC Milan",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "~€40m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
     name: "Santiago Castro",prob: 35, truth: 55, bullshit: false,
     club_origin: "bologna", club_display_name: "Bologna", direction: "out",
     from: "Bologna", to: "AS Roma",
@@ -808,15 +802,22 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
+  {
+    name: "Sergi Dominguez",prob: 35, truth: 55, bullshit: false,
+    club_origin: "lazio", club_display_name: "Lazio", direction: "in",
+    from: "Dinamo Zagreb", to: "Lazio",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
 ];
 
-const BY_LEAGUE = {"Serie A": 48, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 46, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 48}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 46}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T15:47:58.921728Z",
+  updated: "2026-08-04T16:48:29.196303Z",
   label: "Nation aggregation"
 };
 

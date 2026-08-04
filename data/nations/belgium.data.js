@@ -6,7 +6,7 @@
 const NATION = {
   name: "Belgium",
   flag_emoji: "🇧🇪",
-  stories_count: 14
+  stories_count: 13
 };
 
 const TOP_STORIES = [  {
@@ -66,13 +66,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Denzel Dumfries",prob: 22, truth: 45, bullshit: false,
-    club_origin: "rsc-anderlecht", club_display_name: "RSC Anderlecht", direction: "in",
-    from: "Inter Milan", to: "RSC Anderlecht",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
-  },
-  {
     name: "Anouar Ait El-Hadj",prob: 20, truth: 45, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
     from: "Union Saint-Gilloise", to: "Undisclosed",
@@ -109,12 +102,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Pro League": 14, "Challenger Pro League": 0, "Division 1": 0};
+const BY_LEAGUE = {"Pro League": 13, "Challenger Pro League": 0, "Division 1": 0};
 
-const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 14}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
+const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 13}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T15:47:58.919032Z",
+  updated: "2026-08-04T16:48:29.193834Z",
   label: "Nation aggregation"
 };

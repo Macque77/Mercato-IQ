@@ -43,7 +43,6 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Konstantinos Karetsas", sub:"18 · AM · Belgium/Greece", club:"Genk", pos:"AM", report:"1 Aug 2026", src:"Football Italia", tier:2, fee:"~€40m", truth:60, prob:35, light:"y", trend:"up", note:"Described as Milan's 'current favourite' for the attacking-midfield slot, though Borussia Dortmund are also credited with interest at the same valuation."},
   {name:"Kerim Alajbegović", sub:"18 · W · Bosnia", club:"Bayer Leverkusen", pos:"W", report:"1 Aug 2026", src:"Football Italia", tier:3, fee:"€25-30m", truth:45, prob:20, light:"o", trend:"flat", note:"Named as an alternative to Karetsas, but Juventus and Premier League clubs are also credited with interest in the same player."},
   {name:"Can Uzun", sub:"20 · AM · Turkey/Germany", club:"Eintracht Frankfurt", pos:"AM", report:"1 Aug 2026", src:"Football Italia", tier:3, fee:"~€25m", truth:42, prob:18, light:"o", trend:"flat", note:"A third name floated for the same attacking-midfield slot; nothing beyond exploratory interest reported yet."}
 ];

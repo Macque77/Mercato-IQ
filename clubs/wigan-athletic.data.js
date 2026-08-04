@@ -37,7 +37,6 @@ const INCOMING = [
   {name:"Joe Walsh", sub:"DF", club:"QPR", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Wigan reportedly closing in on the capture."}
 ];
 const OUTGOING = [
-  {name:"Sam Tickle", sub:"GK", club:"QPR / Bristol City", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"£1.5-2m bid", truth:55, prob:40, light:'y', trend:'flat', note:"Wigan reportedly valuing him higher at £2.5-3m with no release clause, holding firm."}
 ];
 const RISERS = [];
 const FALLERS = [];
