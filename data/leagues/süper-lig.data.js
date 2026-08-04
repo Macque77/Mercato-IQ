@@ -17,16 +17,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Iván Cedric", prob: 80, truth: 85, bullshit: false,
-    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
-    from: "Vanspor FK", to: "Alanyaspor",
+    name: "Nariman Akhundzada", prob: 80, truth: 90, bullshit: false,
+    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
+    from: "Columbus Crew", to: "Erzurumspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Nariman Akhundzada", prob: 80, truth: 90, bullshit: false,
-    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
-    from: "Columbus Crew", to: "Erzurumspor",
+    name: "Iván Cedric", prob: 80, truth: 85, bullshit: false,
+    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
+    from: "Vanspor FK", to: "Alanyaspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
@@ -108,6 +108,10 @@ const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
+<<<<<<< HEAD
   updated: "2026-08-04T16:48:29.229476Z",
+=======
+  updated: "2026-08-04T16:21:25.920726Z",
+>>>>>>> origin/main
   label: "League aggregation"
 };
