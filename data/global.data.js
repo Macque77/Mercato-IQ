@@ -213,19 +213,6 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
-    headline: "Mehmet Topal",
-    club_display_name: "Fenerbahçe SK",
-    summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
-    value: "Contract renewal",
-    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
-    direction: "in",
-    prob: 85, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Turkey", league: "Super Lig",
-    club_link: "fenerbahce",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Udoka Godwin-Malife",
     club_display_name: "Reading",
     summary: "",
@@ -237,6 +224,19 @@ const HEADLINES = [
     nation: "England", league: "League One",
     club_link: "reading",
     updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Mehmet Topal",
+    club_display_name: "Fenerbahçe SK",
+    summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
+    value: "Contract renewal",
+    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
+    direction: "in",
+    prob: 85, trend: 'flat', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Super Lig",
+    club_link: "fenerbahce",
+    updated: "2026-08-03T14:30:00Z"
   },
   {
     headline: "Pepe",
@@ -317,6 +317,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Altay Bayindir",
+    club_display_name: "RC Celta",
+    summary: "",
+    value: "TBC",
+    from: "Manchester United", to: "RC Celta",
+    direction: "in",
+    prob: 65, trend: 'up', bullshit: false,
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "celta-vigo",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
     headline: "Ike Ugbo",
     club_display_name: "Sheffield Wednesday",
     summary: "Club reportedly willing to sell or loan before the 1 September deadline.",
@@ -341,19 +354,6 @@ const HEADLINES = [
     nation: "Netherlands", league: "Eredivisie",
     club_link: "psv-eindhoven",
     updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Altay Bayindir",
-    club_display_name: "RC Celta",
-    summary: "",
-    value: "TBC",
-    from: "Manchester United", to: "RC Celta",
-    direction: "in",
-    prob: 65, trend: 'up', bullshit: false,
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "celta-vigo",
-    updated: "2026-08-03T18:00:00Z"
   },
   {
     headline: "Maghnes Akliouche",
@@ -460,19 +460,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Daniel Jebbison",
-    club_display_name: "Preston North End",
-    summary: "",
-    value: "Loan + option",
-    from: "Preston North End", to: "Blackburn Rovers",
-    direction: "out",
-    prob: 55, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "preston-north-end",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
     headline: "Jahnoah Markelo",
     club_display_name: "Rangers",
     summary: "Rangers reportedly in talks for the defender.",
@@ -484,6 +471,19 @@ const HEADLINES = [
     nation: "Scotland", league: "Premiership",
     club_link: "rangers",
     updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Daniel Jebbison",
+    club_display_name: "Blackburn Rovers",
+    summary: "",
+    value: "Loan + option",
+    from: "Preston North End", to: "Blackburn Rovers",
+    direction: "in",
+    prob: 55, trend: 'up', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "blackburn-rovers",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Eseosa Sule",
@@ -551,19 +551,6 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
-    headline: "Ilias Akhomach",
-    club_display_name: "Rayo Vallecano",
-    summary: "",
-    value: "Undisclosed",
-    from: "Villarreal", to: "Rayo Vallecano",
-    direction: "in",
-    prob: 50, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "rayo-vallecano",
-    updated: "2026-08-03T18:00:00Z"
-  },
-  {
     headline: "Divin Mubama",
     club_display_name: "Derby County",
     summary: "O'Rourke is a credible EFL-focused reporter and the logic stacks up given Derby'",
@@ -575,6 +562,19 @@ const HEADLINES = [
     nation: "England", league: "Championship",
     club_link: "derby-county",
     updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Ilias Akhomach",
+    club_display_name: "Rayo Vallecano",
+    summary: "",
+    value: "Undisclosed",
+    from: "Villarreal", to: "Rayo Vallecano",
+    direction: "in",
+    prob: 50, trend: 'flat', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "rayo-vallecano",
+    updated: "2026-08-03T18:00:00Z"
   },
   {
     headline: "Başar Önal",
@@ -629,19 +629,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Lucas Perri",
-    club_display_name: "Torino",
-    summary: "",
-    value: "Undisclosed",
-    from: "Leeds United", to: "Torino",
-    direction: "in",
-    prob: 48, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "torino",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Florian Thauvin",
     club_display_name: "Olympique Lyonnais",
     summary: "RMC reports Lyon in talks with the veteran winger after his Udinese exit.",
@@ -652,6 +639,19 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "France", league: "Ligue 1",
     club_link: "olympique-lyon",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Lucas Perri",
+    club_display_name: "Torino",
+    summary: "",
+    value: "Undisclosed",
+    from: "Leeds United", to: "Torino",
+    direction: "in",
+    prob: 48, trend: 'up', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "torino",
     updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T10:32:37.940651Z",
+  updated: "2026-08-04T10:34:43.860523Z",
   label: "Global aggregation from all clubs"
 };
