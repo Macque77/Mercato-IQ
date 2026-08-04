@@ -515,6 +515,8 @@
 
   .metric-fill {
     height:100%;
+    /* Fallback only -- actual colour is set inline per-card by metricGradient(), driven
+       by the value itself (see script below), so this static gradient is rarely seen. */
     background:linear-gradient(90deg, var(--accent-gold), var(--accent-red));
     border-radius:999px;
   }
@@ -1492,6 +1494,23 @@ function relativeTime(iso) {
   return diffDay + 'd ago';
 }
 
+// Prob metric bar: colour driven by the value itself, on the same four-band scale as
+// the decoder legend (Likely 50%+ / Live in the mix / Long shot / Unlikely). Bands
+// match the site-wide light-band rule: g>50, y>=30, o>=15, r<15.
+// Declared before the render IIFE below so it's initialised before first use.
+const METRIC_BAND_COLORS = { g: '46,204,113', y: '232,194,73', o: '243,156,18', r: '255,61,71' };
+function metricBand(v) {
+  const n = Number(v) || 0;
+  if (n > 50) return 'g';
+  if (n >= 30) return 'y';
+  if (n >= 15) return 'o';
+  return 'r';
+}
+function metricGradient(v) {
+  const rgb = METRIC_BAND_COLORS[metricBand(v)];
+  return `linear-gradient(90deg, rgba(${rgb},0.45), rgb(${rgb}))`;
+}
+
 (function(){
   // Populate header status strip (live indicator + last-updated + headline count)
   const statusEl = document.getElementById('header-status');
@@ -1541,10 +1560,11 @@ function relativeTime(iso) {
     }).join('');
   }
 
-  // Populate headlines feed
+  // Populate headlines feed -- ranked by likelihood (Probability) descending
   if(typeof HEADLINES !== 'undefined' && HEADLINES && HEADLINES.length > 0) {
     const feed = document.getElementById('feed');
-    feed.innerHTML = HEADLINES.map(h => renderHeadline(h)).join('');
+    const ranked = HEADLINES.slice().sort((a, b) => (b.prob || 0) - (a.prob || 0));
+    feed.innerHTML = ranked.map(h => renderHeadline(h)).join('');
   }
 })();
 
@@ -1553,6 +1573,7 @@ function slugifyName(s) {
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
+
 
 function renderHeadline(h) {
   const tier = h.tier || 3;
@@ -1585,7 +1606,7 @@ function renderHeadline(h) {
     <div class="card-footer">
       <div class="metric">
         <div class="metric-label">Prob</div>
-        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
       </div>
     </div>

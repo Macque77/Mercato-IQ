@@ -335,6 +335,8 @@
 
   .metric-fill {
     height:100%;
+    /* Fallback only -- actual colour is set inline per-card by metricGradient(), driven
+       by the value itself (see script below), so this static gradient is rarely seen. */
     background:linear-gradient(90deg, var(--accent-gold), var(--primary-bright));
     border-radius:999px;
   }
@@ -819,6 +821,25 @@ const PROSE = {
 
 var __cardSeq = 0;
 
+// Truth/Probability metric bars: colour is driven by the value itself, on the same
+// four-band scale as the decoder legend (Likely 50%+ / Live in the mix / Long shot /
+// Unlikely). A low reading now genuinely reads red, a high one genuinely reads green,
+// instead of every bar sharing one fixed gold-to-brand-colour gradient regardless of
+// value. Bands match the site-wide light-band rule: g>50, y>=30, o>=15, r<15.
+// Declared before the render IIFE below so it's initialised before first use.
+const METRIC_BAND_COLORS = { g: '46,204,113', y: '232,194,73', o: '243,156,18', r: '255,61,71' };
+function metricBand(v) {
+  const n = Number(v) || 0;
+  if (n > 50) return 'g';
+  if (n >= 30) return 'y';
+  if (n >= 15) return 'o';
+  return 'r';
+}
+function metricGradient(v) {
+  const rgb = METRIC_BAND_COLORS[metricBand(v)];
+  return `linear-gradient(90deg, rgba(${rgb},0.45), rgb(${rgb}))`;
+}
+
 (function(){
   const rs = document.documentElement.style;
   if(typeof BRAND !== 'undefined') {
@@ -858,17 +879,17 @@ var __cardSeq = 0;
     confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
   }
 
-  // Render incoming rumours
+  // Render incoming rumours -- ranked by likelihood (Probability) descending
   const rumors = document.getElementById('rumors');
   if(rumors) {
-    const items = (typeof INCOMING !== 'undefined') ? INCOMING : [];
+    const items = ((typeof INCOMING !== 'undefined') ? INCOMING : []).slice().sort((a, b) => (b.prob || 0) - (a.prob || 0));
     rumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active incoming rumours yet</div>';
   }
 
-  // Render outgoing rumours
+  // Render outgoing rumours -- ranked by likelihood (Probability) descending
   const outRumors = document.getElementById('outgoing-rumors');
   if(outRumors) {
-    const items = (typeof OUTGOING !== 'undefined') ? OUTGOING : [];
+    const items = ((typeof OUTGOING !== 'undefined') ? OUTGOING : []).slice().sort((a, b) => (b.prob || 0) - (a.prob || 0));
     outRumors.innerHTML = items.length ? items.map(t => renderCard(t, _LM, _HUB)).join('') : '<div class="empty">No active outgoing rumours yet</div>';
   }
 
@@ -971,12 +992,12 @@ function renderCard(t, linkMap, hub) {
     <div class="card-footer">
       <div class="metric">
         <div class="metric-label">Truth</div>
-        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%"></div></div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
         <div class="metric-value">${truth}%</div>
       </div>
       <div class="metric">
         <div class="metric-label">Probability</div>
-        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
       </div>
     </div>

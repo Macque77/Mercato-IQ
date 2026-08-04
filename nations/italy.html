@@ -403,6 +403,8 @@
 
   .metric-fill {
     height:100%;
+    /* Fallback only -- actual colour is set inline per-card by metricGradient(), driven
+       by the value itself (see script below), so this static gradient is rarely seen. */
     background:linear-gradient(90deg, var(--accent-gold), var(--accent-red));
     border-radius:999px;
   }
@@ -650,6 +652,23 @@ const REPORT_META = {
 
 /*==ENDDATA==*/
 
+// Prob metric bar: colour driven by the value itself, on the same four-band scale as
+// the decoder legend (Likely 50%+ / Live in the mix / Long shot / Unlikely). Bands
+// match the site-wide light-band rule: g>50, y>=30, o>=15, r<15.
+// Declared before the render IIFE below so it's initialised before first use.
+const METRIC_BAND_COLORS = { g: '46,204,113', y: '232,194,73', o: '243,156,18', r: '255,61,71' };
+function metricBand(v) {
+  const n = Number(v) || 0;
+  if (n > 50) return 'g';
+  if (n >= 30) return 'y';
+  if (n >= 15) return 'o';
+  return 'r';
+}
+function metricGradient(v) {
+  const rgb = METRIC_BAND_COLORS[metricBand(v)];
+  return `linear-gradient(90deg, rgba(${rgb},0.45), rgb(${rgb}))`;
+}
+
 (function(){
   // Populate leagues grid. aggregate.py emits this array as LEAGUES_LIST with a
   // {slug,name,count} shape -- NOT "LEAGUES" / "club_count" (that mismatch used to leave
@@ -667,10 +686,11 @@ const REPORT_META = {
     if(container) container.innerHTML = '<div class="empty">No league data yet</div>';
   }
 
-  // Populate transfer stories
+  // Populate transfer stories -- ranked by likelihood (Probability) descending
   if(typeof TOP_STORIES !== 'undefined' && TOP_STORIES && TOP_STORIES.length > 0) {
     const container = document.getElementById('stories');
-    container.innerHTML = TOP_STORIES.map(s => renderStory(s)).join('');
+    const ranked = TOP_STORIES.slice().sort((a, b) => (b.prob || 0) - (a.prob || 0));
+    container.innerHTML = ranked.map(s => renderStory(s)).join('');
   } else {
     const container = document.getElementById('stories');
     if(container) container.innerHTML = '<div class="empty">No stories yet</div>';
@@ -682,6 +702,7 @@ function slugifyName(s) {
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
+
 
 function renderStory(s) {
   const tier = s.tier || 3;
@@ -714,7 +735,7 @@ function renderStory(s) {
     <div class="card-footer">
       <div class="metric">
         <div class="metric-label">Prob</div>
-        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%"></div></div>
+        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
         <div class="metric-value">${prob}%</div>
       </div>
     </div>
