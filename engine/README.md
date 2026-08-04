@@ -27,11 +27,38 @@ attached "Mercato" Claude Project) before changing anything.
   - `python3 engine/build_extended.py --batch-landing-pages` -- rebuild every
     nation page, league page, and index.html
 
-## The two-phase research pipeline
+## The pipeline: Phase 0 (poll) -> Phase 1 (research) -> Phase 2 (apply)
 
 Genuinely new transfer information can only come from a research step that can
 read the web and judge sources -- i.e. an LLM, not a cron job. So the pipeline
-is split in two, and only Phase 2 is a script:
+is split up, and only Phase 2 is a plain script:
+
+**Phase 0 -- POLL (cheap pre-filter, agent + script together).** This
+sandbox's outbound network is allowlisted and blocks direct `curl`/`urllib`
+calls to arbitrary domains (confirmed 2026-08-04: bbc.co.uk, google.com etc.
+all get a 403 tunnel error; only package registries like pypi work). So a
+plain polling script can't fetch anything itself -- only the `WebFetch`/
+`WebSearch` *tools* can reach the open web. The pattern:
+
+```
+1. Agent calls WebFetch on https://feeds.bbci.co.uk/sport/football/rss.xml,
+   prompting it to return every <item> as a verbatim JSON array of
+   {title, link, guid, pubDate} (extraction, not summarization -- the model
+   handles this faithfully).
+2. Save that JSON to a file, e.g. /tmp/bbc_items.json.
+3. python3 engine/poll_feeds.py --input /tmp/bbc_items.json --source "BBC Sport Football"
+   -- filters out anything already seen (engine/.feed_seen.json) and anything
+   that doesn't match a loose transfer-keyword regex, prints the rest as leads.
+4. Commit engine/.feed_seen.json (small file, git add -A picks it up) so the
+   next poll -- even from a fresh clone -- doesn't re-report the same items.
+```
+
+A hit from Phase 0 is a *lead*, not something to inject verbatim -- it tells
+Phase 1 what's worth chasing down properly (who's reporting it, source link,
+truth/prob rating), especially useful for deciding whether an on-demand
+deadline-day check is worth a full research pass or can skip straight to "no
+change, skip". `engine/poll_feeds.py --input <file> --json|--quiet` are the
+machine-readable/exit-code forms for scripting this decision.
 
 **Phase 1 -- RESEARCH (an agent/LLM step, not a script).** Search reliable
 sources (Fabrizio Romano, Gianluca Di Marzio, Nicolo Schira, and reputable
