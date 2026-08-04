@@ -143,11 +143,11 @@ const TOP_STORIES = [  {
     value: "Valued at ~€5m", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Mert Kömür", prob: 35, truth: 65, bullshit: false,
-    club_origin: "1-fc-augsburg", club_display_name: "FC Augsburg", direction: "out",
-    from: "FC Augsburg", to: "Hull City",
+    name: "Eren Dinkci", prob: 35, truth: 60, bullshit: false,
+    club_origin: "werder-bremen", club_display_name: "Werder Bremen", direction: "in",
+    from: "SC Freiburg", to: "Werder Bremen",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+    value: "Not specified", updated: "2026-08-03T14:30:00Z"
   },
 ];
 
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "union-berlin", "name": "1. FC Union Berlin", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T19:13:02.044043Z",
+  updated: "2026-08-04T19:16:02.753398Z",
   label: "League aggregation"
 };

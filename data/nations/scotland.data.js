@@ -6,7 +6,7 @@
 const NATION = {
   name: "Scotland",
   flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-  stories_count: 15
+  stories_count: 16
 };
 
 const TOP_STORIES = [  {
@@ -29,6 +29,13 @@ const TOP_STORIES = [  {
     from: "Torino", to: "Celtic",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "~£12m", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Alistair Johnston",prob: 60, truth: 65, bullshit: false,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "out",
+    from: "Celtic", to: "Everton / Fulham",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
     name: "Jahnoah Markelo",prob: 55, truth: 65, bullshit: false,
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
-  {
-    name: "Calvin Miller",prob: 10, truth: 20, bullshit: false,
-    club_origin: "falkirk", club_display_name: "Falkirk", direction: "out",
-    from: "Falkirk", to: "Celtic",
-    tier: 4, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
-  },
 ];
 
-const BY_LEAGUE = {"Premiership": 15};
+const BY_LEAGUE = {"Premiership": 16};
 
-const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 15}];
+const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 16}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T19:13:02.041503Z",
+  updated: "2026-08-04T19:16:02.751546Z",
   label: "Nation aggregation"
 };

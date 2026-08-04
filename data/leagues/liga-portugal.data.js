@@ -6,17 +6,10 @@
 const LEAGUE = {
   name: "Liga Portugal",
   nation: "Portugal",
-  stories_count: 18
+  stories_count: 17
 };
 
 const TOP_STORIES = [  {
-    name: "Nestory Irankunda", prob: 45, truth: 55, bullshit: false,
-    club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "in",
-    from: "Watford", to: "Sporting CP",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~€22m (bonuses included)", updated: "2026-07-29T00:00:00Z"
-  },
-  {
     name: "Ahmed Sidibé", prob: 88, truth: 85, bullshit: false,
     club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "in",
     from: "Venezia", to: "Vitória SC",
@@ -108,16 +101,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Oumar Camara", prob: 25, truth: 40, bullshit: false,
-    club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
-    from: "Vitória SC", to: "Vitória Guimarães",
+    name: "Andrew", prob: 25, truth: 40, bullshit: false,
+    club_origin: "braga", club_display_name: "SC Braga", direction: "in",
+    from: "Gil Vicente", to: "SC Braga",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Andrew", prob: 25, truth: 40, bullshit: false,
-    club_origin: "braga", club_display_name: "SC Braga", direction: "in",
-    from: "Gil Vicente", to: "SC Braga",
+    name: "Oumar Camara", prob: 25, truth: 40, bullshit: false,
+    club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
+    from: "Vitória SC", to: "Vitória Guimarães",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
@@ -137,12 +130,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"sporting-cp": 4, "vitoria-guimaraes": 4, "fc-porto": 1, "estoril": 3, "sl-benfica": 2, "arouca": 1, "santa-clara": 2, "braga": 1};
+const BY_CLUB = {"vitoria-guimaraes": 4, "fc-porto": 1, "estoril": 3, "sl-benfica": 2, "sporting-cp": 3, "arouca": 1, "santa-clara": 2, "braga": 1};
 
-const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "tondela", "name": "CD Tondela", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0, "badge": false, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "estoril", "name": "Estoril Praia", "count": 3, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "arouca", "name": "FC Arouca", "count": 1, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "fc-porto", "name": "FC Porto", "count": 1, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "chaves", "name": "GD Chaves", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "braga", "name": "SC Braga", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sl-benfica", "name": "SL Benfica", "count": 2, "badge": true, "primary": "#C60C30", "primaryBright": "#FF2040"}, {"slug": "santa-clara", "name": "Santa Clara", "count": 2, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 4, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 4, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}];
+const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "tondela", "name": "CD Tondela", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "belenenses", "name": "CF Os Belenenses", "count": 0, "badge": false, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "estoril", "name": "Estoril Praia", "count": 3, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "arouca", "name": "FC Arouca", "count": 1, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "fc-porto", "name": "FC Porto", "count": 1, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "chaves", "name": "GD Chaves", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "pacos-ferreira", "name": "Pa\u00e7os de Ferreira", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "braga", "name": "SC Braga", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sl-benfica", "name": "SL Benfica", "count": 2, "badge": true, "primary": "#C60C30", "primaryBright": "#FF2040"}, {"slug": "santa-clara", "name": "Santa Clara", "count": 2, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "sporting-cp", "name": "Sporting CP", "count": 3, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "vitoria-guimaraes", "name": "Vit\u00f3ria SC", "count": 4, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T19:13:02.048961Z",
+  updated: "2026-08-04T19:16:02.756942Z",
   label: "League aggregation"
 };
