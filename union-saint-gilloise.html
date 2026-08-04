@@ -847,10 +847,20 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_IN = [
+  {name:"Keo Boets", sub:"22 · GK · Belgium", club:"Sint-Truiden", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as fourth-choice goalkeeper depth on a one-year deal."}
+];
+const CONFIRMED_OUT = [
+  {name:"Kjell Scherpen", sub:"26 · GK · Netherlands", club:"Ipswich Town", pos:"GK", fee:"~€8-10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Number-one keeper departs for the Premier League after one title-winning season, with a 40% sell-on owed to Brighton."}
+];
+const INCOMING = [
+  {name:"Milan Hokke", sub:"CB · Netherlands", club:"ADO Den Haag", pos:"CB", report:"29 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Below asking price", truth:55, prob:35, light:"y", trend:"flat", note:"Union's bid sits under ADO's valuation, but the player has signalled he wants the move."}
+];
+const OUTGOING = [
+  {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"29 Jul 2026", src:"The Athletic", tier:1, fee:"£17m bid rejected", truth:75, prob:40, light:"y", trend:"flat", note:"Forest's opening bid was rejected after Khalaili's record €25-32m Inter move collapsed on a failed medical; Bournemouth and Newcastle also circling."},
+  {name:"Anouar Ait El-Hadj", sub:"24 · MF", club:"Undisclosed", pos:"MF", report:"3 Aug 2026", src:"La Dernière Heure", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Pointedly left out of Union's Champions League squad for Bodø/Glimt amid exit speculation, though no destination is confirmed."},
+  {name:"Mamadou Barry", sub:"CB", club:"Saudi Pro League club", pos:"CB", report:"26 Jul 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Linked with a Saudi move alongside former teammate Wesley Hoedt."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -859,10 +869,21 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Union-Saint-Gilloise Official", u:"#"}
-};
+  club: {l:"Union-Saint-Gilloise Official", u:"#"},
+  voetbalkrantMilanHokke: {l:"Voetbalkrant", u:"https://www.voetbalkrant.com/nieuws/2026-06-29/union-biedt-ver-onder-de-vraagprijs-maar-krijgt-hulp-ik-wil-de-stap-graag-maken"},
+  theAthleticviaYahooSportsAnanKhalaili: {l:"The Athletic (via Yahoo Sports)", u:"https://sports.yahoo.com/articles/nottingham-forest-17m-bid-anan-101500691.html"},
+  voetbalkrantviaLaDernireHeureAnouarAitElHadj: {l:"Voetbalkrant (via La Dernière Heure)", u:"https://www.voetbalkrant.com/nieuws/2026-08-02/transfergeruchten-zorgen-voor-opvallende-afwezige-bij-union-sg"},
+  voetbalkrantMamadouBarry: {l:"Voetbalkrant", u:"https://www.voetbalkrant.com/nieuws/2026-07-26/een-duo-met-wesley-hoedt-union-sg-kan-verdediger-naar-saudi-arabie-zien-vertrekken"},
+  voetbalkrantKeoBoets: {l:"Voetbalkrant", u:"https://www.voetbalkrant.com/nieuws/2026-07-23/done-deal-union-sg-haalt-nieuwe-doelman-in-huis"},
+  beINSportsKjellScherpen: {l:"beIN Sports", u:"https://www.beinsports.com/en-us/soccer/premier-league/articles/ipswich-continue-summer-spree-by-signing-six-foot-nine-goalkeeper-scherpen-2026-07-28"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Milan Hokke": ["voetbalkrantMilanHokke"],
+  "Anan Khalaili": ["theAthleticviaYahooSportsAnanKhalaili"],
+  "Anouar Ait El-Hadj": ["voetbalkrantviaLaDernireHeureAnouarAitElHadj"],
+  "Mamadou Barry": ["voetbalkrantMamadouBarry"],
+  "Keo Boets": ["voetbalkrantKeoBoets"],
+  "Kjell Scherpen": ["beINSportsKjellScherpen"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

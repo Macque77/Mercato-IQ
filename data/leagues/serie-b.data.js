@@ -66,6 +66,6 @@ const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T10:50:58.886584Z",
+  updated: "2026-08-04T11:12:28.131464Z",
   label: "League aggregation"
 };

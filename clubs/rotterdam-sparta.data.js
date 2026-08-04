@@ -31,8 +31,14 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_OUT = [
+  {name:"Pelle Clement", sub:"MF · Netherlands", club:"Sparta Rotterdam", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left Sparta's midfield on a free transfer to join FC Groningen, deepening the club's need for reinforcements."},
+  {name:"Joshua Kitolano", sub:"MF · Netherlands", club:"Sparta Rotterdam", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed for Norwegian side Bodø/Glimt, another midfield exit Sparta have had to replace."}
+];
+const INCOMING = [
+  {name:"Jasper Schendelaar", sub:"25 · GK · Netherlands", club:"PEC Zwolle", pos:"GK", report:"8 Jul 2026", src:"Voetbal International", tier:1, fee:"~€1.5m (Transfermarkt est.)", truth:70, prob:45, light:"y", trend:"flat", note:"Identified as Sparta's No.1 goalkeeper target to challenge Filip Bednarek; talks ongoing but technical director Gerard Nijkamp says the clubs remain 'some distance apart'."},
+  {name:"Dirk Proper", sub:"24 · AM · Netherlands", club:"NEC Nijmegen", pos:"AM", report:"26 Jul 2026", src:"Voetbal International", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Sparta lack a genuine No.10 and Nijkamp confirmed Proper has 'certainly been discussed' as an option, though no bid is in yet."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -42,10 +48,16 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Rotterdam-Sparta Official", u:"#"}
-};
+  club: {l:"Rotterdam-Sparta Official", u:"#"},
+  voetbalInternationalJasperSchendelaar: {l:"Voetbal International", u:"https://www.vi.nl/nieuws/sparta-wil-schendelaar-pec-in-afwachting-van-bod"},
+  voetbalPrimeurnlVIDirkProper: {l:"VoetbalPrimeur.nl (VI)", u:"https://www.voetbalprimeur.nl/nieuws/2116141/sparta-zoekt-nieuwe-spelmaker-en-keeper.html"},
+  footballTransferscomPelleClement: {l:"FootballTransfers.com", u:"https://www.footballtransfers.com/nl/transfernieuws/nl-eredivisie/2026/07/sparta-rotterdam-moet-middenveld-om-deze-reden-voorzien-van-transfers"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Jasper Schendelaar": ["voetbalInternationalJasperSchendelaar"],
+  "Dirk Proper": ["voetbalPrimeurnlVIDirkProper"],
+  "Pelle Clement": ["footballTransferscomPelleClement"],
+  "Joshua Kitolano": ["footballTransferscomJoshuaKitolano"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -30,7 +30,10 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Aitor Cantalapiedra", sub:"30 · W/FW · Spain", club:"EC Vitória (Brazil)", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Two-year deal; returns to Greek football having previously played for Panathinaikos."},
+  {name:"Dimitris Nikolaou", sub:"27 · CB/LB · Greece", club:"Bari (loan)", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returns to Greek football after seven years in Italy, most recently on loan at Bari."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];
@@ -42,10 +45,13 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Opa-Ofi Official", u:"#"}
-};
+  club: {l:"Opa-Ofi Official", u:"#"},
+  aitorCantalapiedra: {l:"ΤΑ ΝΕΑ", u:"https://www.tanea.gr/2026/07/27/sports/football/ofi-anakoinose-tin-apoktisi-tou-aitor-me-dietes-symvolaio/"},
+  iefimeridagrDimitrisNikolaou: {l:"iefimerida.gr", u:"https://www.iefimerida.gr/spor/ofi-metagrafes-kleinei-aitor-kai-nikolaoy"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Aitor Cantalapiedra": ["aitorCantalapiedra"],
+  "Dimitris Nikolaou": ["iefimeridagrDimitrisNikolaou"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

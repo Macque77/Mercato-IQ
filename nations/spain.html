@@ -617,7 +617,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">13</span>
+          <span class="stat-value">23</span>
         </div>
       </div>
     </div>
@@ -650,10 +650,17 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 13
+  stories_count: 23
 };
 
 const TOP_STORIES = [  {
+    name: "Matteo Prati",prob: 35, bullshit: false,
+    club_origin: "racing-santander", club_display_name: "Racing de Santander", direction: "in",
+    from: "Cagliari (on loan at Torino)", to: "Racing de Santander",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
     name: "Altay Bayindir",prob: 65, bullshit: false,
     club_origin: "celta-vigo", club_display_name: "RC Celta", direction: "in",
     from: "Manchester United", to: "RC Celta",
@@ -668,6 +675,20 @@ const TOP_STORIES = [  {
     value: "Free (contract expired at Getafe)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
+    name: "Gustavo Puerta",prob: 55, bullshit: false,
+    club_origin: "racing-santander", club_display_name: "Racing de Santander", direction: "out",
+    from: "Racing de Santander", to: "Racing Santander",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€16m bid (Racing want more)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Jorge Salinas",prob: 50, bullshit: false,
+    club_origin: "racing-santander", club_display_name: "Racing de Santander", direction: "out",
+    from: "Racing de Santander", to: "Racing Santander",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€8m bid vs €16m release clause", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
     name: "Ilias Akhomach",prob: 50, bullshit: false,
     club_origin: "rayo-vallecano", club_display_name: "Rayo Vallecano", direction: "in",
     from: "Villarreal", to: "Rayo Vallecano",
@@ -675,11 +696,25 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
+    name: "Jonathan Dubasin",prob: 45, bullshit: false,
+    club_origin: "osasuna", club_display_name: "CA Osasuna", direction: "in",
+    from: "Sporting Gijón", to: "CA Osasuna",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€2.6m+€0.4m bid (Sporting want ~€10m clause)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
     name: "Gabriel Jesus",prob: 42, bullshit: false,
     club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
     from: "Manchester City", to: "Atlético Madrid",
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "€45m", updated: "2026-08-03T14:30:00Z", league: "La Liga"
+  },
+  {
+    name: "Jofre Torrents",prob: 40, bullshit: false,
+    club_origin: "racing-santander", club_display_name: "Racing de Santander", direction: "in",
+    from: "Barcelona Atlètic", to: "Racing de Santander",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan (part of Salinas deal package)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
     name: "Villarreal winger",prob: 35, bullshit: false,
@@ -703,56 +738,35 @@ const TOP_STORIES = [  {
     value: "TBD - loan or permanent structure discussed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
+    name: "Aarón Martín",prob: 30, bullshit: false,
+    club_origin: "alaves", club_display_name: "Deportivo Alavés", direction: "in",
+    from: "Genoa CFC", to: "Deportivo Alavés",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
+    name: "Bryan Zaragoza",prob: 25, bullshit: false,
+    club_origin: "alaves", club_display_name: "Deportivo Alavés", direction: "in",
+    from: "Bayern Munich", to: "Deportivo Alavés",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan (Bayern value ~€8m)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
     name: "Ferran Torres",prob: 15, bullshit: false,
     club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "out",
     from: "FC Barcelona", to: "Real Madrid / PSG (interest)",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Speculative", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
-  {
-    name: "Arnau Tenas",prob: 35, bullshit: false,
-    club_origin: "villarreal", club_display_name: "Villarreal", direction: "out",
-    from: "Villarreal", to: "Mallorca (interest)",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
-    name: "Arsen Zakharyan",prob: 25, bullshit: false,
-    club_origin: "real-sociedad", club_display_name: "Real Sociedad", direction: "out",
-    from: "Real Sociedad", to: "Exit options being explored",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
-    name: "Hidemasa Morita successor / Kamada",prob: 20, bullshit: false,
-    club_origin: "real-sociedad", club_display_name: "Real Sociedad", direction: "in",
-    from: "Crystal Palace / free agent market", to: "Real Sociedad",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
-    name: "Pape Gueye",prob: 20, bullshit: false,
-    club_origin: "villarreal", club_display_name: "Villarreal", direction: "in",
-    from: "Everton (interest)", to: "Villarreal",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
-    name: "Álex Remiro",prob: 15, bullshit: false,
-    club_origin: "real-sociedad", club_display_name: "Real Sociedad", direction: "out",
-    from: "Real Sociedad", to: "Aston Villa (interest)",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
 ];
 
-const BY_LEAGUE = {"La Liga": 13, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
+const BY_LEAGUE = {"La Liga": 23, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 13}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 23}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T10:50:58.880590Z",
+  updated: "2026-08-04T11:12:28.116975Z",
   label: "Nation aggregation"
 };
 

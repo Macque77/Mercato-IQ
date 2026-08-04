@@ -849,8 +849,12 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Iván Cedric", sub:"24 · FW · Cameroon/Spain", club:"Vanspor FK", pos:"FW", report:"2 Aug 2026", src:"Sporx", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Agreement reached with last season's TFF 1. Lig top-scorer (15 goals, 6 assists); official unveiling pending medical."}
+];
+const OUTGOING = [
+  {name:"İbrahim Kaya", sub:"25 · Winger/Forward · Turkey", club:"Alanyaspor", pos:"FW", report:"3 Aug 2026", src:"Hürriyet", tier:1, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Player confirmed a club's interest without naming them, saying it's ultimately Alanyaspor's decision; scored 6 goals in his maiden Süper Lig season."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -859,10 +863,13 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Alanyaspor Official", u:"#"}
-};
+  club: {l:"Alanyaspor Official", u:"#"},
+  sporxIvnCedric: {l:"Sporx", u:"https://www.sporx.com/www.sporx.com/alanyaspor-a-kamerunlu-forvet-ivan-cedric-SXHBQ1171110SXQ"},
+  hrriyetbrahimKaya: {l:"Hürriyet", u:"https://www.hurriyet.com.tr/sporarena/ibrahim-kayadan-transfer-aciklamasi-bir-kulubun-ilgisi-oldugunu-biliyorum-43260459"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Iván Cedric": ["sporxIvnCedric"],
+  "İbrahim Kaya": ["hrriyetbrahimKaya"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

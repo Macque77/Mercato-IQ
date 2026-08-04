@@ -852,9 +852,18 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_IN = [
+  {name:"Fabio Ferraro", sub:"23 · LB", club:"FCV Dender EH", pos:"LB", fee:"€700k + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signs a three-year deal, returning to Belgian top flight via Charleroi's former RWDM/Dender pathway."},
+  {name:"Norman Bassette", sub:"ST", club:"Coventry City", pos:"ST", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins on loan from Coventry, having previously been on Belgium's international radar."}
+];
+const CONFIRMED_OUT = [
+  {name:"Bryan Reynolds", sub:"25 · RB · USA", club:"Stade Rennais", pos:"RB", fee:"~€4.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"American international leaves for Ligue 1 after 146 appearances, having previously rejected an initial Rangers bid."},
+  {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
+];
+const INCOMING = [
+  {name:"Cameron Congreve", sub:"22 · RW · Wales", club:"Swansea City", pos:"RW", report:"2 Aug 2026", src:"WalesOnline", tier:2, fee:"Undisclosed (7-figure)", truth:75, prob:80, light:"g", trend:"flat", note:"Deal described as imminent, with Swansea retaining a buy-back and sell-on clause; Congreve impressed on loan at Dundee last season."},
+  {name:"Issiaka Kamate", sub:"MF", club:"Inter Milan", pos:"MF", report:"3 Jun 2026", src:"Nico Schira", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Nico Schira reported Westerlo closing in on an agreement with Inter for the player; no public update since early June."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -864,10 +873,21 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"KVC Westerlo Official", u:"#"}
-};
+  club: {l:"KVC Westerlo Official", u:"#"},
+  the72viaWalesOnlineCameronCongreve: {l:"The72 (via WalesOnline)", u:"https://the72.co.uk/2026/08/02/swansea-city-cameron-congreve-westerlo-exit/"},
+  voetbalkrantviaNicoSchiraIssiakaKamate: {l:"Voetbalkrant (via Nico Schira)", u:"https://www.voetbalkrant.com/nieuws/2026-06-03/westerlo-heel-dicht-bij-overeenkomst-met-speler-van-inter-milan"},
+  voetbalkrantviaSachaTavolieriFabioFerraro: {l:"Voetbalkrant (via Sacha Tavolieri)", u:"https://www.voetbalkrant.com/nieuws/2026-07-20/westerlo-slaat-opnieuw-toe-op-transfermarkt-akkoord-met-dender-is-rond"},
+  sporzaNormanBassette: {l:"Sporza", u:"https://sporza.be/nl/2026/07/17/zomertransfers-jpl-westerlo-strikt-nieuwe-spits-met-norman-bassette-die-door-tedesco-al-rode-duivel-was~1784279414332/"},
+  voetbalkrantviaSachaTavolieriBryanReynolds: {l:"Voetbalkrant (via Sacha Tavolieri)", u:"https://www.voetbalkrant.com/nieuws/2026-07-09/westerlo-blijft-cashen-tweede-uitgaande-toptransfer-op-een-dag"},
+  voetbalkrantEminBayram: {l:"Voetbalkrant", u:"https://www.voetbalkrant.com/nieuws/2026-07-08/westerlo-verkoopt-opnieuw-sterkhouder-voor-miljoenenbedrag"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Cameron Congreve": ["the72viaWalesOnlineCameronCongreve"],
+  "Issiaka Kamate": ["voetbalkrantviaNicoSchiraIssiakaKamate"],
+  "Fabio Ferraro": ["voetbalkrantviaSachaTavolieriFabioFerraro"],
+  "Norman Bassette": ["sporzaNormanBassette"],
+  "Bryan Reynolds": ["voetbalkrantviaSachaTavolieriBryanReynolds"],
+  "Emin Bayram": ["voetbalkrantEminBayram"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

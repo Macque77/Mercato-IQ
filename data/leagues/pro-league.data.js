@@ -6,10 +6,38 @@
 const LEAGUE = {
   name: "Pro League",
   nation: "Belgium",
-  stories_count: 3
+  stories_count: 14
 };
 
 const TOP_STORIES = [  {
+    name: "Anan Khalaili", prob: 40, bullshit: false,
+    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
+    from: "Union Saint-Gilloise", to: "Nottingham Forest",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "£17m bid rejected", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Davis Opoku", prob: 30, bullshit: false,
+    club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "out",
+    from: "OH Leuven", to: "Feyenoord",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Issiaka Kamate", prob: 30, bullshit: false,
+    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
+    from: "Inter Milan", to: "KVC Westerlo",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z"
+  },
+  {
+    name: "Cameron Congreve", prob: 80, bullshit: false,
+    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
+    from: "Swansea City", to: "KVC Westerlo",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (7-figure)", updated: "2026-08-03T18:30:00Z"
+  },
+  {
     name: "David Njoku", prob: 45, bullshit: false,
     club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
     from: "Udinese", to: "Club Brugge",
@@ -24,20 +52,69 @@ const TOP_STORIES = [  {
     value: "€12m", updated: "2026-08-03T14:30:00Z"
   },
   {
+    name: "Aiham Ousou", prob: 30, bullshit: false,
+    club_origin: "charleroi", club_display_name: "R Charleroi SC", direction: "out",
+    from: "R Charleroi SC", to: "Ludogorets",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z"
+  },
+  {
+    name: "Jelle Van Neck", prob: 30, bullshit: false,
+    club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "in",
+    from: "Olympique de Marseille", to: "OH Leuven",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
     name: "Denzel Dumfries", prob: 22, bullshit: false,
     club_origin: "rsc-anderlecht", club_display_name: "RSC Anderlecht", direction: "in",
     from: "Inter Milan", to: "RSC Anderlecht",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€35m", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Anouar Ait El-Hadj", prob: 20, bullshit: false,
+    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
+    from: "Union Saint-Gilloise", to: "Undisclosed",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Milan Hokke", prob: 35, bullshit: false,
+    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "in",
+    from: "ADO Den Haag", to: "Union Saint-Gilloise",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Below asking price", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Étienne Camara", prob: 25, bullshit: false,
+    club_origin: "charleroi", club_display_name: "R Charleroi SC", direction: "in",
+    from: "Panathinaikos", to: "R Charleroi SC",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z"
+  },
+  {
+    name: "Mamadou Barry", prob: 20, bullshit: false,
+    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
+    from: "Union Saint-Gilloise", to: "Saudi Pro League club",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Claudio Katunda", prob: 20, bullshit: false,
+    club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "in",
+    from: "Schalke 04", to: "Cercle Brugge",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
 ];
 
-const BY_CLUB = {"club-brugge": 1, "standard-liege": 1, "rsc-anderlecht": 1};
+const BY_CLUB = {"union-saint-gilloise": 4, "oh-leuven": 2, "westerlo": 2, "club-brugge": 1, "standard-liege": 1, "charleroi": 2, "rsc-anderlecht": 1, "cercle-brugge": 1};
 
-const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1, "badge": false, "primary": "#2E5CC8", "primaryBright": "#2E5CC8"}, {"slug": "eupen", "name": "KAS Eupen", "count": 0, "badge": false, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "westerlo", "name": "KVC Westerlo", "count": 0, "badge": false, "primary": "#FFCC00", "primaryBright": "#FFE066"}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "charleroi", "name": "R Charleroi SC", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 1, "badge": false, "primary": "#8B0000", "primaryBright": "#8B0000"}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false, "primary": "#FF0000", "primaryBright": "#FF0000"}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "waasland-beveren", "name": "Waasland-Beveren", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
+const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 1, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1, "badge": false, "primary": "#2E5CC8", "primaryBright": "#2E5CC8"}, {"slug": "eupen", "name": "KAS Eupen", "count": 0, "badge": false, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "westerlo", "name": "KVC Westerlo", "count": 2, "badge": false, "primary": "#FFCC00", "primaryBright": "#FFE066"}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 2, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "charleroi", "name": "R Charleroi SC", "count": 2, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 1, "badge": false, "primary": "#8B0000", "primaryBright": "#8B0000"}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false, "primary": "#FF0000", "primaryBright": "#FF0000"}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 4, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "waasland-beveren", "name": "Waasland-Beveren", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T10:50:58.885875Z",
+  updated: "2026-08-04T11:12:28.128582Z",
   label: "League aggregation"
 };

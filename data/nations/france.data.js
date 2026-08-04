@@ -6,15 +6,29 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 38
+  stories_count: 42
 };
 
 const TOP_STORIES = [  {
+    name: "Joseph Nonge",prob: 60, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
+    from: "Kocaelispor", to: "Stade Brestois 29",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "~€2.5m valuation", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
     name: "Madison Ingram",prob: 55, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Joris Chotard",prob: 55, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
     name: "Maghnes Akliouche",prob: 62, bullshit: false,
@@ -80,13 +94,6 @@ const TOP_STORIES = [  {
     value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Felix Bacher",prob: 38, bullshit: false,
-    club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
-    from: "Estoril", to: "Olympique Lyonnais",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
     name: "Ousmane Dembélé",prob: 35, bullshit: false,
     club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "in",
     from: "PSG", to: "Olympique de Marseille",
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€45m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
-  {
-    name: "Mykhailo Mudryk",prob: 32, bullshit: false,
-    club_origin: "rc-strasbourg", club_display_name: "RC Strasbourg Alsace", direction: "in",
-    from: "Chelsea", to: "RC Strasbourg Alsace",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 38, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 42, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 38}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 42}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T10:50:58.879556Z",
+  updated: "2026-08-04T11:12:28.114496Z",
   label: "Nation aggregation"
 };

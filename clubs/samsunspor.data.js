@@ -31,9 +31,15 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_OUT = [
+  {name:"Rick van Drongelen", sub:"DF · Netherlands", club:"Panathinaikos", pos:"DF", fee:"Undisclosed (significant)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move to Panathinaikos completed, generating a sizeable fee for Samsunspor."}
+];
+const INCOMING = [
+  {name:"Kevin Carlos", sub:"25 · ST · Spain", club:"OGC Nice", pos:"ST", report:"2 Aug 2026", src:"Sporx", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Samsunspor have reportedly prepared a fresh bid after an earlier loan-with-option structure collapsed; other clubs are also circling the Nice striker."}
+];
+const OUTGOING = [
+  {name:"Ali Diabaté", sub:"MF", club:"Samsunspor", pos:"MF", report:"29 Jul 2026", src:"Fotomaç", tier:2, fee:"€8m offer rejected", truth:80, prob:8, light:"r", trend:"flat", note:"President Yüksel Yıldırım confirmed the club turned down an €8m approach from a Saudi club, saying Samsunspor plans to build around him for the next 3-4 years."}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -42,10 +48,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Samsunspor Official", u:"#"}
-};
+  club: {l:"Samsunspor Official", u:"#"},
+  sporxKevinCarlos: {l:"Sporx", u:"https://www.sporx.com/www.sporx.com/samsunspor-kevin-carlos-transferi-icin-devrede-SXHBQ1171111SXQ"},
+  fotomaAliDiabat: {l:"Fotomaç", u:"https://www.fotomac.com.tr/superlig/2026/07/29/5-transfer-yolda"},
+  fanatikRickvanDrongelen: {l:"Fanatik", u:"https://www.fanatik.com.tr/takim/samsunspor/futbol/"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Kevin Carlos": ["sporxKevinCarlos"],
+  "Ali Diabaté": ["fotomaAliDiabat"],
+  "Rick van Drongelen": ["fanatikRickvanDrongelen"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

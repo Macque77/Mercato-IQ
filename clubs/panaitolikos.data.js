@@ -32,7 +32,10 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Marvelous Nakamba", sub:"MF · Zimbabwe", club:"Free agent (ex-Luton Town)", pos:"DM", report:"3 Aug 2026", src:"monobala.gr (via AgrinioCulture.gr)", tier:3, fee:"Free", truth:65, prob:55, light:"g", trend:"flat", note:"Preliminary agreement reportedly reached; expected in Greece around 6 Aug pending visa clearance."},
+  {name:"Moussa Djenepo", sub:"W · Mali", club:"Free agent (ex-Southampton)", pos:"W", report:"3 Aug 2026", src:"monobala.gr (via AgrinioCulture.gr)", tier:3, fee:"Free", truth:60, prob:50, light:"y", trend:"flat", note:"Also described as preliminarily agreed, with a possible arrival on 5-6 Aug."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -42,10 +45,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Panaitolikos Official", u:"#"}
-};
+  club: {l:"Panaitolikos Official", u:"#"},
+  agrinioCulturegrMarvelousNakamba: {l:"AgrinioCulture.gr", u:"https://www.agrinioculture.gr/2026/08/03/panaitolikos-i-dipli-afixi-o-epithetikos-kai-to-kare-en-opsei-kalamatas/"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Marvelous Nakamba": ["agrinioCulturegrMarvelousNakamba"],
+  "Moussa Djenepo": ["agrinioCulturegrMoussaDjenepo"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

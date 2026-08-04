@@ -31,8 +31,17 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_OUT = [
+  {name:"Víctor Muñoz", sub:"W · Spain", club:"Liverpool", pos:"W", fee:"€40m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official, club-record outgoing sale to Liverpool."},
+  {name:"Sheraldo Becker", sub:"W · Netherlands", club:"Mainz 05", pos:"W", fee:"Loan-to-permanent clause activated", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official permanent move."},
+  {name:"Javi Galán", sub:"LB · Spain", club:"Celta Vigo", pos:"LB", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free departure."}
+];
+const INCOMING = [
+  {name:"Jonathan Dubasin", sub:"26 · LW · Belgium", club:"Sporting Gijón", pos:"LW", report:"17 Jul 2026", src:"FútbolFantasy / Noticias de Navarra", tier:2, fee:"€2.6m+€0.4m bid (Sporting want ~€10m clause)", truth:65, prob:45, light:"y", trend:"flat", note:"Osasuna's opening €2.6m bid was rejected; they are preparing an improved offer for the 16-goal Segunda forward who wants the step up."},
+  {name:"Pablo García", sub:"20 · LW/RW · Spain", club:"Real Betis", pos:"W", report:"23 Jun 2026", src:"Flavio Pace / El Gol Digital", tier:2, fee:"€10m+ demanded / €30m clause", truth:45, prob:12, light:"r", trend:"flat", note:"Osasuna are one of several suitors (with Alavés, Ajax, Club Brugge, Stuttgart, Inter Miami) for this Betis academy winger."},
+  {name:"Abel Ruiz", sub:"26 · ST · Spain", club:"Girona FC", pos:"ST", report:"24 Apr 2026", src:"Miguel Rubio / TodoMercadoWeb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Named on Osasuna's leaked striker wishlist as the 'differentiating' but expensive attacking option."},
+  {name:"César Tárrega", sub:"24 · CB · Spain", club:"Valencia CF", pos:"CB", report:"24 Apr 2026", src:"Miguel Rubio / TodoMercadoWeb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Listed among Osasuna's centre-back targets for defensive rejuvenation."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -48,10 +57,20 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "elsadar-fichajes": {l:"El Sadar - Osasuna transfer news", u:"https://elsadar.com/category/actualidad/fichajes-actualidad/"}
-};
+  "elsadar-fichajes": {l:"El Sadar - Osasuna transfer news", u:"https://elsadar.com/category/actualidad/fichajes-actualidad/"},
+  ftbolFantasyJonathanDubasin: {l:"FútbolFantasy", u:"https://www.futbolfantasy.com/laliga/noticias/147494-osasuna-prepara-una-nueva-ofensiva-por-jonathan-dubasin"},
+  elGolDigitalPabloGarca: {l:"El Gol Digital", u:"https://www.elgoldigital.com/futbol/real-betis-balompie/pablo-garcia-betis-osasuna-brujas-ajax-inter-miami-mercado-10-millones-2026/"},
+  todoMercadoWebAbelRuiz: {l:"TodoMercadoWeb", u:"https://www.todomercadoweb.es/laliga/filtran-la-lista-de-la-compra-del-ca-osasuna-para-el-mercado-de-fichajes-547876"},
+  ftbolFantasyVctorMuoz: {l:"FútbolFantasy", u:"https://www.futbolfantasy.com/laliga/equipos/osasuna/mercado-fichajes/verano-2026"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Jonathan Dubasin": ["ftbolFantasyJonathanDubasin"],
+  "Pablo García": ["elGolDigitalPabloGarca"],
+  "Abel Ruiz": ["todoMercadoWebAbelRuiz"],
+  "César Tárrega": ["todoMercadoWebCsarTrrega"],
+  "Víctor Muñoz": ["ftbolFantasyVctorMuoz"],
+  "Sheraldo Becker": ["ftbolFantasySheraldoBecker"],
+  "Javi Galán": ["ftbolFantasyJaviGaln"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -848,9 +848,19 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_OUT = [
+  {name:"Pierre Lees-Melou", sub:"32 · CM · France", club:"Paris FC", pos:"CM", fee:"~€6.5m + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure to newly-promoted Paris FC on a deal through June 2027, their fourth signing of the summer."}
+];
+const INCOMING = [
+  {name:"Joseph Nonge", sub:"21 · CM · Belgium", club:"Kocaelispor", pos:"CM", report:"2 Aug 2026", src:"Sacha Tavolieri", tier:1, fee:"~€2.5m valuation", truth:75, prob:60, light:"g", trend:"flat", note:"Tavolieri reports personal terms are already agreed with the player; Brest are now negotiating a permanent fee with the Turkish club."},
+  {name:"Moussa Koné", sub:"ST · Free Agent", club:"Free Agent (ex-Nîmes)", pos:"ST", report:"3 Aug 2026", src:"TOPMercato.com", tier:3, fee:"Free (€0)", truth:50, prob:35, light:"y", trend:"flat", note:"Brest are weighing a reunion with a forward who previously scored against them, available on a free transfer."},
+  {name:"Tochukwu Nnadi", sub:"MF · Nigeria", club:"Marseille", pos:"MF", report:"31 Jul 2026", src:"BUTFootballClub.fr / JeunesFooteux.com", tier:3, fee:"Loan or reduced fee (valued ~€6m)", truth:45, prob:25, light:"o", trend:"flat", note:"Squeezed for minutes at OM after his €6m move from Zulte Waregem, Brest are exploring a loan or permanent deal to relaunch him."}
+];
+const OUTGOING = [
+  {name:"Joris Chotard", sub:"24 · CM · France", club:"Stade Brest", pos:"CM", report:"31 Jul 2026", src:"L'Équipe", tier:1, fee:"Undisclosed (valued ~€7m)", truth:65, prob:55, light:"g", trend:"flat", note:"Brest's second-most valuable player has accepted Saudi side Neom SC's proposal; clubs are still negotiating the fee."},
+  {name:"Kamory Doumbia", sub:"23 · AM · Mali", club:"Stade Brest", pos:"AM", report:"2 Aug 2026", src:"Sport.fr / BFM Marseille", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"New Marseille sporting director Grégory Lorenzi is monitoring the playmaker, but Brest are working to keep him after an injury-hit season."},
+  {name:"Ludovic Ajorque", sub:"32 · ST · France", club:"Stade Brest", pos:"ST", report:"1 Aug 2026", src:"Sport.fr (But!)", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Lorenzi knows Ajorque from his own Brest days and has flagged the veteran forward as a possible reinforcement for Marseille's attack."}
+];
 
 const RISERS = [];
 
@@ -867,10 +877,21 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "gffn-brest": {l:"Get French Football News · Brest", u:"https://www.getfootballnewsfrance.com/tag/brest/"}
-};
+  "gffn-brest": {l:"Get French Football News · Brest", u:"https://www.getfootballnewsfrance.com/tag/brest/"},
+  sachaTavolieriviaMorningFootJosephNonge: {l:"Sacha Tavolieri (via Morning Foot)", u:"https://morning-foot.com/ligue-1/brest/mercato-brest-joseph-nonge-kocaelispor/"},
+  tOPMercatocomMoussaKon: {l:"TOPMercato.com", u:"https://www.topmercato.com/club/stade-brestois-29/"},
+  bUTFootballClubfrTochukwuNnadi: {l:"BUTFootballClub.fr", u:"https://lesnouvellesdufoot.fr/france/sb29/"},
+  lquipeviaTOPMercatoJorisChotard: {l:"L'Équipe (via TOPMercato)", u:"https://www.topmercato.com/2123948-mercato-le-2e-joueur-le-plus-cher-de-brest-dit-oui-a-une-destination-exotique/"},
+  soccerwayPierreLeesMelou: {l:"Soccerway", u:"https://fr.soccerway.com/actualites/football-ligue-1-pierre-lees-melou-quitte-brest-et-s-engage-avec-le-paris-fc-jusqu-en-2027/Ot0NHKS7"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Joseph Nonge": ["sachaTavolieriviaMorningFootJosephNonge"],
+  "Moussa Koné": ["tOPMercatocomMoussaKon"],
+  "Tochukwu Nnadi": ["bUTFootballClubfrTochukwuNnadi"],
+  "Joris Chotard": ["lquipeviaTOPMercatoJorisChotard"],
+  "Kamory Doumbia": ["sportfrBFMMarseilleKamoryDoumbia"],
+  "Ludovic Ajorque": ["sportfrLudovicAjorque"],
+  "Pierre Lees-Melou": ["soccerwayPierreLeesMelou"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

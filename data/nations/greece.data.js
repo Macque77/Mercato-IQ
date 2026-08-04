@@ -6,7 +6,7 @@
 const NATION = {
   name: "Greece",
   flag_emoji: "🇬🇷",
-  stories_count: 2
+  stories_count: 9
 };
 
 const TOP_STORIES = [  {
@@ -23,14 +23,63 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€15m", updated: "2026-08-03T14:30:00Z", league: "Super League"
   },
+  {
+    name: "Maksim Borisko",prob: 25, bullshit: false,
+    club_origin: "panathinaikos", club_display_name: "Panathinaikos", direction: "in",
+    from: "Baltika Kaliningrad", to: "Panathinaikos",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€2.1m", updated: "2026-07-29T00:00:00Z", league: "Super League"
+  },
+  {
+    name: "Marvelous Nakamba",prob: 55, bullshit: false,
+    club_origin: "panaitolikos", club_display_name: "Panaitolikos", direction: "in",
+    from: "Free agent (ex-Luton Town)", to: "Panaitolikos",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z", league: "Super League"
+  },
+  {
+    name: "Lubomír Šatka",prob: 55, bullshit: false,
+    club_origin: "aris-thessaloniki", club_display_name: "Aris Thessaloniki", direction: "in",
+    from: "Free agent (ex-Samsunspor)", to: "Aris Thessaloniki",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z", league: "Super League"
+  },
+  {
+    name: "Moussa Djenepo",prob: 50, bullshit: false,
+    club_origin: "panaitolikos", club_display_name: "Panaitolikos", direction: "in",
+    from: "Free agent (ex-Southampton)", to: "Panaitolikos",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z", league: "Super League"
+  },
+  {
+    name: "Rafael Mir",prob: 50, bullshit: false,
+    club_origin: "aris-thessaloniki", club_display_name: "Aris Thessaloniki", direction: "in",
+    from: "Elche CF", to: "Aris Thessaloniki",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Super League"
+  },
+  {
+    name: "Dimitris Giannoulis",prob: 40, bullshit: false,
+    club_origin: "paok", club_display_name: "PAOK Thessaloniki", direction: "in",
+    from: "Augsburg", to: "PAOK Thessaloniki",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Super League"
+  },
+  {
+    name: "Antoine Makoumbou",prob: 15, bullshit: false,
+    club_origin: "panathinaikos", club_display_name: "Panathinaikos", direction: "in",
+    from: "Samsunspor", to: "Panathinaikos",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Super League"
+  },
 ];
 
-const BY_LEAGUE = {"Super League": 2, "Gamma Ethniki": 0};
+const BY_LEAGUE = {"Super League": 9, "Gamma Ethniki": 0};
 
-const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 2}, {"slug": "gamma-ethniki", "name": "Gamma Ethniki", "count": 0}];
+const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 9}, {"slug": "gamma-ethniki", "name": "Gamma Ethniki", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T10:50:58.879856Z",
+  updated: "2026-08-04T11:12:28.115370Z",
   label: "Nation aggregation"
 };

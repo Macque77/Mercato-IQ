@@ -30,9 +30,25 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_IN = [
+  {name:"Aritz Elustondo", sub:"32 · CB · Spain", club:"Real Sociedad", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined on a free transfer on modest wages."},
+  {name:"Baptiste Santamaria", sub:"31 · MF · France", club:"Valencia", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"One-year deal with a renewal option after leaving Valencia."},
+  {name:"Pantelis Hatzidiakos", sub:"29 · CB · Greece", club:"FC Copenhagen", pos:"CB", fee:"~€1.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Greek international centre-back returning from Denmark."},
+  {name:"Taha Ali", sub:"28 · W · Sweden", club:"Malmö FF", pos:"W", fee:"~€2m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swedish World Cup 2026 participant joins for a reported €2m."},
+  {name:"Tom Louchet", sub:"MF · France", club:"Radnički Niš", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed formalities in Thessaloniki before an introductory interview."}
+];
+const CONFIRMED_OUT = [
+  {name:"Georgios Giakoumakis", sub:"FW · Greece", club:"Cruz Azul (loan return)", pos:"FW", fee:"Loan return", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan spell ended; club now searching for a replacement striker."},
+  {name:"Luka Ivanušec", sub:"W · Croatia", club:"Feyenoord (loan return)", pos:"W", fee:"Loan return", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned to Feyenoord at the end of his loan."},
+  {name:"Jorge Sánchez", sub:"DF · Mexico", club:"Atlas FC", pos:"RB", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to Liga MX side Atlas."},
+  {name:"Dejan Lovren", sub:"DF · Croatia", club:"Free agent", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran centre-back departed on a free transfer."},
+  {name:"Giorgi Gugeshashvili", sub:"GK · Georgia", club:"Göztepe", pos:"GK", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sent out on loan to the Turkish side."},
+  {name:"Lefteris Lyratzis", sub:"26 · RB · Greece", club:"Atromitos", pos:"RB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer to Atromitos on a two-year deal, with PAOK keeping a sell-on percentage."}
+];
+const INCOMING = [
+  {name:"Dimitris Giannoulis", sub:"LB · Greece", club:"Augsburg", pos:"LB", report:"3 Aug 2026", src:"Foxbet.gr", tier:3, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"flat", note:"Reported to be \"on a very good path\"; PAOK pushing Augsburg to lower their asking price."},
+  {name:"Antoine Makoumbou", sub:"MF · Congo", club:"Samsunspor", pos:"MF", report:"10 Jun 2026", src:"Turkish media (via Foxbet.gr)", tier:3, fee:"Undisclosed", truth:25, prob:15, light:"o", trend:"flat", note:"Named alongside Panathinaikos as a suitor; contract runs to 2029, making a deal difficult."}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -42,10 +58,25 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Paok Official", u:"#"}
-};
+  club: {l:"Paok Official", u:"#"},
+  foxbetgrDimitrisGiannoulis: {l:"Foxbet.gr", u:"https://www.foxbet.gr/309143/metagrafes-paok"},
+  pAOKFCgrAritzElustondo: {l:"PAOKFC.gr", u:"https://www.paokfc.gr/en/category/news/transfer-news-en/"},
+  lefterisLyratzis: {l:"ΤΑ ΝΕΑ", u:"https://www.tanea.gr/2026/08/03/sports/football/o-atromitos-anakoinose-ton-lyratzi/"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Dimitris Giannoulis": ["foxbetgrDimitrisGiannoulis"],
+  "Antoine Makoumbou": ["foxbetgrAntoineMakoumbou"],
+  "Aritz Elustondo": ["pAOKFCgrAritzElustondo"],
+  "Baptiste Santamaria": ["pAOKFCgrBaptisteSantamaria"],
+  "Pantelis Hatzidiakos": ["pAOKFCgrPantelisHatzidiakos"],
+  "Taha Ali": ["pAOKFCgrTahaAli"],
+  "Tom Louchet": ["pAOKFCgrTomLouchet"],
+  "Georgios Giakoumakis": ["pAOKFCgrGeorgiosGiakoumakis"],
+  "Luka Ivanušec": ["pAOKFCgrLukaIvanuec"],
+  "Jorge Sánchez": ["pAOKFCgrJorgeSnchez"],
+  "Dejan Lovren": ["pAOKFCgrDejanLovren"],
+  "Giorgi Gugeshashvili": ["pAOKFCgrGiorgiGugeshashvili"],
+  "Lefteris Lyratzis": ["lefterisLyratzis"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

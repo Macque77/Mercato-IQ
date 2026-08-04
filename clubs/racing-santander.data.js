@@ -30,10 +30,24 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Racing Santander"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const CONFIRMED_IN = [
+  {name:"Sergio Canales", sub:"MF · Spain", club:"CF Monterrey", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Marquee free-agent return for Racing's La Liga comeback after 14 years, deal until 2027 plus option."},
+  {name:"Facundo González", sub:"DF · Uruguay", club:"Juventus", pos:"DF", fee:"Promotion-triggered purchase clause", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing until 2029."},
+  {name:"Asier Villalibre", sub:"FW · Spain", club:"Deportivo Alavés", pos:"FW", fee:"Promotion-triggered purchase clause", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing until 2029."}
+];
+const CONFIRMED_OUT = [
+  {name:"Yeray Cabanzón", sub:"W · Spain", club:"Real Valladolid", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure, contract to 2029."},
+  {name:"Javi Castro", sub:"DF · Spain", club:"Cádiz CF", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official three-year deal."},
+  {name:"Mario García", sub:"LB · Spain", club:"Widzew Łódź", pos:"LB", fee:"~€500k plus sell-on", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure to Poland."}
+];
+const INCOMING = [
+  {name:"Matteo Prati", sub:"22 · CM · Italy", club:"Cagliari (on loan at Torino)", pos:"CM", report:"13 Jul 2026", src:"Nicolò Schira (via Pablo Sánchez / El Desmarque)", tier:1, fee:"Undisclosed", truth:70, prob:35, light:"y", trend:"flat", note:"Schira reports Racing chasing the Italy U21 midfielder as Cagliari and Torino discuss his future."},
+  {name:"Jofre Torrents", sub:"19 · LB · Spain", club:"Barcelona Atlètic", pos:"LB", report:"29 Jul 2026", src:"Juan Pérez / El Desmarque", tier:2, fee:"Loan (part of Salinas deal package)", truth:55, prob:40, light:"y", trend:"flat", note:"Requested by Racing as a loan makeweight/replacement inside the Jorge Salinas–Barcelona negotiation."}
+];
+const OUTGOING = [
+  {name:"Jorge Salinas", sub:"19 · CB/LB · Spain", club:"Racing Santander", pos:"CB", report:"29 Jul 2026", src:"Juan Pérez / El Desmarque", tier:2, fee:"€8m bid vs €16m release clause", truth:75, prob:50, light:"y", trend:"flat", note:"Barcelona's €8m offer falls short of the clause (raised to €16m after promotion); Racing want Jofre Torrents, Xavi Espart or Héctor Fort on loan as part of any deal."},
+  {name:"Gustavo Puerta", sub:"23 · CM · Colombia", club:"Racing Santander", pos:"CM", report:"16 Jul 2026", src:"Pablo Sánchez / El Desmarque", tier:2, fee:"€16m bid (Racing want more)", truth:70, prob:55, light:"g", trend:"flat", note:"Bologna are leading suitors for the Colombia international midfielder; Racing consider the €16m offer insufficient but a deal is reportedly close."}
+];
 const RISERS = [];
 const FALLERS = [];
 
@@ -50,10 +64,24 @@ const POSITIONS = [
 const WATCHLIST = [];
 
 const HUB = {
-  "eldesmarque-racing-budget": {l:"El Desmarque - Racing's budget and transfer plans for 2026/27", u:"https://www.eldesmarque.com/futbol/liga-1a-division/20260706/racing-santander-avisa-cartera-millonaria-fichajes-importantes-cambios-estadio_18_019637585.html"}
-};
+  "eldesmarque-racing-budget": {l:"El Desmarque - Racing's budget and transfer plans for 2026/27", u:"https://www.eldesmarque.com/futbol/liga-1a-division/20260706/racing-santander-avisa-cartera-millonaria-fichajes-importantes-cambios-estadio_18_019637585.html"},
+  elDesmarqueMatteoPrati: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260713/racing-santander-fichaje-serie-a-internacional-italia_18_019703648.html"},
+  elDesmarqueJofreTorrents: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260729/barca-salinas-racing-cesiones_18_019837867.html"},
+  elDesmarqueGustavoPuerta: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260716/racing-santander-millonada-fichaje-gustavo-puerta_18_019737461.html"},
+  elDesmarqueSergioCanales: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260606/racing-santander-cuenta-fichajes-vuelta-sergio-canales_18_019373884.html"},
+  ftbolFantasyFacundoGonzlez: {l:"FútbolFantasy", u:"https://www.futbolfantasy.com/laliga/equipos/racing/mercado-fichajes/verano-2026"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Matteo Prati": ["elDesmarqueMatteoPrati"],
+  "Jofre Torrents": ["elDesmarqueJofreTorrents"],
+  "Jorge Salinas": ["elDesmarqueJorgeSalinas"],
+  "Gustavo Puerta": ["elDesmarqueGustavoPuerta"],
+  "Sergio Canales": ["elDesmarqueSergioCanales"],
+  "Facundo González": ["ftbolFantasyFacundoGonzlez"],
+  "Asier Villalibre": ["ftbolFantasyAsierVillalibre"],
+  "Yeray Cabanzón": ["ftbolFantasyYerayCabanzn"],
+  "Javi Castro": ["ftbolFantasyJaviCastro"],
+  "Mario García": ["ftbolFantasyMarioGarca"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
