@@ -407,6 +407,32 @@
   .cr-fee .cr-value { font-size:13px; }
   .cr-status .cr-value { font-size:13px; color:var(--accent-gold); }
 
+  /* Truth/Probability mini-bars: same idea as fee/status (label above, value on the
+     right), but with the metric bar itself so Incoming/Outgoing rows keep their dual
+     rating visible while staying one line tall, matching Confirmed's row format. */
+  .cr-metric { width:92px; }
+
+  .cr-metric .cr-label {
+    display:flex;
+    justify-content:space-between;
+    font-size:9px;
+    color:var(--text-muted);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    margin-bottom:4px;
+  }
+
+  .cr-metric .cr-label b {
+    color:var(--text);
+    font-weight:600;
+    font-family:var(--mono);
+  }
+
+  .metric-bar.mini {
+    height:4px;
+    margin-bottom:0;
+  }
+
   .cr-note-preview {
     padding:0 16px 12px 60px;
     margin-top:-6px;
@@ -418,9 +444,14 @@
     text-overflow:ellipsis;
   }
 
+  .cr-note-preview.bullshit { color:var(--bullshit); }
+
+  .cr-tier { flex:none; }
+
   @media(max-width:768px) {
     .confirmed-row-main { flex-wrap:wrap; }
     .cr-figures { width:calc(100% - 44px); justify-content:space-between; margin-left:44px; }
+    .cr-metric { width:auto; flex:1; max-width:140px; }
     .cr-note-preview { padding-left:16px; white-space:normal; }
   }
 
@@ -733,14 +764,14 @@
 
   <section class="section" id="incoming-section">
     <h3 class="section-title">Incoming Rumours &amp; Reports <span class="section-count" id="incoming-count"></span></h3>
-    <div class="transfer-grid" id="rumors">
+    <div class="confirmed-list" id="rumors">
       <!-- Populated by data -->
     </div>
   </section>
 
   <section class="section" id="outgoing-section">
     <h3 class="section-title">Outgoing Rumours &amp; Reports <span class="section-count" id="outgoing-count"></span></h3>
-    <div class="transfer-grid" id="outgoing-rumors">
+    <div class="confirmed-list" id="outgoing-rumors">
       <!-- Populated by data -->
     </div>
   </section>
@@ -748,7 +779,7 @@
   <section class="section" id="watchlist-section">
     <h3 class="section-title">Long-Tail Watchlist <span class="section-count" id="watchlist-count"></span></h3>
     <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Lower-credibility, monitoring-only or cooling links, kept for completeness rather than as headline moves.</p>
-    <div class="transfer-grid" id="watchlist-grid">
+    <div class="confirmed-list" id="watchlist-grid">
       <!-- Populated by data -->
     </div>
   </section>
@@ -1302,7 +1333,7 @@ function sourcesAccordion(name, linkMap, hub) {
 
 function renderCard(t, linkMap, hub) {
   const tier = t.tier || 3;
-  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
+  const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const truth = t.truth || 50;
   const prob = t.prob || 50;
   // BULLSHIT is an explicit per-item editorial call (t.bullshit === true), not a mechanical
@@ -1315,31 +1346,28 @@ function renderCard(t, linkMap, hub) {
   const bullTag = isBullshit ? '<div class="bullshit-tag">BULLSHIT</div>' : '';
   const noteClass = isBullshit ? ' bullshit' : '';
   const acc = sourcesAccordion(t.name, linkMap, hub);
+  const note = t.note || 'No details';
 
-  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
     ${bullTag}
-    <div class="card-header">
-      <div class="card-player">
-        <span class="player-name">${t.name}</span>
-        <span class="tier-badge t${tier}">${tierLabel}</span>
+    <div class="confirmed-row-main">
+      <span class="tier-badge t${tier} cr-tier">${tierLabel}</span>
+      <div class="cr-main">
+        <span class="cr-name">${t.name}</span>
+        <span class="cr-dest">${t.src || 'Unknown'}${t.club ? ' &middot; ' + t.club : ''}</span>
       </div>
-      <div class="source-info">${t.src || 'Unknown'}${t.club ? ' &middot; ' + t.club : ''}</div>
-    </div>
-    <div class="card-body">
-      <div class="note${noteClass}">${t.note || 'No details'}</div>
-    </div>
-    <div class="card-footer">
-      <div class="metric">
-        <div class="metric-label">Truth</div>
-        <div class="metric-bar"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
-        <div class="metric-value">${truth}%</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Probability</div>
-        <div class="metric-bar"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
-        <div class="metric-value">${prob}%</div>
+      <div class="cr-figures">
+        <div class="cr-metric">
+          <div class="cr-label">Truth <b>${truth}%</b></div>
+          <div class="metric-bar mini"><div class="metric-fill" style="width:${truth}%;background:${metricGradient(truth)}"></div></div>
+        </div>
+        <div class="cr-metric">
+          <div class="cr-label">Prob <b>${prob}%</b></div>
+          <div class="metric-bar mini"><div class="metric-fill" style="width:${prob}%;background:${metricGradient(prob)}"></div></div>
+        </div>
       </div>
     </div>
+    <div class="cr-note-preview${noteClass}" title="${note.replace(/"/g, '&quot;')}">${note}</div>
     ${acc.html}
   </div>`;
 }
@@ -1376,21 +1404,22 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
 
 function renderWatchlistCard(t, wlLinkMap, hub) {
   const tier = t.tier || 3;
-  const tierLabel = ['', 'Tier 1', 'Tier 2', 'Tier 3'][tier] || 'T' + tier;
-  const dirLabel = t.dir === 'out' ? 'OUT' : 'IN';
+  const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
   const acc = sourcesAccordion(t.name, wlLinkMap, hub);
+  const note = t.note || 'No details';
 
-  return `<div class="transfer-card" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
-    <div class="card-header">
-      <div class="card-player">
-        <span class="player-name">${t.name}</span>
-        <span class="tier-badge t${tier}">${tierLabel}</span>
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name">${t.name}</span>
+        <span class="tier-badge t${tier} cr-tier">${tierLabel}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}${t.age ? ' &middot; ' + t.age : ''}</span>
       </div>
-      <div class="source-info">${dirLabel}${t.club ? ' &middot; ' + t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}${t.age ? ' &middot; ' + t.age : ''}</div>
     </div>
-    <div class="card-body">
-      <div class="note">${t.note || 'No details'}</div>
-    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
     ${acc.html}
   </div>`;
 }

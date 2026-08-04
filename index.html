@@ -1733,8 +1733,6 @@ function renderHeadline(h) {
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = h.prob || 50;
   const isBullshit = h.bullshit === true;
-  const direction = h.direction === 'out' ? '→' : '←';
-  const dirClass = h.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = h.club_link ? `${h.club_link}.html#t-${slugifyName(h.headline)}` : '#';
 
@@ -1749,7 +1747,6 @@ function renderHeadline(h) {
     </div>
     <div class="card-body">
       <div class="transfer-direction">
-        <span class="direction-arrow ${dirClass}">${direction}</span>
         <div class="transfer-details">
           <div>${h.from} → ${h.to}</div>
           <div>${h.value}</div>

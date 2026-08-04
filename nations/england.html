@@ -219,6 +219,57 @@
     gap:20px;
   }
 
+  /* League pills sit to the right of the nation name, making use of the wide banner
+     instead of leaving it empty -- replaces the old separate full-width "Leagues"
+     card grid below the hero. */
+  .hero-leagues {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-left:auto;
+    max-width:60%;
+    justify-content:flex-end;
+  }
+
+  .hero-league-pill {
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,0.02);
+    text-decoration:none;
+    color:var(--text-secondary);
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.3px;
+    white-space:nowrap;
+    transition:all 150ms ease;
+  }
+
+  .hero-league-pill:hover {
+    color:var(--text);
+    border-color:var(--accent-gold);
+    transform:translateY(-1px);
+  }
+
+  .hero-league-pill .pill-count {
+    font-size:9px;
+    color:var(--text-muted);
+    background:rgba(0,0,0,0.25);
+    border-radius:999px;
+    padding:1px 6px;
+  }
+
+  @media(max-width:900px) {
+    .hero-inner { flex-wrap:wrap; }
+    .hero-leagues { max-width:100%; justify-content:flex-start; margin-left:0; width:100%; }
+  }
+
   .flag-display {
     flex-shrink:0;
     width:84px;
@@ -305,50 +356,6 @@
     margin-bottom:12px;
     padding-bottom:8px;
     border-bottom:2px solid var(--accent-gold);
-  }
-
-  .leagues-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
-    gap:10px;
-    margin-bottom:24px;
-  }
-
-  .league-card {
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:12px;
-    text-align:center;
-    cursor:pointer;
-    transition:all 200ms ease;
-    text-decoration:none;
-    color:inherit;
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-    min-height:70px;
-    justify-content:center;
-  }
-
-  .league-card:hover {
-    border-color:var(--accent-gold);
-    transform:translateY(-2px);
-    box-shadow:0 6px 12px rgba(0,0,0,0.3);
-  }
-
-  .league-name {
-    font-family:var(--display);
-    font-size:12px;
-    font-weight:400;
-    text-transform:uppercase;
-    letter-spacing:0.2px;
-  }
-
-  .league-meta {
-    font-family:var(--mono);
-    font-size:10px;
-    color:var(--text-muted);
   }
 
   /* ===== TRANSFER CARDS ===== */
@@ -559,10 +566,6 @@
       grid-template-columns:1fr;
     }
 
-    .leagues-grid {
-      grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));
-    }
-
     .logo {
       font-size:11px;
     }
@@ -611,17 +614,13 @@
         </div>
       </div>
     </div>
+    <nav class="hero-leagues" id="hero-leagues" aria-label="Leagues in this nation">
+      <!-- Populated by data -->
+    </nav>
   </div>
 </div>
 
 <div class="container">
-  <section class="section">
-    <h3 class="section-title">Leagues</h3>
-    <div class="leagues-grid" id="leagues-grid">
-      <!-- Populated by data -->
-    </div>
-  </section>
-
   <section class="section">
     <h3 class="section-title">Top Transfer Stories</h3>
     <div class="transfer-grid" id="stories">
@@ -784,20 +783,20 @@ function metricGradient(v) {
 }
 
 (function(){
-  // Populate leagues grid. aggregate.py emits this array as LEAGUES_LIST with a
-  // {slug,name,count} shape -- NOT "LEAGUES" / "club_count" (that mismatch used to leave
-  // this grid permanently empty even when data existed).
-  if(typeof LEAGUES_LIST !== 'undefined' && LEAGUES_LIST && LEAGUES_LIST.length > 0) {
-    const container = document.getElementById('leagues-grid');
-    container.innerHTML = LEAGUES_LIST.map(l => `
-      <a href="../leagues/${l.slug}.html" class="league-card">
-        <div class="league-name">${l.name}</div>
-        <div class="league-meta">${l.count || 0} stories</div>
-      </a>
-    `).join('');
-  } else {
-    const container = document.getElementById('leagues-grid');
-    if(container) container.innerHTML = '<div class="empty">No league data yet</div>';
+  // Populate league pills in the hero banner. aggregate.py emits this array as
+  // LEAGUES_LIST with a {slug,name,count} shape -- NOT "LEAGUES" / "club_count" (that
+  // mismatch used to leave this permanently empty even when data existed).
+  const heroLeagues = document.getElementById('hero-leagues');
+  if(heroLeagues) {
+    if(typeof LEAGUES_LIST !== 'undefined' && LEAGUES_LIST && LEAGUES_LIST.length > 0) {
+      heroLeagues.innerHTML = LEAGUES_LIST.map(l => `
+        <a href="../leagues/${l.slug}.html" class="hero-league-pill">
+          ${l.name}<span class="pill-count">${l.count || 0}</span>
+        </a>
+      `).join('');
+    } else {
+      heroLeagues.style.display = 'none';
+    }
   }
 
   // Populate transfer stories -- ranked by likelihood (Probability) descending
@@ -863,8 +862,6 @@ function renderStory(s) {
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
   const isBullshit = s.bullshit === true;
-  const direction = s.direction === 'out' ? '→' : '←';
-  const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
@@ -879,7 +876,6 @@ function renderStory(s) {
     </div>
     <div class="card-body">
       <div class="transfer-direction">
-        <span class="direction-icon ${dirClass}">${direction}</span>
         <div class="transfer-details">
           <div>${s.from} → ${s.to}</div>
           <div>${s.value}</div>

@@ -865,8 +865,6 @@ function renderStory(s) {
   const tierLabel = ['', 'T1', 'T2', 'T3'][tier] || 'T' + tier;
   const prob = s.prob || 50;
   const isBullshit = s.bullshit === true;
-  const direction = s.direction === 'out' ? '→' : '←';
-  const dirClass = s.direction === 'out' ? 'out' : 'in';
   const bullTag = isBullshit ? '<div class="bullshit-tag">Bullshit</div>' : '';
   const href = s.club_origin ? `../${s.club_origin}.html#t-${slugifyName(s.name)}` : '#';
 
@@ -881,7 +879,6 @@ function renderStory(s) {
     </div>
     <div class="card-body">
       <div class="transfer-direction">
-        <span class="direction-icon ${dirClass}">${direction}</span>
         <div class="transfer-details">
           <div>${s.from} → ${s.to}</div>
           <div>${s.value}</div>
