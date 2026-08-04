@@ -37,7 +37,7 @@ const BY_LEAGUE = {"Pro League": 3, "Challenger Pro League": 0, "Division 1": 0}
 const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 3}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
 
 const REPORT_META = {
-  asof: "03 Aug 2026",
-  updated: "2026-08-03T23:04:23.247696Z",
+  asof: "04 Aug 2026",
+  updated: "2026-08-04T07:48:19.917759Z",
   label: "Nation aggregation"
 };
