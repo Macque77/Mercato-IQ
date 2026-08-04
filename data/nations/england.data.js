@@ -66,13 +66,6 @@ const TOP_STORIES = [  {
     value: "€90-100m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Nestory Irankunda",prob: 45, truth: 55, bullshit: false,
-    club_origin: "watford", club_display_name: "Watford", direction: "out",
-    from: "Watford", to: "Sporting CP",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~€22m (bonuses included)", updated: "2026-07-29T00:00:00Z", league: "Championship"
-  },
-  {
     name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
@@ -87,18 +80,18 @@ const TOP_STORIES = [  {
     value: "Loan (poss. obligation to buy)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
-    name: "James Trafford",prob: 40, truth: 60, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
-    from: "Manchester City", to: "Leeds United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
     name: "Mykhailo Mudryk",prob: 40, truth: 65, bullshit: false,
     club_origin: "chelsea", club_display_name: "Chelsea", direction: "out",
     from: "Chelsea", to: "Coventry City / Strasbourg (multiple suitors)",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "James Trafford",prob: 40, truth: 60, bullshit: false,
+    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
+    from: "Manchester City", to: "Leeds United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Carlos Baleba",prob: 35, truth: 55, bullshit: false,
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
+  {
+    name: "Noah Atubolu",prob: 30, truth: 80, bullshit: false,
+    club_origin: "brighton", club_display_name: "Brighton", direction: "in",
+    from: "SC Freiburg", to: "Brighton",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
 ];
 
-const BY_LEAGUE = {"Championship": 20, "Premier League": 112, "League One": 54, "League Two": 0};
+const BY_LEAGUE = {"Championship": 19, "Premier League": 113, "League One": 54, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 112}, {"slug": "league-one", "name": "League One", "count": 54}, {"slug": "championship", "name": "Championship", "count": 20}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 113}, {"slug": "league-one", "name": "League One", "count": 54}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:48:54.609236Z",
+  updated: "2026-08-04T17:50:08.378024Z",
   label: "Nation aggregation"
 };
