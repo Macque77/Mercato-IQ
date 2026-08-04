@@ -6,10 +6,24 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 60
+  stories_count: 62
 };
 
 const TOP_STORIES = [  {
+    name: "Franco Mastantuono",prob: 35, truth: 55, bullshit: false,
+    club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "in",
+    from: "Real Madrid", to: "Fiorentina",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Diego Moreira",prob: 30, truth: 50, bullshit: false,
+    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
+    from: "Strasbourg", to: "AS Roma",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
     name: "Kieron Bowie",prob: 55, truth: 60, bullshit: false,
     club_origin: "sassuolo", club_display_name: "US Sassuolo", direction: "in",
     from: "Hellas Verona", to: "US Sassuolo",
@@ -55,7 +69,7 @@ const TOP_STORIES = [  {
     name: "Serhou Guirassy",prob: 40, truth: 58, bullshit: false,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "RB Leipzig", to: "AS Roma",
-    tier: 2, coverage: 1, coverage_trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
@@ -95,33 +109,19 @@ const TOP_STORIES = [  {
   },
   {
     name: "Santiago Castro",prob: 35, truth: 55, bullshit: false,
-    club_origin: "bologna", club_display_name: "Bologna", direction: "out",
+    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "Bologna", to: "AS Roma",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
-  {
-    name: "Kristian Thorstvedt",prob: 35, truth: 55, bullshit: false,
-    club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "in",
-    from: "Sassuolo", to: "Fiorentina",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "~€15m (asking price)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Ricardo Mangas",prob: 35, truth: 55, bullshit: false,
-    club_origin: "monza", club_display_name: "AC Monza", direction: "in",
-    from: "Sporting CP", to: "AC Monza",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan with conditional obligation to buy", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
 ];
 
-const BY_LEAGUE = {"Serie A": 49, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 51, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 49}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 51}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T12:44:46.875791Z",
+  updated: "2026-08-04T12:46:29.275258Z",
   label: "Nation aggregation"
 };
