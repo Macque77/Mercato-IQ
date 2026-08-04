@@ -46,8 +46,8 @@ const CONFIRMED_OUT = [
   {name:"Lefteris Lyratzis", sub:"26 · RB · Greece", club:"Atromitos", pos:"RB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer to Atromitos on a two-year deal, with PAOK keeping a sell-on percentage."}
 ];
 const INCOMING = [
-  {name:"Dimitris Giannoulis", sub:"LB · Greece", club:"Augsburg", pos:"LB", report:"3 Aug 2026", src:"Foxbet.gr", tier:3, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"flat", note:"Reported to be \"on a very good path\"; PAOK pushing Augsburg to lower their asking price."},
-  {name:"Antoine Makoumbou", sub:"MF · Congo", club:"Samsunspor", pos:"MF", report:"10 Jun 2026", src:"Turkish media (via Foxbet.gr)", tier:3, fee:"Undisclosed", truth:25, prob:15, light:"o", trend:"flat", note:"Named alongside Panathinaikos as a suitor; contract runs to 2029, making a deal difficult."}
+  {name:"Dimitris Giannoulis", sub:"LB · Greece", club:"Augsburg", pos:"LB", report:"3 Aug 2026", src:"Foxbet.gr", tier:3, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"flat", note:"Reported to be \"on a very good path\"; PAOK pushing Augsburg to lower their asking price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Antoine Makoumbou", sub:"MF · Congo", club:"Samsunspor", pos:"MF", report:"10 Jun 2026", src:"Turkish media (via Foxbet.gr)", tier:3, fee:"Undisclosed", truth:25, prob:15, light:"o", trend:"flat", note:"Named alongside Panathinaikos as a suitor; contract runs to 2029, making a deal difficult.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 const OUTGOING = [];
 const RISERS = [];

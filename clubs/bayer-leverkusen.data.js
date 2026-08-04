@@ -44,8 +44,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Moussa Diaby", sub:"Talk of sensational Bundesliga return", club:"Al-Ittihad", pos:"RW", report:"Leverkusen are reportedly plotting a €30m reunion with Diaby, who scored 96 goals in 172 appearances for the club before his 2023 move to Aston Villa.", src:"Goal.com", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Speculative reunion story with no indication Al-Ittihad are willing sellers."},
-  {name:"Zakaria El Ouahdi", sub:"Identified as alternative to Medina at right-back", club:"KRC Genk", pos:"RB", report:"Leverkusen have identified the Morocco international full-back as a fallback option to Facundo Medina, with Genk said to be demanding a fee that makes 'top clubs swallow hard'.", src:"Kicker", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Reported as secondary target behind Medina; Genk resisting a cut-price sale."}
+  {name:"Moussa Diaby", sub:"Talk of sensational Bundesliga return", club:"Al-Ittihad", pos:"RW", report:"Leverkusen are reportedly plotting a €30m reunion with Diaby, who scored 96 goals in 172 appearances for the club before his 2023 move to Aston Villa.", src:"Goal.com", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Speculative reunion story with no indication Al-Ittihad are willing sellers.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Zakaria El Ouahdi", sub:"Identified as alternative to Medina at right-back", club:"KRC Genk", pos:"RB", report:"Leverkusen have identified the Morocco international full-back as a fallback option to Facundo Medina, with Genk said to be demanding a fee that makes 'top clubs swallow hard'.", src:"Kicker", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Reported as secondary target behind Medina; Genk resisting a cut-price sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 
 const OUTGOING = [];

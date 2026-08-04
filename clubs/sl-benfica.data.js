@@ -42,8 +42,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Todibo from Nice", sub:"24 · CB · France", club:"OGC Nice", pos:"CB", report:"31 Jul 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€20m", truth:58, prob:42, light:"y", trend:"up", note:"Hawkins reports Benfica interested in Nice defender. Deal talks ongoing but not finalized."},
-  {name:"Sérgio Conceição", sub:"35 · ST · Portugal", club:"Free agent", pos:"ST", report:"28 Jul 2026", src:"Portuguese media", tier:2, fee:"Free agent", truth:40, prob:22, light:"o", trend:"flat", note:"Speculation about former Porto striker; low likelihood given age and competition."}
+  {name:"Todibo from Nice", sub:"24 · CB · France", club:"OGC Nice", pos:"CB", report:"31 Jul 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€20m", truth:58, prob:42, light:"y", trend:"up", note:"Hawkins reports Benfica interested in Nice defender. Deal talks ongoing but not finalized.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42},
+  {name:"Sérgio Conceição", sub:"35 · ST · Portugal", club:"Free agent", pos:"ST", report:"28 Jul 2026", src:"Portuguese media", tier:2, fee:"Free agent", truth:40, prob:22, light:"o", trend:"flat", note:"Speculation about former Porto striker; low likelihood given age and competition.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22}
 ];
 
 const OUTGOING = [];

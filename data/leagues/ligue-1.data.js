@@ -97,7 +97,7 @@ const TOP_STORIES = [  {
     name: "Diego Moreira", prob: 30, truth: 50, bullshit: false,
     club_origin: "rc-strasbourg", club_display_name: "RC Strasbourg Alsace", direction: "out",
     from: "RC Strasbourg Alsace", to: "AS Roma",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "aj-auxerre", "name": "AJ Auxerre", "count": 3, "ba
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:28:09.488278Z",
+  updated: "2026-08-04T19:11:19.728613Z",
   label: "League aggregation"
 };

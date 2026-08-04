@@ -43,8 +43,8 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Claudio Braga", sub:"FW", club:"Celtic", pos:"FW", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Early-stage interest reported from Celtic."},
-  {name:"Unnamed Hearts striker", sub:"ST", club:"Undisclosed", pos:"ST", report:"~1 wk ago", src:"The Scotsman", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Reported to be nearing an exit, player not named."}
+  {name:"Claudio Braga", sub:"FW", club:"Celtic", pos:"FW", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Early-stage interest reported from Celtic.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Unnamed Hearts striker", sub:"ST", club:"Undisclosed", pos:"ST", report:"~1 wk ago", src:"The Scotsman", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Reported to be nearing an exit, player not named.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const RISERS = [];
 const FALLERS = [];

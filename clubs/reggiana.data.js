@@ -33,10 +33,10 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Michele Castagnetti", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Eyed as a potential replacement for Reinhart amid Reggiana's post-relegation rebuild in Serie C."}
+  {name:"Michele Castagnetti", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Eyed as a potential replacement for Reinhart amid Reggiana's post-relegation rebuild in Serie C.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const OUTGOING = [
-  {name:"Reinhart", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Possible departure reported, nothing confirmed."}
+  {name:"Reinhart", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Possible departure reported, nothing confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const RISERS = [];
 const FALLERS = [];

@@ -50,7 +50,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"RB Leipzig", pos:"ST", report:"2 Aug 2026", src:"Sport Bild / Sky Deutschland", tier:2, fee:"Below €35m valuation via contract clause", truth:70, prob:65, light:"g", trend:"up", note:"Reported imminent: Sport Bild says the move could complete during Hoffenheim's Austrian training camp (2-9 Aug), with Leipzig activating a contractual release clause below his risen €35m market value. Asllani chose Leipzig over Barcelona and was omitted from the training-camp squad, a strong signal of an imminent exit."}
+  {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"RB Leipzig", pos:"ST", report:"2 Aug 2026", src:"Sport Bild / Sky Deutschland", tier:2, fee:"Below €35m valuation via contract clause", truth:70, prob:65, light:"g", trend:"up", note:"Reported imminent: Sport Bild says the move could complete during Hoffenheim's Austrian training camp (2-9 Aug), with Leipzig activating a contractual release clause below his risen €35m market value. Asllani chose Leipzig over Barcelona and was omitted from the training-camp squad, a strong signal of an imminent exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65}
 ];
 
 const RISERS = [

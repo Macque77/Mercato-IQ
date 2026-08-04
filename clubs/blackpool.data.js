@@ -33,11 +33,11 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"~2 wks ago", src:"FLW opinion", tier:4, fee:"Free", truth:30, prob:20, light:'o', trend:'flat', note:"Speculative return suggested in an opinion piece, nothing reported."}
+  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"~2 wks ago", src:"FLW opinion", tier:4, fee:"Free", truth:30, prob:20, light:'o', trend:'flat', note:"Speculative return suggested in an opinion piece, nothing reported.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 const OUTGOING = [
-  {name:"Franco Ravizzoli", sub:"GK", club:"Leicester City", pos:"GK", report:"~1 wk ago", src:"FLW", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Russell Martin connection cited, monitoring stage."},
-  {name:"Josh Bowler", sub:"W", club:"Nottingham Forest", pos:"W", report:"~2 wks ago", src:"FLW", tier:3, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Status unclear, treat as speculative."}
+  {name:"Franco Ravizzoli", sub:"GK", club:"Leicester City", pos:"GK", report:"~1 wk ago", src:"FLW", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Russell Martin connection cited, monitoring stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Josh Bowler", sub:"W", club:"Nottingham Forest", pos:"W", report:"~2 wks ago", src:"FLW", tier:3, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Status unclear, treat as speculative.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const RISERS = [];
 const FALLERS = [];

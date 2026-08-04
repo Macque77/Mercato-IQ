@@ -49,13 +49,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Joseph Kalulu", sub:"21 · LB · —", club:"Pau FC", pos:"LB", report:"17-18 Jul 2026", src:"L'Équipe (via AfricaFoot / Angers Info)", tier:2, fee:"~€2m (est. market value)", truth:55, prob:30, light:"y", trend:"flat", note:"Angers are scouting the Pau FC left-back, who has impressed in Ligue 2, but face competition from FC Basel and reportedly Hamburg."},
-  {name:"Paulos Abraham", sub:"24 · ST · Sweden", club:"Hammarby", pos:"ST", report:"2 Aug 2026", src:"Radio L1 (X)", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Single-source report says Angers are interested in the Hammarby striker (9 goals this season); contract runs to Dec 2028."}
+  {name:"Joseph Kalulu", sub:"21 · LB · —", club:"Pau FC", pos:"LB", report:"17-18 Jul 2026", src:"L'Équipe (via AfricaFoot / Angers Info)", tier:2, fee:"~€2m (est. market value)", truth:55, prob:30, light:"y", trend:"flat", note:"Angers are scouting the Pau FC left-back, who has impressed in Ligue 2, but face competition from FC Basel and reportedly Hamburg.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Paulos Abraham", sub:"24 · ST · Sweden", club:"Hammarby", pos:"ST", report:"2 Aug 2026", src:"Radio L1 (X)", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Single-source report says Angers are interested in the Hammarby striker (9 goals this season); contract runs to Dec 2028.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [
-  {name:"Yahia Jlidi", sub:"17 · AM/winger · Tunisia", club:"Lyon / Roma (Monaco also interested)", pos:"AM", report:"24 Jul – 4 Aug 2026", src:"RMC Sport / Foot Mercato / AfricaFoot", tier:1, fee:"Angers value at ~€7m (rejected Monaco's €4m bid)", truth:75, prob:55, light:"g", trend:"flat", note:"Monaco's €4m bid was rejected in July; by early August Lyon and AS Roma were both reported to be accelerating pursuit of the highly-rated Tunisian U17 international."},
-  {name:"Harouna Djibirin", sub:"19 · FW · Cameroon", club:"Club Brugge", pos:"FW", report:"5 May 2026 (renewed 31 Jul 2026)", src:"Sacha Tavolieri (via Walfoot); AfricaFoot", tier:1, fee:"~€15m asking price", truth:65, prob:35, light:"y", trend:"flat", note:"Brugge's interest, first reported by insider Sacha Tavolieri, resurfaced in late July with the Belgian club resuming discussions, though no bid is confirmed."}
+  {name:"Yahia Jlidi", sub:"17 · AM/winger · Tunisia", club:"Lyon / Roma (Monaco also interested)", pos:"AM", report:"24 Jul – 4 Aug 2026", src:"RMC Sport / Foot Mercato / AfricaFoot", tier:1, fee:"Angers value at ~€7m (rejected Monaco's €4m bid)", truth:75, prob:55, light:"g", trend:"flat", note:"Monaco's €4m bid was rejected in July; by early August Lyon and AS Roma were both reported to be accelerating pursuit of the highly-rated Tunisian U17 international.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
+  {name:"Harouna Djibirin", sub:"19 · FW · Cameroon", club:"Club Brugge", pos:"FW", report:"5 May 2026 (renewed 31 Jul 2026)", src:"Sacha Tavolieri (via Walfoot); AfricaFoot", tier:1, fee:"~€15m asking price", truth:65, prob:35, light:"y", trend:"flat", note:"Brugge's interest, first reported by insider Sacha Tavolieri, resurfaced in late July with the Belgian club resuming discussions, though no bid is confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const RISERS = [

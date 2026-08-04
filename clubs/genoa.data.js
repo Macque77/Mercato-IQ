@@ -48,13 +48,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Sorba Thomas", sub:"RW, Wales, 26", club:"Huddersfield/Stoke City", pos:"RW", report:"Genoa are among several clubs, along with West Ham interest, tracking the Welsh winger as a squad reinforcement option.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Still at an early exploratory stage with multiple clubs in the mix."},
-  {name:"Pierre-Emerick Aubameyang", sub:"ST, Gabon, 37", club:"Marseille", pos:"ST", report:"Named among veteran striker targets under consideration by Genoa as attacking cover following interest in Traore from the same Marseille squad.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Speculative veteran link, no concrete talks confirmed."}
+  {name:"Sorba Thomas", sub:"RW, Wales, 26", club:"Huddersfield/Stoke City", pos:"RW", report:"Genoa are among several clubs, along with West Ham interest, tracking the Welsh winger as a squad reinforcement option.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Still at an early exploratory stage with multiple clubs in the mix.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Pierre-Emerick Aubameyang", sub:"ST, Gabon, 37", club:"Marseille", pos:"ST", report:"Named among veteran striker targets under consideration by Genoa as attacking cover following interest in Traore from the same Marseille squad.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Speculative veteran link, no concrete talks confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [
-  {name:"Elliot Stroud", sub:"LW, Sweden, 20", club:"Hull City", pos:"LW", report:"Genoa allege they had a pre-contract agreement with the Mjallby winger, who instead signed for Hull City; the club has begun legal action against his agents.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:75, prob:90, light:"g", trend:"flat", note:"Player has already signed elsewhere so this is a completed loss for Genoa, not a live target."},
-  {name:"Brooke Norton-Cuffy", sub:"RB, England, 22", club:"Everton/Arsenal", pos:"RB", report:"Everton are targeting the full-back, with a sell-on clause meaning parent club Arsenal would receive a cut of any circa €20m Genoa sale.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Premier League interest growing after a strong loan season at Genoa."}
+  {name:"Elliot Stroud", sub:"LW, Sweden, 20", club:"Hull City", pos:"LW", report:"Genoa allege they had a pre-contract agreement with the Mjallby winger, who instead signed for Hull City; the club has begun legal action against his agents.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:75, prob:90, light:"g", trend:"flat", note:"Player has already signed elsewhere so this is a completed loss for Genoa, not a live target.", lastSeen:"2026-08-04T19:10:50Z", baseProb:90},
+  {name:"Brooke Norton-Cuffy", sub:"RB, England, 22", club:"Everton/Arsenal", pos:"RB", report:"Everton are targeting the full-back, with a sell-on clause meaning parent club Arsenal would receive a cut of any circa €20m Genoa sale.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Premier League interest growing after a strong loan season at Genoa.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const RISERS = [

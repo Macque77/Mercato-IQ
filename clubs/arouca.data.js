@@ -37,7 +37,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Taichi Fukui", sub:"21 · MF · Japan", club:"Arouca", pos:"MF", report:"22 May 2026", src:"Record (via Bola na Rede)", tier:2, fee:"~€10m (near release clause)", truth:55, prob:30, light:"y", trend:"flat", note:"Rayo Vallecano interested; Arouca will only sell for an offer close to his €10m release clause."}
+  {name:"Taichi Fukui", sub:"21 · MF · Japan", club:"Arouca", pos:"MF", report:"22 May 2026", src:"Record (via Bola na Rede)", tier:2, fee:"~€10m (near release clause)", truth:55, prob:30, light:"y", trend:"flat", note:"Rayo Vallecano interested; Arouca will only sell for an offer close to his €10m release clause.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];

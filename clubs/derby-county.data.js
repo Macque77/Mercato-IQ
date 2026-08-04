@@ -35,9 +35,9 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Loan", truth:65, prob:50, light:'y', trend:'up', note:"O'Rourke is a credible EFL-focused reporter and the logic stacks up given Derby's thin attacking options so far."},
-  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"~2 wks ago", src:"Football League World", tier:3, fee:"Loan", truth:50, prob:30, light:'y', trend:'flat', note:"Sensible fit being floated but still City's decision to make, nothing close yet."},
-  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:15, light:'o', trend:'flat', note:"Very early and one of six clubs in a crowded field, do not back Derby specifically to land him."}
+  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Loan", truth:65, prob:50, light:'y', trend:'up', note:"O'Rourke is a credible EFL-focused reporter and the logic stacks up given Derby's thin attacking options so far.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"~2 wks ago", src:"Football League World", tier:3, fee:"Loan", truth:50, prob:30, light:'y', trend:'flat', note:"Sensible fit being floated but still City's decision to make, nothing close yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:15, light:'o', trend:'flat', note:"Very early and one of six clubs in a crowded field, do not back Derby specifically to land him.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 const OUTGOING = [];
 const RISERS = [];

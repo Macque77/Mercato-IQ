@@ -35,7 +35,7 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Matty Young", sub:"DF/W", club:"Sunderland", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Loan", truth:50, prob:40, light:'y', trend:'flat', note:"MK Dons competing with Sheffield Wednesday, Leicester and Cardiff for the loan."}
+  {name:"Matty Young", sub:"DF/W", club:"Sunderland", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Loan", truth:50, prob:40, light:'y', trend:'flat', note:"MK Dons competing with Sheffield Wednesday, Leicester and Cardiff for the loan.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const OUTGOING = [];
 const RISERS = [];

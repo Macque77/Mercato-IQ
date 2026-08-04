@@ -44,7 +44,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Rayan Bamba", sub:"22-year-old defender, returning from loan spell at Nancy", club:"Stade Rennais", pos:"RB", report:"Le Mans, newly promoted to Ligue 1, are set to take Rennes right-back Rayan Bamba on loan again to add competition at right-back after his 20-appearance Ligue 2 loan at Nancy.", src:"Foot Mercato", tier:2, fee:"Loan", truth:70, prob:65, light:"g", trend:"flat", note:"Reported alongside separate Actu.fr coverage of Le Mans needing right-back depth."}
+  {name:"Rayan Bamba", sub:"22-year-old defender, returning from loan spell at Nancy", club:"Stade Rennais", pos:"RB", report:"Le Mans, newly promoted to Ligue 1, are set to take Rennes right-back Rayan Bamba on loan again to add competition at right-back after his 20-appearance Ligue 2 loan at Nancy.", src:"Foot Mercato", tier:2, fee:"Loan", truth:70, prob:65, light:"g", trend:"flat", note:"Reported alongside separate Actu.fr coverage of Le Mans needing right-back depth.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65}
 ];
 
 const OUTGOING = [];

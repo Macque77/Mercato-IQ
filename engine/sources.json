@@ -1,0 +1,134 @@
+{
+  "England": {
+    "tier1": [
+      "David Ornstein (The Athletic, BBC Sport)",
+      "Simon Stone (BBC Sport)",
+      "James Ducker (The Telegraph)",
+      "Laurie Whitwell (The Athletic)",
+      "Amy Lawrence (The Athletic)",
+      "James Copley (X/Twitter, EFL/Championship)"
+    ],
+    "tier2_urls": [
+      "https://www.skysports.com/premier-league-news",
+      "https://feeds.bbci.co.uk/sport/football/rss.xml",
+      "https://www.theathletic.com/football/",
+      "https://www.telegraph.co.uk/football/"
+    ]
+  },
+  "Spain": {
+    "tier1": [
+      "Gerard Romero (RAC1, Barcelona specialist)",
+      "Matteo Moretto (Relevo, Sky Sports Spain)"
+    ],
+    "tier2_urls": [
+      "https://www.relevo.com/",
+      "https://www.marca.com/futbol.html",
+      "https://as.com/futbol/",
+      "https://www.sport.es/es/",
+      "https://www.mundodeportivo.com/futbol/",
+      "https://www.football-espana.net/"
+    ]
+  },
+  "Italy": {
+    "tier1": [
+      "Gianluca Di Marzio (Sky Italia)",
+      "Rudy Galetti (Sky Italia)",
+      "Nico Schira (Sky Italia)",
+      "Sacha Tavolieri (HLN, Serie A + Belgium)"
+    ],
+    "tier2_urls": [
+      "https://www.gazzetta.it/",
+      "https://www.calciomercato.com/",
+      "https://www.tuttomercatoweb.com/",
+      "https://www.tuttosport.com/"
+    ]
+  },
+  "Germany": {
+    "tier1": [
+      "Christian Falk (BILD, Sky Deutschland)",
+      "Jacob Feldmann (BILD, Sky Deutschland)",
+      "Florian Plettenberg (Sky Deutschland)",
+      "Philipp Hinze (Sky Deutschland/BILD, X: @philipphinze24)"
+    ],
+    "tier2_urls": [
+      "https://www.kicker.de/",
+      "https://www.bundesliga.com/en/bundesliga/transfers",
+      "https://www.bild.de/sport/fussball/",
+      "https://www.sport1.de/transfermarkt"
+    ]
+  },
+  "France": {
+    "tier1": [
+      "Mohamed Bouhafsi (RMC Sport, France Bleu, PSG specialist)",
+      "Fabrice Hawkins (L'Equipe, Twitter/X)"
+    ],
+    "tier2_urls": [
+      "https://www.lequipe.fr/Football/",
+      "https://www.footmercato.net/",
+      "https://rmcsport.bfmtv.com/football/",
+      "https://www.topmercato.com/"
+    ]
+  },
+  "Netherlands": {
+    "tier1": [
+      "Mike Verweij (Telegraaf, Ajax specialist)",
+      "Mikos Goura (ESPN Netherlands)",
+      "Voetbal International (VI.nl) staff reporters"
+    ],
+    "tier2_urls": [
+      "https://www.vi.nl/",
+      "https://www.fcupdate.nl/",
+      "https://www.telegraaf.nl/sport/voetbal",
+      "https://www.espn.nl/"
+    ]
+  },
+  "Belgium": {
+    "tier1": [
+      "Sacha Tavolieri (HLN)",
+      "Kristof Terreur (HLN)"
+    ],
+    "tier2_urls": [
+      "https://www.hln.be/voetbal",
+      "https://sporza.be/nl/categorie/voetbal/",
+      "https://www.rtbf.be/sport/football"
+    ]
+  },
+  "Portugal": {
+    "tier1": [
+      "Portuguese football press (SIC Noticias, TVI)"
+    ],
+    "tier2_urls": [
+      "https://www.ojogo.pt/",
+      "https://www.record.pt/",
+      "https://www.cmjornal.pt/desporto"
+    ]
+  },
+  "Turkey": {
+    "tier1": [],
+    "tier2_urls": [
+      "https://www.fotomac.com.tr/",
+      "https://www.fanatik.com.tr/"
+    ]
+  },
+  "Greece": {
+    "tier1": [],
+    "tier2_urls": [
+      "https://www.gazzetta.gr/",
+      "https://www.sport24.gr/"
+    ]
+  },
+  "Scotland": {
+    "tier1": [],
+    "tier2_urls": [
+      "https://www.dailyrecord.co.uk/sport/football/",
+      "https://www.bbc.co.uk/sport/football/scottish-premiership"
+    ]
+  },
+  "Sweden": {
+    "tier1": [],
+    "tier2_urls": [
+      "https://www.fotbolldirekt.se/",
+      "https://www.aftonbladet.se/sportbladet/fotboll"
+    ]
+  }
+}

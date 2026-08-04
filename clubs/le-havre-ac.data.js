@@ -47,8 +47,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Timothée Pembélé", sub:"24 · LB · France", club:"Sunderland", pos:"LB", report:"15 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Sunderland are reported to be set to complete a permanent deal for the defender after his loan spell."},
-  {name:"Yanis Zouaoui", sub:"Left-back, 28, contract through June 2027", club:"FC Nantes", pos:"LB", report:"Le Havre and Nantes are in advanced talks over the sale of left-back Yanis Zouaoui, who would become Nantes' sixth summer signing.", src:"L'Equipe", tier:1, fee:"Undisclosed", truth:80, prob:75, light:"g", trend:"flat", note:"Described as 'very advanced' negotiations; not yet officially completed."}
+  {name:"Timothée Pembélé", sub:"24 · LB · France", club:"Sunderland", pos:"LB", report:"15 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Sunderland are reported to be set to complete a permanent deal for the defender after his loan spell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:52},
+  {name:"Yanis Zouaoui", sub:"Left-back, 28, contract through June 2027", club:"FC Nantes", pos:"LB", report:"Le Havre and Nantes are in advanced talks over the sale of left-back Yanis Zouaoui, who would become Nantes' sixth summer signing.", src:"L'Equipe", tier:1, fee:"Undisclosed", truth:80, prob:75, light:"g", trend:"flat", note:"Described as 'very advanced' negotiations; not yet officially completed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:75}
 ];
 
 const RISERS = [

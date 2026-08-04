@@ -36,7 +36,7 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Luke Graham", sub:"DF", club:"Rangers", pos:"DF", report:"~4 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Reported fresh scouting interest, but the source is several months old."}
+  {name:"Luke Graham", sub:"DF", club:"Rangers", pos:"DF", report:"~4 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Reported fresh scouting interest, but the source is several months old.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];

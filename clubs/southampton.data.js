@@ -39,7 +39,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Shea Charles", sub:"23 · MF · Northern Ireland", club:"Leeds United", pos:"MF", report:"22 Jul 2026", src:"Graham Smyth / Yorkshire Evening Post", tier:2, fee:"~£30m valuation", truth:60, prob:40, light:"y", trend:"up", note:"Leeds have lodged what they're calling their 'best and final' bid after two rejected offers; Southampton are holding out for closer to their valuation. Crystal Palace and Fulham also linked."}
+  {name:"Shea Charles", sub:"23 · MF · Northern Ireland", club:"Leeds United", pos:"MF", report:"22 Jul 2026", src:"Graham Smyth / Yorkshire Evening Post", tier:2, fee:"~£30m valuation", truth:60, prob:40, light:"y", trend:"up", note:"Leeds have lodged what they're calling their 'best and final' bid after two rejected offers; Southampton are holding out for closer to their valuation. Crystal Palace and Fulham also linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const RISERS = [];
 const FALLERS = [];

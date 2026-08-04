@@ -39,11 +39,11 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Chiquinho", sub:"26 · LB · Portugal", club:"Guimarães", pos:"LB", report:"1 Aug 2026", src:"Sky Sports", tier:2, fee:"€8m", truth:62, prob:48, note:"Sky reports Olympiacos interest in Portuguese left-back."}
+  {name:"Chiquinho", sub:"26 · LB · Portugal", club:"Guimarães", pos:"LB", report:"1 Aug 2026", src:"Sky Sports", tier:2, fee:"€8m", truth:62, prob:48, note:"Sky reports Olympiacos interest in Portuguese left-back.", lastSeen:"2026-08-04T19:10:50Z", baseProb:48}
 ];
 
 const OUTGOING = [
-  {name:"Francisco Ortega", sub:"27 · LB", club:"River Plate", pos:"LB", report:"23 Jul 2026", src:"Nicolo Schira", tier:2, fee:"~€7m asking price", truth:45, prob:20, light:"o", trend:"flat", note:"Early-stage talks opened; Ortega's contract with Olympiacos runs to 2028."}
+  {name:"Francisco Ortega", sub:"27 · LB", club:"River Plate", pos:"LB", report:"23 Jul 2026", src:"Nicolo Schira", tier:2, fee:"~€7m asking price", truth:45, prob:20, light:"o", trend:"flat", note:"Early-stage talks opened; Ortega's contract with Olympiacos runs to 2028.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [];

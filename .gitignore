@@ -2,5 +2,6 @@
 # stray build/debug artifacts
 *.stalecheck.js
 *.stalecheck.tmp
+*.syntaxcheck.js
 __pycache__/
 *.pyc

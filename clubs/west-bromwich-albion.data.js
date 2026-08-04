@@ -35,10 +35,10 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:15, light:'o', trend:'flat', note:"Very early, Brighton have not decided their plan for him yet, background noise for now."}
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:15, light:'o', trend:'flat', note:"Very early, Brighton have not decided their plan for him yet, background noise for now.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 const OUTGOING = [
-  {name:"Eseosa Sule", sub:"Winger", club:"Undisclosed", pos:"W", report:"~4 days ago", src:"West Brom News", tier:2, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Club's own dedicated transfer reporter using strong imminent language, worth some credence."}
+  {name:"Eseosa Sule", sub:"Winger", club:"Undisclosed", pos:"W", report:"~4 days ago", src:"West Brom News", tier:2, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Club's own dedicated transfer reporter using strong imminent language, worth some credence.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 const RISERS = [];
 const FALLERS = [];

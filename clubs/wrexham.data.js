@@ -36,7 +36,7 @@ const CONFIRMED_OUT = [
   {name:"Tom O'Connor", sub:"MF", club:"Released", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract terminated by mutual consent."}
 ];
 const INCOMING = [
-  {name:"Anthony Patterson", sub:"GK", club:"Sunderland", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Freshly promoted Wrexham exploring goalkeeping options; nothing concrete lodged yet."}
+  {name:"Anthony Patterson", sub:"GK", club:"Sunderland", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Freshly promoted Wrexham exploring goalkeeping options; nothing concrete lodged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const OUTGOING = [];
 const RISERS = [];

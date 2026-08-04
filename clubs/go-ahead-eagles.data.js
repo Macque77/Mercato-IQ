@@ -55,7 +55,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Joris Kramer", sub:"Centre-back, club captain", club:"Ajax / Feyenoord / PSV / AZ (domestic interest)", pos:"DF", report:"Go Ahead director Jan Willem van Dop said the club wants to keep its 29-year-old captain this season after fending off a bid from FC Groningen and an unnamed Turkish club. Kramer was given an informal window until 1 August to explore a move to one of the traditional 'big' Dutch clubs if a serious, respectful offer arrived; Robin Pröpper (FC Twente) has been floated as a possible successor if he does leave.", src:"FCUpdate.nl", tier:2, fee:"Undisclosed", truth:55, prob:20, light:"o", trend:"flat", note:"Self-imposed 1 August deadline has now passed with no confirmed move."}
+  {name:"Joris Kramer", sub:"Centre-back, club captain", club:"Ajax / Feyenoord / PSV / AZ (domestic interest)", pos:"DF", report:"Go Ahead director Jan Willem van Dop said the club wants to keep its 29-year-old captain this season after fending off a bid from FC Groningen and an unnamed Turkish club. Kramer was given an informal window until 1 August to explore a move to one of the traditional 'big' Dutch clubs if a serious, respectful offer arrived; Robin Pröpper (FC Twente) has been floated as a possible successor if he does leave.", src:"FCUpdate.nl", tier:2, fee:"Undisclosed", truth:55, prob:20, light:"o", trend:"flat", note:"Self-imposed 1 August deadline has now passed with no confirmed move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [];

@@ -33,8 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Mohamed Salah", sub:"33 · FW · Egypt", club:"Free agent (ex-Liverpool)", pos:"FW", report:"1 Aug 2026", src:"Robin Bairner / Yagiz Sabuncuoglu (FootballTransfers)", tier:2, fee:"~€34m total (2-yr deal)", truth:60, prob:46, light:"y", trend:"up", note:"Reported to be the more advanced of two rival Süper Lig offers - roughly €17m/season across two years - with Salah said to be 'positively inclined' pending family consultation."},
-  {name:"Darwin Nunez", sub:"27 · FW · Uruguay", club:"Al-Hilal", pos:"FW", report:"3 Aug 2026", src:"Sacha Tavolieri / SportBible", tier:2, fee:"Loan", truth:48, prob:24, light:"o", trend:"flat", note:"One of four Süper Lig clubs (with Besiktas, Galatasaray, Fenerbahce) now credited with interest in the loaned-out Al-Hilal forward."}
+  {name:"Mohamed Salah", sub:"33 · FW · Egypt", club:"Free agent (ex-Liverpool)", pos:"FW", report:"1 Aug 2026", src:"Robin Bairner / Yagiz Sabuncuoglu (FootballTransfers)", tier:2, fee:"~€34m total (2-yr deal)", truth:60, prob:46, light:"y", trend:"up", note:"Reported to be the more advanced of two rival Süper Lig offers - roughly €17m/season across two years - with Salah said to be 'positively inclined' pending family consultation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:46},
+  {name:"Darwin Nunez", sub:"27 · FW · Uruguay", club:"Al-Hilal", pos:"FW", report:"3 Aug 2026", src:"Sacha Tavolieri / SportBible", tier:2, fee:"Loan", truth:48, prob:24, light:"o", trend:"flat", note:"One of four Süper Lig clubs (with Besiktas, Galatasaray, Fenerbahce) now credited with interest in the loaned-out Al-Hilal forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24}
 ];
 const OUTGOING = [];
 const RISERS = [

@@ -35,12 +35,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation."},
-  {name:"Iker Luque", sub:"21 · W · Spain", club:"Atlético Madrid", pos:"RW", report:"Rayo have been negotiating since January for the young Atlético winger on a four-year deal.", src:"El Gol Digital", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Long-running, low-profile interest rather than a fresh development."}
+  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Iker Luque", sub:"21 · W · Spain", club:"Atlético Madrid", pos:"RW", report:"Rayo have been negotiating since January for the young Atlético winger on a four-year deal.", src:"El Gol Digital", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Long-running, low-profile interest rather than a fresh development.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Nobel Mendy", sub:"23 · CB · Senegal/France", club:"Hull City", pos:"CB", report:"Mendy has skipped training twice to push through a move after Hull City's revised bid; Rayo have reportedly changed the terms, stalling the deal.", src:"Sport Witness", tier:2, fee:"€18-25m (reports vary)", truth:65, prob:55, light:"g", trend:"flat", note:"Real Betis, who developed and previously sold Mendy, stand to earn a €4-5m sell-on if this completes."}
+  {name:"Nobel Mendy", sub:"23 · CB · Senegal/France", club:"Hull City", pos:"CB", report:"Mendy has skipped training twice to push through a move after Hull City's revised bid; Rayo have reportedly changed the terms, stalling the deal.", src:"Sport Witness", tier:2, fee:"€18-25m (reports vary)", truth:65, prob:55, light:"g", trend:"flat", note:"Real Betis, who developed and previously sold Mendy, stand to earn a €4-5m sell-on if this completes.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 
 const RISERS = [];

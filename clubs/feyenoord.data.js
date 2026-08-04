@@ -47,12 +47,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Jarrad Branthwaite", sub:"21 · CB · England", club:"Everton", pos:"CB", report:"31 Jul 2026", src:"Sky Sports", tier:2, fee:"€40m loan option", truth:58, prob:42, note:"Sky reports Feyenoord in loan discussions with Everton for young defender."}
+  {name:"Jarrad Branthwaite", sub:"21 · CB · England", club:"Everton", pos:"CB", report:"31 Jul 2026", src:"Sky Sports", tier:2, fee:"€40m loan option", truth:58, prob:42, note:"Sky reports Feyenoord in loan discussions with Everton for young defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42}
 ];
 
 const OUTGOING = [
-  {name:"Givairo Read", sub:"CB/RB, 20", club:"AS Roma", pos:"DF", report:"Roma have had a €28m bid (plus 10% sell-on) rejected by Feyenoord, who are holding firm at a €30m valuation; the player has agreed personal terms and wants the move, with Nottingham Forest's interest strengthening Feyenoord's hand.", src:"Sportingpedia / Dutch press", tier:2, fee:"€28-30m (in negotiation)", truth:82, prob:78, light:"g", trend:"flat", note:"Roma delegation reportedly in Rotterdam to finalise commissions and bonus clauses."},
-  {name:"In-beom Hwang", sub:"MF", club:"FC Porto", pos:"MF", report:"Feyenoord and Porto have reached an agreement in principle for the South Korean midfielder, with final paperwork still to be completed.", src:"FootballTransfers.com", tier:2, fee:"Undisclosed", truth:75, prob:80, light:"g", trend:"flat", note:"Reported as 'principeakkoord' (agreement in principle), one step short of official confirmation."}
+  {name:"Givairo Read", sub:"CB/RB, 20", club:"AS Roma", pos:"DF", report:"Roma have had a €28m bid (plus 10% sell-on) rejected by Feyenoord, who are holding firm at a €30m valuation; the player has agreed personal terms and wants the move, with Nottingham Forest's interest strengthening Feyenoord's hand.", src:"Sportingpedia / Dutch press", tier:2, fee:"€28-30m (in negotiation)", truth:82, prob:78, light:"g", trend:"flat", note:"Roma delegation reportedly in Rotterdam to finalise commissions and bonus clauses.", lastSeen:"2026-08-04T19:10:50Z", baseProb:78},
+  {name:"In-beom Hwang", sub:"MF", club:"FC Porto", pos:"MF", report:"Feyenoord and Porto have reached an agreement in principle for the South Korean midfielder, with final paperwork still to be completed.", src:"FootballTransfers.com", tier:2, fee:"Undisclosed", truth:75, prob:80, light:"g", trend:"flat", note:"Reported as 'principeakkoord' (agreement in principle), one step short of official confirmation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80}
 ];
 
 const RISERS = [];

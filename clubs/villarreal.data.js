@@ -36,13 +36,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Luis Milla", sub:"CM, Spain", club:"Getafe", pos:"CM", report:"Villarreal have identified Getafe's Luis Milla as their preferred replacement for the departing Dani Parejo, with Milla entering the final year of his contract and available cheaply.", src:"Diario AS", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Reported before Villarreal's managerial change (Marcelino out, Inigo Perez in from Rayo Vallecano), which could affect summer recruitment plans."}
+  {name:"Luis Milla", sub:"CM, Spain", club:"Getafe", pos:"CM", report:"Villarreal have identified Getafe's Luis Milla as their preferred replacement for the departing Dani Parejo, with Milla entering the final year of his contract and available cheaply.", src:"Diario AS", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Reported before Villarreal's managerial change (Marcelino out, Inigo Perez in from Rayo Vallecano), which could affect summer recruitment plans.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const OUTGOING = [
-  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Mallorca (interest)", pos:"GK", report:"Jul 2026", src:"FútbolFantasy", tier:3, fee:"Loan, wages co-funded", truth:45, prob:35, light:"y", trend:"up", note:"Mallorca reported as advancing negotiations for a goalkeeper loan with Villarreal helping fund wages; Elche also credited with background interest."},
-  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Sevilla / Espanyol / Rayo Vallecano (interest)", pos:"W", report:"Jul 2026", src:"FútbolFantasy / OneFootball", tier:3, fee:"TBD", truth:40, prob:30, light:"y", trend:"flat", note:"Multiple clubs credited with loan interest in the winger; reports disagree on the front-runner (see also Rayo Vallecano's page)."},
-  {name:"Pape Gueye", sub:"26 · CDM · Senegal", club:"Everton (interest)", pos:"CDM", report:"Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"up", note:"Everton reported to be accelerating a pursuit of the defensive midfielder."}
+  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Mallorca (interest)", pos:"GK", report:"Jul 2026", src:"FútbolFantasy", tier:3, fee:"Loan, wages co-funded", truth:45, prob:35, light:"y", trend:"up", note:"Mallorca reported as advancing negotiations for a goalkeeper loan with Villarreal helping fund wages; Elche also credited with background interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Sevilla / Espanyol / Rayo Vallecano (interest)", pos:"W", report:"Jul 2026", src:"FútbolFantasy / OneFootball", tier:3, fee:"TBD", truth:40, prob:30, light:"y", trend:"flat", note:"Multiple clubs credited with loan interest in the winger; reports disagree on the front-runner (see also Rayo Vallecano's page).", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Pape Gueye", sub:"26 · CDM · Senegal", club:"Everton (interest)", pos:"CDM", report:"Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"up", note:"Everton reported to be accelerating a pursuit of the defensive midfielder.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [

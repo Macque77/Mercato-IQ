@@ -41,7 +41,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Bowie", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", report:"~1 wk ago", src:"The Scotsman", tier:4, fee:"Undisclosed", truth:30, prob:20, light:'o', trend:'flat', note:"Referenced only in a headline alongside Celtic/Rangers news, insufficient detail to confirm further."}
+  {name:"Bowie", sub:"Undisclosed", club:"Undisclosed", pos:"N/A", report:"~1 wk ago", src:"The Scotsman", tier:4, fee:"Undisclosed", truth:30, prob:20, light:'o', trend:'flat', note:"Referenced only in a headline alongside Celtic/Rangers news, insufficient detail to confirm further.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 const RISERS = [];
 const FALLERS = [];

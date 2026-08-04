@@ -43,8 +43,8 @@ const CONFIRMED_OUT = [
   {name:"Giorgos Athanasiadis", sub:"GK · Greece", club:"Iraklis", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer within Thessaloniki."}
 ];
 const INCOMING = [
-  {name:"Rafael Mir", sub:"FW · Spain", club:"Elche CF", pos:"ST", report:"3 Aug 2026", src:"Foxbet.gr", tier:3, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"Expected in Thessaloniki within days to partner Loren Morón up front."},
-  {name:"Lubomír Šatka", sub:"CB · Slovakia", club:"Free agent (ex-Samsunspor)", pos:"CB", report:"3 Aug 2026", src:"Foxbet.gr", tier:3, fee:"Free", truth:60, prob:55, light:"g", trend:"flat", note:"Talks described as being in their final stage after leaving Samsunspor."}
+  {name:"Rafael Mir", sub:"FW · Spain", club:"Elche CF", pos:"ST", report:"3 Aug 2026", src:"Foxbet.gr", tier:3, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"Expected in Thessaloniki within days to partner Loren Morón up front.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Lubomír Šatka", sub:"CB · Slovakia", club:"Free agent (ex-Samsunspor)", pos:"CB", report:"3 Aug 2026", src:"Foxbet.gr", tier:3, fee:"Free", truth:60, prob:55, light:"g", trend:"flat", note:"Talks described as being in their final stage after leaving Samsunspor.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 const OUTGOING = [];
 const RISERS = [];

@@ -34,9 +34,9 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Sydie Peck", sub:"MF", club:"Sheffield United", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Sheffield United reportedly backed to sign if he leaves."},
-  {name:"Brodie Spencer", sub:"DF", club:"QPR / West Brom", pos:"DF", report:"~1 wk ago", src:"FLW exclusive", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'flat', note:"See Huddersfield Town entry, same player linked from Oxford's side too."},
-  {name:"Cameron Brannagan", sub:"MF", club:"Undisclosed", pos:"MF", report:"~2 wks ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Captain described as a major transfer concern for the club."}
+  {name:"Sydie Peck", sub:"MF", club:"Sheffield United", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Sheffield United reportedly backed to sign if he leaves.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Brodie Spencer", sub:"DF", club:"QPR / West Brom", pos:"DF", report:"~1 wk ago", src:"FLW exclusive", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'flat', note:"See Huddersfield Town entry, same player linked from Oxford's side too.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Cameron Brannagan", sub:"MF", club:"Undisclosed", pos:"MF", report:"~2 wks ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Captain described as a major transfer concern for the club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];

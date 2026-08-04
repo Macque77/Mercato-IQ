@@ -39,12 +39,12 @@ const CONFIRMED_OUT = [
   {name:"Diogo Sousa", sub:"20 · MF · Portugal", club:"Strasbourg", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"€11m base fee plus up to €4m in add-ons; Vitória keeps a 10% sell-on clause."}
 ];
 const INCOMING = [
-  {name:"Ahmed Sidibé", sub:"24 · CB · France", club:"Venezia", pos:"CB", report:"31 Jul 2026", src:"A Bola", tier:2, fee:"Loan + option to buy", truth:85, prob:88, light:"g", trend:"flat", note:"In Portugal undergoing medical examinations after flying in to complete a season-long loan with purchase option from Venezia."}
+  {name:"Ahmed Sidibé", sub:"24 · CB · France", club:"Venezia", pos:"CB", report:"31 Jul 2026", src:"A Bola", tier:2, fee:"Loan + option to buy", truth:85, prob:88, light:"g", trend:"flat", note:"In Portugal undergoing medical examinations after flying in to complete a season-long loan with purchase option from Venezia.", lastSeen:"2026-08-04T19:10:50Z", baseProb:88}
 ];
 const OUTGOING = [
-  {name:"Noah Saviolo", sub:"22 · W · Portugal", club:"Vitória Guimarães", pos:"W", report:"29 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"U21 international winger pointed toward a Benfica move among three expected summer departures; no formal offer confirmed."},
-  {name:"Gonçalo Nogueira", sub:"22 · MF · Portugal", club:"Vitória Guimarães", pos:"MF", report:"29 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Listed among players expected to leave this summer; no destination club named yet."},
-  {name:"Oumar Camara", sub:"19 · W", club:"Vitória Guimarães", pos:"W", report:"29 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"Young winger tipped for a summer exit despite a productive 2025/26 (6 goals, 2 assists); no concrete suitor reported."}
+  {name:"Noah Saviolo", sub:"22 · W · Portugal", club:"Vitória Guimarães", pos:"W", report:"29 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"U21 international winger pointed toward a Benfica move among three expected summer departures; no formal offer confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Gonçalo Nogueira", sub:"22 · MF · Portugal", club:"Vitória Guimarães", pos:"MF", report:"29 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Listed among players expected to leave this summer; no destination club named yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Oumar Camara", sub:"19 · W", club:"Vitória Guimarães", pos:"W", report:"29 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"Young winger tipped for a summer exit despite a productive 2025/26 (6 goals, 2 assists); no concrete suitor reported.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const RISERS = [];
 const FALLERS = [];

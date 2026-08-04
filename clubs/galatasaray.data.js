@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Álvaro Soler", sub:"26 · RW · Spain", club:"Montpellier", pos:"RW", report:"1 Aug 2026", src:"Sky Sports Turkey", tier:2, fee:"€10m", truth:56, prob:42, note:"Sky reports Galatasaray interest in Spanish winger."}
+  {name:"Álvaro Soler", sub:"26 · RW · Spain", club:"Montpellier", pos:"RW", report:"1 Aug 2026", src:"Sky Sports Turkey", tier:2, fee:"€10m", truth:56, prob:42, note:"Sky reports Galatasaray interest in Spanish winger.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42}
 ];
 
 const OUTGOING = [];

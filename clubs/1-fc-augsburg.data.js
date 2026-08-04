@@ -54,7 +54,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Mert Kömür", sub:"Hull City 'making progress'; Galatasaray also circling", club:"Hull City", pos:"RW", report:"Hull City have reportedly made progress in talks over the winger, with head coach Manuel Baum also fielding questions on his future amid Galatasaray interest.", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Described as 'positive talks' by Hull's camp; Galatasaray interest adds competition."}
+  {name:"Mert Kömür", sub:"Hull City 'making progress'; Galatasaray also circling", club:"Hull City", pos:"RW", report:"Hull City have reportedly made progress in talks over the winger, with head coach Manuel Baum also fielding questions on his future amid Galatasaray interest.", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Described as 'positive talks' by Hull's camp; Galatasaray interest adds competition.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const RISERS = [];

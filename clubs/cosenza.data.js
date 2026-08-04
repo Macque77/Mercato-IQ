@@ -35,7 +35,7 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Pascalau & McJannet", sub:"Various", club:"Undisclosed", pos:"VAR", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Reported as an imminent double signing for the Girone C promotion-playoff side."}
+  {name:"Pascalau & McJannet", sub:"Various", club:"Undisclosed", pos:"VAR", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Reported as an imminent double signing for the Girone C promotion-playoff side.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 const OUTGOING = [];
 const RISERS = [];

@@ -33,8 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Reggie Walsh", sub:"MF", club:"Chelsea", pos:"MF", report:"~2 days ago", src:"Alan Nixon", tier:3, fee:"Loan", truth:75, prob:75, light:'g', trend:'up', note:"Loan expected to complete ahead of the deadline."},
-  {name:"Joe Walsh", sub:"DF", club:"QPR", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Wigan reportedly closing in on the capture."}
+  {name:"Reggie Walsh", sub:"MF", club:"Chelsea", pos:"MF", report:"~2 days ago", src:"Alan Nixon", tier:3, fee:"Loan", truth:75, prob:75, light:'g', trend:'up', note:"Loan expected to complete ahead of the deadline.", lastSeen:"2026-08-04T19:10:50Z", baseProb:75},
+  {name:"Joe Walsh", sub:"DF", club:"QPR", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Wigan reportedly closing in on the capture.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 const OUTGOING = [
 ];

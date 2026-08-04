@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Sotirios Papagiannopoulos", sub:"26 · CB · Greece", club:"AEK Athens", pos:"CB", report:"30 Jul 2026", src:"Sky Sports", tier:2, fee:"€6m", truth:54, prob:40, note:"Sky reports AIK monitoring Greek defender."}
+  {name:"Sotirios Papagiannopoulos", sub:"26 · CB · Greece", club:"AEK Athens", pos:"CB", report:"30 Jul 2026", src:"Sky Sports", tier:2, fee:"€6m", truth:54, prob:40, note:"Sky reports AIK monitoring Greek defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [];

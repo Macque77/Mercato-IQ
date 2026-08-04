@@ -39,8 +39,8 @@ const CONFIRMED_OUT = [
   {name:"Karol Świderski", sub:"FW · Poland", club:"Widzew Łódź", pos:"FW", fee:"~€1m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left after being told he was not part of next season's plans."}
 ];
 const INCOMING = [
-  {name:"Maksim Borisko", sub:"26 · GK · Russia", club:"Baltika Kaliningrad", pos:"GK", report:"8 Jun 2026", src:"Vanya Karpov (via Gazzetta.gr)", tier:2, fee:"~€2.1m", truth:40, prob:25, light:"o", trend:"flat", note:"Russian media links him as a Nistrup-approved alternative to Kotarsky; Trabzonspor also monitoring but player reportedly favours Greece."},
-  {name:"Antoine Makoumbou", sub:"MF · Congo", club:"Samsunspor", pos:"MF", report:"10 Jun 2026", src:"Turkish media (via Foxbet.gr)", tier:3, fee:"Undisclosed", truth:30, prob:15, light:"o", trend:"flat", note:"Panathinaikos and PAOK both linked; his contract runs to 2029, which complicates a move."}
+  {name:"Maksim Borisko", sub:"26 · GK · Russia", club:"Baltika Kaliningrad", pos:"GK", report:"8 Jun 2026", src:"Vanya Karpov (via Gazzetta.gr)", tier:2, fee:"~€2.1m", truth:40, prob:25, light:"o", trend:"flat", note:"Russian media links him as a Nistrup-approved alternative to Kotarsky; Trabzonspor also monitoring but player reportedly favours Greece.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Antoine Makoumbou", sub:"MF · Congo", club:"Samsunspor", pos:"MF", report:"10 Jun 2026", src:"Turkish media (via Foxbet.gr)", tier:3, fee:"Undisclosed", truth:30, prob:15, light:"o", trend:"flat", note:"Panathinaikos and PAOK both linked; his contract runs to 2029, which complicates a move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 const OUTGOING = [];
 const RISERS = [];

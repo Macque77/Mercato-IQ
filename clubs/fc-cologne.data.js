@@ -49,8 +49,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Mateo Kvasina", sub:"19 · ST · Serbia", club:"Borussia Mönchengladbach", pos:"ST", report:"1 Aug 2026", src:"Sky Deutschland", tier:2, fee:"€8m", truth:62, prob:48, light:"y", trend:"flat", note:"Sky reports Cologne pursuing young striker from Gladbach."},
-  {name:"Mikey Moore", sub:"18 · W · England", club:"Tottenham Hotspur", pos:"W", report:"3 Aug 2026", src:"Fabrizio Romano (via TheHardTackle)", tier:1, fee:"Loan (no fee)", truth:80, prob:72, light:"g", trend:"up", note:"Advanced talks for a season-long loan, with a deal potentially completing 'next week.' Tottenham see this as the ideal development step after a strong 2025/26 loan at Rangers and consider a permanent sale a non-starter. Köln beat several rival European clubs to be the first to formalise an official proposal."}
+  {name:"Mateo Kvasina", sub:"19 · ST · Serbia", club:"Borussia Mönchengladbach", pos:"ST", report:"1 Aug 2026", src:"Sky Deutschland", tier:2, fee:"€8m", truth:62, prob:48, light:"y", trend:"flat", note:"Sky reports Cologne pursuing young striker from Gladbach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:48},
+  {name:"Mikey Moore", sub:"18 · W · England", club:"Tottenham Hotspur", pos:"W", report:"3 Aug 2026", src:"Fabrizio Romano (via TheHardTackle)", tier:1, fee:"Loan (no fee)", truth:80, prob:72, light:"g", trend:"up", note:"Advanced talks for a season-long loan, with a deal potentially completing 'next week.' Tottenham see this as the ideal development step after a strong 2025/26 loan at Rangers and consider a permanent sale a non-starter. Köln beat several rival European clubs to be the first to formalise an official proposal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:72}
 ];
 
 const OUTGOING = [];

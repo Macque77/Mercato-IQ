@@ -34,8 +34,8 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Harvey White", sub:"MF", club:"Plymouth Argyle", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Plymouth reportedly backed to complete a deal for the midfielder."},
-  {name:"Dan Phillips", sub:"MF", club:"Blackburn Rovers", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Championship side reportedly plotting a move."}
+  {name:"Harvey White", sub:"MF", club:"Plymouth Argyle", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Plymouth reportedly backed to complete a deal for the midfielder.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Dan Phillips", sub:"MF", club:"Blackburn Rovers", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Championship side reportedly plotting a move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const RISERS = [];
 const FALLERS = [];

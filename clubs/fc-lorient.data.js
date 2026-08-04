@@ -48,7 +48,7 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Bamba Dieng", sub:"Striker, still without a club end of July", club:"Hull City / Middlesbrough (linked)", pos:"ST", report:"Dieng has left Lorient and remains a free agent; English Championship sides Hull City and Middlesbrough are reported to be competing for his signature.", src:"Foot Mercato", tier:3, fee:"Free agent", truth:45, prob:35, light:"y", trend:"flat", note:"No destination confirmed as of early August; a prior move to a Turkish club fell through."}
+  {name:"Bamba Dieng", sub:"Striker, still without a club end of July", club:"Hull City / Middlesbrough (linked)", pos:"ST", report:"Dieng has left Lorient and remains a free agent; English Championship sides Hull City and Middlesbrough are reported to be competing for his signature.", src:"Foot Mercato", tier:3, fee:"Free agent", truth:45, prob:35, light:"y", trend:"flat", note:"No destination confirmed as of early August; a prior move to a Turkish club fell through.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const RISERS = [

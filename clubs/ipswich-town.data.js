@@ -65,23 +65,23 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Tim Iroegbunam", sub:"CM · England U21", club:"Everton", pos:"CM", report:"~3 days ago", src:"TWTD / the72", tier:3, fee:"£10-18m", truth:55, prob:30, light:'y', trend:'flat',
-   note:"Reportedly on Ipswich's radar; one year left on his Everton deal makes a move feasible. A PL-ready midfield profile for a survival squad. OBSTACLE: Everton's valuation and competition."},
+   note:"Reportedly on Ipswich's radar; one year left on his Everton deal makes a move feasible. A PL-ready midfield profile for a survival squad. OBSTACLE: Everton's valuation and competition.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"PL-ready survival signings (framing)", sub:"Spine upgrades", club:"Market", pos:"Spine", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£50-90m total", truth:55, prob:40, light:'y', trend:'up',
-   note:"The core need: several Premier League-level additions to avoid a repeat of the 2024/25 drop. Names firm up once the manager question is settled."},
+   note:"The core need: several Premier League-level additions to avoid a repeat of the 2024/25 drop. Names firm up once the manager question is settled.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Striker: goals for survival (framing)", sub:"Position need, no named target yet", club:"Market", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:35, light:'y', trend:'flat',
-   note:"Framing row from the positions board, not a named rumour: goals for survival are a stated priority of the rebuild, and a striker addition is expected once the manager question is resolved. No individual target has yet been credibly linked."},
+   note:"Framing row from the positions board, not a named rumour: goals for survival are a stated priority of the rebuild, and a striker addition is expected once the manager question is resolved. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Centre-back: solidity at the step up (framing)", sub:"Position need, no named target yet", club:"Market", pos:"CB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:30, light:'y', trend:'flat',
-   note:"Framing row from the positions board, not a named rumour: defensive solidity at the step up is flagged as a core requirement after the 2024/25 drop. No individual target has yet been credibly linked."},
+   note:"Framing row from the positions board, not a named rumour: defensive solidity at the step up is flagged as a core requirement after the 2024/25 drop. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Full-back: PL-level quality and pace (framing)", sub:"Position need, no named target yet", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:25, light:'o', trend:'flat',
-   note:"Framing row from the positions board, not a named rumour: Premier League-level quality and pace at full-back is listed among the positions most likely strengthened. No individual target has yet been credibly linked."},
-  {name:"Sasa Lukic", sub:"29 · CM · Serbia", club:"Fulham", pos:"MF", report:"Sky Sports News: Ipswich are targeting a second raid on Fulham after Issa Diop, with Gary O'Neil keen to add a defensive-minded midfielder.", src:"Sky Sports News", tier:2, fee:"Undisclosed (12 months left on contract)", truth:55, prob:25, light:"o", trend:"flat", note:"Early stage; no club-to-club contact confirmed yet."}
+   note:"Framing row from the positions board, not a named rumour: Premier League-level quality and pace at full-back is listed among the positions most likely strengthened. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Sasa Lukic", sub:"29 · CM · Serbia", club:"Fulham", pos:"MF", report:"Sky Sports News: Ipswich are targeting a second raid on Fulham after Issa Diop, with Gary O'Neil keen to add a defensive-minded midfielder.", src:"Sky Sports News", tier:2, fee:"Undisclosed (12 months left on contract)", truth:55, prob:25, light:"o", trend:"flat", note:"Early stage; no club-to-club contact confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 
 const OUTGOING = [
   {name:"Manager: McKenna (risk)", sub:"Fulham front-runner", club:"Fulham", pos:"Head coach", report:"~3 days ago", src:"Sky Sports / TalkSPORT", tier:1, fee:"~£8m buy-out", truth:85, prob:45, light:'y', trend:'up',
-   note:"The pivotal uncertainty. McKenna is the bookies' favourite for Fulham after Silva's exit, with an £8m buy-out. Retention is Ipswich's priority one; his departure would reshape the entire summer."},
+   note:"The pivotal uncertainty. McKenna is the bookies' favourite for Fulham after Silva's exit, with an £8m buy-out. Retention is Ipswich's priority one; his departure would reshape the entire summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Fringe & squad trim", sub:"Promotion churn", club:"Various", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
-   note:"Championship-level squad players moved on to make room for PL-quality upgrades."},
+   note:"Championship-level squad players moved on to make room for PL-quality upgrades.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const RISERS = [

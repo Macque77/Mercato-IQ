@@ -59,7 +59,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Kodai Sano", sub:"Central midfielder", club:"PSV", pos:"MF", report:"PSV and NEC have reached an agreement in principle for the 22-year-old Japanese midfielder after both sides compromised from NEC's initial c.€20m asking price. Sano, currently away with NEC for their Champions League qualifier in Greece against Olympiakos, is expected to travel to Eindhoven imminently for a medical and to sign his contract.", src:"Tim Reedijk, VI.nl", tier:1, fee:"Undisclosed", truth:88, prob:92, light:"g", trend:"flat", note:"Breaking as of 4 August 2026; only medical/signing formalities remain."}
+  {name:"Kodai Sano", sub:"Central midfielder", club:"PSV", pos:"MF", report:"PSV and NEC have reached an agreement in principle for the 22-year-old Japanese midfielder after both sides compromised from NEC's initial c.€20m asking price. Sano, currently away with NEC for their Champions League qualifier in Greece against Olympiakos, is expected to travel to Eindhoven imminently for a medical and to sign his contract.", src:"Tim Reedijk, VI.nl", tier:1, fee:"Undisclosed", truth:88, prob:92, light:"g", trend:"flat", note:"Breaking as of 4 August 2026; only medical/signing formalities remain.", lastSeen:"2026-08-04T19:10:50Z", baseProb:92}
 ];
 
 const RISERS = [];

@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Elia Caprile", sub:"20 · GK · Italy", club:"Empoli", pos:"GK", report:"30 Jul 2026", src:"Sky Deutschland", tier:2, fee:"€12m", truth:58, prob:44, note:"Sky reports Bochum interested in young Italian goalkeeper."}
+  {name:"Elia Caprile", sub:"20 · GK · Italy", club:"Empoli", pos:"GK", report:"30 Jul 2026", src:"Sky Deutschland", tier:2, fee:"€12m", truth:58, prob:44, note:"Sky reports Bochum interested in young Italian goalkeeper.", lastSeen:"2026-08-04T19:10:50Z", baseProb:44}
 ];
 
 const OUTGOING = [];

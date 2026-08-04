@@ -47,14 +47,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Andreas Hountondji", sub:"25 · ST · Benin", club:"Burnley", pos:"ST", report:"3 Aug 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"up", note:"Previously on loan at St Pauli; reported close to completing a move to newly-promoted Frosinone."},
-  {name:"Kevin Amey", sub:"Defender", club:"Bologna", pos:"CB", report:"Amey returns to Frosinone on loan after his contract with Bologna was renewed through 2029.", src:"TuttoMercatoWeb", tier:2, fee:"Loan", truth:70, prob:85, light:"g", trend:"flat", note:"Reported as effectively completed in early July 2026."},
-  {name:"Cristian Raimondo", sub:"Striker", club:"Bologna", pos:"ST", report:"Raimondo returns to Frosinone on a fresh loan agreement from Bologna.", src:"TuttoMercatoWeb", tier:2, fee:"Loan", truth:70, prob:85, light:"g", trend:"flat", note:"Reported early July 2026, part of Frosinone's Serie B rebuild under new Clara Vista ownership."}
+  {name:"Andreas Hountondji", sub:"25 · ST · Benin", club:"Burnley", pos:"ST", report:"3 Aug 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"up", note:"Previously on loan at St Pauli; reported close to completing a move to newly-promoted Frosinone.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Kevin Amey", sub:"Defender", club:"Bologna", pos:"CB", report:"Amey returns to Frosinone on loan after his contract with Bologna was renewed through 2029.", src:"TuttoMercatoWeb", tier:2, fee:"Loan", truth:70, prob:85, light:"g", trend:"flat", note:"Reported as effectively completed in early July 2026.", lastSeen:"2026-08-04T19:10:50Z", baseProb:85},
+  {name:"Cristian Raimondo", sub:"Striker", club:"Bologna", pos:"ST", report:"Raimondo returns to Frosinone on a fresh loan agreement from Bologna.", src:"TuttoMercatoWeb", tier:2, fee:"Loan", truth:70, prob:85, light:"g", trend:"flat", note:"Reported early July 2026, part of Frosinone's Serie B rebuild under new Clara Vista ownership.", lastSeen:"2026-08-04T19:10:50Z", baseProb:85}
 ];
 
 const OUTGOING = [
-  {name:"Fares Ghedjemis", sub:"Winger, Algeria, mid-20s", club:"Celtic / Rangers", pos:"RW", report:"Celtic had an opening bid for Ghedjemis rejected; Frosinone have since set their asking price at €15-20m amid a bidding war with Rangers, who also had a €10m offer turned down.", src:"Yahoo Sports", tier:2, fee:"Asking price €15-20m", truth:70, prob:55, light:"g", trend:"flat", note:"Also being monitored by Monaco, Borussia Dortmund, Atalanta and Juventus per TuttoMercatoWeb; his valuation has reportedly doubled amid the Celtic-Rangers interest."},
-  {name:"Christian Ndow", sub:"Forward", club:"Spezia", pos:"ST", report:"Ndow has agreed a two-year deal with Spezia with medicals scheduled.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:65, prob:75, light:"g", trend:"flat", note:"Reported 9 July 2026."}
+  {name:"Fares Ghedjemis", sub:"Winger, Algeria, mid-20s", club:"Celtic / Rangers", pos:"RW", report:"Celtic had an opening bid for Ghedjemis rejected; Frosinone have since set their asking price at €15-20m amid a bidding war with Rangers, who also had a €10m offer turned down.", src:"Yahoo Sports", tier:2, fee:"Asking price €15-20m", truth:70, prob:55, light:"g", trend:"flat", note:"Also being monitored by Monaco, Borussia Dortmund, Atalanta and Juventus per TuttoMercatoWeb; his valuation has reportedly doubled amid the Celtic-Rangers interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
+  {name:"Christian Ndow", sub:"Forward", club:"Spezia", pos:"ST", report:"Ndow has agreed a two-year deal with Spezia with medicals scheduled.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:65, prob:75, light:"g", trend:"flat", note:"Reported 9 July 2026.", lastSeen:"2026-08-04T19:10:50Z", baseProb:75}
 ];
 
 const RISERS = [

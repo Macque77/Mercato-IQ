@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"David Njoku", sub:"23 · ST · Nigeria", club:"Udinese", pos:"ST", report:"1 Aug 2026", src:"HLN", tier:2, fee:"€18m", truth:60, prob:45, note:"HLN reports Brugge pursuing Nigerian striker from Udinese."}
+  {name:"David Njoku", sub:"23 · ST · Nigeria", club:"Udinese", pos:"ST", report:"1 Aug 2026", src:"HLN", tier:2, fee:"€18m", truth:60, prob:45, note:"HLN reports Brugge pursuing Nigerian striker from Udinese.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 
 const OUTGOING = [];

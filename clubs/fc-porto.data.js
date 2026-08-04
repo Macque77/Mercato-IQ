@@ -37,7 +37,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Pepe", sub:"41 · CB · Portugal", club:"Free agent (Real Madrid exit)", pos:"CB", report:"31 Jul 2026", src:"O Jogo", tier:2, fee:"Free agent", truth:85, prob:80, light:"g", trend:"up", note:"Porto moving to bring back veteran defender Pepe as free agent after Real Madrid departure. Sources confirm final stages of negotiation."}
+  {name:"Pepe", sub:"41 · CB · Portugal", club:"Free agent (Real Madrid exit)", pos:"CB", report:"31 Jul 2026", src:"O Jogo", tier:2, fee:"Free agent", truth:85, prob:80, light:"g", trend:"up", note:"Porto moving to bring back veteran defender Pepe as free agent after Real Madrid departure. Sources confirm final stages of negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80}
 ];
 
 const OUTGOING = [];

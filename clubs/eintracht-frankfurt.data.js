@@ -50,7 +50,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Raphael Onyedika", sub:"25 · CM/CB · Nigeria", club:"Club Brugge", pos:"CM/CB", report:"1 Aug 2026", src:"Sky Sports Deutschland", tier:2, fee:"~€9m + bonuses", truth:78, prob:70, light:"g", trend:"up", note:"Agreement reached 1 Aug on a contract through 2031; medical scheduled for the coming days with an official announcement expected the following week. Chose Frankfurt over Saudi Arabia's Al Ittihad - Frankfurt's second midfield addition after Aseko."}
+  {name:"Raphael Onyedika", sub:"25 · CM/CB · Nigeria", club:"Club Brugge", pos:"CM/CB", report:"1 Aug 2026", src:"Sky Sports Deutschland", tier:2, fee:"~€9m + bonuses", truth:78, prob:70, light:"g", trend:"up", note:"Agreement reached 1 Aug on a contract through 2031; medical scheduled for the coming days with an official announcement expected the following week. Chose Frankfurt over Saudi Arabia's Al Ittihad - Frankfurt's second midfield addition after Aseko.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70}
 ];
 
 const OUTGOING = [];

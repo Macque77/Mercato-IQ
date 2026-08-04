@@ -44,11 +44,11 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Stefan Posch", sub:"29 · CB/RB · Austria", club:"Como 1907", pos:"CB/RB", report:"3 Aug 2026", src:"Get German Football News", tier:2, fee:"Fee TBC (Como paid ~€5.5m for him in Jan)", truth:68, prob:55, light:"g", trend:"up", note:"Mainz are pushing to make permanent a hugely successful six-month loan (started 16 straight Bundesliga starts, key to their Conference League run). CEO Christian Heidel: 'This is definitely still on the table... we would like to make this happen.' Posch himself wants to return; fee and structure still to be agreed with Como, who are yet to have him report back for pre-season."}
+  {name:"Stefan Posch", sub:"29 · CB/RB · Austria", club:"Como 1907", pos:"CB/RB", report:"3 Aug 2026", src:"Get German Football News", tier:2, fee:"Fee TBC (Como paid ~€5.5m for him in Jan)", truth:68, prob:55, light:"g", trend:"up", note:"Mainz are pushing to make permanent a hugely successful six-month loan (started 16 straight Bundesliga starts, key to their Conference League run). CEO Christian Heidel: 'This is definitely still on the table... we would like to make this happen.' Posch himself wants to return; fee and structure still to be agreed with Como, who are yet to have him report back for pre-season.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 
 const OUTGOING = [
-  {name:"Paul Nebel", sub:"Attacking midfielder/winger, will not extend contract", club:"Undisclosed suitors", pos:"CAM", report:"Nebel has told Mainz he does not want to extend his expiring contract, opening the door to a summer departure, per sporting director Christian Heidel.", src:"Christian Heidel via Yahoo Sports (Mainz sporting director)", tier:2, fee:"N/A - contract situation", truth:70, prob:45, light:"y", trend:"flat", note:"No concrete destination club named yet; situation described as an 'agreement' between player and club over a likely exit."}
+  {name:"Paul Nebel", sub:"Attacking midfielder/winger, will not extend contract", club:"Undisclosed suitors", pos:"CAM", report:"Nebel has told Mainz he does not want to extend his expiring contract, opening the door to a summer departure, per sporting director Christian Heidel.", src:"Christian Heidel via Yahoo Sports (Mainz sporting director)", tier:2, fee:"N/A - contract situation", truth:70, prob:45, light:"y", trend:"flat", note:"No concrete destination club named yet; situation described as an 'agreement' between player and club over a likely exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 
 const RISERS = [

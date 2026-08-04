@@ -45,8 +45,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"flat", note:"Elche credited with interest alongside Levante and Mallorca; Tenas is also strongly linked with a Mallorca loan, making Elche's chances secondary at best."},
-  {name:"Deiver Machado", sub:"LB, free agent after Nantes release", club:"RC Deportivo", pos:"DF", report:"Elche were tipped to move fastest for the released Nantes left-back, though Deportivo have since joined the race for his signature.", src:"TeleElx", tier:3, fee:"Free transfer", truth:50, prob:40, light:"y", trend:"flat", note:"A free-agent depth signing that turned into a genuine two-club race once Deportivo entered late."}
+  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"flat", note:"Elche credited with interest alongside Levante and Mallorca; Tenas is also strongly linked with a Mallorca loan, making Elche's chances secondary at best.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Deiver Machado", sub:"LB, free agent after Nantes release", club:"RC Deportivo", pos:"DF", report:"Elche were tipped to move fastest for the released Nantes left-back, though Deportivo have since joined the race for his signature.", src:"TeleElx", tier:3, fee:"Free transfer", truth:50, prob:40, light:"y", trend:"flat", note:"A free-agent depth signing that turned into a genuine two-club race once Deportivo entered late.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [];

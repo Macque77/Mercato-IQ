@@ -36,7 +36,7 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"George Hirst", sub:"27 · ST · Scotland", club:"Ipswich Town", pos:"ST", report:"~3 days ago", src:"Football Insider (Pete O'Rourke)", tier:2, fee:"Loan + option", truth:65, prob:35, light:'y', trend:'flat', note:"O'Rourke is a genuine EFL-focused reporter, described as an approach expected in the coming days rather than a live negotiation."}
+  {name:"George Hirst", sub:"27 · ST · Scotland", club:"Ipswich Town", pos:"ST", report:"~3 days ago", src:"Football Insider (Pete O'Rourke)", tier:2, fee:"Loan + option", truth:65, prob:35, light:'y', trend:'flat', note:"O'Rourke is a genuine EFL-focused reporter, described as an approach expected in the coming days rather than a live negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const OUTGOING = [];
 const RISERS = [];

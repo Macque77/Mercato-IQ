@@ -41,14 +41,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Gonçalo Inácio", sub:"23 · CB · Portugal", club:"Sporting CP", pos:"CB", report:"2 Aug 2026", src:"RMC Sport", tier:2, fee:"€35m", truth:58, prob:40, light:"y", trend:"flat", note:"RMC reports Lille monitoring the Portuguese defender from Sporting."},
-  {name:"Milan Skriniar", sub:"31 · CB · Slovakia", club:"Paris Saint-Germain", pos:"CB", report:"30 Jul 2026", src:"L'Équipe", tier:2, fee:"€30m", truth:50, prob:30, light:"y", trend:"flat", note:"L'Équipe reports Lille interest in the PSG centre-back; PSG are not eager to sell."},
-  {name:"Başar Önal", sub:"22 · CB · Turkey", club:"NEC Nijmegen", pos:"CB", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"€9.5m + add-ons", truth:60, prob:48, light:"y", trend:"up", note:"Lille reported to be nearing a deal for the young Turkish defender."}
+  {name:"Gonçalo Inácio", sub:"23 · CB · Portugal", club:"Sporting CP", pos:"CB", report:"2 Aug 2026", src:"RMC Sport", tier:2, fee:"€35m", truth:58, prob:40, light:"y", trend:"flat", note:"RMC reports Lille monitoring the Portuguese defender from Sporting.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Milan Skriniar", sub:"31 · CB · Slovakia", club:"Paris Saint-Germain", pos:"CB", report:"30 Jul 2026", src:"L'Équipe", tier:2, fee:"€30m", truth:50, prob:30, light:"y", trend:"flat", note:"L'Équipe reports Lille interest in the PSG centre-back; PSG are not eager to sell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Başar Önal", sub:"22 · CB · Turkey", club:"NEC Nijmegen", pos:"CB", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"€9.5m + add-ons", truth:60, prob:48, light:"y", trend:"up", note:"Lille reported to be nearing a deal for the young Turkish defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:48}
 ];
 
 const OUTGOING = [
-  {name:"Ayyoub Bouaddi", sub:"18 · CM · France", club:"Multiple (linked)", pos:"CM", report:"28 Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:20, light:"o", trend:"flat", note:"Manchester City, Manchester United, Arsenal and Bayern Munich are all reported to be monitoring the highly-rated teenager, though no bid has landed yet."},
-  {name:"Alexsandro", sub:"26 · CB · Brazil", club:"Ipswich Town (interest dismissed)", pos:"CB", report:"3 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:12, light:"r", trend:"down", note:"Ipswich Town's interest has been dismissed by club officials, who want to keep the defender."}
+  {name:"Ayyoub Bouaddi", sub:"18 · CM · France", club:"Multiple (linked)", pos:"CM", report:"28 Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:20, light:"o", trend:"flat", note:"Manchester City, Manchester United, Arsenal and Bayern Munich are all reported to be monitoring the highly-rated teenager, though no bid has landed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Alexsandro", sub:"26 · CB · Brazil", club:"Ipswich Town (interest dismissed)", pos:"CB", report:"3 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:12, light:"r", trend:"down", note:"Ipswich Town's interest has been dismissed by club officials, who want to keep the defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
 ];
 
 const RISERS = [

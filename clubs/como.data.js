@@ -40,12 +40,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Moise Kean", sub:"26 · ST · Italy", club:"Fiorentina", pos:"ST", report:"23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Kean's representatives have been shopping the striker to Como (and Fenerbahce), with Como said to have made contact citing Champions League football as a selling point; Fiorentina coach Fabio Grosso says he'd be happy if Kean stays but won't rule out a sale."},
-  {name:"Yan Couto", sub:"Right-back, Brazil, 24", club:"Borussia Dortmund", pos:"RB", report:"Como are closing in on Yan Couto from Borussia Dortmund, with the move described as close to completion though slowed by Dortmund's administrative processes.", src:"Calciomercato.com", tier:2, fee:"Undisclosed (loan/permanent details still being finalized)", truth:75, prob:70, light:"g", trend:"flat", note:"Gianluca Di Marzio previously reported Como reopening contacts with Dortmund on a loan-based structure."}
+  {name:"Moise Kean", sub:"26 · ST · Italy", club:"Fiorentina", pos:"ST", report:"23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Kean's representatives have been shopping the striker to Como (and Fenerbahce), with Como said to have made contact citing Champions League football as a selling point; Fiorentina coach Fabio Grosso says he'd be happy if Kean stays but won't rule out a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
+  {name:"Yan Couto", sub:"Right-back, Brazil, 24", club:"Borussia Dortmund", pos:"RB", report:"Como are closing in on Yan Couto from Borussia Dortmund, with the move described as close to completion though slowed by Dortmund's administrative processes.", src:"Calciomercato.com", tier:2, fee:"Undisclosed (loan/permanent details still being finalized)", truth:75, prob:70, light:"g", trend:"flat", note:"Gianluca Di Marzio previously reported Como reopening contacts with Dortmund on a loan-based structure.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70}
 ];
 
 const OUTGOING = [
-  {name:"Alvaro Morata", sub:"Striker, Spain, 33", club:"Undisclosed", pos:"ST", report:"Morata is reported as departing Como this summer amid the club's need to balance the books after heavy spending.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"Como face financial fair-play pressure and may need further departures after major incoming signings."}
+  {name:"Alvaro Morata", sub:"Striker, Spain, 33", club:"Undisclosed", pos:"ST", report:"Morata is reported as departing Como this summer amid the club's need to balance the books after heavy spending.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"Como face financial fair-play pressure and may need further departures after major incoming signings.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50}
 ];
 
 const RISERS = [

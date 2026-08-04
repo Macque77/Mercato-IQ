@@ -35,10 +35,10 @@ const CONFIRMED_OUT = [
   {name:"Christ Makosso", sub:"DF", club:"Auxerre", pos:"DF", fee:"£2m + add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreement in principle reported by a credible transfer insider."}
 ];
 const INCOMING = [
-  {name:"Lee Buchanan", sub:"DF", club:"Birmingham City", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Scouted, nothing advanced."}
+  {name:"Lee Buchanan", sub:"DF", club:"Birmingham City", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Scouted, nothing advanced.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const OUTGOING = [
-  {name:"Unnamed forwards (x2)", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Manager Jack Wilshere", tier:3, fee:"Undisclosed", truth:55, prob:50, light:'y', trend:'flat', note:"Manager has publicly flagged expected departures from the forward line."}
+  {name:"Unnamed forwards (x2)", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Manager Jack Wilshere", tier:3, fee:"Undisclosed", truth:55, prob:50, light:'y', trend:'flat', note:"Manager has publicly flagged expected departures from the forward line.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50}
 ];
 const RISERS = [];
 const FALLERS = [];

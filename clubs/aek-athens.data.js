@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Oussama El Khannouss", sub:"23 · CM · Morocco", club:"Leicester City", pos:"CM", report:"31 Jul 2026", src:"Sky Sports", tier:2, fee:"€15m", truth:58, prob:40, note:"Sky reports AEK pursuing midfielder from Leicester."}
+  {name:"Oussama El Khannouss", sub:"23 · CM · Morocco", club:"Leicester City", pos:"CM", report:"31 Jul 2026", src:"Sky Sports", tier:2, fee:"€15m", truth:58, prob:40, note:"Sky reports AEK pursuing midfielder from Leicester.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [];

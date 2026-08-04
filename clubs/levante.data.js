@@ -45,12 +45,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:15, light:"o", trend:"flat", note:"Levante credited with background interest alongside Elche and Mallorca; Mallorca appear the most advanced of the three suitors."},
-  {name:"Jeremy Toljan", sub:"RB, German, free agent", club:"Free agent", pos:"RB", report:"Levante explored signing free agent right-back Toljan as defensive cover but talks broke down without an agreement.", src:"Fichajes.com", tier:3, fee:"Free transfer (failed)", truth:55, prob:8, light:"r", trend:"flat", note:"Negotiations reported to have collapsed in early August, so a deal now looks unlikely."}
+  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:15, light:"o", trend:"flat", note:"Levante credited with background interest alongside Elche and Mallorca; Mallorca appear the most advanced of the three suitors.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Jeremy Toljan", sub:"RB, German, free agent", club:"Free agent", pos:"RB", report:"Levante explored signing free agent right-back Toljan as defensive cover but talks broke down without an agreement.", src:"Fichajes.com", tier:3, fee:"Free transfer (failed)", truth:55, prob:8, light:"r", trend:"flat", note:"Negotiations reported to have collapsed in early August, so a deal now looks unlikely.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8}
 ];
 
 const OUTGOING = [
-  {name:"Karl Etta Eyong", sub:"FW, six Europe's-elite suitors", club:"Barcelona", pos:"FW", report:"Barcelona are described as most keen, with Real Madrid, Man City, Man United, Arsenal and Chelsea all credited with interest in the young Cameroonian less than a year after he joined from Villarreal.", src:"Mundo Deportivo", tier:2, fee:"€30m (Spanish clubs) / €40m (foreign clubs) release clause", truth:55, prob:20, light:"o", trend:"flat", note:"Eyong reportedly hopes to push for a January move while staying on loan at Levante for now, since financial fair-play rules blocked a summer Barcelona deal."}
+  {name:"Karl Etta Eyong", sub:"FW, six Europe's-elite suitors", club:"Barcelona", pos:"FW", report:"Barcelona are described as most keen, with Real Madrid, Man City, Man United, Arsenal and Chelsea all credited with interest in the young Cameroonian less than a year after he joined from Villarreal.", src:"Mundo Deportivo", tier:2, fee:"€30m (Spanish clubs) / €40m (foreign clubs) release clause", truth:55, prob:20, light:"o", trend:"flat", note:"Eyong reportedly hopes to push for a January move while staying on loan at Levante for now, since financial fair-play rules blocked a summer Barcelona deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [

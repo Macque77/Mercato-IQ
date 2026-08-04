@@ -33,8 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Marvelous Nakamba", sub:"MF · Zimbabwe", club:"Free agent (ex-Luton Town)", pos:"DM", report:"3 Aug 2026", src:"monobala.gr (via AgrinioCulture.gr)", tier:3, fee:"Free", truth:65, prob:55, light:"g", trend:"flat", note:"Preliminary agreement reportedly reached; expected in Greece around 6 Aug pending visa clearance."},
-  {name:"Moussa Djenepo", sub:"W · Mali", club:"Free agent (ex-Southampton)", pos:"W", report:"3 Aug 2026", src:"monobala.gr (via AgrinioCulture.gr)", tier:3, fee:"Free", truth:60, prob:50, light:"y", trend:"flat", note:"Also described as preliminarily agreed, with a possible arrival on 5-6 Aug."}
+  {name:"Marvelous Nakamba", sub:"MF · Zimbabwe", club:"Free agent (ex-Luton Town)", pos:"DM", report:"3 Aug 2026", src:"monobala.gr (via AgrinioCulture.gr)", tier:3, fee:"Free", truth:65, prob:55, light:"g", trend:"flat", note:"Preliminary agreement reportedly reached; expected in Greece around 6 Aug pending visa clearance.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
+  {name:"Moussa Djenepo", sub:"W · Mali", club:"Free agent (ex-Southampton)", pos:"W", report:"3 Aug 2026", src:"monobala.gr (via AgrinioCulture.gr)", tier:3, fee:"Free", truth:60, prob:50, light:"y", trend:"flat", note:"Also described as preliminarily agreed, with a possible arrival on 5-6 Aug.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50}
 ];
 const OUTGOING = [];
 const RISERS = [];

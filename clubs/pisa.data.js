@@ -35,7 +35,7 @@ const CONFIRMED_OUT = [
   {name:"Pietro Beruatto", sub:"DF", club:"Benevento", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to Benevento on a deal through 2029."}
 ];
 const INCOMING = [
-  {name:"Loyola", sub:"FW", club:"Independiente (Argentina)", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Reported advanced negotiations, club said to be securing a discount on the fee."}
+  {name:"Loyola", sub:"FW", club:"Independiente (Argentina)", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Reported advanced negotiations, club said to be securing a discount on the fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const OUTGOING = [];
 const RISERS = [];

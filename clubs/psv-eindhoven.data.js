@@ -48,8 +48,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Xavi Simons", sub:"21 · CAM · Netherlands", club:"PSV Eindhoven (loan from Leipzig)", pos:"CAM", report:"1 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"Loan + option", truth:75, prob:65, light:"g", trend:"up", note:"Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented Dutch playmaker."},
-  {name:"Kodai Sano", sub:"MF, 22 · Japan", club:"NEC Nijmegen", pos:"MF", report:"VI reports PSV and NEC have reached agreement; Sano, currently with NEC for a Europa/Champions League qualifier in Greece against Olympiacos, is set to have a medical and sign shortly. Would be PSV's second major summer signing after Sven Mijnans.", src:"Voetbal International", tier:1, fee:"Reduced from NEC's initial ~€20m asking price; final figure undisclosed", truth:90, prob:92, light:"g", trend:"flat", note:"4 Aug 2026."}
+  {name:"Xavi Simons", sub:"21 · CAM · Netherlands", club:"PSV Eindhoven (loan from Leipzig)", pos:"CAM", report:"1 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"Loan + option", truth:75, prob:65, light:"g", trend:"up", note:"Falk confirms PSV negotiating loan deal extension with RB Leipzig for talented Dutch playmaker.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
+  {name:"Kodai Sano", sub:"MF, 22 · Japan", club:"NEC Nijmegen", pos:"MF", report:"VI reports PSV and NEC have reached agreement; Sano, currently with NEC for a Europa/Champions League qualifier in Greece against Olympiacos, is set to have a medical and sign shortly. Would be PSV's second major summer signing after Sven Mijnans.", src:"Voetbal International", tier:1, fee:"Reduced from NEC's initial ~€20m asking price; final figure undisclosed", truth:90, prob:92, light:"g", trend:"flat", note:"4 Aug 2026.", lastSeen:"2026-08-04T19:10:50Z", baseProb:92}
 ];
 
 const OUTGOING = [

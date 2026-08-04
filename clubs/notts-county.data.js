@@ -37,12 +37,12 @@ const CONFIRMED_OUT = [
   {name:"Matthew Dennis", sub:"ST", club:"Burton Albion", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Burton Albion entry."}
 ];
 const INCOMING = [
-  {name:"Tommi O'Reilly", sub:"MF", club:"Aston Villa", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:50, light:'y', trend:'up', note:"Notts reportedly set to beat Sheffield Wednesday to the signing."},
-  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Racing Plymouth Argyle for the striker's signature."},
-  {name:"Devon Matthews", sub:"DF", club:"Undisclosed", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Competing with Wigan Athletic."}
+  {name:"Tommi O'Reilly", sub:"MF", club:"Aston Villa", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:50, light:'y', trend:'up', note:"Notts reportedly set to beat Sheffield Wednesday to the signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Racing Plymouth Argyle for the striker's signature.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Devon Matthews", sub:"DF", club:"Undisclosed", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Competing with Wigan Athletic.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const OUTGOING = [
-  {name:"Alassana Jatta", sub:"ST", club:"Undisclosed (Danish top flight)", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"£425k", truth:55, prob:40, light:'y', trend:'flat', note:"Bolton Wanderers and Bradford City reportedly trying to hijack the move."}
+  {name:"Alassana Jatta", sub:"ST", club:"Undisclosed (Danish top flight)", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"£425k", truth:55, prob:40, light:'y', trend:'flat', note:"Bolton Wanderers and Bradford City reportedly trying to hijack the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const RISERS = [];
 const FALLERS = [];

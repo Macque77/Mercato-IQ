@@ -82,19 +82,19 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Lamine Camara", sub:"DM/CM · Senegal", club:"Monaco", pos:"CM", report:"~1 day ago", src:"OneFootball / Yahoo", tier:2, fee:"~€50m", truth:70, prob:35, light:'y', trend:'up',
-   note:"A primary midfield target with a high ceiling; the player reportedly favours Spurs or Villa, and Champions League football is a genuine lure. OBSTACLES: a multi-club race (Newcastle, Spurs, Liverpool) and a ~€50m fee."},
+   note:"A primary midfield target with a high ceiling; the player reportedly favours Spurs or Villa, and Champions League football is a genuine lure. OBSTACLES: a multi-club race (Newcastle, Spurs, Liverpool) and a ~€50m fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Ilaix Moriba", sub:"CM · Guinea", club:"Celta Vigo", pos:"CM", report:"~1 day ago", src:"OneFootball", tier:3, fee:"£20-30m", truth:55, prob:22, light:'o', trend:'flat',
-   note:"Considered as a midfield option, a cheaper alternative to Camara. OBSTACLE: a step down in ceiling; more of a depth/value play."},
+   note:"Considered as a midfield option, a cheaper alternative to Camara. OBSTACLE: a step down in ceiling; more of a depth/value play.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
   {name:"Marcus Rashford", sub:"W/ST · England", club:"(tracked)", pos:"W", report:"~1 day ago", src:"Aggregated roundup", tier:3, fee:"£40m+", truth:55, prob:15, light:'o', trend:'flat',
-   note:"Tracked alongside Spurs and Newcastle in a transfer roundup. OBSTACLES: wages, fee and a crowded field; an opportunistic link rather than a concrete move."},
-  {name:"Igor Paixão", sub:"Brazilian winger linked after strong Marseille season", club:"Marseille", pos:"FW", report:"Villa are exploring a move for the 26-year-old after he scored 12 goals with 7 assists last season; Champions League qualification seen as a selling point.", src:"L'Équipe (via Sports Mole)", tier:2, fee:"£30m", truth:55, prob:30, light:"y", trend:"flat", note:""}
+   note:"Tracked alongside Spurs and Newcastle in a transfer roundup. OBSTACLES: wages, fee and a crowded field; an opportunistic link rather than a concrete move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Igor Paixão", sub:"Brazilian winger linked after strong Marseille season", club:"Marseille", pos:"FW", report:"Villa are exploring a move for the 26-year-old after he scored 12 goals with 7 assists last season; Champions League qualification seen as a selling point.", src:"L'Équipe (via Sports Mole)", tier:2, fee:"£30m", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const OUTGOING = [
   {name:"Fringe & loan returns", sub:"Squad trim", club:"Various", pos:"-", report:"~4 days ago", src:"Aston Villa News (aggregated)", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
-   note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio."},
-  {name:"Emiliano Martínez", sub:"33 · GK · Argentina", club:"Juventus", pos:"GK", report:"2 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:50, prob:8, light:"r", trend:"flat", note:"Romano reported Juventus have informed Villa they will not proceed with a move — costs were judged too high, so this rumour has effectively collapsed for now."},
-  {name:"Ezri Konsa", sub:"Arsenal circling as Saliba cover", club:"Arsenal", pos:"DF", report:"Villa have received a bid in the region of £60-65m from Arsenal; Konsa open to talks but Champions League football may keep him at Villa Park.", src:"Read Aston Villa / CaughtOffside", tier:2, fee:"£60-65m", truth:55, prob:30, light:"y", trend:"flat", note:""}
+   note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Emiliano Martínez", sub:"33 · GK · Argentina", club:"Juventus", pos:"GK", report:"2 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:50, prob:8, light:"r", trend:"flat", note:"Romano reported Juventus have informed Villa they will not proceed with a move — costs were judged too high, so this rumour has effectively collapsed for now.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8},
+  {name:"Ezri Konsa", sub:"Arsenal circling as Saliba cover", club:"Arsenal", pos:"DF", report:"Villa have received a bid in the region of £60-65m from Arsenal; Konsa open to talks but Champions League football may keep him at Villa Park.", src:"Read Aston Villa / CaughtOffside", tier:2, fee:"£60-65m", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const RISERS = [

@@ -35,9 +35,9 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Nicolas Valentini", sub:"25 · CB · Argentina", club:"Fiorentina", pos:"CB", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Explicitly framed as United exploring with no official approach lodged yet."},
-  {name:"Kalvin Phillips", sub:"30 · MF · England", club:"Manchester City", pos:"MF", report:"~1 wk ago", src:"City Xtra / The Star", tier:3, fee:"Loan", truth:55, prob:35, light:'y', trend:'up', note:"Player reportedly keen and City want to trim wages, gives this more legs than the average kite-flying loan link."},
-  {name:"Rabbi Matondo", sub:"W", club:"SK Brann", pos:"W", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:20, light:'o', trend:'flat', note:"Described as under consideration only, nothing concrete."}
+  {name:"Nicolas Valentini", sub:"25 · CB · Argentina", club:"Fiorentina", pos:"CB", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Explicitly framed as United exploring with no official approach lodged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Kalvin Phillips", sub:"30 · MF · England", club:"Manchester City", pos:"MF", report:"~1 wk ago", src:"City Xtra / The Star", tier:3, fee:"Loan", truth:55, prob:35, light:'y', trend:'up', note:"Player reportedly keen and City want to trim wages, gives this more legs than the average kite-flying loan link.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Rabbi Matondo", sub:"W", club:"SK Brann", pos:"W", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:20, light:'o', trend:'flat', note:"Described as under consideration only, nothing concrete.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 const OUTGOING = [];
 const RISERS = [];

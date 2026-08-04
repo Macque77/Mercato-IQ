@@ -44,12 +44,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Tim Meyer", sub:"Swiss revelation targeted as defensive midfield reinforcement", club:"Grasshopper Zurich", pos:"CDM", report:"Auxerre have moved into the acquisition phase for the Swiss defensive midfielder, who impressed for Grasshoppers last season.", src:"TOP Mercato", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage interest reported by an aggregator outlet; no formal bid confirmed yet."}
+  {name:"Tim Meyer", sub:"Swiss revelation targeted as defensive midfield reinforcement", club:"Grasshopper Zurich", pos:"CDM", report:"Auxerre have moved into the acquisition phase for the Swiss defensive midfielder, who impressed for Grasshoppers last season.", src:"TOP Mercato", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage interest reported by an aggregator outlet; no formal bid confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Kévin Danois", sub:"26 · CB · France", club:"Multiple (unspecified)", pos:"CB", report:"Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:34, light:"y", trend:"flat", note:"New Sporting Director David Wantier is reported to be targeting over €30m combined from sales of Danois and Sinayoko to fund the rebuild under Will Still."},
-  {name:"Kevin Danois", sub:"West Ham and Newcastle monitoring, Hull City bid rejected", club:"West Ham United / Newcastle United (interest)", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old midfielder closely after Hull City's ~€15m offer was seen as below Auxerre's €20m valuation.", src:"Les Transferts", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Danois is contracted through June 2029, giving Auxerre strong leverage; a departure this window looks unlikely unless valuation is met."}
+  {name:"Kévin Danois", sub:"26 · CB · France", club:"Multiple (unspecified)", pos:"CB", report:"Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:34, light:"y", trend:"flat", note:"New Sporting Director David Wantier is reported to be targeting over €30m combined from sales of Danois and Sinayoko to fund the rebuild under Will Still.", lastSeen:"2026-08-04T19:10:50Z", baseProb:34},
+  {name:"Kevin Danois", sub:"West Ham and Newcastle monitoring, Hull City bid rejected", club:"West Ham United / Newcastle United (interest)", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old midfielder closely after Hull City's ~€15m offer was seen as below Auxerre's €20m valuation.", src:"Les Transferts", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Danois is contracted through June 2029, giving Auxerre strong leverage; a departure this window looks unlikely unless valuation is met.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const RISERS = [];

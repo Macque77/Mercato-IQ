@@ -47,14 +47,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Rafael Leão", sub:"27 · LW · Portugal", club:"AC Milan", pos:"LW", report:"1 Aug 2026", src:"L'Équipe", tier:2, fee:"€70m", truth:45, prob:22, light:"o", trend:"flat", note:"L'Équipe reports Lens monitoring; Milan unlikely to sell their star winger."},
-  {name:"Jonathan David", sub:"26 · ST · Canada", club:"LOSC Lille", pos:"ST", report:"31 Jul 2026", src:"Sky Sports France", tier:2, fee:"€45m", truth:52, prob:32, light:"y", trend:"flat", note:"Sky reports Lens interest in Lille's striker; a deal between Ligue 1 rivals remains unlikely but not dismissed."},
-  {name:"Adama Camara", sub:"Tracked alongside Nice and PSV", club:"Paris FC", pos:"CDM", report:"Lens are one of several clubs, along with Nice, PSV and Al-Jazira, monitoring Paris FC's experienced defensive midfielder Camara.", src:"Foot Mercato", tier:3, fee:"€3m (valuation)", truth:50, prob:30, light:"y", trend:"flat", note:"Contract with Paris FC runs to 2027; 29 years old"},
-  {name:"Melayro Bogarde", sub:"Eyed as Sangaré replacement", club:"LASK", pos:"CM", report:"Lens are targeting Surinamese international Bogarde from Austrian side LASK as a cut-price alternative following Sangaré's Brentford exit.", src:"Foot Mercato", tier:2, fee:"€5m (est.)", truth:55, prob:42, light:"y", trend:"flat", note:"38 appearances for LASK last season; contracted through 2028"}
+  {name:"Rafael Leão", sub:"27 · LW · Portugal", club:"AC Milan", pos:"LW", report:"1 Aug 2026", src:"L'Équipe", tier:2, fee:"€70m", truth:45, prob:22, light:"o", trend:"flat", note:"L'Équipe reports Lens monitoring; Milan unlikely to sell their star winger.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
+  {name:"Jonathan David", sub:"26 · ST · Canada", club:"LOSC Lille", pos:"ST", report:"31 Jul 2026", src:"Sky Sports France", tier:2, fee:"€45m", truth:52, prob:32, light:"y", trend:"flat", note:"Sky reports Lens interest in Lille's striker; a deal between Ligue 1 rivals remains unlikely but not dismissed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
+  {name:"Adama Camara", sub:"Tracked alongside Nice and PSV", club:"Paris FC", pos:"CDM", report:"Lens are one of several clubs, along with Nice, PSV and Al-Jazira, monitoring Paris FC's experienced defensive midfielder Camara.", src:"Foot Mercato", tier:3, fee:"€3m (valuation)", truth:50, prob:30, light:"y", trend:"flat", note:"Contract with Paris FC runs to 2027; 29 years old", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Melayro Bogarde", sub:"Eyed as Sangaré replacement", club:"LASK", pos:"CM", report:"Lens are targeting Surinamese international Bogarde from Austrian side LASK as a cut-price alternative following Sangaré's Brentford exit.", src:"Foot Mercato", tier:2, fee:"€5m (est.)", truth:55, prob:42, light:"y", trend:"flat", note:"38 appearances for LASK last season; contracted through 2028", lastSeen:"2026-08-04T19:10:50Z", baseProb:42}
 ];
 
 const OUTGOING = [
-  {name:"Rémy Labeau-Lascary", sub:"Set for Auxerre switch", club:"AJ Auxerre", pos:"ST", report:"Lens forward Labeau-Lascary, currently on loan at Brest, is set to join Auxerre as a replacement for Lassine Sinayoko.", src:"Foot Mercato", tier:2, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"flat", note:"Expected to sign a four-year deal; scored 6 goals in 28 appearances on loan at Brest"}
+  {name:"Rémy Labeau-Lascary", sub:"Set for Auxerre switch", club:"AJ Auxerre", pos:"ST", report:"Lens forward Labeau-Lascary, currently on loan at Brest, is set to join Auxerre as a replacement for Lassine Sinayoko.", src:"Foot Mercato", tier:2, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"flat", note:"Expected to sign a four-year deal; scored 6 goals in 28 appearances on loan at Brest", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 
 const RISERS = [

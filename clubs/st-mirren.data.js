@@ -41,7 +41,7 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Sule, Mallan and Reid", sub:"Various", club:"Undisclosed", pos:"VAR", report:"~1 wk ago", src:"Daily Record", tier:3, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Developing situations referenced in a transfer-latest piece, direction unclear."}
+  {name:"Sule, Mallan and Reid", sub:"Various", club:"Undisclosed", pos:"VAR", report:"~1 wk ago", src:"Daily Record", tier:3, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Developing situations referenced in a transfer-latest piece, direction unclear.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const RISERS = [];
 const FALLERS = [];

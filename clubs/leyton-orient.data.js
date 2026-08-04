@@ -33,11 +33,11 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Alfie Gilchrist", sub:"DF", club:"West Brom", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"~£2m", truth:55, prob:45, light:'y', trend:'flat', note:"Talks ongoing at the reported valuation."},
-  {name:"Owen Dale", sub:"W", club:"Free agent (ex-Oxford United)", pos:"W", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:55, prob:45, light:'y', trend:'flat', note:"Pursued after reportedly snubbing Plymouth Argyle."}
+  {name:"Alfie Gilchrist", sub:"DF", club:"West Brom", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"~£2m", truth:55, prob:45, light:'y', trend:'flat', note:"Talks ongoing at the reported valuation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Owen Dale", sub:"W", club:"Free agent (ex-Oxford United)", pos:"W", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:55, prob:45, light:'y', trend:'flat', note:"Pursued after reportedly snubbing Plymouth Argyle.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const OUTGOING = [
-  {name:"Dom Ballard", sub:"FW", club:"Bristol City", pos:"FW", report:"~1 wk ago", src:"FLW exclusive", tier:2, fee:"£5m+", truth:65, prob:50, light:'y', trend:'up', note:"Bristol City have had two bids rejected; Leicester City also interested; Orient holding firm on valuation."}
+  {name:"Dom Ballard", sub:"FW", club:"Bristol City", pos:"FW", report:"~1 wk ago", src:"FLW exclusive", tier:2, fee:"£5m+", truth:65, prob:50, light:'y', trend:'up', note:"Bristol City have had two bids rejected; Leicester City also interested; Orient holding firm on valuation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50}
 ];
 const RISERS = [];
 const FALLERS = [];

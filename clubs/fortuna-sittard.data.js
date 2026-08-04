@@ -54,7 +54,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Mohamed Ihattaren", sub:"Attacking midfielder, club captain", club:"FC Twente", pos:"MF", report:"Twente is described as the only serious Dutch suitor for Ihattaren, though manager Erik ten Hag had not yet made direct contact as of late July. Fortuna's technical director Joris Mathijsen says no club has formally approached the club yet, while Feyenoord and AZ have both reportedly cooled on the idea.", src:"FCUpdate.nl", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Situation unresolved with the league already underway; six goals/eleven assists in 30 games last season for Fortuna."}
+  {name:"Mohamed Ihattaren", sub:"Attacking midfielder, club captain", club:"FC Twente", pos:"MF", report:"Twente is described as the only serious Dutch suitor for Ihattaren, though manager Erik ten Hag had not yet made direct contact as of late July. Fortuna's technical director Joris Mathijsen says no club has formally approached the club yet, while Feyenoord and AZ have both reportedly cooled on the idea.", src:"FCUpdate.nl", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Situation unresolved with the league already underway; six goals/eleven assists in 30 games last season for Fortuna.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const RISERS = [];

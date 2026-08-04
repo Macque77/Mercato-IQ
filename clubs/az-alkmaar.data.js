@@ -45,13 +45,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Thom van Bergen", sub:"22 · ST · Netherlands", club:"FC Groningen", pos:"ST", report:"31 Jul 2026", src:"Voetbal International", tier:1, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:"Eyed by AZ as a long-term successor up front, with links growing as Troy Parrott's future stays uncertain."}
+  {name:"Thom van Bergen", sub:"22 · ST · Netherlands", club:"FC Groningen", pos:"ST", report:"31 Jul 2026", src:"Voetbal International", tier:1, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:"Eyed by AZ as a long-term successor up front, with links growing as Troy Parrott's future stays uncertain.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Troy Parrott", sub:"24 · ST · Republic of Ireland", club:"AZ Alkmaar", pos:"ST", report:"3 Aug 2026", src:"Voetbal International", tier:1, fee:"Undisclosed (ETV ~€20m)", truth:65, prob:40, light:"y", trend:"flat", note:"Relegated West Ham, managed by Francesco Farioli, reportedly ready to meet AZ's asking price; Parrott has publicly played down Premier League talk."},
-  {name:"Kees Smit", sub:"20 · DM · Netherlands", club:"AZ Alkmaar", pos:"DM", report:"10 Apr 2026", src:"FootballTransfers.com", tier:2, fee:"Undisclosed (ETV ~€17.2m)", truth:55, prob:30, light:"y", trend:"flat", note:"Manchester United have been the most persistent suitor across a string of reports since January 2026, with Real Madrid and Newcastle also credited with interest; no bid has followed."},
-  {name:"Peer Koopmeiners", sub:"26 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"3 Aug 2026", src:"Mounir Boualin / VoetbalPrimeur.nl", tier:1, fee:"€13m bid rejected", truth:70, prob:15, light:"o", trend:"flat", note:"Club Brugge had a €13m offer turned down and have since walked away; AZ coach Lee-Roy Echteld says the club is now 'far along' in extension talks instead."}
+  {name:"Troy Parrott", sub:"24 · ST · Republic of Ireland", club:"AZ Alkmaar", pos:"ST", report:"3 Aug 2026", src:"Voetbal International", tier:1, fee:"Undisclosed (ETV ~€20m)", truth:65, prob:40, light:"y", trend:"flat", note:"Relegated West Ham, managed by Francesco Farioli, reportedly ready to meet AZ's asking price; Parrott has publicly played down Premier League talk.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Kees Smit", sub:"20 · DM · Netherlands", club:"AZ Alkmaar", pos:"DM", report:"10 Apr 2026", src:"FootballTransfers.com", tier:2, fee:"Undisclosed (ETV ~€17.2m)", truth:55, prob:30, light:"y", trend:"flat", note:"Manchester United have been the most persistent suitor across a string of reports since January 2026, with Real Madrid and Newcastle also credited with interest; no bid has followed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Peer Koopmeiners", sub:"26 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"3 Aug 2026", src:"Mounir Boualin / VoetbalPrimeur.nl", tier:1, fee:"€13m bid rejected", truth:70, prob:15, light:"o", trend:"flat", note:"Club Brugge had a €13m offer turned down and have since walked away; AZ coach Lee-Roy Echteld says the club is now 'far along' in extension talks instead.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const RISERS = [];

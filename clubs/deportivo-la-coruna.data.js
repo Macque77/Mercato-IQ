@@ -38,13 +38,13 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Domingos Duarte", sub:"31 · CB · Portugal", club:"Getafe (free agent)", pos:"CB", report:"04 Jul 2026", src:"Matteo Moretto", tier:2, fee:"Free (contract expired at Getafe)", truth:70, prob:60, light:"g", trend:"up", note:"Moretto reported advanced talks for the free-agent centre-back, who spent the 2018/19 season on loan at Riazor and left a strong impression. A reunion given his familiarity with the club and city."},
-  {name:"Francisco Moura", sub:"Portuguese right-back", club:"FC Porto", pos:"RB", report:"Deportivo have shown concrete interest in Moura as they build a squad capable of competing after promotion back to LaLiga.", src:"Superdeporte", tier:3, fee:"", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage interest reported; no formal offer confirmed yet."},
-  {name:"Ricardo Rodríguez", sub:"Swiss left-back, 33, free agent", club:"Free agent", pos:"LB", report:"Named as one of five left-back candidates being weighed by Deportivo before they settled on Angeliño; competition to partner/replace Quagliata at left-back.", src:"ElDesmarque", tier:2, fee:"", truth:55, prob:15, light:"o", trend:"flat", note:"Overtaken in the club's plans once the Angeliño deal advanced."}
+  {name:"Domingos Duarte", sub:"31 · CB · Portugal", club:"Getafe (free agent)", pos:"CB", report:"04 Jul 2026", src:"Matteo Moretto", tier:2, fee:"Free (contract expired at Getafe)", truth:70, prob:60, light:"g", trend:"up", note:"Moretto reported advanced talks for the free-agent centre-back, who spent the 2018/19 season on loan at Riazor and left a strong impression. A reunion given his familiarity with the club and city.", lastSeen:"2026-08-04T19:10:50Z", baseProb:60},
+  {name:"Francisco Moura", sub:"Portuguese right-back", club:"FC Porto", pos:"RB", report:"Deportivo have shown concrete interest in Moura as they build a squad capable of competing after promotion back to LaLiga.", src:"Superdeporte", tier:3, fee:"", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage interest reported; no formal offer confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Ricardo Rodríguez", sub:"Swiss left-back, 33, free agent", club:"Free agent", pos:"LB", report:"Named as one of five left-back candidates being weighed by Deportivo before they settled on Angeliño; competition to partner/replace Quagliata at left-back.", src:"ElDesmarque", tier:2, fee:"", truth:55, prob:15, light:"o", trend:"flat", note:"Overtaken in the club's plans once the Angeliño deal advanced.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [
-  {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move."}
+  {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:95}
 ];
 
 const RISERS = [

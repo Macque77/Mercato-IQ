@@ -42,13 +42,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"James Tavernier", sub:"34 · RB · England", club:"Free agent (ex-Rangers)", pos:"RB", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:50, prob:26, light:"o", trend:"flat", note:"Paris FC are one of two French suitors (with Nice) for the veteran Rangers captain, now a free agent."},
-  {name:"Ibrahima Cisse", sub:"Striker, 18-year-old prospect", club:"KAA Gent", pos:"ST", report:"Paris FC are among the candidates, along with Lyon and Bournemouth, to sign Gent's highly rated 18-year-old striker Ibrahima Cisse.", src:"Foot Mercato", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Competing directly with Lyon and Bournemouth for the same young forward."},
-  {name:"Mory Kera", sub:"Prospect, multi-club interest", club:"Undisclosed academy", pos:"CM", report:"Paris FC are reported to be in the race for young prospect Mory Kera, alongside Monaco and other Ligue 1 clubs.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Multiple Ligue 1 clubs credited with interest in the same prospect; early stage."}
+  {name:"James Tavernier", sub:"34 · RB · England", club:"Free agent (ex-Rangers)", pos:"RB", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:50, prob:26, light:"o", trend:"flat", note:"Paris FC are one of two French suitors (with Nice) for the veteran Rangers captain, now a free agent.", lastSeen:"2026-08-04T19:10:50Z", baseProb:26},
+  {name:"Ibrahima Cisse", sub:"Striker, 18-year-old prospect", club:"KAA Gent", pos:"ST", report:"Paris FC are among the candidates, along with Lyon and Bournemouth, to sign Gent's highly rated 18-year-old striker Ibrahima Cisse.", src:"Foot Mercato", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Competing directly with Lyon and Bournemouth for the same young forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Mory Kera", sub:"Prospect, multi-club interest", club:"Undisclosed academy", pos:"CM", report:"Paris FC are reported to be in the race for young prospect Mory Kera, alongside Monaco and other Ligue 1 clubs.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Multiple Ligue 1 clubs credited with interest in the same prospect; early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const OUTGOING = [
-  {name:"Ilan Kebbal", sub:"Winger, manager wants to keep him", club:"Marseille / Coventry City", pos:"RW", report:"Both Marseille and Coventry City have been credited with interest in Paris FC winger Ilan Kebbal, but new manager Liam Rosenior has publicly said he wants to keep the player.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Manager's public comments push against an exit, lowering the likelihood of a sale."}
+  {name:"Ilan Kebbal", sub:"Winger, manager wants to keep him", club:"Marseille / Coventry City", pos:"RW", report:"Both Marseille and Coventry City have been credited with interest in Paris FC winger Ilan Kebbal, but new manager Liam Rosenior has publicly said he wants to keep the player.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Manager's public comments push against an exit, lowering the likelihood of a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [

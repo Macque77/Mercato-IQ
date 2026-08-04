@@ -38,7 +38,7 @@ const CONFIRMED_OUT = [
   {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
 ];
 const INCOMING = [
-  {name:"Rio Cardines", sub:"Full-back", club:"Crystal Palace", pos:"FB", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Loan", truth:55, prob:45, light:'y', trend:'flat', note:"Manager Michael Skubala's own still open for business quote lends this some weight, but nothing official and he stressed there is no rush."}
+  {name:"Rio Cardines", sub:"Full-back", club:"Crystal Palace", pos:"FB", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Loan", truth:55, prob:45, light:'y', trend:'flat', note:"Manager Michael Skubala's own still open for business quote lends this some weight, but nothing official and he stressed there is no rush.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const OUTGOING = [];
 const RISERS = [];

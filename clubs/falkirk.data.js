@@ -36,7 +36,7 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Calvin Miller", sub:"Undisclosed", club:"Celtic", pos:"N/A", report:"~5 months ago", src:"MSN", tier:4, fee:"Undisclosed", truth:20, prob:10, light:'r', trend:'flat', note:"Manager John McGlynn has denied the link as nonsense, effectively dead."}
+  {name:"Calvin Miller", sub:"Undisclosed", club:"Celtic", pos:"N/A", report:"~5 months ago", src:"MSN", tier:4, fee:"Undisclosed", truth:20, prob:10, light:'r', trend:'flat', note:"Manager John McGlynn has denied the link as nonsense, effectively dead.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
 ];
 const RISERS = [];
 const FALLERS = [];

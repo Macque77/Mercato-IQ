@@ -36,8 +36,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Luke Molyneux", sub:"W", club:"Salford City", pos:"W", report:"~1 wk ago", src:"Ben Wignall / FLW", tier:2, fee:"Undisclosed", truth:75, prob:70, light:'g', trend:'up', note:"Exclusive reporting describes the move as closing in."},
-  {name:"Owen Bailey", sub:"MF", club:"Sheffield Wednesday / Bradford City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Contested by two rival League One clubs."}
+  {name:"Luke Molyneux", sub:"W", club:"Salford City", pos:"W", report:"~1 wk ago", src:"Ben Wignall / FLW", tier:2, fee:"Undisclosed", truth:75, prob:70, light:'g', trend:'up', note:"Exclusive reporting describes the move as closing in.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70},
+  {name:"Owen Bailey", sub:"MF", club:"Sheffield Wednesday / Bradford City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Contested by two rival League One clubs.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const RISERS = [];
 const FALLERS = [];

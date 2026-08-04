@@ -37,11 +37,11 @@ const CONFIRMED_OUT = [
   {name:"Kévin Boma", sub:"DF", club:"RB Salzburg", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure confirmed; fee undisclosed."}
 ];
 const INCOMING = [
-  {name:"Ilias Kostis", sub:"23 · CB · Greece", club:"Atlético Madrid", pos:"CB", report:"26 Jul 2026", src:"Record (via Bola na Rede)", tier:2, fee:"Loan or permanent (TBD)", truth:60, prob:55, light:"g", trend:"flat", note:"Negotiations between Estoril and Atlético ongoing, resolution expected within days; addresses defensive gaps left by Boma and Bacher exits."}
+  {name:"Ilias Kostis", sub:"23 · CB · Greece", club:"Atlético Madrid", pos:"CB", report:"26 Jul 2026", src:"Record (via Bola na Rede)", tier:2, fee:"Loan or permanent (TBD)", truth:60, prob:55, light:"g", trend:"flat", note:"Negotiations between Estoril and Atlético ongoing, resolution expected within days; addresses defensive gaps left by Boma and Bacher exits.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 const OUTGOING = [
-  {name:"Felix Bacher", sub:"DF", club:"Estoril Praia", pos:"DF", report:"26 Jul 2026", src:"Record (via Bola na Rede)", tier:2, fee:"€4m+", truth:55, prob:50, light:"y", trend:"flat", note:"Increasingly likely to join Lyon under Paulo Fonseca for a fee above €4m; talks progressing but unconfirmed."},
-  {name:"Yanis Begraoui", sub:"ST · Morocco", club:"Estoril Praia", pos:"ST", report:"26 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Valuation rising", truth:50, prob:40, light:"y", trend:"flat", note:"Third-top scorer in Primeira Liga last season; drawing significant unnamed interest with his stock rising ahead of the 2026 World Cup."}
+  {name:"Felix Bacher", sub:"DF", club:"Estoril Praia", pos:"DF", report:"26 Jul 2026", src:"Record (via Bola na Rede)", tier:2, fee:"€4m+", truth:55, prob:50, light:"y", trend:"flat", note:"Increasingly likely to join Lyon under Paulo Fonseca for a fee above €4m; talks progressing but unconfirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Yanis Begraoui", sub:"ST · Morocco", club:"Estoril Praia", pos:"ST", report:"26 May 2026", src:"O Jogo (via Bola na Rede)", tier:3, fee:"Valuation rising", truth:50, prob:40, light:"y", trend:"flat", note:"Third-top scorer in Primeira Liga last season; drawing significant unnamed interest with his stock rising ahead of the 2026 World Cup.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const RISERS = [];
 const FALLERS = [];

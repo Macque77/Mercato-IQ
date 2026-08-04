@@ -45,9 +45,9 @@ const CONFIRMED_OUT = [
   {name:"Castaldi", sub:"MF", club:"Sorrento", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned out to Serie C."}
 ];
 const INCOMING = [
-  {name:"Cherubini", sub:"FW", club:"Roma", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Interest reported, competition from Las Palmas noted."},
-  {name:"De Luca", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"General attacking reinforcement target, nothing firm."},
-  {name:"Merkaj", sub:"FW", club:"Sudtirol", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Being monitored only."}
+  {name:"Cherubini", sub:"FW", club:"Roma", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Interest reported, competition from Las Palmas noted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"De Luca", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"General attacking reinforcement target, nothing firm.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Merkaj", sub:"FW", club:"Sudtirol", pos:"FW", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Being monitored only.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const OUTGOING = [];
 const RISERS = [];

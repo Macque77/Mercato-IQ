@@ -39,7 +39,7 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Arena", sub:"DF", club:"Trento / Treviso", pos:"DF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reported interest from both Serie C clubs, no bid confirmed yet."}
+  {name:"Arena", sub:"DF", club:"Trento / Treviso", pos:"DF", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reported interest from both Serie C clubs, no bid confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];

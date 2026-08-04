@@ -57,8 +57,30 @@ BUGFIX 3 (dangling LINKMAP entries):
     Fixed by searching HUB *by URL* first; if a HUB entry for this exact URL
     already exists, its key is reused directly (no new HUB entry, LINKMAP points
     at the real surviving key) instead of always minting a new name-based key.
+
+RUMOUR LIFECYCLE (added 2026-08-04, user-requested): a rumour used to be
+inert once written -- re-injecting the same player name at the same club was
+always a silent no-op, even if a new source reported fresh (and very
+different) prob/truth numbers the next day. INCOMING/OUTGOING items now carry
+`lastSeen` (ISO timestamp of the most recent research pass that saw this
+exact rumour reported) and `baseProb` (the prob as most recently reported,
+untouched by decay). When a fresh research pass reports a player already
+tracked at that club, the existing entry is UPDATED in place -- new
+prob/truth/note/fee/src/tier, `lastSeen` reset to now, `baseProb` reset to
+the new prob, and `trend` set by comparing the new prob to the old one
+(up/down/flat). This is the "resurrect" half of the lifecycle: a rumour that
+has faded (see `engine/decay_rumours.py`) jumps back to full prominence the
+moment a source actually re-reports it. CONFIRMED_IN/CONFIRMED_OUT keep the
+old skip-on-duplicate-name behaviour (a completed deal doesn't need updating).
+`engine/decay_rumours.py` is the other half: run automatically in Phase 2
+after this script, it lowers `prob` (never `baseProb`) the longer a rumour
+goes without a fresh `lastSeen`, so an untouched rumour visibly fades rather
+than sitting frozen at its original numbers forever.
 """
 import json, re, sys, os, glob
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import js_obj_utils as jou
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLUBS_DIR = os.path.join(REPO, 'clubs')
@@ -121,7 +143,7 @@ def append_to_array(content, arrname, new_items_js):
     return content[:m.start()] + m.group(1) + new_inner + m.group(3) + content[m.end():]
 
 
-def rumour_item_js(item):
+def rumour_item_js(item, trend='flat'):
     truth = int(item.get('truth', 50))
     prob = int(item.get('prob', 30))
     fields = [
@@ -136,8 +158,16 @@ def rumour_item_js(item):
         f'truth:{truth}',
         f'prob:{prob}',
         f'light:"{band(prob)}"',
-        f'trend:"flat"',
+        f'trend:"{trend}"',
         f'note:"{esc(item.get("note",""))}"',
+        # RUMOUR LIFECYCLE: baseProb is the prob as most recently REPORTED
+        # (never touched by decay -- only a fresh injection resets it);
+        # lastSeen anchors engine/decay_rumours.py's fade-over-time clock.
+        # Both reset to "now"/current prob every time this function renders
+        # an item, whether it's a brand-new rumour or a resurrect-update of
+        # an existing one.
+        f'lastSeen:"{jou.now_iso()}"',
+        f'baseProb:{prob}',
     ]
     return '{' + ', '.join(fields) + '}'
 
@@ -214,6 +244,58 @@ def add_hub_and_linkmap(content, name, source_url, source_label):
     return content
 
 
+def upsert_rumours(content, arr_name, items):
+    """INCOMING/OUTGOING handling: unlike CONFIRMED_IN/OUT, a rumour already
+    tracked at this club gets UPDATED in place (fresh prob/truth/note/fee,
+    lastSeen reset to now, baseProb reset, trend computed vs the old prob)
+    rather than silently skipped -- see the RUMOUR LIFECYCLE note in this
+    file's docstring. Returns (new_content, changed)."""
+    if not items:
+        return content, False
+    block = jou.find_array_block(content, arr_name)
+    if not block:
+        print(f'  WARN: could not find array {arr_name}')
+        return content, False
+    _, _, inner = block
+    existing_spans = jou.split_top_level_objects(inner)
+    object_texts = [inner[s:e] for s, e in existing_spans]
+    name_to_index = {}
+    for idx, text in enumerate(object_texts):
+        nm = jou.field_str(text, 'name')
+        if nm is not None and nm not in name_to_index:
+            name_to_index[nm] = idx
+
+    changed = False
+    for item in items:
+        name = item['name']
+        if name in name_to_index:
+            idx = name_to_index[name]
+            old_text = object_texts[idx]
+            old_prob = jou.field_int(old_text, 'baseProb')
+            if old_prob is None:
+                old_prob = jou.field_int(old_text, 'prob')
+            new_prob = int(item.get('prob', 30))
+            if old_prob is None:
+                trend = 'flat'
+            elif new_prob > old_prob:
+                trend = 'up'
+            elif new_prob < old_prob:
+                trend = 'down'
+            else:
+                trend = 'flat'
+            object_texts[idx] = rumour_item_js(item, trend=trend)
+            changed = True
+        else:
+            object_texts.append(rumour_item_js(item, trend='flat'))
+            name_to_index[name] = len(object_texts) - 1
+            changed = True
+
+    if not changed:
+        return content, False
+    new_content, ok = jou.replace_array_objects(content, arr_name, object_texts)
+    return (new_content, True) if ok else (content, False)
+
+
 def process_club(slug, data):
     path = os.path.join(CLUBS_DIR, f'{slug}.data.js')
     if not os.path.exists(path):
@@ -222,9 +304,11 @@ def process_club(slug, data):
     content = open(path, encoding='utf-8').read()
     changed = False
 
+    for arr_key, arr_name in [('incoming', 'INCOMING'), ('outgoing', 'OUTGOING')]:
+        content, arr_changed = upsert_rumours(content, arr_name, data.get(arr_key, []))
+        changed = changed or arr_changed
+
     for arr_key, arr_name, item_fn in [
-        ('incoming', 'INCOMING', rumour_item_js),
-        ('outgoing', 'OUTGOING', rumour_item_js),
         ('confirmed_in', 'CONFIRMED_IN', confirmed_item_js),
         ('confirmed_out', 'CONFIRMED_OUT', confirmed_item_js),
     ]:
@@ -268,11 +352,13 @@ def main():
 
     total_ok = 0
     touched_slugs = set()
+    researched_slugs = set()  # every club a research pass actually looked at, changed or not
     for rf in research_files:
         data = json.load(open(rf, encoding='utf-8'))
         print(f'=== {rf} ===')
         for club in data['clubs']:
             slug = club['slug']
+            researched_slugs.add(slug)
             ok = process_club(slug, club)
             if ok:
                 total_ok += 1
@@ -286,6 +372,25 @@ def main():
     if touched_slugs:
         with open(os.path.join(REPO, '.last_injected_slugs'), 'w') as f:
             f.write('\n'.join(sorted(touched_slugs)))
+
+    # Record that Phase 1 actually spent a research pass on these clubs this
+    # cycle -- whether or not it found anything new -- so a future sync can
+    # skip re-researching a club that was just checked (see
+    # engine/pick_research_targets.py). A no-op club still counts: "we looked
+    # and there was nothing new" is exactly the signal a staleness gate needs.
+    if researched_slugs:
+        last_research_path = os.path.join(REPO, 'engine', '.last_research.json')
+        state = {}
+        if os.path.exists(last_research_path):
+            try:
+                state = json.load(open(last_research_path, encoding='utf-8'))
+            except (json.JSONDecodeError, OSError):
+                state = {}
+        now = jou.now_iso()
+        for slug in researched_slugs:
+            state[slug] = now
+        with open(last_research_path, 'w', encoding='utf-8') as f:
+            json.dump(state, f, indent=1, sort_keys=True)
 
 
 if __name__ == '__main__':

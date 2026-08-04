@@ -33,12 +33,12 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Udoka Godwin-Malife", sub:"DF", club:"Burton Albion", pos:"DF", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Undisclosed", truth:85, prob:85, light:'g', trend:'up', note:"Medical reported underway for the Burton captain, about as advanced as it gets before an announcement."},
-  {name:"Kyreece Lisbie", sub:"W", club:"Colchester United", pos:"W", report:"~1 wk ago", src:"Various", tier:3, fee:"Six-figure fee", truth:55, prob:45, light:'y', trend:'flat', note:"Competing with Peterborough United for the winger."}
+  {name:"Udoka Godwin-Malife", sub:"DF", club:"Burton Albion", pos:"DF", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Undisclosed", truth:85, prob:85, light:'g', trend:'up', note:"Medical reported underway for the Burton captain, about as advanced as it gets before an announcement.", lastSeen:"2026-08-04T19:10:50Z", baseProb:85},
+  {name:"Kyreece Lisbie", sub:"W", club:"Colchester United", pos:"W", report:"~1 wk ago", src:"Various", tier:3, fee:"Six-figure fee", truth:55, prob:45, light:'y', trend:'flat', note:"Competing with Peterborough United for the winger.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const OUTGOING = [
-  {name:"Andy Rinomhota", sub:"MF", club:"Sheffield Wednesday", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Interest described as a sensible fit."},
-  {name:"Charlie Savage", sub:"MF", club:"Cardiff City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Cardiff reportedly ahead of Sheffield Wednesday in the race."}
+  {name:"Andy Rinomhota", sub:"MF", club:"Sheffield Wednesday", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Interest described as a sensible fit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Charlie Savage", sub:"MF", club:"Cardiff City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Cardiff reportedly ahead of Sheffield Wednesday in the race.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const RISERS = [];
 const FALLERS = [];

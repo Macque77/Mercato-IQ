@@ -35,11 +35,11 @@ const CONFIRMED_OUT = [
   {name:"Callum Brittain", sub:"DF", club:"Blackburn Rovers", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."}
 ];
 const INCOMING = [
-  {name:"Unnamed 24yo midfielder", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Charlie Gregory / FLW", tier:3, fee:"Undisclosed", truth:45, prob:45, light:'y', trend:'flat', note:"Reported as set to seal a deal, but the player has not been named."}
+  {name:"Unnamed 24yo midfielder", sub:"MF", club:"Undisclosed", pos:"MF", report:"~1 wk ago", src:"Charlie Gregory / FLW", tier:3, fee:"Undisclosed", truth:45, prob:45, light:'y', trend:'flat', note:"Reported as set to seal a deal, but the player has not been named.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const OUTGOING = [
-  {name:"Adam Phillips", sub:"MF", club:"Bradford City", pos:"MF", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Undisclosed", truth:75, prob:70, light:'g', trend:'up', note:"Described as imminent by a credible EFL-focused reporter."},
-  {name:"David McGoldrick", sub:"ST", club:"Mansfield Town", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:25, light:'o', trend:'flat', note:"Barnsley reportedly confident the veteran striker wants to stay."}
+  {name:"Adam Phillips", sub:"MF", club:"Bradford City", pos:"MF", report:"~1 wk ago", src:"Pete O'Rourke", tier:2, fee:"Undisclosed", truth:75, prob:70, light:'g', trend:'up', note:"Described as imminent by a credible EFL-focused reporter.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70},
+  {name:"David McGoldrick", sub:"ST", club:"Mansfield Town", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:25, light:'o', trend:'flat', note:"Barnsley reportedly confident the veteran striker wants to stay.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const RISERS = [];
 const FALLERS = [];

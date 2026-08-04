@@ -35,10 +35,10 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Jelle Van Neck", sub:"22 · GK · Belgium", club:"Olympique de Marseille", pos:"GK", report:"17 Jul 2026", src:"Get Belgian & Dutch Football News", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"OH Leuven seen as offering better first-team chances than rival suitor Mechelen for the ex-Club Brugge academy keeper."}
+  {name:"Jelle Van Neck", sub:"22 · GK · Belgium", club:"Olympique de Marseille", pos:"GK", report:"17 Jul 2026", src:"Get Belgian & Dutch Football News", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"OH Leuven seen as offering better first-team chances than rival suitor Mechelen for the ex-Club Brugge academy keeper.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const OUTGOING = [
-  {name:"Davis Opoku", sub:"18 · RB · Belgium", club:"Feyenoord", pos:"RB", report:"27 Jul 2026", src:"Sacha Tavolieri", tier:1, fee:"Undisclosed", truth:70, prob:30, light:"y", trend:"flat", note:"Feyenoord's top choice to replace Givairo Read, with Porto also watching; Opoku is contracted to OHL until 2028."}
+  {name:"Davis Opoku", sub:"18 · RB · Belgium", club:"Feyenoord", pos:"RB", report:"27 Jul 2026", src:"Sacha Tavolieri", tier:1, fee:"Undisclosed", truth:70, prob:30, light:"y", trend:"flat", note:"Feyenoord's top choice to replace Givairo Read, with Porto also watching; Opoku is contracted to OHL until 2028.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];

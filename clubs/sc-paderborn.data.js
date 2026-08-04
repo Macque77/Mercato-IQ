@@ -43,7 +43,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Deniz Zeitler", sub:"Highly-rated attacking prospect", club:"TSG Hoffenheim", pos:"CAM", report:"Newly promoted Paderborn have opened talks with Hoffenheim over a move for young attacking prospect Zeitler, described as young, versatile and developable, fitting the club's recruitment profile.", src:"Sky Sports Germany / Neue Westfälische", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage talks reported; no fee or medical scheduled yet."}
+  {name:"Deniz Zeitler", sub:"Highly-rated attacking prospect", club:"TSG Hoffenheim", pos:"CAM", report:"Newly promoted Paderborn have opened talks with Hoffenheim over a move for young attacking prospect Zeitler, described as young, versatile and developable, fitting the club's recruitment profile.", src:"Sky Sports Germany / Neue Westfälische", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage talks reported; no fee or medical scheduled yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [];

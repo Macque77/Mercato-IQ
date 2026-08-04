@@ -37,10 +37,10 @@ const CONFIRMED_OUT = [
   {name:"Alfie May", sub:"ST", club:"Doncaster Rovers", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Doncaster entry."}
 ];
 const INCOMING = [
-  {name:"Archie Collins", sub:"MF", club:"Free agent", pos:"MF", report:"~1 wk ago", src:"FLW", tier:3, fee:"Free", truth:55, prob:35, light:'y', trend:'flat', note:"Seven-club race for the free agent including Millwall, Sheffield Wednesday and Leicester."}
+  {name:"Archie Collins", sub:"MF", club:"Free agent", pos:"MF", report:"~1 wk ago", src:"FLW", tier:3, fee:"Free", truth:55, prob:35, light:'y', trend:'flat', note:"Seven-club race for the free agent including Millwall, Sheffield Wednesday and Leicester.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const OUTGOING = [
-  {name:"Brodie Spencer", sub:"DF", club:"QPR / West Brom", pos:"DF", report:"~1 wk ago", src:"FLW exclusive", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Two Championship clubs reportedly interested."}
+  {name:"Brodie Spencer", sub:"DF", club:"QPR / West Brom", pos:"DF", report:"~1 wk ago", src:"FLW exclusive", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Two Championship clubs reportedly interested.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const RISERS = [];
 const FALLERS = [];

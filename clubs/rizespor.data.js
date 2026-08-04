@@ -36,7 +36,7 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Kartal Kayra", sub:"25 · MF · Turkey", club:"Beşiktaş", pos:"MF", report:"3 Aug 2026", src:"Fotomaç", tier:2, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Rizespor's management has opened direct contact with Beşiktaş over the midfielder as part of their pre-season rebuild."}
+  {name:"Kartal Kayra", sub:"25 · MF · Turkey", club:"Beşiktaş", pos:"MF", report:"3 Aug 2026", src:"Fotomaç", tier:2, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Rizespor's management has opened direct contact with Beşiktaş over the midfielder as part of their pre-season rebuild.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const OUTGOING = [];
 const RISERS = [];

@@ -59,21 +59,21 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Yan Diomande", sub:"young · winger", club:"(target)", pos:"W", report:"~2 days ago", src:"TEAMtalk", tier:3, fee:"£20-30m", truth:55, prob:35, light:'y', trend:'up',
-   note:"Liverpool's determination to sign the pacey wide forward is growing, and Iraola is reported keen, a clean style fit for his press. OBSTACLE: T3 sourcing and competition; no fee agreed yet."},
+   note:"Liverpool's determination to sign the pacey wide forward is growing, and Iraola is reported keen, a clean style fit for his press. OBSTACLE: T3 sourcing and competition; no fee agreed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Rayan", sub:"19 · winger", club:"Bournemouth", pos:"W", report:"~20h ago", src:"Liverpool.com", tier:3, fee:"£25-40m", truth:55, prob:22, light:'o', trend:'up',
-   note:"Iraola's arrival prompts a link to the teenager he knows from Bournemouth, who impressed with five goals in 15 league games. OBSTACLES: only six months at Bournemouth, who can demand a premium; early-stage."},
+   note:"Iraola's arrival prompts a link to the teenager he knows from Bournemouth, who impressed with five goals in 15 league games. OBSTACLES: only six months at Bournemouth, who can demand a premium; early-stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
   {name:"Iliman Ndiaye", sub:"W/AM · Senegal", club:"Everton", pos:"W", report:"~2 days ago", src:"Aggregated (traced via feed)", tier:3, fee:"£25-35m", truth:55, prob:18, light:'o', trend:'flat',
-   note:"Linked amid a reported contract dispute at Everton, having rejected new terms. On-profile for energy and directness. OBSTACLE: Everton's stance and valuation; sourcing is moderate."},
+   note:"Linked amid a reported contract dispute at Everton, having rejected new terms. On-profile for energy and directness. OBSTACLE: Everton's stance and valuation; sourcing is moderate.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
   {name:"Kennett Eichhorn", sub:"young · midfield", club:"(target)", pos:"CM", report:"~2 days ago", src:"Aggregated", tier:4, fee:"£15-25m", truth:35, prob:14, light:'r', trend:'up',
-   note:"Liverpool intensifying interest after Bayern Munich reportedly withdrew. A young midfield prospect for the model. Early-warning sourcing."},
-  {name:"Bradley Barcola", sub:"23 · W · France", club:"Paris Saint-Germain", pos:"W", report:"27 Jul – 2 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Liverpool ~€100m offer vs PSG demanding €150-170m", truth:58, prob:30, light:"y", trend:"flat", note:"Personal terms reportedly agreed in principle, but Romano says he doesn't expect an imminent move given the clubs remain far apart on fee."}
+   note:"Liverpool intensifying interest after Bayern Munich reportedly withdrew. A young midfield prospect for the model. Early-warning sourcing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
+  {name:"Bradley Barcola", sub:"23 · W · France", club:"Paris Saint-Germain", pos:"W", report:"27 Jul – 2 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Liverpool ~€100m offer vs PSG demanding €150-170m", truth:58, prob:30, light:"y", trend:"flat", note:"Personal terms reportedly agreed in principle, but Romano says he doesn't expect an imminent move given the clubs remain far apart on fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const OUTGOING = [
   {name:"Cody Gakpo", sub:"W/ST · Netherlands", club:"(seeking exit)", pos:"W", report:"~2 days ago", src:"Dutch press (traced via feed)", tier:3, fee:"£45-60m", truth:55, prob:45, light:'y', trend:'up',
-   note:"Reported to want to leave following Slot's exit. PRICING: a proven PL forward under contract holds a firm fee; a sale would part-fund the attacking rebuild. Player-driven, so leverage is mixed."},
+   note:"Reported to want to leave following Slot's exit. PRICING: a proven PL forward under contract holds a firm fee; a sale would part-fund the attacking rebuild. Player-driven, so leverage is mixed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
-   note:"Standard FSG churn of fringe and loan players to balance the squad and the cost ratio under a new coach."}
+   note:"Standard FSG churn of fringe and loan players to balance the squad and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 
 const RISERS = [

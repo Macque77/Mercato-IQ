@@ -33,10 +33,10 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Iván Cedric", sub:"24 · FW · Cameroon/Spain", club:"Vanspor FK", pos:"FW", report:"2 Aug 2026", src:"Sporx", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Agreement reached with last season's TFF 1. Lig top-scorer (15 goals, 6 assists); official unveiling pending medical."}
+  {name:"Iván Cedric", sub:"24 · FW · Cameroon/Spain", club:"Vanspor FK", pos:"FW", report:"2 Aug 2026", src:"Sporx", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Agreement reached with last season's TFF 1. Lig top-scorer (15 goals, 6 assists); official unveiling pending medical.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80}
 ];
 const OUTGOING = [
-  {name:"İbrahim Kaya", sub:"25 · Winger/Forward · Turkey", club:"Alanyaspor", pos:"FW", report:"3 Aug 2026", src:"Hürriyet", tier:1, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Player confirmed a club's interest without naming them, saying it's ultimately Alanyaspor's decision; scored 6 goals in his maiden Süper Lig season."}
+  {name:"İbrahim Kaya", sub:"25 · Winger/Forward · Turkey", club:"Alanyaspor", pos:"FW", report:"3 Aug 2026", src:"Hürriyet", tier:1, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Player confirmed a club's interest without naming them, saying it's ultimately Alanyaspor's decision; scored 6 goals in his maiden Süper Lig season.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 const RISERS = [];
 const FALLERS = [];

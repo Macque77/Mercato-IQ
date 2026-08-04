@@ -37,7 +37,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Nestory Irankunda", sub:"20 · W · Australia", club:"Sporting CP", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~€22m (bonuses included)", truth:55, prob:45, light:"y", trend:"flat", note:"Schira: agreement in principle on personal terms to 2031, with Sporting racing other suitors to close the deal."}
+  {name:"Nestory Irankunda", sub:"20 · W · Australia", club:"Sporting CP", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~€22m (bonuses included)", truth:55, prob:45, light:"y", trend:"flat", note:"Schira: agreement in principle on personal terms to 2031, with Sporting racing other suitors to close the deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const RISERS = [];
 const FALLERS = [];

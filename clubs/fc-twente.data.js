@@ -45,8 +45,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Bart van Rooij", sub:"22, right-back", club:"Ajax", pos:"DF", report:"Van Rooij's name circulated as a possible Anton Gaaei replacement after Ajax's database of contract situations flagged him, but Telegraaf insider Mike Verweij shot the rumour down, calling it 'absolutely not an option' — early agent contact was routine scouting, not genuine interest, and a reported ~€10m valuation is seen as a further obstacle.", src:"Mike Verweij, De Telegraaf", tier:1, fee:"€10m (reported valuation)", truth:82, prob:8, light:"r", trend:"flat", note:"Explicitly denied by a top-tier insider; listed for transparency only."},
-  {name:"Arno Verschueren", sub:"midfielder", club:"Fortuna Sittard", pos:"MF", report:"Fortuna Sittard are reported to be showing growing interest in the FC Twente midfielder as the window progresses.", src:"TwenteInsite.nl", tier:2, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:""}
+  {name:"Bart van Rooij", sub:"22, right-back", club:"Ajax", pos:"DF", report:"Van Rooij's name circulated as a possible Anton Gaaei replacement after Ajax's database of contract situations flagged him, but Telegraaf insider Mike Verweij shot the rumour down, calling it 'absolutely not an option' — early agent contact was routine scouting, not genuine interest, and a reported ~€10m valuation is seen as a further obstacle.", src:"Mike Verweij, De Telegraaf", tier:1, fee:"€10m (reported valuation)", truth:82, prob:8, light:"r", trend:"flat", note:"Explicitly denied by a top-tier insider; listed for transparency only.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8},
+  {name:"Arno Verschueren", sub:"midfielder", club:"Fortuna Sittard", pos:"MF", report:"Fortuna Sittard are reported to be showing growing interest in the FC Twente midfielder as the window progresses.", src:"TwenteInsite.nl", tier:2, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const RISERS = [];

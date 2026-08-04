@@ -47,7 +47,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Noah Atubolu", sub:"Germany U21 goalkeeper wanted abroad", club:"Olympique Marseille / Premier League interest", pos:"GK", report:"Atubolu is looking to make a big move away from Freiburg this summer, with Marseille showing concrete interest alongside continued Premier League links; report also floats an unnamed German 'Rekordmeister' (record champion, i.e. Bayern Munich) entering the race.", src:"Sky Sports Germany / Sport1 / Fussball Transfers", tier:2, fee:"Unknown", truth:60, prob:45, light:"y", trend:"flat", note:"Multiple clubs credited with interest but no advanced negotiations confirmed publicly yet; Atubolu was left out of a recent Germany squad in favour of Bayern's Jonas Urbig."}
+  {name:"Noah Atubolu", sub:"Germany U21 goalkeeper wanted abroad", club:"Olympique Marseille / Premier League interest", pos:"GK", report:"Atubolu is looking to make a big move away from Freiburg this summer, with Marseille showing concrete interest alongside continued Premier League links; report also floats an unnamed German 'Rekordmeister' (record champion, i.e. Bayern Munich) entering the race.", src:"Sky Sports Germany / Sport1 / Fussball Transfers", tier:2, fee:"Unknown", truth:60, prob:45, light:"y", trend:"flat", note:"Multiple clubs credited with interest but no advanced negotiations confirmed publicly yet; Atubolu was left out of a recent Germany squad in favour of Bayern's Jonas Urbig.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 
 const RISERS = [

@@ -38,11 +38,11 @@ const CONFIRMED_OUT = [
   {name:"Tolu Arokodare", sub:"ST · Nigeria", club:"Ajax", pos:"ST", fee:"~£18.8m / €22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul 2026 by BBC Sport: loan-to-buy move to Ajax following a reported training-ground dispute with the manager."}
 ];
 const INCOMING = [
-  {name:"Niko Sigur", sub:"22 · DM/RB · Canada", club:"Hajduk Split", pos:"DM", report:"7 Jul 2026", src:"Luke Fletcher / Last Word On Football (via Sky Sports News)", tier:2, fee:"~£2.5m", truth:55, prob:38, light:"y", trend:"flat", note:"Wolves are pursuing the Canadian World Cup performer as inexpensive midfield/defensive depth for their Championship campaign."},
-  {name:"Brayan Medina", sub:"24 · CB · Colombia", club:"CD Tondela", pos:"CB", report:"29 Jul 2026", src:"Pipe Sierra (via The72)", tier:3, fee:"Undisclosed", truth:28, prob:10, light:"r", trend:"down", note:"New manager Cesar Peixoto has enquired about the 195cm defender following Tondela's relegation, competing with Genoa and Olympiacos; Medina has since signed a contract extension with Tondela through 2030, reducing near-term likelihood."}
+  {name:"Niko Sigur", sub:"22 · DM/RB · Canada", club:"Hajduk Split", pos:"DM", report:"7 Jul 2026", src:"Luke Fletcher / Last Word On Football (via Sky Sports News)", tier:2, fee:"~£2.5m", truth:55, prob:38, light:"y", trend:"flat", note:"Wolves are pursuing the Canadian World Cup performer as inexpensive midfield/defensive depth for their Championship campaign.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
+  {name:"Brayan Medina", sub:"24 · CB · Colombia", club:"CD Tondela", pos:"CB", report:"29 Jul 2026", src:"Pipe Sierra (via The72)", tier:3, fee:"Undisclosed", truth:28, prob:10, light:"r", trend:"down", note:"New manager Cesar Peixoto has enquired about the 195cm defender following Tondela's relegation, competing with Genoa and Olympiacos; Medina has since signed a contract extension with Tondela through 2030, reducing near-term likelihood.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
 ];
 const OUTGOING = [
-  {name:"Jose Sa", sub:"33 · GK · Portugal", club:"Olympiacos", pos:"GK", report:"15 Jul 2026", src:"Konstantinos Lianos (The72)", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Olympiacos are eyeing Sa as a replacement for their departing keeper Tzolakis; Sa (170 Wolves appearances, contract to 2027) is reportedly open to a fresh challenge following relegation."}
+  {name:"Jose Sa", sub:"33 · GK · Portugal", club:"Olympiacos", pos:"GK", report:"15 Jul 2026", src:"Konstantinos Lianos (The72)", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Olympiacos are eyeing Sa as a replacement for their departing keeper Tzolakis; Sa (170 Wolves appearances, contract to 2027) is reportedly open to a fresh challenge following relegation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 const RISERS = [];
 const FALLERS = [];

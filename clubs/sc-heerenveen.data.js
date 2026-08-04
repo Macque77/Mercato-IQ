@@ -45,7 +45,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Tomás Bisuma", sub:"23 · CM · Uruguay", club:"Fiorentina", pos:"CM", report:"30 Jul 2026", src:"Sky Sports", tier:2, fee:"€15m", truth:54, prob:40, note:"Sky reports Heerenveen interest in Fiorentina midfielder."}
+  {name:"Tomás Bisuma", sub:"23 · CM · Uruguay", club:"Fiorentina", pos:"CM", report:"30 Jul 2026", src:"Sky Sports", tier:2, fee:"€15m", truth:54, prob:40, note:"Sky reports Heerenveen interest in Fiorentina midfielder.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [];

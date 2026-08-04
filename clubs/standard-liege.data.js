@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Andi Zeqiri", sub:"24 · ST · Switzerland", club:"Augsburg", pos:"ST", report:"30 Jul 2026", src:"RTBF", tier:2, fee:"€12m", truth:56, prob:38, note:"RTBF reports Standard monitoring Swiss striker from Augsburg."}
+  {name:"Andi Zeqiri", sub:"24 · ST · Switzerland", club:"Augsburg", pos:"ST", report:"30 Jul 2026", src:"RTBF", tier:2, fee:"€12m", truth:56, prob:38, note:"RTBF reports Standard monitoring Swiss striker from Augsburg.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38}
 ];
 
 const OUTGOING = [];

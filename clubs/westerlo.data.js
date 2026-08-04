@@ -44,8 +44,8 @@ const CONFIRMED_OUT = [
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Cameron Congreve", sub:"22 · RW · Wales", club:"Swansea City", pos:"RW", report:"2 Aug 2026", src:"WalesOnline", tier:2, fee:"Undisclosed (7-figure)", truth:75, prob:80, light:"g", trend:"flat", note:"Deal described as imminent, with Swansea retaining a buy-back and sell-on clause; Congreve impressed on loan at Dundee last season."},
-  {name:"Issiaka Kamate", sub:"MF", club:"Inter Milan", pos:"MF", report:"3 Jun 2026", src:"Nico Schira", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Nico Schira reported Westerlo closing in on an agreement with Inter for the player; no public update since early June."}
+  {name:"Cameron Congreve", sub:"22 · RW · Wales", club:"Swansea City", pos:"RW", report:"2 Aug 2026", src:"WalesOnline", tier:2, fee:"Undisclosed (7-figure)", truth:75, prob:80, light:"g", trend:"flat", note:"Deal described as imminent, with Swansea retaining a buy-back and sell-on clause; Congreve impressed on loan at Dundee last season.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80},
+  {name:"Issiaka Kamate", sub:"MF", club:"Inter Milan", pos:"MF", report:"3 Jun 2026", src:"Nico Schira", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Nico Schira reported Westerlo closing in on an agreement with Inter for the player; no public update since early June.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const OUTGOING = [];
 const RISERS = [];

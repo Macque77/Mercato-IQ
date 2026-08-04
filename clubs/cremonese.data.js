@@ -35,7 +35,7 @@ const CONFIRMED_OUT = [
   {name:"Leonardo Sernicola", sub:"DF", club:"Benevento", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to Benevento on a deal through 2029."}
 ];
 const INCOMING = [
-  {name:"Andrea Sottil", sub:"Manager", club:"Undisclosed", pos:"MGR", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"N/A", truth:50, prob:35, light:'y', trend:'flat', note:"Managerial candidate reported for the vacant post following the sporting director's departure, not yet confirmed."}
+  {name:"Andrea Sottil", sub:"Manager", club:"Undisclosed", pos:"MGR", report:"~1 wk ago", src:"Tuttomercatoweb", tier:3, fee:"N/A", truth:50, prob:35, light:'y', trend:'flat', note:"Managerial candidate reported for the vacant post following the sporting director's departure, not yet confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const OUTGOING = [];
 const RISERS = [];

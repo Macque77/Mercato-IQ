@@ -43,8 +43,8 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Aiham Ousou", sub:"Captain · CB", club:"Ludogorets", pos:"CB", report:"18 Jul 2026", src:"La Dernière Heure", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Charleroi risk losing their captain to the Bulgarian champions right before the season starts; club reluctant to sell."},
-  {name:"Étienne Camara", sub:"MF", club:"Panathinaikos", pos:"MF", report:"8 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Greek giants tabled a fresh offer for the Charleroi midfielder; valuation gap remains between the clubs."}
+  {name:"Aiham Ousou", sub:"Captain · CB", club:"Ludogorets", pos:"CB", report:"18 Jul 2026", src:"La Dernière Heure", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Charleroi risk losing their captain to the Bulgarian champions right before the season starts; club reluctant to sell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Étienne Camara", sub:"MF", club:"Panathinaikos", pos:"MF", report:"8 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Greek giants tabled a fresh offer for the Charleroi midfielder; valuation gap remains between the clubs.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const RISERS = [];
 const FALLERS = [];

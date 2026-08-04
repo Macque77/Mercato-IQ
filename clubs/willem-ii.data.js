@@ -53,12 +53,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Nils Rossen", sub:"MF, 21", club:"Telstar", pos:"MF", report:"Willem II have tabled a bid with Telstar for the young midfielder as they look to add competition centrally.", src:"Brabants Dagblad (via Tilbo transfer blog)", tier:3, fee:"Bid submitted, undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Late Jul 2026."},
-  {name:"Gijs Besselink", sub:"MF", club:"FC Twente", pos:"MF", report:"Named as a target but Twente have shown no willingness to let him leave.", src:"Tilbo transfer blog", tier:3, fee:"N/A, Twente unwilling to sell", truth:45, prob:15, light:"o", trend:"flat", note:"Late Jul 2026."}
+  {name:"Nils Rossen", sub:"MF, 21", club:"Telstar", pos:"MF", report:"Willem II have tabled a bid with Telstar for the young midfielder as they look to add competition centrally.", src:"Brabants Dagblad (via Tilbo transfer blog)", tier:3, fee:"Bid submitted, undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Late Jul 2026.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Gijs Besselink", sub:"MF", club:"FC Twente", pos:"MF", report:"Named as a target but Twente have shown no willingness to let him leave.", src:"Tilbo transfer blog", tier:3, fee:"N/A, Twente unwilling to sell", truth:45, prob:15, light:"o", trend:"flat", note:"Late Jul 2026.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [
-  {name:"Jeff Hardeveld", sub:"DF (Left), 31", club:"Telstar", pos:"DF", report:"Voetbal International reports Telstar interest in the experienced left-back.", src:"Voetbal International", tier:1, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Late Jul 2026."}
+  {name:"Jeff Hardeveld", sub:"DF (Left), 31", club:"Telstar", pos:"DF", report:"Voetbal International reports Telstar interest in the experienced left-back.", src:"Voetbal International", tier:1, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Late Jul 2026.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const RISERS = [];

@@ -42,7 +42,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Unnamed Kilmarnock player", sub:"Undisclosed", club:"Rangers", pos:"N/A", report:"~1 wk ago", src:"Yahoo Sports opinion", tier:4, fee:"Undisclosed", truth:30, prob:20, light:'o', trend:'flat', note:"Suggested as a follow-up Rangers target after the Bailey Rice loan, opinion-based."}
+  {name:"Unnamed Kilmarnock player", sub:"Undisclosed", club:"Rangers", pos:"N/A", report:"~1 wk ago", src:"Yahoo Sports opinion", tier:4, fee:"Undisclosed", truth:30, prob:20, light:'o', trend:'flat', note:"Suggested as a follow-up Rangers target after the Bailey Rice loan, opinion-based.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 const RISERS = [];
 const FALLERS = [];

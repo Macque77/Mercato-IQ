@@ -7,7 +7,8 @@
 # the schema documented at the top of engine/inject_research.py.
 #
 # This script is Phase 2: given that JSON, get it live on the site.
-#   inject -> node --check (syntax gate) -> stale-rumour scan -> aggregate -> rebuild -> verify -> commit
+#   inject -> node --check (syntax gate) -> stale-rumour scan -> rumour decay scan
+#     -> aggregate -> rebuild -> verify -> commit
 #
 # The stale-rumour scan (engine/detect_stale_rumours.py, added 2026-08-04) runs
 # site-wide every time, not just on the clubs this batch touched -- a newly-injected
@@ -15,6 +16,16 @@
 # club's page (e.g. Player X confirmed signing for Club A should retire any other
 # club's "targeting Player X" rumour), so it has to check the whole site, not just
 # what this batch changed.
+#
+# The rumour decay scan (engine/decay_rumours.py, added 2026-08-04) is the other
+# half of the lifecycle: a rumour that's confirmed/killed gets REMOVED by the
+# stale-rumour scan above, but a rumour that simply stops being reported on
+# should fade (lower prob/lighter color) rather than sit frozen at its original
+# numbers forever or get deleted outright. It also runs site-wide every time,
+# since a rumour anywhere on the site can go stale-by-silence independent of
+# what this batch touched. engine/inject_research.py is the reverse of this: it
+# now UPDATES an existing rumour in place (resetting its decay clock) instead of
+# silently no-op'ing when a fresh source re-reports a player already tracked.
 # (push is automatic: .git/hooks/post-commit pushes to origin/main on every commit)
 #
 # Usage:
@@ -36,7 +47,7 @@ fi
 
 rm -f .last_injected_slugs
 
-echo "=== [1/6] Inject research into clubs/*.data.js ==="
+echo "=== [1/8] Inject research into clubs/*.data.js ==="
 python3 engine/inject_research.py "$@"
 if [ ! -f .last_injected_slugs ]; then
   echo "No clubs were changed by this research batch. Nothing to rebuild."
@@ -46,7 +57,7 @@ SLUGS=$(cat .last_injected_slugs)
 COUNT=$(echo "$SLUGS" | wc -l)
 echo "$COUNT club(s) touched: $(echo $SLUGS | tr '\n' ' ')"
 
-echo "=== [2/6] Syntax-check every touched data file ==="
+echo "=== [2/8] Syntax-check every touched data file ==="
 FAILED=0
 for slug in $SLUGS; do
   if ! node --check "clubs/${slug}.data.js" 2>/tmp/nodecheck_err.txt; then
@@ -60,7 +71,7 @@ if [ "$FAILED" -eq 1 ]; then
   exit 2
 fi
 
-echo "=== [3/7] Stale-rumour scan (site-wide: catches rumours a NEW confirmed deal just killed, on this club or any other) ==="
+echo "=== [3/8] Stale-rumour scan (site-wide: catches rumours a NEW confirmed deal just killed, on this club or any other) ==="
 rm -f .stale_touched_slugs
 python3 engine/detect_stale_rumours.py
 if [ -f .stale_touched_slugs ]; then
@@ -70,17 +81,27 @@ if [ -f .stale_touched_slugs ]; then
   rm -f .stale_touched_slugs
 fi
 
-echo "=== [4/7] Re-aggregate (global/nation/league data) ==="
+echo "=== [4/8] Rumour decay scan (site-wide: fades prob on rumours nobody's re-reported in a while) ==="
+rm -f .decay_touched_slugs
+python3 engine/decay_rumours.py
+if [ -f .decay_touched_slugs ]; then
+  DECAY_SLUGS=$(cat .decay_touched_slugs)
+  echo "(decay scan touched: $(echo $DECAY_SLUGS | tr '\n' ' '))"
+  SLUGS=$(printf '%s\n%s\n' "$SLUGS" "$DECAY_SLUGS" | sort -u | sed '/^$/d')
+  rm -f .decay_touched_slugs
+fi
+
+echo "=== [5/8] Re-aggregate (global/nation/league data) ==="
 python3 engine/aggregate.py
 
-echo "=== [5/7] Rebuild touched club pages + all landing pages ==="
+echo "=== [6/8] Rebuild touched club pages + all landing pages ==="
 for slug in $SLUGS; do
   python3 engine/build_extended.py "$slug"
 done
 python3 engine/build_extended.py --batch-landing-pages
 
 if [ "${SKIP_VERIFY:-0}" != "1" ]; then
-  echo "=== [6/7] Verify (Playwright sweep) ==="
+  echo "=== [7/8] Verify (Playwright sweep) ==="
   if [ "${FULL_VERIFY:-0}" = "1" ]; then
     node engine/verify_site.js
   else
@@ -92,16 +113,16 @@ if [ "${SKIP_VERIFY:-0}" != "1" ]; then
     exit 3
   fi
 else
-  echo "=== [6/7] Verify -- SKIPPED (SKIP_VERIFY=1) ==="
+  echo "=== [7/8] Verify -- SKIPPED (SKIP_VERIFY=1) ==="
 fi
 
 if [ "${NO_COMMIT:-0}" = "1" ]; then
-  echo "=== [7/7] Commit -- SKIPPED (NO_COMMIT=1). Changes are staged in the working tree only. ==="
+  echo "=== [8/8] Commit -- SKIPPED (NO_COMMIT=1). Changes are staged in the working tree only. ==="
   rm -f .last_injected_slugs
   exit 0
 fi
 
-echo "=== [7/7] Commit + push (push is automatic via post-commit hook) ==="
+echo "=== [8/8] Commit + push (push is automatic via post-commit hook) ==="
 rm -f .last_injected_slugs
 git add -A
 git commit -m "Research sync: update $(echo $SLUGS | tr '\n' ' ')" || echo "Nothing to commit (rebuild produced no diff)."

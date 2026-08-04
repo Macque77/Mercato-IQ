@@ -27,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Franco Mastantuono", prob: 35, truth: 55, bullshit: false,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "out",
     from: "Real Madrid", to: "Fiorentina",
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-08-03T18:00:00Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:28:09.485840Z",
+  updated: "2026-08-04T19:11:19.726647Z",
   label: "League aggregation"
 };

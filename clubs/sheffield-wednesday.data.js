@@ -35,15 +35,15 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Mark O'Mahony", sub:"FW", club:"Brighton (youth)", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Young attacker linked, early stage."},
-  {name:"Tyler Onyango", sub:"MF", club:"Free agent (ex-Everton)", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:50, prob:40, light:'y', trend:'flat', note:"Reported on trial with the club."},
-  {name:"Reece James", sub:"W", club:"Free agent (ex-Wednesday)", pos:"W", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:45, prob:35, light:'y', trend:'flat', note:"Trial return, fans keen on a re-signing."},
-  {name:"Davis Keillor-Dunn", sub:"FW", club:"Wrexham", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Wednesday reportedly want a deal for the forward."}
+  {name:"Mark O'Mahony", sub:"FW", club:"Brighton (youth)", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Young attacker linked, early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Tyler Onyango", sub:"MF", club:"Free agent (ex-Everton)", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:50, prob:40, light:'y', trend:'flat', note:"Reported on trial with the club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Reece James", sub:"W", club:"Free agent (ex-Wednesday)", pos:"W", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:45, prob:35, light:'y', trend:'flat', note:"Trial return, fans keen on a re-signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Davis Keillor-Dunn", sub:"FW", club:"Wrexham", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Wednesday reportedly want a deal for the forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const OUTGOING = [
-  {name:"Ike Ugbo", sub:"FW", club:"Various EFL/European clubs", pos:"FW", report:"~4 days ago", src:"Darren Witcoop", tier:2, fee:"Undisclosed", truth:70, prob:65, light:'g', trend:'up', note:"Club reportedly willing to sell or loan before the 1 September deadline."},
-  {name:"Owen Bailey", sub:"MF", club:"Doncaster Rovers", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Reportedly missed out amid a complication over Callum Paterson."},
-  {name:"Tommi O'Reilly", sub:"MF", club:"Notts County", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reportedly lost the race for the Aston Villa target to Notts County."}
+  {name:"Ike Ugbo", sub:"FW", club:"Various EFL/European clubs", pos:"FW", report:"~4 days ago", src:"Darren Witcoop", tier:2, fee:"Undisclosed", truth:70, prob:65, light:'g', trend:'up', note:"Club reportedly willing to sell or loan before the 1 September deadline.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
+  {name:"Owen Bailey", sub:"MF", club:"Doncaster Rovers", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Reportedly missed out amid a complication over Callum Paterson.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Tommi O'Reilly", sub:"MF", club:"Notts County", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reportedly lost the race for the Aston Villa target to Notts County.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];

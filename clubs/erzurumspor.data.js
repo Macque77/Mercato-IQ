@@ -33,7 +33,7 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Nariman Akhundzada", sub:"22 · ST · Azerbaijan", club:"Columbus Crew", pos:"ST", report:"4 Aug 2026", src:"Sabah", tier:2, fee:"Undisclosed", truth:90, prob:80, light:"g", trend:"flat", note:"Principle agreement reached; player set for a medical in Erzurum before signing, following a standout spell at Qarabağ (35 goals in 126 games)."}
+  {name:"Nariman Akhundzada", sub:"22 · ST · Azerbaijan", club:"Columbus Crew", pos:"ST", report:"4 Aug 2026", src:"Sabah", tier:2, fee:"Undisclosed", truth:90, prob:80, light:"g", trend:"flat", note:"Principle agreement reached; player set for a medical in Erzurum before signing, following a standout spell at Qarabağ (35 goals in 126 games).", lastSeen:"2026-08-04T19:10:50Z", baseProb:80}
 ];
 const OUTGOING = [];
 const RISERS = [];

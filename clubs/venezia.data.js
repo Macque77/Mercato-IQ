@@ -51,14 +51,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Takehiro Tomiyasu", sub:"Defender, JPN, 27, free agent", club:"Free agent (ex-Arsenal/Bologna)", pos:"CB", report:"Venezia are reported to be advancing in talks for the free-agent defender, ahead of rival interest from Torino and Sassuolo.", src:"Tuttomercatoweb", tier:2, fee:"Undisclosed", truth:50, prob:35, light:"y", trend:"flat", note:"Player currently training on trial with Crystal Palace."},
-  {name:"Isak Oskarsson", sub:"Forward, ISL", club:"Real Sociedad", pos:"ST", report:"Being considered as a further attacking option for Venezia.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage scouting interest only."},
-  {name:"Matteo Darmian", sub:"Defender, ITA, 36", club:"Inter", pos:"RB", report:"Named as a target for Venezia among a group of three Serie A clubs weighing a move for the veteran full-back.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:30, prob:15, light:"o", trend:"flat", note:"Speculative and competing with other suitors."}
+  {name:"Takehiro Tomiyasu", sub:"Defender, JPN, 27, free agent", club:"Free agent (ex-Arsenal/Bologna)", pos:"CB", report:"Venezia are reported to be advancing in talks for the free-agent defender, ahead of rival interest from Torino and Sassuolo.", src:"Tuttomercatoweb", tier:2, fee:"Undisclosed", truth:50, prob:35, light:"y", trend:"flat", note:"Player currently training on trial with Crystal Palace.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Isak Oskarsson", sub:"Forward, ISL", club:"Real Sociedad", pos:"ST", report:"Being considered as a further attacking option for Venezia.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage scouting interest only.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Matteo Darmian", sub:"Defender, ITA, 36", club:"Inter", pos:"RB", report:"Named as a target for Venezia among a group of three Serie A clubs weighing a move for the veteran full-back.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:30, prob:15, light:"o", trend:"flat", note:"Speculative and competing with other suitors.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [
-  {name:"Christian Adorante", sub:"Striker, ITA", club:"Sampdoria", pos:"ST", report:"Sampdoria's interest was rejected, with Venezia wanting to keep the forward.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:45, prob:15, light:"o", trend:"flat", note:"Club stance reported as firm to retain the player."},
-  {name:"Alvin Okoro", sub:"Forward, ITA", club:"Arezzo", pos:"ST", report:"Arezzo have shown interest in taking the attacker, likely on loan.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Lower-league loan-type move under discussion."}
+  {name:"Christian Adorante", sub:"Striker, ITA", club:"Sampdoria", pos:"ST", report:"Sampdoria's interest was rejected, with Venezia wanting to keep the forward.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:45, prob:15, light:"o", trend:"flat", note:"Club stance reported as firm to retain the player.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Alvin Okoro", sub:"Forward, ITA", club:"Arezzo", pos:"ST", report:"Arezzo have shown interest in taking the attacker, likely on loan.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Lower-league loan-type move under discussion.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [

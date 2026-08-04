@@ -662,7 +662,7 @@ const HEADLINES = [
     from: "Real Madrid", to: "Fiorentina",
     direction: "out",
     prob: 35, truth: 55, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Spain", league: "La Liga",
     club_link: "real-madrid",
     updated: "2026-08-03T18:00:00Z"
@@ -753,7 +753,7 @@ const HEADLINES = [
     from: "RC Strasbourg Alsace", to: "AS Roma",
     direction: "out",
     prob: 30, truth: 50, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "France", league: "Ligue 1",
     club_link: "rc-strasbourg",
     updated: "2026-08-03T14:30:00Z"
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:28:09.474229Z",
+  updated: "2026-08-04T19:11:19.716630Z",
   label: "Global aggregation from all clubs"
 };

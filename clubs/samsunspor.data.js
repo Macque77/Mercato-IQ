@@ -35,10 +35,10 @@ const CONFIRMED_OUT = [
   {name:"Rick van Drongelen", sub:"DF · Netherlands", club:"Panathinaikos", pos:"DF", fee:"Undisclosed (significant)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move to Panathinaikos completed, generating a sizeable fee for Samsunspor."}
 ];
 const INCOMING = [
-  {name:"Kevin Carlos", sub:"25 · ST · Spain", club:"OGC Nice", pos:"ST", report:"2 Aug 2026", src:"Sporx", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Samsunspor have reportedly prepared a fresh bid after an earlier loan-with-option structure collapsed; other clubs are also circling the Nice striker."}
+  {name:"Kevin Carlos", sub:"25 · ST · Spain", club:"OGC Nice", pos:"ST", report:"2 Aug 2026", src:"Sporx", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Samsunspor have reportedly prepared a fresh bid after an earlier loan-with-option structure collapsed; other clubs are also circling the Nice striker.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const OUTGOING = [
-  {name:"Ali Diabaté", sub:"MF", club:"Samsunspor", pos:"MF", report:"29 Jul 2026", src:"Fotomaç", tier:2, fee:"€8m offer rejected", truth:80, prob:8, light:"r", trend:"flat", note:"President Yüksel Yıldırım confirmed the club turned down an €8m approach from a Saudi club, saying Samsunspor plans to build around him for the next 3-4 years."}
+  {name:"Ali Diabaté", sub:"MF", club:"Samsunspor", pos:"MF", report:"29 Jul 2026", src:"Fotomaç", tier:2, fee:"€8m offer rejected", truth:80, prob:8, light:"r", trend:"flat", note:"President Yüksel Yıldırım confirmed the club turned down an €8m approach from a Saudi club, saying Samsunspor plans to build around him for the next 3-4 years.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8}
 ];
 const RISERS = [];
 const FALLERS = [];

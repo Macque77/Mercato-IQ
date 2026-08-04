@@ -33,7 +33,7 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Luke Berry", sub:"MF", club:"Free agent", pos:"MF", report:"~2 wks ago", src:"FLW opinion", tier:4, fee:"Free", truth:30, prob:25, light:'o', trend:'flat', note:"Reunion speculation with the ex-Charlton Athletic midfielder, opinion-based."}
+  {name:"Luke Berry", sub:"MF", club:"Free agent", pos:"MF", report:"~2 wks ago", src:"FLW opinion", tier:4, fee:"Free", truth:30, prob:25, light:'o', trend:'flat', note:"Reunion speculation with the ex-Charlton Athletic midfielder, opinion-based.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const OUTGOING = [];
 const RISERS = [];

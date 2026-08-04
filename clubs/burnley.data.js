@@ -47,8 +47,8 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Florentino Luis", sub:"26 · MF · Portugal", club:"Ipswich Town", pos:"MF", report:"~3 days ago", src:"Fabrizio Romano / East Anglian Daily Times", tier:1, fee:"£16m", truth:92, prob:90, light:'g', trend:'up', note:"Romano-level sourcing with agreement reached language, about as close to done as it gets before the medical."},
-  {name:"Andreas Hountondji", sub:"24 · ST · Benin", club:"Frosinone", pos:"ST", report:"~1 wk ago", src:"Nicolò Schira", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Schira has a mixed but not terrible track record here, edging closer language suggests it is real but terms are still to be nailed down."}
+  {name:"Florentino Luis", sub:"26 · MF · Portugal", club:"Ipswich Town", pos:"MF", report:"~3 days ago", src:"Fabrizio Romano / East Anglian Daily Times", tier:1, fee:"£16m", truth:92, prob:90, light:'g', trend:'up', note:"Romano-level sourcing with agreement reached language, about as close to done as it gets before the medical.", lastSeen:"2026-08-04T19:10:50Z", baseProb:90},
+  {name:"Andreas Hountondji", sub:"24 · ST · Benin", club:"Frosinone", pos:"ST", report:"~1 wk ago", src:"Nicolò Schira", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Schira has a mixed but not terrible track record here, edging closer language suggests it is real but terms are still to be nailed down.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const RISERS = [];
 const FALLERS = [];

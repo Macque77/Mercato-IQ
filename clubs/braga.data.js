@@ -35,7 +35,7 @@ const CONFIRMED_OUT = [
   {name:"Lukas Hornicek", sub:"GK · Slovakia", club:"Newcastle United", fee:"€30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 3 Aug 2026: Braga's goalkeeper departs for the Premier League in a €30m deal."}
 ];
 const INCOMING = [
-  {name:"Andrew", sub:"GK · Brazil", club:"Gil Vicente", pos:"GK", report:"3 Aug 2026", src:"Record / Bolanarede", tier:3, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"With Hornicek sold to Newcastle, Braga are reportedly eyeing Gil Vicente's in-form Brazilian goalkeeper as his successor."}
+  {name:"Andrew", sub:"GK · Brazil", club:"Gil Vicente", pos:"GK", report:"3 Aug 2026", src:"Record / Bolanarede", tier:3, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"With Hornicek sold to Newcastle, Braga are reportedly eyeing Gil Vicente's in-form Brazilian goalkeeper as his successor.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 const OUTGOING = [];
 const RISERS = [];
