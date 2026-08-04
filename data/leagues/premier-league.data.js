@@ -38,18 +38,18 @@ const TOP_STORIES = [  {
     value: "£60m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Alejandro Garnacho", prob: 45, truth: 60, bullshit: false,
-    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
-    from: "Chelsea", to: "Aston Villa",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Loan + conditional buy option", updated: "2026-06-06T12:00:00Z"
-  },
-  {
     name: "Lucas Bergvall", prob: 45, truth: 82, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    name: "Alejandro Garnacho", prob: 45, truth: 60, bullshit: false,
+    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
+    from: "Chelsea", to: "Aston Villa",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Loan + conditional buy option", updated: "2026-06-06T12:00:00Z"
   },
   {
     name: "Lewis Hall", prob: 32, truth: 65, bullshit: false,
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 8, "badge": 
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T16:48:29.220360Z",
+  updated: "2026-08-04T16:53:10.913371Z",
   label: "League aggregation"
 };
