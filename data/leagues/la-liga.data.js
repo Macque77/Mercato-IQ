@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T15:49:05.555361Z",
+  updated: "2026-08-04T16:21:25.913351Z",
   label: "League aggregation"
 };

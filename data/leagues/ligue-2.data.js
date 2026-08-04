@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "b
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T15:49:05.557716Z",
+  updated: "2026-08-04T16:21:25.915788Z",
   label: "League aggregation"
 };

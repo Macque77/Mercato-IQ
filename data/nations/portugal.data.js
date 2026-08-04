@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "liga-portugal", "name": "Liga Portugal", "count"
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T15:49:05.549390Z",
+  updated: "2026-08-04T16:21:25.907109Z",
   label: "Nation aggregation"
 };
