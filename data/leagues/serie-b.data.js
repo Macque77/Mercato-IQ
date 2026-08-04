@@ -62,10 +62,10 @@ const TOP_STORIES = [  {
 
 const BY_CLUB = {"pisa": 1, "ascoli-picchio": 2, "cremonese": 1, "benevento": 3};
 
-const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count": 2, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "benevento", "name": "Benevento", "count": 3, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "empoli", "name": "Empoli FC", "count": 0, "badge": false, "primary": "#1E4FA0", "primaryBright": "#5CA9FF"}, {"slug": "pisa", "name": "Pisa", "count": 1, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "cremonese", "name": "US Cremonese", "count": 1, "badge": false, "primary": "#B30000", "primaryBright": "#FF6259"}];
+const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count": 2, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "benevento", "name": "Benevento", "count": 3, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "empoli", "name": "Empoli FC", "count": 0, "badge": true, "primary": "#1E4FA0", "primaryBright": "#5CA9FF"}, {"slug": "pisa", "name": "Pisa", "count": 1, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "cremonese", "name": "US Cremonese", "count": 1, "badge": true, "primary": "#B30000", "primaryBright": "#FF6259"}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T08:23:10.622863Z",
+  updated: "2026-08-04T09:10:31.371005Z",
   label: "League aggregation"
 };

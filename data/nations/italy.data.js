@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 46}, {"slu
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T08:23:10.611419Z",
+  updated: "2026-08-04T09:10:31.357377Z",
   label: "Nation aggregation"
 };
