@@ -75,10 +75,19 @@ const REPORT_META = { label: "Updated 03 Aug 2026 – European refresh" , update
 
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Zadok Yohanna", sub:"Winger, Nigerian, 18", club:"AIK Stockholm", pos:"RW", fee:"£21.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a five-year deal until 2031; regarded as one of Brighton's marquee wonderkid signings of the window"},
+  {name:"Costinha", sub:"Right back, Portuguese", club:"Olympiacos", pos:"RB", fee:"£11m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as part of Brighton's right-back succession plan behind Joel Veltman (since released)"}
+];
 const CONFIRMED_OUT =
     [
-  {name:"Danny Welbeck", sub:"35 · ST · England", club:"free to Chelsea", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran forward leaves as a free agent, contract to 2028 at Chelsea, confirmed via Di Marzio's live mercato digest."}
+  {name:"Danny Welbeck", sub:"35 · ST · England", club:"free to Chelsea", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran forward leaves as a free agent, contract to 2028 at Chelsea, confirmed via Di Marzio's live mercato digest."},
+  {name:"Jan Paul van Hecke", sub:"Centre back, Dutch, 26", club:"Tottenham Hotspur", pos:"CB", fee:"£52m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Third summer signing for Roberto De Zerbi's Tottenham; van Hecke had refused to extend his Brighton contract"},
+  {name:"Jeremy Sarmiento", sub:"Winger, Ecuadorian, 24", club:"Middlesbrough", pos:"LW", fee:"£3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Struggled for regular minutes at Brighton, drops into the Championship for regular football"},
+  {name:"Adam Webster", sub:"Centre back, English, 31", club:"Released", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of 2025/26 season"},
+  {name:"Joel Veltman", sub:"Right back, Dutch, 34", club:"Released", pos:"RB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of 2025/26 season; long-serving Brighton defender"},
+  {name:"Solly March", sub:"Winger/midfielder, English, 31", club:"Released", pos:"RW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of 2025/26 season; club legend with over a decade at the Amex"},
+  {name:"James Milner", sub:"Central midfielder, English, 40", club:"Retired", pos:"CM", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Retired from professional football at end of 2025/26 season"}
 ];
 
 const INCOMING = [
@@ -88,6 +97,10 @@ const INCOMING = [
    note:"A Conference League campaign stretches the squad, so depth additions across positions are expected alongside the headline intake. Framing thread carried from the v1 positions panel; no specific name asserted without sourcing."},
   {name:"Forward options", sub:"Goals and ceiling", club:"Market", pos:"FW", report:"window framing", src:"Model-based", tier:3, fee:"TBC", truth:55, prob:30, light:'y', trend:'flat',
    note:"The v1 positions panel flagged forward options (goals and ceiling) as a likely strand of the intake. Framing thread only; names firm up as the window opens."},
+  {name:"Said El Mala", sub:"Winger, German (Lebanese heritage), 19", club:"1. FC Köln", pos:"RW", report:"Brighton are pushing for final talks with Köln and have offered contracts to both Said El Mala and his brother Malek, with a fee expected around €35m.", src:"Sport Bild", tier:2, fee:"€35m (est.)", truth:70, prob:45, light:"y", trend:"flat", note:"Bayern Munich reported to have pulled out of the race as Köln hold firm on valuation; deal has dragged on for months"},
+  {name:"Roony Bardghji", sub:"Winger, Swedish, 20", club:"Barcelona", pos:"RW", report:"Brighton are the frontrunners to sign the out-of-favour Barcelona winger permanently, though Barça want a buy-back clause and Brighton have conditioned a bid on selling Yankuba Minteh first.", src:"Sport (Spain)", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Competition from Aston Villa, Leeds, Sunderland, Fulham and Everton reported"},
+  {name:"Arijon Ibrahimovic", sub:"Midfielder/winger, German-Kosovan, 19", club:"Bayern Munich", pos:"CAM", report:"Brighton are among several Premier League clubs (also linked: Aston Villa, Crystal Palace, Fulham) monitoring the Bayern Munich attacking talent as he weighs a move for regular first-team football.", src:"Bavarian Football Works / German media", tier:3, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Bayern have since begun integrating him into the first-team squad for 2026/27, cooling exit speculation somewhat"},
+  {name:"Noah Atubolu", sub:"Goalkeeper, German, 23", club:"SC Freiburg", pos:"GK", report:"Brighton are shortlisted as suitors for Freiburg's Atubolu as a potential long-term successor to Bart Verbruggen, should the Dutchman depart, though he is not reported as the club's top-choice option.", src:"Florian Plettenberg", tier:1, fee:"Undisclosed", truth:80, prob:30, light:"y", trend:"flat", note:"Contingent on Verbruggen leaving; Atubolu could also leave Freiburg on a free in 2027"}
 ];
 
 const OUTGOING = [
@@ -95,6 +108,8 @@ const OUTGOING = [
    note:"A near-inevitable feature of any Brighton summer: a developed star sold at a premium to a bigger club. PRICING: long contracts and multi-club interest stack the fee; proceeds fund the next intake."},
   {name:"Fringe & squad trim", sub:"Reinvestment churn", club:"Various", pos:"ANY", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Routine churn to balance the squad for a European campaign and keep the cost ratio healthy."},
+  {name:"Carlos Baleba", sub:"Central midfielder, Cameroonian, 22", club:"Manchester United", pos:"CDM", report:"Manchester United made official, formal contact with Brighton for Baleba, who is reportedly 'super keen' on the move, but Brighton gave a clear answer of no intention to sell this summer, not even naming a price.", src:"Fabrizio Romano", tier:1, fee:"N/A (Brighton refusing to sell)", truth:92, prob:20, light:"o", trend:"flat", note:"Man United reportedly now expected to turn to other targets after Brighton's rebuff; long-standing interest could resurface in future windows"},
+  {name:"Bart Verbruggen", sub:"Goalkeeper, Dutch, 23", club:"Chelsea / Bayern Munich", pos:"GK", report:"Chelsea and Bayern Munich are locked in a transfer battle for Brighton's No.1, with Chelsea reportedly ready to move with an offer around £50m, though Brighton are said to expect him to stay this window.", src:"TeamTalk / Tribuna", tier:2, fee:"£50m (mooted)", truth:60, prob:30, light:"y", trend:"flat", note:"Brighton lining up Noah Atubolu as a possible replacement should a sale go through"}
 ];
 
 const RISERS = [
@@ -141,14 +156,39 @@ const HUB = {
   sky:      {l:"Sky Sports · Brighton", u:"https://www.skysports.com/brighton-and-hove-albion"},
   sussex:   {l:"Sussex Express · Albion", u:"https://www.sussexexpress.co.uk/sport/football/brighton-hove-albion"},
   bbcGossip:{l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
-  gianlucaDiMarzioDannyWelbeck: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-trattative-1-agosto-2026-495391"}};
+  gianlucaDiMarzioDannyWelbeck: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-trattative-1-agosto-2026-495391"},
+  sportBildviaYahooSportsBulinewsSaidElMala: {l:"Sport Bild (via Yahoo Sports/Bulinews)", u:"https://sports.yahoo.com/articles/brighton-pushing-final-talks-sign-085200469.html"},
+  sportviaFootballPlaceRoonyBardghji: {l:"Sport (via Football Place)", u:"https://footballplace.co.uk/roony-bardghji-brighton-barcelona-transfer/"},
+  bavarianFootballWorksArijonIbrahimovic: {l:"Bavarian Football Works", u:"https://www.bavarianfootballworks.com/bayern-munich-transfer-news-rumors/207726/bayern-munich-arijon-ibrahimovic-transfer-rumors-bundesliga-premier-league-stuttgart-crystal-palace-fulham-brighton"},
+  florianPlettenbergviaSussexExpressNoahAtubolu: {l:"Florian Plettenberg (via Sussex Express)", u:"https://www.sussexexpress.co.uk/sport/football/brighton-and-hove-albion/one-of-the-best-brighton-target-top-bundesliga-goalkeeper-amid-bart-verbruggen-claim-6574615"},
+  fabrizioRomanoCarlosBaleba: {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano/status/1956382150837616761"},
+  teamTalkBartVerbruggen: {l:"TeamTalk", u:"https://www.teamtalk.com/chelsea/bart-verbruggen-chelsea-winstanley-bayern-munich-50m-transfer-brighton-news"},
+  eSPNZadokYohanna: {l:"ESPN", u:"https://www.espn.com/espn/story/_/id/48997587/brighton-sign-nigerian-starlet-zadok-yohanna-18-aik-stockholm-5-year-deal"},
+  brightonHoveAlbionofficialCostinha: {l:"Brighton & Hove Albion (official)", u:"https://www.brightonandhovealbion.com/media-article/mft-transfer-news-costinha-olympiacos-june-2026"},
+  skySportsJanPaulvanHecke: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11675/13555493/jan-paul-van-hecke-tottenham-sign-brighton-defender-for-lb52m"},
+  eSPNDannyWelbeck: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49478554/danny-welbeck-chelsea-brighton-premier-league-transfers"},
+  sportsMoleJeremySarmiento: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/brighton-and-hove-albion/transfer-talk/feature/brighton--hove-albion-summer-transfers-all-confirmed-ins-and-outs-for-2026_599174.html"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
   "Forward options": ["athletic","bbcGossip"],
   "Prized asset (premium sale)": ["naylor","athletic","sky"],
   "Fringe & squad trim": ["argus","sussex"],
-  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck"]};
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "eSPNDannyWelbeck"],
+  "Said El Mala": ["sportBildviaYahooSportsBulinewsSaidElMala"],
+  "Roony Bardghji": ["sportviaFootballPlaceRoonyBardghji"],
+  "Arijon Ibrahimovic": ["bavarianFootballWorksArijonIbrahimovic"],
+  "Noah Atubolu": ["florianPlettenbergviaSussexExpressNoahAtubolu"],
+  "Carlos Baleba": ["fabrizioRomanoCarlosBaleba"],
+  "Bart Verbruggen": ["teamTalkBartVerbruggen"],
+  "Zadok Yohanna": ["eSPNZadokYohanna"],
+  "Costinha": ["brightonHoveAlbionofficialCostinha"],
+  "Jan Paul van Hecke": ["skySportsJanPaulvanHecke"],
+  "Jeremy Sarmiento": ["sportsMoleJeremySarmiento"],
+  "Adam Webster": ["sportsMoleJeremySarmiento"],
+  "Joel Veltman": ["sportsMoleJeremySarmiento"],
+  "Solly March": ["sportsMoleJeremySarmiento"],
+  "James Milner": ["sportsMoleJeremySarmiento"]};
 const WL_LINKMAP = {
   "Data-model targets":"athletic","Prized asset":"naylor",
 };
