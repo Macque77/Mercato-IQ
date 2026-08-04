@@ -13,7 +13,7 @@ const TOP_STORIES = [  {
     name: "Rodri",prob: 40, truth: 65, bullshit: false,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
     from: "Manchester City", to: "Real Madrid",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Opening bid €50-60m (City value ~€80m)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 81}, {"slu
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:47:42.700011Z",
+  updated: "2026-08-04T17:48:54.611950Z",
   label: "Nation aggregation"
 };

@@ -324,7 +324,7 @@ const HEADLINES = [
     from: "Manchester City", to: "Real Madrid",
     direction: "in",
     prob: 40, truth: 65, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "Spain", league: "La Liga",
     club_link: "real-madrid",
     updated: "2026-08-03T18:00:00Z"
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:47:42.694430Z",
+  updated: "2026-08-04T17:48:54.608227Z",
   label: "Global aggregation from all clubs"
 };
