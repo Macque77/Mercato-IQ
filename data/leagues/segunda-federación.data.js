@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "cd-numancia", "name": "CD Numancia", "count": 0, "
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:23:14.978508Z",
+  updated: "2026-08-04T18:24:30.054608Z",
   label: "League aggregation"
 };
