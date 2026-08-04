@@ -11,8 +11,8 @@ const NATION = {
 
 const TOP_STORIES = [  {
     name: "Jasper Schendelaar",prob: 45, bullshit: false,
-    club_origin: "rotterdam-sparta", club_display_name: "Sparta Rotterdam", direction: "in",
-    from: "PEC Zwolle", to: "Sparta Rotterdam",
+    club_origin: "pec-zwolle", club_display_name: "PEC Zwolle", direction: "out",
+    from: "PEC Zwolle", to: "PEC Zwolle",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~€1.5m (Transfermarkt est.)", updated: "2026-07-29T00:00:00Z", league: "Eredivisie"
   },
@@ -101,6 +101,6 @@ const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 12},
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:12:28.116125Z",
+  updated: "2026-08-04T11:13:48.358146Z",
   label: "Nation aggregation"
 };

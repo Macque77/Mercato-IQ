@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0,
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:12:28.126839Z",
+  updated: "2026-08-04T11:13:48.362088Z",
   label: "League aggregation"
 };

@@ -162,15 +162,15 @@ const HEADLINES = [
   },
   {
     headline: "Jasper Schendelaar",
-    club_display_name: "Sparta Rotterdam",
-    summary: "Identified as Sparta's No.1 goalkeeper target to challenge Filip Bednarek; talks",
+    club_display_name: "PEC Zwolle",
+    summary: "Sparta Rotterdam's top keeper target following Joël Drommel's PSV return; PEC ar",
     value: "~€1.5m (Transfermarkt est.)",
-    from: "PEC Zwolle", to: "Sparta Rotterdam",
-    direction: "in",
+    from: "PEC Zwolle", to: "PEC Zwolle",
+    direction: "out",
     prob: 45, trend: 'flat', bullshit: false,
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Netherlands", league: "Eredivisie",
-    club_link: "rotterdam-sparta",
+    club_link: "pec-zwolle",
     updated: "2026-07-29T00:00:00Z"
   },
   {
@@ -278,19 +278,6 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
-    headline: "Dirk Proper",
-    club_display_name: "Sparta Rotterdam",
-    summary: "",
-    value: "Undisclosed",
-    from: "NEC Nijmegen", to: "Sparta Rotterdam",
-    direction: "in",
-    prob: 30, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Netherlands", league: "Eredivisie",
-    club_link: "rotterdam-sparta",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
     headline: "Issiaka Kamate",
     club_display_name: "KVC Westerlo",
     summary: "Nico Schira reported Westerlo closing in on an agreement with Inter for the play",
@@ -302,6 +289,19 @@ const HEADLINES = [
     nation: "Belgium", league: "Pro League",
     club_link: "westerlo",
     updated: "2026-08-03T18:30:00Z"
+  },
+  {
+    headline: "Dirk Proper",
+    club_display_name: "Sparta Rotterdam",
+    summary: "",
+    value: "Undisclosed",
+    from: "NEC Nijmegen", to: "Sparta Rotterdam",
+    direction: "in",
+    prob: 30, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Netherlands", league: "Eredivisie",
+    club_link: "rotterdam-sparta",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Rafael Leão",
@@ -382,19 +382,6 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
-    headline: "Mehmet Topal",
-    club_display_name: "Fenerbahçe SK",
-    summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
-    value: "Contract renewal",
-    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
-    direction: "in",
-    prob: 85, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Turkey", league: "Super Lig",
-    club_link: "fenerbahce",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Udoka Godwin-Malife",
     club_display_name: "Reading",
     summary: "",
@@ -408,6 +395,19 @@ const HEADLINES = [
     updated: "2026-07-29T00:00:00Z"
   },
   {
+    headline: "Mehmet Topal",
+    club_display_name: "Fenerbahçe SK",
+    summary: "Sky reports Fenerbahçe close to veteran midfield legend extension.",
+    value: "Contract renewal",
+    from: "Free agent (Fenerbahçe)", to: "Fenerbahçe SK",
+    direction: "in",
+    prob: 85, trend: 'flat', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Super Lig",
+    club_link: "fenerbahce",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Cameron Congreve",
     club_display_name: "KVC Westerlo",
     summary: "",
@@ -419,19 +419,6 @@ const HEADLINES = [
     nation: "Belgium", league: "Pro League",
     club_link: "westerlo",
     updated: "2026-08-03T18:30:00Z"
-  },
-  {
-    headline: "Iván Cedric",
-    club_display_name: "Alanyaspor",
-    summary: "",
-    value: "Undisclosed",
-    from: "Vanspor FK", to: "Alanyaspor",
-    direction: "in",
-    prob: 80, trend: 'flat', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "Turkey", league: "Süper Lig",
-    club_link: "alanyaspor",
-    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Nariman Akhundzada",
@@ -458,6 +445,19 @@ const HEADLINES = [
     nation: "Portugal", league: "Liga Portugal",
     club_link: "fc-porto",
     updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Iván Cedric",
+    club_display_name: "Alanyaspor",
+    summary: "",
+    value: "Undisclosed",
+    from: "Vanspor FK", to: "Alanyaspor",
+    direction: "in",
+    prob: 80, trend: 'flat', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "Turkey", league: "Süper Lig",
+    club_link: "alanyaspor",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Tommy Watson",
@@ -525,6 +525,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Altay Bayindir",
+    club_display_name: "RC Celta",
+    summary: "",
+    value: "TBC",
+    from: "Manchester United", to: "RC Celta",
+    direction: "in",
+    prob: 65, trend: 'up', bullshit: false,
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "celta-vigo",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
     headline: "Ike Ugbo",
     club_display_name: "Sheffield Wednesday",
     summary: "Club reportedly willing to sell or loan before the 1 September deadline.",
@@ -549,19 +562,6 @@ const HEADLINES = [
     nation: "Netherlands", league: "Eredivisie",
     club_link: "psv-eindhoven",
     updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    headline: "Altay Bayindir",
-    club_display_name: "RC Celta",
-    summary: "",
-    value: "TBC",
-    from: "Manchester United", to: "RC Celta",
-    direction: "in",
-    prob: 65, trend: 'up', bullshit: false,
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "celta-vigo",
-    updated: "2026-08-03T18:00:00Z"
   },
   {
     headline: "Maghnes Akliouche",
@@ -681,19 +681,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Daniel Jebbison",
-    club_display_name: "Preston North End",
-    summary: "",
-    value: "Loan + option",
-    from: "Preston North End", to: "Blackburn Rovers",
-    direction: "out",
-    prob: 55, trend: 'up', bullshit: false,
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "preston-north-end",
-    updated: "2026-07-29T00:00:00Z"
-  },
-  {
     headline: "Jahnoah Markelo",
     club_display_name: "Rangers",
     summary: "Rangers reportedly in talks for the defender.",
@@ -707,16 +694,16 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
-    headline: "Eseosa Sule",
-    club_display_name: "West Bromwich Albion",
+    headline: "Daniel Jebbison",
+    club_display_name: "Blackburn Rovers",
     summary: "",
-    value: "Undisclosed",
-    from: "West Bromwich Albion", to: "Undisclosed",
-    direction: "out",
+    value: "Loan + option",
+    from: "Preston North End", to: "Blackburn Rovers",
+    direction: "in",
     prob: 55, trend: 'up', bullshit: false,
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Championship",
-    club_link: "west-bromwich-albion",
+    club_link: "blackburn-rovers",
     updated: "2026-07-29T00:00:00Z"
   },
   {
@@ -730,6 +717,19 @@ const HEADLINES = [
     tier: 2, coverage: 1, coverage_trend: 'flat',
     nation: "Portugal", league: "Liga Portugal",
     club_link: "estoril",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    headline: "Eseosa Sule",
+    club_display_name: "West Bromwich Albion",
+    summary: "",
+    value: "Undisclosed",
+    from: "West Bromwich Albion", to: "Undisclosed",
+    direction: "out",
+    prob: 55, trend: 'up', bullshit: false,
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "west-bromwich-albion",
     updated: "2026-07-29T00:00:00Z"
   },
   {
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T11:12:28.112319Z",
+  updated: "2026-08-04T11:13:48.356981Z",
   label: "Global aggregation from all clubs"
 };
