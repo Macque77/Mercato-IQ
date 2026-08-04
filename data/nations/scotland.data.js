@@ -6,7 +6,7 @@
 const NATION = {
   name: "Scotland",
   flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-  stories_count: 18
+  stories_count: 16
 };
 
 const TOP_STORIES = [  {
@@ -45,25 +45,11 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
-    name: "Fares Ghedjemis",prob: 35, truth: 55, bullshit: false,
-    club_origin: "celtic", club_display_name: "Celtic", direction: "in",
-    from: "Frosinone", to: "Celtic",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "£6-8m", updated: "2026-08-03T18:00:00Z", league: "Premiership"
-  },
-  {
     name: "Greg Taylor",prob: 33, truth: 50, bullshit: false,
     club_origin: "celtic", club_display_name: "Celtic", direction: "in",
     from: "PAOK", to: "Celtic",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
-  },
-  {
-    name: "Nicolas Raskin",prob: 32, truth: 55, bullshit: false,
-    club_origin: "rangers", club_display_name: "Rangers", direction: "out",
-    from: "Rangers", to: "Real Betis",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "~€23.5m asking price", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
     name: "Unnamed Rangers attacker",prob: 45, truth: 50, bullshit: false,
@@ -114,14 +100,28 @@ const TOP_STORIES = [  {
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
+  {
+    name: "Unnamed Kilmarnock player",prob: 20, truth: 30, bullshit: false,
+    club_origin: "kilmarnock", club_display_name: "Kilmarnock", direction: "out",
+    from: "Kilmarnock", to: "Rangers",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Bowie",prob: 20, truth: 30, bullshit: false,
+    club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
+    from: "Dundee United", to: "Undisclosed",
+    tier: 4, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
 ];
 
-const BY_LEAGUE = {"Premiership": 18};
+const BY_LEAGUE = {"Premiership": 16};
 
-const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 18}];
+const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 16}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:48:54.611584Z",
+  updated: "2026-08-04T17:58:37.331456Z",
   label: "Nation aggregation"
 };

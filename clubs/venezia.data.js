@@ -36,19 +36,29 @@ const CONFIRMED_IN = [
   {name:"Korel Lisman", sub:"24 · W · Netherlands", to:"permanent from Lech Poznan", fee:"~€2m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 27 Jun. Wide-attack addition."},
   {name:"Ale Gomes", sub:"25 · CB · Portugal", to:"permanent from Real Zaragoza", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 4 Jul. Centre-back reinforcement for the Serie A step-up."},
   {name:"Redouane Halhal", sub:"23 · CB · Belgium", to:"permanent from KV Mechelen", fee:"€5m plus add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Further defensive depth added late in the window."},
-  {name:"Simon Sohm", sub:"24 · CM · Switzerland", to:"loan from Fiorentina with €10m option to buy", fee:"Loan + €10m option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Midfield loan addition from Fiorentina with a route to a permanent deal."}
+  {name:"Simon Sohm", sub:"24 · CM · Switzerland", to:"loan from Fiorentina with €10m option to buy", fee:"Loan + €10m option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Midfield loan addition from Fiorentina with a route to a permanent deal."},
+  {name:"Kornel Lisman", sub:"Striker, POL", club:"Real Zaragoza", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed through 2030."},
+  {name:"Armel Bella-Kotchap", sub:"Centre-back, GER, 24", club:"Hellas Verona", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined on a deal through 2030 with an option."},
+  {name:"Ale Gomes Furtado", sub:"Defender, ESP/POR, class 2008", club:"Real Zaragoza", pos:"CB", fee:"~€2m plus bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young prospect acquisition for the academy/first-team pathway."},
+  {name:"Akor Adams", sub:"Striker, NGA, 24", club:"Sevilla", pos:"ST", fee:"Reported club-record fee (~€8m range)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Described locally as a record signing for the club's attack."}
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Michael Svoboda", sub:"25 · CB · Czech Republic", club:"Brighton", pos:"CB", fee:"€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Jul. Centre-back cashes in with a Premier League move."}
+  {name:"Michael Svoboda", sub:"25 · CB · Czech Republic", club:"Brighton", pos:"CB", fee:"€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Jul. Centre-back cashes in with a Premier League move."},
+  {name:"Mattia Svoboda", sub:"Defender, captain, ITA/CZE", club:"Brighton & Hove Albion", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move for the former club captain to the Premier League."},
+  {name:"Gaetano Oristanio", sub:"Forward, ITA, 22", club:"Torino", pos:"CAM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Medical exams completed as part of the move to Torino."},
+  {name:"Albion Rrahmani", sub:"Striker, KOS", club:"Sparta Prague", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent departure to the Czech league."}
 ];
 
 const INCOMING = [
-  {name:"Akor Adams", sub:"24 · ST · Nigeria", club:"Sevilla", pos:"ST", report:"12 Jul 2026", src:"Football Italia", tier:2, fee:"~€16m plus bonuses", truth:60, prob:45, light:"y", trend:"up", note:"Talks described as at a 'very advanced stage' for further striker reinforcement alongside Rrahmani."}
+  {name:"Takehiro Tomiyasu", sub:"Defender, JPN, 27, free agent", club:"Free agent (ex-Arsenal/Bologna)", pos:"CB", report:"Venezia are reported to be advancing in talks for the free-agent defender, ahead of rival interest from Torino and Sassuolo.", src:"Tuttomercatoweb", tier:2, fee:"Undisclosed", truth:50, prob:35, light:"y", trend:"flat", note:"Player currently training on trial with Crystal Palace."},
+  {name:"Isak Oskarsson", sub:"Forward, ISL", club:"Real Sociedad", pos:"ST", report:"Being considered as a further attacking option for Venezia.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage scouting interest only."},
+  {name:"Matteo Darmian", sub:"Defender, ITA, 36", club:"Inter", pos:"RB", report:"Named as a target for Venezia among a group of three Serie A clubs weighing a move for the veteran full-back.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:30, prob:15, light:"o", trend:"flat", note:"Speculative and competing with other suitors."}
 ];
 
 const OUTGOING = [
-  {name:"Gaetano Oristanio", sub:"23 · AM · Italy", club:"Destination unclear", pos:"AM", report:"2 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:35, light:"y", trend:"up", note:"Described as a 'transfer in progress' without a confirmed destination named yet."}
+  {name:"Christian Adorante", sub:"Striker, ITA", club:"Sampdoria", pos:"ST", report:"Sampdoria's interest was rejected, with Venezia wanting to keep the forward.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:45, prob:15, light:"o", trend:"flat", note:"Club stance reported as firm to retain the player."},
+  {name:"Alvin Okoro", sub:"Forward, ITA", club:"Arezzo", pos:"ST", report:"Arezzo have shown interest in taking the attacker, likely on loan.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Lower-league loan-type move under discussion."}
 ];
 
 const RISERS = [
@@ -75,20 +85,31 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  footballItalia: {l:"Football Italia · Venezia", u:"https://football-italia.net/category/teams/venezia/"}
-};
+  footballItalia: {l:"Football Italia · Venezia", u:"https://football-italia.net/category/teams/venezia/"},
+  tuttomercatowebTakehiroTomiyasu: {l:"Tuttomercatoweb", u:"https://www.tuttomercatoweb.com/venezia"},
+  calciomercatocomIsakOskarsson: {l:"Calciomercato.com", u:"https://www.calciomercato.com/venezia"},
+  sOSFantaSimonSohm: {l:"SOS Fanta", u:"https://www.msn.com/it-it/sport/other/ufficiale-sohm-%C3%A8-un-nuovo-giocatore-del-venezia-il-comunicato-cifre-e-le-prime-parole-del-centrocampista/ar-AA29eUI8?ocid=BingNewsVerp"},
+  skySportGaetanoOristanio: {l:"Sky Sport", u:"https://sport.sky.it/calciomercato/torino"}};
 
 const LINKMAP = {
-  "Albion Rrahmani": ["footballItalia"],
+  "Albion Rrahmani": ["footballItalia", "calciomercatocomIsakOskarsson"],
   "Thierry Rendall Correia": ["footballItalia"],
   "Korel Lisman": ["footballItalia"],
   "Ale Gomes": ["footballItalia"],
   "Redouane Halhal": ["footballItalia"],
-  "Simon Sohm": ["footballItalia"],
+  "Simon Sohm": ["footballItalia", "sOSFantaSimonSohm"],
   "Michael Svoboda": ["footballItalia"],
-  "Akor Adams": ["footballItalia"],
-  "Gaetano Oristanio": ["footballItalia"]
-};
+  "Akor Adams": ["footballItalia", "calciomercatocomIsakOskarsson"],
+  "Gaetano Oristanio": ["footballItalia", "skySportGaetanoOristanio"],
+  "Takehiro Tomiyasu": ["tuttomercatowebTakehiroTomiyasu"],
+  "Isak Oskarsson": ["calciomercatocomIsakOskarsson"],
+  "Matteo Darmian": ["calciomercatocomIsakOskarsson"],
+  "Christian Adorante": ["calciomercatocomIsakOskarsson"],
+  "Alvin Okoro": ["calciomercatocomIsakOskarsson"],
+  "Kornel Lisman": ["calciomercatocomIsakOskarsson"],
+  "Armel Bella-Kotchap": ["calciomercatocomIsakOskarsson"],
+  "Ale Gomes Furtado": ["calciomercatocomIsakOskarsson"],
+  "Mattia Svoboda": ["calciomercatocomIsakOskarsson"]};
 const WL_LINKMAP = {
   "Akor Adams": ["footballItalia"]
 };

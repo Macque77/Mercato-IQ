@@ -856,19 +856,26 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Mario Mitaj", sub:"23 · CB · Albania", to:"loan with option to buy from Al Ittihad", fee:"Loan + option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Defensive reinforcement on loan with a route to a permanent deal."}
+  {name:"Mario Mitaj", sub:"23 · CB · Albania", to:"loan with option to buy from Al Ittihad", fee:"Loan + option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Defensive reinforcement on loan with a route to a permanent deal."},
+  {name:"Hamed Junior Traore", sub:"CM/RW, Ivory Coast, 26", club:"Olympique Marseille", pos:"CM", fee:"Loan, €10m option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially announced by Genoa; medical completed. Marseille also confirmed the departure. Player previously spent time on loan at Napoli."},
+  {name:"David Puczka", sub:"LW, Hungary, 20", club:"Juventus", pos:"LW", fee:"€6m (incl. bonuses)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left Juventus' development squad after two seasons (54 apps, 10 goals) to join Genoa's first team."},
+  {name:"Elias Havel", sub:"ST, Austria", club:"Hartberg", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sporting director Lopez said he will add speed and in-behind running to the attack; medicals completed."}
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Jeff Ekhator", sub:"19 · ST · Italy", club:"Juventus", pos:"ST", fee:"€16m plus bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Jul. Teenage striker, who had just made his senior Italy debut, cashes in with a move to Juventus."}
+  {name:"Jeff Ekhator", sub:"19 · ST · Italy", club:"Juventus", pos:"ST", fee:"€16m plus bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Jul. Teenage striker, who had just made his senior Italy debut, cashes in with a move to Juventus."},
+  {name:"Josep Leali", sub:"GK, Italy", club:"Hellas Verona", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed after three seasons as a Genoa goalkeeper."},
+  {name:"David Ankeye", sub:"ST, England, 20", club:"FK Zeljeznicar", pos:"ST", fee:"Loan, €500k", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sent out on loan to the Bosnian club for further development."}
 ];
 
 const INCOMING = [
-  {name:"Hamed Junior Traore", sub:"25 · CM · Ivory Coast", club:"Olympique Marseille", pos:"CM", report:"12-14 Jul 2026", src:"Football Italia", tier:2, fee:"€8-10m (loan with option to buy)", truth:58, prob:42, light:"y", trend:"up", note:"Expected to complete a loan-with-option move for creative midfield reinforcement."}
+  {name:"Sorba Thomas", sub:"RW, Wales, 26", club:"Huddersfield/Stoke City", pos:"RW", report:"Genoa are among several clubs, along with West Ham interest, tracking the Welsh winger as a squad reinforcement option.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Still at an early exploratory stage with multiple clubs in the mix."},
+  {name:"Pierre-Emerick Aubameyang", sub:"ST, Gabon, 37", club:"Marseille", pos:"ST", report:"Named among veteran striker targets under consideration by Genoa as attacking cover following interest in Traore from the same Marseille squad.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Speculative veteran link, no concrete talks confirmed."}
 ];
 
 const OUTGOING = [
-  {name:"Artem Dovbyk", sub:"28 · ST · Ukraine", club:"AS Roma (staying, rumoured target)", pos:"ST", report:"4 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Coach Daniele De Rossi reportedly wants a reunion with his former Roma striker, though complications remain and Bologna are also in the conversation for the same player."}
+  {name:"Elliot Stroud", sub:"LW, Sweden, 20", club:"Hull City", pos:"LW", report:"Genoa allege they had a pre-contract agreement with the Mjallby winger, who instead signed for Hull City; the club has begun legal action against his agents.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:75, prob:90, light:"g", trend:"flat", note:"Player has already signed elsewhere so this is a completed loss for Genoa, not a live target."},
+  {name:"Brooke Norton-Cuffy", sub:"RB, England, 22", club:"Everton/Arsenal", pos:"RB", report:"Everton are targeting the full-back, with a sell-on clause meaning parent club Arsenal would receive a cut of any circa €20m Genoa sale.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Premier League interest growing after a strong loan season at Genoa."}
 ];
 
 const RISERS = [
@@ -899,15 +906,27 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  footballItalia: {l:"Football Italia · Genoa", u:"https://football-italia.net/category/teams/genoa/"}
-};
+  footballItalia: {l:"Football Italia · Genoa", u:"https://football-italia.net/category/teams/genoa/"},
+  footballItaliaYahooSportsArtemDovbyk: {l:"Football Italia / Yahoo Sports", u:"https://football-italia.net/?s=Dovbyk+Genoa"},
+  footballItaliaSorbaThomas: {l:"Football Italia", u:"https://football-italia.net/genoa-among-clubs-interested-in-thomas-deal/"},
+  footballItaliaPierreEmerickAubameyang: {l:"Football Italia", u:"https://football-italia.net/category/serie-a/genoa/"},
+  footballItaliaBrookeNortonCuffy: {l:"Football Italia", u:"https://football-italia.net/norton-cuffy-targeted-by-everton-arsenal-genoa/"},
+  footballItaliaHamedJuniorTraore: {l:"Football Italia", u:"https://football-italia.net/official-genoa-sign-traore-olympique-marseille/"},
+  footballItaliaMarioMitaj: {l:"Football Italia", u:"https://football-italia.net/official-genoa-sign-mitaj-from-al-ittihad-6-5m/"}};
 
 const LINKMAP = {
-  "Mario Mitaj": ["footballItalia"],
-  "Jeff Ekhator": ["footballItalia"],
-  "Hamed Junior Traore": ["footballItalia"],
-  "Artem Dovbyk": ["footballItalia"]
-};
+  "Mario Mitaj": ["footballItalia", "footballItaliaMarioMitaj"],
+  "Jeff Ekhator": ["footballItalia", "footballItaliaPierreEmerickAubameyang"],
+  "Hamed Junior Traore": ["footballItalia", "footballItaliaHamedJuniorTraore"],
+  "Artem Dovbyk": ["footballItalia", "footballItaliaYahooSportsArtemDovbyk"],
+  "Sorba Thomas": ["footballItaliaSorbaThomas"],
+  "Pierre-Emerick Aubameyang": ["footballItaliaPierreEmerickAubameyang"],
+  "Elliot Stroud": ["footballItaliaPierreEmerickAubameyang"],
+  "Brooke Norton-Cuffy": ["footballItaliaBrookeNortonCuffy"],
+  "David Puczka": ["footballItaliaPierreEmerickAubameyang"],
+  "Elias Havel": ["footballItaliaPierreEmerickAubameyang"],
+  "Josep Leali": ["footballItaliaPierreEmerickAubameyang"],
+  "David Ankeye": ["footballItaliaPierreEmerickAubameyang"]};
 const WL_LINKMAP = {
   "Artem Dovbyk": ["footballItalia"],
   "Hamed Junior Traore": ["footballItalia"]

@@ -35,16 +35,26 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Ebeneezer Akinsanmiro", sub:"20 · CM · Nigeria", to:"loan with obligation to buy from Inter", fee:"€7.5m plus 10% of any future sale", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul. Midfield reinforcement joining with an obligation to buy attached."}
+  {name:"Ebeneezer Akinsanmiro", sub:"20 · CM · Nigeria", to:"loan with obligation to buy from Inter", fee:"€7.5m plus 10% of any future sale", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul. Midfield reinforcement joining with an obligation to buy attached."},
+  {name:"Ebenezer Akinsanmiro", sub:"Midfielder, Nigerian, 21", club:"Inter", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official on 1 August 2026; new manager Ivan Juric was reported as decisive in convincing him to join."},
+  {name:"Gustavo Varela", sub:"Attacker, Portuguese", club:"Benfica", pos:"RW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal finalised and officially announced on 27 July 2026."},
+  {name:"Ricardo Mangas", sub:"Right-back, Portuguese", club:"Sporting CP", pos:"RB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as a surprise addition around 24 July 2026 after medical tests."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Luca Ravanelli", sub:"Centre-back, Italian", club:"Sampdoria", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed Serie B move on 24 July 2026."},
+  {name:"Reita", sub:"Forward", club:"Catanzaro", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent departure confirmed in late July 2026."},
+  {name:"Keita Balde", sub:"Forward, Senegalese", club:"Free agent", pos:"LW", fee:"n/a", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Cut from the squad; club stated he is \"not part of our technical project\"."}
+];
 
 const INCOMING = [
-  {name:"Gustavo Varela", sub:"21 · ST · Portugal", club:"Benfica", pos:"ST", report:"24 Jul 2026", src:"Football Italia", tier:2, fee:"€2m plus up to €1.5m add-ons", truth:62, prob:48, light:"y", trend:"up", note:"Agreement reported reached between the clubs for the young striker, pending official confirmation."},
-  {name:"Ricardo Mangas", sub:"23 · RB · Portugal", club:"Sporting CP", pos:"RB", report:"23 Jul 2026", src:"Football Italia", tier:2, fee:"Loan with conditional obligation to buy", truth:55, prob:35, light:"y", trend:"up", note:"Loan move with an obligation to buy that would trigger under certain conditions."},
   {name:"Tyrese Asante", sub:"22 · CB · Ghana", club:"Maccabi Tel Aviv", pos:"CB", report:"23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:22, light:"o", trend:"flat", note:"Targeted as defensive depth; talks reported without a concrete agreement yet."},
-  {name:"Caleb Okoli", sub:"25 · CB · Italy", club:"Leicester City", pos:"CB", report:"3 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:42, prob:18, light:"o", trend:"flat", note:"Early-stage interest linked; no bid reported."}
+  {name:"Caleb Okoli", sub:"25 · CB · Italy", club:"Leicester City", pos:"CB", report:"3 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:42, prob:18, light:"o", trend:"flat", note:"Early-stage interest linked; no bid reported."},
+  {name:"Marco Massolin", sub:"Midfielder", club:"Inter", pos:"CM", report:"Monza are reported close to a second deal with Inter, bringing Massolin in alongside Akinsanmiro.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:50, prob:40, light:"y", trend:"flat", note:"Piggybacking on the good relations established via the Akinsanmiro transfer."},
+  {name:"Emil Audero", sub:"Goalkeeper, Italian", club:"Undisclosed (free agent/loan market)", pos:"GK", report:"Monza are said to be pushing hard to close a deal for the experienced goalkeeper.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Described as an advancing negotiation (\"stringe per Audero\")."},
+  {name:"Cuello", sub:"Forward", club:"Multiple suitors", pos:"RW", report:"Monza have concrete contacts for Cuello, who is also being chased by other Serie A/B clubs.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Competition from other clubs makes the outcome uncertain."},
+  {name:"Pawel Dawidowicz", sub:"Centre-back, Polish", club:"Verona", pos:"CB", report:"Dawidowicz has been proposed to Monza as well as four other Serie B clubs.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Wide circulation of the player to multiple clubs suggests early-stage speculation."},
+  {name:"Daniele Rugani", sub:"Centre-back, Italian", club:"Juventus", pos:"CB", report:"Rugani is mentioned as a possible defensive target, with Bologna also credited with interest.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Named alongside Bologna as a rival suitor."}
 ];
 
 const OUTGOING = [];
@@ -72,16 +82,25 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  footballItalia: {l:"Football Italia · Monza", u:"https://football-italia.net/category/teams/monza/"}
-};
+  footballItalia: {l:"Football Italia · Monza", u:"https://football-italia.net/category/teams/monza/"},
+  tuttoMercatoWebMarcoMassolin: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/monza"},
+  mBNewsLucaViscardiEbenezerAkinsanmiro: {l:"MB News (Luca Viscardi)", u:"https://www.mbnews.it/"}};
 
 const LINKMAP = {
   "Ebeneezer Akinsanmiro": ["footballItalia"],
-  "Gustavo Varela": ["footballItalia"],
-  "Ricardo Mangas": ["footballItalia"],
+  "Gustavo Varela": ["footballItalia", "tuttoMercatoWebMarcoMassolin"],
+  "Ricardo Mangas": ["footballItalia", "tuttoMercatoWebMarcoMassolin"],
   "Tyrese Asante": ["footballItalia"],
-  "Caleb Okoli": ["footballItalia"]
-};
+  "Caleb Okoli": ["footballItalia"],
+  "Marco Massolin": ["tuttoMercatoWebMarcoMassolin"],
+  "Emil Audero": ["tuttoMercatoWebMarcoMassolin"],
+  "Cuello": ["tuttoMercatoWebMarcoMassolin"],
+  "Pawel Dawidowicz": ["tuttoMercatoWebMarcoMassolin"],
+  "Daniele Rugani": ["tuttoMercatoWebMarcoMassolin"],
+  "Ebenezer Akinsanmiro": ["mBNewsLucaViscardiEbenezerAkinsanmiro"],
+  "Luca Ravanelli": ["tuttoMercatoWebMarcoMassolin"],
+  "Reita": ["tuttoMercatoWebMarcoMassolin"],
+  "Keita Balde": ["tuttoMercatoWebMarcoMassolin"]};
 const WL_LINKMAP = {
   "Gustavo Varela": ["footballItalia"]
 };

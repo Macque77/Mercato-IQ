@@ -6,122 +6,122 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 57
+  stories_count: 140
 };
 
 const TOP_STORIES = [  {
-    name: "Kieron Bowie",prob: 55, truth: 60, bullshit: false,
-    club_origin: "sassuolo", club_display_name: "US Sassuolo", direction: "in",
-    from: "Hellas Verona", to: "US Sassuolo",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "~€12m (Verona's asking price)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    name: "Cristian Romero",prob: 75, truth: 85, bullshit: false,
+    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
+    from: "Tottenham Hotspur", to: "Inter Milan",
+    tier: 1, coverage: 1, coverage_trend: 'down',
+    value: "~€40m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "El Bilal Touré",prob: 50, truth: 55, bullshit: false,
-    club_origin: "parma", club_display_name: "Parma", direction: "in",
-    from: "Atalanta", to: "Parma",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan with conditional mandatory purchase", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Gustavo Varela",prob: 48, truth: 62, bullshit: false,
-    club_origin: "monza", club_display_name: "AC Monza", direction: "in",
-    from: "Benfica", to: "AC Monza",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€2m plus up to €1.5m add-ons", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Lucas Perri",prob: 48, truth: 62, bullshit: false,
-    club_origin: "torino", club_display_name: "Torino", direction: "in",
-    from: "Leeds United", to: "Torino",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Hamed Junior Traore",prob: 42, truth: 58, bullshit: false,
-    club_origin: "genoa", club_display_name: "Genoa", direction: "in",
-    from: "Olympique Marseille", to: "Genoa",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€8-10m (loan with option to buy)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Serhou Guirassy",prob: 40, truth: 58, bullshit: false,
-    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
-    from: "RB Leipzig", to: "AS Roma",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Richard Ríos",prob: 40, truth: 55, bullshit: false,
-    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
-    from: "Palmeiras", to: "AS Roma",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Roma offer €25m vs Palmeiras ask ~€30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Trevoh Chalobah",prob: 38, truth: 60, bullshit: false,
-    club_origin: "como", club_display_name: "Como 1907", direction: "in",
-    from: "Chelsea", to: "Como 1907",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€30-35m (Chelsea holding out for €35m)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Kerim Alajbegović",prob: 38, truth: 60, bullshit: false,
+    name: "Guglielmo Vicario",prob: 65, truth: 85, bullshit: false,
     club_origin: "juventus", club_display_name: "Juventus", direction: "in",
-    from: "Bayer Leverkusen", to: "Juventus",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "€25-30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    from: "Tottenham Hotspur", to: "Juventus",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Cyril Ngonge",prob: 38, truth: 55, bullshit: false,
-    club_origin: "torino", club_display_name: "Torino", direction: "in",
-    from: "Napoli", to: "Torino",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan with €8m option to buy", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    name: "Daniel Maldini",prob: 55, truth: 75, bullshit: false,
+    club_origin: "cagliari", club_display_name: "Cagliari", direction: "in",
+    from: "Atalanta", to: "Cagliari",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Santiago Castro",prob: 35, truth: 55, bullshit: false,
-    club_origin: "bologna", club_display_name: "Bologna", direction: "out",
-    from: "Bologna", to: "AS Roma",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€35m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    name: "Noa Lang",prob: 45, truth: 70, bullshit: false,
+    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
+    from: "Napoli", to: "Ajax",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Kristian Thorstvedt",prob: 35, truth: 55, bullshit: false,
-    club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "in",
-    from: "Sassuolo", to: "Fiorentina",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "~€15m (asking price)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
+    club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
+    from: "Glasgow Rangers", to: "Atalanta",
+    tier: 1, coverage: 1, coverage_trend: 'down',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Ricardo Mangas",prob: 35, truth: 55, bullshit: false,
-    club_origin: "monza", club_display_name: "AC Monza", direction: "in",
-    from: "Sporting CP", to: "AC Monza",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan with conditional obligation to buy", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    name: "Andrea Pinamonti",prob: 30, truth: 60, bullshit: false,
+    club_origin: "sassuolo", club_display_name: "US Sassuolo", direction: "out",
+    from: "US Sassuolo", to: "Lazio",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Pietro Comuzzo",prob: 35, truth: 52, bullshit: false,
-    club_origin: "torino", club_display_name: "Torino", direction: "in",
-    from: "Fiorentina", to: "Torino",
+    name: "Francisco Conceicao",prob: 20, truth: 55, bullshit: false,
+    club_origin: "juventus", club_display_name: "Juventus", direction: "out",
+    from: "Juventus", to: "Manchester United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Elliot Stroud",prob: 90, truth: 75, bullshit: false,
+    club_origin: "genoa", club_display_name: "Genoa", direction: "out",
+    from: "Genoa", to: "Hull City",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Sergi Dominguez",prob: 35, truth: 55, bullshit: false,
-    club_origin: "lazio", club_display_name: "Lazio", direction: "in",
-    from: "Dinamo Zagreb", to: "Lazio",
+    name: "Kevin Amey",prob: 85, truth: 70, bullshit: false,
+    club_origin: "frosinone", club_display_name: "Frosinone", direction: "in",
+    from: "Bologna", to: "Frosinone",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Cristian Raimondo",prob: 85, truth: 70, bullshit: false,
+    club_origin: "frosinone", club_display_name: "Frosinone", direction: "in",
+    from: "Bologna", to: "Frosinone",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Mathias Olivera / Gutierrez",prob: 85, truth: 75, bullshit: false,
+    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
+    from: "Napoli", to: "Bayer Leverkusen",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Christian Ndow",prob: 75, truth: 65, bullshit: false,
+    club_origin: "frosinone", club_display_name: "Frosinone", direction: "out",
+    from: "Frosinone", to: "Spezia",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Yan Couto",prob: 70, truth: 75, bullshit: false,
+    club_origin: "como", club_display_name: "Como 1907", direction: "in",
+    from: "Borussia Dortmund", to: "Como 1907",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (loan/permanent details still being finalized)", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Sebastiano Esposito",prob: 60, truth: 75, bullshit: false,
+    club_origin: "cagliari", club_display_name: "Cagliari", direction: "out",
+    from: "Cagliari", to: "Atalanta",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Asking price approx. €18m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Fares Ghedjemis",prob: 55, truth: 70, bullshit: false,
+    club_origin: "frosinone", club_display_name: "Frosinone", direction: "out",
+    from: "Frosinone", to: "Celtic / Rangers",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Asking price €15-20m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
 ];
 
-const BY_LEAGUE = {"Serie A": 46, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 129, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 46}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 129}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:48:54.610627Z",
+  updated: "2026-08-04T17:58:37.329943Z",
   label: "Nation aggregation"
 };

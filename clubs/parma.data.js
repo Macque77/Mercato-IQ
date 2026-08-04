@@ -32,20 +32,32 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Giovanni Daffara", sub:"22 · GK · Italy", to:"permanent from Juventus", fee:"€6m plus add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun. Young goalkeeper arrives from Juventus as part of the club's post-Bonny rebuild."},
-  {name:"Franco Ezequiel Carboni", sub:"22 · LB · Argentina", to:"from Inter", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Jul. Defensive addition arriving as part of the broader Inter-Parma relationship following the Bonny sale."}
+  {name:"Franco Ezequiel Carboni", sub:"22 · LB · Argentina", to:"from Inter", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Jul. Defensive addition arriving as part of the broader Inter-Parma relationship following the Bonny sale."},
+  {name:"Diallo", sub:"Defender", club:"Undisclosed", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official arrival confirmed by the club on 31 July 2026."}
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Ange-Yoan Bonny", sub:"21 · ST · France U21", club:"Inter Milan", pos:"ST", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure - Bonny reunites with Cristian Chivu at Inter after his breakout final months at Parma (6 goals, 4 assists, helped the club beat relegation). Stuttgart tried to hijack the move but Inter won out."}
+  {name:"Ange-Yoan Bonny", sub:"21 · ST · France U21", club:"Inter Milan", pos:"ST", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure - Bonny reunites with Cristian Chivu at Inter after his breakout final months at Parma (6 goals, 4 assists, helped the club beat relegation). Stuttgart tried to hijack the move but Inter won out."},
+  {name:"Adrian Benedyczak", sub:"Forward, Polish", club:"Kasımpaşa (Turkey)", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sale confirmed on 29 July 2026."},
+  {name:"Nicolo Balogh", sub:"Forward", club:"Kocaelispor (Turkey)", pos:"ST", fee:"~€1m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal reported in final stages, with fee figures fluctuating between €450k and €1m across reports."}
 ];
 
 const INCOMING = [
-  {name:"El Bilal Touré", sub:"24 · ST · Mali", club:"Atalanta", pos:"ST", report:"2 Aug 2026", src:"Gianluca Di Marzio", tier:2, fee:"Loan with conditional mandatory purchase", truth:55, prob:50, light:"y", trend:"flat", note:"Di Marzio describes the loan as in its closing stages."}
+  {name:"El Bilal Touré", sub:"24 · ST · Mali", club:"Atalanta", pos:"ST", report:"2 Aug 2026", src:"Gianluca Di Marzio", tier:2, fee:"Loan with conditional mandatory purchase", truth:55, prob:50, light:"y", trend:"flat", note:"Di Marzio describes the loan as in its closing stages."},
+  {name:"Matteo Cancellieri", sub:"Winger, Italian", club:"Lazio", pos:"RW", report:"Parma are tracking Cancellieri, though Fiorentina and Torino are also credited with monitoring the player.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Three-way competition reported for the same target."},
+  {name:"Bjerkebo", sub:"Forward, Swedish", club:"Swedish club", pos:"ST", report:"Parma are said to be attracted by Bjerkebo's scoring form (9 goals in 10 appearances) as a squad depth option.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Very early-stage scouting interest."},
+  {name:"Gabriel Strefezza", sub:"Winger, Italian-Brazilian", club:"Undisclosed (returning to Italy)", pos:"RW", report:"Contacts are ongoing to bring Strefezza back to Parma, with a multi-year contract reportedly on the table.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"flat", note:"Described locally as a player Parma see as a boost to the attack."},
+  {name:"Matteo Miretti", sub:"Midfielder, Italian", club:"Juventus", pos:"CM", report:"Parma had previously scouted Miretti and are said to be aware of his availability as he looks to leave Juventus.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"No active negotiation confirmed, more of a resurfacing interest."},
+  {name:"Meichtry", sub:"Young forward, Swiss", club:"Thun", pos:"ST", report:"Parma are among several European clubs, alongside Genoa, Wolfsburg and Hoffenheim, showing interest in the young Thun forward.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Heavy multi-club competition makes a Parma move unlikely without an early move."}
 ];
 
 const OUTGOING = [
   {name:"Zion Suzuki", sub:"24 · GK · Japan", club:"Multiple (Juventus, Aston Villa, Leeds, Newcastle linked)", pos:"GK", report:"1-3 Jul 2026", src:"Football Italia", tier:2, fee:"~€30m (asking price)", truth:55, prob:30, light:"y", trend:"up", note:"Genuinely for sale with several Premier League and Serie A clubs credited with interest, though Daffara's arrival suggests Parma are already planning for his exit."},
-  {name:"Mateo Pellegrino", sub:"24 · ST · Argentina", club:"Juventus (rumoured)", pos:"ST", report:"6-12 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Juventus reportedly 'booked' the striker as a backup target after their opening offer was rejected by Parma; not an advanced negotiation."}
+  {name:"Mateo Pellegrino", sub:"24 · ST · Argentina", club:"Juventus (rumoured)", pos:"ST", report:"6-12 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Juventus reportedly 'booked' the striker as a backup target after their opening offer was rejected by Parma; not an advanced negotiation."},
+  {name:"Mandela Keita", sub:"Midfielder", club:"Atalanta", pos:"CM", report:"Atalanta have entered the race for Keita, with Parma said to be holding out for a minimum of €20m.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Player has publicly said he remains focused on Parma despite the transfer speculation."},
+  {name:"Riccardo Pellegrino", sub:"Midfielder, Italian", club:"Multiple clubs", pos:"CM", report:"Sporting director Cherubini confirmed multiple clubs have shown interest in Pellegrino this window.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Direct quote from club sporting director lends some credibility."},
+  {name:"Fabio Troilo", sub:"Defender", club:"Fulham", pos:"CB", report:"Fulham are reported to be preparing an offer worth around €20m to sign the Parma defender.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Reported figure is high relative to Parma's usual sales; treat with some caution pending further corroboration."},
+  {name:"Corrent", sub:"Midfielder/Defender", club:"Carrarese", pos:"CDM", report:"Carrarese are interested in taking Corrent on a Serie B move.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"flat", note:"Minor squad-depth departure rumour."}
 ];
 
 const RISERS = [
@@ -73,15 +85,30 @@ const WATCHLIST = [
 
 const HUB = {
   footballItalia: {l:"Football Italia · Parma", u:"https://football-italia.net/category/teams/parma/"},
-  gianlucaDiMarzioElBilalTour: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"}};
+  gianlucaDiMarzioElBilalTour: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"},
+  gianlucaDiMarzioElBilalTour1: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com"},
+  tuttoMercatoWebMatteoCancellieri: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/parma"},
+  parmaPress24Diallo: {l:"ParmaPress24", u:"https://www.parmapress24.it/"}};
 
 const LINKMAP = {
   "Giovanni Daffara": ["footballItalia"],
   "Franco Ezequiel Carboni": ["footballItalia"],
   "Ange-Yoan Bonny": ["footballItalia"],
-  "Zion Suzuki": ["footballItalia"],
+  "Zion Suzuki": ["footballItalia", "gianlucaDiMarzioElBilalTour1"],
   "Mateo Pellegrino": ["footballItalia"],
-  "El Bilal Touré": ["gianlucaDiMarzioElBilalTour"]};
+  "El Bilal Touré": ["gianlucaDiMarzioElBilalTour", "gianlucaDiMarzioElBilalTour1"],
+  "Matteo Cancellieri": ["tuttoMercatoWebMatteoCancellieri"],
+  "Bjerkebo": ["tuttoMercatoWebMatteoCancellieri"],
+  "Gabriel Strefezza": ["tuttoMercatoWebMatteoCancellieri"],
+  "Matteo Miretti": ["tuttoMercatoWebMatteoCancellieri"],
+  "Meichtry": ["tuttoMercatoWebMatteoCancellieri"],
+  "Mandela Keita": ["tuttoMercatoWebMatteoCancellieri"],
+  "Riccardo Pellegrino": ["tuttoMercatoWebMatteoCancellieri"],
+  "Fabio Troilo": ["tuttoMercatoWebMatteoCancellieri"],
+  "Corrent": ["tuttoMercatoWebMatteoCancellieri"],
+  "Diallo": ["parmaPress24Diallo"],
+  "Adrian Benedyczak": ["parmaPress24Diallo"],
+  "Nicolo Balogh": ["tuttoMercatoWebMatteoCancellieri"]};
 const WL_LINKMAP = {
   "Zion Suzuki": ["footballItalia"]
 };

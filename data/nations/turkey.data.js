@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "coun
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:48:54.612513Z",
+  updated: "2026-08-04T17:58:37.332932Z",
   label: "Nation aggregation"
 };

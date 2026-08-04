@@ -35,25 +35,30 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Konstantinos Koulierakis", sub:"CB · Greece", club:"permanent from Wolfsburg", pos:"CB", fee:"€17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Di Marzio posted arrival images; official signing with medicals and signature to follow."}
+  {name:"Konstantinos Koulierakis", sub:"CB · Greece", club:"permanent from Wolfsburg", pos:"CB", fee:"€17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Di Marzio posted arrival images; official signing with medicals and signature to follow."},
+  {name:"Santiago Castro", sub:"Striker, ARG, 21", club:"Bologna", pos:"ST", fee:"€35m + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing ('ufficiali Castro in giallorosso'); part of a broader swap-style deal that also sent Artem Dovbyk to Bologna. Castro said he 'wanted to come from the first moment.'"}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Paulo Dybala", sub:"30 · CAM/ST · Argentina", club:"Juventus", pos:"CAM/ST", fee:"Free agent", free:true, status:"done", statusTxt:"DONE, EXIT", note:"Contract expired 30 Jun. Dybala departs as free agent; Juventus completed signing."},
   {name:"Alessandro Romano", sub:"20 · CB · Italy", club:"Cagliari", pos:"CB", fee:"Loan, €5m plus add-ons obligation to buy", free:false, status:"done", statusTxt:"DONE, LOAN OUT", note:"Confirmed 1 Jul. Young centre-back sent out on loan with an obligation to buy attached, a squad-management move as Roma trims its defensive numbers."},
-  {name:"Mattia Viti", sub:"CB · Italy", club:"permanent to Sampdoria", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move after a loan spell, four-year contract, medicals confirmed via Di Marzio."}
+  {name:"Mattia Viti", sub:"CB · Italy", club:"permanent to Sampdoria", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move after a loan spell, four-year contract, medicals confirmed via Di Marzio."},
+  {name:"Artem Dovbyk", sub:"Striker, UKR, 28", club:"Bologna", pos:"ST", fee:"Part of Castro swap deal", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moves to Bologna as part of the same operation that brought Santiago Castro to Roma; a buyback clause for Roma has been reported."}
 ];
 
 const INCOMING = [
   {name:"Serhou Guirassy", sub:"24 · ST · Guinea", club:"RB Leipzig", pos:"ST", report:"31 Jul 2026", src:"Matteo Moretto / Fabrizio Romano (Sky Italia)", tier:2, fee:"€30m", truth:58, prob:40, light:"y", trend:"up", note:"Romano and Moretto report Roma in talks with Leipzig for young striker. Deal not finalised but discussions advanced."},
-  {name:"Santiago Castro", sub:"21 · ST · Argentina", club:"Bologna", pos:"ST", report:"2 Aug 2026", src:"Football Italia", tier:2, fee:"€35m", truth:55, prob:35, light:"y", trend:"up", note:"Roma reported in negotiations for Bologna's young striker, with Artem Dovbyk potentially moving the opposite way on loan as part of the same conversation - though Genoa are also chasing Dovbyk, complicating any swap."},
   {name:"Jeremie Freuler", sub:"29 · CM · Switzerland", club:"Atalanta", pos:"CM", report:"28 Jul 2026", src:"Corriere della Sera", tier:2, fee:"€15m", truth:45, prob:28, light:"o", trend:"flat", note:"Roma monitoring Atalanta's midfielder as squad depth option. Atalanta not eager sellers."},
   {name:"Richard Ríos", sub:"CDM · Colombia", club:"Palmeiras", pos:"CDM", report:"Jul 2026", src:"Gianluca Di Marzio", tier:2, fee:"Roma offer €25m vs Palmeiras ask ~€30m", truth:55, prob:40, light:"y", trend:"flat", note:"Di Marzio: gap between the clubs is 'just 5 million euros'; Manchester United also inquiring."},
-  {name:"Diego Moreira", sub:"21 · LWB · Portugal", club:"Strasbourg", pos:"LWB", report:"15 Jul 2026", src:"Nicolo Schira", tier:1, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma have reportedly offered a contract to 2031, with direct talks expected between the clubs."}
+  {name:"Diego Moreira", sub:"21 · LWB · Portugal", club:"Strasbourg", pos:"LWB", report:"15 Jul 2026", src:"Nicolo Schira", tier:1, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma have reportedly offered a contract to 2031, with direct talks expected between the clubs."},
+  {name:"Givairo Read", sub:"Winger, NED, 21", club:"Feyenoord", pos:"RW", report:"Roma have made a formal offer for Read and manager Gian Piero Gasperini personally contacted the player, but there remains distance between the two clubs on terms.", src:"Fanpage.it / Calciomercato.it", tier:2, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:"Active negotiation with a concrete bid on the table as of early August, though a fee agreement has not been reached."},
+  {name:"Nahuel Molina", sub:"Right-back, ARG, 27", club:"Atletico Madrid", pos:"RB", report:"Roma have submitted an initial €16m bid to Atletico Madrid for the right-back as a replacement option, with a self-imposed spending ceiling of around €28m for the position.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma are working multiple right-back targets in parallel, including alternatives at lower fees."},
+  {name:"Alessio Cacciamani", sub:"Winger, ITA, 19", club:"Torino", pos:"RW", report:"Roma have made an enquiry over the young Torino winger, who is valued at €18-20m by his current club.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Early-stage interest in a development prospect rather than an advanced deal."},
+  {name:"Rafael Leao", sub:"Winger, POR, 27", club:"AC Milan", pos:"LW", report:"Bookmakers and speculative reports have floated a sensational Leao-to-Roma scenario as an alternative to his Turkish links.", src:"Betting market analysis", tier:3, fee:"Undisclosed", truth:20, prob:8, light:"r", trend:"flat", note:"No concrete Roma bid reported; framed mainly as odds-based speculation rather than a substantive move."}
 ];
 
 const OUTGOING = [
-  {name:"Artem Dovbyk", sub:"28 · ST · Ukraine", club:"Bologna (loan, rumoured)", pos:"ST", report:"4 Jul 2026", src:"Football Italia", tier:2, fee:"Loan (part of possible Castro swap)", truth:48, prob:25, light:"o", trend:"flat", note:"Bologna manager links floated alongside the Castro talks, with Genoa's Daniele De Rossi also reportedly keen on a reunion with his former Roma striker - two suitors chasing the same man muddies the picture."}
+  {name:"Marash Kumbulla", sub:"Centre-back, ALB, 25", club:"Unspecified (loan/sale)", pos:"CB", report:"Roma are working on moving Kumbulla out either on loan or permanently as Gasperini reshapes the defensive options.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Replacement right-back/defensive targets already being lined up, suggesting the exit is progressing in parallel."}
 ];
 
 const RISERS = [];
@@ -89,19 +94,28 @@ const HUB = {
   gianlucaDiMarzioviaGiallorossinetRichardRos: {l:"Gianluca Di Marzio (via Giallorossi.net)", u:"https://www.giallorossi.net/calciomercato-roma-di-marzio-offerta-di-25-milioni-per-rios-distanza-di-soli-5-col-palmeiras/"},
   nicoloSchiraviaSportingpediaDiegoMoreira: {l:"Nicolo Schira (via Sportingpedia)", u:"https://www.sportingpedia.com/2026/07/15/diego-moreira-set-to-swap-strasbourg-for-as-roma/"},
   gianlucaDiMarzioKonstantinosKoulierakis: {l:"Gianluca Di Marzio", u:"https://x.com/DiMarzio/status/2083512575757594801"},
-  gianlucaDiMarzioMattiaViti: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-30-luglio-495350"}};
+  gianlucaDiMarzioMattiaViti: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-30-luglio-495350"},
+  calciomercatoitGivairoRead: {l:"Calciomercato.it", u:"https://www.calciomercato.it/"},
+  footballItaliaNahuelMolina: {l:"Football Italia", u:"https://www.football-italia.net/"},
+  tuttoMercatoWebRafaelLeao: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/roma"},
+  fanpageitSkySportKonstantinosKoulierakis: {l:"Fanpage.it / Sky Sport", u:"https://www.bing.com/news/search?q=Koulierakis+Roma"}};
 
 const LINKMAP = {
   "Paulo Dybala": ["gnews-paulodybala"],
   "Serhou Guirassy": ["moretto", "romano"],
   "Jeremie Freuler": ["corriere"],
-  "Santiago Castro": ["footballItalia"],
-  "Artem Dovbyk": ["footballItalia"],
+  "Santiago Castro": ["footballItalia", "calciomercatoitGivairoRead"],
+  "Artem Dovbyk": ["footballItalia", "calciomercatoitGivairoRead"],
   "Alessandro Romano": ["cagliariclub"],
   "Richard Ríos": ["gianlucaDiMarzioviaGiallorossinetRichardRos"],
   "Diego Moreira": ["nicoloSchiraviaSportingpediaDiegoMoreira"],
-  "Konstantinos Koulierakis": ["gianlucaDiMarzioKonstantinosKoulierakis"],
-  "Mattia Viti": ["gianlucaDiMarzioMattiaViti"]};
+  "Konstantinos Koulierakis": ["gianlucaDiMarzioKonstantinosKoulierakis", "fanpageitSkySportKonstantinosKoulierakis"],
+  "Mattia Viti": ["gianlucaDiMarzioMattiaViti"],
+  "Givairo Read": ["calciomercatoitGivairoRead"],
+  "Nahuel Molina": ["footballItaliaNahuelMolina"],
+  "Alessio Cacciamani": ["footballItaliaNahuelMolina"],
+  "Rafael Leao": ["tuttoMercatoWebRafaelLeao"],
+  "Marash Kumbulla": ["tuttoMercatoWebRafaelLeao"]};
 const WL_LINKMAP = {
   "Serhou Guirassy": ["gnews-serhouguirassy"],
   "Paulo Dybala": ["gnews-paulodybala"],

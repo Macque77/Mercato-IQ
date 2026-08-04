@@ -32,21 +32,26 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Rahim Alhassane", sub:"22 · LB · France", to:"permanent from Real Oviedo", fee:"~€3.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 20 Jul. Left-back reinforcement for Tedesco's first Bologna squad."},
-  {name:"Mikel Amondarain", sub:"22 · CM · Argentina", to:"permanent from Estudiantes", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed despite reported Nottingham Forest interest in the same player."}
+  {name:"Mikel Amondarain", sub:"22 · CM · Argentina", to:"permanent from Estudiantes", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed despite reported Nottingham Forest interest in the same player."},
+  {name:"Artem Dovbyk", sub:"Striker, UKR, 28", club:"AS Roma", pos:"ST", fee:"Part of Castro swap deal", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Arrives as part of the operation that sent Santiago Castro to Roma; player said he chose the club for its directors and coach, calling himself 'ambitious.'"},
+  {name:"Alhassane Ndiaye", sub:"Defender", club:"Undisclosed", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Recently presented to the club; deal reported as closed by Il Sussidiario."}
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Federico Ravaglia", sub:"25 · GK · Italy", club:"Watford", pos:"GK", fee:"Undisclosed, with buy-back option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Goalkeeper departs for Watford with Bologna retaining a buy-back clause."}
+  {name:"Federico Ravaglia", sub:"25 · GK · Italy", club:"Watford", pos:"GK", fee:"Undisclosed, with buy-back option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 31 Jul. Goalkeeper departs for Watford with Bologna retaining a buy-back clause."},
+  {name:"Santiago Castro", sub:"Striker, ARG, 21", club:"AS Roma", pos:"ST", fee:"€35m + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure to Roma, receiving the number 9 shirt there; part of the same operation bringing Artem Dovbyk to Bologna."},
+  {name:"Marco Ravaglia", sub:"Goalkeeper, ITA", club:"Watford", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Definitive transfer completed with a buyback clause included for Bologna."}
 ];
 
 const INCOMING = [
-  {name:"Artem Dovbyk", sub:"28 · ST · Ukraine", club:"AS Roma", pos:"ST", report:"31 Jul 2026", src:"Football Italia", tier:2, fee:"Loan (part of possible Castro swap)", truth:48, prob:25, light:"o", trend:"flat", note:"Floated as a possible makeweight/loan alongside Roma's interest in Santiago Castro, but Genoa's Daniele De Rossi is also chasing Dovbyk, a former player of his at Roma - two suitors muddy the picture."}
 ];
 
 const OUTGOING = [
-  {name:"Santiago Castro", sub:"21 · ST · Argentina", club:"AS Roma", pos:"ST", report:"2 Aug 2026", src:"Football Italia", tier:2, fee:"€35m", truth:55, prob:35, light:"y", trend:"up", note:"Roma reported in negotiations for the young Argentine striker, with a Dovbyk-the-other-way loan discussed as part of the same conversation."},
   {name:"Jhon Lucumi", sub:"27 · CB · Colombia", club:"Multiple (Juventus, Inter, Man Utd linked)", pos:"CB", report:"Jul 2026", src:"Football Italia", tier:2, fee:"€25m (asking price)", truth:55, prob:30, light:"y", trend:"up", note:"CEO Claudio Fenucci has confirmed the club promised Lucumi an exit for the right offer; Bologna already rejected a Besiktas bid of €12m plus Jean Onana as insufficient."},
-  {name:"Jonathan Rowe", sub:"22 · W · England", club:"Multiple (Chelsea, Aston Villa, Everton linked)", pos:"W", report:"Jul 2026", src:"Football Italia", tier:2, fee:"€40-45m (asking price)", truth:52, prob:25, light:"o", trend:"flat", note:"Three Premier League clubs credited with interest, but Bologna's high asking price and Fenucci's public praise of the player suggest no active push to sell."}
+  {name:"Jonathan Rowe", sub:"22 · W · England", club:"Multiple (Chelsea, Aston Villa, Everton linked)", pos:"W", report:"Jul 2026", src:"Football Italia", tier:2, fee:"€40-45m (asking price)", truth:52, prob:25, light:"o", trend:"flat", note:"Three Premier League clubs credited with interest, but Bologna's high asking price and Fenucci's public praise of the player suggest no active push to sell."},
+  {name:"Juan Miranda", sub:"Left-back, ESP, 26", club:"Juventus (interest)", pos:"LB", report:"Juventus have registered interest and reportedly offered around €17m against Bologna's €25m valuation, but Bologna are instead seriously considering triggering a contract-renewal clause to keep him.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Bologna's move toward a renewal significantly reduces the likelihood of a sale this window; Como mentioned as an alternative suitor."},
+  {name:"Remo Freuler", sub:"Midfielder, SUI, 33", club:"Foreign clubs (unnamed)", pos:"CM", report:"Unnamed foreign offers have been reported for the veteran midfielder, though he is said to be unconvinced about leaving.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:30, prob:15, light:"o", trend:"flat", note:"Player reluctance reported as the main obstacle rather than club valuation."},
+  {name:"Thijs Dallinga", sub:"Forward, NED, 24", club:"Unspecified", pos:"ST", report:"A departure is being tied to incoming striker business, suggesting Dallinga could make way once Bologna's attack is reshaped post-Castro sale.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Contingent on further Bologna forward signings rather than an active negotiation."}
 ];
 
 const RISERS = [
@@ -75,18 +80,23 @@ const WATCHLIST = [
 
 const HUB = {
   footballItalia: {l:"Football Italia · Bologna", u:"https://football-italia.net/category/teams/bologna/"},
-  club: {l:"Bologna FC 1909 Official", u:"https://www.bolognafc.it/en/news"}
-};
+  club: {l:"Bologna FC 1909 Official", u:"https://www.bolognafc.it/en/news"},
+  tuttoMercatoWebJuanMiranda: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/bologna"},
+  calciomercatoitSantiagoCastro: {l:"Calciomercato.it", u:"https://www.calciomercato.it/"}};
 
 const LINKMAP = {
   "Rahim Alhassane": ["footballItalia"],
-  "Mikel Amondarain": ["footballItalia"],
+  "Mikel Amondarain": ["footballItalia", "tuttoMercatoWebJuanMiranda"],
   "Federico Ravaglia": ["footballItalia"],
-  "Artem Dovbyk": ["footballItalia"],
-  "Santiago Castro": ["footballItalia"],
+  "Artem Dovbyk": ["footballItalia", "tuttoMercatoWebJuanMiranda"],
+  "Santiago Castro": ["footballItalia", "calciomercatoitSantiagoCastro"],
   "Jhon Lucumi": ["footballItalia"],
-  "Jonathan Rowe": ["footballItalia"]
-};
+  "Jonathan Rowe": ["footballItalia"],
+  "Juan Miranda": ["tuttoMercatoWebJuanMiranda"],
+  "Remo Freuler": ["tuttoMercatoWebJuanMiranda"],
+  "Thijs Dallinga": ["tuttoMercatoWebJuanMiranda"],
+  "Alhassane Ndiaye": ["tuttoMercatoWebJuanMiranda"],
+  "Marco Ravaglia": ["tuttoMercatoWebJuanMiranda"]};
 const WL_LINKMAP = {
   "Santiago Castro": ["footballItalia"],
   "Jhon Lucumi": ["footballItalia"]

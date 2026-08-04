@@ -30,7 +30,10 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · US Sassuolo"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Vasilije Adzic", sub:"Attacking midfielder, MNE, 20", club:"Juventus", pos:"CAM", fee:"Loan with buy option (Juventus retain counter-option)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sassuolo won the race ahead of Cagliari; Spalletti sanctioned the exit to secure Adzic regular game-time."},
+  {name:"Filip Walukiewicz", sub:"Centre-back, POL, 26", club:"Torino", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left Torino as part of their squad rebuild under new boss Davide Abate."}
+];
 
 const CONFIRMED_OUT = [
   {name:"Tarik Muharemovic", sub:"22 · CB · Bosnia", club:"Leeds United", pos:"CB", fee:"€40m (Juventus receive €20m via sell-on)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 14 Jul. Newcastle, Sunderland and Bournemouth were also credited with interest before Leeds completed the deal; Juventus retain a 50% sell-on clause from a previous transfer, banking €20m of the fee."}
@@ -38,11 +41,16 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Kieron Bowie", sub:"21 · ST · Scotland", club:"Hellas Verona", pos:"ST", report:"31 Jul 2026", src:"Football Italia", tier:2, fee:"~€12m (Verona's asking price)", truth:60, prob:55, light:"g", trend:"up", note:"Sassuolo's interest was reported in early July with Verona demanding around €12m; later coverage lists the move as close to completion following the striker's drop into Serie B with Verona's relegation."},
-  {name:"Ognjen Ugresic", sub:"22 · CM · Serbia", club:"Partizan Belgrade", pos:"CM", report:"12 Jul 2026", src:"Football Italia", tier:3, fee:"~€6m", truth:50, prob:25, light:"o", trend:"flat", note:"Sassuolo one of several clubs (also Udinese, Bologna, Club Brugge, Frankfurt, Monaco) in a genuine bidding war for the Partizan midfielder - competition makes any single suitor's chances modest."}
+  {name:"Ognjen Ugresic", sub:"22 · CM · Serbia", club:"Partizan Belgrade", pos:"CM", report:"12 Jul 2026", src:"Football Italia", tier:3, fee:"~€6m", truth:50, prob:25, light:"o", trend:"flat", note:"Sassuolo one of several clubs (also Udinese, Bologna, Club Brugge, Frankfurt, Monaco) in a genuine bidding war for the Partizan midfielder - competition makes any single suitor's chances modest."},
+  {name:"Daniele Maldini", sub:"Attacking midfielder, ITA, 24", club:"Atalanta", pos:"CAM", report:"Sassuolo are pursuing Maldini as a primary offensive/trequartista target, contingent on Atalanta completing the signing of a replacement (Alajbegovic).", src:"Calciomercato.it", tier:2, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"flat", note:"Deal linked to Atalanta first resolving their own incoming replacement."},
+  {name:"Francesco Acerbi", sub:"Centre-back, ITA, 38, free agent", club:"Free agent", pos:"CB", report:"Sassuolo are reportedly considering the veteran free-agent defender to help replace departed Muharemovic.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"Speculative free-agent link, no formal contact confirmed."},
+  {name:"Senne Van der Brempt", sub:"Full-back, BEL, 24", club:"Como", pos:"RB", report:"Sassuolo made a formal offer for the Como full-back, who initially turned it down.", src:"Tuttomercatoweb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Player reportedly cool on the move as of late July."}
 ];
 
 const OUTGOING = [
-  {name:"Cristian Volpato", sub:"21 · AM · Australia", club:"Fiorentina", pos:"AM", report:"4 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:48, prob:25, light:"o", trend:"flat", note:"Volpato has said he's open to leaving for a 'great club' after the World Cup, with Fiorentina the club credited with concrete interest."}
+  {name:"Cristian Volpato", sub:"21 · AM · Australia", club:"Fiorentina", pos:"AM", report:"4 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:48, prob:25, light:"o", trend:"flat", note:"Volpato has said he's open to leaving for a 'great club' after the World Cup, with Fiorentina the club credited with concrete interest."},
+  {name:"Andrea Pinamonti", sub:"Striker, ITA, 27", club:"Lazio", pos:"ST", report:"Lazio boss Gattuso has identified Pinamonti as a back-up offensive reinforcement while Lazio's priority remains a loan move for Milan's Santiago Gimenez.", src:"La Repubblica", tier:1, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Contact established between the clubs but Lazio's real priority lies elsewhere."},
+  {name:"Armand Lauriente", sub:"Winger, FRA, 26", club:"Besiktas", pos:"LW", report:"Besiktas interest in Lauriente has reportedly cooled after initial contact in mid-July.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Deal appears to have stalled as of early August."}
 ];
 
 const RISERS = [
@@ -70,15 +78,27 @@ const WATCHLIST = [
 
 const HUB = {
   footballItalia: {l:"Football Italia · Sassuolo", u:"https://football-italia.net/category/teams/sassuolo/"},
-  bwrao: {l:"Black & White & Read All Over", u:"https://www.blackwhitereadallover.com/"}
-};
+  bwrao: {l:"Black & White & Read All Over", u:"https://www.blackwhitereadallover.com/"},
+  calciomercatoitDanieleMaldini: {l:"Calciomercato.it", u:"https://www.calciomercato.it"},
+  tuttomercatowebFrancescoAcerbi: {l:"Tuttomercatoweb", u:"https://www.tuttomercatoweb.com/sassuolo"},
+  laRepubblicaviaCalciomercatoitAndreaPinamonti: {l:"La Repubblica (via Calciomercato.it)", u:"https://www.calciomercato.it/2026/08/03/pinamonti-nel-mirino-della-lazio-contatto-con-il-sassuolo/"},
+  calciomercatoitClaudioGaluppiVasilijeAdzic: {l:"Calciomercato.it (Claudio Galuppi)", u:"https://www.calciomercato.it/2026/08/03/adzic-al-sassuolo-ci-siamo-lascia-la-juventus-affare-ad-un-passo/"},
+  skySportFilipWalukiewicz: {l:"Sky Sport", u:"https://sport.sky.it/calciomercato/torino"},
+  bBCSportTarikMuharemovic: {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football/articles/cpd3d6vx803o"}};
 
 const LINKMAP = {
-  "Tarik Muharemovic": ["footballItalia"],
+  "Tarik Muharemovic": ["footballItalia", "bBCSportTarikMuharemovic"],
   "Kieron Bowie": ["footballItalia"],
   "Ognjen Ugresic": ["footballItalia"],
-  "Cristian Volpato": ["footballItalia"]
-};
+  "Cristian Volpato": ["footballItalia"],
+  "Daniele Maldini": ["calciomercatoitDanieleMaldini"],
+  "Francesco Acerbi": ["tuttomercatowebFrancescoAcerbi"],
+  "Senne Van der Brempt": ["tuttomercatowebFrancescoAcerbi"],
+  "Joao Mario": ["tuttomercatowebFrancescoAcerbi"],
+  "Andrea Pinamonti": ["laRepubblicaviaCalciomercatoitAndreaPinamonti"],
+  "Armand Lauriente": ["tuttomercatowebFrancescoAcerbi"],
+  "Vasilije Adzic": ["calciomercatoitClaudioGaluppiVasilijeAdzic"],
+  "Filip Walukiewicz": ["skySportFilipWalukiewicz"]};
 const WL_LINKMAP = {
   "Kieron Bowie": ["footballItalia"]
 };

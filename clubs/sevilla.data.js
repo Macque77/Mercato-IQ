@@ -48,8 +48,7 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Isaac Romero", sub:"Striker, Russian interest", club:"Unnamed Russian clubs", pos:"FW", report:"Sevilla are reportedly willing to sell Isaac Romero for around €4-5m amid financial pressure, with interest emerging from Russian football.", src:"Vamos Mi Sevilla (citing Estadio Deportivo)", tier:3, fee:"€4-5m (Sevilla's valuation)", truth:50, prob:30, light:"y", trend:"flat", note:"This looks driven by Sevilla's finances rather than sporting reasons, and Romero himself reportedly prefers to stay in Spain, which could complicate any move abroad."},
-  {name:"Akor Adams", sub:"Striker, near Venezia move", club:"Venezia", pos:"FW", report:"Adams has reportedly agreed personal terms with Venezia, in a deal that could reach €20.5-23.5m including add-ons — what would be Sevilla's first major sale of the summer.", src:"El Pespunte / El Desmarque", tier:2, fee:"Up to €20.5-23.5m (reported)", truth:65, prob:65, light:"g", trend:"flat", note:"Multiple Spanish outlets describe this as close to being finalized, representing a large profit for Sevilla on a player bought for roughly €5.5m from Montpellier in January 2025."}
+  {name:"Isaac Romero", sub:"Striker, Russian interest", club:"Unnamed Russian clubs", pos:"FW", report:"Sevilla are reportedly willing to sell Isaac Romero for around €4-5m amid financial pressure, with interest emerging from Russian football.", src:"Vamos Mi Sevilla (citing Estadio Deportivo)", tier:3, fee:"€4-5m (Sevilla's valuation)", truth:50, prob:30, light:"y", trend:"flat", note:"This looks driven by Sevilla's finances rather than sporting reasons, and Romero himself reportedly prefers to stay in Spain, which could complicate any move abroad."}
 ];
 
 const RISERS = [

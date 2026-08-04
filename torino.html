@@ -851,20 +851,35 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Torino"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Giovanni Simeone", sub:"Striker, ARG, 30", club:"Napoli", pos:"ST", fee:"Buyout clause", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Activated release clause to lead the Torino attack under new coach Davide Abate."},
+  {name:"Tino Anjorin", sub:"Midfielder, ENG, 24", club:"Empoli", pos:"CM", fee:"Buyout clause", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed to bolster the Torino midfield."},
+  {name:"Marko Kulenovic", sub:"Striker, CRO", club:"Dinamo Zagreb", pos:"ST", fee:"Buyout clause", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Added as attacking depth."},
+  {name:"Pietro Comuzzo", sub:"Centre-back, ITA, 21", club:"Fiorentina", pos:"CB", fee:"Loan, €1m fee + €19m purchase option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Medical exams completed; full agreement reached on loan-with-option structure."},
+  {name:"Serdar Comert", sub:"Centre-back, SUI, free agent", club:"Free agent", pos:"CB", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as a free-agent defensive reinforcement."},
+  {name:"Michael Fitz-Jim", sub:"Midfielder, NED", club:"Ajax", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Prospect identified by new coach Davide Abate, having worked with him previously under Farioli at Ajax."},
+  {name:"Gaetano Oristanio", sub:"Forward, ITA, 22", club:"Venezia", pos:"CAM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed medical examinations after agreeing to move from Venezia."}
+];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Filip Walukiewicz", sub:"Centre-back, POL, 26", club:"Sassuolo", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed as part of the defensive overhaul."},
+  {name:"Antonio Silva", sub:"Forward", club:"Mantova", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moved on to Serie B side Mantova."}
+];
 
 const INCOMING = [
   {name:"Lucas Perri", sub:"27 · GK · Brazil", club:"Leeds United", pos:"GK", report:"24 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:62, prob:48, light:"y", trend:"up", note:"Described as 'closing in' on the move; Leeds' medical has been delayed only because the English club is finalising a replacement (James Trafford), suggesting the Torino side of the deal is essentially agreed."},
   {name:"Cyril Ngonge", sub:"24 · W · Belgium", club:"Napoli", pos:"W", report:"14 Jul 2026", src:"FootItalia.com", tier:2, fee:"Loan with €8m option to buy", truth:55, prob:38, light:"y", trend:"up", note:"Advanced talks with Ngonge having already approved the move and skipped Napoli pre-season training; Club Brugge and other European sides were interested but the player prioritised Torino."},
-  {name:"Pietro Comuzzo", sub:"21 · CB · Italy", club:"Fiorentina", pos:"CB", report:"26 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:52, prob:35, light:"y", trend:"up", note:"Advanced negotiations reported for the young Fiorentina centre-back."},
   {name:"Eray Comert", sub:"27 · CB · Switzerland", club:"Free agent", pos:"CB", report:"26 Jul 2026", src:"Football Italia", tier:3, fee:"Free", truth:48, prob:30, light:"y", trend:"flat", note:"Free-agent centre-back in advanced talks after leaving his previous club."},
-  {name:"Dominik Livakovic", sub:"31 · GK · Croatia", club:"Fenerbahce", pos:"GK", report:"21 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:42, prob:20, light:"o", trend:"flat", note:"Both Torino and Dinamo Zagreb have held talks with the goalkeeper's agent - one of three names Torino are exploring for the No.1 shirt alongside Perri and Ramsdale."}
+  {name:"Dominik Livakovic", sub:"31 · GK · Croatia", club:"Fenerbahce", pos:"GK", report:"21 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:42, prob:20, light:"o", trend:"flat", note:"Both Torino and Dinamo Zagreb have held talks with the goalkeeper's agent - one of three names Torino are exploring for the No.1 shirt alongside Perri and Ramsdale."},
+  {name:"Takehiro Tomiyasu", sub:"Defender, JPN, 27, free agent", club:"Free agent (ex-Arsenal/Bologna)", pos:"CB", report:"Torino are among the clubs tracking free agent Tomiyasu, who is currently training with Crystal Palace on trial.", src:"Calciomercato.com", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Also being considered by Venezia and Sassuolo in the same period."},
+  {name:"Lucas Ryan", sub:"Centre-back, BRA", club:"Lokomotiv Plovdiv", pos:"CB", report:"Torino have identified the Brazilian defender playing in Bulgaria as a depth target.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage scouting link."},
+  {name:"Salvatore Falcone", sub:"Goalkeeper, ITA", club:"Lecce", pos:"GK", report:"Was previously Torino's primary goalkeeper target before the club shifted focus to Lucas Perri.", src:"Tuttomercatoweb", tier:2, fee:"Undisclosed", truth:50, prob:15, light:"o", trend:"flat", note:"Superseded by the more advanced Perri negotiation."}
 ];
 
 const OUTGOING = [
-  {name:"Gvidas Gineitis", sub:"22 · CM · Lithuania", club:"Celtic", pos:"CM", report:"2 Aug 2026", src:"Nicolo Schira / FootballTransfers", tier:2, fee:"~€14-15m", truth:58, prob:42, light:"y", trend:"up", note:"Schira reports Celtic preparing an improved offer for the midfielder, which would be a club-record Celtic signing; Torino are said to value him at around €15m."}
+  {name:"Gvidas Gineitis", sub:"22 · CM · Lithuania", club:"Celtic", pos:"CM", report:"2 Aug 2026", src:"Nicolo Schira / FootballTransfers", tier:2, fee:"~€14-15m", truth:58, prob:42, light:"y", trend:"up", note:"Schira reports Celtic preparing an improved offer for the midfielder, which would be a club-record Celtic signing; Torino are said to value him at around €15m."},
+  {name:"Che Adams", sub:"Striker, SCO, 30", club:"Wolverhampton Wanderers", pos:"ST", report:"Wolves have shown interest; Torino will consider offers in excess of €5m.", src:"Tuttomercatoweb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Fee threshold reportedly set by Torino's hierarchy."},
+  {name:"Cheikh Seck", sub:"Winger, SEN", club:"Partizan Belgrade", pos:"LW", report:"Could remain out on loan in Belgrade for a further season.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Loan extension being weighed rather than a fresh permanent exit."}
 ];
 
 const RISERS = [
@@ -896,18 +911,34 @@ const WATCHLIST = [
 const HUB = {
   footballItalia: {l:"Football Italia · Torino", u:"https://football-italia.net/category/teams/torino/"},
   footitalia: {l:"FootItalia.com", u:"https://www.footitalia.com/"},
-  footballtransfersGineitis: {l:"FootballTransfers · Gineitis", u:"https://www.footballtransfers.com/en/transfer-news/gb-sct-premier-league/2026/08/celtic-transfer-news-gvidas-gineitis-torino-offer-summer-2026"}
-};
+  footballtransfersGineitis: {l:"FootballTransfers · Gineitis", u:"https://www.footballtransfers.com/en/transfer-news/gb-sct-premier-league/2026/08/celtic-transfer-news-gvidas-gineitis-torino-offer-summer-2026"},
+  skySportLucasPerri: {l:"Sky Sport", u:"https://sport.sky.it/calciomercato/2026/07/24/calciomercato-torino-comert-perri-news"},
+  calciomercatocomTakehiroTomiyasu: {l:"Calciomercato.com", u:"https://www.calciomercato.com/torino"},
+  tuttomercatowebSalvatoreFalcone: {l:"Tuttomercatoweb", u:"https://www.tuttomercatoweb.com/torino"},
+  skySportGiovanniSimeone: {l:"Sky Sport", u:"https://sport.sky.it/calciomercato/torino"},
+  blastingNewsItaliaPietroComuzzo: {l:"Blasting News Italia", u:"https://it.blastingnews.com/calcio/2026/07/torino-chiude-laffare-comuzzo-il-difensore-dalla-fiorentina-in-prestito-004082363.html"}};
 
 const LINKMAP = {
-  "Lucas Perri": ["footballItalia"],
+  "Lucas Perri": ["footballItalia", "skySportLucasPerri"],
   "Cyril Ngonge": ["footitalia"],
-  "Pietro Comuzzo": ["footballItalia"],
+  "Pietro Comuzzo": ["footballItalia", "blastingNewsItaliaPietroComuzzo"],
   "Eray Comert": ["footballItalia"],
   "Dominik Livakovic": ["footballItalia"],
   "Aaron Ramsdale": ["footballItalia"],
-  "Gvidas Gineitis": ["footballtransfersGineitis"]
-};
+  "Gvidas Gineitis": ["footballtransfersGineitis"],
+  "Takehiro Tomiyasu": ["calciomercatocomTakehiroTomiyasu"],
+  "Lucas Ryan": ["calciomercatocomTakehiroTomiyasu"],
+  "Salvatore Falcone": ["tuttomercatowebSalvatoreFalcone"],
+  "Che Adams": ["tuttomercatowebSalvatoreFalcone"],
+  "Cheikh Seck": ["tuttomercatowebSalvatoreFalcone"],
+  "Giovanni Simeone": ["skySportGiovanniSimeone"],
+  "Tino Anjorin": ["skySportGiovanniSimeone"],
+  "Marko Kulenovic": ["skySportGiovanniSimeone"],
+  "Serdar Comert": ["skySportLucasPerri"],
+  "Michael Fitz-Jim": ["calciomercatocomTakehiroTomiyasu"],
+  "Gaetano Oristanio": ["skySportGiovanniSimeone"],
+  "Filip Walukiewicz": ["skySportGiovanniSimeone"],
+  "Antonio Silva": ["skySportGiovanniSimeone"]};
 const WL_LINKMAP = {
   "Lucas Perri": ["footballItalia"],
   "Cyril Ngonge": ["footitalia"],

@@ -30,18 +30,23 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Como"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Trevoh Chalobah", sub:"Centre-back, England, 26", club:"Chelsea", pos:"CB", fee:"€30m plus €6m in add-ons (approx. £31m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Fabrizio Romano confirmed a verbal agreement; medicals scheduled. Reported by several outlets as Como's marquee summer signing."}
+];
 
 const CONFIRMED_OUT = [
-  {name:"Mergim Vojvoda", sub:"30 · RB · Kosovo", club:"Udinese", pos:"RB", fee:"€1.6m (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 19 Jul. Full-back departs for Udinese in a modest fee deal."}
+  {name:"Mergim Vojvoda", sub:"30 · RB · Kosovo", club:"Udinese", pos:"RB", fee:"€1.6m (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 19 Jul. Full-back departs for Udinese in a modest fee deal."},
+  {name:"Konstantinos Koulierakis", sub:"Centre-back, Greece, 21", club:"Roma", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported as officially completed to Roma rather than Como, closing that transfer avenue for Fabregas' side."}
 ];
 
 const INCOMING = [
-  {name:"Trevoh Chalobah", sub:"27 · CB · England", club:"Chelsea", pos:"CB", report:"25 Jul 2026", src:"Football Italia", tier:2, fee:"€30-35m (Chelsea holding out for €35m)", truth:60, prob:38, light:"y", trend:"up", note:"Chelsea rejected an initial €30m Como bid; Como have returned with an improved offer as Chelsea hold their valuation at €35m - a genuine, live negotiation for Champions League-calibre defensive reinforcement."},
-  {name:"Moise Kean", sub:"26 · ST · Italy", club:"Fiorentina", pos:"ST", report:"23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Kean's representatives have been shopping the striker to Como (and Fenerbahce), with Como said to have made contact citing Champions League football as a selling point; Fiorentina coach Fabio Grosso says he'd be happy if Kean stays but won't rule out a sale."}
+  {name:"Moise Kean", sub:"26 · ST · Italy", club:"Fiorentina", pos:"ST", report:"23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Kean's representatives have been shopping the striker to Como (and Fenerbahce), with Como said to have made contact citing Champions League football as a selling point; Fiorentina coach Fabio Grosso says he'd be happy if Kean stays but won't rule out a sale."},
+  {name:"Yan Couto", sub:"Right-back, Brazil, 24", club:"Borussia Dortmund", pos:"RB", report:"Como are closing in on Yan Couto from Borussia Dortmund, with the move described as close to completion though slowed by Dortmund's administrative processes.", src:"Calciomercato.com", tier:2, fee:"Undisclosed (loan/permanent details still being finalized)", truth:75, prob:70, light:"g", trend:"flat", note:"Gianluca Di Marzio previously reported Como reopening contacts with Dortmund on a loan-based structure."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Alvaro Morata", sub:"Striker, Spain, 33", club:"Undisclosed", pos:"ST", report:"Morata is reported as departing Como this summer amid the club's need to balance the books after heavy spending.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"Como face financial fair-play pressure and may need further departures after major incoming signings."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Trevoh Chalobah pursuit advances</b>: Como return with an improved bid after Chelsea's initial rejection, narrowing the gap to the Blues' €35m valuation."}
@@ -66,14 +71,19 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  footballItalia: {l:"Football Italia · Como", u:"https://football-italia.net/category/teams/como/"}
-};
+  footballItalia: {l:"Football Italia · Como", u:"https://football-italia.net/category/teams/como/"},
+  calciomercatocomYanCouto: {l:"Calciomercato.com", u:"https://www.msn.com/it-it/sport"},
+  skySportMoiseKean: {l:"Sky Sport", u:"https://sport.sky.it/calciomercato/2026/08/03/kean-como-fiorentina-calciomercato-news"},
+  tuttoMercatoWebAlvaroMorata: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/como"},
+  yahooSportscitingFabrizioRomanoTrevohChalobah: {l:"Yahoo Sports (citing Fabrizio Romano)", u:"https://sports.yahoo.com/articles/como-agree-31m-deal-sign"}};
 
 const LINKMAP = {
   "Mergim Vojvoda": ["footballItalia"],
-  "Trevoh Chalobah": ["footballItalia"],
-  "Moise Kean": ["footballItalia"]
-};
+  "Trevoh Chalobah": ["footballItalia", "yahooSportscitingFabrizioRomanoTrevohChalobah"],
+  "Moise Kean": ["footballItalia", "skySportMoiseKean"],
+  "Yan Couto": ["calciomercatocomYanCouto"],
+  "Alvaro Morata": ["tuttoMercatoWebAlvaroMorata"],
+  "Konstantinos Koulierakis": ["calciomercatocomYanCouto"]};
 const WL_LINKMAP = {
   "Trevoh Chalobah": ["footballItalia"],
   "Moise Kean": ["footballItalia"]

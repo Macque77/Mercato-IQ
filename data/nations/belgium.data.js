@@ -108,6 +108,6 @@ const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 13},
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T17:48:54.608721Z",
+  updated: "2026-08-04T17:58:37.327125Z",
   label: "Nation aggregation"
 };

@@ -858,15 +858,25 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Ange-Yoan Bonny", sub:"21 · ST · France U21", to:"permanent from Parma", fee:"~€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed - Bonny reunites with Cristian Chivu, who coached him for his breakout final three months at Parma (6 goals, 4 assists, helped Parma beat relegation). Stuttgart tried to hijack the move but Inter won out."},
   {name:"Andy Diouf", sub:"22 · CM · France", to:"permanent from RC Lens", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed midfield addition from Lens, adding energy and ball-carrying to Chivu's engine room."},
-  {name:"Ivan Provedel", sub:"27 · GK · Italy", to:"permanent from Lazio", fee:"€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 8 Jul. A domestic-rival raid for goalkeeping depth behind Yann Sommer, adding an experienced Serie A number one to Chivu's squad."}
+  {name:"Ivan Provedel", sub:"27 · GK · Italy", to:"permanent from Lazio", fee:"€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 8 Jul. A domestic-rival raid for goalkeeping depth behind Yann Sommer, adding an experienced Serie A number one to Chivu's squad."},
+  {name:"John Stones", sub:"CB, England, 32", club:"Manchester City", pos:"CB", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a two-year deal through June 2028 after a decade at Manchester City; teammate Bisseck said Stones would 'push Inter's defenders to raise their level'."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Denzel Dumfries", sub:"RB, Netherlands, 30", club:"Real Madrid", pos:"RB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure leaves Inter searching for a right-side replacement, with Diaby among the names discussed."},
+  {name:"Ebenezer Akinsanmiro", sub:"CM, Nigeria, 21", club:"Monza", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sale helped fund Inter's renewed bid for Curtis Jones."}
+];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Cristian Romero", sub:"CB, Argentina, 28", club:"Tottenham Hotspur", pos:"CB", report:"Tottenham and Inter have reached a verbal agreement worth around €40m/£34.2m; De Zerbi has accepted the captain's wish to leave and Inter director Ausilio continues pushing the deal through, with Tuttosport calling it 'all but done'.", src:"Fabrizio Romano / ESPN Argentina (via GiveMeSport)", tier:1, fee:"~€40m", truth:85, prob:75, light:"g", trend:"flat", note:"Salary demands and the requirement Inter complete a prior sale are the last hurdles; Barcelona interest earlier fell through on cost."},
+  {name:"Curtis Jones", sub:"CM, England, 25", club:"Liverpool", pos:"CM", report:"Inter have gone back in for a third time with an improved €35m offer (after €25m and €32m rejections); Liverpool still want €40-50m and are holding firm despite Jones appearing to court the move on social media after a dressing-room armband dispute.", src:"Dicip Khetan, International Business Times", tier:2, fee:"€35m offered", truth:70, prob:45, light:"y", trend:"flat", note:"Jones has just one year left on his contract (to 2027), which gives Inter some leverage, but Liverpool are not budging yet."},
+  {name:"Moussa Diaby", sub:"RW, France, 26", club:"Al-Ittihad", pos:"RW", report:"Diaby has re-emerged as an option for the right flank as Inter search for a replacement for the departed Dumfries.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"One of several names being floated for the vacant right-side role."},
+  {name:"Michael Kayode", sub:"RB, Italy, 21", club:"Fiorentina", pos:"RB", report:"Inter have made an enquiry over the young Italian full-back, though the asking price remains a stumbling block.", src:"Il Sussidiario / Blasting News", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Early-stage interest rather than an active negotiation."}
+];
 
 const OUTGOING = [
-  {name:"Filip Stanković", sub:"21 · GK · Serbia", club:"Multiple (loan/permanent options discussed)", pos:"GK", report:"16 Apr 2026", src:"SempreInter", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Inter reportedly weighing offering the young goalkeeper as makeweight in a deal involving Andy Diouf-type midfield business; more squad management than an active sale process."}
+  {name:"Filip Stanković", sub:"21 · GK · Serbia", club:"Multiple (loan/permanent options discussed)", pos:"GK", report:"16 Apr 2026", src:"SempreInter", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Inter reportedly weighing offering the young goalkeeper as makeweight in a deal involving Andy Diouf-type midfield business; more squad management than an active sale process."},
+  {name:"Kristjan Asllani", sub:"CM, Albania, 23", club:"Unlisted", pos:"CM", report:"Considered outside Chivu's project this season, with offers reportedly on the table for the midfielder.", src:"Blasting News", tier:3, fee:"Undisclosed", truth:45, prob:40, light:"y", trend:"flat", note:"No concrete destination yet reported."}
 ];
 
 const RISERS = [
@@ -894,15 +904,28 @@ const WATCHLIST = [];
 const HUB = {
   sempreinter: {l:"SempreInter · Transfer News", u:"https://sempreinter.com/"},
   footballItalia: {l:"Football Italia · Inter", u:"https://football-italia.net/category/teams/inter/"},
-  club: {l:"Inter Official · Transfer News", u:"https://www.inter.it/en/news/category/transfer-news"}
-};
+  club: {l:"Inter Official · Transfer News", u:"https://www.inter.it/en/news/category/transfer-news"},
+  giveMeSportCristianRomero: {l:"GiveMeSport", u:"https://www.givemesport.com/tottenham-inter-milan-cristian-romero-agreement-reached/"},
+  internationalBusinessTimesCurtisJones: {l:"International Business Times", u:"https://www.ibtimes.sg/inter-revive-curtis-jones-pursuit-improved-35m-offer-liverpool-hold-firm-91278"},
+  footballItaliaMoussaDiaby: {l:"Football Italia", u:"https://football-italia.net/moussa-diaby-re-emerges-for-inter/"},
+  footballItaliaMichaelKayode: {l:"Football Italia", u:"https://football-italia.net/category/serie-a/inter/"},
+  footballItaliaJohnStones: {l:"Football Italia", u:"https://football-italia.net/bisseck-stones-will-push-inter-defenders/"},
+  footballItaliaDenzelDumfries: {l:"Football Italia", u:"https://football-italia.net/where-inter-need-to-improve-in-2026-27-double/"},
+  footballItaliaEbenezerAkinsanmiro: {l:"Football Italia", u:"https://football-italia.net/serie-a-transfer-halhal-venezia-frosinone-monz/"}};
 
 const LINKMAP = {
   "Ange-Yoan Bonny": ["footballItalia","club"],
   "Andy Diouf": ["club"],
   "Filip Stanković": ["sempreinter"],
-  "Ivan Provedel": ["footballItalia"]
-};
+  "Ivan Provedel": ["footballItalia"],
+  "Cristian Romero": ["giveMeSportCristianRomero"],
+  "Curtis Jones": ["internationalBusinessTimesCurtisJones"],
+  "Moussa Diaby": ["footballItaliaMoussaDiaby"],
+  "Michael Kayode": ["footballItaliaMichaelKayode"],
+  "Kristjan Asllani": ["footballItaliaMichaelKayode"],
+  "John Stones": ["footballItaliaJohnStones"],
+  "Denzel Dumfries": ["footballItaliaDenzelDumfries"],
+  "Ebenezer Akinsanmiro": ["footballItaliaEbenezerAkinsanmiro"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

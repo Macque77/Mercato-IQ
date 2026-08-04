@@ -41,10 +41,14 @@ const CONFIRMED_OUT = [
   {name:"Gianluca Gaetano", sub:"23 · AM · Italy", club:"Atalanta", pos:"AM", fee:"~€14m (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 9 Jul. Sold to Atalanta at the direct request of new coach Maurizio Sarri."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Daniel Maldini", sub:"Attacking midfielder/forward, Italy, 24", club:"Atalanta", pos:"CAM", report:"Cagliari are pushing to land Maldini on loan from Atalanta as part of a parallel operation potentially linked to the Esposito exit.", src:"Fabrizio Romano", tier:1, fee:"Loan, undisclosed buy option", truth:75, prob:55, light:"g", trend:"flat", note:"Reported as more advanced than the Esposito side of the deal; not yet confirmed as an official swap."},
+  {name:"Unnamed Juventus prospect / loan replacement", sub:"Attacker, replacement plan if Esposito leaves", club:"Juventus", pos:"ST", report:"Cagliari are lining up a loan striker from Juventus as cover in case Sebastiano Esposito is sold before deadline day.", src:"Sportmediaset", tier:2, fee:"Loan (undisclosed)", truth:55, prob:40, light:"y", trend:"flat", note:"Player not yet named publicly; framed as a contingency plan tied to the Esposito situation."}
+];
 
 const OUTGOING = [
-  {name:"Yerry Mina", sub:"31 · CB · Colombia", club:"Fenerbahce (rumoured)", pos:"CB", report:"9 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Turkish interest reported in the experienced centre-back, but nothing beyond exploratory contact confirmed."}
+  {name:"Yerry Mina", sub:"31 · CB · Colombia", club:"Fenerbahce (rumoured)", pos:"CB", report:"9 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Turkish interest reported in the experienced centre-back, but nothing beyond exploratory contact confirmed."},
+  {name:"Sebastiano Esposito", sub:"Striker, Italy, 23", club:"Atalanta", pos:"ST", report:"Relations between Esposito and Cagliari have broken down over a contract dispute; Cagliari are asking around €18m for the striker, with Atalanta the strongest suitor and Napoli also monitoring. Inter retain a resale percentage.", src:"FC Internews", tier:2, fee:"Asking price approx. €18m", truth:75, prob:60, light:"g", trend:"flat", note:"Cagliari reportedly cut Esposito's wages amid the standoff ('metodo Koopmeiners'); situation is fluid with multiple outlets confirming the rift."}
 ];
 
 const RISERS = [
@@ -74,8 +78,10 @@ const WATCHLIST = [
 
 const HUB = {
   footballItalia: {l:"Football Italia · Cagliari", u:"https://football-italia.net/category/teams/cagliari/"},
-  club: {l:"Cagliari Calcio Official", u:"https://cagliaricalcio.com/en/news/"}
-};
+  club: {l:"Cagliari Calcio Official", u:"https://cagliaricalcio.com/en/news/"},
+  gonfialaRetecitingFabrizioRomanoDanielMaldini: {l:"Gonfia la Rete (citing Fabrizio Romano)", u:"https://www.gonfialarete.com/2026/08/04/calciomercato-prove-di-scambio-tra-cagliari-e-atalanta-il-punto-della-situazione/"},
+  sportmediasetviaMSNUnnamedJuventusprospectloanreplacement: {l:"Sportmediaset (via MSN)", u:"https://www.msn.com/it-it/sport/calcio/cagliari-esposito-che-intrigo-la-percentuale-per-linter-il-sostituto-dalla-juve-e-il-napoli-alla-finestra"},
+  fCInternewsviaMSNSebastianoEsposito: {l:"FC Internews (via MSN)", u:"https://www.msn.com/it-it/sport/calcio/il-cagliari-chiede-18-milioni-per-esposito-intanto-arriva-il-sostituto"}};
 
 const LINKMAP = {
   "Harry Winks": ["footballItalia","club"],
@@ -83,8 +89,10 @@ const LINKMAP = {
   "Alessandro Romano": ["footballItalia","club"],
   "Demi Akarakiri": ["footballItalia","club"],
   "Gianluca Gaetano": ["footballItalia"],
-  "Yerry Mina": ["footballItalia"]
-};
+  "Yerry Mina": ["footballItalia"],
+  "Daniel Maldini": ["gonfialaRetecitingFabrizioRomanoDanielMaldini"],
+  "Unnamed Juventus prospect / loan replacement": ["sportmediasetviaMSNUnnamedJuventusprospectloanreplacement"],
+  "Sebastiano Esposito": ["fCInternewsviaMSNSebastianoEsposito"]};
 const WL_LINKMAP = {
   "Yerry Mina": ["footballItalia"]
 };

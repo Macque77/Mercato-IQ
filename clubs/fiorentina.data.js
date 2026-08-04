@@ -38,7 +38,8 @@ const CONFIRMED_IN = [
   {name:"Arthur Atta", sub:"20 · CM · France", to:"permanent from Udinese", fee:"€40m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 11 Jul after medicals on the 9th. The headline signing of the summer - a significant fee for a highly-rated young midfielder."},
   {name:"Radu Dragusin", sub:"24 · CB · Romania", to:"permanent from Tottenham", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreed 5 Jul, medical completed 7 Jul. Centre-back reinforcement from the Premier League."},
   {name:"Viery Fernandes Santos Lopes", sub:"22 · CB · Brazil", to:"permanent from Gremio", fee:"€15m (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Jul. Further defensive investment from Brazil."},
-  {name:"João Mário", sub:"Juventus academy", club:"permanent from Juventus", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed via Di Marzio's live mercato digest, days after medicals were reported as imminent."}
+  {name:"João Mário", sub:"Juventus academy", club:"permanent from Juventus", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed via Di Marzio's live mercato digest, days after medicals were reported as imminent."},
+  {name:"Joao Mario", sub:"Defender, Portugal, 22", club:"Juventus", pos:"CB", fee:"Loan with right of redemption", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal finalized with medicals held on 3 August 2026; reported as a return to Fiorentina for the young defender under coach Paolo Vanoli/Daniele Galloppa's staff."}
 ];
 
 const CONFIRMED_OUT = [
@@ -53,13 +54,14 @@ const INCOMING = [
   {name:"Christ Inao Oulai", sub:"20 · CM · Ivory Coast", club:"Trabzonspor", pos:"CM", report:"4 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:28, light:"o", trend:"flat", note:"Ongoing negotiations reported, not yet at an advanced stage."},
   {name:"Tomas Aranda", sub:"20 · CM · Argentina", club:"Boca Juniors", pos:"CM", report:"5 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:22, light:"o", trend:"flat", note:"Fiorentina's interest is complicated by competition from Arsenal for the same player."},
   {name:"Luca Koleosho", sub:"21 · W · Italy", club:"Burnley", pos:"W", report:"3-7 Jul 2026", src:"Football Italia", tier:3, fee:"€11m plus bonuses (bid made)", truth:45, prob:15, light:"o", trend:"down", note:"Fiorentina made an €11m bid but Paris FC are reported to have outbid them for the winger."},
-  {name:"Franco Mastantuono", sub:"19 · AM · Argentina", club:"Real Madrid", pos:"AM", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:55, prob:35, light:"y", trend:"flat", note:"A loan exit from Madrid is 'progressing' per Romano, with Mastantuono leading the race to join Fiorentina for regular football."}
+  {name:"Franco Mastantuono", sub:"19 · AM · Argentina", club:"Real Madrid", pos:"AM", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:55, prob:35, light:"y", trend:"flat", note:"A loan exit from Madrid is 'progressing' per Romano, with Mastantuono leading the race to join Fiorentina for regular football."},
+  {name:"Jaden Philogene", sub:"Winger, England, 24", club:"Ipswich Town", pos:"RW", report:"Fiorentina are exploring an idea to sign Philogene as attacking reinforcement, listed among the club's live transfer targets.", src:"Calciomercato.com", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Mentioned only briefly as an 'idea' within a wider live-blog roundup; not yet an advanced negotiation."}
 ];
 
 const OUTGOING = [
-  {name:"Pietro Comuzzo", sub:"21 · CB · Italy", club:"Torino", pos:"CB", report:"26 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:52, prob:35, light:"y", trend:"up", note:"Advanced negotiations reported with Torino for the young centre-back."},
   {name:"Moise Kean", sub:"26 · ST · Italy", club:"Como / Fenerbahce (rumoured)", pos:"ST", report:"21-23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Kean's representatives have been shopping him around, but coach Fabio Grosso says he'd be happy if the striker stays and hasn't pushed for a sale."},
-  {name:"Nicolò Fagioli", sub:"25 · CM · Italy", club:"Newcastle United", pos:"CM", report:"2 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Monitoring stage only; no bid reported."}
+  {name:"Nicolò Fagioli", sub:"25 · CM · Italy", club:"Newcastle United", pos:"CM", report:"2 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Monitoring stage only; no bid reported."},
+  {name:"Dodo", sub:"Right-back, Brazil, 27", club:"Inter / Napoli", pos:"RB", report:"Dodo is emerging as a top target for Inter after missing out on Marco Palestra, with Napoli also showing strong interest as they look for a right-back alternative.", src:"Yahoo Sports", tier:2, fee:"Undisclosed valuation", truth:65, prob:45, light:"y", trend:"flat", note:"Both Milan clubs (Inter primarily) and Napoli linked; Fiorentina yet to signal willingness to sell."}
 ];
 
 const RISERS = [
@@ -91,7 +93,12 @@ const HUB = {
   footballItalia: {l:"Football Italia · Fiorentina", u:"https://football-italia.net/category/teams/fiorentina/"},
   violaNation: {l:"Viola Nation", u:"https://www.violanation.com/"},
   fabrizioRomanoviaFootballTransfersFrancoMastantuono: {l:"Fabrizio Romano (via FootballTransfers)", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-transfer-news-chelsea-trevoh-chalobah-barcelona-rodri-real-madrid-franco-mastantuono"},
-  gianlucaDiMarzioJooMrio: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/joao-mario-fiorentina-juventus-trattativa-news-495419"}};
+  gianlucaDiMarzioJooMrio: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/joao-mario-fiorentina-juventus-trattativa-news-495419"},
+  derbyDerbyDerbyFrancoMastantuono: {l:"DerbyDerbyDerby", u:"https://www.derbyderbyderby.it/calciomercato/fiorentina-equasi-fatta-per-mastantuono-dal-real-madrid-arrivera-in-prestito/"},
+  calciomercatocomviaMSNJadenPhilogene: {l:"Calciomercato.com (via MSN)", u:"https://www.msn.com/it-it/sport/calcio/calciomercato-live-adzic-verso-il-cagliari-idea-philogene-per-la-fiorentina-ufficiali-akinsanmiro-al-monza-akpoguma-al-frosinone-e-antonio-silva-al-bournemouth/ar-AA28L228"},
+  yahooSportsDodo: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/dodo-strong-option-inter-palestra-140000000.html"},
+  skySportMoiseKean: {l:"Sky Sport", u:"https://sport.sky.it/calciomercato/2026/08/03/kean-como-fiorentina-calciomercato-news"},
+  fanpageitVitoLamorteJoaoMario: {l:"Fanpage.it (Vito Lamorte)", u:"https://www.fanpage.it/sport/live/calciomercato-3-agosto-2026/"}};
 
 const LINKMAP = {
   "Arthur Atta": ["footballItalia"],
@@ -106,10 +113,13 @@ const LINKMAP = {
   "Tomas Aranda": ["footballItalia"],
   "Luca Koleosho": ["footballItalia"],
   "Pietro Comuzzo": ["footballItalia"],
-  "Moise Kean": ["violaNation"],
+  "Moise Kean": ["violaNation", "skySportMoiseKean"],
   "Nicolò Fagioli": ["footballItalia"],
-  "Franco Mastantuono": ["fabrizioRomanoviaFootballTransfersFrancoMastantuono"],
-  "João Mário": ["gianlucaDiMarzioJooMrio"]};
+  "Franco Mastantuono": ["fabrizioRomanoviaFootballTransfersFrancoMastantuono", "derbyDerbyDerbyFrancoMastantuono"],
+  "João Mário": ["gianlucaDiMarzioJooMrio"],
+  "Jaden Philogene": ["calciomercatocomviaMSNJadenPhilogene"],
+  "Dodo": ["yahooSportsDodo"],
+  "Joao Mario": ["fanpageitVitoLamorteJoaoMario"]};
 const WL_LINKMAP = {
   "Moise Kean": ["violaNation"],
   "Kristian Thorstvedt": ["footballItalia"]

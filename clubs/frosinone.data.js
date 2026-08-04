@@ -37,16 +37,25 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Alessio Zerbin", sub:"25 · W · Italy", to:"permanent from Napoli", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 24 Jul. Attacking winger leaves Napoli, where he had been since 2017, for regular Serie A football."},
   {name:"Luis Hasa", sub:"20 · MF · Albania", to:"permanent from Napoli", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 24 Jul, part of the same double deal with Napoli as Zerbin."},
-  {name:"Kevin Akpoguma", sub:"30 · CB · Nigeria", to:"free transfer from TSG Hoffenheim", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 28 Jul after completing his medical. Experienced Bundesliga defender joins as a free agent."}
+  {name:"Kevin Akpoguma", sub:"30 · CB · Nigeria", to:"free transfer from TSG Hoffenheim", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 28 Jul after completing his medical. Experienced Bundesliga defender joins as a free agent."},
+  {name:"Salvatore Calo", sub:"Midfielder", club:"Cesena", pos:"CM", fee:"Buy-out clause exercised (riscatto)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Frosinone exercised the option to sign Calo permanently, reported 17 June 2026."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Simone Marchizza", sub:"Defender, former captain", club:"Vicenza", pos:"LB", fee:"Free/undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Frosinone captain signed a two-year deal with Vicenza, reported 8 July 2026."},
+  {name:"Julian Dixon", sub:"Forward", club:"Toronto FC", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned to Toronto FC after a brief loan stint at Frosinone, reported 2 July 2026."}
+];
 
 const INCOMING = [
-  {name:"Andreas Hountondji", sub:"25 · ST · Benin", club:"Burnley", pos:"ST", report:"3 Aug 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"up", note:"Previously on loan at St Pauli; reported close to completing a move to newly-promoted Frosinone."}
+  {name:"Andreas Hountondji", sub:"25 · ST · Benin", club:"Burnley", pos:"ST", report:"3 Aug 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"up", note:"Previously on loan at St Pauli; reported close to completing a move to newly-promoted Frosinone."},
+  {name:"Kevin Amey", sub:"Defender", club:"Bologna", pos:"CB", report:"Amey returns to Frosinone on loan after his contract with Bologna was renewed through 2029.", src:"TuttoMercatoWeb", tier:2, fee:"Loan", truth:70, prob:85, light:"g", trend:"flat", note:"Reported as effectively completed in early July 2026."},
+  {name:"Cristian Raimondo", sub:"Striker", club:"Bologna", pos:"ST", report:"Raimondo returns to Frosinone on a fresh loan agreement from Bologna.", src:"TuttoMercatoWeb", tier:2, fee:"Loan", truth:70, prob:85, light:"g", trend:"flat", note:"Reported early July 2026, part of Frosinone's Serie B rebuild under new Clara Vista ownership."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Fares Ghedjemis", sub:"Winger, Algeria, mid-20s", club:"Celtic / Rangers", pos:"RW", report:"Celtic had an opening bid for Ghedjemis rejected; Frosinone have since set their asking price at €15-20m amid a bidding war with Rangers, who also had a €10m offer turned down.", src:"Yahoo Sports", tier:2, fee:"Asking price €15-20m", truth:70, prob:55, light:"g", trend:"flat", note:"Also being monitored by Monaco, Borussia Dortmund, Atalanta and Juventus per TuttoMercatoWeb; his valuation has reportedly doubled amid the Celtic-Rangers interest."},
+  {name:"Christian Ndow", sub:"Forward", club:"Spezia", pos:"ST", report:"Ndow has agreed a two-year deal with Spezia with medicals scheduled.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:65, prob:75, light:"g", trend:"flat", note:"Reported 9 July 2026."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Zerbin and Hasa double-signing from Napoli</b>: both confirmed the same week as Frosinone build their Serie A squad."},
@@ -70,15 +79,23 @@ const WATCHLIST = [
 ];
 
 const HUB = {
-  footballItalia: {l:"Football Italia · Frosinone", u:"https://football-italia.net/category/teams/frosinone/"}
-};
+  footballItalia: {l:"Football Italia · Frosinone", u:"https://football-italia.net/category/teams/frosinone/"},
+  tuttoMercatoWebKevinAmey: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/frosinone"},
+  yahooSportsFaresGhedjemis: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/celtic-opening-ghedjemis-bid-rejected-075000151.html"},
+  calciomercatocomviaMSNKevinAkpoguma: {l:"Calciomercato.com (via MSN)", u:"https://www.msn.com/it-it/sport/calcio/calciomercato-live-adzic-verso-il-cagliari-idea-philogene-per-la-fiorentina-ufficiali-akinsanmiro-al-monza-akpoguma-al-frosinone-e-antonio-silva-al-bournemouth/ar-AA28L228"}};
 
 const LINKMAP = {
   "Alessio Zerbin": ["footballItalia"],
   "Luis Hasa": ["footballItalia"],
-  "Kevin Akpoguma": ["footballItalia"],
-  "Andreas Hountondji": ["footballItalia"]
-};
+  "Kevin Akpoguma": ["footballItalia", "calciomercatocomviaMSNKevinAkpoguma"],
+  "Andreas Hountondji": ["footballItalia"],
+  "Kevin Amey": ["tuttoMercatoWebKevinAmey"],
+  "Cristian Raimondo": ["tuttoMercatoWebKevinAmey"],
+  "Fares Ghedjemis": ["yahooSportsFaresGhedjemis"],
+  "Christian Ndow": ["tuttoMercatoWebKevinAmey"],
+  "Salvatore Calo": ["tuttoMercatoWebKevinAmey"],
+  "Simone Marchizza": ["tuttoMercatoWebKevinAmey"],
+  "Julian Dixon": ["tuttoMercatoWebKevinAmey"]};
 const WL_LINKMAP = {
   "Andreas Hountondji": ["footballItalia"]
 };
