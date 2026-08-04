@@ -87,6 +87,6 @@ const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1, "ba
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:13:46.719469Z",
+  updated: "2026-08-04T18:14:55.973372Z",
   label: "League aggregation"
 };

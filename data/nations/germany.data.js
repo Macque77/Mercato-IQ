@@ -48,7 +48,7 @@ const TOP_STORIES = [  {
     name: "Michael Olise",prob: 15, truth: 45, bullshit: false,
     club_origin: "bayern-munich", club_display_name: "Bayern Munich", direction: "out",
     from: "Bayern Munich", to: "Real Madrid",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "~€150m mooted", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
@@ -62,7 +62,7 @@ const TOP_STORIES = [  {
     name: "Raphael Onyedika",prob: 70, truth: 78, bullshit: false,
     club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
     from: "Club Brugge", to: "Eintracht Frankfurt",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "~€9m + bonuses", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
@@ -76,7 +76,7 @@ const TOP_STORIES = [  {
     name: "Stefan Posch",prob: 55, truth: 68, bullshit: false,
     club_origin: "mainz-05", club_display_name: "1. FSV Mainz 05", direction: "in",
     from: "Como 1907", to: "1. FSV Mainz 05",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Fee TBC (Como paid ~€5.5m for him in Jan)", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
@@ -97,7 +97,7 @@ const TOP_STORIES = [  {
     name: "Mats Wieffer",prob: 45, truth: 62, bullshit: false,
     club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
     from: "AZ Alkmaar", to: "Borussia Dortmund",
-    tier: 2, coverage: 1, coverage_trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€25m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 34},
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T18:13:46.697583Z",
+  updated: "2026-08-04T18:14:55.956017Z",
   label: "Nation aggregation"
 };
