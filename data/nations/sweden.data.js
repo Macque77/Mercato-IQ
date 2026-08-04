@@ -24,6 +24,6 @@ const LEAGUES_LIST = [{"slug": "allsvenskan", "name": "Allsvenskan", "count": 1}
 
 const REPORT_META = {
   asof: "04 Aug 2026",
-  updated: "2026-08-04T16:48:29.198530Z",
+  updated: "2026-08-04T16:53:25.566080Z",
   label: "Nation aggregation"
 };
