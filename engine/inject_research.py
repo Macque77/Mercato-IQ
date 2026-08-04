@@ -80,9 +80,12 @@ def slugify_key(label, name):
     if not base:
         return 'src'
     key = base[0].lower() + base[1:]
-    # BUGFIX 4: a JS object key used unquoted (as HUB/LINKMAP keys are) must not
-    # start with a digit -- e.g. label "67 Hail Hail" -> "67HailHail..." is an
-    # invalid identifier and breaks node --check. Prefix with 's' in that case.
+    # BUGFIX 4 (2026-08-04): a JS object key used unquoted (as HUB/LINKMAP keys
+    # are) must not start with a digit -- e.g. label "67 Hail Hail" ->
+    # "67HailHail..." is an invalid identifier and breaks node --check.
+    # Prefix with 's' in that case. Caught live during the top-5-league
+    # refresh when an Osasuna rumour sourced to "67 Hail Hail" broke the
+    # syntax gate.
     if key[0].isdigit():
         key = 's' + key
     return key
