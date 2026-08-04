@@ -852,16 +852,22 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Dani Requena", sub:"24 · CM · Spain", to:"loan (with ~€1m purchase option) from Villarreal", fee:"Loan + option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Cross-verified via Villarreal's own summer transfer record as an official exit to Levante."}
+  {name:"Dani Requena", sub:"24 · CM · Spain", to:"loan (with ~€1m purchase option) from Villarreal", fee:"Loan + option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Cross-verified via Villarreal's own summer transfer record as an official exit to Levante."},
+  {name:"Aïssa Mandi", sub:"Centre-back", club:"Lille", pos:"DF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Experienced ex-Betis defender returns to LaLiga on a two-year deal to lead Luis Castro's backline."},
+  {name:"Yanis Musuayi", sub:"Forward", club:"Club Brugge", pos:"FW", fee:"€2.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed through 2030 as the direct replacement lined up immediately after Espí's departure to Real Madrid."}
 ];
 
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Carlos Espí", sub:"Forward", club:"Real Madrid", pos:"FW", fee:"€25m (release clause)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Mourinho personally requested the deal for the breakout striker, whose rapid rise forced a quick release-clause transfer."}
+];
 
 const INCOMING = [
   {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:15, light:"o", trend:"flat", note:"Levante credited with background interest alongside Elche and Mallorca; Mallorca appear the most advanced of the three suitors."}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Karl Etta Eyong", sub:"FW, six Europe's-elite suitors", club:"Barcelona", pos:"FW", report:"Barcelona are described as most keen, with Real Madrid, Man City, Man United, Arsenal and Chelsea all credited with interest in the young Cameroonian less than a year after he joined from Villarreal.", src:"Mundo Deportivo", tier:2, fee:"€30m (Spanish clubs) / €40m (foreign clubs) release clause", truth:55, prob:20, light:"o", trend:"flat", note:"Eyong reportedly hopes to push for a January move while staying on loan at Levante for now, since financial fair-play rules blocked a summer Barcelona deal."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Dani Requena</b>: midfield reinforcement arrives on loan from Villarreal with an option to make it permanent."}
@@ -883,13 +889,19 @@ const WATCHLIST = [
 
 const HUB = {
   "futbolfantasy-villarreal": {l:"FútbolFantasy - Villarreal summer transfer tracker (Requena exit corroborated)", u:"https://www.futbolfantasy.com/laliga/equipos/villarreal/mercado-fichajes/verano-2026"},
-  "futbolfantasy-elche": {l:"FútbolFantasy - Elche transfer tracker (Tenas three-way interest)", u:"https://www.futbolfantasy.com/laliga/equipos/elche/mercado-fichajes/verano-2026"}
-};
+  "futbolfantasy-elche": {l:"FútbolFantasy - Elche transfer tracker (Tenas three-way interest)", u:"https://www.futbolfantasy.com/laliga/equipos/elche/mercado-fichajes/verano-2026"},
+  mundoDeportivoviaGoalcomKarlEttaEyong: {l:"Mundo Deportivo (via Goal.com)", u:"https://www.goal.com/en-us/lists/high-flying-striker-pushing-for-january-move-just-months-after-joining-la-liga-side-with-man-city-man-utd-cheslea-arsenal-and-barcelona-interest/blta6c5c5d6a2b896bd"},
+  elDesmarqueAssaMandi: {l:"ElDesmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260716/aissa-mandi-vuelve-laliga-fichaje-oficial_18_019730258.html"},
+  elGolDigitalYanisMusuayi: {l:"El Gol Digital", u:"https://www.elgoldigital.com/futbol/levante-ud/musuayi-delantero-brujas-fichaje"},
+  defensaCentralCarlosEsp: {l:"Defensa Central", u:"https://defensacentral.com/actualidad/arancha-rodriguez-periodista-mourinho-es-ha-pedido-expresamente-fichaje-carlos-espi-madrid-no-va-activar-clausula-por-tema-iva-pero-levante-si-va-recibir-25-millones_341503_102.html"}};
 
 const LINKMAP = {
   "Dani Requena": ["futbolfantasy-villarreal"],
-  "Arnau Tenas": ["futbolfantasy-elche"]
-};
+  "Arnau Tenas": ["futbolfantasy-elche"],
+  "Karl Etta Eyong": ["mundoDeportivoviaGoalcomKarlEttaEyong"],
+  "Aïssa Mandi": ["elDesmarqueAssaMandi"],
+  "Yanis Musuayi": ["elGolDigitalYanisMusuayi"],
+  "Carlos Espí": ["defensaCentralCarlosEsp"]};
 const WL_LINKMAP = {
   "Arnau Tenas": ["futbolfantasy-elche"]
 };

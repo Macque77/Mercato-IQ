@@ -30,15 +30,21 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Valencia CF"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Ryunosuke Sato", sub:"Forward, Japan international", club:"FC Tokyo", pos:"FW", fee:"Around €4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The 19-year-old Japan international's move reportedly broke the transfer-fee record previously held by countryman Take Kubo, and he has signed through 2031."}
+];
 
 const CONFIRMED_OUT = [
   {name:"Baptiste Santamaría", sub:"30 · CM · France", club:"PAOK", pos:"CM", fee:"Free (contract terminated)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 13 July 2026 - Santamaría leaves for the Greek champions on a free transfer."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Kingsley Ehizibue", sub:"Free-agent right-back, emergency fix", club:"Udinese (free agent)", pos:"DF", report:"After missing out on Thomas Meunier, Andrés García and Daijiro Chirino, Valencia have turned to the free-agent Dutch-Nigerian right-back as a low-cost solution to a position in crisis.", src:"El Desmarque (Jorge Ruiz)", tier:2, fee:"Free transfer", truth:55, prob:45, light:"y", trend:"flat", note:"Valencia's right-back options collapsed one by one through July, leaving Ehizibue as essentially the last realistic name on the list with the window closing fast and money short."}
+];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Hugo Duro", sub:"Striker made available", club:"Unspecified suitors", pos:"FW", report:"Valencia have set a €12m price tag on Duro to help balance the books, though the club's own reporting suggests few clubs have been willing to meet that valuation.", src:"Fichajes.net / Deporte Valenciano", tier:3, fee:"€12m (asking price)", truth:45, prob:15, light:"o", trend:"flat", note:"This reads more like a financial necessity being floated by the club than a live approach from any specific suitor, and Duro is not believed to be pushing to leave himself."}
+];
 
 const RISERS = [];
 
@@ -57,12 +63,16 @@ const POSITIONS = [
 const WATCHLIST = [];
 
 const HUB = {
-  "fichajes-valencia": {l:"Fichajes.com - Valencia CF altas y bajas 2026/27", u:"https://www.fichajes.com/equipo/valencia-cf/altas-bajas/"}
-};
+  "fichajes-valencia": {l:"Fichajes.com - Valencia CF altas y bajas 2026/27", u:"https://www.fichajes.com/equipo/valencia-cf/altas-bajas/"},
+  elDesmarqueKingsleyEhizibue: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260714/primera-oferta-chirino-rechazada-negociacion_18_019716572.html"},
+  fichajesnetHugoDuro: {l:"Fichajes.net", u:"https://www.fichajes.net/noticias/hugo-duro-rampa-salida-mestalla-20260603.html"},
+  valenciaCFofficialRyunosukeSato: {l:"Valencia CF (official)", u:"https://www.valenciacf.com/official-statement-ryunosuke-sato"}};
 
 const LINKMAP = {
-  "Baptiste Santamaría": ["fichajes-valencia"]
-};
+  "Baptiste Santamaría": ["fichajes-valencia"],
+  "Kingsley Ehizibue": ["elDesmarqueKingsleyEhizibue"],
+  "Hugo Duro": ["fichajesnetHugoDuro"],
+  "Ryunosuke Sato": ["valenciaCFofficialRyunosukeSato"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

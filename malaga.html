@@ -852,12 +852,17 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"José Salinas", sub:"~26 · LB · Spain", to:"loan from RCD Espanyol", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 27 July 2026 as Málaga's fourth summer reinforcement. Salinas came through Elche's academy, helped them win promotion in 2024/25, then moved to Espanyol; he now joins Málaga's own promotion push."}
+  {name:"José Salinas", sub:"~26 · LB · Spain", to:"loan from RCD Espanyol", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 27 July 2026 as Málaga's fourth summer reinforcement. Salinas came through Elche's academy, helped them win promotion in 2024/25, then moved to Espanyol; he now joins Málaga's own promotion push."},
+  {name:"Fernando Calero", sub:"Centre-back", club:"Espanyol", pos:"DF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Málaga's first signing since returning to LaLiga after eight years away, brought in on a one-year deal with an option."},
+  {name:"Juan Cruz", sub:"Winger (loan)", club:"Leganés", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Brought in on loan to add pace and one-on-one threat out wide for the promoted side."}
 ];
 
 const CONFIRMED_OUT = [];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Raúl Asencio", sub:"CB, Real Madrid outcast under Mourinho", club:"Real Madrid", pos:"DF", report:"Newly-promoted Málaga have emerged as suitors for the young centre-back Madrid are trying to move on, alongside RB Leipzig, as agent Jorge Mendes shops him around.", src:"El Gol Digital", tier:3, fee:"~€20m valuation", truth:50, prob:25, light:"o", trend:"flat", note:"Málaga's interest looks genuine but faces stiff competition from a Bundesliga side better placed financially to match Madrid's valuation."},
+  {name:"Diego Rico", sub:"LB, weighing La Liga return", club:"Getafe", pos:"DF", report:"Radio Marca reports Rico and his camp view a move to La Rosaleda favourably and are waiting on a formal Málaga offer, with Espanyol and Alavés also circling.", src:"Radio Marca Málaga", tier:2, fee:"Free transfer", truth:60, prob:40, light:"y", trend:"flat", note:"Reported as the player's stated preference among three suitors, which gives Málaga a real edge if they move quickly."}
+];
 
 const OUTGOING = [];
 
@@ -879,12 +884,18 @@ const WATCHLIST = [];
 
 const HUB = {
   "jornadaperfecta-salinas": {l:"Jornada Perfecta - José Salinas signs for Málaga CF", u:"https://www.jornadaperfecta.com/blog/jose-salinas-malaga-anuncio-fichaje-26/"},
-  "eldesmarque-malaga-market": {l:"El Desmarque - Málaga's summer transfer market plans under Loren Juarros", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260624/malaga-perfila-fichajes-lineas-rojas-loren-juarros-mercado_18_019538692.html"}
-};
+  "eldesmarque-malaga-market": {l:"El Desmarque - Málaga's summer transfer market plans under Loren Juarros", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260624/malaga-perfila-fichajes-lineas-rojas-loren-juarros-mercado_18_019538692.html"},
+  elGolDigitalRalAsencio: {l:"El Gol Digital", u:"https://www.elgoldigital.com/futbol/malaga-cf/asencio-malaga-salida-real-madrid-2026"},
+  radioMarcaMlagaDiegoRico: {l:"Radio Marca Málaga", u:"https://www.merchanendirecto.es/diego-rico-atrae-malaga-cf-y-espera-oferta/"},
+  radioMarcaMlagaFernandoCalero: {l:"Radio Marca Málaga", u:"https://www.merchanendirecto.es/oficial-fernando-calero-malaga-2026-2027/"},
+  ascensoDirectoJuanCruz: {l:"Ascenso Directo", u:"https://www.ascensodirecto.es/articulo/malaga-cf/malaga-cf-perfila-plantilla-asi-mercado-fichajes/20260731114118001623.html"}};
 
 const LINKMAP = {
-  "José Salinas": ["jornadaperfecta-salinas", "eldesmarque-malaga-market"]
-};
+  "José Salinas": ["jornadaperfecta-salinas", "eldesmarque-malaga-market", "ascensoDirectoJuanCruz"],
+  "Raúl Asencio": ["elGolDigitalRalAsencio"],
+  "Diego Rico": ["radioMarcaMlagaDiegoRico"],
+  "Fernando Calero": ["radioMarcaMlagaFernandoCalero"],
+  "Juan Cruz": ["ascensoDirectoJuanCruz"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

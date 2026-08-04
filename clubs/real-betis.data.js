@@ -31,14 +31,20 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Fran García", sub:"26 · LB · Spain", to:"permanent from Real Madrid", fee:"~£3.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Made surplus at the Bernabéu by Marc Cucurella's arrival; Betis land a title-winning left-back to strengthen their Champions League squad."}
+  {name:"Fran García", sub:"26 · LB · Spain", to:"permanent from Real Madrid", fee:"~£3.4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Made surplus at the Bernabéu by Marc Cucurella's arrival; Betis land a title-winning left-back to strengthen their Champions League squad."},
+  {name:"Dani Ceballos", sub:"Midfielder, boyhood-club return", club:"Real Madrid", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ceballos agreed to terminate the final year of his Real Madrid contract to return to Betis for free, accepting a significant pay cut for the homecoming."},
+  {name:"Diego Conde", sub:"Goalkeeper, on loan", club:"Villarreal", pos:"GK", fee:"Loan with option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Conde arrives on a season-long loan with a purchase option as Pellegrini's plan to replace departing veteran Pau López."}
 ];
 
 const CONFIRMED_OUT = [];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Fábio Silva", sub:"Forward, exit push from Dortmund", club:"Borussia Dortmund", pos:"FW", report:"Betis named as one of five La Liga clubs (with Villarreal, Celta, Real Sociedad, Espanyol) monitoring Silva as he pushes to leave Dortmund and return to Spain.", src:"Fichajes.net (via Rudy Galletti)", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Silva is reportedly unsettled in Germany and keen on a return to Spanish football, with Betis just one of several suitors circling and nothing concrete advanced yet."}
+];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Ez Abde", sub:"Winger wanted by Roma and Newcastle", club:"AS Roma", pos:"FW", report:"Roma have bid around €35m plus add-ons and Newcastle have also shown interest, but Betis are refusing to drop below Abde's €60m release clause.", src:"Fichajes.net", tier:2, fee:"€60m release clause (Betis will not negotiate below it)", truth:60, prob:20, light:"o", trend:"flat", note:"Betis sporting director Manu Fajardo is holding firm on the full release clause, and Newcastle's lack of Champions League football is also working against a deal, so a sale looks unlikely at current prices."}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Fran García</b>: title-winning Real Madrid left-back arrives permanently, a coup for a first Champions League campaign in years."}
@@ -60,12 +66,19 @@ const WATCHLIST = [];
 
 const HUB = {
   "managingmadrid-frangarcia": {l:"Managing Madrid - Fran García/Betis fee agreement reporting", u:"https://www.managingmadrid.com/109880/betis-real-madrid-fran-garcia-2026-news"},
-  "teamtalk-rmdone": {l:"TeamTalk - Real Madrid completed transfers summer 2026 (Fran García listed)", u:"https://www.teamtalk.com/news/every-completed-real-madrid-transfer-summer-2026-signings-sales-loans"}
-};
+  "teamtalk-rmdone": {l:"TeamTalk - Real Madrid completed transfers summer 2026 (Fran García listed)", u:"https://www.teamtalk.com/news/every-completed-real-madrid-transfer-summer-2026-signings-sales-loans"},
+  fichajesnetFbioSilva: {l:"Fichajes.net", u:"https://www.fichajes.net/noticias/batalla-3-bandas-espana-fabio-silva-20260803.html"},
+  fichajesnetEzAbde: {l:"Fichajes.net", u:"https://www.fichajes.net/noticias/roma-no-llega-pide-betis-abde-20260729.html"},
+  realMadridofficialFranGarca: {l:"Real Madrid (official)", u:"https://www.realmadrid.com/en-US/news/club/announcements/comunicado-oficial-fran-garcia-08-07-2026"},
+  mundoBetisDaniCeballos: {l:"MundoBetis", u:"https://mundobetis.com/2026/06/26/oficial-dani-ceballos-deja-el-real-madrid-para-volver-al-real-betis/"},
+  getSpanishFootballNewsDiegoConde: {l:"Get Spanish Football News", u:"https://getfootballnewsspain.com/official-real-betis-sign-villarreal-star/"}};
 
 const LINKMAP = {
-  "Fran García": ["managingmadrid-frangarcia", "teamtalk-rmdone"]
-};
+  "Fran García": ["managingmadrid-frangarcia", "teamtalk-rmdone", "realMadridofficialFranGarca"],
+  "Fábio Silva": ["fichajesnetFbioSilva"],
+  "Ez Abde": ["fichajesnetEzAbde"],
+  "Dani Ceballos": ["mundoBetisDaniCeballos"],
+  "Diego Conde": ["getSpanishFootballNewsDiegoConde"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

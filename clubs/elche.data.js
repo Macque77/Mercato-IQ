@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Gonzalo Villar", sub:"25 · CM · Spain", to:"permanent from Dinamo Zagreb", fee:"~€1m + €0.5m variables", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 May 2026."},
   {name:"Buba Sangaré", sub:"23 · LB · Mali", to:"permanent, option exercised with Roma", fee:"~€4.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Purchase option triggered 3 June 2026 after a loan spell."},
-  {name:"Víctor Chust", sub:"24 · CB · Spain", to:"permanent from Cádiz", fee:"~€1.6m (Real Madrid retain 50% economic rights)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 17 June 2026, converting a loan-parent situation into a permanent Elche deal."}
+  {name:"Víctor Chust", sub:"24 · CB · Spain", to:"permanent from Cádiz", fee:"~€1.6m (Real Madrid retain 50% economic rights)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 17 June 2026, converting a loan-parent situation into a permanent Elche deal."},
+  {name:"Fer Niño", sub:"Forward", club:"Burgos CF", pos:"FW", fee:"~€2.6m fixed plus variables", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed to fill an otherwise empty forward line after Álvaro Rodríguez's exit, pushing Elche's summer outlay above €10m."}
 ];
 
 const CONFIRMED_OUT = [
@@ -43,7 +44,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"flat", note:"Elche credited with interest alongside Levante and Mallorca; Tenas is also strongly linked with a Mallorca loan, making Elche's chances secondary at best."}
+  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"flat", note:"Elche credited with interest alongside Levante and Mallorca; Tenas is also strongly linked with a Mallorca loan, making Elche's chances secondary at best."},
+  {name:"Deiver Machado", sub:"LB, free agent after Nantes release", club:"RC Deportivo", pos:"DF", report:"Elche were tipped to move fastest for the released Nantes left-back, though Deportivo have since joined the race for his signature.", src:"TeleElx", tier:3, fee:"Free transfer", truth:50, prob:40, light:"y", trend:"flat", note:"A free-agent depth signing that turned into a genuine two-club race once Deportivo entered late."}
 ];
 
 const OUTGOING = [];
@@ -71,18 +73,22 @@ const WATCHLIST = [
 const HUB = {
   "futbolfantasy-elche": {l:"FútbolFantasy - Elche CF transfer tracker", u:"https://www.futbolfantasy.com/laliga/equipos/elche/mercado-fichajes/verano-2026"},
   "yahoo-sarabia-exit": {l:"Yahoo Sports - Eder Sarabia announces Elche exit", u:"https://sports.yahoo.com/articles/official-eder-sarabia-announces-elche-201000423.html"},
-  "yahoo-anselmi": {l:"Yahoo Sports - Elche name Martín Anselmi as new manager", u:"https://sports.yahoo.com/articles/official-elche-name-manager-172000288.html"}
-};
+  "yahoo-anselmi": {l:"Yahoo Sports - Elche name Martín Anselmi as new manager", u:"https://sports.yahoo.com/articles/official-elche-name-manager-172000288.html"},
+  teleElxDeiverMachado: {l:"TeleElx", u:"https://teleelx.es/2026/07/22/deiver-machado-apunta-a-ser-el-primer-fichaje-del-elche-c-f/"},
+  dorsal16BubaSangar: {l:"Dorsal16", u:"https://www.dorsal16.com/se-cierra-el-primer-movimiento-en-el-mercado-de-fichajes-del-elche-45-kilos-van-directos-a-la-as-roma/"},
+  alicantePlazaFerNio: {l:"Alicante Plaza", u:"https://alicanteplaza.es/alicanteplaza/deportesalicante/otro-fernando-nino-para-el-elche-cf-que-eleva-por-encima-de-los-10-millones-de-euros-su-inversion-en-este-mercado-de-fichajes"},
+  elEspaollvaroRodrguez: {l:"El Español", u:"https://www.elespanol.com/alicante/deporte/elche-cf/20260714/elche-traspasa-alvaro-rodriguez-bournemouth-operacion-millones/1003744321409_0.html"}};
 
 const LINKMAP = {
   "Gonzalo Villar": ["futbolfantasy-elche"],
-  "Buba Sangaré": ["futbolfantasy-elche"],
+  "Buba Sangaré": ["futbolfantasy-elche", "dorsal16BubaSangar"],
   "Víctor Chust": ["futbolfantasy-elche"],
-  "Álvaro Rodríguez": ["futbolfantasy-elche"],
+  "Álvaro Rodríguez": ["futbolfantasy-elche", "elEspaollvaroRodrguez"],
   "André Silva": ["futbolfantasy-elche"],
   "Éder Sarabia": ["yahoo-sarabia-exit"],
-  "Arnau Tenas": ["futbolfantasy-elche"]
-};
+  "Arnau Tenas": ["futbolfantasy-elche"],
+  "Deiver Machado": ["teleElxDeiverMachado"],
+  "Fer Niño": ["alicantePlazaFerNio"]};
 const WL_LINKMAP = {
   "Arnau Tenas": ["futbolfantasy-elche"]
 };
