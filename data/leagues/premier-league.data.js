@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 9, "badge": 
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T06:14:51.034236Z",
+  updated: "2026-08-05T09:57:31.623895Z",
   label: "League aggregation"
 };

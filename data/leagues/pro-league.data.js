@@ -108,6 +108,6 @@ const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T06:14:51.034743Z",
+  updated: "2026-08-05T09:57:31.625014Z",
   label: "League aggregation"
 };

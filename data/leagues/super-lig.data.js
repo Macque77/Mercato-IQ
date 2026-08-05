@@ -38,6 +38,6 @@ const CLUBS_LIST = [{"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count"
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T06:14:51.035984Z",
+  updated: "2026-08-05T09:57:31.627741Z",
   label: "League aggregation"
 };
