@@ -80,14 +80,41 @@ SCHEMA_DOC = """
 - `fee` free-text ("£75m", "Free", "Loan", "Undisclosed"); for confirmed items set `free`: true/false.
 """
 
+def _load_source_roster():
+    """Compact per-nation reporter/outlet roster from engine/sources.json, so the
+    research model consults the right trusted names for each club's country. Runs
+    at import; fail-safe to '' if the file is missing/broken."""
+    try:
+        data = json.load(open(os.path.join(REPO, 'engine', 'sources.json'), encoding='utf-8'))
+    except (OSError, json.JSONDecodeError):
+        return '(source roster unavailable)'
+    lines = []
+    for nation, s in data.items():
+        bits = []
+        if s.get('tier1'):
+            bits.append('reporters: ' + '; '.join(s['tier1']))
+        if s.get('tier2_urls'):
+            bits.append('outlets: ' + ', '.join(s['tier2_urls'][:4]))
+        if bits:
+            lines.append(f"- {nation}: " + ' | '.join(bits))
+    return '\n'.join(lines)
+
+
+SOURCE_ROSTER = _load_source_roster()
+
+
 SYSTEM_PROMPT = f"""You are the research step of Mercato IQ, a football transfer-news site. \
 Your job: for the specific clubs named in the user's message, use web search to find \
 CURRENT, well-sourced transfer news (incoming/outgoing rumours and confirmed deals) and \
 return it as strict JSON.
 
 Sourcing rules (house policy):
-- Prefer tier-1 reporters: Fabrizio Romano, David Ornstein, Gianluca Di Marzio, Nicolo Schira, \
-Gerard Romero, Matteo Moretto, Christian Falk, and reputable league outlets (Sky Sports, BBC, PA, L'Equipe, Kicker, Gazzetta).
+- Prefer tier-1 reporters and reputable league outlets, matched to the club's country. Trusted roster by nation:
+{SOURCE_ROSTER}
+- Also consult the biggest global names regardless of nation: Fabrizio Romano, David Ornstein.
+- Search reporters BY NAME (e.g. "Fabrizio Romano <player>", "David Ornstein <club>", "Di Marzio <club>"): this \
+surfaces their latest reporting, including breaking news first posted on X/Twitter that outlets then relay -- \
+X itself is often not directly searchable, so name-based search is how you catch those stories.
 - NEVER link transferfeed.com or an aggregator scrape as the source. Find and link the ORIGINAL report.
 - Rate `truth` (is the story true) and `prob` (will it happen) independently, 0-100. Confirmed deals are not rumours.
 - Editorial style: British English, no em dashes, journalistic and concise, add a skeptical `note` on weak sourcing.
