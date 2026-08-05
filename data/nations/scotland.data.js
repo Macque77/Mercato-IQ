@@ -6,7 +6,7 @@
 const NATION = {
   name: "Scotland",
   flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-  stories_count: 15
+  stories_count: 14
 };
 
 const TOP_STORIES = [  {
@@ -22,13 +22,6 @@ const TOP_STORIES = [  {
     from: "Torino", to: "Celtic",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "~£12m", updated: "2026-08-03T18:00:00Z", league: "Premiership"
-  },
-  {
-    name: "Alistair Johnston",prob: 60, truth: 65, bullshit: false,
-    club_origin: "celtic", club_display_name: "Celtic", direction: "out",
-    from: "Celtic", to: "Everton / Fulham",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
     name: "Jahnoah Markelo",prob: 55, truth: 65, bullshit: false,
@@ -94,16 +87,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
-    name: "Bowie",prob: 20, truth: 30, bullshit: false,
-    club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
-    from: "Dundee United", to: "Undisclosed",
+    name: "Unnamed Kilmarnock player",prob: 20, truth: 30, bullshit: false,
+    club_origin: "kilmarnock", club_display_name: "Kilmarnock", direction: "out",
+    from: "Kilmarnock", to: "Rangers",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
-    name: "Unnamed Kilmarnock player",prob: 20, truth: 30, bullshit: false,
-    club_origin: "kilmarnock", club_display_name: "Kilmarnock", direction: "out",
-    from: "Kilmarnock", to: "Rangers",
+    name: "Bowie",prob: 20, truth: 30, bullshit: false,
+    club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
+    from: "Dundee United", to: "Undisclosed",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
@@ -116,12 +109,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Premiership": 15};
+const BY_LEAGUE = {"Premiership": 14};
 
-const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 15}];
+const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 14}];
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T12:01:02.157308Z",
+  updated: "2026-08-05T12:02:31.621284Z",
   label: "Nation aggregation"
 };

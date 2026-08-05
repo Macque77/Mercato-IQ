@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 179
+  stories_count: 180
 };
 
 const TOP_STORIES = [  {
@@ -20,7 +20,7 @@ const TOP_STORIES = [  {
     name: "Bruno Guimarães",prob: 88, truth: 92, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Newcastle United", to: "Arsenal",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£75m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
@@ -73,13 +73,6 @@ const TOP_STORIES = [  {
     value: "Loan (poss. obligation to buy)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
-    name: "Rodri",prob: 40, truth: 65, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
-    from: "Manchester City", to: "Real Madrid",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Opening bid €50-60m (City value ~€80m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
     name: "Mykhailo Mudryk",prob: 40, truth: 65, bullshit: false,
     club_origin: "chelsea", club_display_name: "Chelsea", direction: "out",
     from: "Chelsea", to: "Coventry City / Strasbourg (multiple suitors)",
@@ -108,6 +101,13 @@ const TOP_STORIES = [  {
     value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
+    name: "Noah Atubolu",prob: 30, truth: 80, bullshit: false,
+    club_origin: "brighton", club_display_name: "Brighton", direction: "in",
+    from: "SC Freiburg", to: "Brighton",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
     name: "Arthur Theate",prob: 30, truth: 55, bullshit: false,
     club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
     from: "Eintracht Frankfurt", to: "Bournemouth",
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Championship": 19, "Premier League": 106, "League One": 54, "League Two": 0};
+const BY_LEAGUE = {"Championship": 19, "Premier League": 107, "League One": 54, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 106}, {"slug": "league-one", "name": "League One", "count": 54}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 107}, {"slug": "league-one", "name": "League One", "count": 54}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T12:01:02.150288Z",
+  updated: "2026-08-05T12:02:31.619657Z",
   label: "Nation aggregation"
 };
