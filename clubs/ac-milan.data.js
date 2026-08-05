@@ -53,7 +53,7 @@ const INCOMING = [
 const OUTGOING = [
   {name:"Rafael Leão", sub:"27 · LW · Portugal", club:"Multiple (unspecified)", pos:"LW", report:"1 Aug 2026", src:"Football Italia", tier:2, fee:"€60-80m (expected)", truth:55, prob:32, light:"y", trend:"up", note:"Milan are expected to sell Leão and other first-team fringe pieces to help fund the Karetsas/Alajbegović/Uzun pursuit and further defensive reinforcement.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
   {name:"Yunus Musah", sub:"23 · CM · USA", club:"Unnamed Premier League clubs", pos:"CM", report:"18 Jul 2026", src:"Nicolo Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Schira: early-stage interest only from two unnamed Premier League clubs — could leave Milan this summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Rafael Leao", sub:"Winger, POR, 27", club:"Fenerbahce", pos:"LW", report:"Fenerbahce sent a delegation to Italy for direct talks with Milan and the player over a big-money move, offering wages reported around €10m; Galatasaray also circling, though Leao has been non-committal on a Turkish switch.", src:"Gianluca Di Marzio / Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Milan reportedly value Leao at around €60m; player's own willingness to move to Turkey remains the key uncertainty, with agent Jorge Mendes involved.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Rafael Leao", sub:"27 · Portugal · W", club:"Fenerbahce", pos:"LW", report:"Fenerbahce are preparing fresh talks and a lucrative salary package as they push to sign the winger, with Milan said to be holding out for a permanent fee rather than sanctioning a loan. Ruben Amorim has publicly played down the speculation and insisted the squad remains his focus.", src:"Goal", tier:3, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Sceptical read: we could not stand this up with a tier-one source such as Romano, Di Marzio or Schira, and the reporting traces back to Turkish speculation rather than an original tier-one report. Milan's asking price has not been credibly established. Handle as talk, not a deal.", lastSeen:"2026-08-05T13:15:33Z", baseProb:30},
   {name:"Youssouf Fofana", sub:"Midfielder, FRA, 26", club:"Premier League (unnamed clubs)", pos:"CDM", report:"Two unnamed Premier League clubs have made enquiries for Fofana amid a congested Milan midfield.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"No club names attached yet; Milan's stance on a sale undetermined.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Santiago Gimenez", sub:"Striker, MEX, 25", club:"FC Porto", pos:"ST", report:"Porto have opened direct negotiations with Milan for the Mexican striker, with an initial valuation of around €20m mentioned.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Gimenez has fallen behind Gonçalo Ramos in the pecking order following Milan's club-record signing, fuelling exit talk.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
@@ -86,7 +86,8 @@ const HUB = {
   footballItaliaMatheusNwaneri: {l:"Football Italia", u:"https://www.football-italia.net/"},
   calciomercatocomBrahimDiaz: {l:"Calciomercato.com", u:"https://www.calciomercato.com/squadra/ac-milan/9dntj5dioj5ex52yrgwzxrq9l"},
   tuttoMercatoWebYoussoufFofana: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/milan"},
-  yardbarkerGoncaloRamos: {l:"Yardbarker", u:"https://www.yardbarker.com/"}};
+  yardbarkerGoncaloRamos: {l:"Yardbarker", u:"https://www.yardbarker.com/"},
+  goalcomRafaelLeao: {l:"Goal.com", u:"https://www.goal.com/en-us/team/ac-milan/news/9dntj5dioj5ex52yrgwzxrq9l"}};
 
 const LINKMAP = {
   "Jadon Sancho": ["club"],
@@ -95,7 +96,7 @@ const LINKMAP = {
   "Yunus Musah": ["nicoloSchiraviaNapoliMagazineYunusMusah"],
   "Matheus Nwaneri": ["footballItaliaMatheusNwaneri"],
   "Brahim Diaz": ["calciomercatocomBrahimDiaz"],
-  "Rafael Leao": ["footballItaliaMatheusNwaneri"],
+  "Rafael Leao": ["footballItaliaMatheusNwaneri", "goalcomRafaelLeao"],
   "Youssouf Fofana": ["tuttoMercatoWebYoussoufFofana"],
   "Santiago Gimenez": ["footballItaliaMatheusNwaneri"],
   "Goncalo Ramos": ["yardbarkerGoncaloRamos"]};

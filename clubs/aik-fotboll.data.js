@@ -34,7 +34,9 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · AIK Fotboll"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Diogo Tomas", sub:"29 · Finland · CB", club:"ADO Den Haag", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by AIK on 1 August. Deal runs to the end of the 2026 season with an option for two further campaigns, and he takes shirt 33. Expressen broke the agreement on the Friday before the club confirmed it. Tomas arrived out of contract after promotion with ADO Den Haag, and AIK only turned to him after a return move for Filip Benkovic collapsed late on."}
+];
 
 const CONFIRMED_OUT = [];
 
@@ -57,12 +59,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"}
-};
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
+  aIKFotbollofficialDiogoTomas: {l:"AIK Fotboll (official)", u:"https://www.aikfotboll.se/artiklar-och-nyheter/260801-diogo-tomas-till-aik-fotboll"}};
 
 const LINKMAP = {
-  "Sotirios Papagiannopoulos": ["sky"]
-};
+  "Sotirios Papagiannopoulos": ["sky"],
+  "Diogo Tomas": ["aIKFotbollofficialDiogoTomas"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

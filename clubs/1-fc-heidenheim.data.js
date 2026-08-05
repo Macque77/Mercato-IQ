@@ -31,7 +31,9 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Niklas Dorsch", sub:"28 · Germany · M", club:"Toronto FC", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreement struck while Heidenheim were at their training camp in Natz-Schabs, South Tyrol. Dorsch had made clear he wanted the MLS move. Fee not disclosed by either club, so treat the financials with caution."}
+];
 const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];
@@ -42,10 +44,11 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"1-Fc-Heidenheim Official", u:"#"}
-};
+  club: {l:"1-Fc-Heidenheim Official", u:"#"},
+  getGermanFootballNewsviaYahooSportsNiklasDorsch: {l:"Get German Football News via Yahoo Sports", u:"https://sports.yahoo.com/articles/official-dorsch-departs-1-fc-151800870.html"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Niklas Dorsch": ["getGermanFootballNewsviaYahooSportsNiklasDorsch"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
