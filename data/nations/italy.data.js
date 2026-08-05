@@ -6,7 +6,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 138
+  stories_count: 139
 };
 
 const TOP_STORIES = [  {
@@ -66,6 +66,13 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
+    name: "Pierre-Emile Hojbjerg",prob: 25, truth: 70, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Marseille", to: "AC Milan",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
     name: "Francisco Conceicao",prob: 20, truth: 55, bullshit: false,
     club_origin: "juventus", club_display_name: "Juventus", direction: "out",
     from: "Juventus", to: "Manchester United",
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
-  {
-    name: "Sebastiano Esposito",prob: 60, truth: 75, bullshit: false,
-    club_origin: "cagliari", club_display_name: "Cagliari", direction: "out",
-    from: "Cagliari", to: "Atalanta",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Asking price approx. €18m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
 ];
 
-const BY_LEAGUE = {"Serie A": 127, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 128, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 127}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 128}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T19:05:30.164666Z",
+  updated: "2026-08-05T22:44:08.198085Z",
   label: "Nation aggregation"
 };

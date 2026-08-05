@@ -101,7 +101,7 @@ const INCOMING = [
   {name:"Midfield control", sub:"Positional thread", club:"Market", pos:"CM", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Within £120-200m gross", truth:55, prob:50, light:'y', trend:'flat',
    note:"Carried from the v1 positions board (heat 50): tactical fit for Alonso in central midfield is a flagged need. Thread-level only; no named midfield targets were held in the v1 state.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
   {name:"Victor Osimhen", sub:"Linked but Tottenham reported as favourites", club:"Napoli", pos:"FW", report:"Chelsea have been credited with interest in the Nigerian striker but multiple reports now say Tottenham are leading the race at a fee north of €75m.", src:"CaughtOffside", tier:3, fee:"€75m+", truth:40, prob:15, light:"o", trend:"flat", note:"Spurs reported to be in pole position, cooling Chelsea's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Pep Chavarria", sub:"28 · Spain · LB", club:"Rayo Vallecano", pos:"Left-back", report:"Chelsea are closing on a deal worth about £16.3m plus add-ons, with personal terms already agreed. The Spaniard would provide competition for Jorrel Hato following Marc Cucurella's move to Real Madrid, and is a target of Xabi Alonso.", src:"Press Association", tier:2, fee:"£16.3m plus add-ons", truth:90, prob:85, light:"g", trend:"flat", note:"Wire and Athletic reporting is consistent on the fee, but nothing is signed and Chelsea have chased this one for much of the window without closing it.", lastSeen:"2026-08-05T17:03:23Z", baseProb:85}
+  {name:"Pep Chavarria", sub:"28 · Spain · LB", club:"Rayo Vallecano", pos:"Left-back", report:"Chelsea are close to completing a deal worth an initial £16.3m plus performance-related add-ons, well short of the defender's release clause. Personal terms are already agreed and Chavarria is expected to be granted permission for a medical once the clubs finalise details. Left-back became a priority after Marc Cucurella's move to Real Madrid left Jorrel Hato as the only senior option there.", src:"The Athletic; Fabrizio Romano", tier:1, fee:"£16.3m plus add-ons", truth:92, prob:88, light:"g", trend:"up", note:"Romano stressed the negotiation has been more complicated than expected, so Chelsea are staying cautious until signatures are on paper.", lastSeen:"2026-08-05T22:44:07Z", baseProb:88}
 ];
 
 const OUTGOING = [
@@ -109,7 +109,9 @@ const OUTGOING = [
    note:"The defining business: a vast roster trimmed for balance and cost-rule profit. PRICING: fringe and academy names move at varied floors; book profit on homegrown sales.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
   {name:"High earners", sub:"Wage & ratio relief", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Expect some bigger names to move on as Alonso reshapes the side and BlueCo manage the cost ratio.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Mykhailo Mudryk", sub:"Loan exit being planned after doping ban expired", club:"Coventry City / Strasbourg (multiple suitors)", pos:"FW", report:"Now free to play again after his doping suspension, Chelsea are weighing a loan to help restore his fitness and value; Coventry are among several Premier League and European clubs registering interest, with Strasbourg also in the mix.", src:"Ben Jacobs / Ahad Shaukat", tier:1, fee:"Loan", truth:65, prob:40, light:"y", trend:"flat", note:"Xabi Alonso to assess him in pre-season before a final decision on his future", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Mykhailo Mudryk", sub:"Loan exit being planned after doping ban expired", club:"Coventry City / Strasbourg (multiple suitors)", pos:"FW", report:"Now free to play again after his doping suspension, Chelsea are weighing a loan to help restore his fitness and value; Coventry are among several Premier League and European clubs registering interest, with Strasbourg also in the mix.", src:"Ben Jacobs / Ahad Shaukat", tier:1, fee:"Loan", truth:65, prob:40, light:"y", trend:"flat", note:"Xabi Alonso to assess him in pre-season before a final decision on his future", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Pedro Neto", sub:"26 · Portugal · W", club:"Manchester City", pos:"Winger", report:"Manchester City have made a formal approach for the Portugal winger, but Chelsea's position is that they want to keep him at Stamford Bridge.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:85, prob:25, light:"o", trend:"flat", note:"An approach is not a bid. Romano frames Chelsea as resistant, so treat any move as unlikely as things stand.", lastSeen:"2026-08-05T22:44:07Z", baseProb:25},
+  {name:"Enzo Fernandez", sub:"25 · Argentina · CM", club:"Undecided", pos:"Central midfield", report:"Chelsea are due to meet the midfielder's agent to discuss his future, with Real Madrid said to be sticking to their decision not to pursue him.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:78, prob:20, light:"o", trend:"flat", note:"Weak on specifics. This is a scheduled meeting rather than a live negotiation, and no concrete suitor has been established.", lastSeen:"2026-08-05T22:44:07Z", baseProb:20}
 ];
 
 const RISERS = [
@@ -174,7 +176,10 @@ const HUB = {
   yahooSportsTyriqueGeorge: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-everton-sign-tyrique-george-153951753.html"},
   pAIrishNewsPepChavarra: {l:"PA / Irish News", u:"https://www.irishnews.com/sport/soccer/chelsea-closing-in-on-163m-deal-for-rayo-vallecano-defender-pep-chavarria-GILJMPPFFRNTPPQ6WKGPQSXGYA/"},
   skySportsJordanHenderson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11661/13569179/jordan-henderson-transfer-news-chelsea-confirm-signing-of-midfielder-following-brentford-exit"},
-  skySportsDannyWelbeck: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11668/13568440/chelsea-transfer-news-danny-welbeck-completes-move-to-stamford-bridge-from-brighton-for-undisclosed-fee"}};
+  skySportsDannyWelbeck: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11668/13568440/chelsea-transfer-news-danny-welbeck-completes-move-to-stamford-bridge-from-brighton-for-undisclosed-fee"},
+  theAthleticPepChavarria: {l:"The Athletic", u:"https://www.theathletic.com/football/"},
+  fabrizioRomanoviaFootball365PedroNeto: {l:"Fabrizio Romano, via Football365", u:"https://www.football365.com/news/chelsea-romano-rates-chances-neto-man-city-maresca-transfer"},
+  fabrizioRomanoviaFootball365EnzoFernandez: {l:"Fabrizio Romano, via Football365", u:"https://www.football365.com/news/chelsea-enzo-fernandez-future-fabrizio-romano-update"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -196,7 +201,9 @@ const LINKMAP = {
   "Andrey Santos": ["teamTalkMorganRogers"],
   "Tyrique George": ["yahooSportsTyriqueGeorge"],
   "Jordan Henderson": ["skySportsJordanHenderson"],
-  "Pep Chavarria": ["pAIrishNewsPepChavarra"]};
+  "Pep Chavarria": ["pAIrishNewsPepChavarra", "theAthleticPepChavarria"],
+  "Pedro Neto": ["fabrizioRomanoviaFootball365PedroNeto"],
+  "Enzo Fernandez": ["fabrizioRomanoviaFootball365EnzoFernandez"]};
 const WL_LINKMAP = {
   "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };

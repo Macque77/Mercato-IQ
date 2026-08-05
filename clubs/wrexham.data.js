@@ -30,7 +30,9 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Ben Whiteman", sub:"30 · England · CM", club:"Preston North End", pos:"CM", fee:"Undisclosed (reported £3m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wrexham's second signing of the summer, on a three-year contract with the option of a further year until at least 2029. The Preston captain made more than 220 appearances at Deepdale, and manager Paul Heckingbottom publicly accused him of crossing a line in pushing for the move."}
+];
 const CONFIRMED_OUT = [
   {name:"Paul Mullin", sub:"ST", club:"Released", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract terminated by mutual consent."},
   {name:"Tom O'Connor", sub:"MF", club:"Released", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract terminated by mutual consent."}
@@ -49,14 +51,14 @@ const WATCHLIST = [];
 const HUB = {
   "gnews-paulmullin": {l:"Related news search: Paul Mullin", u:"https://news.google.com/search?q=Wrexham%20Paul%20Mullin%20transfer&hl=en-GB&gl=GB"},
   "gnews-tomoconnor": {l:"Related news search: Tom O'Connor", u:"https://news.google.com/search?q=Wrexham%20Tom%20O%27Connor%20transfer&hl=en-GB&gl=GB"},
-  "gnews-anthonypatterson": {l:"Related news search: Anthony Patterson", u:"https://news.google.com/search?q=Wrexham%20Anthony%20Patterson%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-anthonypatterson": {l:"Related news search: Anthony Patterson", u:"https://news.google.com/search?q=Wrexham%20Anthony%20Patterson%20transfer&hl=en-GB&gl=GB"},
+  wrexhamAFCofficialBenWhiteman: {l:"Wrexham AFC official", u:"https://www.wrexhamafc.co.uk/news/2026/august/05/ben-whiteman-signs-for-wrexham-from-preston-north-end/"}};
 
 const LINKMAP = {
   "Paul Mullin": ["gnews-paulmullin"],
   "Tom O'Connor": ["gnews-tomoconnor"],
-  "Anthony Patterson": ["gnews-anthonypatterson"]
-};
+  "Anthony Patterson": ["gnews-anthonypatterson"],
+  "Ben Whiteman": ["wrexhamAFCofficialBenWhiteman"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -73,7 +73,8 @@ const CONFIRMED_IN = [
   {name:"Merlin Röhl", sub:"Season-long loan with obligation to buy", club:"SC Freiburg", pos:"MF", fee:"£17.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Germany U21 international, Moyes' ninth signing of the window"},
   {name:"Adam Aznou", sub:"Permanent, four-year deal", club:"Bayern Munich", pos:"DF", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"19-year-old Moroccan left-back, Everton's fourth summer signing"},
   {name:"Tyrique George", sub:"Permanent", club:"Chelsea", pos:"FW", fee:"£18m-£24m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young winger arrives from Chelsea to bolster attacking options"},
-  {name:"Carlos Alcaraz", sub:"Loan made permanent", club:"Flamengo", pos:"MF", fee:"Undisclosed (option exercised)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Everton activated the buy option on the Argentine midfielder's loan"}
+  {name:"Carlos Alcaraz", sub:"Loan made permanent", club:"Flamengo", pos:"MF", fee:"Undisclosed (option exercised)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Everton activated the buy option on the Argentine midfielder's loan"},
+  {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Arsenal", pos:"DM", fee:"£7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Two-year deal at Hill Dickinson Stadium after a single season at Arsenal. Agreement in principle broken by David Ornstein and relayed by Sky Sports News before completion; fee officially undisclosed but reported at around £7m."}
 ];
 const CONFIRMED_OUT = [
   {name:"Seamus Coleman", sub:"Released", club:"Free agent", pos:"DF", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving club captain released at contract expiry"},
@@ -161,7 +162,8 @@ const HUB = {
   fotMobAdamAznou: {l:"FotMob", u:"https://www.fotmob.com/sw/news/1qzvfarwf77p81mu941bzezyuh-everton-sign-8m-left-back-aznou-from-bayern-munich"},
   yahooSportsTyriqueGeorge: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-everton-sign-tyrique-george-153951753.html"},
   theScoreCarlosAlcaraz: {l:"theScore", u:"https://www.thescore.com/news/3293953"},
-  sportsMoleSeamusColeman: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/everton/transfer-talk/feature/everton-summer-transfers-all-confirmed-ins-and-outs-for-2026_599217.html"}};
+  sportsMoleSeamusColeman: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/everton/transfer-talk/feature/everton-summer-transfers-all-confirmed-ins-and-outs-for-2026_599217.html"},
+  davidOrnsteinTheAthleticChristianNorgaard: {l:"David Ornstein, The Athletic", u:"https://www.theathletic.com/football/"}};
 const LINKMAP = {
   "Raul Jimenez": ["fInsider","echo"],
   "Marquee striker": ["fInsider","teamtalk","echo"],
@@ -179,7 +181,8 @@ const LINKMAP = {
   "Tyrique George": ["yahooSportsTyriqueGeorge"],
   "Carlos Alcaraz": ["theScoreCarlosAlcaraz"],
   "Seamus Coleman": ["sportsMoleSeamusColeman"],
-  "Isaac Heath": ["sportsMoleSeamusColeman"]};
+  "Isaac Heath": ["sportsMoleSeamusColeman"],
+  "Christian Norgaard": ["davidOrnsteinTheAthleticChristianNorgaard"]};
 const WL_LINKMAP = {
   "Marquee striker":"fInsider","Iliman Ndiaye":"echo","Jack Grealish":"bbcGossip",
 };

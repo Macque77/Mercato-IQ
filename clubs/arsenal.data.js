@@ -72,7 +72,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Karl Hein", sub:"Backup goalkeeper departs", club:"Werder Bremen", pos:"GK", fee:"£2.6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Jakub Kiwior", sub:"Squad defender sold to Portugal", club:"Porto", pos:"DF", fee:"£14.7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
-  {name:"Leandro Trossard", sub:"Winger exits after Tzolis arrival", club:"Beşiktaş", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Some outlets reported a fee around €20m"}
+  {name:"Leandro Trossard", sub:"Winger exits after Tzolis arrival", club:"Beşiktaş", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Some outlets reported a fee around €20m"},
+  {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Everton", pos:"Defensive midfield", fee:"Around £7m (€8m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by both clubs. Norgaard has signed a two-year deal at Everton a year after arriving from Brentford, having made just seven league starts in Arsenal's title-winning season. He missed the friendly against Real Betis to finalise the move."}
 ];
 
 const INCOMING = [
@@ -85,7 +86,7 @@ const INCOMING = [
   {name:"Bruno Guimarães", sub:"28 · Brazil · MF", club:"Newcastle United", pos:"MF", report:"Arsenal have agreed a £75m fee with Newcastle for their captain, with a medical in north London expected within days after the clubs compromised (Arsenal opened around £60m, Newcastle wanted £80m).", src:"Sky Sports", tier:1, fee:"£75m", truth:92, prob:88, light:"g", trend:"up", note:"Fee agreed and medical pending, so a near-complete deal rather than a target. Lyon are due roughly €8m via a 20% sell-on clause.", lastSeen:"2026-08-05T11:41:11Z", baseProb:88},
   {name:"Ezri Konsa", sub:"Targeted as Saliba injury cover", club:"Aston Villa", pos:"DF", report:"Arsenal have had a £60-65m bid in talks with Villa as they seek defensive reinforcement after William Saliba's back injury; Konsa is open to discussing a move but may prefer to stay for Champions League football.", src:"CaughtOffside / Sports Mole", tier:2, fee:"£60m", truth:55, prob:35, light:"y", trend:"flat", note:"Villa under financial pressure but Konsa reportedly leaning toward staying", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Rayan", sub:"Audacious move for breakout Brazilian winger", club:"Bournemouth", pos:"FW", report:"20-year-old Brazilian right winger has impressed since a January move from Vasco da Gama; Bournemouth want £85m and Arsenal are seen as unlikely to pursue given depth on the right flank.", src:"The Sun", tier:3, fee:"£85m", truth:40, prob:15, light:"o", trend:"flat", note:"Arsenal's greater need is reportedly a left-sided attacker after Trossard's exit", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"Central midfield", report:"Arsenal have agreed a £75m fee with Newcastle for their captain, who has been granted permission to leave the club's La Manga training camp and travel for a medical. Guimaraes, who has two years left on his contract, told Newcastle earlier in the summer that he wanted the move, and the compromise fee follows Newcastle's £100m sale of Sandro Tonali to Tottenham.", src:"Sky Sports", tier:2, fee:"£75m", truth:95, prob:92, light:"g", trend:"flat", note:"Fee agreed and medical booked rather than signed and sealed, so treat as advanced but not done until Arsenal announce it. Widely matched by PA, so sourcing is solid.", lastSeen:"2026-08-05T17:03:23Z", baseProb:92}
+  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"Central midfield", report:"Arsenal and Newcastle have settled on a fee of around £75m for the Brazil captain after the Magpies initially held out for north of £80m. Personal terms were agreed some time ago and Guimaraes has been awaiting clearance to travel for a medical, with all parties keen to close the situation quickly.", src:"David Ornstein (The Athletic)", tier:1, fee:"£75m", truth:95, prob:90, light:"g", trend:"down", note:"Ornstein and Romano are aligned on the fee, and Arsenal's sale of Norgaard supports the timeline. Treat as done only once a medical is confirmed.", lastSeen:"2026-08-05T22:44:07Z", baseProb:90}
 ];
 
 const OUTGOING = [
@@ -99,8 +100,7 @@ const OUTGOING = [
    note:"Among the names Arsenal will listen on. Versatile and experienced; a sale would open a full-back refresh that is itself a stated target area.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"William Saliba", sub:"24 · CB · France", club:"Real Madrid", pos:"CB", report:"~1 wk ago", src:"Marca / BBC gossip", tier:3, fee:"£80m+ (resisting)", truth:35, prob:10, light:'r', trend:'down',
    note:"Real Madrid are reported to have made him a top defensive target. PRICING: Arsenal have worked to secure his long-term future and would price a sale prohibitively. The high ask is designed to deter, not invite; very low probability.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10},
-  {name:"Myles Lewis-Skelly", sub:"Man Utd exploring feasibility of a raid", club:"Manchester United", pos:"MF", report:"United are reported to be looking into a move for the 19-year-old academy product; Arsenal value him at £38.5m and are not actively selling.", src:"Sky Sports", tier:2, fee:"£38.5m (valuation)", truth:35, prob:12, light:"r", trend:"flat", note:"Arsenal would only consider offers well above valuation", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
-  {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Everton", pos:"Defensive midfield", report:"Arsenal and Everton are said to still be ironing out the final details of Norgaard's move to Merseyside despite the midfielder having already completed a medical.", src:"Daily Cannon", tier:3, fee:"Undisclosed", truth:60, prob:70, light:"g", trend:"flat", note:"Weak sourcing. This is a fan-run Arsenal site with no tier-one byline attached, and no Sky, PA or Athletic confirmation of the medical has surfaced. Hold until a recognised reporter stands it up.", lastSeen:"2026-08-05T17:03:23Z", baseProb:70}
+  {name:"Myles Lewis-Skelly", sub:"Man Utd exploring feasibility of a raid", club:"Manchester United", pos:"MF", report:"United are reported to be looking into a move for the 19-year-old academy product; Arsenal value him at £38.5m and are not actively selling.", src:"Sky Sports", tier:2, fee:"£38.5m (valuation)", truth:35, prob:12, light:"r", trend:"flat", note:"Arsenal would only consider offers well above valuation", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
 ];
 
 const RISERS = [
@@ -170,7 +170,9 @@ const HUB = {
   arseblogNewsPieroHincapi: {l:"Arseblog News", u:"https://arseblog.news/2026/06/confirmed-arsenal-sign-piero-hincapie-on-permanent-deal/"},
   sportsMoleIllanMeslier: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/feature/arsenal-summer-transfers-all-confirmed-ins-and-outs-for-2026_599109.html"},
   skySportsBrunoGuimares: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11670/13569653/bruno-guimaraes-transfer-news-arsenal-agree-lb75m-fee-for-newcastle-midfielder"},
-  dailyCannonChristianNorgaard: {l:"Daily Cannon", u:"https://dailycannon.com/2026/08/newcastle-bruno-arsenal-medical-fee-agreed/"}};
+  dailyCannonChristianNorgaard: {l:"Daily Cannon", u:"https://dailycannon.com/2026/08/newcastle-bruno-arsenal-medical-fee-agreed/"},
+  davidOrnsteinTheAthleticBrunoGuimaraes: {l:"David Ornstein, The Athletic", u:"https://www.theathletic.com/football/"},
+  eSPNChristianNorgaard: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49540382/everton-christian-norgaard-arsenal-transfer"}};
 const LINKMAP = {
   "Morgan Rogers": ["bbcArs","mokbel"],
   "Eli Junior Kroupi": ["bbcArs"],
@@ -192,8 +194,8 @@ const LINKMAP = {
   "Christos Tzolis": ["sportsMoleIllanMeslier"],
   "Karl Hein": ["sportsMoleIllanMeslier"],
   "Jakub Kiwior": ["sportsMoleIllanMeslier"],
-  "Bruno Guimaraes": ["skySportsBrunoGuimares"],
-  "Christian Norgaard": ["dailyCannonChristianNorgaard"]};
+  "Bruno Guimaraes": ["skySportsBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimaraes"],
+  "Christian Norgaard": ["dailyCannonChristianNorgaard", "eSPNChristianNorgaard"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
   "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",

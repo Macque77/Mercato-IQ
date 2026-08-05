@@ -750,6 +750,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Bruno Guimaraes",
+    club_display_name: "Arsenal",
+    summary: "",
+    value: "£75m",
+    from: "Newcastle United", to: "Arsenal",
+    direction: "in",
+    prob: 90, truth: 95, trend: 'down', bullshit: false,
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
     headline: "Bruno Guimarães",
     club_display_name: "Arsenal",
     summary: "",
@@ -760,6 +773,19 @@ const HEADLINES = [
     tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Pep Chavarria",
+    club_display_name: "Chelsea",
+    summary: "",
+    value: "£16.3m plus add-ons",
+    from: "Rayo Vallecano", to: "Chelsea",
+    direction: "in",
+    prob: 88, truth: 92, trend: 'up', bullshit: false,
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "chelsea",
     updated: "2026-08-03T12:48:44Z"
   },
   {
@@ -1490,42 +1516,16 @@ const HEADLINES = [
     club_link: "rotterdam-sparta",
     updated: "2026-07-29T00:00:00Z"
   },
-  {
-    headline: "Arthur Theate",
-    club_display_name: "Bournemouth",
-    summary: "",
-    value: "Undisclosed",
-    from: "Eintracht Frankfurt", to: "Bournemouth",
-    direction: "in",
-    prob: 30, truth: 55, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "bournemouth",
-    updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    headline: "Andrea Pinamonti",
-    club_display_name: "US Sassuolo",
-    summary: "Contact established between the clubs but Lazio's real priority lies elsewhere.",
-    value: "Undisclosed",
-    from: "US Sassuolo", to: "Lazio",
-    direction: "out",
-    prob: 30, truth: 60, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Italy", league: "Serie A",
-    club_link: "sassuolo",
-    updated: "2026-08-03T14:30:00Z"
-  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 184, league_count: 3
+    stories_count: 185, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 138, league_count: 3
+    stories_count: 139, league_count: 3
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
@@ -1533,7 +1533,7 @@ const NATIONS = [
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 76, league_count: 1
+    stories_count: 75, league_count: 1
   },
   {
     name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
@@ -1564,19 +1564,19 @@ const NATIONS = [
     stories_count: 10, league_count: 1
   },
   {
-    name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+    name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
     stories_count: 1, league_count: 1
   },
   {
-    name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
-    stories_count: 1, league_count: 1
+    name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+    stories_count: 0, league_count: 0
   },
 ];
 
 const STATS = {
   total_stories: 621,
-  clubs_covered: 182,
-  tier1_count: 73,
+  clubs_covered: 181,
+  tier1_count: 78,
   top_league: "Serie A",
   most_active_club: "Sunderland",
   nations_covered: 13,
@@ -1585,7 +1585,7 @@ const STATS = {
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T19:05:30.162636Z",
+  updated: "2026-08-05T22:44:08.196396Z",
   label: "Global aggregation from all clubs"
 };
 
