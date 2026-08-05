@@ -47,10 +47,19 @@ WINDOWS_PATH = os.path.join(REPO, 'engine', 'windows.json')
 MODEL = os.environ.get('MERCATO_MODEL') or 'claude-opus-5'  # swap to claude-sonnet-5 to cut cost
 BATCH_SIZE = int(os.environ.get('MERCATO_BATCH_SIZE', '4'))  # clubs researched per API call
 
-# High-signal RSS feeds for the Phase 0 lead poll. HTML-only outlets in
-# engine/sources.json aren't RSS, so they're used by the model's web_search, not here.
+# High-signal RSS feeds for the Phase 0 lead poll -- English-language and
+# broad-European on purpose: poll_feeds.py's keyword filter is English, so a
+# foreign-language headline ("el Madrid ficha a...") wouldn't match and would be
+# dropped. These four cover confirmed deals AND live rumours (Sky's "X latest"
+# blogs, BBC's gossip column, the Guardian's Rumour Mill). Any feed that fails to
+# fetch just logs a warning and is skipped, so a dead URL is harmless. HTML-only
+# outlets in engine/sources.json aren't RSS, so they're left to the model's
+# web_search, not polled here.
 RSS_FEEDS = [
-    ('BBC Sport Football', 'https://feeds.bbci.co.uk/sport/football/rss.xml'),
+    ('BBC Sport Football',   'https://feeds.bbci.co.uk/sport/football/rss.xml'),
+    ('Sky Sports Football',  'https://www.skysports.com/rss/12040'),
+    ('ESPN Soccer',          'https://www.espn.com/espn/rss/soccer/news'),
+    ('The Guardian Football', 'https://www.theguardian.com/football/rss'),
 ]
 
 # The schema the model must emit, quoted verbatim from engine/inject_research.py so
