@@ -1,0 +1,140 @@
+name: Research Sync
+
+# Unattended Phase 0->1->2 pipeline, hosted on GitHub Actions.
+#   Phase 0/1  engine/research_agent.py  (feeds -> targets -> Claude API web search -> research.json)
+#   Phase 2    engine/inject_research.py -> node --check -> stale/decay -> aggregate -> build
+# Runs on Linux, so the Windows-only workarounds (CRLF, cp1252, keyless SSH) don't apply here.
+#
+# Hybrid cadence:
+#   * hourly           incremental  -- research only clubs flagged by feeds or gone stale (cheap)
+#   * daily 06:00 UTC  sweep        -- research every club in an in-window league, capped (broad)
+# Off-season runs are gated out by engine/check_window.py so no API budget is spent.
+#
+# REQUIRED SETUP (one-time, by a repo admin):
+#   Settings -> Secrets and variables -> Actions -> New repository secret
+#     ANTHROPIC_API_KEY = <your Claude API key>
+#   Without it the workflow exits early with a clear message (it does not fail the whole run).
+
+on:
+  schedule:
+    - cron: '0 * * * *'    # hourly -> incremental
+    - cron: '0 6 * * *'    # daily 06:00 UTC -> sweep
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Research mode'
+        type: choice
+        default: incremental
+        options: [incremental, sweep]
+      max_clubs:
+        description: 'Max clubs to research this run'
+        default: '12'
+      force:
+        description: 'Research even if off-season'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mercato-research-sync
+  cancel-in-progress: false
+
+jobs:
+  research-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # lets the final git push use GITHUB_TOKEN
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Anthropic SDK
+        run: pip install --quiet anthropic
+
+      - name: Check API key
+        id: key
+        run: |
+          if [ -z "${ANTHROPIC_API_KEY}" ]; then
+            echo "ANTHROPIC_API_KEY secret is not set -- skipping research. See the workflow header for setup."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Decide mode and window
+        id: plan
+        if: steps.key.outputs.ok == 'true'
+        run: |
+          # mode: explicit dispatch input, else derived from which cron fired (daily = sweep).
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            if [ "${{ github.event.schedule }}" = "0 6 * * *" ]; then MODE=sweep; else MODE=incremental; fi
+          fi
+          MAX="${{ github.event.inputs.max_clubs }}"
+          if [ -z "$MAX" ]; then
+            if [ "$MODE" = "sweep" ]; then MAX=40; else MAX=12; fi
+          fi
+          # window gate: skip off-season unless forced via dispatch.
+          if python3 engine/check_window.py --quiet; then WINDOW=open; else WINDOW=closed; fi
+          FORCE="${{ github.event.inputs.force }}"
+          if [ "$WINDOW" = "closed" ] && [ "$FORCE" != "true" ]; then
+            echo "Off-season and not forced -- skipping research this run."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "mode=$MODE"   >> "$GITHUB_OUTPUT"
+          echo "max=$MAX"     >> "$GITHUB_OUTPUT"
+          echo "Plan: mode=$MODE max=$MAX window=$WINDOW"
+
+      - name: Research (Phase 0 + 1)
+        id: research
+        if: steps.plan.outputs.run == 'true'
+        run: |
+          set -e
+          COUNT=$(python3 engine/research_agent.py \
+            --mode "${{ steps.plan.outputs.mode }}" \
+            --max-clubs "${{ steps.plan.outputs.max }}" \
+            --out research.json | tail -n1)
+          echo "clubs=${COUNT:-0}" >> "$GITHUB_OUTPUT"
+          echo "Research produced ${COUNT:-0} club(s)."
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MERCATO_MODEL: ${{ vars.MERCATO_MODEL }}   # optional repo variable, e.g. claude-sonnet-5
+
+      - name: Apply, build, commit, push (Phase 2)
+        if: steps.plan.outputs.run == 'true'
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ "${{ steps.research.outputs.clubs }}" -gt 0 ]; then
+            # Full apply pipeline; skip the Playwright sweep (not installed), node --check still gates.
+            NO_COMMIT=1 SKIP_VERIFY=1 bash engine/apply_research.sh research.json
+          fi
+          # Nothing new found -> only the poll/research state files changed; commit those so the
+          # next run's staleness/seen gates work. Periodic rebuilds are handled by deploy.yml.
+          rm -f research.json
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Research sync (${{ steps.plan.outputs.mode }}): ${{ steps.research.outputs.clubs }} club(s) updated"
+          git push
