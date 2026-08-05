@@ -25,7 +25,7 @@ const HEADLINES = [
     from: "Newcastle United", to: "Arsenal",
     direction: "in",
     prob: 90, truth: 95, trend: 'down', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
     updated: "2026-08-03T12:48:44Z"
@@ -51,7 +51,7 @@ const HEADLINES = [
     from: "Rayo Vallecano", to: "Chelsea",
     direction: "in",
     prob: 88, truth: 92, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "chelsea",
     updated: "2026-08-03T12:48:44Z"
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T22:44:08.196396Z",
+  updated: "2026-08-05T23:31:20.548392Z",
   label: "Global aggregation from all clubs"
 };

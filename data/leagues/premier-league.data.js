@@ -13,7 +13,7 @@ const TOP_STORIES = [  {
     name: "Bruno Guimaraes", prob: 90, truth: 95, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Newcastle United", to: "Arsenal",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£75m", updated: "2026-08-03T12:48:44Z"
   },
   {
@@ -27,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Pep Chavarria", prob: 88, truth: 92, bullshit: false,
     club_origin: "chelsea", club_display_name: "Chelsea", direction: "in",
     from: "Rayo Vallecano", to: "Chelsea",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£16.3m plus add-ons", updated: "2026-08-03T12:48:44Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 10, "badge":
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T22:44:08.206233Z",
+  updated: "2026-08-05T23:31:20.559816Z",
   label: "League aggregation"
 };
