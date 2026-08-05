@@ -121,7 +121,7 @@ const BY_LEAGUE = {"Super Lig": 3, "S\u00fcper Lig": 12, "B\u00f6lgesel Amat\u00
 const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "count": 12}, {"slug": "super-lig", "name": "Super Lig", "count": 3}, {"slug": "b\u00f6lgesel-amat\u00f6r-lig", "name": "B\u00f6lgesel Amat\u00f6r Lig", "count": 0}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.548936Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.030344Z",
   label: "Nation aggregation"
 };

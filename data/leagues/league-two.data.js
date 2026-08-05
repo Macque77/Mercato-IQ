@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "bristol-rovers", "name": "Bristol Rovers", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.554872Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.033251Z",
   label: "League aggregation"
 };

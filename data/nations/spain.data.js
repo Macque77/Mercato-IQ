@@ -121,7 +121,7 @@ const BY_LEAGUE = {"La Liga": 79, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, 
 const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 79}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.548419Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.030120Z",
   label: "Nation aggregation"
 };

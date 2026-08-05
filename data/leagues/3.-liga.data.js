@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "rostock", "name": "Hansa Rostock", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "duisburg", "name": "MSV Duisburg", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "regensburg", "name": "SSV Jahn Regensburg", "count": 0, "badge": false, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.549906Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.030817Z",
   label: "League aggregation"
 };

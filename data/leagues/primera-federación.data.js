@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "alcorcon", "name": "AD Alcorc\u00f3n", "count": 0, "badge": false, "primary": "#FFC72C", "primaryBright": "#FFE066"}, {"slug": "cartagena", "name": "FC Cartagena", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "sd-huesca", "name": "SD Huesca", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "ponferradina", "name": "SD Ponferradina", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.557494Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.034553Z",
   label: "League aggregation"
 };

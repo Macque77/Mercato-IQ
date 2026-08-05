@@ -48,14 +48,14 @@ const TOP_STORIES = [  {
     name: "Franco Mastantuono",prob: 35, truth: 55, bullshit: false,
     club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "in",
     from: "Real Madrid", to: "Fiorentina",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
     name: "Diego Moreira",prob: 30, truth: 50, bullshit: false,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "Strasbourg", to: "AS Roma",
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
@@ -121,7 +121,7 @@ const BY_LEAGUE = {"Serie A": 127, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 127}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.547274Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.029521Z",
   label: "Nation aggregation"
 };

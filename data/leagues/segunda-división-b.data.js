@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "almeria-b", "name": "Almer\u00eda B", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "real-madrid-castilla", "name": "RM Castilla", "count": 0, "badge": false, "primary": "#FEBE10", "primaryBright": "#FFFFFF"}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.558349Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.034954Z",
   label: "League aggregation"
 };

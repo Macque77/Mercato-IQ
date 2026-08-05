@@ -121,7 +121,7 @@ const BY_LEAGUE = {"Premiership": 15};
 const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 15}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.548122Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.029953Z",
   label: "Nation aggregation"
 };

@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "albacete", "name": "Albacete Balompi\u00e9", "count": 0, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "burgos-cf", "name": "Burgos CF", "count": 0, "badge": true, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "cd-castellon", "name": "CD Castell\u00f3n", "count": 0, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "tenerife", "name": "CD Tenerife", "count": 0, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "cf-eldense", "name": "CF Eldense", "count": 0, "badge": true, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "sabadell", "name": "CF Sabadell", "count": 0, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "cordoba", "name": "C\u00f3rdoba CF", "count": 0, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "real-valladolid", "name": "Real Valladolid", "count": 0, "badge": true, "primary": "#6B0F1A", "primaryBright": "#B0475A"}, {"slug": "eibar", "name": "SD Eibar", "count": 0, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "sporting-gijon", "name": "Sporting Gij\u00f3n", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
-  asof: "04 Aug 2026",
-  updated: "2026-08-04T21:03:47.554068Z",
+  asof: "05 Aug 2026",
+  updated: "2026-08-05T06:14:51.032840Z",
   label: "League aggregation"
 };
