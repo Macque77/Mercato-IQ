@@ -370,7 +370,10 @@ def main():
     print(f'\nTotal clubs updated: {total_ok}')
     # Write the touched-slug list so the pipeline wrapper can rebuild only what changed.
     if touched_slugs:
-        with open(os.path.join(REPO, '.last_injected_slugs'), 'w') as f:
+        # newline='\n': keep LF even on Windows so the shell loop in
+        # apply_research.sh (`for slug in $(cat ...)`) doesn't inherit a
+        # trailing \r and pass "clubs/<slug>.data.js\r" to node --check.
+        with open(os.path.join(REPO, '.last_injected_slugs'), 'w', newline='\n') as f:
             f.write('\n'.join(sorted(touched_slugs)))
 
     # Record that Phase 1 actually spent a research pass on these clubs this

@@ -147,7 +147,9 @@ def main():
             touched_slugs.append(slug)
 
     if not dry_run and touched_slugs:
-        with open(os.path.join(REPO, '.decay_touched_slugs'), 'w', encoding='utf-8') as f:
+        # newline='\n': keep LF on Windows so apply_research.sh's shell loop
+        # doesn't inherit a trailing \r (see .last_injected_slugs in inject_research.py).
+        with open(os.path.join(REPO, '.decay_touched_slugs'), 'w', encoding='utf-8', newline='\n') as f:
             f.write('\n'.join(sorted(touched_slugs)) + '\n')
 
     print(f"Rumour decay scan: {len(report['decayed'])} rumour(s) faded, "

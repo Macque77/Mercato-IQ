@@ -225,7 +225,9 @@ def main():
 
     if not dry_run and files_changed:
         all_touched = sorted({r['club'] for r in report if '[NOT APPLIED' not in r['reason']})
-        with open(os.path.join(REPO, '.stale_touched_slugs'), 'w', encoding='utf-8') as f:
+        # newline='\n': keep LF on Windows so apply_research.sh's shell loop
+        # doesn't inherit a trailing \r (see .last_injected_slugs in inject_research.py).
+        with open(os.path.join(REPO, '.stale_touched_slugs'), 'w', encoding='utf-8', newline='\n') as f:
             f.write('\n'.join(all_touched) + '\n')
 
     print(f"Stale rumour scan: {len(report)} stale entr{'y' if len(report)==1 else 'ies'} found across {len(paths)} clubs.")
