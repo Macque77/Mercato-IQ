@@ -45,7 +45,7 @@ CLUBS_DIR = os.path.join(REPO, 'clubs')
 WINDOWS_PATH = os.path.join(REPO, 'engine', 'windows.json')
 
 MODEL = os.environ.get('MERCATO_MODEL') or 'claude-opus-5'  # swap to claude-sonnet-5 to cut cost
-BATCH_SIZE = int(os.environ.get('MERCATO_BATCH_SIZE', '8'))  # clubs researched per API call
+BATCH_SIZE = int(os.environ.get('MERCATO_BATCH_SIZE', '4'))  # clubs researched per API call
 
 # High-signal RSS feeds for the Phase 0 lead poll. HTML-only outlets in
 # engine/sources.json aren't RSS, so they're used by the model's web_search, not here.
@@ -211,7 +211,12 @@ def pick_incremental_targets(leads):
             env={**os.environ, 'PYTHONUTF8': '1'},
         )
         if out.returncode == 0 and out.stdout.strip():
-            return [t['slug'] for t in json.loads(out.stdout).get('targets', [])]
+            targets = json.loads(out.stdout).get('targets', [])
+            # Chase the news first: clubs a feed headline flagged before merely-stale
+            # ones, so a capped run spends its budget on what's actually happening
+            # rather than the alphabetical head of the roster.
+            targets.sort(key=lambda t: 'poll-flagged' not in t.get('reasons', []))
+            return [t['slug'] for t in targets]
     except Exception as e:
         log(f"  pick_research_targets failed: {e}")
     finally:
