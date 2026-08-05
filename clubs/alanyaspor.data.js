@@ -30,7 +30,9 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Omar Ben Ali", sub:"2005-born · Tunisia · ST", club:"CS Sfaxien", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by the club: a four-year contract for the Tunisia youth international forward, signed from CS Sfaxien. Announced on 6 July, so this is a window arrival rather than fresh breaking news, and no fee has been disclosed."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Iván Cedric", sub:"24 · FW · Cameroon/Spain", club:"Vanspor FK", pos:"FW", report:"2 Aug 2026", src:"Sporx", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Agreement reached with last season's TFF 1. Lig top-scorer (15 goals, 6 assists); official unveiling pending medical.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80}
@@ -48,11 +50,13 @@ const WATCHLIST = [];
 const HUB = {
   club: {l:"Alanyaspor Official", u:"#"},
   sporxIvnCedric: {l:"Sporx", u:"https://www.sporx.com/www.sporx.com/alanyaspor-a-kamerunlu-forvet-ivan-cedric-SXHBQ1171110SXQ"},
-  hrriyetbrahimKaya: {l:"Hürriyet", u:"https://www.hurriyet.com.tr/sporarena/ibrahim-kayadan-transfer-aciklamasi-bir-kulubun-ilgisi-oldugunu-biliyorum-43260459"}};
+  hrriyetbrahimKaya: {l:"Hürriyet", u:"https://www.hurriyet.com.tr/sporarena/ibrahim-kayadan-transfer-aciklamasi-bir-kulubun-ilgisi-oldugunu-biliyorum-43260459"},
+  alanyasporofficialOmarBenAli: {l:"Alanyaspor (official)", u:"https://www.alanyaspor.org.tr/haberler/kategori/transfer-haberleri"}};
 
 const LINKMAP = {
   "Iván Cedric": ["sporxIvnCedric"],
-  "İbrahim Kaya": ["hrriyetbrahimKaya"]};
+  "İbrahim Kaya": ["hrriyetbrahimKaya"],
+  "Omar Ben Ali": ["alanyasporofficialOmarBenAli"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
