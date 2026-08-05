@@ -58,7 +58,6 @@ BATCH_SIZE = int(os.environ.get('MERCATO_BATCH_SIZE', '4'))  # clubs researched 
 RSS_FEEDS = [
     ('BBC Sport Football',   'https://feeds.bbci.co.uk/sport/football/rss.xml'),
     ('Sky Sports Football',  'https://www.skysports.com/rss/12040'),
-    ('ESPN Soccer',          'https://www.espn.com/espn/rss/soccer/news'),
     ('The Guardian Football', 'https://www.theguardian.com/football/rss'),
 ]
 
@@ -192,8 +191,12 @@ def run_poll():
                 env={**os.environ, 'PYTHONUTF8': '1'},
             )
             if out.returncode == 0 and out.stdout.strip():
+                # poll_feeds.py --json prints a bare JSON array of the new items
+                # (not a {"new_items": [...]} object) -- calling .get() on a list
+                # used to throw and get swallowed here, so leads were always 0.
                 data = json.loads(out.stdout)
-                for it in data.get('new_items', data if isinstance(data, list) else []):
+                items = data if isinstance(data, list) else data.get('new_items', [])
+                for it in items:
                     if isinstance(it, dict) and it.get('title'):
                         leads.append(it['title'])
         except Exception as e:
