@@ -851,7 +851,11 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Diego Larotonda", sub:"Italy · CM", club:"", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced as the Grigi's first signing of the window by the local Alessandria broadcaster. No tier-1 corroboration and no fee disclosed, so the financial detail is unverified."},
+  {name:"Stevo Chillemi", sub:"21 · France-born · ST", club:"", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially confirmed by the club per Radiogold, a forward able to play as a centre forward or second striker. Selling club and fee were not reported, so they are omitted rather than assumed."},
+  {name:"Gabriele Balan", sub:"Italy · CM", club:"", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported by Il Piccolo as another midfield addition for coach Sesia. Single local outlet only and no terms given, so details beyond the arrival itself should be treated cautiously."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];
@@ -863,10 +867,14 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Alessandria Official", u:"#"}
-};
+  club: {l:"Alessandria Official", u:"#"},
+  radiogoldDiegoLarotonda: {l:"Radiogold", u:"https://radiogold.it/news/categoria/news-alessandria/sport/notizie-calcio/alessandria-calcio/"},
+  ilPiccoloGabrieleBalan: {l:"Il Piccolo", u:"https://www.ilpiccolo.net/sezione/alessandria-calcio/"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Diego Larotonda": ["radiogoldDiegoLarotonda"],
+  "Stevo Chillemi": ["radiogoldDiegoLarotonda"],
+  "Gabriele Balan": ["ilPiccoloGabrieleBalan"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "as-saint-\u00e9tienne", "name": "AS Saint-\u00c9ti
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T15:32:31.376162Z",
+  updated: "2026-08-05T16:26:16.991281Z",
   label: "League aggregation"
 };
