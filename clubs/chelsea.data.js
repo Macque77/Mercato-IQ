@@ -83,7 +83,8 @@ const CONFIRMED_IN = [
   {name:"Geovany Quenda", sub:"Permanent, contract to 2034", club:"Sporting CP", pos:"FW", fee:"£43m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Portuguese wing prospect, one of Chelsea's marquee summer additions"},
   {name:"Maxence Lacroix", sub:"Permanent", club:"Crystal Palace", pos:"DF", fee:"£52m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back reinforcement for Xabi Alonso's back line"},
   {name:"Marco Palestra", sub:"Permanent, contract to 2033", club:"Atalanta", pos:"DF", fee:"£47m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young Italian right-back"},
-  {name:"Valentin Barco", sub:"Permanent, 7-year deal to 2033", club:"Strasbourg", pos:"MF", fee:"£34m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Chelsea's 9th summer signing; may be loaned out immediately"}
+  {name:"Valentin Barco", sub:"Permanent, 7-year deal to 2033", club:"Strasbourg", pos:"MF", fee:"£34m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Chelsea's 9th summer signing; may be loaned out immediately"},
+  {name:"Jordan Henderson", sub:"36 · England · MF", club:"Brentford", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on a two-year deal after his Brentford contract was mutually terminated. The 91-cap England midfielder was part of the 2026 World Cup squad."}
 ];
 const CONFIRMED_OUT = [
   {name:"Marc Cucurella", sub:"Permanent", club:"Real Madrid", pos:"DF", fee:"£51.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back departs for Real Madrid"},
@@ -169,7 +170,10 @@ const HUB = {
   caughtOffsideMykhailoMudryk: {l:"CaughtOffside", u:"https://www.caughtoffside.com/2026/08/04/chelsea-consider-loaning-out-mudryk-shock-club/"},
   chelseaFCofficialGeovanyQuenda: {l:"Chelsea FC official", u:"https://www.chelseafc.com/en/news/article/summer-transfers-2026-all-the-chelsea-ins-outs-and-new-contracts-so-far"},
   teamTalkMorganRogers: {l:"TeamTalk", u:"https://www.teamtalk.com/chelsea/every-completed-chelsea-transfer-summer-2026-signings-sales-loans"},
-  yahooSportsTyriqueGeorge: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-everton-sign-tyrique-george-153951753.html"}};
+  yahooSportsTyriqueGeorge: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-everton-sign-tyrique-george-153951753.html"},
+  pAIrishNewsPepChavarra: {l:"PA / Irish News", u:"https://www.irishnews.com/sport/soccer/chelsea-closing-in-on-163m-deal-for-rayo-vallecano-defender-pep-chavarria-GILJMPPFFRNTPPQ6WKGPQSXGYA/"},
+  skySportsJordanHenderson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11661/13569179/jordan-henderson-transfer-news-chelsea-confirm-signing-of-midfielder-following-brentford-exit"},
+  skySportsDannyWelbeck: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11668/13568440/chelsea-transfer-news-danny-welbeck-completes-move-to-stamford-bridge-from-brighton-for-undisclosed-fee"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -178,8 +182,8 @@ const LINKMAP = {
   "High earners": ["bbcChe","law"],
   "Emmanuel Emegha": ["romano","lequipe","cfc"],
   "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "teamTalkMorganRogers"],
-  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra", "footballTransfersRomanoMorettoPepChavarra"],
-  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "teamTalkMorganRogers"],
+  "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra", "footballTransfersRomanoMorettoPepChavarra", "pAIrishNewsPepChavarra"],
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "teamTalkMorganRogers", "skySportsDannyWelbeck"],
   "Victor Osimhen": ["footballTransfersRomanoMorettoPepChavarra"],
   "Mykhailo Mudryk": ["caughtOffsideMykhailoMudryk"],
   "Geovany Quenda": ["chelseaFCofficialGeovanyQuenda"],
@@ -189,7 +193,8 @@ const LINKMAP = {
   "Valentin Barco": ["teamTalkMorganRogers"],
   "Marc Cucurella": ["teamTalkMorganRogers"],
   "Andrey Santos": ["teamTalkMorganRogers"],
-  "Tyrique George": ["yahooSportsTyriqueGeorge"]};
+  "Tyrique George": ["yahooSportsTyriqueGeorge"],
+  "Jordan Henderson": ["skySportsJordanHenderson"]};
 const WL_LINKMAP = {
   "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };

@@ -67,7 +67,7 @@ const TOP_STORIES = [  {
   },
   {
     name: "Fisnik Asllani",prob: 65, truth: 70, bullshit: false,
-    club_origin: "tsg-hoffenheim", club_display_name: "TSG Hoffenheim", direction: "out",
+    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "in",
     from: "TSG Hoffenheim", to: "RB Leipzig",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Below €35m valuation via contract clause", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 34},
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T09:57:31.613286Z",
+  updated: "2026-08-05T12:01:02.152786Z",
   label: "Nation aggregation"
 };

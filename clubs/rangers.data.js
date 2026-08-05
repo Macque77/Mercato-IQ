@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Lawrence Shankland", sub:"FW", club:"Heart of Midlothian", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing from a direct rival."},
   {name:"Danilo", sub:"DF", club:"NEC Nijmegen", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned after NEC declined to make his loan permanent."},
-  {name:"Godfrey", sub:"DF", club:"Atalanta", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Everton defender, loan signing."}
+  {name:"Godfrey", sub:"DF", club:"Atalanta", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Everton defender, loan signing."},
+  {name:"Daisuke Yokota", sub:"26 · Japan · W", club:"Hannover 96", pos:"W", fee:"£2.75m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Winger joins for an initial £2.75m plus add-ons on a three-year deal with a further one-year option, becoming the ninth summer signing. Scored five goals with four assists in the 2. Bundesliga last season and could feature in the Europa League qualifier."}
 ];
 const CONFIRMED_OUT = [
   {name:"James Tavernier", sub:"DF", club:"Released", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released as a free agent after MLS talks with Charlotte FC stalled."}
@@ -41,7 +42,6 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Jahnoah Markelo", sub:"DF", club:"Coventry City", pos:"DF", report:"~1 wk ago", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:65, prob:55, light:'g', trend:'up', note:"Rangers reportedly in talks for the defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Mikey Moore", sub:"W", club:"Tottenham Hotspur", pos:"W", report:"~1 wk ago", src:"The Scotsman", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Competing with Bundesliga interest, player reportedly told to make a decision.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Daisuke Yokota", sub:"26 · RW · Japan", club:"Hannover 96", pos:"RW", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"~€3.3m + €0.7m add-ons", truth:88, prob:80, light:'g', trend:'up', note:"Romano reports a full agreement reached; would be Rangers' ninth signing of the summer, with a medical reported for 4 August.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80},
   {name:"Fares Ghedjemis", sub:"23 · W · Algeria", club:"Frosinone", pos:"W", report:"4 Aug 2026", src:"Sky Sports Scotland (via GiveMeSport)", tier:2, fee:"£8m bid submitted", truth:48, prob:28, light:'o', trend:'up', note:"Rangers submitted an £8m offer attempting to hijack Celtic's move for the winger; Frosinone have rejected both bids so far and want £10m+.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
   {name:"Camilo Mena", sub:"23 · RW · Colombia", club:"Lechia Gdansk", pos:"RW", report:"3 Aug 2026", src:"Purple Vert (via Yahoo Sports UK)", tier:3, fee:"~£3.4m", truth:35, prob:15, light:'o', trend:'flat', note:"Rangers are said to be monitoring the winger as a fallback option after Lechia's relegation lowered his valuation; no formal talks reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
@@ -68,8 +68,8 @@ const HUB = {
   "footballtransfersRaskin": {l:"FootballTransfers · Raskin", u:"https://www.footballtransfers.com/en/transfer-news/gb-sct-premier-league/2026/07/rangers-transfer-news-nicolas-raskin-sale-23m-asking-price-summer-2026"},
   "givemesportYokota": {l:"GiveMeSport · Yokota", u:"https://www.givemesport.com/fabrizio-romano-rangers-reach-agreement-daisuke-yokota-transfer/"},
   "givemesportGhedjemis": {l:"GiveMeSport · Ghedjemis", u:"https://www.givemesport.com/breaking-rangers-submit-8m-offer-hijack-celtic-transfer-fares-ghedjemis/"},
-  "yahooMena": {l:"Yahoo Sports UK · Mena", u:"https://uk.sports.yahoo.com/news/rangers-closely-monitor-camilo-mena-100941826.html"}
-};
+  "yahooMena": {l:"Yahoo Sports UK · Mena", u:"https://uk.sports.yahoo.com/news/rangers-closely-monitor-camilo-mena-100941826.html"},
+  skySportsDaisukeYokota: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11788/13569962/rangers-transfer-news-daisuke-yokota-joins-from-hannover-96-to-become-derek-mcinnes-ninth-summer-signing"}};
 
 const LINKMAP = {
   "Lawrence Shankland": ["gnews-lawrenceshankland"],
@@ -80,7 +80,7 @@ const LINKMAP = {
   "Mikey Moore": ["scotsman"],
   "Nicolas Raskin": ["footballtransfersRaskin", "dailyrecord"],
   "Unnamed Rangers attacker": ["glasgowworld"],
-  "Daisuke Yokota": ["givemesportYokota"],
+  "Daisuke Yokota": ["givemesportYokota", "skySportsDaisukeYokota"],
   "Fares Ghedjemis": ["givemesportGhedjemis"],
   "Camilo Mena": ["yahooMena"]
 };

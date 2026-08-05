@@ -43,7 +43,8 @@ const CONFIRMED_OUT = [
   {name:"Martin Dubravka", sub:"GK", club:"Tottenham Hotspur", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released on a free transfer."},
   {name:"Jaidon Anthony", sub:"LW", club:"Brentford", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."},
   {name:"Loum Tchaouna", sub:"LW", club:"Coventry City", pos:"LW", fee:"£20m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale as part of Burnley's post-relegation rebuild."},
-  {name:"Maxime Esteve", sub:"CB", club:"RB Leipzig", pos:"CB", fee:"£27.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale, one of the bigger fees of Burnley's summer clear-out."}
+  {name:"Maxime Esteve", sub:"CB", club:"RB Leipzig", pos:"CB", fee:"£27.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale, one of the bigger fees of Burnley's summer clear-out."},
+  {name:"Florentino Luís", sub:"26 · Portugal · MF", club:"Ipswich Town", pos:"MF", fee:"£16m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to newly promoted Ipswich on a five-year deal worth an initial £16m plus a reported £3m in add-ons, shortly after his own permanent move from Benfica."}
 ];
 const INCOMING = [];
 const OUTGOING = [
@@ -67,8 +68,8 @@ const HUB = {
   "gnews-maximeesteve": {l:"Related news search: Maxime Esteve", u:"https://news.google.com/search?q=Burnley%20Maxime%20Esteve%20transfer&hl=en-GB&gl=GB"},
   "romano": {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"},
   "eastanglian": {l:"East Anglian Daily Times", u:"https://www.eadt.co.uk/sport"},
-  "schira": {l:"Nicolò Schira", u:"https://x.com/NicoSchira"}
-};
+  "schira": {l:"Nicolò Schira", u:"https://x.com/NicoSchira"},
+  pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"}};
 
 const LINKMAP = {
   "Lluc Castell": ["gnews-lluccastell"],
@@ -77,8 +78,8 @@ const LINKMAP = {
   "Loum Tchaouna": ["gnews-loumtchaouna"],
   "Maxime Esteve": ["gnews-maximeesteve"],
   "Florentino Luis": ["romano", "eastanglian"],
-  "Andreas Hountondji": ["schira"]
-};
+  "Andreas Hountondji": ["schira"],
+  "Florentino Luís": ["pAYahooSportFlorentinoLus"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

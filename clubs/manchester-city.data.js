@@ -86,7 +86,8 @@ const OUTGOING = [
    note:"Expect the usual City churn of loanees and fringe players to balance the books and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Rodri", sub:"30 · CDM · Spain", club:"Real Madrid", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Savinho", sub:"Requested exit, Spurs given deadline", club:"Tottenham Hotspur", pos:"FW", report:"Savinho has told City he wants to leave for more playing time; Tottenham hold priority interest and were reportedly given a deadline to complete a deal, with Liverpool an alternative suitor as a Salah replacement.", src:"Fabrizio Romano", tier:1, fee:"~£60m", truth:75, prob:65, light:"g", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
-  {name:"James Trafford", sub:"Leeds keen once Perri deal completes", club:"Leeds United", pos:"GK", report:"Leeds intend to move for academy product Trafford once they sell Lucas Perri to Torino; the player is described as keen on the switch, though no fee is agreed yet.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"James Trafford", sub:"Leeds keen once Perri deal completes", club:"Leeds United", pos:"GK", report:"Leeds intend to move for academy product Trafford once they sell Lucas Perri to Torino; the player is described as keen on the switch, though no fee is agreed yet.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Tijjani Reijnders", sub:"28 · Netherlands · MF", club:"Nottingham Forest", pos:"MF", report:"Reported to be open to an exit after 19 Premier League starts in his debut season; Nottingham Forest are interested around £55m, with City said to want closer to £60m.", src:"PA / Yahoo Sport", tier:2, fee:"£55m", truth:60, prob:35, light:"y", trend:"flat", note:"Juventus and Galatasaray are also monitoring the Netherlands midfielder, signed from AC Milan for about £35m in June 2025. No fee has been agreed.", lastSeen:"2026-08-05T11:41:11Z", baseProb:35}
 ];
 
 const RISERS = [
@@ -141,7 +142,8 @@ const HUB = {
   readManCitycomviaRomanoJamesTrafford: {l:"ReadManCity.com (via Romano)", u:"https://readmancity.com/2026/07/25/fabrizio-romano-confirms-leeds-united-move-manchester-city-goalkeeper/"},
   eSPNElliotAnderson: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49433223/elliot-anderson-completes-move-manchester-city-nottingham-forest"},
   tEAMtalkMathysDetourbet: {l:"TEAMtalk", u:"https://www.teamtalk.com/manchester-city/every-completed-man-city-transfer-summer-2026-signings-exits-loans"},
-  footballFanCastManuelAkanji: {l:"FootballFanCast", u:"https://www.footballfancast.com/manchester-city-transfers-signings/"}};
+  footballFanCastManuelAkanji: {l:"FootballFanCast", u:"https://www.footballfancast.com/manchester-city-transfers-signings/"},
+  pAYahooSportTijjaniReijnders: {l:"PA / Yahoo Sport", u:"https://ca.sports.yahoo.com/news/nottingham-forest-target-tijjani-reijnders-153500623.html"}};
 const LINKMAP = {
   "Elliot Anderson": ["men", "eSPNElliotAnderson"],
   "Enzo Fernández": ["men"],
@@ -160,7 +162,8 @@ const LINKMAP = {
   "Pierce Charles": ["tEAMtalkMathysDetourbet"],
   "Manuel Akanji": ["footballFanCastManuelAkanji"],
   "Nathan Ake": ["tEAMtalkMathysDetourbet"],
-  "Jahmai Simpson-Pusey": ["footballFanCastManuelAkanji"]};
+  "Jahmai Simpson-Pusey": ["footballFanCastManuelAkanji"],
+  "Tijjani Reijnders": ["pAYahooSportTijjaniReijnders"]};
 const WL_LINKMAP = {
   "Elliot Anderson":"men","Backroom rebuild":"athletic","Loan returns":"men",
 };

@@ -6,7 +6,7 @@
 const NATION = {
   name: "Turkey",
   flag_emoji: "🇹🇷",
-  stories_count: 15
+  stories_count: 14
 };
 
 const TOP_STORIES = [  {
@@ -31,13 +31,6 @@ const TOP_STORIES = [  {
     value: "Contract renewal", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Nariman Akhundzada",prob: 80, truth: 90, bullshit: false,
-    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
-    from: "Columbus Crew", to: "Erzurumspor",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
-  },
-  {
     name: "Iván Cedric",prob: 80, truth: 85, bullshit: false,
     club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
     from: "Vanspor FK", to: "Alanyaspor",
@@ -45,11 +38,11 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Mohamed Salah",prob: 46, truth: 60, bullshit: false,
-    club_origin: "trabzonspor", club_display_name: "Trabzonspor", direction: "in",
-    from: "Free agent (ex-Liverpool)", to: "Trabzonspor",
+    name: "Nariman Akhundzada",prob: 80, truth: 90, bullshit: false,
+    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
+    from: "Columbus Crew", to: "Erzurumspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "~€34m total (2-yr deal)", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
     name: "Álvaro Soler",prob: 42, truth: 56, bullshit: false,
@@ -116,12 +109,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Super Lig": 3, "S\u00fcper Lig": 12, "B\u00f6lgesel Amat\u00f6r Lig": 0};
+const BY_LEAGUE = {"Super Lig": 3, "S\u00fcper Lig": 11, "B\u00f6lgesel Amat\u00f6r Lig": 0};
 
-const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "count": 12}, {"slug": "super-lig", "name": "Super Lig", "count": 3}, {"slug": "b\u00f6lgesel-amat\u00f6r-lig", "name": "B\u00f6lgesel Amat\u00f6r Lig", "count": 0}];
+const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "count": 11}, {"slug": "super-lig", "name": "Super Lig", "count": 3}, {"slug": "b\u00f6lgesel-amat\u00f6r-lig", "name": "B\u00f6lgesel Amat\u00f6r Lig", "count": 0}];
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T09:57:31.615657Z",
+  updated: "2026-08-05T12:01:02.162326Z",
   label: "Nation aggregation"
 };

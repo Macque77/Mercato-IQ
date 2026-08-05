@@ -54,7 +54,8 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
 const CONFIRMED_IN = [
   {name:"Chuba Akpom", sub:"30 · ST · England", club:"Ajax", pos:"FW", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Proven Championship-and-Eredivisie goalscorer returns to England to lead the line back in the Premier League."},
   {name:"Cedric Kipre", sub:"29 · CB · Ivory Coast", club:"Stade de Reims", pos:"DF", fee:"£3.9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ligue 1 centre-back adds height and top-flight-ready experience to Kieran McKenna's defence."},
-  {name:"Issa Diop", sub:"29 · CB · France", club:"Fulham", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First of Ipswich's two raids on Fulham this summer, addressing centre-back depth for the top flight."}
+  {name:"Issa Diop", sub:"29 · CB · France", club:"Fulham", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First of Ipswich's two raids on Fulham this summer, addressing centre-back depth for the top flight."},
+  {name:"Florentino Luís", sub:"26 · Portugal · MF", club:"Burnley", pos:"MF", fee:"£16m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Defensive midfielder joins the newly promoted side on a five-year deal for an initial £16m plus a reported £3m in add-ons, chosen ahead of interest from Hull City. Made 33 appearances for Burnley last season."}
 ];
 const CONFIRMED_OUT = [
   {name:"Arijanet Muric", sub:"27 · GK · Kosovo", club:"Sassuolo", pos:"GK", fee:"£6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ends his Ipswich spell (including a prior loan at Sassuolo) with a permanent move back to Serie A."},
@@ -130,7 +131,8 @@ const HUB = {
   suffolkNewsSkySportsNewsSasaLukic: {l:"Suffolk News (Sky Sports News)", u:"https://www.suffolknews.co.uk/ipswich/sport/transfer-talk-town-eyeing-second-raid-on-fulham-9475948/"},
   sportsMoleChubaAkpom: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/ipswich-town/transfer-talk/feature/ipswich-summer-transfers-all-confirmed-ins-and-outs-for-2026_599297.html"},
   tWTDcoukIssaDiop: {l:"TWTD.co.uk", u:"https://www.twtd.co.uk/ipswich-town-news/52375/town-confirm-diop-signing"},
-  suffolkNewsSammieSzmodics: {l:"Suffolk News", u:"https://www.suffolknews.co.uk/ipswich/sport/forward-seals-move-away-from-portman-road-9476664/"}};
+  suffolkNewsSammieSzmodics: {l:"Suffolk News", u:"https://www.suffolknews.co.uk/ipswich/sport/forward-seals-move-away-from-portman-road-9476664/"},
+  pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"}};
 const LINKMAP = {
   "Tim Iroegbunam": ["twtd","eadt"],
   "PL-ready survival signings (framing)": ["eadt","twtd"],
@@ -146,7 +148,8 @@ const LINKMAP = {
   "Arijanet Muric": ["sportsMoleChubaAkpom"],
   "Sammie Szmodics": ["suffolkNewsSammieSzmodics"],
   "Conor Chaplin": ["sportsMoleChubaAkpom"],
-  "Conor Townsend": ["sportsMoleChubaAkpom"]};
+  "Conor Townsend": ["sportsMoleChubaAkpom"],
+  "Florentino Luís": ["pAYahooSportFlorentinoLus"]};
 const WL_LINKMAP = {
   "Kieran McKenna":"sky","Tim Iroegbunam":"twtd",
 };

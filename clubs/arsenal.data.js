@@ -82,7 +82,7 @@ const INCOMING = [
    note:"A recurring centre-forward option as Arsenal weigh succession for Gabriel Jesus; reporting has Arsenal registering interest. OBSTACLES: T3 sourcing, a crowded market for elite young strikers, and the cost-cap maths on another big fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
   {name:"Julián Álvarez", sub:"26 · Argentina · ST", club:"Atlético Madrid", pos:"ST", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£120m+", truth:45, prob:10, light:'r', trend:'flat',
    note:"Listed by the BBC as an attacking target but flagged as 'highly complex': a valuation north of £120m would almost certainly require a major sale first, and Atlético hold all the leverage. An aspirational, low-probability swing rather than a likely deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10},
-  {name:"Bruno Guimarães", sub:"Deal advancing fast, medical stage reported", club:"Newcastle United", pos:"MF", report:"Talks accelerated in early August with personal terms agreed; Romano reports the move is 'expected shortly' with a medical set for August 3 and Newcastle already planning a replacement.", src:"Fabrizio Romano", tier:1, fee:"£80m (£70m + £10m add-ons)", truth:85, prob:78, light:"g", trend:"flat", note:"The Times reported the fee breakdown", lastSeen:"2026-08-04T19:10:50Z", baseProb:78},
+  {name:"Bruno Guimarães", sub:"28 · Brazil · MF", club:"Newcastle United", pos:"MF", report:"Arsenal have agreed a £75m fee with Newcastle for their captain, with a medical in north London expected within days after the clubs compromised (Arsenal opened around £60m, Newcastle wanted £80m).", src:"Sky Sports", tier:1, fee:"£75m", truth:92, prob:88, light:"g", trend:"up", note:"Fee agreed and medical pending, so a near-complete deal rather than a target. Lyon are due roughly €8m via a 20% sell-on clause.", lastSeen:"2026-08-05T11:41:11Z", baseProb:88},
   {name:"Ezri Konsa", sub:"Targeted as Saliba injury cover", club:"Aston Villa", pos:"DF", report:"Arsenal have had a £60-65m bid in talks with Villa as they seek defensive reinforcement after William Saliba's back injury; Konsa is open to discussing a move but may prefer to stay for Champions League football.", src:"CaughtOffside / Sports Mole", tier:2, fee:"£60m", truth:55, prob:35, light:"y", trend:"flat", note:"Villa under financial pressure but Konsa reportedly leaning toward staying", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Rayan", sub:"Audacious move for breakout Brazilian winger", club:"Bournemouth", pos:"FW", report:"20-year-old Brazilian right winger has impressed since a January move from Vasco da Gama; Bournemouth want £85m and Arsenal are seen as unlikely to pursue given depth on the right flank.", src:"The Sun", tier:3, fee:"£85m", truth:40, prob:15, light:"o", trend:"flat", note:"Arsenal's greater need is reportedly a left-sided attacker after Trossard's exit", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
@@ -166,7 +166,8 @@ const HUB = {
   caughtOffsideGabrielJesus: {l:"CaughtOffside", u:"https://www.caughtoffside.com/2026/06/24/arsenal-gabriel-jesus-transfer-fee/"},
   skySportsMylesLewisSkelly: {l:"Sky Sports", u:"https://www.skysports.com/football/transfer-paper-talk/12709/13569111/myles-lewis-skelly-transfer-news-man-utd-considering-move-for-arsenal-player-paper-talk"},
   arseblogNewsPieroHincapi: {l:"Arseblog News", u:"https://arseblog.news/2026/06/confirmed-arsenal-sign-piero-hincapie-on-permanent-deal/"},
-  sportsMoleIllanMeslier: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/feature/arsenal-summer-transfers-all-confirmed-ins-and-outs-for-2026_599109.html"}};
+  sportsMoleIllanMeslier: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/feature/arsenal-summer-transfers-all-confirmed-ins-and-outs-for-2026_599109.html"},
+  skySportsBrunoGuimares: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11670/13569653/bruno-guimaraes-transfer-news-arsenal-agree-lb75m-fee-for-newcastle-midfielder"}};
 const LINKMAP = {
   "Morgan Rogers": ["bbcArs","mokbel"],
   "Eli Junior Kroupi": ["bbcArs"],
@@ -180,7 +181,7 @@ const LINKMAP = {
   "Ben White": ["bbcArs"],
   "William Saliba": ["marca","bbcGossip"],
   "Piero Hincapié": ["romano","afc", "arseblogNewsPieroHincapi"],
-  "Bruno Guimarães": ["football365viaFabrizioRomanoBrunoGuimares"],
+  "Bruno Guimarães": ["football365viaFabrizioRomanoBrunoGuimares", "skySportsBrunoGuimares"],
   "Ezri Konsa": ["sportsMoleviaCaughtOffsideEzriKonsa"],
   "Rayan": ["nowArsenalviaTheSunRayan"],
   "Myles Lewis-Skelly": ["skySportsMylesLewisSkelly"],

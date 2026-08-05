@@ -54,7 +54,8 @@ const CONFIRMED_IN = [
   {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent from Celtic", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect signs a 5-year contract; Romano confirmed with 'Here We Go'."}
 ];
 const CONFIRMED_OUT = [
-  {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."}
+  {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."},
+  {name:"Mohamed Salah", sub:"34 · Egypt · FW", club:"Trabzonspor", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Leaves on a free after mutually terminating his contract a year early, ending a nine-year Anfield spell in which he won seven major trophies and scored 257 goals in 442 games. Reported to be travelling to Turkey to complete a two-year deal."}
 ];
 
 const INCOMING = [
@@ -66,7 +67,7 @@ const INCOMING = [
    note:"Linked amid a reported contract dispute at Everton, having rejected new terms. On-profile for energy and directness. OBSTACLE: Everton's stance and valuation; sourcing is moderate.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
   {name:"Kennett Eichhorn", sub:"young · midfield", club:"(target)", pos:"CM", report:"~2 days ago", src:"Aggregated", tier:4, fee:"£15-25m", truth:35, prob:14, light:'r', trend:'up',
    note:"Liverpool intensifying interest after Bayern Munich reportedly withdrew. A young midfield prospect for the model. Early-warning sourcing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
-  {name:"Bradley Barcola", sub:"23 · W · France", club:"Paris Saint-Germain", pos:"W", report:"27 Jul – 2 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Liverpool ~€100m offer vs PSG demanding €150-170m", truth:58, prob:30, light:"y", trend:"flat", note:"Personal terms reportedly agreed in principle, but Romano says he doesn't expect an imminent move given the clubs remain far apart on fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Named Liverpool's priority attacking target after Salah's exit; the player is reported to have reached an agreement in principle, but no official bid has been tabled and the clubs remain apart on price (Liverpool around £100m, PSG valuing him at £120m-plus).", src:"Sky Sports", tier:2, fee:"£100m target", truth:70, prob:48, light:"y", trend:"up", note:"OBSTACLE: a wide valuation gap, with PSG figures quoted as high as £145m. Player willingness is the strongest part of the story; the fee is not yet close.", lastSeen:"2026-08-05T11:41:11Z", baseProb:48}
 ];
 
 const OUTGOING = [
@@ -124,7 +125,9 @@ const HUB = {
   bbcGossip: {l:"BBC Sport · gossip column", u:"https://www.bbc.co.uk/sport/football/gossip"},
   vi:        {l:"Voetbal International", u:"https://www.vi.nl/"},
   fabrizioRomanoviaCaughtOffsideBradleyBarcola: {l:"Fabrizio Romano (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/02/fabrizio-romano-bradley-barcola-liverpool-transfer-update-not-imminent/"},
-  fabrizioRomanoviaRoundtableDaraJikiemi: {l:"Fabrizio Romano (via Roundtable)", u:"https://roundtable.io/sports/soccer/scottish-premiership/celtic/news/here-we-go---fabrizio-romano-confirms-celtic-transfer"}};
+  fabrizioRomanoviaRoundtableDaraJikiemi: {l:"Fabrizio Romano (via Roundtable)", u:"https://roundtable.io/sports/soccer/scottish-premiership/celtic/news/here-we-go---fabrizio-romano-confirms-celtic-transfer"},
+  skySportsBradleyBarcola: {l:"Sky Sports", u:"https://www.skysports.com/transfer/news/12691/13567165/bradley-barcola-transfer-news-psg-value-france-forward-at-lb145m-amid-liverpool-and-arsenal-interest-paper-talk"},
+  skySportsMohamedSalah: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13569969/mohamed-salah-former-liverpool-forward-set-to-join-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
@@ -133,8 +136,9 @@ const LINKMAP = {
   "Cody Gakpo": ["vi","echo"],
   "Ibrahima Konaté": ["ninetymin"],
   "Fringe & loan army": ["echo"],
-  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola"],
-  "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"]};
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola"],
+  "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"],
+  "Mohamed Salah": ["skySportsMohamedSalah"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };

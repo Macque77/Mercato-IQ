@@ -96,8 +96,7 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Bruno Guimarães", sub:"28 · CM · Brazil, captain", club:"Arsenal", pos:"CM/DM", report:"30-31 Jul 2026", src:"talkSPORT (Ben Jacobs) / The Sun (Jack Rosser) / ESPN Brasil", tier:1, fee:"£70-85m (gap narrowing)", truth:82, prob:62, light:'g', trend:'up',
-   note:"Still the defining storyline, and it has moved: The Sun's Jack Rosser (30 Jul) reports Arsenal 'close to agreeing a deal' with Newcastle, fee just north of £70m, while FootballTransfers' own 30 Jul piece has Arsenal in 'advanced talks' off a 'verbal agreement' at around €87m/£75m. Newcastle's ask has softened from the earlier £85m, Arsenal's offer has crept up from £75m - the gap is narrowing rather than closed. Bamba's arrival gives Newcastle a contingency if Bruno goes. Two years plus a club option remain on his contract, so Newcastle are not forced sellers, but 'close to finalising' language across multiple outlets pushes probability up again this refresh; still not a signed deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:62},
+  {name:"Bruno Guimarães", sub:"28 · Brazil · MF", club:"Arsenal", pos:"MF", report:"Newcastle have agreed to sell captain Guimarães to Arsenal for £75m, with the midfielder set for a medical within days.", src:"Sky Sports", tier:1, fee:"£75m", truth:92, prob:88, light:"g", trend:"up", note:"A defining sale of the window for Newcastle. Lyon take about €8m through a 20% sell-on clause, and Shearer among others has warned of a challenging summer on Tyneside.", lastSeen:"2026-08-05T11:41:11Z", baseProb:88},
   {name:"Jacob Murphy", sub:"31 · RW/LW · England", club:"Everton", pos:"W", report:"28 Jul 2026", src:"Football Insider", tier:3, fee:"Bargain-fee speculation, undisclosed", truth:52, prob:26, light:'o', trend:'up',
    note:"Football Insider (28 Jul) reports Newcastle are 'now ready to accept the right offer' for Murphy, a step on from the pure enquiry-stage framing of the last refresh, though still no bid or fee agreed. A decade-long servant whose game time is squeezed by Bazoumana Touré's arrival and any Ezzalzouli deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:26},
   {name:"Lewis Hall", sub:"22 · LB/LWB · England", club:"Manchester United / Chelsea", pos:"LB", report:"30 Jul 2026", src:"CaughtOffside (Simon Phillips)", tier:3, fee:"≈£55-60m", truth:48, prob:22, light:'o', trend:'up',
@@ -184,7 +183,8 @@ const HUB = {
   newcastleUnitedofficialEwenJaouen: {l:"Newcastle United official", u:"https://www.newcastleunited.com/en/news/ewen-jaouen-signs-for-newcastle-united"},
   skySportsAnthonyGordon: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13548577/anthony-gordon-transfer-news-barcelona-reach-agreement-with-newcastle-for-england-international-winger"},
   eSPNSandroTonali: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49246543/sandro-tonali-completes-record-transfer-tottenham-newcastle-united"},
-  footballFanCastKieranTrippier: {l:"FootballFanCast", u:"https://www.footballfancast.com/newcastle-transfers-signings/"}};
+  footballFanCastKieranTrippier: {l:"FootballFanCast", u:"https://www.footballfancast.com/newcastle-transfers-signings/"},
+  skySportsBrunoGuimares: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11670/13569653/bruno-guimaraes-transfer-news-arsenal-agree-lb75m-fee-for-newcastle-midfielder"}};
 const LINKMAP = {
   "Sean Steur": ["skyNUFC","nufcOfficial", "skySportsSeanSteur"],
   "Bazoumana Touré": ["skyNUFC","nufcOfficial", "eSPNBazoumanaTour"],
@@ -206,7 +206,7 @@ const LINKMAP = {
   "Giorgio Scalvini": ["tuttoAtalanta","scalviniHT","shieldsGaz"],
   "Abde Ezzalzouli": ["teamtalk","ezzalzouliFP"],
   "Joaquín Oso": ["osoSW"],
-  "Bruno Guimarães": ["brunoSun","brunoFT","talksport","skyNUFC"],
+  "Bruno Guimarães": ["brunoSun","brunoFT","talksport","skyNUFC", "skySportsBrunoGuimares"],
   "Jacob Murphy": ["murphyFI"],
   "Lewis Hall": ["hallCO"],
   "Nick Pope": ["shieldsGaz","leeRyder"],

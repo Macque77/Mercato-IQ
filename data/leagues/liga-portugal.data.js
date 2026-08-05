@@ -108,16 +108,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Oumar Camara", prob: 25, truth: 40, bullshit: false,
-    club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
-    from: "Vitória SC", to: "Vitória Guimarães",
+    name: "Andrew", prob: 25, truth: 40, bullshit: false,
+    club_origin: "braga", club_display_name: "SC Braga", direction: "in",
+    from: "Gil Vicente", to: "SC Braga",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Andrew", prob: 25, truth: 40, bullshit: false,
-    club_origin: "braga", club_display_name: "SC Braga", direction: "in",
-    from: "Gil Vicente", to: "SC Braga",
+    name: "Oumar Camara", prob: 25, truth: 40, bullshit: false,
+    club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "out",
+    from: "Vitória SC", to: "Vitória Guimarães",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
@@ -143,6 +143,6 @@ const CLUBS_LIST = [{"slug": "boavista", "name": "Boavista FC", "count": 0, "bad
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T09:57:31.622254Z",
+  updated: "2026-08-05T12:01:02.194255Z",
   label: "League aggregation"
 };

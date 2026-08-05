@@ -73,9 +73,9 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Super League"
   },
   {
-    name: "Antoine Makoumbou",prob: 15, truth: 25, bullshit: false,
-    club_origin: "paok", club_display_name: "PAOK Thessaloniki", direction: "in",
-    from: "Samsunspor", to: "PAOK Thessaloniki",
+    name: "Antoine Makoumbou",prob: 15, truth: 30, bullshit: false,
+    club_origin: "panathinaikos", club_display_name: "Panathinaikos", direction: "in",
+    from: "Samsunspor", to: "Panathinaikos",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Super League"
   },
@@ -87,6 +87,6 @@ const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T09:57:31.613596Z",
+  updated: "2026-08-05T12:01:02.152786Z",
   label: "Nation aggregation"
 };
