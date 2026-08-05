@@ -6,17 +6,24 @@
 const NATION = {
   name: "Wales",
   flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
-  stories_count: 0
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Jack Moylan",prob: 82, truth: 88, bullshit: false,
+    club_origin: "cardiff-city", club_display_name: "Cardiff City", direction: "in",
+    from: "Lincoln City", to: "Cardiff City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Championship"
+  },
+];
 
-const BY_LEAGUE = {"Championship": 0, "Cymru Premier": 0};
+const BY_LEAGUE = {"Championship": 1, "Cymru Premier": 0};
 
-const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 0}, {"slug": "cymru-premier", "name": "Cymru Premier", "count": 0}];
+const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 1}, {"slug": "cymru-premier", "name": "Cymru Premier", "count": 0}];
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T16:26:16.980423Z",
+  updated: "2026-08-05T17:03:24.549161Z",
   label: "Nation aggregation"
 };

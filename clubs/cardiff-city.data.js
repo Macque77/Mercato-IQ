@@ -34,7 +34,9 @@ const CONFIRMED_IN = [
   {name:"Omari Kellyman", sub:"19 · AM · England", club:"Chelsea", pos:"AM", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Cardiff's third summer signing under Brian Barry-Murphy, on the record with player quotes already given."}
 ];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Jack Moylan", sub:"24 · Republic of Ireland · AM", club:"Lincoln City", pos:"Attacking midfielder", report:"Cardiff are in advanced talks and closing in on the League One title winner, who scored 11 times last season, as the Bluebirds finally move in the market after promotion.", src:"Pete O'Rourke", tier:2, fee:"Undisclosed", truth:88, prob:82, light:"g", trend:"flat", note:"Reported by a well-connected EFL correspondent rather than a tier-1 name, and no fee has been put on the record, so treat the structure of the deal with caution until Cardiff announce.", lastSeen:"2026-08-05T17:03:23Z", baseProb:82}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -44,12 +46,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "gnews-omarikellyman": {l:"Related news search: Omari Kellyman", u:"https://news.google.com/search?q=Cardiff%20City%20Omari%20Kellyman%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-omarikellyman": {l:"Related news search: Omari Kellyman", u:"https://news.google.com/search?q=Cardiff%20City%20Omari%20Kellyman%20transfer&hl=en-GB&gl=GB"},
+  peteORourkeJackMoylan: {l:"Pete O'Rourke", u:"https://x.com/SportsPeteO/status/2083511106371236130"}};
 
 const LINKMAP = {
-  "Omari Kellyman": ["gnews-omarikellyman"]
-};
+  "Omari Kellyman": ["gnews-omarikellyman"],
+  "Jack Moylan": ["peteORourkeJackMoylan"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

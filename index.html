@@ -750,19 +750,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Florentino Luis",
-    club_display_name: "Burnley",
-    summary: "",
-    value: "£16m",
-    from: "Burnley", to: "Ipswich Town",
-    direction: "out",
-    prob: 90, truth: 92, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Championship",
-    club_link: "burnley",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Bruno Guimarães",
     club_display_name: "Arsenal",
     summary: "",
@@ -1516,12 +1503,25 @@ const HEADLINES = [
     club_link: "bournemouth",
     updated: "2026-06-06T00:00:00Z"
   },
+  {
+    headline: "Andrea Pinamonti",
+    club_display_name: "US Sassuolo",
+    summary: "Contact established between the clubs but Lazio's real priority lies elsewhere.",
+    value: "Undisclosed",
+    from: "US Sassuolo", to: "Lazio",
+    direction: "out",
+    prob: 30, truth: 60, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Italy", league: "Serie A",
+    club_link: "sassuolo",
+    updated: "2026-08-03T14:30:00Z"
+  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 180, league_count: 3
+    stories_count: 184, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -1533,7 +1533,7 @@ const NATIONS = [
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 77, league_count: 1
+    stories_count: 76, league_count: 1
   },
   {
     name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
@@ -1564,19 +1564,19 @@ const NATIONS = [
     stories_count: 10, league_count: 1
   },
   {
-    name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
+    name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
     stories_count: 1, league_count: 1
   },
   {
-    name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
-    stories_count: 0, league_count: 0
+    name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
+    stories_count: 1, league_count: 1
   },
 ];
 
 const STATS = {
-  total_stories: 617,
-  clubs_covered: 181,
-  tier1_count: 74,
+  total_stories: 621,
+  clubs_covered: 182,
+  tier1_count: 73,
   top_league: "Serie A",
   most_active_club: "Sunderland",
   nations_covered: 13,
@@ -1585,7 +1585,7 @@ const STATS = {
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T16:26:16.976824Z",
+  updated: "2026-08-05T17:03:24.545547Z",
   label: "Global aggregation from all clubs"
 };
 

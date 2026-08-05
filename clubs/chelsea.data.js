@@ -100,7 +100,8 @@ const INCOMING = [
    note:"Carried from the v1 positions board (heat 55): an Alonso-shaped defensive structure is a stated priority of the rebuild. Thread-level only; the v1 state held no named defensive targets, so names attach at the next refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Midfield control", sub:"Positional thread", club:"Market", pos:"CM", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Within £120-200m gross", truth:55, prob:50, light:'y', trend:'flat',
    note:"Carried from the v1 positions board (heat 50): tactical fit for Alonso in central midfield is a flagged need. Thread-level only; no named midfield targets were held in the v1 state.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
-  {name:"Victor Osimhen", sub:"Linked but Tottenham reported as favourites", club:"Napoli", pos:"FW", report:"Chelsea have been credited with interest in the Nigerian striker but multiple reports now say Tottenham are leading the race at a fee north of €75m.", src:"CaughtOffside", tier:3, fee:"€75m+", truth:40, prob:15, light:"o", trend:"flat", note:"Spurs reported to be in pole position, cooling Chelsea's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+  {name:"Victor Osimhen", sub:"Linked but Tottenham reported as favourites", club:"Napoli", pos:"FW", report:"Chelsea have been credited with interest in the Nigerian striker but multiple reports now say Tottenham are leading the race at a fee north of €75m.", src:"CaughtOffside", tier:3, fee:"€75m+", truth:40, prob:15, light:"o", trend:"flat", note:"Spurs reported to be in pole position, cooling Chelsea's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Pep Chavarria", sub:"28 · Spain · LB", club:"Rayo Vallecano", pos:"Left-back", report:"Chelsea are closing on a deal worth about £16.3m plus add-ons, with personal terms already agreed. The Spaniard would provide competition for Jorrel Hato following Marc Cucurella's move to Real Madrid, and is a target of Xabi Alonso.", src:"Press Association", tier:2, fee:"£16.3m plus add-ons", truth:90, prob:85, light:"g", trend:"flat", note:"Wire and Athletic reporting is consistent on the fee, but nothing is signed and Chelsea have chased this one for much of the window without closing it.", lastSeen:"2026-08-05T17:03:23Z", baseProb:85}
 ];
 
 const OUTGOING = [
@@ -194,7 +195,8 @@ const LINKMAP = {
   "Marc Cucurella": ["teamTalkMorganRogers"],
   "Andrey Santos": ["teamTalkMorganRogers"],
   "Tyrique George": ["yahooSportsTyriqueGeorge"],
-  "Jordan Henderson": ["skySportsJordanHenderson"]};
+  "Jordan Henderson": ["skySportsJordanHenderson"],
+  "Pep Chavarria": ["pAIrishNewsPepChavarra"]};
 const WL_LINKMAP = {
   "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };

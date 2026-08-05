@@ -42,7 +42,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Gvidas Gineitis", sub:"MF", club:"Torino", pos:"MF", report:"~1 wk ago", src:"BBC / Football Insider / Daily Record", tier:2, fee:"~£12m", truth:75, prob:60, light:'g', trend:'up', note:"Agent contact reportedly made, Torino want around £12m and Celtic are said to be preparing an improved offer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:60},
   {name:"Claudio Braga", sub:"FW", club:"Heart of Midlothian", pos:"FW", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Celtic reportedly keeping close tabs, early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Fares Ghedjemis", sub:"23 · W · Algeria", club:"Frosinone", pos:"W", report:"3 Aug 2026", src:"Fraser Fletcher / TEAMtalk", tier:2, fee:"£6-8m", truth:55, prob:35, light:'y', trend:'flat', note:"Celtic's opening £6m bid was rejected, with Frosinone wanting £8m+; the winger is reportedly enthusiastic about the move, but Rangers have since submitted a rival hijack bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Fares Ghedjemis", sub:"23 · Algeria · W", club:"Frosinone", pos:"Winger", report:"Celtic have had an opening bid in the region of £6m to £8m turned down, with Frosinone holding out for more than £10m for the winger who scored 15 goals as they won promotion to Serie A. Rangers have also bid.", src:"The Scotsman", tier:2, fee:"£10m-plus", truth:75, prob:40, light:"y", trend:"up", note:"Sourcing is Scottish and Italian media rather than a tier-1 reporter, and much of the noise about the player favouring Celtic traces back to fan-facing sites. The gap between Celtic's offer and Frosinone's valuation is real, so a collapse is very possible.", lastSeen:"2026-08-05T17:03:23Z", baseProb:40},
   {name:"Greg Taylor", sub:"28 · LB · Scotland", club:"PAOK", pos:"LB", report:"31 Jul 2026", src:"67 Hail Hail (via Daily Record, Greece)", tier:2, fee:"Undisclosed", truth:50, prob:33, light:'y', trend:'up', note:"Taylor has fallen out of favour under PAOK's new coach after just a year away, with a Celtic return said to be gathering momentum.", lastSeen:"2026-08-04T19:10:50Z", baseProb:33}
 ];
 const OUTGOING = [
@@ -70,7 +70,8 @@ const HUB = {
   "teamtalkGhedjemis": {l:"TEAMtalk · Ghedjemis", u:"https://www.teamtalk.com/news/celtic-transfer-news-fares-ghedjemis-bid-rejected-next-move"},
   "hailhailTaylor": {l:"67 Hail Hail · Taylor", u:"https://www.67hailhail.com/transfers/greg-taylor-set-for-significant-developments-with-paok-ready-to-allow-celtic-return/"},
   "skySportsEngels": {l:"Sky Sports · Engels", u:"https://www.skysports.com/football/news/11095/13568688/west-ham-transfer-news-hammers-in-talks-to-sign-celtic-midfielder-arne-engels-amid-premier-league-interest"},
-  fabrizioRomanoviaRoundtableDaraJikiemi: {l:"Fabrizio Romano (via Roundtable)", u:"https://roundtable.io/sports/soccer/scottish-premiership/celtic/news/here-we-go---fabrizio-romano-confirms-celtic-transfer"}};
+  fabrizioRomanoviaRoundtableDaraJikiemi: {l:"Fabrizio Romano (via Roundtable)", u:"https://roundtable.io/sports/soccer/scottish-premiership/celtic/news/here-we-go---fabrizio-romano-confirms-celtic-transfer"},
+  theScotsmanFaresGhedjemis: {l:"The Scotsman", u:"https://www.scotsman.com/sport/football/celtic/latest-celtic-news/celtic-and-rangers-face-potential-eight-figure-transfer-fee-in-battle-to-sign-fares-ghedjemis-8839335"}};
 
 const LINKMAP = {
   "Kasper Hogh": ["gnews-kasperhogh"],
@@ -81,7 +82,7 @@ const LINKMAP = {
   "Claudio Braga": ["yahoosport"],
   "Alistair Johnston": ["footballinsider"],
   "Reo Hatate": ["scottishsun"],
-  "Fares Ghedjemis": ["teamtalkGhedjemis"],
+  "Fares Ghedjemis": ["teamtalkGhedjemis", "theScotsmanFaresGhedjemis"],
   "Greg Taylor": ["hailhailTaylor"],
   "Arne Engels": ["skySportsEngels"],
   "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"]};

@@ -87,7 +87,10 @@ const CONFIRMED_OUT =
   {name:"Adam Webster", sub:"Centre back, English, 31", club:"Released", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of 2025/26 season"},
   {name:"Joel Veltman", sub:"Right back, Dutch, 34", club:"Released", pos:"RB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of 2025/26 season; long-serving Brighton defender"},
   {name:"Solly March", sub:"Winger/midfielder, English, 31", club:"Released", pos:"RW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of 2025/26 season; club legend with over a decade at the Amex"},
-  {name:"James Milner", sub:"Central midfielder, English, 40", club:"Retired", pos:"CM", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Retired from professional football at end of 2025/26 season"}
+  {name:"James Milner", sub:"Central midfielder, English, 40", club:"Retired", pos:"CM", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Retired from professional football at end of 2025/26 season"},
+  {name:"Carl Rushworth", sub:"25 · England · GK", club:"Coventry City", pos:"Goalkeeper", fee:"£22.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Coventry's record signing, completed after the goalkeeper's loan spell and with Rushworth entering the final year of his Brighton contract. TeamTalk report a buy-back clause was inserted, but that detail is single-sourced and not confirmed by either club."},
+  {name:"Diego Coppola", sub:"22 · Italy · CB", club:"Paris FC", pos:"Centre-back", fee:"£17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed on Sky Sports' window tracker."},
+  {name:"Brajan Gruda", sub:"22 · Germany · W", club:"RB Leipzig", pos:"Winger", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season loan listed on Sky's tracker. No option or obligation detail published."}
 ];
 
 const INCOMING = [
@@ -167,14 +170,15 @@ const HUB = {
   brightonHoveAlbionofficialCostinha: {l:"Brighton & Hove Albion (official)", u:"https://www.brightonandhovealbion.com/media-article/mft-transfer-news-costinha-olympiacos-june-2026"},
   skySportsJanPaulvanHecke: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11675/13555493/jan-paul-van-hecke-tottenham-sign-brighton-defender-for-lb52m"},
   eSPNDannyWelbeck: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49478554/danny-welbeck-chelsea-brighton-premier-league-transfers"},
-  sportsMoleJeremySarmiento: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/brighton-and-hove-albion/transfer-talk/feature/brighton--hove-albion-summer-transfers-all-confirmed-ins-and-outs-for-2026_599174.html"}};
+  sportsMoleJeremySarmiento: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/brighton-and-hove-albion/transfer-talk/feature/brighton--hove-albion-summer-transfers-all-confirmed-ins-and-outs-for-2026_599174.html"},
+  skySportsTransferCentreCarlRushworth: {l:"Sky Sports Transfer Centre", u:"https://www.skysports.com/football/news/11095/13546618/transfer-news-summer-transfer-window-2026-premier-league-deals-ins-and-outs"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
   "Forward options": ["athletic","bbcGossip"],
   "Prized asset (premium sale)": ["naylor","athletic","sky"],
   "Fringe & squad trim": ["argus","sussex"],
-  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "eSPNDannyWelbeck"],
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "eSPNDannyWelbeck", "skySportsTransferCentreCarlRushworth"],
   "Said El Mala": ["sportBildviaYahooSportsBulinewsSaidElMala"],
   "Roony Bardghji": ["sportviaFootballPlaceRoonyBardghji"],
   "Arijon Ibrahimovic": ["bavarianFootballWorksArijonIbrahimovic"],
@@ -183,12 +187,15 @@ const LINKMAP = {
   "Bart Verbruggen": ["teamTalkBartVerbruggen"],
   "Zadok Yohanna": ["eSPNZadokYohanna"],
   "Costinha": ["brightonHoveAlbionofficialCostinha"],
-  "Jan Paul van Hecke": ["skySportsJanPaulvanHecke"],
+  "Jan Paul van Hecke": ["skySportsJanPaulvanHecke", "skySportsTransferCentreCarlRushworth"],
   "Jeremy Sarmiento": ["sportsMoleJeremySarmiento"],
   "Adam Webster": ["sportsMoleJeremySarmiento"],
-  "Joel Veltman": ["sportsMoleJeremySarmiento"],
+  "Joel Veltman": ["sportsMoleJeremySarmiento", "skySportsTransferCentreCarlRushworth"],
   "Solly March": ["sportsMoleJeremySarmiento"],
-  "James Milner": ["sportsMoleJeremySarmiento"]};
+  "James Milner": ["sportsMoleJeremySarmiento"],
+  "Carl Rushworth": ["skySportsTransferCentreCarlRushworth"],
+  "Diego Coppola": ["skySportsTransferCentreCarlRushworth"],
+  "Brajan Gruda": ["skySportsTransferCentreCarlRushworth"]};
 const WL_LINKMAP = {
   "Data-model targets":"athletic","Prized asset":"naylor",
 };

@@ -67,7 +67,8 @@ const INCOMING = [
    note:"Linked amid a reported contract dispute at Everton, having rejected new terms. On-profile for energy and directness. OBSTACLE: Everton's stance and valuation; sourcing is moderate.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
   {name:"Kennett Eichhorn", sub:"young · midfield", club:"(target)", pos:"CM", report:"~2 days ago", src:"Aggregated", tier:4, fee:"£15-25m", truth:35, prob:14, light:'r', trend:'up',
    note:"Liverpool intensifying interest after Bayern Munich reportedly withdrew. A young midfield prospect for the model. Early-warning sourcing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
-  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Named Liverpool's priority attacking target after Salah's exit; the player is reported to have reached an agreement in principle, but no official bid has been tabled and the clubs remain apart on price (Liverpool around £100m, PSG valuing him at £120m-plus).", src:"Sky Sports", tier:2, fee:"£100m target", truth:70, prob:48, light:"y", trend:"up", note:"OBSTACLE: a wide valuation gap, with PSG figures quoted as high as £145m. Player willingness is the strongest part of the story; the fee is not yet close.", lastSeen:"2026-08-05T11:41:11Z", baseProb:48}
+  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool are ready to open talks with PSG with an opening offer prepared for the France winger, who has two years left on his deal and has indicated he will not sign a new one. PSG's valuation sits around £128m to £145m, and a winger has been a priority since Mohamed Salah's exit.", src:"Sky Sports", tier:2, fee:"£100m-plus", truth:85, prob:45, light:"y", trend:"down", note:"The interest is solid, but claims of a verbal agreement or agreement in principle come from far weaker outlets and should be discounted. Liverpool's valuation remains a long way below PSG's asking price.", lastSeen:"2026-08-05T17:03:23Z", baseProb:45},
+  {name:"Ibrahim Mbaye", sub:"18 · Senegal · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool have explored the conditions of a deal for the teenager, who debuted for PSG at 16 and has 42 appearances to his name, as the search for a right winger continues after Salah's departure.", src:"Sky Sports", tier:2, fee:"Undisclosed, around €50m mooted", truth:80, prob:30, light:"y", trend:"flat", note:"This is exploratory rather than advanced. Bayer Leverkusen are reported to be in direct club-to-club talks, and Manchester City and Tottenham were said to be keener earlier in the window, so Liverpool are not front runners.", lastSeen:"2026-08-05T17:03:23Z", baseProb:30}
 ];
 
 const OUTGOING = [
@@ -127,7 +128,9 @@ const HUB = {
   fabrizioRomanoviaCaughtOffsideBradleyBarcola: {l:"Fabrizio Romano (via CaughtOffside)", u:"https://www.caughtoffside.com/2026/08/02/fabrizio-romano-bradley-barcola-liverpool-transfer-update-not-imminent/"},
   fabrizioRomanoviaRoundtableDaraJikiemi: {l:"Fabrizio Romano (via Roundtable)", u:"https://roundtable.io/sports/soccer/scottish-premiership/celtic/news/here-we-go---fabrizio-romano-confirms-celtic-transfer"},
   skySportsBradleyBarcola: {l:"Sky Sports", u:"https://www.skysports.com/transfer/news/12691/13567165/bradley-barcola-transfer-news-psg-value-france-forward-at-lb145m-amid-liverpool-and-arsenal-interest-paper-talk"},
-  skySportsMohamedSalah: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13569969/mohamed-salah-former-liverpool-forward-set-to-join-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"}};
+  skySportsMohamedSalah: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13569969/mohamed-salah-former-liverpool-forward-set-to-join-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"},
+  skySportsBradleyBarcola1: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13567997/bradley-barcola-transfer-news-liverpool-set-to-open-talks-with-paris-saint-germain-over-winger-with-an-opening-offer-prepared"},
+  skySportsIbrahimMbaye: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11669/13569955/ibrahim-mbaye-liverpool-explore-deal-for-paris-saint-germain-winger"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
@@ -136,9 +139,10 @@ const LINKMAP = {
   "Cody Gakpo": ["vi","echo"],
   "Ibrahima Konaté": ["ninetymin"],
   "Fringe & loan army": ["echo"],
-  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola"],
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1"],
   "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"],
-  "Mohamed Salah": ["skySportsMohamedSalah"]};
+  "Mohamed Salah": ["skySportsMohamedSalah"],
+  "Ibrahim Mbaye": ["skySportsIbrahimMbaye"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };

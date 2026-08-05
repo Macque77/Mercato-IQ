@@ -44,11 +44,11 @@ const CONFIRMED_OUT = [
   {name:"Jaidon Anthony", sub:"LW", club:"Brentford", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."},
   {name:"Loum Tchaouna", sub:"LW", club:"Coventry City", pos:"LW", fee:"£20m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale as part of Burnley's post-relegation rebuild."},
   {name:"Maxime Esteve", sub:"CB", club:"RB Leipzig", pos:"CB", fee:"£27.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale, one of the bigger fees of Burnley's summer clear-out."},
-  {name:"Florentino Luís", sub:"26 · Portugal · MF", club:"Ipswich Town", pos:"MF", fee:"£16m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to newly promoted Ipswich on a five-year deal worth an initial £16m plus a reported £3m in add-ons, shortly after his own permanent move from Benfica."}
+  {name:"Florentino Luís", sub:"26 · Portugal · MF", club:"Ipswich Town", pos:"MF", fee:"£16m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to newly promoted Ipswich on a five-year deal worth an initial £16m plus a reported £3m in add-ons, shortly after his own permanent move from Benfica."},
+  {name:"Florentino Luis", sub:"26 · Portugal · DM", club:"Ipswich Town", pos:"Defensive midfield", fee:"£16m plus £3m in add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Portugal midfielder has signed a five-year deal at Portman Road, leaving Turf Moor after one season and a relegation. Burnley had been obliged to make his Benfica loan permanent for just over £20m in June, so this represents a loss on the outlay. Fee detail per David Ornstein."}
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Florentino Luis", sub:"26 · MF · Portugal", club:"Ipswich Town", pos:"MF", report:"~3 days ago", src:"Fabrizio Romano / East Anglian Daily Times", tier:1, fee:"£16m", truth:92, prob:90, light:'g', trend:'up', note:"Romano-level sourcing with agreement reached language, about as close to done as it gets before the medical.", lastSeen:"2026-08-04T19:10:50Z", baseProb:90},
   {name:"Andreas Hountondji", sub:"24 · ST · Benin", club:"Frosinone", pos:"ST", report:"~1 wk ago", src:"Nicolò Schira", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Schira has a mixed but not terrible track record here, edging closer language suggests it is real but terms are still to be nailed down.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
 const RISERS = [];
@@ -69,7 +69,8 @@ const HUB = {
   "romano": {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"},
   "eastanglian": {l:"East Anglian Daily Times", u:"https://www.eadt.co.uk/sport"},
   "schira": {l:"Nicolò Schira", u:"https://x.com/NicoSchira"},
-  pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"}};
+  pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"},
+  burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis: {l:"Burnley Express (fee via David Ornstein)", u:"https://www.burnleyexpress.net/sport/football/burnley-fc/burnley-ps16m-switch-premier-league-newcomers-8839366"}};
 
 const LINKMAP = {
   "Lluc Castell": ["gnews-lluccastell"],
@@ -77,7 +78,7 @@ const LINKMAP = {
   "Jaidon Anthony": ["gnews-jaidonanthony"],
   "Loum Tchaouna": ["gnews-loumtchaouna"],
   "Maxime Esteve": ["gnews-maximeesteve"],
-  "Florentino Luis": ["romano", "eastanglian"],
+  "Florentino Luis": ["romano", "eastanglian", "burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis"],
   "Andreas Hountondji": ["schira"],
   "Florentino Luís": ["pAYahooSportFlorentinoLus"]};
 const WL_LINKMAP = {};
