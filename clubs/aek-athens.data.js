@@ -34,7 +34,9 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · AEK Athens"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Lovro Majer", sub:"28 · Croatia · M", club:"VfL Wolfsburg", pos:"Midfielder", fee:"Over €6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by AEK, who say Majer has signed until summer 2030. Fabrizio Romano broke the verbal agreement 24 hours before the club confirmed it, so sourcing is strong on both ends. Wolfsburg's relegation to 2. Bundesliga made the exit possible for a player who cost €25m in 2023."}
+];
 
 const CONFIRMED_OUT = [];
 
@@ -57,12 +59,12 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"}
-};
+  "sky": {l:"Sky Sports", u:"https://www.skysports.com/football/news"},
+  aEKFCofficialannouncementLovroMajer: {l:"AEK FC (official announcement)", u:"https://www.aekfc.gr/newsdetails/stin-aek-o-lovro-mager-134437.htm?lang=en&path=549787190"}};
 
 const LINKMAP = {
-  "Oussama El Khannouss": ["sky"]
-};
+  "Oussama El Khannouss": ["sky"],
+  "Lovro Majer": ["aEKFCofficialannouncementLovroMajer"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

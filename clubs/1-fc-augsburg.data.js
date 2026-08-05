@@ -37,7 +37,8 @@ const CONFIRMED_IN = [
   {name:"Michael Gregoritsch", sub:"Austria international rejoins on permanent deal", club:"Brøndby IF", pos:"ST", fee:"€500,000", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Augsburg exercised a permanent option on the Austrian forward, who previously played for the club until 2022 before Freiburg and a loan at Brøndby."},
   {name:"Tom Wisbereit", sub:"Germany youth international goalkeeper joins", club:"Unattached/Youth", pos:"GK", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Germany youth international goalkeeper confirmed by the club's official transfer list, dated 14.07.2026."},
   {name:"Calvin Brackelmann", sub:"Centre-back signed from Arminia Bielefeld", club:"Arminia Bielefeld", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed on Augsburg's official transfer list, dated 29.05.2026."},
-  {name:"Rodrigo Ribeiro", sub:"Loan-to-permanent option exercised", club:"Sporting CP", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Portuguese forward's loan spell converted into a permanent transfer, confirmed 27.05.2026."}
+  {name:"Rodrigo Ribeiro", sub:"Loan-to-permanent option exercised", club:"Sporting CP", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Portuguese forward's loan spell converted into a permanent transfer, confirmed 27.05.2026."},
+  {name:"Yannik Keitel", sub:"26 · Germany · MF", club:"VfB Stuttgart", pos:"Midfielder", fee:"Loan (extended)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Listed on the official Bundesliga transfer round-up as a loan extension rather than a fresh signing. No fee or option detail has been published, so the terms remain unclear."}
 ];
 
 const CONFIRMED_OUT = [
@@ -76,7 +77,10 @@ const HUB = {
   bBCSportMertKmr: {l:"BBC Sport", u:"https://www.bbc.com/sport/football/articles/c4gx0z9z6vpo"},
   yahooSportsFabianRieder: {l:"Yahoo Sports", u:"https://sports.yahoo.com/article/official-rennes-fabian-rieder-signs-162400632.html"},
   yahooSportsMichaelGregoritsch: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-augsburg-confirm-permanent-signing-113000240.html"},
-  fCAugsburgOfficialTomWisbereit: {l:"FC Augsburg Official", u:"https://www.fcaugsburg.de/en/news"}};
+  fCAugsburgOfficialTomWisbereit: {l:"FC Augsburg Official", u:"https://www.fcaugsburg.de/en/news"},
+  bundesligacomHennesBehrens: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/news/augsburg-sign-hennes-behrens-hoffenheim-38212"},
+  bundesligacomoffiziellerTransfermarktYannikKeitel: {l:"Bundesliga.com (offizieller Transfermarkt)", u:"https://www.bundesliga.com/de/bundesliga/news/offizieller-transfermarkt-alle-wechsel-transfers-ubersicht-11850"},
+  kickerFelixMeiser: {l:"kicker", u:"https://www.kicker.de/fc-augsburg/team-transfers"}};
 
 const LINKMAP = {
   "Mert Kömür": ["bBCSportMertKmr"],
@@ -90,7 +94,9 @@ const LINKMAP = {
   "Maximilian Bauer": ["fCAugsburgOfficialTomWisbereit"],
   "Elias Saad": ["fCAugsburgOfficialTomWisbereit"],
   "Kyliane Dong": ["fCAugsburgOfficialTomWisbereit"],
-  "Felix Meiser": ["fCAugsburgOfficialTomWisbereit"]};
+  "Felix Meiser": ["fCAugsburgOfficialTomWisbereit", "kickerFelixMeiser"],
+  "Hennes Behrens": ["bundesligacomHennesBehrens"],
+  "Yannik Keitel": ["bundesligacomoffiziellerTransfermarktYannikKeitel"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

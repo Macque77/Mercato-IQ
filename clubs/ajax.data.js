@@ -35,7 +35,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Marc-André ter Stegen", sub:"34 · GK · Germany", club:"free from Barcelona", pos:"GK", fee:"Free (Ajax covers a share of salary)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time Barcelona No.1 joins Ajax; Romano reported him already travelling to sign."}
+  {name:"Marc-André ter Stegen", sub:"34 · GK · Germany", club:"free from Barcelona", pos:"GK", fee:"Free (Ajax covers a share of salary)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time Barcelona No.1 joins Ajax; Romano reported him already travelling to sign."},
+  {name:"Marc-Andre ter Stegen", sub:"34 · Germany · GK", club:"FC Barcelona", pos:"Goalkeeper", fee:"Loan (season-long)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by both clubs after weeks of delay caused by a wrangle over who covers the goalkeeper's wages, which the two boards eventually split. ESPN report there is no option to buy, with Ter Stegen contracted at Barcelona until 2028. A request from new head coach Michel, who worked with him at Girona."}
 ];
 
 const CONFIRMED_OUT = [];
@@ -49,7 +50,7 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Mika Godts", sub:"20 · W · Belgium", club:"Paris Saint-Germain", pos:"W", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Romano says the move is 'progressing well' with a player agreement reportedly reached, though no club-to-club fee is confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Mika Godts", sub:"21 · Belgium · W", club:"Paris Saint-Germain", pos:"Winger", report:"PSG have lodged an official bid of more than €40m for Godts, with a package worth around €45m on the table. Ajax opened at a €60m valuation, so a gap remains, but the winger has already said yes to Paris and personal terms are agreed. PSG are rebuilding an attack that has lost senior forwards this summer.", src:"Fabrizio Romano", tier:1, fee:"€40m bid, package around €45m", truth:95, prob:72, light:"g", trend:"up", note:"Sourcing is as good as it gets, and Romano flagged negotiations as moving fast. The caveat is the valuation gap: Ajax want closer to €60m and have no pressing need to sell before the Conference League run continues, so the deal is likelier than not rather than done.", lastSeen:"2026-08-05T15:32:30Z", baseProb:72},
   {name:"Kian Fitz-Jim", sub:"MF, 23, to Torino — contract to 2030", club:"Torino", pos:"MF", report:"Ajax and Torino are closing in on a deal that would send the midfielder to Serie A, with a resale percentage included; a contract until mid-2030 is reportedly ready for him to sign.", src:"Mike Verweij, De Telegraaf / Gianluca Di Marzio", tier:1, fee:"€3-4m", truth:80, prob:82, light:"g", trend:"flat", note:"Described as 'nearing agreement' rather than officially confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:82}
 ];
 
@@ -73,17 +74,20 @@ const HUB = {
   voetbalzoneMikeVerweijDeTelegraafToluArokodare: {l:"Voetbalzone (Mike Verweij, De Telegraaf)", u:"https://www.voetbalzone.nl/nieuws/verweij-voorspelt-dat-ajax-target-sensatie-in-eredivisie-kan-worden/blte53c96773058de7d"},
   fCUpdatenlNoaLang: {l:"FCUpdate.nl", u:"https://www.fcupdate.nl/voetbalnieuws/2026/08/ajax-transferoffensief-nog-niet-voorbij-jordi-cruijff-heeft-nieuwe-plannen-klaarstaan"},
   ajax1nlMikeVerweijDeTelegraafBartvanRooij: {l:"Ajax1.nl (Mike Verweij, De Telegraaf)", u:"https://www.ajax1.nl/mike-verweij-zet-streep-door-ajax-transfer-absoluut-geen-optie/"},
-  voetbalzoneMikeVerweijDeTelegraafKianFitzJim: {l:"Voetbalzone (Mike Verweij, De Telegraaf)", u:"https://www.voetbalzone.nl/nieuws/ajax-nadert-akkoord-over-uitgaande-transfer-van-vier-miljoen-euro/blt521ef7be8f0263fa"}};
+  voetbalzoneMikeVerweijDeTelegraafKianFitzJim: {l:"Voetbalzone (Mike Verweij, De Telegraaf)", u:"https://www.voetbalzone.nl/nieuws/ajax-nadert-akkoord-over-uitgaande-transfer-van-vier-miljoen-euro/blt521ef7be8f0263fa"},
+  fabrizioRomanoXMikaGodts: {l:"Fabrizio Romano (X)", u:"https://x.com/FabrizioRomano/status/2083923908403605760"},
+  aFCAjaxofficialMarcAndreterStegen: {l:"AFC Ajax (official)", u:"https://x.com/AFCAjax/status/2084542603547259241"}};
 
 const LINKMAP = {
   "Orkun Kökçü": ["sky"],
-  "Mika Godts": ["fabrizioRomanoviaFootballTransfersMikaGodts"],
+  "Mika Godts": ["fabrizioRomanoviaFootballTransfersMikaGodts", "fabrizioRomanoXMikaGodts"],
   "Marc-André ter Stegen": ["fabrizioRomanoviaFootballTransfersMarcAndrterStegen"],
   "Edson Álvarez": ["voetbalzoneMikeVerweijDeTelegraafEdsonlvarez"],
   "Tolu Arokodare": ["voetbalzoneMikeVerweijDeTelegraafToluArokodare"],
   "Noa Lang": ["fCUpdatenlNoaLang"],
   "Bart van Rooij": ["ajax1nlMikeVerweijDeTelegraafBartvanRooij"],
-  "Kian Fitz-Jim": ["voetbalzoneMikeVerweijDeTelegraafKianFitzJim"]};
+  "Kian Fitz-Jim": ["voetbalzoneMikeVerweijDeTelegraafKianFitzJim"],
+  "Marc-Andre ter Stegen": ["aFCAjaxofficialMarcAndreterStegen"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

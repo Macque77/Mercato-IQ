@@ -6,7 +6,7 @@
 const NATION = {
   name: "Netherlands",
   flag_emoji: "🇳🇱",
-  stories_count: 37
+  stories_count: 38
 };
 
 const TOP_STORIES = [  {
@@ -22,6 +22,13 @@ const TOP_STORIES = [  {
     from: "AFC Ajax", to: "Torino",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "€3-4m", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+  },
+  {
+    name: "Mika Godts",prob: 72, truth: 95, bullshit: false,
+    club_origin: "ajax", club_display_name: "AFC Ajax", direction: "out",
+    from: "AFC Ajax", to: "Paris Saint-Germain",
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
     name: "Tolu Arokodare",prob: 50, truth: 65, bullshit: false,
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
-  {
-    name: "Givairo Read",prob: 78, truth: 82, bullshit: false,
-    club_origin: "feyenoord", club_display_name: "Feyenoord Rotterdam", direction: "out",
-    from: "Feyenoord Rotterdam", to: "AS Roma",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€28-30m (in negotiation)", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
-  },
 ];
 
-const BY_LEAGUE = {"Eredivisie": 37, "Eerste Divisie": 0};
+const BY_LEAGUE = {"Eredivisie": 38, "Eerste Divisie": 0};
 
-const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 37}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
+const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 38}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
 
 const REPORT_META = {
   asof: "05 Aug 2026",
-  updated: "2026-08-05T13:18:48.226581Z",
+  updated: "2026-08-05T15:32:31.362275Z",
   label: "Nation aggregation"
 };

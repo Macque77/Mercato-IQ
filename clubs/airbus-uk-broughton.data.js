@@ -30,7 +30,9 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Brandon Diau", sub:"CB · former Bayer Leverkusen academy", club:"Free agent", pos:"Centre back", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by the FAW's own Cymru Leagues channel, which describes the 6ft 6in defender as Airbus's third summer arrival ahead of their return to the top flight. A second spell in Welsh football after Flint Town United. No fee was disclosed and a free transfer would be normal at this level, so treat the fee line as unconfirmed."}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [];
@@ -42,10 +44,11 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Airbus UK Broughton Official", u:"#"}
-};
+  club: {l:"Airbus UK Broughton Official", u:"#"},
+  fAWCymruLeaguesBrandonDiau: {l:"FAW Cymru Leagues", u:"https://faw.cymru/cymru-leagues/news/novira-cymru-leagues-latest-ammanford-strengthen-up-front-as-flint-bid-farewell-to-talisman/"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Brandon Diau": ["fAWCymruLeaguesBrandonDiau"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
