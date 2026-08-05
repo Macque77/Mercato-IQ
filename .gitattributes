@@ -1,3 +1,12 @@
 # Shell scripts must keep LF endings so bash (incl. on Windows, where
 # core.autocrlf=true) can execute them without tripping on \r.
 *.sh text eol=lf
+
+# Generated + data files: pin LF so the Linux Actions runner and Windows editors
+# stop flip-flopping line endings and producing whole-file churn in diffs.
+# (New writes normalise to LF; run `git add --renormalize .` once to convert
+# the existing CRLF files in a single dedicated commit if you want to clear it now.)
+*.js   text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.py   text eol=lf
