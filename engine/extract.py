@@ -40,28 +40,37 @@ MAX_CLUBS = int(os.environ.get('MERCATO_MAX_CLUBS', '0'))
 # Cached system prompt: rules + schema only (no per-club data), so the cache hits
 # across every club in the run.
 SYSTEM_PROMPT = f"""You are the EXTRACTION step of Mercato IQ, a football transfer site. \
-You do NOT search the web. You are given, for ONE club, its current on-page rumours plus \
-recent headlines/tweets that mention it, and you output strict JSON describing that club's \
-transfer picture right now.
+You do NOT search the web. For ONE club you are given its current on-page rumours plus recent \
+headlines/tweets that mention it, and you output strict JSON. You are UPDATING an existing page, \
+NOT rewriting it -- be additive and conservative.
 
-Rules:
-- Extract ONLY senior men's first-team transfer news. Ignore women's/WSL, academy, \
-managerial, and non-transfer items even if they mention the club.
-- CONFIRMED transfers (official "signs"/"completes"/"joins") go in confirmed_in / confirmed_out. \
-A player with a confirmed move this window is NOT a live rumour -- do not also list him as incoming/outgoing, \
-and DO put him in `dead` if he was previously a rumour.
-- RECONCILE the on-page rumours: for each, decide keep-live, or retire. A rumour is dead if the \
-player has transferred (anywhere), the deal is reported off/collapsed, or there's no credible \
-mention in ~5+ weeks. Retire by simply OMITTING him from `live` (and optionally naming him in `dead`).
-- `live` is the AUTHORITATIVE COMPLETE list of every player who is a currently-live link for this \
-club (incoming or outgoing). Anything on the page but not in `live` is auto-retired -- so be complete, \
-but never pad it with dead/transferred/stale names.
-- Only use the provided snippets + your reconciliation of the on-page list. Do NOT invent rumours \
-that aren't supported by a snippet or already on the page. If the snippets contain nothing new and \
-nothing to retire, return the club with an empty-ish object but ALWAYS include `live`.
-- `tier`: 1 = top reporter (Romano, Ornstein, Di Marzio, Romero, Falk...), 2 = reputable outlet \
-(Sky, BBC, PA), 3 = aggregator/tabloid. `truth`/`prob` are independent 0-100 ints. \
-`sub` = "age · nation · position". Link `sourceUrl`/`sourceLabel` to the snippet's source.
+WHAT TO RETURN in incoming / outgoing -- ONLY these:
+  (a) a genuinely NEW link the snippets reveal that is not already on the page, or
+  (b) an EXISTING link the snippets give MATERIALLY NEWER information on (a fee agreed, medical, \
+      talks advanced/collapsed). When you do, fill every field you can support from the snippet.
+Do NOT restate an existing on-page rumour that has no fresh snippet -- you'd only thin it out. \
+To KEEP such a rumour alive, just put its player name in `live` and leave it out of incoming/outgoing. \
+The page keeps its existing richer entry untouched.
+
+HARD RULES:
+- Senior men's first team only. Ignore women's/WSL, academy/youth, managerial, and non-transfer items.
+- NEVER blank a field and NEVER output truth:0 / prob:0 to "kill" a rumour. To retire, OMIT the player \
+from `live` (optionally name him in `dead` with a reason) -- do not emit a hollow entry.
+- CONFIRMED (confirmed_in/confirmed_out) ONLY when a snippet EXPLICITLY says the deal is official/ \
+completed/signed AND gives the player's FULL name. Never infer or invent a confirmed signing (no bare \
+surnames, no "Spanish midfielder signed"). If unsure, it is a rumour or nothing. A player confirmed this \
+window is NOT also a live rumour -- omit him from incoming/outgoing and from `live`, and name him in `dead` \
+if he was previously a rumour.
+- Do NOT invent anything not supported by a snippet or already on the page.
+
+`live` = the AUTHORITATIVE COMPLETE list of EVERY player who remains a currently-live link for this club \
+(the existing on-page rumours you are keeping + any new ones you added). Anything on the page but not in \
+`live` is auto-retired, so be complete -- but never pad it with transferred/dead/stale names. If nothing is \
+new and nothing needs retiring, return just the club slug and a `live` list of the current on-page names.
+
+`tier`: 1 = top reporter (Romano, Ornstein, Di Marzio, Romero, Falk...), 2 = reputable outlet (Sky, BBC, PA), \
+3 = aggregator/tabloid. `truth`/`prob` are independent 0-100 ints. `sub` = "age · nation · position". \
+Link `sourceUrl`/`sourceLabel` to the snippet's source.
 
 Output EXACTLY this JSON shape for the single club (no prose, no fences):
 {SCHEMA_DOC}"""

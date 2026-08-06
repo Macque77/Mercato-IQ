@@ -259,17 +259,20 @@ def upsert_rumours(content, arr_name, items):
     _, _, inner = block
     existing_spans = jou.split_top_level_objects(inner)
     object_texts = [inner[s:e] for s, e in existing_spans]
+    # Key by _norm(name) so an accented model spelling ("Bruno Guimarães") updates
+    # the existing unaccented entry ("Bruno Guimaraes") in place instead of adding
+    # a duplicate.
     name_to_index = {}
     for idx, text in enumerate(object_texts):
         nm = jou.field_str(text, 'name')
-        if nm is not None and nm not in name_to_index:
-            name_to_index[nm] = idx
+        if nm is not None and _norm(nm) not in name_to_index:
+            name_to_index[_norm(nm)] = idx
 
     changed = False
     for item in items:
-        name = item['name']
-        if name in name_to_index:
-            idx = name_to_index[name]
+        key = _norm(item['name'])
+        if key in name_to_index:
+            idx = name_to_index[key]
             old_text = object_texts[idx]
             old_prob = jou.field_int(old_text, 'baseProb')
             if old_prob is None:
@@ -283,11 +286,14 @@ def upsert_rumours(content, arr_name, items):
                 trend = 'down'
             else:
                 trend = 'flat'
-            object_texts[idx] = rumour_item_js(item, trend=trend)
+            # Merge, don't clobber: a thin model update must never blank a field a
+            # prior (richer) run established. Keep the existing value wherever the
+            # model left one empty/missing.
+            object_texts[idx] = rumour_item_js(_backfill(item, old_text), trend=trend)
             changed = True
         else:
             object_texts.append(rumour_item_js(item, trend='flat'))
-            name_to_index[name] = len(object_texts) - 1
+            name_to_index[key] = len(object_texts) - 1
             changed = True
 
     if not changed:
@@ -303,6 +309,25 @@ def _norm(s):
     s = unicodedata.normalize('NFKD', s or '')
     s = ''.join(ch for ch in s if not unicodedata.combining(ch))
     return re.sub(r'\s+', ' ', s).strip().lower()
+
+
+def _backfill(item, old_text):
+    """Where the model's update leaves a field empty/missing, keep the value already
+    on the page. A snippet-only extract often can't restate sub/club/pos/etc., and a
+    blank must never overwrite richer detail a prior run established."""
+    out = dict(item)
+    for f in ('sub', 'club', 'pos', 'report', 'src', 'fee', 'note'):
+        if not str(out.get(f, '') or '').strip():
+            old = jou.field_str(old_text, f)
+            if old:
+                out[f] = old
+    for f in ('tier', 'truth', 'prob'):
+        v = out.get(f)
+        if v in (None, '') or (isinstance(v, int) and f in ('truth', 'prob') and v == 0):
+            old = jou.field_int(old_text, f)
+            if old is not None:
+                out[f] = old
+    return out
 
 
 def reconcile_live(content, live_names, protected_names):
