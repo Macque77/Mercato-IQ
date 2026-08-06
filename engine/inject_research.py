@@ -359,6 +359,31 @@ def dedupe_by_norm(content, arr_name):
     return (new_content, True) if ok else (content, False)
 
 
+def _is_hollow(obj):
+    """A row a weak extract invented without grounding: club literally 'Unknown', or
+    BOTH club and sub empty. Real entries always carry at least a club or a descriptor,
+    so this stays high-precision and won't drop good data."""
+    club = (jou.field_str(obj, 'club') or '').strip()
+    sub = (jou.field_str(obj, 'sub') or '').strip()
+    if club.lower() == 'unknown':
+        return True
+    return club == '' and sub == ''
+
+
+def drop_hollow(content, arr_name):
+    """Remove hollow rows (see _is_hollow) from an array."""
+    block = jou.find_array_block(content, arr_name)
+    if not block:
+        return content, False
+    _, _, inner = block
+    objs = [inner[s:e] for s, e in jou.split_top_level_objects(inner)]
+    kept = [o for o in objs if not _is_hollow(o)]
+    if len(kept) == len(objs):
+        return content, False
+    new_content, ok = jou.replace_array_objects(content, arr_name, kept)
+    return (new_content, True) if ok else (content, False)
+
+
 def reconcile_live(content, live_names, protected_names):
     """Replace-list reconciliation: flag dead:true any on-page rumour whose player
     is NOT in the model's authoritative `live` list (and not freshly added this
@@ -434,10 +459,12 @@ def process_club(slug, data):
         content, arr_changed = upsert_rumours(content, arr_name, data.get(arr_key, []))
         changed = changed or arr_changed
 
-    # Collapse any pre-existing accent/spelling duplicates before reconciliation.
-    for arr_name in ('INCOMING', 'OUTGOING', 'WATCHLIST'):
+    # Self-heal: collapse accent/spelling duplicates and drop hollow "Unknown"-club
+    # rows across every array (belt-and-braces cleanup of anything a weaker run left).
+    for arr_name in ('INCOMING', 'OUTGOING', 'WATCHLIST', 'CONFIRMED_IN', 'CONFIRMED_OUT', 'DEAD'):
         content, dd_changed = dedupe_by_norm(content, arr_name)
-        changed = changed or dd_changed
+        content, hollow_changed = drop_hollow(content, arr_name)
+        changed = changed or dd_changed or hollow_changed
 
     # Rule 1: retire rumours a source has called off (retire_rumours.py moves them).
     content, dead_changed = flag_dead(content, data.get('dead', []))
