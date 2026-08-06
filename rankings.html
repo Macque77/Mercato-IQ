@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transfer Journalist Power Rankings · Mercato-IQ</title>
+<meta name="description" content="Which transfer reporters are actually right — ranked by measured accuracy, exclusivity and lead time. Plus live transfers by completion likelihood.">
+<style>
+  :root{
+    --ground:#eaeef0;--panel:#fff;--panel-2:#f4f7f8;--ink:#0c1719;--ink-soft:#46595d;
+    --line:#d3dcdf;--line-strong:#b7c5c9;--brand:#0b7f97;--brand-ink:#075c6e;
+    --hi:#17925f;--mid:#bd8718;--lo:#c0453c;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --ground:#081416;--panel:#0f1e21;--panel-2:#132a2e;--ink:#e6eef0;--ink-soft:#8ea4a8;
+    --line:#1d3236;--line-strong:#2c474c;--brand:#2fbdd6;--brand-ink:#7fe0ef;
+    --hi:#31c98a;--mid:#e0ac48;--lo:#e46a60;
+  }}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--ground);line-height:1.5;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:clamp(20px,5vw,52px) clamp(14px,4vw,40px)}
+  .eyebrow{font:600 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brand-ink)}
+  h1{font-size:clamp(28px,5vw,44px);line-height:1.04;letter-spacing:-.02em;font-weight:800;margin:.3em 0 .2em}
+  .lede{font-size:clamp(16px,2.2vw,19px);color:var(--ink-soft);max-width:64ch;margin:0}
+  h2{font-size:clamp(19px,2.6vw,24px);font-weight:750;margin:44px 0 6px;letter-spacing:-.01em}
+  .note{color:var(--ink-soft);margin:0 0 16px;max-width:70ch;font-size:14.5px}
+  .caveat{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--mid);
+    border-radius:12px;padding:14px 18px;margin:22px 0 0;font-size:14px;color:var(--ink-soft)}
+  .caveat b{color:var(--ink)}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:8px}
+  table{border-collapse:collapse;width:100%;min-width:720px;background:var(--panel);font-size:14px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  thead th{font:600 11px/1.1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);
+    position:sticky;top:0;background:var(--panel-2)}
+  td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--panel-2)}
+  .rk{font-family:var(--mono);color:var(--ink-soft);width:2ch}
+  .src{font-weight:650}
+  .tier{font:600 10px/1 var(--mono);color:var(--ink-soft);margin-left:7px;border:1px solid var(--line-strong);
+    border-radius:99px;padding:2px 5px}
+  .score{font-family:var(--mono);font-weight:700;padding:2px 7px;border-radius:6px}
+  .score.hi,.conf.hi{color:#fff;background:var(--hi)} .score.mid,.conf.mid{color:#fff;background:var(--mid)}
+  .score.lo,.conf.lo{color:#fff;background:var(--lo)} .score.na{color:var(--ink-soft)}
+  td.bad{color:var(--lo)} .cal{font:500 12px/1 var(--mono);color:var(--ink-soft);white-space:normal}
+  .conf{font-family:var(--mono);font-weight:700;padding:3px 8px;border-radius:6px}
+  .pl{font-weight:640} .to{color:var(--ink-soft)}
+  .stage{font:600 10px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border-radius:99px;
+    border:1px solid var(--line-strong);color:var(--ink-soft)}
+  .stage.s-here-we-go{color:#fff;background:var(--hi);border-color:transparent}
+  .stage.s-advanced{color:var(--hi);border-color:var(--hi)}
+  .srcs{color:var(--ink-soft);font-size:13px;white-space:normal}
+  .foot{margin-top:44px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+  .prov{display:inline-block;font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--mid);border:1px solid var(--mid);border-radius:99px;padding:4px 9px;margin-left:10px;vertical-align:middle}
+  a{color:var(--brand-ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Mercato-IQ · Reliability index</div>
+  <h1>Transfer Journalist Power Rankings <span class="prov">Provisional</span></h1>
+  <p class="lede">Everyone reports the rumours. This ranks the reporters — by how often they're
+  actually right, how often they break it first, and how far ahead. Scored automatically against
+  what really happened.</p>
+
+  <div class="caveat"><b>How to read this (honestly):</b> scores are computed from
+  616 tracked claims and 42 resolved outcomes. The dataset is still young, so treat
+  early positions as indicative. Attribution currently comes from how reporters are <b>quoted in
+  mainstream coverage</b>, not their primary posts — so lead-times are conservative. Both improve
+  as history accrues.</div>
+
+  <h2>Reporter reliability</h2>
+  <p class="note">Ranked by a volume-adjusted reliability score. <b>Excl</b> = exclusivity (how often
+  they broke it vs re-reported). <b>False</b> = player went elsewhere. <b>Miss</b> = claimed
+  advanced/here-we-go but it collapsed. <b>Lead</b> = days ahead of confirmation. <b>Cal</b> =
+  completion rate by the confidence they claimed.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr>
+      <th class="rk">#</th><th>Reporter</th><th class="n">Score</th><th class="n">Acc</th>
+      <th class="n">Excl</th><th class="n">Right</th><th class="n">False</th><th class="n">Miss</th>
+      <th class="n">Lead</th><th class="n">Fee</th><th>Calibration</th>
+    </tr></thead>
+    <tbody>
+<tr>
+      <td class="rk">1</td>
+      <td class="src">Fabrizio Romano<span class="tier">T1</span></td>
+      <td class="n"><span class="score mid">0.57</span></td>
+      <td class="n">67%</td>
+      <td class="n">100%</td>
+      <td class="n">2</td>
+      <td class="n bad">1</td>
+      <td class="n bad">0</td>
+      <td class="n">—</td>
+      <td class="n">50%</td>
+      <td class="cal">her 100% · adv 100% · tal 0%</td>
+    </tr>
+<tr>
+      <td class="rk">2</td>
+      <td class="src">Get French Football News<span class="tier">T2</span></td>
+      <td class="n"><span class="score lo">0.25</span></td>
+      <td class="n">0%</td>
+      <td class="n">100%</td>
+      <td class="n">0</td>
+      <td class="n bad">4</td>
+      <td class="n bad">0</td>
+      <td class="n">—</td>
+      <td class="n">—</td>
+      <td class="cal">tal 0% · int 0%</td>
+    </tr>
+    </tbody>
+  </table></div>
+
+  <h2>Live transfers by completion likelihood</h2>
+  <p class="note">Every open story, scored for how likely it is to actually complete — combining the
+  stage it's reached with the measured reliability of the reporters carrying it.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="n">Likely</th><th>Player</th><th>To</th><th>Stage</th><th>Sources</th></tr></thead>
+    <tbody>
+<tr>
+      <td class="n"><span class="conf hi">91%</span></td>
+      <td class="pl">Savinho</td>
+      <td class="to">Tottenham Hotspur</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">90%</span></td>
+      <td class="pl">Saïdou Sow</td>
+      <td class="to">Nantes</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Les Nouvelles du Foot</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">90%</span></td>
+      <td class="pl">Daniel Maldini</td>
+      <td class="to">Cagliari</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">tuttomercatoweb.com</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">89%</span></td>
+      <td class="pl">Iván Cedric</td>
+      <td class="to">Alanyaspor</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Sporx</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">89%</span></td>
+      <td class="pl">Nariman Akhundzada</td>
+      <td class="to">Erzurumspor</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Sabah</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">89%</span></td>
+      <td class="pl">Admir Bristric</td>
+      <td class="to">Leicester City</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Planet Nogomet</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">89%</span></td>
+      <td class="pl">Kodai Sano</td>
+      <td class="to">PSV</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Tim Reedijk, VI.nl</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">89%</span></td>
+      <td class="pl">Deniz Zeitler</td>
+      <td class="to">SC Paderborn 07</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Sky Sports Germany</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">89%</span></td>
+      <td class="pl">Anan Khalaili</td>
+      <td class="to">Nottingham Forest</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">The Athletic</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">89%</span></td>
+      <td class="pl">Ahmed Sidibé</td>
+      <td class="to">Vitória SC</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">A Bola</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">88%</span></td>
+      <td class="pl">Christian Ndow</td>
+      <td class="to">Spezia</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">TuttoMercatoWeb</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">88%</span></td>
+      <td class="pl">Kodai Sano</td>
+      <td class="to">PSV Eindhoven</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Voetbal International</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">88%</span></td>
+      <td class="pl">Bruno Guimarães</td>
+      <td class="to">Arsenal</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">BBC Sport Football</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">88%</span></td>
+      <td class="pl">Bruno Guimarães</td>
+      <td class="to">Newcastle United</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">BBC Sport</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">87%</span></td>
+      <td class="pl">Elliot Stroud</td>
+      <td class="to">Hull City</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Football Italia</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">87%</span></td>
+      <td class="pl">Lucas Perri</td>
+      <td class="to">Torino</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">Football Italia</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">87%</span></td>
+      <td class="pl">Bryan Mbeumo</td>
+      <td class="to">Manchester United</td>
+      <td><span class="stage s-here-we-go">here-we-go</span></td>
+      <td class="srcs">David Ornstein</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">66%</span></td>
+      <td class="pl">Damián Pizarro</td>
+      <td class="to">Audax Italiano</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">TuttoUdinese</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">66%</span></td>
+      <td class="pl">Nahuel Molina</td>
+      <td class="to">AS Roma</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Gianluca Di Marzio</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">66%</span></td>
+      <td class="pl">Adam Phillips</td>
+      <td class="to">Bradford City</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Pete O&#x27;Rourke</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf hi">66%</span></td>
+      <td class="pl">Ferran Torres</td>
+      <td class="to">Paris Saint-Germain</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Gianluca Di Marzio</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Nahuel Molina</td>
+      <td class="to">Unspecified</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Hrvoje Smolcic</td>
+      <td class="to">Arca Corum FK</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Cristian Romero</td>
+      <td class="to">Inter Milan</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Zion Suzuki</td>
+      <td class="to">Paris Saint-Germain</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Mikey Moore</td>
+      <td class="to">FC Cologne</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Mika Godts</td>
+      <td class="to">Paris Saint-Germain</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Rafael Leão</td>
+      <td class="to">Tottenham Hotspur</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Mikey Moore</td>
+      <td class="to">FC Köln</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="pl">Ousmane Diomande</td>
+      <td class="to">Nottingham Forest</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">on-page rumour</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">64%</span></td>
+      <td class="pl">Matteo Ruggeri</td>
+      <td class="to">Aston Villa</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Fabrizio Romano, Transferfeed page</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">64%</span></td>
+      <td class="pl">Bradley Barcola</td>
+      <td class="to">Liverpool</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">BBC Sport, Fabrizio Romano</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">62%</span></td>
+      <td class="pl">Diego Moreira</td>
+      <td class="to">AS Roma</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Gianluca Di Marzio, Nicolo Schira</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="pl">Francis Nzaba</td>
+      <td class="to">Antalyaspor</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Yeni Alanya</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="pl">Chibuike Nwaiwu</td>
+      <td class="to">Fulham</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Soccernet NG</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="pl">Giuseppe Favasuli</td>
+      <td class="to">Napoli</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Areniello</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="pl">Marvelous Nakamba</td>
+      <td class="to">Panaitolikos</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">monobala.gr</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="pl">Moussa Djenepo</td>
+      <td class="to">Panaitolikos</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">monobala.gr</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="pl">Hidemasa Morita successor / Kamada</td>
+      <td class="to">Real Sociedad</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">FútbolFantasy</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="pl">Álex Remiro</td>
+      <td class="to">Aston Villa (interest)</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">FútbolFantasy</td>
+    </tr>
+    </tbody>
+  </table></div>
+
+  <div class="foot">Generated automatically by the Mercato-IQ reliability engine. Methodology:
+  claims are captured from live coverage, clustered into stories, and resolved against confirmed
+  moves; reporters are scored on the resolved set. Volume-adjusted so a small sample can't top a
+  large track record. Provisional while the dataset accrues.</div>
+</div>
+</body>
+</html>

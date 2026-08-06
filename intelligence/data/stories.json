@@ -121,31 +121,6 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
-   "player": "Bruno Guimarães",
-   "to_club": "Newcastle United",
-   "stage": "here-we-go",
-   "completion_likelihood": 0.892,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:33:42Z",
-   "last_ts": "2026-08-06T14:33:42Z"
-  },
-  {
-   "player": "Yan Diomande",
-   "to_club": "Real Madrid",
-   "stage": "here-we-go",
-   "completion_likelihood": 0.888,
-   "sources": [
-    "BBC Sport",
-    "Sky Deutschland"
-   ],
-   "source_count": 2,
-   "first_ts": "2026-08-06T10:49:40Z",
-   "last_ts": "2026-08-06T14:21:37Z"
-  },
-  {
    "player": "Christian Ndow",
    "to_club": "Spezia",
    "stage": "here-we-go",
@@ -170,24 +145,24 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
-   "player": "Bryan Mbeumo",
-   "to_club": "Manchester United",
-   "stage": "here-we-go",
-   "completion_likelihood": 0.883,
-   "sources": [
-    "David Ornstein"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
    "player": "Bruno Guimarães",
    "to_club": "Arsenal",
    "stage": "here-we-go",
    "completion_likelihood": 0.883,
    "sources": [
     "BBC Sport Football"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:33:42Z",
+   "last_ts": "2026-08-06T14:33:42Z"
+  },
+  {
+   "player": "Bruno Guimarães",
+   "to_club": "Newcastle United",
+   "stage": "here-we-go",
+   "completion_likelihood": 0.883,
+   "sources": [
+    "BBC Sport"
    ],
    "source_count": 1,
    "first_ts": "2026-08-06T14:33:42Z",
@@ -216,6 +191,18 @@
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
    "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
+   "player": "Bryan Mbeumo",
+   "to_club": "Manchester United",
+   "stage": "here-we-go",
+   "completion_likelihood": 0.87,
+   "sources": [
+    "David Ornstein"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
   },
   {
    "player": "Damián Pizarro",
@@ -374,19 +361,6 @@
    "last_ts": "2026-08-06T13:55:46Z"
   },
   {
-   "player": "Bradley Barcola",
-   "to_club": "Liverpool",
-   "stage": "advanced",
-   "completion_likelihood": 0.644,
-   "sources": [
-    "BBC Sport",
-    "Fabrizio Romano"
-   ],
-   "source_count": 2,
-   "first_ts": "2026-08-06T10:49:40Z",
-   "last_ts": "2026-08-06T14:33:42Z"
-  },
-  {
    "player": "Matteo Ruggeri",
    "to_club": "Aston Villa",
    "stage": "advanced",
@@ -398,6 +372,19 @@
    "source_count": 2,
    "first_ts": "2026-08-06T10:49:40Z",
    "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
+   "player": "Bradley Barcola",
+   "to_club": "Liverpool",
+   "stage": "advanced",
+   "completion_likelihood": 0.635,
+   "sources": [
+    "BBC Sport",
+    "Fabrizio Romano"
+   ],
+   "source_count": 2,
+   "first_ts": "2026-08-06T10:49:40Z",
+   "last_ts": "2026-08-06T14:33:42Z"
   },
   {
    "player": "Diego Moreira",
@@ -623,18 +610,6 @@
    "completion_likelihood": 0.602,
    "sources": [
     "Sky Sports Turkey"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
-   "player": "Givairo Read",
-   "to_club": "AS Roma",
-   "stage": "advanced",
-   "completion_likelihood": 0.602,
-   "sources": [
-    "Sportingpedia"
    ],
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
@@ -1086,18 +1061,6 @@
    "last_ts": "2026-08-06T10:49:40Z"
   },
   {
-   "player": "James Trafford",
-   "to_club": "Leeds United",
-   "stage": "advanced",
-   "completion_likelihood": 0.579,
-   "sources": [
-    "David Ornstein"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:33:42Z",
-   "last_ts": "2026-08-06T14:33:42Z"
-  },
-  {
    "player": "Sergi Dominguez",
    "to_club": "Lazio",
    "stage": "advanced",
@@ -1422,18 +1385,6 @@
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
    "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
-   "player": "Ayyoub Bouaddi",
-   "to_club": "Manchester City",
-   "stage": "talks",
-   "completion_likelihood": 0.42,
-   "sources": [
-    "Fabrizio Romano"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T10:49:40Z",
-   "last_ts": "2026-08-06T10:49:40Z"
   },
   {
    "player": "Guglielmo Vicario",
@@ -1883,18 +1834,6 @@
    "last_ts": "2026-08-06T14:21:37Z"
   },
   {
-   "player": "Mert Kömür",
-   "to_club": "Hull City",
-   "stage": "talks",
-   "completion_likelihood": 0.381,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
    "player": "Kevin Danois",
    "to_club": "West Ham United / Newcastle United (interest)",
    "stage": "talks",
@@ -2015,18 +1954,6 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
-   "player": "Mats Wieffer",
-   "to_club": "Borussia Dortmund",
-   "stage": "talks",
-   "completion_likelihood": 0.381,
-   "sources": [
-    "Sky Deutschland"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
    "player": "Fer López",
    "to_club": "RC Celta",
    "stage": "talks",
@@ -2141,18 +2068,6 @@
    "completion_likelihood": 0.381,
    "sources": [
     "Record"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
-   "player": "Mateo Kvasina",
-   "to_club": "FC Cologne",
-   "stage": "talks",
-   "completion_likelihood": 0.381,
-   "sources": [
-    "Sky Deutschland"
    ],
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
@@ -2345,18 +2260,6 @@
    "completion_likelihood": 0.381,
    "sources": [
     "Mounir Boualin"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
-   "player": "Xavi Simons",
-   "to_club": "PSV Eindhoven",
-   "stage": "talks",
-   "completion_likelihood": 0.381,
-   "sources": [
-    "Sky Deutschland"
    ],
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
@@ -2675,90 +2578,6 @@
    "last_ts": "2026-08-06T11:59:55Z"
   },
   {
-   "player": "Rodri",
-   "to_club": "FC Barcelona",
-   "stage": "talks",
-   "completion_likelihood": 0.38,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:21:37Z",
-   "last_ts": "2026-08-06T14:21:37Z"
-  },
-  {
-   "player": "Ferran Torres",
-   "to_club": "Barcelona",
-   "stage": "talks",
-   "completion_likelihood": 0.38,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:21:37Z",
-   "last_ts": "2026-08-06T14:21:37Z"
-  },
-  {
-   "player": "Rodri",
-   "to_club": "Real Madrid",
-   "stage": "talks",
-   "completion_likelihood": 0.38,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:21:37Z",
-   "last_ts": "2026-08-06T14:21:37Z"
-  },
-  {
-   "player": "Vinícius Júnior",
-   "to_club": "Real Madrid",
-   "stage": "talks",
-   "completion_likelihood": 0.38,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:21:37Z",
-   "last_ts": "2026-08-06T14:21:37Z"
-  },
-  {
-   "player": "Raul Asencio",
-   "to_club": "Liverpool",
-   "stage": "talks",
-   "completion_likelihood": 0.38,
-   "sources": [
-    "The Guardian"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:33:42Z",
-   "last_ts": "2026-08-06T14:33:42Z"
-  },
-  {
-   "player": "Mbaye",
-   "to_club": "Liverpool",
-   "stage": "talks",
-   "completion_likelihood": 0.38,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:33:42Z",
-   "last_ts": "2026-08-06T14:33:42Z"
-  },
-  {
-   "player": "Cody Gakpo",
-   "to_club": "Liverpool",
-   "stage": "talks",
-   "completion_likelihood": 0.38,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:33:42Z",
-   "last_ts": "2026-08-06T14:33:42Z"
-  },
-  {
    "player": "Juan Miranda",
    "to_club": "Juventus (interest)",
    "stage": "talks",
@@ -2856,12 +2675,36 @@
    "last_ts": "2026-08-06T10:49:40Z"
   },
   {
+   "player": "Mert Kömür",
+   "to_club": "Hull City",
+   "stage": "talks",
+   "completion_likelihood": 0.361,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-04T19:10:50Z",
+   "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
    "player": "Matteo Bellanova",
    "to_club": "Everton / Inter / Napoli (interest)",
    "stage": "talks",
    "completion_likelihood": 0.361,
    "sources": [
     "TuttoMercatoWeb"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-04T19:10:50Z",
+   "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
+   "player": "Mats Wieffer",
+   "to_club": "Borussia Dortmund",
+   "stage": "talks",
+   "completion_likelihood": 0.361,
+   "sources": [
+    "Sky Deutschland"
    ],
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
@@ -2899,6 +2742,18 @@
    "completion_likelihood": 0.361,
    "sources": [
     "Matteo Moretto"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-04T19:10:50Z",
+   "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
+   "player": "Mateo Kvasina",
+   "to_club": "FC Cologne",
+   "stage": "talks",
+   "completion_likelihood": 0.361,
+   "sources": [
+    "Sky Deutschland"
    ],
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
@@ -3002,6 +2857,18 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
+   "player": "Xavi Simons",
+   "to_club": "PSV Eindhoven",
+   "stage": "talks",
+   "completion_likelihood": 0.361,
+   "sources": [
+    "Sky Deutschland"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-04T19:10:50Z",
+   "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
    "player": "Jasper Schendelaar",
    "to_club": "Sparta Rotterdam",
    "stage": "talks",
@@ -3062,18 +2929,6 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
-   "player": "Lucas Bergvall",
-   "to_club": "Nottingham Forest or Newcastle United",
-   "stage": "talks",
-   "completion_likelihood": 0.361,
-   "sources": [
-    "David Ornstein"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
    "player": "Takehiro Tomiyasu",
    "to_club": "Venezia",
    "stage": "talks",
@@ -3084,6 +2939,78 @@
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
    "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
+   "player": "Rodri",
+   "to_club": "FC Barcelona",
+   "stage": "talks",
+   "completion_likelihood": 0.359,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:21:37Z",
+   "last_ts": "2026-08-06T14:21:37Z"
+  },
+  {
+   "player": "Ferran Torres",
+   "to_club": "Barcelona",
+   "stage": "talks",
+   "completion_likelihood": 0.359,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:21:37Z",
+   "last_ts": "2026-08-06T14:21:37Z"
+  },
+  {
+   "player": "Rodri",
+   "to_club": "Real Madrid",
+   "stage": "talks",
+   "completion_likelihood": 0.359,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:21:37Z",
+   "last_ts": "2026-08-06T14:21:37Z"
+  },
+  {
+   "player": "Vinícius Júnior",
+   "to_club": "Real Madrid",
+   "stage": "talks",
+   "completion_likelihood": 0.359,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:21:37Z",
+   "last_ts": "2026-08-06T14:21:37Z"
+  },
+  {
+   "player": "Mbaye",
+   "to_club": "Liverpool",
+   "stage": "talks",
+   "completion_likelihood": 0.359,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:33:42Z",
+   "last_ts": "2026-08-06T14:33:42Z"
+  },
+  {
+   "player": "Cody Gakpo",
+   "to_club": "Liverpool",
+   "stage": "talks",
+   "completion_likelihood": 0.359,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:33:42Z",
+   "last_ts": "2026-08-06T14:33:42Z"
   },
   {
    "player": "Andreas Hountondji",
@@ -3154,6 +3081,18 @@
    "completion_likelihood": 0.336,
    "sources": [
     "Football Italia"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-04T19:10:50Z",
+   "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
+   "player": "Lucas Bergvall",
+   "to_club": "Nottingham Forest or Newcastle United",
+   "stage": "talks",
+   "completion_likelihood": 0.336,
+   "sources": [
+    "David Ornstein"
    ],
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
@@ -3275,18 +3214,6 @@
    "completion_likelihood": 0.283,
    "sources": [
     "Gianluca Di Marzio"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
-   "player": "Michael Olise",
-   "to_club": "Real Madrid",
-   "stage": "interest",
-   "completion_likelihood": 0.273,
-   "sources": [
-    "Fabrizio Romano"
    ],
    "source_count": 1,
    "first_ts": "2026-08-04T19:10:50Z",
@@ -3692,18 +3619,6 @@
   {
    "player": "Midfield quality",
    "to_club": "Coventry City",
-   "stage": "interest",
-   "completion_likelihood": 0.24,
-   "sources": [
-    "Pattern-based"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
-   "player": "Fringe & squad trim",
-   "to_club": "Various",
    "stage": "interest",
    "completion_likelihood": 0.24,
    "sources": [
@@ -5358,18 +5273,6 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
-   "player": "Elia Caprile",
-   "to_club": "VfL Bochum",
-   "stage": "interest",
-   "completion_likelihood": 0.234,
-   "sources": [
-    "Sky Deutschland"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-04T19:10:50Z",
-   "last_ts": "2026-08-04T19:10:50Z"
-  },
-  {
    "player": "Jordan Holsgrove",
    "to_club": "Werder Bremen",
    "stage": "interest",
@@ -5452,18 +5355,6 @@
    "source_count": 1,
    "first_ts": "2026-08-06T10:49:40Z",
    "last_ts": "2026-08-06T10:49:40Z"
-  },
-  {
-   "player": "Cody Gakpo",
-   "to_club": "Tottenham Hotspur",
-   "stage": "interest",
-   "completion_likelihood": 0.233,
-   "sources": [
-    "BBC Sport"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T14:31:11Z",
-   "last_ts": "2026-08-06T14:31:11Z"
   },
   {
    "player": "Marash Kumbulla",
@@ -5958,18 +5849,6 @@
    "last_ts": "2026-08-06T11:36:31Z"
   },
   {
-   "player": "Jhon Lucumi",
-   "to_club": "Sunderland",
-   "stage": "interest",
-   "completion_likelihood": 0.23,
-   "sources": [
-    "Tuttomercatoweb"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T11:59:55Z",
-   "last_ts": "2026-08-06T11:59:55Z"
-  },
-  {
    "player": "Lamine Camara",
    "to_club": "Aston Villa",
    "stage": "interest",
@@ -6247,6 +6126,18 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
+   "player": "Elia Caprile",
+   "to_club": "VfL Bochum",
+   "stage": "interest",
+   "completion_likelihood": 0.219,
+   "sources": [
+    "Sky Deutschland"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-04T19:10:50Z",
+   "last_ts": "2026-08-04T19:10:50Z"
+  },
+  {
    "player": "Jeff Hardeveld",
    "to_club": "Telstar",
    "stage": "interest",
@@ -6305,6 +6196,18 @@
    "source_count": 1,
    "first_ts": "2026-08-06T14:21:37Z",
    "last_ts": "2026-08-06T14:21:37Z"
+  },
+  {
+   "player": "Cody Gakpo",
+   "to_club": "Tottenham Hotspur",
+   "stage": "interest",
+   "completion_likelihood": 0.218,
+   "sources": [
+    "BBC Sport"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T14:31:11Z",
+   "last_ts": "2026-08-06T14:31:11Z"
   },
   {
    "player": "Kevin Carlos",

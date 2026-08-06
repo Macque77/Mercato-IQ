@@ -75,6 +75,21 @@ def process_club(content, slug, club_name):
                 ts=_f(o, 'confirmedAt') or _f(o, 'lastSeen') or '',
                 player=name, to_club=to_club or club_name,
                 confirmed_source=_f(o, 'src'), fee=_f(o, 'fee')))
+
+    # DEAD rumours -> COLLAPSED resolutions: this specific (player -> club) link died
+    # without happening. A source that only floated 'interest' isn't punished for it,
+    # but one that claimed 'here we go' / 'advanced' and it collapsed is a confident miss.
+    for o in _objects(content, 'DEAD'):
+        name = _f(o, 'name')
+        if not name:
+            continue
+        direction = _f(o, 'dir') or 'in'
+        other = _f(o, 'club')
+        to_club = club_name if direction == 'in' else other
+        resolutions.append(cs.make_resolution(
+            ts=_f(o, 'deadAt') or _f(o, 'lastSeen') or '',
+            player=name, to_club=to_club or club_name, outcome='collapsed',
+            confirmed_source=_f(o, 'deadReason')))
     return claims, resolutions
 
 

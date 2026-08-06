@@ -112,18 +112,33 @@ def build_stories(claims, resolutions):
             }
         stage = max((s['stage'] for s in sources.values()), key=lambda st: STAGE_RANK.get(st, 0))
 
-        # outcome
+        # outcome. Only consider resolutions in a plausible window of the first report,
+        # so a claim isn't "resolved" by the same player's unrelated move a season later.
+        def _in_window(r):
+            rd = parse_ts(r.get('confirmed_at', ''))
+            if not b_dt or not rd:
+                return True  # missing timestamps (snapshot seed) -> don't gate
+            days = (rd - b_dt).total_seconds() / 86400.0
+            return -30 <= days <= 250
+
         outcome, confirmed_at, confirmed_to_key, confirmed_fee = 'pending', '', '', None
-        for r in res_idx.get(pk, []):
-            if r['to_club_key'] == tk:
-                outcome, confirmed_at, confirmed_to_key = 'completed', r.get('confirmed_at', ''), tk
-                confirmed_fee = parse_fee(r.get('fee', ''))
-                break
-        if outcome == 'pending':
-            for r in res_idx.get(pk, []):
-                if r['to_club_key'] and r['to_club_key'] != tk:
-                    outcome, confirmed_at, confirmed_to_key = 'false', r.get('confirmed_at', ''), r['to_club_key']
-                    break
+        rs = [r for r in res_idx.get(pk, []) if _in_window(r)]
+        # precedence: completed > false > collapsed > pending
+        hit = next((r for r in rs if r.get('outcome', 'confirmed') == 'confirmed'
+                    and r['to_club_key'] == tk), None)
+        if hit:
+            outcome, confirmed_at, confirmed_to_key = 'completed', hit.get('confirmed_at', ''), tk
+            confirmed_fee = parse_fee(hit.get('fee', ''))
+        else:
+            elsewhere = next((r for r in rs if r.get('outcome', 'confirmed') == 'confirmed'
+                              and r['to_club_key'] and r['to_club_key'] != tk), None)
+            if elsewhere:
+                outcome, confirmed_at, confirmed_to_key = 'false', elsewhere.get('confirmed_at', ''), elsewhere['to_club_key']
+            else:
+                collapsed = next((r for r in rs if r.get('outcome') == 'collapsed'
+                                  and r['to_club_key'] == tk), None)
+                if collapsed:
+                    outcome, confirmed_at = 'collapsed', collapsed.get('confirmed_at', '')
 
         stories.append({
             'player': cl[0].get('player', ''), 'player_key': pk,
@@ -180,7 +195,7 @@ def completion_confidence(story, scoremap, now=None):
 
 if __name__ == '__main__':
     stories = build_stories(cs.load_claims(), cs.load_resolutions())
-    by = {'completed': 0, 'false': 0, 'pending': 0}
+    by = {}
     for s in stories:
-        by[s['outcome']] += 1
+        by[s['outcome']] = by.get(s['outcome'], 0) + 1
     print(f"stories: {len(stories)}  {by}")

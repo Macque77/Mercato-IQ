@@ -51,12 +51,13 @@ def build(min_resolved=MIN_RESOLVED):
 
     agg = defaultdict(lambda: {
         'source': '', 'tier': 3, 'stories': 0, 'right': 0, 'wrong': 0, 'pending': 0,
-        'scoops': 0, 'follows': 0, 'leads': [], 'fees': [],
+        'confident_miss': 0, 'scoops': 0, 'follows': 0, 'leads': [], 'fees': [],
         'cal': defaultdict(lambda: [0, 0])})  # stage -> [completed, resolved]
 
     for story in stories:
         confirmed_fee = story.get('confirmed_fee')
         conf_dt = st.parse_ts(story.get('confirmed_at', ''))
+        outcome = story['outcome']
         for sk, s in story['sources'].items():
             a = agg[sk]
             a['source'] = s['source']
@@ -67,7 +68,9 @@ def build(min_resolved=MIN_RESOLVED):
             else:
                 a['follows'] += 1
             stage = s.get('stage', 'interest')
-            if story['outcome'] == 'completed':
+            high_conf = st.STAGE_RANK.get(stage, 0) >= 2  # advanced / here-we-go
+
+            if outcome == 'completed':
                 a['right'] += 1
                 a['cal'][stage][0] += 1
                 a['cal'][stage][1] += 1
@@ -79,9 +82,21 @@ def build(min_resolved=MIN_RESOLVED):
                 fa = _fee_accuracy(s.get('fee'), confirmed_fee)
                 if fa is not None:
                     a['fees'].append(fa)
-            elif story['outcome'] == 'false':
+            elif outcome == 'false':
+                # player went elsewhere: a miss regardless of stage, worse if confident
                 a['wrong'] += 1
                 a['cal'][stage][1] += 1
+                if high_conf:
+                    a['confident_miss'] += 1
+            elif outcome == 'collapsed':
+                # deal died. Only held against a source that claimed advanced/here-we-go;
+                # a mere 'interest' floated and dropped is not a wrong report.
+                if high_conf:
+                    a['wrong'] += 1
+                    a['cal'][stage][1] += 1
+                    a['confident_miss'] += 1
+                else:
+                    a['pending'] += 1
             else:
                 a['pending'] += 1
 
@@ -100,6 +115,7 @@ def build(min_resolved=MIN_RESOLVED):
             'source': a['source'], 'tier': a['tier'], 'source_key': sk,
             'stories': a['stories'], 'resolved': resolved,
             'right': a['right'], 'false_reports': a['wrong'], 'pending': a['pending'],
+            'confident_miss': a['confident_miss'],
             'accuracy': round(acc, 3) if acc is not None else None,
             'completion_rate': round(completion, 3) if completion is not None else None,
             'scoops': a['scoops'], 'follows': a['follows'],
@@ -129,9 +145,10 @@ def build(min_resolved=MIN_RESOLVED):
 
     ranked = [r for r in rows if r['resolved'] >= min_resolved]
     thin = [r for r in rows if r['resolved'] < min_resolved]
-    return ranked, thin, live, {'completed': sum(1 for s in stories if s['outcome'] == 'completed'),
-                                'false': sum(1 for s in stories if s['outcome'] == 'false'),
-                                'pending': sum(1 for s in stories if s['outcome'] == 'pending')}
+    tally = {}
+    for s in stories:
+        tally[s['outcome']] = tally.get(s['outcome'], 0) + 1
+    return ranked, thin, live, tally
 
 
 def main():
