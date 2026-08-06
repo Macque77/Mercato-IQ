@@ -45,6 +45,6 @@ const CLUBS_LIST = [{"slug": "cidadela", "name": "A.S. Cittadella 1973", "count"
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:24:37.279807Z",
+  updated: "2026-08-06T10:30:05.377314Z",
   label: "League aggregation"
 };

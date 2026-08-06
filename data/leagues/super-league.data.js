@@ -73,20 +73,20 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Antoine Makoumbou", prob: 15, truth: 30, bullshit: false,
-    club_origin: "panathinaikos", club_display_name: "Panathinaikos", direction: "in",
-    from: "Samsunspor", to: "Panathinaikos",
+    name: "Antoine Makoumbou", prob: 15, truth: 25, bullshit: false,
+    club_origin: "paok", club_display_name: "PAOK Thessaloniki", direction: "in",
+    from: "Samsunspor", to: "PAOK Thessaloniki",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
 ];
 
-const BY_CLUB = {"olympiacos": 2, "aek-athens": 1, "panathinaikos": 2, "aris-thessaloniki": 2, "panaitolikos": 2, "paok": 1};
+const BY_CLUB = {"olympiacos": 2, "aek-athens": 1, "panathinaikos": 1, "aris-thessaloniki": 2, "panaitolikos": 2, "paok": 2};
 
-const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1, "badge": false, "primary": "#FDB900", "primaryBright": "#FDB900"}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 2, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "atromitos", "name": "Atromitos", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "olympiacos", "name": "Olympiacos FC", "count": 2, "badge": false, "primary": "#CC0000", "primaryBright": "#CC0000"}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 1, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 2, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 2, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "peristeri", "name": "Peristeri", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
+const CLUBS_LIST = [{"slug": "aek-athens", "name": "AEK Athens", "count": 1, "badge": false, "primary": "#FDB900", "primaryBright": "#FDB900"}, {"slug": "apollon-athens", "name": "Apollon Athens", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "aris-thessaloniki", "name": "Aris Thessaloniki", "count": 2, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "asteras-tripolis", "name": "Asteras Tripolis", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "atromitos", "name": "Atromitos", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "opa-ofi", "name": "OFI Crete", "count": 0, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "olympiacos", "name": "Olympiacos FC", "count": 2, "badge": false, "primary": "#CC0000", "primaryBright": "#CC0000"}, {"slug": "paok", "name": "PAOK Thessaloniki", "count": 2, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "panaitolikos", "name": "Panaitolikos", "count": 2, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "panathinaikos", "name": "Panathinaikos", "count": 1, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "peristeri", "name": "Peristeri", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "volos-nps", "name": "Volos NPS", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:24:37.282318Z",
+  updated: "2026-08-06T10:30:05.378185Z",
   label: "League aggregation"
 };

@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 177
+  stories_count: 178
 };
 
 const TOP_STORIES = [  {
@@ -87,13 +87,6 @@ const TOP_STORIES = [  {
     value: "Loan (poss. obligation to buy)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
-    name: "Rodri",prob: 40, truth: 65, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
-    from: "Manchester City", to: "Real Madrid",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Opening bid €50-60m (City value ~€80m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
     name: "Mykhailo Mudryk",prob: 40, truth: 65, bullshit: false,
     club_origin: "chelsea", club_display_name: "Chelsea", direction: "out",
     from: "Chelsea", to: "Coventry City / Strasbourg (multiple suitors)",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~£70m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
+  {
+    name: "Lewis Hall",prob: 32, truth: 65, bullshit: false,
+    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
+    from: "Newcastle United", to: "Manchester United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
 ];
 
-const BY_LEAGUE = {"Premier League": 105, "Championship": 19, "League One": 53, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 106, "Championship": 19, "League One": 53, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 105}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 106}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:24:37.224555Z",
+  updated: "2026-08-06T10:30:05.360773Z",
   label: "Nation aggregation"
 };

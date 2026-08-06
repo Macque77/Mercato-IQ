@@ -6,7 +6,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 137
+  stories_count: 136
 };
 
 const TOP_STORIES = [  {
@@ -31,13 +31,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Sankhoun Diawara",prob: 55, truth: 85, bullshit: false,
-    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
-    from: "Troyes", to: "AC Milan",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
     name: "Givairo Read",prob: 55, truth: 85, bullshit: false,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "Feyenoord", to: "AS Roma",
@@ -52,9 +45,9 @@ const TOP_STORIES = [  {
     value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Noa Lang",prob: 45, truth: 70, bullshit: false,
-    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
-    from: "Napoli", to: "Ajax",
+    name: "Sankhoun Diawara",prob: 55, truth: 85, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Troyes", to: "AC Milan",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
@@ -62,6 +55,13 @@ const TOP_STORIES = [  {
     name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
     club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
     from: "Glasgow Rangers", to: "Atalanta",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Noa Lang",prob: 45, truth: 70, bullshit: false,
+    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
+    from: "Napoli", to: "Ajax",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
@@ -87,13 +87,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Francisco Conceição",prob: 15, truth: 45, bullshit: false,
-    club_origin: "juventus", club_display_name: "Juventus", direction: "out",
-    from: "Juventus", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'down',
-    value: "~£25m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
     name: "Elliot Stroud",prob: 90, truth: 75, bullshit: false,
     club_origin: "genoa", club_display_name: "Genoa", direction: "out",
     from: "Genoa", to: "Hull City",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
+  {
+    name: "Mathias Olivera / Gutierrez",prob: 85, truth: 75, bullshit: false,
+    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
+    from: "Napoli", to: "Bayer Leverkusen",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
 ];
 
-const BY_LEAGUE = {"Serie A": 126, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 125, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 126}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 125}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:24:37.228574Z",
+  updated: "2026-08-06T10:30:05.362112Z",
   label: "Nation aggregation"
 };
