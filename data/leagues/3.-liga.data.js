@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "rostock", "name": "Hansa Rostock", "count": 0, "ba
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T11:26:21.341808Z",
+  updated: "2026-08-06T11:36:32.071579Z",
   label: "League aggregation"
 };

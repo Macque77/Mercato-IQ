@@ -265,6 +265,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Dayann Methalie",
+    club_display_name: "Sunderland",
+    summary: "Well sourced on both sides of the Channel; the gap is purely the fixed fee.",
+    value: "€30m asking price",
+    from: "Toulouse", to: "Sunderland",
+    direction: "in",
+    prob: 65, truth: 92, trend: 'up', bullshit: false,
+    tier: 1, coverage: 7, coverage_trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "sunderland",
+    updated: "2026-07-31T09:00:00Z"
+  },
+  {
     headline: "Loic Openda",
     club_display_name: "Olympique Lyonnais",
     summary: "",
@@ -771,25 +784,12 @@ const HEADLINES = [
     club_link: "rotterdam-sparta",
     updated: "2026-07-29T00:00:00Z"
   },
-  {
-    headline: "Jeff Hardeveld",
-    club_display_name: "Willem II",
-    summary: "Late Jul 2026.",
-    value: "Undisclosed",
-    from: "Willem II", to: "Telstar",
-    direction: "out",
-    prob: 35, truth: 65, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Netherlands", league: "Eredivisie",
-    club_link: "willem-ii",
-    updated: "2026-08-04T14:30:00Z"
-  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 184, league_count: 3
+    stories_count: 185, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -842,9 +842,9 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 631,
+  total_stories: 632,
   clubs_covered: 178,
-  tier1_count: 86,
+  tier1_count: 87,
   top_league: "Serie A",
   most_active_club: "Sunderland",
   nations_covered: 13,
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T11:26:21.337837Z",
+  updated: "2026-08-06T11:36:32.067666Z",
   label: "Global aggregation from all clubs"
 };
