@@ -334,8 +334,22 @@ def load_club_rumours(slug):
     return out
 
 
+class FatalResearchError(RuntimeError):
+    """An API error that will hit every batch identically -- a bad/again-expired key
+    or an exhausted credit balance. Abort the whole run loudly instead of letting each
+    batch return [] and the sweep finish as a silent "0 club(s) updated" no-op (which
+    is exactly how an out-of-credits account looked before this guard existed)."""
+
+
+def _is_fatal_api_error(e):
+    code = getattr(e, 'status_code', None)
+    msg = str(e).lower()
+    return code in (401, 403) or 'credit balance' in msg or 'authentication' in msg
+
+
 def anthropic_research(client, roster, slugs, leads):
-    """One web-search-backed API call for a batch of clubs. Returns [] on failure."""
+    """One web-search-backed API call for a batch of clubs. Returns [] on a transient
+    failure; raises FatalResearchError on an account-level error that dooms every batch."""
     from anthropic import APIError
 
     log(f"Researching batch: {', '.join(slugs)}")
@@ -378,6 +392,8 @@ def anthropic_research(client, roster, slugs, leads):
             ) as stream:
                 resp = stream.get_final_message()
         except APIError as e:
+            if _is_fatal_api_error(e):
+                raise FatalResearchError(str(e)) from e
             log(f"  API error on batch {slugs}: {e}")
             return []
         if resp.stop_reason == 'refusal':
@@ -482,15 +498,22 @@ def main():
     # sequentially. Capped to stay under rate limits; the SDK retries 429s anyway.
     conc = max(1, int(os.environ.get('MERCATO_CONCURRENCY') or '4'))
     all_clubs = []
-    if conc == 1 or len(batches) <= 1:
-        for batch in batches:
-            all_clubs.extend(anthropic_research(client, roster, batch, leads))
-    else:
-        from concurrent.futures import ThreadPoolExecutor
-        log(f"Running {len(batches)} batch(es) at concurrency {min(conc, len(batches))}.")
-        with ThreadPoolExecutor(max_workers=min(conc, len(batches))) as ex:
-            for result in ex.map(lambda b: anthropic_research(client, roster, b, leads), batches):
-                all_clubs.extend(result)
+    try:
+        if conc == 1 or len(batches) <= 1:
+            for batch in batches:
+                all_clubs.extend(anthropic_research(client, roster, batch, leads))
+        else:
+            from concurrent.futures import ThreadPoolExecutor
+            log(f"Running {len(batches)} batch(es) at concurrency {min(conc, len(batches))}.")
+            with ThreadPoolExecutor(max_workers=min(conc, len(batches))) as ex:
+                for result in ex.map(lambda b: anthropic_research(client, roster, b, leads), batches):
+                    all_clubs.extend(result)
+    except FatalResearchError as e:
+        log(f"FATAL: {e}")
+        log("This affects every club identically, so aborting WITHOUT writing results "
+            "(a silent 0-club no-op would hide the real problem). If this is a credit/"
+            "billing error, top up at https://console.anthropic.com -> Plans & Billing.")
+        sys.exit(3)
 
     out_path = os.path.join(REPO, args.out)
     with open(out_path, 'w', encoding='utf-8', newline='\n') as f:

@@ -108,7 +108,10 @@ jobs:
         id: research
         if: steps.plan.outputs.run == 'true'
         run: |
-          set -e
+          # pipefail: research_agent.py exits non-zero on a fatal account error (bad key /
+          # no credits); without pipefail the `| tail` would swallow it and the run would
+          # look like a healthy 0-club no-op.
+          set -eo pipefail
           COUNT=$(python3 engine/research_agent.py \
             --mode "${{ steps.plan.outputs.mode }}" \
             --max-clubs "${{ steps.plan.outputs.max }}" \
