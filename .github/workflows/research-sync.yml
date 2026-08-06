@@ -141,4 +141,27 @@ jobs:
             exit 0
           fi
           git commit -m "Research sync (${{ steps.plan.outputs.mode }}): ${{ steps.research.outputs.clubs }} club(s) updated"
-          git push
+
+          # Robust push. Research Sync runs are serialized by the concurrency group, but a
+          # manual edit or the deploy workflow can push to main while a long sweep runs. A
+          # bare `git push` is then rejected ("fetch first") and the ENTIRE run's work is
+          # thrown away -- exactly what happened to sweep run #14. Rebase onto the latest
+          # main and retry; if a generated file conflicts, keep our freshly built version
+          # (--theirs during a rebase = the commit being replayed, i.e. ours).
+          pushed=false
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then pushed=true; break; fi
+            echo "Push rejected (attempt $attempt) -- rebasing onto latest origin/main."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "Rebase conflict -- preferring our freshly generated files."
+              git checkout --theirs . || true
+              git add -A
+              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            fi
+            sleep $((attempt * 3))
+          done
+          if [ "$pushed" != true ]; then
+            echo "::error::Could not push after 5 attempts."
+            exit 1
+          fi
