@@ -86,6 +86,24 @@
 
   .logo { flex:none; }
 
+  .rankings-link {
+    margin-left:auto;
+    flex:none;
+    font-family:var(--mono, ui-monospace, monospace);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--primary-bright);
+    text-decoration:none;
+    padding:7px 12px;
+    border:1px solid var(--primary-bright);
+    border-radius:99px;
+    white-space:nowrap;
+    transition:background .15s, color .15s;
+  }
+  .rankings-link:hover { background:var(--primary-bright); color:#0a0e14; }
+
   .breadcrumb {
     display:flex;
     align-items:center;
@@ -769,6 +787,7 @@
       <span>/</span>
       <span style="color:var(--primary-bright)">Brentford</span>
     </div>
+    <a href="/rankings.html" class="rankings-link">Power Rankings</a>
   </div>
 
   <div class="club-bar">
@@ -930,13 +949,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"El Hadji Malick Diouf", sub:"Unknown · Unknown · Forward", club:"Unknown", pos:"Forward", report:"Brentford's £15-18m offer rejected", src:"On-page rumour", tier:3, fee:"£15-18m", truth:45, prob:25, light:"o", trend:"up", note:"Offer rejected; deal stalling", lastSeen:"2026-08-06T13:55:46Z", baseProb:25},
-  {name:"Pape Matar Sarr", sub:"Unknown · Unknown · Midfielder", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:40, prob:30, light:"y", trend:"up", note:"Offered by Tottenham; no firm interest confirmed", lastSeen:"2026-08-06T13:55:46Z", baseProb:30}
+  {name:"El Hadji Malick Diouf", sub:"20 · Senegal · F", club:"Grenoble", pos:"Forward", report:"Brentford's £15-18m offer rejected", src:"On-page rumour", tier:0, fee:"£15-18m", truth:45, prob:25, light:"o", trend:"down", note:"Offer rejected; deal stalling", lastSeen:"2026-08-06T14:33:42Z", baseProb:25},
+  {name:"Pape Matar Sarr", sub:"22 · Senegal · M", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:0, fee:"Unknown", truth:40, prob:30, light:"y", trend:"down", note:"Offered by Tottenham; no firm interest confirmed", lastSeen:"2026-08-06T14:33:42Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Igor Thiago", sub:"Unknown · Brazil · Unknown", club:"Chelsea", pos:"Unknown", report:"Chelsea among clubs monitoring the Brazilian", src:"On-page rumour", tier:3, fee:"Unknown", truth:35, prob:20, light:"o", trend:"flat", note:"Early monitoring; no concrete bid", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
-  {name:"Bryan Mbeumo", sub:"26 · Cameroon · Forward", club:"Manchester United", pos:"Forward", report:"Agreement reached between Manchester United and Brentford; expected to undergo medical", src:"David Ornstein (The Athletic)", tier:1, fee:"£65m + £6m add-ons", truth:95, prob:90, light:"g", trend:"flat", note:"Deal struck; medical expected this weekend", lastSeen:"2026-08-06T13:55:46Z", baseProb:90}
+  {name:"Igor Thiago", sub:"22 · Brazil · M", club:"Brentford", pos:"Midfielder", report:"Chelsea among clubs monitoring the Brazilian", src:"On-page rumour", tier:0, fee:"Unknown", truth:35, prob:20, light:"o", trend:"down", note:"Early monitoring; no concrete bid", lastSeen:"2026-08-06T14:33:42Z", baseProb:20},
+  {name:"Bryan Mbeumo", sub:"26 · Cameroon · Forward", club:"Manchester United", pos:"Forward", report:"Agreement reached between Manchester United and Brentford; expected to undergo medical", src:"David Ornstein (The Athletic)", tier:1, fee:"£65m + £6m add-ons", truth:95, prob:90, light:"g", trend:"flat", note:"Deal struck; medical expected this weekend", lastSeen:"2026-08-06T13:55:46Z", baseProb:90, dead:true, deadReason:"Agreement reached with Manchester United appears incomplete/unconfirmed; no recent substantiation"},
+  {name:"Jordan Henderson", sub:"34 · England · M", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford. Chelsea top contender among multiple PL clubs eyeing England midfielder as Brentford ready to grant free transfer.", src:"David Ornstein", tier:1, fee:"Free", truth:75, prob:60, light:"g", trend:"flat", note:"Multiple Premier League clubs interested; Brentford willing to release on free transfer", lastSeen:"2026-08-06T14:33:42Z", baseProb:60}
 ];
 const DEAD = [
   {name:"Value & successor targets", sub:"Data-model intake", club:"Market", pos:"-", report:"window framing", src:"Model-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',
@@ -1002,7 +1022,8 @@ const HUB = {
   roundtableBrentfordFCJannikSchuster: {l:"Roundtable / Brentford FC", u:"https://roundtable.io/sports/soccer/premier-league/brentford/news/brentford-confirm-jannik-schuster-signing-from-red-bull-salzburg"},
   yahooSportsJaidonAnthony: {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/news/jaidon-anthony-brentford-confirm-second-160627350.html"},
   sportsMoleCallumWilson: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/brentford/transfer-talk/feature/brentford-summer-transfers-all-confirmed-ins-and-outs-for-2026_599228.html"},
-  theAthleticDavidOrnsteinBryanMbeumo: {l:"The Athletic (David Ornstein)", u:"https://x.com/David_Ornstein/status/1946208352570085417"}};
+  theAthleticDavidOrnsteinBryanMbeumo: {l:"The Athletic (David Ornstein)", u:"https://x.com/David_Ornstein/status/1946208352570085417"},
+  davidOrnsteinXJordanHenderson: {l:"David Ornstein (X)", u:"https://x.com/David_Ornstein/status/2081792914003292358"}};
 const LINKMAP = {
   "Value & successor targets": ["bbcBees","athletic","wls"],
   "Forward depth options": ["bbcBees","wls"],
@@ -1017,7 +1038,8 @@ const LINKMAP = {
   "Jaidon Anthony": ["yahooSportsJaidonAnthony"],
   "Callum Wilson": ["sportsMoleCallumWilson"],
   "Frank Onyeka": ["sportsMoleCallumWilson"],
-  "Bryan Mbeumo": ["theAthleticDavidOrnsteinBryanMbeumo"]};
+  "Bryan Mbeumo": ["theAthleticDavidOrnsteinBryanMbeumo"],
+  "Jordan Henderson": ["davidOrnsteinXJordanHenderson"]};
 const WL_LINKMAP = {
   "Data-model targets":"bbcBees","Prized asset":"athletic",
 };

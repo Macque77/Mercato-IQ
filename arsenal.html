@@ -86,6 +86,24 @@
 
   .logo { flex:none; }
 
+  .rankings-link {
+    margin-left:auto;
+    flex:none;
+    font-family:var(--mono, ui-monospace, monospace);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--primary-bright);
+    text-decoration:none;
+    padding:7px 12px;
+    border:1px solid var(--primary-bright);
+    border-radius:99px;
+    white-space:nowrap;
+    transition:background .15s, color .15s;
+  }
+  .rankings-link:hover { background:var(--primary-bright); color:#0a0e14; }
+
   .breadcrumb {
     display:flex;
     align-items:center;
@@ -769,6 +787,7 @@
       <span>/</span>
       <span style="color:var(--primary-bright)">Arsenal</span>
     </div>
+    <a href="/rankings.html" class="rankings-link">Power Rankings</a>
   </div>
 
   <div class="club-bar">
@@ -926,10 +945,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimarães", sub:"25 · Brazil · CM", club:"Newcastle United", pos:"Midfielder", report:"Arsenal signing Newcastle captain Guimarães", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:95, prob:85, light:"g", trend:"up", note:"Closing on full agreement reported", lastSeen:"2026-08-06T14:31:11Z", baseProb:85}
+  {name:"Bruno Guimarães", sub:"Newcastle captain", club:"Newcastle United", pos:"MID", report:"BBC Sport and Sky Sports confirm Arsenal signing Newcastle captain Bruno Guimarães", src:"BBC Sport Football / Sky Sports Football", tier:2, fee:"Undisclosed", truth:100, prob:95, light:"g", trend:"up", note:"Deal reported as signed by BBC and Sky Sports", lastSeen:"2026-08-06T14:33:42Z", baseProb:95}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Mathias Norgaard", sub:"Midfielder", club:"Arsenal", pos:"MID", report:"BBC Sport and Sky Sports confirm Norgaard completed move to Everton", src:"BBC Sport Football / Sky Sports Football", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-06T14:33:42Z", baseProb:100}
+];
 const DEAD = [
   {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No credible updates in recent snippets; link appears stale", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£80m+", truth:55, prob:20, light:'o', trend:'flat',

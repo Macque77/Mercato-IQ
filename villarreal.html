@@ -86,6 +86,24 @@
 
   .logo { flex:none; }
 
+  .rankings-link {
+    margin-left:auto;
+    flex:none;
+    font-family:var(--mono, ui-monospace, monospace);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--primary-bright);
+    text-decoration:none;
+    padding:7px 12px;
+    border:1px solid var(--primary-bright);
+    border-radius:99px;
+    white-space:nowrap;
+    transition:background .15s, color .15s;
+  }
+  .rankings-link:hover { background:var(--primary-bright); color:#0a0e14; }
+
   .breadcrumb {
     display:flex;
     align-items:center;
@@ -769,6 +787,7 @@
       <span>/</span>
       <span style="color:var(--primary-bright)">Villarreal</span>
     </div>
+    <a href="/rankings.html" class="rankings-link">Power Rankings</a>
   </div>
 
   <div class="club-bar">
