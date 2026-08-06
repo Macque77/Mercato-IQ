@@ -29,6 +29,9 @@ on:
       max_clubs:
         description: 'Max clubs to research this run'
         default: '12'
+      clubs:
+        description: 'Exact club slugs to research (comma-separated); overrides mode targeting'
+        default: ''
       force:
         description: 'Research even if off-season'
         type: boolean
@@ -109,6 +112,7 @@ jobs:
           COUNT=$(python3 engine/research_agent.py \
             --mode "${{ steps.plan.outputs.mode }}" \
             --max-clubs "${{ steps.plan.outputs.max }}" \
+            --clubs "${{ github.event.inputs.clubs }}" \
             --out research.json | tail -n1)
           echo "clubs=${COUNT:-0}" >> "$GITHUB_OUTPUT"
           echo "Research produced ${COUNT:-0} club(s)."

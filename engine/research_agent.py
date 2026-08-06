@@ -40,12 +40,15 @@ import urllib.request
 from datetime import date, datetime
 from xml.etree import ElementTree
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import js_obj_utils as jou  # noqa: E402
+
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLUBS_DIR = os.path.join(REPO, 'clubs')
 WINDOWS_PATH = os.path.join(REPO, 'engine', 'windows.json')
 
 MODEL = os.environ.get('MERCATO_MODEL') or 'claude-opus-5'  # swap to claude-sonnet-5 to cut cost
-BATCH_SIZE = int(os.environ.get('MERCATO_BATCH_SIZE', '4'))  # clubs researched per API call
+BATCH_SIZE = int(os.environ.get('MERCATO_BATCH_SIZE', '2'))  # clubs per API call (fewer = deeper reconciliation)
 
 # High-signal RSS feeds for the Phase 0 lead poll -- English-language and
 # broad-European on purpose: poll_feeds.py's keyword filter is English, so a
@@ -131,6 +134,7 @@ X itself is often not directly searchable, so name-based search is how you catch
 - Accuracy matters more than volume: this publishes to a live site. If you cannot verify a story, leave it out.
 - CHECK CONFIRMED TRANSFERS FIRST. Before reporting any rumour, establish whether the player has already completed a move this season -- if so the rumour is void: record the deal (confirmed_in/out) and, if an old rumour for them is still floating around, add them to `dead`. A rumour for an already-transferred player is always wrong.
 - KEEP IT CURRENT, NOT STALE. Only report a rumour as live if it is genuinely being talked about now. Base recency on the LATEST credible source mention. Actively retire the dead ones via `dead`: deals a source has called off, links no one has reported in 5+ weeks, and players who signed elsewhere. A page full of months-old dead links is worse than a short accurate one.
+- RECONCILE against a current snapshot. When the user message lists a club's existing on-page rumours, treat that as a to-check list. Look up the club's current picture -- transferfeed.com/clubs/<club-slug> aggregates the live links per club (search "transferfeed <club> transfers" and read that page): anything on that current list which is NOT already on the page should be ADDED; anything on the page that is NOT in the current picture (and not freshly reported elsewhere) should go in `dead`. Use transferfeed to know WHAT is live, but always cite the ORIGINAL reporter, never link transferfeed itself.
 
 Output: a SINGLE JSON object matching this schema and NOTHING else -- no prose, no markdown fences:
 {SCHEMA_DOC}
@@ -303,6 +307,31 @@ def pick_incremental_targets(leads):
     return []
 
 
+def load_club_rumours(slug):
+    """Existing on-page rumours for a club: [{name, dir, recency}] from
+    INCOMING/OUTGOING/WATCHLIST, so the model can RECONCILE (verify each is still
+    live, add missing, retire dead) rather than only appending new ones."""
+    try:
+        content = open(os.path.join(CLUBS_DIR, f'{slug}.data.js'), encoding='utf-8').read()
+    except OSError:
+        return []
+    out = []
+    for arr in ('INCOMING', 'OUTGOING', 'WATCHLIST'):
+        block = jou.find_array_block(content, arr)
+        if not block:
+            continue
+        _, _, inner = block
+        for s, e in jou.split_top_level_objects(inner):
+            obj = inner[s:e]
+            name = jou.field_str(obj, 'name')
+            if not name:
+                continue
+            d = jou.field_str(obj, 'dir') or ('out' if arr == 'OUTGOING' else 'in')
+            recency = jou.field_str(obj, 'report') or jou.field_str(obj, 'age') or jou.field_str(obj, 'lastSeen') or ''
+            out.append({'name': name, 'dir': d, 'recency': recency[:50]})
+    return out
+
+
 def anthropic_research(client, roster, slugs, leads):
     """One web-search-backed API call for a batch of clubs. Returns [] on failure."""
     from anthropic import APIError
@@ -311,17 +340,32 @@ def anthropic_research(client, roster, slugs, leads):
 
     club_lines = '\n'.join(f'  - slug "{s}": {roster[s]["name"]} ({roster[s]["league"] or "?"})'
                            for s in slugs if s in roster)
+    existing = []
+    for s in slugs:
+        rs = load_club_rumours(s)
+        if rs:
+            listed = '; '.join(f"{r['name']} ({r['dir']}{', ' + r['recency'] if r['recency'] else ''})" for r in rs[:25])
+            existing.append(f'  {roster[s]["name"]} [{s}] currently on page: {listed}')
+    existing_block = ''
+    if existing:
+        existing_block = ("\n\nRECONCILE the rumours already on each club's page below. For EACH: verify it is "
+                          "still a live link; ADD any current link that's missing; and put in `dead` (with a reason) "
+                          "any that are no longer being reported, have gone quiet 5+ weeks, or whose player has "
+                          "transferred. Do not silently keep a stale one.\n" + '\n'.join(existing))
     lead_block = ''
     if leads:
         lead_block = "\nHeadlines from today's feeds (leads to chase, not verbatim facts):\n" + \
             '\n'.join(f'  - {t}' for t in leads[:40])
     user_msg = (
         f"Research current transfer news for these clubs and return the JSON object.\n"
-        f"Use the EXACT slug shown for each club.\n\nClubs:\n{club_lines}\n{lead_block}"
+        f"Use the EXACT slug shown for each club.\n\nClubs:\n{club_lines}\n{lead_block}{existing_block}"
     )
 
     messages = [{'role': 'user', 'content': user_msg}]
-    tools = [{'type': 'web_search_20260209', 'name': 'web_search', 'max_uses': 8}]
+    tools = [
+        {'type': 'web_search_20260209', 'name': 'web_search', 'max_uses': 10},
+        {'type': 'web_fetch_20260209', 'name': 'web_fetch', 'max_uses': 6},
+    ]
 
     # Server-tool loop: web_search may pause the turn (pause_turn) up to a few times.
     for _ in range(6):
@@ -384,6 +428,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--mode', choices=['incremental', 'sweep'], default='incremental')
     ap.add_argument('--max-clubs', type=int, default=int(os.environ.get('MERCATO_MAX_CLUBS', '12')))
+    ap.add_argument('--clubs', default='', help='comma-separated slugs to research exactly (overrides mode targeting)')
     ap.add_argument('--out', default='research.json')
     args = ap.parse_args()
 
@@ -396,7 +441,10 @@ def main():
 
     leads = run_poll()
 
-    if args.mode == 'sweep':
+    if args.clubs.strip():
+        targets = [s.strip() for s in args.clubs.split(',') if s.strip() in roster]
+        log(f"Explicit clubs: {len(targets)} valid -> {', '.join(targets)}")
+    elif args.mode == 'sweep':
         live = in_window_leagues()
         targets = [s for s, v in sorted(roster.items()) if v['league'] in live]
         log(f"Sweep: {len(targets)} clubs in {len(live)} in-window league(s).")
