@@ -66,9 +66,7 @@ const IGNORE = [];
 
 const POSITIONS = [];
 
-const WATCHLIST = [
-  {name:"Mathys Detourbet", club:"ES Troyes AC", pos:"W", dir:"out", age:"~7mo", tier:2, note:"Manchester City have been credited with long-standing interest."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "gffn-troyes": {l:"Get French Football News · Troyes", u:"https://www.getfootballnewsfrance.com/tag/troyes/"},

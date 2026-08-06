@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -861,12 +869,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Moise Kean", sub:"26 · ST · Italy", club:"Fiorentina", pos:"ST", report:"23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Kean's representatives have been shopping the striker to Como (and Fenerbahce), with Como said to have made contact citing Champions League football as a selling point; Fiorentina coach Fabio Grosso says he'd be happy if Kean stays but won't rule out a sale."},
-  {name:"Yan Couto", sub:"Right-back, Brazil, 24", club:"Borussia Dortmund", pos:"RB", report:"Como are closing in on Yan Couto from Borussia Dortmund, with the move described as close to completion though slowed by Dortmund's administrative processes.", src:"Calciomercato.com", tier:2, fee:"Undisclosed (loan/permanent details still being finalized)", truth:75, prob:70, light:"g", trend:"flat", note:"Gianluca Di Marzio previously reported Como reopening contacts with Dortmund on a loan-based structure."}
+  {name:"Moise Kean", sub:"26 · ST · Italy", club:"Fiorentina", pos:"ST", report:"23 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:18, light:"o", trend:"flat", note:"Kean's representatives have been shopping the striker to Como (and Fenerbahce), with Como said to have made contact citing Champions League football as a selling point; Fiorentina coach Fabio Grosso says he'd be happy if Kean stays but won't rule out a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
+  {name:"Yan Couto", sub:"Right-back, Brazil, 24", club:"Borussia Dortmund", pos:"RB", report:"Como are closing in on Yan Couto from Borussia Dortmund, with the move described as close to completion though slowed by Dortmund's administrative processes.", src:"Calciomercato.com", tier:2, fee:"Undisclosed (loan/permanent details still being finalized)", truth:75, prob:70, light:"g", trend:"flat", note:"Gianluca Di Marzio previously reported Como reopening contacts with Dortmund on a loan-based structure.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70}
 ];
 
 const OUTGOING = [
-  {name:"Alvaro Morata", sub:"Striker, Spain, 33", club:"Undisclosed", pos:"ST", report:"Morata is reported as departing Como this summer amid the club's need to balance the books after heavy spending.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"Como face financial fair-play pressure and may need further departures after major incoming signings."}
+  {name:"Alvaro Morata", sub:"Striker, Spain, 33", club:"Undisclosed", pos:"ST", report:"Morata is reported as departing Como this summer amid the club's need to balance the books after heavy spending.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"Como face financial fair-play pressure and may need further departures after major incoming signings.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50}
 ];
 
 const RISERS = [
@@ -887,7 +895,6 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Trevoh Chalobah", club:"Chelsea", pos:"CB", dir:"in", age:"~9 days", tier:2, note:"Como have improved their bid after an initial €30m offer was rejected."},
   {name:"Moise Kean", club:"Fiorentina", pos:"ST", dir:"in", age:"~11 days", tier:3, note:"Kean's agent has shopped him to Como; contact made but no offer confirmed."}
 ];
 
@@ -956,6 +963,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1040,6 +1048,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1204,6 +1220,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

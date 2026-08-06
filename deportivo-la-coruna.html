@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -859,13 +867,16 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Domingos Duarte", sub:"31 · CB · Portugal", club:"Getafe (free agent)", pos:"CB", report:"04 Jul 2026", src:"Matteo Moretto", tier:2, fee:"Free (contract expired at Getafe)", truth:70, prob:60, light:"g", trend:"up", note:"Moretto reported advanced talks for the free-agent centre-back, who spent the 2018/19 season on loan at Riazor and left a strong impression. A reunion given his familiarity with the club and city."},
-  {name:"Francisco Moura", sub:"Portuguese right-back", club:"FC Porto", pos:"RB", report:"Deportivo have shown concrete interest in Moura as they build a squad capable of competing after promotion back to LaLiga.", src:"Superdeporte", tier:3, fee:"", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage interest reported; no formal offer confirmed yet."},
-  {name:"Ricardo Rodríguez", sub:"Swiss left-back, 33, free agent", club:"Free agent", pos:"LB", report:"Named as one of five left-back candidates being weighed by Deportivo before they settled on Angeliño; competition to partner/replace Quagliata at left-back.", src:"ElDesmarque", tier:2, fee:"", truth:55, prob:15, light:"o", trend:"flat", note:"Overtaken in the club's plans once the Angeliño deal advanced."}
+  {name:"Domingos Duarte", sub:"31 · CB · Portugal", club:"Getafe (free agent)", pos:"CB", report:"04 Jul 2026", src:"Matteo Moretto", tier:2, fee:"Free (contract expired at Getafe)", truth:70, prob:60, light:"g", trend:"up", note:"Moretto reported advanced talks for the free-agent centre-back, who spent the 2018/19 season on loan at Riazor and left a strong impression. A reunion given his familiarity with the club and city.", lastSeen:"2026-08-04T19:10:50Z", baseProb:60},
+  {name:"Francisco Moura", sub:"Portuguese right-back", club:"FC Porto", pos:"RB", report:"Deportivo have shown concrete interest in Moura as they build a squad capable of competing after promotion back to LaLiga.", src:"Superdeporte", tier:3, fee:"", truth:40, prob:20, light:"o", trend:"flat", note:"Early-stage interest reported; no formal offer confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Ricardo Rodríguez", sub:"Swiss left-back, 33, free agent", club:"Free agent", pos:"LB", report:"Named as one of five left-back candidates being weighed by Deportivo before they settled on Angeliño; competition to partner/replace Quagliata at left-back.", src:"ElDesmarque", tier:2, fee:"", truth:55, prob:15, light:"o", trend:"flat", note:"Overtaken in the club's plans once the Angeliño deal advanced.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [
-  {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move."}
+  {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:95}
+];
+const DEAD = [
+  {name:"Domingos Duarte", club:"Getafe (free agent)", pos:"CB", dir:"in", age:"~1 month", tier:2, note:"Advanced talks reported by Matteo Moretto; player already knows Riazor from a 2018/19 loan.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [
@@ -884,9 +895,7 @@ const POSITIONS = [
   {p:"Centre-back depth for the top flight", w:50, x:"Duarte reunion would add senior La Liga-tested experience to a squad built for an immediate return."}
 ];
 
-const WATCHLIST = [
-  {name:"Domingos Duarte", club:"Getafe (free agent)", pos:"CB", dir:"in", age:"~1 month", tier:2, note:"Advanced talks reported by Matteo Moretto; player already knows Riazor from a 2018/19 loan."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "moncloa-depor-spend": {l:"Moncloa - Deportivo invest €20m across summer signings", u:"https://www.moncloa.com/2026/07/12/deportivo-coruna-invierte-20-millones-fichajes-3398638/"},
@@ -954,6 +963,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1038,6 +1048,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1202,6 +1220,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

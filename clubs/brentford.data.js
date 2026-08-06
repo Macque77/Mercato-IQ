@@ -101,6 +101,10 @@ const OUTGOING = [
    note:"Routine churn to keep the squad balanced and the cost ratio healthy.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Igor Thiago", sub:"Record sale being monitored by Chelsea", club:"Chelsea", pos:"FW", report:"Chelsea are among clubs monitoring the Brazilian striker after his prolific breakout season; Brentford have set an £80m valuation that would surpass the £71m received for Bryan Mbeumo.", src:"ESPN Brasil (via Football Muse)", tier:2, fee:"£80m (valuation)", truth:45, prob:20, light:"o", trend:"flat", note:"Thiago signed an improved contract through 2031 in February, suggesting no rush to sell", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
+const DEAD = [
+  {name:"Avom", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed: recycled aggregator repetition does not refresh recency. No club, fee or fresh report held at migration; re-trace at the next refresh or drop.", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Hadj Moussa", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed on recycled aggregator repetition. No club, fee or fresh report held at migration; re-trace at the next refresh or drop.", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Andrews</b> - new deal to 2032; stability secured."},
@@ -131,9 +135,7 @@ const POSITIONS = [
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
   {name:"Data-model targets", club:"Market", pos:"-", dir:"in", age:"framing", tier:3, note:"Value recruits and successors via Brentford's analytics network."},
-  {name:"Prized asset", club:"Brentford", pos:"-", dir:"out", age:"framing", tier:3, note:"A premium sale is the expected summer feature, once a successor is ready."},
-  {name:"Avom", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed: recycled aggregator repetition does not refresh recency. No club, fee or fresh report held at migration; re-trace at the next refresh or drop."},
-  {name:"Hadj Moussa", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed on recycled aggregator repetition. No club, fee or fresh report held at migration; re-trace at the next refresh or drop."},
+  {name:"Prized asset", club:"Brentford", pos:"-", dir:"out", age:"framing", tier:3, note:"A premium sale is the expected summer feature, once a successor is ready."}
 ];
 
 /* ---------- SOURCE LINKS ----------

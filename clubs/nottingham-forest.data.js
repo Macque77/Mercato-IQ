@@ -85,6 +85,9 @@ const OUTGOING = [
   {name:"Morgan Gibbs-White", sub:"25 · AM · England", club:"Aston Villa interest", pos:"AM", report:"24 Jul 2026", src:"Yahoo Sports (Mick Brown)", tier:3, fee:"Valuation undisclosed - Forest refusing to sell", truth:62, prob:12, light:'r', trend:'down',
    note:"Villa have identified Gibbs-White as their primary Morgan Rogers replacement and are 'prepared to make a substantial bid,' but Forest's stance is described as unequivocal: they 'don't want to lose him under any circumstances.' Marinakis blocked a Tottenham move with a contract extension last summer and is expected to do the same again - this reads as interest without a realistic pathway to a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
 ];
+const DEAD = [
+  {name:"Honest Ahanor", club:"Atalanta", pos:"CB", dir:"in", age:"~11 wks", tier:3, note:"18-year-old Champions League regular monitored since November; Atalanta want £30m+ and he's 'in no rush to leave' - a longer-term watch, not a summer deal.", deadReason:"no fresh report in 11+ weeks", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Diomande</b>: personal terms agreed, Sporting excluding him from friendlies, BBC and Romano both describe talks as advancing fast - an announcement could land within days."},
@@ -118,9 +121,8 @@ const POSITIONS = [
 const WATCHLIST = [
   {name:"Cathal McCarthy", club:"Hull City", pos:"CB", dir:"in", age:"~3 wks", tier:3, note:"19-year-old Irish centre-back; Forest's seven-figure bid was rejected, an improved offer is expected, with a Championship loan likely if he signs."},
   {name:"Dodo", club:"Fiorentina", pos:"RB", dir:"in", age:"~2 wks", tier:3, note:"27-year-old attacking full-back being 'lined up' alongside the Read pursuit; explosive going forward, considered weaker defensively than Aina."},
-  {name:"Honest Ahanor", club:"Atalanta", pos:"CB", dir:"in", age:"~11 wks", tier:3, note:"18-year-old Champions League regular monitored since November; Atalanta want £30m+ and he's 'in no rush to leave' - a longer-term watch, not a summer deal."},
   {name:"Chris Wood", club:"Contract situation", pos:"ST", dir:"out", age:"~3 wks", tier:3, note:"Entering the final year of his deal at 34; local reporting suggests a sale makes sense to avoid losing him free next summer, but no interested club has been named yet."},
-  {name:"Ola Aina", club:"Contract/squad status", pos:"RB", dir:"out", age:"~4 days", tier:3, note:"Injury-hit 2025/26 (28 matches missed) and now facing fresh competition from the Read pursuit; no external suitor reported, but his standing is visibly eroding."},
+  {name:"Ola Aina", club:"Contract/squad status", pos:"RB", dir:"out", age:"~4 days", tier:3, note:"Injury-hit 2025/26 (28 matches missed) and now facing fresh competition from the Read pursuit; no external suitor reported, but his standing is visibly eroding."}
 ];
 
 const HUB = {

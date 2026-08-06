@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -863,16 +871,16 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Dzenan Pejcinovic", sub:"Striker linked as Stuttgart chase attacking reinforcement", club:"VfL Wolfsburg", pos:"ST", report:"Stuttgart are locked in 'difficult' talks with Wolfsburg for the 21-year-old striker, who scored 12 goals last season, but the two clubs remain far apart on valuation.", src:"Goal.com (Christian Guinin)", tier:1, fee:"Wolfsburg want €25m+, Stuttgart yet to match", truth:75, prob:45, light:"y", trend:"flat", note:"Sporting director Fabian Wohlgemuth confirmed talks are ongoing but said a deal is 'a long way off'; Wolfsburg under no financial pressure to sell after the €17m Koulierakis sale to Roma."},
-  {name:"Radek Vitek", sub:"Goalkeeper eyed amid Stuttgart injury crisis", club:"Manchester United", pos:"GK", report:"Stuttgart are exploring a move for the uncapped Manchester United goalkeeper after Alexander Nübel's understudy Dennis Seimen was ruled out for at least two months.", src:"Bild", tier:2, fee:"Valued around €6m (Transfermarkt)", truth:65, prob:40, light:"y", trend:"flat", note:"Vitek, 22, has made no senior United appearances but impressed on loan at Bristol City (41 apps); Hull City and Celtic are also credited with interest."}
+  {name:"Dzenan Pejcinovic", sub:"Striker linked as Stuttgart chase attacking reinforcement", club:"VfL Wolfsburg", pos:"ST", report:"Stuttgart are locked in 'difficult' talks with Wolfsburg for the 21-year-old striker, who scored 12 goals last season, but the two clubs remain far apart on valuation.", src:"Goal.com (Christian Guinin)", tier:1, fee:"Wolfsburg want €25m+, Stuttgart yet to match", truth:75, prob:45, light:"y", trend:"flat", note:"Sporting director Fabian Wohlgemuth confirmed talks are ongoing but said a deal is 'a long way off'; Wolfsburg under no financial pressure to sell after the €17m Koulierakis sale to Roma.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Radek Vitek", sub:"Goalkeeper eyed amid Stuttgart injury crisis", club:"Manchester United", pos:"GK", report:"Stuttgart are exploring a move for the uncapped Manchester United goalkeeper after Alexander Nübel's understudy Dennis Seimen was ruled out for at least two months.", src:"Bild", tier:2, fee:"Valued around €6m (Transfermarkt)", truth:65, prob:40, light:"y", trend:"flat", note:"Vitek, 22, has made no senior United appearances but impressed on loan at Bristol City (41 apps); Hull City and Celtic are also credited with interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Jamie Leweling", sub:"24 · W · Germany", club:"Bournemouth / Everton", pos:"W", report:"3 Aug 2026", src:"Kicker (via Bulinews/Yahoo)", tier:2, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"up", note:"Kicker reports Stuttgart may need to sell to balance the books, with 'no star considered unsellable.' Bournemouth have made a fresh approach that Leweling reportedly rejected last month; Everton and Roma are also credited with interest."},
-  {name:"Ermedin Demirović", sub:"26 · ST · Bosnia", club:"Unspecified", pos:"ST", report:"3 Aug 2026", src:"Kicker (via Bulinews/Yahoo)", tier:3, fee:"Undisclosed", truth:45, prob:22, light:"o", trend:"flat", note:"Named by Kicker among Stuttgart's potential sale candidates as the club looks to balance its books; no concrete club interest specified yet."},
-  {name:"Ermedin Demirovic", sub:"Bosnian striker admired by Leeds United", club:"Leeds United", pos:"ST", report:"Leeds United have identified Demirovic as an attacking target for Daniel Farke's Premier League survival push, but the striker is reportedly content in Stuttgart.", src:"Slobodna Bosna", tier:2, fee:"Not specified", truth:55, prob:25, light:"o", trend:"flat", note:"Demirovic contributed to 20 goals last season and is not pushing for an exit, giving Stuttgart a strong negotiating position; other unnamed European clubs are also monitoring him."},
-  {name:"Alexander Nübel", sub:"Number one goalkeeper drawing Turkish interest", club:"Besiktas", pos:"GK", report:"Besiktas have been credited with surprise interest in Nübel as they look to strengthen their goalkeeping options this summer.", src:"A Spor", tier:2, fee:"Not specified", truth:55, prob:30, light:"y", trend:"flat", note:"Reported as part of a wider look at Besiktas's defensive and goalkeeping targets from the Bundesliga."},
-  {name:"Jeff Chabot", sub:"Defender floated as alternative Besiktas target", club:"Besiktas", pos:"CB", report:"Besiktas are said to view the 23-year-old Chabot as a defensive alternative after missing out on their primary target, Flamengo's Leo Pereira.", src:"A Spor", tier:3, fee:"Not specified", truth:45, prob:20, light:"o", trend:"flat", note:"Chabot is under contract at Stuttgart until 2028 and remains a key player under Sebastian Hoeneß, making a move unlikely without a significant offer."}
+  {name:"Jamie Leweling", sub:"24 · W · Germany", club:"Bournemouth / Everton", pos:"W", report:"3 Aug 2026", src:"Kicker (via Bulinews/Yahoo)", tier:2, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"up", note:"Kicker reports Stuttgart may need to sell to balance the books, with 'no star considered unsellable.' Bournemouth have made a fresh approach that Leweling reportedly rejected last month; Everton and Roma are also credited with interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Ermedin Demirović", sub:"26 · ST · Bosnia", club:"Unspecified", pos:"ST", report:"3 Aug 2026", src:"Kicker (via Bulinews/Yahoo)", tier:3, fee:"Undisclosed", truth:45, prob:22, light:"o", trend:"flat", note:"Named by Kicker among Stuttgart's potential sale candidates as the club looks to balance its books; no concrete club interest specified yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
+  {name:"Ermedin Demirovic", sub:"Bosnian striker admired by Leeds United", club:"Leeds United", pos:"ST", report:"Leeds United have identified Demirovic as an attacking target for Daniel Farke's Premier League survival push, but the striker is reportedly content in Stuttgart.", src:"Slobodna Bosna", tier:2, fee:"Not specified", truth:55, prob:25, light:"o", trend:"flat", note:"Demirovic contributed to 20 goals last season and is not pushing for an exit, giving Stuttgart a strong negotiating position; other unnamed European clubs are also monitoring him.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Alexander Nübel", sub:"Number one goalkeeper drawing Turkish interest", club:"Besiktas", pos:"GK", report:"Besiktas have been credited with surprise interest in Nübel as they look to strengthen their goalkeeping options this summer.", src:"A Spor", tier:2, fee:"Not specified", truth:55, prob:30, light:"y", trend:"flat", note:"Reported as part of a wider look at Besiktas's defensive and goalkeeping targets from the Bundesliga.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Jeff Chabot", sub:"Defender floated as alternative Besiktas target", club:"Besiktas", pos:"CB", report:"Besiktas are said to view the 23-year-old Chabot as a defensive alternative after missing out on their primary target, Flamengo's Leo Pereira.", src:"A Spor", tier:3, fee:"Not specified", truth:45, prob:20, light:"o", trend:"flat", note:"Chabot is under contract at Stuttgart until 2028 and remains a key player under Sebastian Hoeneß, making a move unlikely without a significant offer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [];
@@ -961,6 +969,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1045,6 +1054,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1209,6 +1226,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

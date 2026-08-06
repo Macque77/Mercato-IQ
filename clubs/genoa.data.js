@@ -56,6 +56,9 @@ const OUTGOING = [
   {name:"Elliot Stroud", sub:"LW, Sweden, 20", club:"Hull City", pos:"LW", report:"Genoa allege they had a pre-contract agreement with the Mjallby winger, who instead signed for Hull City; the club has begun legal action against his agents.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:75, prob:90, light:"g", trend:"flat", note:"Player has already signed elsewhere so this is a completed loss for Genoa, not a live target.", lastSeen:"2026-08-04T19:10:50Z", baseProb:90},
   {name:"Brooke Norton-Cuffy", sub:"RB, England, 22", club:"Everton/Arsenal", pos:"RB", report:"Everton are targeting the full-back, with a sell-on clause meaning parent club Arsenal would receive a cut of any circa €20m Genoa sale.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Premier League interest growing after a strong loan season at Genoa.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
+const DEAD = [
+  {name:"Artem Dovbyk", club:"AS Roma", pos:"ST", dir:"in", age:"~1 month", tier:3, note:"De Rossi wants a reunion with his old Roma forward, but Bologna are also in the mix.", deadReason:"signed for bologna", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Mario Mitaj arrives</b>: loan-with-option defensive addition from Al Ittihad."},
@@ -79,10 +82,7 @@ const POSITIONS = [
   {p:"Central midfield", w:35, x:"Traore's loan-with-option move is the most advanced incoming business."}
 ];
 
-const WATCHLIST = [
-  {name:"Artem Dovbyk", club:"AS Roma", pos:"ST", dir:"in", age:"~1 month", tier:3, note:"De Rossi wants a reunion with his old Roma forward, but Bologna are also in the mix."},
-  {name:"Hamed Junior Traore", club:"Olympique Marseille", pos:"CM", dir:"in", age:"~3 weeks", tier:2, note:"Loan-with-option move expected to complete."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   footballItalia: {l:"Football Italia · Genoa", u:"https://football-italia.net/category/teams/genoa/"},

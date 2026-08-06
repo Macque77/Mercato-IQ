@@ -77,9 +77,7 @@ const POSITIONS = [
   {p:"Full-back / centre-back depth", w:35, x:"Mangas, Asante and Okoli are all being explored as defensive reinforcements at varying stages."}
 ];
 
-const WATCHLIST = [
-  {name:"Gustavo Varela", club:"Benfica", pos:"ST", dir:"in", age:"~10 days", tier:2, note:"Agreement reported reached, pending official confirmation."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   footballItalia: {l:"Football Italia · Monza", u:"https://football-italia.net/category/teams/monza/"},

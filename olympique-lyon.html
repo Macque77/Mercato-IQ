@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -868,19 +876,19 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Florian Thauvin", sub:"33 · RW · France", club:"Free agent (Udinese)", pos:"RW", report:"1 Aug 2026", src:"RMC Sport", tier:2, fee:"Free agent", truth:62, prob:48, light:"y", trend:"flat", note:"RMC reports Lyon in talks with the veteran winger after his Udinese exit."},
-  {name:"Madison Ingram", sub:"20 · CM · England", club:"Chelsea", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€30m", truth:71, prob:55, light:"g", trend:"up", note:"Romano reports Chelsea are open to a loan move for the young midfielder to Lyon."},
-  {name:"Loïs Openda", sub:"26 · ST · Belgium", club:"Juventus", pos:"ST", report:"25 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Reported to be set to join Lyon as the club looks to freshen up its attack."},
-  {name:"Felix Bacher", sub:"22 · CB · Austria", club:"Estoril", pos:"CB", report:"21 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:38, light:"y", trend:"flat", note:"Lyon reported in advanced negotiations for the Austrian centre-back."},
-  {name:"Loic Openda", sub:"Forward, agreed switch", club:"Juventus", pos:"ST", report:"Lyon are reported to have agreed a deal to sign Juventus forward Loic Openda as they rebuild the front line after selling academy talent abroad.", src:"Sky Sport", tier:1, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Reported as an agreed transfer, though not yet officially announced by either club."},
-  {name:"Jun-ho Bae", sub:"Player, bid submitted", club:"Stoke City", pos:"CM", report:"Lyon have submitted a 3.5m euro bid to Stoke City for South Korean player Jun-ho Bae, though the Championship club are yet to accept.", src:"L'Equipe", tier:2, fee:"€3.5m (bid)", truth:60, prob:40, light:"y", trend:"flat", note:"Initial bid only; Stoke have not confirmed acceptance."},
-  {name:"Claudio Braga", sub:"Striker, monitored target", club:"Unattached club (Brazil)", pos:"ST", report:"Lyon are said to be tracking Brazilian forward Claudio Braga as an alternative striker option amid tight DNCG spending constraints.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early speculative interest under strict financial oversight from the DNCG."}
+  {name:"Florian Thauvin", sub:"33 · RW · France", club:"Free agent (Udinese)", pos:"RW", report:"1 Aug 2026", src:"RMC Sport", tier:2, fee:"Free agent", truth:62, prob:48, light:"y", trend:"flat", note:"RMC reports Lyon in talks with the veteran winger after his Udinese exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:48},
+  {name:"Madison Ingram", sub:"20 · CM · England", club:"Chelsea", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€30m", truth:71, prob:55, light:"g", trend:"up", note:"Romano reports Chelsea are open to a loan move for the young midfielder to Lyon.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
+  {name:"Loïs Openda", sub:"26 · ST · Belgium", club:"Juventus", pos:"ST", report:"25 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Reported to be set to join Lyon as the club looks to freshen up its attack.", lastSeen:"2026-08-04T19:10:50Z", baseProb:52},
+  {name:"Felix Bacher", sub:"22 · CB · Austria", club:"Estoril", pos:"CB", report:"21 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:38, light:"y", trend:"flat", note:"Lyon reported in advanced negotiations for the Austrian centre-back.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
+  {name:"Loic Openda", sub:"Forward, agreed switch", club:"Juventus", pos:"ST", report:"Lyon are reported to have agreed a deal to sign Juventus forward Loic Openda as they rebuild the front line after selling academy talent abroad.", src:"Sky Sport", tier:1, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Reported as an agreed transfer, though not yet officially announced by either club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
+  {name:"Jun-ho Bae", sub:"Player, bid submitted", club:"Stoke City", pos:"CM", report:"Lyon have submitted a 3.5m euro bid to Stoke City for South Korean player Jun-ho Bae, though the Championship club are yet to accept.", src:"L'Equipe", tier:2, fee:"€3.5m (bid)", truth:60, prob:40, light:"y", trend:"flat", note:"Initial bid only; Stoke have not confirmed acceptance.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Claudio Braga", sub:"Striker, monitored target", club:"Unattached club (Brazil)", pos:"ST", report:"Lyon are said to be tracking Brazilian forward Claudio Braga as an alternative striker option amid tight DNCG spending constraints.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early speculative interest under strict financial oversight from the DNCG.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const OUTGOING = [
-  {name:"Pavel Šulc", sub:"25 · AM · Czech Republic", club:"Lyon", pos:"AM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:24, light:"o", trend:"flat", note:"Leeds United reported to have opened talks over the playmaker's situation."},
-  {name:"Pavel Sulc", sub:"Midfielder, Premier League interest", club:"Leeds United", pos:"CAM", report:"Leeds United have opened talks with Lyon over a move for attacking midfielder Pavel Sulc, though a deal is not considered close.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Talks confirmed but described as at an early stage."},
-  {name:"Jacob Widell Zetterstrom", sub:"Goalkeeper, squad surplus", club:"Derby County", pos:"GK", report:"Derby County have been credited with interest in Lyon goalkeeper Jacob Widell Zetterstrom as the Swede looks for a route to regular first-team football.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Speculative interest with no reported formal approach."}
+  {name:"Pavel Šulc", sub:"25 · AM · Czech Republic", club:"Lyon", pos:"AM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:24, light:"o", trend:"flat", note:"Leeds United reported to have opened talks over the playmaker's situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24},
+  {name:"Pavel Sulc", sub:"Midfielder, Premier League interest", club:"Leeds United", pos:"CAM", report:"Leeds United have opened talks with Lyon over a move for attacking midfielder Pavel Sulc, though a deal is not considered close.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Talks confirmed but described as at an early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Jacob Widell Zetterstrom", sub:"Goalkeeper, squad surplus", club:"Derby County", pos:"GK", report:"Derby County have been credited with interest in Lyon goalkeeper Jacob Widell Zetterstrom as the Swede looks for a route to regular first-team football.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Speculative interest with no reported formal approach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [
@@ -986,6 +994,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1070,6 +1079,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1234,6 +1251,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

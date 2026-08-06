@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -860,15 +868,15 @@ const CONFIRMED_OUT = [
   {name:"Javi Galán", sub:"LB · Spain", club:"Celta Vigo", pos:"LB", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free departure."}
 ];
 const INCOMING = [
-  {name:"Pablo García", sub:"20 · LW/RW · Spain", club:"Real Betis", pos:"W", report:"23 Jun 2026", src:"Flavio Pace / El Gol Digital", tier:2, fee:"€10m+ demanded / €30m clause", truth:45, prob:12, light:"r", trend:"flat", note:"Osasuna are one of several suitors (with Alavés, Ajax, Club Brugge, Stuttgart, Inter Miami) for this Betis academy winger."},
-  {name:"Abel Ruiz", sub:"26 · ST · Spain", club:"Girona FC", pos:"ST", report:"24 Apr 2026", src:"Miguel Rubio / TodoMercadoWeb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Named on Osasuna's leaked striker wishlist as the 'differentiating' but expensive attacking option."},
-  {name:"César Tárrega", sub:"24 · CB · Spain", club:"Valencia CF", pos:"CB", report:"24 Apr 2026", src:"Miguel Rubio / TodoMercadoWeb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Listed among Osasuna's centre-back targets for defensive rejuvenation."},
-  {name:"Kieran Tierney", sub:"LB, Scottish international, 29", club:"Celtic", pos:"LB", report:"Osasuna are making enquiries about a deal for Celtic left-back Tierney after missing out on their first-choice target at the position.", src:"67 Hail Hail / Inside Futbol", tier:2, fee:"", truth:60, prob:30, light:"y", trend:"flat", note:"Described as an enquiry stage rather than an advanced negotiation."},
-  {name:"Lizancos", sub:"RB, Spanish, 22", club:"Burgos CF", pos:"RB", report:"Osasuna raised their offer for Burgos right-back Lizancos to roughly €2-2.5m, potentially including winger Arguibide going the other way on loan, but Burgos are holding firm and refusing to sell cheaply.", src:"Diario de Navarra", tier:2, fee:"~€2-2.5m", truth:75, prob:50, light:"y", trend:"flat", note:"Burgos publicly stated 'no vamos a malvender' (we won't sell cheap), indicating a prolonged negotiation."},
-  {name:"Alex Moreno", sub:"LB, Spanish", club:"Multiple suitors", pos:"LB", report:"Osasuna are among several La Liga clubs showing interest in full-back Alex Moreno as squad depth options are assessed.", src:"Fichajes.com", tier:3, fee:"", truth:45, prob:20, light:"o", trend:"flat", note:"Reported as one of several interested parties rather than a leading suitor."}
+  {name:"Pablo García", sub:"20 · LW/RW · Spain", club:"Real Betis", pos:"W", report:"23 Jun 2026", src:"Flavio Pace / El Gol Digital", tier:2, fee:"€10m+ demanded / €30m clause", truth:45, prob:12, light:"r", trend:"flat", note:"Osasuna are one of several suitors (with Alavés, Ajax, Club Brugge, Stuttgart, Inter Miami) for this Betis academy winger.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
+  {name:"Abel Ruiz", sub:"26 · ST · Spain", club:"Girona FC", pos:"ST", report:"24 Apr 2026", src:"Miguel Rubio / TodoMercadoWeb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Named on Osasuna's leaked striker wishlist as the 'differentiating' but expensive attacking option.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"César Tárrega", sub:"24 · CB · Spain", club:"Valencia CF", pos:"CB", report:"24 Apr 2026", src:"Miguel Rubio / TodoMercadoWeb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Listed among Osasuna's centre-back targets for defensive rejuvenation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Kieran Tierney", sub:"LB, Scottish international, 29", club:"Celtic", pos:"LB", report:"Osasuna are making enquiries about a deal for Celtic left-back Tierney after missing out on their first-choice target at the position.", src:"67 Hail Hail / Inside Futbol", tier:2, fee:"", truth:60, prob:30, light:"y", trend:"flat", note:"Described as an enquiry stage rather than an advanced negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Lizancos", sub:"RB, Spanish, 22", club:"Burgos CF", pos:"RB", report:"Osasuna raised their offer for Burgos right-back Lizancos to roughly €2-2.5m, potentially including winger Arguibide going the other way on loan, but Burgos are holding firm and refusing to sell cheaply.", src:"Diario de Navarra", tier:2, fee:"~€2-2.5m", truth:75, prob:50, light:"y", trend:"flat", note:"Burgos publicly stated 'no vamos a malvender' (we won't sell cheap), indicating a prolonged negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Alex Moreno", sub:"LB, Spanish", club:"Multiple suitors", pos:"LB", report:"Osasuna are among several La Liga clubs showing interest in full-back Alex Moreno as squad depth options are assessed.", src:"Fichajes.com", tier:3, fee:"", truth:45, prob:20, light:"o", trend:"flat", note:"Reported as one of several interested parties rather than a leading suitor.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 const OUTGOING = [
-  {name:"Ante Budimir", sub:"ST, Croatian international, 35", club:"Unspecified (market interest)", pos:"ST", report:"Budimir's release clause reportedly reset to €20m after a lower €8m window expired on 1 August without being triggered, keeping the door open for suitors this month.", src:"Noticias de Navarra", tier:2, fee:"€20m release clause", truth:70, prob:20, light:"o", trend:"flat", note:"No specific buying club named yet; treat as a clause/valuation story rather than an active negotiation."}
+  {name:"Ante Budimir", sub:"ST, Croatian international, 35", club:"Unspecified (market interest)", pos:"ST", report:"Budimir's release clause reportedly reset to €20m after a lower €8m window expired on 1 August without being triggered, keeping the door open for suitors this month.", src:"Noticias de Navarra", tier:2, fee:"€20m release clause", truth:70, prob:20, light:"o", trend:"flat", note:"No specific buying club named yet; treat as a clause/valuation story rather than an active negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -955,6 +963,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1039,6 +1048,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1203,6 +1220,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

@@ -85,6 +85,10 @@ const OUTGOING = [
    note:"Talks are described as open rather than advanced, with Juventus eyeing him as a Kolo Muani alternative and Fenerbahce also credited with interest - Richarlison reportedly prefers Serie A. A single-source story at this stage, worth tracking rather than trusting outright, and complicated by an earlier scout claim (now discounted, see Ignore list) that he'd move as part of a Tonali part-exchange.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
   {name:"Mikey Moore", sub:"Loan to Bundesliga advancing fast", club:"FC Köln", pos:"FW", report:"Köln have sent an official bid to sign the winger on loan, with negotiations at an advanced stage and Moore open to the move; several clubs were keen but Köln are now clear favourites.", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:85, prob:70, light:"g", trend:"flat", note:"Romano: deal could be completed within a week", lastSeen:"2026-08-04T19:10:50Z", baseProb:70}
 ];
+const DEAD = [
+  {name:"Kerim Alajbegovic", club:"Bayer Leverkusen", pos:"W", dir:"in", age:"~1 wk", tier:2, note:"18-year-old Bosnian winger; Schira reports Spurs and Chelsea have both approached his camp, with Leverkusen holding out for €30m. Longer-term project rather than an immediate deadline-day play.", deadReason:"signed for juventus", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Dominic Solanke", club:"Tottenham (exit direction)", pos:"ST", dir:"out", age:"~3 mths", tier:4, note:"Fitness and form questions have lingered since a season-ending injury last term, and continued spend elsewhere on attackers keeps exit chatter alive - but no club or fee has attached itself to this yet.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Savinho</b>: Romano upgrades this from background interest to an active, De Zerbi-driven negotiation - now blocked only by Manchester City sourcing a replacement."},
@@ -117,11 +121,9 @@ const POSITIONS = [
 
 const WATCHLIST = [
   {name:"Martin Baturina", club:"Como", pos:"AM/W", dir:"in", age:"~3 wks", tier:3, note:"Como want €80m (£68m) and have already rejected a reported £47m bid from a Premier League club; parked as the luxury No.10/wide option behind the Savinho and Leão chases."},
-  {name:"Kerim Alajbegovic", club:"Bayer Leverkusen", pos:"W", dir:"in", age:"~1 wk", tier:2, note:"18-year-old Bosnian winger; Schira reports Spurs and Chelsea have both approached his camp, with Leverkusen holding out for €30m. Longer-term project rather than an immediate deadline-day play."},
   {name:"Nicolo Tresoldi", club:"Club Brugge", pos:"ST", dir:"in", age:"~1 day", tier:3, note:"Named alongside Asllani as a fallback striker option once Kroupi's injury complicated the priority move; Roma and Borussia Dortmund also credited with interest."},
   {name:"Andreas Schjelderup", club:"Benfica", pos:"W", dir:"in", age:"~10 days", tier:2, note:"Benfica's €80m (£68m) valuation looks a stretch this deep into a £237m summer; TeamTalk describes talks as 'very early stage' with no formal bid submitted."},
-  {name:"Troy Parrott", club:"AZ Alkmaar", pos:"ST", dir:"in", age:"ongoing", tier:4, note:"Sold on permanently with a sell-on clause still owed to Spurs; his breakout Eredivisie scoring form has revived boyhood-club reunion talk, but nothing formal has followed the interview quotes yet."},
-  {name:"Dominic Solanke", club:"Tottenham (exit direction)", pos:"ST", dir:"out", age:"~3 mths", tier:4, note:"Fitness and form questions have lingered since a season-ending injury last term, and continued spend elsewhere on attackers keeps exit chatter alive - but no club or fee has attached itself to this yet."},
+  {name:"Troy Parrott", club:"AZ Alkmaar", pos:"ST", dir:"in", age:"ongoing", tier:4, note:"Sold on permanently with a sell-on clause still owed to Spurs; his breakout Eredivisie scoring form has revived boyhood-club reunion talk, but nothing formal has followed the interview quotes yet."}
 ];
 
 const HUB = {

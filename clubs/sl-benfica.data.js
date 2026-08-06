@@ -64,9 +64,7 @@ const POSITIONS = [
   {p:"Centre-back", w:60, x:"Todibo interest signals defensive depth recruitment."}
 ];
 
-const WATCHLIST = [
-  {name:"João Neves", club:"PSG", pos:"CM", dir:"out", age:"~19 days", tier:1, note:"OFFICIAL - Midfielder confirmed to Paris Saint-Germain."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "gnews-jooneves": {l:"Related news search: João Neves", u:"https://news.google.com/search?q=SL%20Benfica%20Jo%C3%A3o%20Neves%20transfer&hl=en-GB&gl=GB"},

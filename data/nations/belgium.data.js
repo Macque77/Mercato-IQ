@@ -87,16 +87,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
-    name: "Mamadou Barry",prob: 20, truth: 40, bullshit: false,
-    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
-    from: "Union Saint-Gilloise", to: "Saudi Pro League club",
+    name: "Claudio Katunda",prob: 20, truth: 50, bullshit: false,
+    club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "in",
+    from: "Schalke 04", to: "Cercle Brugge",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Claudio Katunda",prob: 20, truth: 50, bullshit: false,
-    club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "in",
-    from: "Schalke 04", to: "Cercle Brugge",
+    name: "Mamadou Barry",prob: 20, truth: 40, bullshit: false,
+    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
+    from: "Union Saint-Gilloise", to: "Saudi Pro League club",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
@@ -108,6 +108,6 @@ const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 13},
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:14:19.908218Z",
+  updated: "2026-08-06T10:24:37.223559Z",
   label: "Nation aggregation"
 };

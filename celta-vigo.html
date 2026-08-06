@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -859,18 +867,18 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Altay Bayindir", sub:"28 · GK · Turkey", club:"Manchester United", pos:"GK", report:"03 Aug 2026", src:"Faro de Vigo / Sport Witness", tier:2, fee:"Season-long loan, no fee", truth:75, prob:65, light:"g", trend:"up", note:"Bayindir was set to undergo his medical 'within hours' of this report, with completion expected by Monday at the latest. Coach Claudio Giráldez wants an experienced back-up goalkeeper after Ionut Radu's injury concerns; Bayindir lost his United starting spot to Senne Lammens after a poor run of six Premier League games without a clean sheet."},
-  {name:"Fer López", sub:"Target to bring back from Wolves", club:"Wolverhampton Wanderers", pos:"MF", report:"Celta want to re-sign their former academy playmaker, sold to Wolves for over €20m last summer and loaned back in the second half of 2025/26, but talks are reportedly frozen.", src:"El Desmarque / Galicia Press", tier:2, fee:"Loan sought (permanent deal unaffordable for Celta)", truth:78, prob:40, light:"y", trend:"flat", note:"Coach Claudio Giráldez views Fer López as his top midfield priority, but Wolves want a big fee and negotiations have stalled amid Celta's tight budget."},
-  {name:"Hugo Bueno", sub:"Vigo-born left-back target", club:"Wolverhampton Wanderers", pos:"DF", report:"Celta are also exploring a move for Wolves left-back Hugo Bueno, a Vigo native who left the club's academy as a teenager and had a loan spell at Feyenoord.", src:"Mundo Celeste (via Galicia Press)", tier:3, fee:"Undisclosed (valued around €12m)", truth:55, prob:25, light:"o", trend:"flat", note:"Wolves' relegation to the Championship could make this move easier, but nothing concrete has progressed beyond initial interest."},
-  {name:"Denis Suárez", sub:"Homecoming midfielder", club:"Deportivo Alavés", pos:"MF", report:"Sporting director Marco Garcés and coach Giráldez both want Denis Suárez back at Balaídos, with the player himself said to be willing.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:75, prob:45, light:"y", trend:"flat", note:"The move reportedly hinges on Celta first completing up to seven separate departures to free up squad space and budget."},
-  {name:"Giorgi Kochorashvili", sub:"Fallback midfield option", club:"Sporting CP", pos:"MF", report:"The Georgian is on Celta's radar as an alternative to Fer López, though he's not a top priority and rivals Deportivo appear to be leading the race.", src:"Galicia Press", tier:3, fee:"Undisclosed", truth:50, prob:15, light:"o", trend:"flat", note:"Reports suggest Celta would only pursue this seriously if their other midfield targets fall through, with Sevilla, Levante and Getafe also credited with interest."}
+  {name:"Altay Bayindir", sub:"28 · GK · Turkey", club:"Manchester United", pos:"GK", report:"03 Aug 2026", src:"Faro de Vigo / Sport Witness", tier:2, fee:"Season-long loan, no fee", truth:75, prob:65, light:"g", trend:"up", note:"Bayindir was set to undergo his medical 'within hours' of this report, with completion expected by Monday at the latest. Coach Claudio Giráldez wants an experienced back-up goalkeeper after Ionut Radu's injury concerns; Bayindir lost his United starting spot to Senne Lammens after a poor run of six Premier League games without a clean sheet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
+  {name:"Fer López", sub:"Target to bring back from Wolves", club:"Wolverhampton Wanderers", pos:"MF", report:"Celta want to re-sign their former academy playmaker, sold to Wolves for over €20m last summer and loaned back in the second half of 2025/26, but talks are reportedly frozen.", src:"El Desmarque / Galicia Press", tier:2, fee:"Loan sought (permanent deal unaffordable for Celta)", truth:78, prob:40, light:"y", trend:"flat", note:"Coach Claudio Giráldez views Fer López as his top midfield priority, but Wolves want a big fee and negotiations have stalled amid Celta's tight budget.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Hugo Bueno", sub:"Vigo-born left-back target", club:"Wolverhampton Wanderers", pos:"DF", report:"Celta are also exploring a move for Wolves left-back Hugo Bueno, a Vigo native who left the club's academy as a teenager and had a loan spell at Feyenoord.", src:"Mundo Celeste (via Galicia Press)", tier:3, fee:"Undisclosed (valued around €12m)", truth:55, prob:25, light:"o", trend:"flat", note:"Wolves' relegation to the Championship could make this move easier, but nothing concrete has progressed beyond initial interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Denis Suárez", sub:"Homecoming midfielder", club:"Deportivo Alavés", pos:"MF", report:"Sporting director Marco Garcés and coach Giráldez both want Denis Suárez back at Balaídos, with the player himself said to be willing.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:75, prob:45, light:"y", trend:"flat", note:"The move reportedly hinges on Celta first completing up to seven separate departures to free up squad space and budget.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Giorgi Kochorashvili", sub:"Fallback midfield option", club:"Sporting CP", pos:"MF", report:"The Georgian is on Celta's radar as an alternative to Fer López, though he's not a top priority and rivals Deportivo appear to be leading the race.", src:"Galicia Press", tier:3, fee:"Undisclosed", truth:50, prob:15, light:"o", trend:"flat", note:"Reports suggest Celta would only pursue this seriously if their other midfield targets fall through, with Sevilla, Levante and Getafe also credited with interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [
-  {name:"Ilaix Moriba", sub:"Sale needed for FFP", club:"Aston Villa", pos:"MF", report:"Aston Villa (Unai Emery) and Brighton are both credited with interest in Moriba, who Celta view as their most sellable asset this summer.", src:"El Desmarque", tier:2, fee:"Villa reportedly around €20m, Brighton around €25m", truth:70, prob:40, light:"y", trend:"flat", note:"Celta reportedly need roughly €18m in sales to balance the books, making a Moriba exit financially attractive despite his form."},
-  {name:"Williot Swedberg", sub:"Prized winger attracting suitors", club:"Atalanta", pos:"FW", report:"Atalanta have been credited with interest in Swedberg, Celta's most valuable asset, as a possible squad sale this summer.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Swedberg recently signed a new deal to 2029, which suggests Celta would only sell for a significant fee rather than being desperate to offload him."},
-  {name:"Borja Iglesias", sub:"Big-money Liga MX offer", club:"Club América", pos:"FW", report:"Club América are reported to have set Borja Iglesias's exit price at around $10m (approx €9m) and want to meet him during Spain's World Cup stay in the US.", src:"AS (via Fichajes.net)", tier:2, fee:"Approx €9m / $10m", truth:68, prob:25, light:"o", trend:"flat", note:"Iglesias only returned to Celta from Betis relatively recently and is a fan favourite, so a swift exit to Mexico this summer looks far from certain."},
-  {name:"Unai Núñez", sub:"Spanish centre-back, 27", club:"Unattached / TBD", pos:"CB", report:"Celta had hoped to sell Núñez this summer but received no offers with a transfer fee attached; club is resigning itself to keeping him unless a club agrees to cover 60-70% of his wages.", src:"ElDesmarque", tier:2, fee:"", truth:65, prob:20, light:"o", trend:"flat", note:"No suitor has emerged willing to meet wage conditions; departure now considered unlikely before deadline day."}
+  {name:"Ilaix Moriba", sub:"Sale needed for FFP", club:"Aston Villa", pos:"MF", report:"Aston Villa (Unai Emery) and Brighton are both credited with interest in Moriba, who Celta view as their most sellable asset this summer.", src:"El Desmarque", tier:2, fee:"Villa reportedly around €20m, Brighton around €25m", truth:70, prob:40, light:"y", trend:"flat", note:"Celta reportedly need roughly €18m in sales to balance the books, making a Moriba exit financially attractive despite his form.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Williot Swedberg", sub:"Prized winger attracting suitors", club:"Atalanta", pos:"FW", report:"Atalanta have been credited with interest in Swedberg, Celta's most valuable asset, as a possible squad sale this summer.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Swedberg recently signed a new deal to 2029, which suggests Celta would only sell for a significant fee rather than being desperate to offload him.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Borja Iglesias", sub:"Big-money Liga MX offer", club:"Club América", pos:"FW", report:"Club América are reported to have set Borja Iglesias's exit price at around $10m (approx €9m) and want to meet him during Spain's World Cup stay in the US.", src:"AS (via Fichajes.net)", tier:2, fee:"Approx €9m / $10m", truth:68, prob:25, light:"o", trend:"flat", note:"Iglesias only returned to Celta from Betis relatively recently and is a fan favourite, so a swift exit to Mexico this summer looks far from certain.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Unai Núñez", sub:"Spanish centre-back, 27", club:"Unattached / TBD", pos:"CB", report:"Celta had hoped to sell Núñez this summer but received no offers with a transfer fee attached; club is resigning itself to keeping him unless a club agrees to cover 60-70% of his wages.", src:"ElDesmarque", tier:2, fee:"", truth:65, prob:20, light:"o", trend:"flat", note:"No suitor has emerged willing to meet wage conditions; departure now considered unlikely before deadline day.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [
@@ -971,6 +979,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1055,6 +1064,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1219,6 +1236,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

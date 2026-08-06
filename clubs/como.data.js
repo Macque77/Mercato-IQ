@@ -66,7 +66,6 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Trevoh Chalobah", club:"Chelsea", pos:"CB", dir:"in", age:"~9 days", tier:2, note:"Como have improved their bid after an initial €30m offer was rejected."},
   {name:"Moise Kean", club:"Fiorentina", pos:"ST", dir:"in", age:"~11 days", tier:3, note:"Kean's agent has shopped him to Como; contact made but no offer confirmed."}
 ];
 

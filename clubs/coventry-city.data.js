@@ -105,8 +105,10 @@ const OUTGOING = [
   {name:"Fringe & squad trim", sub:"Step-up churn", club:"Various", pos:"MULTI", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:35, light:'y', trend:'flat',
    note:"Limited outgoings; the title-winning core is largely retained. PRICING: standard floors on fringe names; a standout sold only at a premium.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Standout core asset", sub:"Premium-only scenario", club:"Unknown suitors", pos:"MULTI", report:"window framing", src:"Pattern-based", tier:3, fee:"Premium only", truth:55, prob:12, light:'r', trend:'flat',
-   note:"Split out from the v1 outgoing note: any sale from the title-winning core happens only at a heavy premium, and the stated plan is retention. No suitor or player was named pre-window; treated as a low-likelihood scenario, not a live thread.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
-  {name:"Ellis Simms", sub:"Wolves interest reported to have cooled", club:"Wolverhampton Wanderers", pos:"FW", report:"Wolves had been linked with a move for the Coventry striker but are reported to have cooled their interest after securing a free-agent alternative instead.", src:"Coventry Telegraph", tier:2, fee:"~£10m (mooted)", truth:55, prob:15, light:"o", trend:"flat", note:"Deal appears to have stalled; Simms more likely to stay for now", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+   note:"Split out from the v1 outgoing note: any sale from the title-winning core happens only at a heavy premium, and the stated plan is retention. No suitor or player was named pre-window; treated as a low-likelihood scenario, not a live thread.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
+];
+const DEAD = [
+  {name:"Ellis Simms", sub:"Wolves interest reported to have cooled", club:"Wolverhampton Wanderers", pos:"FW", report:"Wolves had been linked with a move for the Coventry striker but are reported to have cooled their interest after securing a free-agent alternative instead.", src:"Coventry Telegraph", tier:2, fee:"~£10m (mooted)", truth:55, prob:15, light:"o", trend:"flat", note:"Deal appears to have stalled; Simms more likely to stay for now", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [

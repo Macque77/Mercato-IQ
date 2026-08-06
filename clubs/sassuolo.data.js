@@ -49,8 +49,10 @@ const INCOMING = [
 
 const OUTGOING = [
   {name:"Cristian Volpato", sub:"21 · AM · Australia", club:"Fiorentina", pos:"AM", report:"4 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:48, prob:25, light:"o", trend:"flat", note:"Volpato has said he's open to leaving for a 'great club' after the World Cup, with Fiorentina the club credited with concrete interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Andrea Pinamonti", sub:"Striker, ITA, 27", club:"Lazio", pos:"ST", report:"Lazio boss Gattuso has identified Pinamonti as a back-up offensive reinforcement while Lazio's priority remains a loan move for Milan's Santiago Gimenez.", src:"La Repubblica", tier:1, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Contact established between the clubs but Lazio's real priority lies elsewhere.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Armand Lauriente", sub:"Winger, FRA, 26", club:"Besiktas", pos:"LW", report:"Besiktas interest in Lauriente has reportedly cooled after initial contact in mid-July.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Deal appears to have stalled as of early August.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+  {name:"Andrea Pinamonti", sub:"Striker, ITA, 27", club:"Lazio", pos:"ST", report:"Lazio boss Gattuso has identified Pinamonti as a back-up offensive reinforcement while Lazio's priority remains a loan move for Milan's Santiago Gimenez.", src:"La Repubblica", tier:1, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Contact established between the clubs but Lazio's real priority lies elsewhere.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+];
+const DEAD = [
+  {name:"Armand Lauriente", sub:"Winger, FRA, 26", club:"Besiktas", pos:"LW", report:"Besiktas interest in Lauriente has reportedly cooled after initial contact in mid-July.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Deal appears to have stalled as of early August.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [

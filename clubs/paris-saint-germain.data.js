@@ -75,9 +75,7 @@ const POSITIONS = [
   {p:"Left winger", w:70, x:"Market monitoring for potential Vinicius replacement as Ornstein reports Real Madrid winger targeted by Saudi Arabia."}
 ];
 
-const WATCHLIST = [
-  {name:"João Neves", club:"PSG", pos:"CM", dir:"in", age:"~19 days", tier:1, note:"OFFICIAL - Portuguese midfielder confirmed from Benfica."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "gnews-jooneves": {l:"Related news search: João Neves", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Jo%C3%A3o%20Neves%20transfer&hl=en-GB&gl=GB"},

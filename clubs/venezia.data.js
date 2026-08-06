@@ -80,9 +80,7 @@ const POSITIONS = [
   {p:"Defensive reinforcement", w:30, x:"Gomes, Halhal and Correia have already added considerable defensive depth for the step up to Serie A."}
 ];
 
-const WATCHLIST = [
-  {name:"Akor Adams", club:"Sevilla", pos:"ST", dir:"in", age:"~3 weeks", tier:2, note:"Talks at a very advanced stage for further striker reinforcement."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   footballItalia: {l:"Football Italia · Venezia", u:"https://football-italia.net/category/teams/venezia/"},

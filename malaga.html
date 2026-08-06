@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -861,10 +869,10 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Raúl Asencio", sub:"CB, Real Madrid outcast under Mourinho", club:"Real Madrid", pos:"DF", report:"Newly-promoted Málaga have emerged as suitors for the young centre-back Madrid are trying to move on, alongside RB Leipzig, as agent Jorge Mendes shops him around.", src:"El Gol Digital", tier:3, fee:"~€20m valuation", truth:50, prob:25, light:"o", trend:"flat", note:"Málaga's interest looks genuine but faces stiff competition from a Bundesliga side better placed financially to match Madrid's valuation."},
-  {name:"Diego Rico", sub:"LB, weighing La Liga return", club:"Getafe", pos:"DF", report:"Radio Marca reports Rico and his camp view a move to La Rosaleda favourably and are waiting on a formal Málaga offer, with Espanyol and Alavés also circling.", src:"Radio Marca Málaga", tier:2, fee:"Free transfer", truth:60, prob:40, light:"y", trend:"flat", note:"Reported as the player's stated preference among three suitors, which gives Málaga a real edge if they move quickly."},
-  {name:"Carlos Dominguez", sub:"CB, Spanish", club:"Celta Vigo", pos:"CB", report:"Malaga are targeting a loan for Celta centre-back Dominguez to cover a run of defensive injuries as they prepare for the Segunda Division return.", src:"Superdeporte", tier:2, fee:"Loan", truth:60, prob:40, light:"y", trend:"flat", note:"Framed as a need-driven move after injuries to the back line."},
-  {name:"Bryan Zaragoza", sub:"RW, Spanish", club:"Unattached/loan market", pos:"RW", report:"Malaga were mentioned as exploring a domestic opportunity for winger Zaragoza, though detail remains thin.", src:"Fichajes.com", tier:3, fee:"n/a", truth:40, prob:15, light:"o", trend:"flat", note:"Sparse coverage; treat as speculative until a concrete link club is confirmed."}
+  {name:"Raúl Asencio", sub:"CB, Real Madrid outcast under Mourinho", club:"Real Madrid", pos:"DF", report:"Newly-promoted Málaga have emerged as suitors for the young centre-back Madrid are trying to move on, alongside RB Leipzig, as agent Jorge Mendes shops him around.", src:"El Gol Digital", tier:3, fee:"~€20m valuation", truth:50, prob:25, light:"o", trend:"flat", note:"Málaga's interest looks genuine but faces stiff competition from a Bundesliga side better placed financially to match Madrid's valuation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Diego Rico", sub:"LB, weighing La Liga return", club:"Getafe", pos:"DF", report:"Radio Marca reports Rico and his camp view a move to La Rosaleda favourably and are waiting on a formal Málaga offer, with Espanyol and Alavés also circling.", src:"Radio Marca Málaga", tier:2, fee:"Free transfer", truth:60, prob:40, light:"y", trend:"flat", note:"Reported as the player's stated preference among three suitors, which gives Málaga a real edge if they move quickly.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Carlos Dominguez", sub:"CB, Spanish", club:"Celta Vigo", pos:"CB", report:"Malaga are targeting a loan for Celta centre-back Dominguez to cover a run of defensive injuries as they prepare for the Segunda Division return.", src:"Superdeporte", tier:2, fee:"Loan", truth:60, prob:40, light:"y", trend:"flat", note:"Framed as a need-driven move after injuries to the back line.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Bryan Zaragoza", sub:"RW, Spanish", club:"Unattached/loan market", pos:"RW", report:"Malaga were mentioned as exploring a domestic opportunity for winger Zaragoza, though detail remains thin.", src:"Fichajes.com", tier:3, fee:"n/a", truth:40, prob:15, light:"o", trend:"flat", note:"Sparse coverage; treat as speculative until a concrete link club is confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [];
@@ -953,6 +961,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1037,6 +1046,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1201,6 +1218,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

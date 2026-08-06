@@ -86,8 +86,6 @@ const INCOMING = [
    note:"Juventus are prepared to approve a loan exit and Leeds are interested, a high-profile fix for the No.9 need. Obstacle: a loan only (no resale upside), wages, and 'amid interest from others' means a competitive field. No T1 confirmation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
   {name:"Lois Openda", sub:"ST · Belgium", club:"RB Leipzig", pos:"ST", report:"~2 days ago", src:"TEAMtalk", tier:3, fee:"£25-35m", truth:47, prob:22, light:'o', trend:'down',
    note:"TEAMtalk says his future is likely in England and Leeds 'especially' want him, a genuine striker upgrade. OBSTACLES, now heavier: fee and wages sit at the very top of Leeds' range, and Nottingham Forest have entered hard, with Evangelos Marinakis reportedly pushing a £35m forward target to choose Forest over Leeds. Competition for the No.9 is intensifying.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
-  {name:"James Trafford", sub:"GK · England", club:"Man City", pos:"GK", report:"~4-5 wks", src:"TEAMtalk", tier:3, fee:"~£30m", truth:45, prob:20, light:'o', trend:'down',
-   note:"A young English keeper to solve the No.1 question long term; TEAMtalk says ~£30m could be enough. OBSTACLE, and the reason this has eased: Karl Darlow has established himself as first choice and been offered an extension, so with Meslier the one near-certain exit the immediate need is depth, not a marquee number one. City's pricing and competition for a homegrown GK also bite.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Shea Charles", sub:"DM · Northern Ireland", club:"Southampton", pos:"DM", report:"~1 day ago", src:"Aggregated", tier:3, fee:"£10-15m", truth:50, prob:25, light:'o', trend:'up',
    note:"Leeds remain interested after Southampton's play-off exit: young, British, a holding-midfield profile that fits. Obstacle: T3 sourcing only, valuation, and no progression to talks reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Lutsharel Geertruida", sub:"25 · Netherlands", club:"RB Leipzig", pos:"CB/RB", report:"~2 days ago", src:"S. Vidal / YEP", tier:3, fee:"£17-20m", truth:47, prob:22, light:'o', trend:'flat',
@@ -97,9 +95,7 @@ const INCOMING = [
   {name:"Harvey Elliott", sub:"AM/W · England", club:"Liverpool", pos:"AM/W", report:"~2 days ago", src:"Football Insider", tier:3, fee:"£20-25m", truth:45, prob:20, light:'o', trend:'up',
    note:"Fresh link for the Liverpool creator seeking minutes, a clear quality and resale profile. Obstacle: Football Insider-tier sourcing, a likely crowded race for a player of his profile, and price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
-   note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
-  {name:"Troy Parrott", sub:"ST · Ireland", club:"AZ Alkmaar", pos:"ST", report:"~7 wks", src:"Aggregated", tier:3, fee:"£12-16m", truth:41, prob:16, light:'o', trend:'down',
-   note:"Earlier framed as a 'key target' for the striker hunt, but the link has gone quiet for weeks. Stays alive only on the strength of the underlying need.", lastSeen:"2026-08-04T19:10:50Z", baseProb:16}
+   note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18}
 ];
 
 const OUTGOING = [
@@ -111,14 +107,24 @@ const OUTGOING = [
    note:"Open to leaving after reduced minutes, with a long suitor list (Newcastle, Everton, Man Utd checks, plus Freiburg, Union Berlin, Southampton). PRICING: PL/Bundesliga demand holds a floor, but a player pushing to go softens it. A sale would trigger a midfield buy (Hackney/Charles).", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Wilfried Gnonto", sub:"W · Italy", club:"SC Freiburg", pos:"W", report:"~2 days ago", src:"S. Vidal", tier:3, fee:"£20-28m", truth:65, prob:40, light:'y', trend:'up',
    note:"Freiburg are keen and Leeds have SET a transfer fee, a holder's stance on a genuine resale asset. PRICING: still a saleable talent, so the price is firm; an exit here is the most likely funder of a 'blockbuster' incoming.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Jack Harrison", sub:"W · England", club:"Fiorentina", pos:"W", report:"~5 wks", src:"Aggregated", tier:3, fee:"€8m option", truth:65, prob:40, light:'y', trend:'flat',
-   note:"On loan at Fiorentina with an ~€8m permanent option; the player has said he is happy in Florence. A clean, likely permanent exit that clears wages.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Largie Ramazani", sub:"W · DR Congo/Belgium", club:"Valencia", pos:"W", report:"~3 wks", src:"Football media", tier:3, fee:"£8-12m", truth:63, prob:38, light:'y', trend:'flat',
    note:"On loan at Valencia, where he has impressed (6 goals); a permanent move or fresh loan is the likely outcome. Squad-trimming that helps SCR headroom.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
-  {name:"Lucas Perri", sub:"GK · Brazil", club:"Brazilian clubs", pos:"GK", report:"~6 wks", src:"Jorge Nicola", tier:3, fee:"£6-10m", truth:55, prob:30, light:'y', trend:'flat',
-   note:"A summer exit is being considered, with Brazilian clubs understood to be interested. Part of clearing a crowded goalkeeping department.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Mateo Joseph", sub:"22 · Spain · ST", club:"Mallorca / Leicester / Wrexham", pos:"ST", report:"~4 wks", src:"TEAMtalk", tier:3, fee:"£6-10m", truth:50, prob:25, light:'o', trend:'down',
    note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+];
+const DEAD = [
+  {name:"James Trafford", sub:"GK · England", club:"Man City", pos:"GK", report:"~4-5 wks", src:"TEAMtalk", tier:3, fee:"~£30m", truth:45, prob:20, light:'o', trend:'down',
+   note:"A young English keeper to solve the No.1 question long term; TEAMtalk says ~£30m could be enough. OBSTACLE, and the reason this has eased: Karl Darlow has established himself as first choice and been offered an extension, so with Meslier the one near-certain exit the immediate need is depth, not a marquee number one. City's pricing and competition for a homegrown GK also bite.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dir:"in", deadReason:"no fresh report in 5+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Troy Parrott", sub:"ST · Ireland", club:"AZ Alkmaar", pos:"ST", report:"~7 wks", src:"Aggregated", tier:3, fee:"£12-16m", truth:41, prob:16, light:'o', trend:'down',
+   note:"Earlier framed as a 'key target' for the striker hunt, but the link has gone quiet for weeks. Stays alive only on the strength of the underlying need.", lastSeen:"2026-08-04T19:10:50Z", baseProb:16, dir:"in", deadReason:"no fresh report in 7+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Jack Harrison", sub:"W · England", club:"Fiorentina", pos:"W", report:"~5 wks", src:"Aggregated", tier:3, fee:"€8m option", truth:65, prob:40, light:'y', trend:'flat',
+   note:"On loan at Fiorentina with an ~€8m permanent option; the player has said he is happy in Florence. A clean, likely permanent exit that clears wages.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dir:"out", deadReason:"no fresh report in 5+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Lucas Perri", sub:"GK · Brazil", club:"Brazilian clubs", pos:"GK", report:"~6 wks", src:"Jorge Nicola", tier:3, fee:"£6-10m", truth:55, prob:30, light:'y', trend:'flat',
+   note:"A summer exit is being considered, with Brazilian clubs understood to be interested. Part of clearing a crowded goalkeeping department.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dir:"out", deadReason:"no fresh report in 6+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Carl Rushworth", club:"Brighton", pos:"GK", dir:"in", age:"~6 wks", tier:3, note:"Leeds and Newcastle have enquired about the young English keeper.", deadReason:"no fresh report in 6+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Jeremy Monga", club:"Leicester", pos:"W", dir:"in", age:"~11d", tier:3, note:"talkSPORT: Leeds among several top-flight clubs after the 16-year-old winger.", deadReason:"signed for manchester-city", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Anis Hadj Moussa", club:"Feyenoord", pos:"W", dir:"in", age:"~8 wks", tier:4, note:"Eredivisie winger with broad interest incl. Saudi Arabia; early link.", deadReason:"no fresh report in 8+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Isaac Schmidt", club:"Werder Bremen", pos:"DF", dir:"out", age:"~7 wks", tier:3, note:"On loan with an option to buy; permanent exit possible.", deadReason:"no fresh report in 7+ weeks", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [
@@ -166,20 +172,16 @@ const WATCHLIST = [
   {name:"Beto", club:"Everton", pos:"ST", dir:"in", age:"~13d", tier:4, note:"Re-linked a year on; another body in the striker market."},
   {name:"Axel Disasi", club:"Chelsea", pos:"CB", dir:"in", age:"~13d", tier:3, note:"Football Insider: Leeds expect to lead the race if he is made available."},
   {name:"Nick Pope", club:"Newcastle", pos:"GK", dir:"in", age:"~13d", tier:4, note:"Farke reportedly weighing a £5-10m move, an experienced GK alternative to Trafford."},
-  {name:"Carl Rushworth", club:"Brighton", pos:"GK", dir:"in", age:"~6 wks", tier:3, note:"Leeds and Newcastle have enquired about the young English keeper."},
   {name:"Dmytro Riznyk", club:"Shakhtar", pos:"GK", dir:"in", age:"~9d", tier:4, note:"A 'serious interest' GK link; approach reported, little corroboration."},
   {name:"Santiago Bueno", club:"Wolves", pos:"CB", dir:"in", age:"~3 wks", tier:3, note:"Pete O'Rourke: Leeds targeting Wolves' defenders post-relegation."},
   {name:"Kevin Mac Allister", club:"Union SG", pos:"CB", dir:"in", age:"~4 wks", tier:3, note:"Among several PL clubs tracking the Argentine defender."},
   {name:"Daniel Svensson", club:"Dortmund", pos:"LB", dir:"in", age:"~3 wks", tier:3, note:"Tuttomercato: growing English interest in the 24-year-old left-back."},
   {name:"Jhon Solis", club:"Girona", pos:"MF", dir:"in", age:"~3 wks", tier:4, note:"Leeds and Brentford credited with interest in the Colombian midfielder."},
   {name:"Gustavo Hamer", club:"Sheffield Utd", pos:"MF", dir:"in", age:"~3 wks", tier:4, note:"Sports Boom: monitoring the creative midfielder's situation."},
-  {name:"Jeremy Monga", club:"Leicester", pos:"W", dir:"in", age:"~11d", tier:3, note:"talkSPORT: Leeds among several top-flight clubs after the 16-year-old winger."},
-  {name:"Anis Hadj Moussa", club:"Feyenoord", pos:"W", dir:"in", age:"~8 wks", tier:4, note:"Eredivisie winger with broad interest incl. Saudi Arabia; early link."},
   {name:"Wilfried Gnonto", club:"SC Freiburg", pos:"W", dir:"out", age:"~2d", tier:3, note:"(Also in main table.) Freiburg target; Leeds have set a fee."},
   {name:"Sebastiaan Bornauw", club:"FC Koln", pos:"CB", dir:"out", age:"~3 wks", tier:3, note:"Kicker: a candidate to return to Koln; on-loan centre-back."},
   {name:"Maximilian Wober", club:"Werder Bremen", pos:"CB", dir:"out", age:"~4 wks", tier:3, note:"On loan at Werder; future beyond the season unclear, contract to 2027."},
-  {name:"Isaac Schmidt", club:"Werder Bremen", pos:"DF", dir:"out", age:"~7 wks", tier:3, note:"On loan with an option to buy; permanent exit possible."},
-  {name:"Sam Byram", club:"(seeking club)", pos:"DF", dir:"out", age:"~9d", tier:4, note:"Just 85 minutes all season; a likely free-agent-style departure."},
+  {name:"Sam Byram", club:"(seeking club)", pos:"DF", dir:"out", age:"~9d", tier:4, note:"Just 85 minutes all season; a likely free-agent-style departure."}
 ];
 
 /* ---------- SOURCE LINKS ----------

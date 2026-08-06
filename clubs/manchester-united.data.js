@@ -83,6 +83,10 @@ const OUTGOING = [
    note:"Cristiano Ronaldo reportedly wanted his compatriot alongside him at Al-Nassr, but Saudi Arabia's PIF has imposed a transfer-spending ban on the club after liabilities passed 800m riyals (≈€187m), killing any realistic move. Fernandes himself rejected an Al-Hilal approach worth £80-100m the previous summer and has repeatedly said he wants to complete unfinished business - a Premier League and Champions League title - before considering a Saudi switch. This one is effectively dead for the current window barring a dramatic financial reversal in Riyadh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:5},
   {name:"Amad Diallo", sub:"Interest circling despite 'not for sale' stance", club:"Various (Tottenham monitoring)", pos:"FW", report:"United have repeatedly stated Amad is not for sale amid Tottenham interest, though some reports suggest the club could now be open to a big offer as their forward overhaul continues.", src:"Fabrizio Romano", tier:2, fee:"Undisclosed", truth:45, prob:15, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
+const DEAD = [
+  {name:"Micky Van de Ven", club:"Tottenham", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"One of the three 'Operation Wall' centre-back names from Football365's original report; no sign of movement toward an actual approach as of late July.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Castello Lukeba", club:"RB Leipzig", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"The third 'Operation Wall' name, valued for his ball-carrying out of the back; remains background scouting rather than an active pursuit.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Marcus Rashford</b>: Roma swap/Kone chatter gaining traction across Italian outlets, release clause makes any European move mechanically simple."},
@@ -117,10 +121,8 @@ const POSITIONS = [
 
 const WATCHLIST = [
   {name:"Antonee Robinson", club:"Fulham", pos:"LB", dir:"in", age:"~3 wks", tier:2, note:"Named by Sky Sports as United's fallback left-back option if Newcastle hold firm on Lewis Hall; uncertainty over his Fulham future under a new manager adds a plausible route out."},
-  {name:"Micky Van de Ven", club:"Tottenham", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"One of the three 'Operation Wall' centre-back names from Football365's original report; no sign of movement toward an actual approach as of late July."},
-  {name:"Castello Lukeba", club:"RB Leipzig", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"The third 'Operation Wall' name, valued for his ball-carrying out of the back; remains background scouting rather than an active pursuit."},
   {name:"Altay Bayındır", club:"Manchester United (internal)", pos:"GK", dir:"out", age:"~4 wks", tier:3, note:"With Karl Darlow signed as senior cover and Onana out on loan, Bayındır's own long-term standing as back-up No.1 is being reassessed internally - no formal exit links yet."},
-  {name:"Facundo Pellistri", club:"Manchester United (fringe)", pos:"RW", dir:"out", age:"ongoing", tier:3, note:"Long a peripheral figure in the first-team picture; conflicting reports over whether a permanent departure has already been finalised mean this needs firming up before treating as live."},
+  {name:"Facundo Pellistri", club:"Manchester United (fringe)", pos:"RW", dir:"out", age:"ongoing", tier:3, note:"Long a peripheral figure in the first-team picture; conflicting reports over whether a permanent departure has already been finalised mean this needs firming up before treating as live."}
 ];
 
 const HUB = {

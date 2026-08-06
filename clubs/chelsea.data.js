@@ -142,9 +142,8 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Emmanuel Emegha", club:"Strasbourg", pos:"ST", dir:"in", age:"~2 wks", tier:2, note:"(In ledger.) Long-agreed BlueCo cross-club move."},
   {name:"Loan army", club:"Chelsea", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"Chelsea's large loan and fringe group to be traded for balance and profit."},
-  {name:"Alonso targets", club:"Market", pos:"-", dir:"in", age:"~2 wks", tier:3, note:"System-specific additions expected once Alonso starts on 1 July."},
+  {name:"Alonso targets", club:"Market", pos:"-", dir:"in", age:"~2 wks", tier:3, note:"System-specific additions expected once Alonso starts on 1 July."}
 ];
 
 /* ---------- SOURCE LINKS ----------

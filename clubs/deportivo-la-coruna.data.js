@@ -46,6 +46,9 @@ const INCOMING = [
 const OUTGOING = [
   {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:95}
 ];
+const DEAD = [
+  {name:"Domingos Duarte", club:"Getafe (free agent)", pos:"CB", dir:"in", age:"~1 month", tier:2, note:"Advanced talks reported by Matteo Moretto; player already knows Riazor from a 2018/19 loan.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Domingos Duarte reunion talks</b>: advanced negotiations for a free-agent centre-back who already knows the club from a prior loan spell."}
@@ -63,9 +66,7 @@ const POSITIONS = [
   {p:"Centre-back depth for the top flight", w:50, x:"Duarte reunion would add senior La Liga-tested experience to a squad built for an immediate return."}
 ];
 
-const WATCHLIST = [
-  {name:"Domingos Duarte", club:"Getafe (free agent)", pos:"CB", dir:"in", age:"~1 month", tier:2, note:"Advanced talks reported by Matteo Moretto; player already knows Riazor from a 2018/19 loan."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "moncloa-depor-spend": {l:"Moncloa - Deportivo invest €20m across summer signings", u:"https://www.moncloa.com/2026/07/12/deportivo-coruna-invierte-20-millones-fichajes-3398638/"},

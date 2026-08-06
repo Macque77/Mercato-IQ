@@ -42,11 +42,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Jesper Lindström", sub:"Winger/Attacking Midfielder", club:"SSC Napoli", pos:"CAM", report:"A loan move with a reported €5m purchase option looked done and Lindström was set for an early introduction at Schalke, but the deal reportedly collapsed at the last moment, with Napoli said to be threatening legal action over the breakdown.", src:"BILD / Sport Bild", tier:2, fee:"Loan, €5m option (deal disputed)", truth:70, prob:20, light:"o", trend:"flat", note:"Multiple outlets (Sport.de, Fussballdaten, OneFootball) first reported the move as done, then BILD reported it had collapsed with Napoli threatening legal steps.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Diogo Leite", sub:"Free agent centre-back", club:"Union Berlin (released)", pos:"CB", report:"Schalke were reportedly willing to push their financial limits to land the free-agent centre-back, but he is now said to be closing in on a move to Saudi side Al-Diriyah, with Everton and Leeds also poised to miss out.", src:"Inside Futbol", tier:3, fee:"Free transfer", truth:55, prob:15, light:"o", trend:"flat", note:"Leite left Union Berlin as a free agent; Schalke were linked but he is reported close to agreeing terms with Al-Diriyah in Saudi Arabia instead.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
 const OUTGOING = [];
+const DEAD = [
+  {name:"Jesper Lindström", sub:"Winger/Attacking Midfielder", club:"SSC Napoli", pos:"CAM", report:"A loan move with a reported €5m purchase option looked done and Lindström was set for an early introduction at Schalke, but the deal reportedly collapsed at the last moment, with Napoli said to be threatening legal action over the breakdown.", src:"BILD / Sport Bild", tier:2, fee:"Loan, €5m option (deal disputed)", truth:70, prob:20, light:"o", trend:"flat", note:"Multiple outlets (Sport.de, Fussballdaten, OneFootball) first reported the move as done, then BILD reported it had collapsed with Napoli threatening legal steps.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dir:"in", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Wöber signs free from Leeds</b>: a notable defensive coup for a promoted side, adding Austrian international quality at centre-back."},

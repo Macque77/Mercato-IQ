@@ -24,18 +24,18 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Andrea Sottil", prob: 35, truth: 50, bullshit: false,
-    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
-    from: "Undisclosed", to: "US Cremonese",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "N/A", updated: "2026-07-29T00:00:00Z"
-  },
-  {
     name: "Kurminowski", prob: 35, truth: 50, bullshit: false,
     club_origin: "ascoli-picchio", club_display_name: "Ascoli Picchio", direction: "in",
     from: "Free agent", to: "Ascoli Picchio",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Free", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Andrea Sottil", prob: 35, truth: 50, bullshit: false,
+    club_origin: "cremonese", club_display_name: "US Cremonese", direction: "in",
+    from: "Undisclosed", to: "US Cremonese",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "N/A", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Cherubini", prob: 30, truth: 50, bullshit: false,
@@ -66,6 +66,6 @@ const CLUBS_LIST = [{"slug": "ascoli-picchio", "name": "Ascoli Picchio", "count"
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:14:19.918857Z",
+  updated: "2026-08-06T10:24:37.278807Z",
   label: "League aggregation"
 };

@@ -102,6 +102,12 @@ const OUTGOING = [
   {name:"Myles Lewis-Skelly", sub:"Man Utd exploring feasibility of a raid", club:"Manchester United", pos:"MF", report:"United are reported to be looking into a move for the 19-year-old academy product; Arsenal value him at £38.5m and are not actively selling.", src:"Sky Sports", tier:2, fee:"£38.5m (valuation)", truth:35, prob:12, light:"r", trend:"flat", note:"Arsenal would only consider offers well above valuation", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
   {name:"Mishel Nduka", sub:"16 · England · CM", club:"Manchester City", pos:"CM", report:"The England youth international has agreed to join Manchester City after turning down a highly competitive long-term contract at Arsenal.", src:"David Ornstein (The Athletic)", tier:1, fee:"Undisclosed", truth:90, prob:88, light:"g", trend:"flat", note:"Academy deal, so compensation figures are unlikely to be published.", lastSeen:"2026-08-06T08:45:12Z", baseProb:88}
 ];
+const DEAD = [
+  {name:"Khvicha Kvaratskhelia", club:"PSG", pos:"W", dir:"in", age:"~12 wks", tier:3, note:"Earlier framed by Romano as a priority winger target; complex on PSG's valuation and no fresh 2026 confirmation. Monitoring only.", deadReason:"no fresh report in 12+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Morgan Gibbs-White", club:"Nottingham Forest", pos:"AM", dir:"in", age:"~6 wks", tier:4, note:"Previously considered as a creator alongside Rogers; cooled and behind Rogers in the pecking order.", deadReason:"no fresh report in 6+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Ethan Nwaneri", club:"Arsenal", pos:"AM", dir:"out", age:"~12 wks", tier:2, note:"Already re-signed; Romano guarantees no intention to sell despite a difficult loan spell. Stays.", deadReason:"no fresh report in 12+ weeks", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Reiss Nelson", club:"Fringe / loan", pos:"W", dir:"out", age:"~5 wks", tier:4, note:"Peripheral attacker, a candidate for a permanent exit or loan as part of squad churn. Low detail.", deadReason:"no fresh report in 5+ weeks", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Hincapié</b>: permanent confirmed, Arsenal's first summer signing."},
@@ -135,13 +141,9 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Khvicha Kvaratskhelia", club:"PSG", pos:"W", dir:"in", age:"~12 wks", tier:3, note:"Earlier framed by Romano as a priority winger target; complex on PSG's valuation and no fresh 2026 confirmation. Monitoring only."},
   {name:"Hugo Ekitike", club:"Eintracht Frankfurt", pos:"ST", dir:"in", age:"~2 wks", tier:4, note:"A young striker option floated for Arsenal, but more strongly linked with Liverpool. Early-warning only."},
-  {name:"Morgan Gibbs-White", club:"Nottingham Forest", pos:"AM", dir:"in", age:"~6 wks", tier:4, note:"Previously considered as a creator alongside Rogers; cooled and behind Rogers in the pecking order."},
   {name:"Jurriën Timber", club:"Arsenal", pos:"RB/CB", dir:"out", age:"~1 wk", tier:1, note:"Not a sale: contract renewal talks are advanced. Listed here only to track the retention story."},
-  {name:"Declan Rice", club:"Arsenal", pos:"CM", dir:"out", age:"~1 wk", tier:1, note:"Not a sale: initial renewal talks reported positive. Retention, not departure."},
-  {name:"Ethan Nwaneri", club:"Arsenal", pos:"AM", dir:"out", age:"~12 wks", tier:2, note:"Already re-signed; Romano guarantees no intention to sell despite a difficult loan spell. Stays."},
-  {name:"Reiss Nelson", club:"Fringe / loan", pos:"W", dir:"out", age:"~5 wks", tier:4, note:"Peripheral attacker, a candidate for a permanent exit or loan as part of squad churn. Low detail."},
+  {name:"Declan Rice", club:"Arsenal", pos:"CM", dir:"out", age:"~1 wk", tier:1, note:"Not a sale: initial renewal talks reported positive. Retention, not departure."}
 ];
 
 /* ---------- SOURCE LINKS ----------

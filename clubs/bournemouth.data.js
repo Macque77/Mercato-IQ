@@ -61,8 +61,6 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Malik Tillman", sub:"AM · USA", club:"Bayer Leverkusen", pos:"AM", report:"~5 wks ago", src:"TeamTalk / ESPN", tier:3, fee:"£25-35m", truth:55, prob:25, light:'o', trend:'flat',
-   note:"Bournemouth are credited with joining the race for the USMNT attacker, who would link up with Tyler Adams. OBSTACLE: a reported ~€35m clause for Bayern could shape the price; competition exists.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Young press-fit additions", sub:"Rose-system talent", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:55, prob:40, light:'y', trend:'up',
    note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Avom & Hadj Moussa", sub:"Recycled aggregator links", club:"Aggregated feeds", pos:"-", report:"~60d+ / recycled", tier:4, fee:"n/a", truth:25, prob:8, light:'r', trend:'down', bullshit:true,
@@ -78,6 +76,10 @@ const OUTGOING = [
    note:"Standard churn to balance the squad for a European campaign and keep the cost ratio healthy.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Rayan", sub:"Breakout Brazilian winger attracting suitors", club:"Multiple (Arsenal/Liverpool linked)", pos:"FW", report:"20-year-old right winger has scored 7 goals since a January move from Vasco da Gama; Bournemouth want £85m and a move this window is seen as unlikely.", src:"The Sun / OneFootball", tier:3, fee:"£85m", truth:45, prob:15, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
   {name:"Antoine Semenyo", sub:"New contract signed, release clause active from January", club:"Multiple PL clubs previously linked", pos:"FW", report:"Semenyo committed his future to Bournemouth with a new deal that includes a £65m release clause only active from January 2027; no active move this summer.", src:"BBC Sport", tier:1, fee:"£65m release clause (Jan 2027)", truth:60, prob:10, light:"r", trend:"flat", note:"Not a live summer target given new contract terms", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
+];
+const DEAD = [
+  {name:"Malik Tillman", sub:"AM · USA", club:"Bayer Leverkusen", pos:"AM", report:"~5 wks ago", src:"TeamTalk / ESPN", tier:3, fee:"£25-35m", truth:55, prob:25, light:'o', trend:'flat',
+   note:"Bournemouth are credited with joining the race for the USMNT attacker, who would link up with Tyler Adams. OBSTACLE: a reported ~€35m clause for Bayern could shape the price; competition exists.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dir:"in", deadReason:"no fresh report in 5+ weeks", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [
@@ -109,8 +111,7 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Malik Tillman", club:"Bayer Leverkusen", pos:"AM", dir:"in", age:"~5 wks", tier:3, note:"(Also in main table.) USMNT attacker; Bournemouth in the race."},
-  {name:"Prized young assets", club:"Bournemouth", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"The best young players draw elite interest; a premium sale is likely, per the model."},
+  {name:"Prized young assets", club:"Bournemouth", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"The best young players draw elite interest; a premium sale is likely, per the model."}
 ];
 
 /* ---------- SOURCE LINKS ----------

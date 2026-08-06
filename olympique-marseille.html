@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -866,27 +874,27 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Ousmane Dembélé", sub:"29 · RW · France", club:"PSG", pos:"RW", report:"2 Aug 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€50m+", truth:55, prob:35, light:"y", trend:"flat", note:"Hawkins reports Marseille interest in the PSG winger; PSG are not motivated to sell."},
-  {name:"Luis Díaz", sub:"29 · LW · Colombia", club:"Liverpool", pos:"LW", report:"30 Jul 2026", src:"Sky Sports News", tier:2, fee:"€60m", truth:48, prob:28, light:"o", trend:"flat", note:"Sky reports Marseille are monitoring; Liverpool are unlikely to sell to a Ligue 1 rival."},
-  {name:"Martin Terrier", sub:"29 · FW · France", club:"Bayer Leverkusen", pos:"FW", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:30, light:"y", trend:"flat", note:"Marseille are competing with Rennes, Terrier's former club, to sign the striker."},
-  {name:"Moris Valinčić", sub:"22 · RB · Croatia", club:"Dinamo Zagreb", pos:"RB", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:22, light:"o", trend:"flat", note:"Marseille have made an enquiry over the Croatian right-back."},
-  {name:"Djibril Sidibé", sub:"33 · RB · France", club:"Free agent", pos:"RB", report:"22 Jul 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:40, prob:16, light:"o", trend:"flat", note:"The 2018 World Cup winner has been mentioned as a possible experienced free-agent option."},
-  {name:"Memphis Depay", sub:"Forward, out-of-contract option", club:"Corinthians", pos:"ST", report:"Marseille have made contact over a possible move for Memphis Depay, whose contract at Corinthians expired, but his wage demands are seen as a major obstacle.", src:"Foot Mercato", tier:2, fee:"Free transfer", truth:50, prob:20, light:"o", trend:"flat", note:"Reported as unlikely to progress due to prohibitive wage demands."},
-  {name:"Ilan Kebbal", sub:"Winger, monitored", club:"Paris FC", pos:"RW", report:"Marseille are exploring a move for Paris FC winger Ilan Kebbal, though the newly promoted club's manager has publicly said he wants to keep him.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Paris FC boss Liam Rosenior has publicly ruled out a departure, cooling the rumour."},
-  {name:"Guillaume Restes", sub:"Goalkeeper, depth option", club:"Toulouse FC", pos:"GK", report:"Marseille have been credited with interest in Toulouse goalkeeper Guillaume Restes as competition/succession for the current No.1 spot.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Speculative given uncertainty over Rulli's future in Marseille."}
+  {name:"Ousmane Dembélé", sub:"29 · RW · France", club:"PSG", pos:"RW", report:"2 Aug 2026", src:"Fabrice Hawkins / L'Équipe", tier:2, fee:"€50m+", truth:55, prob:35, light:"y", trend:"flat", note:"Hawkins reports Marseille interest in the PSG winger; PSG are not motivated to sell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Luis Díaz", sub:"29 · LW · Colombia", club:"Liverpool", pos:"LW", report:"30 Jul 2026", src:"Sky Sports News", tier:2, fee:"€60m", truth:48, prob:28, light:"o", trend:"flat", note:"Sky reports Marseille are monitoring; Liverpool are unlikely to sell to a Ligue 1 rival.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
+  {name:"Martin Terrier", sub:"29 · FW · France", club:"Bayer Leverkusen", pos:"FW", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:30, light:"y", trend:"flat", note:"Marseille are competing with Rennes, Terrier's former club, to sign the striker.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Moris Valinčić", sub:"22 · RB · Croatia", club:"Dinamo Zagreb", pos:"RB", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:22, light:"o", trend:"flat", note:"Marseille have made an enquiry over the Croatian right-back.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
+  {name:"Djibril Sidibé", sub:"33 · RB · France", club:"Free agent", pos:"RB", report:"22 Jul 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:40, prob:16, light:"o", trend:"flat", note:"The 2018 World Cup winner has been mentioned as a possible experienced free-agent option.", lastSeen:"2026-08-04T19:10:50Z", baseProb:16},
+  {name:"Memphis Depay", sub:"Forward, out-of-contract option", club:"Corinthians", pos:"ST", report:"Marseille have made contact over a possible move for Memphis Depay, whose contract at Corinthians expired, but his wage demands are seen as a major obstacle.", src:"Foot Mercato", tier:2, fee:"Free transfer", truth:50, prob:20, light:"o", trend:"flat", note:"Reported as unlikely to progress due to prohibitive wage demands.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Ilan Kebbal", sub:"Winger, monitored", club:"Paris FC", pos:"RW", report:"Marseille are exploring a move for Paris FC winger Ilan Kebbal, though the newly promoted club's manager has publicly said he wants to keep him.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Paris FC boss Liam Rosenior has publicly ruled out a departure, cooling the rumour.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Guillaume Restes", sub:"Goalkeeper, depth option", club:"Toulouse FC", pos:"GK", report:"Marseille have been credited with interest in Toulouse goalkeeper Guillaume Restes as competition/succession for the current No.1 spot.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Speculative given uncertainty over Rulli's future in Marseille.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const OUTGOING = [
-  {name:"Igor Paixão", sub:"25 · W · Brazil", club:"Leeds United", pos:"W", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:18, light:"o", trend:"flat", note:"Leeds United reported to have included the winger on their shortlist, though nothing concrete has emerged."},
-  {name:"Nayef Aguerd", sub:"29 · CB · Morocco", club:"Stade Rennais", pos:"CB", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:26, light:"o", trend:"flat", note:"Former club Stade Rennais are exploring bringing the defender back."},
-  {name:"Gerónimo Rulli", sub:"34 · GK · Argentina", club:"Manchester City", pos:"GK", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:20, light:"o", trend:"flat", note:"Manchester City reported to have submitted an offer for the veteran shot-stopper."},
-  {name:"Pierre-Emile Højbjerg", sub:"30 · CM · Denmark", club:"AC Milan", pos:"CM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:42, prob:14, light:"r", trend:"flat", note:"AC Milan reported to have considered the Danish midfielder as an option."},
-  {name:"Mason Greenwood", sub:"24 · ST · England", club:"Fenerbahçe", pos:"ST", report:"14 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed (Man Utd retains 10%+ sell-on)", truth:60, prob:45, light:"y", trend:"flat", note:"Romano described the move as in its final stages, with no buy-back clause activation from Manchester United."},
-  {name:"Geronimo Rulli", sub:"Goalkeeper, offer submitted", club:"Manchester City", pos:"GK", report:"Manchester City have submitted an offer for Marseille goalkeeper Geronimo Rulli, though Marseille want to control the timing and line up a replacement before letting him leave.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:70, prob:55, light:"g", trend:"flat", note:"Marseille reportedly want a replacement (e.g. Restes) lined up before sanctioning the sale."},
-  {name:"Pierre-Emile Hojbjerg", sub:"Midfielder, Serie A interest", club:"AC Milan", pos:"CDM", report:"AC Milan are considering a move for Marseille midfielder Pierre-Emile Hojbjerg as they look to add experience to their midfield.", src:"Sky Sport", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Described as under consideration rather than an active bid."},
-  {name:"Igor Paixao", sub:"Winger, valuation gap", club:"Leeds United", pos:"LW", report:"Leeds United have placed Igor Paixao third on their shortlist, but a large valuation gap (OM want 50m euros, Leeds offering 30-35m) makes the deal difficult.", src:"Foot Mercato", tier:2, fee:"€50m demanded / €30-35m offered", truth:60, prob:30, light:"y", trend:"flat", note:"Significant gap between valuation and offer reduces the near-term likelihood of a deal."},
-  {name:"Facundo Medina", sub:"Defender, talks opened", club:"Bayer Leverkusen", pos:"CB", report:"Bayer Leverkusen have opened talks over signing Marseille defender Facundo Medina, though no agreement has yet been reached.", src:"Le Phoceen", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Early-stage talks only, per local outlet Le Phoceen."},
-  {name:"Pierre-Emerick Aubameyang", sub:"Forward, multiple suitors", club:"Undisclosed suitors", pos:"ST", report:"Suitors for Marseille forward Pierre-Emerick Aubameyang are reportedly multiplying as the veteran striker's future in Provence is questioned.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"No specific club named yet, described only as multiple emerging suitors."}
+  {name:"Igor Paixão", sub:"25 · W · Brazil", club:"Leeds United", pos:"W", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:18, light:"o", trend:"flat", note:"Leeds United reported to have included the winger on their shortlist, though nothing concrete has emerged.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
+  {name:"Nayef Aguerd", sub:"29 · CB · Morocco", club:"Stade Rennais", pos:"CB", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:26, light:"o", trend:"flat", note:"Former club Stade Rennais are exploring bringing the defender back.", lastSeen:"2026-08-04T19:10:50Z", baseProb:26},
+  {name:"Gerónimo Rulli", sub:"34 · GK · Argentina", club:"Manchester City", pos:"GK", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:20, light:"o", trend:"flat", note:"Manchester City reported to have submitted an offer for the veteran shot-stopper.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Pierre-Emile Højbjerg", sub:"30 · CM · Denmark", club:"AC Milan", pos:"CM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:42, prob:14, light:"r", trend:"flat", note:"AC Milan reported to have considered the Danish midfielder as an option.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
+  {name:"Mason Greenwood", sub:"24 · ST · England", club:"Fenerbahçe", pos:"ST", report:"14 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed (Man Utd retains 10%+ sell-on)", truth:60, prob:45, light:"y", trend:"flat", note:"Romano described the move as in its final stages, with no buy-back clause activation from Manchester United.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Geronimo Rulli", sub:"Goalkeeper, offer submitted", club:"Manchester City", pos:"GK", report:"Manchester City have submitted an offer for Marseille goalkeeper Geronimo Rulli, though Marseille want to control the timing and line up a replacement before letting him leave.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:70, prob:55, light:"g", trend:"flat", note:"Marseille reportedly want a replacement (e.g. Restes) lined up before sanctioning the sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
+  {name:"Pierre-Emile Hojbjerg", sub:"Midfielder, Serie A interest", club:"AC Milan", pos:"CDM", report:"AC Milan are considering a move for Marseille midfielder Pierre-Emile Hojbjerg as they look to add experience to their midfield.", src:"Sky Sport", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Described as under consideration rather than an active bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Igor Paixao", sub:"Winger, valuation gap", club:"Leeds United", pos:"LW", report:"Leeds United have placed Igor Paixao third on their shortlist, but a large valuation gap (OM want 50m euros, Leeds offering 30-35m) makes the deal difficult.", src:"Foot Mercato", tier:2, fee:"€50m demanded / €30-35m offered", truth:60, prob:30, light:"y", trend:"flat", note:"Significant gap between valuation and offer reduces the near-term likelihood of a deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Facundo Medina", sub:"Defender, talks opened", club:"Bayer Leverkusen", pos:"CB", report:"Bayer Leverkusen have opened talks over signing Marseille defender Facundo Medina, though no agreement has yet been reached.", src:"Le Phoceen", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Early-stage talks only, per local outlet Le Phoceen.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Pierre-Emerick Aubameyang", sub:"Forward, multiple suitors", club:"Undisclosed suitors", pos:"ST", report:"Suitors for Marseille forward Pierre-Emerick Aubameyang are reportedly multiplying as the veteran striker's future in Provence is questioned.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"No specific club named yet, described only as multiple emerging suitors.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [
@@ -999,6 +1007,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1083,6 +1092,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1247,6 +1264,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

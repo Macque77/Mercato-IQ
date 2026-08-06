@@ -35,8 +35,9 @@ const CONFIRMED_OUT = [
   {name:"Aaron Donnelly", sub:"DF", club:"Dunfermline Athletic", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed exit, described as leaving the side short at the back."}
 ];
 const INCOMING = [];
-const OUTGOING = [
-  {name:"Luke Graham", sub:"DF", club:"Rangers", pos:"DF", report:"~4 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Reported fresh scouting interest, but the source is several months old.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+const OUTGOING = [];
+const DEAD = [
+  {name:"Luke Graham", sub:"DF", club:"Rangers", pos:"DF", report:"~4 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:50, prob:30, light:'y', trend:'flat', note:"Reported fresh scouting interest, but the source is several months old.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dir:"out", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
 ];
 const RISERS = [];
 const FALLERS = [];

@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -856,12 +864,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation."},
-  {name:"Iker Luque", sub:"21 · W · Spain", club:"Atlético Madrid", pos:"RW", report:"Rayo have been negotiating since January for the young Atlético winger on a four-year deal.", src:"El Gol Digital", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Long-running, low-profile interest rather than a fresh development."}
+  {name:"Ilias Akhomach", sub:"22 · W · Morocco/Spain", club:"Villarreal", pos:"W", report:"Jul 2026", src:"OneFootball", tier:2, fee:"Undisclosed", truth:55, prob:50, light:"y", trend:"flat", note:"OneFootball reported a confirmed Rayo signing for the Villarreal winger, though Villarreal's own summer transfer tracker still listed Akhomach as attracting loan interest from Sevilla and Espanyol at a similar date - the two reports don't fully agree, so this is logged as a genuinely live story rather than a nailed-on certainty pending clearer confirmation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Iker Luque", sub:"21 · W · Spain", club:"Atlético Madrid", pos:"RW", report:"Rayo have been negotiating since January for the young Atlético winger on a four-year deal.", src:"El Gol Digital", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Long-running, low-profile interest rather than a fresh development.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Nobel Mendy", sub:"23 · CB · Senegal/France", club:"Hull City", pos:"CB", report:"Mendy has skipped training twice to push through a move after Hull City's revised bid; Rayo have reportedly changed the terms, stalling the deal.", src:"Sport Witness", tier:2, fee:"€18-25m (reports vary)", truth:65, prob:55, light:"g", trend:"flat", note:"Real Betis, who developed and previously sold Mendy, stand to earn a €4-5m sell-on if this completes."}
+  {name:"Nobel Mendy", sub:"23 · CB · Senegal/France", club:"Hull City", pos:"CB", report:"Mendy has skipped training twice to push through a move after Hull City's revised bid; Rayo have reportedly changed the terms, stalling the deal.", src:"Sport Witness", tier:2, fee:"€18-25m (reports vary)", truth:65, prob:55, light:"g", trend:"flat", note:"Real Betis, who developed and previously sold Mendy, stand to earn a €4-5m sell-on if this completes.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 
 const RISERS = [];
@@ -944,6 +952,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1028,6 +1037,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1192,6 +1209,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

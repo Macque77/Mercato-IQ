@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -879,30 +887,34 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Iliman Ndiaye", sub:"26 · RW/AM · Senegal", club:"Everton", pos:"RW/AM", report:"29 Jul 2026", src:"Mirror / CaughtOffside (Ahad Shaukat)", tier:2, fee:"£70m ask, United want ≈£50m", truth:60, prob:25, light:'o', trend:'down',
-   note:"Everton have set a £70m price on a winger who scored 6 and assisted 3 in 32 Premier League games last season, with three years still on his contract giving them full leverage. United have him on their attacking shortlist as a potential Garnacho-void filler but are reportedly angling closer to £50m rather than meeting the asking price. Al-Hilal have now entered the picture and Ndiaye's camp would reportedly welcome a Saudi offer, which is the single biggest threat to any Premier League move materialising. OBSTACLES: valuation gap, Saudi competition, and Everton having rejected his contract-extension pushback rather than sanctioning a cut-price exit."},
+   note:"Everton have set a £70m price on a winger who scored 6 and assisted 3 in 32 Premier League games last season, with three years still on his contract giving them full leverage. United have him on their attacking shortlist as a potential Garnacho-void filler but are reportedly angling closer to £50m rather than meeting the asking price. Al-Hilal have now entered the picture and Ndiaye's camp would reportedly welcome a Saudi offer, which is the single biggest threat to any Premier League move materialising. OBSTACLES: valuation gap, Saudi competition, and Everton having rejected his contract-extension pushback rather than sanctioning a cut-price exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Manu Kone", sub:"25 · CM/DM · France", club:"AS Roma", pos:"CM/DM", report:"27 Jul 2026", src:"Gazzetta dello Sport / Football Italia (via CaughtOffside)", tier:2, fee:"€60m ask; cash-plus-Rashford structure discussed", truth:50, prob:28, light:'o', trend:'up',
-   note:"Italian outlets report United have discussed including Marcus Rashford to bridge the gap on Roma's €60m valuation of Kone, easing the cash outlay while handing Roma a proven Serie A-ready forward. Rashford's reported €11m net salary is the sticking point - United would likely need to keep covering a meaningful share of his wages even in a part-exchange. Reporters stress this is still an idea being floated rather than a formal structure, and separate straight sales for both players would be cleaner for all parties. OBSTACLES: wage-sharing on Rashford, Roma's readiness to let a key midfielder go, and the complexity of tying two deals together this late in the window."},
+   note:"Italian outlets report United have discussed including Marcus Rashford to bridge the gap on Roma's €60m valuation of Kone, easing the cash outlay while handing Roma a proven Serie A-ready forward. Rashford's reported €11m net salary is the sticking point - United would likely need to keep covering a meaningful share of his wages even in a part-exchange. Reporters stress this is still an idea being floated rather than a formal structure, and separate straight sales for both players would be cleaner for all parties. OBSTACLES: wage-sharing on Rashford, Roma's readiness to let a key midfielder go, and the complexity of tying two deals together this late in the window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
   {name:"Lewis Hall", sub:"23 · LB · England", club:"Newcastle United", pos:"LB", report:"11 Jul 2026", src:"Sky Sports News", tier:1, fee:"Not yet quantified - Newcastle expected to demand a premium", truth:65, prob:32, light:'y', trend:'flat',
-   note:"Sky Sports names Hall as a live option to succeed Luke Shaw, whose contract runs down next summer, after Tyrell Malacia's release left United without senior back-up. Hall missed Thomas Tuchel's most recent squad and could be made available, though Newcastle paid Chelsea £28m for him two years ago and are expected to demand significant compensation. Antonee Robinson of Fulham is credited as the alternative option if Newcastle hold firm. OBSTACLES: Newcastle's reluctance to strengthen a direct rival cheaply, and competition for minutes with Patrick Dorgu and Diogo Dalot as cover."},
+   note:"Sky Sports names Hall as a live option to succeed Luke Shaw, whose contract runs down next summer, after Tyrell Malacia's release left United without senior back-up. Hall missed Thomas Tuchel's most recent squad and could be made available, though Newcastle paid Chelsea £28m for him two years ago and are expected to demand significant compensation. Antonee Robinson of Fulham is credited as the alternative option if Newcastle hold firm. OBSTACLES: Newcastle's reluctance to strengthen a direct rival cheaply, and competition for minutes with Patrick Dorgu and Diogo Dalot as cover.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
   {name:"Murillo", sub:"23 · CB · Brazil", club:"Nottingham Forest", pos:"CB", report:"28 Feb 2026 (resurfacing)", src:"TeamTalk (unverified social source, awaiting corroboration)", tier:3, fee:"£61m-£70m (€70m-€80m)", truth:35, prob:20, light:'o', trend:'flat',
-   note:"United have scouted Murillo extensively as part of the 'Operation Wall' centre-back search reported by Football365, with his left-footed profile fitting Carrick's build-out patterns. TeamTalk's 'locked in talks' framing traces to a single X account with a mixed accuracy record rather than a tier-1 name, and even TeamTalk's own report says it is awaiting further sourcing before treating it as live. A Brazilian outlet has separately corroborated the £61m-plus valuation, and Forest's willingness to sell may hinge on their own league finish. OBSTACLES: single-source framing, Forest's reluctance to sell a key asset mid-season form permitting, and Chelsea also credited with interest."},
+   note:"United have scouted Murillo extensively as part of the 'Operation Wall' centre-back search reported by Football365, with his left-footed profile fitting Carrick's build-out patterns. TeamTalk's 'locked in talks' framing traces to a single X account with a mixed accuracy record rather than a tier-1 name, and even TeamTalk's own report says it is awaiting further sourcing before treating it as live. A Brazilian outlet has separately corroborated the £61m-plus valuation, and Forest's willingness to sell may hinge on their own league finish. OBSTACLES: single-source framing, Forest's reluctance to sell a key asset mid-season form permitting, and Chelsea also credited with interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Aurélien Tchouaméni", sub:"26 · CDM · France", club:"Real Madrid", pos:"CDM", report:"8 Jul 2026", src:"AS (José Félix Díaz, via Ruben Martín)", tier:3, fee:"~£68m mentioned", truth:30, prob:10, light:'r', trend:'down',
-   note:"Spanish reporter José Félix Díaz says United have tabled a five-year contract offer that Tchouaméni 'hasn't rejected', with INEOS said to be structuring salary payments across the deal to close the gap with Madrid pay scales. But Real Madrid boss José Mourinho wants to keep his only senior defensive midfielder and Madrid are reluctant to sell without a ready replacement, with the player contracted until 2028. OBSTACLES: Mourinho's resistance, Madrid's lack of a like-for-like alternative, and the fee gap between what United would pay and what Madrid consider a serious offer."},
-  {name:"Francisco Conceição", sub:"23 · W · Portugal", club:"Juventus", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~£25m", truth:45, prob:15, light:"o", trend:"flat", note:"Schira describes this as enquiry stage only — Manchester United 'have asked for information', not yet a bid."},
-  {name:"Aurélien Tchouameni", sub:"Leading midfield target", club:"Real Madrid", pos:"MF", report:"United see Tchouameni as their leading 'premium midfielder' target; a Madrid source says he could still be sold this summer despite recently signing a new contract.", src:"David Ornstein", tier:1, fee:"~£70m", truth:65, prob:50, light:"y", trend:"flat", note:""},
-  {name:"Carlos Baleba", sub:"Long-standing target, price reduced", club:"Brighton", pos:"MF", report:"Personal terms were agreed last summer and United 'admire the Cameroonian enormously'; talks have quietened but could reactivate closer to deadline day with the price down from £100m to £70m.", src:"David Ornstein", tier:1, fee:"~£70m", truth:55, prob:35, light:"y", trend:"flat", note:""}
+   note:"Spanish reporter José Félix Díaz says United have tabled a five-year contract offer that Tchouaméni 'hasn't rejected', with INEOS said to be structuring salary payments across the deal to close the gap with Madrid pay scales. But Real Madrid boss José Mourinho wants to keep his only senior defensive midfielder and Madrid are reluctant to sell without a ready replacement, with the player contracted until 2028. OBSTACLES: Mourinho's resistance, Madrid's lack of a like-for-like alternative, and the fee gap between what United would pay and what Madrid consider a serious offer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10},
+  {name:"Francisco Conceição", sub:"23 · W · Portugal", club:"Juventus", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~£25m", truth:45, prob:15, light:"o", trend:"flat", note:"Schira describes this as enquiry stage only — Manchester United 'have asked for information', not yet a bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Aurélien Tchouameni", sub:"Leading midfield target", club:"Real Madrid", pos:"MF", report:"United see Tchouameni as their leading 'premium midfielder' target; a Madrid source says he could still be sold this summer despite recently signing a new contract.", src:"David Ornstein", tier:1, fee:"~£70m", truth:65, prob:50, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"Carlos Baleba", sub:"Long-standing target, price reduced", club:"Brighton", pos:"MF", report:"Personal terms were agreed last summer and United 'admire the Cameroonian enormously'; talks have quietened but could reactivate closer to deadline day with the price down from £100m to £70m.", src:"David Ornstein", tier:1, fee:"~£70m", truth:55, prob:35, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const OUTGOING = [
   {name:"Marcus Rashford", sub:"28 · RW/LW · England", club:"AS Roma (or open market)", pos:"RW/LW", report:"27 Jul 2026", src:"Gazzetta dello Sport / Football Italia", tier:2, fee:"£40m release clause (all clubs bar Man City & Liverpool)", truth:65, prob:42, light:'y', trend:'up',
-   note:"Rashford's contract carries a £40m release clause applicable to any club other than Manchester City or Liverpool, and United's stated preference is a European move over a domestic one. The Roma links have hardened through the Kone swap speculation, with Gazzetta and Football Italia both running variations of the story through late July. A straight cash sale remains more likely to actually close than the swap structure given the complexity of bundling two deals, but the direction of travel is clearly toward a European exit before deadline day."},
+   note:"Rashford's contract carries a £40m release clause applicable to any club other than Manchester City or Liverpool, and United's stated preference is a European move over a domestic one. The Roma links have hardened through the Kone swap speculation, with Gazzetta and Football Italia both running variations of the story through late July. A straight cash sale remains more likely to actually close than the swap structure given the complexity of bundling two deals, but the direction of travel is clearly toward a European exit before deadline day.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42},
   {name:"Manuel Ugarte", sub:"24 · CDM · Uruguay", club:"Galatasaray", pos:"CDM", report:"29 May 2026", src:"Akşam Spor (Turkey)", tier:3, fee:"≈£24m", truth:30, prob:22, light:'o', trend:'flat',
-   note:"Turkish outlet Akşam Spor reports Galatasaray have stepped up their pursuit of a player squeezed further down the pecking order by the Santos and Tielemans arrivals, with Atlético Madrid and Napoli also said to be monitoring. The story has gone quiet since late May with no fresh corroboration from a tier-1 outlet, and United have not been reported as actively shopping him, though a squad short of midfield minutes for Ugarte makes an exit logical business given the new arrivals."},
+   note:"Turkish outlet Akşam Spor reports Galatasaray have stepped up their pursuit of a player squeezed further down the pecking order by the Santos and Tielemans arrivals, with Atlético Madrid and Napoli also said to be monitoring. The story has gone quiet since late May with no fresh corroboration from a tier-1 outlet, and United have not been reported as actively shopping him, though a squad short of midfield minutes for Ugarte makes an exit logical business given the new arrivals.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
   {name:"Kobbie Mainoo", sub:"21 · CM · England", club:"Real Madrid (monitoring)", pos:"CM", report:"5 Jul 2026", src:"Fichajes (via TheHardTackle)", tier:3, fee:"Valuation gap - United see him as a 'long-term project'", truth:30, prob:8, light:'r', trend:'down',
-   note:"Spanish outlet Fichajes frames Madrid's interest as background scouting rather than an active move, with United regarding Mainoo as central to their rebuild and showing no willingness to entertain anything short of an extraordinary offer. The report itself concedes the transfer 'appears highly unlikely at this stage', and United's public and private stance throughout the window has been to build midfield depth around him rather than sell."},
+   note:"Spanish outlet Fichajes frames Madrid's interest as background scouting rather than an active move, with United regarding Mainoo as central to their rebuild and showing no willingness to entertain anything short of an extraordinary offer. The report itself concedes the transfer 'appears highly unlikely at this stage', and United's public and private stance throughout the window has been to build midfield depth around him rather than sell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8},
   {name:"Bruno Fernandes", sub:"31 · AM · Portugal", club:"Al-Nassr (collapsed interest)", pos:"AM", report:"27 Jul 2026", src:"The Week / GB News", tier:2, fee:"€65m release clause (overseas only) - moot", truth:40, prob:5, light:'r', trend:'down',
-   note:"Cristiano Ronaldo reportedly wanted his compatriot alongside him at Al-Nassr, but Saudi Arabia's PIF has imposed a transfer-spending ban on the club after liabilities passed 800m riyals (≈€187m), killing any realistic move. Fernandes himself rejected an Al-Hilal approach worth £80-100m the previous summer and has repeatedly said he wants to complete unfinished business - a Premier League and Champions League title - before considering a Saudi switch. This one is effectively dead for the current window barring a dramatic financial reversal in Riyadh."},
-  {name:"Amad Diallo", sub:"Interest circling despite 'not for sale' stance", club:"Various (Tottenham monitoring)", pos:"FW", report:"United have repeatedly stated Amad is not for sale amid Tottenham interest, though some reports suggest the club could now be open to a big offer as their forward overhaul continues.", src:"Fabrizio Romano", tier:2, fee:"Undisclosed", truth:45, prob:15, light:"o", trend:"flat", note:""}
+   note:"Cristiano Ronaldo reportedly wanted his compatriot alongside him at Al-Nassr, but Saudi Arabia's PIF has imposed a transfer-spending ban on the club after liabilities passed 800m riyals (≈€187m), killing any realistic move. Fernandes himself rejected an Al-Hilal approach worth £80-100m the previous summer and has repeatedly said he wants to complete unfinished business - a Premier League and Champions League title - before considering a Saudi switch. This one is effectively dead for the current window barring a dramatic financial reversal in Riyadh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:5},
+  {name:"Amad Diallo", sub:"Interest circling despite 'not for sale' stance", club:"Various (Tottenham monitoring)", pos:"FW", report:"United have repeatedly stated Amad is not for sale amid Tottenham interest, though some reports suggest the club could now be open to a big offer as their forward overhaul continues.", src:"Fabrizio Romano", tier:2, fee:"Undisclosed", truth:45, prob:15, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+];
+const DEAD = [
+  {name:"Micky Van de Ven", club:"Tottenham", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"One of the three 'Operation Wall' centre-back names from Football365's original report; no sign of movement toward an actual approach as of late July.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Castello Lukeba", club:"RB Leipzig", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"The third 'Operation Wall' name, valued for his ball-carrying out of the back; remains background scouting rather than an active pursuit.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [
@@ -938,10 +950,8 @@ const POSITIONS = [
 
 const WATCHLIST = [
   {name:"Antonee Robinson", club:"Fulham", pos:"LB", dir:"in", age:"~3 wks", tier:2, note:"Named by Sky Sports as United's fallback left-back option if Newcastle hold firm on Lewis Hall; uncertainty over his Fulham future under a new manager adds a plausible route out."},
-  {name:"Micky Van de Ven", club:"Tottenham", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"One of the three 'Operation Wall' centre-back names from Football365's original report; no sign of movement toward an actual approach as of late July."},
-  {name:"Castello Lukeba", club:"RB Leipzig", pos:"CB", dir:"in", age:"~3 months", tier:3, note:"The third 'Operation Wall' name, valued for his ball-carrying out of the back; remains background scouting rather than an active pursuit."},
   {name:"Altay Bayındır", club:"Manchester United (internal)", pos:"GK", dir:"out", age:"~4 wks", tier:3, note:"With Karl Darlow signed as senior cover and Onana out on loan, Bayındır's own long-term standing as back-up No.1 is being reassessed internally - no formal exit links yet."},
-  {name:"Facundo Pellistri", club:"Manchester United (fringe)", pos:"RW", dir:"out", age:"ongoing", tier:3, note:"Long a peripheral figure in the first-team picture; conflicting reports over whether a permanent departure has already been finalised mean this needs firming up before treating as live."},
+  {name:"Facundo Pellistri", club:"Manchester United (fringe)", pos:"RW", dir:"out", age:"ongoing", tier:3, note:"Long a peripheral figure in the first-team picture; conflicting reports over whether a permanent departure has already been finalised mean this needs firming up before treating as live."}
 ];
 
 const HUB = {
@@ -1088,6 +1098,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1172,6 +1183,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1336,6 +1355,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

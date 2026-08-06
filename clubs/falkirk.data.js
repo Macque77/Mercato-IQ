@@ -35,8 +35,9 @@ const CONFIRMED_OUT = [
   {name:"Dylan Tait", sub:"MF", club:"Dundee United", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent exit on a three-year deal."}
 ];
 const INCOMING = [];
-const OUTGOING = [
-  {name:"Calvin Miller", sub:"Undisclosed", club:"Celtic", pos:"N/A", report:"~5 months ago", src:"MSN", tier:4, fee:"Undisclosed", truth:20, prob:10, light:'r', trend:'flat', note:"Manager John McGlynn has denied the link as nonsense, effectively dead.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
+const OUTGOING = [];
+const DEAD = [
+  {name:"Calvin Miller", sub:"Undisclosed", club:"Celtic", pos:"N/A", report:"~5 months ago", src:"MSN", tier:4, fee:"Undisclosed", truth:20, prob:10, light:'r', trend:'flat', note:"Manager John McGlynn has denied the link as nonsense, effectively dead.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10, dir:"out", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
 ];
 const RISERS = [];
 const FALLERS = [];

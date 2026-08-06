@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -908,23 +916,23 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Manager appointment", sub:"McKenna / Frank linked", club:"TBC", pos:"Head coach", report:"~4 days ago", src:"Sky Sports / Irish Times", tier:1, fee:"Compensation", truth:85, prob:50, light:'y', trend:'up',
-   note:"The gating decision. Kieran McKenna (Ipswich, ~£8m compensation) and the available Thomas Frank are among early names; Khan says the club will move deliberately. Squad plans follow the appointment. True is high (elite-tier reporting on the vacancy); Happens sits at evens on any single named outcome."},
+   note:"The gating decision. Kieran McKenna (Ipswich, ~£8m compensation) and the available Thomas Frank are among early names; Khan says the club will move deliberately. Squad plans follow the appointment. True is high (elite-tier reporting on the vacancy); Happens sits at evens on any single named outcome.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
   {name:"Striker (Jimenez replacement)", sub:"Goals up front", club:"Market", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£25-45m", truth:55, prob:35, light:'y', trend:'flat',
-   note:"With Jimenez leaving on a free, a new forward is a clear need. Names firm up once the manager is appointed."},
+   note:"With Jimenez leaving on a free, a new forward is a clear need. Names firm up once the manager is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Central midfield need", sub:"Framing row · no named target", club:"Market", pos:"CM", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:25, light:'o', trend:'flat',
-   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): midfield quality and depth flagged as a likely strengthening area once the head coach is appointed."},
+   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): midfield quality and depth flagged as a likely strengthening area once the head coach is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Full-back addition", sub:"Framing row · no named target", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:22, light:'o', trend:'flat',
-   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): full-back balance for the new system, paced to the incoming coach's preferences."},
-  {name:"Chibuike Nwaiwu", sub:"23 · CB/DM · Nigeria", club:"Trabzonspor", pos:"DF", report:"Fulham went furthest of three Premier League suitors (also Tottenham and Crystal Palace), agreeing personal terms on a four-year deal, but two improved bids have both been rejected with Trabzonspor holding firm on valuation.", src:"Soccernet NG / Hasan Tuncel", tier:3, fee:"€30-35m (asking price)", truth:55, prob:30, light:"y", trend:"flat", note:"A prolonged saga: Fulham had a 'preliminary agreement' in mid-July, but by 3 Aug both an initial and an improved offer (with bonuses) had been turned down. Move stalls unless Fulham raise their bid."}
+   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): full-back balance for the new system, paced to the incoming coach's preferences.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
+  {name:"Chibuike Nwaiwu", sub:"23 · CB/DM · Nigeria", club:"Trabzonspor", pos:"DF", report:"Fulham went furthest of three Premier League suitors (also Tottenham and Crystal Palace), agreeing personal terms on a four-year deal, but two improved bids have both been rejected with Trabzonspor holding firm on valuation.", src:"Soccernet NG / Hasan Tuncel", tier:3, fee:"€30-35m (asking price)", truth:55, prob:30, light:"y", trend:"flat", note:"A prolonged saga: Fulham had a 'preliminary agreement' in mid-July, but by 3 Aug both an initial and an improved offer (with bonuses) had been turned down. Move stalls unless Fulham raise their bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 
 const OUTGOING = [
   {name:"Raul Jimenez", sub:"ST · Mexico", club:"Free agent", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"FREE", truth:55, prob:60, light:'g', trend:'up',
-   note:"Out of contract at the end of June and set to leave (Everton among those linked). PRICING: a free departure; the priority becomes replacing his goals."},
+   note:"Out of contract at the end of June and set to leave (Everton among those linked). PRICING: a free departure; the priority becomes replacing his goals.", lastSeen:"2026-08-04T19:10:50Z", baseProb:60},
   {name:"Ageing spine & fringe", sub:"Squad refresh", club:"Various", pos:"SQD", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
-   note:"A refresh of older players is likely under a new coach, balanced against the cost rules."},
-  {name:"Kevin", sub:"23 · W · Brazil", club:"AS Roma", pos:"FW", report:"Roma's €50m bid has been rejected as too low, with Fulham demanding more for the Brazilian winger; an improved Roma offer is expected imminently.", src:"Globo Esporte (via TheHardTackle)", tier:2, fee:"€50m+ (bid rejected)", truth:65, prob:45, light:"y", trend:"flat", note:"Kevin cost Fulham €45m from Shakhtar Donetsk last summer but managed only 1,469 minutes across 31 games; Roma want him as a direct replacement winger."},
-  {name:"Sasa Lukic", sub:"29 · CM · Serbia", club:"Ipswich Town", pos:"MF", report:"Sky Sports News reports Ipswich are targeting a second raid on Fulham after signing Issa Diop, with Gary O'Neil keen to add the Serbian midfielder to strengthen his engine room.", src:"Sky Sports News", tier:2, fee:"Undisclosed (12 months left on contract)", truth:55, prob:25, light:"o", trend:"flat", note:"Early stage: report says no club-to-club contact has been established yet, but it is 'one to keep an eye on'."}
+   note:"A refresh of older players is likely under a new coach, balanced against the cost rules.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Kevin", sub:"23 · W · Brazil", club:"AS Roma", pos:"FW", report:"Roma's €50m bid has been rejected as too low, with Fulham demanding more for the Brazilian winger; an improved Roma offer is expected imminently.", src:"Globo Esporte (via TheHardTackle)", tier:2, fee:"€50m+ (bid rejected)", truth:65, prob:45, light:"y", trend:"flat", note:"Kevin cost Fulham €45m from Shakhtar Donetsk last summer but managed only 1,469 minutes across 31 games; Roma want him as a direct replacement winger.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Sasa Lukic", sub:"29 · CM · Serbia", club:"Ipswich Town", pos:"MF", report:"Sky Sports News reports Ipswich are targeting a second raid on Fulham after signing Issa Diop, with Gary O'Neil keen to add the Serbian midfielder to strengthen his engine room.", src:"Sky Sports News", tier:2, fee:"Undisclosed (12 months left on contract)", truth:55, prob:25, light:"o", trend:"flat", note:"Early stage: report says no club-to-club contact has been established yet, but it is 'one to keep an eye on'.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 
 const RISERS = [
@@ -1163,6 +1171,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1247,6 +1256,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1411,6 +1428,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

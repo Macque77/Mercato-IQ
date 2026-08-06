@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -860,13 +868,13 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Fábio Silva", sub:"Forward, exit push from Dortmund", club:"Borussia Dortmund", pos:"FW", report:"Betis named as one of five La Liga clubs (with Villarreal, Celta, Real Sociedad, Espanyol) monitoring Silva as he pushes to leave Dortmund and return to Spain.", src:"Fichajes.net (via Rudy Galletti)", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Silva is reportedly unsettled in Germany and keen on a return to Spanish football, with Betis just one of several suitors circling and nothing concrete advanced yet."},
-  {name:"Franjo Ivanović", sub:"Croatia international · ST", club:"Benfica", pos:"ST", report:"Ivanović has reportedly rejected Hull City to prioritise Betis, with Pellegrini using Champions League football as a recruiting pitch, but Benfica insist on an outright sale rather than a loan.", src:"Estadio Deportivo / OneFootball", tier:2, fee:"Permanent deal demanded by Benfica; fee TBD", truth:58, prob:35, light:"y", trend:"flat", note:"Troy Parrott is a named alternative if the Ivanović deal structure can't be resolved."}
+  {name:"Fábio Silva", sub:"Forward, exit push from Dortmund", club:"Borussia Dortmund", pos:"FW", report:"Betis named as one of five La Liga clubs (with Villarreal, Celta, Real Sociedad, Espanyol) monitoring Silva as he pushes to leave Dortmund and return to Spain.", src:"Fichajes.net (via Rudy Galletti)", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Silva is reportedly unsettled in Germany and keen on a return to Spanish football, with Betis just one of several suitors circling and nothing concrete advanced yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Franjo Ivanović", sub:"Croatia international · ST", club:"Benfica", pos:"ST", report:"Ivanović has reportedly rejected Hull City to prioritise Betis, with Pellegrini using Champions League football as a recruiting pitch, but Benfica insist on an outright sale rather than a loan.", src:"Estadio Deportivo / OneFootball", tier:2, fee:"Permanent deal demanded by Benfica; fee TBD", truth:58, prob:35, light:"y", trend:"flat", note:"Troy Parrott is a named alternative if the Ivanović deal structure can't be resolved.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const OUTGOING = [
-  {name:"Ez Abde", sub:"Winger wanted by Roma and Newcastle", club:"AS Roma", pos:"FW", report:"Roma have bid around €35m plus add-ons and Newcastle have also shown interest, but Betis are refusing to drop below Abde's €60m release clause.", src:"Fichajes.net", tier:2, fee:"€60m release clause (Betis will not negotiate below it)", truth:60, prob:20, light:"o", trend:"flat", note:"Betis sporting director Manu Fajardo is holding firm on the full release clause, and Newcastle's lack of Champions League football is also working against a deal, so a sale looks unlikely at current prices."},
-  {name:"Rodrigo Marina", sub:"Striker", club:"US Avellino (Serie B, interest)", pos:"ST", report:"Betis are negotiating Marina's sale as part of a wider forward-line reshuffle alongside the Ivanović pursuit.", src:"Estadio Deportivo", tier:2, fee:"Undisclosed", truth:55, prob:38, light:"y", trend:"flat", note:"No agreement reached as of early Aug; part of Betis freeing squad space for a marquee forward arrival."}
+  {name:"Ez Abde", sub:"Winger wanted by Roma and Newcastle", club:"AS Roma", pos:"FW", report:"Roma have bid around €35m plus add-ons and Newcastle have also shown interest, but Betis are refusing to drop below Abde's €60m release clause.", src:"Fichajes.net", tier:2, fee:"€60m release clause (Betis will not negotiate below it)", truth:60, prob:20, light:"o", trend:"flat", note:"Betis sporting director Manu Fajardo is holding firm on the full release clause, and Newcastle's lack of Champions League football is also working against a deal, so a sale looks unlikely at current prices.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Rodrigo Marina", sub:"Striker", club:"US Avellino (Serie B, interest)", pos:"ST", report:"Betis are negotiating Marina's sale as part of a wider forward-line reshuffle alongside the Ivanović pursuit.", src:"Estadio Deportivo", tier:2, fee:"Undisclosed", truth:55, prob:38, light:"y", trend:"flat", note:"No agreement reached as of early Aug; part of Betis freeing squad space for a marquee forward arrival.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38}
 ];
 
 const RISERS = [
@@ -955,6 +963,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1039,6 +1048,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1203,6 +1220,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

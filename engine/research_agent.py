@@ -78,9 +78,11 @@ SCHEMA_DOC = """
    "incoming":     [{"name","sub","club","pos","report","src","tier","fee","truth","prob","note","sourceUrl","sourceLabel"}],
    "outgoing":     [ ... same shape ... ],
    "confirmed_in": [{"name","sub","club","pos","fee","free","note","sourceUrl","sourceLabel"}],
-   "confirmed_out":[ ... same shape ... ]}
+   "confirmed_out":[ ... same shape ... ],
+   "dead":         [{"name","reason"}]}
 ]}
 - Only include a club if you found genuinely new, well-sourced news for it. Omit clubs with nothing new.
+- `dead` retires rumours that are over: put a player here (with a short `reason`) if a credible source says the deal is off/cold, OR the player has already transferred anywhere this season, OR the last credible mention is more than ~5 weeks old. Retiring is as valuable as adding -- do it whenever you can confirm a link is dead.
 - `truth` and `prob` are independent 0-100 integers (likelihood true / likelihood it happens).
 - `tier`: 1 = top reporter (Romano, Ornstein, Di Marzio, Romero, Falk...), 2 = reputable outlet (Sky, BBC, PA), 3 = aggregator/tabloid.
 - `sub` is a short descriptor, e.g. "23 · France · W" (age · nation · position).
@@ -127,6 +129,8 @@ X itself is often not directly searchable, so name-based search is how you catch
 - Rate `truth` (is the story true) and `prob` (will it happen) independently, 0-100. Confirmed deals are not rumours.
 - Editorial style: British English, no em dashes, journalistic and concise, add a skeptical `note` on weak sourcing.
 - Accuracy matters more than volume: this publishes to a live site. If you cannot verify a story, leave it out.
+- CHECK CONFIRMED TRANSFERS FIRST. Before reporting any rumour, establish whether the player has already completed a move this season -- if so the rumour is void: record the deal (confirmed_in/out) and, if an old rumour for them is still floating around, add them to `dead`. A rumour for an already-transferred player is always wrong.
+- KEEP IT CURRENT, NOT STALE. Only report a rumour as live if it is genuinely being talked about now. Base recency on the LATEST credible source mention. Actively retire the dead ones via `dead`: deals a source has called off, links no one has reported in 5+ weeks, and players who signed elsewhere. A page full of months-old dead links is worse than a short accurate one.
 
 Output: a SINGLE JSON object matching this schema and NOTHING else -- no prose, no markdown fences:
 {SCHEMA_DOC}

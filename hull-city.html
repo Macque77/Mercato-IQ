@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -891,22 +899,22 @@ const CONFIRMED_OUT = [
    by position need, clearly labelled; nothing is asserted as a sourced link. */
 const INCOMING = [
   {name:"PL-experienced rebuild", sub:"Framing · survival-ready profiles", club:"Market", pos:"ALL", report:"window framing", src:"Pattern-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',
-   note:"A Championship-built squad needs a broad upgrade. Acun's network typically drives a high volume of arrivals, including loans and frees. Specific names firm up as the window opens; this frames the task, not invented targets."},
+   note:"A Championship-built squad needs a broad upgrade. Acun's network typically drives a high volume of arrivals, including loans and frees. Specific names firm up as the window opens; this frames the task, not invented targets.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Goalscorer", sub:"Framing · position need, no named target", club:"Market", pos:"ST", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:40, light:'y', trend:'flat',
-   note:"Framing row, not a sourced rumour: goals are decisive in a survival fight, making a Premier League-level goalscorer the single clearest need in the rebuild. No named target is asserted; candidates will be rated as sourced links emerge."},
+   note:"Framing row, not a sourced rumour: goals are decisive in a survival fight, making a Premier League-level goalscorer the single clearest need in the rebuild. No named target is asserted; candidates will be rated as sourced links emerge.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Centre-back", sub:"Framing · position need, no named target", club:"Market", pos:"CB", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:35, light:'y', trend:'flat',
-   note:"Framing row, not a sourced rumour: solidity at the step up is a stated priority; a promoted defence typically concedes most without top-flight-ready reinforcement. No named target is asserted."},
+   note:"Framing row, not a sourced rumour: solidity at the step up is a stated priority; a promoted defence typically concedes most without top-flight-ready reinforcement. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Midfield control", sub:"Framing · position need, no named target", club:"Market", pos:"CM", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:32, light:'y', trend:'flat',
-   note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted."},
+   note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
   {name:"Goalkeeper / depth", sub:"Framing · position need, no named target", club:"Market", pos:"GK", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:28, light:'o', trend:'flat',
-   note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted."},
-  {name:"Konstantinos Tzolakis", sub:"22 · GK · Greece", club:"Olympiacos", pos:"GK", report:"Owner Acun Ilicali has publicly confirmed personal terms are agreed, but the club-to-club deal with Olympiacos is taking longer than hoped and has hit a late snag.", src:"Yorkshire/multiple + owner confirmation", tier:2, fee:"~€20m", truth:70, prob:55, light:"g", trend:"flat", note:"Would be a club-record fee for Hull; Ilicali has confirmed the pursuit publicly despite the delay."},
-  {name:"Sorba Thomas", sub:"26 · W · Wales", club:"Nantes (on loan from Huddersfield Town)", pos:"FW", report:"HullLive/BBC Sport name Thomas as Hull's 'number one' target; he was left out of Nantes' squad amid ongoing loan-recall talks, with Huddersfield holding his registration.", src:"HullLive / BBC Sport", tier:2, fee:"Undisclosed (loan-recall / fee to Huddersfield)", truth:60, prob:40, light:"y", trend:"flat", note:"Later reports describe 'optimism' over reaching agreement despite Nantes' resistance to cutting the loan short."}
+   note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
+  {name:"Konstantinos Tzolakis", sub:"22 · GK · Greece", club:"Olympiacos", pos:"GK", report:"Owner Acun Ilicali has publicly confirmed personal terms are agreed, but the club-to-club deal with Olympiacos is taking longer than hoped and has hit a late snag.", src:"Yorkshire/multiple + owner confirmation", tier:2, fee:"~€20m", truth:70, prob:55, light:"g", trend:"flat", note:"Would be a club-record fee for Hull; Ilicali has confirmed the pursuit publicly despite the delay.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
+  {name:"Sorba Thomas", sub:"26 · W · Wales", club:"Nantes (on loan from Huddersfield Town)", pos:"FW", report:"HullLive/BBC Sport name Thomas as Hull's 'number one' target; he was left out of Nantes' squad amid ongoing loan-recall talks, with Huddersfield holding his registration.", src:"HullLive / BBC Sport", tier:2, fee:"Undisclosed (loan-recall / fee to Huddersfield)", truth:60, prob:40, light:"y", trend:"flat", note:"Later reports describe 'optimism' over reaching agreement despite Nantes' resistance to cutting the loan short.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const OUTGOING = [
   {name:"Championship-level players", sub:"Framing · step-up churn", club:"Various", pos:"ALL", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
-   note:"Squad players who got Hull up but may not suit the Premier League moved on. PRICING: standard floors; a standout sold only at a premium."},
+   note:"Squad players who got Hull up but may not suit the Premier League moved on. PRICING: standard floors; a standout sold only at a premium.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const RISERS = [
@@ -1146,6 +1154,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1230,6 +1239,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1394,6 +1411,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

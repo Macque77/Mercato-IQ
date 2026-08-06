@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -856,15 +864,15 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Mark O'Mahony", sub:"FW", club:"Brighton (youth)", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Young attacker linked, early stage."},
-  {name:"Tyler Onyango", sub:"MF", club:"Free agent (ex-Everton)", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:50, prob:40, light:'y', trend:'flat', note:"Reported on trial with the club."},
-  {name:"Reece James", sub:"W", club:"Free agent (ex-Wednesday)", pos:"W", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:45, prob:35, light:'y', trend:'flat', note:"Trial return, fans keen on a re-signing."},
-  {name:"Davis Keillor-Dunn", sub:"FW", club:"Wrexham", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Wednesday reportedly want a deal for the forward."}
+  {name:"Mark O'Mahony", sub:"FW", club:"Brighton (youth)", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Young attacker linked, early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Tyler Onyango", sub:"MF", club:"Free agent (ex-Everton)", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:50, prob:40, light:'y', trend:'flat', note:"Reported on trial with the club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Reece James", sub:"W", club:"Free agent (ex-Wednesday)", pos:"W", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:45, prob:35, light:'y', trend:'flat', note:"Trial return, fans keen on a re-signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Davis Keillor-Dunn", sub:"FW", club:"Wrexham", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Wednesday reportedly want a deal for the forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 const OUTGOING = [
-  {name:"Ike Ugbo", sub:"FW", club:"Various EFL/European clubs", pos:"FW", report:"~4 days ago", src:"Darren Witcoop", tier:2, fee:"Undisclosed", truth:70, prob:65, light:'g', trend:'up', note:"Club reportedly willing to sell or loan before the 1 September deadline."},
-  {name:"Owen Bailey", sub:"MF", club:"Doncaster Rovers", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Reportedly missed out amid a complication over Callum Paterson."},
-  {name:"Tommi O'Reilly", sub:"MF", club:"Notts County", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reportedly lost the race for the Aston Villa target to Notts County."}
+  {name:"Ike Ugbo", sub:"FW", club:"Various EFL/European clubs", pos:"FW", report:"~4 days ago", src:"Darren Witcoop", tier:2, fee:"Undisclosed", truth:70, prob:65, light:'g', trend:'up', note:"Club reportedly willing to sell or loan before the 1 September deadline.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
+  {name:"Owen Bailey", sub:"MF", club:"Doncaster Rovers", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Reportedly missed out amid a complication over Callum Paterson.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Tommi O'Reilly", sub:"MF", club:"Notts County", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Reportedly lost the race for the Aston Villa target to Notts County.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -935,6 +943,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1019,6 +1028,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1183,6 +1200,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

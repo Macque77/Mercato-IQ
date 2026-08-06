@@ -71,9 +71,7 @@ const POSITIONS = [
   {p:"Attacking midfield", w:55, x:"Akliouche's expected exit to PSG opens a creative gap Monaco will need to fill before deadline day."}
 ];
 
-const WATCHLIST = [
-  {name:"Maghnes Akliouche", club:"AS Monaco", pos:"AM", dir:"out", age:"~4 days", tier:2, note:"PSG deal reportedly agreed in principle at €50m."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "gffn-monaco": {l:"Get French Football News · Monaco", u:"https://www.getfootballnewsfrance.com/tag/monaco/"},

@@ -59,6 +59,9 @@ const OUTGOING = [
   {name:"Fabio Troilo", sub:"Defender", club:"Fulham", pos:"CB", report:"Fulham are reported to be preparing an offer worth around €20m to sign the Parma defender.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Reported figure is high relative to Parma's usual sales; treat with some caution pending further corroboration.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Corrent", sub:"Midfielder/Defender", club:"Carrarese", pos:"CDM", report:"Carrarese are interested in taking Corrent on a Serie B move.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"flat", note:"Minor squad-depth departure rumour.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
+const DEAD = [
+  {name:"Zion Suzuki", club:"Multiple", pos:"GK", dir:"out", age:"~1 month", tier:2, note:"For sale at around €30m with several Premier League and Serie A suitors credited.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Giovanni Daffara and Franco Carboni arrive</b>: goalkeeper and full-back reinforcements as Parma rebuild after Bonny's exit."}
@@ -79,9 +82,7 @@ const POSITIONS = [
   {p:"Centre-forward", w:45, x:"Bonny's sale leaves a genuine gap up front; no confirmed replacement yet."}
 ];
 
-const WATCHLIST = [
-  {name:"Zion Suzuki", club:"Multiple", pos:"GK", dir:"out", age:"~1 month", tier:2, note:"For sale at around €30m with several Premier League and Serie A suitors credited."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   footballItalia: {l:"Football Italia · Parma", u:"https://football-italia.net/category/teams/parma/"},

@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -882,23 +890,25 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Malik Tillman", sub:"AM · USA", club:"Bayer Leverkusen", pos:"AM", report:"~5 wks ago", src:"TeamTalk / ESPN", tier:3, fee:"£25-35m", truth:55, prob:25, light:'o', trend:'flat',
-   note:"Bournemouth are credited with joining the race for the USMNT attacker, who would link up with Tyler Adams. OBSTACLE: a reported ~€35m clause for Bayern could shape the price; competition exists."},
   {name:"Young press-fit additions", sub:"Rose-system talent", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:55, prob:40, light:'y', trend:'up',
-   note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens."},
+   note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Avom & Hadj Moussa", sub:"Recycled aggregator links", club:"Aggregated feeds", pos:"-", report:"~60d+ / recycled", tier:4, fee:"n/a", truth:25, prob:8, light:'r', trend:'down', bullshit:true,
-   note:"Recycled aggregator repetition with no named original source behind it, resurfacing every few weeks without ever being freshly re-reported. Carried only to show it's been discounted, not as live business."},
-  {name:"Arthur Theate", sub:"Defensive reinforcement option", club:"Eintracht Frankfurt", pos:"DF", report:"Bournemouth continue to be linked with defensive cover as Marco Rose reshapes his backline ahead of the new season.", src:"The Athletic", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:""},
-  {name:"Tiago Gabriel", sub:"Centre-back shortlist name", club:"Lecce", pos:"DF", report:"Young Italian-based centre-back named among Bournemouth's defensive targets.", src:"Gianluca Di Marzio", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:""},
-  {name:"Jhon Lucumí", sub:"Colombian centre-back option", club:"Bologna", pos:"DF", report:"Linked as defensive cover option amid Bournemouth's search for centre-back depth.", src:"Nicolò Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:""}
+   note:"Recycled aggregator repetition with no named original source behind it, resurfacing every few weeks without ever being freshly re-reported. Carried only to show it's been discounted, not as live business.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8},
+  {name:"Arthur Theate", sub:"Defensive reinforcement option", club:"Eintracht Frankfurt", pos:"DF", report:"Bournemouth continue to be linked with defensive cover as Marco Rose reshapes his backline ahead of the new season.", src:"The Athletic", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Tiago Gabriel", sub:"Centre-back shortlist name", club:"Lecce", pos:"DF", report:"Young Italian-based centre-back named among Bournemouth's defensive targets.", src:"Gianluca Di Marzio", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Jhon Lucumí", sub:"Colombian centre-back option", club:"Bologna", pos:"DF", report:"Linked as defensive cover option amid Bournemouth's search for centre-back depth.", src:"Nicolò Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 const OUTGOING = [
   {name:"Prized young asset", sub:"The model in action", club:"Elite suitors", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40m+", truth:55, prob:50, light:'y', trend:'up',
-   note:"Bournemouth's best young players always attract bigger clubs (Huijsen to Real Madrid, Kerkez to Liverpool last year). PRICING: a holder's premium applies; a sale funds the next intake."},
+   note:"Bournemouth's best young players always attract bigger clubs (Huijsen to Real Madrid, Kerkez to Liverpool last year). PRICING: a holder's premium applies; a sale funds the next intake.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
   {name:"Fringe & squad trim", sub:"Reinvestment churn", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
-   note:"Standard churn to balance the squad for a European campaign and keep the cost ratio healthy."},
-  {name:"Rayan", sub:"Breakout Brazilian winger attracting suitors", club:"Multiple (Arsenal/Liverpool linked)", pos:"FW", report:"20-year-old right winger has scored 7 goals since a January move from Vasco da Gama; Bournemouth want £85m and a move this window is seen as unlikely.", src:"The Sun / OneFootball", tier:3, fee:"£85m", truth:45, prob:15, light:"o", trend:"flat", note:""},
-  {name:"Antoine Semenyo", sub:"New contract signed, release clause active from January", club:"Multiple PL clubs previously linked", pos:"FW", report:"Semenyo committed his future to Bournemouth with a new deal that includes a £65m release clause only active from January 2027; no active move this summer.", src:"BBC Sport", tier:1, fee:"£65m release clause (Jan 2027)", truth:60, prob:10, light:"r", trend:"flat", note:"Not a live summer target given new contract terms"}
+   note:"Standard churn to balance the squad for a European campaign and keep the cost ratio healthy.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Rayan", sub:"Breakout Brazilian winger attracting suitors", club:"Multiple (Arsenal/Liverpool linked)", pos:"FW", report:"20-year-old right winger has scored 7 goals since a January move from Vasco da Gama; Bournemouth want £85m and a move this window is seen as unlikely.", src:"The Sun / OneFootball", tier:3, fee:"£85m", truth:45, prob:15, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Antoine Semenyo", sub:"New contract signed, release clause active from January", club:"Multiple PL clubs previously linked", pos:"FW", report:"Semenyo committed his future to Bournemouth with a new deal that includes a £65m release clause only active from January 2027; no active move this summer.", src:"BBC Sport", tier:1, fee:"£65m release clause (Jan 2027)", truth:60, prob:10, light:"r", trend:"flat", note:"Not a live summer target given new contract terms", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
+];
+const DEAD = [
+  {name:"Malik Tillman", sub:"AM · USA", club:"Bayer Leverkusen", pos:"AM", report:"~5 wks ago", src:"TeamTalk / ESPN", tier:3, fee:"£25-35m", truth:55, prob:25, light:'o', trend:'flat',
+   note:"Bournemouth are credited with joining the race for the USMNT attacker, who would link up with Tyler Adams. OBSTACLE: a reported ~€35m clause for Bayern could shape the price; competition exists.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dir:"in", deadReason:"no fresh report in 5+ weeks", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [
@@ -930,8 +940,7 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Malik Tillman", club:"Bayer Leverkusen", pos:"AM", dir:"in", age:"~5 wks", tier:3, note:"(Also in main table.) USMNT attacker; Bournemouth in the race."},
-  {name:"Prized young assets", club:"Bournemouth", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"The best young players draw elite interest; a premium sale is likely, per the model."},
+  {name:"Prized young assets", club:"Bournemouth", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"The best young players draw elite interest; a premium sale is likely, per the model."}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -1134,6 +1143,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1218,6 +1228,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1382,6 +1400,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

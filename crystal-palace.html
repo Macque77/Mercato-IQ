@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -908,23 +916,23 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Manager appointment", sub:"Pierre Sage front-runner", club:"Lens", pos:"Head coach", report:"~5 days ago", src:"TeamTalk / BeFootball", tier:2, fee:"Compensation", truth:80, prob:45, light:'y', trend:'up',
-   note:"The gating decision of the summer. Iraola chose Liverpool; Lens coach Pierre Sage (ex-Lyon, Coupe de France winner, Ligue 1 runner-up) is the reported leading candidate, with talks advanced. Not yet confirmed; squad plans follow the appointment."},
+   note:"The gating decision of the summer. Iraola chose Liverpool; Lens coach Pierre Sage (ex-Lyon, Coupe de France winner, Ligue 1 runner-up) is the reported leading candidate, with talks advanced. Not yet confirmed; squad plans follow the appointment.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Europa-ready depth", sub:"Post-appointment additions", club:"Market", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:60, prob:35, light:'y', trend:'flat',
-   note:"Additions to handle a heavier European fixture load, paced to the new manager's preferences. Specific names firm up once the dugout is settled."},
+   note:"Additions to handle a heavier European fixture load, paced to the new manager's preferences. Specific names firm up once the dugout is settled.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Forward depth (framing)", sub:"Support for Mateta", club:"Market", pos:"ST/W", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:25, light:'o', trend:'flat',
-   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged forward depth (support for Mateta) as a likely strengthening area once the manager is appointed; no named target was in circulation at the 6 Jun data date."},
+   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged forward depth (support for Mateta) as a likely strengthening area once the manager is appointed; no named target was in circulation at the 6 Jun data date.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Midfield cover (framing)", sub:"Insurance against a Wharton bid", club:"Market", pos:"CM", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:22, light:'o', trend:'flat',
-   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged midfield cover as a strengthening area, insurance in case an elite bid lands for Wharton; no named target was in circulation at the 6 Jun data date."},
-  {name:"Ousmane Diao", sub:"Identified as top defensive target", club:"FC Midtjylland", pos:"DF", report:"Palace have identified the Senegalese centre-back as their leading option to help replace Marc Guehi and are set to hold talks now the season has finished.", src:"Sports Boom", tier:3, fee:"~€20m", truth:45, prob:30, light:"y", trend:"flat", note:"Competition reported from other Premier League and Bundesliga clubs"},
-  {name:"Igor Julio", sub:"Talks reported to be underway", club:"Brighton", pos:"DF", report:"The young Brighton centre-back has emerged as a target to help fill the defensive gap left by Guehi's departure, with talks said to be under way.", src:"BBC Sport", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Fee not yet reported; competition for defensive reinforcements ongoing"}
+   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged midfield cover as a strengthening area, insurance in case an elite bid lands for Wharton; no named target was in circulation at the 6 Jun data date.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
+  {name:"Ousmane Diao", sub:"Identified as top defensive target", club:"FC Midtjylland", pos:"DF", report:"Palace have identified the Senegalese centre-back as their leading option to help replace Marc Guehi and are set to hold talks now the season has finished.", src:"Sports Boom", tier:3, fee:"~€20m", truth:45, prob:30, light:"y", trend:"flat", note:"Competition reported from other Premier League and Bundesliga clubs", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Igor Julio", sub:"Talks reported to be underway", club:"Brighton", pos:"DF", report:"The young Brighton centre-back has emerged as a target to help fill the defensive gap left by Guehi's departure, with talks said to be under way.", src:"BBC Sport", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Fee not yet reported; competition for defensive reinforcements ongoing", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const OUTGOING = [
   {name:"Adam Wharton", sub:"21 · CM · England", club:"Elite interest", pos:"CM", report:"~1 wk ago", src:"The Athletic / aggregated", tier:2, fee:"£60m+", truth:65, prob:30, light:'y', trend:'up',
-   note:"A prized young midfielder with persistent big-club interest. PRICING: youth, England pedigree and a long deal mean a steep holder's premium; Palace need not sell given Europa revenue, lowering probability and lifting the fee."},
+   note:"A prized young midfielder with persistent big-club interest. PRICING: youth, England pedigree and a long deal mean a steep holder's premium; Palace need not sell given Europa revenue, lowering probability and lifting the fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Prized defenders", sub:"Richards / Lacroix watch", club:"Various", pos:"CB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£30m+ each", truth:55, prob:30, light:'y', trend:'flat',
-   note:"Central defenders who shone in the European run will draw interest. PRICING: holder's premium; only strong bids move them."},
-  {name:"Jean-Philippe Mateta", sub:"Contract offer on the table, no extension signed yet", club:"Interest previously from Juventus / Aston Villa / Chelsea", pos:"FW", report:"After a January transfer request and prior interest from Juventus, Aston Villa and Chelsea, Palace have instead offered Mateta a new long-term contract; as of mid-July no agreement had been signed, keeping his long-term future unresolved.", src:"Yahoo Sports / GOAL.com", tier:2, fee:"£35m (prior valuation)", truth:50, prob:20, light:"o", trend:"flat", note:"Club's current priority is a new deal, not a sale, but situation remains fluid"}
+   note:"Central defenders who shone in the European run will draw interest. PRICING: holder's premium; only strong bids move them.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Jean-Philippe Mateta", sub:"Contract offer on the table, no extension signed yet", club:"Interest previously from Juventus / Aston Villa / Chelsea", pos:"FW", report:"After a January transfer request and prior interest from Juventus, Aston Villa and Chelsea, Palace have instead offered Mateta a new long-term contract; as of mid-July no agreement had been signed, keeping his long-term future unresolved.", src:"Yahoo Sports / GOAL.com", tier:2, fee:"£35m (prior valuation)", truth:50, prob:20, light:"o", trend:"flat", note:"Club's current priority is a new deal, not a sale, but situation remains fluid", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const RISERS = [
@@ -1165,6 +1173,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1249,6 +1258,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1413,6 +1430,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

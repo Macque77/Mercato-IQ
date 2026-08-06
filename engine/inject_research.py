@@ -296,6 +296,37 @@ def upsert_rumours(content, arr_name, items):
     return (new_content, True) if ok else (content, False)
 
 
+def flag_dead(content, dead_items):
+    """Mark named live rumours dead:true (+ deadReason) so engine/retire_rumours.py
+    moves them to the DEAD section on its pass. This is rule 1 -- a source said the
+    deal is off. Matches by player name across INCOMING/OUTGOING/WATCHLIST."""
+    wanted = {}
+    for d in dead_items:
+        nm = re.sub(r'\s+', ' ', (d.get('name') or '')).strip().lower()
+        if nm:
+            wanted[nm] = d.get('reason') or 'source reported the deal off'
+    if not wanted:
+        return content, False
+    changed = False
+    for arr in ('INCOMING', 'OUTGOING', 'WATCHLIST'):
+        block = jou.find_array_block(content, arr)
+        if not block:
+            continue
+        _, _, inner = block
+        objs = [inner[s:e] for s, e in jou.split_top_level_objects(inner)]
+        arr_changed = False
+        for i, obj in enumerate(objs):
+            nm = re.sub(r'\s+', ' ', (jou.field_str(obj, 'name') or '')).strip().lower()
+            if nm in wanted and not re.search(r'\bdead\s*:\s*true\b', obj):
+                objs[i] = jou.append_fields(obj, ['dead:true', f'deadReason:"{esc(wanted[nm])}"'])
+                arr_changed = True
+        if arr_changed:
+            new_content, ok = jou.replace_array_objects(content, arr, objs)
+            if ok:
+                content, changed = new_content, True
+    return content, changed
+
+
 def process_club(slug, data):
     path = os.path.join(CLUBS_DIR, f'{slug}.data.js')
     if not os.path.exists(path):
@@ -307,6 +338,10 @@ def process_club(slug, data):
     for arr_key, arr_name in [('incoming', 'INCOMING'), ('outgoing', 'OUTGOING')]:
         content, arr_changed = upsert_rumours(content, arr_name, data.get(arr_key, []))
         changed = changed or arr_changed
+
+    # Rule 1: retire rumours a source has called off (retire_rumours.py moves them).
+    content, dead_changed = flag_dead(content, data.get('dead', []))
+    changed = changed or dead_changed
 
     for arr_key, arr_name, item_fn in [
         ('confirmed_in', 'CONFIRMED_IN', confirmed_item_js),

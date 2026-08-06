@@ -71,9 +71,9 @@ if [ "$FAILED" -eq 1 ]; then
   exit 2
 fi
 
-echo "=== [3/8] Stale-rumour scan (site-wide: catches rumours a NEW confirmed deal just killed, on this club or any other) ==="
+echo "=== [3/8] Retire dead/cold rumours site-wide (confirmed-elsewhere, >5 weeks stale, or source-marked dead -> DEAD section) ==="
 rm -f .stale_touched_slugs
-python3 engine/detect_stale_rumours.py
+python3 engine/retire_rumours.py
 if [ -f .stale_touched_slugs ]; then
   STALE_SLUGS=$(cat .stale_touched_slugs)
   echo "(stale-rumour cleanup touched: $(echo $STALE_SLUGS | tr '\n' ' '))"

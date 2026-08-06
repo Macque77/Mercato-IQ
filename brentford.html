@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -906,21 +914,25 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Value & successor targets", sub:"Data-model intake", club:"Market", pos:"-", report:"window framing", src:"Model-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',
-   note:"Brentford recruit quietly through their analytics network, lining up successors before stars leave. One or two difference-makers are the brief. Specific names firm up as the window opens; this frames the pattern."},
+   note:"Brentford recruit quietly through their analytics network, lining up successors before stars leave. One or two difference-makers are the brief. Specific names firm up as the window opens; this frames the pattern.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Forward depth options", sub:"Support Thiago & Schade", club:"Market", pos:"ST/W", report:"window framing", src:"Pattern-based", tier:3, fee:"Value fees", truth:55, prob:40, light:'y', trend:'flat',
-   note:"Framing row split out of the old dashboard's positions heat during migration: support for Igor Thiago (22 PL goals) and Kevin Schade is the clearest depth need. No specific player asserted; candidates surface via the data model once the window opens."},
+   note:"Framing row split out of the old dashboard's positions heat during migration: support for Igor Thiago (22 PL goals) and Kevin Schade is the clearest depth need. No specific player asserted; candidates surface via the data model once the window opens.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Midfield value options", sub:"Data-model profiles", club:"Market", pos:"CM", report:"window framing", src:"Pattern-based", tier:3, fee:"Value fees", truth:55, prob:35, light:'y', trend:'flat',
-   note:"Framing row split out of the old dashboard's positions heat during migration: midfield value profiles identified by the analytics network, typically from Scandinavia, the lower divisions or France. No specific player asserted."},
-  {name:"El Hadji Malick Diouf", sub:"Rejected opening bid for West Ham right-winger", club:"West Ham United", pos:"DF", report:"Brentford's £15-18m offer was rejected as 'almost insulting' by West Ham, who value the 21-year-old higher after paying £19m for him from Slavia Prague; West Ham say he's not for sale at any price.", src:"The 4th Official (via West Ham Zone/Yahoo)", tier:2, fee:"£15-18m (rejected bid)", truth:55, prob:15, light:"o", trend:"flat", note:""},
-  {name:"Pape Matar Sarr", sub:"Offered by Spurs amid midfield overcrowding", club:"Tottenham Hotspur", pos:"MF", report:"Tottenham offered the midfielder to Brentford as they manage squad depth following the arrivals of Sandro Tonali and Mateus Fernandes; Brentford were initially cool but could revisit before deadline day.", src:"Paul O'Keefe (X)", tier:2, fee:"~£50m valuation", truth:45, prob:12, light:"r", trend:"flat", note:"Bigger clubs including Bayern Munich, Real Madrid and PSG also linked"}
+   note:"Framing row split out of the old dashboard's positions heat during migration: midfield value profiles identified by the analytics network, typically from Scandinavia, the lower divisions or France. No specific player asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"El Hadji Malick Diouf", sub:"Rejected opening bid for West Ham right-winger", club:"West Ham United", pos:"DF", report:"Brentford's £15-18m offer was rejected as 'almost insulting' by West Ham, who value the 21-year-old higher after paying £19m for him from Slavia Prague; West Ham say he's not for sale at any price.", src:"The 4th Official (via West Ham Zone/Yahoo)", tier:2, fee:"£15-18m (rejected bid)", truth:55, prob:15, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Pape Matar Sarr", sub:"Offered by Spurs amid midfield overcrowding", club:"Tottenham Hotspur", pos:"MF", report:"Tottenham offered the midfielder to Brentford as they manage squad depth following the arrivals of Sandro Tonali and Mateus Fernandes; Brentford were initially cool but could revisit before deadline day.", src:"Paul O'Keefe (X)", tier:2, fee:"~£50m valuation", truth:45, prob:12, light:"r", trend:"flat", note:"Bigger clubs including Bayern Munich, Real Madrid and PSG also linked", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
 ];
 
 const OUTGOING = [
   {name:"Prized asset (premium sale)", sub:"Sold once successor is ready", club:"Bigger clubs", pos:"-", report:"window framing", src:"Pattern-based", tier:3, fee:"£40m+", truth:55, prob:45, light:'y', trend:'flat',
-   note:"A recurring summer feature: a developed star sold at a premium, but only with a successor lined up (the Toney, Mbeumo, Wissa pattern). PRICING: holder's premium; proceeds fund the next intake."},
+   note:"A recurring summer feature: a developed star sold at a premium, but only with a successor lined up (the Toney, Mbeumo, Wissa pattern). PRICING: holder's premium; proceeds fund the next intake.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Fringe & squad trim", sub:"Reinvestment churn", club:"Various", pos:"-", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
-   note:"Routine churn to keep the squad balanced and the cost ratio healthy."},
-  {name:"Igor Thiago", sub:"Record sale being monitored by Chelsea", club:"Chelsea", pos:"FW", report:"Chelsea are among clubs monitoring the Brazilian striker after his prolific breakout season; Brentford have set an £80m valuation that would surpass the £71m received for Bryan Mbeumo.", src:"ESPN Brasil (via Football Muse)", tier:2, fee:"£80m (valuation)", truth:45, prob:20, light:"o", trend:"flat", note:"Thiago signed an improved contract through 2031 in February, suggesting no rush to sell"}
+   note:"Routine churn to keep the squad balanced and the cost ratio healthy.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Igor Thiago", sub:"Record sale being monitored by Chelsea", club:"Chelsea", pos:"FW", report:"Chelsea are among clubs monitoring the Brazilian striker after his prolific breakout season; Brentford have set an £80m valuation that would surpass the £71m received for Bryan Mbeumo.", src:"ESPN Brasil (via Football Muse)", tier:2, fee:"£80m (valuation)", truth:45, prob:20, light:"o", trend:"flat", note:"Thiago signed an improved contract through 2031 in February, suggesting no rush to sell", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+];
+const DEAD = [
+  {name:"Avom", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed: recycled aggregator repetition does not refresh recency. No club, fee or fresh report held at migration; re-trace at the next refresh or drop.", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"},
+  {name:"Hadj Moussa", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed on recycled aggregator repetition. No club, fee or fresh report held at migration; re-trace at the next refresh or drop.", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [
@@ -952,9 +964,7 @@ const POSITIONS = [
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
   {name:"Data-model targets", club:"Market", pos:"-", dir:"in", age:"framing", tier:3, note:"Value recruits and successors via Brentford's analytics network."},
-  {name:"Prized asset", club:"Brentford", pos:"-", dir:"out", age:"framing", tier:3, note:"A premium sale is the expected summer feature, once a successor is ready."},
-  {name:"Avom", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed: recycled aggregator repetition does not refresh recency. No club, fee or fresh report held at migration; re-trace at the next refresh or drop."},
-  {name:"Hadj Moussa", club:"unverified (aggregator feed)", pos:"-", dir:"in", age:"~cooled", tier:4, note:"Carried from the old dashboard, which named him only in its recency note as a link that had decayed on recycled aggregator repetition. No club, fee or fresh report held at migration; re-trace at the next refresh or drop."},
+  {name:"Prized asset", club:"Brentford", pos:"-", dir:"out", age:"framing", tier:3, note:"A premium sale is the expected summer feature, once a successor is ready."}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -1155,6 +1165,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1239,6 +1250,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1403,6 +1422,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

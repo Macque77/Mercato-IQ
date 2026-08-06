@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -868,15 +876,15 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Cristian Romero", sub:"CB, Argentina, 28", club:"Tottenham Hotspur", pos:"CB", report:"Tottenham and Inter have reached a verbal agreement worth around €40m/£34.2m; De Zerbi has accepted the captain's wish to leave and Inter director Ausilio continues pushing the deal through, with Tuttosport calling it 'all but done'.", src:"Fabrizio Romano / ESPN Argentina (via GiveMeSport)", tier:1, fee:"~€40m", truth:85, prob:75, light:"g", trend:"flat", note:"Salary demands and the requirement Inter complete a prior sale are the last hurdles; Barcelona interest earlier fell through on cost."},
-  {name:"Curtis Jones", sub:"CM, England, 25", club:"Liverpool", pos:"CM", report:"Inter have gone back in for a third time with an improved €35m offer (after €25m and €32m rejections); Liverpool still want €40-50m and are holding firm despite Jones appearing to court the move on social media after a dressing-room armband dispute.", src:"Dicip Khetan, International Business Times", tier:2, fee:"€35m offered", truth:70, prob:45, light:"y", trend:"flat", note:"Jones has just one year left on his contract (to 2027), which gives Inter some leverage, but Liverpool are not budging yet."},
-  {name:"Moussa Diaby", sub:"RW, France, 26", club:"Al-Ittihad", pos:"RW", report:"Diaby has re-emerged as an option for the right flank as Inter search for a replacement for the departed Dumfries.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"One of several names being floated for the vacant right-side role."},
-  {name:"Michael Kayode", sub:"RB, Italy, 21", club:"Fiorentina", pos:"RB", report:"Inter have made an enquiry over the young Italian full-back, though the asking price remains a stumbling block.", src:"Il Sussidiario / Blasting News", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Early-stage interest rather than an active negotiation."}
+  {name:"Cristian Romero", sub:"CB, Argentina, 28", club:"Tottenham Hotspur", pos:"CB", report:"Tottenham and Inter have reached a verbal agreement worth around €40m/£34.2m; De Zerbi has accepted the captain's wish to leave and Inter director Ausilio continues pushing the deal through, with Tuttosport calling it 'all but done'.", src:"Fabrizio Romano / ESPN Argentina (via GiveMeSport)", tier:1, fee:"~€40m", truth:85, prob:75, light:"g", trend:"flat", note:"Salary demands and the requirement Inter complete a prior sale are the last hurdles; Barcelona interest earlier fell through on cost.", lastSeen:"2026-08-04T19:10:50Z", baseProb:75},
+  {name:"Curtis Jones", sub:"CM, England, 25", club:"Liverpool", pos:"CM", report:"Inter have gone back in for a third time with an improved €35m offer (after €25m and €32m rejections); Liverpool still want €40-50m and are holding firm despite Jones appearing to court the move on social media after a dressing-room armband dispute.", src:"Dicip Khetan, International Business Times", tier:2, fee:"€35m offered", truth:70, prob:45, light:"y", trend:"flat", note:"Jones has just one year left on his contract (to 2027), which gives Inter some leverage, but Liverpool are not budging yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Moussa Diaby", sub:"RW, France, 26", club:"Al-Ittihad", pos:"RW", report:"Diaby has re-emerged as an option for the right flank as Inter search for a replacement for the departed Dumfries.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"One of several names being floated for the vacant right-side role.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Michael Kayode", sub:"RB, Italy, 21", club:"Fiorentina", pos:"RB", report:"Inter have made an enquiry over the young Italian full-back, though the asking price remains a stumbling block.", src:"Il Sussidiario / Blasting News", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Early-stage interest rather than an active negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 
 const OUTGOING = [
-  {name:"Filip Stanković", sub:"21 · GK · Serbia", club:"Multiple (loan/permanent options discussed)", pos:"GK", report:"16 Apr 2026", src:"SempreInter", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Inter reportedly weighing offering the young goalkeeper as makeweight in a deal involving Andy Diouf-type midfield business; more squad management than an active sale process."},
-  {name:"Kristjan Asllani", sub:"CM, Albania, 23", club:"Unlisted", pos:"CM", report:"Considered outside Chivu's project this season, with offers reportedly on the table for the midfielder.", src:"Blasting News", tier:3, fee:"Undisclosed", truth:45, prob:40, light:"y", trend:"flat", note:"No concrete destination yet reported."}
+  {name:"Filip Stanković", sub:"21 · GK · Serbia", club:"Multiple (loan/permanent options discussed)", pos:"GK", report:"16 Apr 2026", src:"SempreInter", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Inter reportedly weighing offering the young goalkeeper as makeweight in a deal involving Andy Diouf-type midfield business; more squad management than an active sale process.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Kristjan Asllani", sub:"CM, Albania, 23", club:"Unlisted", pos:"CM", report:"Considered outside Chivu's project this season, with offers reportedly on the table for the midfielder.", src:"Blasting News", tier:3, fee:"Undisclosed", truth:45, prob:40, light:"y", trend:"flat", note:"No concrete destination yet reported.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
 
 const RISERS = [
@@ -974,6 +982,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1058,6 +1067,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1222,6 +1239,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

@@ -80,8 +80,7 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Serhou Guirassy", club:"RB Leipzig", pos:"ST", dir:"in", age:"~4 days", tier:2, note:"Romano and Moretto: Roma in advanced talks with Leipzig for forward."},
-  {name:"Santiago Castro", club:"Bologna", pos:"ST", dir:"in", age:"~1 day", tier:2, note:"Negotiations reported with a potential Dovbyk swap attached."}
+  {name:"Serhou Guirassy", club:"RB Leipzig", pos:"ST", dir:"in", age:"~4 days", tier:2, note:"Romano and Moretto: Roma in advanced talks with Leipzig for forward."}
 ];
 
 const HUB = {

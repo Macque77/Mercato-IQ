@@ -40,11 +40,12 @@ const CONFIRMED_IN = [
 
 const CONFIRMED_OUT = [];
 
-const INCOMING = [
-  {name:"Elias Egouli", sub:"Centre-back", club:"Fortuna Düsseldorf", pos:"CB", report:"A move via an exit clause looked to be agreed, with reports the towering 23-year-old defender would join newly-promoted Elversberg, but the transfer was subsequently reported to have collapsed.", src:"BILD", tier:3, fee:"Reported exit clause", truth:60, prob:15, light:"o", trend:"flat", note:"Transfermarkt.de and BILD first reported the move as being completed via an exit clause; later coverage said the transfer had fallen through and Egouli suffered an injury afterwards.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
-];
+const INCOMING = [];
 
 const OUTGOING = [];
+const DEAD = [
+  {name:"Elias Egouli", sub:"Centre-back", club:"Fortuna Düsseldorf", pos:"CB", report:"A move via an exit clause looked to be agreed, with reports the towering 23-year-old defender would join newly-promoted Elversberg, but the transfer was subsequently reported to have collapsed.", src:"BILD", tier:3, fee:"Reported exit clause", truth:60, prob:15, light:"o", trend:"flat", note:"Transfermarkt.de and BILD first reported the move as being completed via an exit clause; later coverage said the transfer had fallen through and Egouli suffered an injury afterwards.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dir:"in", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Ambitious summer rebuild</b>: five confirmed arrivals, including a €6m academy prospect from Dortmund, as Elversberg prepare for a maiden Bundesliga campaign."}

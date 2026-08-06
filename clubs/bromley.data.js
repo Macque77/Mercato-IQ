@@ -32,10 +32,11 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [
-  {name:"Tiernan Brooks", sub:"GK", club:"Gateshead", pos:"GK", report:"~9 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:30, prob:15, light:'o', trend:'flat', note:"Named among four monitoring clubs in a stale article, unconfirmed whether still live.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
-];
+const INCOMING = [];
 const OUTGOING = [];
+const DEAD = [
+  {name:"Tiernan Brooks", sub:"GK", club:"Gateshead", pos:"GK", report:"~9 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:30, prob:15, light:'o', trend:'flat', note:"Named among four monitoring clubs in a stale article, unconfirmed whether still live.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dir:"in", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

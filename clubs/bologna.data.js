@@ -74,7 +74,6 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Santiago Castro", club:"AS Roma", pos:"ST", dir:"out", age:"~1 day", tier:2, note:"Negotiations reported with a potential Dovbyk swap attached."},
   {name:"Jhon Lucumi", club:"Multiple", pos:"CB", dir:"out", age:"~3 weeks", tier:2, note:"Club has promised an exit for the right offer; Besiktas bid already rejected."}
 ];
 

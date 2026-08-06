@@ -52,6 +52,9 @@ const OUTGOING = [
   {name:"Kévin Danois", sub:"26 · CB · France", club:"Multiple (unspecified)", pos:"CB", report:"Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:34, light:"y", trend:"flat", note:"New Sporting Director David Wantier is reported to be targeting over €30m combined from sales of Danois and Sinayoko to fund the rebuild under Will Still.", lastSeen:"2026-08-04T19:10:50Z", baseProb:34},
   {name:"Kevin Danois", sub:"West Ham and Newcastle monitoring, Hull City bid rejected", club:"West Ham United / Newcastle United (interest)", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old midfielder closely after Hull City's ~€15m offer was seen as below Auxerre's €20m valuation.", src:"Les Transferts", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Danois is contracted through June 2029, giving Auxerre strong leverage; a departure this window looks unlikely unless valuation is met.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
+const DEAD = [
+  {name:"Mathys Detourbet", club:"AJ Auxerre", pos:"W", dir:"out", age:"~7mo", tier:2, note:"Manchester City have been credited with long-standing interest in the teenage winger.", deadReason:"completed move to as-monaco, manchester-city", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [];
 
@@ -67,9 +70,7 @@ const IGNORE = [];
 
 const POSITIONS = [];
 
-const WATCHLIST = [
-  {name:"Mathys Detourbet", club:"AJ Auxerre", pos:"W", dir:"out", age:"~7mo", tier:2, note:"Manchester City have been credited with long-standing interest in the teenage winger."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "gffn-auxerre": {l:"Get French Football News · Auxerre", u:"https://www.getfootballnewsfrance.com/tag/auxerre/"},

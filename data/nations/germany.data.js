@@ -6,7 +6,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 35
+  stories_count: 33
 };
 
 const TOP_STORIES = [  {
@@ -67,7 +67,7 @@ const TOP_STORIES = [  {
   },
   {
     name: "Fisnik Asllani",prob: 65, truth: 70, bullshit: false,
-    club_origin: "tsg-hoffenheim", club_display_name: "TSG Hoffenheim", direction: "out",
+    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "in",
     from: "TSG Hoffenheim", to: "RB Leipzig",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Below €35m valuation via contract clause", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 34, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
+const BY_LEAGUE = {"Bundesliga": 32, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 34}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 32}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:14:19.909062Z",
+  updated: "2026-08-06T10:24:37.227068Z",
   label: "Nation aggregation"
 };

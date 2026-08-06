@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -865,18 +873,20 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Sergi Dominguez", sub:"23 · CB · Spain", club:"Dinamo Zagreb", pos:"CB", report:"12 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"up", note:"Advanced negotiations reported for the centre-back as Lazio look to rebuild their defensive options after Gila's exit."},
-  {name:"Santiago Gimenez", sub:"ST, Mexico, 25", club:"AC Milan", pos:"ST", report:"Gattuso has identified the Milan striker as an ideal attacking option; Lazio and FC Porto have both made enquiries, though Milan remain uncertain about sanctioning a loan.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:70, prob:30, light:"y", trend:"flat", note:"Competing interest from Porto complicates Lazio's pursuit."},
-  {name:"Yunus Musah", sub:"CM, USA, 22", club:"AC Milan", pos:"CM", report:"Lazio have submitted a fresh proposal for the Milan midfielder, structured as a loan with a purchase option worth around €20m.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Part of a wider Lazio push to sign multiple Milan-linked players this window."},
-  {name:"Armando Broja", sub:"ST, Albania, 24", club:"Burnley", pos:"ST", report:"Lazio can secure the Albanian striker on loan with an option to buy as they look to bolster their forward line under Gattuso.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Talks described as advanced enough that a deal is considered gettable."},
-  {name:"Nikola Ivanovic", sub:"CB, Serbia, 22", club:"Benfica", pos:"CB", report:"Lazio want the young centre-back on loan after he has struggled for playing time at Benfica.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Depth option amid Lazio's defensive rebuild following Gila's exit."},
-  {name:"John Kennedy", sub:"ST, Brazil, 24", club:"Fluminense", pos:"ST", report:"Lazio are pursuing the Brazilian centre-forward, who is said to be open to a move to Rome.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:20, light:"o", trend:"flat", note:"One of several forward options being explored under Gattuso."}
+  {name:"Sergi Dominguez", sub:"23 · CB · Spain", club:"Dinamo Zagreb", pos:"CB", report:"12 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"up", note:"Advanced negotiations reported for the centre-back as Lazio look to rebuild their defensive options after Gila's exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Santiago Gimenez", sub:"ST, Mexico, 25", club:"AC Milan", pos:"ST", report:"Gattuso has identified the Milan striker as an ideal attacking option; Lazio and FC Porto have both made enquiries, though Milan remain uncertain about sanctioning a loan.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:70, prob:30, light:"y", trend:"flat", note:"Competing interest from Porto complicates Lazio's pursuit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Yunus Musah", sub:"CM, USA, 22", club:"AC Milan", pos:"CM", report:"Lazio have submitted a fresh proposal for the Milan midfielder, structured as a loan with a purchase option worth around €20m.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Part of a wider Lazio push to sign multiple Milan-linked players this window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Armando Broja", sub:"ST, Albania, 24", club:"Burnley", pos:"ST", report:"Lazio can secure the Albanian striker on loan with an option to buy as they look to bolster their forward line under Gattuso.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Talks described as advanced enough that a deal is considered gettable.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Nikola Ivanovic", sub:"CB, Serbia, 22", club:"Benfica", pos:"CB", report:"Lazio want the young centre-back on loan after he has struggled for playing time at Benfica.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Depth option amid Lazio's defensive rebuild following Gila's exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"John Kennedy", sub:"ST, Brazil, 24", club:"Fluminense", pos:"ST", report:"Lazio are pursuing the Brazilian centre-forward, who is said to be open to a move to Rome.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:20, light:"o", trend:"flat", note:"One of several forward options being explored under Gattuso.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
 
 const OUTGOING = [
-  {name:"Alessio Romagnoli", sub:"CB, Italy, 31", club:"Al-Sadd", pos:"CB", report:"Negotiations with Al-Sadd have stalled, with Atalanta now reportedly ready to pounce if the Qatari move collapses, even as Romagnoli continues training with Lazio.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"flat", note:"Player's camp says they are not currently planning for a Lazio future, suggesting an exit remains the likelier outcome."},
-  {name:"Mattia Zaccagni", sub:"LW, Italy, 30", club:"Marseille", pos:"LW", report:"Marseille have been monitoring the Italy international, with reports of a potential offer in the region of €15m for the winger, who is contracted to Lazio until 2029.", src:"Yahoo Sports", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Lazio said to be willing to listen to offers rather than actively pushing for a sale."},
-  {name:"Matteo Cancellieri", sub:"RW, Italy, 23", club:"Unlisted (4 clubs interested)", pos:"RW", report:"At least four clubs are said to be interested in the winger; Lazio are not pushing for a sale but are open to assessing proposals, even with Isaksen's injury reducing squad depth.", src:"Quotidiano Sportivo", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"No single frontrunner club has emerged yet."}
+  {name:"Mattia Zaccagni", sub:"LW, Italy, 30", club:"Marseille", pos:"LW", report:"Marseille have been monitoring the Italy international, with reports of a potential offer in the region of €15m for the winger, who is contracted to Lazio until 2029.", src:"Yahoo Sports", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Lazio said to be willing to listen to offers rather than actively pushing for a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Matteo Cancellieri", sub:"RW, Italy, 23", club:"Unlisted (4 clubs interested)", pos:"RW", report:"At least four clubs are said to be interested in the winger; Lazio are not pushing for a sale but are open to assessing proposals, even with Isaksen's injury reducing squad depth.", src:"Quotidiano Sportivo", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"No single frontrunner club has emerged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+];
+const DEAD = [
+  {name:"Alessio Romagnoli", sub:"CB, Italy, 31", club:"Al-Sadd", pos:"CB", report:"Negotiations with Al-Sadd have stalled, with Atalanta now reportedly ready to pounce if the Qatari move collapses, even as Romagnoli continues training with Lazio.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"flat", note:"Player's camp says they are not currently planning for a Lazio future, suggesting an exit remains the likelier outcome.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [
@@ -976,6 +986,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1060,6 +1071,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1224,6 +1243,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

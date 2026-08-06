@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -862,14 +870,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Gonçalo Inácio", sub:"23 · CB · Portugal", club:"Sporting CP", pos:"CB", report:"2 Aug 2026", src:"RMC Sport", tier:2, fee:"€35m", truth:58, prob:40, light:"y", trend:"flat", note:"RMC reports Lille monitoring the Portuguese defender from Sporting."},
-  {name:"Milan Skriniar", sub:"31 · CB · Slovakia", club:"Paris Saint-Germain", pos:"CB", report:"30 Jul 2026", src:"L'Équipe", tier:2, fee:"€30m", truth:50, prob:30, light:"y", trend:"flat", note:"L'Équipe reports Lille interest in the PSG centre-back; PSG are not eager to sell."},
-  {name:"Başar Önal", sub:"22 · CB · Turkey", club:"NEC Nijmegen", pos:"CB", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"€9.5m + add-ons", truth:60, prob:48, light:"y", trend:"up", note:"Lille reported to be nearing a deal for the young Turkish defender."}
+  {name:"Gonçalo Inácio", sub:"23 · CB · Portugal", club:"Sporting CP", pos:"CB", report:"2 Aug 2026", src:"RMC Sport", tier:2, fee:"€35m", truth:58, prob:40, light:"y", trend:"flat", note:"RMC reports Lille monitoring the Portuguese defender from Sporting.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Milan Skriniar", sub:"31 · CB · Slovakia", club:"Paris Saint-Germain", pos:"CB", report:"30 Jul 2026", src:"L'Équipe", tier:2, fee:"€30m", truth:50, prob:30, light:"y", trend:"flat", note:"L'Équipe reports Lille interest in the PSG centre-back; PSG are not eager to sell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Başar Önal", sub:"22 · CB · Turkey", club:"NEC Nijmegen", pos:"CB", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"€9.5m + add-ons", truth:60, prob:48, light:"y", trend:"up", note:"Lille reported to be nearing a deal for the young Turkish defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:48}
 ];
 
 const OUTGOING = [
-  {name:"Ayyoub Bouaddi", sub:"18 · CM · France", club:"Multiple (linked)", pos:"CM", report:"28 Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:20, light:"o", trend:"flat", note:"Manchester City, Manchester United, Arsenal and Bayern Munich are all reported to be monitoring the highly-rated teenager, though no bid has landed yet."},
-  {name:"Alexsandro", sub:"26 · CB · Brazil", club:"Ipswich Town (interest dismissed)", pos:"CB", report:"3 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:12, light:"r", trend:"down", note:"Ipswich Town's interest has been dismissed by club officials, who want to keep the defender."}
+  {name:"Ayyoub Bouaddi", sub:"18 · CM · France", club:"Multiple (linked)", pos:"CM", report:"28 Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:20, light:"o", trend:"flat", note:"Manchester City, Manchester United, Arsenal and Bayern Munich are all reported to be monitoring the highly-rated teenager, though no bid has landed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Alexsandro", sub:"26 · CB · Brazil", club:"Ipswich Town (interest dismissed)", pos:"CB", report:"3 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:12, light:"r", trend:"down", note:"Ipswich Town's interest has been dismissed by club officials, who want to keep the defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
 ];
 
 const RISERS = [
@@ -956,6 +964,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1040,6 +1049,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1204,6 +1221,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

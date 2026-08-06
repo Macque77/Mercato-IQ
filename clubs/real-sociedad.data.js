@@ -46,6 +46,9 @@ const OUTGOING = [
   {name:"Jon Martin", sub:"CB, Spain, 20", club:"Real Madrid / Barcelona", pos:"CB", report:"Real Madrid and Barcelona have been informed Jon Martin's release clause stands at 50m euros, with Deco said to have met the defender's agent in April, though the player has publicly ruled out leaving.", src:"Diario AS", tier:2, fee:"€50m release clause", truth:65, prob:20, light:"o", trend:"flat", note:"Martin: \"My plan is what I've already said: to focus on Real Sociedad.\" Spain U21 international, key part of the club's Copa del Rey win.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Mikel Oyarzabal", sub:"Forward, Spain, captain", club:"Barcelona", pos:"ST", report:"Barcelona speculation resurfaced around the Real Sociedad captain, who publicly shut it down saying he is 'where he wants to be'.", src:"Football Espana", tier:2, fee:"", truth:55, prob:10, light:"r", trend:"flat", note:"Oyarzabal also stonewalled earlier Barcelona attempts (reported 1 May 2026) to sign three Real Sociedad players at once.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
 ];
+const DEAD = [
+  {name:"Arsen Zakharyan", club:"Real Sociedad", pos:"AM", dir:"out", age:"~6 weeks", tier:3, note:"Exit being explored but no concrete suitor confirmed.", deadReason:"no fresh report in 6+ weeks", deadAt:"2026-08-06T10:24:32Z"}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Copa del Rey triumph</b>: beating Athletic Bilbao then Atlético Madrid en route to the title secures a European return via the cup route."}
@@ -63,9 +66,7 @@ const POSITIONS = [
   {p:"Attacking midfield", w:35, x:"Zakharyan's uncertain future and Kamada links point to a possible reshuffle in the No.10 area."}
 ];
 
-const WATCHLIST = [
-  {name:"Arsen Zakharyan", club:"Real Sociedad", pos:"AM", dir:"out", age:"~6 weeks", tier:3, note:"Exit being explored but no concrete suitor confirmed."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "aljazeera-copadelrey": {l:"Al Jazeera - Real Sociedad win Copa del Rey", u:"https://www.aljazeera.com/sports/2026/4/19/real-sociedad-upset-atletico-madrid-to-win-fourth-copa-del-rey-title"},

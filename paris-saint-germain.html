@@ -811,6 +811,14 @@
       <!-- Populated by data -->
     </div>
   </section>
+
+  <section class="section" id="dead-section">
+    <h3 class="section-title">Dead &amp; Cold Rumours <span class="section-count" id="dead-count"></span></h3>
+    <p class="sec-sub" style="color:var(--text-muted);font-size:13px;margin:-10px 0 20px">Links that are over: a source called the deal off, nothing fresh in 5+ weeks, or the player has signed elsewhere. Kept for the record, not shown as live.</p>
+    <div class="confirmed-list" id="dead-list">
+      <!-- Populated by data -->
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -866,16 +874,16 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Mika Godts", sub:"20 · W · Belgium", club:"Ajax", pos:"W", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Romano says the move is 'progressing well' with a player agreement reportedly reached, though no club-to-club fee is confirmed."},
-  {name:"Zion Suzuki", sub:"PSG accelerate move for Japan No.1", club:"Parma", pos:"GK", report:"PSG have opened talks with Parma over a swift deal for Japan international goalkeeper Zion Suzuki with an opening bid of €33m plus bonuses.", src:"Fabrizio Romano", tier:1, fee:"€33m + bonuses", truth:78, prob:68, light:"g", trend:"flat", note:"PSG want competition for Chevalier/Safonov; Juventus also interested"},
-  {name:"Lucas Digne", sub:"Release clause return to Paris", club:"Aston Villa", pos:"LB", report:"PSG are set to activate Digne's €10m release clause, with the left-back said to have already agreed personal terms on a three-year deal.", src:"Fabrizio Romano", tier:1, fee:"€10m (release clause)", truth:85, prob:80, light:"g", trend:"flat", note:"Would provide cover for Nuno Mendes; Digne previously at PSG 2013-15"},
-  {name:"Ferran Torres", sub:"Agreement in principle as Barcola cover", club:"Barcelona", pos:"ST", report:"Torres has reportedly reached an agreement in principle to join PSG as the club lines up forward reinforcements with only a year left on his Barcelona deal.", src:"Gianluca Di Marzio", tier:1, fee:"Undisclosed", truth:70, prob:62, light:"g", trend:"flat", note:"One of several forward targets alongside Monaco's Akliouche and Leipzig's Diomandé"},
-  {name:"Guéla Doué", sub:"Eyed as long-term Hakimi cover", club:"RC Strasbourg", pos:"RB", report:"PSG have registered interest in Strasbourg's Ivorian full-back as a potential long-term replacement option for Achraf Hakimi.", src:"L'Équipe", tier:2, fee:"€20m (valuation)", truth:52, prob:35, light:"y", trend:"flat", note:"No significant progress yet; Doué under contract at Strasbourg until 2029"}
+  {name:"Mika Godts", sub:"20 · W · Belgium", club:"Ajax", pos:"W", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Romano says the move is 'progressing well' with a player agreement reportedly reached, though no club-to-club fee is confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Zion Suzuki", sub:"PSG accelerate move for Japan No.1", club:"Parma", pos:"GK", report:"PSG have opened talks with Parma over a swift deal for Japan international goalkeeper Zion Suzuki with an opening bid of €33m plus bonuses.", src:"Fabrizio Romano", tier:1, fee:"€33m + bonuses", truth:78, prob:68, light:"g", trend:"flat", note:"PSG want competition for Chevalier/Safonov; Juventus also interested", lastSeen:"2026-08-04T19:10:50Z", baseProb:68},
+  {name:"Lucas Digne", sub:"Release clause return to Paris", club:"Aston Villa", pos:"LB", report:"PSG are set to activate Digne's €10m release clause, with the left-back said to have already agreed personal terms on a three-year deal.", src:"Fabrizio Romano", tier:1, fee:"€10m (release clause)", truth:85, prob:80, light:"g", trend:"flat", note:"Would provide cover for Nuno Mendes; Digne previously at PSG 2013-15", lastSeen:"2026-08-04T19:10:50Z", baseProb:80},
+  {name:"Ferran Torres", sub:"Agreement in principle as Barcola cover", club:"Barcelona", pos:"ST", report:"Torres has reportedly reached an agreement in principle to join PSG as the club lines up forward reinforcements with only a year left on his Barcelona deal.", src:"Gianluca Di Marzio", tier:1, fee:"Undisclosed", truth:70, prob:62, light:"g", trend:"flat", note:"One of several forward targets alongside Monaco's Akliouche and Leipzig's Diomandé", lastSeen:"2026-08-04T19:10:50Z", baseProb:62},
+  {name:"Guéla Doué", sub:"Eyed as long-term Hakimi cover", club:"RC Strasbourg", pos:"RB", report:"PSG have registered interest in Strasbourg's Ivorian full-back as a potential long-term replacement option for Achraf Hakimi.", src:"L'Équipe", tier:2, fee:"€20m (valuation)", truth:52, prob:35, light:"y", trend:"flat", note:"No significant progress yet; Doué under contract at Strasbourg until 2029", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const OUTGOING = [
-  {name:"Bradley Barcola", sub:"23 · W · France", club:"Liverpool", pos:"W", report:"27 Jul – 2 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Liverpool ~€100m offer vs PSG demanding €150-170m", truth:58, prob:30, light:"y", trend:"flat", note:"Personal terms reportedly agreed in principle, but Romano says he doesn't expect an imminent move given the clubs remain far apart on fee."},
-  {name:"Ibrahim Mbaye", sub:"Premier League and Bundesliga circling academy winger", club:"Manchester City (shortlisted)", pos:"RW", report:"PSG's 18-year-old academy forward Mbaye has been shortlisted by Manchester City, with Aston Villa, Tottenham and Borussia Dortmund also interested.", src:"Get French Football News", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Highly rated prospect with growing international experience"}
+  {name:"Bradley Barcola", sub:"23 · W · France", club:"Liverpool", pos:"W", report:"27 Jul – 2 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Liverpool ~€100m offer vs PSG demanding €150-170m", truth:58, prob:30, light:"y", trend:"flat", note:"Personal terms reportedly agreed in principle, but Romano says he doesn't expect an imminent move given the clubs remain far apart on fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Ibrahim Mbaye", sub:"Premier League and Bundesliga circling academy winger", club:"Manchester City (shortlisted)", pos:"RW", report:"PSG's 18-year-old academy forward Mbaye has been shortlisted by Manchester City, with Aston Villa, Tottenham and Borussia Dortmund also interested.", src:"Get French Football News", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Highly rated prospect with growing international experience", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 
 const RISERS = [
@@ -896,9 +904,7 @@ const POSITIONS = [
   {p:"Left winger", w:70, x:"Market monitoring for potential Vinicius replacement as Ornstein reports Real Madrid winger targeted by Saudi Arabia."}
 ];
 
-const WATCHLIST = [
-  {name:"João Neves", club:"PSG", pos:"CM", dir:"in", age:"~19 days", tier:1, note:"OFFICIAL - Portuguese midfielder confirmed from Benfica."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "gnews-jooneves": {l:"Related news search: João Neves", u:"https://news.google.com/search?q=Paris%20Saint-Germain%20Jo%C3%A3o%20Neves%20transfer&hl=en-GB&gl=GB"},
@@ -978,6 +984,7 @@ const SECTION_NAV_DEFS = [
   { key: 'incoming', id: 'incoming-section', label: 'Incoming' },
   { key: 'outgoing', id: 'outgoing-section', label: 'Outgoing' },
   { key: 'watchlist', id: 'watchlist-section', label: 'Watchlist' },
+  { key: 'dead', id: 'dead-section', label: 'Dead' },
 ];
 
 (function(){
@@ -1062,6 +1069,14 @@ const SECTION_NAV_DEFS = [
     const items = (typeof WATCHLIST !== 'undefined') ? WATCHLIST : [];
     sectionCounts.watchlist = items.length;
     wlGrid.innerHTML = items.length ? items.map(t => renderWatchlistCard(t, _WLM, _HUB)).join('') : '<div class="empty">Nothing on the long-tail watchlist right now</div>';
+  }
+
+  // Render dead / cold rumours -- retired links kept for the record
+  const deadList = document.getElementById('dead-list');
+  if(deadList) {
+    const items = (typeof DEAD !== 'undefined') ? DEAD : [];
+    sectionCounts.dead = items.length;
+    deadList.innerHTML = items.length ? items.map(t => renderDeadCard(t, _LM, _HUB)).join('') : '<div class="empty">No dead or cold rumours on record</div>';
   }
 
   // Section count badges in each heading (e.g. "Confirmed Transfers 4")
@@ -1226,6 +1241,27 @@ function renderConfirmedCard(t, dir, linkMap, hub) {
           <div class="cr-label">Status</div>
           <div class="cr-value">${t.statusTxt || 'DONE'}</div>
         </div>
+      </div>
+    </div>
+    <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>
+    ${acc.html}
+  </div>`;
+}
+
+function renderDeadCard(t, linkMap, hub) {
+  const dir = t.dir === 'out' ? 'out' : 'in';
+  const dirLabel = dir === 'out' ? 'OUT' : 'IN';
+  const acc = sourcesAccordion(t.name, linkMap, hub);
+  const reason = t.deadReason || 'No longer active';
+  const when = t.deadAt ? (' &middot; ' + String(t.deadAt).slice(0, 10)) : '';
+  const note = reason + when;
+  return `<div class="transfer-card confirmed-row" id="${acc.id}" data-name-slug="${slugifyName(t.name)}" style="opacity:.62">
+    <div class="confirmed-row-main">
+      <div class="cr-dir ${dir}">${dirLabel}</div>
+      <div class="cr-main">
+        <span class="cr-name" style="text-decoration:line-through;text-decoration-thickness:1px">${t.name}</span>
+        <span class="cr-dest">${t.club ? t.club : ''}${t.pos ? ' &middot; ' + t.pos : ''}</span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--text-muted);border:1px solid var(--text-muted);border-radius:4px;padding:1px 5px;margin-left:6px">DEAD</span>
       </div>
     </div>
     <div class="cr-note-preview" title="${note.replace(/"/g, '&quot;')}">${note}</div>

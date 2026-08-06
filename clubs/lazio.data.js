@@ -53,9 +53,11 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Alessio Romagnoli", sub:"CB, Italy, 31", club:"Al-Sadd", pos:"CB", report:"Negotiations with Al-Sadd have stalled, with Atalanta now reportedly ready to pounce if the Qatari move collapses, even as Romagnoli continues training with Lazio.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"flat", note:"Player's camp says they are not currently planning for a Lazio future, suggesting an exit remains the likelier outcome.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Mattia Zaccagni", sub:"LW, Italy, 30", club:"Marseille", pos:"LW", report:"Marseille have been monitoring the Italy international, with reports of a potential offer in the region of €15m for the winger, who is contracted to Lazio until 2029.", src:"Yahoo Sports", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Lazio said to be willing to listen to offers rather than actively pushing for a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Matteo Cancellieri", sub:"RW, Italy, 23", club:"Unlisted (4 clubs interested)", pos:"RW", report:"At least four clubs are said to be interested in the winger; Lazio are not pushing for a sale but are open to assessing proposals, even with Isaksen's injury reducing squad depth.", src:"Quotidiano Sportivo", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"No single frontrunner club has emerged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+];
+const DEAD = [
+  {name:"Alessio Romagnoli", sub:"CB, Italy, 31", club:"Al-Sadd", pos:"CB", report:"Negotiations with Al-Sadd have stalled, with Atalanta now reportedly ready to pounce if the Qatari move collapses, even as Romagnoli continues training with Lazio.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"flat", note:"Player's camp says they are not currently planning for a Lazio future, suggesting an exit remains the likelier outcome.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
 const RISERS = [

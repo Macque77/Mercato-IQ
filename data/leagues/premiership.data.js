@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Premiership",
   nation: "Scotland",
-  stories_count: 16
+  stories_count: 15
 };
 
 const TOP_STORIES = [  {
@@ -22,6 +22,13 @@ const TOP_STORIES = [  {
     from: "Torino", to: "Celtic",
     tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "~£12m", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Alistair Johnston", prob: 60, truth: 65, bullshit: false,
+    club_origin: "celtic", club_display_name: "Celtic", direction: "out",
+    from: "Celtic", to: "Everton / Fulham",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
     name: "Jahnoah Markelo", prob: 55, truth: 65, bullshit: false,
@@ -94,9 +101,9 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Luke Graham", prob: 30, truth: 50, bullshit: false,
-    club_origin: "dundee", club_display_name: "Dundee", direction: "out",
-    from: "Dundee", to: "Rangers",
+    name: "Bowie", prob: 20, truth: 30, bullshit: false,
+    club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
+    from: "Dundee United", to: "Undisclosed",
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
@@ -107,28 +114,14 @@ const TOP_STORIES = [  {
     tier: 4, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
-  {
-    name: "Bowie", prob: 20, truth: 30, bullshit: false,
-    club_origin: "dundee-united", club_display_name: "Dundee United", direction: "out",
-    from: "Dundee United", to: "Undisclosed",
-    tier: 4, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Calvin Miller", prob: 10, truth: 20, bullshit: false,
-    club_origin: "falkirk", club_display_name: "Falkirk", direction: "out",
-    from: "Falkirk", to: "Celtic",
-    tier: 4, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
 ];
 
-const BY_CLUB = {"celtic": 5, "rangers": 4, "aberdeen": 1, "heart-of-midlothian": 1, "st-mirren": 1, "dundee": 1, "kilmarnock": 1, "dundee-united": 1, "falkirk": 1};
+const BY_CLUB = {"celtic": 6, "rangers": 4, "aberdeen": 1, "heart-of-midlothian": 1, "st-mirren": 1, "dundee-united": 1, "kilmarnock": 1};
 
-const CLUBS_LIST = [{"slug": "aberdeen", "name": "Aberdeen", "count": 1, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "celtic", "name": "Celtic", "count": 5, "badge": false, "primary": "#018749", "primaryBright": "#2ECC71"}, {"slug": "dundee", "name": "Dundee", "count": 1, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "dundee-united", "name": "Dundee United", "count": 1, "badge": false, "primary": "#FF6C00", "primaryBright": "#FFA55C"}, {"slug": "falkirk", "name": "Falkirk", "count": 1, "badge": false, "primary": "#001E62", "primaryBright": "#5C7CFF"}, {"slug": "heart-of-midlothian", "name": "Heart of Midlothian", "count": 1, "badge": false, "primary": "#7C2529", "primaryBright": "#E0636B"}, {"slug": "hibernian", "name": "Hibernian", "count": 0, "badge": false, "primary": "#00643D", "primaryBright": "#3FCB8C"}, {"slug": "kilmarnock", "name": "Kilmarnock", "count": 1, "badge": false, "primary": "#00338D", "primaryBright": "#6FA8FF"}, {"slug": "motherwell", "name": "Motherwell", "count": 0, "badge": false, "primary": "#740A28", "primaryBright": "#FDB913"}, {"slug": "rangers", "name": "Rangers", "count": 4, "badge": false, "primary": "#0033A0", "primaryBright": "#5C8DFF"}, {"slug": "st-johnstone", "name": "St Johnstone", "count": 0, "badge": false, "primary": "#1560BD", "primaryBright": "#6FA8FF"}, {"slug": "st-mirren", "name": "St Mirren", "count": 1, "badge": false, "primary": "#2B2B2B", "primaryBright": "#C0C0C0"}];
+const CLUBS_LIST = [{"slug": "aberdeen", "name": "Aberdeen", "count": 1, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "celtic", "name": "Celtic", "count": 6, "badge": false, "primary": "#018749", "primaryBright": "#2ECC71"}, {"slug": "dundee", "name": "Dundee", "count": 0, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "dundee-united", "name": "Dundee United", "count": 1, "badge": false, "primary": "#FF6C00", "primaryBright": "#FFA55C"}, {"slug": "falkirk", "name": "Falkirk", "count": 0, "badge": false, "primary": "#001E62", "primaryBright": "#5C7CFF"}, {"slug": "heart-of-midlothian", "name": "Heart of Midlothian", "count": 1, "badge": false, "primary": "#7C2529", "primaryBright": "#E0636B"}, {"slug": "hibernian", "name": "Hibernian", "count": 0, "badge": false, "primary": "#00643D", "primaryBright": "#3FCB8C"}, {"slug": "kilmarnock", "name": "Kilmarnock", "count": 1, "badge": false, "primary": "#00338D", "primaryBright": "#6FA8FF"}, {"slug": "motherwell", "name": "Motherwell", "count": 0, "badge": false, "primary": "#740A28", "primaryBright": "#FDB913"}, {"slug": "rangers", "name": "Rangers", "count": 4, "badge": false, "primary": "#0033A0", "primaryBright": "#5C8DFF"}, {"slug": "st-johnstone", "name": "St Johnstone", "count": 0, "badge": false, "primary": "#1560BD", "primaryBright": "#6FA8FF"}, {"slug": "st-mirren", "name": "St Mirren", "count": 1, "badge": false, "primary": "#2B2B2B", "primaryBright": "#C0C0C0"}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:14:19.917277Z",
+  updated: "2026-08-06T10:24:37.270285Z",
   label: "League aggregation"
 };
