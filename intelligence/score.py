@@ -25,6 +25,7 @@ import json
 import os
 import sys
 from collections import defaultdict
+from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -49,10 +50,19 @@ def build(min_resolved=MIN_RESOLVED):
     resolutions = cs.load_resolutions()
     stories = st.build_stories(claims, resolutions)
 
+    now = datetime.now(timezone.utc)
     agg = defaultdict(lambda: {
         'source': '', 'tier': 3, 'stories': 0, 'right': 0, 'wrong': 0, 'pending': 0,
         'confident_miss': 0, 'scoops': 0, 'follows': 0, 'leads': [], 'fees': [],
+        'fee_diffs': [], 'rec_right': 0.0, 'rec_resolved': 0.0,
         'cal': defaultdict(lambda: [0, 0])})  # stage -> [completed, resolved]
+
+    def _recency_w(first_ts):
+        d = st.parse_ts(first_ts)
+        if not d:
+            return 1.0
+        age = (now - d).total_seconds() / 86400.0
+        return 0.5 ** (max(0.0, age) / 180.0)  # ~6-month half-life
 
     for story in stories:
         confirmed_fee = story.get('confirmed_fee')
@@ -69,9 +79,12 @@ def build(min_resolved=MIN_RESOLVED):
                 a['follows'] += 1
             stage = s.get('stage', 'interest')
             high_conf = st.STAGE_RANK.get(stage, 0) >= 2  # advanced / here-we-go
+            w = _recency_w(s.get('first_ts', ''))
 
             if outcome == 'completed':
                 a['right'] += 1
+                a['rec_right'] += w
+                a['rec_resolved'] += w
                 a['cal'][stage][0] += 1
                 a['cal'][stage][1] += 1
                 sdt = st.parse_ts(s.get('first_ts', ''))
@@ -82,9 +95,12 @@ def build(min_resolved=MIN_RESOLVED):
                 fa = _fee_accuracy(s.get('fee'), confirmed_fee)
                 if fa is not None:
                     a['fees'].append(fa)
+                if s.get('fee') is not None and confirmed_fee not in (None, 0):
+                    a['fee_diffs'].append(s['fee'] - confirmed_fee)  # +over / -under
             elif outcome == 'false':
                 # player went elsewhere: a miss regardless of stage, worse if confident
                 a['wrong'] += 1
+                a['rec_resolved'] += w
                 a['cal'][stage][1] += 1
                 if high_conf:
                     a['confident_miss'] += 1
@@ -93,6 +109,7 @@ def build(min_resolved=MIN_RESOLVED):
                 # a mere 'interest' floated and dropped is not a wrong report.
                 if high_conf:
                     a['wrong'] += 1
+                    a['rec_resolved'] += w
                     a['cal'][stage][1] += 1
                     a['confident_miss'] += 1
                 else:
@@ -111,17 +128,24 @@ def build(min_resolved=MIN_RESOLVED):
         avg_lead = (sum(a['leads']) / len(a['leads'])) if a['leads'] else None
         fee_acc = (sum(a['fees']) / len(a['fees'])) if a['fees'] else None
         calibration = {stg: round(c[0] / c[1], 2) for stg, c in a['cal'].items() if c[1]}
+        recent = ((a['rec_right'] + PSEUDO) / (a['rec_resolved'] + 2 * PSEUDO)
+                  if a['rec_resolved'] else None)
+        fee_bias = (sum(a['fee_diffs']) / len(a['fee_diffs'])) if a['fee_diffs'] else None
+        break_rate = (a['scoops'] / a['stories']) if a['stories'] else None
         rows.append({
             'source': a['source'], 'tier': a['tier'], 'source_key': sk,
             'stories': a['stories'], 'resolved': resolved,
             'right': a['right'], 'false_reports': a['wrong'], 'pending': a['pending'],
             'confident_miss': a['confident_miss'],
             'accuracy': round(acc, 3) if acc is not None else None,
+            'recent_score': round(recent, 3) if recent is not None else None,
             'completion_rate': round(completion, 3) if completion is not None else None,
             'scoops': a['scoops'], 'follows': a['follows'],
             'originality': round(originality, 3) if originality is not None else None,
+            'break_rate': round(break_rate, 3) if break_rate is not None else None,
             'avg_lead_days': round(avg_lead, 1) if avg_lead is not None else None,
             'fee_accuracy': round(fee_acc, 2) if fee_acc is not None else None,
+            'fee_bias': round(fee_bias, 1) if fee_bias is not None else None,
             'calibration': calibration,
             'score': round(adjusted, 3) if adjusted is not None else None,
         })
@@ -134,9 +158,19 @@ def build(min_resolved=MIN_RESOLVED):
         if story['outcome'] != 'pending':
             continue
         conf = st.completion_confidence(story, scoremap)
+        # momentum: escalating stage or multi-source & fresh = heating; long-quiet = cooling
+        last_dt = st.parse_ts(story.get('last_ts', ''))
+        age = ((now - last_dt).total_seconds() / 86400.0) if last_dt else 0
+        escalated = st.STAGE_RANK.get(story['stage'], 0) > st.STAGE_RANK.get(story.get('first_stage', 'interest'), 0)
+        if age > 21:
+            momentum = 'cooling'
+        elif escalated or (len(story['sources']) >= 3 and age <= 7):
+            momentum = 'heating'
+        else:
+            momentum = 'steady'
         live.append({
             'player': story['player'], 'to_club': story['to_club'], 'stage': story['stage'],
-            'completion_likelihood': round(conf, 3),
+            'completion_likelihood': round(conf, 3), 'momentum': momentum,
             'sources': sorted({s['source'] for s in story['sources'].values()}),
             'source_count': len(story['sources']),
             'first_ts': story['first_ts'], 'last_ts': story['last_ts'],

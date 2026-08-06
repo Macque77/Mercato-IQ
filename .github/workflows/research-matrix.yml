@@ -142,7 +142,9 @@ jobs:
           if [ -f research.json ]; then
             python3 intelligence/log_claims.py research.json || true
           fi
-          # Refresh scores + the public rankings page every sweep (deterministic, 0 tokens).
+          # Reliability engine refresh every sweep (deterministic, 0 tokens):
+          # calibrate (learn stage priors + Brier) -> score -> public rankings page.
+          python3 intelligence/calibrate.py >/dev/null || true
           python3 intelligence/score.py --min 5 >/dev/null || true
           python3 intelligence/build_rankings.py || true
           rm -rf research.json _shards

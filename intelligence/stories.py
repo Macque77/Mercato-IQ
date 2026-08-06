@@ -15,6 +15,7 @@ and, combining a story's sources by their track record, it produces a
 
 Pure functions over the claim store; no side effects. Used by score.py.
 """
+import json
 import os
 import re
 import sys
@@ -28,7 +29,23 @@ import claim_store as cs  # noqa: E402
 # completion model's stage prior.
 STAGE_RANK = {'interest': 0, 'talks': 1, 'advanced': 2, 'here-we-go': 3}
 # Prior log-odds that a move at this stage completes, before weighing the sources.
+# Hand-set defaults; overridden by data-learned priors (data/stage_priors.json, written
+# by calibrate.py) once enough outcomes exist, so the model calibrates itself over time.
 STAGE_PRIOR_LOGIT = {'interest': -1.1, 'talks': -0.4, 'advanced': 0.5, 'here-we-go': 2.2}
+
+
+def _stage_priors():
+    path = os.path.join(cs.DATA_DIR, 'stage_priors.json')
+    priors = dict(STAGE_PRIOR_LOGIT)
+    try:
+        learned = json.load(open(path, encoding='utf-8'))
+        for stg, v in learned.items():
+            # only trust a learned prior once it has a reasonable sample
+            if isinstance(v, dict) and v.get('n', 0) >= 8 and 'logit' in v:
+                priors[stg] = v['logit']
+    except Exception:
+        pass
+    return priors
 
 # Two claims count as the "same scoop" only if separated by more than this — a burst
 # inside the window is treated as independent/simultaneous, not follow-on re-reporting.
@@ -143,7 +160,8 @@ def build_stories(claims, resolutions):
         stories.append({
             'player': cl[0].get('player', ''), 'player_key': pk,
             'to_club': cl[0].get('to_club', ''), 'to_club_key': tk,
-            'stage': stage, 'first_ts': breaker_ts, 'last_ts': ordered[-1]['ts'],
+            'stage': stage, 'first_stage': ordered[0].get('stage', 'interest'),
+            'first_ts': breaker_ts, 'last_ts': ordered[-1]['ts'],
             'breaker': ordered[0]['source_key'],
             'sources': sources, 'outcome': outcome, 'confirmed_at': confirmed_at,
             'confirmed_to_key': confirmed_to_key, 'confirmed_fee': confirmed_fee,
@@ -166,7 +184,8 @@ def completion_confidence(story, scoremap, now=None):
 
     scoremap: {source_key: reliability_score in 0..1}. Missing sources default to 0.45.
     """
-    logit = STAGE_PRIOR_LOGIT.get(story['stage'], -0.4)
+    priors = _stage_priors()
+    logit = priors.get(story['stage'], -0.4)
     for sk, s in story['sources'].items():
         rel = scoremap.get(sk)
         if rel is None:
@@ -187,7 +206,7 @@ def completion_confidence(story, scoremap, now=None):
     if last and n:
         age_days = max(0.0, (n - last).total_seconds() / 86400.0)
         decay = 0.5 ** (age_days / 21.0)
-        base = _sigmoid(STAGE_PRIOR_LOGIT.get(story['stage'], -0.4))
+        base = _sigmoid(priors.get(story['stage'], -0.4))
         conf = base + (conf - base) * decay
 
     return max(0.02, min(0.98, conf))
