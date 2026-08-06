@@ -50,15 +50,16 @@ const INCOMING = [
   {name:"Serhou Guirassy", sub:"24 · ST · Guinea", club:"RB Leipzig", pos:"ST", report:"31 Jul 2026", src:"Matteo Moretto / Fabrizio Romano (Sky Italia)", tier:2, fee:"€30m", truth:58, prob:40, light:"y", trend:"up", note:"Romano and Moretto report Roma in talks with Leipzig for young striker. Deal not finalised but discussions advanced.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Jeremie Freuler", sub:"29 · CM · Switzerland", club:"Atalanta", pos:"CM", report:"28 Jul 2026", src:"Corriere della Sera", tier:2, fee:"€15m", truth:45, prob:28, light:"o", trend:"flat", note:"Roma monitoring Atalanta's midfielder as squad depth option. Atalanta not eager sellers.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
   {name:"Richard Ríos", sub:"CDM · Colombia", club:"Palmeiras", pos:"CDM", report:"Jul 2026", src:"Gianluca Di Marzio", tier:2, fee:"Roma offer €25m vs Palmeiras ask ~€30m", truth:55, prob:40, light:"y", trend:"flat", note:"Di Marzio: gap between the clubs is 'just 5 million euros'; Manchester United also inquiring.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Diego Moreira", sub:"21 · LWB · Portugal", club:"Strasbourg", pos:"LWB", report:"15 Jul 2026", src:"Nicolo Schira", tier:1, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma have reportedly offered a contract to 2031, with direct talks expected between the clubs.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Givairo Read", sub:"Winger, NED, 21", club:"Feyenoord", pos:"RW", report:"Roma have made a formal offer for Read and manager Gian Piero Gasperini personally contacted the player, but there remains distance between the two clubs on terms.", src:"Fanpage.it / Calciomercato.it", tier:2, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:"Active negotiation with a concrete bid on the table as of early August, though a fee agreement has not been reached.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Diego Moreira", sub:"22 · Belgium · LW", club:"Strasbourg", pos:"LW", report:"With Crysencio Summerville lost to Al-Hilal, Roma have widened their search for a left-sided attacker for Gasperini and Moreira is among the names on the list, with Jorge Mendes working the file.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:70, prob:25, light:"o", trend:"down", note:"An option rather than an advanced deal. Roma have cycled through several names for this slot in a fortnight, so expect the shortlist to shift again.", lastSeen:"2026-08-06T08:45:12Z", baseProb:25},
+  {name:"Givairo Read", sub:"19 · Netherlands · RB", club:"Feyenoord", pos:"RB", report:"Roma have tabled a formal offer for the Feyenoord full back and are waiting on a definitive answer from Rotterdam, with the right side a priority after Zeki Celik's exit.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:85, prob:55, light:"g", trend:"up", note:"Di Marzio has the offer confirmed, but Feyenoord have yet to respond and no fee has been reported.", lastSeen:"2026-08-06T08:45:12Z", baseProb:55},
   {name:"Nahuel Molina", sub:"Right-back, ARG, 27", club:"Atletico Madrid", pos:"RB", report:"Roma have submitted an initial €16m bid to Atletico Madrid for the right-back as a replacement option, with a self-imposed spending ceiling of around €28m for the position.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Roma are working multiple right-back targets in parallel, including alternatives at lower fees.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Alessio Cacciamani", sub:"Winger, ITA, 19", club:"Torino", pos:"RW", report:"Roma have made an enquiry over the young Torino winger, who is valued at €18-20m by his current club.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"flat", note:"Early-stage interest in a development prospect rather than an advanced deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
   {name:"Rafael Leao", sub:"Winger, POR, 27", club:"AC Milan", pos:"LW", report:"Bookmakers and speculative reports have floated a sensational Leao-to-Roma scenario as an alternative to his Turkish links.", src:"Betting market analysis", tier:3, fee:"Undisclosed", truth:20, prob:8, light:"r", trend:"flat", note:"No concrete Roma bid reported; framed mainly as odds-based speculation rather than a substantive move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8}
 ];
 
 const OUTGOING = [
-  {name:"Marash Kumbulla", sub:"Centre-back, ALB, 25", club:"Unspecified (loan/sale)", pos:"CB", report:"Roma are working on moving Kumbulla out either on loan or permanently as Gasperini reshapes the defensive options.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Replacement right-back/defensive targets already being lined up, suggesting the exit is progressing in parallel.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Marash Kumbulla", sub:"Centre-back, ALB, 25", club:"Unspecified (loan/sale)", pos:"CB", report:"Roma are working on moving Kumbulla out either on loan or permanently as Gasperini reshapes the defensive options.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Replacement right-back/defensive targets already being lined up, suggesting the exit is progressing in parallel.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Zeki Celik", sub:"29 · Turkey · RB", club:"Juventus", pos:"RB", report:"The Turkey full back is heading to Juventus after his contract renewal talks with Roma broke down, a departure that has forced the Giallorossi to move for cover on the right.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:92, prob:90, light:"g", trend:"flat", note:"Di Marzio frames the move as settled but no fee has been published and Roma have not announced it, so hold off on confirming terms.", lastSeen:"2026-08-06T08:45:12Z", baseProb:90}
 ];
 
 const RISERS = [];
@@ -98,7 +99,8 @@ const HUB = {
   calciomercatoitGivairoRead: {l:"Calciomercato.it", u:"https://www.calciomercato.it/"},
   footballItaliaNahuelMolina: {l:"Football Italia", u:"https://www.football-italia.net/"},
   tuttoMercatoWebRafaelLeao: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/roma"},
-  fanpageitSkySportKonstantinosKoulierakis: {l:"Fanpage.it / Sky Sport", u:"https://www.bing.com/news/search?q=Koulierakis+Roma"}};
+  fanpageitSkySportKonstantinosKoulierakis: {l:"Fanpage.it / Sky Sport", u:"https://www.bing.com/news/search?q=Koulierakis+Roma"},
+  gianlucaDiMarzioGivairoRead: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/"}};
 
 const LINKMAP = {
   "Paulo Dybala": ["gnews-paulodybala"],
@@ -108,14 +110,15 @@ const LINKMAP = {
   "Artem Dovbyk": ["footballItalia", "calciomercatoitGivairoRead"],
   "Alessandro Romano": ["cagliariclub"],
   "Richard Ríos": ["gianlucaDiMarzioviaGiallorossinetRichardRos"],
-  "Diego Moreira": ["nicoloSchiraviaSportingpediaDiegoMoreira"],
+  "Diego Moreira": ["nicoloSchiraviaSportingpediaDiegoMoreira", "gianlucaDiMarzioGivairoRead"],
   "Konstantinos Koulierakis": ["gianlucaDiMarzioKonstantinosKoulierakis", "fanpageitSkySportKonstantinosKoulierakis"],
   "Mattia Viti": ["gianlucaDiMarzioMattiaViti"],
-  "Givairo Read": ["calciomercatoitGivairoRead"],
+  "Givairo Read": ["calciomercatoitGivairoRead", "gianlucaDiMarzioGivairoRead"],
   "Nahuel Molina": ["footballItaliaNahuelMolina"],
   "Alessio Cacciamani": ["footballItaliaNahuelMolina"],
   "Rafael Leao": ["tuttoMercatoWebRafaelLeao"],
-  "Marash Kumbulla": ["tuttoMercatoWebRafaelLeao"]};
+  "Marash Kumbulla": ["tuttoMercatoWebRafaelLeao"],
+  "Zeki Celik": ["gianlucaDiMarzioGivairoRead"]};
 const WL_LINKMAP = {
   "Serhou Guirassy": ["gnews-serhouguirassy"],
   "Paulo Dybala": ["gnews-paulodybala"],

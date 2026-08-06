@@ -36,7 +36,8 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Sekou Fofana", sub:"Franco-Ivorian left-back signed from Lausanne-Sport", club:"Lausanne-Sport", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a four-year deal after 50 appearances for Lausanne since 2021."},
-  {name:"Romain Faivre", sub:"Loan spell renewed for a second consecutive season", club:"AFC Bournemouth", pos:"CAM", fee:"Loan, no purchase option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Bournemouth and Auxerre agreed a fresh season-long loan without a buy option, extending Faivre's stay after his 2025-26 loan spell."}
+  {name:"Romain Faivre", sub:"Loan spell renewed for a second consecutive season", club:"AFC Bournemouth", pos:"CAM", fee:"Loan, no purchase option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Bournemouth and Auxerre agreed a fresh season-long loan without a buy option, extending Faivre's stay after his 2025-26 loan spell."},
+  {name:"Arthur Piedfort", sub:"21 · Belgium · CM", club:"KVC Westerlo", pos:"CM", fee:"€5.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by Auxerre, who handed the Belgian midfielder a four-year deal. Foot Mercato lists him as the club's biggest outlay of the window."}
 ];
 
 const CONFIRMED_OUT = [
@@ -76,7 +77,8 @@ const HUB = {
   lesTransfertsKevinDanois: {l:"Les Transferts", u:"https://www.les-transferts.com/rumeurs-transferts/aj-auxerre-deux-clubs-anglais-viseraient-kevin-danois/"},
   lquipeSekouFofana: {l:"L'Équipe", u:"https://www.lequipe.fr/Football/Actualites/Transferts-venant-de-lausanne-sport-le-lateral-gauche-sekou-fofana-va-signer-a-auxerre/1702581"},
   lquipeRomainFaivre: {l:"L'Équipe", u:"https://www.lequipe.fr/Football/Actualites/Mercato-romain-faivre-repart-sur-un-pret-avec-l-aj-auxerre/1700937"},
-  maliactuLassineSinayoko: {l:"Maliactu", u:"https://maliactu.net/mercato-lassine-sinayoko-quitte-auxerre-et-sengage-pour-trois-ans-avec-le-paris-fc/"}};
+  maliactuLassineSinayoko: {l:"Maliactu", u:"https://maliactu.net/mercato-lassine-sinayoko-quitte-auxerre-et-sengage-pour-trois-ans-avec-le-paris-fc/"},
+  footMercatoArthurPiedfort: {l:"Foot Mercato", u:"https://www.footmercato.net/club/association-jeunesse-auxerroise/tableau/"}};
 
 const LINKMAP = {
   "Lassine Sinayoko": ["gffn-auxerre", "maliactuLassineSinayoko"],
@@ -85,7 +87,8 @@ const LINKMAP = {
   "Tim Meyer": ["tOPMercatoTimMeyer"],
   "Kevin Danois": ["lesTransfertsKevinDanois"],
   "Sekou Fofana": ["lquipeSekouFofana"],
-  "Romain Faivre": ["lquipeRomainFaivre"]};
+  "Romain Faivre": ["lquipeRomainFaivre"],
+  "Arthur Piedfort": ["footMercatoArthurPiedfort"]};
 const WL_LINKMAP = {
   "Mathys Detourbet": ["gffn-auxerre"]
 };

@@ -48,7 +48,8 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Folarin Balogun", sub:"American striker's Monaco exit looks increasingly likely", club:"Everton (interest)", pos:"ST", report:"Monaco face financial pressure after missing out on the Champions League and could sell the striker for around €50m this summer, with Everton among the sides considering a move.", src:"Yahoo Sports / MSN France", tier:2, fee:"", truth:60, prob:45, light:"y", trend:"flat", note:"Monaco have already brought in Matthis Abline as a like-for-like forward, which supports the likelihood of a Balogun sale materialising.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
+  {name:"Folarin Balogun", sub:"American striker's Monaco exit looks increasingly likely", club:"Everton (interest)", pos:"ST", report:"Monaco face financial pressure after missing out on the Champions League and could sell the striker for around €50m this summer, with Everton among the sides considering a move.", src:"Yahoo Sports / MSN France", tier:2, fee:"", truth:60, prob:45, light:"y", trend:"flat", note:"Monaco have already brought in Matthis Abline as a like-for-like forward, which supports the likelihood of a Balogun sale materialising.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Lamine Camara", sub:"22 · Senegal · CM", club:"Premier League interest", pos:"CM", report:"Monaco are looking to raise significant funds this summer and want between €44m and €56m for the Senegal midfielder, with Brighton, Newcastle and Aston Villa credited with interest.", src:"Top Mercato", tier:2, fee:"€44m-€56m", truth:60, prob:35, light:"y", trend:"flat", note:"A valuation piece rather than a negotiation update. No named tier-one reporter has confirmed talks with any of the English clubs.", lastSeen:"2026-08-06T08:45:12Z", baseProb:35}
 ];
 
 const RISERS = [
@@ -82,7 +83,9 @@ const HUB = {
   yahooSportsMatthisAbline: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-monaco-sign-matthis-abline-081000502.html"},
   yahooSportsMathysDetourbet: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-manchester-city-mathys-detourbet-152000102.html"},
   sportfrMaghnesAkliouche: {l:"Sport.fr", u:"https://www.msn.com/fr-ch/sport/football/psg-akliouche-s-engage-pour-cinq-ans-monaco-obtient-ses-50-millions/ar-AA299kOb"},
-  theGuardianAladjiBamba: {l:"The Guardian", u:"https://www.theguardian.com/football/2026/jul/24/transfers-newcastle-sign-aladji-bamba-monaco"}};
+  theGuardianAladjiBamba: {l:"The Guardian", u:"https://www.theguardian.com/football/2026/jul/24/transfers-newcastle-sign-aladji-bamba-monaco"},
+  fabriceHawkinsRMCSportMaghnesAkliouche: {l:"Fabrice Hawkins, RMC Sport", u:"https://x.com/FabriceHawkins/status/2074105712439906741"},
+  topMercatoLamineCamara: {l:"Top Mercato", u:"https://www.topmercato.com/2122930-mercato-las-monaco-doit-vendre-pour-150-me-les-4-favoris-pour-un-depart-cet-ete"}};
 
 const LINKMAP = {
   "Matthis Abline": ["asmonaco", "gffn-monaco", "yahooSportsMatthisAbline"],
@@ -90,10 +93,11 @@ const LINKMAP = {
   "Boubakar Dembaga": ["gffn-monaco"],
   "Erik Lira": ["gffn-monaco"],
   "Simon Adingra": ["gffn-monaco"],
-  "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche"],
+  "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche", "fabriceHawkinsRMCSportMaghnesAkliouche"],
   "Fares Ghedjemis": ["yahooSportsFaresGhedjemis"],
   "Folarin Balogun": ["yahooSportsFolarinBalogun"],
-  "Mathys Detourbet": ["yahooSportsMathysDetourbet"]};
+  "Mathys Detourbet": ["yahooSportsMathysDetourbet"],
+  "Lamine Camara": ["topMercatoLamineCamara"]};
 const WL_LINKMAP = {
   "Maghnes Akliouche": ["gffn-monaco"]
 };

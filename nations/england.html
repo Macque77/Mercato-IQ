@@ -664,7 +664,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">186</span>
+          <span class="stat-value">187</span>
         </div>
       </div>
     </div>
@@ -701,21 +701,28 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 186
+  stories_count: 187
 };
 
 const TOP_STORIES = [  {
-    name: "Bruno Guimaraes",prob: 90, truth: 95, bullshit: false,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
-    from: "Newcastle United", to: "Arsenal",
-    tier: 1, coverage: 3, coverage_trend: 'up',
-    value: "£80m+", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
     name: "Bruno Guimarães",prob: 88, truth: 92, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Newcastle United", to: "Arsenal",
     tier: 1, coverage: 2, coverage_trend: 'flat',
+    value: "£75m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "Mishel Nduka",prob: 88, truth: 90, bullshit: false,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Manchester City",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "Bruno Guimaraes",prob: 85, truth: 92, bullshit: false,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
+    from: "Newcastle United", to: "Arsenal",
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "£75m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
@@ -802,22 +809,15 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
-  {
-    name: "Arthur Theate",prob: 30, truth: 55, bullshit: false,
-    club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
-    from: "Eintracht Frankfurt", to: "Bournemouth",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-06-06T00:00:00Z", league: "Premier League"
-  },
 ];
 
-const BY_LEAGUE = {"Premier League": 113, "Championship": 19, "League One": 54, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 114, "Championship": 19, "League One": 54, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 113}, {"slug": "league-one", "name": "League One", "count": 54}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 114}, {"slug": "league-one", "name": "League One", "count": 54}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:09:18.066317Z",
+  updated: "2026-08-06T08:45:13.636905Z",
   label: "Nation aggregation"
 };
 

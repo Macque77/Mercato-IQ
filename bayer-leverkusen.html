@@ -855,18 +855,20 @@ const CONFIRMED_IN = [
   {name:"Afonso Moreira", sub:"21 · W · Portugal", to:"permanent from Olympique Lyon", fee:"~€29.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Leverkusen's marquee summer arrival, brought in to add width and directness following Grimaldo's exit."},
   {name:"Kennet Eichhorn", sub:"19 · CB · Germany", to:"permanent from Hertha BSC", fee:"~€9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young German centre-back for squad depth and future development."},
   {name:"Aleksa Damjanović", sub:"20 · ST · Serbia", to:"permanent from Crvena Zvezda (Roter Stern Belgrad)", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Serbian forward signed as a long-term striker option."},
-  {name:"Miguel Gutiérrez", sub:"24 · LB · Spain", club:"permanent from Napoli", pos:"LB", fee:"~€25-30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Di Marzio reports the deal as agreed, positioned as the successor to Alejandro Grimaldo."}
+  {name:"Miguel Gutiérrez", sub:"24 · LB · Spain", club:"permanent from Napoli", pos:"LB", fee:"~€25-30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Di Marzio reports the deal as agreed, positioned as the successor to Alejandro Grimaldo."},
+  {name:"Miguel Gutierrez", sub:"25 · Spain · LB", club:"Napoli", pos:"LB", fee:"26m euros (up to around 30m with bonuses)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially confirmed on 5 August, a five-year deal to 2031 and the No 3 shirt. He replaces Alejandro Grimaldo, who joined Atletico Madrid, and made 36 competitive appearances last season."}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Kerim Alajbegović", sub:"18 · AM/W · Bosnia", to:"permanent to Juventus", club:"Juventus", fee:"~€33-40m (reports vary)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Aug: a Bundesliga record fee for a teenager never having played a first-team minute for Leverkusen, following a breakout loan at RB Salzburg and a Goal-of-the-Tournament nomination at the 2026 World Cup. Sporting director Simon Rolfes cited 'fierce competition' in his positions. Chelsea also pursued him before Juventus won the race."},
   {name:"Alejandro Grimaldo", sub:"30 · LB", to:"permanent to Atlético Madrid", club:"Atlético Madrid", fee:"~€22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jun: the Spain left-back returns home to Atlético after three trophy-laden years in Leverkusen, prompting the Afonso Moreira signing on the opposite flank."},
-  {name:"Abdoulaye Faye", sub:"Loaned to Celta Vigo after contract extension", club:"Celta Vigo", pos:"CB", fee:"€300,000 loan fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Senegalese centre-back's contract was extended to June 2031 before he was sent out on loan to LaLiga's Celta Vigo."}
+  {name:"Abdoulaye Faye", sub:"Loaned to Celta Vigo after contract extension", club:"Celta Vigo", pos:"CB", fee:"€300,000 loan fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Senegalese centre-back's contract was extended to June 2031 before he was sent out on loan to LaLiga's Celta Vigo."},
+  {name:"Kerim Alajbegovic", sub:"18 · Bosnia and Herzegovina · AM", club:"Juventus", pos:"AM", fee:"30m euros guaranteed, rising with add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed on 2 August, with Juventus confirming a five-year contract to 2031 and a guaranteed fee of 30m euros payable over four instalments. Headline figures of 35m include performance bonuses, so treat that number with care."}
 ];
 
 const INCOMING = [
-  {name:"Moussa Diaby", sub:"Talk of sensational Bundesliga return", club:"Al-Ittihad", pos:"RW", report:"Leverkusen are reportedly plotting a €30m reunion with Diaby, who scored 96 goals in 172 appearances for the club before his 2023 move to Aston Villa.", src:"Goal.com", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Speculative reunion story with no indication Al-Ittihad are willing sellers."},
-  {name:"Zakaria El Ouahdi", sub:"Identified as alternative to Medina at right-back", club:"KRC Genk", pos:"RB", report:"Leverkusen have identified the Morocco international full-back as a fallback option to Facundo Medina, with Genk said to be demanding a fee that makes 'top clubs swallow hard'.", src:"Kicker", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Reported as secondary target behind Medina; Genk resisting a cut-price sale."}
+  {name:"Moussa Diaby", sub:"Talk of sensational Bundesliga return", club:"Al-Ittihad", pos:"RW", report:"Leverkusen are reportedly plotting a €30m reunion with Diaby, who scored 96 goals in 172 appearances for the club before his 2023 move to Aston Villa.", src:"Goal.com", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Speculative reunion story with no indication Al-Ittihad are willing sellers.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Zakaria El Ouahdi", sub:"Identified as alternative to Medina at right-back", club:"KRC Genk", pos:"RB", report:"Leverkusen have identified the Morocco international full-back as a fallback option to Facundo Medina, with Genk said to be demanding a fee that makes 'top clubs swallow hard'.", src:"Kicker", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Reported as secondary target behind Medina; Genk resisting a cut-price sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 
 const OUTGOING = [];
@@ -901,7 +903,9 @@ const HUB = {
   goalcomMoussaDiaby: {l:"Goal.com", u:"https://www.goal.com/en/news/96-goalscorer-in-172-games-bayer-leverkusen-are-on-the-verge-of-a-spectacular-return-for-30-million/bltf840c2f7000b45a5"},
   yahooSportsZakariaElOuahdi: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/leverkusen-identify-genk-full-back-070600034.html"},
   footballItaliaKerimAlajbegovi: {l:"Football Italia", u:"https://football-italia.net/official-juventus-sign-alajbegovic-leverkusen/"},
-  bayer04LeverkusenOfficialAbdoulayeFaye: {l:"Bayer 04 Leverkusen Official", u:"https://www.leverkusen.com/en"}};
+  bayer04LeverkusenOfficialAbdoulayeFaye: {l:"Bayer 04 Leverkusen Official", u:"https://www.leverkusen.com/en"},
+  bundesligacomMiguelGutierrez: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/news/miguel-gutierrez-joins-leverkusen-napoli-grimaldo-38428"},
+  getGermanFootballNewsKerimAlajbegovic: {l:"Get German Football News", u:"https://www.getfootballnewsgermany.com/2026/kerim-alajbegovic-juve-done/"}};
 
 const LINKMAP = {
   "Kerim Alajbegović": ["bundesliga","bein","yahoo", "footballItaliaKerimAlajbegovi"],
@@ -912,7 +916,9 @@ const LINKMAP = {
   "Miguel Gutiérrez": ["gianlucaDiMarzioMiguelGutirrez", "yahooSportsCanadaMiguelGutirrez"],
   "Moussa Diaby": ["goalcomMoussaDiaby"],
   "Zakaria El Ouahdi": ["yahooSportsZakariaElOuahdi"],
-  "Abdoulaye Faye": ["bayer04LeverkusenOfficialAbdoulayeFaye"]};
+  "Abdoulaye Faye": ["bayer04LeverkusenOfficialAbdoulayeFaye"],
+  "Miguel Gutierrez": ["bundesligacomMiguelGutierrez"],
+  "Kerim Alajbegovic": ["getGermanFootballNewsKerimAlajbegovic"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

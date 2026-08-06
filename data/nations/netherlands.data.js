@@ -6,7 +6,7 @@
 const NATION = {
   name: "Netherlands",
   flag_emoji: "🇳🇱",
-  stories_count: 38
+  stories_count: 37
 };
 
 const TOP_STORIES = [  {
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Eredivisie": 38, "Eerste Divisie": 0};
+const BY_LEAGUE = {"Eredivisie": 37, "Eerste Divisie": 0};
 
-const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 38}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
+const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 37}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:09:18.067700Z",
+  updated: "2026-08-06T08:45:13.638379Z",
   label: "Nation aggregation"
 };

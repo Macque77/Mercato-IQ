@@ -95,7 +95,7 @@ const OUTGOING = [
   {name:"Fringe & loan returns", sub:"Squad trim", club:"Various", pos:"-", report:"~4 days ago", src:"Aston Villa News (aggregated)", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Emiliano Martínez", sub:"33 · GK · Argentina", club:"Juventus", pos:"GK", report:"2 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:50, prob:8, light:"r", trend:"flat", note:"Romano reported Juventus have informed Villa they will not proceed with a move — costs were judged too high, so this rumour has effectively collapsed for now.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8},
-  {name:"Ezri Konsa", sub:"Arsenal circling as Saliba cover", club:"Arsenal", pos:"DF", report:"Villa have received a bid in the region of £60-65m from Arsenal; Konsa open to talks but Champions League football may keep him at Villa Park.", src:"Read Aston Villa / CaughtOffside", tier:2, fee:"£60-65m", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+  {name:"Ezri Konsa", sub:"28 · England · CB", club:"Arsenal", pos:"CB", report:"Arsenal are said to view Konsa as a top target to cover for the injured William Saliba, with the defender open to talks if a suitable offer arrives. Villa are not willing to listen below £60m and expect him to stay for another Champions League campaign, though they would be forced to sell in 2027 if no extension is signed.", src:"CaughtOffside, relayed by Sports Mole", tier:3, fee:"£60m", truth:45, prob:25, light:"o", trend:"down", note:"Weak sourcing. This traces back to CaughtOffside rather than a tier-1 name, and no Ornstein or Romano follow-up has emerged. Villa's £60m valuation is plausible but the player's stance is unverified, so treat as speculation while Konsa is on post-World Cup break.", lastSeen:"2026-08-06T08:45:12Z", baseProb:25}
 ];
 
 const RISERS = [
@@ -154,7 +154,8 @@ const HUB = {
   readAstonVillaMyOldManSaidMorganRogers: {l:"Read Aston Villa / My Old Man Said", u:"https://myoldmansaid.com/the-good-bad-and-ugly-aston-villas-summer-transfer-window-so-far/"},
   sportsMoleDonyellMalen: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/aston-villa/transfer-talk/feature/aston-villa-summer-transfers-all-confirmed-ins-and-outs-for-2026_598979.html"},
   marcaRubenUriaMatteoRuggeri: {l:"Marca (Ruben Uria)", u:"https://www.marca.com/futbol/atletico.html"},
-  sportsMoleLucasDigne: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/aston-villa/transfer-talk/news/emery-wants-to-sign-italian-defender-immediately-as-aston-villa-bid-to-resolve-clear-issue_602381.html"}};
+  sportsMoleLucasDigne: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/aston-villa/transfer-talk/news/emery-wants-to-sign-italian-defender-immediately-as-aston-villa-bid-to-resolve-clear-issue_602381.html"},
+  sportsMoleEzriKonsa: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/news/konsa-arsenal-stance-revealed-amid-transfer-interest_602295.html"}};
 const LINKMAP = {
   "Lamine Camara": ["onefootball","yahoo","lequipe"],
   "Ilaix Moriba": ["onefootball"],
@@ -165,7 +166,7 @@ const LINKMAP = {
   "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "skySportsAlejandroGarnacho"],
   "Emiliano Martínez": ["fabrizioRomanoviaReadTottenhamEmilianoMartnez"],
   "Igor Paixão": ["sportsMoleviaLquipeIgorPaixo"],
-  "Ezri Konsa": ["readAstonVillaEzriKonsa"],
+  "Ezri Konsa": ["readAstonVillaEzriKonsa", "sportsMoleEzriKonsa"],
   "Johan Manzambi": ["skySportsJohanManzambi"],
   "João Gomes": ["eSPNDailyPostJooGomes"],
   "Youri Tielemans": ["readAstonVillaMyOldManSaidMorganRogers"],

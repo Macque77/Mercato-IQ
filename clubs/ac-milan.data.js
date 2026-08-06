@@ -48,7 +48,8 @@ const INCOMING = [
   {name:"Can Uzun", sub:"20 · AM · Turkey/Germany", club:"Eintracht Frankfurt", pos:"AM", report:"1 Aug 2026", src:"Football Italia", tier:3, fee:"~€25m", truth:42, prob:18, light:"o", trend:"flat", note:"A third name floated for the same attacking-midfield slot; nothing beyond exploratory interest reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
   {name:"Matheus Nwaneri", sub:"Winger/Forward, ENG, 19", club:"Arsenal", pos:"RW", report:"Milan are monitoring the young Arsenal winger as an attacking reinforcement, with Borussia Dortmund also in the race and Arsenal holding out for a high fee.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Early-stage interest reported alongside competition from Dortmund; Arsenal valuation seen as a stumbling block.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Brahim Diaz", sub:"Attacking midfielder, ESP, 26", club:"Real Madrid", pos:"CAM", report:"Milan sources have floated a possible reunion with the former loanee as squad depth is assessed following the Ramos signing.", src:"Milanistichannel", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Speculative talk tied to pre-season squad evaluation under Ruben Amorim rather than any concrete approach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Pierre-Emile Hojbjerg", sub:"31 · Denmark · CM", club:"Marseille", pos:"Midfielder", report:"Gianluca Di Marzio, speaking on Sky Italia's Calciomercato - L'Originale, named Hojbjerg as an option for Milan's midfield, with the Rossoneri described as alert to opportunities once the coaching staff has assessed the squad and the players returning from loan.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:70, prob:25, light:"o", trend:"flat", note:"Weak-ish sourcing in practice: this is a passing TV-segment remark rather than a report of concrete negotiations, and it reaches us via an English-language relay of Di Marzio's words rather than a written Sky Italia piece. Treat as a shortlist name, not an advanced deal, until fee talks with his club are reported.", lastSeen:"2026-08-05T22:44:07Z", baseProb:25}
+  {name:"Pierre-Emile Hojbjerg", sub:"31 · Denmark · CM", club:"Marseille", pos:"Midfielder", report:"Gianluca Di Marzio, speaking on Sky Italia's Calciomercato - L'Originale, named Hojbjerg as an option for Milan's midfield, with the Rossoneri described as alert to opportunities once the coaching staff has assessed the squad and the players returning from loan.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:70, prob:25, light:"o", trend:"flat", note:"Weak-ish sourcing in practice: this is a passing TV-segment remark rather than a report of concrete negotiations, and it reaches us via an English-language relay of Di Marzio's words rather than a written Sky Italia piece. Treat as a shortlist name, not an advanced deal, until fee talks with his club are reported.", lastSeen:"2026-08-05T22:44:07Z", baseProb:25},
+  {name:"Sankhoun Diawara", sub:"2006-born · CB", club:"Troyes", pos:"CB", report:"Gianluca Di Marzio reported Milan were pushing to complete a deal for the 2006-born Troyes centre-back, part of the Rossoneri's push to add young defensive depth.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:85, prob:55, light:"g", trend:"flat", note:"Di Marzio is tier-1, but the report dates from late July and there has been no confirmation since, so treat the deal as unresolved rather than imminent.", lastSeen:"2026-08-06T08:45:12Z", baseProb:55}
 ];
 
 const OUTGOING = [
@@ -89,7 +90,8 @@ const HUB = {
   tuttoMercatoWebYoussoufFofana: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/milan"},
   yardbarkerGoncaloRamos: {l:"Yardbarker", u:"https://www.yardbarker.com/"},
   goalcomRafaelLeao: {l:"Goal.com", u:"https://www.goal.com/en-us/team/ac-milan/news/9dntj5dioj5ex52yrgwzxrq9l"},
-  diMarzioonCalciomercatoLOriginaleSkyItaliaPierreEmileHojbjerg: {l:"Di Marzio on Calciomercato - L'Originale (Sky Italia)", u:"https://milanreports.com/2026/07/18/hojbjerg-is-an-option-for-ac-milans-midfield-says-di-marzio/"}};
+  diMarzioonCalciomercatoLOriginaleSkyItaliaPierreEmileHojbjerg: {l:"Di Marzio on Calciomercato - L'Originale (Sky Italia)", u:"https://milanreports.com/2026/07/18/hojbjerg-is-an-option-for-ac-milans-midfield-says-di-marzio/"},
+  diMarzioviaMilanReportsSankhounDiawara: {l:"Di Marzio, via Milan Reports", u:"https://milanreports.com/2026/07/23/di-marzio-milan-pushing-for-diawara/"}};
 
 const LINKMAP = {
   "Jadon Sancho": ["club"],
@@ -102,7 +104,8 @@ const LINKMAP = {
   "Youssouf Fofana": ["tuttoMercatoWebYoussoufFofana"],
   "Santiago Gimenez": ["footballItaliaMatheusNwaneri"],
   "Goncalo Ramos": ["yardbarkerGoncaloRamos"],
-  "Pierre-Emile Hojbjerg": ["diMarzioonCalciomercatoLOriginaleSkyItaliaPierreEmileHojbjerg"]};
+  "Pierre-Emile Hojbjerg": ["diMarzioonCalciomercatoLOriginaleSkyItaliaPierreEmileHojbjerg"],
+  "Sankhoun Diawara": ["diMarzioviaMilanReportsSankhounDiawara"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
