@@ -1,127 +1,175 @@
 #!/usr/bin/env python3
-"""Scorer -- turn claims + resolutions into per-source reliability scorecards.
+"""Enriched scorer — the full journalist scorecard + a transfer-completion feed.
 
-For every claim we ask: did that move actually happen?
-  * a resolution exists for (player, to_club)                 -> RIGHT  (they called it)
-  * a resolution exists for the player but a DIFFERENT to_club -> WRONG  (wrong destination)
-  * no resolution for the player yet                          -> PENDING (unresolved)
+Beyond raw accuracy, per source we compute the metrics that actually characterise a
+transfer reporter (all requested, plus a few that fall out for free):
 
-Per source we then compute accuracy and a VOLUME-ADJUSTED score, because 1-from-1 must
-not outrank 40-from-45. The adjustment shrinks toward 0.5 with a pseudo-count
-(Laplace/Bayesian): adjusted = (right + a) / (right + wrong + a + b), a=b=2. Sources
-with too few resolved claims are listed separately as "insufficient sample".
+  accuracy        of RESOLVED claims, % that went to the club they named
+  completion_rate of ALL their claims, % that have completed ("came to fruition")
+  false_reports   times the player demonstrably went ELSEWHERE (or deal collapsed)
+  scoops/follows  times they BROKE a story first vs re-reported someone else's
+  originality     scoops / (scoops+follows) — the inverse of "just re-reporting"
+  avg_lead_days   how far AHEAD of confirmation they broke it — their real value
+  calibration     completion rate split by the confidence they claimed
+                  (interest / talks / advanced / here-we-go) — are they crying wolf?
+  fee_accuracy    when both a claimed and a confirmed fee exist, how close (0..1)
+  score           volume-adjusted composite reliability (0..1), used to weight stories
 
-Writes intelligence/data/scores.json and prints a Power Ranking. Also emits a
-confidence weight per source (0..1) that the site can later use to score STORIES.
+It also emits the product's headline: for every PENDING story, a COMPLETION LIKELIHOOD
+built from its sources' reliability (stories.completion_confidence).
 
+Outputs intelligence/data/scores.json and stories.json; prints the Power Ranking.
 Usage:  python3 intelligence/score.py [--min N] [--json]
 """
 import json
 import os
 import sys
 from collections import defaultdict
-from datetime import datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import claim_store as cs  # noqa: E402
+import stories as st  # noqa: E402
 
 SCORES_PATH = os.path.join(cs.DATA_DIR, 'scores.json')
-MIN_RESOLVED = 4          # min resolved claims to appear in the ranking
-PSEUDO = 2                # Laplace pseudo-count each side
+STORIES_PATH = os.path.join(cs.DATA_DIR, 'stories.json')
+MIN_RESOLVED = 4
+PSEUDO = 2
+FEE_TOL = 0.20  # a claimed fee within 20% of confirmed counts as accurate
 
 
-def _parse_ts(s):
-    try:
-        return datetime.fromisoformat((s or '').replace('Z', '+00:00'))
-    except Exception:
+def _fee_accuracy(claimed, confirmed):
+    if claimed is None or confirmed is None or confirmed <= 0:
         return None
+    return 1.0 if abs(claimed - confirmed) <= FEE_TOL * confirmed else 0.0
 
 
-def _lead_days(claim_ts, confirm_ts):
-    a, b = _parse_ts(claim_ts), _parse_ts(confirm_ts)
-    if a and b:
-        return (b - a).total_seconds() / 86400.0
-    return None
-
-
-def build_scores(min_resolved=MIN_RESOLVED):
-    claims = [c for c in cs.load_claims() if cs.is_attributable(c.get('source', ''))]
+def build(min_resolved=MIN_RESOLVED):
+    claims = cs.load_claims()
     resolutions = cs.load_resolutions()
+    stories = st.build_stories(claims, resolutions)
 
-    # index resolutions by player: player_key -> list of (to_club_key, confirmed_at)
-    res_by_player = defaultdict(list)
-    for r in resolutions:
-        res_by_player[r['player_key']].append((r['to_club_key'], r.get('confirmed_at', '')))
+    agg = defaultdict(lambda: {
+        'source': '', 'tier': 3, 'stories': 0, 'right': 0, 'wrong': 0, 'pending': 0,
+        'scoops': 0, 'follows': 0, 'leads': [], 'fees': [],
+        'cal': defaultdict(lambda: [0, 0])})  # stage -> [completed, resolved]
 
-    agg = defaultdict(lambda: {'source': '', 'tier': 3, 'claims': 0, 'right': 0,
-                               'wrong': 0, 'pending': 0, 'leads': []})
-    for c in claims:
-        s = agg[c['source_key']]
-        s['source'] = c['source']
-        s['tier'] = min(s['tier'], int(c.get('source_tier') or 3))
-        s['claims'] += 1
-        outcomes = res_by_player.get(c['player_key'])
-        if not outcomes:
-            s['pending'] += 1
-            continue
-        to_key = c.get('to_club') and cs.norm(c['to_club']) or ''
-        hit = next((ca for (tk, ca) in outcomes if tk and tk == to_key), None)
-        if hit is not None:
-            s['right'] += 1
-            ld = _lead_days(c['ts'], hit)
-            if ld is not None and -2 <= ld <= 400:
-                s['leads'].append(ld)
-        else:
-            # player resolved, but not to the club this source claimed
-            s['wrong'] += 1
+    for story in stories:
+        confirmed_fee = story.get('confirmed_fee')
+        conf_dt = st.parse_ts(story.get('confirmed_at', ''))
+        for sk, s in story['sources'].items():
+            a = agg[sk]
+            a['source'] = s['source']
+            a['tier'] = min(a['tier'], s['tier'])
+            a['stories'] += 1
+            if s.get('is_scoop', True):
+                a['scoops'] += 1
+            else:
+                a['follows'] += 1
+            stage = s.get('stage', 'interest')
+            if story['outcome'] == 'completed':
+                a['right'] += 1
+                a['cal'][stage][0] += 1
+                a['cal'][stage][1] += 1
+                sdt = st.parse_ts(s.get('first_ts', ''))
+                if sdt and conf_dt:
+                    ld = (conf_dt - sdt).total_seconds() / 86400.0
+                    if -2 <= ld <= 400:
+                        a['leads'].append(ld)
+                fa = _fee_accuracy(s.get('fee'), confirmed_fee)
+                if fa is not None:
+                    a['fees'].append(fa)
+            elif story['outcome'] == 'false':
+                a['wrong'] += 1
+                a['cal'][stage][1] += 1
+            else:
+                a['pending'] += 1
 
     rows = []
-    for key, s in agg.items():
-        resolved = s['right'] + s['wrong']
-        acc = (s['right'] / resolved) if resolved else None
-        adjusted = (s['right'] + PSEUDO) / (resolved + 2 * PSEUDO) if resolved else None
-        avg_lead = (sum(s['leads']) / len(s['leads'])) if s['leads'] else None
+    for sk, a in agg.items():
+        resolved = a['right'] + a['wrong']
+        acc = (a['right'] / resolved) if resolved else None
+        adjusted = (a['right'] + PSEUDO) / (resolved + 2 * PSEUDO) if resolved else None
+        completion = (a['right'] / a['stories']) if a['stories'] else None
+        breaks = a['scoops'] + a['follows']
+        originality = (a['scoops'] / breaks) if breaks else None
+        avg_lead = (sum(a['leads']) / len(a['leads'])) if a['leads'] else None
+        fee_acc = (sum(a['fees']) / len(a['fees'])) if a['fees'] else None
+        calibration = {stg: round(c[0] / c[1], 2) for stg, c in a['cal'].items() if c[1]}
         rows.append({
-            'source': s['source'], 'tier': s['tier'],
-            'claims': s['claims'], 'resolved': resolved,
-            'right': s['right'], 'wrong': s['wrong'], 'pending': s['pending'],
+            'source': a['source'], 'tier': a['tier'], 'source_key': sk,
+            'stories': a['stories'], 'resolved': resolved,
+            'right': a['right'], 'false_reports': a['wrong'], 'pending': a['pending'],
             'accuracy': round(acc, 3) if acc is not None else None,
-            'score': round(adjusted, 3) if adjusted is not None else None,
+            'completion_rate': round(completion, 3) if completion is not None else None,
+            'scoops': a['scoops'], 'follows': a['follows'],
+            'originality': round(originality, 3) if originality is not None else None,
             'avg_lead_days': round(avg_lead, 1) if avg_lead is not None else None,
+            'fee_accuracy': round(fee_acc, 2) if fee_acc is not None else None,
+            'calibration': calibration,
+            'score': round(adjusted, 3) if adjusted is not None else None,
         })
     rows.sort(key=lambda r: (r['score'] is None, -(r['score'] or 0), -r['resolved']))
+
+    # completion likelihood for live stories, using the scores we just built
+    scoremap = {r['source_key']: r['score'] for r in rows if r['score'] is not None}
+    live = []
+    for story in stories:
+        if story['outcome'] != 'pending':
+            continue
+        conf = st.completion_confidence(story, scoremap)
+        live.append({
+            'player': story['player'], 'to_club': story['to_club'], 'stage': story['stage'],
+            'completion_likelihood': round(conf, 3),
+            'sources': sorted({s['source'] for s in story['sources'].values()}),
+            'source_count': len(story['sources']),
+            'first_ts': story['first_ts'], 'last_ts': story['last_ts'],
+        })
+    live.sort(key=lambda x: -x['completion_likelihood'])
+
     ranked = [r for r in rows if r['resolved'] >= min_resolved]
     thin = [r for r in rows if r['resolved'] < min_resolved]
-    return ranked, thin
+    return ranked, thin, live, {'completed': sum(1 for s in stories if s['outcome'] == 'completed'),
+                                'false': sum(1 for s in stories if s['outcome'] == 'false'),
+                                'pending': sum(1 for s in stories if s['outcome'] == 'pending')}
 
 
 def main():
     min_resolved = MIN_RESOLVED
     if '--min' in sys.argv:
         min_resolved = int(sys.argv[sys.argv.index('--min') + 1])
-    ranked, thin = build_scores(min_resolved)
+    ranked, thin, live, tally = build(min_resolved)
 
-    payload = {'generated': None, 'min_resolved': min_resolved,
-               'ranked': ranked, 'insufficient_sample': thin}
     os.makedirs(cs.DATA_DIR, exist_ok=True)
     with open(SCORES_PATH, 'w', encoding='utf-8', newline='\n') as f:
-        json.dump(payload, f, ensure_ascii=False, indent=1)
+        json.dump({'min_resolved': min_resolved, 'story_outcomes': tally,
+                   'ranked': ranked, 'insufficient_sample': thin}, f, ensure_ascii=False, indent=1)
+    with open(STORIES_PATH, 'w', encoding='utf-8', newline='\n') as f:
+        json.dump({'live_stories': live}, f, ensure_ascii=False, indent=1)
 
     if '--json' in sys.argv:
-        print(json.dumps(payload, ensure_ascii=False, indent=1))
+        print(json.dumps({'ranked': ranked[:15], 'live': live[:15]}, ensure_ascii=False, indent=1))
         return
 
-    print(f"\n  MERCATO-IQ JOURNALIST POWER RANKING  (min {min_resolved} resolved claims)\n")
-    print(f"  {'#':>2}  {'Source':<28} {'Score':>6} {'Acc':>5} {'Right':>6} {'Wrong':>6} {'Lead':>6}")
-    print("  " + "-" * 68)
+    print(f"\n  MERCATO-IQ JOURNALIST POWER RANKING   (min {min_resolved} resolved · "
+          f"stories {tally})\n")
+    hdr = f"  {'#':>2}  {'Source':<26}{'Score':>6}{'Acc':>5}{'Excl':>6}{'False':>6}{'Lead':>7}{'Fee':>5}"
+    print(hdr + "\n  " + "-" * (len(hdr) - 2))
     for i, r in enumerate(ranked[:25], 1):
         acc = f"{int(r['accuracy']*100)}%" if r['accuracy'] is not None else "  -"
+        exc = f"{int(r['originality']*100)}%" if r['originality'] is not None else "  -"
         lead = f"{r['avg_lead_days']}d" if r['avg_lead_days'] is not None else "  -"
-        print(f"  {i:>2}  {r['source'][:28]:<28} {r['score']:>6.2f} {acc:>5} "
-              f"{r['right']:>6} {r['wrong']:>6} {lead:>6}")
-    print(f"\n  {len(ranked)} ranked, {len(thin)} with insufficient sample. "
-          f"Scores -> {os.path.relpath(SCORES_PATH, cs.REPO if hasattr(cs,'REPO') else HERE)}")
+        fee = f"{int(r['fee_accuracy']*100)}%" if r['fee_accuracy'] is not None else " -"
+        print(f"  {i:>2}  {r['source'][:26]:<26}{r['score']:>6.2f}{acc:>5}{exc:>6}"
+              f"{r['false_reports']:>6}{lead:>7}{fee:>5}")
+    print(f"\n  {len(ranked)} ranked, {len(thin)} insufficient sample.")
+
+    if live:
+        print("\n  TOP LIVE STORIES BY COMPLETION LIKELIHOOD\n")
+        for s in live[:10]:
+            src = ', '.join(s['sources'][:3]) + ('…' if s['source_count'] > 3 else '')
+            print(f"  {int(s['completion_likelihood']*100):>3}%  {s['player'][:22]:<22} -> "
+                  f"{s['to_club'][:18]:<18} [{s['stage']:<10}] {src}")
 
 
 if __name__ == '__main__':

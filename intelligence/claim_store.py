@@ -93,12 +93,12 @@ def make_claim(*, ts, source, player, club_slug, direction, from_club='', to_clu
 
 
 def make_resolution(*, ts, player, to_club, outcome='confirmed', confirmed_at='',
-                    confirmed_source=''):
+                    confirmed_source='', fee=''):
     return {
         'ts': ts, 'player': player, 'player_key': norm(player),
         'to_club': to_club, 'to_club_key': norm(to_club),
         'outcome': outcome, 'confirmed_at': confirmed_at or ts,
-        'confirmed_source': clean_source(confirmed_source),
+        'confirmed_source': clean_source(confirmed_source), 'fee': fee or '',
     }
 
 

@@ -68,7 +68,7 @@ def capture(research, ts=None):
                 to_club = slug.replace('-', ' ') if direction == 'in' else other
                 resolutions.append(cs.make_resolution(
                     ts=ts, player=name, to_club=to_club or slug,
-                    confirmed_source=it.get('src', '')))
+                    confirmed_source=it.get('src', ''), fee=it.get('fee', '')))
     return claims, resolutions
 
 

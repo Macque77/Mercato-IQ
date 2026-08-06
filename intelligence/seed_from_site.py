@@ -74,7 +74,7 @@ def process_club(content, slug, club_name):
             resolutions.append(cs.make_resolution(
                 ts=_f(o, 'confirmedAt') or _f(o, 'lastSeen') or '',
                 player=name, to_club=to_club or club_name,
-                confirmed_source=_f(o, 'src')))
+                confirmed_source=_f(o, 'src'), fee=_f(o, 'fee')))
     return claims, resolutions
 
 

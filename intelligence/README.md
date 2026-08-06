@@ -29,15 +29,29 @@ every run. Do not gitignore them.
 | `claim_store.py` | JSONL store; normalization (`player_key`, source), stable ids, upsert/dedup |
 | `seed_from_site.py` | One-shot bootstrap: claims + resolutions from the 304 `clubs/*.data.js` (head start on history) |
 | `log_claims.py` | Live capture from a run's `research.json` — wired into the assemble stage; runs every sweep |
-| `score.py` | Compute accuracy / lead-time / calibration → `scores.json`; print the Power Ranking |
+| `stories.py` | Cluster claims into stories (who broke it first vs re-reported), + the completion-likelihood model |
+| `score.py` | Enriched per-source scorecards → `scores.json`; live completion feed → `stories.json`; Power Ranking |
 
-## How a score is computed
+## Metrics per source (`scores.json`)
 
-For each claim: a resolution for the same `(player, to_club)` → **right**; the player
-resolved to a *different* club → **wrong**; no resolution yet → **pending**. Per
-source: `accuracy = right / (right+wrong)`, plus a **volume-adjusted** score
-(Laplace shrink toward 0.5, pseudo-count 2) so 1-from-1 can't outrank 40-from-45.
-Sources below `--min` resolved claims are held out as *insufficient sample*.
+| Metric | Meaning |
+|--------|---------|
+| `accuracy` | Of RESOLVED claims, % that went to the club they named |
+| `completion_rate` | Of ALL their claims, % that have completed ("came to fruition") |
+| `false_reports` | Times the player demonstrably went ELSEWHERE (or the deal collapsed) |
+| `scoops` / `follows` / `originality` | Broke it first vs re-reported; originality = the exclusivity rate |
+| `avg_lead_days` | How far AHEAD of confirmation they broke it — their real value |
+| `calibration` | Completion rate split by claimed stage (interest / talks / advanced / here-we-go) — crying wolf? |
+| `fee_accuracy` | When both a claimed and confirmed fee exist, how close (within 20%) |
+| `score` | Volume-adjusted composite (Laplace shrink toward 0.5) so 1-from-1 can't outrank 40-from-45 |
+
+## Completion likelihood (`stories.json`)
+
+For every live story, a transparent **log-odds** model: a stage prior (here-we-go starts
+high, interest low) plus each distinct source pushing the odds up or down by how far its
+reliability sits from a coin-flip. Followers count for less than the source who broke it;
+tier-3 aggregators count for less; a stale story decays back toward the prior. This is the
+headline number the product sells — and it's driven by, and improves with, the scores.
 
 ## Run it
 
