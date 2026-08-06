@@ -82,10 +82,12 @@ SCHEMA_DOC = """
    "outgoing":     [ ... same shape ... ],
    "confirmed_in": [{"name","sub","club","pos","fee","free","note","sourceUrl","sourceLabel"}],
    "confirmed_out":[ ... same shape ... ],
-   "dead":         [{"name","reason"}]}
+   "dead":         [{"name","reason"}],
+   "live":         ["<player name>", ...]}
 ]}
-- Only include a club if you found genuinely new, well-sourced news for it. Omit clubs with nothing new.
-- `dead` retires rumours that are over: put a player here (with a short `reason`) if a credible source says the deal is off/cold, OR the player has already transferred anywhere this season, OR the last credible mention is more than ~5 weeks old. Retiring is as valuable as adding -- do it whenever you can confirm a link is dead.
+- Only include a club if you researched it. For a researched club, ALWAYS return `live`.
+- `live` is the AUTHORITATIVE, COMPLETE list of every player who is a currently-live rumour for this club right now (both incoming and outgoing), per the transferfeed snapshot + your research. This is the single most important field: any rumour currently on the club's page whose player is NOT in `live` will be automatically RETIRED. So be thorough and include every genuinely-live link -- but do NOT include players who have transferred, whose deal is off, or who haven't been credibly reported in 5+ weeks.
+- `dead` optionally names players to retire with an explicit `reason` (belt-and-braces on top of `live`).
 - `truth` and `prob` are independent 0-100 integers (likelihood true / likelihood it happens).
 - `tier`: 1 = top reporter (Romano, Ornstein, Di Marzio, Romero, Falk...), 2 = reputable outlet (Sky, BBC, PA), 3 = aggregator/tabloid.
 - `sub` is a short descriptor, e.g. "23 · France · W" (age · nation · position).
@@ -134,10 +136,7 @@ X itself is often not directly searchable, so name-based search is how you catch
 - Accuracy matters more than volume: this publishes to a live site. If you cannot verify a story, leave it out.
 - CHECK CONFIRMED TRANSFERS FIRST. Before reporting any rumour, establish whether the player has already completed a move this season -- if so the rumour is void: record the deal (confirmed_in/out) and, if an old rumour for them is still floating around, add them to `dead`. A rumour for an already-transferred player is always wrong.
 - KEEP IT CURRENT, NOT STALE. Only report a rumour as live if it is genuinely being talked about now. Base recency on the LATEST credible source mention. Actively retire the dead ones via `dead`: deals a source has called off, links no one has reported in 5+ weeks, and players who signed elsewhere. A page full of months-old dead links is worse than a short accurate one.
-- RECONCILE, and CLASSIFY EVERY EXISTING RUMOUR. When the user message lists a club's current on-page rumours, you MUST account for each one: either keep it live (you found a credible report from the last ~5 weeks that it is still on) or put it in `dead`. None may be silently left as-is. First fetch the club's current snapshot -- transferfeed.com/clubs/<club-slug> aggregates the live links per club with "X ago" dates (search "transferfeed <club> transfers" and read that page). Then:
-    * ADD any player on that current snapshot who is not already on the page.
-    * For each existing on-page rumour: if the player is NOT on the current snapshot and you cannot find a fresh (<5 week) credible report, put them in `dead` -- reason "no fresh report in 5+ weeks", "signed for <club>", or "source says off". A stale link left standing is the exact failure we are fixing, so when unsure, RETIRE it.
-  To KEEP a rumour live, re-state it in incoming/outgoing (that refreshes its date so it doesn't age out); to RETIRE it, list it in `dead`. Use transferfeed to know what is live; always cite the ORIGINAL reporter, never link transferfeed itself.
+- RECONCILE via the `live` list. The user message lists a club's current on-page rumours. Your job is to return `live` -- the COMPLETE set of players who are STILL a live rumour there. Build it from the club's current snapshot: transferfeed.com/clubs/<club-slug> aggregates the live links per club with "X ago" dates (search "transferfeed <club> transfers" and read that page), plus reputable reporters. Include a player in `live` only if the link is genuinely current (reported within ~5 weeks, player not transferred, deal not called off). Everything on the page but NOT in `live` is retired automatically -- so a transferred player (e.g. one who signed elsewhere) or a months-old link simply gets left OUT of `live`, which is how you retire it. Also ADD any live player missing from the page via incoming/outgoing, and cite the ORIGINAL reporter, never transferfeed itself.
 
 Output: a SINGLE JSON object matching this schema and NOTHING else -- no prose, no markdown fences:
 {SCHEMA_DOC}
@@ -414,7 +413,6 @@ def parse_and_validate(text, roster):
         if slug not in roster:
             log(f"  dropping unknown slug: {slug!r}")
             continue
-        # keep only known arrays, and only entries that have a name
         cleaned = {'slug': slug}
         has_content = False
         for key in arrays:
@@ -422,6 +420,18 @@ def parse_and_validate(text, roster):
             if items:
                 cleaned[key] = items
                 has_content = True
+        # `dead`: explicit retirements [{name, reason}] -- MUST be carried through
+        # (it used to be silently dropped here, so nothing ever got retired).
+        dead = [d for d in c.get('dead', []) if isinstance(d, dict) and d.get('name')]
+        if dead:
+            cleaned['dead'] = dead
+            has_content = True
+        # `live`: the COMPLETE current live-rumour name list for the club. Anything
+        # on the page not in this list gets retired (replace-list reconciliation).
+        live = [n for n in c.get('live', []) if isinstance(n, str) and n.strip()]
+        if live:
+            cleaned['live'] = live
+            has_content = True
         if has_content:
             valid.append(cleaned)
     return valid

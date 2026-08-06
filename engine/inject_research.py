@@ -296,6 +296,47 @@ def upsert_rumours(content, arr_name, items):
     return (new_content, True) if ok else (content, False)
 
 
+def _norm(s):
+    """Lowercase, strip diacritics, collapse spaces -- robust name matching so
+    'Víctor Muñoz' == 'Victor Munoz' when comparing against the model's live list."""
+    import unicodedata
+    s = unicodedata.normalize('NFKD', s or '')
+    s = ''.join(ch for ch in s if not unicodedata.combining(ch))
+    return re.sub(r'\s+', ' ', s).strip().lower()
+
+
+def reconcile_live(content, live_names, protected_names):
+    """Replace-list reconciliation: flag dead:true any on-page rumour whose player
+    is NOT in the model's authoritative `live` list (and not freshly added this
+    pass). retire_rumours.py then moves them to DEAD. This is how a transferred /
+    months-old link gets retired -- the model simply leaves it out of `live`."""
+    if not live_names:
+        return content, False
+    live = {_norm(n) for n in live_names}
+    prot = {_norm(n) for n in protected_names}
+    changed = False
+    for arr in ('INCOMING', 'OUTGOING', 'WATCHLIST'):
+        block = jou.find_array_block(content, arr)
+        if not block:
+            continue
+        _, _, inner = block
+        objs = [inner[s:e] for s, e in jou.split_top_level_objects(inner)]
+        arr_changed = False
+        for i, obj in enumerate(objs):
+            nm = _norm(jou.field_str(obj, 'name'))
+            if not nm or nm in live or nm in prot:
+                continue
+            if re.search(r'\bdead\s*:\s*true\b', obj):
+                continue
+            objs[i] = jou.append_fields(obj, ['dead:true', 'deadReason:"no longer a current link"'])
+            arr_changed = True
+        if arr_changed:
+            new_content, ok = jou.replace_array_objects(content, arr, objs)
+            if ok:
+                content, changed = new_content, True
+    return content, changed
+
+
 def flag_dead(content, dead_items):
     """Mark named live rumours dead:true (+ deadReason) so engine/retire_rumours.py
     moves them to the DEAD section on its pass. This is rule 1 -- a source said the
@@ -342,6 +383,14 @@ def process_club(slug, data):
     # Rule 1: retire rumours a source has called off (retire_rumours.py moves them).
     content, dead_changed = flag_dead(content, data.get('dead', []))
     changed = changed or dead_changed
+
+    # Replace-list reconciliation: retire anything not in the model's authoritative
+    # `live` list. Protect players it's adding/confirming this pass (clearly live).
+    if data.get('live'):
+        protected = [it['name'] for k in ('incoming', 'outgoing', 'confirmed_in', 'confirmed_out')
+                     for it in data.get(k, []) if isinstance(it, dict) and it.get('name')]
+        content, live_changed = reconcile_live(content, data['live'], protected)
+        changed = changed or live_changed
 
     for arr_key, arr_name, item_fn in [
         ('confirmed_in', 'CONFIRMED_IN', confirmed_item_js),
