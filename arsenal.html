@@ -919,17 +919,15 @@ const CONFIRMED_OUT = [
   {name:"Karl Hein", sub:"Backup goalkeeper departs", club:"Werder Bremen", pos:"GK", fee:"£2.6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Jakub Kiwior", sub:"Squad defender sold to Portugal", club:"Porto", pos:"DF", fee:"£14.7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Leandro Trossard", sub:"Winger exits after Tzolis arrival", club:"Beşiktaş", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Some outlets reported a fee around €20m"},
-  {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Everton", pos:"Defensive midfield", fee:"Around £7m (€8m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by both clubs. Norgaard has signed a two-year deal at Everton a year after arriving from Brentford, having made just seven league starts in Arsenal's title-winning season. He missed the friendly against Real Betis to finalise the move."}
+  {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Everton", pos:"Defensive midfield", fee:"Around £7m (€8m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by both clubs. Norgaard has signed a two-year deal at Everton a year after arriving from Brentford, having made just seven league starts in Arsenal's title-winning season. He missed the friendly against Real Betis to finalise the move."},
+  {name:"Kristoffer Norgaard", sub:"25 · Denmark · CM", club:"Everton", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed move to Everton"}
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimarães", sub:"28 · Brazil · M", club:"Newcastle United", pos:"M", report:"Arsenal signing Newcastle captain Guimarães", src:"BBC Sport", tier:2, fee:"£75m", truth:85, prob:75, light:"g", trend:"down", note:"BBC report confirms Arsenal are signing Newcastle captain; fee agreed at £75m", lastSeen:"2026-08-06T14:04:24Z", baseProb:75},
   {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle are closing on a full agreement for the Brazil midfielder, with a fee reported at around £75m and personal terms long since settled. Guimaraes has made clear he wants the move and Newcastle's resistance has softened as the endgame nears.", src:"David Ornstein (The Athletic)", tier:1, fee:"£75m", truth:92, prob:85, light:"g", trend:"down", note:"Ornstein and Romano align on an imminent agreement, but rival outlets have contradicted each other all summer on timings and medical dates, so treat any 'done deal' framing with care until it is signed.", lastSeen:"2026-08-06T08:45:12Z", baseProb:85}
 ];
 
-const OUTGOING = [
-  {name:"Kristoffer Norgaard", sub:"26 · Denmark · M", club:"Everton", pos:"M", report:"Everton sign midfielder Norgaard from Arsenal", src:"BBC Sport / Sky Sports", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Completed move from Arsenal to Everton", lastSeen:"2026-08-06T14:04:24Z", baseProb:100}
-];
+const OUTGOING = [];
 const DEAD = [
   {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No credible updates in recent snippets; link appears stale", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£80m+", truth:55, prob:20, light:'o', trend:'flat',

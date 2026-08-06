@@ -80,7 +80,8 @@ const CONFIRMED_IN = [
   {name:"Costinha", sub:"Right back, Portuguese", club:"Olympiacos", pos:"RB", fee:"£11m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as part of Brighton's right-back succession plan behind Joel Veltman (since released)"},
   {name:"Gabby George", sub:"29 · England · DEF", club:"Manchester United", pos:"Defender", fee:"Six-figure fee (reported)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Women's team signing. Manchester United confirmed on their official site that George has agreed a transfer to Brighton, subject to registration, after they triggered a contract extension in January. The versatile defender wanted regular game time ahead of the new WSL season."},
   {name:"George", sub:"Unknown · Unknown · Defender", club:"Manchester United", pos:"DEF", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Defender joins Brighton from Man Utd"},
-  {name:"Evan Ferguson", sub:"21 · Ireland · F", club:"Man Utd", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Defender George joins Brighton from Man Utd"}
+  {name:"Evan Ferguson", sub:"21 · Ireland · F", club:"Man Utd", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Defender George joins Brighton from Man Utd"},
+  {name:"Leny Yoro", sub:"18 · France · D", club:"Manchester United", pos:"D", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Defender joins Brighton from Manchester United"}
 ];
 const CONFIRMED_OUT =
     [
@@ -211,7 +212,8 @@ const LINKMAP = {
   "George": ["bBCSportGeorge"],
   "Moisés Caicedo": ["xDavidOrnsteinMoissCaicedo"],
   "Joao Pedro": ["xDavidOrnsteinJoaoPedro"],
-  "Evan Ferguson": ["bBCSportGeorge"]};
+  "Evan Ferguson": ["bBCSportGeorge"],
+  "Leny Yoro": ["bBCSportGeorge"]};
 const WL_LINKMAP = {
   "Data-model targets":"athletic","Prized asset":"naylor",
 };

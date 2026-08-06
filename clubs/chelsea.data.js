@@ -98,7 +98,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Pep Chavarria", sub:"Rayo Vallecano · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea set to clinch deal to sign Rayo Vallecano left-back", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Advanced stage, deal imminent", lastSeen:"2026-08-06T14:04:24Z", baseProb:80}
+  {name:"Pep Chavarria", sub:"Unknown · Spain · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea set to clinch deal to sign Rayo Vallecano left-back", src:"skysports.com", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal reportedly imminent", lastSeen:"2026-08-06T14:09:02Z", baseProb:80}
 ];
 
 const OUTGOING = [];

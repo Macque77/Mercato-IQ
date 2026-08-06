@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "psg-b", "name": "Paris Saint-Germain B", "count": 
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:04:25.076510Z",
+  updated: "2026-08-06T14:09:03.877598Z",
   label: "League aggregation"
 };

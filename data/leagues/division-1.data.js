@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "dfcde", "name": "RWDM Brussels FC", "count": 0, "b
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:04:25.077648Z",
+  updated: "2026-08-06T14:09:03.878681Z",
   label: "League aggregation"
 };
