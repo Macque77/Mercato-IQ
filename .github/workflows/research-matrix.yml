@@ -65,8 +65,13 @@ jobs:
           if [ -n "${{ github.event.inputs.league }}" ]; then
             SEL_ARGS=(--league "${{ github.event.inputs.league }}")
           fi
+          # COST SAFETY: X (web_search) is ~$16/day at hourly -- far more than the rest of
+          # the pipeline. So X is OFF on the hourly cron and only runs on a manual dispatch
+          # (unless a cheaper X source replaces web_search). Manual dispatch: X on unless no_x=true.
           NOX=""
-          if [ "${{ github.event.inputs.no_x }}" = "true" ]; then NOX="--no-x"; fi
+          if [ "${{ github.event.inputs.no_x }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+            NOX="--no-x"
+          fi
           python3 engine/discover.py "${SEL_ARGS[@]}" $NOX --out "leads-${{ matrix.nation }}.json"
         env:
           # discover needs the key ONLY for the X web_search fallback (engine/x_source.py).
