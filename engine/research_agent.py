@@ -56,9 +56,17 @@ BATCH_SIZE = int(os.environ.get('MERCATO_BATCH_SIZE', '4'))  # clubs researched 
 # outlets in engine/sources.json aren't RSS, so they're left to the model's
 # web_search, not polled here.
 RSS_FEEDS = [
-    ('BBC Sport Football',   'https://feeds.bbci.co.uk/sport/football/rss.xml'),
-    ('Sky Sports Football',  'https://www.skysports.com/rss/12040'),
+    # English -- broad European coverage, feeds the poll for every league.
+    ('BBC Sport Football',    'https://feeds.bbci.co.uk/sport/football/rss.xml'),
+    ('Sky Sports Football',   'https://www.skysports.com/rss/12040'),
     ('The Guardian Football', 'https://www.theguardian.com/football/rss'),
+    # Foreign-language -- surface leads for their leagues that English feeds may
+    # miss. Requires the multilingual keyword filter in engine/poll_feeds.py.
+    ('Marca (Spain)',         'https://e00-marca.uecdn.es/rss/futbol.xml'),
+    ('Kicker (Germany)',      'https://newsfeed.kicker.de/news/aktuell'),
+    ('Record (Portugal)',     'https://www.record.pt/rss'),
+    ('Voetbal Int. (NL)',     'https://www.vi.nl/rss'),
+    ('Fotomac (Turkey)',      'https://www.fotomac.com.tr/rss/anasayfa.xml'),
 ]
 
 # The schema the model must emit, quoted verbatim from engine/inject_research.py so
@@ -270,6 +278,8 @@ def anthropic_research(client, roster, slugs, leads):
     """One web-search-backed API call for a batch of clubs. Returns [] on failure."""
     from anthropic import APIError
 
+    log(f"Researching batch: {', '.join(slugs)}")
+
     club_lines = '\n'.join(f'  - slug "{s}": {roster[s]["name"]} ({roster[s]["league"] or "?"})'
                            for s in slugs if s in roster)
     lead_block = ''
@@ -376,11 +386,21 @@ def main():
     import anthropic
     client = anthropic.Anthropic()
 
+    batches = [targets[i:i + BATCH_SIZE] for i in range(0, len(targets), BATCH_SIZE)]
+    # Run batches concurrently -- the Anthropic client is thread-safe, so a sweep
+    # of many batches finishes in roughly (batches / concurrency) waves instead of
+    # sequentially. Capped to stay under rate limits; the SDK retries 429s anyway.
+    conc = max(1, int(os.environ.get('MERCATO_CONCURRENCY') or '4'))
     all_clubs = []
-    for i in range(0, len(targets), BATCH_SIZE):
-        batch = targets[i:i + BATCH_SIZE]
-        log(f"Batch {i // BATCH_SIZE + 1}: {', '.join(batch)}")
-        all_clubs.extend(anthropic_research(client, roster, batch, leads))
+    if conc == 1 or len(batches) <= 1:
+        for batch in batches:
+            all_clubs.extend(anthropic_research(client, roster, batch, leads))
+    else:
+        from concurrent.futures import ThreadPoolExecutor
+        log(f"Running {len(batches)} batch(es) at concurrency {min(conc, len(batches))}.")
+        with ThreadPoolExecutor(max_workers=min(conc, len(batches))) as ex:
+            for result in ex.map(lambda b: anthropic_research(client, roster, b, leads), batches):
+                all_clubs.extend(result)
 
     out_path = os.path.join(REPO, args.out)
     with open(out_path, 'w', encoding='utf-8', newline='\n') as f:

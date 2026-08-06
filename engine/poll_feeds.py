@@ -39,11 +39,30 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SEEN_FILE = os.path.join(REPO, 'engine', '.feed_seen.json')
 
 # Loose keyword filter -- breadth-first, not the source of truth. A hit here
-# just means "worth spending a real research pass on this headline".
+# just means "worth spending a real research pass on this headline". Multilingual
+# so the foreign-language feeds (Marca/Kicker/Record/VI/Fotomac) surface leads;
+# false positives are cheap (they just get researched and found to have nothing).
 TRANSFER_KEYWORDS = re.compile(
-    r'\b(transfer|sign(s|ed|ing)?|deal|move|loan(ed)?|medical|fee|bid|agree(s|d)?|'
-    r'join(s|ed)?|confirm(s|ed)?|deadline day|swoop|targets?|linked|release clause)\b',
-    re.IGNORECASE,
+    r'\b('
+    # transfer\w* catches the transfer-root word across languages: transfer(s),
+    # transfert (FR), transferde (TR), transfervrije (NL), transferencia (ES/PT).
+    r'transfer\w*|'
+    # English
+    r'sign(s|ed|ing)?|deal|move|loan(ed)?|medical|fee|bid|agree(s|d)?|'
+    r'join(s|ed)?|confirm(s|ed)?|deadline day|swoop|targets?|linked|release clause|'
+    # Spanish / Portuguese
+    r'fichaj\w*|fichar|fichado|cesi[oó]n|traspaso|acuerdo|oferta|refuer[zç]o|'
+    r'pr[eé]stamo|contrata[cç][aã]o|empr[eé]st\w*|oficial|'
+    # Italian
+    r'mercato|trattativa|acquist\w*|cession\w*|prestito|accordo|ufficiale|colpo|'
+    # German
+    r'wechsel|verpflicht\w*|leihe|abl[oö]se|einigung|neuzug\w*|'
+    # French
+    r'signature|pr[eê]t|recrue|arriv[eé]e|d[eé]part|offre|'
+    # Dutch / Turkish
+    r'akkoord|versterking|aanwinst|imza|anla[sş]ma|kiral[ıi]k|bonservis'
+    r')\b',
+    re.IGNORECASE | re.UNICODE,
 )
 
 
