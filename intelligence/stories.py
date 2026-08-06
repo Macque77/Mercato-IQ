@@ -105,6 +105,8 @@ def build_stories(claims, resolutions):
     stories = []
     for (pk, tk), cl in groups.items():
         cl.sort(key=lambda x: x.get('ts', ''))
+        # destination club's slug = the slug of an incoming claim (where this IS the dest)
+        dest_slug = next((c.get('club_slug', '') for c in cl if c.get('direction') == 'in'), '')
         # one entry per source (their earliest claim in this story)
         by_src = {}
         for c in cl:
@@ -159,7 +161,7 @@ def build_stories(claims, resolutions):
 
         stories.append({
             'player': cl[0].get('player', ''), 'player_key': pk,
-            'to_club': cl[0].get('to_club', ''), 'to_club_key': tk,
+            'to_club': cl[0].get('to_club', ''), 'to_club_key': tk, 'club_slug': dest_slug,
             'stage': stage, 'first_stage': ordered[0].get('stage', 'interest'),
             'first_ts': breaker_ts, 'last_ts': ordered[-1]['ts'],
             'breaker': ordered[0]['source_key'],

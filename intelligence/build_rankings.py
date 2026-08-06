@@ -13,6 +13,7 @@ dataset PROVISIONAL until enough history has accrued.
 Usage:  python3 intelligence/build_rankings.py [--out rankings.html] [--min N]
 """
 import html
+import json
 import os
 import sys
 
@@ -61,18 +62,51 @@ def rank_rows(ranked):
 
 def live_rows(live):
     out = []
+    glyph = {'heating': '▲', 'cooling': '▼', 'steady': '·'}
     for s in live[:40]:
         c = s['completion_likelihood']
         band = 'hi' if c >= 0.66 else ('mid' if c >= 0.4 else 'lo')
         srcs = ', '.join(s['sources'][:3]) + ('…' if s['source_count'] > 3 else '')
+        mo = s.get('momentum', 'steady')
         out.append(f"""<tr>
       <td class="n"><span class="conf {band}">{round(c*100)}%</span></td>
+      <td class="mo mo-{mo}" title="{mo}">{glyph.get(mo, '·')}</td>
       <td class="pl">{esc(s['player'])}</td>
       <td class="to">{esc(s['to_club'])}</td>
       <td><span class="stage s-{esc(s['stage'])}">{esc(s['stage'])}</span></td>
       <td class="srcs">{esc(srcs)}</td>
     </tr>""")
     return '\n'.join(out)
+
+
+def cal_section(cal):
+    """Render the model calibration block (Brier, skill, reliability curve)."""
+    if not cal or not cal.get('buckets'):
+        return ''
+    brier, base, skill = cal.get('brier'), cal.get('baseline_brier'), cal.get('skill')
+    bars = []
+    for b in cal['buckets']:
+        w = round(b['actual_rate'] * 100)
+        bars.append(f"""<tr>
+      <td class="n">{round(b['avg_pred']*100)}%</td>
+      <td class="n">{round(b['actual_rate']*100)}%</td>
+      <td class="n">{b['n']}</td>
+      <td class="barcell"><span class="bar" style="width:{w}%"></span></td>
+    </tr>""")
+    skill_txt = (f"{round(skill*100)}% better than guessing the base rate"
+                 if isinstance(skill, (int, float)) else "—")
+    return f"""
+  <h2>Does the model actually predict?</h2>
+  <p class="note">Every resolved deal, scored by what the model would have predicted vs. what
+  happened. A calibrated model tracks the diagonal: when it says 70%, ~70% complete.
+  <b>Brier {brier}</b> vs. a base-rate baseline of {base} — <b>{skill_txt}</b>. Provisional on
+  {cal.get('n_resolved','—')} resolved outcomes; sharpens as history accrues.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="n">Predicted</th><th class="n">Actual</th><th class="n">n</th><th>Reliability</th></tr></thead>
+    <tbody>
+{''.join(bars)}
+    </tbody>
+  </table></div>"""
 
 
 TEMPLATE = """<!doctype html>
@@ -130,6 +164,9 @@ TEMPLATE = """<!doctype html>
   .stage.s-here-we-go{{color:#fff;background:var(--hi);border-color:transparent}}
   .stage.s-advanced{{color:var(--hi);border-color:var(--hi)}}
   .srcs{{color:var(--ink-soft);font-size:13px;white-space:normal}}
+  .mo{{text-align:center;font-weight:700;width:1.4em}}
+  .mo-heating{{color:var(--hi)}} .mo-cooling{{color:var(--lo)}} .mo-steady{{color:var(--ink-soft)}}
+  .barcell{{width:40%}} .bar{{display:block;height:9px;border-radius:99px;background:var(--brand);min-width:2px}}
   .foot{{margin-top:44px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);padding-top:18px}}
   .prov{{display:inline-block;font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
     color:var(--mid);border:1px solid var(--mid);border-radius:99px;padding:4px 9px;margin-left:10px;vertical-align:middle}}
@@ -166,11 +203,14 @@ TEMPLATE = """<!doctype html>
     </tbody>
   </table></div>
 
+{cal_section}
+
   <h2>Live transfers by completion likelihood</h2>
   <p class="note">Every open story, scored for how likely it is to actually complete — combining the
-  stage it's reached with the measured reliability of the reporters carrying it.</p>
+  stage it's reached with the measured reliability of the reporters carrying it. The arrow shows
+  momentum: <span style="color:var(--hi)">▲</span> heating, <span style="color:var(--lo)">▼</span> cooling.</p>
   <div class="tbl-wrap"><table>
-    <thead><tr><th class="n">Likely</th><th>Player</th><th>To</th><th>Stage</th><th>Sources</th></tr></thead>
+    <thead><tr><th class="n">Likely</th><th></th><th>Player</th><th>To</th><th>Stage</th><th>Sources</th></tr></thead>
     <tbody>
 {live_rows}
     </tbody>
@@ -198,9 +238,25 @@ def main():
     n_claims = len(cs.load_claims())
     n_res = tally.get('completed', 0) + tally.get('false', 0) + tally.get('collapsed', 0)
 
+    # Per-club confidence board data: slug -> its live stories (for the on-page widget).
+    club_conf = {}
+    for s in live:
+        slug = s.get('club_slug')
+        if slug:
+            club_conf.setdefault(slug, []).append(s)
+    for slug in club_conf:
+        club_conf[slug] = sorted(club_conf[slug], key=lambda x: -x['completion_likelihood'])[:8]
+    with open(os.path.join(cs.DATA_DIR, 'club_confidence.json'), 'w',
+              encoding='utf-8', newline='\n') as f:
+        json.dump(club_conf, f, ensure_ascii=False, separators=(',', ':'))
+
+    try:
+        cal = json.load(open(os.path.join(cs.DATA_DIR, 'calibration.json'), encoding='utf-8'))
+    except Exception:
+        cal = None
     page = TEMPLATE.format(
         rank_rows=rank_rows(ranked), live_rows=live_rows(live),
-        n_claims=n_claims, n_res=n_res)
+        cal_section=cal_section(cal), n_claims=n_claims, n_res=n_res)
     with open(out_path, 'w', encoding='utf-8', newline='\n') as f:
         f.write(page)
     print(f"Wrote {os.path.relpath(out_path, REPO)}: {len(ranked)} ranked reporter(s), "

@@ -53,6 +53,9 @@
   .stage.s-here-we-go{color:#fff;background:var(--hi);border-color:transparent}
   .stage.s-advanced{color:var(--hi);border-color:var(--hi)}
   .srcs{color:var(--ink-soft);font-size:13px;white-space:normal}
+  .mo{text-align:center;font-weight:700;width:1.4em}
+  .mo-heating{color:var(--hi)} .mo-cooling{color:var(--lo)} .mo-steady{color:var(--ink-soft)}
+  .barcell{width:40%} .bar{display:block;height:9px;border-radius:99px;background:var(--brand);min-width:2px}
   .foot{margin-top:44px;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
   .prov{display:inline-block;font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;
     color:var(--mid);border:1px solid var(--mid);border-radius:99px;padding:4px 9px;margin-left:10px;vertical-align:middle}
@@ -114,14 +117,64 @@
     </tbody>
   </table></div>
 
+
+  <h2>Does the model actually predict?</h2>
+  <p class="note">Every resolved deal, scored by what the model would have predicted vs. what
+  happened. A calibrated model tracks the diagonal: when it says 70%, ~70% complete.
+  <b>Brier 0.1921</b> vs. a base-rate baseline of 0.2222 — <b>14% better than guessing the base rate</b>. Provisional on
+  42 resolved outcomes; sharpens as history accrues.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="n">Predicted</th><th class="n">Actual</th><th class="n">n</th><th>Reliability</th></tr></thead>
+    <tbody>
+<tr>
+      <td class="n">16%</td>
+      <td class="n">0%</td>
+      <td class="n">11</td>
+      <td class="barcell"><span class="bar" style="width:0%"></span></td>
+    </tr><tr>
+      <td class="n">24%</td>
+      <td class="n">33%</td>
+      <td class="n">6</td>
+      <td class="barcell"><span class="bar" style="width:33%"></span></td>
+    </tr><tr>
+      <td class="n">37%</td>
+      <td class="n">40%</td>
+      <td class="n">10</td>
+      <td class="barcell"><span class="bar" style="width:40%"></span></td>
+    </tr><tr>
+      <td class="n">45%</td>
+      <td class="n">43%</td>
+      <td class="n">7</td>
+      <td class="barcell"><span class="bar" style="width:43%"></span></td>
+    </tr><tr>
+      <td class="n">53%</td>
+      <td class="n">100%</td>
+      <td class="n">1</td>
+      <td class="barcell"><span class="bar" style="width:100%"></span></td>
+    </tr><tr>
+      <td class="n">88%</td>
+      <td class="n">0%</td>
+      <td class="n">3</td>
+      <td class="barcell"><span class="bar" style="width:0%"></span></td>
+    </tr><tr>
+      <td class="n">92%</td>
+      <td class="n">100%</td>
+      <td class="n">4</td>
+      <td class="barcell"><span class="bar" style="width:100%"></span></td>
+    </tr>
+    </tbody>
+  </table></div>
+
   <h2>Live transfers by completion likelihood</h2>
   <p class="note">Every open story, scored for how likely it is to actually complete — combining the
-  stage it's reached with the measured reliability of the reporters carrying it.</p>
+  stage it's reached with the measured reliability of the reporters carrying it. The arrow shows
+  momentum: <span style="color:var(--hi)">▲</span> heating, <span style="color:var(--lo)">▼</span> cooling.</p>
   <div class="tbl-wrap"><table>
-    <thead><tr><th class="n">Likely</th><th>Player</th><th>To</th><th>Stage</th><th>Sources</th></tr></thead>
+    <thead><tr><th class="n">Likely</th><th></th><th>Player</th><th>To</th><th>Stage</th><th>Sources</th></tr></thead>
     <tbody>
 <tr>
       <td class="n"><span class="conf hi">91%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Savinho</td>
       <td class="to">Tottenham Hotspur</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -129,6 +182,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">90%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Saïdou Sow</td>
       <td class="to">Nantes</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -136,6 +190,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">90%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Daniel Maldini</td>
       <td class="to">Cagliari</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -143,6 +198,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">89%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Iván Cedric</td>
       <td class="to">Alanyaspor</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -150,6 +206,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">89%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Nariman Akhundzada</td>
       <td class="to">Erzurumspor</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -157,6 +214,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">89%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Admir Bristric</td>
       <td class="to">Leicester City</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -164,6 +222,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">89%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Kodai Sano</td>
       <td class="to">PSV</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -171,6 +230,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">89%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Deniz Zeitler</td>
       <td class="to">SC Paderborn 07</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -178,6 +238,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">89%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Anan Khalaili</td>
       <td class="to">Nottingham Forest</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -185,6 +246,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">89%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Ahmed Sidibé</td>
       <td class="to">Vitória SC</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -192,6 +254,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">88%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Christian Ndow</td>
       <td class="to">Spezia</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -199,6 +262,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">88%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Kodai Sano</td>
       <td class="to">PSV Eindhoven</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -206,6 +270,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">88%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Bruno Guimarães</td>
       <td class="to">Arsenal</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -213,6 +278,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">88%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Bruno Guimarães</td>
       <td class="to">Newcastle United</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -220,6 +286,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">87%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Elliot Stroud</td>
       <td class="to">Hull City</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -227,6 +294,7 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">87%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Lucas Perri</td>
       <td class="to">Torino</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
@@ -234,167 +302,191 @@
     </tr>
 <tr>
       <td class="n"><span class="conf hi">87%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Bryan Mbeumo</td>
       <td class="to">Manchester United</td>
       <td><span class="stage s-here-we-go">here-we-go</span></td>
       <td class="srcs">David Ornstein</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf hi">66%</span></td>
+      <td class="n"><span class="conf mid">50%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
+      <td class="pl">Nahuel Molina</td>
+      <td class="to">AS Roma</td>
+      <td><span class="stage s-advanced">advanced</span></td>
+      <td class="srcs">Gianluca Di Marzio</td>
+    </tr>
+<tr>
+      <td class="n"><span class="conf mid">50%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Damián Pizarro</td>
       <td class="to">Audax Italiano</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">TuttoUdinese</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf hi">66%</span></td>
-      <td class="pl">Nahuel Molina</td>
-      <td class="to">AS Roma</td>
-      <td><span class="stage s-advanced">advanced</span></td>
-      <td class="srcs">Gianluca Di Marzio</td>
-    </tr>
-<tr>
-      <td class="n"><span class="conf hi">66%</span></td>
+      <td class="n"><span class="conf mid">50%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Adam Phillips</td>
       <td class="to">Bradford City</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Pete O&#x27;Rourke</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf hi">66%</span></td>
+      <td class="n"><span class="conf mid">50%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Ferran Torres</td>
       <td class="to">Paris Saint-Germain</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Gianluca Di Marzio</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">49%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Nahuel Molina</td>
       <td class="to">Unspecified</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">49%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Hrvoje Smolcic</td>
       <td class="to">Arca Corum FK</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">49%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Cristian Romero</td>
       <td class="to">Inter Milan</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">49%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Zion Suzuki</td>
       <td class="to">Paris Saint-Germain</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">48%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Mikey Moore</td>
       <td class="to">FC Cologne</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">48%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Mika Godts</td>
       <td class="to">Paris Saint-Germain</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">48%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Rafael Leão</td>
       <td class="to">Tottenham Hotspur</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">48%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Mikey Moore</td>
       <td class="to">FC Köln</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">65%</span></td>
+      <td class="n"><span class="conf mid">48%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Ousmane Diomande</td>
       <td class="to">Nottingham Forest</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">on-page rumour</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">64%</span></td>
+      <td class="n"><span class="conf mid">48%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Matteo Ruggeri</td>
       <td class="to">Aston Villa</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Fabrizio Romano, Transferfeed page</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">64%</span></td>
+      <td class="n"><span class="conf mid">47%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Bradley Barcola</td>
       <td class="to">Liverpool</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">BBC Sport, Fabrizio Romano</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">62%</span></td>
+      <td class="n"><span class="conf mid">45%</span></td>
+      <td class="mo mo-heating" title="heating">▲</td>
       <td class="pl">Diego Moreira</td>
       <td class="to">AS Roma</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Gianluca Di Marzio, Nicolo Schira</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="n"><span class="conf mid">44%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Francis Nzaba</td>
       <td class="to">Antalyaspor</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Yeni Alanya</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="n"><span class="conf mid">44%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Chibuike Nwaiwu</td>
       <td class="to">Fulham</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Soccernet NG</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="n"><span class="conf mid">44%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Giuseppe Favasuli</td>
       <td class="to">Napoli</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">Areniello</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="n"><span class="conf mid">44%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Marvelous Nakamba</td>
       <td class="to">Panaitolikos</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">monobala.gr</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="n"><span class="conf mid">44%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Moussa Djenepo</td>
       <td class="to">Panaitolikos</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">monobala.gr</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="n"><span class="conf mid">44%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Hidemasa Morita successor / Kamada</td>
       <td class="to">Real Sociedad</td>
       <td><span class="stage s-advanced">advanced</span></td>
       <td class="srcs">FútbolFantasy</td>
     </tr>
 <tr>
-      <td class="n"><span class="conf mid">61%</span></td>
+      <td class="n"><span class="conf mid">44%</span></td>
+      <td class="mo mo-steady" title="steady">·</td>
       <td class="pl">Álex Remiro</td>
       <td class="to">Aston Villa (interest)</td>
       <td><span class="stage s-advanced">advanced</span></td>

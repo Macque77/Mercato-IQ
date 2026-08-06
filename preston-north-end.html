@@ -104,6 +104,31 @@
   }
   .rankings-link:hover { background:var(--primary-bright); color:#0a0e14; }
 
+  .confidence-board {
+    max-width:var(--maxw, 1200px); margin:18px auto 0; padding:16px 18px;
+    background:rgba(255,255,255,0.03); border:1px solid var(--border, #21262d);
+    border-radius:12px;
+  }
+  .confidence-board h3 {
+    margin:0 0 12px; font-family:var(--display); font-size:14px; font-weight:400;
+    letter-spacing:0.06em; text-transform:uppercase; display:flex; align-items:baseline; gap:10px;
+  }
+  .confidence-board .cb-sub { font-size:11px; color:var(--muted, #8b949e); letter-spacing:0.04em; }
+  .cb-row { display:grid; grid-template-columns:52px 1fr auto auto; gap:10px; align-items:center;
+    padding:8px 0; border-top:1px solid var(--border, #21262d); }
+  .cb-row:first-child { border-top:0; }
+  .cb-pct { font-family:var(--mono, ui-monospace, monospace); font-weight:700; font-size:13px;
+    text-align:center; padding:3px 0; border-radius:6px; color:#0a0e14; }
+  .cb-pct.hi { background:#2ea043; } .cb-pct.mid { background:#bb8009; } .cb-pct.lo { background:#a83a34; color:#fff; }
+  .cb-pl { font-weight:600; font-size:14px; }
+  .cb-stage { font-family:var(--mono, ui-monospace, monospace); font-size:10px; text-transform:uppercase;
+    letter-spacing:0.05em; color:var(--muted, #8b949e); border:1px solid var(--border,#21262d);
+    border-radius:99px; padding:2px 8px; white-space:nowrap; }
+  .cb-mo { font-size:13px; width:1.2em; text-align:center; }
+  .cb-mo.heating { color:#2ea043; } .cb-mo.cooling { color:#a83a34; } .cb-mo.steady { color:var(--muted,#8b949e); }
+  .confidence-board .cb-more { display:inline-block; margin-top:12px; font-family:var(--mono,ui-monospace,monospace);
+    font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--primary-bright); text-decoration:none; }
+
   .breadcrumb {
     display:flex;
     align-items:center;
@@ -810,6 +835,30 @@
 <div class="hero-summary" id="hero-summary" style="display:none">
   <p id="hero-summary-text"></p>
 </div>
+
+<div id="confidence-board" class="confidence-board" style="display:none">
+  <h3>Transfer Confidence <span class="cb-sub">live completion likelihood · Mercato-IQ reliability engine</span></h3>
+  <div id="cb-list"></div>
+  <a class="cb-more" href="/rankings.html">Full journalist power rankings →</a>
+</div>
+<script defer>
+(function(){
+  var slug=(location.pathname.split('/').pop()||'').replace(/\.html$/,'');
+  if(!slug) return;
+  fetch('/intelligence/data/club_confidence.json').then(function(r){return r.ok?r.json():null;}).then(function(d){
+    if(!d) return; var items=d[slug]; if(!items||!items.length) return;
+    document.getElementById('cb-list').innerHTML=items.map(function(s){
+      var p=Math.round(s.completion_likelihood*100), band=p>=66?'hi':(p>=40?'mid':'lo');
+      var mo=s.momentum||'steady', gl=mo==='heating'?'▲':(mo==='cooling'?'▼':'·');
+      return '<div class="cb-row"><span class="cb-pct '+band+'">'+p+'%</span>'+
+        '<span class="cb-pl">'+(s.player||'')+'</span>'+
+        '<span class="cb-stage">'+(s.stage||'')+'</span>'+
+        '<span class="cb-mo '+mo+'" title="'+mo+'">'+gl+'</span></div>';
+    }).join('');
+    document.getElementById('confidence-board').style.display='block';
+  }).catch(function(){});
+})();
+</script>
 
 <div class="container">
   <section class="section" id="confirmed-section">

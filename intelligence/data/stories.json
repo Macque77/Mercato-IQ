@@ -6,6 +6,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.91,
    "momentum": "steady",
+   "club_slug": "tottenham-hotspur",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -19,6 +20,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.895,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Les Nouvelles du Foot"
    ],
@@ -32,6 +34,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.895,
    "momentum": "steady",
+   "club_slug": "cagliari",
    "sources": [
     "tuttomercatoweb.com"
    ],
@@ -45,6 +48,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.892,
    "momentum": "steady",
+   "club_slug": "alanyaspor",
    "sources": [
     "Sporx"
    ],
@@ -58,6 +62,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.892,
    "momentum": "steady",
+   "club_slug": "erzurumspor",
    "sources": [
     "Sabah"
    ],
@@ -71,6 +76,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.892,
    "momentum": "steady",
+   "club_slug": "leicester-city",
    "sources": [
     "Planet Nogomet"
    ],
@@ -84,6 +90,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.892,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tim Reedijk, VI.nl"
    ],
@@ -97,6 +104,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.892,
    "momentum": "steady",
+   "club_slug": "sc-paderborn",
    "sources": [
     "Sky Sports Germany"
    ],
@@ -110,6 +118,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.892,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "The Athletic"
    ],
@@ -123,6 +132,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.892,
    "momentum": "steady",
+   "club_slug": "vitoria-guimaraes",
    "sources": [
     "A Bola"
    ],
@@ -136,6 +146,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.884,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -149,6 +160,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.884,
    "momentum": "steady",
+   "club_slug": "psv-eindhoven",
    "sources": [
     "Voetbal International"
    ],
@@ -162,6 +174,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.883,
    "momentum": "steady",
+   "club_slug": "arsenal",
    "sources": [
     "BBC Sport Football"
    ],
@@ -175,6 +188,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.883,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "BBC Sport"
    ],
@@ -188,6 +202,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.872,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -201,6 +216,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.872,
    "momentum": "steady",
+   "club_slug": "torino",
    "sources": [
     "Football Italia"
    ],
@@ -214,6 +230,7 @@
    "stage": "here-we-go",
    "completion_likelihood": 0.87,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "David Ornstein"
    ],
@@ -227,6 +244,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.499,
    "momentum": "steady",
+   "club_slug": "as-roma",
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -240,6 +258,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.499,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoUdinese"
    ],
@@ -253,6 +272,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.497,
    "momentum": "steady",
+   "club_slug": "bradford-city",
    "sources": [
     "Pete O'Rourke"
    ],
@@ -266,6 +286,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.497,
    "momentum": "steady",
+   "club_slug": "paris-saint-germain",
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -279,6 +300,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.486,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -292,6 +314,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.486,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -305,6 +328,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.486,
    "momentum": "steady",
+   "club_slug": "inter-milan",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -318,6 +342,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.486,
    "momentum": "steady",
+   "club_slug": "paris-saint-germain",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -331,6 +356,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.485,
    "momentum": "steady",
+   "club_slug": "fc-cologne",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -344,6 +370,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.485,
    "momentum": "steady",
+   "club_slug": "paris-saint-germain",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -357,6 +384,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.485,
    "momentum": "steady",
+   "club_slug": "tottenham-hotspur",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -370,6 +398,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.485,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -383,6 +412,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.481,
    "momentum": "steady",
+   "club_slug": "nottingham-forest",
    "sources": [
     "on-page rumour"
    ],
@@ -396,6 +426,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.476,
    "momentum": "steady",
+   "club_slug": "aston-villa",
    "sources": [
     "Fabrizio Romano",
     "Transferfeed page"
@@ -410,6 +441,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.468,
    "momentum": "steady",
+   "club_slug": "liverpool",
    "sources": [
     "BBC Sport",
     "Fabrizio Romano"
@@ -424,6 +456,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.45,
    "momentum": "heating",
+   "club_slug": "as-roma",
    "sources": [
     "Gianluca Di Marzio",
     "Nicolo Schira"
@@ -438,6 +471,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "antalyaspor",
    "sources": [
     "Yeni Alanya"
    ],
@@ -451,6 +485,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "fulham",
    "sources": [
     "Soccernet NG"
    ],
@@ -464,6 +499,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "napoli",
    "sources": [
     "Areniello"
    ],
@@ -477,6 +513,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "panaitolikos",
    "sources": [
     "monobala.gr"
    ],
@@ -490,6 +527,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "panaitolikos",
    "sources": [
     "monobala.gr"
    ],
@@ -503,6 +541,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "real-sociedad",
    "sources": [
     "FútbolFantasy"
    ],
@@ -516,6 +555,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FútbolFantasy"
    ],
@@ -529,6 +569,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "santa-clara",
    "sources": [
     "Gabriel Machado"
    ],
@@ -542,6 +583,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "CaughtOffside"
    ],
@@ -555,6 +597,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.442,
    "momentum": "steady",
+   "club_slug": "wigan-athletic",
    "sources": [
     "Alan Nixon"
    ],
@@ -568,6 +611,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.441,
    "momentum": "steady",
+   "club_slug": "mainz-05",
    "sources": [
     "Get German Football News"
    ],
@@ -581,6 +625,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.441,
    "momentum": "steady",
+   "club_slug": "celtic",
    "sources": [
     "Daily Record"
    ],
@@ -594,6 +639,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.441,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "tuttomercatoweb.com"
    ],
@@ -607,6 +653,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.441,
    "momentum": "steady",
+   "club_slug": "rb-leipzig",
    "sources": [
     "sport1.de"
    ],
@@ -620,6 +667,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "deportivo-la-coruna",
    "sources": [
     "ElDesmarque"
    ],
@@ -633,6 +681,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Ben Wignall"
    ],
@@ -646,6 +695,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "fc-porto",
    "sources": [
     "O Jogo"
    ],
@@ -659,6 +709,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "fenerbahce",
    "sources": [
     "Sky Sports Turkey"
    ],
@@ -672,6 +723,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FootballTransfers.com"
    ],
@@ -685,6 +737,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "fiorentina",
    "sources": [
     "Calciomercato.com"
    ],
@@ -698,6 +751,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "Yorkshire"
    ],
@@ -711,6 +765,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "HullLive"
    ],
@@ -724,6 +779,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "leicester-city",
    "sources": [
     "@SportsPeteO / FLW"
    ],
@@ -737,6 +793,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Christian Heidel via Yahoo Sports"
    ],
@@ -750,6 +807,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "olympique-lyon",
    "sources": [
     "Sky Sport"
    ],
@@ -763,6 +821,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "osasuna",
    "sources": [
     "67 Hail Hail"
    ],
@@ -776,6 +835,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "real-betis",
    "sources": [
     "Fichajes.net"
    ],
@@ -789,6 +849,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Estadio Deportivo"
    ],
@@ -802,6 +863,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sky Sports Germany"
    ],
@@ -815,6 +877,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "sporting-cp",
    "sources": [
     "Nicolo Schira"
    ],
@@ -828,6 +891,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "stade-brest",
    "sources": [
     "Sacha Tavolieri"
    ],
@@ -841,6 +905,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.434,
    "momentum": "steady",
+   "club_slug": "westerlo",
    "sources": [
     "Nico Schira"
    ],
@@ -854,6 +919,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.433,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "CoventryLive"
    ],
@@ -867,6 +933,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.433,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Florian Plettenberg"
    ],
@@ -880,6 +947,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.433,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "John Townley"
    ],
@@ -893,6 +961,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.433,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "L'Equipe"
    ],
@@ -906,6 +975,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.433,
    "momentum": "steady",
+   "club_slug": "union-berlin",
    "sources": [
     "Kicker"
    ],
@@ -919,6 +989,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.433,
    "momentum": "steady",
+   "club_slug": "sunderland",
    "sources": [
     "Sunderland Echo"
    ],
@@ -932,6 +1003,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.432,
    "momentum": "steady",
+   "club_slug": "crystal-palace",
    "sources": [
     "The Athletic"
    ],
@@ -945,6 +1017,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.432,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "The Guardian"
    ],
@@ -958,6 +1031,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.43,
    "momentum": "steady",
+   "club_slug": "ascoli-picchio",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -971,6 +1045,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.43,
    "momentum": "steady",
+   "club_slug": "pisa",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -984,6 +1059,7 @@
    "stage": "talks",
    "completion_likelihood": 0.424,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sky Sports"
    ],
@@ -997,6 +1073,7 @@
    "stage": "talks",
    "completion_likelihood": 0.424,
    "momentum": "steady",
+   "club_slug": "fulham",
    "sources": [
     "Sky Sports"
    ],
@@ -1010,6 +1087,7 @@
    "stage": "talks",
    "completion_likelihood": 0.424,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sky Sports"
    ],
@@ -1023,6 +1101,7 @@
    "stage": "talks",
    "completion_likelihood": 0.424,
    "momentum": "steady",
+   "club_slug": "olympiacos",
    "sources": [
     "Sky Sports"
    ],
@@ -1036,6 +1115,7 @@
    "stage": "talks",
    "completion_likelihood": 0.424,
    "momentum": "steady",
+   "club_slug": "rangers",
    "sources": [
     "Sky Sports"
    ],
@@ -1049,6 +1129,7 @@
    "stage": "talks",
    "completion_likelihood": 0.419,
    "momentum": "heating",
+   "club_slug": "ipswich-town",
    "sources": [
     "East Anglian Daily Times",
     "Sky Sports"
@@ -1063,6 +1144,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "as-roma",
    "sources": [
     "Matteo Moretto"
    ],
@@ -1076,6 +1158,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "as-roma",
    "sources": [
     "Football Italia"
    ],
@@ -1089,6 +1172,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "como",
    "sources": [
     "Calciomercato.com",
     "Yahoo Sports"
@@ -1103,6 +1187,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "espanyol",
    "sources": [
     "Matteo Moretto"
    ],
@@ -1116,6 +1201,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "fiorentina",
    "sources": [
     "Football Italia"
    ],
@@ -1129,6 +1215,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "frosinone",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -1142,6 +1229,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "frosinone",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -1155,6 +1243,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "monza",
    "sources": [
     "Football Italia"
    ],
@@ -1168,6 +1257,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "napoli",
    "sources": [
     "Football Italia"
    ],
@@ -1181,6 +1271,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -1194,6 +1285,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "torino",
    "sources": [
     "Football Italia"
    ],
@@ -1207,6 +1299,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.413,
    "momentum": "steady",
+   "club_slug": "torino",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -1220,6 +1313,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.411,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -1233,6 +1327,7 @@
    "stage": "talks",
    "completion_likelihood": 0.397,
    "momentum": "steady",
+   "club_slug": "atalanta",
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -1246,6 +1341,7 @@
    "stage": "talks",
    "completion_likelihood": 0.397,
    "momentum": "steady",
+   "club_slug": "derby-county",
    "sources": [
     "Pete O'Rourke"
    ],
@@ -1259,6 +1355,7 @@
    "stage": "talks",
    "completion_likelihood": 0.394,
    "momentum": "steady",
+   "club_slug": "parma",
    "sources": [
     "Forza Parma",
     "Gianluca Di Marzio"
@@ -1273,6 +1370,7 @@
    "stage": "talks",
    "completion_likelihood": 0.387,
    "momentum": "steady",
+   "club_slug": "atletico-madrid",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1286,6 +1384,7 @@
    "stage": "talks",
    "completion_likelihood": 0.387,
    "momentum": "steady",
+   "club_slug": "sunderland",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1299,6 +1398,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.386,
    "momentum": "steady",
+   "club_slug": "lazio",
    "sources": [
     "Football Italia"
    ],
@@ -1312,6 +1412,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.386,
    "momentum": "steady",
+   "club_slug": "lazio",
    "sources": [
     "Football Italia"
    ],
@@ -1325,6 +1426,7 @@
    "stage": "talks",
    "completion_likelihood": 0.385,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1338,6 +1440,7 @@
    "stage": "talks",
    "completion_likelihood": 0.385,
    "momentum": "steady",
+   "club_slug": "olympique-lyon",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1351,6 +1454,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "nottingham-forest",
    "sources": [
     "on-page rumour"
    ],
@@ -1364,6 +1468,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "on-page rumour"
    ],
@@ -1377,6 +1482,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "ajax",
    "sources": [
     "vi.nl"
    ],
@@ -1390,6 +1496,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "ajax",
    "sources": [
     "vi.nl"
    ],
@@ -1403,6 +1510,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "stade-rennais",
    "sources": [
     "On-page rumour"
    ],
@@ -1416,6 +1524,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "brentford",
    "sources": [
     "On-page rumour"
    ],
@@ -1429,6 +1538,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "brentford",
    "sources": [
     "On-page rumour"
    ],
@@ -1442,6 +1552,7 @@
    "stage": "talks",
    "completion_likelihood": 0.382,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "On-page rumour"
    ],
@@ -1455,6 +1566,7 @@
    "stage": "talks",
    "completion_likelihood": 0.381,
    "momentum": "steady",
+   "club_slug": "cercle-brugge",
    "sources": [
     "Voetbalkrant"
    ],
@@ -1468,6 +1580,7 @@
    "stage": "talks",
    "completion_likelihood": 0.381,
    "momentum": "steady",
+   "club_slug": "union-saint-gilloise",
    "sources": [
     "Voetbalkrant"
    ],
@@ -1481,6 +1594,7 @@
    "stage": "talks",
    "completion_likelihood": 0.381,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "A Spor"
    ],
@@ -1494,6 +1608,7 @@
    "stage": "talks",
    "completion_likelihood": 0.365,
    "momentum": "steady",
+   "club_slug": "juventus",
    "sources": [
     "Fabrizio Romano",
     "Gazzetta dello Sport"
@@ -1508,6 +1623,7 @@
    "stage": "talks",
    "completion_likelihood": 0.364,
    "momentum": "steady",
+   "club_slug": "west-ham",
    "sources": [
     "Keith Downie",
     "Sky Sports"
@@ -1522,6 +1638,7 @@
    "stage": "advanced",
    "completion_likelihood": 0.354,
    "momentum": "steady",
+   "club_slug": "olympique-lyon",
    "sources": [
     "Get French Football News"
    ],
@@ -1535,6 +1652,7 @@
    "stage": "talks",
    "completion_likelihood": 0.353,
    "momentum": "steady",
+   "club_slug": "ac-milan",
    "sources": [
     "Gianluca Di Marzio",
     "Sky Sport"
@@ -1549,6 +1667,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "aj-auxerre",
    "sources": [
     "TOP Mercato"
    ],
@@ -1562,6 +1681,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "alaves",
    "sources": [
     "Superdeporte"
    ],
@@ -1575,6 +1695,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "alaves",
    "sources": [
     "Juanfutbol"
    ],
@@ -1588,6 +1709,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Yeni Alanya"
    ],
@@ -1601,6 +1723,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "aris-thessaloniki",
    "sources": [
     "Foxbet.gr"
    ],
@@ -1614,6 +1737,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "aris-thessaloniki",
    "sources": [
     "Foxbet.gr"
    ],
@@ -1627,6 +1751,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "as-roma",
    "sources": [
     "Betting market analysis"
    ],
@@ -1640,6 +1765,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "barnsley",
    "sources": [
     "Charlie Gregory"
    ],
@@ -1653,6 +1779,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "Football Insider"
    ],
@@ -1666,6 +1793,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "deportivo-la-coruna",
    "sources": [
     "Superdeporte"
    ],
@@ -1679,6 +1807,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "La Grada"
    ],
@@ -1692,6 +1821,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "getafe",
    "sources": [
     "Tuttomercato"
    ],
@@ -1705,6 +1835,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "getafe",
    "sources": [
     "Africafoot"
    ],
@@ -1718,6 +1849,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FLW exclusive"
    ],
@@ -1731,6 +1863,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "Pattern-based"
    ],
@@ -1744,6 +1877,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "SempreInter"
    ],
@@ -1757,6 +1891,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Blasting News"
    ],
@@ -1770,6 +1905,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "leeds-united",
    "sources": [
     "Simon Phillips"
    ],
@@ -1783,6 +1919,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TEAMtalk"
    ],
@@ -1796,6 +1933,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "F. Plettenberg"
    ],
@@ -1809,6 +1947,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Manager Jack Wilshere"
    ],
@@ -1822,6 +1961,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "ogc-nice",
    "sources": [
     "L'Equipe"
    ],
@@ -1835,6 +1975,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "PEC Zwolle Nieuws"
    ],
@@ -1848,6 +1989,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "rangers",
    "sources": [
     "Purple Vert"
    ],
@@ -1861,6 +2003,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "sporting-cp",
    "sources": [
     "A Bola"
    ],
@@ -1874,6 +2017,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Alan Nixon"
    ],
@@ -1887,6 +2031,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "O Jogo"
    ],
@@ -1900,6 +2045,7 @@
    "stage": "talks",
    "completion_likelihood": 0.346,
    "momentum": "steady",
+   "club_slug": "willem-ii",
    "sources": [
     "Brabants Dagblad"
    ],
@@ -1913,6 +2059,7 @@
    "stage": "talks",
    "completion_likelihood": 0.345,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Goal"
    ],
@@ -1926,6 +2073,7 @@
    "stage": "talks",
    "completion_likelihood": 0.345,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Lazionews"
    ],
@@ -1939,6 +2087,7 @@
    "stage": "talks",
    "completion_likelihood": 0.345,
    "momentum": "steady",
+   "club_slug": "werder-bremen",
    "sources": [
     "Deichstube"
    ],
@@ -1952,6 +2101,7 @@
    "stage": "talks",
    "completion_likelihood": 0.345,
    "momentum": "steady",
+   "club_slug": "sunderland",
    "sources": [
     "Sport"
    ],
@@ -1965,6 +2115,7 @@
    "stage": "talks",
    "completion_likelihood": 0.345,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "transferfeed"
    ],
@@ -1978,6 +2129,7 @@
    "stage": "talks",
    "completion_likelihood": 0.345,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "transferfeed"
    ],
@@ -1991,6 +2143,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Les Transferts"
    ],
@@ -2004,6 +2157,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "alaves",
    "sources": [
     "Noticias de Álava"
    ],
@@ -2017,6 +2171,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "RMC Sport"
    ],
@@ -2030,6 +2185,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sacha Tavolieri; AfricaFoot"
    ],
@@ -2043,6 +2199,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Record"
    ],
@@ -2056,6 +2213,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tuttosport"
    ],
@@ -2069,6 +2227,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FootballTransfers.com"
    ],
@@ -2082,6 +2241,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Mounir Boualin"
    ],
@@ -2095,6 +2255,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "GOAL"
    ],
@@ -2108,6 +2269,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "blackburn-rovers",
    "sources": [
     "Lancashire Post"
    ],
@@ -2121,6 +2283,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "celta-vigo",
    "sources": [
     "El Desmarque"
    ],
@@ -2134,6 +2297,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "celta-vigo",
    "sources": [
     "El Desmarque"
    ],
@@ -2147,6 +2311,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "ElDesmarque"
    ],
@@ -2160,6 +2325,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "club-brugge",
    "sources": [
     "HLN"
    ],
@@ -2173,6 +2339,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "TeamTalk"
    ],
@@ -2186,6 +2353,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "TuttoJuve"
    ],
@@ -2199,6 +2367,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "espanyol",
    "sources": [
     "AS.com"
    ],
@@ -2212,6 +2381,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Radio MARCA Valladolid"
    ],
@@ -2225,6 +2395,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "estoril",
    "sources": [
     "Record"
    ],
@@ -2238,6 +2409,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Record"
    ],
@@ -2251,6 +2423,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Yahoo Sports"
    ],
@@ -2264,6 +2437,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Yahoo Sports"
    ],
@@ -2277,6 +2451,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Globo Esporte"
    ],
@@ -2290,6 +2465,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "getafe",
    "sources": [
     "AS"
    ],
@@ -2303,6 +2479,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "inter-milan",
    "sources": [
     "Dicip Khetan"
    ],
@@ -2316,6 +2493,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sky Sport Italia"
    ],
@@ -2329,6 +2507,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Yahoo Sports"
    ],
@@ -2342,6 +2521,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FLW exclusive"
    ],
@@ -2355,6 +2535,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "malaga",
    "sources": [
     "Radio Marca Málaga"
    ],
@@ -2368,6 +2549,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "oh-leuven",
    "sources": [
     "Get Belgian & Dutch Football News"
    ],
@@ -2381,6 +2563,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Nicolo Schira"
    ],
@@ -2394,6 +2577,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "olympique-lyon",
    "sources": [
     "RMC Sport"
    ],
@@ -2407,6 +2591,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "olympique-lyon",
    "sources": [
     "L'Equipe"
    ],
@@ -2420,6 +2605,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "L'Equipe"
    ],
@@ -2433,6 +2619,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "osasuna",
    "sources": [
     "Diario de Navarra"
    ],
@@ -2446,6 +2633,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "pec-zwolle",
    "sources": [
     "Mounir Boualin"
    ],
@@ -2459,6 +2647,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Juan Pérez"
    ],
@@ -2472,6 +2661,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Pablo Sánchez"
    ],
@@ -2485,6 +2675,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "rangers",
    "sources": [
     "Sky Sports Scotland"
    ],
@@ -2498,6 +2689,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "rayo-vallecano",
    "sources": [
     "OneFootball"
    ],
@@ -2511,6 +2703,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sport Witness"
    ],
@@ -2524,6 +2717,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sky"
    ],
@@ -2537,6 +2731,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fichajes.net"
    ],
@@ -2550,6 +2745,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sjoerd Keizer, VI"
    ],
@@ -2563,6 +2759,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Darren Witcoop"
    ],
@@ -2576,6 +2773,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "sl-benfica",
    "sources": [
     "Fabrice Hawkins"
    ],
@@ -2589,6 +2787,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Graham Smyth"
    ],
@@ -2602,6 +2801,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Goal.com"
    ],
@@ -2615,6 +2815,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "L'Équipe"
    ],
@@ -2628,6 +2829,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "tottenham-hotspur",
    "sources": [
     "TeamTalk"
    ],
@@ -2641,6 +2843,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Gianluigi Longari"
    ],
@@ -2654,6 +2857,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TeamTalk"
    ],
@@ -2667,6 +2871,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "valencia",
    "sources": [
     "El Desmarque"
    ],
@@ -2680,6 +2885,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "vfb-stuttgart",
    "sources": [
     "Goal.com"
    ],
@@ -2693,6 +2899,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "werder-bremen",
    "sources": [
     "meczyki.pl"
    ],
@@ -2706,6 +2913,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "West Brom News"
    ],
@@ -2719,6 +2927,7 @@
    "stage": "talks",
    "completion_likelihood": 0.338,
    "momentum": "steady",
+   "club_slug": "west-ham",
    "sources": [
     "Keith Downie"
    ],
@@ -2732,6 +2941,7 @@
    "stage": "talks",
    "completion_likelihood": 0.337,
    "momentum": "steady",
+   "club_slug": "celtic",
    "sources": [
     "The Scotsman"
    ],
@@ -2745,6 +2955,7 @@
    "stage": "talks",
    "completion_likelihood": 0.337,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "kicker"
    ],
@@ -2758,6 +2969,7 @@
    "stage": "talks",
    "completion_likelihood": 0.337,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Noticias de Gipuzkoa"
    ],
@@ -2771,6 +2983,7 @@
    "stage": "talks",
    "completion_likelihood": 0.337,
    "momentum": "steady",
+   "club_slug": "sunderland",
    "sources": [
     "BILD"
    ],
@@ -2784,6 +2997,7 @@
    "stage": "talks",
    "completion_likelihood": 0.337,
    "momentum": "steady",
+   "club_slug": "sunderland",
    "sources": [
     "Santi Aouna"
    ],
@@ -2797,6 +3011,7 @@
    "stage": "talks",
    "completion_likelihood": 0.334,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -2810,6 +3025,7 @@
    "stage": "talks",
    "completion_likelihood": 0.334,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -2823,6 +3039,7 @@
    "stage": "talks",
    "completion_likelihood": 0.334,
    "momentum": "steady",
+   "club_slug": "cosenza",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -2836,6 +3053,7 @@
    "stage": "talks",
    "completion_likelihood": 0.334,
    "momentum": "steady",
+   "club_slug": "lecce",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -2849,6 +3067,7 @@
    "stage": "talks",
    "completion_likelihood": 0.334,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -2862,6 +3081,7 @@
    "stage": "talks",
    "completion_likelihood": 0.334,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -2875,6 +3095,7 @@
    "stage": "talks",
    "completion_likelihood": 0.333,
    "momentum": "steady",
+   "club_slug": "aston-villa",
    "sources": [
     "Transferfeed page"
    ],
@@ -2888,6 +3109,7 @@
    "stage": "talks",
    "completion_likelihood": 0.329,
    "momentum": "heating",
+   "club_slug": "ipswich-town",
    "sources": [
     "Sky Sports News",
     "The Athletic"
@@ -2902,6 +3124,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "BBC Sport"
    ],
@@ -2915,6 +3138,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -2928,6 +3152,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "borussia-dortmund",
    "sources": [
     "Sky Deutschland"
    ],
@@ -2941,6 +3166,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "celtic",
    "sources": [
     "BBC",
     "Nicolo Schira"
@@ -2955,6 +3181,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -2968,6 +3195,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "espanyol",
    "sources": [
     "Matteo Moretto"
    ],
@@ -2981,6 +3209,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "fc-cologne",
    "sources": [
     "Sky Deutschland"
    ],
@@ -2994,6 +3223,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "fiorentina",
    "sources": [
     "Football Italia"
    ],
@@ -3007,6 +3237,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -3020,6 +3251,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "le-mans-fc",
    "sources": [
     "Foot Mercato"
    ],
@@ -3033,6 +3265,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "lecce",
    "sources": [
     "Football Italia"
    ],
@@ -3046,6 +3279,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "monza",
    "sources": [
     "Football Italia"
    ],
@@ -3059,6 +3293,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Matteo Moretto"
    ],
@@ -3072,6 +3307,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "heating",
+   "club_slug": "samsunspor",
    "sources": [
     "L'Equipe",
     "Sporx"
@@ -3086,6 +3322,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Voetbal International"
    ],
@@ -3099,6 +3336,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "psv-eindhoven",
    "sources": [
     "Sky Deutschland"
    ],
@@ -3112,6 +3350,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "rotterdam-sparta",
    "sources": [
     "Voetbal International"
    ],
@@ -3125,6 +3364,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "sassuolo",
    "sources": [
     "Football Italia"
    ],
@@ -3138,6 +3378,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "sassuolo",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3151,6 +3392,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "torino",
    "sources": [
     "Football Italia"
    ],
@@ -3164,6 +3406,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3177,6 +3420,7 @@
    "stage": "talks",
    "completion_likelihood": 0.319,
    "momentum": "steady",
+   "club_slug": "venezia",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3190,6 +3434,7 @@
    "stage": "talks",
    "completion_likelihood": 0.317,
    "momentum": "steady",
+   "club_slug": "barcelona",
    "sources": [
     "BBC Sport"
    ],
@@ -3203,6 +3448,7 @@
    "stage": "talks",
    "completion_likelihood": 0.317,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "BBC Sport"
    ],
@@ -3216,6 +3462,7 @@
    "stage": "talks",
    "completion_likelihood": 0.317,
    "momentum": "steady",
+   "club_slug": "real-madrid",
    "sources": [
     "BBC Sport"
    ],
@@ -3229,6 +3476,7 @@
    "stage": "talks",
    "completion_likelihood": 0.317,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "BBC Sport"
    ],
@@ -3242,6 +3490,7 @@
    "stage": "talks",
    "completion_likelihood": 0.317,
    "momentum": "steady",
+   "club_slug": "liverpool",
    "sources": [
     "BBC Sport"
    ],
@@ -3255,6 +3504,7 @@
    "stage": "talks",
    "completion_likelihood": 0.317,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "BBC Sport"
    ],
@@ -3268,6 +3518,7 @@
    "stage": "talks",
    "completion_likelihood": 0.308,
    "momentum": "steady",
+   "club_slug": "frosinone",
    "sources": [
     "Football Italia",
     "Nicolò Schira"
@@ -3282,6 +3533,7 @@
    "stage": "talks",
    "completion_likelihood": 0.301,
    "momentum": "heating",
+   "club_slug": "az-alkmaar",
    "sources": [
     "Transfernieuws.nl",
     "Voetbal International"
@@ -3296,6 +3548,7 @@
    "stage": "talks",
    "completion_likelihood": 0.295,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -3309,6 +3562,7 @@
    "stage": "talks",
    "completion_likelihood": 0.295,
    "momentum": "steady",
+   "club_slug": "fc-utrecht",
    "sources": [
     "FCUpdate.nl"
    ],
@@ -3322,6 +3576,7 @@
    "stage": "talks",
    "completion_likelihood": 0.295,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FCUpdate.nl"
    ],
@@ -3335,6 +3590,7 @@
    "stage": "talks",
    "completion_likelihood": 0.295,
    "momentum": "steady",
+   "club_slug": "sassuolo",
    "sources": [
     "Football Italia"
    ],
@@ -3348,6 +3604,7 @@
    "stage": "talks",
    "completion_likelihood": 0.295,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "David Ornstein"
    ],
@@ -3361,6 +3618,7 @@
    "stage": "talks",
    "completion_likelihood": 0.291,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fabrizio Romano",
     "Get French Football News"
@@ -3375,6 +3633,7 @@
    "stage": "talks",
    "completion_likelihood": 0.267,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -3388,6 +3647,7 @@
    "stage": "talks",
    "completion_likelihood": 0.267,
    "momentum": "steady",
+   "club_slug": "olympique-lyon",
    "sources": [
     "Get French Football News"
    ],
@@ -3401,6 +3661,7 @@
    "stage": "talks",
    "completion_likelihood": 0.267,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -3414,6 +3675,7 @@
    "stage": "talks",
    "completion_likelihood": 0.236,
    "momentum": "heating",
+   "club_slug": "",
    "sources": [
     "Foot Mercato",
     "Get French Football News"
@@ -3428,6 +3690,7 @@
    "stage": "interest",
    "completion_likelihood": 0.235,
    "momentum": "steady",
+   "club_slug": "aek-athens",
    "sources": [
     "Sky Sports"
    ],
@@ -3441,6 +3704,7 @@
    "stage": "interest",
    "completion_likelihood": 0.235,
    "momentum": "steady",
+   "club_slug": "aik-fotboll",
    "sources": [
     "Sky Sports"
    ],
@@ -3454,6 +3718,7 @@
    "stage": "interest",
    "completion_likelihood": 0.235,
    "momentum": "steady",
+   "club_slug": "atletico-madrid",
    "sources": [
     "Sky Sports"
    ],
@@ -3467,6 +3732,7 @@
    "stage": "interest",
    "completion_likelihood": 0.235,
    "momentum": "steady",
+   "club_slug": "feyenoord",
    "sources": [
     "Sky Sports"
    ],
@@ -3480,6 +3746,7 @@
    "stage": "interest",
    "completion_likelihood": 0.235,
    "momentum": "steady",
+   "club_slug": "sc-heerenveen",
    "sources": [
     "Sky Sports"
    ],
@@ -3493,6 +3760,7 @@
    "stage": "interest",
    "completion_likelihood": 0.215,
    "momentum": "steady",
+   "club_slug": "as-roma",
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -3506,6 +3774,7 @@
    "stage": "interest",
    "completion_likelihood": 0.207,
    "momentum": "steady",
+   "club_slug": "tottenham-hotspur",
    "sources": [
     "Fabrizio Romano"
    ],
@@ -3514,102 +3783,12 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
-   "player": "Folarin Balogun",
-   "to_club": "Nottingham Forest",
-   "stage": "interest",
-   "completion_likelihood": 0.205,
-   "momentum": "steady",
-   "sources": [
-    "on-page rumour"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
-   "player": "Tijjani Reijnders",
-   "to_club": "Nottingham Forest",
-   "stage": "interest",
-   "completion_likelihood": 0.205,
-   "momentum": "steady",
-   "sources": [
-    "on-page rumour"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
-   "player": "Cathal McCarthy",
-   "to_club": "Nottingham Forest",
-   "stage": "interest",
-   "completion_likelihood": 0.205,
-   "momentum": "steady",
-   "sources": [
-    "on-page rumour"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
-   "player": "Dodo",
-   "to_club": "Nottingham Forest",
-   "stage": "interest",
-   "completion_likelihood": 0.205,
-   "momentum": "steady",
-   "sources": [
-    "on-page rumour"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
-   "player": "Murillo",
-   "to_club": "unknown",
-   "stage": "interest",
-   "completion_likelihood": 0.205,
-   "momentum": "steady",
-   "sources": [
-    "on-page rumour"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
-   "player": "Morgan Gibbs-White",
-   "to_club": "unknown",
-   "stage": "interest",
-   "completion_likelihood": 0.205,
-   "momentum": "steady",
-   "sources": [
-    "on-page rumour"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
-   "player": "Chris Wood",
-   "to_club": "unknown",
-   "stage": "interest",
-   "completion_likelihood": 0.205,
-   "momentum": "steady",
-   "sources": [
-    "on-page rumour"
-   ],
-   "source_count": 1,
-   "first_ts": "2026-08-06T13:55:46Z",
-   "last_ts": "2026-08-06T13:55:46Z"
-  },
-  {
    "player": "Esteban Lepaul",
    "to_club": "Multiple suitors (unspecified)",
    "stage": "interest",
    "completion_likelihood": 0.205,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "On-page rumour"
    ],
@@ -3623,6 +3802,7 @@
    "stage": "interest",
    "completion_likelihood": 0.204,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Voetbalkrant"
    ],
@@ -3631,11 +3811,110 @@
    "last_ts": "2026-08-04T19:10:50Z"
   },
   {
+   "player": "Folarin Balogun",
+   "to_club": "Nottingham Forest",
+   "stage": "interest",
+   "completion_likelihood": 0.204,
+   "momentum": "steady",
+   "club_slug": "nottingham-forest",
+   "sources": [
+    "on-page rumour"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
+   "player": "Tijjani Reijnders",
+   "to_club": "Nottingham Forest",
+   "stage": "interest",
+   "completion_likelihood": 0.204,
+   "momentum": "steady",
+   "club_slug": "nottingham-forest",
+   "sources": [
+    "on-page rumour"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
+   "player": "Cathal McCarthy",
+   "to_club": "Nottingham Forest",
+   "stage": "interest",
+   "completion_likelihood": 0.204,
+   "momentum": "steady",
+   "club_slug": "nottingham-forest",
+   "sources": [
+    "on-page rumour"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
+   "player": "Dodo",
+   "to_club": "Nottingham Forest",
+   "stage": "interest",
+   "completion_likelihood": 0.204,
+   "momentum": "steady",
+   "club_slug": "nottingham-forest",
+   "sources": [
+    "on-page rumour"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
+   "player": "Murillo",
+   "to_club": "unknown",
+   "stage": "interest",
+   "completion_likelihood": 0.204,
+   "momentum": "steady",
+   "club_slug": "",
+   "sources": [
+    "on-page rumour"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
+   "player": "Morgan Gibbs-White",
+   "to_club": "unknown",
+   "stage": "interest",
+   "completion_likelihood": 0.204,
+   "momentum": "steady",
+   "club_slug": "",
+   "sources": [
+    "on-page rumour"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
+   "player": "Chris Wood",
+   "to_club": "unknown",
+   "stage": "interest",
+   "completion_likelihood": 0.204,
+   "momentum": "steady",
+   "club_slug": "",
+   "sources": [
+    "on-page rumour"
+   ],
+   "source_count": 1,
+   "first_ts": "2026-08-06T13:55:46Z",
+   "last_ts": "2026-08-06T13:55:46Z"
+  },
+  {
    "player": "Unai Núñez",
    "to_club": "Deportivo Alavés",
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "alaves",
    "sources": [
     "El Gol Digital"
    ],
@@ -3649,6 +3928,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "angers-sco",
    "sources": [
     "Radio L1"
    ],
@@ -3662,6 +3942,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "antalyaspor",
    "sources": [
     "Yeni Alanya"
    ],
@@ -3675,6 +3956,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fichajes"
    ],
@@ -3688,6 +3970,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Yahoo Sports"
    ],
@@ -3701,6 +3984,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "atletico-madrid",
    "sources": [
     "The Sun"
    ],
@@ -3714,6 +3998,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "CaughtOffside"
    ],
@@ -3727,6 +4012,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "bayer-leverkusen",
    "sources": [
     "Goal.com"
    ],
@@ -3740,6 +4026,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Graeme Bailey"
    ],
@@ -3753,6 +4040,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "blackpool",
    "sources": [
     "FLW opinion"
    ],
@@ -3766,6 +4054,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FLW"
    ],
@@ -3779,6 +4068,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FLW"
    ],
@@ -3792,6 +4082,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "borussia-dortmund",
    "sources": [
     "Soy Fútbol"
    ],
@@ -3805,6 +4096,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FLW opinion"
    ],
@@ -3818,6 +4110,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "braga",
    "sources": [
     "Record / Bolanarede"
    ],
@@ -3831,6 +4124,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "cambridge-united",
    "sources": [
     "FLW opinion"
    ],
@@ -3844,6 +4138,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "celta-vigo",
    "sources": [
     "Mundo Celeste"
    ],
@@ -3857,6 +4152,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "celta-vigo",
    "sources": [
     "Galicia Press"
    ],
@@ -3870,6 +4166,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "celtic",
    "sources": [
     "Yahoo Sports"
    ],
@@ -3883,6 +4180,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "Pattern-based"
    ],
@@ -3896,6 +4194,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "Pattern-based"
    ],
@@ -3909,6 +4208,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "Pattern-based"
    ],
@@ -3922,6 +4222,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "Pattern-based"
    ],
@@ -3935,6 +4236,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Pattern-based"
    ],
@@ -3948,6 +4250,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "derby-county",
    "sources": [
     "Football League World"
    ],
@@ -3961,6 +4264,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "derby-county",
    "sources": [
     "Sunderland Echo"
    ],
@@ -3974,6 +4278,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "The Scotsman"
    ],
@@ -3987,6 +4292,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "elche",
    "sources": [
     "FútbolFantasy"
    ],
@@ -4000,6 +4306,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "elche",
    "sources": [
     "TeleElx"
    ],
@@ -4013,6 +4320,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "espanyol",
    "sources": [
     "Fichajes.net"
    ],
@@ -4026,6 +4334,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "O Jogo"
    ],
@@ -4039,6 +4348,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "fc-groningen",
    "sources": [
     "Nieuwsbreak.nl"
    ],
@@ -4052,6 +4362,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "getafe",
    "sources": [
     "El Desmarque"
    ],
@@ -4065,6 +4376,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "The Scotsman"
    ],
@@ -4078,6 +4390,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "huddersfield-town",
    "sources": [
     "FLW"
    ],
@@ -4091,6 +4404,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "Pattern-based"
    ],
@@ -4104,6 +4418,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "Pattern-based"
    ],
@@ -4117,6 +4432,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "Pattern-based"
    ],
@@ -4130,6 +4446,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "hull-city",
    "sources": [
     "Pattern-based"
    ],
@@ -4143,6 +4460,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Pattern-based"
    ],
@@ -4156,6 +4474,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "inter-milan",
    "sources": [
     "Il Sussidiario"
    ],
@@ -4169,6 +4488,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "ipswich-town",
    "sources": [
     "TWTD / the72"
    ],
@@ -4182,6 +4502,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Yahoo Sports opinion"
    ],
@@ -4195,6 +4516,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "leeds-united",
    "sources": [
     "TEAMtalk"
    ],
@@ -4208,6 +4530,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "leeds-united",
    "sources": [
     "TEAMtalk"
    ],
@@ -4221,6 +4544,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "leeds-united",
    "sources": [
     "TEAMtalk"
    ],
@@ -4234,6 +4558,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "leeds-united",
    "sources": [
     "S. Vidal"
    ],
@@ -4247,6 +4572,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "leeds-united",
    "sources": [
     "Football Insider"
    ],
@@ -4260,6 +4586,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "S. Vidal"
    ],
@@ -4273,6 +4600,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football media"
    ],
@@ -4286,6 +4614,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TEAMtalk"
    ],
@@ -4299,6 +4628,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "leicester-city",
    "sources": [
     "FLW"
    ],
@@ -4312,6 +4642,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "malaga",
    "sources": [
     "El Gol Digital"
    ],
@@ -4325,6 +4656,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "malaga",
    "sources": [
     "Fichajes.com"
    ],
@@ -4338,6 +4670,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "ogc-nice",
    "sources": [
     "L'Equipe"
    ],
@@ -4351,6 +4684,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "osasuna",
    "sources": [
     "Miguel Rubio"
    ],
@@ -4364,6 +4698,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "osasuna",
    "sources": [
     "Miguel Rubio"
    ],
@@ -4377,6 +4712,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "osasuna",
    "sources": [
     "Fichajes.com"
    ],
@@ -4390,6 +4726,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "panathinaikos",
    "sources": [
     "Turkish media"
    ],
@@ -4403,6 +4740,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "paok",
    "sources": [
     "Foxbet.gr"
    ],
@@ -4416,6 +4754,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "paok",
    "sources": [
     "Turkish media"
    ],
@@ -4429,6 +4768,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "preston-north-end",
    "sources": [
     "Sunderland Echo"
    ],
@@ -4442,6 +4782,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "rangers",
    "sources": [
     "The Scotsman"
    ],
@@ -4455,6 +4796,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "rayo-vallecano",
    "sources": [
     "El Gol Digital"
    ],
@@ -4468,6 +4810,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TeamTalk"
    ],
@@ -4481,6 +4824,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FútbolFantasy"
    ],
@@ -4494,6 +4838,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "santa-clara",
    "sources": [
     "NetVasco"
    ],
@@ -4507,6 +4852,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "sheffield-united",
    "sources": [
     "The Star"
    ],
@@ -4520,6 +4866,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "sheffield-united",
    "sources": [
     "City Xtra"
    ],
@@ -4533,6 +4880,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "sheffield-united",
    "sources": [
     "The Star"
    ],
@@ -4546,6 +4894,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Daily Record"
    ],
@@ -4559,6 +4908,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "stade-brest",
    "sources": [
     "TOPMercato.com"
    ],
@@ -4572,6 +4922,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "stade-brest",
    "sources": [
     "BUTFootballClub.fr / JeunesFooteux.com"
    ],
@@ -4585,6 +4936,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sunderland Echo"
    ],
@@ -4598,6 +4950,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "torino",
    "sources": [
     "Calciomercato.com"
    ],
@@ -4611,6 +4964,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "tottenham-hotspur",
    "sources": [
     "TeamTalk"
    ],
@@ -4624,6 +4978,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "udinese",
    "sources": [
     "Calciomercato.com"
    ],
@@ -4637,6 +4992,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fichajes.net"
    ],
@@ -4650,6 +5006,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Barca Blaugranes"
    ],
@@ -4663,6 +5020,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "venezia",
    "sources": [
     "Calciomercato.com"
    ],
@@ -4676,6 +5034,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "venezia",
    "sources": [
     "Calciomercato.com"
    ],
@@ -4689,6 +5048,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Calciomercato.com"
    ],
@@ -4702,6 +5062,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Calciomercato.com"
    ],
@@ -4715,6 +5076,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Kicker"
    ],
@@ -4728,6 +5090,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FútbolFantasy"
    ],
@@ -4741,6 +5104,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FútbolFantasy / OneFootball"
    ],
@@ -4754,6 +5118,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "FútbolFantasy"
    ],
@@ -4767,6 +5132,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "O Jogo"
    ],
@@ -4780,6 +5146,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "O Jogo"
    ],
@@ -4793,6 +5160,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "west-bromwich-albion",
    "sources": [
     "Sunderland Echo"
    ],
@@ -4806,6 +5174,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "willem-ii",
    "sources": [
     "Tilbo transfer blog"
    ],
@@ -4819,6 +5188,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "wolverhampton",
    "sources": [
     "Pipe Sierra"
    ],
@@ -4832,6 +5202,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Konstantinos Lianos"
    ],
@@ -4845,6 +5216,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Lazio News 24"
    ],
@@ -4858,6 +5230,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "90min"
    ],
@@ -4871,6 +5244,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Turkish press"
    ],
@@ -4884,6 +5258,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "sunderland",
    "sources": [
     "TeamTalk"
    ],
@@ -4897,6 +5272,7 @@
    "stage": "interest",
    "completion_likelihood": 0.18,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "EFL reporting"
    ],
@@ -4910,6 +5286,7 @@
    "stage": "interest",
    "completion_likelihood": 0.179,
    "momentum": "steady",
+   "club_slug": "ac-milan",
    "sources": [
     "Milanistichannel"
    ],
@@ -4923,6 +5300,7 @@
    "stage": "interest",
    "completion_likelihood": 0.179,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Nicolo Schira"
    ],
@@ -4936,6 +5314,7 @@
    "stage": "interest",
    "completion_likelihood": 0.179,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Daily Record"
    ],
@@ -4949,6 +5328,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Hürriyet"
    ],
@@ -4962,6 +5342,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "alaves",
    "sources": [
     "Andrés Guzmán"
    ],
@@ -4975,6 +5356,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "alaves",
    "sources": [
     "Flavio Pace"
    ],
@@ -4988,6 +5370,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "angers-sco",
    "sources": [
     "L'Équipe"
    ],
@@ -5001,6 +5384,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "as-roma",
    "sources": [
     "Corriere della Sera"
    ],
@@ -5014,6 +5398,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "El Desmarque"
    ],
@@ -5027,6 +5412,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "atletico-madrid",
    "sources": [
     "ElDesmarque"
    ],
@@ -5040,6 +5426,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "bayer-leverkusen",
    "sources": [
     "Kicker"
    ],
@@ -5053,6 +5440,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "bayern-munich",
    "sources": [
     "CaughtOffside"
    ],
@@ -5066,6 +5454,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "borussia-dortmund",
    "sources": [
     "Bild"
    ],
@@ -5079,6 +5468,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "borussia-dortmund",
    "sources": [
     "Yahoo Sports UK"
    ],
@@ -5092,6 +5482,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "El Desmarque"
    ],
@@ -5105,6 +5496,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "AS"
    ],
@@ -5118,6 +5510,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "celtic",
    "sources": [
     "67 Hail Hail"
    ],
@@ -5131,6 +5524,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "La Dernière Heure"
    ],
@@ -5144,6 +5538,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "coventry-city",
    "sources": [
     "Ben Jacobs"
    ],
@@ -5157,6 +5552,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Mike Verweij"
    ],
@@ -5170,6 +5566,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TwenteInsite.nl"
    ],
@@ -5183,6 +5580,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "galatasaray",
    "sources": [
     "Sky Sports Turkey"
    ],
@@ -5196,6 +5594,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "getafe",
    "sources": [
     "FutbolFantasy / Marca"
    ],
@@ -5209,6 +5608,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "LecceNews24"
    ],
@@ -5222,6 +5622,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "losc-lille",
    "sources": [
     "RMC Sport"
    ],
@@ -5235,6 +5636,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "losc-lille",
    "sources": [
     "L'Équipe"
    ],
@@ -5248,6 +5650,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "malaga",
    "sources": [
     "Superdeporte"
    ],
@@ -5261,6 +5664,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "L'Equipe"
    ],
@@ -5274,6 +5678,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sacha Tavolieri"
    ],
@@ -5287,6 +5692,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "olympique-marseille",
    "sources": [
     "Fabrice Hawkins"
    ],
@@ -5300,6 +5706,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "olympique-marseille",
    "sources": [
     "Sky Sports News"
    ],
@@ -5313,6 +5720,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "osasuna",
    "sources": [
     "Flavio Pace"
    ],
@@ -5326,6 +5734,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Noticias de Navarra"
    ],
@@ -5339,6 +5748,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "panathinaikos",
    "sources": [
     "Vanya Karpov"
    ],
@@ -5352,6 +5762,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "paris-saint-germain",
    "sources": [
     "L'Équipe"
    ],
@@ -5365,6 +5776,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "pec-zwolle",
    "sources": [
     "VoetbalPrimeur.nl"
    ],
@@ -5378,6 +5790,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Lancashire Post"
    ],
@@ -5391,6 +5804,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "racing-santander",
    "sources": [
     "Nicolò Schira"
    ],
@@ -5404,6 +5818,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "racing-santander",
    "sources": [
     "Juan Pérez"
    ],
@@ -5417,6 +5832,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Daily Record"
    ],
@@ -5430,6 +5846,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "real-betis",
    "sources": [
     "Estadio Deportivo"
    ],
@@ -5443,6 +5860,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Mundo Deportivo"
    ],
@@ -5456,6 +5874,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Diario AS"
    ],
@@ -5469,6 +5888,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Espana"
    ],
@@ -5482,6 +5902,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "rizespor",
    "sources": [
     "Fotomaç"
    ],
@@ -5495,6 +5916,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sjoerd Keizer, VI"
    ],
@@ -5508,6 +5930,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Fotomaç"
    ],
@@ -5521,6 +5944,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "sassuolo",
    "sources": [
     "Calciomercato.it"
    ],
@@ -5534,6 +5958,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "La Repubblica"
    ],
@@ -5547,6 +5972,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "sl-benfica",
    "sources": [
     "Portuguese media"
    ],
@@ -5560,6 +5986,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "A Bola"
    ],
@@ -5573,6 +6000,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sport.fr"
    ],
@@ -5586,6 +6014,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Sport.fr"
    ],
@@ -5599,6 +6028,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "standard-liege",
    "sources": [
     "RTBF"
    ],
@@ -5612,6 +6042,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "stoke-city",
    "sources": [
     "Football Insider"
    ],
@@ -5625,6 +6056,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tavolieri / TEAMtalk"
    ],
@@ -5638,6 +6070,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "torino",
    "sources": [
     "Calciomercato.com"
    ],
@@ -5651,6 +6084,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Calciomercato.com"
    ],
@@ -5664,6 +6098,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "La Dernière Heure"
    ],
@@ -5677,6 +6112,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "vfb-stuttgart",
    "sources": [
     "Bild"
    ],
@@ -5690,6 +6126,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Kicker"
    ],
@@ -5703,6 +6140,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Slobodna Bosna"
    ],
@@ -5716,6 +6154,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "werder-bremen",
    "sources": [
     "The Daily Telegraph"
    ],
@@ -5729,6 +6168,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "werder-bremen",
    "sources": [
     "DeichStube"
    ],
@@ -5742,6 +6182,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "west-ham",
    "sources": [
     "Alan Nixon"
    ],
@@ -5755,6 +6196,7 @@
    "stage": "interest",
    "completion_likelihood": 0.175,
    "momentum": "steady",
+   "club_slug": "wolverhampton",
    "sources": [
     "Luke Fletcher"
    ],
@@ -5768,6 +6210,7 @@
    "stage": "interest",
    "completion_likelihood": 0.174,
    "momentum": "steady",
+   "club_slug": "bayern-munich",
    "sources": [
     "Christian Falk"
    ],
@@ -5781,6 +6224,7 @@
    "stage": "interest",
    "completion_likelihood": 0.174,
    "momentum": "steady",
+   "club_slug": "lazio",
    "sources": [
     "Corriere dello Sport"
    ],
@@ -5794,6 +6238,7 @@
    "stage": "interest",
    "completion_likelihood": 0.174,
    "momentum": "steady",
+   "club_slug": "real-sociedad",
    "sources": [
     "El Desmarque"
    ],
@@ -5807,6 +6252,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5820,6 +6266,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "ascoli-picchio",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -5833,6 +6280,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "atalanta",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5846,6 +6294,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5859,6 +6308,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "benevento",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -5872,6 +6322,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "benevento",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -5885,6 +6336,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "benevento",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -5898,6 +6350,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5911,6 +6364,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "cremonese",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -5924,6 +6378,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Foot Mercato"
    ],
@@ -5937,6 +6392,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "lecce",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5950,6 +6406,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "lecce",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5963,6 +6420,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "lecce",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5976,6 +6434,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "lecce",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -5989,6 +6448,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6002,6 +6462,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6015,6 +6476,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6028,6 +6490,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "monza",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6041,6 +6504,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "monza",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6054,6 +6518,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "monza",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6067,6 +6532,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "monza",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6080,6 +6546,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "monza",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6093,6 +6560,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "olympique-lyon",
    "sources": [
     "Foot Mercato"
    ],
@@ -6106,6 +6574,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Foot Mercato"
    ],
@@ -6119,6 +6588,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "olympique-marseille",
    "sources": [
     "Foot Mercato"
    ],
@@ -6132,6 +6602,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "olympique-marseille",
    "sources": [
     "Foot Mercato"
    ],
@@ -6145,6 +6616,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "paris-fc",
    "sources": [
     "Foot Mercato"
    ],
@@ -6158,6 +6630,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Foot Mercato"
    ],
@@ -6171,6 +6644,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "parma",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6184,6 +6658,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "parma",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6197,6 +6672,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "parma",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6210,6 +6686,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "parma",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6223,6 +6700,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6236,6 +6714,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "reggiana",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6249,6 +6728,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6262,6 +6742,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "sassuolo",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6275,6 +6756,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6288,6 +6770,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "udinese",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6301,6 +6784,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6314,6 +6798,7 @@
    "stage": "interest",
    "completion_likelihood": 0.173,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6327,6 +6812,7 @@
    "stage": "interest",
    "completion_likelihood": 0.172,
    "momentum": "steady",
+   "club_slug": "sunderland",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6340,6 +6826,7 @@
    "stage": "interest",
    "completion_likelihood": 0.172,
    "momentum": "steady",
+   "club_slug": "aston-villa",
    "sources": [
     "Transferfeed page"
    ],
@@ -6353,6 +6840,7 @@
    "stage": "interest",
    "completion_likelihood": 0.172,
    "momentum": "steady",
+   "club_slug": "aston-villa",
    "sources": [
     "Transferfeed page"
    ],
@@ -6366,6 +6854,7 @@
    "stage": "interest",
    "completion_likelihood": 0.172,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Transferfeed page"
    ],
@@ -6379,6 +6868,7 @@
    "stage": "interest",
    "completion_likelihood": 0.172,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6392,6 +6882,7 @@
    "stage": "interest",
    "completion_likelihood": 0.168,
    "momentum": "steady",
+   "club_slug": "aston-villa",
    "sources": [
     "El Desmarque",
     "Transferfeed page"
@@ -6406,6 +6897,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "atletico-madrid",
    "sources": [
     "Matteo Moretto"
    ],
@@ -6419,6 +6911,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Voetbal International"
    ],
@@ -6432,6 +6925,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "como",
    "sources": [
     "Football Italia"
    ],
@@ -6445,6 +6939,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "fiorentina",
    "sources": [
     "Football Italia"
    ],
@@ -6458,6 +6953,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "fiorentina",
    "sources": [
     "Football Italia"
    ],
@@ -6471,6 +6967,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -6484,6 +6981,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "juventus",
    "sources": [
     "Football Italia"
    ],
@@ -6497,6 +6995,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "lazio",
    "sources": [
     "Football Italia"
    ],
@@ -6510,6 +7009,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6523,6 +7023,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "napoli",
    "sources": [
     "Football Italia"
    ],
@@ -6536,6 +7037,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "olympique-marseille",
    "sources": [
     "Foot Mercato"
    ],
@@ -6549,6 +7051,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "paris-fc",
    "sources": [
     "Foot Mercato"
    ],
@@ -6562,6 +7065,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "parma",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6575,6 +7079,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6588,6 +7093,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6601,6 +7107,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -6614,6 +7121,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "udinese",
    "sources": [
     "Football Italia"
    ],
@@ -6627,6 +7135,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "udinese",
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6640,6 +7149,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "vfl-bochum",
    "sources": [
     "Sky Deutschland"
    ],
@@ -6653,6 +7163,7 @@
    "stage": "interest",
    "completion_likelihood": 0.163,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Voetbal International"
    ],
@@ -6666,6 +7177,7 @@
    "stage": "interest",
    "completion_likelihood": 0.162,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Foot Mercato"
    ],
@@ -6679,6 +7191,7 @@
    "stage": "interest",
    "completion_likelihood": 0.162,
    "momentum": "steady",
+   "club_slug": "ac-milan",
    "sources": [
     "Football Italia"
    ],
@@ -6692,6 +7205,7 @@
    "stage": "interest",
    "completion_likelihood": 0.162,
    "momentum": "steady",
+   "club_slug": "ac-milan",
    "sources": [
     "Football Italia"
    ],
@@ -6705,6 +7219,7 @@
    "stage": "interest",
    "completion_likelihood": 0.162,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -6718,6 +7233,7 @@
    "stage": "interest",
    "completion_likelihood": 0.162,
    "momentum": "steady",
+   "club_slug": "tottenham-hotspur",
    "sources": [
     "BBC Sport"
    ],
@@ -6731,6 +7247,7 @@
    "stage": "interest",
    "completion_likelihood": 0.152,
    "momentum": "steady",
+   "club_slug": "ogc-nice",
    "sources": [
     "Get French Football News"
    ],
@@ -6744,6 +7261,7 @@
    "stage": "interest",
    "completion_likelihood": 0.152,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -6757,6 +7275,7 @@
    "stage": "interest",
    "completion_likelihood": 0.152,
    "momentum": "steady",
+   "club_slug": "rc-strasbourg",
    "sources": [
     "Get French Football News"
    ],
@@ -6770,6 +7289,7 @@
    "stage": "interest",
    "completion_likelihood": 0.152,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -6783,6 +7303,7 @@
    "stage": "interest",
    "completion_likelihood": 0.152,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -6796,6 +7317,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -6809,6 +7331,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "fc-groningen",
    "sources": [
     "FCUpdate.nl"
    ],
@@ -6822,6 +7345,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "fc-groningen",
    "sources": [
     "FCUpdate.nl"
    ],
@@ -6835,6 +7359,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "fc-utrecht",
    "sources": [
     "FCUpdate.nl"
    ],
@@ -6848,6 +7373,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "fc-utrecht",
    "sources": [
     "FCUpdate.nl"
    ],
@@ -6861,6 +7387,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "fiorentina",
    "sources": [
     "Football Italia"
    ],
@@ -6874,6 +7401,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "genoa",
    "sources": [
     "Football Italia"
    ],
@@ -6887,6 +7415,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -6900,6 +7429,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "inter-milan",
    "sources": [
     "Football Italia"
    ],
@@ -6913,6 +7443,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "juventus",
    "sources": [
     "Football Italia"
    ],
@@ -6926,6 +7457,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "lazio",
    "sources": [
     "Football Italia"
    ],
@@ -6939,6 +7471,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "lazio",
    "sources": [
     "Football Italia"
    ],
@@ -6952,6 +7485,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "lecce",
    "sources": [
     "Football Italia"
    ],
@@ -6965,6 +7499,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "napoli",
    "sources": [
     "Football Italia"
    ],
@@ -6978,6 +7513,7 @@
    "stage": "interest",
    "completion_likelihood": 0.148,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Football Italia"
    ],
@@ -6991,6 +7527,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -7004,6 +7541,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -7017,6 +7555,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "ogc-nice",
    "sources": [
     "Get French Football News"
    ],
@@ -7030,6 +7569,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "ogc-nice",
    "sources": [
     "Get French Football News"
    ],
@@ -7043,6 +7583,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "olympique-marseille",
    "sources": [
     "Get French Football News"
    ],
@@ -7056,6 +7597,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "olympique-marseille",
    "sources": [
     "Get French Football News"
    ],
@@ -7069,6 +7611,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "",
    "sources": [
     "Get French Football News"
    ],
@@ -7082,6 +7625,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "rc-strasbourg",
    "sources": [
     "Get French Football News"
    ],
@@ -7095,6 +7639,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "rc-strasbourg",
    "sources": [
     "Get French Football News"
    ],
@@ -7108,6 +7653,7 @@
    "stage": "interest",
    "completion_likelihood": 0.132,
    "momentum": "steady",
+   "club_slug": "rc-strasbourg",
    "sources": [
     "Get French Football News"
    ],
