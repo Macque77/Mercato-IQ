@@ -205,11 +205,38 @@ def main():
         buckets[slug].append({'text': text[:SNIPPET_LEN + 40], 'source': source,
                               'url': url, 'date': date})
 
-    # 1) Google News RSS -- the PRIMARY breadth engine: one targeted, language-appropriate
-    # query per club, so every club pulls fresh web-wide coverage instead of only what a
-    # fixed feed list happens to mention. Runs first so the best-targeted items claim the
-    # snippet budget before the broad feeds fill it. Deterministic, zero tokens, best-effort.
     import urllib.parse
+
+    # 1) Per-journalist Google News FIRST -- pull each tracked reporter's recent articles
+    # and attach them to any club they mention, tagged "(via <name>)" so the extractor
+    # attributes the claim to that reporter. Runs first so attributed items (the reliability
+    # engine's fuel) claim the snippet budget ahead of the generic per-club pass.
+    def _clean_name(raw):
+        return re.sub(r'\s*\(.*$', '', raw or '').strip()
+    jn_hits = 0
+    for nation in nations:
+        region = _GNEWS_REGION.get(nation, 'hl=en-GB&gl=GB&ceid=GB:en')
+        nation_slugs = [s for s in slugs if LEAGUE_TO_NATION.get(roster[s].get('league')) == nation]
+        for raw in (sources.get(nation, {}) or {}).get('tier1', [])[:6]:
+            name = _clean_name(raw)
+            if len(name) < 4:
+                continue
+            q = urllib.parse.quote(f'"{name}"')
+            url = f"https://news.google.com/rss/search?q={q}&{region}"
+            for it in ra.fetch_rss(url):
+                title = it.get('title', '')
+                if not title or 'Google News' in title:
+                    continue
+                for s in nation_slugs:
+                    if matchers[s].search(title):
+                        add(s, f"{title} (via {name})", 'Google News', it.get('link', ''), it.get('pubDate', ''))
+                        jn_hits += 1
+                        break
+            time.sleep(0.12)
+    log(f"  Per-journalist pass done ({jn_hits} attributed item(s)).")
+
+    # 1b) Per-club Google News -- the broad breadth engine: one targeted, language-
+    # appropriate query per club fills the remaining budget with fresh web-wide coverage.
     gn_hits = 0
     for s in slugs:
         nation = LEAGUE_TO_NATION.get(roster[s].get('league'))
