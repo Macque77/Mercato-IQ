@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 185
+  stories_count: 183
 };
 
 const TOP_STORIES = [  {
@@ -52,20 +52,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed (~€5m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Matteo Ruggeri",prob: 72, truth: 80, bullshit: false,
-    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
-    from: "Atlético Madrid", to: "Aston Villa",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-06-06T12:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Dayann Methalie",prob: 65, truth: 92, bullshit: false,
-    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
-    from: "Toulouse", to: "Sunderland",
-    tier: 1, coverage: 7, coverage_trend: 'up',
-    value: "€30m asking price", updated: "2026-07-31T09:00:00Z", league: "Premier League"
-  },
-  {
     name: "Cristian Romero",prob: 62, truth: 80, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
@@ -94,6 +80,13 @@ const TOP_STORIES = [  {
     value: "~£70m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
+    name: "Nestory Irankunda",prob: 45, truth: 55, bullshit: false,
+    club_origin: "watford", club_display_name: "Watford", direction: "out",
+    from: "Watford", to: "Sporting CP",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "~€22m (bonuses included)", updated: "2026-07-29T00:00:00Z", league: "Championship"
+  },
+  {
     name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Nottingham Forest or Newcastle United",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
+  {
+    name: "James Trafford",prob: 40, truth: 60, bullshit: false,
+    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
+    from: "Manchester City", to: "Leeds United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
 ];
 
-const BY_LEAGUE = {"Premier League": 114, "Championship": 18, "League One": 53, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 111, "Championship": 19, "League One": 53, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 114}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 18}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 111}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T11:36:32.068380Z",
+  updated: "2026-08-06T11:59:56.321778Z",
   label: "Nation aggregation"
 };
