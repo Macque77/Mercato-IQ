@@ -15,6 +15,7 @@ Usage:  python3 intelligence/build_rankings.py [--out rankings.html] [--min N]
 import html
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -37,6 +38,10 @@ def cls_for(x, good=0.6, mid=0.4):
     return 'hi' if x >= good else ('mid' if x >= mid else 'lo')
 
 
+def prof_slug(source_key):
+    return re.sub(r'[^a-z0-9]+', '-', (source_key or '').lower()).strip('-')
+
+
 def rank_rows(ranked):
     out = []
     for i, r in enumerate(ranked, 1):
@@ -44,9 +49,10 @@ def rank_rows(ranked):
         cal_txt = ' · '.join(f"{k[:3]} {pct(v)}" for k, v in sorted(
             cal.items(), key=lambda kv: {'here-we-go': 3, 'advanced': 2, 'talks': 1, 'interest': 0}.get(kv[0], 0), reverse=True))
         lead = f"{r['avg_lead_days']}d" if r.get('avg_lead_days') is not None else "—"
+        href = f"/journalists/{prof_slug(r.get('source_key',''))}.html"
         out.append(f"""<tr>
       <td class="rk">{i}</td>
-      <td class="src">{esc(r['source'])}<span class="tier">T{r.get('tier',3)}</span></td>
+      <td class="src"><a href="{href}">{esc(r['source'])}</a><span class="tier">T{r.get('tier',3)}</span></td>
       <td class="n"><span class="score {cls_for(r.get('score'))}">{r['score']:.2f}</span></td>
       <td class="n">{pct(r.get('accuracy'))}</td>
       <td class="n">{pct(r.get('originality'))}</td>
@@ -225,6 +231,74 @@ TEMPLATE = """<!doctype html>
 </html>"""
 
 
+PROFILE_TEMPLATE = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{name} — transfer reliability profile · Mercato-IQ</title>
+<meta name="description" content="{name}: measured transfer-reporting reliability — accuracy, exclusivity, lead time, calibration and completion record.">
+<style>
+  :root{{--bg:#081416;--panel:#0f1e21;--ink:#e6eef0;--soft:#8ea4a8;--line:#1d3236;--brand:#2fbdd6;
+    --hi:#31c98a;--mid:#e0ac48;--lo:#e46a60;--mono:ui-monospace,"SF Mono",Menlo,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;}}
+  @media (prefers-color-scheme:light){{:root{{--bg:#eef1f2;--panel:#fff;--ink:#0c1719;--soft:#46595d;--line:#d3dcdf;--brand:#0b7f97;}}}}
+  *{{box-sizing:border-box}} body{{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}}
+  .wrap{{max-width:760px;margin:0 auto;padding:clamp(20px,5vw,52px) 20px}}
+  a.back{{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brand);text-decoration:none}}
+  h1{{font-size:clamp(28px,6vw,42px);margin:.3em 0 .1em;letter-spacing:-.02em}}
+  .tier{{font:600 11px/1 var(--mono);color:var(--soft);border:1px solid var(--line);border-radius:99px;padding:4px 9px;vertical-align:middle;margin-left:8px}}
+  .headline{{display:flex;align-items:baseline;gap:14px;margin:18px 0 6px}}
+  .big{{font:800 56px/1 var(--mono);letter-spacing:-.02em;color:var(--brand)}}
+  .big-l{{font:600 12px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}}
+  .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}}
+  .cell{{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}}
+  .cell .v{{font:700 22px/1 var(--mono);font-variant-numeric:tabular-nums}}
+  .cell .k{{font:600 10px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-top:5px}}
+  .v.hi{{color:var(--hi)}} .v.lo{{color:var(--lo)}}
+  h2{{font-size:18px;margin:30px 0 10px}}
+  .cal-row{{display:grid;grid-template-columns:110px 46px 1fr;gap:10px;align-items:center;margin:7px 0}}
+  .cal-row .lbl{{font:600 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--soft)}}
+  .cal-row .pct{{font:700 13px/1 var(--mono)}} .cbar{{height:9px;border-radius:99px;background:var(--brand);min-width:2px}}
+  .foot{{margin-top:34px;color:var(--soft);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}}
+</style></head><body><div class="wrap">
+  <a class="back" href="/rankings.html">← All power rankings</a>
+  <h1>{name}<span class="tier">Tier {tier}</span></h1>
+  <div class="headline"><span class="big">{score}</span><span class="big-l">reliability<br/>score</span></div>
+  <div class="grid">{cells}</div>
+  <h2>Calibration — completion rate by the confidence they claim</h2>
+  {cal}
+  <div class="foot">Computed by the Mercato-IQ reliability engine from {resolved} resolved claims of {stories} tracked.
+  Provisional while the dataset accrues. Attribution from mainstream coverage, not primary posts.</div>
+</div></body></html>"""
+
+
+def profile_page(r):
+    def cell(v, k, good=None):
+        cls = ''
+        if good is not None and isinstance(v, (int, float)):
+            cls = 'hi' if v >= good else ('lo' if v < good * 0.6 else '')
+        return f'<div class="cell"><div class="v {cls}">{v}</div><div class="k">{esc(k)}</div></div>'
+    cells = ''.join([
+        cell(pct(r.get('accuracy')), 'Accuracy'),
+        cell(pct(r.get('recent_score')), 'Recent form'),
+        cell(pct(r.get('originality')), 'Exclusivity'),
+        cell(r.get('right', 0), 'Correct'),
+        cell(r.get('false_reports', 0), 'False'),
+        cell(r.get('confident_miss', 0), 'Confident misses'),
+        cell(f"{r['avg_lead_days']}d" if r.get('avg_lead_days') is not None else '—', 'Avg lead'),
+        cell(pct(r.get('fee_accuracy')) if r.get('fee_accuracy') is not None else '—', 'Fee accuracy'),
+        cell((f"{'+' if (r.get('fee_bias') or 0) >= 0 else ''}{r['fee_bias']}m" if r.get('fee_bias') is not None else '—'), 'Fee bias'),
+    ])
+    order = {'here-we-go': 3, 'advanced': 2, 'talks': 1, 'interest': 0}
+    cal = r.get('calibration') or {}
+    rows = ''.join(
+        f'<div class="cal-row"><span class="lbl">{esc(k)}</span><span class="pct">{pct(v)}</span>'
+        f'<span class="cbar" style="width:{round(v*100)}%"></span></div>'
+        for k, v in sorted(cal.items(), key=lambda kv: order.get(kv[0], 0), reverse=True)) or '<p style="color:var(--soft)">Not enough resolved claims yet.</p>'
+    return PROFILE_TEMPLATE.format(
+        name=esc(r['source']), tier=r.get('tier', 3), score=f"{r.get('score', 0):.2f}",
+        cells=cells, cal=rows, resolved=r.get('resolved', 0), stories=r.get('stories', 0))
+
+
 def main():
     out_path = os.path.join(REPO, 'rankings.html')
     if '--out' in sys.argv:
@@ -259,8 +333,21 @@ def main():
         cal_section=cal_section(cal), n_claims=n_claims, n_res=n_res)
     with open(out_path, 'w', encoding='utf-8', newline='\n') as f:
         f.write(page)
+
+    # Per-journalist profile pages (SEO/shareable) for anyone with a track record.
+    jdir = os.path.join(REPO, 'journalists')
+    os.makedirs(jdir, exist_ok=True)
+    nprof = 0
+    for r in (ranked + thin):
+        if r.get('resolved', 0) < 1:
+            continue
+        with open(os.path.join(jdir, prof_slug(r['source_key']) + '.html'), 'w',
+                  encoding='utf-8', newline='\n') as f:
+            f.write(profile_page(r))
+        nprof += 1
+
     print(f"Wrote {os.path.relpath(out_path, REPO)}: {len(ranked)} ranked reporter(s), "
-          f"{len(live)} live stories.")
+          f"{len(live)} live stories, {nprof} profile page(s).")
 
 
 if __name__ == '__main__':
