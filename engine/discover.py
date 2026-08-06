@@ -47,8 +47,8 @@ SOURCES_PATH = os.path.join(REPO, 'engine', 'sources.json')
 _UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
-MAX_SNIPPETS_PER_CLUB = 12   # keep the extract prompt small -> cheap
-SNIPPET_LEN = 320            # chars of context around a match
+MAX_SNIPPETS_PER_CLUB = 8    # keep the extract prompt small -> cheap (fewer input tokens)
+SNIPPET_LEN = 300            # chars of context around a match
 
 # Map a club's breadcrumb league display-name to the sources.json nation key, so a
 # club pulls its own country's outlets and journalist handles.

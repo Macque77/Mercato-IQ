@@ -31,8 +31,11 @@ from research_agent import (SCHEMA_DOC, load_club_rumours, parse_and_validate,  
 
 REPO = ra.REPO
 MODEL = os.environ.get('MERCATO_EXTRACT_MODEL') or 'claude-haiku-4-5-20251001'
-MAX_TOKENS = int(os.environ.get('MERCATO_EXTRACT_MAX_TOKENS', '4000'))
+MAX_TOKENS = int(os.environ.get('MERCATO_EXTRACT_MAX_TOKENS', '2500'))  # one club's JSON fits easily
 CONCURRENCY = max(1, int(os.environ.get('MERCATO_CONCURRENCY') or '6'))
+# Hard safety cap on Haiku calls per run, so a mis-scoped dispatch can't rack up cost.
+# 0 = no cap. Clubs are already pre-filtered to those with fresh news, so this rarely binds.
+MAX_CLUBS = int(os.environ.get('MERCATO_MAX_CLUBS', '0'))
 
 # Cached system prompt: rules + schema only (no per-club data), so the cache hits
 # across every club in the run.
@@ -103,15 +106,20 @@ def extract_club(client, slug, name, snippets, on_page, roster):
         if _is_fatal_api_error(e):
             raise FatalResearchError(str(e)) from e
         ra.log(f"  API error on {slug}: {e}")
-        return None
+        return None, None
 
+    u = resp.usage
+    usage = {
+        'in': getattr(u, 'input_tokens', 0) or 0,
+        'out': getattr(u, 'output_tokens', 0) or 0,
+        'cache_read': getattr(u, 'cache_read_input_tokens', 0) or 0,
+        'cache_write': getattr(u, 'cache_creation_input_tokens', 0) or 0,
+    }
     text = ''.join(b.text for b in resp.content if getattr(b, 'type', '') == 'text')
     clubs = parse_and_validate(text, roster)
     # parse_and_validate returns a list of club dicts; keep the one for this slug.
-    for c in clubs:
-        if c.get('slug') == slug:
-            return c
-    return clubs[0] if clubs else None
+    chosen = next((c for c in clubs if c.get('slug') == slug), clubs[0] if clubs else None)
+    return chosen, usage
 
 
 def main():
@@ -138,6 +146,9 @@ def main():
     ra.log(f"Extract: {len(clubs_in)} club(s) via {MODEL} (concurrency {CONCURRENCY}).")
 
     items = list(clubs_in.items())
+    if MAX_CLUBS and len(items) > MAX_CLUBS:
+        ra.log(f"  capping {len(items)} -> {MAX_CLUBS} club(s) (MERCATO_MAX_CLUBS).")
+        items = items[:MAX_CLUBS]
 
     def work(item):
         slug, v = item
@@ -159,7 +170,17 @@ def main():
                "If this is a credit/billing error, top up at https://console.anthropic.com.")
         sys.exit(3)
 
-    out_clubs = [c for c in results if c]
+    out_clubs = [c for c, _ in results if c]
+    # Token accounting -- surfaced every run so cost stays visible.
+    tot = {'in': 0, 'out': 0, 'cache_read': 0, 'cache_write': 0}
+    for _, u in results:
+        if u:
+            for k in tot:
+                tot[k] += u.get(k, 0)
+    ra.log(f"Tokens: input={tot['in']} output={tot['out']} "
+           f"cache_read={tot['cache_read']} cache_write={tot['cache_write']} "
+           f"(model {MODEL}, {len(items)} call(s))")
+
     out_path = os.path.join(REPO, args.out)
     with open(out_path, 'w', encoding='utf-8', newline='\n') as f:
         json.dump({'clubs': out_clubs}, f, ensure_ascii=False, indent=1)
