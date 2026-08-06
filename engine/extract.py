@@ -61,6 +61,11 @@ completed/signed AND gives the player's FULL name. Never infer or invent a confi
 surnames, no "Spanish midfielder signed"). If unsure, it is a rumour or nothing. A player confirmed this \
 window is NOT also a live rumour -- omit him from incoming/outgoing and from `live`, and name him in `dead` \
 if he was previously a rumour.
+- A COMPLETED/DONE move ALWAYS goes in confirmed_in/confirmed_out -- NEVER as an incoming/outgoing rumour \
+with truth:100. If a snippet says a player has joined/left, that's confirmed, not a rumour.
+- SKIP any entry you cannot ground: if you don't know the player's real current club AND position, do NOT \
+emit an entry for them (no "Unknown" clubs, no bare surnames). Better to omit than to add a hollow row.
+- Use the player's correct real full name (don't guess a first name you haven't seen).
 - Do NOT invent anything not supported by a snippet or already on the page.
 
 `live` = the AUTHORITATIVE COMPLETE list of EVERY player who remains a currently-live link for this club \

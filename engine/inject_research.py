@@ -330,6 +330,35 @@ def _backfill(item, old_text):
     return out
 
 
+def dedupe_by_norm(content, arr_name):
+    """Collapse entries in an array that share a normalized name (e.g. an accented
+    and unaccented spelling of the same player), keeping the richest (longest) one.
+    Cleans up duplicates a prior buggy run may have left; the upsert dedup only
+    prevents NEW ones. Preserves first-seen order and any unnamed objects."""
+    block = jou.find_array_block(content, arr_name)
+    if not block:
+        return content, False
+    _, _, inner = block
+    objs = [inner[s:e] for s, e in jou.split_top_level_objects(inner)]
+    chosen, order, unnamed = {}, [], []
+    for o in objs:
+        nm = jou.field_str(o, 'name')
+        if not nm:
+            unnamed.append(o)
+            continue
+        k = _norm(nm)
+        if k not in chosen:
+            chosen[k] = o
+            order.append(k)
+        elif len(o) > len(chosen[k]):
+            chosen[k] = o  # keep the richer of the duplicates
+    if len(chosen) + len(unnamed) == len(objs):
+        return content, False  # nothing duplicated
+    new_objs = [chosen[k] for k in order] + unnamed
+    new_content, ok = jou.replace_array_objects(content, arr_name, new_objs)
+    return (new_content, True) if ok else (content, False)
+
+
 def reconcile_live(content, live_names, protected_names):
     """Replace-list reconciliation: flag dead:true any on-page rumour whose player
     is NOT in the model's authoritative `live` list (and not freshly added this
@@ -404,6 +433,11 @@ def process_club(slug, data):
     for arr_key, arr_name in [('incoming', 'INCOMING'), ('outgoing', 'OUTGOING')]:
         content, arr_changed = upsert_rumours(content, arr_name, data.get(arr_key, []))
         changed = changed or arr_changed
+
+    # Collapse any pre-existing accent/spelling duplicates before reconciliation.
+    for arr_name in ('INCOMING', 'OUTGOING', 'WATCHLIST'):
+        content, dd_changed = dedupe_by_norm(content, arr_name)
+        changed = changed or dd_changed
 
     # Rule 1: retire rumours a source has called off (retire_rumours.py moves them).
     content, dead_changed = flag_dead(content, data.get('dead', []))
