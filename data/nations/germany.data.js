@@ -27,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Yan Diomande",prob: 55, truth: 70, bullshit: false,
     club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "out",
     from: "RB Leipzig", to: "Real Madrid",
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~€120m reported asking/offer", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 34},
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:59:48.603417Z",
+  updated: "2026-08-06T10:14:19.909062Z",
   label: "Nation aggregation"
 };

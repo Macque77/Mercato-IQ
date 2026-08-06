@@ -285,7 +285,7 @@ const HEADLINES = [
     from: "RB Leipzig", to: "Real Madrid",
     direction: "out",
     prob: 55, truth: 70, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "Germany", league: "Bundesliga",
     club_link: "rb-leipzig",
     updated: "2026-08-03T14:30:00Z"
@@ -428,7 +428,7 @@ const HEADLINES = [
     from: "Paris Saint-Germain", to: "Liverpool",
     direction: "in",
     prob: 45, truth: 80, trend: 'down', bullshit: false,
-    tier: 1, coverage: 5, coverage_trend: 'up',
+    tier: 1, coverage: 5, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "liverpool",
     updated: "2026-06-06T00:00:00Z"
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:59:48.602086Z",
+  updated: "2026-08-06T10:14:19.907680Z",
   label: "Global aggregation from all clubs"
 };

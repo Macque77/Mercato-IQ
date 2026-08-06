@@ -62,7 +62,7 @@ const TOP_STORIES = [  {
     name: "Couhaib Driouech",prob: 35, truth: 60, bullshit: false,
     club_origin: "rangers", club_display_name: "Rangers", direction: "in",
     from: "PSV Eindhoven", to: "Rangers",
-    tier: 3, coverage: 2, coverage_trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
     value: "c.£6m", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 16
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:59:48.604833Z",
+  updated: "2026-08-06T10:14:19.910274Z",
   label: "Nation aggregation"
 };
