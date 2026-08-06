@@ -910,16 +910,17 @@ const INCOMING = [
   {name:"Rayan", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0},
   {name:"Iliman Ndiaye", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0},
   {name:"Kennett Eichhorn", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0},
-  {name:"Bradley Barcola", sub:"", club:"PSG", pos:"", report:"Liverpool and PSG in official club-to-club talks", src:"BBC Sport", tier:2, fee:"~£100m", truth:75, prob:45, light:"y", trend:"flat", note:"Targeted as potential third £100m signing; early-stage negotiations", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
+  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool ready to make Barcola third £100m signing", src:"BBC Sport", tier:2, fee:"~£100m", truth:75, prob:65, light:"g", trend:"up", note:"Liverpool and PSG in advanced negotiations; sources indicate willingness to spend at that level", lastSeen:"2026-08-06T14:04:24Z", baseProb:65},
   {name:"Ibrahim Mbaye", sub:"", club:"", pos:"", report:"Liverpool exploring deal conditions", src:"", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"Early exploratory stage; limited credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
   {name:"Raul Asencio", sub:"", club:"", pos:"", report:"Intermediaries sounded Liverpool out", src:"The Guardian", tier:2, fee:"", truth:40, prob:25, light:"o", trend:"up", note:"Intermediary approach; early-stage interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:25}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"", club:"Tottenham", pos:"W", report:"Tottenham made Gakpo a target", src:"BBC Sport", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"up", note:"Tottenham interest; question over suitability", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
+  {name:"Cody Gakpo", sub:"24 · Netherlands · W", club:"Tottenham Hotspur", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions fit", src:"BBC Sport", tier:2, fee:"Unknown", truth:60, prob:50, light:"y", trend:"up", note:"Tottenham interest confirmed; BBC Sport analysis of potential move", lastSeen:"2026-08-06T14:04:24Z", baseProb:50},
   {name:"Rio Ngumoha", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"flat", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0}
 ];
 const DEAD = [
+  {name:"Carlos Ramos", sub:"Unknown · Spain · Midfielder", club:"Unknown", pos:"Midfielder", report:"Liverpool sign Spanish midfielder Ramos", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:90, prob:95, light:"g", trend:"flat", note:"Official signing confirmed by BBC Sport", lastSeen:"2026-08-06T14:04:24Z", baseProb:95, dead:true, deadReason:"Signed officially by Liverpool; moved from rumour to confirmed", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Standard FSG churn of fringe and loan players to balance the squad and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"Generic outgoing movement; not specific player(s)", dir:"out", deadAt:"2026-08-06T13:55:46Z"}
 ];
@@ -998,7 +999,8 @@ const LINKMAP = {
   "Mohamed Salah": ["skySportsMohamedSalah", "eSPNMohamedSalah"],
   "Ibrahim Mbaye": ["skySportsIbrahimMbaye"],
   "Raul Asencio": ["tEAMtalkRaulAsencio", "theGuardianFootballRaulAsencio"],
-  "Ramos": ["bBCSportFootballRamos"]};
+  "Ramos": ["bBCSportFootballRamos"],
+  "Carlos Ramos": ["bBCSportFootballRamos"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };

@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "aydin-sk", "name": "Ayd\u0131nspor 1923", "count":
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T13:55:47.444331Z",
+  updated: "2026-08-06T14:04:25.076100Z",
   label: "League aggregation"
 };

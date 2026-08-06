@@ -83,7 +83,7 @@ const TOP_STORIES = [  {
     name: "Francisco Conceição", prob: 15, truth: 45, bullshit: false,
     club_origin: "juventus", club_display_name: "Juventus", direction: "out",
     from: "Juventus", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~£25m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 6, "badge"
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T13:55:47.451719Z",
+  updated: "2026-08-06T14:04:25.083708Z",
   label: "League aggregation"
 };

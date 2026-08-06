@@ -923,13 +923,15 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimarães", sub:"29 · Brazil · Midfielder", club:"Newcastle United", pos:"Midfielder", report:"Arsenal have agreed £75m fee with Newcastle", src:"The Guardian", tier:2, fee:"£75m", truth:95, prob:90, light:"g", trend:"up", note:"Deal closing between clubs", lastSeen:"2026-08-06T13:55:46Z", baseProb:90},
-  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle are closing on a full agreement for the Brazil midfielder, with a fee reported at around £75m and personal terms long since settled. Guimaraes has made clear he wants the move and Newcastle's resistance has softened as the endgame nears.", src:"David Ornstein (The Athletic)", tier:1, fee:"£75m", truth:92, prob:85, light:"g", trend:"down", note:"Ornstein and Romano align on an imminent agreement, but rival outlets have contradicted each other all summer on timings and medical dates, so treat any 'done deal' framing with care until it is signed.", lastSeen:"2026-08-06T08:45:12Z", baseProb:85},
-  {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35}
+  {name:"Bruno Guimarães", sub:"28 · Brazil · M", club:"Newcastle United", pos:"M", report:"Arsenal signing Newcastle captain Guimarães", src:"BBC Sport", tier:2, fee:"£75m", truth:85, prob:75, light:"g", trend:"down", note:"BBC report confirms Arsenal are signing Newcastle captain; fee agreed at £75m", lastSeen:"2026-08-06T14:04:24Z", baseProb:75},
+  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle are closing on a full agreement for the Brazil midfielder, with a fee reported at around £75m and personal terms long since settled. Guimaraes has made clear he wants the move and Newcastle's resistance has softened as the endgame nears.", src:"David Ornstein (The Athletic)", tier:1, fee:"£75m", truth:92, prob:85, light:"g", trend:"down", note:"Ornstein and Romano align on an imminent agreement, but rival outlets have contradicted each other all summer on timings and medical dates, so treat any 'done deal' framing with care until it is signed.", lastSeen:"2026-08-06T08:45:12Z", baseProb:85}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Kristoffer Norgaard", sub:"26 · Denmark · M", club:"Everton", pos:"M", report:"Everton sign midfielder Norgaard from Arsenal", src:"BBC Sport / Sky Sports", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Completed move from Arsenal to Everton", lastSeen:"2026-08-06T14:04:24Z", baseProb:100}
+];
 const DEAD = [
+  {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No credible updates in recent snippets; link appears stale", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£80m+", truth:55, prob:20, light:'o', trend:'flat',
    note:"Named by the BBC among Arsenal's three main attacking targets after a strong season. On-profile (young, high ceiling, resale) and a forward, which is a stated need. OBSTACLE: a fee reported in excess of £80m for a teenager, and Bournemouth under no pressure to sell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"Rumour with 1 Jun 2026 date lacks current credibility; no recent reporting", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Benjamin Šeško", sub:"22 · Slovenia · ST", club:"RB Leipzig", pos:"ST", report:"~2 wks ago", src:"Aggregated / sportskeeda", tier:3, fee:"£60-70m", truth:40, prob:15, light:'o', trend:'flat',
@@ -988,9 +990,7 @@ const POSITIONS = [
 
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
-const WATCHLIST = [
-  {name:"Hugo Ekitike", club:"Eintracht Frankfurt", pos:"ST", dir:"in", age:"~2 wks", tier:4, note:"A young striker option floated for Arsenal, but more strongly linked with Liverpool. Early-warning only."}
-];
+const WATCHLIST = [];
 
 /* ---------- SOURCE LINKS ----------
    Exact URLs only where verified this refresh; otherwise the named source's hub.
@@ -1025,7 +1025,9 @@ const HUB = {
   mailSportEzriKonsa: {l:"Mail Sport", u:"https://www.dailymail.co.uk/sport/football/index.html"},
   theGuardianFootballBrunoGuimares: {l:"The Guardian Football", u:"https://www.theguardian.com/football/2026/aug/05/arsenal-agree-75m-fee-with-newcastle-for-bruno-guimaraes-as-clubs-reach-compromise"},
   skySportsFootballChristianNorgaard: {l:"Sky Sports Football", u:"https://www.skysports.com/football/live-blog/12040/13279303/everton-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights"},
-  bBCSportFootballChristianNorgaard: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cm2gvlnjndpo"}};
+  bBCSportFootballChristianNorgaard: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cm2gvlnjndpo"},
+  bBCSportFootballBrunoGuimares: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/clyl2e351vlo?at_medium=RSS&at_campaign=rss"},
+  bBCSportFootballKristofferNorgaard: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cm2gvlnjndpo?at_medium=RSS&at_campaign=rss"}};
 const LINKMAP = {
   "Morgan Rogers": ["bbcArs","mokbel"],
   "Eli Junior Kroupi": ["bbcArs"],
@@ -1039,7 +1041,7 @@ const LINKMAP = {
   "Ben White": ["bbcArs"],
   "William Saliba": ["marca","bbcGossip"],
   "Piero Hincapié": ["romano","afc", "arseblogNewsPieroHincapi"],
-  "Bruno Guimarães": ["football365viaFabrizioRomanoBrunoGuimares", "skySportsBrunoGuimares", "theGuardianFootballBrunoGuimares"],
+  "Bruno Guimarães": ["football365viaFabrizioRomanoBrunoGuimares", "skySportsBrunoGuimares", "theGuardianFootballBrunoGuimares", "bBCSportFootballBrunoGuimares"],
   "Ezri Konsa": ["sportsMoleviaCaughtOffsideEzriKonsa", "mailSportEzriKonsa"],
   "Rayan": ["nowArsenalviaTheSunRayan"],
   "Myles Lewis-Skelly": ["skySportsMylesLewisSkelly"],
@@ -1049,7 +1051,8 @@ const LINKMAP = {
   "Jakub Kiwior": ["sportsMoleIllanMeslier"],
   "Bruno Guimaraes": ["skySportsBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimaraes", "ornstein"],
   "Christian Norgaard": ["dailyCannonChristianNorgaard", "eSPNChristianNorgaard", "skySportsFootballChristianNorgaard", "bBCSportFootballChristianNorgaard"],
-  "Mishel Nduka": ["davidOrnsteinTheAthleticBrunoGuimaraes"]};
+  "Mishel Nduka": ["davidOrnsteinTheAthleticBrunoGuimaraes"],
+  "Kristoffer Norgaard": ["bBCSportFootballKristofferNorgaard"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
   "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",

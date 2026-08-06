@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "as-monaco-b", "name": "AS Monaco B", "count": 0, "
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T13:55:47.444923Z",
+  updated: "2026-08-06T14:04:25.076716Z",
   label: "League aggregation"
 };

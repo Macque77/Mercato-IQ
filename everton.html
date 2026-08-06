@@ -928,19 +928,17 @@ const CONFIRMED_OUT = [
   {name:"Isaac Heath", sub:"Free transfer", club:"Cambridge United", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young left-winger moves down to League One/Two on a free"}
 ];
 
-const INCOMING = [
-  {name:"Raul Jimenez", sub:"33 · Mexico · F", club:"Unknown", pos:"Forward", report:"Incoming striker target", src:"On-page rumour", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"down", note:"Rumour ~3 weeks old; no recent credible update", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
-  {name:"Jack Grealish", sub:"28 · England · W", club:"Manchester City", pos:"Winger", report:"Incoming target", src:"On-page rumour", tier:3, fee:"", truth:15, prob:5, light:"r", trend:"down", note:"Rumour ~2 weeks old; highly unlikely given his Manchester City status", lastSeen:"2026-08-06T13:55:46Z", baseProb:5},
-  {name:"Alistair Johnston", sub:"24 · Canada · RB", club:"Celtic", pos:"Right-back", report:"Priority right-back target; opening bid mentioned", src:"On-page rumour", tier:3, fee:"", truth:50, prob:45, light:"y", trend:"down", note:"Active interest reported; credible target", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
-  {name:"Nahuel Molina", sub:"25 · Argentina · RB", club:"Atletico Madrid", pos:"Right-back", report:"Strong move made for Argentine defender", src:"On-page rumour", tier:3, fee:"", truth:45, prob:40, light:"y", trend:"up", note:"Described as 'strong move'; recent interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:40},
-  {name:"Barış Alper Yılmaz", sub:"24 · Turkey · W", club:"Galatasaray", pos:"Winger/Forward", report:"Turkish winger/forward with strong physical attributes", src:"On-page rumour", tier:3, fee:"", truth:55, prob:50, light:"y", trend:"up", note:"Target identified; recent interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:50}
-];
+const INCOMING = [];
 
-const OUTGOING = [
-  {name:"Iliman Ndiaye", sub:"23 · Senegal · W", club:"Everton", pos:"Winger", report:"Outgoing; linked with exit", src:"On-page rumour", tier:3, fee:"", truth:50, prob:45, light:"y", trend:"up", note:"Rumour ~1 week old; active speculation", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
-  {name:"Tim Iroegbunam", sub:"20 · England · CM", club:"Everton", pos:"Midfielder", report:"Outgoing; deal entering final year", src:"On-page rumour", tier:3, fee:"", truth:55, prob:50, light:"y", trend:"up", note:"Contract situation suggests potential departure", lastSeen:"2026-08-06T13:55:46Z", baseProb:50}
-];
+const OUTGOING = [];
 const DEAD = [
+  {name:"Raul Jimenez", sub:"33 · Mexico · F", club:"Unknown", pos:"Forward", report:"Incoming striker target", src:"On-page rumour", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"down", note:"Rumour ~3 weeks old; no recent credible update", lastSeen:"2026-08-06T13:55:46Z", baseProb:20, dead:true, deadReason:"No recent snippet support; outdated rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Jack Grealish", sub:"28 · England · W", club:"Manchester City", pos:"Winger", report:"Incoming target", src:"On-page rumour", tier:3, fee:"", truth:15, prob:5, light:"r", trend:"down", note:"Rumour ~2 weeks old; highly unlikely given his Manchester City status", lastSeen:"2026-08-06T13:55:46Z", baseProb:5, dead:true, deadReason:"No recent snippet support; outdated rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Alistair Johnston", sub:"24 · Canada · RB", club:"Celtic", pos:"Right-back", report:"Priority right-back target; opening bid mentioned", src:"On-page rumour", tier:3, fee:"", truth:50, prob:45, light:"y", trend:"down", note:"Active interest reported; credible target", lastSeen:"2026-08-06T13:55:46Z", baseProb:45, dead:true, deadReason:"No recent snippet support; outdated rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Nahuel Molina", sub:"25 · Argentina · RB", club:"Atletico Madrid", pos:"Right-back", report:"Strong move made for Argentine defender", src:"On-page rumour", tier:3, fee:"", truth:45, prob:40, light:"y", trend:"up", note:"Described as 'strong move'; recent interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:40, dead:true, deadReason:"No recent snippet support; outdated rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Barış Alper Yılmaz", sub:"24 · Turkey · W", club:"Galatasaray", pos:"Winger/Forward", report:"Turkish winger/forward with strong physical attributes", src:"On-page rumour", tier:3, fee:"", truth:55, prob:50, light:"y", trend:"up", note:"Target identified; recent interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:50, dead:true, deadReason:"No recent snippet support; outdated rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Iliman Ndiaye", sub:"23 · Senegal · W", club:"Everton", pos:"Winger", report:"Outgoing; linked with exit", src:"On-page rumour", tier:3, fee:"", truth:50, prob:45, light:"y", trend:"up", note:"Rumour ~1 week old; active speculation", lastSeen:"2026-08-06T13:55:46Z", baseProb:45, dead:true, deadReason:"No recent snippet support; outdated rumour", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Tim Iroegbunam", sub:"20 · England · CM", club:"Everton", pos:"Midfielder", report:"Outgoing; deal entering final year", src:"On-page rumour", tier:3, fee:"", truth:55, prob:50, light:"y", trend:"up", note:"Contract situation suggests potential departure", lastSeen:"2026-08-06T13:55:46Z", baseProb:50, dead:true, deadReason:"No recent snippet support; outdated rumour", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Marquee striker", sub:"Friedkin-backed", club:"Various", pos:"ST", report:"~3 wks ago", src:"Football Insider / TeamTalk", tier:3, fee:"£40-70m", truth:55, prob:40, light:'y', trend:'up',
    note:"The headline aim: a big-money goalscorer after Beto and Barry fell short. Links include Liam Delap (long admired) and Jarrod Bowen. OBSTACLES: fees and wages for proven names.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"Duplicate/vague on-page entry; subsumed by Raul Jimenez", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Underperforming forwards", sub:"Beto / Barry review", club:"Various", pos:"ST", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
@@ -974,10 +972,7 @@ const POSITIONS = [
 
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
-const WATCHLIST = [
-  {name:"Iliman Ndiaye", club:"Everton", pos:"AM", dir:"out", age:"~1 wk", tier:3, note:"(Also in main table.) Prized creator; retention is the key task amid interest."},
-  {name:"Jack Grealish", club:"Man City", pos:"W", dir:"in", age:"~2 wks", tier:3, note:"A stay (loan-to-permanent) is a concrete possibility."}
-];
+const WATCHLIST = [];
 
 /* ---------- SOURCE LINKS ----------
    Exact URLs only where verified this refresh; otherwise the named source's hub.

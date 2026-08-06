@@ -6,29 +6,15 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 191
+  stories_count: 167
 };
 
 const TOP_STORIES = [  {
-    name: "Eberechi Eze",prob: 95, truth: 95, bullshit: false,
-    club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "out",
-    from: "Crystal Palace", to: "Arsenal",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "£68m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
     name: "Bryan Mbeumo",prob: 90, truth: 95, bullshit: false,
     club_origin: "brentford", club_display_name: "Brentford", direction: "out",
     from: "Brentford", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£65m + £6m add-ons", updated: "2026-06-06T12:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Mishel Nduka",prob: 88, truth: 90, bullshit: false,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
-    from: "Arsenal", to: "Manchester City",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Bruno Guimaraes",prob: 85, truth: 92, bullshit: false,
@@ -41,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Marcus Rashford",prob: 85, truth: 85, bullshit: false,
     club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
     from: "Manchester United", to: "Barcelona",
-    tier: 1, coverage: 3, coverage_trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "Loan + Buy option", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
@@ -87,6 +73,20 @@ const TOP_STORIES = [  {
     value: "Loan (poss. obligation to buy)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
+    name: "Mykhailo Mudryk",prob: 40, truth: 65, bullshit: false,
+    club_origin: "chelsea", club_display_name: "Chelsea", direction: "out",
+    from: "Chelsea", to: "Coventry City / Strasbourg (multiple suitors)",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "Enzo Fernandez",prob: 40, truth: 88, bullshit: false,
+    club_origin: "chelsea", club_display_name: "Chelsea", direction: "out",
+    from: "Chelsea", to: "No agreed destination",
+    tier: 1, coverage: 2, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
     name: "Arthur Theate",prob: 30, truth: 55, bullshit: false,
     club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
     from: "Eintracht Frankfurt", to: "Bournemouth",
@@ -101,27 +101,27 @@ const TOP_STORIES = [  {
     value: "TBC", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Mykhailo Mudryk",prob: 25, truth: 55, bullshit: false,
-    club_origin: "coventry-city", club_display_name: "Coventry City", direction: "in",
-    from: "Chelsea", to: "Coventry City",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-06-06T12:00:00Z", league: "Premier League"
-  },
-  {
     name: "Cody Gakpo",prob: 20, truth: 52, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Liverpool", to: "Tottenham Hotspur",
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
+  {
+    name: "Antoine Semenyo",prob: 10, truth: 60, bullshit: false,
+    club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
+    from: "Multiple PL clubs previously linked", to: "Bournemouth",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "£65m release clause (Jan 2027)", updated: "2026-06-06T00:00:00Z", league: "Premier League"
+  },
 ];
 
-const BY_LEAGUE = {"Premier League": 120, "Championship": 18, "League One": 53, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 96, "Championship": 18, "League One": 53, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 120}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 18}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 96}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 18}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T13:55:47.440131Z",
+  updated: "2026-08-06T14:04:25.071687Z",
   label: "Nation aggregation"
 };

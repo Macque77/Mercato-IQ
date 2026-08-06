@@ -905,6 +905,7 @@ const CONFIRMED_IN = [
    note:"Confirmed 3 August per FootballTransfers and multiple outlets: the €30.6m release clause has been formally triggered and Horníček has completed his medical ahead of an imminent unveiling at St James' Park. This closes Newcastle's senior goalkeeper position after the Jaouen arrival was explicitly positioned as a long-term development signing rather than an immediate Pope replacement. Horníček becomes the senior cover on a long-term deal."},
   {name:"Aladji Bamba", sub:"21 · DM · Ivory Coast", to:"from AS Monaco", fee:"£35.5m (€40m, incl. add-ons)", free:false, status:"done", statusTxt:"DONE, SIGNED",
    note:"Confirmed by Sky Sports, the Newcastle official site and AS Monaco (24 Jul): a five-year deal for the highly-rated defensive midfielder, No.8 shirt assigned. Landed while the Bruno Guimarães saga was still unresolved, positioning Bamba as a like-for-like contingency in central midfield if the captain does leave for Arsenal. Was missing from the previous refresh's tracked list entirely - picked up this cycle via the FootballTransfers.com confirmed-deals cross-check."},
+  {name:"Matthias Jaissle", sub:"43 · Austria · Manager", club:"Newcastle United", pos:"Head Coach", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Appointed as Eddie Howe's successor"}
 ];
 const CONFIRMED_OUT = [
   {name:"Anthony Gordon", sub:"25 · LW · England", to:"Barcelona (permanent)", club:"Barcelona (permanent)", fee:"£69m", free:false, status:"exit", statusTxt:"DONE, DEPARTED",
@@ -929,27 +930,25 @@ const CONFIRMED_OUT = [
    note:"Academy departure to York City, confirmed this window; picked up via the FootballTransfers.com confirmed-deals cross-check, not previously tracked."},
 ];
 
-const INCOMING = [
-  {name:"Matthias Jaissle", sub:"31 · Austria · Manager", club:"", pos:"Manager", report:"Newcastle appoint Jaissle as head coach", src:"BBC Sport", tier:2, fee:"", truth:95, prob:100, light:"g", trend:"up", note:"Confirmed appointment as manager", lastSeen:"2026-08-06T13:55:46Z", baseProb:100},
-  {name:"Giorgio Scalvini", sub:"20 · Italy · D", club:"", pos:"D", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:35, prob:25, light:"o", trend:"down", note:"No recent snippet confirmation; last update 30 Jul 2026", lastSeen:"2026-08-06T13:55:46Z", baseProb:25},
-  {name:"Abde Ezzalzouli", sub:"", club:"", pos:"", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"Stable through late July; no recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
-  {name:"Joaquín Oso", sub:"", club:"", pos:"", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:25, prob:15, light:"o", trend:"up", note:"14 Jul 2026 update; no fresher info; likely stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:15},
-  {name:"Angelo Stiller", sub:"", club:"", pos:"", report:"Newcastle shortlist", src:"On-page", tier:3, fee:"", truth:20, prob:15, light:"o", trend:"down", note:"Added to shortlist only; early stage", lastSeen:"2026-08-06T13:55:46Z", baseProb:15}
-];
+const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Bruno Guimarães", sub:"28 · Brazil · M", club:"Arsenal", pos:"M", report:"Arsenal agree £75m fee with Newcastle", src:"The Guardian", tier:2, fee:"£75m", truth:90, prob:95, light:"g", trend:"up", note:"Deal reportedly agreed; clubs reach compromise on fee", lastSeen:"2026-08-06T13:55:46Z", baseProb:95},
-  {name:"Jacob Murphy", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"28 Jul 2026 update; no recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
-  {name:"Lewis Hall", sub:"", club:"Manchester United", pos:"", report:"Manchester United considering move", src:"On-page", tier:3, fee:"", truth:25, prob:15, light:"o", trend:"down", note:"Only 'said to be considering'; no concrete development", lastSeen:"2026-08-06T13:55:46Z", baseProb:15},
-  {name:"Nick Pope", sub:"", club:"", pos:"GK", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:20, prob:15, light:"o", trend:"down", note:"~Jul 2026; no fresher update; likely stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:15},
-  {name:"Joe Willock", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"28-29 Jul 2026 update; no recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
-  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Arsenal", pos:"Central midfielder", report:"Arsenal have agreed a 75m pound fee with Newcastle for their captain and the club have accepted the sale, with Sky Sports setting out the reasoning behind sanctioning it. Not a rumour so much as a deal in its final stages, though completion, medical and registration are still to be confirmed, so it stops short of a done deal.", src:"Sky Sports", tier:2, fee:"£75m", truth:95, prob:90, light:"g", trend:"flat", note:"Fee agreed rather than signed. The move gathered pace after the manager's exit left the squad unsettled. Downgrade to confirmed_out only once Newcastle or Arsenal announce.", lastSeen:"2026-08-06T10:49:40Z", baseProb:90},
-  {name:"Nick Woltemade", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:25, prob:15, light:"o", trend:"flat", note:"~2 weeks old; minimal credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:15},
-  {name:"Yoane Wissa", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:20, prob:10, light:"r", trend:"flat", note:"~2 weeks old; minimal credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:10},
-  {name:"Dan Burn", sub:"", club:"", pos:"D", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:15, prob:10, light:"r", trend:"flat", note:"~4 weeks old; stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:10},
-  {name:"Fabian Schär", sub:"", club:"", pos:"D", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:15, prob:10, light:"r", trend:"flat", note:"~4 weeks old; stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:10}
+  {name:"Bruno Guimarães", sub:"29 · Brazil · CM", club:"Arsenal", pos:"Midfielder", report:"Arsenal agree £75m fee with Newcastle for captain", src:"BBC Sport / Telegraph", tier:2, fee:"£75m", truth:95, prob:95, light:"g", trend:"flat", note:"Deal agreed between clubs", lastSeen:"2026-08-06T14:04:24Z", baseProb:95},
+  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Arsenal", pos:"Central midfielder", report:"Arsenal have agreed a 75m pound fee with Newcastle for their captain and the club have accepted the sale, with Sky Sports setting out the reasoning behind sanctioning it. Not a rumour so much as a deal in its final stages, though completion, medical and registration are still to be confirmed, so it stops short of a done deal.", src:"Sky Sports", tier:2, fee:"£75m", truth:95, prob:90, light:"g", trend:"flat", note:"Fee agreed rather than signed. The move gathered pace after the manager's exit left the squad unsettled. Downgrade to confirmed_out only once Newcastle or Arsenal announce.", lastSeen:"2026-08-06T10:49:40Z", baseProb:90}
 ];
 const DEAD = [
+  {name:"Giorgio Scalvini", sub:"20 · Italy · D", club:"", pos:"D", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:35, prob:25, light:"o", trend:"down", note:"No recent snippet confirmation; last update 30 Jul 2026", lastSeen:"2026-08-06T13:55:46Z", baseProb:25, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Abde Ezzalzouli", sub:"", club:"", pos:"", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"Stable through late July; no recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:20, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Joaquín Oso", sub:"", club:"", pos:"", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:25, prob:15, light:"o", trend:"up", note:"14 Jul 2026 update; no fresher info; likely stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Angelo Stiller", sub:"", club:"", pos:"", report:"Newcastle shortlist", src:"On-page", tier:3, fee:"", truth:20, prob:15, light:"o", trend:"down", note:"Added to shortlist only; early stage", lastSeen:"2026-08-06T13:55:46Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Jacob Murphy", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"28 Jul 2026 update; no recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:20, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Lewis Hall", sub:"", club:"Manchester United", pos:"", report:"Manchester United considering move", src:"On-page", tier:3, fee:"", truth:25, prob:15, light:"o", trend:"down", note:"Only 'said to be considering'; no concrete development", lastSeen:"2026-08-06T13:55:46Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Nick Pope", sub:"", club:"", pos:"GK", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:20, prob:15, light:"o", trend:"down", note:"~Jul 2026; no fresher update; likely stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Joe Willock", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"28-29 Jul 2026 update; no recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:20, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Nick Woltemade", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:25, prob:15, light:"o", trend:"flat", note:"~2 weeks old; minimal credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Yoane Wissa", sub:"", club:"", pos:"", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:20, prob:10, light:"r", trend:"flat", note:"~2 weeks old; minimal credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:10, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Dan Burn", sub:"", club:"", pos:"D", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:15, prob:10, light:"r", trend:"flat", note:"~4 weeks old; stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:10, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
+  {name:"Fabian Schär", sub:"", club:"", pos:"D", report:"Outgoing rumour", src:"On-page", tier:3, fee:"", truth:15, prob:10, light:"r", trend:"flat", note:"~4 weeks old; stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:10, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Dan Burn & Fabian Schär", club:"Newcastle United", pos:"CB", dir:"out", age:"~4 wks", tier:3, note:"Both 34 with contracts expiring 2027; not an active sale story, but their situation is the direct driver of the Scalvini centre-back pursuit above. Monitoring only.", dead:true, deadReason:"no longer a current link", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Kieran McKenna / Antonio Conte", club:"Alternate coaching candidates", pos:"Head coach", dir:"in", age:"~same day", tier:3, note:"Named alongside Jaissle as the search continues; no reported contact confirmed for either as of 30 Jul, well behind Jaissle in the reported pecking order.", dead:true, deadReason:"no longer a current link", deadAt:"2026-08-06T13:55:46Z"}
 ];
@@ -986,10 +985,7 @@ const POSITIONS = [
   {p:"Central midfield", w:50, x:"Contingent on a Bruno Guimarães sale; Steur signed as depth, Ederson monitored as a possible replacement"},
 ];
 
-const WATCHLIST = [
-  {name:"Nick Woltemade", club:"Newcastle United", pos:"ST", dir:"out", age:"~2 wks", tier:2, note:"The Athletic (Chris Waugh) reports his fit in Howe's system was already uncertain after a difficult World Cup; with Howe now gone, his standing under a new coach is an open question, though a sale remains unlikely given the fee sunk into him."},
-  {name:"Yoane Wissa", club:"Newcastle United", pos:"ST", dir:"out", age:"~2 wks", tier:2, note:"The Athletic reports Newcastle explored a sale market but judged the financial hit too heavy; the club is banking on a stronger season after his World Cup involvement rather than moving him on."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   bbcNUFC:    {l:"BBC Sport · Newcastle United", u:"https://www.bbc.co.uk/sport/football/teams/newcastle-united"},
@@ -1033,7 +1029,9 @@ const HUB = {
   skySportsTransferCentreBrunoGuimaraes: {l:"Sky Sports Transfer Centre", u:"https://www.skysports.com/football/live-blog/11678/13025496/newcastle-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts"},
   skySportsPaperTalkviaTheSunLewisHall: {l:"Sky Sports Paper Talk (via The Sun)", u:"https://www.skysports.com/football/transfer-paper-talk/12709/13568628/bruno-guimaraes-transfer-news-arsenal-closing-in-on-deal-for-newcastle-captain-paper-talk"},
   bBCSportFootballMatthiasJaissle: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cn4n0ypyx31o"},
-  theGuardianFootballBrunoGuimares: {l:"The Guardian Football", u:"https://www.theguardian.com/football/2026/aug/05/arsenal-agree-75m-fee-with-newcastle-for-bruno-guimaraes-as-clubs-reach-compromise"}};
+  theGuardianFootballBrunoGuimares: {l:"The Guardian Football", u:"https://www.theguardian.com/football/2026/aug/05/arsenal-agree-75m-fee-with-newcastle-for-bruno-guimaraes-as-clubs-reach-compromise"},
+  bBCSportFootballBrunoGuimares: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/clyl2e351vlo"},
+  skySportsFootballMatthiasJaissle: {l:"Sky Sports Football", u:"https://www.skysports.com/football/news/12040/13568428/newcastle-united-appoint-matthias-jaissle-as-head-coach-following-eddie-howes-departure-from-st-james-park"}};
 const LINKMAP = {
   "Sean Steur": ["skyNUFC","nufcOfficial", "skySportsSeanSteur"],
   "Bazoumana Touré": ["skyNUFC","nufcOfficial", "eSPNBazoumanaTour"],
@@ -1051,11 +1049,11 @@ const LINKMAP = {
   "Travis Hernes": ["chronicle"],
   "Joe White": ["shieldsGaz"],
   "Charlie McArthur": ["chronicle"],
-  "Matthias Jaissle": ["jaissleTribuna","jaissleYahoo","jaissleGoal", "bBCSportFootballMatthiasJaissle"],
+  "Matthias Jaissle": ["jaissleTribuna","jaissleYahoo","jaissleGoal", "bBCSportFootballMatthiasJaissle", "skySportsFootballMatthiasJaissle"],
   "Giorgio Scalvini": ["tuttoAtalanta","scalviniHT","shieldsGaz"],
   "Abde Ezzalzouli": ["teamtalk","ezzalzouliFP"],
   "Joaquín Oso": ["osoSW"],
-  "Bruno Guimarães": ["brunoSun","brunoFT","talksport","skyNUFC", "skySportsBrunoGuimares", "theGuardianFootballBrunoGuimares"],
+  "Bruno Guimarães": ["brunoSun","brunoFT","talksport","skyNUFC", "skySportsBrunoGuimares", "theGuardianFootballBrunoGuimares", "bBCSportFootballBrunoGuimares"],
   "Jacob Murphy": ["murphyFI"],
   "Lewis Hall": ["hallCO", "skySportsPaperTalkviaTheSunLewisHall"],
   "Nick Pope": ["shieldsGaz","leeRyder"],
