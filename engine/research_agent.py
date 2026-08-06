@@ -185,27 +185,50 @@ def parse_today():
 
 
 def fetch_rss(url):
-    """Return [{title, link, guid, pubDate}] for one RSS feed, or [] on failure."""
+    """Return [{title, link, guid, pubDate}] for one feed, or [] on failure.
+
+    Namespace-agnostic and handles both RSS (<item>) and Atom (<entry>, whose
+    <link> carries the URL in an href attribute) -- a feed in Atom format or with
+    a default namespace would otherwise silently parse to zero items."""
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mercato-IQ/1.0'})
         with urllib.request.urlopen(req, timeout=30) as resp:
             raw = resp.read()
         root = ElementTree.fromstring(raw)
-        items = []
-        for it in root.iter('item'):
-            def text(tag):
-                el = it.find(tag)
-                return el.text.strip() if el is not None and el.text else ''
-            items.append({
-                'title': text('title'),
-                'link': text('link'),
-                'guid': text('guid') or text('link'),
-                'pubDate': text('pubDate'),
-            })
-        return items
     except Exception as e:  # network/parse failures shouldn't kill the run
         log(f"  feed fetch failed ({url}): {e}")
         return []
+
+    def local(tag):
+        return tag.rsplit('}', 1)[-1].lower()  # strip {namespace}
+
+    def child_text(el, *names):
+        for ch in el:
+            if local(ch.tag) in names and (ch.text or '').strip():
+                return ch.text.strip()
+        return ''
+
+    def link_of(el):
+        for ch in el:
+            if local(ch.tag) == 'link':
+                return (ch.get('href') or (ch.text or '')).strip()
+        return ''
+
+    items = []
+    for el in root.iter():
+        if local(el.tag) not in ('item', 'entry'):
+            continue
+        title = child_text(el, 'title')
+        if not title:
+            continue
+        link = link_of(el)
+        items.append({
+            'title': title,
+            'link': link,
+            'guid': child_text(el, 'guid', 'id') or link or title,
+            'pubDate': child_text(el, 'pubdate', 'published', 'updated', 'date'),
+        })
+    return items
 
 
 def run_poll():
@@ -213,34 +236,36 @@ def run_poll():
     leads = []
     for source, url in RSS_FEEDS:
         items = fetch_rss(url)
-        if not items:
-            continue
-        items_path = os.path.join(REPO, f'.poll_items_{re.sub(r"[^a-z0-9]", "", source.lower())}.json')
-        with open(items_path, 'w', encoding='utf-8', newline='\n') as f:
-            json.dump(items, f)
-        try:
-            out = subprocess.run(
-                [sys.executable, os.path.join(REPO, 'engine', 'poll_feeds.py'),
-                 '--input', items_path, '--source', source, '--json'],
-                capture_output=True, text=True, cwd=REPO,
-                env={**os.environ, 'PYTHONUTF8': '1'},
-            )
-            if out.returncode == 0 and out.stdout.strip():
-                # poll_feeds.py --json prints a bare JSON array of the new items
-                # (not a {"new_items": [...]} object) -- calling .get() on a list
-                # used to throw and get swallowed here, so leads were always 0.
-                data = json.loads(out.stdout)
-                items = data if isinstance(data, list) else data.get('new_items', [])
-                for it in items:
-                    if isinstance(it, dict) and it.get('title'):
-                        leads.append(it['title'])
-        except Exception as e:
-            log(f"  poll_feeds failed for {source}: {e}")
-        finally:
+        fresh = []
+        if items:
+            items_path = os.path.join(REPO, f'.poll_items_{re.sub(r"[^a-z0-9]", "", source.lower())}.json')
+            with open(items_path, 'w', encoding='utf-8', newline='\n') as f:
+                json.dump(items, f)
             try:
-                os.remove(items_path)
-            except OSError:
-                pass
+                out = subprocess.run(
+                    [sys.executable, os.path.join(REPO, 'engine', 'poll_feeds.py'),
+                     '--input', items_path, '--source', source, '--json'],
+                    capture_output=True, text=True, cwd=REPO,
+                    env={**os.environ, 'PYTHONUTF8': '1'},
+                )
+                if out.returncode == 0 and out.stdout.strip():
+                    # poll_feeds.py --json prints a bare JSON array of the new items
+                    # (not a {"new_items": [...]} object) -- calling .get() on a list
+                    # used to throw and get swallowed here, so leads were always 0.
+                    data = json.loads(out.stdout)
+                    new_items = data if isinstance(data, list) else data.get('new_items', [])
+                    fresh = [it['title'] for it in new_items if isinstance(it, dict) and it.get('title')]
+            except Exception as e:
+                log(f"  poll_feeds failed for {source}: {e}")
+            finally:
+                try:
+                    os.remove(items_path)
+                except OSError:
+                    pass
+        leads.extend(fresh)
+        # Per-feed visibility: items fetched vs new transfer leads. 0 items on a
+        # feed that should have some means a fetch/parse issue with that URL.
+        log(f"  {source}: {len(items)} items, {len(fresh)} new lead(s)")
     log(f"Phase 0: {len(leads)} fresh transfer lead(s) from feeds.")
     return leads
 
