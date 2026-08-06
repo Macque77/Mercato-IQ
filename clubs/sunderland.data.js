@@ -75,6 +75,8 @@ const CONFIRMED_OUT = [
    note:"Confirmed by SAFC (16 Jul): a free, permanent move to Le Havre. Corrects an earlier tracking error - a prior refresh had him watchlisted as a possible incoming full-back target; he was in fact already a Sunderland player heading out the door. Picked up this cycle via the FootballTransfers.com confirmed-deals cross-check."},
   {name:"Zak Johnson", sub:"20 · CB", to:"York City", club:"York City", fee:"Undisclosed", status:"exit", statusTxt:"EXIT CONFIRMED",
    note:"Confirmed by York City FC: a permanent return to League Two after being tracked in earlier refreshes only as an Oxford United rumour. A fringe academy centre-back exit."},
+  {name:"Timothee Pembele", sub:"23 · France · DF", club:"Le Havre", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent exit confirmed on 16 July following two loan spells away from Wearside."},
+  {name:"Ahmed Abdullahi", sub:"Nigeria · ST", club:"Eyupspor", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move to the Turkish side announced by both clubs on 4 August."}
 ];
 
 const INCOMING = [
@@ -88,7 +90,8 @@ const INCOMING = [
    note:"Sunderland in 'preliminary negotiations' per TheHardTackle (13 Jul), competing directly with Leeds and Aston Villa; Barcelona are said to be fielding more than ten enquiries for the winger. On-model age, but early-stage and multi-club with no fee agreed - genuine interest, low completion odds this window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
   {name:"Lorenzo Pirola", sub:"Centre-back target facing Serie A competition", club:"Olympiacos", pos:"DF", report:"Sunderland have opened talks with Olympiacos, proposing around €20m plus add-ons against a €25m asking price, but face competition from Inter Milan and Roma for the Italian defender.", src:"Manuel Meza", tier:2, fee:"€25m (£21.8m)", truth:60, prob:25, light:"o", trend:"flat", note:"Le Bris personally driving the pursuit", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Abdul Fatawu", sub:"Winger target at risk from Leicester domino effect", club:"Leicester City", pos:"MF", report:"Sunderland are keen on the Ghanaian winger, but a potential Eberechi Eze-to-Arsenal deal could see Leicester bring in Bilal El Khannouss from Crystal Palace, which would likely block Fatawu from leaving.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:65, prob:20, light:"o", trend:"flat", note:"Deal seen as unlikely if the Eze/El Khannouss domino plays out", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Matias Soule", sub:"23 · Argentina · RW", club:"Roma", pos:"RW", report:"Sunderland remain in talks with Roma over the Argentine, who is seen as the right-sided addition Regis Le Bris wants before the Europa League campaign. Fabrizio Romano has put a timeframe on a resolution, with Roma willing to listen at around 30m euros after Soule turned down Saudi offers. AC Milan and Fulham are the competition.", src:"Fabrizio Romano", tier:1, fee:"£30m", truth:88, prob:55, light:"g", trend:"flat", note:"Live and credible, but Roma have twice reopened the file this summer and Milan can move quickly. Treat the fee as fluid until a bid is lodged.", lastSeen:"2026-08-06T10:49:40Z", baseProb:55}
+  {name:"Matias Soule", sub:"23 · Argentina · RW", club:"Roma", pos:"RW", report:"Sunderland remain in talks with Roma over the Argentine, who is seen as the right-sided addition Regis Le Bris wants before the Europa League campaign. Fabrizio Romano has put a timeframe on a resolution, with Roma willing to listen at around 30m euros after Soule turned down Saudi offers. AC Milan and Fulham are the competition.", src:"Fabrizio Romano", tier:1, fee:"£30m", truth:88, prob:55, light:"g", trend:"flat", note:"Live and credible, but Roma have twice reopened the file this summer and Milan can move quickly. Treat the fee as fluid until a bid is lodged.", lastSeen:"2026-08-06T10:49:40Z", baseProb:55},
+  {name:"Geny Catamo", sub:"25 · Mozambique · RW", club:"Sporting CP", pos:"RW", report:"Sunderland have opened talks with Sporting CP over the Mozambique international, identified by Florent Ghisolfi as the priority to add quality on the right of Regis Le Bris's attack. Sporting have rejected the initial approach and insist Catamo leaves only if his 60m euro (£51m) release clause is met.", src:"James Copley, Sunderland Echo (corroborated by A Bola)", tier:2, fee:"£51m release clause", truth:88, prob:25, light:"o", trend:"flat", note:"Talks are real and exclusively reported, but Sporting will not negotiate below the clause and Catamo is under contract to 2029, so a record-breaking Sunderland outlay would be required.", lastSeen:"2026-08-06T11:26:20Z", baseProb:25}
 ];
 
 const OUTGOING = [
@@ -107,7 +110,8 @@ const OUTGOING = [
   {name:"Arthur Masuaku", sub:"32 · DR Congo · LB", club:"Konyaspor (Turkey)", pos:"LB", report:"~1-2 days ago", src:"FootballPlace / Sunderland Echo (contested)", tier:3, fee:"Free/undisclosed", truth:52, prob:40, light:'y', trend:'up',
    note:"Genuinely contested this refresh. FootballPlace reports Sunderland have 'agreed' his exit with Konyaspor closing in on a free transfer and a medical expected in Turkey within days (per Turkish outlet Konya'nın Sesi). But the Echo's own 30 Jul round-up flags 'conflicting reports' and says the move 'may be stalling' as Masuaku explores alternative options. Reinildo is the only other senior left-back on the books, so this remains directly tied to how the Methalie pursuit resolves; probability raised sharply but flagged as unresolved rather than done.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Romaine Mundle", sub:"22 · LW", club:"Rangers / continental", pos:"LW", report:"~3 wks ago", src:"Sunderland Echo / Voetbalnieuws", tier:3, fee:"£10-16m", truth:48, prob:24, light:'o', trend:'down',
-   note:"No fresh reporting found this refresh; still recovering from summer surgery and held out as a precaution in pre-season. Rangers and various continental clubs remain credited from the last cycle, but this has gone quiet - flagged as stale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24}
+   note:"No fresh reporting found this refresh; still recovering from summer surgery and held out as a precaution in pre-season. Rangers and various continental clubs remain credited from the last cycle, but this has gone quiet - flagged as stale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24},
+  {name:"Chemsdine Talbi", sub:"21 · Belgium · RW", club:"RB Leipzig", pos:"RW", report:"RB Leipzig have made the Sunderland winger a significant target as they look to add two wide players this summer.", src:"Foot Mercato", tier:2, fee:"Undisclosed", truth:70, prob:22, light:"o", trend:"flat", note:"Single-outlet sourcing so far and no indication Sunderland would sell a first-team winger while chasing further attacking additions.", lastSeen:"2026-08-06T11:26:20Z", baseProb:22}
 ];
 const DEAD = [
   {name:"Mariano Troilo", sub:"22 · Argentina · CB", club:"Parma", pos:"CB", report:"~12 wks ago", src:"Sport Witness / ParmaLive / OneFootball", tier:3, fee:"~€30m (£26m)", truth:50, prob:16, light:'o', trend:'down',
@@ -116,8 +120,6 @@ const DEAD = [
    note:"Courted at the top of the league but going nowhere. He is the established No.1 after an impressive first season, precisely why Patterson is the one leaving, and Sunderland have no need to sell on a deal to 2030. No fresh movement; quiet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10, dir:"out", deadReason:"no fresh report in 9+ weeks", deadAt:"2026-08-06T10:24:32Z"},
   {name:"Enzo Le Fée", sub:"26 · CM/AM", club:"Liverpool / Villa / Arsenal", pos:"CM/AM", report:"~9 wks ago", src:"SportsBoom / Fichajes", tier:3, fee:"£22-30m", truth:44, prob:14, light:'r', trend:'down',
    note:"Several Champions-League-chasing clubs linked, but the player has played it down as 'the media part' and Sunderland have no need to sell above his ~€23m arrival cost. No fresh reporting found this refresh; flagged as stale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14, dir:"out", deadReason:"no fresh report in 9+ weeks", deadAt:"2026-08-06T10:24:32Z"},
-  {name:"Chemsdine Talbi", sub:"20 · Morocco · RW", club:"Villa / Brighton / Napoli", pos:"RW", report:"~cooled", src:"SportsBoom", tier:3, fee:"£25-35m", truth:40, prob:12, light:'r', trend:'flat',
-   note:"Broad monitoring of a prized young winger only a year in; any sale would be at a steep premium with Sunderland holding the cards, and with wide attack now a need the club would resist letting him go. No concrete bid, no fresh reporting this refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"},
   {name:"Trai Hume", sub:"24 · NI · RB", club:"Brighton / Real Madrid", pos:"RB", report:"~11 wks ago", src:"aggregated / TEAMtalk", tier:4, fee:"£20-30m", truth:34, prob:10, light:'r', trend:'flat',
    note:"Brighton interest is plausible but quiet, and with Meunier now added Sunderland have cover rather than pressure. Under contract to 2030, so the holder's price applies. No fresh reporting this refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10, dir:"out", deadReason:"no fresh report in 11+ weeks", deadAt:"2026-08-06T10:24:32Z"},
   {name:"Habib Diarra", sub:"22 · CM · club-record", club:"Galatasaray", pos:"CM", report:"~11 wks ago", src:"Turkish press", tier:4, fee:"£35m+", truth:20, prob:6, light:'r', trend:'flat',
@@ -266,7 +268,11 @@ const HUB = {
   yahooSportsThomasMeunier: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/thomas-meunier-joins-sunderland-free-093000646.html"},
   footballFanCastEliezerMayenda: {l:"Football FanCast", u:"https://www.footballfancast.com/sunderland-transfers-signings/"},
   fabrizioRomanoviaSunderlandEchoMatiasSoule: {l:"Fabrizio Romano via Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football/sunderland-afc/fabrizio-romano-sets-matias-soule-transfer-timeframe-amid-sunderland-and-ac-milan-links-8839721"},
-  aFPviaFrance24EliezerMayenda: {l:"AFP via France 24", u:"https://www.france24.com/en/live-news/20260706-rennes-buy-young-striker-mayenda-from-sunderland"}};
+  aFPviaFrance24EliezerMayenda: {l:"AFP via France 24", u:"https://www.france24.com/en/live-news/20260706-rennes-buy-young-striker-mayenda-from-sunderland"},
+  sunderlandEchoGenyCatamo: {l:"Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football/sunderland-afc/sunderland-transfer-exclusive-talks-ongoing-over-sporting-cp-star-with-ps51m-release-clause-8838666"},
+  footMercatoChemsdineTalbi: {l:"Foot Mercato", u:"https://www.footmercato.net/"},
+  sunderlandAFCThomasMeunier: {l:"Sunderland AFC", u:"https://www.safc.com/news/2026/july/15/thomas-meunier-joins-sunderland/"},
+  sunderlandAFCofficialannouncementclubrecordEliezerMayenda: {l:"Sunderland AFC official announcement (club record)", u:"https://en.wikipedia.org/wiki/2026%E2%80%9327_Sunderland_A.F.C._season"}};
 const LINKMAP = {
   "Ernest Poku": ["pokuFFC2","pokuGGFN","pokuSky"],
   "Mariano Troilo": ["troiloSW","troiloOF","parmalive", "sportWitnessviaParmaTodayMarianoTroilo"],
@@ -284,11 +290,11 @@ const LINKMAP = {
   "Romaine Mundle": ["echo","voetbal"],
   "Robin Roefs": ["caught","bbcGossip"],
   "Enzo Le Fée": ["sportsboom","teamtalk"],
-  "Chemsdine Talbi": ["sportsboom", "sunderlandEchoviaFootMercatoChemsdineTalbi"],
+  "Chemsdine Talbi": ["sportsboom", "sunderlandEchoviaFootMercatoChemsdineTalbi", "footMercatoChemsdineTalbi"],
   "Trai Hume": ["teamtalk"],
   "Habib Diarra": ["fanatik"],
-  "Thomas Meunier": ["meunier","meunierGFFN", "yahooSportsThomasMeunier", "footballFanCastEliezerMayenda"],
-  "Eliezer Mayenda": ["mayendaRennes","gffn", "footballFanCastEliezerMayenda", "aFPviaFrance24EliezerMayenda"],
+  "Thomas Meunier": ["meunier","meunierGFFN", "yahooSportsThomasMeunier", "footballFanCastEliezerMayenda", "sunderlandAFCThomasMeunier"],
+  "Eliezer Mayenda": ["mayendaRennes","gffn", "footballFanCastEliezerMayenda", "aFPviaFrance24EliezerMayenda", "sunderlandAFCofficialannouncementclubrecordEliezerMayenda"],
   "Milan Aleksić": ["b92","safc"],
   "Harrison Jones": ["nEcho"],
   "Dan Neil": ["neilSky","rangersOfficial", "footballFanCastEliezerMayenda"],
@@ -301,7 +307,10 @@ const LINKMAP = {
   "Tarik Muharemović": ["sunderlandEchoFabrizioRomanoTarikMuharemovi"],
   "Lorenzo Pirola": ["footItaliaviaSportsIllustratedLorenzoPirola"],
   "Abdul Fatawu": ["sportsIllustratedFabrizioRomanoAbdulFatawu"],
-  "Matias Soule": ["fabrizioRomanoviaSunderlandEchoMatiasSoule"]};
+  "Matias Soule": ["fabrizioRomanoviaSunderlandEchoMatiasSoule"],
+  "Geny Catamo": ["sunderlandEchoGenyCatamo"],
+  "Timothee Pembele": ["sunderlandAFCofficialannouncementclubrecordEliezerMayenda"],
+  "Ahmed Abdullahi": ["sunderlandAFCofficialannouncementclubrecordEliezerMayenda"]};
 const WL_LINKMAP = {
   "Chidera Ejuke":"ejuke",
   "Geoffrey Kondogbia":"echo","Marlon Gomes":"sportsboom","Flavien Boyomo":"moretto","Lutsharel Geertruida":"hinze",

@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 182
+  stories_count: 184
 };
 
 const TOP_STORIES = [  {
@@ -41,7 +41,7 @@ const TOP_STORIES = [  {
     name: "Ousmane Diomande",prob: 80, truth: 90, bullshit: false,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest",
-    tier: 1, coverage: 5, coverage_trend: 'up',
+    tier: 1, coverage: 5, coverage_trend: 'flat',
     value: "£34m", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
@@ -55,21 +55,21 @@ const TOP_STORIES = [  {
     name: "Matteo Ruggeri",prob: 72, truth: 80, bullshit: false,
     club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
     from: "Atlético Madrid", to: "Aston Villa",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-06-06T12:00:00Z", league: "Premier League"
   },
   {
     name: "Cristian Romero",prob: 62, truth: 80, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
-    tier: 1, coverage: 3, coverage_trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "≈€40m (£35m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Savinho",prob: 55, truth: 78, bullshit: false,
     club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Manchester City", to: "Tottenham Hotspur",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£60m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Premier League": 110, "Championship": 19, "League One": 53, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 112, "Championship": 19, "League One": 53, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 110}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 112}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:49:42.908870Z",
+  updated: "2026-08-06T11:26:21.338528Z",
   label: "Nation aggregation"
 };

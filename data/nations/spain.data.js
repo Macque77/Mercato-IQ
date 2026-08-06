@@ -13,7 +13,7 @@ const TOP_STORIES = [  {
     name: "Rodri",prob: 40, truth: 80, bullshit: false,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
     from: "Manchester City", to: "Real Madrid",
-    tier: 1, coverage: 3, coverage_trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "Around €80m", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
@@ -34,7 +34,7 @@ const TOP_STORIES = [  {
     name: "Julian Alvarez",prob: 33, truth: 70, bullshit: false,
     club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
     from: "Atletico Madrid", to: "FC Barcelona",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 84}, {"slu
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:49:42.910854Z",
+  updated: "2026-08-06T11:26:21.340496Z",
   label: "Nation aggregation"
 };

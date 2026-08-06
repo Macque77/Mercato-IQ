@@ -20,7 +20,7 @@ const TOP_STORIES = [  {
     name: "Nahuel Molina",prob: 82, truth: 90, bullshit: false,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "Atletico Madrid", to: "AS Roma",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "€13m + €4m bonuses", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 128}, {"sl
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:49:42.909904Z",
+  updated: "2026-08-06T11:26:21.339535Z",
   label: "Nation aggregation"
 };

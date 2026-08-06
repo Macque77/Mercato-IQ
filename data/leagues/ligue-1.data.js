@@ -27,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Zion Suzuki", prob: 74, truth: 92, bullshit: false,
     club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
     from: "Parma", to: "Paris Saint-Germain",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Around €33m with add-ons", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -55,7 +55,7 @@ const TOP_STORIES = [  {
     name: "Bradley Barcola", prob: 58, truth: 90, bullshit: false,
     club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "out",
     from: "Paris Saint-Germain", to: "Liverpool",
-    tier: 1, coverage: 3, coverage_trend: 'down',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "Nine figures sought", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -104,7 +104,7 @@ const TOP_STORIES = [  {
     name: "Yanis Zouaoui", prob: 70, truth: 80, bullshit: false,
     club_origin: "le-havre-ac", club_display_name: "Le Havre AC", direction: "in",
     from: "Nantes", to: "Le Havre AC",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "aj-auxerre", "name": "AJ Auxerre", "count": 3, "ba
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:49:42.917215Z",
+  updated: "2026-08-06T11:26:21.346921Z",
   label: "League aggregation"
 };

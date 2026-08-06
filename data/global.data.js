@@ -12,7 +12,7 @@ const HEADLINES = [
     from: "TSG Hoffenheim", to: "RB Leipzig",
     direction: "in",
     prob: 95, truth: 97, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "Germany", league: "Bundesliga",
     club_link: "rb-leipzig",
     updated: "2026-08-03T14:30:00Z"
@@ -142,7 +142,7 @@ const HEADLINES = [
     from: "Atletico Madrid", to: "AS Roma",
     direction: "in",
     prob: 82, truth: 90, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "Italy", league: "Serie A",
     club_link: "as-roma",
     updated: "2026-08-03T14:30:00Z"
@@ -168,7 +168,7 @@ const HEADLINES = [
     from: "Sporting CP", to: "Nottingham Forest",
     direction: "in",
     prob: 80, truth: 90, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 5, coverage_trend: 'up',
+    tier: 1, coverage: 5, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "nottingham-forest",
     updated: "2026-07-30T14:00:00Z"
@@ -194,7 +194,7 @@ const HEADLINES = [
     from: "RB Leipzig", to: "Real Madrid",
     direction: "out",
     prob: 78, truth: 88, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "Germany", league: "Bundesliga",
     club_link: "rb-leipzig",
     updated: "2026-08-03T14:30:00Z"
@@ -220,7 +220,7 @@ const HEADLINES = [
     from: "Parma", to: "Paris Saint-Germain",
     direction: "in",
     prob: 74, truth: 92, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "France", league: "Ligue 1",
     club_link: "paris-saint-germain",
     updated: "2026-08-03T14:30:00Z"
@@ -246,7 +246,7 @@ const HEADLINES = [
     from: "Atlético Madrid", to: "Aston Villa",
     direction: "in",
     prob: 72, truth: 80, trend: 'down', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "aston-villa",
     updated: "2026-06-06T12:00:00Z"
@@ -298,7 +298,7 @@ const HEADLINES = [
     from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
     direction: "out",
     prob: 62, truth: 80, trend: 'up', bullshit: false,
-    tier: 1, coverage: 3, coverage_trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-08-03T12:48:44Z"
@@ -363,7 +363,7 @@ const HEADLINES = [
     from: "Paris Saint-Germain", to: "Liverpool",
     direction: "out",
     prob: 58, truth: 90, trend: 'up', bullshit: false,
-    tier: 1, coverage: 3, coverage_trend: 'down',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     nation: "France", league: "Ligue 1",
     club_link: "paris-saint-germain",
     updated: "2026-08-03T14:30:00Z"
@@ -376,7 +376,7 @@ const HEADLINES = [
     from: "Manchester City", to: "Tottenham Hotspur",
     direction: "in",
     prob: 55, truth: 78, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "tottenham-hotspur",
     updated: "2026-08-03T12:48:44Z"
@@ -623,7 +623,7 @@ const HEADLINES = [
     from: "Manchester City", to: "Real Madrid",
     direction: "in",
     prob: 40, truth: 80, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 3, coverage_trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     nation: "Spain", league: "La Liga",
     club_link: "real-madrid",
     updated: "2026-08-03T18:00:00Z"
@@ -789,7 +789,7 @@ const HEADLINES = [
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 182, league_count: 3
+    stories_count: 184, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -842,17 +842,17 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 629,
+  total_stories: 631,
   clubs_covered: 178,
   tier1_count: 86,
   top_league: "Serie A",
-  most_active_club: "Manchester United",
+  most_active_club: "Sunderland",
   nations_covered: 13,
   leagues_covered: 28
 };
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:49:42.907983Z",
+  updated: "2026-08-06T11:26:21.337837Z",
   label: "Global aggregation from all clubs"
 };

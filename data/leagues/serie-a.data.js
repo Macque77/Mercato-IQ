@@ -20,7 +20,7 @@ const TOP_STORIES = [  {
     name: "Nahuel Molina", prob: 82, truth: 90, bullshit: false,
     club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
     from: "Atletico Madrid", to: "AS Roma",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "€13m + €4m bonuses", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -146,7 +146,7 @@ const TOP_STORIES = [  {
     name: "El Bilal Touré", prob: 50, truth: 55, bullshit: false,
     club_origin: "atalanta", club_display_name: "Atalanta", direction: "out",
     from: "Atalanta", to: "Parma",
-    tier: 2, coverage: 1, coverage_trend: 'down',
+    tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Loan with conditional mandatory purchase", updated: "2026-08-03T14:30:00Z"
   },
 ];
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "ac-milan", "name": "AC Milan", "count": 6, "badge"
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:49:42.919831Z",
+  updated: "2026-08-06T11:26:21.349569Z",
   label: "League aggregation"
 };
