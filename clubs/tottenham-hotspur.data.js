@@ -41,8 +41,7 @@ const CONFIRMED_IN = [
    note:"Robertson's Anfield exit on a free lands him competition and cover at left-back, and gives De Zerbi a proven leader to help stabilise a squad that went through three head coaches in a single season."},
   {name:"Martin Dubravka", sub:"37 · GK · Slovakia", to:"free transfer from Burnley", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Pure squad depth behind Antonin Kinsky and (for now) Guglielmo Vicario - low-cost, low-risk, and consistent with Lange's pattern of using free transfers to preserve fee spend for the difference-makers."},
-  {name:"Jan Paul van Hecke", sub:"Centre-back reinforcement", club:"Brighton & Hove Albion", pos:"DF", fee:"£52m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as defensive cover ahead of expected Romero exit"},
-  {name:"Martin Dúbravka", sub:"Free-transfer goalkeeper", club:"Burnley", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by the club and reflected on ESPN's transfer tracker"}
+  {name:"Jan Paul van Hecke", sub:"Centre-back reinforcement", club:"Brighton & Hove Albion", pos:"DF", fee:"£52m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as defensive cover ahead of expected Romero exit"}
 ];
 
 const CONFIRMED_OUT = [

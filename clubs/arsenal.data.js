@@ -78,10 +78,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle are closing on a full agreement for the Brazil midfielder, with a fee reported at around £75m and personal terms long since settled. Guimaraes has made clear he wants the move and Newcastle's resistance has softened as the endgame nears.", src:"David Ornstein (The Athletic)", tier:1, fee:"£75m", truth:92, prob:85, light:"g", trend:"down", note:"Ornstein and Romano align on an imminent agreement, but rival outlets have contradicted each other all summer on timings and medical dates, so treat any 'done deal' framing with care until it is signed.", lastSeen:"2026-08-06T08:45:12Z", baseProb:85}
+  {name:"Bruno Guimaraes", sub:"25 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle closing on full agreement for Newcastle captain", src:"BBC Sport Football", tier:2, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"down", note:"Transfer advanced, talks ongoing", lastSeen:"2026-08-06T14:13:57Z", baseProb:75}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Mathias Norgaard", sub:"27 · Denmark · CM", club:"Everton", pos:"CM", report:"Completed move to Everton", src:"Sky Sports Football", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-06T14:13:57Z", baseProb:100}
+];
 const DEAD = [
   {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No credible updates in recent snippets; link appears stale", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£80m+", truth:55, prob:20, light:'o', trend:'flat',
@@ -201,10 +203,11 @@ const LINKMAP = {
   "Christos Tzolis": ["sportsMoleIllanMeslier"],
   "Karl Hein": ["sportsMoleIllanMeslier"],
   "Jakub Kiwior": ["sportsMoleIllanMeslier"],
-  "Bruno Guimaraes": ["skySportsBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimaraes", "ornstein"],
+  "Bruno Guimaraes": ["skySportsBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimaraes", "ornstein", "bBCSportFootballBrunoGuimares"],
   "Christian Norgaard": ["dailyCannonChristianNorgaard", "eSPNChristianNorgaard", "skySportsFootballChristianNorgaard", "bBCSportFootballChristianNorgaard"],
   "Mishel Nduka": ["davidOrnsteinTheAthleticBrunoGuimaraes"],
-  "Kristoffer Norgaard": ["bBCSportFootballKristofferNorgaard"]};
+  "Kristoffer Norgaard": ["bBCSportFootballKristofferNorgaard"],
+  "Mathias Norgaard": ["skySportsFootballChristianNorgaard"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
   "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",

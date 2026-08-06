@@ -83,38 +83,12 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Mishel Nduka",
-    club_display_name: "Arsenal",
-    summary: "",
-    value: "Undisclosed",
-    from: "Arsenal", to: "Manchester City",
-    direction: "out",
-    prob: 88, truth: 90, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Bruno Guimaraes",
-    club_display_name: "Arsenal",
-    summary: "",
-    value: "£75m",
-    from: "Newcastle United", to: "Arsenal",
-    direction: "in",
-    prob: 85, truth: 92, trend: 'down', bullshit: false,
-    tier: 1, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
     headline: "Marcus Rashford",
     club_display_name: "Manchester United",
     summary: "",
     value: "Loan + Buy option",
-    from: "Manchester United", to: "Barcelona",
-    direction: "out",
+    from: "Barcelona", to: "Manchester United",
+    direction: "in",
     prob: 85, truth: 85, trend: 'up', bullshit: false,
     tier: 1, coverage: 3, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
@@ -460,19 +434,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Aurélien Tchouameni",
-    club_display_name: "Manchester United",
-    summary: "",
-    value: "~£70m",
-    from: "Real Madrid", to: "Manchester United",
-    direction: "in",
-    prob: 50, truth: 65, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "manchester-united",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
     headline: "Tolu Arokodare",
     club_display_name: "AFC Ajax",
     summary: "Verweij predicts he 'can become a sensation' in the Eredivisie despite raw techn",
@@ -698,8 +659,8 @@ const HEADLINES = [
     club_display_name: "Manchester United",
     summary: "",
     value: "~£70m",
-    from: "Manchester United", to: "Brighton",
-    direction: "out",
+    from: "Brighton", to: "Manchester United",
+    direction: "in",
     prob: 35, truth: 55, trend: 'flat', bullshit: false,
     tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
@@ -784,12 +745,51 @@ const HEADLINES = [
     club_link: "racing-santander",
     updated: "2026-08-03T18:00:00Z"
   },
+  {
+    headline: "Julian Alvarez",
+    club_display_name: "FC Barcelona",
+    summary: "Atletico have shown no willingness to sell and Barcelona's wage room is the obvi",
+    value: "Undisclosed",
+    from: "Atletico Madrid", to: "FC Barcelona",
+    direction: "in",
+    prob: 33, truth: 70, trend: 'up', bullshit: false,
+    tier: 1, coverage: 2, coverage_trend: 'flat',
+    nation: "Spain", league: "La Liga",
+    club_link: "barcelona",
+    updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    headline: "Diego Moreira",
+    club_display_name: "RC Strasbourg Alsace",
+    summary: "",
+    value: "Undisclosed",
+    from: "RC Strasbourg Alsace", to: "AS Roma",
+    direction: "out",
+    prob: 30, truth: 50, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 2, coverage_trend: 'flat',
+    nation: "France", league: "Ligue 1",
+    club_link: "rc-strasbourg",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Davis Opoku",
+    club_display_name: "OH Leuven",
+    summary: "",
+    value: "Undisclosed",
+    from: "OH Leuven", to: "Feyenoord",
+    direction: "out",
+    prob: 30, truth: 70, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "Belgium", league: "Pro League",
+    club_link: "oh-leuven",
+    updated: "2026-07-29T00:00:00Z"
+  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 179, league_count: 3
+    stories_count: 161, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -797,7 +797,7 @@ const NATIONS = [
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 86, league_count: 1
+    stories_count: 85, league_count: 1
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
@@ -842,17 +842,17 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 636,
-  clubs_covered: 175,
-  tier1_count: 81,
+  total_stories: 617,
+  clubs_covered: 178,
+  tier1_count: 76,
   top_league: "Serie A",
-  most_active_club: "Arsenal",
+  most_active_club: "Leeds United",
   nations_covered: 13,
   leagues_covered: 28
 };
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:09:03.872116Z",
+  updated: "2026-08-06T14:13:58.788867Z",
   label: "Global aggregation from all clubs"
 };

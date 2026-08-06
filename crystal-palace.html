@@ -932,20 +932,20 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Ousmane Diao", sub:"Centre-back · Senegal", club:"Unknown", pos:"CB", report:"Palace have identified the Senegalese centre-back", src:"On-page", tier:3, fee:"Unknown", truth:70, prob:60, light:"g", trend:"up", note:"Identified target, no recent credible update", lastSeen:"2026-08-06T14:09:02Z", baseProb:60},
-  {name:"Igor Julio", sub:"Centre-back · Brighton", club:"Brighton & Hove Albion", pos:"CB", report:"The young Brighton centre-back has emerged as a target", src:"On-page", tier:3, fee:"Unknown", truth:65, prob:55, light:"g", trend:"up", note:"Emerged as target, no recent credible update", lastSeen:"2026-08-06T14:09:02Z", baseProb:55},
-  {name:"Takehiro Tomiyasu", sub:"Defender · Japan", club:"Arsenal", pos:"FB", report:"Palace have agreed a free transfer", src:"On-page", tier:3, fee:"Free", truth:75, prob:70, light:"g", trend:"up", note:"Agreement reported, awaiting completion", lastSeen:"2026-08-06T14:09:02Z", baseProb:70},
-  {name:"Solly March", sub:"Winger · England", club:"Brighton & Hove Albion", pos:"W", report:"Palace are considering a move for the winger", src:"On-page", tier:3, fee:"Unknown", truth:60, prob:50, light:"y", trend:"up", note:"Being considered, no recent credible update", lastSeen:"2026-08-06T14:09:02Z", baseProb:50},
-  {name:"Real Salt Lake wing-back", sub:"Wing-back · Unknown", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal", src:"The Athletic", tier:2, fee:"£11m", truth:80, prob:75, light:"g", trend:"up", note:"Advanced negotiations", lastSeen:"2026-08-06T14:09:02Z", baseProb:75}
+  {name:"Igor Julio", sub:"Centre-back · Brighton", club:"Brighton", pos:"CB", report:"The young Brighton centre-back has emerged as a target", src:"On-page", tier:3, fee:"Unknown", truth:50, prob:35, light:"y", trend:"down", note:"Emerged as target, no recent credible update", lastSeen:"2026-08-06T14:13:57Z", baseProb:35},
+  {name:"Takehiro Tomiyasu", sub:"Defender · Japan", club:"Arsenal", pos:"DEF", report:"Palace have agreed a free transfer", src:"On-page", tier:3, fee:"Free", truth:70, prob:65, light:"g", trend:"down", note:"Agreement reported, awaiting completion", lastSeen:"2026-08-06T14:13:57Z", baseProb:65},
+  {name:"Solly March", sub:"Winger · Brighton", club:"Brighton", pos:"W", report:"Palace are considering a move for the winger", src:"On-page", tier:3, fee:"Unknown", truth:45, prob:30, light:"y", trend:"down", note:"Being considered, no recent credible update", lastSeen:"2026-08-06T14:13:57Z", baseProb:30},
+  {name:"Unknown RSL wing-back", sub:"Wing-back · Real Salt Lake", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal for Real Salt Lake wing-back", src:"The Athletic", tier:2, fee:"£11m", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks; player name not disclosed in snippet", lastSeen:"2026-08-06T14:13:57Z", baseProb:70}
 ];
 
 const OUTGOING = [
-  {name:"Adam Wharton", sub:"Midfielder · England", club:"Crystal Palace", pos:"CM", report:"Adam Wharton linked with departure", src:"On-page", tier:3, fee:"Unknown", truth:65, prob:60, light:"g", trend:"up", note:"Departure speculation, no recent credible update", lastSeen:"2026-08-06T14:09:02Z", baseProb:60},
-  {name:"Jean-Philippe Mateta", sub:"Striker · France", club:"Crystal Palace", pos:"ST", report:"After a January transfer request and prior interest", src:"On-page", tier:3, fee:"Unknown", truth:70, prob:65, light:"g", trend:"up", note:"Transfer request filed, no recent credible update on current status", lastSeen:"2026-08-06T14:09:02Z", baseProb:65},
-  {name:"Eberechi Eze", sub:"Midfielder · England", club:"Crystal Palace", pos:"CM", report:"Arsenal reach agreement in principle to sign Eberechi Eze", src:"On-page", tier:3, fee:"£68m", truth:80, prob:75, light:"g", trend:"up", note:"Agreement in principle reached", lastSeen:"2026-08-06T14:09:02Z", baseProb:75},
-  {name:"Marc Guehi", sub:"Centre-back · France", club:"Crystal Palace", pos:"CB", report:"Liverpool bid £35m for Marc Guehi. Medical undergoing", src:"On-page", tier:3, fee:"£35m", truth:85, prob:80, light:"g", trend:"up", note:"Medical in progress", lastSeen:"2026-08-06T14:09:02Z", baseProb:80}
+  {name:"Adam Wharton", sub:"Midfielder · England", club:"Crystal Palace", pos:"MID", report:"Adam Wharton linked with departure", src:"On-page", tier:3, fee:"Unknown", truth:55, prob:45, light:"y", trend:"down", note:"Departure speculation, no recent credible update", lastSeen:"2026-08-06T14:13:57Z", baseProb:45},
+  {name:"Jean-Philippe Mateta", sub:"Forward · France", club:"Crystal Palace", pos:"FW", report:"After a January transfer request and prior interest", src:"On-page", tier:3, fee:"Unknown", truth:60, prob:50, light:"y", trend:"down", note:"Transfer request filed, no recent credible update on current status", lastSeen:"2026-08-06T14:13:57Z", baseProb:50},
+  {name:"Eberechi Eze", sub:"Midfielder · England", club:"Crystal Palace", pos:"MID", report:"Arsenal reach agreement in principle to sign Eberechi Eze", src:"On-page", tier:3, fee:"£68m", truth:70, prob:75, light:"g", trend:"flat", note:"Deal agreed in principle with Arsenal", lastSeen:"2026-08-06T14:13:57Z", baseProb:75},
+  {name:"Marc Guehi", sub:"Centre-back · England", club:"Crystal Palace", pos:"CB", report:"Liverpool bid £35m for Marc Guehi. Medical undergone", src:"On-page", tier:2, fee:"£35m", truth:85, prob:80, light:"g", trend:"flat", note:"Medical completed; advanced stage", lastSeen:"2026-08-06T14:13:57Z", baseProb:80}
 ];
 const DEAD = [
+  {name:"Real Salt Lake wing-back", sub:"Wing-back · Unknown", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal", src:"The Athletic", tier:2, fee:"£11m", truth:80, prob:75, light:"g", trend:"up", note:"Advanced negotiations", lastSeen:"2026-08-06T14:09:02Z", baseProb:75, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
   {name:"Manager appointment", sub:"Pierre Sage front-runner", club:"Lens", pos:"Head coach", report:"~5 days ago", src:"TeamTalk / BeFootball", tier:2, fee:"Compensation", truth:80, prob:45, light:'y', trend:'up',
    note:"The gating decision of the summer. Iraola chose Liverpool; Lens coach Pierre Sage (ex-Lyon, Coupe de France winner, Ligue 1 runner-up) is the reported leading candidate, with talks advanced. Not yet confirmed; squad plans follow the appointment.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Europa-ready depth", sub:"Post-appointment additions", club:"Market", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:60, prob:35, light:'y', trend:'flat',
@@ -1038,7 +1038,8 @@ const LINKMAP = {
   "Solly March": ["bbcGossip"],
   "Real Salt Lake wing-back": ["theAthleticRealSaltLakewingback"],
   "Eberechi Eze": ["davidOrnsteinEberechiEze"],
-  "Marc Guehi": ["davidOrnsteinMarcGuehi"]};
+  "Marc Guehi": ["davidOrnsteinMarcGuehi"],
+  "Unknown RSL wing-back": ["theAthleticRealSaltLakewingback"]};
 const WL_LINKMAP = {
   "Pierre Sage":"lequipe","Adam Wharton":"athletic",
 };

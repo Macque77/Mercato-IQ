@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "penafiel", "name": "FC Penafiel", "count": 0, "bad
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:09:03.881436Z",
+  updated: "2026-08-06T14:13:58.798710Z",
   label: "League aggregation"
 };

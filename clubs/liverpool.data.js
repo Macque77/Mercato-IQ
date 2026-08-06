@@ -52,7 +52,7 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
   {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent from Celtic", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect signs a 5-year contract; Romano confirmed with 'Here We Go'."},
-  {name:"Ramos", sub:"", club:"", pos:"Midfielder", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed"}
+  {name:"Ramos", sub:"", club:"", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed by Liverpool"}
 ];
 const CONFIRMED_OUT = [
   {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."},
@@ -60,21 +60,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"Unknown · France · W", club:"Paris Saint-Germain", pos:"W", report:"Liverpool ready to make Barcola third £100m signing", src:"BBC Sport", tier:2, fee:"£100m", truth:75, prob:35, light:"y", trend:"down", note:"Exploratory interest; PSG unlikely to sell", lastSeen:"2026-08-06T14:09:02Z", baseProb:35},
-  {name:"Raul Asencio", sub:"Unknown · Spain · Defender", club:"Real Madrid", pos:"Defender", report:"Intermediaries sounded Liverpool out", src:"The Guardian", tier:3, fee:"Unknown", truth:40, prob:20, light:"o", trend:"down", note:"Intermediary approach; Real Madrid unlikely to sell", lastSeen:"2026-08-06T14:09:02Z", baseProb:20}
+  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Liverpool ready to make Barcola third £100m signing", src:"BBC Sport", tier:2, fee:"£100m", truth:75, prob:60, light:"g", trend:"up", note:"Confirmed in recent BBC Sport reporting as a target for third major signing", lastSeen:"2026-08-06T14:13:57Z", baseProb:60},
+  {name:"Raul Asencio", sub:"20 · Spain · CB", club:"Real Madrid", pos:"CB", report:"Intermediaries sounded Liverpool out; Guardian reports Asencio to Liverpool rumoured", src:"The Guardian", tier:2, fee:"Unknown", truth:55, prob:50, light:"y", trend:"up", note:"Emerging interest reported by intermediaries", lastSeen:"2026-08-06T14:13:57Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions", src:"BBC Sport", tier:2, fee:"Unknown", truth:50, prob:25, light:"o", trend:"down", note:"Tottenham interest; Liverpool unlikely to sell", lastSeen:"2026-08-06T14:09:02Z", baseProb:25}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions if he'd be a good fit at Spurs", src:"BBC Sport", tier:2, fee:"Unknown", truth:50, prob:45, light:"y", trend:"up", note:"Spurs interest confirmed but BBC questions feasibility of move", lastSeen:"2026-08-06T14:13:57Z", baseProb:45}
 ];
 const DEAD = [
-  {name:"Yan Diomande", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0, dead:true, deadReason:"No fresh snippet; stale rumour (5+ weeks)", dir:"in", deadAt:"2026-08-06T14:09:03Z"},
-  {name:"Rayan", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0, dead:true, deadReason:"No fresh snippet; stale rumour (5+ weeks)", dir:"in", deadAt:"2026-08-06T14:09:03Z"},
-  {name:"Iliman Ndiaye", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0, dead:true, deadReason:"No fresh snippet; stale rumour (2d old, no update)", dir:"in", deadAt:"2026-08-06T14:09:03Z"},
-  {name:"Kennett Eichhorn", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0, dead:true, deadReason:"No fresh snippet; stale rumour (5+ weeks)", dir:"in", deadAt:"2026-08-06T14:09:03Z"},
-  {name:"Ibrahim Mbaye", sub:"", club:"", pos:"", report:"Liverpool exploring deal conditions", src:"", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"Early exploratory stage; limited credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:20, dead:true, deadReason:"No fresh snippet; stale rumour (5+ weeks)", dir:"in", deadAt:"2026-08-06T14:09:03Z"},
-  {name:"Rio Ngumoha", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"flat", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0, dead:true, deadReason:"No fresh snippet; stale rumour (5+ weeks)", dir:"out", deadAt:"2026-08-06T14:09:03Z"},
-  {name:"Carlos Ramos", sub:"Unknown · Spain · Midfielder", club:"Unknown", pos:"Midfielder", report:"Liverpool sign Spanish midfielder Ramos", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:90, prob:95, light:"g", trend:"flat", note:"Official signing confirmed by BBC Sport", lastSeen:"2026-08-06T14:04:24Z", baseProb:95, dead:true, deadReason:"Signed officially by Liverpool; moved from rumour to confirmed", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Standard FSG churn of fringe and loan players to balance the squad and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"Generic outgoing movement; not specific player(s)", dir:"out", deadAt:"2026-08-06T13:55:46Z"}
 ];

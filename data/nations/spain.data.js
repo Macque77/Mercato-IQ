@@ -6,7 +6,7 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 86
+  stories_count: 85
 };
 
 const TOP_STORIES = [  {
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"La Liga": 86, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
+const BY_LEAGUE = {"La Liga": 85, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 86}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 85}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:09:03.875006Z",
+  updated: "2026-08-06T14:13:58.791835Z",
   label: "Nation aggregation"
 };
