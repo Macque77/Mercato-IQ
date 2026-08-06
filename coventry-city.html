@@ -908,7 +908,8 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
-  {name:"Miguel Ángel Brau", sub:"Permanent, four-year contract", club:"Granada", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back and Frank Lampard's first signing since promotion, pending work permit/international clearance"}
+  {name:"Miguel Ángel Brau", sub:"Permanent, four-year contract", club:"Granada", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back and Frank Lampard's first signing since promotion, pending work permit/international clearance"},
+  {name:"Carl Rushworth", sub:"25 · England · GK", club:"Brighton", pos:"Goalkeeper", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Formally announced by Coventry, with the keeper describing it as joining a club he already calls home."}
 ];
 const CONFIRMED_OUT = [
   {name:"Jamie Allen", sub:"Released", club:"Free agent", pos:"MF", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of Championship-winning season"},
@@ -927,7 +928,8 @@ const INCOMING = [
   {name:"Mykhailo Mudryk", sub:"Loan interest registered", club:"Chelsea", pos:"FW", report:"Newly-promoted Coventry are among clubs exploring a loan for the Ukrainian winger, who is available again after his doping ban; Frank Lampard knows him from Chelsea and rates his pace and technique.", src:"Ben Jacobs (TheHardTackle)", tier:1, fee:"Loan", truth:55, prob:25, light:"o", trend:"flat", note:"Competing with Strasbourg and other PL clubs for his signature; match sharpness a concern", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Tim Iroegbunam", sub:"Approach expected", club:"Everton", pos:"MF", report:"Coventry are one of three English clubs (with Hull City and Ipswich Town) plus two Italian sides showing interest in the Everton midfielder, whose contract has a year left to run.", src:"TeamTalk", tier:2, fee:"~£20m", truth:55, prob:20, light:"o", trend:"flat", note:"No formal offers yet; loan-with-obligation structure possible", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Fikayo Tomori", sub:"Long-shot interest, Liverpool now favourites", club:"AC Milan", pos:"DF", report:"Frank Lampard's Coventry held the strongest interest in bringing his former Chelsea player back to England, but Liverpool have since entered talks with Milan, all but ending Coventry's hopes.", src:"TuttoJuve (via Sports Mole)", tier:2, fee:"€15m-€20m", truth:50, prob:10, light:"r", trend:"flat", note:"Liverpool's move for defensive cover effectively ends Coventry's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:10},
-  {name:"Harvey Elliott", sub:"Speculative interest from a promoted club", club:"Liverpool", pos:"MF", report:"Elliott struggled on loan at Aston Villa and Liverpool are open to offers this summer; former Everton CEO Keith Wyness suggested a promoted club could move for him, with Coventry among names mentioned.", src:"Football Insider", tier:3, fee:"~£25m", truth:30, prob:15, light:"o", trend:"flat", note:"No concrete negotiations reported; speculative at this stage", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+  {name:"Harvey Elliott", sub:"Speculative interest from a promoted club", club:"Liverpool", pos:"MF", report:"Elliott struggled on loan at Aston Villa and Liverpool are open to offers this summer; former Everton CEO Keith Wyness suggested a promoted club could move for him, with Coventry among names mentioned.", src:"Football Insider", tier:3, fee:"~£25m", truth:30, prob:15, light:"o", trend:"flat", note:"No concrete negotiations reported; speculative at this stage", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Caleb Yirenkyi", sub:"21 · Ghana · M", club:"FC Nordsjaelland", pos:"Midfielder", report:"Coventry have agreed a deal with Nordsjaelland for the Ghanaian, who would become the club's record signing as they strengthen for their first Premier League season.", src:"CoventryLive", tier:2, fee:"Club record, reported around 27m euros", truth:85, prob:80, light:"g", trend:"flat", note:"The agreement is well sourced by the club's beat reporting, but the headline fee figure comes from lower-tier relays and should be treated as an estimate until confirmed.", lastSeen:"2026-08-06T10:49:40Z", baseProb:80}
 ];
 
 const OUTGOING = [
@@ -990,7 +992,8 @@ const HUB = {
   footballInsiderHarveyElliott: {l:"Football Insider", u:"https://www.footballinsider247.com/liverpool-contacts-in-agreement-over-harvey-elliott-situation-coventry-ipswich-tipped-for-deal/"},
   coventryTelegraphEllisSimms: {l:"Coventry Telegraph", u:"https://www.coventrytelegraph.net/sport/football/transfer-news/coventry-city-ellis-simms-wolves-34099886"},
   bBCSportMiguelngelBrau: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/c8e4l36e8j8o"},
-  sportsMoleJamieAllen: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/coventry-city/transfer-talk/feature/coventry-summer-transfers-all-confirmed-ins-and-outs-for-2026_599293.html"}};
+  sportsMoleJamieAllen: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/coventry-city/transfer-talk/feature/coventry-summer-transfers-all-confirmed-ins-and-outs-for-2026_599293.html"},
+  coventryLiveCalebYirenkyi: {l:"CoventryLive", u:"https://www.coventrytelegraph.net/sport/football/transfer-news/"}};
 const LINKMAP = {
   "PL-level quality additions": ["covTel","bbcCov","sky"],
   "Striker / goals": ["covTel","bbcGossip"],
@@ -1005,7 +1008,9 @@ const LINKMAP = {
   "Ellis Simms": ["coventryTelegraphEllisSimms"],
   "Miguel Ángel Brau": ["bBCSportMiguelngelBrau"],
   "Jamie Allen": ["sportsMoleJamieAllen"],
-  "Bradley Collins": ["sportsMoleJamieAllen"]};
+  "Bradley Collins": ["sportsMoleJamieAllen"],
+  "Caleb Yirenkyi": ["coventryLiveCalebYirenkyi"],
+  "Carl Rushworth": ["coventryLiveCalebYirenkyi"]};
 const WL_LINKMAP = {
   "PL-ready targets":"covTel","Core retention":"ccfc",
 };

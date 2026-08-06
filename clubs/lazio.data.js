@@ -35,7 +35,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Danilho Doekhi", sub:"27 · CB · Netherlands", to:"free transfer from Union Berlin", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 14 Jul on a deal until June 2029. Free-agent defensive reinforcement to help offset Gila's exit."}
+  {name:"Danilho Doekhi", sub:"27 · CB · Netherlands", to:"free transfer from Union Berlin", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 14 Jul on a deal until June 2029. Free-agent defensive reinforcement to help offset Gila's exit."},
+  {name:"Alfonso Pedraza", sub:"30 · Spain · LB", club:"Villarreal", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Logged as completed on Sky Sport Italia's Lazio window tracker. Terms have not been published."}
 ];
 
 const CONFIRMED_OUT = [
@@ -45,7 +46,7 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Sergi Dominguez", sub:"23 · CB · Spain", club:"Dinamo Zagreb", pos:"CB", report:"12 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"up", note:"Advanced negotiations reported for the centre-back as Lazio look to rebuild their defensive options after Gila's exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Santiago Gimenez", sub:"ST, Mexico, 25", club:"AC Milan", pos:"ST", report:"Gattuso has identified the Milan striker as an ideal attacking option; Lazio and FC Porto have both made enquiries, though Milan remain uncertain about sanctioning a loan.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:70, prob:30, light:"y", trend:"flat", note:"Competing interest from Porto complicates Lazio's pursuit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Santiago Gimenez", sub:"25 · Mexico · ST", club:"Milan", pos:"ST", report:"Lazio have made fresh direct contact with the Mexican's entourage as Gattuso pushes for a centre-forward. The obstacle is money: Milan value him at around €20m and Lotito can only realistically do a loan, without an obligation to buy.", src:"Corriere dello Sport", tier:2, fee:"Loan sought", truth:75, prob:25, light:"o", trend:"down", note:"Described in Rome as a dream rather than a negotiation. No tier-one reporter has it advancing.", lastSeen:"2026-08-06T10:49:40Z", baseProb:25},
   {name:"Yunus Musah", sub:"CM, USA, 22", club:"AC Milan", pos:"CM", report:"Lazio have submitted a fresh proposal for the Milan midfielder, structured as a loan with a purchase option worth around €20m.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Part of a wider Lazio push to sign multiple Milan-linked players this window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Armando Broja", sub:"ST, Albania, 24", club:"Burnley", pos:"ST", report:"Lazio can secure the Albanian striker on loan with an option to buy as they look to bolster their forward line under Gattuso.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Talks described as advanced enough that a deal is considered gettable.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Nikola Ivanovic", sub:"CB, Serbia, 22", club:"Benfica", pos:"CB", report:"Lazio want the young centre-back on loan after he has struggled for playing time at Benfica.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Depth option amid Lazio's defensive rebuild following Gila's exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
@@ -54,10 +55,11 @@ const INCOMING = [
 
 const OUTGOING = [
   {name:"Mattia Zaccagni", sub:"LW, Italy, 30", club:"Marseille", pos:"LW", report:"Marseille have been monitoring the Italy international, with reports of a potential offer in the region of €15m for the winger, who is contracted to Lazio until 2029.", src:"Yahoo Sports", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"Lazio said to be willing to listen to offers rather than actively pushing for a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Matteo Cancellieri", sub:"RW, Italy, 23", club:"Unlisted (4 clubs interested)", pos:"RW", report:"At least four clubs are said to be interested in the winger; Lazio are not pushing for a sale but are open to assessing proposals, even with Isaksen's injury reducing squad depth.", src:"Quotidiano Sportivo", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"No single frontrunner club has emerged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+  {name:"Matteo Cancellieri", sub:"24 · Italy · W", club:"West Ham", pos:"W", report:"West Ham are not hiding their interest and have reportedly floated a swap involving Fullkrug to tempt Lazio.", src:"Lazio News 24", tier:3, fee:"Undisclosed", truth:40, prob:15, light:"o", trend:"down", note:"Weak sourcing. Swap ideas of this kind rarely come from the clubs themselves and no English tier-one reporter has touched it.", lastSeen:"2026-08-06T10:49:40Z", baseProb:15},
+  {name:"Nuno Tavares", sub:"26 · Portugal · LB", club:"No fixed destination", pos:"LB", report:"With Pedraza signed, Lazio are overloaded at full-back and the Portuguese is the number one candidate to leave on the left.", src:"Lazionews", tier:3, fee:"Undisclosed", truth:60, prob:35, light:"y", trend:"flat", note:"Squad-balance logic rather than a concrete bid. No buying club has been named by a credible source.", lastSeen:"2026-08-06T10:49:40Z", baseProb:35}
 ];
 const DEAD = [
-  {name:"Alessio Romagnoli", sub:"CB, Italy, 31", club:"Al-Sadd", pos:"CB", report:"Negotiations with Al-Sadd have stalled, with Atalanta now reportedly ready to pounce if the Qatari move collapses, even as Romagnoli continues training with Lazio.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"flat", note:"Player's camp says they are not currently planning for a Lazio future, suggesting an exit remains the likelier outcome.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
+  {name:"Alessio Romagnoli", sub:"31 · Italy · CB", club:"Atalanta", pos:"CB", report:"His move to Al Sadd collapsed and Lazio are looking for a new home for him. Al Sadd have returned with renewed interest while Atalanta, now coached by Sarri, are watching the situation.", src:"Corriere dello Sport", tier:2, fee:"Undisclosed", truth:75, prob:45, light:"y", trend:"flat", note:"Two very different destinations in play, which usually means nothing is agreed.", lastSeen:"2026-08-06T10:49:40Z", baseProb:45, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:49:41Z"}
 ];
 
 const RISERS = [
@@ -92,21 +94,27 @@ const HUB = {
   footballItaliaArmandoBroja: {l:"Football Italia", u:"https://football-italia.net/lazio-can-secure-broja-from-burnley-on-loan/"},
   footballItaliaNikolaIvanovic: {l:"Football Italia", u:"https://football-italia.net/lazio-want-ivanovic-on-loan-struggle-benfica/"},
   footballItaliaJohnKennedy: {l:"Football Italia", u:"https://football-italia.net/category/serie-a/lazio/"},
-  footballItaliaAlessioRomagnoli: {l:"Football Italia", u:"https://football-italia.net/atalanta-ready-pounce-al-sadd-stall-romagnoli/"}};
+  footballItaliaAlessioRomagnoli: {l:"Football Italia", u:"https://football-italia.net/atalanta-ready-pounce-al-sadd-stall-romagnoli/"},
+  corrieredelloSportSantiagoGimenez: {l:"Corriere dello Sport", u:"https://www.corrieredellosport.it/calcio/calcio-mercato/lazio"},
+  lazionewsNunoTavares: {l:"Lazionews", u:"https://www.lazionews.eu/category/calciomercato/"},
+  lazioNews24MatteoCancellieri: {l:"Lazio News 24", u:"https://www.lazionews24.com/calciomercato/"},
+  skySportItaliaAlfonsoPedraza: {l:"Sky Sport Italia", u:"https://sport.sky.it/calciomercato/lazio"}};
 
 const LINKMAP = {
-  "Danilho Doekhi": ["thelaziali"],
-  "Mario Gila": ["footballItalia", "footballItaliaJohnKennedy"],
+  "Danilho Doekhi": ["thelaziali", "skySportItaliaAlfonsoPedraza"],
+  "Mario Gila": ["footballItalia", "footballItaliaJohnKennedy", "skySportItaliaAlfonsoPedraza"],
   "Ivan Provedel": ["footballItalia"],
   "Sergi Dominguez": ["thelaziali"],
-  "Santiago Gimenez": ["footballItaliaSantiagoGimenez"],
+  "Santiago Gimenez": ["footballItaliaSantiagoGimenez", "corrieredelloSportSantiagoGimenez"],
   "Yunus Musah": ["footballItaliaYunusMusah"],
   "Armando Broja": ["footballItaliaArmandoBroja"],
   "Nikola Ivanovic": ["footballItaliaNikolaIvanovic"],
   "John Kennedy": ["footballItaliaJohnKennedy"],
-  "Alessio Romagnoli": ["footballItaliaAlessioRomagnoli"],
+  "Alessio Romagnoli": ["footballItaliaAlessioRomagnoli", "corrieredelloSportSantiagoGimenez"],
   "Mattia Zaccagni": ["footballItaliaJohnKennedy"],
-  "Matteo Cancellieri": ["footballItaliaJohnKennedy"]};
+  "Matteo Cancellieri": ["footballItaliaJohnKennedy", "lazioNews24MatteoCancellieri"],
+  "Nuno Tavares": ["lazionewsNunoTavares"],
+  "Alfonso Pedraza": ["skySportItaliaAlfonsoPedraza"]};
 const WL_LINKMAP = {
   "Sergi Dominguez": ["thelaziali"]
 };

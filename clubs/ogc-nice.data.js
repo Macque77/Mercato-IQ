@@ -44,7 +44,8 @@ const CONFIRMED_OUT = [
   {name:"Charles Vanhoutte", sub:"Midfielder", club:"Feyenoord", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure confirmed 19/06."},
   {name:"Gabin Bernardeau", sub:"Midfielder", club:"FC Lorient", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure confirmed 09/07."},
   {name:"Kail Boudache", sub:"Defender", club:"Olympique Lyonnais", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free transfer to Lyon confirmed 15/06."},
-  {name:"Maxime Dupe", sub:"Goalkeeper", club:"FC Nantes", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free-agent return to Nantes confirmed 24/06."}
+  {name:"Maxime Dupe", sub:"Goalkeeper", club:"FC Nantes", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free-agent return to Nantes confirmed 24/06."},
+  {name:"Jeremie Boga", sub:"29 · Ivory Coast · W", club:"Undisclosed", pos:"", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Listed among Nice's 2026/27 departures alongside Aliou Balde, Charles Vanhoutte and Gabin Bernardeau. Destination and fee not confirmed in this check, so publish the exit only, not a landing spot."}
 ];
 
 const INCOMING = [
@@ -97,7 +98,8 @@ const HUB = {
   getFrenchFootballNewsLEquipeKevinCarlos: {l:"Get French Football News (L'Equipe)", u:"https://www.getfootballnewsfrance.com/2026/nices-kevin-carlos-targeted-by-samsunspor/"},
   getFrenchFootballNewsFootMercatoJamesTavernier: {l:"Get French Football News (Foot Mercato)", u:"https://www.getfootballnewsfrance.com/2026/rangers-legend-james-tavernier-courted-by-paris-fc-and-nice/"},
   footMercatoGauthierHein: {l:"Foot Mercato", u:"https://www.footmercato.net/club/ogc-nice/actualite"},
-  getFrenchFootballNewsMaximeDupe: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-maxime-dupe-returns-to-fc-nantes/"}};
+  getFrenchFootballNewsMaximeDupe: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-maxime-dupe-returns-to-fc-nantes/"},
+  footMercatoGauthierHein1: {l:"Foot Mercato", u:"https://www.footmercato.net/club/ogc-nice/tableau/"}};
 
 const LINKMAP = {
   "Maxime Dupé": ["gffn-nice"],
@@ -109,12 +111,13 @@ const LINKMAP = {
   "William Mikelbrencis": ["gffn-nice", "getFrenchFootballNewsLEquipeWilliamMikelbrencis"],
   "Bamba Dieng": ["getFrenchFootballNewsLEquipeBambaDieng"],
   "Kojo Peprah Oppong": ["getFrenchFootballNewsLEquipeKojoPeprahOppong"],
-  "Gauthier Hein": ["footMercatoGauthierHein"],
+  "Gauthier Hein": ["footMercatoGauthierHein", "footMercatoGauthierHein1"],
   "Laurent Abergel": ["footMercatoGauthierHein"],
-  "Charles Vanhoutte": ["footMercatoGauthierHein"],
+  "Charles Vanhoutte": ["footMercatoGauthierHein", "footMercatoGauthierHein1"],
   "Gabin Bernardeau": ["footMercatoGauthierHein"],
   "Kail Boudache": ["footMercatoGauthierHein"],
-  "Maxime Dupe": ["getFrenchFootballNewsMaximeDupe"]};
+  "Maxime Dupe": ["getFrenchFootballNewsMaximeDupe"],
+  "Jeremie Boga": ["footMercatoGauthierHein1"]};
 const WL_LINKMAP = {
   "Mohamed-Ali Cho": ["gffn-nice"]
 };

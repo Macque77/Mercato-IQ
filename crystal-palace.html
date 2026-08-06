@@ -924,7 +924,9 @@ const INCOMING = [
   {name:"Midfield cover (framing)", sub:"Insurance against a Wharton bid", club:"Market", pos:"CM", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:22, light:'o', trend:'flat',
    note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged midfield cover as a strengthening area, insurance in case an elite bid lands for Wharton; no named target was in circulation at the 6 Jun data date.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
   {name:"Ousmane Diao", sub:"Identified as top defensive target", club:"FC Midtjylland", pos:"DF", report:"Palace have identified the Senegalese centre-back as their leading option to help replace Marc Guehi and are set to hold talks now the season has finished.", src:"Sports Boom", tier:3, fee:"~€20m", truth:45, prob:30, light:"y", trend:"flat", note:"Competition reported from other Premier League and Bundesliga clubs", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Igor Julio", sub:"Talks reported to be underway", club:"Brighton", pos:"DF", report:"The young Brighton centre-back has emerged as a target to help fill the defensive gap left by Guehi's departure, with talks said to be under way.", src:"BBC Sport", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Fee not yet reported; competition for defensive reinforcements ongoing", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Igor Julio", sub:"Talks reported to be underway", club:"Brighton", pos:"DF", report:"The young Brighton centre-back has emerged as a target to help fill the defensive gap left by Guehi's departure, with talks said to be under way.", src:"BBC Sport", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Fee not yet reported; competition for defensive reinforcements ongoing", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Takehiro Tomiyasu", sub:"27 · Japan · D", club:"Free agent", pos:"Defender", report:"Palace have agreed a free transfer for the former Arsenal defender after a trial and pre-season training spell at Beckenham. Fabrizio Romano says a medical has been completed in London, with the contract due to be signed within 48 hours. BBC Sport had reported talks over a permanent deal last week, and Pierre Sage is understood to have been pleased with his condition.", src:"Fabrizio Romano; BBC Sport", tier:1, fee:"Free", truth:94, prob:90, light:"g", trend:"flat", note:"Effectively done rather than a rumour, but no club announcement yet. Injury record over recent seasons is the obvious risk on a free deal.", lastSeen:"2026-08-06T10:49:40Z", baseProb:90},
+  {name:"Solly March", sub:"31 · England · W", club:"Brighton", pos:"Winger", report:"Palace are considering a move for the winger as a second addition once the Tomiyasu signing is completed, according to BBC Sport's round-up.", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Gossip-column level only, with no reporter putting numbers or a timeline to it. Treat as an idea Palace are weighing rather than an active negotiation until a tier-one name confirms contact.", lastSeen:"2026-08-06T10:49:40Z", baseProb:35}
 ];
 
 const OUTGOING = [
@@ -990,7 +992,8 @@ const HUB = {
   crystalPalaceFCofficialJaydeeCanvot: {l:"Crystal Palace FC official", u:"https://www.cpfc.co.uk/news/announcement/jaydee-canvot-signs-for-crystal-palace/"},
   crystalPalaceFCofficialBornaSosa: {l:"Crystal Palace FC official", u:"https://www.cpfc.co.uk/news/announcement/borna-sosa-joins-crystal-palace-announcement/"},
   skySportsMarcGuhi: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13495114/marc-guehi-man-city-sign-defender-from-crystal-palace-for-an-initial-lb20m-as-spending-reaches-lb425m-in-12-months"},
-  teamTalkMaxenceLacroix: {l:"TeamTalk", u:"https://www.teamtalk.com/chelsea/every-completed-chelsea-transfer-summer-2026-signings-sales-loans"}};
+  teamTalkMaxenceLacroix: {l:"TeamTalk", u:"https://www.teamtalk.com/chelsea/every-completed-chelsea-transfer-summer-2026-signings-sales-loans"},
+  fabrizioRomanoTakehiroTomiyasu: {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"}};
 const LINKMAP = {
   "Manager appointment": ["teamtalk","lequipe","rmc"],
   "Europa-ready depth": ["bbcGossip","slp"],
@@ -1006,7 +1009,9 @@ const LINKMAP = {
   "Jaydee Canvot": ["crystalPalaceFCofficialJaydeeCanvot"],
   "Borna Sosa": ["crystalPalaceFCofficialBornaSosa"],
   "Marc Guéhi": ["skySportsMarcGuhi"],
-  "Maxence Lacroix": ["teamTalkMaxenceLacroix"]};
+  "Maxence Lacroix": ["teamTalkMaxenceLacroix"],
+  "Takehiro Tomiyasu": ["fabrizioRomanoTakehiroTomiyasu"],
+  "Solly March": ["bbcGossip"]};
 const WL_LINKMAP = {
   "Pierre Sage":"lequipe","Adam Wharton":"athletic",
 };

@@ -34,13 +34,15 @@ const CONFIRMED_IN = [
   {name:"Patson Daka", sub:"27 · ST · Zambia", to:"free from Leicester City", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 22 Jul: Zambian international striker signs on a free transfer after his Leicester contract expired. Sporting director Kathleen Krüger: 'He brings high commitment with and without the ball.' Daka cost Leicester ~€30m from RB Salzburg in 2021, making this a notable free upgrade for a promoted-era HSV squad settling into its first Bundesliga campaigns back in the top flight."},
   {name:"Martin Adeline", sub:"22 · CM · France", to:"permanent from Troyes", fee:"~€4m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"French midfielder signed for squad depth."},
   {name:"Kofi Amoako", sub:"21 · CM/W", to:"permanent from Dynamo Dresden", fee:"~€1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young attacking midfielder brought in from 2. Bundesliga."},
-  {name:"Bilal Nadir", sub:"Moroccan midfielder", club:"Olympique de Marseille", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"22-year-old signed 24 July 2026 on a long-term deal and trained with the squad the same day."}
+  {name:"Bilal Nadir", sub:"Moroccan midfielder", club:"Olympique de Marseille", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"22-year-old signed 24 July 2026 on a long-term deal and trained with the squad the same day."},
+  {name:"Damion Downs", sub:"22 · USA · ST", club:"Southampton", pos:"ST", fee:"Loan with option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported as a loan with a purchase option that would rank among Hamburg's biggest outlays. Sourced to Transfermarkt's club news rather than a tier-one reporter, so treat the option details with care."}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Ransford Königsdörffer", sub:"24 · W · Germany", to:"free to 1. FSV Mainz 05", club:"1. FSV Mainz 05", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; winger departs on a free transfer for a fellow Bundesliga side."},
   {name:"Robert Glatzel", sub:"32 · ST · Germany", to:"permanent to VfL Wolfsburg", club:"VfL Wolfsburg", fee:"~€1.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Veteran striker and club's all-time modern-era top scorer departs for Wolfsburg."},
-  {name:"Vildan Kardesler", sub:"Offensive midfielder", club:"Released (contract not renewed)", pos:"CAM", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"28-year-old's contract not renewed as of 7 July 2026; leaves with 6 goals in 35 competitive appearances for HSV."}
+  {name:"Vildan Kardesler", sub:"Offensive midfielder", club:"Released (contract not renewed)", pos:"CAM", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"28-year-old's contract not renewed as of 7 July 2026; leaves with 6 goals in 35 competitive appearances for HSV."},
+  {name:"Noah Katterbach", sub:"25 · Germany · LB", club:"Eintracht Braunschweig", pos:"LB", fee:"Loan with option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan for 2026/27 with a purchase option. Katterbach is contracted at HSV until June 2028 but did not play a Bundesliga minute last season."}
 ];
 
 const INCOMING = [];
@@ -67,14 +69,20 @@ const HUB = {
   hsv: {l:"HSV Official", u:"https://www.hsv.de/en/"},
   newsde: {l:"news.de", u:"https://www.news.de/sport/859647837/transferticker-fussball-bundesliga-sommer-2026-hsv-daka-wechsel-zugaenge-abgaenge-saison-26-27-adeyemi-bvb-woeber-schalke/1/"},
   hSVdeofficialPatsonDaka: {l:"HSV.de (official)", u:"https://www.hsv.de/news"},
-  bundesligacomBilalNadir: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/hamburger-sv/news"}};
+  bundesligacomBilalNadir: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/hamburger-sv/news"},
+  kickerMartinAdeline: {l:"kicker", u:"https://www.kicker.de/die-sommer-neuzugaenge-der-bundesligisten-im-ueberblick-954971/artikel"},
+  transfermarktclubnewsDamionDowns: {l:"Transfermarkt club news", u:"https://www.transfermarkt.us/hamburger-sv/news/verein/41"},
+  kickerRobertGlatzel: {l:"kicker", u:"https://www.kicker.de/hamburger-sv/team-transfers"}};
 
 const LINKMAP = {
   "Patson Daka": ["hsv","newsde", "hSVdeofficialPatsonDaka"],
   "Bilal Nadir": ["bundesligacomBilalNadir"],
-  "Martin Adeline": ["bundesligacomBilalNadir"],
-  "Kofi Amoako": ["hSVdeofficialPatsonDaka"],
-  "Vildan Kardesler": ["hSVdeofficialPatsonDaka"]};
+  "Martin Adeline": ["bundesligacomBilalNadir", "kickerMartinAdeline"],
+  "Kofi Amoako": ["hSVdeofficialPatsonDaka", "kickerMartinAdeline"],
+  "Vildan Kardesler": ["hSVdeofficialPatsonDaka"],
+  "Damion Downs": ["transfermarktclubnewsDamionDowns"],
+  "Robert Glatzel": ["kickerRobertGlatzel"],
+  "Noah Katterbach": ["kickerRobertGlatzel"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

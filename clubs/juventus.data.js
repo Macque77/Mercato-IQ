@@ -51,7 +51,6 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Kerim Alajbegović", sub:"18 · W · Bosnia", club:"Bayer Leverkusen", pos:"W", report:"2 Aug 2026", src:"Football Director Carnevali / Black & White & Read All Over", tier:2, fee:"€25-30m", truth:60, prob:38, light:"y", trend:"up", note:"Talks ongoing per club sources; the young Bosnian winger has also been linked with Tottenham and Chelsea, so competition remains a live obstacle even with Juventus reportedly in advanced discussions.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
   {name:"Guglielmo Vicario", sub:"GK, Italy, 29", club:"Tottenham Hotspur", pos:"GK", report:"Juventus have made Vicario a concrete target after he fell behind Kinsky in Tottenham's pecking order and was left out of the pre-season squad; Spurs have already lined up Kinsky and Dubravka as their goalkeepers.", src:"Fabrizio Romano (via GiveMeSport)", tier:1, fee:"Undisclosed", truth:85, prob:65, light:"g", trend:"flat", note:"Juventus previously eyed Emiliano Martinez but judged him too costly; coach Spalletti has publicly questioned why Tottenham dropped Vicario.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
-  {name:"Zion Suzuki", sub:"GK, Japan, 23", club:"Parma", pos:"GK", report:"An alternative goalkeeper option, but Spalletti himself described a deal as 'prohibitively expensive', with PSG also said to have tabled an official €33m bid.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:65, prob:20, light:"o", trend:"flat", note:"Now considered the less likely of Juve's two main GK targets given the price tag.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Alexander Sorloth", sub:"ST, Norway, 30", club:"Atletico Madrid", pos:"ST", report:"Juventus have renewed interest in the Norwegian striker as an attacking alternative amid the pursuit of a new number 9 options beyond Kolo Muani.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:55, prob:25, light:"o", trend:"flat", note:"One of several forward names under consideration.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Jhon Lucumi", sub:"CB, Colombia, 27", club:"Bologna", pos:"CB", report:"Named among defensive targets as Juventus look to add another centre-back to the squad.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Early-stage links rather than concrete negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
@@ -64,6 +63,7 @@ const OUTGOING = [
   {name:"Matteo Cerri", sub:"ST, Italy", club:"Grenoble", pos:"ST", report:"A move to the French second-tier club is reported as expected imminently for the young forward.", src:"Il Sussidiario", tier:3, fee:"Undisclosed", truth:45, prob:55, light:"g", trend:"flat", note:"Minor squad departure, low profile but reasonably advanced.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
 const DEAD = [
+  {name:"Zion Suzuki", sub:"23 · Japan · GK", club:"Paris Saint-Germain", pos:"GK", report:"With the Dibu Martinez pursuit shelved, Juventus are weighing a loan for the Japan goalkeeper. The scenario floated is PSG signing him first and then loaning him to Turin, and much hinges on what Paris decide about Chevalier.", src:"Gianluca Di Marzio, Nicolo Schira", tier:1, fee:"Loan", truth:70, prob:25, light:"o", trend:"up", note:"Conditional and convoluted: it only becomes real if PSG move first, so treat as a live idea rather than a negotiation.", lastSeen:"2026-08-06T10:49:40Z", baseProb:25, dir:"in", deadReason:"link went cold", deadAt:"2026-08-06T10:49:41Z"},
   {name:"Francisco Conceicao", sub:"RW, Portugal, 23", club:"Manchester United", pos:"RW", report:"Reports linked Man United's Carrick with a move, but Fabrizio Romano poured cold water on it, noting United already have Amad Diallo and Mbeumo as winger options; Juventus have set a €60m price or would need Zirkzee included as a swap.", src:"Fabrizio Romano (via TEAMtalk/The Week)", tier:1, fee:"Undisclosed", truth:55, prob:20, light:"o", trend:"flat", note:"Romano himself has cast doubt on the story, calling elements of it into question.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
 ];
 
@@ -104,25 +104,29 @@ const HUB = {
   footballItaliaAlexanderSorloth: {l:"Football Italia", u:"https://football-italia.net/category/serie-a/juventus/"},
   footballItaliaFranciscoConceicao: {l:"Football Italia", u:"https://football-italia.net/conceicao-manchester-united-e60m-zirkzee-swap/"},
   footballItaliaRandalKoloMuani: {l:"Football Italia", u:"https://football-italia.net/spalletti-alajbegovic-kolo-muani-juventus/"},
-  footballItaliaVasilijeAdzic: {l:"Football Italia", u:"https://football-italia.net/official-sassuolo-sign-adzic-juventus-option/"}};
+  footballItaliaVasilijeAdzic: {l:"Football Italia", u:"https://football-italia.net/official-sassuolo-sign-adzic-juventus-option/"},
+  skySportItaliaJoshuaZirkzee: {l:"Sky Sport Italia", u:"https://sport.sky.it/calciomercato/2026/08/05/juventus-zirkzee-calciomercato-news"},
+  gianlucaDiMarziocomZionSuzuki: {l:"GianlucaDiMarzio.com", u:"https://www.gianlucadimarzio.com/"},
+  skySportItaliaRandalKoloMuani: {l:"Sky Sport Italia", u:"https://sport.sky.it/calciomercato/2026/08/02/kolo-muani-juventus-news-video-calciomercato"},
+  skySportItaliaKerimAlajbegovic: {l:"Sky Sport Italia", u:"https://sport.sky.it/calciomercato/2026/08/02/juventus-alajbegovic-calciomercato-news"}};
 
 const LINKMAP = {
-  "Randal Kolo Muani": ["juvefc","bwrao", "footballItaliaRandalKoloMuani"],
+  "Randal Kolo Muani": ["juvefc","bwrao", "footballItaliaRandalKoloMuani", "skySportItaliaRandalKoloMuani"],
   "Kerim Alajbegović": ["bwrao","beinJuve"],
   "Dušan Vlahović": ["footballItalia"],
-  "Joshua Zirkzee": ["club", "footballItaliaJoshuaZirkzee"],
+  "Joshua Zirkzee": ["club", "footballItaliaJoshuaZirkzee", "skySportItaliaJoshuaZirkzee"],
   "Paulo Dybala": ["footballItalia","club"],
   "Jeff Ekhator": ["footballItalia","club"],
   "Francisco Conceição": ["nicoloSchiraFranciscoConceio"],
   "João Mário": ["gianlucaDiMarzioJooMrio"],
   "Guglielmo Vicario": ["giveMeSportGuglielmoVicario"],
-  "Zion Suzuki": ["footballItaliaZionSuzuki"],
+  "Zion Suzuki": ["footballItaliaZionSuzuki", "gianlucaDiMarziocomZionSuzuki"],
   "Alexander Sorloth": ["footballItaliaAlexanderSorloth"],
   "Jhon Lucumi": ["footballItaliaAlexanderSorloth"],
   "Francisco Conceicao": ["footballItaliaFranciscoConceicao"],
   "Federico Gatti": ["footballItaliaAlexanderSorloth"],
   "Matteo Cerri": ["footballItaliaAlexanderSorloth"],
-  "Kerim Alajbegovic": ["footballItaliaRandalKoloMuani"],
+  "Kerim Alajbegovic": ["footballItaliaRandalKoloMuani", "skySportItaliaKerimAlajbegovic"],
   "Vasilije Adzic": ["footballItaliaVasilijeAdzic"],
   "Joao Mario": ["footballItaliaAlexanderSorloth"]};
 const WL_LINKMAP = {};

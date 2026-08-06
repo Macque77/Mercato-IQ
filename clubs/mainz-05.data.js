@@ -44,7 +44,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Stefan Posch", sub:"29 · CB/RB · Austria", club:"Como 1907", pos:"CB/RB", report:"3 Aug 2026", src:"Get German Football News", tier:2, fee:"Fee TBC (Como paid ~€5.5m for him in Jan)", truth:68, prob:55, light:"g", trend:"up", note:"Mainz are pushing to make permanent a hugely successful six-month loan (started 16 straight Bundesliga starts, key to their Conference League run). CEO Christian Heidel: 'This is definitely still on the table... we would like to make this happen.' Posch himself wants to return; fee and structure still to be agreed with Como, who are yet to have him report back for pre-season.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
+  {name:"Stefan Posch", sub:"28 · Austria · CB", club:"Como", pos:"CB", report:"Mainz are ready to stretch their budget to turn Stefan Posch's spell into a permanent transfer, with the Austrian centre-half seen as the anchor of next season's back line.", src:"Get German Football News", tier:3, fee:"Undisclosed", truth:70, prob:55, light:"g", trend:"flat", note:"Sourced to a German-language relay rather than Sky Deutschland or BILD directly, and no fee has been put on the table publicly. Fair to call it advanced interest, not a deal.", lastSeen:"2026-08-06T10:49:40Z", baseProb:55}
 ];
 
 const OUTGOING = [

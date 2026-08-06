@@ -928,12 +928,12 @@ const OUTGOING = [
   {name:"Bruno Guimarães", sub:"28 · Brazil · MF", club:"Arsenal", pos:"MF", report:"Newcastle have agreed to sell captain Guimarães to Arsenal for £75m, with the midfielder set for a medical within days.", src:"Sky Sports", tier:1, fee:"£75m", truth:92, prob:88, light:"g", trend:"up", note:"A defining sale of the window for Newcastle. Lyon take about €8m through a 20% sell-on clause, and Shearer among others has warned of a challenging summer on Tyneside.", lastSeen:"2026-08-05T11:41:11Z", baseProb:88},
   {name:"Jacob Murphy", sub:"31 · RW/LW · England", club:"Everton", pos:"W", report:"28 Jul 2026", src:"Football Insider", tier:3, fee:"Bargain-fee speculation, undisclosed", truth:52, prob:26, light:'o', trend:'up',
    note:"Football Insider (28 Jul) reports Newcastle are 'now ready to accept the right offer' for Murphy, a step on from the pure enquiry-stage framing of the last refresh, though still no bid or fee agreed. A decade-long servant whose game time is squeezed by Bazoumana Touré's arrival and any Ezzalzouli deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:26},
-  {name:"Lewis Hall", sub:"22 · LB/LWB · England", club:"Manchester United / Chelsea", pos:"LB", report:"30 Jul 2026", src:"CaughtOffside (Simon Phillips)", tier:3, fee:"≈£55-60m", truth:48, prob:22, light:'o', trend:'up',
-   note:"A genuine change since the last refresh: CaughtOffside's Simon Phillips (30 Jul) reports Manchester United's chase has stalled ('nothing has moved' recently), but Chelsea are now 'hovering' and see Hall as a 'dream target' to replace Marc Cucurella. No fee specifically reported for the Chelsea interest. Newcastle's prior £55-60m valuation still stands as the reference point; a sale would leave a fresh full-back hole alongside the Oso interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
+  {name:"Lewis Hall", sub:"21 · England · LB", club:"Manchester United", pos:"Left-back", report:"Manchester United are said to be considering a move for the left-back, with Newcastle in flux after the managerial change and the Guimaraes sale. No approach has been confirmed by either club.", src:"The Sun, relayed by Sky Sports Paper Talk", tier:3, fee:"Undisclosed", truth:55, prob:20, light:"o", trend:"down", note:"Thin sourcing. A paper round-up line only, with no tier-1 reporter attaching their name to it. Hall is a long-term asset on a long contract and there is no evidence Newcastle want to sell.", lastSeen:"2026-08-06T10:49:40Z", baseProb:20},
   {name:"Nick Pope", sub:"34 · GK · England", club:"Ipswich Town (interest)", pos:"GK", report:"~Jul 2026 (no fresher update found)", src:"Shields Gazette (Lee Ryder)", tier:2, fee:"Undisclosed", truth:60, prob:30, light:'y', trend:'flat',
    note:"Unchanged this refresh: Pope 'will be allowed to leave' this summer per the Gazette, with Ipswich and other Premier League sides interested. Explicitly contingent on Newcastle first landing a senior replacement - Horníček's deal is still only 'advancing towards completion', not yet formal, so this holds rather than rises.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Joe Willock", sub:"26 · CM/AM · England", club:"Besiktas", pos:"CM", report:"28-29 Jul 2026", src:"Newcastle World", tier:2, fee:"£10m bid rejected", truth:66, prob:38, light:'y', trend:'up',
-   note:"Materially more concrete than the last refresh's 'open to offers' framing: Newcastle World (28-29 Jul) reports Besiktas made a £10m bid that Newcastle rejected, Willock's agent has travelled to Istanbul, and a Turkish journalist says the player has 'approved' the move - but it won't proceed unless Newcastle lowers its price. A named club and a real (if rejected) bid lift both True and Happens versus the previous vague framing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38}
+   note:"Materially more concrete than the last refresh's 'open to offers' framing: Newcastle World (28-29 Jul) reports Besiktas made a £10m bid that Newcastle rejected, Willock's agent has travelled to Istanbul, and a Turkish journalist says the player has 'approved' the move - but it won't proceed unless Newcastle lowers its price. A named club and a real (if rejected) bid lift both True and Happens versus the previous vague framing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
+  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Arsenal", pos:"Central midfielder", report:"Arsenal have agreed a 75m pound fee with Newcastle for their captain and the club have accepted the sale, with Sky Sports setting out the reasoning behind sanctioning it. Not a rumour so much as a deal in its final stages, though completion, medical and registration are still to be confirmed, so it stops short of a done deal.", src:"Sky Sports", tier:2, fee:"£75m", truth:95, prob:90, light:"g", trend:"flat", note:"Fee agreed rather than signed. The move gathered pace after the manager's exit left the squad unsettled. Downgrade to confirmed_out only once Newcastle or Arsenal announce.", lastSeen:"2026-08-06T10:49:40Z", baseProb:90}
 ];
 
 const RISERS = [
@@ -1013,7 +1013,9 @@ const HUB = {
   skySportsAnthonyGordon: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13548577/anthony-gordon-transfer-news-barcelona-reach-agreement-with-newcastle-for-england-international-winger"},
   eSPNSandroTonali: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49246543/sandro-tonali-completes-record-transfer-tottenham-newcastle-united"},
   footballFanCastKieranTrippier: {l:"FootballFanCast", u:"https://www.footballfancast.com/newcastle-transfers-signings/"},
-  skySportsBrunoGuimares: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11670/13569653/bruno-guimaraes-transfer-news-arsenal-agree-lb75m-fee-for-newcastle-midfielder"}};
+  skySportsBrunoGuimares: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11670/13569653/bruno-guimaraes-transfer-news-arsenal-agree-lb75m-fee-for-newcastle-midfielder"},
+  skySportsTransferCentreBrunoGuimaraes: {l:"Sky Sports Transfer Centre", u:"https://www.skysports.com/football/live-blog/11678/13025496/newcastle-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts"},
+  skySportsPaperTalkviaTheSunLewisHall: {l:"Sky Sports Paper Talk (via The Sun)", u:"https://www.skysports.com/football/transfer-paper-talk/12709/13568628/bruno-guimaraes-transfer-news-arsenal-closing-in-on-deal-for-newcastle-captain-paper-talk"}};
 const LINKMAP = {
   "Sean Steur": ["skyNUFC","nufcOfficial", "skySportsSeanSteur"],
   "Bazoumana Touré": ["skyNUFC","nufcOfficial", "eSPNBazoumanaTour"],
@@ -1037,10 +1039,11 @@ const LINKMAP = {
   "Joaquín Oso": ["osoSW"],
   "Bruno Guimarães": ["brunoSun","brunoFT","talksport","skyNUFC", "skySportsBrunoGuimares"],
   "Jacob Murphy": ["murphyFI"],
-  "Lewis Hall": ["hallCO"],
+  "Lewis Hall": ["hallCO", "skySportsPaperTalkviaTheSunLewisHall"],
   "Nick Pope": ["shieldsGaz","leeRyder"],
   "Joe Willock": ["willockNW","shieldsGaz"],
-  "Angelo Stiller": ["yahooSportsviaSportBILDKickerAngeloStiller"]};
+  "Angelo Stiller": ["yahooSportsviaSportBILDKickerAngeloStiller"],
+  "Bruno Guimaraes": ["skySportsTransferCentreBrunoGuimaraes"]};
 const WL_LINKMAP = {
   "Nick Woltemade":"athletic","Yoane Wissa":"athletic",
   "Dan Burn & Fabian Schär":"teamtalk","Kieran McKenna / Antonio Conte":"khelnow",

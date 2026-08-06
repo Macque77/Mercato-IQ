@@ -87,7 +87,8 @@ const INCOMING = [
   {name:"Roony Bardghji", sub:"20 · Sweden · RW/AM", club:"Barcelona", pos:"RW", report:"~2 wks ago", src:"TheHardTackle / Sport (Spain)", tier:3, fee:"Undisclosed (loan or permanent both floated)", truth:42, prob:12, light:'r', trend:'flat',
    note:"Sunderland in 'preliminary negotiations' per TheHardTackle (13 Jul), competing directly with Leeds and Aston Villa; Barcelona are said to be fielding more than ten enquiries for the winger. On-model age, but early-stage and multi-club with no fee agreed - genuine interest, low completion odds this window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
   {name:"Lorenzo Pirola", sub:"Centre-back target facing Serie A competition", club:"Olympiacos", pos:"DF", report:"Sunderland have opened talks with Olympiacos, proposing around €20m plus add-ons against a €25m asking price, but face competition from Inter Milan and Roma for the Italian defender.", src:"Manuel Meza", tier:2, fee:"€25m (£21.8m)", truth:60, prob:25, light:"o", trend:"flat", note:"Le Bris personally driving the pursuit", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Abdul Fatawu", sub:"Winger target at risk from Leicester domino effect", club:"Leicester City", pos:"MF", report:"Sunderland are keen on the Ghanaian winger, but a potential Eberechi Eze-to-Arsenal deal could see Leicester bring in Bilal El Khannouss from Crystal Palace, which would likely block Fatawu from leaving.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:65, prob:20, light:"o", trend:"flat", note:"Deal seen as unlikely if the Eze/El Khannouss domino plays out", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Abdul Fatawu", sub:"Winger target at risk from Leicester domino effect", club:"Leicester City", pos:"MF", report:"Sunderland are keen on the Ghanaian winger, but a potential Eberechi Eze-to-Arsenal deal could see Leicester bring in Bilal El Khannouss from Crystal Palace, which would likely block Fatawu from leaving.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:65, prob:20, light:"o", trend:"flat", note:"Deal seen as unlikely if the Eze/El Khannouss domino plays out", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Matias Soule", sub:"23 · Argentina · RW", club:"Roma", pos:"RW", report:"Sunderland remain in talks with Roma over the Argentine, who is seen as the right-sided addition Regis Le Bris wants before the Europa League campaign. Fabrizio Romano has put a timeframe on a resolution, with Roma willing to listen at around 30m euros after Soule turned down Saudi offers. AC Milan and Fulham are the competition.", src:"Fabrizio Romano", tier:1, fee:"£30m", truth:88, prob:55, light:"g", trend:"flat", note:"Live and credible, but Roma have twice reopened the file this summer and Milan can move quickly. Treat the fee as fluid until a bid is lodged.", lastSeen:"2026-08-06T10:49:40Z", baseProb:55}
 ];
 
 const OUTGOING = [
@@ -263,7 +264,9 @@ const HUB = {
   sunderlandEchoSimonAdingra: {l:"Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football/sunderland-afc/sunderlands-ps807m-transfer-picture-as-wilson-isidor-simon-adingra-and-dayann-methalie-latest-emerges-8834751"},
   sunderlandEchoviaFootMercatoChemsdineTalbi: {l:"Sunderland Echo (via Foot Mercato)", u:"https://www.sunderlandecho.com/sport/football/sunderland-afc/sunderland-transfer-news-chemsdine-talbi-rb-leipzig-8835623"},
   yahooSportsThomasMeunier: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/thomas-meunier-joins-sunderland-free-093000646.html"},
-  footballFanCastEliezerMayenda: {l:"Football FanCast", u:"https://www.footballfancast.com/sunderland-transfers-signings/"}};
+  footballFanCastEliezerMayenda: {l:"Football FanCast", u:"https://www.footballfancast.com/sunderland-transfers-signings/"},
+  fabrizioRomanoviaSunderlandEchoMatiasSoule: {l:"Fabrizio Romano via Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football/sunderland-afc/fabrizio-romano-sets-matias-soule-transfer-timeframe-amid-sunderland-and-ac-milan-links-8839721"},
+  aFPviaFrance24EliezerMayenda: {l:"AFP via France 24", u:"https://www.france24.com/en/live-news/20260706-rennes-buy-young-striker-mayenda-from-sunderland"}};
 const LINKMAP = {
   "Ernest Poku": ["pokuFFC2","pokuGGFN","pokuSky"],
   "Mariano Troilo": ["troiloSW","troiloOF","parmalive", "sportWitnessviaParmaTodayMarianoTroilo"],
@@ -284,8 +287,8 @@ const LINKMAP = {
   "Chemsdine Talbi": ["sportsboom", "sunderlandEchoviaFootMercatoChemsdineTalbi"],
   "Trai Hume": ["teamtalk"],
   "Habib Diarra": ["fanatik"],
-  "Thomas Meunier": ["meunier","meunierGFFN", "yahooSportsThomasMeunier"],
-  "Eliezer Mayenda": ["mayendaRennes","gffn", "footballFanCastEliezerMayenda"],
+  "Thomas Meunier": ["meunier","meunierGFFN", "yahooSportsThomasMeunier", "footballFanCastEliezerMayenda"],
+  "Eliezer Mayenda": ["mayendaRennes","gffn", "footballFanCastEliezerMayenda", "aFPviaFrance24EliezerMayenda"],
   "Milan Aleksić": ["b92","safc"],
   "Harrison Jones": ["nEcho"],
   "Dan Neil": ["neilSky","rangersOfficial", "footballFanCastEliezerMayenda"],
@@ -297,7 +300,8 @@ const LINKMAP = {
   "Zak Johnson": ["johnsonYork"],
   "Tarik Muharemović": ["sunderlandEchoFabrizioRomanoTarikMuharemovi"],
   "Lorenzo Pirola": ["footItaliaviaSportsIllustratedLorenzoPirola"],
-  "Abdul Fatawu": ["sportsIllustratedFabrizioRomanoAbdulFatawu"]};
+  "Abdul Fatawu": ["sportsIllustratedFabrizioRomanoAbdulFatawu"],
+  "Matias Soule": ["fabrizioRomanoviaSunderlandEchoMatiasSoule"]};
 const WL_LINKMAP = {
   "Chidera Ejuke":"ejuke",
   "Geoffrey Kondogbia":"echo","Marlon Gomes":"sportsboom","Flavien Boyomo":"moretto","Lutsharel Geertruida":"hinze",

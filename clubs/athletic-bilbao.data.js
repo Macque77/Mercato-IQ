@@ -48,9 +48,7 @@ const OUTGOING = [
   {name:"Nico Williams", sub:"Left winger, Spanish, 24", club:"Arsenal", pos:"LW", report:"Arsenal have renewed contact with Athletic over Williams and are in a straight fight with Liverpool for the winger, per multiple reports through late July.", src:"Fichajes / The 4th Official", tier:3, fee:"", truth:45, prob:25, light:"o", trend:"flat", note:"Williams signed a long-term Athletic contract (through 2035) with a very high release clause; recurring rumour that has followed him for over a year without a concrete move materialising.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Oihan Sancet", sub:"Attacking midfielder, Spanish, 25", club:"Manchester United", pos:"CAM", report:"Manchester United have been reported as leading the race for Sancet, with Athletic determined to fight to keep their key creative midfielder.", src:"Yahoo Sports", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"flat", note:"Most recent reporting on this specific link is several months old; treat as a background storyline rather than an active deadline-day rumour.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
 ];
-const DEAD = [
-  {name:"Ibai Sanz", club:"Sporting Gijón", pos:"FW", dir:"out", age:"~9 weeks", tier:2, note:"Loan interest from Segunda side Sporting Gijón; Athletic weighing whether a lower-tier loan suits his development.", deadReason:"no fresh report in 9+ weeks", deadAt:"2026-08-06T10:24:32Z"}
-];
+const DEAD = [];
 
 const RISERS = [];
 

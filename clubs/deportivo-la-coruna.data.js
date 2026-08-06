@@ -46,9 +46,7 @@ const INCOMING = [
 const OUTGOING = [
   {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:95}
 ];
-const DEAD = [
-  {name:"Domingos Duarte", club:"Getafe (free agent)", pos:"CB", dir:"in", age:"~1 month", tier:2, note:"Advanced talks reported by Matteo Moretto; player already knows Riazor from a 2018/19 loan.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
-];
+const DEAD = [];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Domingos Duarte reunion talks</b>: advanced negotiations for a free-agent centre-back who already knows the club from a prior loan spell."}

@@ -890,7 +890,7 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Bradley Barcola", sub:"Bayern make contact but Liverpool lead the race", club:"Paris Saint-Germain", pos:"LW", report:"Bayern have made contact over the PSG winger as a contingency plan should Michael Olise depart, but Liverpool are widely reported to be leading the race for his signature.", src:"CaughtOffside", tier:2, fee:"Undisclosed", truth:60, prob:25, light:"o", trend:"flat", note:"Bayern viewed as a backup option; Liverpool reported to have 'no chance' rivals per some outlets.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Benjamin Sesko", sub:"Shock long-term interest as Kane succession plan", club:"Manchester United", pos:"ST", report:"Bayern are reported to retain long-term interest in Manchester United's Sesko as a surprise alternative to Harry Kane, with Kane potentially shifted into a new role.", src:"Christian Falk (Bild)", tier:2, fee:"Undisclosed", truth:55, prob:15, light:"o", trend:"flat", note:"Described as a shock/long-term interest; Manchester United considered unlikely sellers this summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+  {name:"Benjamin Sesko", sub:"23 · Slovenia · ST", club:"Manchester United", pos:"Striker", report:"Christian Falk says Bayern have not closed the door on bringing the Slovenia striker back to the Bundesliga. Harry Kane remains the undisputed first choice and is expected to sign fresh terms, but Falk reports Bayern are already thinking about the succession, with a striker addition possible in 2027 even if Kane extends.", src:"Christian Falk (BILD/Sport BILD)", tier:1, fee:"Undisclosed", truth:72, prob:18, light:"o", trend:"up", note:"This is monitoring, not a deal. Falk explicitly frames it as future planning behind Kane, so anything phrased as an imminent Sesko move overstates it.", lastSeen:"2026-08-06T10:49:40Z", baseProb:18}
 ];
 
 const OUTGOING = [
@@ -932,14 +932,15 @@ const HUB = {
   caughtOffsideviaMSNBradleyBarcola: {l:"CaughtOffside (via MSN)", u:"https://www.msn.com/en-gb/sport/football/expert-confirms-liverpool-lead-race-for-winger-signing-despite-bayern-also-making-contact/ar-AA298esW"},
   yahooSportsChristianFalkBenjaminSesko: {l:"Yahoo Sports (Christian Falk)", u:"https://sports.yahoo.com/articles/bayern-retain-long-term-interest-151000791.html"},
   yahooSportsFabrizioRomanoMichaelOlise: {l:"Yahoo Sports (Fabrizio Romano)", u:"https://sports.yahoo.com/articles/real-madrid-rule-michael-olise-082000726.html"},
-  gOALviaMSNJooPalhinha: {l:"GOAL (via MSN)", u:"https://www.msn.com/en-us/sports/soccer/bayern-munich-transfer-list-three-stars-as-max-eberl-warns-joao-palhinha-he-has-no-future-at-the-club/ar-AA29b9gu"}};
+  gOALviaMSNJooPalhinha: {l:"GOAL (via MSN)", u:"https://www.msn.com/en-us/sports/soccer/bayern-munich-transfer-list-three-stars-as-max-eberl-warns-joao-palhinha-he-has-no-future-at-the-club/ar-AA29b9gu"},
+  christianFalkBayernInsiderBenjaminSesko: {l:"Christian Falk, Bayern Insider", u:"https://cfbayerninsider.com/"}};
 
 const LINKMAP = {
   "Ismael Saibari": ["bfw","club"],
   "Nathaniel Brown": ["bein","bfw"],
   "Michael Olise": ["fabrizioRomanoviaTeamTalkMichaelOlise", "yahooSportsFabrizioRomanoMichaelOlise"],
   "Bradley Barcola": ["caughtOffsideviaMSNBradleyBarcola"],
-  "Benjamin Sesko": ["yahooSportsChristianFalkBenjaminSesko"],
+  "Benjamin Sesko": ["yahooSportsChristianFalkBenjaminSesko", "christianFalkBayernInsiderBenjaminSesko"],
   "João Palhinha": ["gOALviaMSNJooPalhinha"]};
 const WL_LINKMAP = {
   "Jamal Musiala": "bein"

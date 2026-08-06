@@ -32,7 +32,8 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Matthis Abline", sub:"23 · ST · France", to:"permanent from FC Nantes", fee:"€30m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official 30 Jul 2026. Monaco's marquee attacking signing of the window, brought in to add firepower up front."},
-  {name:"Mathys Detourbet", sub:"Manchester City winger arrives on a season-long loan", club:"Manchester City", pos:"RW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The 19-year-old, sold by Troyes to Manchester City this summer via the City Football Group network, has been immediately loaned to Monaco for 2026-27."}
+  {name:"Mathys Detourbet", sub:"Manchester City winger arrives on a season-long loan", club:"Manchester City", pos:"RW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The 19-year-old, sold by Troyes to Manchester City this summer via the City Football Group network, has been immediately loaned to Monaco for 2026-27."},
+  {name:"Ansu Fati", sub:"23 · Spain · FW", club:"Barcelona", pos:"Forward", fee:"€11m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Monaco's biggest outlay of the 2026/27 window per Foot Mercato's club ledger."}
 ];
 
 const CONFIRMED_OUT = [
@@ -44,7 +45,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Erik Lira", sub:"26 · CM · Mexico", club:"Cruz Azul", pos:"CM", report:"29 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:24, light:"o", trend:"flat", note:"Monaco have shown concrete interest in the Cruz Azul midfielder as squad depth is assessed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24},
   {name:"Simon Adingra", sub:"24 · W · Ivory Coast", club:"Brighton (on loan at Sunderland)", pos:"W", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"Loan", truth:48, prob:20, light:"o", trend:"flat", note:"Monaco explored re-signing the winger on loan; talks described as preliminary.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Fares Ghedjemis", sub:"Algerian winger eyed as an Akliouche-style replacement", club:"Frosinone", pos:"RW", report:"Monaco are reportedly interested in the Algeria international winger, who scored 15 goals in Serie B last season to help Frosinone win promotion; Lille are also said to be keen.", src:"Yahoo Sports (via agency reporting)", tier:2, fee:"", truth:55, prob:35, light:"y", trend:"flat", note:"Competition from Lille and the early stage of talks make this speculative for now.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Fares Ghedjemis", sub:"Algerian winger eyed as an Akliouche-style replacement", club:"Frosinone", pos:"RW", report:"Monaco are reportedly interested in the Algeria international winger, who scored 15 goals in Serie B last season to help Frosinone win promotion; Lille are also said to be keen.", src:"Yahoo Sports (via agency reporting)", tier:2, fee:"", truth:55, prob:35, light:"y", trend:"flat", note:"Competition from Lille and the early stage of talks make this speculative for now.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Joey Veerman", sub:"27 · Netherlands · CM", club:"PSV", pos:"Central midfielder", report:"Monaco are tracking the PSV playmaker as they look to add creativity in midfield, according to TuttoMercatoWeb.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:60, prob:20, light:"o", trend:"flat", note:"A scouting-level story only. No bid, no talks reported, and nothing yet from the Dutch press, who would normally be first on a PSV sale.", lastSeen:"2026-08-06T10:49:40Z", baseProb:20}
 ];
 
 const OUTGOING = [
@@ -83,7 +85,10 @@ const HUB = {
   sportfrMaghnesAkliouche: {l:"Sport.fr", u:"https://www.msn.com/fr-ch/sport/football/psg-akliouche-s-engage-pour-cinq-ans-monaco-obtient-ses-50-millions/ar-AA299kOb"},
   theGuardianAladjiBamba: {l:"The Guardian", u:"https://www.theguardian.com/football/2026/jul/24/transfers-newcastle-sign-aladji-bamba-monaco"},
   fabriceHawkinsRMCSportMaghnesAkliouche: {l:"Fabrice Hawkins, RMC Sport", u:"https://x.com/FabriceHawkins/status/2074105712439906741"},
-  topMercatoLamineCamara: {l:"Top Mercato", u:"https://www.topmercato.com/2122930-mercato-las-monaco-doit-vendre-pour-150-me-les-4-favoris-pour-un-depart-cet-ete"}};
+  topMercatoLamineCamara: {l:"Top Mercato", u:"https://www.topmercato.com/2122930-mercato-las-monaco-doit-vendre-pour-150-me-les-4-favoris-pour-un-depart-cet-ete"},
+  tuttoMercatoWebJoeyVeerman: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/"},
+  footMercatoMaghnesAkliouche: {l:"Foot Mercato", u:"https://www.footmercato.net/"},
+  footMercatoAnsuFati: {l:"Foot Mercato", u:"https://www.footmercato.net/club/as-monaco/tableau/"}};
 
 const LINKMAP = {
   "Matthis Abline": ["asmonaco", "gffn-monaco", "yahooSportsMatthisAbline"],
@@ -91,11 +96,13 @@ const LINKMAP = {
   "Boubakar Dembaga": ["gffn-monaco"],
   "Erik Lira": ["gffn-monaco"],
   "Simon Adingra": ["gffn-monaco"],
-  "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche", "fabriceHawkinsRMCSportMaghnesAkliouche"],
+  "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche", "fabriceHawkinsRMCSportMaghnesAkliouche", "footMercatoMaghnesAkliouche"],
   "Fares Ghedjemis": ["yahooSportsFaresGhedjemis"],
   "Folarin Balogun": ["yahooSportsFolarinBalogun"],
   "Mathys Detourbet": ["yahooSportsMathysDetourbet"],
-  "Lamine Camara": ["topMercatoLamineCamara"]};
+  "Lamine Camara": ["topMercatoLamineCamara"],
+  "Joey Veerman": ["tuttoMercatoWebJoeyVeerman"],
+  "Ansu Fati": ["footMercatoAnsuFati"]};
 const WL_LINKMAP = {
   "Maghnes Akliouche": ["gffn-monaco"]
 };

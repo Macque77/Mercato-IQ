@@ -917,7 +917,8 @@ const INCOMING = [
   {name:"Marcus Rashford", sub:"W/ST · England", club:"(tracked)", pos:"W", report:"~1 day ago", src:"Aggregated roundup", tier:3, fee:"£40m+", truth:55, prob:15, light:'o', trend:'flat',
    note:"Tracked alongside Spurs and Newcastle in a transfer roundup. OBSTACLES: wages, fee and a crowded field; an opportunistic link rather than a concrete move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
   {name:"Igor Paixão", sub:"Brazilian winger linked after strong Marseille season", club:"Marseille", pos:"FW", report:"Villa are exploring a move for the 26-year-old after he scored 12 goals with 7 assists last season; Champions League qualification seen as a selling point.", src:"L'Équipe (via Sports Mole)", tier:2, fee:"£30m", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Matteo Ruggeri", sub:"24 · Italy · LB", club:"Atletico Madrid", pos:"Left-back", report:"Villa have reached an agreement in principle with Atletico Madrid for the Italy left-back, structured around an initial €18m plus a further €6m in add-ons. Unai Emery made the left side of his defence a priority with Lucas Digne closing on a move to Paris Saint-Germain, and Ruggeri had earlier been linked with Liverpool and Tottenham.", src:"Marca", tier:2, fee:"€24m (£21m) including add-ons", truth:80, prob:78, light:"g", trend:"flat", note:"The Athletic only has Villa 'considering' Ruggeri among several left-back options, while the agreement claim comes from Marca and Spanish reporter Ruben Uria. Fee reporting also varies between €24m and €25m, so the structure is not settled.", lastSeen:"2026-08-05T17:03:23Z", baseProb:78}
+  {name:"Matteo Ruggeri", sub:"24 · Italy · LB", club:"Atlético Madrid", pos:"LB", report:"Villa have reached an agreement with Atlético Madrid for Ruggeri, lined up as their fifth summer arrival and as the long-term answer at left-back after Lucas Digne's departure. Fabrizio Romano reports Atlético want to bank sales, Molina and possibly Ruggeri, before pushing on with their own business.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:80, prob:72, light:"g", trend:"down", note:"Romano's update reached us relayed by TEAMtalk rather than through a primary link, and the deal is tied to Atlético's outgoings, so fee and timing remain fluid.", lastSeen:"2026-08-06T10:49:40Z", baseProb:72},
+  {name:"Zion Suzuki", sub:"23 · Japan · GK", club:"Parma", pos:"GK", report:"The Parma goalkeeper remains on Villa's list, but Romano says Juventus have made him a priority and PSG would sign him then look at a loan if Lucas Chevalier can be sold. Juventus' offer has so far fallen short of Parma's valuation. Villa's move depends on Emiliano Martínez's future.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:65, prob:25, light:"o", trend:"flat", note:"Weak for Villa specifically: the reporting centres on Juventus and PSG, and Villa only act if Martínez goes. Do not present this as an advanced Villa deal.", lastSeen:"2026-08-06T10:49:40Z", baseProb:25}
 ];
 
 const OUTGOING = [
@@ -984,7 +985,10 @@ const HUB = {
   sportsMoleDonyellMalen: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/aston-villa/transfer-talk/feature/aston-villa-summer-transfers-all-confirmed-ins-and-outs-for-2026_598979.html"},
   marcaRubenUriaMatteoRuggeri: {l:"Marca (Ruben Uria)", u:"https://www.marca.com/futbol/atletico.html"},
   sportsMoleLucasDigne: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/aston-villa/transfer-talk/news/emery-wants-to-sign-italian-defender-immediately-as-aston-villa-bid-to-resolve-clear-issue_602381.html"},
-  sportsMoleEzriKonsa: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/news/konsa-arsenal-stance-revealed-amid-transfer-interest_602295.html"}};
+  sportsMoleEzriKonsa: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/news/konsa-arsenal-stance-revealed-amid-transfer-interest_602295.html"},
+  tEAMtalkrelayingFabrizioRomanoMatteoRuggeri: {l:"TEAMtalk (relaying Fabrizio Romano)", u:"https://www.teamtalk.com/aston-villa/aston-villa-reach-agreement-atletico-madrid-liverpool-tottenham-target-fifth-signing"},
+  tEAMtalkrelayingFabrizioRomanoZionSuzuki: {l:"TEAMtalk (relaying Fabrizio Romano)", u:"https://www.teamtalk.com/aston-villa/fabrizio-romano-reveals-psg-juventus-plans-for-aston-villa-target-zion-suzuki"},
+  readAstonVillarelayingFabrizioRomanoJooGomes: {l:"Read Aston Villa (relaying Fabrizio Romano)", u:"https://readastonvilla.com/2026/07/16/here-we-go-fabrizio-romano-confirms-next-aston-villa-signing/"}};
 const LINKMAP = {
   "Lamine Camara": ["onefootball","yahoo","lequipe"],
   "Ilaix Moriba": ["onefootball"],
@@ -997,13 +1001,14 @@ const LINKMAP = {
   "Igor Paixão": ["sportsMoleviaLquipeIgorPaixo"],
   "Ezri Konsa": ["readAstonVillaEzriKonsa", "sportsMoleEzriKonsa"],
   "Johan Manzambi": ["skySportsJohanManzambi"],
-  "João Gomes": ["eSPNDailyPostJooGomes"],
+  "João Gomes": ["eSPNDailyPostJooGomes", "readAstonVillarelayingFabrizioRomanoJooGomes"],
   "Youri Tielemans": ["readAstonVillaMyOldManSaidMorganRogers"],
   "Lucas Digne": ["readAstonVillaMyOldManSaidMorganRogers", "sportsMoleLucasDigne"],
   "Donyell Malen": ["sportsMoleDonyellMalen"],
   "Enzo Barrenechea": ["sportsMoleDonyellMalen"],
   "Lewis Dobbin": ["sportsMoleDonyellMalen"],
-  "Matteo Ruggeri": ["marcaRubenUriaMatteoRuggeri"]};
+  "Matteo Ruggeri": ["marcaRubenUriaMatteoRuggeri", "tEAMtalkrelayingFabrizioRomanoMatteoRuggeri"],
+  "Zion Suzuki": ["tEAMtalkrelayingFabrizioRomanoZionSuzuki"]};
 const WL_LINKMAP = {
   "Lamine Camara":"onefootball","Morgan Rogers":"bbcVilla","Loan flops":"bmail",
 };

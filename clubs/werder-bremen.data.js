@@ -53,7 +53,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Tomas Bobcek", sub:"Polish league's top scorer targeted for the attack", club:"Lechia Gdansk", pos:"ST", report:"Werder are reportedly already in negotiations with Lechia Gdansk for Bobcek after the 24-year-old Slovak finished as the Ekstraklasa's top scorer with 20 goals last season.", src:"meczyki.pl", tier:1, fee:"Valued at ~€8m, talk of a €10m deal", truth:70, prob:55, light:"g", trend:"flat", note:"Werder have shown a recent pattern of recruiting from Poland, having already signed defender Oskar Wojcik this summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Jordan Holsgrove", sub:"Scottish midfielder eyed as a cut-price alternative", club:"GD Estoril Praia", pos:"CDM", report:"Werder are exploring a move for the Scottish midfielder as a more affordable option than top target Cameron Puertas to solve their engine-room needs.", src:"The Daily Telegraph", tier:2, fee:"Valued at ~€5m", truth:60, prob:35, light:"y", trend:"flat", note:"Holsgrove, 26, registered 8 assists last season in Portugal and is also drawing interest from four English Championship clubs including Charlton Athletic; contracted at Estoril until 2028.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Eren Dinkci", sub:"Bremen-born forward hints at a return home", club:"SC Freiburg", pos:"ST", report:"Werder are considering re-signing the Bremen-born forward, who fuelled speculation himself by saying he wants to 'score a goal at the Weserstadion.'", src:"DeichStube", tier:2, fee:"Not specified", truth:60, prob:35, light:"y", trend:"flat", note:"Dinkci previously came through Werder's system before moving to Freiburg; a boyhood-club return narrative is fuelling the speculation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Eren Dinkci", sub:"Bremen-born forward hints at a return home", club:"SC Freiburg", pos:"ST", report:"Werder are considering re-signing the Bremen-born forward, who fuelled speculation himself by saying he wants to 'score a goal at the Weserstadion.'", src:"DeichStube", tier:2, fee:"Not specified", truth:60, prob:35, light:"y", trend:"flat", note:"Dinkci previously came through Werder's system before moving to Freiburg; a boyhood-club return narrative is fuelling the speculation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Batista Mendy", sub:"26 · France · DM", club:"Trabzonspor", pos:"DM", report:"Werder are said to be weighing up a move for the France-born holding midfielder currently in the Turkish top flight, with the club still looking to add depth in the middle of the park.", src:"Deichstube", tier:3, fee:"Undisclosed", truth:55, prob:20, light:"o", trend:"flat", note:"Weak sourcing: this comes from a regional Werder ticker and is framed as a question rather than a firm report. No tier-1 reporter has touched it and there is no indication of talks between the clubs, so treat as early speculation only.", lastSeen:"2026-08-06T10:49:40Z", baseProb:20}
 ];
 
 const OUTGOING = [];
@@ -80,14 +81,16 @@ const HUB = {
   theDailyTelegraphviaWeserKurierJordanHolsgrove: {l:"The Daily Telegraph (via Weser Kurier)", u:"https://weser-kurier.de/werder/profis/schottischer-mittelfeldspieler-holsgrove-bei-werder-bremen-im-gespraech-doc86v9798ylkx117docnef"},
   deichStubeviaYahooSportsErenDinkci: {l:"DeichStube (via Yahoo Sports)", u:"https://sports.yahoo.com/articles/dink-hints-bremen-return-want-164900228.html"},
   werderdeofficialAlexanderSchlager: {l:"werder.de (official)", u:"https://www.werder.de/news/maenner/2026-2027/mixed-zone-schlager-30073036"},
-  werderdeofficialLeonardoBittencourt: {l:"werder.de (official)", u:"https://www.werder.de/news/maenner/2026-2027/interview-bittencourt-29072026"}};
+  werderdeofficialLeonardoBittencourt: {l:"werder.de (official)", u:"https://www.werder.de/news/maenner/2026-2027/interview-bittencourt-29072026"},
+  deichstubeBatistaMendy: {l:"Deichstube", u:"https://www.deichstube.de/news/werder-bremen-transfers-geruecht-wechsel-transfer-news-bundesliga-transfergeruechte-abgang-neuzugang-batista-mendy-zr-94187647.html"}};
 
 const LINKMAP = {
   "Tomas Bobcek": ["meczykiplviaWeserKurierTomasBobcek"],
   "Jordan Holsgrove": ["theDailyTelegraphviaWeserKurierJordanHolsgrove"],
   "Eren Dinkci": ["deichStubeviaYahooSportsErenDinkci"],
   "Alexander Schlager": ["werderdeofficialAlexanderSchlager"],
-  "Leonardo Bittencourt": ["werderdeofficialLeonardoBittencourt"]};
+  "Leonardo Bittencourt": ["werderdeofficialLeonardoBittencourt"],
+  "Batista Mendy": ["deichstubeBatistaMendy"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

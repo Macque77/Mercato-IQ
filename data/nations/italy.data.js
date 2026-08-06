@@ -6,7 +6,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 136
+  stories_count: 139
 };
 
 const TOP_STORIES = [  {
@@ -17,24 +17,17 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Cristian Romero",prob: 75, truth: 85, bullshit: false,
-    club_origin: "inter-milan", club_display_name: "Inter Milan", direction: "in",
-    from: "Tottenham Hotspur", to: "Inter Milan",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~€40m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    name: "Nahuel Molina",prob: 82, truth: 90, bullshit: false,
+    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
+    from: "Atletico Madrid", to: "AS Roma",
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    value: "€13m + €4m bonuses", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
     name: "Guglielmo Vicario",prob: 65, truth: 85, bullshit: false,
     club_origin: "juventus", club_display_name: "Juventus", direction: "in",
     from: "Tottenham Hotspur", to: "Juventus",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Givairo Read",prob: 55, truth: 85, bullshit: false,
-    club_origin: "as-roma", club_display_name: "AS Roma", direction: "in",
-    from: "Feyenoord", to: "AS Roma",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
+  {
+    name: "Christian Ndow",prob: 75, truth: 65, bullshit: false,
+    club_origin: "frosinone", club_display_name: "Frosinone", direction: "out",
+    from: "Frosinone", to: "Spezia",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
 ];
 
-const BY_LEAGUE = {"Serie A": 125, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 128, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 125}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 128}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:30:05.362112Z",
+  updated: "2026-08-06T10:49:42.909904Z",
   label: "Nation aggregation"
 };

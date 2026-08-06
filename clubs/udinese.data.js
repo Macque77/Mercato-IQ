@@ -39,7 +39,8 @@ const CONFIRMED_IN = [
   {name:"Giorgi Chakvetadze", sub:"25 · AM · Georgia", to:"permanent from Watford", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Jul. Attacking midfield addition."},
   {name:"Omar Haktab Traoré", sub:"24 · RB · Morocco", to:"free transfer", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Jul. Free-agent full-back signing."},
   {name:"Mergim Vojvoda", sub:"30 · RB · Kosovo", to:"permanent from Como", fee:"€1.6m (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 19 Jul. Further full-back depth added late in the window."},
-  {name:"Jarl Magnus Selvik", sub:"Goalkeeper, NOR", club:"Watford", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Brought in to cover for the injured Maduka Okoye."}
+  {name:"Jarl Magnus Selvik", sub:"Goalkeeper, NOR", club:"Watford", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Brought in to cover for the injured Maduka Okoye."},
+  {name:"Nicolò Zaniolo", sub:"27 · Italy · AM", club:"Galatasaray", pos:"Attacking midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Udinese triggered the permanent purchase from Galatasaray and then announced a contract extension after long negotiations, calming a saga that had dragged through the summer. The fee has been described as manageable rather than confirmed publicly, and noise around his future has not fully died down."}
 ];
 
 const CONFIRMED_OUT = [
@@ -55,14 +56,21 @@ const INCOMING = [
   {name:"Ognjen Ugresic", sub:"22 · CM · Serbia", club:"Partizan Belgrade", pos:"CM", report:"12 Jul 2026", src:"Football Italia", tier:3, fee:"~€6m", truth:50, prob:20, light:"o", trend:"flat", note:"One of several clubs (also Sassuolo, Bologna, Club Brugge, Frankfurt, Monaco) chasing the same midfielder - genuine interest but heavy competition.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Gerard Deulofeu", sub:"Forward, ESP, 32", club:"Free agent / rejoining Udinese", pos:"RW", report:"Deulofeu has returned to train with Udinese after a three-year absence, with a possible contract reinstatement under discussion.", src:"Tuttomercatoweb", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Emotional reunion story; no contract signed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Warren Bondo", sub:"Midfielder, FRA, 22", club:"AC Milan", pos:"CM", report:"Udinese are targeting the Milan midfielder as a replacement for departing Atta.", src:"Calciomercato.com", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Contingent on Atta's own exit being finalised first.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Ted Siltanen", sub:"Defender, FIN", club:"Djurgardens IF", pos:"LB", report:"Udinese have shown interest but there remains a distance between the clubs on valuation.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Valuation gap stalling progress.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Ted Siltanen", sub:"Defender, FIN", club:"Djurgardens IF", pos:"LB", report:"Udinese have shown interest but there remains a distance between the clubs on valuation.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Valuation gap stalling progress.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Mërgim Vojvoda", sub:"31 · Kosovo · RB", club:"Como", pos:"Full-back", report:"The Kosovo international has been at Villa Stuart for his medical and has already posted a farewell message to Como, leaving only the formalities on a move to Friuli.", src:"TuttoUdinese", tier:3, fee:"Undisclosed", truth:90, prob:90, light:"g", trend:"flat", note:"Club-focused outlet rather than a tier-one name, but a completed medical plus a public goodbye to Como makes this hard to argue with. Terms not disclosed.", lastSeen:"2026-08-06T10:49:40Z", baseProb:90}
 ];
 
 const OUTGOING = [
-  {name:"Nicolò Zaniolo", sub:"27 · AM · Italy", club:"AC Milan / Lazio (rumoured)", pos:"AM", report:"29 Jun - 14 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:58, prob:32, light:"y", trend:"up", note:"A genuinely messy situation: Zaniolo was offered to Milan amid a salary dispute, Lazio have shown interest, and the player presented a medical certificate to skip training - real friction rather than idle speculation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
   {name:"Oier Zarraga Kristensen", sub:"Defender, DEN", club:"Unnamed suitor", pos:"CB", report:"Reports name Kristensen as the more likely of the Kristensen/Solet centre-back pairing to leave this summer.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"One of the two centre-backs is expected to depart, with Kristensen the 'main suspect'.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Bojan Milacic", sub:"Goalkeeper, SRB", club:"Watford", pos:"GK", report:"Linked with a move to sister club Watford under the shared Pozzo ownership structure.", src:"Calciomercato.com", tier:2, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"flat", note:"Intra-ownership transfers between Udinese and Watford are common under the Pozzo family.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Jamie Zemura", sub:"Defender", club:"Watford", pos:"LB", report:"Named alongside Payero and Bravo as part of a batch of players reported set for moves to Watford.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Reported but not yet formally confirmed, unlike Bravo's move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+  {name:"Jamie Zemura", sub:"Defender", club:"Watford", pos:"LB", report:"Named alongside Payero and Bravo as part of a batch of players reported set for moves to Watford.", src:"Tuttomercatoweb", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Reported but not yet formally confirmed, unlike Bravo's move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Oumar Solet", sub:"26 · France · CB", club:"Leeds United", pos:"Centre-back", report:"Leeds are pressing again for the centre-back, with Udinese sounding out Terracciano and Tapia as potential replacements.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:75, prob:50, light:"y", trend:"flat", note:"No agreed fee has been reported and the story is running on TMW's rolling feed rather than a tier-one byline. Udinese have consistently held out for a premium on Solet.", lastSeen:"2026-08-06T10:49:40Z", baseProb:50},
+  {name:"Martín Payero", sub:"27 · Argentina · CM", club:"Watford", pos:"Midfielder", report:"Part of the familiar Udinese to Watford pipeline, with Payero reported as ready to leave for the Pozzo family's English club.", src:"TuttoUdinese", tier:3, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Same-ownership moves rarely collapse, but this is club-site level sourcing with no fee or contract detail attached.", lastSeen:"2026-08-06T10:49:40Z", baseProb:65},
+  {name:"Damián Pizarro", sub:"21 · Chile · ST", club:"Audax Italiano", pos:"Striker", report:"Talks with Audax Italiano are described as advanced, with a return to Chile close and his future set to be away from Udinese.", src:"TuttoUdinese", tier:3, fee:"Undisclosed", truth:80, prob:70, light:"g", trend:"flat", note:"Low-tier sourcing, and it is not yet clear whether the move is a permanent sale or another loan.", lastSeen:"2026-08-06T10:49:40Z", baseProb:70}
+];
+const DEAD = [
+  {name:"Nicolò Zaniolo", sub:"27 · AM · Italy", club:"AC Milan / Lazio (rumoured)", pos:"AM", report:"29 Jun - 14 Jul 2026", src:"Football Italia", tier:2, fee:"Undisclosed", truth:58, prob:32, light:"y", trend:"up", note:"A genuinely messy situation: Zaniolo was offered to Milan amid a salary dispute, Lazio have shown interest, and the player presented a medical certificate to skip training - real friction rather than idle speculation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32, dir:"out", deadReason:"completed move to udinese", deadAt:"2026-08-06T10:49:41Z"},
+  {name:"Jordan Zemura", sub:"26 · Zimbabwe · LB", club:"Watford", pos:"Left-back", report:"Reported alongside Payero on the Udinese to Watford axis, with the left-back expected to say goodbye this window.", src:"TuttoUdinese", tier:3, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Weak sourcing tier and no structure to the deal reported yet, so treat the timing as loose.", lastSeen:"2026-08-06T10:49:40Z", baseProb:65, dir:"out", deadReason:"completed move to watford", deadAt:"2026-08-06T10:49:41Z"}
 ];
 
 const RISERS = [
@@ -85,9 +93,7 @@ const POSITIONS = [
   {p:"Attacking midfield", w:40, x:"Zaniolo's messy exit situation and Pafundi's loan both open up the No.10 area."}
 ];
 
-const WATCHLIST = [
-  {name:"Nicolò Zaniolo", club:"AC Milan / Lazio", pos:"AM", dir:"out", age:"~3 weeks", tier:2, note:"Salary dispute has turned genuinely tense, with the player skipping training via a medical certificate."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   footballItalia: {l:"Football Italia · Udinese", u:"https://football-italia.net/category/teams/udinese/"},
@@ -95,19 +101,23 @@ const HUB = {
   gianlucaDiMarzioIkerBravo: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-news-24-luglio-2026-495120"},
   tuttomercatowebGerardDeulofeu: {l:"Tuttomercatoweb", u:"https://www.tuttomercatoweb.com/udinese"},
   calciomercatocomWarrenBondo: {l:"Calciomercato.com", u:"https://www.calciomercato.com/udinese"},
-  aNSAMergimVojvoda: {l:"ANSA", u:"https://www.msn.com/it-it/sport/calcio/calcio-udinese-dal-como-%C3%A8-ufficiale-l-acquisto-di-vojvoda/ar-AA28bqlt"}};
+  aNSAMergimVojvoda: {l:"ANSA", u:"https://www.msn.com/it-it/sport/calcio/calcio-udinese-dal-como-%C3%A8-ufficiale-l-acquisto-di-vojvoda/ar-AA28bqlt"},
+  tuttoUdineseMrgimVojvoda: {l:"TuttoUdinese", u:"https://www.tuttoudinese.it/calciomercato/calciomercato-udinese-tabellone-acquisti-cessioni-ufficialita-183126"},
+  tuttoMercatoWebOumarSolet: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/udinese/"},
+  calciomercatocomNicolZaniolo: {l:"Calciomercato.com", u:"https://www.calciomercato.com/squadra/udinese/notizie/dxq76zcvnokq07cszdx0i6kve"},
+  udineseblogUdineseofficialstatementArthurAtta: {l:"Udineseblog (Udinese official statement)", u:"https://www.udineseblog.it/udinese/mercato-bianconero/"}};
 
 const LINKMAP = {
   "Unai Gómez": ["footballItalia"],
   "Giorgi Chakvetadze": ["footballItalia"],
   "Omar Haktab Traoré": ["footballItalia"],
   "Mergim Vojvoda": ["footballItalia", "aNSAMergimVojvoda"],
-  "Arthur Atta": ["footballItalia"],
+  "Arthur Atta": ["footballItalia", "udineseblogUdineseofficialstatementArthurAtta"],
   "Martin Payero": ["footballItalia"],
   "Simone Pafundi": ["footballItalia"],
   "Ognjen Ugresic": ["footballItalia"],
-  "Nicolò Zaniolo": ["footitalia"],
-  "Iker Bravo": ["gianlucaDiMarzioIkerBravo", "calciomercatocomWarrenBondo"],
+  "Nicolò Zaniolo": ["footitalia", "calciomercatocomNicolZaniolo"],
+  "Iker Bravo": ["gianlucaDiMarzioIkerBravo", "calciomercatocomWarrenBondo", "tuttoUdineseMrgimVojvoda"],
   "Gerard Deulofeu": ["tuttomercatowebGerardDeulofeu"],
   "Warren Bondo": ["calciomercatocomWarrenBondo"],
   "Ted Siltanen": ["tuttomercatowebGerardDeulofeu"],
@@ -116,7 +126,12 @@ const LINKMAP = {
   "Jamie Zemura": ["tuttomercatowebGerardDeulofeu"],
   "Jarl Magnus Selvik": ["calciomercatocomWarrenBondo"],
   "Kjerrumgaard": ["calciomercatocomWarrenBondo"],
-  "Mattia Pafundi": ["calciomercatocomWarrenBondo"]};
+  "Mattia Pafundi": ["calciomercatocomWarrenBondo"],
+  "Mërgim Vojvoda": ["tuttoUdineseMrgimVojvoda"],
+  "Oumar Solet": ["tuttoMercatoWebOumarSolet"],
+  "Martín Payero": ["tuttoUdineseMrgimVojvoda"],
+  "Jordan Zemura": ["tuttoUdineseMrgimVojvoda"],
+  "Damián Pizarro": ["tuttoUdineseMrgimVojvoda"]};
 const WL_LINKMAP = {
   "Nicolò Zaniolo": ["footitalia"]
 };

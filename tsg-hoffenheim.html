@@ -879,7 +879,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"RB Leipzig", pos:"ST", report:"2 Aug 2026", src:"Sport Bild / Sky Deutschland", tier:2, fee:"Below €35m valuation via contract clause", truth:70, prob:65, light:"g", trend:"up", note:"Reported imminent: Sport Bild says the move could complete during Hoffenheim's Austrian training camp (2-9 Aug), with Leipzig activating a contractual release clause below his risen €35m market value. Asllani chose Leipzig over Barcelona and was omitted from the training-camp squad, a strong signal of an imminent exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65}
+  {name:"Fisnik Asllani", sub:"23 · Kosovo · ST", club:"RB Leipzig", pos:"Striker", report:"Sport BILD say the Kosovo international has chosen Leipzig ahead of Barcelona and that a move is imminent, with Leipzig intending to activate the release clause in his Hoffenheim contract. Salary terms with the player were still to be agreed.", src:"Sport BILD", tier:2, fee:"Release clause", truth:80, prob:75, light:"g", trend:"up", note:"Single-source tabloid reporting and personal terms were unresolved when it broke, so the deal is close rather than done. No confirmation yet from Hoffenheim or Leipzig.", lastSeen:"2026-08-06T10:49:40Z", baseProb:75}
 ];
 
 const RISERS = [
@@ -912,10 +912,11 @@ const HUB = {
   sportschauARDAdamDaghim: {l:"Sportschau (ARD)", u:"https://www.sportschau.de/regional/swr/swr-daghim-fuer-tour-im-kraichgau-ist-ein-neuer-supersprinter-unterwegs-100.html"},
   oneFootballBazoumanaTour: {l:"OneFootball", u:"https://onefootball.com/en/news/bazoumana-toure-joins-newcastle-from-hoffenheim-in-50m-move-deal-until-2031-43103486"},
   yahooSportsviaKickerMuhammedDamar: {l:"Yahoo Sports (via Kicker)", u:"https://sports.yahoo.com/articles/official-damar-joins-wolfsburg-tsg-152600372.html"},
-  yahooSportsviaSkyGermanyLucaErlein: {l:"Yahoo Sports (via Sky Germany)", u:"https://sports.yahoo.com/articles/wolfsburg-leverkusen-close-hoffenheim-duo-115800467.html"}};
+  yahooSportsviaSkyGermanyLucaErlein: {l:"Yahoo Sports (via Sky Germany)", u:"https://sports.yahoo.com/articles/wolfsburg-leverkusen-close-hoffenheim-duo-115800467.html"},
+  skyDeutschlandreportcarriedbyGetGermanFootballNewsAdamDaghim: {l:"Sky Deutschland report, carried by Get German Football News", u:"https://sports.yahoo.com/articles/report-hoffenheim-reach-agreement-sign-195000069.html"}};
 
 const LINKMAP = {
-  "Adam Daghim": ["gfn", "sportschauARDAdamDaghim"],
+  "Adam Daghim": ["gfn", "sportschauARDAdamDaghim", "skyDeutschlandreportcarriedbyGetGermanFootballNewsAdamDaghim"],
   "Bazoumana Touré": ["sky","espn","yahoo", "oneFootballBazoumanaTour"],
   "Fisnik Asllani": ["gfn", "yahooSportsviaSportBildFisnikAsllani"],
   "Patrick Wimmer": ["sportschauARDPatrickWimmer"],

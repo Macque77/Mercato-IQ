@@ -48,16 +48,17 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Rodri", sub:"30 · CDM · Spain", club:"Manchester City", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Rodri", sub:"30 · Spain · DM", club:"Manchester City", pos:"Defensive midfielder", report:"Madrid have agreed personal terms and opened formal talks with City, sensing value with the midfielder inside the last year of his contract. City are reported to want around €80m.", src:"Fabrizio Romano", tier:1, fee:"Around €80m", truth:80, prob:40, light:"y", trend:"flat", note:"Romano is firm on the talks but also says City are happy to let the race widen, and that Florentino Pérez has not given final approval. Spanish and English outlets now report Barcelona sounding out the player's camp, which muddies it further.", lastSeen:"2026-08-06T10:49:40Z", baseProb:40},
   {name:"Michael Olise", sub:"Winger", club:"Bayern Munich", pos:"RW", report:"Speculative reporting links Madrid with Olise as further attacking reinforcement.", src:"Various (aggregated)", tier:3, fee:"Speculative", truth:30, prob:12, light:"r", trend:"flat", note:"No direct sourcing beyond aggregator-level chatter; treat as background noise, not an active pursuit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
-  {name:"Yan Diomande", sub:"19 · Ivory Coast · W", club:"RB Leipzig", pos:"W", report:"Madrid have agreed a deal worth around £115.8m for the teenage forward after an earlier bid was rejected, with the package able to rise towards €135m to €140m including variables. He would become the club's record signing, with Liverpool and PSG also in the race.", src:"PA / ESPN", tier:2, fee:"£115.8m rising to c.£120m", truth:85, prob:80, light:"g", trend:"down", note:"Agreement reported by PA and backed by ESPN sources, but nothing official from either club yet and fee figures still vary between outlets. Reports of an off-field dispute around the player's representation are worth monitoring.", lastSeen:"2026-08-06T08:59:48Z", baseProb:80}
+  {name:"Yan Diomande", sub:"19 · Ivory Coast · W", club:"RB Leipzig", pos:"Winger", report:"Madrid and Leipzig have reached agreement on a package worth up to about €135m including variables, with a fixed fee in the €115m to €120m range. The medical and signing are all that remain.", src:"ESPN, plus Florian Plettenberg (Sky Sport Germany)", tier:2, fee:"Up to €135m", truth:92, prob:88, light:"g", trend:"up", note:"Plettenberg reported the breakthrough on X and Madrid coverage has followed, but the paperwork has dragged: a dispute between agencies over the teenager's representation has held up the registration, so this is not done until it is announced. Liverpool and PSG both chased him earlier in the window.", lastSeen:"2026-08-06T10:49:40Z", baseProb:88}
 ];
 
 const OUTGOING = [
   {name:"Vinícius Júnior", sub:"26 · LW · Brazil", club:"Arsenal (interest)", pos:"LW", report:"02 Aug 2026", src:"FootballTransfers / TeamTalk", tier:2, fee:"TBD - loan or permanent structure discussed", truth:55, prob:30, light:"y", trend:"up", note:"CORRECTED 03 Aug: an earlier version of this record wrongly logged a completed €500m Vinícius sale to Al-Nassr - that never happened. The real, live story is Arsenal's interest, with reports of a partial agreement on structure and Vinícius reportedly softening his stance on a Premier League move after Mourinho's arrival reshuffled his standing in the side. Nothing signed; treat as an ongoing saga, not a done deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Franco Mastantuono", sub:"19 · AM · Argentina", club:"Fiorentina", pos:"AM", report:"4 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:55, prob:35, light:"y", trend:"flat", note:"A loan exit is 'progressing' per Romano, with Mastantuono leading the race to leave Madrid for regular football at Fiorentina.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Endrick", sub:"20 · ST · Brazil", club:"AS Roma (loan interest)", pos:"ST", report:"Roma have shown loan interest, though Madrid are reportedly hesitant to negotiate terms; his game-time squeeze worsened after Carlos Espí's arrival.", src:"Aggregated Spanish/Italian reporting", tier:2, fee:"Loan", truth:50, prob:30, light:"y", trend:"flat", note:"Mourinho is said to be weighing loaning out Endrick or Gonzalo García (the latter has since been sold to Fulham) as the attack is reshaped.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Liverpool", pos:"CB", report:"The homegrown centre-back has been told he can leave this summer, and intermediaries have approached Liverpool to test their interest.", src:"TEAMtalk", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Sourced to intermediaries via one English outlet, with no Madrid-based corroboration from Relevo, AS or Marca. Weak until Spanish press confirm the exit stance.", lastSeen:"2026-08-06T08:59:48Z", baseProb:20}
+  {name:"Franco Mastantuono", sub:"18 · Argentina · AM", club:"Fiorentina", pos:"Attacking midfielder", report:"Fiorentina are said to be close to an agreement to take the Argentinian on loan for the season.", src:"CNN Türk, relaying Spanish and Italian reports", tier:3, fee:"Loan", truth:50, prob:40, light:"y", trend:"up", note:"Thin sourcing: this has surfaced inside Turkish coverage of the Endrick chase rather than from Di Marzio, Romano or the Spanish tier ones. Needs an Italian tier-one voice before it can be trusted.", lastSeen:"2026-08-06T10:49:40Z", baseProb:40},
+  {name:"Endrick", sub:"20 · Brazil · ST", club:"Fenerbahçe", pos:"Striker", report:"Fenerbahçe have put an offer to Madrid for a loan, and Madrid have parked the incoming bids while José Mourinho decides whether he wants the Brazilian in his squad. Roma, who sent sporting director Tony D'Amico to Madrid, and Fiorentina are also pushing.", src:"Fotomaç, CNN Türk", tier:3, fee:"Loan", truth:65, prob:40, light:"y", trend:"up", note:"Turkish outlets are driving this and their transfer copy runs hot. The relevant fact is that Mourinho has used Endrick in pre-season and scored him a goal against Fiorentina, so a loan is far from settled.", lastSeen:"2026-08-06T10:49:40Z", baseProb:40},
+  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Liverpool", pos:"CB", report:"The homegrown centre-back has been told he can leave this summer, and intermediaries have approached Liverpool to test their interest.", src:"TEAMtalk", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Sourced to intermediaries via one English outlet, with no Madrid-based corroboration from Relevo, AS or Marca. Weak until Spanish press confirm the exit stance.", lastSeen:"2026-08-06T08:59:48Z", baseProb:20},
+  {name:"Eduardo Camavinga", sub:"23 · France · CM", club:"Galatasaray", pos:"Midfielder", report:"Galatasaray have kept working on the Frenchman, with Madrid open to a sale above €50m, but Manchester United are reported to have moved in and the player is said to favour staying at the Bernabéu.", src:"Fotomaç", tier:3, fee:"€50m plus", truth:45, prob:15, light:"o", trend:"flat", note:"Turkish tabloid territory and cooling: the last substantive update is from late July and every version of the story has Camavinga wanting to stay and Mourinho holding the casting vote.", lastSeen:"2026-08-06T10:49:40Z", baseProb:15}
 ];
 const DEAD = [
   {name:"Yan Diomandé", sub:"Winger/forward", club:"RB Leipzig", pos:"RW", report:"Romano gave a 'here we go' on a reported £113m deal, but the announcement has stalled after agent Max Gradel filed a FIFA complaint in a representation dispute; Leipzig's sporting director says it won't be held up by the agency battle, while other reports say Madrid has stepped back from finalising terms.", src:"Fabrizio Romano", tier:1, fee:"~£113m reported", truth:62, prob:50, light:"y", trend:"flat", note:"Genuinely messy situation - Here We Go status undermined by an active FIFA complaint and conflicting club statements.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50, dir:"in", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"},
@@ -111,7 +112,11 @@ const HUB = {
   theAthleticYanDiomande: {l:"The Athletic", u:"https://www.theathletic.com/football/"},
   pAviaTheIrishNewsYanDiomande: {l:"PA (via The Irish News)", u:"https://www.irishnews.com/sport/soccer/real-madrid-agree-1158m-deal-for-rb-leipzig-forward-yan-diomande-MVIQI3MQQNJHBI2H454WFGJJIA/"},
   skySportsViniciusJunior: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13567839/real-madrid-transfer-news-vinicius-junior-to-stay-at-the-santiago-bernabeu-beyond-this-summer-despite-arsenal-interest"},
-  tEAMtalkRaulAsencio: {l:"TEAMtalk", u:"https://www.teamtalk.com/liverpool/raul-ascencio-transfer-news-liverpool-in-contact-real-madrid-sale-iraola-mourinho"}};
+  tEAMtalkRaulAsencio: {l:"TEAMtalk", u:"https://www.teamtalk.com/liverpool/raul-ascencio-transfer-news-liverpool-in-contact-real-madrid-sale-iraola-mourinho"},
+  fabrizioRomanoviaYahooSportsRodri: {l:"Fabrizio Romano (via Yahoo Sports)", u:"https://sports.yahoo.com/articles/fabrizio-romano-confirms-real-madrid-104500128.html"},
+  fotomaEndrick: {l:"Fotomaç", u:"https://www.fotomac.com.tr/fenerbahce/2026/08/06/fenerbahceden-endrick-harekati-mourinhonun-transfer-karari"},
+  cNNTrkFrancoMastantuono: {l:"CNN Türk", u:"https://www.cnnturk.com/spor/futbol/fenerbahcenin-endrick-transferi-jose-mourinhonun-kararina-bagli-3450910"},
+  fotomaEduardoCamavinga: {l:"Fotomaç", u:"https://www.fotomac.com.tr/galatasaray/2026/07/23/galatasaraya-eduardo-camavingada-dev-rakip"}};
 
 const LINKMAP = {
   "Ibrahima Konaté": ["espn-konate", "eSPNIbrahimaKonat"],
@@ -124,16 +129,17 @@ const LINKMAP = {
   "Dani Carvajal": ["teamtalk-rmdone", "teamTalkDenzelDumfries"],
   "David Alaba": ["teamtalk-rmdone", "teamTalkDenzelDumfries"],
   "Vinícius Júnior": ["footballtransfers-vinijr", "yahooSportsVinciusJnior"],
-  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "forbesRodri"],
-  "Franco Mastantuono": ["fabrizioRomanoviaFootballTransfersRodri"],
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "forbesRodri", "fabrizioRomanoviaYahooSportsRodri"],
+  "Franco Mastantuono": ["fabrizioRomanoviaFootballTransfersRodri", "cNNTrkFrancoMastantuono"],
   "Gonzalo García": ["fabrizioRomanoviaFootballTransfersRodri"],
   "César Palacios": ["fabrizioRomanoviaFootballTransfersRodri"],
   "Yan Diomandé": ["oneFootballYanDiomand"],
   "Michael Olise": ["aggregatednewssearchMichaelOlise"],
-  "Endrick": ["aggregatednewssearchEndrick"],
+  "Endrick": ["aggregatednewssearchEndrick", "fotomaEndrick"],
   "Yan Diomande": ["eSPNYanDiomande", "theAthleticYanDiomande", "pAviaTheIrishNewsYanDiomande"],
   "Vinicius Junior": ["skySportsViniciusJunior"],
-  "Raul Asencio": ["tEAMtalkRaulAsencio"]};
+  "Raul Asencio": ["tEAMtalkRaulAsencio"],
+  "Eduardo Camavinga": ["fotomaEduardoCamavinga"]};
 const WL_LINKMAP = {
   "Vinícius Júnior": ["footballtransfers-vinijr"]
 };

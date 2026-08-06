@@ -871,7 +871,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"TSG Hoffenheim", pos:"ST", report:"2 Aug 2026", src:"Sport Bild / Sky Deutschland", tier:2, fee:"Below €35m valuation via contract clause", truth:70, prob:65, light:"g", trend:"up", note:"Reported imminent: Sport Bild says Leipzig could activate a release clause well below Asllani's freshly risen €35m market value, with the move possibly completing during Hoffenheim's Austrian training camp (2-9 Aug). Leipzig reportedly want to sell one of their current strikers first before finalising.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
+  {name:"Fisnik Asllani", sub:"23 · Kosovo · ST", club:"TSG Hoffenheim", pos:"Striker", report:"Leipzig have full agreement with Hoffenheim for the striker, with the medical held in Salzburg and a contract to 2031 lined up. Plettenberg and Hinze both call it done, with only the official announcement outstanding.", src:"Florian Plettenberg (Sky Deutschland), Philipp Hinze", tier:1, fee:"€25m", truth:97, prob:95, light:"g", trend:"up", note:"Treat as effectively done rather than confirmed until Leipzig announce. Fee reported at around €25m by German sources, though one report has floated €30m, so the final structure may include add-ons.", lastSeen:"2026-08-06T10:49:40Z", baseProb:95},
   {name:"Unnamed Sunderland academy forward", sub:"Youth player on Leipzig's scouting list", club:"Sunderland", pos:"ST", report:"RB Leipzig have placed an unnamed Sunderland youngster on their list of potential summer targets as they continue to mine the club's academy pipeline.", src:"Sunderland Echo", tier:3, fee:"Unknown", truth:40, prob:25, light:"o", trend:"flat", note:"Player not yet named publicly; speculative early-stage interest only.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
 
@@ -880,7 +880,7 @@ const OUTGOING = [
   {name:"Serhou Guirassy", sub:"24 · ST · Guinea", club:"AS Roma", pos:"ST", report:"31 Jul 2026", src:"Matteo Moretto / Fabrizio Romano (Sky Italia)", tier:2, fee:"~€30m", truth:58, prob:40, light:"y", trend:"up", note:"Romano and Moretto report Roma in advanced talks for the striker; nothing finalised yet but discussions have progressed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Antonio Nusa", sub:"21 · W · Norway", club:"AS Roma", pos:"W", report:"29 Jul 2026", src:"Sky (Germany/Italy)", tier:2, fee:"€60m demanded", truth:50, prob:30, light:"y", trend:"flat", note:"Roma opened talks after missing out on Crysencio Summerville (to Al-Hilal); Leipzig are demanding around €60m and have so far resisted a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Assan Ouedraogo", sub:"19 · MF · Germany", club:"Real Madrid / Man Utd / Chelsea", pos:"MF", report:"Jul 2026", src:"TeamTalk", tier:3, fee:"Undisclosed", truth:30, prob:12, light:"r", trend:"flat", note:"Real Madrid reportedly made informal contact with the midfielder's representatives, with Manchester United and Chelsea also credited with interest - an ongoing, lower-confidence speculation thread rather than a fresh breaking story.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
-  {name:"Yan Diomande", sub:"Ivorian winger wanted by Real Madrid", club:"Real Madrid", pos:"RW", report:"Real Madrid are pushing to complete a move worth around €120m for Diomande; Leipzig sporting director Marcel Schäfer has publicly denied any deal is finalised, though talks continue and the player was absent from the pre-season training camp.", src:"Fabrizio Romano / Yahoo Sports / Goal.com", tier:1, fee:"~€120m reported asking/offer", truth:70, prob:55, light:"g", trend:"flat", note:"Leipzig management has mocked reports of a completed deal, calling premature claims from 'self-proclaimed transfer experts' inaccurate, but confirm negotiations are ongoing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
+  {name:"Yan Diomande", sub:"19 · Ivory Coast · W", club:"Real Madrid", pos:"Winger", report:"Real Madrid have pushed hard for the teenage winger in a deal reported in the €130m to €140m range, with German outlets saying only the medical is left. Leipzig sporting boss Marcel Schaefer has publicly pumped the brakes, insisting there is no agreement yet, while Diomande has returned to training with the squad.", src:"Sky Deutschland / BILD, ESPN, Marcel Schaefer comments", tier:1, fee:"€130m-€140m", truth:88, prob:78, light:"g", trend:"up", note:"Genuine and live, but the numbers are moving and the club has denied a completed agreement, so the record-fee figures should be handled with care until Leipzig confirm. Watch for the medical before treating it as done.", lastSeen:"2026-08-06T10:49:40Z", baseProb:78}
 ];
 
 const RISERS = [
@@ -913,16 +913,18 @@ const HUB = {
   teamtalkOuedraogo: {l:"TeamTalk · Ouedraogo", u:"https://www.teamtalk.com/news/real-madrid-want-rb-leipzig-midfielder-assan-ouedraogo-the-new-jude-bellingham"},
   sunderlandEchoUnnamedSunderlandacademyforward: {l:"Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football"},
   yahooSportsviaFabrizioRomanoYanDiomande: {l:"Yahoo Sports (via Fabrizio Romano)", u:"https://sports.yahoo.com/"},
-  uNIIndiaPterGulcsi: {l:"UNI India", u:"https://www.uniindia.com/"}};
+  uNIIndiaPterGulcsi: {l:"UNI India", u:"https://www.uniindia.com/"},
+  florianPlettenbergSkyDeutschlandFisnikAsllani: {l:"Florian Plettenberg (Sky Deutschland)", u:"https://x.com/Plettigoal/status/2085109685687087521"},
+  florianPlettenbergSkyDeutschlandYanDiomande: {l:"Florian Plettenberg (Sky Deutschland)", u:"https://x.com/Plettigoal/status/2084290653286990000"}};
 
 const LINKMAP = {
   "Rocco Reitz": ["gfn","rbl"],
   "Yan Diomandé": ["aljazeera"],
-  "Fisnik Asllani": ["yahoo"],
+  "Fisnik Asllani": ["yahoo", "florianPlettenbergSkyDeutschlandFisnikAsllani"],
   "Antonio Nusa": ["getfootballnewsitalyNusa"],
   "Assan Ouedraogo": ["teamtalkOuedraogo"],
   "Unnamed Sunderland academy forward": ["sunderlandEchoUnnamedSunderlandacademyforward"],
-  "Yan Diomande": ["yahooSportsviaFabrizioRomanoYanDiomande"],
+  "Yan Diomande": ["yahooSportsviaFabrizioRomanoYanDiomande", "florianPlettenbergSkyDeutschlandYanDiomande"],
   "Ørjan Nyland": ["yahooSportsviaFabrizioRomanoYanDiomande"],
   "Péter Gulácsi": ["uNIIndiaPterGulcsi"]};
 const WL_LINKMAP = {

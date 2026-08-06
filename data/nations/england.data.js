@@ -6,10 +6,17 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 178
+  stories_count: 182
 };
 
 const TOP_STORIES = [  {
+    name: "Takehiro Tomiyasu",prob: 90, truth: 94, bullshit: false,
+    club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "in",
+    from: "Free agent", to: "Crystal Palace",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
     name: "Bruno Guimarães",prob: 88, truth: 92, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Newcastle United", to: "Arsenal",
@@ -34,8 +41,8 @@ const TOP_STORIES = [  {
     name: "Ousmane Diomande",prob: 80, truth: 90, bullshit: false,
     club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
     from: "Sporting CP", to: "Nottingham Forest",
-    tier: 1, coverage: 4, coverage_trend: 'flat',
-    value: "~£37m + £5m add-ons", updated: "2026-07-30T14:00:00Z", league: "Premier League"
+    tier: 1, coverage: 5, coverage_trend: 'up',
+    value: "£34m", updated: "2026-07-30T14:00:00Z", league: "Premier League"
   },
   {
     name: "Gerónimo Rulli",prob: 75, truth: 80, bullshit: false,
@@ -45,11 +52,32 @@ const TOP_STORIES = [  {
     value: "Undisclosed (~€5m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Savinho",prob: 65, truth: 75, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
+    name: "Matteo Ruggeri",prob: 72, truth: 80, bullshit: false,
+    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "in",
+    from: "Atlético Madrid", to: "Aston Villa",
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-06-06T12:00:00Z", league: "Premier League"
+  },
+  {
+    name: "Cristian Romero",prob: 62, truth: 80, bullshit: false,
+    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "out",
+    from: "Tottenham Hotspur", to: "Inter Milan (Barcelona lurking)",
+    tier: 1, coverage: 3, coverage_trend: 'up',
+    value: "≈€40m (£35m)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "Savinho",prob: 55, truth: 78, bullshit: false,
+    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
     from: "Manchester City", to: "Tottenham Hotspur",
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    value: "£60m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "Matias Soule",prob: 55, truth: 88, bullshit: false,
+    club_origin: "sunderland", club_display_name: "Sunderland", direction: "in",
+    from: "Roma", to: "Sunderland",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~£60m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+    value: "£30m", updated: "2026-07-31T09:00:00Z", league: "Premier League"
   },
   {
     name: "Aurélien Tchouameni",prob: 50, truth: 65, bullshit: false,
@@ -57,20 +85,6 @@ const TOP_STORIES = [  {
     from: "Real Madrid", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "~£70m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Bradley Barcola",prob: 45, truth: 80, bullshit: false,
-    club_origin: "liverpool", club_display_name: "Liverpool", direction: "in",
-    from: "Paris Saint-Germain", to: "Liverpool",
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    value: "c.£145m", updated: "2026-06-06T00:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Ayyoub Bouaddi",prob: 45, truth: 70, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "in",
-    from: "Lille", to: "Manchester City",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "€90-100m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
@@ -100,28 +114,14 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
-  {
-    name: "Carlos Baleba",prob: 35, truth: 55, bullshit: false,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
-    from: "Brighton", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~£70m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Lewis Hall",prob: 32, truth: 65, bullshit: false,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
-    from: "Newcastle United", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Not yet quantified - Newcastle expected to demand a premium", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
 ];
 
-const BY_LEAGUE = {"Premier League": 106, "Championship": 19, "League One": 53, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 110, "Championship": 19, "League One": 53, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 106}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 110}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 19}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:30:05.360773Z",
+  updated: "2026-08-06T10:49:42.908870Z",
   label: "Nation aggregation"
 };

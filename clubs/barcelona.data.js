@@ -49,7 +49,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Julián Álvarez", sub:"Striker, Argentine, 26", club:"Atlético Madrid", pos:"ST", report:"Barcelona are pursuing Álvarez as their primary striker target following Lewandowski's exit, with the player publicly stating his desire to join; Atlético are resisting and Barça's reported offers (~€100m) remain below Atlético's demands.", src:"Multiple (Goal.com, Yahoo Sports, La Gaceta)", tier:2, fee:"", truth:70, prob:35, light:"y", trend:"flat", note:"Álvarez's representatives were reported to be meeting with Barcelona to plan a joint strategy, and Barça were said to be preparing a new bid; deal complicated by Atlético's refusal to sell to a domestic rival and the window closing 1 Sept.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Eli Junior Kroupi", sub:"Forward, French, 20", club:"Bournemouth", pos:"ST", report:"Barcelona have identified the Bournemouth forward as a backup/Plan B striker target amid their pursuit of a marquee No.9, though he also draws interest from Manchester City, PSG, Arsenal and Tottenham.", src:"Multiple aggregated reports", tier:3, fee:"", truth:40, prob:15, light:"o", trend:"flat", note:"Reports indicate an injury setback has complicated this route, and heavy competition from richer Premier League/PSG suitors makes a Barça move unlikely without Álvarez falling through entirely.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Julian Alvarez", sub:"26 · Argentina · ST", club:"Atletico Madrid", pos:"ST", report:"Barcelona remain committed to Alvarez as their priority attacking signing, with Fabrizio Romano reporting that talks with Atletico Madrid are continuing and that sporting director Deco was due to meet the striker's agent in Madrid. Alvarez has made his desire to leave clear since the World Cup, but Atletico have not entertained any offer and have ordered him back for pre-season on 10 August. Barcelona have already sounded out alternative attacking targets in case the move collapses.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:88, prob:30, light:"y", trend:"flat", note:"The interest is real and consistently reported, but Barcelona have yet to table a meaningful bid and Atletico hold a contract to 2030. Treat the 10 August reporting date as the effective deadline on this one.", lastSeen:"2026-08-06T08:45:12Z", baseProb:30}
+  {name:"Julian Alvarez", sub:"26 · Argentina · ST", club:"Atletico Madrid", pos:"Striker", report:"Barcelona have not given up on the Argentina striker, who remains the priority for the number nine slot, but Romano says the club have quietly opened contact with alternative attacking targets in case the pursuit collapses.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:70, prob:33, light:"y", trend:"up", note:"Atletico have shown no willingness to sell and Barcelona's wage room is the obvious obstacle. The activation of back-up options suggests the club themselves rate this as difficult.", lastSeen:"2026-08-06T10:49:40Z", baseProb:33},
+  {name:"Rodri", sub:"30 · Spain · DM", club:"Manchester City", pos:"Defensive midfielder", report:"Barcelona are among the clubs monitoring the City midfielder. Romano reports that when formal club-to-club talks opened, City deliberately slowed negotiations in the belief that more bidders would join the race.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:62, prob:25, light:"o", trend:"flat", note:"Treat with caution. Romano frames Barcelona as interested rather than negotiating, and a fee at that level looks awkward against Barcelona's registration position.", lastSeen:"2026-08-06T10:49:40Z", baseProb:25}
 ];
 
 const OUTGOING = [
@@ -101,11 +102,12 @@ const HUB = {
   mundoDeportivoviaBarcaBlaugranesJoaoCancelo: {l:"Mundo Deportivo (via Barca Blaugranes)", u:"https://www.barcablaugranes.com/barcelona-news/128091/fc-barcelona-news-3-august-2026-ferran-torres-not-for-sale-joao-cancelo-signing-very-close"},
   mundoDeportivoviaBarcaBlaugranesFerranTorres: {l:"Mundo Deportivo (via Barca Blaugranes)", u:"https://www.barcablaugranes.com/barcelona-news/128222/fc-barcelona-news-5-august-2026-marc-andre-ter-stegen-joins-ajax-on-loan-barca-not-giving-up-on-julian-alvarez"},
   fCBarcelonaviaBarcaBlaugranesJesseBisiwu: {l:"FC Barcelona (via Barca Blaugranes)", u:"https://www.barcablaugranes.com/barcelona-news/127966/fc-barcelona-news-1-august-2026-barca-announce-jesse-bisiwu-signing-hamza-abdelkarim-scores-twice"},
-  fCBarcelonaofficialMarcAndreterStegen: {l:"FC Barcelona (official)", u:"https://www.fcbarcelona.com/en/news/4550198/ter-stegen-loaned-to-ajax"}};
+  fCBarcelonaofficialMarcAndreterStegen: {l:"FC Barcelona (official)", u:"https://www.fcbarcelona.com/en/news/4550198/ter-stegen-loaned-to-ajax"},
+  fabrizioRomanoXKarimAdeyemi: {l:"Fabrizio Romano (X)", u:"https://x.com/FabrizioRomano"}};
 
 const LINKMAP = {
   "Anthony Gordon": ["teamtalk-fcbdone"],
-  "Karim Adeyemi": ["teamtalk-fcbdone", "aPNewsGoalcomKarimAdeyemi"],
+  "Karim Adeyemi": ["teamtalk-fcbdone", "aPNewsGoalcomKarimAdeyemi", "fabrizioRomanoXKarimAdeyemi"],
   "Jesse Bisiwu": ["teamtalk-fcbdone", "fCBarcelonaviaBarcaBlaugranesJesseBisiwu"],
   "João Cancelo": ["beinsports-cancelo"],
   "Robert Lewandowski": ["espn-lewandowski", "beINSportsRobertLewandowski"],
@@ -116,9 +118,10 @@ const LINKMAP = {
   "Julián Álvarez": ["goalcomJulinlvarez"],
   "Eli Junior Kroupi": ["aggregatednewsreportsEliJuniorKroupi"],
   "Marcus Rashford": ["yahooSportsMarcusRashford"],
-  "Julian Alvarez": ["fabrizioRomanoviaYahooSportsJulianAlvarez"],
+  "Julian Alvarez": ["fabrizioRomanoviaYahooSportsJulianAlvarez", "fabrizioRomanoXKarimAdeyemi"],
   "Joao Cancelo": ["mundoDeportivoviaBarcaBlaugranesJoaoCancelo"],
-  "Marc-Andre ter Stegen": ["fCBarcelonaofficialMarcAndreterStegen"]};
+  "Marc-Andre ter Stegen": ["fCBarcelonaofficialMarcAndreterStegen"],
+  "Rodri": ["fabrizioRomanoXKarimAdeyemi"]};
 const WL_LINKMAP = {
   "Ferran Torres": ["barcablaugranes-3aug"]
 };

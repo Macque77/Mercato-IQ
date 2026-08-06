@@ -41,7 +41,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Glen Kamara", sub:"30 · CM · Finland", club:"QPR", pos:"CM", fee:"Loan with option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreed 2 Aug 2026 as the midfielder moves to the Championship."},
   {name:"Nordan Mukiele", sub:"Young attacker sent out for game time", club:"Montpellier HSC", pos:"RW", fee:"Loan", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan without a purchase option to Ligue 2 side Montpellier; made 8 Ligue 1 appearances last season."},
-  {name:"Mikayil Faye", sub:"Ex-Barcelona centre-back shipped out after failing to break through", club:"1. FC Nuremberg", pos:"CB", fee:"Loan", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned to the German second-division side after struggling in Ligue 1 since his 2024 arrival from Barcelona and an unsuccessful loan at Cremonese."}
+  {name:"Mikayil Faye", sub:"Ex-Barcelona centre-back shipped out after failing to break through", club:"1. FC Nuremberg", pos:"CB", fee:"Loan", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned to the German second-division side after struggling in Ligue 1 since his 2024 arrival from Barcelona and an unsuccessful loan at Cremonese."},
+  {name:"Jeremy Jacquet", sub:"21 · France · CB", club:"Liverpool", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure logged in French records and reported as a move to Liverpool that brought Rennes a significant fee. No figure has been published by either club, so the fee should be treated as unconfirmed."}
 ];
 
 const INCOMING = [
@@ -86,11 +87,13 @@ const HUB = {
   leParisienEliezerMayenda: {l:"Le Parisien", u:"https://www.leparisien.fr/sports/football/ligue-1/"},
   leTelegrammeBryanReynolds: {l:"Le Telegramme", u:"https://www.letelegramme.fr/sport/football/ligue-1/stade-rennais/"},
   leParisienAdrienThomasson: {l:"Le Parisien", u:"https://www.leparisien.fr/sports/football/ligue-1/mercato-rennes-le-lensois-adrien-thomasson-a-dit-oui-au-stade-rennais-14-05-2026-JWFNX7MIWVCOZBR4FBP5DT7E6I.php"},
-  maxifootNordanMukiele: {l:"Maxifoot", u:"https://news.maxifoot.fr/rennes/mukiele-prete-a-montpellier-officiel-foot-461083.htm"}};
+  maxifootNordanMukiele: {l:"Maxifoot", u:"https://news.maxifoot.fr/rennes/mukiele-prete-a-montpellier-officiel-foot-461083.htm"},
+  aFPviaFrance24EliezerMayenda: {l:"AFP via France 24", u:"https://www.france24.com/en/live-news/20260706-rennes-buy-young-striker-mayenda-from-sunderland"},
+  footMercatoJeremyJacquet: {l:"Foot Mercato", u:"https://www.footmercato.net/club/stade-rennais-fc/tableau/"}};
 
 const LINKMAP = {
   "Charlie Cresswell": ["gffn-rennes", "leTelegrammeMaxifootCharlieCresswell"],
-  "Eliezer Mayenda": ["gffn-rennes", "leParisienEliezerMayenda"],
+  "Eliezer Mayenda": ["gffn-rennes", "leParisienEliezerMayenda", "aFPviaFrance24EliezerMayenda"],
   "Gonçalo Oliveira": ["gffn-rennes"],
   "Adrien Thomasson": ["gffn-rennes", "leParisienAdrienThomasson"],
   "Glen Kamara": ["gffn-rennes"],
@@ -102,7 +105,8 @@ const LINKMAP = {
   "Esteban Lepaul": ["tOPMercatoEstebanLepaul"],
   "Bryan Reynolds": ["leTelegrammeBryanReynolds"],
   "Nordan Mukiele": ["maxifootNordanMukiele"],
-  "Mikayil Faye": ["ouestFranceYersonMosquera"]};
+  "Mikayil Faye": ["ouestFranceYersonMosquera"],
+  "Jeremy Jacquet": ["footMercatoJeremyJacquet"]};
 const WL_LINKMAP = {
   "Martin Terrier": ["gffn-rennes"]
 };

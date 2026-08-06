@@ -890,7 +890,8 @@ const CONFIRMED_OUT = [
   {name:"Arijanet Muric", sub:"27 · GK · Kosovo", club:"Sassuolo", pos:"GK", fee:"£6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ends his Ipswich spell (including a prior loan at Sassuolo) with a permanent move back to Serie A."},
   {name:"Sammie Szmodics", sub:"30 · FW · Republic of Ireland", club:"Derby County", pos:"FW", fee:"Season-long loan with mandatory obligation to buy (£5.4m if Derby promoted, £2.7m otherwise)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returns to a club he previously enjoyed a loan spell at; converts to a permanent Derby deal at season's end."},
   {name:"Conor Chaplin", sub:"27 · AM · England", club:"Released", pos:"MF", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released as Ipswich trims its promotion-winning Championship squad for the step back up."},
-  {name:"Conor Townsend", sub:"33 · LB · England", club:"Released", pos:"DF", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back released after his contract expired."}
+  {name:"Conor Townsend", sub:"33 · LB · England", club:"Released", pos:"DF", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back released after his contract expired."},
+  {name:"Sam Szmodics", sub:"30 · Republic of Ireland · AM", club:"Derby County", pos:"AM/FW", fee:"Loan with obligation to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported as a done deal by the club's local press, with the attacker rejoining Derby. Structured as a loan carrying an obligation, so the permanent element lands next summer."}
 ];
 
 const INCOMING = [
@@ -904,7 +905,8 @@ const INCOMING = [
    note:"Framing row from the positions board, not a named rumour: defensive solidity at the step up is flagged as a core requirement after the 2024/25 drop. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Full-back: PL-level quality and pace (framing)", sub:"Position need, no named target yet", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:25, light:'o', trend:'flat',
    note:"Framing row from the positions board, not a named rumour: Premier League-level quality and pace at full-back is listed among the positions most likely strengthened. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Sasa Lukic", sub:"29 · CM · Serbia", club:"Fulham", pos:"MF", report:"Sky Sports News: Ipswich are targeting a second raid on Fulham after Issa Diop, with Gary O'Neil keen to add a defensive-minded midfielder.", src:"Sky Sports News", tier:2, fee:"Undisclosed (12 months left on contract)", truth:55, prob:25, light:"o", trend:"flat", note:"Early stage; no club-to-club contact confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+  {name:"Sasa Lukic", sub:"29 · Serbia · CM", club:"Fulham", pos:"CM", report:"The Athletic report that Lukic looks destined to leave for Ipswich, with Fulham working on a deal for Rennes midfielder Jordan James that would free him up. The 62-cap Serbia international has a year left at Craven Cottage plus a 12-month option and fits the experienced Premier League profile Ipswich have chased all summer.", src:"The Athletic, via East Anglian Daily Times", tier:2, fee:"Undisclosed", truth:80, prob:55, light:"g", trend:"up", note:"The Athletic's wording is confident, but the same local outlet also reported no movement on the Fulham side of the deal, so the timeline is looser than the headlines suggest.", lastSeen:"2026-08-06T10:49:40Z", baseProb:55},
+  {name:"Julio Enciso", sub:"22 · Paraguay · AM", club:"Strasbourg", pos:"AM/W", report:"Ipswich are confident of re-signing the Paraguayan permanently and are in talks with Strasbourg owners BlueCo. Enciso is understood to be keen on a Portman Road return to work again with Gary O'Neil, who coached him in Alsace last season, and any deal would likely beat the club record of £26m paid for Emersonn.", src:"East Anglian Daily Times / Ipswich Star, Sky Sports", tier:2, fee:"Club record, £26m+", truth:85, prob:65, light:"g", trend:"flat", note:"The local reporting is well briefed, but a record fee for a BlueCo asset who scored 12 and assisted nine last season is not a formality.", lastSeen:"2026-08-06T10:49:40Z", baseProb:65}
 ];
 
 const OUTGOING = [
@@ -961,7 +963,10 @@ const HUB = {
   sportsMoleChubaAkpom: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/ipswich-town/transfer-talk/feature/ipswich-summer-transfers-all-confirmed-ins-and-outs-for-2026_599297.html"},
   tWTDcoukIssaDiop: {l:"TWTD.co.uk", u:"https://www.twtd.co.uk/ipswich-town-news/52375/town-confirm-diop-signing"},
   suffolkNewsSammieSzmodics: {l:"Suffolk News", u:"https://www.suffolknews.co.uk/ipswich/sport/forward-seals-move-away-from-portman-road-9476664/"},
-  pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"}};
+  pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"},
+  eastAnglianDailyTimesJulioEnciso: {l:"East Anglian Daily Times", u:"https://www.eadt.co.uk/sport/26428973.ipswich-town---transfer-update-julio-enciso-sasa-lukic/"},
+  eastAnglianDailyTimesSasaLukic: {l:"East Anglian Daily Times", u:"https://www.eadt.co.uk/sport/26428485.ipswich-town---blues-expected-sign-sasa-lukic-julio-encio/"},
+  ipswichStarEastAnglianDailyTimesSamSzmodics: {l:"Ipswich Star / East Anglian Daily Times", u:"https://www.eadt.co.uk/sport/ipswich-town/"}};
 const LINKMAP = {
   "Tim Iroegbunam": ["twtd","eadt"],
   "PL-ready survival signings (framing)": ["eadt","twtd"],
@@ -970,7 +975,7 @@ const LINKMAP = {
   "Full-back: PL-level quality and pace (framing)": ["eadt"],
   "Manager: McKenna (risk)": ["sky","talksport","bbc"],
   "Fringe & squad trim": ["twtd","eadt"],
-  "Sasa Lukic": ["suffolkNewsSkySportsNewsSasaLukic"],
+  "Sasa Lukic": ["suffolkNewsSkySportsNewsSasaLukic", "eastAnglianDailyTimesSasaLukic"],
   "Chuba Akpom": ["sportsMoleChubaAkpom"],
   "Cedric Kipre": ["sportsMoleChubaAkpom"],
   "Issa Diop": ["tWTDcoukIssaDiop"],
@@ -978,7 +983,9 @@ const LINKMAP = {
   "Sammie Szmodics": ["suffolkNewsSammieSzmodics"],
   "Conor Chaplin": ["sportsMoleChubaAkpom"],
   "Conor Townsend": ["sportsMoleChubaAkpom"],
-  "Florentino Luís": ["pAYahooSportFlorentinoLus"]};
+  "Florentino Luís": ["pAYahooSportFlorentinoLus"],
+  "Julio Enciso": ["eastAnglianDailyTimesJulioEnciso"],
+  "Sam Szmodics": ["ipswichStarEastAnglianDailyTimesSamSzmodics"]};
 const WL_LINKMAP = {
   "Kieran McKenna":"sky","Tim Iroegbunam":"twtd",
 };

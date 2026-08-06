@@ -110,8 +110,10 @@ const OUTGOING = [
   {name:"High earners", sub:"Wage & ratio relief", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Expect some bigger names to move on as Alonso reshapes the side and BlueCo manage the cost ratio.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Mykhailo Mudryk", sub:"Loan exit being planned after doping ban expired", club:"Coventry City / Strasbourg (multiple suitors)", pos:"FW", report:"Now free to play again after his doping suspension, Chelsea are weighing a loan to help restore his fitness and value; Coventry are among several Premier League and European clubs registering interest, with Strasbourg also in the mix.", src:"Ben Jacobs / Ahad Shaukat", tier:1, fee:"Loan", truth:65, prob:40, light:"y", trend:"flat", note:"Xabi Alonso to assess him in pre-season before a final decision on his future", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Pedro Neto", sub:"26 · Portugal · W", club:"Manchester City", pos:"Winger", report:"Manchester City have made a formal approach for the Portugal winger, but Chelsea's position is that they want to keep him at Stamford Bridge.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:85, prob:25, light:"o", trend:"flat", note:"An approach is not a bid. Romano frames Chelsea as resistant, so treat any move as unlikely as things stand.", lastSeen:"2026-08-05T22:44:07Z", baseProb:25},
-  {name:"Enzo Fernandez", sub:"25 · Argentina · CM", club:"Undecided", pos:"Central midfield", report:"Chelsea are due to meet the midfielder's agent to discuss his future, with Real Madrid said to be sticking to their decision not to pursue him.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:78, prob:20, light:"o", trend:"flat", note:"Weak on specifics. This is a scheduled meeting rather than a live negotiation, and no concrete suitor has been established.", lastSeen:"2026-08-05T22:44:07Z", baseProb:20}
+  {name:"Pedro Neto", sub:"26 · Portugal · W", club:"Manchester City", pos:"Winger", report:"Manchester City have made a formal approach for the Portugal winger, but Chelsea's position is that they want to keep him at Stamford Bridge.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:85, prob:25, light:"o", trend:"flat", note:"An approach is not a bid. Romano frames Chelsea as resistant, so treat any move as unlikely as things stand.", lastSeen:"2026-08-05T22:44:07Z", baseProb:25}
+];
+const DEAD = [
+  {name:"Enzo Fernandez", sub:"25 · Argentina · CM", club:"No agreed destination", pos:"Central midfielder", report:"Fabrizio Romano says Chelsea and Fernandez's camp are holding fresh meetings this week to settle his future, with the player having pushed to leave all summer. Romano is clear that Real Madrid are no longer involved, so any exit would need a new buyer at short notice.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:88, prob:40, light:"y", trend:"up", note:"The desire to leave is well sourced, the destination is not. With no club in concrete talks and the window closing, a stay is very possible.", lastSeen:"2026-08-06T10:49:40Z", baseProb:40, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:49:41Z"}
 ];
 
 const RISERS = [
@@ -179,7 +181,9 @@ const HUB = {
   theAthleticPepChavarria: {l:"The Athletic", u:"https://www.theathletic.com/football/"},
   fabrizioRomanoviaFootball365PedroNeto: {l:"Fabrizio Romano, via Football365", u:"https://www.football365.com/news/chelsea-romano-rates-chances-neto-man-city-maresca-transfer"},
   fabrizioRomanoviaFootball365EnzoFernandez: {l:"Fabrizio Romano, via Football365", u:"https://www.football365.com/news/chelsea-enzo-fernandez-future-fabrizio-romano-update"},
-  eSPNPAcopyPepChavarria: {l:"ESPN (PA copy)", u:"https://www.espn.com/soccer/story/_/id/49535743/chelsea-close-163m-pep-chavarria-deal-rayo-vallecano"}};
+  eSPNPAcopyPepChavarria: {l:"ESPN (PA copy)", u:"https://www.espn.com/soccer/story/_/id/49535743/chelsea-close-163m-pep-chavarria-deal-rayo-vallecano"},
+  fabrizioRomanocolumnFootballTransfersEnzoFernandez: {l:"Fabrizio Romano column, FootballTransfers", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/fabrizio-romano-bruno-guimaraes-enzo-fernandez-mykhailo-mudryk"},
+  chelseaFCofficialsiteValentinBarco: {l:"Chelsea FC official site", u:"https://www.chelseafc.com/en/news/article/valentin-barco-signs-for-chelsea"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -196,14 +200,14 @@ const LINKMAP = {
   "Morgan Rogers": ["teamTalkMorganRogers"],
   "Maxence Lacroix": ["teamTalkMorganRogers"],
   "Marco Palestra": ["chelseaFCofficialGeovanyQuenda"],
-  "Valentin Barco": ["teamTalkMorganRogers"],
+  "Valentin Barco": ["teamTalkMorganRogers", "chelseaFCofficialsiteValentinBarco"],
   "Marc Cucurella": ["teamTalkMorganRogers", "eSPNPAcopyPepChavarria"],
   "Andrey Santos": ["teamTalkMorganRogers"],
   "Tyrique George": ["yahooSportsTyriqueGeorge"],
   "Jordan Henderson": ["skySportsJordanHenderson", "eSPNPAcopyPepChavarria"],
   "Pep Chavarria": ["pAIrishNewsPepChavarra", "theAthleticPepChavarria", "eSPNPAcopyPepChavarria"],
   "Pedro Neto": ["fabrizioRomanoviaFootball365PedroNeto"],
-  "Enzo Fernandez": ["fabrizioRomanoviaFootball365EnzoFernandez"]};
+  "Enzo Fernandez": ["fabrizioRomanoviaFootball365EnzoFernandez", "fabrizioRomanocolumnFootballTransfersEnzoFernandez"]};
 const WL_LINKMAP = {
   "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };

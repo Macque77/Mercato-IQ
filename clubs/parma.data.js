@@ -43,7 +43,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"El Bilal Touré", sub:"24 · ST · Mali", club:"Atalanta", pos:"ST", report:"2 Aug 2026", src:"Gianluca Di Marzio", tier:2, fee:"Loan with conditional mandatory purchase", truth:55, prob:50, light:"y", trend:"flat", note:"Di Marzio describes the loan as in its closing stages.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+  {name:"El Bilal Touré", sub:"24 · Mali · ST", club:"Atalanta", pos:"ST", report:"Parma have accelerated for the Mali striker and are close to terms with Atalanta on a loan with an option to buy, with the player looking for a relaunch after a stop-start spell in Bergamo.", src:"Forza Parma / FantaMaster", tier:3, fee:"Loan with option to buy", truth:70, prob:62, light:"g", trend:"up", note:"Sourced so far only to Parma-facing Italian sites, with no tier-one confirmation from Di Marzio, Schira or Romano. Credible given Cuesta's need for a centre-forward, but unverified.", lastSeen:"2026-08-06T10:49:40Z", baseProb:62},
   {name:"Matteo Cancellieri", sub:"Winger, Italian", club:"Lazio", pos:"RW", report:"Parma are tracking Cancellieri, though Fiorentina and Torino are also credited with monitoring the player.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Three-way competition reported for the same target.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Bjerkebo", sub:"Forward, Swedish", club:"Swedish club", pos:"ST", report:"Parma are said to be attracted by Bjerkebo's scoring form (9 goals in 10 appearances) as a squad depth option.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Very early-stage scouting interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Gabriel Strefezza", sub:"Winger, Italian-Brazilian", club:"Undisclosed (returning to Italy)", pos:"RW", report:"Contacts are ongoing to bring Strefezza back to Parma, with a multi-year contract reportedly on the table.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"flat", note:"Described locally as a player Parma see as a boost to the attack.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
@@ -52,16 +52,14 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Zion Suzuki", sub:"24 · GK · Japan", club:"Multiple (Juventus, Aston Villa, Leeds, Newcastle linked)", pos:"GK", report:"1-3 Jul 2026", src:"Football Italia", tier:2, fee:"~€30m (asking price)", truth:55, prob:30, light:"y", trend:"up", note:"Genuinely for sale with several Premier League and Serie A clubs credited with interest, though Daffara's arrival suggests Parma are already planning for his exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Zion Suzuki", sub:"23 · Japan · GK", club:"Paris Saint-Germain", pos:"GK", report:"The World Cup keeper is on his way out of the Tardini two years after arriving. PSG have lodged a formal offer and moved clear of Juventus, and Parma, who value him at around €30m and are contracted to 2029, are willing to talk.", src:"Fabrizio Romano / Gianluca Di Marzio", tier:1, fee:"€28m to €33m with bonuses", truth:92, prob:74, light:"g", trend:"up", note:"Parma have shown with Leoni and Bonny that they will sell at the right number, so the only real question is the fee. Juventus are not yet formally out of it.", lastSeen:"2026-08-06T10:49:40Z", baseProb:74},
   {name:"Mateo Pellegrino", sub:"24 · ST · Argentina", club:"Juventus (rumoured)", pos:"ST", report:"6-12 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Juventus reportedly 'booked' the striker as a backup target after their opening offer was rejected by Parma; not an advanced negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Mandela Keita", sub:"Midfielder", club:"Atalanta", pos:"CM", report:"Atalanta have entered the race for Keita, with Parma said to be holding out for a minimum of €20m.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Player has publicly said he remains focused on Parma despite the transfer speculation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Riccardo Pellegrino", sub:"Midfielder, Italian", club:"Multiple clubs", pos:"CM", report:"Sporting director Cherubini confirmed multiple clubs have shown interest in Pellegrino this window.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Direct quote from club sporting director lends some credibility.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Fabio Troilo", sub:"Defender", club:"Fulham", pos:"CB", report:"Fulham are reported to be preparing an offer worth around €20m to sign the Parma defender.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Reported figure is high relative to Parma's usual sales; treat with some caution pending further corroboration.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Corrent", sub:"Midfielder/Defender", club:"Carrarese", pos:"CDM", report:"Carrarese are interested in taking Corrent on a Serie B move.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"flat", note:"Minor squad-depth departure rumour.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
 ];
-const DEAD = [
-  {name:"Zion Suzuki", club:"Multiple", pos:"GK", dir:"out", age:"~1 month", tier:2, note:"For sale at around €30m with several Premier League and Serie A suitors credited.", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
-];
+const DEAD = [];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Giovanni Daffara and Franco Carboni arrive</b>: goalkeeper and full-back reinforcements as Parma rebuild after Bonny's exit."}
@@ -89,15 +87,17 @@ const HUB = {
   gianlucaDiMarzioElBilalTour: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"},
   gianlucaDiMarzioElBilalTour1: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com"},
   tuttoMercatoWebMatteoCancellieri: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/parma"},
-  parmaPress24Diallo: {l:"ParmaPress24", u:"https://www.parmapress24.it/"}};
+  parmaPress24Diallo: {l:"ParmaPress24", u:"https://www.parmapress24.it/"},
+  forzaParmaElBilalTour: {l:"Forza Parma", u:"https://www.forzaparma.it/category/news/calciomercato/"},
+  gianlucadimarziocomZionSuzuki: {l:"gianlucadimarzio.com", u:"https://www.gianlucadimarzio.com/calciomercato/psg-juventus-suzuki-offerta-28-bonus-parma-495439"}};
 
 const LINKMAP = {
   "Giovanni Daffara": ["footballItalia"],
   "Franco Ezequiel Carboni": ["footballItalia"],
   "Ange-Yoan Bonny": ["footballItalia"],
-  "Zion Suzuki": ["footballItalia", "gianlucaDiMarzioElBilalTour1"],
+  "Zion Suzuki": ["footballItalia", "gianlucaDiMarzioElBilalTour1", "gianlucadimarziocomZionSuzuki"],
   "Mateo Pellegrino": ["footballItalia"],
-  "El Bilal Touré": ["gianlucaDiMarzioElBilalTour", "gianlucaDiMarzioElBilalTour1"],
+  "El Bilal Touré": ["gianlucaDiMarzioElBilalTour", "gianlucaDiMarzioElBilalTour1", "forzaParmaElBilalTour"],
   "Matteo Cancellieri": ["tuttoMercatoWebMatteoCancellieri"],
   "Bjerkebo": ["tuttoMercatoWebMatteoCancellieri"],
   "Gabriel Strefezza": ["tuttoMercatoWebMatteoCancellieri"],

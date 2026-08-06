@@ -37,7 +37,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Josh Maja", sub:"27 · ST · Nigeria", to:"free transfer from West Bromwich Albion", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 Aug 2026, a free-agent striker signing to lead the line."},
   {name:"Amir Richardson", sub:"23 · MF · Morocco", to:"loan return from Fiorentina", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 18 Jul 2026 - the academy product returns on loan to the club that developed him."},
-  {name:"Kaito Mizuta", sub:"Attacking midfielder, first summer signing", club:"Undisclosed previous club", pos:"CAM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a 3-year deal, officialised as Le Havre's first recruit of the close season."}
+  {name:"Kaito Mizuta", sub:"Attacking midfielder, first summer signing", club:"Undisclosed previous club", pos:"CAM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a 3-year deal, officialised as Le Havre's first recruit of the close season."},
+  {name:"Junior Mwanga", sub:"23 · France · DM", club:"Strasbourg", pos:"DM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported as officially completed, with French outlets talking up a long contract. Only secondary French outlets have carried the detail so far, so treat the terms as unconfirmed."}
 ];
 
 const CONFIRMED_OUT = [
@@ -48,7 +49,7 @@ const INCOMING = [];
 
 const OUTGOING = [
   {name:"Timothée Pembélé", sub:"24 · LB · France", club:"Sunderland", pos:"LB", report:"15 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Sunderland are reported to be set to complete a permanent deal for the defender after his loan spell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:52},
-  {name:"Yanis Zouaoui", sub:"Left-back, 28, contract through June 2027", club:"FC Nantes", pos:"LB", report:"Le Havre and Nantes are in advanced talks over the sale of left-back Yanis Zouaoui, who would become Nantes' sixth summer signing.", src:"L'Equipe", tier:1, fee:"Undisclosed", truth:80, prob:75, light:"g", trend:"flat", note:"Described as 'very advanced' negotiations; not yet officially completed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:75}
+  {name:"Yanis Zouaoui", sub:"28 · Algeria · LB", club:"Nantes", pos:"LB", report:"Nantes are on the brink of a full agreement with Le Havre for the left-back, who has a year left on his contract in Normandy. Talks are described as very advanced and the Canaries do not intend to stop there.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:80, prob:70, light:"g", trend:"down", note:"Originally an L'Equipe story since relayed by several French outlets. The fee has not been reported.", lastSeen:"2026-08-06T10:49:40Z", baseProb:70}
 ];
 
 const RISERS = [
@@ -75,15 +76,18 @@ const HUB = {
   "gffn-lehavre": {l:"Get French Football News · Le Havre", u:"https://www.getfootballnewsfrance.com/tag/le-havre/"},
   lEquipeYanisZouaoui: {l:"L'Equipe", u:"https://www.lequipe.fr"},
   footNationalKaitoMizuta: {l:"Foot National", u:"https://www.msn.com/fr-fr/sport/football/le-havre-tient-sa-premi%C3%A8re-recrue-de-l-%C3%A9t%C3%A9/ar-AA27pbz8"},
-  lEquipeJoshMaja: {l:"L'Equipe", u:"https://www.lequipe.fr/Football/Actualites/Libre-de-tout-contrat-josh-maja-revient-en-ligue-1-et-rejoint-le-havre/1708263"}};
+  lEquipeJoshMaja: {l:"L'Equipe", u:"https://www.lequipe.fr/Football/Actualites/Libre-de-tout-contrat-josh-maja-revient-en-ligue-1-et-rejoint-le-havre/1708263"},
+  lEquipeYanisZouaoui1: {l:"L'Equipe", u:"https://www.lequipe.fr/Football/"},
+  mediaSportifJuniorMwanga: {l:"MediaSportif", u:"https://mediasportif.fr/"}};
 
 const LINKMAP = {
   "Josh Maja": ["gffn-lehavre", "lEquipeJoshMaja"],
   "Amir Richardson": ["gffn-lehavre"],
   "Arouna Sangante": ["gffn-lehavre"],
   "Timothée Pembélé": ["gffn-lehavre"],
-  "Yanis Zouaoui": ["lEquipeYanisZouaoui"],
-  "Kaito Mizuta": ["footNationalKaitoMizuta"]};
+  "Yanis Zouaoui": ["lEquipeYanisZouaoui", "lEquipeYanisZouaoui1"],
+  "Kaito Mizuta": ["footNationalKaitoMizuta"],
+  "Junior Mwanga": ["mediaSportifJuniorMwanga"]};
 const WL_LINKMAP = {
   "Timothée Pembélé": ["gffn-lehavre"]
 };

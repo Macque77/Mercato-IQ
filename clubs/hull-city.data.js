@@ -80,7 +80,8 @@ const INCOMING = [
   {name:"Goalkeeper / depth", sub:"Framing · position need, no named target", club:"Market", pos:"GK", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:28, light:'o', trend:'flat',
    note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
   {name:"Konstantinos Tzolakis", sub:"22 · GK · Greece", club:"Olympiacos", pos:"GK", report:"Owner Acun Ilicali has publicly confirmed personal terms are agreed, but the club-to-club deal with Olympiacos is taking longer than hoped and has hit a late snag.", src:"Yorkshire/multiple + owner confirmation", tier:2, fee:"~€20m", truth:70, prob:55, light:"g", trend:"flat", note:"Would be a club-record fee for Hull; Ilicali has confirmed the pursuit publicly despite the delay.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Sorba Thomas", sub:"26 · W · Wales", club:"Nantes (on loan from Huddersfield Town)", pos:"FW", report:"HullLive/BBC Sport name Thomas as Hull's 'number one' target; he was left out of Nantes' squad amid ongoing loan-recall talks, with Huddersfield holding his registration.", src:"HullLive / BBC Sport", tier:2, fee:"Undisclosed (loan-recall / fee to Huddersfield)", truth:60, prob:40, light:"y", trend:"flat", note:"Later reports describe 'optimism' over reaching agreement despite Nantes' resistance to cutting the loan short.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Sorba Thomas", sub:"26 · W · Wales", club:"Nantes (on loan from Huddersfield Town)", pos:"FW", report:"HullLive/BBC Sport name Thomas as Hull's 'number one' target; he was left out of Nantes' squad amid ongoing loan-recall talks, with Huddersfield holding his registration.", src:"HullLive / BBC Sport", tier:2, fee:"Undisclosed (loan-recall / fee to Huddersfield)", truth:60, prob:40, light:"y", trend:"flat", note:"Later reports describe 'optimism' over reaching agreement despite Nantes' resistance to cutting the loan short.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Leon Bailey", sub:"28 · Jamaica · RW", club:"Aston Villa", pos:"RW", report:"Owner Acun Ilicali has said the permanent move is due to be completed shortly, with Bailey set for a long-term contract at the newly promoted club. Hull explored a loan first but Villa pushed for a sale, and the winger stayed in England rather than travel on Villa's pre-season tour of Asia.", src:"John Townley (BirminghamLive), Sky Sports News", tier:2, fee:"Undisclosed", truth:92, prob:88, light:"g", trend:"flat", note:"This is owner talk relayed by reporters rather than a club announcement. Neither Hull nor Villa had confirmed an agreement at the time of the last credible update, so treat it as imminent, not done.", lastSeen:"2026-08-06T10:49:40Z", baseProb:88}
 ];
 
 const OUTGOING = [
@@ -139,7 +140,8 @@ const HUB = {
   theYorkshirePostHidemasaMorita: {l:"The Yorkshire Post", u:"https://www.yorkshirepost.co.uk/sport/football/hull-city-transfer-latest-japanese-international-midfielder-becomes-fourth-summer-signing-8821096"},
   bBCSportOliMcBurnie: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/c87ejdnxqrlo"},
   bBCSportSemiAjayi: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/cly2z964jy0o"},
-  sportsMoleAkinFamewo: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/hull-city/transfer-talk/feature/hull-summer-transfers-all-confirmed-ins-and-outs-for-2026_599295.html"}};
+  sportsMoleAkinFamewo: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/hull-city/transfer-talk/feature/hull-summer-transfers-all-confirmed-ins-and-outs-for-2026_599295.html"},
+  johnTownleyBirminghamLiveXLeonBailey: {l:"John Townley, BirminghamLive (X)", u:"https://x.com/johntownley11/status/2082836990739779698"}};
 const LINKMAP = {
   "PL-experienced rebuild": ["hullLive","bbcHull","sky"],
   "Goalscorer": ["hullLive","bbcGossip"],
@@ -158,7 +160,8 @@ const LINKMAP = {
   "Akin Famewo": ["sportsMoleAkinFamewo"],
   "Ivor Pandur": ["skySportsJackButland"],
   "Kasey Palmer": ["sportsMoleAkinFamewo"],
-  "Kyle Joseph": ["sportsMoleAkinFamewo"]};
+  "Kyle Joseph": ["sportsMoleAkinFamewo"],
+  "Leon Bailey": ["johnTownleyBirminghamLiveXLeonBailey"]};
 const WL_LINKMAP = {
   "PL-ready targets":"hullLive","Squad-trim sales":"official",
 };

@@ -865,7 +865,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Hidemasa Morita successor / Kamada", sub:"29 · CM · Japan", club:"Crystal Palace / free agent market", pos:"CM", report:"Jun 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"flat", note:"Real Sociedad credited with monitoring Daichi Kamada as a potential midfield addition; no advanced negotiations reported.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Hidemasa Morita successor / Kamada", sub:"29 · CM · Japan", club:"Crystal Palace / free agent market", pos:"CM", report:"Jun 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:20, light:"o", trend:"flat", note:"Real Sociedad credited with monitoring Daichi Kamada as a potential midfield addition; no advanced negotiations reported.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Nathan Zézé", sub:"21 · France · CB", club:"Nantes", pos:"Centre-back", report:"A second starting centre-back is the priority for Pellegrino Matarazzo and Zézé has emerged as a target as sporting director Erik Bretos works through his options.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"Nothing is close: El Desmarque describes a market moving slowly with no operation yet crystallised, and Ladislav Krejcí is listed alongside Zézé as an alternative. Treat as a shortlist name, not a deal.", lastSeen:"2026-08-06T10:49:40Z", baseProb:30}
 ];
 
 const OUTGOING = [
@@ -873,11 +874,10 @@ const OUTGOING = [
   {name:"Álex Remiro", sub:"31 · GK · Spain", club:"Aston Villa (interest)", pos:"GK", report:"Jun 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:30, prob:15, light:"o", trend:"flat", note:"Background Premier League interest reported; nothing advanced.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
   {name:"Alex Remiro", sub:"GK, Spain, 31", club:"Barcelona", pos:"GK", report:"Real Sociedad are ready to sell Remiro for 8-10m euros this summer, with Barcelona keen to add competition for Joan Garcia, though any Barca move depends on first offloading Ter Stegen and Inaki Pena.", src:"Mundo Deportivo", tier:2, fee:"€8-10m", truth:70, prob:40, light:"y", trend:"flat", note:"Newcastle, Aston Villa and Inter Milan are also credited with interest. Remiro is prioritising his World Cup place before deciding on his future.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Jon Martin", sub:"CB, Spain, 20", club:"Real Madrid / Barcelona", pos:"CB", report:"Real Madrid and Barcelona have been informed Jon Martin's release clause stands at 50m euros, with Deco said to have met the defender's agent in April, though the player has publicly ruled out leaving.", src:"Diario AS", tier:2, fee:"€50m release clause", truth:65, prob:20, light:"o", trend:"flat", note:"Martin: \"My plan is what I've already said: to focus on Real Sociedad.\" Spain U21 international, key part of the club's Copa del Rey win.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Mikel Oyarzabal", sub:"Forward, Spain, captain", club:"Barcelona", pos:"ST", report:"Barcelona speculation resurfaced around the Real Sociedad captain, who publicly shut it down saying he is 'where he wants to be'.", src:"Football Espana", tier:2, fee:"", truth:55, prob:10, light:"r", trend:"flat", note:"Oyarzabal also stonewalled earlier Barcelona attempts (reported 1 May 2026) to sign three Real Sociedad players at once.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
+  {name:"Mikel Oyarzabal", sub:"Forward, Spain, captain", club:"Barcelona", pos:"ST", report:"Barcelona speculation resurfaced around the Real Sociedad captain, who publicly shut it down saying he is 'where he wants to be'.", src:"Football Espana", tier:2, fee:"", truth:55, prob:10, light:"r", trend:"flat", note:"Oyarzabal also stonewalled earlier Barcelona attempts (reported 1 May 2026) to sign three Real Sociedad players at once.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10},
+  {name:"Javi López", sub:"Spain · LB", club:"Rayo Vallecano", pos:"Left-back", report:"The left-back is now the man pointed towards the exit, with Rayo Vallecano joining the list of suitors after a productive loan at Oviedo.", src:"Noticias de Gipuzkoa, via El Desmarque", tier:2, fee:"Undisclosed", truth:65, prob:45, light:"y", trend:"flat", note:"Regional Basque reporting rather than a tier-one break, and the Sociedad exit plan has already been rewritten once this window.", lastSeen:"2026-08-06T10:49:40Z", baseProb:45}
 ];
-const DEAD = [
-  {name:"Arsen Zakharyan", club:"Real Sociedad", pos:"AM", dir:"out", age:"~6 weeks", tier:3, note:"Exit being explored but no concrete suitor confirmed.", deadReason:"no fresh report in 6+ weeks", deadAt:"2026-08-06T10:24:32Z"}
-];
+const DEAD = [];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Copa del Rey triumph</b>: beating Athletic Bilbao then Atlético Madrid en route to the title secures a European return via the cup route."}
@@ -902,7 +902,9 @@ const HUB = {
   "futbolfantasy-realsociedad": {l:"FútbolFantasy - Real Sociedad transfer tracker", u:"https://www.futbolfantasy.com/laliga/equipos/real-sociedad/mercado-fichajes/verano-2026"},
   footballEspanaviaMundoDeportivoAlexRemiro: {l:"Football Espana (via Mundo Deportivo)", u:"https://www.football-espana.net/2026/05/28/real-sociedad-accept-e8m-sale-barcelona"},
   footballEspanaviaDiarioASJonMartin: {l:"Football Espana (via Diario AS)", u:"https://www.football-espana.net/2026/05/03/jon-martin-real-sociedad-future"},
-  footballEspanaMikelOyarzabal: {l:"Football Espana", u:"https://www.football-espana.net/2026/07/10/oyarzabal-barcelona-transfer-rejection"}};
+  footballEspanaMikelOyarzabal: {l:"Football Espana", u:"https://www.football-espana.net/2026/07/10/oyarzabal-barcelona-transfer-rejection"},
+  elDesmarqueNathanZz: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260805/real-sociedad-mercado-fichajes-futuro-jon-martin-pellegrino-matarazzo-acepta_18_019887589.html"},
+  elDesmarqueJaviLpez: {l:"El Desmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260803/real-sociedad-altera-plan-mercado-sustituye-operacion-decision-tomada_18_019878494.html"}};
 
 const LINKMAP = {
   "Aritz Elustondo": ["futbolfantasy-realsociedad"],
@@ -911,7 +913,9 @@ const LINKMAP = {
   "Álex Remiro": ["futbolfantasy-realsociedad"],
   "Alex Remiro": ["footballEspanaviaMundoDeportivoAlexRemiro"],
   "Jon Martin": ["footballEspanaviaDiarioASJonMartin"],
-  "Mikel Oyarzabal": ["footballEspanaMikelOyarzabal"]};
+  "Mikel Oyarzabal": ["footballEspanaMikelOyarzabal"],
+  "Nathan Zézé": ["elDesmarqueNathanZz"],
+  "Javi López": ["elDesmarqueJaviLpez"]};
 const WL_LINKMAP = {
   "Arsen Zakharyan": ["futbolfantasy-realsociedad"]
 };

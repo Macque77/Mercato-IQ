@@ -878,7 +878,8 @@ const CONFIRMED_OUT = [
   {name:"Maximilian Bauer", sub:"Joins Arminia Bielefeld permanently", club:"Arminia Bielefeld", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25.05.2026 on the club's official departures list."},
   {name:"Elias Saad", sub:"Loaned to MLS side", club:"Nashville SC", pos:"LW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 16.07.2026."},
   {name:"Kyliane Dong", sub:"Loaned to Championship side", club:"Bolton Wanderers", pos:"CM", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 07.07.2026."},
-  {name:"Felix Meiser", sub:"Joins fellow German second-tier side", club:"Fortuna Düsseldorf", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure dated 10.07.2026."}
+  {name:"Felix Meiser", sub:"Joins fellow German second-tier side", club:"Fortuna Düsseldorf", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure dated 10.07.2026."},
+  {name:"Elvis Rexhbeçaj", sub:"Kosovo · CM", club:"VfL Wolfsburg", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"kicker lists Rexhbeçaj among the summer arrivals at second-tier clubs, leaving Augsburg after the 2025/26 season. The fee has not been published and the structure of the exit is unclear, so it is logged as undisclosed rather than free."}
 ];
 
 const INCOMING = [];
@@ -909,13 +910,15 @@ const HUB = {
   fCAugsburgOfficialTomWisbereit: {l:"FC Augsburg Official", u:"https://www.fcaugsburg.de/en/news"},
   bundesligacomHennesBehrens: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/news/augsburg-sign-hennes-behrens-hoffenheim-38212"},
   bundesligacomoffiziellerTransfermarktYannikKeitel: {l:"Bundesliga.com (offizieller Transfermarkt)", u:"https://www.bundesliga.com/de/bundesliga/news/offizieller-transfermarkt-alle-wechsel-transfers-ubersicht-11850"},
-  kickerFelixMeiser: {l:"kicker", u:"https://www.kicker.de/fc-augsburg/team-transfers"}};
+  kickerFelixMeiser: {l:"kicker", u:"https://www.kicker.de/fc-augsburg/team-transfers"},
+  kickerTomWisbereit: {l:"kicker", u:"https://www.kicker.de/fc-augsburg/team-news"},
+  kickerElvisRexhbeaj: {l:"kicker", u:"https://www.kicker.de/die-sommer-neuzugaenge-der-zweitligisten-im-ueberblick-953724/artikel"}};
 
 const LINKMAP = {
   "Mert Kömür": ["bBCSportMertKmr"],
   "Fabian Rieder": ["yahooSportsFabianRieder"],
   "Michael Gregoritsch": ["yahooSportsMichaelGregoritsch"],
-  "Tom Wisbereit": ["fCAugsburgOfficialTomWisbereit"],
+  "Tom Wisbereit": ["fCAugsburgOfficialTomWisbereit", "kickerTomWisbereit"],
   "Calvin Brackelmann": ["fCAugsburgOfficialTomWisbereit"],
   "Rodrigo Ribeiro": ["fCAugsburgOfficialTomWisbereit"],
   "Cédric Zesiger": ["fCAugsburgOfficialTomWisbereit"],
@@ -925,7 +928,8 @@ const LINKMAP = {
   "Kyliane Dong": ["fCAugsburgOfficialTomWisbereit"],
   "Felix Meiser": ["fCAugsburgOfficialTomWisbereit", "kickerFelixMeiser"],
   "Hennes Behrens": ["bundesligacomHennesBehrens"],
-  "Yannik Keitel": ["bundesligacomoffiziellerTransfermarktYannikKeitel"]};
+  "Yannik Keitel": ["bundesligacomoffiziellerTransfermarktYannikKeitel"],
+  "Elvis Rexhbeçaj": ["kickerElvisRexhbeaj"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -40,10 +40,13 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Danilho Doekhi", sub:"27 · CB · Netherlands", to:"free to Lazio", club:"Lazio", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 14 Jul: long-serving Dutch centre-back and former club captain leaves Union for Serie A on a free transfer after his contract expired."},
   {name:"Diogo Leite", sub:"27 · CB · Portugal", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Portuguese centre-back departs as a free agent."},
-  {name:"Alex Kral", sub:"25 · DM · Czech Republic", to:"free to FC København", club:"FC København", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Czech midfielder moves to Denmark on a free transfer."}
+  {name:"Alex Kral", sub:"25 · DM · Czech Republic", to:"free to FC København", club:"FC København", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; Czech midfielder moves to Denmark on a free transfer."},
+  {name:"David Preu", sub:"21 · Germany · Forward", club:"VfB Stuttgart", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The versatile attacker joins VfB Stuttgart's U21 side in the 3. Liga and will wear number 37. Both clubs agreed to keep the financial terms private."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Kastriot Imeri", sub:"26 · Switzerland · AM", club:"Thun", pos:"Playmaker", report:"Kicker, relaying the Berner Zeitung, say Union have the Thun playmaker in their sights, with new head coach Mauro Lustrinelli keen to bring the Swiss title winner he worked with last season to Köpenick. Kicker add Imeri is not the only name on Union's list.", src:"Kicker / Berner Zeitung", tier:2, fee:"Undisclosed", truth:70, prob:45, light:"y", trend:"flat", note:"Coach-driven interest rather than an advanced negotiation, and it originates with a Swiss regional paper. No fee talks reported and Union are weighing alternatives.", lastSeen:"2026-08-06T10:49:40Z", baseProb:45}
+];
 
 const OUTGOING = [];
 
@@ -71,13 +74,16 @@ const HUB = {
   bundesliga: {l:"Bundesliga.com · Official", u:"https://www.bundesliga.com/de/bundesliga/news/danilho-doekhi-lazio-rom-transfer-ehemaliger-union-berlin-spieler-38250"},
   laziali: {l:"The Laziali", u:"https://thelaziali.com/2026/07/14/official-lazio-sign-danilho-doekhi-on-a-free-transfer/"},
   yahooSportsEmmanuelLatteLath: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-union-berlin-ivorian-striker-171500636.html"},
-  insideFutbolviaMSNDiogoLeite: {l:"Inside Futbol (via MSN)", u:"https://www.msn.com/en-gb/sport/other/everton-and-leeds-united-poised-to-miss-out-on-diogo-leite/ar-AA27CBNE?ocid=BingNewsVerp"}};
+  insideFutbolviaMSNDiogoLeite: {l:"Inside Futbol (via MSN)", u:"https://www.msn.com/en-gb/sport/other/everton-and-leeds-united-poised-to-miss-out-on-diogo-leite/ar-AA27CBNE?ocid=BingNewsVerp"},
+  kickerKastriotImeri: {l:"Kicker", u:"https://www.kicker.de/1-fc-union-berlin/team-transfers"}};
 
 const LINKMAP = {
   "Latte Lath": ["atlutd"],
   "Danilho Doekhi": ["bundesliga","laziali"],
   "Emmanuel Latte Lath": ["yahooSportsEmmanuelLatteLath"],
-  "Diogo Leite": ["insideFutbolviaMSNDiogoLeite"]};
+  "Diogo Leite": ["insideFutbolviaMSNDiogoLeite"],
+  "Kastriot Imeri": ["kickerKastriotImeri"],
+  "David Preu": ["kickerKastriotImeri"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

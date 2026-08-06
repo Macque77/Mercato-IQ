@@ -39,7 +39,8 @@ const CONFIRMED_IN = [
   {name:"Otávio", sub:"22 · W · Portugal", to:"permanent from Estrela Amadora", fee:"~€4.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Portuguese winger signed for attacking depth."},
   {name:"Malick Pimpong", sub:"20 · ST · Ghana", to:"permanent from FC Midtjylland", fee:"~€3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young Ghanaian forward brought in as a striker development option."},
   {name:"Malik Pimpong", sub:"Forward", club:"Undisclosed", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed 30 June 2026, handed squad number 35."},
-  {name:"Noel Aseko", sub:"Germany U21 international midfielder", club:"Bayern Munich", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined 8 July 2026 having impressed on loan at Hannover 96 the previous season."}
+  {name:"Noel Aseko", sub:"Germany U21 international midfielder", club:"Bayern Munich", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined 8 July 2026 having impressed on loan at Hannover 96 the previous season."},
+  {name:"Raphael Onyedika", sub:"25 · Nigeria · DM", club:"Club Brugge", pos:"Defensive midfielder", fee:"€9m rising to about €10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced in early August after weeks of talks. Five-year contract to 2031 and he takes the number 25 shirt, arriving as Frankfurt's new midfield anchor."}
 ];
 
 const CONFIRMED_OUT = [
@@ -49,11 +50,13 @@ const CONFIRMED_OUT = [
   {name:"Aurèle Amenda", sub:"Switzerland international centre-back", club:"Coventry City", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 17 July 2026 after two years at Frankfurt."}
 ];
 
-const INCOMING = [
-  {name:"Raphael Onyedika", sub:"25 · CM/CB · Nigeria", club:"Club Brugge", pos:"CM/CB", report:"1 Aug 2026", src:"Sky Sports Deutschland", tier:2, fee:"~€9m + bonuses", truth:78, prob:70, light:"g", trend:"up", note:"Agreement reached 1 Aug on a contract through 2031; medical scheduled for the coming days with an official announcement expected the following week. Chose Frankfurt over Saudi Arabia's Al Ittihad - Frankfurt's second midfield addition after Aseko.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70}
-];
+const INCOMING = [];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Junior Dina Ebimbe", sub:"25 · France · CM", club:"Schalke 04", pos:"Midfielder", report:"Frankfurt and Schalke have settled the final details of a permanent transfer. A package of around 1.3m euros was discussed, with Eintracht banking roughly 1m euros plus a 25 per cent sell-on clause. Ebimbe has agreed personal terms on a contract to 2028 after Schalke lodged a written offer earlier in the week.", src:"Florian Plettenberg (Sky Germany)", tier:1, fee:"€1m plus 25% sell-on", truth:92, prob:88, light:"g", trend:"flat", note:"Details agreed but not yet announced by either club, so treat as advanced rather than done.", lastSeen:"2026-08-06T10:49:40Z", baseProb:88},
+  {name:"Hrvoje Smolcic", sub:"25 · Croatia · CB", club:"Arca Corum FK", pos:"Centre-back", report:"Smolcic had no future at Frankfurt even after his loan spell at Kocaelispor ended and the Hessians are now cutting him loose for good. He is signing a two-year deal with an option at the newly promoted Turkish top-flight side.", src:"Fabrizio Romano, relayed by kicker", tier:1, fee:"Undisclosed", truth:88, prob:85, light:"g", trend:"flat", note:"Fee not disclosed; a permanent exit rather than another loan.", lastSeen:"2026-08-06T10:49:40Z", baseProb:85},
+  {name:"Noel Futkeu", sub:"23 · Germany · ST", club:"Exit sought", pos:"Striker", report:"Frankfurt triggered their recall option on Futkeu after he won the 2. Bundesliga golden boot with 19 goals on loan at Greuther Furth, but new head coach Adi Hutter has cut him from the plans. He was left out of the squad for the Grassau training camp and has been told to find a new club.", src:"kicker", tier:2, fee:"Undisclosed", truth:85, prob:68, light:"g", trend:"flat", note:"No concrete destination reported yet, so the exit is a stated intention rather than a live negotiation.", lastSeen:"2026-08-06T10:49:40Z", baseProb:68}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Onyedika agreement reached</b>: versatile Nigerian midfielder set to complete a move from Club Brugge pending medical."},
@@ -85,18 +88,25 @@ const HUB = {
   club: {l:"Eintracht Frankfurt Official", u:"https://en.eintracht.de/"},
   bundesligacomRaphaelOnyedika: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/eintracht-frankfurt/transfers"},
   wikipediaclubtransferlogMalikPimpong: {l:"Wikipedia (club transfer log)", u:"https://en.wikipedia.org/wiki/2026%E2%80%9327_Eintracht_Frankfurt_season"},
-  bundesligacomNoelAseko: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/eintracht-frankfurt/news"}};
+  bundesligacomNoelAseko: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/eintracht-frankfurt/news"},
+  plettenbergviaGetGermanFootballNewsJuniorDinaEbimbe: {l:"Plettenberg via Get German Football News", u:"https://www.getfootballnewsgermany.com/2026/schalke-ebimbe-done/"},
+  kickerRomanoHrvojeSmolcic: {l:"kicker (Romano)", u:"https://www.kicker.de/eintracht-frankfurt/team-transfers"},
+  kickerNoelFutkeu: {l:"kicker", u:"https://www.kicker.de/eintracht-frankfurt/team-news"},
+  getGermanFootballNewsSportBildRaphaelOnyedika: {l:"Get German Football News (Sport Bild)", u:"https://www.getfootballnewsgermany.com/2026/onyedika-frankfurt-official/"}};
 
 const LINKMAP = {
   "Noel Aseko Nkili": ["bundesliga","gfn"],
-  "Raphael Onyedika": ["sportde", "bundesligacomRaphaelOnyedika"],
+  "Raphael Onyedika": ["sportde", "bundesligacomRaphaelOnyedika", "getGermanFootballNewsSportBildRaphaelOnyedika"],
   "Nathaniel Brown": ["bundesliga", "bundesligacomNoelAseko"],
   "Elias Baum": ["gfnbaum"],
   "Otávio": ["bundesligacomRaphaelOnyedika"],
   "Malik Pimpong": ["wikipediaclubtransferlogMalikPimpong"],
   "Noel Aseko": ["bundesligacomNoelAseko"],
   "Aurèle Amenda": ["bundesligacomNoelAseko"],
-  "Rasmus Kristensen": ["wikipediaclubtransferlogMalikPimpong"]};
+  "Rasmus Kristensen": ["wikipediaclubtransferlogMalikPimpong"],
+  "Junior Dina Ebimbe": ["plettenbergviaGetGermanFootballNewsJuniorDinaEbimbe"],
+  "Hrvoje Smolcic": ["kickerRomanoHrvojeSmolcic"],
+  "Noel Futkeu": ["kickerNoelFutkeu"]};
 const WL_LINKMAP = {
   "Elias Baum": ["gfnbaum"]
 };

@@ -54,6 +54,7 @@ const CONFIRMED_OUT = [
    note:"Confirmed by the club in July as a second consecutive season-long loan back to Trabzonspor after a difficult first spell there failed to fully restore his stock. United retain his registration and a large chunk of his wages remain covered as part of the agreement, with the goalkeeper position now a live monitoring item for the rest of the window."},
   {name:"Joshua Zirkzee", sub:"25 · ST · Netherlands", club:"Juventus", pos:"ST", fee:"€42.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL",
    note:"Confirmed 15 Jul as a straight permanent sale, not the loan-with-option structure earlier reports described. Zirkzee managed just 5 goals in 56 Premier League appearances since his £36.5m move from Bologna and was squeezed for minutes behind Benjamin Šeško and Matheus Cunha; Juventus get a reset opportunity for a player United had already priced for an exit."},
+  {name:"Gabby George", sub:"29 · England · DEF", club:"Brighton & Hove Albion", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Manchester United Women, not the men's side. Confirmed on the club's own website as a permanent transfer subject to registration, days before the WSL season opens. George arrived from Everton in 2023 for a reported 150,000 pound release clause and made 54 appearances, winning the 2024 FA Cup. Her exit follows Turner's departure and leaves United short of defensive cover during a rebuild that also saw manager Marc Skinner leave by mutual consent."}
 ];
 
 const INCOMING = [
@@ -61,8 +62,7 @@ const INCOMING = [
    note:"Everton have set a £70m price on a winger who scored 6 and assisted 3 in 32 Premier League games last season, with three years still on his contract giving them full leverage. United have him on their attacking shortlist as a potential Garnacho-void filler but are reportedly angling closer to £50m rather than meeting the asking price. Al-Hilal have now entered the picture and Ndiaye's camp would reportedly welcome a Saudi offer, which is the single biggest threat to any Premier League move materialising. OBSTACLES: valuation gap, Saudi competition, and Everton having rejected his contract-extension pushback rather than sanctioning a cut-price exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Manu Kone", sub:"25 · CM/DM · France", club:"AS Roma", pos:"CM/DM", report:"27 Jul 2026", src:"Gazzetta dello Sport / Football Italia (via CaughtOffside)", tier:2, fee:"€60m ask; cash-plus-Rashford structure discussed", truth:50, prob:28, light:'o', trend:'up',
    note:"Italian outlets report United have discussed including Marcus Rashford to bridge the gap on Roma's €60m valuation of Kone, easing the cash outlay while handing Roma a proven Serie A-ready forward. Rashford's reported €11m net salary is the sticking point - United would likely need to keep covering a meaningful share of his wages even in a part-exchange. Reporters stress this is still an idea being floated rather than a formal structure, and separate straight sales for both players would be cleaner for all parties. OBSTACLES: wage-sharing on Rashford, Roma's readiness to let a key midfielder go, and the complexity of tying two deals together this late in the window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
-  {name:"Lewis Hall", sub:"23 · LB · England", club:"Newcastle United", pos:"LB", report:"11 Jul 2026", src:"Sky Sports News", tier:1, fee:"Not yet quantified - Newcastle expected to demand a premium", truth:65, prob:32, light:'y', trend:'flat',
-   note:"Sky Sports names Hall as a live option to succeed Luke Shaw, whose contract runs down next summer, after Tyrell Malacia's release left United without senior back-up. Hall missed Thomas Tuchel's most recent squad and could be made available, though Newcastle paid Chelsea £28m for him two years ago and are expected to demand significant compensation. Antonee Robinson of Fulham is credited as the alternative option if Newcastle hold firm. OBSTACLES: Newcastle's reluctance to strengthen a direct rival cheaply, and competition for minutes with Patrick Dorgu and Diogo Dalot as cover.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
+  {name:"Lewis Hall", sub:"21 · England · LB", club:"Newcastle United", pos:"Left-back", report:"United are weighing up a move for the Newcastle left-back amid unrest on Tyneside, with Bruno Guimaraes heading for the exit and the manager's position already resolved. No bid has been lodged and no talks between the clubs have been reported.", src:"The Sun, relayed by Sky Sports Paper Talk", tier:3, fee:"Undisclosed", truth:55, prob:20, light:"o", trend:"down", note:"Weak sourcing. This is a tabloid line carried in a paper round-up, not tier-1 reporting, and no Sky, BBC or Athletic staff reporter has stood it up independently. Treat as speculative interest only until a named reporter confirms contact.", lastSeen:"2026-08-06T10:49:40Z", baseProb:20},
   {name:"Murillo", sub:"23 · CB · Brazil", club:"Nottingham Forest", pos:"CB", report:"28 Feb 2026 (resurfacing)", src:"TeamTalk (unverified social source, awaiting corroboration)", tier:3, fee:"£61m-£70m (€70m-€80m)", truth:35, prob:20, light:'o', trend:'flat',
    note:"United have scouted Murillo extensively as part of the 'Operation Wall' centre-back search reported by Football365, with his left-footed profile fitting Carrick's build-out patterns. TeamTalk's 'locked in talks' framing traces to a single X account with a mixed accuracy record rather than a tier-1 name, and even TeamTalk's own report says it is awaiting further sourcing before treating it as live. A Brazilian outlet has separately corroborated the £61m-plus valuation, and Forest's willingness to sell may hinge on their own league finish. OBSTACLES: single-source framing, Forest's reluctance to sell a key asset mid-season form permitting, and Chelsea also credited with interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Aurélien Tchouaméni", sub:"26 · CDM · France", club:"Real Madrid", pos:"CDM", report:"8 Jul 2026", src:"AS (José Félix Díaz, via Ruben Martín)", tier:3, fee:"~£68m mentioned", truth:30, prob:10, light:'r', trend:'down',
@@ -145,7 +145,9 @@ const HUB = {
   tEAMtalkviaOrnsteinAurlienTchouameni: {l:"TEAMtalk (via Ornstein)", u:"https://www.teamtalk.com/manchester-united/man-utd-transfer-news-aurelien-tchouameni-carlos-baeba-kone-david-ornstein"},
   footballTransferscomFranciscoConceio: {l:"FootballTransfers.com", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/07/man-utd-transfer-news-francisco-conceicao-juventus-summer-2026-bryan-mbeumo-amad-diallo"},
   caughtOffsideviaRomanoAmadDiallo: {l:"CaughtOffside (via Romano)", u:"https://www.caughtoffside.com/2026/07/19/romano-confirms-not-for-sale-stance-man-united/"},
-  tEAMtalkYouriTielemans: {l:"TEAMtalk", u:"https://www.teamtalk.com/manchester-united/every-completed-man-utd-transfer-summer-2026-signings-exits-loans"}};
+  tEAMtalkYouriTielemans: {l:"TEAMtalk", u:"https://www.teamtalk.com/manchester-united/every-completed-man-utd-transfer-summer-2026-signings-exits-loans"},
+  skySportsPaperTalkviaTheSunLewisHall: {l:"Sky Sports Paper Talk (via The Sun)", u:"https://www.skysports.com/football/transfer-paper-talk/12709/13568628/bruno-guimaraes-transfer-news-arsenal-closing-in-on-deal-for-newcastle-captain-paper-talk"},
+  manchesterUnitedofficialGabbyGeorge: {l:"Manchester United official", u:"https://www.manutd.com/en/news/gabby-george-joins-brighton-and-hove-albion-aug-2026"}};
 
 const LINKMAP = {
   "Andrey Santos": ["skyMUFC","manUtdNews", "tEAMtalkYouriTielemans"],
@@ -160,7 +162,7 @@ const LINKMAP = {
   "Mateus Fernandes": ["skyMUFC"],
   "Iliman Ndiaye": ["caughtoffside"],
   "Manu Kone": ["gazzetta","caughtoffside"],
-  "Lewis Hall": ["skyMUFC"],
+  "Lewis Hall": ["skyMUFC", "skySportsPaperTalkviaTheSunLewisHall"],
   "Murillo": ["teamtalkMUFC"],
   "Aurélien Tchouaméni": ["asTchouameni"],
   "Marcus Rashford": ["gazzetta","caughtoffside"],
@@ -171,7 +173,8 @@ const LINKMAP = {
   "Francisco Conceição": ["nicoloSchiraFranciscoConceio", "footballTransferscomFranciscoConceio"],
   "Aurélien Tchouameni": ["tEAMtalkviaOrnsteinAurlienTchouameni"],
   "Carlos Baleba": ["tEAMtalkviaOrnsteinAurlienTchouameni"],
-  "Amad Diallo": ["caughtOffsideviaRomanoAmadDiallo"]};
+  "Amad Diallo": ["caughtOffsideviaRomanoAmadDiallo"],
+  "Gabby George": ["manchesterUnitedofficialGabbyGeorge"]};
 
 const WL_LINKMAP = {
   "Antonee Robinson": "skyMUFC",

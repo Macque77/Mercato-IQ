@@ -47,7 +47,7 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Ayyoub Bouaddi", sub:"18 · CM · France", club:"Multiple (linked)", pos:"CM", report:"28 Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:20, light:"o", trend:"flat", note:"Manchester City, Manchester United, Arsenal and Bayern Munich are all reported to be monitoring the highly-rated teenager, though no bid has landed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Ayyoub Bouaddi", sub:"18 · France · DM", club:"Manchester City", pos:"DM", report:"Fabrizio Romano says talks between Manchester City and Lille over the teenage midfielder are accelerating, with City pushing to get a deal over the line before the season settles.", src:"Fabrizio Romano (relayed by CaughtOffside)", tier:3, fee:"Undisclosed", truth:65, prob:45, light:"y", trend:"up", note:"Romano is tier one, but the only version of this we could stand up is a relay of his words rather than a primary post, and Lille have form for holding firm on their academy graduates. Treat the timeline with caution.", lastSeen:"2026-08-06T10:49:40Z", baseProb:45},
   {name:"Alexsandro", sub:"26 · CB · Brazil", club:"Ipswich Town (interest dismissed)", pos:"CB", report:"3 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:12, light:"r", trend:"down", note:"Ipswich Town's interest has been dismissed by club officials, who want to keep the defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
 ];
 
@@ -74,14 +74,14 @@ const WATCHLIST = [
 const HUB = {
   "rmcsport": {l:"RMC Sport", u:"https://rmcsport.bfmtv.com/football/"},
   "lequipe": {l:"L'Équipe", u:"https://www.lequipe.fr/Football/"},
-  "gffn-lille": {l:"Get French Football News · Lille", u:"https://www.getfootballnewsfrance.com/tag/lille/"}
-};
+  "gffn-lille": {l:"Get French Football News · Lille", u:"https://www.getfootballnewsfrance.com/tag/lille/"},
+  caughtOffsiderelayingFabrizioRomanoAyyoubBouaddi: {l:"CaughtOffside (relaying Fabrizio Romano)", u:"https://www.caughtoffside.com/2026/07/29/man-city-ayyoub-bouaddi-romano-transfer-update/"}};
 
 const LINKMAP = {
   "Gonçalo Inácio": ["rmcsport"],
   "Milan Skriniar": ["lequipe"],
   "Başar Önal": ["gffn-lille"],
-  "Ayyoub Bouaddi": ["gffn-lille"],
+  "Ayyoub Bouaddi": ["gffn-lille", "caughtOffsiderelayingFabrizioRomanoAyyoubBouaddi"],
   "Alexsandro": ["gffn-lille"],
   "Thomas Meunier": ["gffn-lille"]
 };

@@ -47,7 +47,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Cristian Romero", sub:"CB, Argentina, 28", club:"Tottenham Hotspur", pos:"CB", report:"Tottenham and Inter have reached a verbal agreement worth around €40m/£34.2m; De Zerbi has accepted the captain's wish to leave and Inter director Ausilio continues pushing the deal through, with Tuttosport calling it 'all but done'.", src:"Fabrizio Romano / ESPN Argentina (via GiveMeSport)", tier:1, fee:"~€40m", truth:85, prob:75, light:"g", trend:"flat", note:"Salary demands and the requirement Inter complete a prior sale are the last hurdles; Barcelona interest earlier fell through on cost.", lastSeen:"2026-08-04T19:10:50Z", baseProb:75},
+  {name:"Cristian Romero", sub:"28 · Argentina · CB", club:"Tottenham Hotspur", pos:"CB", report:"Inter have a package worth around 40m euros agreed with Tottenham but have not closed personal terms, with Romero asking to match his current salary. Fabrizio Romano says a final decision is due soon, and that Atletico Madrid are preparing a matching bid once they sell Nahuel Molina and possibly Matteo Ruggeri, with Real Madrid and Barcelona also watching.", src:"Fabrizio Romano", tier:1, fee:"€40m", truth:90, prob:40, light:"y", trend:"down", note:"Club-to-club terms are the easy part here. The player side is unresolved, Simeone is pushing hard, and Inter are expected to sell before they buy again after taking John Stones on a free.", lastSeen:"2026-08-06T10:49:40Z", baseProb:40},
   {name:"Curtis Jones", sub:"CM, England, 25", club:"Liverpool", pos:"CM", report:"Inter have gone back in for a third time with an improved €35m offer (after €25m and €32m rejections); Liverpool still want €40-50m and are holding firm despite Jones appearing to court the move on social media after a dressing-room armband dispute.", src:"Dicip Khetan, International Business Times", tier:2, fee:"€35m offered", truth:70, prob:45, light:"y", trend:"flat", note:"Jones has just one year left on his contract (to 2027), which gives Inter some leverage, but Liverpool are not budging yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Moussa Diaby", sub:"RW, France, 26", club:"Al-Ittihad", pos:"RW", report:"Diaby has re-emerged as an option for the right flank as Inter search for a replacement for the departed Dumfries.", src:"Football Italia", tier:2, fee:"Undisclosed", truth:60, prob:30, light:"y", trend:"flat", note:"One of several names being floated for the vacant right-side role.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Michael Kayode", sub:"RB, Italy, 21", club:"Fiorentina", pos:"RB", report:"Inter have made an enquiry over the young Italian full-back, though the asking price remains a stumbling block.", src:"Il Sussidiario / Blasting News", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Early-stage interest rather than an active negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
@@ -90,20 +90,22 @@ const HUB = {
   footballItaliaMichaelKayode: {l:"Football Italia", u:"https://football-italia.net/category/serie-a/inter/"},
   footballItaliaJohnStones: {l:"Football Italia", u:"https://football-italia.net/bisseck-stones-will-push-inter-defenders/"},
   footballItaliaDenzelDumfries: {l:"Football Italia", u:"https://football-italia.net/where-inter-need-to-improve-in-2026-27-double/"},
-  footballItaliaEbenezerAkinsanmiro: {l:"Football Italia", u:"https://football-italia.net/serie-a-transfer-halhal-venezia-frosinone-monz/"}};
+  footballItaliaEbenezerAkinsanmiro: {l:"Football Italia", u:"https://football-italia.net/serie-a-transfer-halhal-venezia-frosinone-monz/"},
+  fabrizioRomanoCaughtOffsideCristianRomero: {l:"Fabrizio Romano, CaughtOffside", u:"https://www.caughtoffside.com/2026/08/05/atletico-madrid-hijack-cristian-romero-transfer-romano/"},
+  readTottenhamrelayingFabrizioRomanoJohnStones: {l:"Read Tottenham, relaying Fabrizio Romano", u:"https://readtottenham.com/2026/08/03/fabrizio-romano-cristian-romero-tottenham-inter-milan/"}};
 
 const LINKMAP = {
   "Ange-Yoan Bonny": ["footballItalia","club"],
   "Andy Diouf": ["club"],
   "Filip Stanković": ["sempreinter"],
   "Ivan Provedel": ["footballItalia"],
-  "Cristian Romero": ["giveMeSportCristianRomero"],
+  "Cristian Romero": ["giveMeSportCristianRomero", "fabrizioRomanoCaughtOffsideCristianRomero"],
   "Curtis Jones": ["internationalBusinessTimesCurtisJones"],
   "Moussa Diaby": ["footballItaliaMoussaDiaby"],
   "Michael Kayode": ["footballItaliaMichaelKayode"],
   "Kristjan Asllani": ["footballItaliaMichaelKayode"],
-  "John Stones": ["footballItaliaJohnStones"],
-  "Denzel Dumfries": ["footballItaliaDenzelDumfries"],
+  "John Stones": ["footballItaliaJohnStones", "readTottenhamrelayingFabrizioRomanoJohnStones"],
+  "Denzel Dumfries": ["footballItaliaDenzelDumfries", "club"],
   "Ebenezer Akinsanmiro": ["footballItaliaEbenezerAkinsanmiro"]};
 const WL_LINKMAP = {};
 

@@ -6,15 +6,15 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 82
+  stories_count: 84
 };
 
 const TOP_STORIES = [  {
-    name: "Rodri",prob: 40, truth: 65, bullshit: false,
+    name: "Rodri",prob: 40, truth: 80, bullshit: false,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
     from: "Manchester City", to: "Real Madrid",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Opening bid €50-60m (City value ~€80m)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+    tier: 1, coverage: 3, coverage_trend: 'up',
+    value: "Around €80m", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
     name: "Igor Julio",prob: 40, truth: 85, bullshit: false,
@@ -31,10 +31,10 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
-    name: "Julian Alvarez",prob: 30, truth: 88, bullshit: false,
+    name: "Julian Alvarez",prob: 33, truth: 70, bullshit: false,
     club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
     from: "Atletico Madrid", to: "FC Barcelona",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
@@ -87,13 +87,6 @@ const TOP_STORIES = [  {
     value: "Free (contract expired at Getafe)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
-    name: "Nahuel Molina",prob: 55, truth: 65, bullshit: false,
-    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "out",
-    from: "Atlético Madrid", to: "Inter Milan",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "~€25m asking price", updated: "2026-08-03T14:30:00Z", league: "La Liga"
-  },
-  {
     name: "Nobel Mendy",prob: 55, truth: 65, bullshit: false,
     club_origin: "rayo-vallecano", club_display_name: "Rayo Vallecano", direction: "out",
     from: "Rayo Vallecano", to: "Hull City",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€8m bid vs €16m release clause", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
+  {
+    name: "Lizancos",prob: 50, truth: 75, bullshit: false,
+    club_origin: "osasuna", club_display_name: "CA Osasuna", direction: "in",
+    from: "Burgos CF", to: "CA Osasuna",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€2-2.5m", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
 ];
 
-const BY_LEAGUE = {"La Liga": 82, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
+const BY_LEAGUE = {"La Liga": 84, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 82}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 84}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T10:30:05.363352Z",
+  updated: "2026-08-06T10:49:42.910854Z",
   label: "Nation aggregation"
 };
