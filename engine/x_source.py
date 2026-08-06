@@ -145,6 +145,74 @@ def fetch_handles(handles, timeout=20):
     return out
 
 
+def fetch_via_websearch(nation, handles, club_names, client=None, max_searches=4):
+    """FALLBACK X source: one Haiku + web_search call per nation to surface recent
+    X/Twitter transfer posts from the given journalist handles for the given clubs.
+    Used because the free syndication endpoint is 429-dead. Returns
+    [{club, text, url}] and a usage dict; ([], {}) on any failure.
+
+    Deliberately ONE call per nation (not per club) and web_search capped, to keep the
+    X token spend small and bounded -- this is the only place the streamlined pipeline
+    spends server-tool tokens, by explicit choice, to keep X coverage without paying
+    for the X API."""
+    if not handles or not club_names:
+        return [], {}
+    try:
+        import anthropic
+        from anthropic import APIError
+    except ImportError:
+        return [], {}
+    if client is None:
+        try:
+            client = anthropic.Anthropic()
+        except Exception:
+            return [], {}
+
+    model = os.environ.get('MERCATO_EXTRACT_MODEL') or 'claude-haiku-4-5-20251001'
+    handle_list = ', '.join('@' + h for h in handles[:8])
+    club_list = ', '.join(club_names[:60])
+    system = ("You find CURRENT football transfer posts on X/Twitter via web search and return "
+              "strict JSON. Only report items genuinely posted by (or directly quoting) the named "
+              "reporters in roughly the last 10 days. Do not invent posts.")
+    user = (f"Using web_search, find the most recent transfer-related X/Twitter posts from these "
+            f"reporters: {handle_list}. Keep ONLY items about these clubs: {club_list}.\n\n"
+            f'Return ONLY a JSON array (no prose): [{{"club":"<one of the clubs>","text":"<what was '
+            f'reported>","url":"<x.com or source link>"}}]. Empty array if nothing relevant.')
+    tools = [{'type': 'web_search_20260209', 'name': 'web_search', 'max_uses': max_searches}]
+    messages = [{'role': 'user', 'content': user}]
+
+    usage = {'in': 0, 'out': 0}
+    try:
+        for _ in range(4):  # server-tool loop (web_search may pause_turn)
+            resp = client.messages.create(model=model, max_tokens=2000, system=system,
+                                          tools=tools, messages=messages)
+            u = resp.usage
+            usage['in'] += getattr(u, 'input_tokens', 0) or 0
+            usage['out'] += getattr(u, 'output_tokens', 0) or 0
+            if resp.stop_reason == 'pause_turn':
+                messages.append({'role': 'assistant', 'content': resp.content})
+                continue
+            break
+    except APIError as e:
+        print(f"  [x_source] web_search fallback failed: {e}", file=sys.stderr)
+        return [], usage
+
+    text = ''.join(b.text for b in resp.content if getattr(b, 'type', '') == 'text')
+    m = re.search(r'\[.*\]', text, re.DOTALL)
+    if not m:
+        return [], usage
+    try:
+        items = json.loads(m.group(0))
+    except json.JSONDecodeError:
+        return [], usage
+    out = []
+    for it in items:
+        if isinstance(it, dict) and it.get('text') and it.get('club'):
+            out.append({'club': it['club'], 'text': it['text'].strip(),
+                        'url': it.get('url', ''), 'date': ''})
+    return out, usage
+
+
 def handles_for_nation(nation, sources_for_nation):
     """Curated known handles for the nation + any @handles named in sources.json +
     the two global names, de-duplicated (case-insensitive)."""

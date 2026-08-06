@@ -218,19 +218,34 @@ def main():
             time.sleep(0.3)
     log("  News pass done.")
 
-    # 3) X / Twitter -- best-effort, isolated. One fetch per handle per nation.
-    if not args.no_x:
+    # 3) X / Twitter -- via Haiku + web_search (the free syndication endpoint is
+    #    429-dead). ONE bounded call per nation; the only server-tool token spend in
+    #    the pipeline, isolated in x_source and reported separately. Skipped with
+    #    --no-x or when no API key is present (e.g. the local sandbox).
+    if not args.no_x and os.environ.get('ANTHROPIC_API_KEY'):
+        x_usage = {'in': 0, 'out': 0}
         for nation in nations:
             handles = x_source.handles_for_nation(nation, sources.get(nation, {}))
-            tweets = x_source.fetch_handles(handles)
-            for tw in tweets:
-                if not TRANSFER_KEYWORDS.search(tw['text']):
-                    continue
-                for s in slugs:
-                    m = matchers[s].search(tw['text'])
-                    if m:
-                        add(s, tw['text'], 'X', tw['url'], tw.get('date', ''))
-            log(f"  X {nation}: {len(handles)} handle(s) -> {len(tweets)} tweet(s).")
+            nation_slugs = [s for s in slugs
+                            if LEAGUE_TO_NATION.get(roster[s].get('league')) == nation]
+            club_names = [roster[s]['name'] for s in nation_slugs]
+            items, u = x_source.fetch_via_websearch(nation, handles, club_names)
+            x_usage['in'] += u.get('in', 0)
+            x_usage['out'] += u.get('out', 0)
+            hits = 0
+            for it in items:
+                # X items are already transfer-focused; match to a club by text or the
+                # model-supplied club name, no keyword gate.
+                for s in nation_slugs:
+                    if matchers[s].search(it['text']) or matchers[s].search(it.get('club', '')):
+                        add(s, it['text'], 'X', it.get('url', ''), it.get('date', ''))
+                        hits += 1
+                        break
+            log(f"  X {nation}: {len(handles)} handle(s) via web_search -> "
+                f"{len(items)} item(s), {hits} matched.")
+        log(f"  X tokens (web_search): input={x_usage['in']} output={x_usage['out']}")
+    elif not args.no_x:
+        log("  X: skipped (no ANTHROPIC_API_KEY in env).")
 
     out_clubs = {}
     for s in slugs:
