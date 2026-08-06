@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Süper Lig",
   nation: "Turkey",
-  stories_count: 14
+  stories_count: 12
 };
 
 const TOP_STORIES = [  {
@@ -17,16 +17,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Nariman Akhundzada", prob: 80, truth: 90, bullshit: false,
-    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
-    from: "Columbus Crew", to: "Erzurumspor",
+    name: "Iván Cedric", prob: 80, truth: 85, bullshit: false,
+    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
+    from: "Vanspor FK", to: "Alanyaspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Iván Cedric", prob: 80, truth: 85, bullshit: false,
-    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
-    from: "Vanspor FK", to: "Alanyaspor",
+    name: "Nariman Akhundzada", prob: 80, truth: 90, bullshit: false,
+    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
+    from: "Columbus Crew", to: "Erzurumspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
@@ -36,13 +36,6 @@ const TOP_STORIES = [  {
     from: "Beşiktaş", to: "Rizespor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Darwin Nunez", prob: 28, truth: 50, bullshit: false,
-    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
-    from: "Al-Hilal", to: "Beşiktaş",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Ali Diabaté", prob: 8, truth: 80, bullshit: false,
@@ -60,24 +53,10 @@ const TOP_STORIES = [  {
   },
   {
     name: "Wilfred Ndidi", prob: 45, truth: 70, bullshit: false,
-    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "out",
-    from: "Beşiktaş", to: "Al Diriyah",
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Al Diriyah", to: "Beşiktaş",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "€7m rejected", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Youssouf Fofana", prob: 40, truth: 65, bullshit: false,
-    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
-    from: "AC Milan", to: "Beşiktaş",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "€20m", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Francis Nzaba", prob: 35, truth: 85, bullshit: false,
-    club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
-    from: "İstanbul Başakşehir", to: "Antalyaspor",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Franck Kessie", prob: 35, truth: 60, bullshit: false,
@@ -85,6 +64,13 @@ const TOP_STORIES = [  {
     from: "Free agent (ex Al-Ahli)", to: "Beşiktaş",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Free", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Francis Nzaba", prob: 35, truth: 85, bullshit: false,
+    club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
+    from: "İstanbul Başakşehir", to: "Antalyaspor",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Güray Vural", prob: 15, truth: 55, bullshit: false,
@@ -109,12 +95,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"alanyaspor": 2, "erzurumspor": 1, "rizespor": 1, "besiktas": 6, "samsunspor": 1, "antalyaspor": 3};
+const BY_CLUB = {"alanyaspor": 2, "erzurumspor": 1, "rizespor": 1, "samsunspor": 1, "antalyaspor": 3, "besiktas": 4};
 
-const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 3, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 6, "badge": true, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 1, "badge": true, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "rizespor", "name": "Rizespor", "count": 1, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "samsunspor", "name": "Samsunspor", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}];
+const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 3, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 4, "badge": true, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 1, "badge": true, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "rizespor", "name": "Rizespor", "count": 1, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "samsunspor", "name": "Samsunspor", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.803883Z",
+  updated: "2026-08-06T14:21:39.652664Z",
   label: "League aggregation"
 };

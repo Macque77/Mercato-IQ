@@ -39,7 +39,7 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Marius Müller", sub:"32 · Germany · GK", club:"VfL Wolfsburg", pos:"GK", report:"Aberdeen are being linked with the Wolfsburg goalkeeper as Stephen Robinson reshapes his squad. The former Kaiserslautern, RB Leipzig and Luzern keeper features in the Press and Journal's running Pittodrie transfer coverage, but there is no confirmation of terms or a bid.", src:"Press and Journal", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Weak sourcing so far. Local paper link only, no tier-1 German reporter has attached Aberdeen to Müller, and a Bundesliga keeper on Wolfsburg wages would be a stretch for the Dons.", lastSeen:"2026-08-06T08:09:17Z", baseProb:40}
+  {name:"Marius Müller", sub:"Goalkeeper · Germany", club:"Wolfsburg", pos:"GK", report:"Aberdeen linked with Wolfsburg goalkeeper", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:50, prob:40, light:"y", trend:"flat", note:"Weak sourcing so far. Local paper link only, no tier-1 German reporter has attached Aberdeen to Müller, and a Bundesliga keeper on Wolfsburg wages would be a stretch for the Dons.", lastSeen:"2026-08-06T14:21:37Z", baseProb:40}
 ];
 const OUTGOING = [];
 const RISERS = [];

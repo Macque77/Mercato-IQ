@@ -664,7 +664,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">141</span>
+          <span class="stat-value">135</span>
         </div>
       </div>
     </div>
@@ -701,14 +701,56 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 141
+  stories_count: 135
 };
 
 const TOP_STORIES = [  {
-    name: "Zeki Celik",prob: 90, truth: 92, bullshit: false,
-    club_origin: "as-roma", club_display_name: "AS Roma", direction: "out",
-    from: "AS Roma", to: "Juventus",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    name: "Santiago Gimenez",prob: 25, truth: 45, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "out",
+    from: "AC Milan", to: "Porto",
+    tier: 0, coverage: 1, coverage_trend: 'down',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Kerim Alajbegović",prob: 20, truth: 45, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Bayer Leverkusen", to: "AC Milan",
+    tier: 0, coverage: 1, coverage_trend: 'down',
+    value: "€25-30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Youssouf Fofana",prob: 20, truth: 40, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "out",
+    from: "AC Milan", to: "Premier League (unnamed clubs)",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Matheus Nwaneri",prob: 20, truth: 45, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Arsenal", to: "AC Milan",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Yunus Musah",prob: 20, truth: 45, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "out",
+    from: "AC Milan", to: "Unnamed Premier League clubs",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Can Uzun",prob: 18, truth: 42, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Eintracht Frankfurt", to: "AC Milan",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "~€25m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+  },
+  {
+    name: "Brahim Diaz",prob: 15, truth: 35, bullshit: false,
+    club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
+    from: "Real Madrid", to: "AC Milan",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
@@ -726,23 +768,9 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Daniel Maldini",prob: 55, truth: 75, bullshit: false,
-    club_origin: "cagliari", club_display_name: "Cagliari", direction: "in",
-    from: "Atalanta", to: "Cagliari",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
     name: "Sankhoun Diawara",prob: 55, truth: 85, bullshit: false,
     club_origin: "ac-milan", club_display_name: "AC Milan", direction: "in",
     from: "Troyes", to: "AC Milan",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
-    club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
-    from: "Glasgow Rangers", to: "Atalanta",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
@@ -754,11 +782,11 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Franco Mastantuono",prob: 35, truth: 55, bullshit: false,
-    club_origin: "fiorentina", club_display_name: "Fiorentina", direction: "in",
-    from: "Real Madrid", to: "Fiorentina",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
+    name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
+    club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
+    from: "Glasgow Rangers", to: "Atalanta",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
     name: "Andrea Pinamonti",prob: 30, truth: 60, bullshit: false,
@@ -775,49 +803,21 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Francisco Conceição",prob: 15, truth: 45, bullshit: false,
-    club_origin: "juventus", club_display_name: "Juventus", direction: "out",
-    from: "Juventus", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~£25m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
     name: "Elliot Stroud",prob: 90, truth: 75, bullshit: false,
     club_origin: "genoa", club_display_name: "Genoa", direction: "out",
     from: "Genoa", to: "Hull City",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
-  {
-    name: "Kevin Amey",prob: 85, truth: 70, bullshit: false,
-    club_origin: "frosinone", club_display_name: "Frosinone", direction: "in",
-    from: "Bologna", to: "Frosinone",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Cristian Raimondo",prob: 85, truth: 70, bullshit: false,
-    club_origin: "frosinone", club_display_name: "Frosinone", direction: "in",
-    from: "Bologna", to: "Frosinone",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
-  {
-    name: "Mathias Olivera / Gutierrez",prob: 85, truth: 75, bullshit: false,
-    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
-    from: "Napoli", to: "Bayer Leverkusen",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
-  },
 ];
 
-const BY_LEAGUE = {"Serie A": 130, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 124, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 130}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 124}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.790749Z",
+  updated: "2026-08-06T14:21:39.641852Z",
   label: "Nation aggregation"
 };
 

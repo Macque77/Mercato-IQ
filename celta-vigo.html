@@ -884,7 +884,6 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Altay Bayindir", sub:"28 · GK · Turkey", club:"Manchester United", pos:"GK", report:"03 Aug 2026", src:"Faro de Vigo / Sport Witness", tier:2, fee:"Season-long loan, no fee", truth:75, prob:65, light:"g", trend:"up", note:"Bayindir was set to undergo his medical 'within hours' of this report, with completion expected by Monday at the latest. Coach Claudio Giráldez wants an experienced back-up goalkeeper after Ionut Radu's injury concerns; Bayindir lost his United starting spot to Senne Lammens after a poor run of six Premier League games without a clean sheet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
   {name:"Fer López", sub:"Target to bring back from Wolves", club:"Wolverhampton Wanderers", pos:"MF", report:"Celta want to re-sign their former academy playmaker, sold to Wolves for over €20m last summer and loaned back in the second half of 2025/26, but talks are reportedly frozen.", src:"El Desmarque / Galicia Press", tier:2, fee:"Loan sought (permanent deal unaffordable for Celta)", truth:78, prob:40, light:"y", trend:"flat", note:"Coach Claudio Giráldez views Fer López as his top midfield priority, but Wolves want a big fee and negotiations have stalled amid Celta's tight budget.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Hugo Bueno", sub:"Vigo-born left-back target", club:"Wolverhampton Wanderers", pos:"DF", report:"Celta are also exploring a move for Wolves left-back Hugo Bueno, a Vigo native who left the club's academy as a teenager and had a loan spell at Feyenoord.", src:"Mundo Celeste (via Galicia Press)", tier:3, fee:"Undisclosed (valued around €12m)", truth:55, prob:25, light:"o", trend:"flat", note:"Wolves' relegation to the Championship could make this move easier, but nothing concrete has progressed beyond initial interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Denis Suárez", sub:"Homecoming midfielder", club:"Deportivo Alavés", pos:"MF", report:"Sporting director Marco Garcés and coach Giráldez both want Denis Suárez back at Balaídos, with the player himself said to be willing.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:75, prob:45, light:"y", trend:"flat", note:"The move reportedly hinges on Celta first completing up to seven separate departures to free up squad space and budget.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
@@ -896,6 +895,9 @@ const OUTGOING = [
   {name:"Williot Swedberg", sub:"Prized winger attracting suitors", club:"Atalanta", pos:"FW", report:"Atalanta have been credited with interest in Swedberg, Celta's most valuable asset, as a possible squad sale this summer.", src:"El Desmarque", tier:2, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Swedberg recently signed a new deal to 2029, which suggests Celta would only sell for a significant fee rather than being desperate to offload him.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Borja Iglesias", sub:"Big-money Liga MX offer", club:"Club América", pos:"FW", report:"Club América are reported to have set Borja Iglesias's exit price at around $10m (approx €9m) and want to meet him during Spain's World Cup stay in the US.", src:"AS (via Fichajes.net)", tier:2, fee:"Approx €9m / $10m", truth:68, prob:25, light:"o", trend:"flat", note:"Iglesias only returned to Celta from Betis relatively recently and is a fan favourite, so a swift exit to Mexico this summer looks far from certain.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"Unai Núñez", sub:"Spanish centre-back, 27", club:"Unattached / TBD", pos:"CB", report:"Celta had hoped to sell Núñez this summer but received no offers with a transfer fee attached; club is resigning itself to keeping him unless a club agrees to cover 60-70% of his wages.", src:"ElDesmarque", tier:2, fee:"", truth:65, prob:20, light:"o", trend:"flat", note:"No suitor has emerged willing to meet wage conditions; departure now considered unlikely before deadline day.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+];
+const DEAD = [
+  {name:"Altay Bayindir", sub:"28 · GK · Turkey", club:"Manchester United", pos:"GK", report:"03 Aug 2026", src:"Faro de Vigo / Sport Witness", tier:2, fee:"Season-long loan, no fee", truth:75, prob:65, light:"g", trend:"up", note:"Bayindir was set to undergo his medical 'within hours' of this report, with completion expected by Monday at the latest. Coach Claudio Giráldez wants an experienced back-up goalkeeper after Ionut Radu's injury concerns; Bayindir lost his United starting spot to Senne Lammens after a poor run of six Premier League games without a clean sheet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65, dead:true, deadReason:"Duplicate entry on page; no fresh snippet with full name and explicit confirmation; insufficient data to confirm", dir:"in", deadAt:"2026-08-06T14:21:38Z"}
 ];
 
 const RISERS = [
@@ -914,9 +916,7 @@ const POSITIONS = [
   {p:"Goalkeeper depth", w:55, x:"Radu's injury concerns are driving the Bayindir loan pursuit as senior cover."}
 ];
 
-const WATCHLIST = [
-  {name:"Altay Bayindir", club:"Manchester United", pos:"GK", dir:"in", age:"~0 days", tier:2, note:"Medical being arranged; loan expected to be completed imminently per Faro de Vigo."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "hardtackle-bayindir1": {l:"The Hard Tackle - Celta eyeing loan for Bayindir", u:"https://thehardtackle.com/transfer-news/2026/08/02/celta-vigo-eyeing-loan-move-for-altay-bayindir/"},
@@ -932,7 +932,9 @@ const HUB = {
   galiciaPressDenisSurez: {l:"Galicia Press", u:"https://www.galiciapress.es/articulo/deportes/2026-07-22/5961199-alaves-deja-denis-suarez-minutos-pretemporada-alimenta-ilusion-fichaje-celta"},
   mSNDeportesBorjaIglesias: {l:"MSN Deportes", u:"https://www.msn.com/es-mx/noticias/other/club-am%C3%A9rica-va-por-borja-iglesias-pero-el-celta-pone-un-precio-millonario-se-aleja-el-fichaje-de-las-%C3%A1guilas/ar-AA27EMOb"},
   elDesmarqueUnaiNez: {l:"ElDesmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260804/celta-vigo-asume-realidad-unai-nunez-cambia-guion-completo-ultima-opcion_18_019886663.html"},
-  yahooSportsSkySportsAbdoulayeFaye: {l:"Yahoo Sports / Sky Sports", u:"https://sports.yahoo.com/articles/official-bayer-leverkusen-pocket-300-151500694.html"}};
+  yahooSportsSkySportsAbdoulayeFaye: {l:"Yahoo Sports / Sky Sports", u:"https://sports.yahoo.com/articles/official-bayer-leverkusen-pocket-300-151500694.html"},
+  marcaAbdoulayeFaye: {l:"Marca", u:"https://www.marca.com/futbol/celta/2026/08/03/abdoulaye-faye-celta.html"},
+  sportesAlexisOlmedo: {l:"sport.es", u:"https://www.sport.es/es/"}};
 
 const LINKMAP = {
   "Altay Bayindir": ["hardtackle-bayindir1", "hardtackle-bayindir2"],
@@ -945,7 +947,8 @@ const LINKMAP = {
   "Borja Iglesias": ["aSFichajesnetBorjaIglesias", "mSNDeportesBorjaIglesias"],
   "Miguel Rodríguez": ["galiciaPressMiguelRodrguez"],
   "Unai Núñez": ["elDesmarqueUnaiNez"],
-  "Abdoulaye Faye": ["yahooSportsSkySportsAbdoulayeFaye"]};
+  "Abdoulaye Faye": ["yahooSportsSkySportsAbdoulayeFaye", "marcaAbdoulayeFaye"],
+  "Alexis Olmedo": ["sportesAlexisOlmedo"]};
 const WL_LINKMAP = {
   "Altay Bayindir": ["hardtackle-bayindir2"]
 };

@@ -57,7 +57,8 @@ const OUTGOING = [
   {name:"Mandela Keita", sub:"Midfielder", club:"Atalanta", pos:"CM", report:"Atalanta have entered the race for Keita, with Parma said to be holding out for a minimum of €20m.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Player has publicly said he remains focused on Parma despite the transfer speculation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Riccardo Pellegrino", sub:"Midfielder, Italian", club:"Multiple clubs", pos:"CM", report:"Sporting director Cherubini confirmed multiple clubs have shown interest in Pellegrino this window.", src:"TuttoMercatoWeb", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Direct quote from club sporting director lends some credibility.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Fabio Troilo", sub:"Defender", club:"Fulham", pos:"CB", report:"Fulham are reported to be preparing an offer worth around €20m to sign the Parma defender.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:20, light:"o", trend:"flat", note:"Reported figure is high relative to Parma's usual sales; treat with some caution pending further corroboration.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Corrent", sub:"Midfielder/Defender", club:"Carrarese", pos:"CDM", report:"Carrarese are interested in taking Corrent on a Serie B move.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"flat", note:"Minor squad-depth departure rumour.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+  {name:"Corrent", sub:"Midfielder/Defender", club:"Carrarese", pos:"CDM", report:"Carrarese are interested in taking Corrent on a Serie B move.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"flat", note:"Minor squad-depth departure rumour.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Mikolajewski", sub:"", club:"Lucerna", pos:"", report:"Parma cede Mikolajewski in prestito al Lucerna", src:"tuttomercatoweb.com", tier:3, fee:"Loan", truth:75, prob:85, light:"g", trend:"flat", note:"On loan to Lucerna", lastSeen:"2026-08-06T14:21:37Z", baseProb:85}
 ];
 const DEAD = [];
 
@@ -89,7 +90,8 @@ const HUB = {
   tuttoMercatoWebMatteoCancellieri: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/parma"},
   parmaPress24Diallo: {l:"ParmaPress24", u:"https://www.parmapress24.it/"},
   forzaParmaElBilalTour: {l:"Forza Parma", u:"https://www.forzaparma.it/category/news/calciomercato/"},
-  gianlucadimarziocomZionSuzuki: {l:"gianlucadimarzio.com", u:"https://www.gianlucadimarzio.com/calciomercato/psg-juventus-suzuki-offerta-28-bonus-parma-495439"}};
+  gianlucadimarziocomZionSuzuki: {l:"gianlucadimarzio.com", u:"https://www.gianlucadimarzio.com/calciomercato/psg-juventus-suzuki-offerta-28-bonus-parma-495439"},
+  tuttomercatowebcomMikolajewski: {l:"tuttomercatoweb.com", u:"https://www.tuttomercatoweb.com/"}};
 
 const LINKMAP = {
   "Giovanni Daffara": ["footballItalia"],
@@ -109,7 +111,8 @@ const LINKMAP = {
   "Corrent": ["tuttoMercatoWebMatteoCancellieri"],
   "Diallo": ["parmaPress24Diallo"],
   "Adrian Benedyczak": ["parmaPress24Diallo"],
-  "Nicolo Balogh": ["tuttoMercatoWebMatteoCancellieri"]};
+  "Nicolo Balogh": ["tuttoMercatoWebMatteoCancellieri"],
+  "Mikolajewski": ["tuttomercatowebcomMikolajewski"]};
 const WL_LINKMAP = {
   "Zion Suzuki": ["footballItalia"]
 };

@@ -881,26 +881,27 @@ const CONFIRMED_IN = [
   {name:"Eliezer Mayenda", sub:"21 · ST · Spain", to:"permanent from Sunderland", fee:"€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 4 Jul 2026, a statement of intent up front."},
   {name:"Gonçalo Oliveira", sub:"20 · CB · Portugal", to:"permanent from Benfica B", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 22 Jun 2026, a development centre-back signing."},
   {name:"Adrien Thomasson", sub:"29 · AM · France", to:"free transfer from RC Lens", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 28 May 2026 on a three-year deal after leaving the Coupe de France winners as a free agent."},
-  {name:"Bryan Reynolds", sub:"USMNT right-back completes move after strong Belgian spell", club:"KVC Westerlo", pos:"RB", fee:"€3.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a four-year deal; presented alongside fellow new arrival Mayenda."}
+  {name:"Bryan Reynolds", sub:"USMNT right-back completes move after strong Belgian spell", club:"KVC Westerlo", pos:"RB", fee:"€3.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a four-year deal; presented alongside fellow new arrival Mayenda."},
+  {name:"Nayef Aguerd", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jul 2026"},
+  {name:"Martin Terrier", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jul 2026"},
+  {name:"Nicolas Lemaître", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 26 Jun 2026"}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Glen Kamara", sub:"30 · CM · Finland", club:"QPR", pos:"CM", fee:"Loan with option to buy", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreed 2 Aug 2026 as the midfielder moves to the Championship."},
   {name:"Nordan Mukiele", sub:"Young attacker sent out for game time", club:"Montpellier HSC", pos:"RW", fee:"Loan", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan without a purchase option to Ligue 2 side Montpellier; made 8 Ligue 1 appearances last season."},
   {name:"Mikayil Faye", sub:"Ex-Barcelona centre-back shipped out after failing to break through", club:"1. FC Nuremberg", pos:"CB", fee:"Loan", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loaned to the German second-division side after struggling in Ligue 1 since his 2024 arrival from Barcelona and an unsuccessful loan at Cremonese."},
-  {name:"Jeremy Jacquet", sub:"21 · France · CB", club:"Liverpool", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure logged in French records and reported as a move to Liverpool that brought Rennes a significant fee. No figure has been published by either club, so the fee should be treated as unconfirmed."}
+  {name:"Jeremy Jacquet", sub:"21 · France · CB", club:"Liverpool", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departure logged in French records and reported as a move to Liverpool that brought Rennes a significant fee. No figure has been published by either club, so the fee should be treated as unconfirmed."},
+  {name:"Breel Embolo", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 23 Jul 2026"}
 ];
 
 const INCOMING = [
-  {name:"Nayef Aguerd", sub:"29 · CB · Morocco", club:"Olympique de Marseille", pos:"CB", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:26, light:"o", trend:"flat", note:"Rennes are exploring bringing the defender back to the club he left in 2021.", lastSeen:"2026-08-04T19:10:50Z", baseProb:26},
-  {name:"Martin Terrier", sub:"29 · FW · France", club:"Bayer Leverkusen", pos:"FW", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:30, light:"y", trend:"flat", note:"Rennes are competing with Marseille to re-sign the former club captain.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Nicolas Lemaître", sub:"29 · CM · France", club:"ES Troyes AC", pos:"CM", report:"26 Jun 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:55, prob:42, light:"y", trend:"up", note:"Reported close to completing his move ahead of the new season.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42},
-  {name:"Yerson Mosquera", sub:"Colombian centre-back linked as depth option", club:"Wolverhampton Wanderers", pos:"CB", report:"Rennes are searching for a central defender to compete for a starting spot ahead of their Europa League campaign, with Wolves' Mosquera among options considered, though the player is still building fitness after a serious ACL injury.", src:"Ouest-France", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Described as one of several defensive targets rather than a firm negotiation; recent ACL history may affect Rennes' final decision.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+  {name:"Yerson Mosquera", sub:"Colombian centre-back linked as depth option", club:"Wolverhampton Wanderers", pos:"CB", report:"Rennes searching for a central defender", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"Described as one of several defensive targets rather than a firm negotiation; recent ACL history may affect Rennes' final decision.", lastSeen:"2026-08-06T14:21:37Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Breel Embolo", sub:"29 · ST · Switzerland", club:"Rennes", pos:"ST", report:"23 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:22, light:"o", trend:"flat", note:"Hull City and Ipswich Town have both been credited with interest as Rennes look to trim the forward line.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
-  {name:"Esteban Lepaul", sub:"Striker attracting outside interest but going nowhere this window", club:"Multiple suitors (unspecified)", pos:"ST", report:"Despite interest from elsewhere, Rennes are holding firm on Lepaul with no active negotiations underway; a bigger sale is anticipated for a future window rather than this summer.", src:"TOP Mercato", tier:3, fee:"N/A", truth:60, prob:10, light:"r", trend:"flat", note:"Club is reportedly planning to cash in only in summer 2027 once his valuation peaks further.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
+  {name:"Esteban Lepaul", sub:"Striker attracting outside interest but going nowhere this window", club:"Multiple suitors (unspecified)", pos:"ST", report:"Despite interest from elsewhere, Rennes holding", src:"On-page rumour", tier:3, fee:"N/A", truth:50, prob:30, light:"y", trend:"up", note:"Club is reportedly planning to cash in only in summer 2027 once his valuation peaks further.", lastSeen:"2026-08-06T14:21:37Z", baseProb:30},
+  {name:"Abdelhamid Ait Boudlal", sub:"", club:"", pos:"", report:"Rennes received €23m offer for their prospect", src:"topmercato", tier:3, fee:"€23m", truth:70, prob:45, light:"y", trend:"flat", note:"Incoming offer reported", lastSeen:"2026-08-06T14:21:37Z", baseProb:45}
 ];
 
 const RISERS = [
@@ -920,9 +921,7 @@ const POSITIONS = [
   {p:"Attacking depth", w:45, x:"Aguerd and Terrier both linked as reunions with former players, competing directly with Marseille for both."}
 ];
 
-const WATCHLIST = [
-  {name:"Martin Terrier", club:"Bayer Leverkusen", pos:"FW", dir:"in", age:"~4 days", tier:2, note:"Rennes and Marseille both chasing the former club captain."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "gffn-rennes": {l:"Get French Football News · Rennes", u:"https://www.getfootballnewsfrance.com/tag/rennes/"},
@@ -935,7 +934,8 @@ const HUB = {
   leParisienAdrienThomasson: {l:"Le Parisien", u:"https://www.leparisien.fr/sports/football/ligue-1/mercato-rennes-le-lensois-adrien-thomasson-a-dit-oui-au-stade-rennais-14-05-2026-JWFNX7MIWVCOZBR4FBP5DT7E6I.php"},
   maxifootNordanMukiele: {l:"Maxifoot", u:"https://news.maxifoot.fr/rennes/mukiele-prete-a-montpellier-officiel-foot-461083.htm"},
   aFPviaFrance24EliezerMayenda: {l:"AFP via France 24", u:"https://www.france24.com/en/live-news/20260706-rennes-buy-young-striker-mayenda-from-sunderland"},
-  footMercatoJeremyJacquet: {l:"Foot Mercato", u:"https://www.footmercato.net/club/stade-rennais-fc/tableau/"}};
+  footMercatoJeremyJacquet: {l:"Foot Mercato", u:"https://www.footmercato.net/club/stade-rennais-fc/tableau/"},
+  topmercatoAbdelhamidAitBoudlal: {l:"topmercato", u:"https://www.topmercato.com/"}};
 
 const LINKMAP = {
   "Charlie Cresswell": ["gffn-rennes", "leTelegrammeMaxifootCharlieCresswell"],
@@ -952,7 +952,8 @@ const LINKMAP = {
   "Bryan Reynolds": ["leTelegrammeBryanReynolds"],
   "Nordan Mukiele": ["maxifootNordanMukiele"],
   "Mikayil Faye": ["ouestFranceYersonMosquera"],
-  "Jeremy Jacquet": ["footMercatoJeremyJacquet"]};
+  "Jeremy Jacquet": ["footMercatoJeremyJacquet"],
+  "Abdelhamid Ait Boudlal": ["topmercatoAbdelhamidAitBoudlal"]};
 const WL_LINKMAP = {
   "Martin Terrier": ["gffn-rennes"]
 };

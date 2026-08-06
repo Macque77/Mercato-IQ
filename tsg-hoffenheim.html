@@ -896,7 +896,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Fisnik Asllani", sub:"23 · Kosovo · ST", club:"RB Leipzig", pos:"Striker", report:"Sport BILD say the Kosovo international has chosen Leipzig ahead of Barcelona and that a move is imminent, with Leipzig intending to activate the release clause in his Hoffenheim contract. Salary terms with the player were still to be agreed.", src:"Sport BILD", tier:2, fee:"Release clause", truth:80, prob:75, light:"g", trend:"up", note:"Single-source tabloid reporting and personal terms were unresolved when it broke, so the deal is close rather than done. No confirmation yet from Hoffenheim or Leipzig.", lastSeen:"2026-08-06T10:49:40Z", baseProb:75}
+  {name:"Fisnik Asllani", sub:"Kosovo · M", club:"RB Leipzig", pos:"M", report:"Transfer imminent to RB Leipzig", src:"sport1.de", tier:3, fee:"Release clause", truth:85, prob:85, light:"g", trend:"up", note:"Deal described as standing before completion", lastSeen:"2026-08-06T14:21:37Z", baseProb:85}
 ];
 
 const RISERS = [
@@ -930,12 +930,13 @@ const HUB = {
   oneFootballBazoumanaTour: {l:"OneFootball", u:"https://onefootball.com/en/news/bazoumana-toure-joins-newcastle-from-hoffenheim-in-50m-move-deal-until-2031-43103486"},
   yahooSportsviaKickerMuhammedDamar: {l:"Yahoo Sports (via Kicker)", u:"https://sports.yahoo.com/articles/official-damar-joins-wolfsburg-tsg-152600372.html"},
   yahooSportsviaSkyGermanyLucaErlein: {l:"Yahoo Sports (via Sky Germany)", u:"https://sports.yahoo.com/articles/wolfsburg-leverkusen-close-hoffenheim-duo-115800467.html"},
-  skyDeutschlandreportcarriedbyGetGermanFootballNewsAdamDaghim: {l:"Sky Deutschland report, carried by Get German Football News", u:"https://sports.yahoo.com/articles/report-hoffenheim-reach-agreement-sign-195000069.html"}};
+  skyDeutschlandreportcarriedbyGetGermanFootballNewsAdamDaghim: {l:"Sky Deutschland report, carried by Get German Football News", u:"https://sports.yahoo.com/articles/report-hoffenheim-reach-agreement-sign-195000069.html"},
+  sport1FisnikAsllani: {l:"Sport1", u:"https://www.sport1.de/transfermarkt"}};
 
 const LINKMAP = {
   "Adam Daghim": ["gfn", "sportschauARDAdamDaghim", "skyDeutschlandreportcarriedbyGetGermanFootballNewsAdamDaghim"],
   "Bazoumana Touré": ["sky","espn","yahoo", "oneFootballBazoumanaTour"],
-  "Fisnik Asllani": ["gfn", "yahooSportsviaSportBildFisnikAsllani"],
+  "Fisnik Asllani": ["gfn", "yahooSportsviaSportBildFisnikAsllani", "sport1FisnikAsllani"],
   "Patrick Wimmer": ["sportschauARDPatrickWimmer"],
   "Muhammed Damar": ["yahooSportsviaKickerMuhammedDamar"],
   "Luca Erlein": ["yahooSportsviaSkyGermanyLucaErlein"]};

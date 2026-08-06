@@ -889,7 +889,8 @@ const CONFIRMED_OUT = [
   {name:"Paulo Dybala", sub:"30 · CAM/ST · Argentina", club:"Juventus", pos:"CAM/ST", fee:"Free agent", free:true, status:"done", statusTxt:"DONE, EXIT", note:"Contract expired 30 Jun. Dybala departs as free agent; Juventus completed signing."},
   {name:"Alessandro Romano", sub:"20 · CB · Italy", club:"Cagliari", pos:"CB", fee:"Loan, €5m plus add-ons obligation to buy", free:false, status:"done", statusTxt:"DONE, LOAN OUT", note:"Confirmed 1 Jul. Young centre-back sent out on loan with an obligation to buy attached, a squad-management move as Roma trims its defensive numbers."},
   {name:"Mattia Viti", sub:"CB · Italy", club:"permanent to Sampdoria", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move after a loan spell, four-year contract, medicals confirmed via Di Marzio."},
-  {name:"Artem Dovbyk", sub:"Striker, UKR, 28", club:"Bologna", pos:"ST", fee:"Part of Castro swap deal", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moves to Bologna as part of the same operation that brought Santiago Castro to Roma; a buyback clause for Roma has been reported."}
+  {name:"Artem Dovbyk", sub:"Striker, UKR, 28", club:"Bologna", pos:"ST", fee:"Part of Castro swap deal", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moves to Bologna as part of the same operation that brought Santiago Castro to Roma; a buyback clause for Roma has been reported."},
+  {name:"Zeki Celik", sub:"Turkey · RB", club:"AS Roma", pos:"RB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Heading to Juventus"}
 ];
 
 const INCOMING = [
@@ -903,8 +904,7 @@ const INCOMING = [
 ];
 
 const OUTGOING = [
-  {name:"Marash Kumbulla", sub:"Centre-back, ALB, 25", club:"Unspecified (loan/sale)", pos:"CB", report:"Roma are working on moving Kumbulla out either on loan or permanently as Gasperini reshapes the defensive options.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Replacement right-back/defensive targets already being lined up, suggesting the exit is progressing in parallel.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Zeki Celik", sub:"29 · Turkey · RB", club:"Juventus", pos:"RB", report:"The Turkey full back is heading to Juventus after his contract renewal talks with Roma broke down, a departure that has forced the Giallorossi to move for cover on the right.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:92, prob:90, light:"g", trend:"flat", note:"Di Marzio frames the move as settled but no fee has been published and Roma have not announced it, so hold off on confirming terms.", lastSeen:"2026-08-06T08:45:12Z", baseProb:90}
+  {name:"Marash Kumbulla", sub:"Centre-back, ALB, 25", club:"Unspecified (loan/sale)", pos:"CB", report:"Roma are working on moving Kumbulla out either on loan or permanently as Gasperini reshapes the defensive options.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Replacement right-back/defensive targets already being lined up, suggesting the exit is progressing in parallel.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
 ];
 const DEAD = [
   {name:"Givairo Read", sub:"19 · Netherlands · RB", club:"Feyenoord", pos:"Right-back", report:"The long-running pursuit of the Feyenoord full-back has gone cold, with Di Marzio describing the negotiation as complex and Roma turning to Molina as a parallel track without formally closing the Read file.", src:"Gianluca Di Marzio / Italian press", tier:1, fee:"Undisclosed", truth:80, prob:20, light:"o", trend:"down", note:"Feyenoord's valuation is the sticking point. If Molina lands, this one is effectively finished.", lastSeen:"2026-08-06T10:49:40Z", baseProb:20, dir:"in", deadReason:"link went cold", deadAt:"2026-08-06T10:49:41Z"}
@@ -947,7 +947,8 @@ const HUB = {
   footballItaliaNahuelMolina: {l:"Football Italia", u:"https://www.football-italia.net/"},
   tuttoMercatoWebRafaelLeao: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/roma"},
   fanpageitSkySportKonstantinosKoulierakis: {l:"Fanpage.it / Sky Sport", u:"https://www.bing.com/news/search?q=Koulierakis+Roma"},
-  gianlucaDiMarzioGivairoRead: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/"}};
+  gianlucaDiMarzioGivairoRead: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/"},
+  tuttomercatowebZekiCelik: {l:"Tuttomercatoweb", u:"https://www.tuttomercatoweb.com/"}};
 
 const LINKMAP = {
   "Paulo Dybala": ["gnews-paulodybala"],
@@ -965,7 +966,7 @@ const LINKMAP = {
   "Alessio Cacciamani": ["footballItaliaNahuelMolina"],
   "Rafael Leao": ["tuttoMercatoWebRafaelLeao"],
   "Marash Kumbulla": ["tuttoMercatoWebRafaelLeao"],
-  "Zeki Celik": ["gianlucaDiMarzioGivairoRead"]};
+  "Zeki Celik": ["gianlucaDiMarzioGivairoRead", "tuttomercatowebZekiCelik"]};
 const WL_LINKMAP = {
   "Serhou Guirassy": ["gnews-serhouguirassy"],
   "Paulo Dybala": ["gnews-paulodybala"],

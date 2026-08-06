@@ -6,7 +6,7 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 81
+  stories_count: 76
 };
 
 const TOP_STORIES = [  {
@@ -94,6 +94,13 @@ const TOP_STORIES = [  {
     value: "~€15m asking price", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
+    name: "Mika Godts",prob: 35, truth: 55, bullshit: false,
+    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
+    from: "Ajax", to: "Paris Saint-Germain",
+    tier: 1, coverage: 1, coverage_trend: 'down',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
     name: "Diego Moreira",prob: 30, truth: 50, bullshit: false,
     club_origin: "rc-strasbourg", club_display_name: "RC Strasbourg Alsace", direction: "out",
     from: "RC Strasbourg Alsace", to: "AS Roma",
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
-  {
-    name: "Rayan Bamba",prob: 65, truth: 70, bullshit: false,
-    club_origin: "le-mans-fc", club_display_name: "Le Mans FC", direction: "in",
-    from: "Stade Rennais", to: "Le Mans FC",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 81, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 76, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 81}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 76}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.789910Z",
+  updated: "2026-08-06T14:21:39.641140Z",
   label: "Nation aggregation"
 };

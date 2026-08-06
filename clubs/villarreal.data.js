@@ -36,7 +36,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Luis Milla", sub:"CM, Spain", club:"Getafe", pos:"CM", report:"Villarreal have identified Getafe's Luis Milla as their preferred replacement for the departing Dani Parejo, with Milla entering the final year of his contract and available cheaply.", src:"Diario AS", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Reported before Villarreal's managerial change (Marcelino out, Inigo Perez in from Rayo Vallecano), which could affect summer recruitment plans.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Luis Milla", sub:"unknown · Spain · M", club:"Getafe", pos:"M", report:"Villarreal have identified Getafe's Luis Milla", src:"On-page", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"up", note:"Early-stage interest", lastSeen:"2026-08-06T14:21:37Z", baseProb:40}
 ];
 
 const OUTGOING = [

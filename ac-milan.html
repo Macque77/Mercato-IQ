@@ -882,28 +882,26 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Jadon Sancho", sub:"24 · LW/RW · England", to:"permanent from Manchester United", fee:"Free agent", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 20 Jul. English winger joins as a free agent after his Manchester United departure, adding pace and creativity to Milan's attack."},
-  {name:"Gonçalo Ramos", sub:"25 · ST · Portugal", to:"permanent from Paris Saint-Germain", fee:"€80m+ (with add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Milan's marquee striker signing of the summer - the Portugal international arrives from PSG to lead the line under new coach Ruben Amorim."},
-  {name:"Mario Gila", sub:"25 · CB · Spain", to:"permanent from Lazio", fee:"~€30m (with bonuses)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"A direct Serie A rival raid - the Spanish centre-back strengthens Milan's defensive options."},
-  {name:"Goncalo Ramos", sub:"Striker, POR, 25", club:"Paris Saint-Germain", pos:"ST", fee:"€65-75m (club record)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a five-year deal after three seasons at PSG; multiple outlets describe it as Milan's record transfer fee, already involved in pre-season under Ruben Amorim."}
+  {name:"Goncalo Ramos", sub:"Striker, POR, 25", club:"Paris Saint-Germain", pos:"ST", fee:"€65-75m (club record)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a five-year deal after three seasons at PSG; multiple outlets describe it as Milan's record transfer fee, already involved in pre-season under Ruben Amorim."},
+  {name:"Mario Gila", sub:"25 · CB · Spain", to:"permanent from Lazio", fee:"~€30m (with bonuses)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"A direct Serie A rival raid - the Spanish centre-back strengthens Milan's defensive options."}
 ];
 
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Kerim Alajbegović", sub:"18 · W · Bosnia", club:"Bayer Leverkusen", pos:"W", report:"1 Aug 2026", src:"Football Italia", tier:3, fee:"€25-30m", truth:45, prob:20, light:"o", trend:"flat", note:"Named as an alternative to Karetsas, but Juventus and Premier League clubs are also credited with interest in the same player.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Can Uzun", sub:"20 · AM · Turkey/Germany", club:"Eintracht Frankfurt", pos:"AM", report:"1 Aug 2026", src:"Football Italia", tier:3, fee:"~€25m", truth:42, prob:18, light:"o", trend:"flat", note:"A third name floated for the same attacking-midfield slot; nothing beyond exploratory interest reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
-  {name:"Matheus Nwaneri", sub:"Winger/Forward, ENG, 19", club:"Arsenal", pos:"RW", report:"Milan are monitoring the young Arsenal winger as an attacking reinforcement, with Borussia Dortmund also in the race and Arsenal holding out for a high fee.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Early-stage interest reported alongside competition from Dortmund; Arsenal valuation seen as a stumbling block.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Brahim Diaz", sub:"Attacking midfielder, ESP, 26", club:"Real Madrid", pos:"CAM", report:"Milan sources have floated a possible reunion with the former loanee as squad depth is assessed following the Ramos signing.", src:"Milanistichannel", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Speculative talk tied to pre-season squad evaluation under Ruben Amorim rather than any concrete approach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Pierre-Emile Hojbjerg", sub:"31 · Denmark · CM", club:"Marseille", pos:"Midfielder", report:"Gianluca Di Marzio, speaking on Sky Italia's Calciomercato - L'Originale, named Hojbjerg as an option for Milan's midfield, with the Rossoneri described as alert to opportunities once the coaching staff has assessed the squad and the players returning from loan.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:70, prob:25, light:"o", trend:"flat", note:"Weak-ish sourcing in practice: this is a passing TV-segment remark rather than a report of concrete negotiations, and it reaches us via an English-language relay of Di Marzio's words rather than a written Sky Italia piece. Treat as a shortlist name, not an advanced deal, until fee talks with his club are reported.", lastSeen:"2026-08-05T22:44:07Z", baseProb:25},
-  {name:"Sankhoun Diawara", sub:"2006-born · CB", club:"Troyes", pos:"CB", report:"Gianluca Di Marzio reported Milan were pushing to complete a deal for the 2006-born Troyes centre-back, part of the Rossoneri's push to add young defensive depth.", src:"Gianluca Di Marzio (Sky Italia)", tier:1, fee:"Undisclosed", truth:85, prob:55, light:"g", trend:"flat", note:"Di Marzio is tier-1, but the report dates from late July and there has been no confirmation since, so treat the deal as unresolved rather than imminent.", lastSeen:"2026-08-06T08:45:12Z", baseProb:55}
+  {name:"Kerim Alajbegović", sub:"18 · W · Bosnia", club:"Bayer Leverkusen", pos:"W", report:"1 Aug 2026", src:"Football Italia", tier:0, fee:"€25-30m", truth:45, prob:20, light:"o", trend:"down", note:"On-page entry dated 1 Aug 2026; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:20},
+  {name:"Can Uzun", sub:"20 · AM · Turkey/Germany", club:"Eintracht Frankfurt", pos:"AM", report:"1 Aug 2026", src:"Football Italia", tier:0, fee:"~€25m", truth:42, prob:18, light:"o", trend:"down", note:"On-page entry dated 1 Aug 2026; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:18},
+  {name:"Matheus Nwaneri", sub:"Winger/Forward, ENG, 19", club:"Arsenal", pos:"W", report:"Milan are monitoring the young Arsenal winger", src:"Football Italia", tier:0, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"down", note:"On-page entry; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:20},
+  {name:"Brahim Diaz", sub:"Attacking midfielder, ESP, 26", club:"Real Madrid", pos:"CAM", report:"Milan sources have floated a possible reunion", src:"Milanistichannel", tier:0, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"down", note:"On-page entry; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:15},
+  {name:"Pierre-Emile Hojbjerg", sub:"31 · Denmark · CM", club:"Marseille", pos:"Midfielder", report:"Gianluca Di Marzio reported interest", src:"Gianluca Di Marzio", tier:1, fee:"Undisclosed", truth:70, prob:25, light:"o", trend:"down", note:"On-page entry; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:25},
+  {name:"Sankhoun Diawara", sub:"2006-born · CB", club:"Troyes", pos:"CB", report:"Gianluca Di Marzio reported Milan were pushing to sign", src:"Gianluca Di Marzio", tier:1, fee:"Undisclosed", truth:85, prob:55, light:"g", trend:"down", note:"On-page entry; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:55}
 ];
 
 const OUTGOING = [
-  {name:"Rafael Leão", sub:"27 · LW · Portugal", club:"Multiple (unspecified)", pos:"LW", report:"1 Aug 2026", src:"Football Italia", tier:2, fee:"€60-80m (expected)", truth:55, prob:32, light:"y", trend:"up", note:"Milan are expected to sell Leão and other first-team fringe pieces to help fund the Karetsas/Alajbegović/Uzun pursuit and further defensive reinforcement.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
-  {name:"Yunus Musah", sub:"23 · CM · USA", club:"Unnamed Premier League clubs", pos:"CM", report:"18 Jul 2026", src:"Nicolo Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Schira: early-stage interest only from two unnamed Premier League clubs — could leave Milan this summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Rafael Leao", sub:"27 · Portugal · W", club:"Fenerbahce", pos:"LW", report:"Fenerbahce are preparing fresh talks and a lucrative salary package as they push to sign the winger, with Milan said to be holding out for a permanent fee rather than sanctioning a loan. Ruben Amorim has publicly played down the speculation and insisted the squad remains his focus.", src:"Goal", tier:3, fee:"Undisclosed", truth:65, prob:30, light:"y", trend:"flat", note:"Sceptical read: we could not stand this up with a tier-one source such as Romano, Di Marzio or Schira, and the reporting traces back to Turkish speculation rather than an original tier-one report. Milan's asking price has not been credibly established. Handle as talk, not a deal.", lastSeen:"2026-08-05T13:15:33Z", baseProb:30},
-  {name:"Youssouf Fofana", sub:"Midfielder, FRA, 26", club:"Premier League (unnamed clubs)", pos:"CDM", report:"Two unnamed Premier League clubs have made enquiries for Fofana amid a congested Milan midfield.", src:"TuttoMercatoWeb", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"No club names attached yet; Milan's stance on a sale undetermined.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Santiago Gimenez", sub:"Striker, MEX, 25", club:"FC Porto", pos:"ST", report:"Porto have opened direct negotiations with Milan for the Mexican striker, with an initial valuation of around €20m mentioned.", src:"Football Italia", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Gimenez has fallen behind Gonçalo Ramos in the pecking order following Milan's club-record signing, fuelling exit talk.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+  {name:"Yunus Musah", sub:"23 · CM · USA", club:"Unnamed Premier League clubs", pos:"CM", report:"18 Jul 2026", src:"Nicolo Schira", tier:0, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"down", note:"On-page entry dated 18 Jul 2026; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:20},
+  {name:"Youssouf Fofana", sub:"Midfielder, FRA, 26", club:"Premier League (unnamed clubs)", pos:"CDM", report:"Two unnamed Premier League clubs have made enquiries", src:"TuttoMercatoWeb", tier:0, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"down", note:"On-page entry; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:20},
+  {name:"Santiago Gimenez", sub:"Striker, MEX, 25", club:"Porto", pos:"ST", report:"Porto have opened direct negotiations with Milan", src:"Football Italia", tier:0, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"down", note:"On-page entry; no fresh snippet found", lastSeen:"2026-08-06T14:21:37Z", baseProb:25}
 ];
 
 const RISERS = [
@@ -937,7 +935,8 @@ const HUB = {
   yardbarkerGoncaloRamos: {l:"Yardbarker", u:"https://www.yardbarker.com/"},
   goalcomRafaelLeao: {l:"Goal.com", u:"https://www.goal.com/en-us/team/ac-milan/news/9dntj5dioj5ex52yrgwzxrq9l"},
   diMarzioonCalciomercatoLOriginaleSkyItaliaPierreEmileHojbjerg: {l:"Di Marzio on Calciomercato - L'Originale (Sky Italia)", u:"https://milanreports.com/2026/07/18/hojbjerg-is-an-option-for-ac-milans-midfield-says-di-marzio/"},
-  diMarzioviaMilanReportsSankhounDiawara: {l:"Di Marzio, via Milan Reports", u:"https://milanreports.com/2026/07/23/di-marzio-milan-pushing-for-diawara/"}};
+  diMarzioviaMilanReportsSankhounDiawara: {l:"Di Marzio, via Milan Reports", u:"https://milanreports.com/2026/07/23/di-marzio-milan-pushing-for-diawara/"},
+  tuttomercatowebcomRafaelLeo: {l:"tuttomercatoweb.com", u:"https://www.tuttomercatoweb.com/"}};
 
 const LINKMAP = {
   "Jadon Sancho": ["club"],
@@ -951,7 +950,8 @@ const LINKMAP = {
   "Santiago Gimenez": ["footballItaliaMatheusNwaneri"],
   "Goncalo Ramos": ["yardbarkerGoncaloRamos"],
   "Pierre-Emile Hojbjerg": ["diMarzioonCalciomercatoLOriginaleSkyItaliaPierreEmileHojbjerg"],
-  "Sankhoun Diawara": ["diMarzioviaMilanReportsSankhounDiawara"]};
+  "Sankhoun Diawara": ["diMarzioviaMilanReportsSankhounDiawara"],
+  "Rafael Leão": ["tuttomercatowebcomRafaelLeo"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

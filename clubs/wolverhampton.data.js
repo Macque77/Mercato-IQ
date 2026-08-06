@@ -31,7 +31,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Kieran Trippier", sub:"35 · RB · England", club:"Newcastle United", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer, medical completed 8 June 2026 on a two-year deal with an optional third."}
+  {name:"Kieran Trippier", sub:"35 · RB · England", club:"Newcastle United", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer, medical completed 8 June 2026 on a two-year deal with an optional third."},
+  {name:"Raúl Jiménez", sub:"35 · Mexico · ST", club:"Benfica", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Return to Wolverhampton"}
 ];
 const CONFIRMED_OUT = [
   {name:"Matt Doherty", sub:"34 · RB · Ireland", club:"Sheffield United", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released on a free transfer, confirmed by Sheffield United's own unveiling."},
@@ -59,8 +60,8 @@ const HUB = {
   bbcArokodare: {l:"BBC Sport · Arokodare", u:"https://feeds.bbci.co.uk/sport/football/articles/clydelp1629o"},
   lastwordSigur: {l:"Last Word On Football · Sigur", u:"https://lastwordonsports.com/football/2026/07/07/wolves-niko-sigur-target/"},
   the72Medina: {l:"The72 · Medina", u:"https://the72.co.uk/2026/07/29/wolverhampton-wanderers-target-brayan-medina/"},
-  the72Sa: {l:"The72 · Sa", u:"https://the72.co.uk/2026/07/15/wolves-jose-sa-eyed-by-olympiacos/"}
-};
+  the72Sa: {l:"The72 · Sa", u:"https://the72.co.uk/2026/07/15/wolves-jose-sa-eyed-by-olympiacos/"},
+  skySportsFootballRalJimnez: {l:"Sky Sports Football", u:"https://www.skysports.com/football/news/12040/13568007/raul-jimenezs-wolves-return-mexican-strikers-comeback-aged-35-has-captured-supporters-imagination-at-molineux"}};
 
 const LINKMAP = {
   "Kieran Trippier": ["gnews-kierantrippier"],
@@ -69,8 +70,8 @@ const LINKMAP = {
   "Tolu Arokodare": ["bbcArokodare"],
   "Niko Sigur": ["lastwordSigur"],
   "Brayan Medina": ["the72Medina"],
-  "Jose Sa": ["the72Sa"]
-};
+  "Jose Sa": ["the72Sa"],
+  "Raúl Jiménez": ["skySportsFootballRalJimnez"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

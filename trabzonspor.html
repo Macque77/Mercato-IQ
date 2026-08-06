@@ -877,12 +877,11 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Mohamed Salah", sub:"34 · Egypt · FW", club:"Liverpool", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Marquee free-transfer arrival on a reported two-year deal after leaving Liverpool. Reported terms include a €17m salary, a €5m bonus and a 20% share of jersey sales; he is travelling to Turkey to complete formalities."}
+  {name:"Mohamed Salah", sub:"34 · Egypt · FW", club:"Liverpool", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Marquee free-transfer arrival on a reported two-year deal after leaving Liverpool. Reported terms include a €17m salary, a €5m bonus and a 20% share of jersey sales; he is travelling to Turkey to complete formalities."},
+  {name:"Darwin Nunez", sub:"25 · Uruguay · ST", club:"Liverpool", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed"}
 ];
 const CONFIRMED_OUT = [];
-const INCOMING = [
-  {name:"Darwin Nunez", sub:"27 · FW · Uruguay", club:"Al-Hilal", pos:"FW", report:"3 Aug 2026", src:"Sacha Tavolieri / SportBible", tier:2, fee:"Loan", truth:48, prob:24, light:"o", trend:"flat", note:"One of four Süper Lig clubs (with Besiktas, Galatasaray, Fenerbahce) now credited with interest in the loaned-out Al-Hilal forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24}
-];
+const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [
   {ar:"⬆", t:"<b>Mohamed Salah signing completed</b>: the free agent has joined on a reported two-year deal, chosen ahead of a rival Besiktas approach."}
@@ -900,10 +899,11 @@ const WATCHLIST = [];
 const HUB = {
   footballtransfersSalah: {l:"FootballTransfers · Salah", u:"https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/08/mohamed-salah-inclined-to-accept-eur34m-trabzonspor-offer"},
   sportbibleNunez: {l:"SportBible · Nunez", u:"https://www.sportbible.com/football/football-news/darwin-nunez-in-talks-over-move-as-transfer-tug-of-war-begins-551522-20260803"},
-  skySportsMohamedSalah: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13569969/mohamed-salah-former-liverpool-forward-set-to-join-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"}};
+  skySportsMohamedSalah: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13569969/mohamed-salah-former-liverpool-forward-set-to-join-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"},
+  skySportsMohamedSalah1: {l:"Sky Sports", u:"https://www.skysports.com/football/news/12040/13570282/mohamed-salah-former-liverpool-forward-joins-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"}};
 
 const LINKMAP = {
-  "Mohamed Salah": ["footballtransfersSalah", "skySportsMohamedSalah"],
+  "Mohamed Salah": ["footballtransfersSalah", "skySportsMohamedSalah", "skySportsMohamedSalah1"],
   "Darwin Nunez": ["sportbibleNunez"]
 };
 const WL_LINKMAP = {

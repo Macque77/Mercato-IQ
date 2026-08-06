@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "La Liga",
   nation: "Spain",
-  stories_count: 85
+  stories_count: 78
 };
 
 const TOP_STORIES = [  {
@@ -15,13 +15,6 @@ const TOP_STORIES = [  {
     from: "Atlético Madrid", to: "Aston Villa",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Rodri", prob: 40, truth: 80, bullshit: false,
-    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
-    from: "Manchester City", to: "Real Madrid",
-    tier: 1, coverage: 3, coverage_trend: 'flat',
-    value: "Around €80m", updated: "2026-08-03T18:00:00Z"
   },
   {
     name: "Igor Julio", prob: 40, truth: 85, bullshit: false,
@@ -38,13 +31,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Julian Alvarez", prob: 33, truth: 70, bullshit: false,
-    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
-    from: "Atletico Madrid", to: "FC Barcelona",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
     name: "Julián Álvarez", prob: 20, truth: 90, bullshit: false,
     club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "out",
     from: "Atlético Madrid", to: "Barcelona",
@@ -57,27 +43,6 @@ const TOP_STORIES = [  {
     from: "Fenerbahçe", to: "RCD Espanyol",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Sergio Escudero", prob: 95, truth: 90, bullshit: false,
-    club_origin: "deportivo-la-coruna", club_display_name: "RC Deportivo", direction: "out",
-    from: "RC Deportivo", to: "Real Zaragoza",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Joao Cancelo", prob: 65, truth: 75, bullshit: false,
-    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "out",
-    from: "FC Barcelona", to: "Al Hilal",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Around 10m euros", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Altay Bayindir", prob: 65, truth: 75, bullshit: false,
-    club_origin: "celta-vigo", club_display_name: "RC Celta", direction: "in",
-    from: "Manchester United", to: "RC Celta",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-08-03T18:00:00Z"
   },
   {
     name: "Miguel Rubio", prob: 65, truth: 78, bullshit: false,
@@ -129,13 +94,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Kingsley Ehizibue", prob: 45, truth: 55, bullshit: false,
-    club_origin: "valencia", club_display_name: "Valencia", direction: "in",
-    from: "Udinese (free agent)", to: "Valencia",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Free transfer", updated: "2026-08-03T18:00:00Z"
-  },
-  {
     name: "Javi López", prob: 45, truth: 65, bullshit: false,
     club_origin: "real-sociedad", club_display_name: "Real Sociedad", direction: "out",
     from: "Real Sociedad", to: "Rayo Vallecano",
@@ -149,14 +107,56 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
+  {
+    name: "Rodri", prob: 45, truth: 65, bullshit: false,
+    club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
+    from: "Manchester City", to: "FC Barcelona",
+    tier: 2, coverage: 2, coverage_trend: 'down',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Kingsley Ehizibue", prob: 45, truth: 55, bullshit: false,
+    club_origin: "valencia", club_display_name: "Valencia", direction: "in",
+    from: "Udinese (free agent)", to: "Valencia",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free transfer", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Gabriel Jesus", prob: 42, truth: 65, bullshit: false,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
+    from: "Manchester City", to: "Atlético Madrid",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "€45m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Cristian 'Cuti' Romero", prob: 40, truth: 65, bullshit: false,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
+    from: "Tottenham Hotspur", to: "Atlético Madrid",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€40-50m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Alexander Sørloth", prob: 40, truth: 55, bullshit: false,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "out",
+    from: "Atlético Madrid", to: "Juventus",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "~€25-30m (talks tied to Nico González deal)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Alex Remiro", prob: 40, truth: 70, bullshit: false,
+    club_origin: "real-sociedad", club_display_name: "Real Sociedad", direction: "out",
+    from: "Real Sociedad", to: "Barcelona",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€8-10m", updated: "2026-08-03T18:00:00Z"
+  },
 ];
 
-const BY_CLUB = {"atletico-madrid": 8, "real-madrid": 4, "espanyol": 5, "racing-santander": 4, "barcelona": 2, "deportivo-la-coruna": 4, "celta-vigo": 9, "rayo-vallecano": 3, "osasuna": 7, "valencia": 3, "real-sociedad": 8, "malaga": 3, "real-betis": 4, "getafe": 4, "villarreal": 3, "athletic-bilbao": 3, "alaves": 3, "sevilla": 5, "levante": 2, "elche": 1};
+const BY_CLUB = {"atletico-madrid": 8, "espanyol": 5, "racing-santander": 4, "deportivo-la-coruna": 3, "rayo-vallecano": 3, "osasuna": 6, "real-sociedad": 8, "celta-vigo": 8, "barcelona": 1, "valencia": 3, "malaga": 3, "real-betis": 4, "getafe": 4, "athletic-bilbao": 3, "alaves": 5, "levante": 2, "real-madrid": 1, "sevilla": 3, "villarreal": 3, "elche": 1};
 
-const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 3, "badge": true, "primary": "#EE2523", "primaryBright": "#FF6259"}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 8, "badge": true, "primary": "#EB6E1F", "primaryBright": "#FF8833"}, {"slug": "osasuna", "name": "CA Osasuna", "count": 7, "badge": true, "primary": "#D2001C", "primaryBright": "#FF6259"}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 3, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "elche", "name": "Elche CF", "count": 1, "badge": true, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "barcelona", "name": "FC Barcelona", "count": 2, "badge": true, "primary": "#A50044", "primaryBright": "#ED1C5A"}, {"slug": "getafe", "name": "Getafe CF", "count": 4, "badge": true, "primary": "#1B3F8B", "primaryBright": "#5C93FF"}, {"slug": "levante", "name": "Levante UD", "count": 2, "badge": true, "primary": "#0F3B6D", "primaryBright": "#5C93FF"}, {"slug": "malaga", "name": "M\u00e1laga CF", "count": 3, "badge": true, "primary": "#1257A6", "primaryBright": "#5C93FF"}, {"slug": "celta-vigo", "name": "RC Celta", "count": 9, "badge": true, "primary": "#8AC3EE", "primaryBright": "#C9E6FF"}, {"slug": "deportivo-la-coruna", "name": "RC Deportivo", "count": 4, "badge": true, "primary": "#0057A3", "primaryBright": "#5CA9FF"}, {"slug": "espanyol", "name": "RCD Espanyol", "count": 5, "badge": true, "primary": "#003DA5", "primaryBright": "#5C93FF"}, {"slug": "racing-santander", "name": "Racing de Santander", "count": 4, "badge": true, "primary": "#00843D", "primaryBright": "#4DDB8C"}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 3, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "real-betis", "name": "Real Betis", "count": 4, "badge": true, "primary": "#00954C", "primaryBright": "#2ECC71"}, {"slug": "real-madrid", "name": "Real Madrid", "count": 4, "badge": true, "primary": "#FEBE10", "primaryBright": "#FFFFFF"}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 8, "badge": true, "primary": "#0067B1", "primaryBright": "#5CA9FF"}, {"slug": "sevilla", "name": "Sevilla", "count": 5, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "valencia", "name": "Valencia", "count": 3, "badge": true, "primary": "#EE8707", "primaryBright": "#FFAD4D"}, {"slug": "villarreal", "name": "Villarreal", "count": 3, "badge": true, "primary": "#FFE667", "primaryBright": "#FFF3B0"}];
+const CLUBS_LIST = [{"slug": "athletic-bilbao", "name": "Athletic Bilbao", "count": 3, "badge": true, "primary": "#EE2523", "primaryBright": "#FF6259"}, {"slug": "atletico-madrid", "name": "Atl\u00e9tico Madrid", "count": 8, "badge": true, "primary": "#EB6E1F", "primaryBright": "#FF8833"}, {"slug": "osasuna", "name": "CA Osasuna", "count": 6, "badge": true, "primary": "#D2001C", "primaryBright": "#FF6259"}, {"slug": "alaves", "name": "Deportivo Alav\u00e9s", "count": 5, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "elche", "name": "Elche CF", "count": 1, "badge": true, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "barcelona", "name": "FC Barcelona", "count": 1, "badge": true, "primary": "#A50044", "primaryBright": "#ED1C5A"}, {"slug": "getafe", "name": "Getafe CF", "count": 4, "badge": true, "primary": "#1B3F8B", "primaryBright": "#5C93FF"}, {"slug": "levante", "name": "Levante UD", "count": 2, "badge": true, "primary": "#0F3B6D", "primaryBright": "#5C93FF"}, {"slug": "malaga", "name": "M\u00e1laga CF", "count": 3, "badge": true, "primary": "#1257A6", "primaryBright": "#5C93FF"}, {"slug": "celta-vigo", "name": "RC Celta", "count": 8, "badge": true, "primary": "#8AC3EE", "primaryBright": "#C9E6FF"}, {"slug": "deportivo-la-coruna", "name": "RC Deportivo", "count": 3, "badge": true, "primary": "#0057A3", "primaryBright": "#5CA9FF"}, {"slug": "espanyol", "name": "RCD Espanyol", "count": 5, "badge": true, "primary": "#003DA5", "primaryBright": "#5C93FF"}, {"slug": "racing-santander", "name": "Racing de Santander", "count": 4, "badge": true, "primary": "#00843D", "primaryBright": "#4DDB8C"}, {"slug": "rayo-vallecano", "name": "Rayo Vallecano", "count": 3, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "real-betis", "name": "Real Betis", "count": 4, "badge": true, "primary": "#00954C", "primaryBright": "#2ECC71"}, {"slug": "real-madrid", "name": "Real Madrid", "count": 1, "badge": true, "primary": "#FEBE10", "primaryBright": "#FFFFFF"}, {"slug": "real-sociedad", "name": "Real Sociedad", "count": 8, "badge": true, "primary": "#0067B1", "primaryBright": "#5CA9FF"}, {"slug": "sevilla", "name": "Sevilla", "count": 3, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "valencia", "name": "Valencia", "count": 3, "badge": true, "primary": "#EE8707", "primaryBright": "#FFAD4D"}, {"slug": "villarreal", "name": "Villarreal", "count": 3, "badge": true, "primary": "#FFE667", "primaryBright": "#FFF3B0"}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.797096Z",
+  updated: "2026-08-06T14:21:39.647064Z",
   label: "League aggregation"
 };

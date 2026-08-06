@@ -6,7 +6,7 @@
 const NATION = {
   name: "Turkey",
   flag_emoji: "🇹🇷",
-  stories_count: 17
+  stories_count: 15
 };
 
 const TOP_STORIES = [  {
@@ -31,16 +31,16 @@ const TOP_STORIES = [  {
     value: "Contract renewal", updated: "2026-08-03T14:30:00Z", league: "Super Lig"
   },
   {
-    name: "Nariman Akhundzada",prob: 80, truth: 90, bullshit: false,
-    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
-    from: "Columbus Crew", to: "Erzurumspor",
+    name: "Iván Cedric",prob: 80, truth: 85, bullshit: false,
+    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
+    from: "Vanspor FK", to: "Alanyaspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Iván Cedric",prob: 80, truth: 85, bullshit: false,
-    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
-    from: "Vanspor FK", to: "Alanyaspor",
+    name: "Nariman Akhundzada",prob: 80, truth: 90, bullshit: false,
+    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
+    from: "Columbus Crew", to: "Erzurumspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
@@ -59,13 +59,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
-    name: "Darwin Nunez",prob: 28, truth: 50, bullshit: false,
-    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
-    from: "Al-Hilal", to: "Beşiktaş",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
-  },
-  {
     name: "Ali Diabaté",prob: 8, truth: 80, bullshit: false,
     club_origin: "samsunspor", club_display_name: "Samsunspor", direction: "out",
     from: "Samsunspor", to: "Samsunspor",
@@ -81,24 +74,10 @@ const TOP_STORIES = [  {
   },
   {
     name: "Wilfred Ndidi",prob: 45, truth: 70, bullshit: false,
-    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "out",
-    from: "Beşiktaş", to: "Al Diriyah",
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Al Diriyah", to: "Beşiktaş",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "€7m rejected", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
-  },
-  {
-    name: "Youssouf Fofana",prob: 40, truth: 65, bullshit: false,
-    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
-    from: "AC Milan", to: "Beşiktaş",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "€20m", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
-  },
-  {
-    name: "Francis Nzaba",prob: 35, truth: 85, bullshit: false,
-    club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
-    from: "İstanbul Başakşehir", to: "Antalyaspor",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
     name: "Franck Kessie",prob: 35, truth: 60, bullshit: false,
@@ -108,20 +87,41 @@ const TOP_STORIES = [  {
     value: "Free", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
   {
+    name: "Francis Nzaba",prob: 35, truth: 85, bullshit: false,
+    club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
+    from: "İstanbul Başakşehir", to: "Antalyaspor",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
+  },
+  {
     name: "Güray Vural",prob: 15, truth: 55, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
     from: "Free agent (ex-Iğdır FK)", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Free", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
   },
+  {
+    name: "Dusan Vlahovic",prob: 12, truth: 30, bullshit: false,
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Juventus", to: "Beşiktaş",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
+  },
+  {
+    name: "Mauro Icardi",prob: 10, truth: 25, bullshit: false,
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Free agent (ex-Galatasaray)", to: "Beşiktaş",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z", league: "Süper Lig"
+  },
 ];
 
-const BY_LEAGUE = {"Super Lig": 3, "S\u00fcper Lig": 14, "B\u00f6lgesel Amat\u00f6r Lig": 0};
+const BY_LEAGUE = {"Super Lig": 3, "S\u00fcper Lig": 12, "B\u00f6lgesel Amat\u00f6r Lig": 0};
 
-const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "count": 14}, {"slug": "super-lig", "name": "Super Lig", "count": 3}, {"slug": "b\u00f6lgesel-amat\u00f6r-lig", "name": "B\u00f6lgesel Amat\u00f6r Lig", "count": 0}];
+const LEAGUES_LIST = [{"slug": "s\u00fcper-lig", "name": "S\u00fcper Lig", "count": 12}, {"slug": "super-lig", "name": "Super Lig", "count": 3}, {"slug": "b\u00f6lgesel-amat\u00f6r-lig", "name": "B\u00f6lgesel Amat\u00f6r Lig", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.792338Z",
+  updated: "2026-08-06T14:21:39.643126Z",
   label: "Nation aggregation"
 };

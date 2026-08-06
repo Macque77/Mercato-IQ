@@ -73,7 +73,7 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Rodri", sub:"28 · Spain · M", club:"Manchester City", pos:"Midfielder", report:"Barcelona keen on Rodri; Real Madrid talks with Manchester City star stall", src:"The Guardian", tier:2, fee:"Undisclosed", truth:75, prob:35, light:"y", trend:"flat", note:"Barcelona and Real Madrid both interested; no agreement reached", lastSeen:"2026-08-06T14:13:57Z", baseProb:35}
+  {name:"Rodri", sub:"28 · Spain · CM", club:"Manchester City", pos:"Midfielder", report:"Barcelona keen on Rodri as Real Madrid talks with Manchester City star stall", src:"The Guardian", tier:2, fee:"Undisclosed", truth:75, prob:35, light:"y", trend:"flat", note:"Barcelona and Real Madrid both interested; Real Madrid talks reported to have stalled", lastSeen:"2026-08-06T14:21:37Z", baseProb:35}
 ];
 const DEAD = [
   {name:"Enzo Fernández", sub:"23 · Argentina · M", club:"Benfica", pos:"Midfielder", report:"Incoming link reported ~6 days ago", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"up", note:"Old report; no recent confirmation found", lastSeen:"2026-08-06T13:55:46Z", baseProb:30, dead:true, deadReason:"No recent snippet support; likely stale rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},

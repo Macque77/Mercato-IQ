@@ -43,10 +43,10 @@ const INCOMING = [
   {name:"Ricardo Rodríguez", sub:"Swiss left-back, 33, free agent", club:"Free agent", pos:"LB", report:"Named as one of five left-back candidates being weighed by Deportivo before they settled on Angeliño; competition to partner/replace Quagliata at left-back.", src:"ElDesmarque", tier:2, fee:"", truth:55, prob:15, light:"o", trend:"flat", note:"Overtaken in the club's plans once the Angeliño deal advanced.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 
-const OUTGOING = [
-  {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:95}
+const OUTGOING = [];
+const DEAD = [
+  {name:"Sergio Escudero", sub:"Spanish left-back, veteran", club:"Real Zaragoza", pos:"LB", report:"Left-back and former captain during Depor's promotion campaign departed for Real Zaragoza on a multi-year deal.", src:"Aragón Digital", tier:2, fee:"", truth:90, prob:95, light:"g", trend:"flat", note:"This is effectively confirmed — Escudero has already spoken publicly about the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:95, dead:true, deadReason:"no longer a current link", dir:"out", deadAt:"2026-08-06T14:21:38Z"}
 ];
-const DEAD = [];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Domingos Duarte reunion talks</b>: advanced negotiations for a free-agent centre-back who already knows the club from a prior loan spell."}
@@ -73,7 +73,8 @@ const HUB = {
   elDesmarqueRicardoRodrguez: {l:"ElDesmarque", u:"https://www.eldesmarque.com/futbol/mercado-de-fichajes/20260723/deportivo-coruna-aumenta-debate-fichaje-lateral-ricardo-rodriguez-cuatro-mas_18_019784861.html"},
   aragnDigitalSergioEscudero: {l:"Aragón Digital", u:"https://www.aragondigital.es/articulo/real-zaragoza/sergio-escudero-lateral-real-zaragoza/20260702123607993404.html"},
   superdeporteAspJensen: {l:"Superdeporte", u:"https://www.superdeporte.es/fichajes/2026/07/13/"},
-  elGolDigitalAngelio: {l:"El Gol Digital", u:"https://www.elgoldigital.com/futbol/rc-deportivo-coruna/deportivo-angelino-cesion-obligacion-compra/"}};
+  elGolDigitalAngelio: {l:"El Gol Digital", u:"https://www.elgoldigital.com/futbol/rc-deportivo-coruna/deportivo-angelino-cesion-obligacion-compra/"},
+  sportesAngelio: {l:"sport.es", u:"https://www.sport.es/es/"}};
 
 const LINKMAP = {
   "Domingos Duarte": ["fichajesnet-duarte"],
@@ -81,7 +82,7 @@ const LINKMAP = {
   "Ricardo Rodríguez": ["elDesmarqueRicardoRodrguez"],
   "Sergio Escudero": ["aragnDigitalSergioEscudero"],
   "Asp Jensen": ["superdeporteAspJensen"],
-  "Angeliño": ["elGolDigitalAngelio"]};
+  "Angeliño": ["elGolDigitalAngelio", "sportesAngelio"]};
 const WL_LINKMAP = {
   "Domingos Duarte": ["fichajesnet-duarte"]
 };

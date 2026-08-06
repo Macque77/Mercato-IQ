@@ -6,17 +6,10 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 38
+  stories_count: 37
 };
 
 const TOP_STORIES = [  {
-    name: "Fisnik Asllani",prob: 95, truth: 97, bullshit: false,
-    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "in",
-    from: "TSG Hoffenheim", to: "RB Leipzig",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "€25m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
-  {
     name: "Junior Dina Ebimbe",prob: 88, truth: 92, bullshit: false,
     club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "out",
     from: "Eintracht Frankfurt", to: "Schalke 04",
@@ -43,13 +36,6 @@ const TOP_STORIES = [  {
     from: "Tottenham Hotspur", to: "FC Cologne",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Loan (no fee)", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
-  {
-    name: "Yan Diomandé",prob: 62, truth: 72, bullshit: false,
-    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "out",
-    from: "RB Leipzig", to: "Real Madrid",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed (fee TBC)", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
     name: "Tomas Bobcek",prob: 55, truth: 70, bullshit: false,
@@ -114,14 +100,28 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€25m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
+  {
+    name: "Kastriot Imeri",prob: 45, truth: 70, bullshit: false,
+    club_origin: "union-berlin", club_display_name: "1. FC Union Berlin", direction: "in",
+    from: "Thun", to: "1. FC Union Berlin",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
+  {
+    name: "Noah Atubolu",prob: 45, truth: 60, bullshit: false,
+    club_origin: "sc-freiburg", club_display_name: "SC Freiburg", direction: "out",
+    from: "SC Freiburg", to: "Olympique Marseille / Premier League interest",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 37, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
+const BY_LEAGUE = {"Bundesliga": 36, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 37}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 36}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.790209Z",
+  updated: "2026-08-06T14:21:39.641378Z",
   label: "Nation aggregation"
 };

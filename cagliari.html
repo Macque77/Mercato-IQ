@@ -888,13 +888,15 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Daniel Maldini", sub:"Attacking midfielder/forward, Italy, 24", club:"Atalanta", pos:"CAM", report:"Cagliari are pushing to land Maldini on loan from Atalanta as part of a parallel operation potentially linked to the Esposito exit.", src:"Fabrizio Romano", tier:1, fee:"Loan, undisclosed buy option", truth:75, prob:55, light:"g", trend:"flat", note:"Reported as more advanced than the Esposito side of the deal; not yet confirmed as an official swap.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Unnamed Juventus prospect / loan replacement", sub:"Attacker, replacement plan if Esposito leaves", club:"Juventus", pos:"ST", report:"Cagliari are lining up a loan striker from Juventus as cover in case Sebastiano Esposito is sold before deadline day.", src:"Sportmediaset", tier:2, fee:"Loan (undisclosed)", truth:55, prob:40, light:"y", trend:"flat", note:"Player not yet named publicly; framed as a contingency plan tied to the Esposito situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Daniel Maldini", sub:"23 · Italy · W", club:"AC Milan", pos:"W", report:"Loan with option to buy agreed", src:"tuttomercatoweb.com", tier:3, fee:"Loan", truth:90, prob:95, light:"g", trend:"up", note:"Operazione in prestito oneroso con diritto di riscatto", lastSeen:"2026-08-06T14:21:37Z", baseProb:95}
 ];
 
 const OUTGOING = [
-  {name:"Yerry Mina", sub:"31 · CB · Colombia", club:"Fenerbahce (rumoured)", pos:"CB", report:"9 Jul 2026", src:"Football Italia", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Turkish interest reported in the experienced centre-back, but nothing beyond exploratory contact confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Sebastiano Esposito", sub:"Striker, Italy, 23", club:"Atalanta", pos:"ST", report:"Relations between Esposito and Cagliari have broken down over a contract dispute; Cagliari are asking around €18m for the striker, with Atalanta the strongest suitor and Napoli also monitoring. Inter retain a resale percentage.", src:"FC Internews", tier:2, fee:"Asking price approx. €18m", truth:75, prob:60, light:"g", trend:"flat", note:"Cagliari reportedly cut Esposito's wages amid the standoff ('metodo Koopmeiners'); situation is fluid with multiple outlets confirming the rift.", lastSeen:"2026-08-04T19:10:50Z", baseProb:60}
+  {name:"Yerry Mina", sub:"30 · Colombia · D", club:"Cagliari", pos:"D", report:"Exit underway", src:"transferfeed", tier:3, fee:"Undisclosed", truth:70, prob:60, light:"g", trend:"up", note:"Departure reported ~3 weeks ago", lastSeen:"2026-08-06T14:21:37Z", baseProb:60},
+  {name:"Sebastiano Esposito", sub:"23 · Italy · F", club:"Cagliari", pos:"F", report:"Relations broken; exit expected", src:"transferfeed", tier:3, fee:"Asking price approx. €18m", truth:75, prob:65, light:"g", trend:"up", note:"Relations between Esposito and Cagliari have broken down", lastSeen:"2026-08-06T14:21:37Z", baseProb:65}
+];
+const DEAD = [
+  {name:"Unnamed Juventus prospect / loan replacement", sub:"Attacker, replacement plan if Esposito leaves", club:"Juventus", pos:"ST", report:"Cagliari are lining up a loan striker from Juventus as cover in case Sebastiano Esposito is sold before deadline day.", src:"Sportmediaset", tier:2, fee:"Loan (undisclosed)", truth:55, prob:40, light:"y", trend:"flat", note:"Player not yet named publicly; framed as a contingency plan tied to the Esposito situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T14:21:38Z"}
 ];
 
 const RISERS = [
@@ -927,7 +929,8 @@ const HUB = {
   club: {l:"Cagliari Calcio Official", u:"https://cagliaricalcio.com/en/news/"},
   gonfialaRetecitingFabrizioRomanoDanielMaldini: {l:"Gonfia la Rete (citing Fabrizio Romano)", u:"https://www.gonfialarete.com/2026/08/04/calciomercato-prove-di-scambio-tra-cagliari-e-atalanta-il-punto-della-situazione/"},
   sportmediasetviaMSNUnnamedJuventusprospectloanreplacement: {l:"Sportmediaset (via MSN)", u:"https://www.msn.com/it-it/sport/calcio/cagliari-esposito-che-intrigo-la-percentuale-per-linter-il-sostituto-dalla-juve-e-il-napoli-alla-finestra"},
-  fCInternewsviaMSNSebastianoEsposito: {l:"FC Internews (via MSN)", u:"https://www.msn.com/it-it/sport/calcio/il-cagliari-chiede-18-milioni-per-esposito-intanto-arriva-il-sostituto"}};
+  fCInternewsviaMSNSebastianoEsposito: {l:"FC Internews (via MSN)", u:"https://www.msn.com/it-it/sport/calcio/il-cagliari-chiede-18-milioni-per-esposito-intanto-arriva-il-sostituto"},
+  tuttomercatowebcomDanielMaldini: {l:"tuttomercatoweb.com", u:"https://www.tuttomercatoweb.com/"}};
 
 const LINKMAP = {
   "Harry Winks": ["footballItalia","club"],
@@ -936,7 +939,7 @@ const LINKMAP = {
   "Demi Akarakiri": ["footballItalia","club"],
   "Gianluca Gaetano": ["footballItalia"],
   "Yerry Mina": ["footballItalia"],
-  "Daniel Maldini": ["gonfialaRetecitingFabrizioRomanoDanielMaldini"],
+  "Daniel Maldini": ["gonfialaRetecitingFabrizioRomanoDanielMaldini", "tuttomercatowebcomDanielMaldini"],
   "Unnamed Juventus prospect / loan replacement": ["sportmediasetviaMSNUnnamedJuventusprospectloanreplacement"],
   "Sebastiano Esposito": ["fCInternewsviaMSNSebastianoEsposito"]};
 const WL_LINKMAP = {

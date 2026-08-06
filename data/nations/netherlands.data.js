@@ -6,36 +6,15 @@
 const NATION = {
   name: "Netherlands",
   flag_emoji: "🇳🇱",
-  stories_count: 37
+  stories_count: 35
 };
 
 const TOP_STORIES = [  {
-    name: "Kodai Sano",prob: 92, truth: 90, bullshit: false,
-    club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
-    from: "NEC Nijmegen", to: "PSV Eindhoven",
+    name: "Kodai Sano",prob: 92, truth: 88, bullshit: false,
+    club_origin: "nec", club_display_name: "N.E.C.", direction: "out",
+    from: "N.E.C.", to: "PSV",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Reduced from NEC's initial ~€20m asking price; final figure undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
-  },
-  {
-    name: "Kian Fitz-Jim",prob: 82, truth: 80, bullshit: false,
-    club_origin: "ajax", club_display_name: "AFC Ajax", direction: "out",
-    from: "AFC Ajax", to: "Torino",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "€3-4m", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
-  },
-  {
-    name: "Mika Godts",prob: 72, truth: 95, bullshit: false,
-    club_origin: "ajax", club_display_name: "AFC Ajax", direction: "out",
-    from: "AFC Ajax", to: "Paris Saint-Germain",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
-  },
-  {
-    name: "Tolu Arokodare",prob: 50, truth: 65, bullshit: false,
-    club_origin: "ajax", club_display_name: "AFC Ajax", direction: "in",
-    from: "Wolverhampton Wanderers", to: "AFC Ajax",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "TBC", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+    value: "Undisclosed", updated: "2026-08-04T14:30:00Z", league: "Eredivisie"
   },
   {
     name: "Jasper Schendelaar",prob: 45, truth: 70, bullshit: false,
@@ -52,18 +31,18 @@ const TOP_STORIES = [  {
     value: "Undisclosed (ETV ~€20m)", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
-    name: "Thom van Bergen",prob: 40, truth: 60, bullshit: false,
-    club_origin: "az-alkmaar", club_display_name: "AZ Alkmaar", direction: "in",
-    from: "FC Groningen", to: "AZ Alkmaar",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
-  },
-  {
     name: "Marvin Young",prob: 40, truth: 60, bullshit: false,
     club_origin: "rotterdam-sparta", club_display_name: "Sparta Rotterdam", direction: "out",
     from: "Sparta Rotterdam", to: "TBD",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Eredivisie"
+  },
+  {
+    name: "Thom van Bergen",prob: 40, truth: 60, bullshit: false,
+    club_origin: "az-alkmaar", club_display_name: "AZ Alkmaar", direction: "in",
+    from: "FC Groningen", to: "AZ Alkmaar",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
     name: "Shunsuke Mito",prob: 35, truth: 60, bullshit: false,
@@ -78,13 +57,6 @@ const TOP_STORIES = [  {
     from: "Willem II", to: "Telstar",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-04T14:30:00Z", league: "Eredivisie"
-  },
-  {
-    name: "Edson Álvarez",prob: 35, truth: 55, bullshit: false,
-    club_origin: "ajax", club_display_name: "AFC Ajax", direction: "in",
-    from: "Fenerbahçe", to: "AFC Ajax",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
     name: "Dirk Proper",prob: 30, truth: 55, bullshit: false,
@@ -114,14 +86,42 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
+  {
+    name: "Givairo Read",prob: 78, truth: 82, bullshit: false,
+    club_origin: "feyenoord", club_display_name: "Feyenoord Rotterdam", direction: "out",
+    from: "Feyenoord Rotterdam", to: "AS Roma",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€28-30m (in negotiation)", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+  },
+  {
+    name: "Xavi Simons",prob: 65, truth: 75, bullshit: false,
+    club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
+    from: "PSV Eindhoven (loan from Leipzig)", to: "PSV Eindhoven",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Loan + option", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+  },
+  {
+    name: "Travis Hernes",prob: 55, truth: 55, bullshit: false,
+    club_origin: "fc-groningen", club_display_name: "FC Groningen", direction: "in",
+    from: "Newcastle United (England)", to: "FC Groningen",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (option to buy)", updated: "2026-08-04T14:30:00Z", league: "Eredivisie"
+  },
+  {
+    name: "Jarrad Branthwaite",prob: 42, truth: 58, bullshit: false,
+    club_origin: "feyenoord", club_display_name: "Feyenoord Rotterdam", direction: "in",
+    from: "Everton", to: "Feyenoord Rotterdam",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€40m loan option", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+  },
 ];
 
-const BY_LEAGUE = {"Eredivisie": 37, "Eerste Divisie": 0};
+const BY_LEAGUE = {"Eredivisie": 35, "Eerste Divisie": 0};
 
-const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 37}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
+const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 35}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.790982Z",
+  updated: "2026-08-06T14:21:39.642071Z",
   label: "Nation aggregation"
 };

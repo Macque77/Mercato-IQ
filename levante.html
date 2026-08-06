@@ -885,18 +885,17 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Carlos Espí", sub:"Forward", club:"Real Madrid", pos:"FW", fee:"€25m (release clause)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Mourinho personally requested the deal for the breakout striker, whose rapid rise forced a quick release-clause transfer."},
   {name:"Carlos Espi", sub:"CAM/Winger, Spanish, 21", club:"Real Madrid", pos:"CAM", fee:"€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"One of the biggest sales in Levante's history; club president Pablo Sanchez confirmed Real Madrid's interest dated back to June. Espi scored 20 goals in 66 appearances over three seasons."},
   {name:"Unai Elgezabal", sub:"CB, Basque, 24", club:"SD Eibar", pos:"CB", fee:"Free/undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departs after two seasons and a promotion campaign; did not feature in preseason training while paperwork was finalised. Levante are said to be chasing Matturro's return as defensive cover."}
 ];
 
-const INCOMING = [
-  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:15, light:"o", trend:"flat", note:"Levante credited with background interest alongside Elche and Mallorca; Mallorca appear the most advanced of the three suitors.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Jeremy Toljan", sub:"RB, German, free agent", club:"Free agent", pos:"RB", report:"Levante explored signing free agent right-back Toljan as defensive cover but talks broke down without an agreement.", src:"Fichajes.com", tier:3, fee:"Free transfer (failed)", truth:55, prob:8, light:"r", trend:"flat", note:"Negotiations reported to have collapsed in early August, so a deal now looks unlikely.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8}
-];
+const INCOMING = [];
 
-const OUTGOING = [
-  {name:"Karl Etta Eyong", sub:"FW, six Europe's-elite suitors", club:"Barcelona", pos:"FW", report:"Barcelona are described as most keen, with Real Madrid, Man City, Man United, Arsenal and Chelsea all credited with interest in the young Cameroonian less than a year after he joined from Villarreal.", src:"Mundo Deportivo", tier:2, fee:"€30m (Spanish clubs) / €40m (foreign clubs) release clause", truth:55, prob:20, light:"o", trend:"flat", note:"Eyong reportedly hopes to push for a January move while staying on loan at Levante for now, since financial fair-play rules blocked a summer Barcelona deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+const OUTGOING = [];
+const DEAD = [
+  {name:"Arnau Tenas", sub:"24 · GK · Spain", club:"Paris Saint-Germain", pos:"GK", report:"17 Jul 2026", src:"FútbolFantasy", tier:3, fee:"TBD", truth:35, prob:15, light:"o", trend:"flat", note:"Levante credited with background interest alongside Elche and Mallorca; Mallorca appear the most advanced of the three suitors.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"Duplicate entry on page; no fresh snippet support", dir:"in", deadAt:"2026-08-06T14:21:38Z"},
+  {name:"Jeremy Toljan", sub:"RB, German, free agent", club:"Free agent", pos:"RB", report:"Levante explored signing free agent right-back Toljan as defensive cover but talks broke down without an agreement.", src:"Fichajes.com", tier:3, fee:"Free transfer (failed)", truth:55, prob:8, light:"r", trend:"flat", note:"Negotiations reported to have collapsed in early August, so a deal now looks unlikely.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8, dead:true, deadReason:"No recent snippet evidence; entry incomplete", dir:"in", deadAt:"2026-08-06T14:21:38Z"},
+  {name:"Karl Etta Eyong", sub:"FW, six Europe's-elite suitors", club:"Barcelona", pos:"FW", report:"Barcelona are described as most keen, with Real Madrid, Man City, Man United, Arsenal and Chelsea all credited with interest in the young Cameroonian less than a year after he joined from Villarreal.", src:"Mundo Deportivo", tier:2, fee:"€30m (Spanish clubs) / €40m (foreign clubs) release clause", truth:55, prob:20, light:"o", trend:"flat", note:"Eyong reportedly hopes to push for a January move while staying on loan at Levante for now, since financial fair-play rules blocked a summer Barcelona deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent snippet evidence; outgoing claim unsupported", dir:"out", deadAt:"2026-08-06T14:21:38Z"}
 ];
 
 const RISERS = [
@@ -913,9 +912,7 @@ const IGNORE = [];
 
 const POSITIONS = [];
 
-const WATCHLIST = [
-  {name:"Arnau Tenas", club:"Paris Saint-Germain", pos:"GK", dir:"in", age:"~2 weeks", tier:3, note:"Three-way interest with Elche and Mallorca; Mallorca reported as front-runners."}
-];
+const WATCHLIST = [];
 
 const HUB = {
   "futbolfantasy-villarreal": {l:"FútbolFantasy - Villarreal summer transfer tracker (Requena exit corroborated)", u:"https://www.futbolfantasy.com/laliga/equipos/villarreal/mercado-fichajes/verano-2026"},

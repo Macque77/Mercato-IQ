@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 161
+  stories_count: 174
 };
 
 const TOP_STORIES = [  {
@@ -15,6 +15,13 @@ const TOP_STORIES = [  {
     from: "Brentford", to: "Manchester United",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£65m + £6m add-ons", updated: "2026-06-06T12:00:00Z", league: "Premier League"
+  },
+  {
+    name: "Mishel Nduka",prob: 88, truth: 90, bullshit: false,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Manchester City",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Marcus Rashford",prob: 85, truth: 85, bullshit: false,
@@ -43,6 +50,13 @@ const TOP_STORIES = [  {
     from: "Roma", to: "Sunderland",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£30m", updated: "2026-07-31T09:00:00Z", league: "Premier League"
+  },
+  {
+    name: "Nestory Irankunda",prob: 45, truth: 55, bullshit: false,
+    club_origin: "watford", club_display_name: "Watford", direction: "out",
+    from: "Watford", to: "Sporting CP",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "~€22m (bonuses included)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
     name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
@@ -100,28 +114,14 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
-  {
-    name: "Antoine Semenyo",prob: 10, truth: 60, bullshit: false,
-    club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
-    from: "Multiple PL clubs previously linked", to: "Bournemouth",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "£65m release clause (Jan 2027)", updated: "2026-06-06T00:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Mathias Norgaard",prob: 100, truth: 100, bullshit: false,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
-    from: "Arsenal", to: "Everton",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
 ];
 
-const BY_LEAGUE = {"Premier League": 90, "Championship": 18, "League One": 53, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 103, "Championship": 18, "League One": 53, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 90}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 18}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 18}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:13:58.789618Z",
+  updated: "2026-08-06T14:21:39.640898Z",
   label: "Nation aggregation"
 };

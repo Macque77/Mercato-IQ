@@ -881,23 +881,21 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Marc-André ter Stegen", sub:"34 · GK · Germany", club:"free from Barcelona", pos:"GK", fee:"Free (Ajax covers a share of salary)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-time Barcelona No.1 joins Ajax; Romano reported him already travelling to sign."},
   {name:"Marc-Andre ter Stegen", sub:"34 · Germany · GK", club:"FC Barcelona", pos:"Goalkeeper", fee:"Loan (season-long)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by both clubs after weeks of delay caused by a wrangle over who covers the goalkeeper's wages, which the two boards eventually split. ESPN report there is no option to buy, with Ter Stegen contracted at Barcelona until 2028. A request from new head coach Michel, who worked with him at Girona."}
 ];
 
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Orkun Kökçü", sub:"24 · CM · Turkey", club:"Benfica", pos:"CM", report:"1 Aug 2026", src:"Sky Sports", tier:2, fee:"€30m", truth:52, prob:35, note:"Sky reports Ajax monitoring Benfica midfielder.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Edson Álvarez", sub:"DM, 28, ex-Ajax captain, currently Fenerbahçe", club:"Fenerbahçe", pos:"MF", report:"Jordi Cruijff is reportedly discussing a reunion with former captain Álvarez to add steel to Ajax's midfield once the Mika Godts sale funds a late-window spending spree.", src:"Mike Verweij, De Telegraaf", tier:1, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Described as the 'dream candidate' for the No.6 role but no formal proposal reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Tolu Arokodare", sub:"FW, 24, Wolverhampton Wanderers", club:"Wolverhampton Wanderers", pos:"FW", report:"Ajax are pushing for a season-long loan with a non-mandatory €18-20m option for the powerful Nigerian striker, whom Wolves bought for €26m from Genk a year ago.", src:"Mike Verweij, De Telegraaf", tier:1, fee:"Loan, ~€18-20m option", truth:65, prob:50, light:"y", trend:"flat", note:"Verweij predicts he 'can become a sensation' in the Eredivisie despite raw technical polish.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
-  {name:"Noa Lang", sub:"FW, 26, PSV Eindhoven", club:"PSV Eindhoven", pos:"FW", report:"Named as a possible like-for-like replacement for Mika Godts if his PSG move is finalised, though talks have not progressed beyond internal planning.", src:"FCUpdate.nl", tier:2, fee:"Undisclosed", truth:40, prob:25, light:"o", trend:"flat", note:"One of several attacking names floated alongside a defensive midfielder and extra cover.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Bart van Rooij", sub:"RB, FC Twente — link firmly denied", club:"FC Twente", pos:"DF", report:"Earlier reports linked the Twente right-back to Ajax, but De Telegraaf's Mike Verweij has shut the rumour down, calling him 'absolutely not an option'.", src:"Mike Verweij, De Telegraaf", tier:1, fee:"~€10m (mooted)", truth:20, prob:8, light:"r", trend:"flat", note:"Verweij says Ajax's data team routinely checks contract situations across Europe without genuine transfer intent.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8}
+  {name:"Orkun Kökçü", sub:"unknown · Turkey · Midfield", club:"Benfica", pos:"Midfield", report:"Transfer linked", src:"On-page", tier:3, fee:"Unknown", truth:50, prob:50, light:"y", trend:"up", note:"Incoming rumour dated 1 Aug 2026", lastSeen:"2026-08-06T14:21:37Z", baseProb:50},
+  {name:"Noa Lang", sub:"unknown · Netherlands · Winger", club:"Club Brugge", pos:"Winger", report:"Named as possible like-for-like replacement; open to return", src:"vi.nl", tier:3, fee:"Unknown", truth:55, prob:55, light:"g", trend:"up", note:"Lang stands open for return according to vi.nl transfer report", lastSeen:"2026-08-06T14:21:37Z", baseProb:55},
+  {name:"Bart van Rooij", sub:"unknown · Netherlands · Defender", club:"FC Twente", pos:"Right-back", report:"Earlier reports linked the Twente right-back to Ajax", src:"On-page", tier:3, fee:"Unknown", truth:40, prob:40, light:"y", trend:"up", note:"Right-back linked from Twente", lastSeen:"2026-08-06T14:21:37Z", baseProb:40},
+  {name:"Barcelona defender", sub:"unknown · unknown · Defender", club:"Barcelona", pos:"Defender", report:"Ajax making moves for Barcelona defender", src:"vi.nl", tier:3, fee:"Unknown", truth:45, prob:45, light:"y", trend:"flat", note:"Defender identity not specified in snippet", lastSeen:"2026-08-06T14:21:37Z", baseProb:45}
 ];
 
 const OUTGOING = [
-  {name:"Mika Godts", sub:"21 · Belgium · W", club:"Paris Saint-Germain", pos:"Winger", report:"PSG have lodged an official bid of more than €40m for Godts, with a package worth around €45m on the table. Ajax opened at a €60m valuation, so a gap remains, but the winger has already said yes to Paris and personal terms are agreed. PSG are rebuilding an attack that has lost senior forwards this summer.", src:"Fabrizio Romano", tier:1, fee:"€40m bid, package around €45m", truth:95, prob:72, light:"g", trend:"up", note:"Sourcing is as good as it gets, and Romano flagged negotiations as moving fast. The caveat is the valuation gap: Ajax want closer to €60m and have no pressing need to sell before the Conference League run continues, so the deal is likelier than not rather than done.", lastSeen:"2026-08-05T15:32:30Z", baseProb:72},
-  {name:"Kian Fitz-Jim", sub:"MF, 23, to Torino — contract to 2030", club:"Torino", pos:"MF", report:"Ajax and Torino are closing in on a deal that would send the midfielder to Serie A, with a resale percentage included; a contract until mid-2030 is reportedly ready for him to sign.", src:"Mike Verweij, De Telegraaf / Gianluca Di Marzio", tier:1, fee:"€3-4m", truth:80, prob:82, light:"g", trend:"flat", note:"Described as 'nearing agreement' rather than officially confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:82}
+  {name:"Mika Godts", sub:"unknown · Belgium · Forward", club:"PSG", pos:"Forward", report:"PSG lodged official bid of more than €40m", src:"On-page", tier:3, fee:"€40m+", truth:70, prob:70, light:"g", trend:"down", note:"Official bid received from PSG", lastSeen:"2026-08-06T14:21:37Z", baseProb:70},
+  {name:"Kian Fitz-Jim", sub:"unknown · unknown · Midfield", club:"Torino", pos:"Midfield", report:"Ajax and Torino closing in on deal", src:"On-page", tier:3, fee:"Unknown", truth:65, prob:65, light:"g", trend:"down", note:"Deal reportedly closing with Torino", lastSeen:"2026-08-06T14:21:37Z", baseProb:65}
 ];
 
 const RISERS = [];
@@ -922,7 +920,9 @@ const HUB = {
   ajax1nlMikeVerweijDeTelegraafBartvanRooij: {l:"Ajax1.nl (Mike Verweij, De Telegraaf)", u:"https://www.ajax1.nl/mike-verweij-zet-streep-door-ajax-transfer-absoluut-geen-optie/"},
   voetbalzoneMikeVerweijDeTelegraafKianFitzJim: {l:"Voetbalzone (Mike Verweij, De Telegraaf)", u:"https://www.voetbalzone.nl/nieuws/ajax-nadert-akkoord-over-uitgaande-transfer-van-vier-miljoen-euro/blt521ef7be8f0263fa"},
   fabrizioRomanoXMikaGodts: {l:"Fabrizio Romano (X)", u:"https://x.com/FabrizioRomano/status/2083923908403605760"},
-  aFCAjaxofficialMarcAndreterStegen: {l:"AFC Ajax (official)", u:"https://x.com/AFCAjax/status/2084542603547259241"}};
+  aFCAjaxofficialMarcAndreterStegen: {l:"AFC Ajax (official)", u:"https://x.com/AFCAjax/status/2084542603547259241"},
+  vinlNoaLang: {l:"vi.nl", u:"https://www.vi.nl/"},
+  voetbalInternationaalBarcelonadefender: {l:"Voetbal Internationaal", u:"https://www.vi.nl/nieuws/ajax-maakt-werk-van-komst-barcelona-verdediger"}};
 
 const LINKMAP = {
   "Orkun Kökçü": ["sky"],
@@ -930,10 +930,11 @@ const LINKMAP = {
   "Marc-André ter Stegen": ["fabrizioRomanoviaFootballTransfersMarcAndrterStegen"],
   "Edson Álvarez": ["voetbalzoneMikeVerweijDeTelegraafEdsonlvarez"],
   "Tolu Arokodare": ["voetbalzoneMikeVerweijDeTelegraafToluArokodare"],
-  "Noa Lang": ["fCUpdatenlNoaLang"],
+  "Noa Lang": ["fCUpdatenlNoaLang", "vinlNoaLang"],
   "Bart van Rooij": ["ajax1nlMikeVerweijDeTelegraafBartvanRooij"],
   "Kian Fitz-Jim": ["voetbalzoneMikeVerweijDeTelegraafKianFitzJim"],
-  "Marc-Andre ter Stegen": ["aFCAjaxofficialMarcAndreterStegen"]};
+  "Marc-Andre ter Stegen": ["aFCAjaxofficialMarcAndreterStegen"],
+  "Barcelona defender": ["voetbalInternationaalBarcelonadefender"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

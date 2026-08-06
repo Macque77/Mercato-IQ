@@ -43,12 +43,14 @@ const INCOMING = [
   {name:"Jahnoah Markelo", sub:"DF", club:"Coventry City", pos:"DF", report:"~1 wk ago", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:65, prob:55, light:'g', trend:'up', note:"Rangers reportedly in talks for the defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Mikey Moore", sub:"W", club:"Tottenham Hotspur", pos:"W", report:"~1 wk ago", src:"The Scotsman", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Competing with Bundesliga interest, player reportedly told to make a decision.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Fares Ghedjemis", sub:"23 · W · Algeria", club:"Frosinone", pos:"W", report:"4 Aug 2026", src:"Sky Sports Scotland (via GiveMeSport)", tier:2, fee:"£8m bid submitted", truth:48, prob:28, light:'o', trend:'up', note:"Rangers submitted an £8m offer attempting to hijack Celtic's move for the winger; Frosinone have rejected both bids so far and want £10m+.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
-  {name:"Camilo Mena", sub:"23 · RW · Colombia", club:"Lechia Gdansk", pos:"RW", report:"3 Aug 2026", src:"Purple Vert (via Yahoo Sports UK)", tier:3, fee:"~£3.4m", truth:35, prob:15, light:'o', trend:'flat', note:"Rangers are said to be monitoring the winger as a fallback option after Lechia's relegation lowered his valuation; no formal talks reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Couhaib Driouech", sub:"24 · Morocco · W", club:"PSV Eindhoven", pos:"W", report:"Rangers have opened talks and lodged an initial bid for the winger, with PSV understood to want roughly double what they paid, putting the price near £6m. Derek McInnes wants another wide attacker after losing Antman and Moore.", src:"Soccer News (NL)", tier:3, fee:"c.£6m", truth:60, prob:35, light:"y", trend:"down", note:"Story originates with Dutch outlet Soccer News and has been picked up by Scottish fan media rather than tier-one reporters. Bid details are unverified and Salzburg are also credited with interest.", lastSeen:"2026-08-06T08:59:48Z", baseProb:35}
+  {name:"Camilo Mena", sub:"23 · RW · Colombia", club:"Lechia Gdansk", pos:"RW", report:"3 Aug 2026", src:"Purple Vert (via Yahoo Sports UK)", tier:3, fee:"~£3.4m", truth:35, prob:15, light:'o', trend:'flat', note:"Rangers are said to be monitoring the winger as a fallback option after Lechia's relegation lowered his valuation; no formal talks reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
 ];
 const OUTGOING = [
-  {name:"Nicolas Raskin", sub:"25 · CDM · Belgium", club:"Real Betis", pos:"CDM", report:"19 Jul 2026", src:"Daily Record / FootballTransfers", tier:2, fee:"~€23.5m asking price", truth:55, prob:32, light:'y', trend:'flat', note:"Rangers have set a club-record-equalling asking price for the Belgium international following his World Cup showing; other outlets have separately named Aston Villa, Wolves, Hull and Fiorentina as suitors, suggesting a genuinely fluid situation on the destination.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
-  {name:"Unnamed Rangers attacker", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"GlasgowWorld", tier:3, fee:"Undisclosed", truth:50, prob:45, light:'y', trend:'flat', note:"Described as one step away from an Ibrox exit, terms reportedly clear.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
+  {name:"Nicolas Raskin", sub:"25 · CDM · Belgium", club:"Real Betis", pos:"CDM", report:"19 Jul 2026", src:"Daily Record / FootballTransfers", tier:2, fee:"~€23.5m asking price", truth:55, prob:32, light:'y', trend:'flat', note:"Rangers have set a club-record-equalling asking price for the Belgium international following his World Cup showing; other outlets have separately named Aston Villa, Wolves, Hull and Fiorentina as suitors, suggesting a genuinely fluid situation on the destination.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32}
+];
+const DEAD = [
+  {name:"Couhaib Driouech", sub:"24 · Morocco · W", club:"PSV Eindhoven", pos:"W", report:"Rangers have opened talks and lodged an initial bid for the winger, with PSV understood to want roughly double what they paid, putting the price near £6m. Derek McInnes wants another wide attacker after losing Antman and Moore.", src:"Soccer News (NL)", tier:3, fee:"c.£6m", truth:60, prob:35, light:"y", trend:"down", note:"Story originates with Dutch outlet Soccer News and has been picked up by Scottish fan media rather than tier-one reporters. Bid details are unverified and Salzburg are also credited with interest.", lastSeen:"2026-08-06T08:59:48Z", baseProb:35, dead:true, deadReason:"No recent snippet confirms progress; BBC gossip mentions PSV link but no Rangers deal advancement reported in latest updates", dir:"in", deadAt:"2026-08-06T14:21:38Z"},
+  {name:"Unnamed Rangers attacker", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"GlasgowWorld", tier:3, fee:"Undisclosed", truth:50, prob:45, light:'y', trend:'flat', note:"Described as one step away from an Ibrox exit, terms reportedly clear.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link", dir:"out", deadAt:"2026-08-06T14:21:38Z"}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -73,7 +75,8 @@ const HUB = {
   skySportsDaisukeYokota: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11788/13569962/rangers-transfer-news-daisuke-yokota-joins-from-hannover-96-to-become-derek-mcinnes-ninth-summer-signing"},
   deTelegraafCouhaibDriouech: {l:"De Telegraaf", u:"https://www.telegraaf.nl/sport/voetbal"},
   rangersFCofficialDaisukeYokota: {l:"Rangers FC official", u:"https://www.rangers.co.uk/article/rangers-sign-daisuke-yokota-from-hannover-96/4GTGqYYVvr2xBM0yYocPFC"},
-  rangersNewsviaSoccerNewsNLCouhaibDriouech: {l:"Rangers News (via Soccer News NL)", u:"https://www.rangersnews.uk/transfer-news/couhaib-driouech-valuation-and-exit-stance-come-to-light-as-rangers-eye-big-money-transfer/"}};
+  rangersNewsviaSoccerNewsNLCouhaibDriouech: {l:"Rangers News (via Soccer News NL)", u:"https://www.rangersnews.uk/transfer-news/couhaib-driouech-valuation-and-exit-stance-come-to-light-as-rangers-eye-big-money-transfer/"},
+  dailyRecordYoussefChermiti: {l:"Daily Record", u:"https://www.dailyrecord.co.uk/sport/football/"}};
 
 const LINKMAP = {
   "Lawrence Shankland": ["gnews-lawrenceshankland"],
@@ -84,10 +87,11 @@ const LINKMAP = {
   "Mikey Moore": ["scotsman"],
   "Nicolas Raskin": ["footballtransfersRaskin", "dailyrecord"],
   "Unnamed Rangers attacker": ["glasgowworld"],
-  "Daisuke Yokota": ["givemesportYokota", "skySportsDaisukeYokota", "rangersFCofficialDaisukeYokota"],
+  "Daisuke Yokota": ["givemesportYokota", "skySportsDaisukeYokota", "rangersFCofficialDaisukeYokota", "dailyRecordYoussefChermiti"],
   "Fares Ghedjemis": ["givemesportGhedjemis"],
   "Camilo Mena": ["yahooMena"],
-  "Couhaib Driouech": ["deTelegraafCouhaibDriouech", "rangersNewsviaSoccerNewsNLCouhaibDriouech"]};
+  "Couhaib Driouech": ["deTelegraafCouhaibDriouech", "rangersNewsviaSoccerNewsNLCouhaibDriouech"],
+  "Youssef Chermiti": ["dailyRecordYoussefChermiti"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
