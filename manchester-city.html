@@ -341,6 +341,16 @@
     flex-direction:column;
     gap:8px;
   }
+  .confirmed-cols {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+  }
+  .confirmed-col h4 {
+    font-size:12px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--text-muted); font-weight:700; margin:0 0 10px;
+  }
+  @media (max-width:640px){ .confirmed-cols { grid-template-columns:1fr; gap:16px; } }
 
   .confirmed-row.transfer-card {
     border-radius:10px;
@@ -785,8 +795,15 @@
 <div class="container">
   <section class="section" id="confirmed-section">
     <h3 class="section-title">Confirmed Transfers <span class="section-count" id="confirmed-count"></span></h3>
-    <div class="confirmed-list" id="confirmed">
-      <!-- Populated by data -->
+    <div class="confirmed-cols">
+      <div class="confirmed-col">
+        <h4>In <span class="section-count" id="confirmed-in-count"></span></h4>
+        <div class="confirmed-list" id="confirmed-in"><!-- Populated by data --></div>
+      </div>
+      <div class="confirmed-col">
+        <h4>Out <span class="section-count" id="confirmed-out-count"></span></h4>
+        <div class="confirmed-list" id="confirmed-out"><!-- Populated by data --></div>
+      </div>
     </div>
   </section>
 
@@ -1218,14 +1235,17 @@ const SECTION_NAV_DEFS = [
   // sticky nav pills -- a section with zero items doesn't get a pill at all.
   const sectionCounts = {};
 
-  // Render confirmed (in + out together, direction-tagged) as compact rows, not full cards
-  const confirmed = document.getElementById('confirmed');
-  if(confirmed) {
+  // Render confirmed as two columns: arrivals (in) and departures (out)
+  const cin = document.getElementById('confirmed-in');
+  const cout = document.getElementById('confirmed-out');
+  if(cin && cout) {
     const ins = (typeof CONFIRMED_IN !== 'undefined' ? CONFIRMED_IN : []).map(t => renderConfirmedCard(t, 'in', _LM, _HUB));
     const outs = (typeof CONFIRMED_OUT !== 'undefined' ? CONFIRMED_OUT : []).map(t => renderConfirmedCard(t, 'out', _LM, _HUB));
-    const all = ins.concat(outs);
-    sectionCounts.confirmed = all.length;
-    confirmed.innerHTML = all.length ? all.join('') : '<div class="empty">No confirmed transfers yet</div>';
+    sectionCounts.confirmed = ins.length + outs.length;
+    cin.innerHTML = ins.length ? ins.join('') : '<div class="empty">No confirmed arrivals</div>';
+    cout.innerHTML = outs.length ? outs.join('') : '<div class="empty">No confirmed departures</div>';
+    const ic = document.getElementById('confirmed-in-count'); if(ic && ins.length) ic.textContent = ins.length;
+    const oc = document.getElementById('confirmed-out-count'); if(oc && outs.length) oc.textContent = outs.length;
   }
 
   // Render incoming rumours -- ranked by likelihood (Probability) descending
