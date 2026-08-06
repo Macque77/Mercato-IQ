@@ -179,7 +179,10 @@ def fetch_via_websearch(nation, handles, club_names, client=None, max_searches=4
             f"reporters: {handle_list}. Keep ONLY items about these clubs: {club_list}.\n\n"
             f'Return ONLY a JSON array (no prose): [{{"club":"<one of the clubs>","text":"<what was '
             f'reported>","url":"<x.com or source link>"}}]. Empty array if nothing relevant.')
-    tools = [{'type': 'web_search_20260209', 'name': 'web_search', 'max_uses': max_searches}]
+    # allowed_callers=['direct'] is required for Haiku to use a server tool (it doesn't
+    # support programmatic/agentic tool calling; the model calls web_search directly).
+    tools = [{'type': 'web_search_20260209', 'name': 'web_search',
+              'max_uses': max_searches, 'allowed_callers': ['direct']}]
     messages = [{'role': 'user', 'content': user}]
 
     usage = {'in': 0, 'out': 0}
