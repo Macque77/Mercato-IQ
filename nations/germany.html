@@ -664,7 +664,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">34</span>
+          <span class="stat-value">35</span>
         </div>
       </div>
     </div>
@@ -701,7 +701,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 34
+  stories_count: 35
 };
 
 const TOP_STORIES = [  {
@@ -717,6 +717,13 @@ const TOP_STORIES = [  {
     from: "RB Leipzig", to: "Real Madrid",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed (fee TBC)", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
+  {
+    name: "Yan Diomande",prob: 55, truth: 70, bullshit: false,
+    club_origin: "rb-leipzig", club_display_name: "RB Leipzig", direction: "out",
+    from: "RB Leipzig", to: "Real Madrid",
+    tier: 1, coverage: 1, coverage_trend: 'down',
+    value: "~€120m reported asking/offer", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
     name: "Tomas Bobcek",prob: 55, truth: 70, bullshit: false,
@@ -802,22 +809,15 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€12m", updated: "2026-08-03T14:30:00Z", league: "2. Bundesliga"
   },
-  {
-    name: "Radek Vitek",prob: 40, truth: 65, bullshit: false,
-    club_origin: "vfb-stuttgart", club_display_name: "VfB Stuttgart", direction: "in",
-    from: "Manchester United", to: "VfB Stuttgart",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Valued around €6m (Transfermarkt)", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 33, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
+const BY_LEAGUE = {"Bundesliga": 34, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 33}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 34}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:45:13.637548Z",
+  updated: "2026-08-06T08:59:48.603417Z",
   label: "Nation aggregation"
 };
 

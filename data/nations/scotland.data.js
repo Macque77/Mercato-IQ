@@ -31,13 +31,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
-    name: "Couhaib Driouech",prob: 45, truth: 78, bullshit: false,
-    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
-    from: "PSV Eindhoven", to: "Rangers",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed (multi-million)", updated: "2026-08-03T18:00:00Z", league: "Premiership"
-  },
-  {
     name: "Marius Müller",prob: 40, truth: 65, bullshit: false,
     club_origin: "aberdeen", club_display_name: "Aberdeen", direction: "in",
     from: "VfL Wolfsburg", to: "Aberdeen",
@@ -64,6 +57,13 @@ const TOP_STORIES = [  {
     from: "Undisclosed", to: "Heart of Midlothian",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Premiership"
+  },
+  {
+    name: "Couhaib Driouech",prob: 35, truth: 60, bullshit: false,
+    club_origin: "rangers", club_display_name: "Rangers", direction: "in",
+    from: "PSV Eindhoven", to: "Rangers",
+    tier: 3, coverage: 2, coverage_trend: 'up',
+    value: "c.£6m", updated: "2026-08-03T18:00:00Z", league: "Premiership"
   },
   {
     name: "Claudio Braga",prob: 30, truth: 50, bullshit: false,
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "premiership", "name": "Premiership", "count": 16
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:45:13.638929Z",
+  updated: "2026-08-06T08:59:48.604833Z",
   label: "Nation aggregation"
 };

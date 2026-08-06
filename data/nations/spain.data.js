@@ -6,17 +6,10 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 82
+  stories_count: 83
 };
 
 const TOP_STORIES = [  {
-    name: "Yan Diomande",prob: 85, truth: 93, bullshit: false,
-    club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
-    from: "RB Leipzig", to: "Real Madrid",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "€125m plus €15m add-ons (about £116m)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
     name: "Rodri",prob: 40, truth: 65, bullshit: false,
     club_origin: "real-madrid", club_display_name: "Real Madrid", direction: "in",
     from: "Manchester City", to: "Real Madrid",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€16m bid (Racing want more)", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
+  {
+    name: "Jorge Salinas",prob: 50, truth: 75, bullshit: false,
+    club_origin: "racing-santander", club_display_name: "Racing de Santander", direction: "out",
+    from: "Racing de Santander", to: "Racing Santander",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€8m bid vs €16m release clause", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
 ];
 
-const BY_LEAGUE = {"La Liga": 82, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
+const BY_LEAGUE = {"La Liga": 83, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 82}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 83}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:45:13.639224Z",
+  updated: "2026-08-06T08:59:48.605127Z",
   label: "Nation aggregation"
 };

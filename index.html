@@ -789,19 +789,6 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
-    headline: "Yan Diomande",
-    club_display_name: "Real Madrid",
-    summary: "",
-    value: "€125m plus €15m add-ons (about £116m)",
-    from: "RB Leipzig", to: "Real Madrid",
-    direction: "in",
-    prob: 85, truth: 93, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    nation: "Spain", league: "La Liga",
-    club_link: "real-madrid",
-    updated: "2026-08-03T18:00:00Z"
-  },
-  {
     headline: "Bruno Guimaraes",
     club_display_name: "Arsenal",
     summary: "",
@@ -1023,6 +1010,19 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
+    headline: "Yan Diomande",
+    club_display_name: "RB Leipzig",
+    summary: "",
+    value: "~€120m reported asking/offer",
+    from: "RB Leipzig", to: "Real Madrid",
+    direction: "out",
+    prob: 55, truth: 70, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'down',
+    nation: "Germany", league: "Bundesliga",
+    club_link: "rb-leipzig",
+    updated: "2026-08-03T14:30:00Z"
+  },
+  {
     headline: "Madison Ingram",
     club_display_name: "Olympique Lyonnais",
     summary: "Romano reports Chelsea are open to a loan move for the young midfielder to Lyon.",
@@ -1069,7 +1069,7 @@ const HEADLINES = [
     from: "Feyenoord", to: "AS Roma",
     direction: "in",
     prob: 55, truth: 85, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "Italy", league: "Serie A",
     club_link: "as-roma",
     updated: "2026-08-03T14:30:00Z"
@@ -1151,6 +1151,19 @@ const HEADLINES = [
     nation: "Netherlands", league: "Eredivisie",
     club_link: "ajax",
     updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Bradley Barcola",
+    club_display_name: "Liverpool",
+    summary: "",
+    value: "c.£145m",
+    from: "Paris Saint-Germain", to: "Liverpool",
+    direction: "in",
+    prob: 45, truth: 80, trend: 'down', bullshit: false,
+    tier: 1, coverage: 5, coverage_trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "liverpool",
+    updated: "2026-06-06T00:00:00Z"
   },
   {
     headline: "Ayyoub Bouaddi",
@@ -1478,19 +1491,6 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
-    headline: "Bradley Barcola",
-    club_display_name: "Paris Saint-Germain",
-    summary: "",
-    value: "Liverpool ~€100m offer vs PSG demanding €150-170m",
-    from: "Paris Saint-Germain", to: "Liverpool",
-    direction: "out",
-    prob: 30, truth: 58, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "paris-saint-germain",
-    updated: "2026-08-03T14:30:00Z"
-  },
-  {
     headline: "Diego Moreira",
     club_display_name: "RC Strasbourg Alsace",
     summary: "",
@@ -1498,7 +1498,7 @@ const HEADLINES = [
     from: "RC Strasbourg Alsace", to: "AS Roma",
     direction: "out",
     prob: 30, truth: 50, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     nation: "France", league: "Ligue 1",
     club_link: "rc-strasbourg",
     updated: "2026-08-03T14:30:00Z"
@@ -1521,7 +1521,7 @@ const HEADLINES = [
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 187, league_count: 3
+    stories_count: 188, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -1529,11 +1529,11 @@ const NATIONS = [
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 82, league_count: 1
+    stories_count: 83, league_count: 1
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 76, league_count: 1
+    stories_count: 75, league_count: 1
   },
   {
     name: "Netherlands", slug: "netherlands", flag_emoji: "🇳🇱",
@@ -1541,7 +1541,7 @@ const NATIONS = [
   },
   {
     name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
-    stories_count: 34, league_count: 2
+    stories_count: 35, league_count: 2
   },
   {
     name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
@@ -1574,7 +1574,7 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 631,
+  total_stories: 633,
   clubs_covered: 183,
   tier1_count: 82,
   top_league: "Serie A",
@@ -1585,7 +1585,7 @@ const STATS = {
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T08:45:13.636048Z",
+  updated: "2026-08-06T08:59:48.602086Z",
   label: "Global aggregation from all clubs"
 };
 

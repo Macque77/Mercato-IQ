@@ -888,8 +888,9 @@ const INCOMING = [
    note:"Linked amid a reported contract dispute at Everton, having rejected new terms. On-profile for energy and directness. OBSTACLE: Everton's stance and valuation; sourcing is moderate.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
   {name:"Kennett Eichhorn", sub:"young · midfield", club:"(target)", pos:"CM", report:"~2 days ago", src:"Aggregated", tier:4, fee:"£15-25m", truth:35, prob:14, light:'r', trend:'up',
    note:"Liverpool intensifying interest after Bayern Munich reportedly withdrew. A young midfield prospect for the model. Early-warning sourcing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
-  {name:"Bradley Barcola", sub:"23 · France · LW", club:"Paris Saint-Germain", pos:"LW", report:"Barcola is Liverpool's main attacking target and the club are readying an opening offer of around £100m. PSG value him nearer £145m and Liverpool have no intention of going that high. The winger has told the European champions he wants to leave, will not sign a new contract and is drawn to Anfield by the promise of regular starts he does not get behind Kvaratskhelia, Doue and Dembele. Liverpool need attacking reinforcement after Mohamed Salah's free-transfer departure and with Hugo Ekitike out for the rest of 2026 with a ruptured Achilles.", src:"The Athletic", tier:2, fee:"c£100m", truth:88, prob:55, light:"g", trend:"up", note:"The interest and the player's desire are well established, but the valuation gap is huge and no bid has landed yet. Some of the more precise fee framing is coming from Football Insider rather than tier one, so treat exact numbers loosely.", lastSeen:"2026-08-06T08:09:17Z", baseProb:55},
-  {name:"Ibrahim Mbaye", sub:"18 · Senegal · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool have explored the conditions of a deal for the teenager, who debuted for PSG at 16 and has 42 appearances to his name, as the search for a right winger continues after Salah's departure.", src:"Sky Sports", tier:2, fee:"Undisclosed, around €50m mooted", truth:80, prob:30, light:"y", trend:"flat", note:"This is exploratory rather than advanced. Bayer Leverkusen are reported to be in direct club-to-club talks, and Manchester City and Tottenham were said to be keener earlier in the window, so Liverpool are not front runners.", lastSeen:"2026-08-05T17:03:23Z", baseProb:30}
+  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Liverpool and PSG are in official club-to-club talks, with Liverpool having told PSG of their intention to bid. The player is said to be open to the move, but PSG's asking price is around €170m and a resolution is not expected quickly, with France's World Cup run a further complication.", src:"Fabrizio Romano", tier:1, fee:"c.£145m", truth:80, prob:45, light:"y", trend:"down", note:"Romano's own words on the talks, relayed by TEAMtalk. No agreement close and the fee remains the obstacle, so treat the £100m-plus headline framing with care.", lastSeen:"2026-08-06T08:59:47Z", baseProb:45},
+  {name:"Ibrahim Mbaye", sub:"18 · Senegal · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool have explored the conditions of a deal for the teenager, who debuted for PSG at 16 and has 42 appearances to his name, as the search for a right winger continues after Salah's departure.", src:"Sky Sports", tier:2, fee:"Undisclosed, around €50m mooted", truth:80, prob:30, light:"y", trend:"flat", note:"This is exploratory rather than advanced. Bayer Leverkusen are reported to be in direct club-to-club talks, and Manchester City and Tottenham were said to be keener earlier in the window, so Liverpool are not front runners.", lastSeen:"2026-08-05T17:03:23Z", baseProb:30},
+  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Real Madrid", pos:"CB", report:"Intermediaries have sounded Liverpool out over the centre-back after he was told he can leave Real Madrid this summer. Andoni Iraola is a long-standing admirer and the Reds want more defensive versatility.", src:"TEAMtalk", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Single-outlet exclusive driven by intermediaries rather than club-to-club contact. No tier-one corroboration from Madrid or Merseyside, so this is agent chatter until Ornstein or Romano touch it.", lastSeen:"2026-08-06T08:59:47Z", baseProb:20}
 ];
 
 const OUTGOING = [
@@ -951,7 +952,10 @@ const HUB = {
   skySportsMohamedSalah: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13569969/mohamed-salah-former-liverpool-forward-set-to-join-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"},
   skySportsBradleyBarcola1: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13567997/bradley-barcola-transfer-news-liverpool-set-to-open-talks-with-paris-saint-germain-over-winger-with-an-opening-offer-prepared"},
   skySportsIbrahimMbaye: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11669/13569955/ibrahim-mbaye-liverpool-explore-deal-for-paris-saint-germain-winger"},
-  tEAMtalkcitingFabrizioRomanoCodyGakpo: {l:"TEAMtalk, citing Fabrizio Romano", u:"https://www.teamtalk.com/tottenham-hotspur/romano-reveals-tottenham-sign-gakpo-liverpool-two-conditions-sale-u-turn"}};
+  tEAMtalkcitingFabrizioRomanoCodyGakpo: {l:"TEAMtalk, citing Fabrizio Romano", u:"https://www.teamtalk.com/tottenham-hotspur/romano-reveals-tottenham-sign-gakpo-liverpool-two-conditions-sale-u-turn"},
+  fabrizioRomanoviaTEAMtalkBradleyBarcola: {l:"Fabrizio Romano (via TEAMtalk)", u:"https://www.teamtalk.com/liverpool/fabrizio-romano-reveals-new-development-bradley-barcola-transfer-liverpool"},
+  tEAMtalkRaulAsencio: {l:"TEAMtalk", u:"https://www.teamtalk.com/liverpool/raul-ascencio-transfer-news-liverpool-in-contact-real-madrid-sale-iraola-mourinho"},
+  eSPNMohamedSalah: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49531510/mohamed-salah-transfer-trabzonspor-liverpool-egypt"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
@@ -960,10 +964,11 @@ const LINKMAP = {
   "Cody Gakpo": ["vi","echo", "tEAMtalkcitingFabrizioRomanoCodyGakpo"],
   "Ibrahima Konaté": ["ninetymin"],
   "Fringe & loan army": ["echo"],
-  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic"],
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic", "fabrizioRomanoviaTEAMtalkBradleyBarcola"],
   "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"],
-  "Mohamed Salah": ["skySportsMohamedSalah"],
-  "Ibrahim Mbaye": ["skySportsIbrahimMbaye"]};
+  "Mohamed Salah": ["skySportsMohamedSalah", "eSPNMohamedSalah"],
+  "Ibrahim Mbaye": ["skySportsIbrahimMbaye"],
+  "Raul Asencio": ["tEAMtalkRaulAsencio"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };
