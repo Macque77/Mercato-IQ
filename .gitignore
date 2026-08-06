@@ -5,3 +5,6 @@
 *.syntaxcheck.js
 __pycache__/
 *.pyc
+leads*.json
+research-*.json
+leads_test.json

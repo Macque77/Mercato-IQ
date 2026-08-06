@@ -16,9 +16,11 @@ name: Research Sync
 #   Without it the workflow exits early with a clear message (it does not fail the whole run).
 
 on:
-  schedule:
-    - cron: '0 * * * *'    # hourly -> incremental
-    - cron: '0 6 * * *'    # daily 06:00 UTC -> sweep
+  # Schedules DISABLED during the migration to research-matrix.yml (the streamlined,
+  # deterministic-fetch + Haiku pipeline). This Opus/web_search workflow is kept as a
+  # manual fallback only. Re-enable these crons if you ever need to fall back.
+  #   - cron: '0 * * * *'    # hourly -> incremental
+  #   - cron: '0 6 * * *'    # daily 06:00 UTC -> sweep
   workflow_dispatch:
     inputs:
       mode:

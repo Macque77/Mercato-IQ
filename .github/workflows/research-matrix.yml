@@ -1,0 +1,140 @@
+name: Research Matrix
+
+# Streamlined, mostly-deterministic successor to research-sync.yml.
+#
+#   discover (per nation, PARALLEL)  engine/discover.py  -- scripted HTTP fetch of
+#       RSS + news pages + X, club-filtered. ZERO Claude tokens.
+#   extract  (per nation, PARALLEL)  engine/extract.py   -- Haiku turns the filtered
+#       snippets into research JSON. No web tools, cached prompt, cheap.
+#       Each nation uploads research-<nation>.json as an artifact (no git push).
+#   assemble (ONCE)                  merge artifacts -> inject -> retire -> build ->
+#       a single commit + push (rebase-retry). Build once, no push storms.
+#
+# Why this shape: the old pipeline made Opus drive web_search for every club (slow,
+# token-heavy) and pushed from the same long-running job (a concurrent push could
+# discard the whole run). Here the web fetch is deterministic, Claude is the cheapest
+# model on pre-filtered text, nations run simultaneously, and only one job commits.
+#
+# REQUIRED: repo secret ANTHROPIC_API_KEY. Optional repo var MERCATO_EXTRACT_MODEL.
+
+on:
+  workflow_dispatch:
+    inputs:
+      nations:
+        description: 'JSON array of sources.json nation keys to run in parallel'
+        default: '["England","Spain","Italy","Germany","France","Netherlands","Belgium","Portugal","Turkey","Scotland"]'
+      league:
+        description: 'Optional single league display-name filter (e.g. "Premier League") for a small test; applies to every matrix nation'
+        default: ''
+      no_x:
+        description: 'Skip the X/Twitter source'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mercato-research-matrix
+  cancel-in-progress: false
+
+jobs:
+  research:
+    strategy:
+      fail-fast: false
+      matrix:
+        nation: ${{ fromJSON(github.event.inputs.nations) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Anthropic SDK
+        run: pip install --quiet anthropic
+      - name: Discover (deterministic fetch)
+        run: |
+          set -eo pipefail
+          SEL_ARGS=(--nation "${{ matrix.nation }}")
+          if [ -n "${{ github.event.inputs.league }}" ]; then
+            SEL_ARGS=(--league "${{ github.event.inputs.league }}")
+          fi
+          NOX=""
+          if [ "${{ github.event.inputs.no_x }}" = "true" ]; then NOX="--no-x"; fi
+          python3 engine/discover.py "${SEL_ARGS[@]}" $NOX --out "leads-${{ matrix.nation }}.json"
+      - name: Extract (Haiku)
+        run: |
+          set -eo pipefail
+          python3 engine/extract.py --leads "leads-${{ matrix.nation }}.json" \
+            --out "research-${{ matrix.nation }}.json"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MERCATO_EXTRACT_MODEL: ${{ vars.MERCATO_EXTRACT_MODEL }}
+      - name: Upload research shard
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-${{ matrix.nation }}
+          path: research-${{ matrix.nation }}.json
+          if-no-files-found: ignore
+
+  assemble:
+    needs: research
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Download all shards
+        uses: actions/download-artifact@v4
+        with:
+          path: _shards
+          merge-multiple: true
+      - name: Merge shards -> research.json
+        id: merge
+        run: |
+          set -eo pipefail
+          python3 - <<'PY'
+          import json, glob, os
+          clubs = []
+          for p in sorted(glob.glob('_shards/research-*.json')):
+              try:
+                  clubs += json.load(open(p, encoding='utf-8')).get('clubs', [])
+              except Exception as e:
+                  print(f"skip {p}: {e}")
+          json.dump({'clubs': clubs}, open('research.json', 'w', encoding='utf-8'),
+                    ensure_ascii=False, indent=1)
+          print(f"merged {len(clubs)} club(s) from shards")
+          open(os.environ['GITHUB_OUTPUT'], 'a').write(f"clubs={len(clubs)}\n")
+          PY
+      - name: Apply, build, commit, push
+        run: |
+          set -eo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.merge.outputs.clubs }}" -gt 0 ]; then
+            NO_COMMIT=1 SKIP_VERIFY=1 bash engine/apply_research.sh research.json
+          fi
+          rm -rf research.json _shards
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."; exit 0
+          fi
+          git commit -m "Research matrix: ${{ steps.merge.outputs.clubs }} club(s) updated"
+          # Rebase-and-retry push (see research-sync.yml for the rationale).
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then echo "pushed"; exit 0; fi
+            echo "push rejected (attempt $attempt) -- rebasing"
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git checkout --theirs . || true; git add -A
+              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not push after retries."; exit 1
