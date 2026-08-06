@@ -30,6 +30,9 @@ on:
         description: 'Skip the X/Twitter source'
         type: boolean
         default: false
+      max_clubs:
+        description: 'Hard cap on Haiku extract calls PER NATION (0 = no cap). Bounds cost.'
+        default: '0'
 
 permissions:
   contents: write
@@ -70,6 +73,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MERCATO_EXTRACT_MODEL: ${{ vars.MERCATO_EXTRACT_MODEL }}
+          MERCATO_MAX_CLUBS: ${{ github.event.inputs.max_clubs }}
       - name: Upload research shard
         uses: actions/upload-artifact@v4
         with:

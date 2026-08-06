@@ -360,14 +360,11 @@ def dedupe_by_norm(content, arr_name):
 
 
 def _is_hollow(obj):
-    """A row a weak extract invented without grounding: club literally 'Unknown', or
-    BOTH club and sub empty. Real entries always carry at least a club or a descriptor,
-    so this stays high-precision and won't drop good data."""
-    club = (jou.field_str(obj, 'club') or '').strip()
-    sub = (jou.field_str(obj, 'sub') or '').strip()
-    if club.lower() == 'unknown':
-        return True
-    return club == '' and sub == ''
+    """A row a weak extract invented without grounding: club literally 'Unknown'.
+    Deliberately NARROW -- a real extract never writes 'Unknown' for a club, whereas
+    empty-club rows include intentional editorial 'framing' cards ("Midfield value
+    options" etc.), so we must NOT drop those. High precision over recall."""
+    return (jou.field_str(obj, 'club') or '').strip().lower() == 'unknown'
 
 
 def drop_hollow(content, arr_name):
