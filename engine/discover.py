@@ -47,11 +47,26 @@ SOURCES_PATH = os.path.join(REPO, 'engine', 'sources.json')
 _UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
-MAX_SNIPPETS_PER_CLUB = 8    # keep the extract prompt small -> cheap (fewer input tokens)
+MAX_SNIPPETS_PER_CLUB = 10   # a touch more breadth now Google News feeds richer per-club coverage
 SNIPPET_LEN = 300            # chars of context around a match
 
 # Map a club's breadcrumb league display-name to the sources.json nation key, so a
 # club pulls its own country's outlets and journalist handles.
+# Google News RSS gives targeted, deterministic, free coverage for EVERY club (and every
+# journalist) across the whole web -- a far broader net than a fixed feed list. Region +
+# language per nation so a Spanish club pulls Spanish coverage, etc.
+_GNEWS_REGION = {
+    'England': 'hl=en-GB&gl=GB&ceid=GB:en', 'Scotland': 'hl=en-GB&gl=GB&ceid=GB:en',
+    'Spain': 'hl=es-ES&gl=ES&ceid=ES:es', 'Italy': 'hl=it-IT&gl=IT&ceid=IT:it',
+    'Germany': 'hl=de-DE&gl=DE&ceid=DE:de', 'France': 'hl=fr-FR&gl=FR&ceid=FR:fr',
+    'Netherlands': 'hl=nl-NL&gl=NL&ceid=NL:nl', 'Belgium': 'hl=nl-BE&gl=BE&ceid=BE:nl',
+    'Portugal': 'hl=pt-PT&gl=PT&ceid=PT:pt', 'Turkey': 'hl=tr-TR&gl=TR&ceid=TR:tr',
+}
+_GNEWS_TERM = {
+    'Spain': 'fichaje', 'Italy': 'calciomercato', 'Germany': 'wechsel',
+    'France': 'mercato', 'Portugal': 'transferência', 'Turkey': 'transfer',
+}
+
 LEAGUE_TO_NATION = {
     'Premier League': 'England', 'Championship': 'England', 'League One': 'England',
     'League Two': 'England',
@@ -190,7 +205,29 @@ def main():
         buckets[slug].append({'text': text[:SNIPPET_LEN + 40], 'source': source,
                               'url': url, 'date': date})
 
-    # 1) RSS -- one fetch per feed, matched against every club.
+    # 1) Google News RSS -- the PRIMARY breadth engine: one targeted, language-appropriate
+    # query per club, so every club pulls fresh web-wide coverage instead of only what a
+    # fixed feed list happens to mention. Runs first so the best-targeted items claim the
+    # snippet budget before the broad feeds fill it. Deterministic, zero tokens, best-effort.
+    import urllib.parse
+    gn_hits = 0
+    for s in slugs:
+        nation = LEAGUE_TO_NATION.get(roster[s].get('league'))
+        region = _GNEWS_REGION.get(nation, 'hl=en-GB&gl=GB&ceid=GB:en')
+        term = _GNEWS_TERM.get(nation, 'transfer')
+        q = urllib.parse.quote(f'"{roster[s]["name"]}" {term}')
+        url = f"https://news.google.com/rss/search?q={q}&{region}"
+        for it in ra.fetch_rss(url):
+            title = it.get('title', '')
+            if not title or 'Google News' in title:
+                continue
+            if matchers[s].search(title):
+                add(s, title, 'Google News', it.get('link', ''), it.get('pubDate', ''))
+                gn_hits += 1
+        time.sleep(0.12)
+    log(f"  Google News pass done ({gn_hits} club-matched item(s)).")
+
+    # 2) RSS -- one fetch per feed, matched against every club (broad supplementary).
     for source, url in ra.RSS_FEEDS:
         for it in ra.fetch_rss(url):
             title = it.get('title', '')
