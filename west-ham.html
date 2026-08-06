@@ -858,9 +858,10 @@ const CONFIRMED_OUT = [
   {name:"Crysencio Summerville", sub:"24 · W · Netherlands", club:"Al-Hilal", pos:"W", fee:"£60m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 24 Jul 2026: Al-Hilal completed a four-year, £60m deal - nearly double an earlier Roma proposal that had been leading the race before the Saudi club hijacked the move."}
 ];
 const INCOMING = [
-  {name:"Simon Adingra", sub:"24 · LW · Ivory Coast", club:"Sunderland", pos:"LW", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:1, fee:"Loan (poss. obligation to buy)", truth:60, prob:42, light:"y", trend:"up", note:"West Ham opened loan talks as a direct replacement following Summerville's sale; Sunderland value the winger at around £30m and are yet to agree terms."},
-  {name:"Wilson Isidor", sub:"25 · ST · Haiti", club:"Sunderland", pos:"ST", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:2, fee:"~£20m loan-to-buy approach reported", truth:48, prob:22, light:"o", trend:"flat", note:"Downie reports Sunderland will not entertain offers, calling Isidor integral to their Europa League squad - directly contradicted same-day by reports of a fresh West Ham loan-to-buy approach, a genuinely live and unresolved situation."},
-  {name:"Troy Parrott", sub:"24 · ST · Republic of Ireland", club:"AZ Alkmaar", pos:"ST", report:"3 Aug 2026", src:"Alan Nixon (The72)", tier:2, fee:"Undisclosed", truth:42, prob:20, light:"o", trend:"flat", note:"West Ham have joined a crowded field (also including Fulham, Ajax, Como, Real Betis, PSV) as competition for striker Taty Castellanos."}
+  {name:"Simon Adingra", sub:"24 · LW · Ivory Coast", club:"Sunderland", pos:"LW", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:1, fee:"Loan (poss. obligation to buy)", truth:60, prob:42, light:"y", trend:"up", note:"West Ham opened loan talks as a direct replacement following Summerville's sale; Sunderland value the winger at around £30m and are yet to agree terms.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42},
+  {name:"Wilson Isidor", sub:"25 · ST · Haiti", club:"Sunderland", pos:"ST", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:2, fee:"~£20m loan-to-buy approach reported", truth:48, prob:22, light:"o", trend:"flat", note:"Downie reports Sunderland will not entertain offers, calling Isidor integral to their Europa League squad - directly contradicted same-day by reports of a fresh West Ham loan-to-buy approach, a genuinely live and unresolved situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
+  {name:"Troy Parrott", sub:"24 · ST · Republic of Ireland", club:"AZ Alkmaar", pos:"ST", report:"3 Aug 2026", src:"Alan Nixon (The72)", tier:2, fee:"Undisclosed", truth:42, prob:20, light:"o", trend:"flat", note:"West Ham have joined a crowded field (also including Fulham, Ajax, Como, Real Betis, PSV) as competition for striker Taty Castellanos.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Joel Veltman", sub:"34 · Netherlands · RB", club:"Free agent (ex-Brighton)", pos:"RB", report:"The Dutch defender, a free agent since leaving Brighton when his contract expired in July, is closing on a Bosman move to the London Stadium. Reports in the Netherlands say he was heading for a medical, and contract details have since emerged. It would be West Ham's first significant business of a Championship summer.", src:"Voetbal International; Chris Reidy (Sky Sports)", tier:2, fee:"Free", truth:80, prob:75, light:"g", trend:"flat", note:"Dutch-media led with no West Ham announcement yet. At 34 and on a short deal, terms rather than the transfer itself are the sticking point, so treat the medical claim with care until the club confirms.", lastSeen:"2026-08-06T08:09:17Z", baseProb:75}
 ];
 const OUTGOING = [];
 const RISERS = [
@@ -883,8 +884,8 @@ const HUB = {
   skySummerville: {l:"Sky Sports · Summerville official", u:"https://www.skysports.com/football/news/11095/13565872/crysencio-summerville-transfer-news-al-hilal-complete-lb60m-signing-of-netherlands-international-from-west-ham"},
   readwesthamAdingra: {l:"ReadWestHam · Adingra", u:"https://readwestham.com/2026/08/03/west-ham-open-talks-to-sign-20-5m-premier-league-winger/"},
   the72Isidor: {l:"The72 · Isidor", u:"https://the72.co.uk/2026/08/03/west-ham-target-wilson-isidor-sunderland-stay/"},
-  the72Parrott: {l:"The72 · Parrott", u:"https://the72.co.uk/2026/08/03/west-ham-target-az-alkmaar-striker-troy-parrott/"}
-};
+  the72Parrott: {l:"The72 · Parrott", u:"https://the72.co.uk/2026/08/03/west-ham-target-az-alkmaar-striker-troy-parrott/"},
+  voetbalInternationalJoelVeltman: {l:"Voetbal International", u:"https://www.vi.nl/"}};
 
 const LINKMAP = {
   "Mateus Fernandes": ["gnews-mateusfernandes"],
@@ -892,8 +893,8 @@ const LINKMAP = {
   "Crysencio Summerville": ["skySummerville"],
   "Simon Adingra": ["readwesthamAdingra"],
   "Wilson Isidor": ["the72Isidor"],
-  "Troy Parrott": ["the72Parrott"]
-};
+  "Troy Parrott": ["the72Parrott"],
+  "Joel Veltman": ["voetbalInternationalJoelVeltman"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

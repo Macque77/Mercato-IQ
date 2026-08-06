@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "cd-numancia", "name": "CD Numancia", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "sevillilla", "name": "Sevilla Atl\u00e9tico", "count": 0, "badge": false, "primary": "#003DA5", "primaryBright": "#3399FF"}];
 
 const REPORT_META = {
-  asof: "05 Aug 2026",
-  updated: "2026-08-05T23:31:20.561802Z",
+  asof: "06 Aug 2026",
+  updated: "2026-08-06T08:09:18.078020Z",
   label: "League aggregation"
 };

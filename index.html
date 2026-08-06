@@ -753,11 +753,11 @@ const HEADLINES = [
     headline: "Bruno Guimaraes",
     club_display_name: "Arsenal",
     summary: "",
-    value: "£75m",
+    value: "£80m+",
     from: "Newcastle United", to: "Arsenal",
     direction: "in",
-    prob: 90, truth: 95, trend: 'down', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
+    prob: 90, truth: 95, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 3, coverage_trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
     updated: "2026-08-03T12:48:44Z"
@@ -776,17 +776,17 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
-    headline: "Pep Chavarria",
-    club_display_name: "Chelsea",
+    headline: "Yan Diomande",
+    club_display_name: "Real Madrid",
     summary: "",
-    value: "£16.3m plus add-ons",
-    from: "Rayo Vallecano", to: "Chelsea",
+    value: "€125m plus €15m add-ons (about £116m)",
+    from: "RB Leipzig", to: "Real Madrid",
     direction: "in",
-    prob: 88, truth: 92, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "chelsea",
-    updated: "2026-08-03T12:48:44Z"
+    prob: 85, truth: 93, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    nation: "Spain", league: "La Liga",
+    club_link: "real-madrid",
+    updated: "2026-08-03T18:00:00Z"
   },
   {
     headline: "Kian Fitz-Jim",
@@ -995,19 +995,6 @@ const HEADLINES = [
     nation: "Scotland", league: "Premiership",
     club_link: "celtic",
     updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    headline: "Yan Diomande",
-    club_display_name: "RB Leipzig",
-    summary: "",
-    value: "~€120m reported asking/offer",
-    from: "RB Leipzig", to: "Real Madrid",
-    direction: "out",
-    prob: 55, truth: 70, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "Germany", league: "Bundesliga",
-    club_link: "rb-leipzig",
-    updated: "2026-08-03T14:30:00Z"
   },
   {
     headline: "Madison Ingram",
@@ -1516,20 +1503,33 @@ const HEADLINES = [
     club_link: "rotterdam-sparta",
     updated: "2026-07-29T00:00:00Z"
   },
+  {
+    headline: "Arthur Theate",
+    club_display_name: "Bournemouth",
+    summary: "",
+    value: "Undisclosed",
+    from: "Eintracht Frankfurt", to: "Bournemouth",
+    direction: "in",
+    prob: 30, truth: 55, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "bournemouth",
+    updated: "2026-06-06T00:00:00Z"
+  },
 ];
 
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 185, league_count: 3
+    stories_count: 186, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
-    stories_count: 139, league_count: 3
+    stories_count: 138, league_count: 3
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
-    stories_count: 79, league_count: 1
+    stories_count: 80, league_count: 1
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
@@ -1541,7 +1541,7 @@ const NATIONS = [
   },
   {
     name: "Germany", slug: "germany", flag_emoji: "🇩🇪",
-    stories_count: 35, league_count: 2
+    stories_count: 34, league_count: 2
   },
   {
     name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
@@ -1549,11 +1549,11 @@ const NATIONS = [
   },
   {
     name: "Turkey", slug: "turkey", flag_emoji: "🇹🇷",
-    stories_count: 14, league_count: 2
+    stories_count: 17, league_count: 2
   },
   {
     name: "Scotland", slug: "scotland", flag_emoji: "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-    stories_count: 14, league_count: 1
+    stories_count: 16, league_count: 1
   },
   {
     name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
@@ -1574,9 +1574,9 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 621,
-  clubs_covered: 181,
-  tier1_count: 78,
+  total_stories: 626,
+  clubs_covered: 182,
+  tier1_count: 77,
   top_league: "Serie A",
   most_active_club: "Sunderland",
   nations_covered: 13,
@@ -1584,8 +1584,8 @@ const STATS = {
 };
 
 const REPORT_META = {
-  asof: "05 Aug 2026",
-  updated: "2026-08-05T23:31:20.548392Z",
+  asof: "06 Aug 2026",
+  updated: "2026-08-06T08:09:18.065510Z",
   label: "Global aggregation from all clubs"
 };
 

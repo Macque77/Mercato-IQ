@@ -907,7 +907,7 @@ const INCOMING = [
   {name:"Bruno Guimarães", sub:"28 · Brazil · MF", club:"Newcastle United", pos:"MF", report:"Arsenal have agreed a £75m fee with Newcastle for their captain, with a medical in north London expected within days after the clubs compromised (Arsenal opened around £60m, Newcastle wanted £80m).", src:"Sky Sports", tier:1, fee:"£75m", truth:92, prob:88, light:"g", trend:"up", note:"Fee agreed and medical pending, so a near-complete deal rather than a target. Lyon are due roughly €8m via a 20% sell-on clause.", lastSeen:"2026-08-05T11:41:11Z", baseProb:88},
   {name:"Ezri Konsa", sub:"Targeted as Saliba injury cover", club:"Aston Villa", pos:"DF", report:"Arsenal have had a £60-65m bid in talks with Villa as they seek defensive reinforcement after William Saliba's back injury; Konsa is open to discussing a move but may prefer to stay for Champions League football.", src:"CaughtOffside / Sports Mole", tier:2, fee:"£60m", truth:55, prob:35, light:"y", trend:"flat", note:"Villa under financial pressure but Konsa reportedly leaning toward staying", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Rayan", sub:"Audacious move for breakout Brazilian winger", club:"Bournemouth", pos:"FW", report:"20-year-old Brazilian right winger has impressed since a January move from Vasco da Gama; Bournemouth want £85m and Arsenal are seen as unlikely to pursue given depth on the right flank.", src:"The Sun", tier:3, fee:"£85m", truth:40, prob:15, light:"o", trend:"flat", note:"Arsenal's greater need is reportedly a left-sided attacker after Trossard's exit", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"Central midfield", report:"Arsenal and Newcastle have settled on a fee of around £75m for the Brazil captain after the Magpies initially held out for north of £80m. Personal terms were agreed some time ago and Guimaraes has been awaiting clearance to travel for a medical, with all parties keen to close the situation quickly.", src:"David Ornstein (The Athletic)", tier:1, fee:"£75m", truth:95, prob:90, light:"g", trend:"down", note:"Ornstein and Romano are aligned on the fee, and Arsenal's sale of Norgaard supports the timeline. Treat as done only once a medical is confirmed.", lastSeen:"2026-08-05T22:44:07Z", baseProb:90}
+  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal are nearing a full agreement with Newcastle for their captain, with personal terms long since settled on a long-term deal and the midfielder waiting on permission to complete a medical. Talks have run for weeks, earlier approaches of around £55m and £65m were rebuffed and the framework is now understood to be worth in excess of £80m after Newcastle initially held out for £100m.", src:"David Ornstein", tier:1, fee:"£80m+", truth:95, prob:90, light:"g", trend:"flat", note:"Sourcing is strong, but rival reports have contradicted each other badly on timing: The Times and ESPN Brasil claimed a club-to-club agreement and a booked medical days before Sky Sports and the Telegraph said formal talks had only just opened. Treat any 'done' framing before Newcastle grant medical permission with caution.", lastSeen:"2026-08-06T08:09:17Z", baseProb:90}
 ];
 
 const OUTGOING = [
@@ -915,8 +915,7 @@ const OUTGOING = [
    note:"Among those who could be sold to fund arrivals, with his recent campaign disrupted by a cruciate injury. PRICING: an injury record and contract length soften the floor, but a proven PL forward retains value. A sale helps the cost ratio and clears a striker slot.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Riccardo Calafiori", sub:"23 · LB/CB · Italy", club:"Juventus", pos:"LB/CB", report:"~1 wk ago", src:"Gazzetta dello Sport", tier:2, fee:"£35-45m", truth:65, prob:30, light:'y', trend:'up',
    note:"Juventus are credited with strong interest and reportedly see him as a first-choice target to add Italy internationals. PRICING: under contract with no need to sell, so Arsenal hold a holder's price; the report notes any deal may hinge on whether Calafiori himself pushes to leave.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Gabriel Martinelli", sub:"24 · LW · Brazil", club:"Available", pos:"LW", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£35-50m", truth:63, prob:28, light:'o', trend:'flat',
-   note:"Named among those who could be made available to fund incomings. PRICING: still a saleable resale asset, so the price is firm; a sale would likely be tied to landing a wide/creative upgrade.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
+  {name:"Gabriel Martinelli", sub:"25 · Brazil · LW", club:"Fenerbahce", pos:"LW", report:"Fenerbahce are said to be monitoring the Brazilian winger's situation, with Roma and Juventus also credited with interest after his World Cup involvement. Nothing beyond admiration has been established and there is no suggestion of a bid or of Arsenal inviting offers.", src:"CBS Sports, relayed by Turkish press", tier:3, fee:"Undisclosed", truth:55, prob:20, light:"o", trend:"down", note:"Weak sourcing. This is a single interest line traced back to CBS Sports and amplified by the Istanbul papers, with no fee, no talks and no Arsenal-side confirmation. Low confidence.", lastSeen:"2026-08-06T08:09:17Z", baseProb:20},
   {name:"Ben White", sub:"RB/CB · England", club:"Listening to offers", pos:"RB/CB", report:"1 Jun 2026", src:"BBC", tier:2, fee:"£25-35m", truth:60, prob:25, light:'o', trend:'flat',
    note:"Among the names Arsenal will listen on. Versatile and experienced; a sale would open a full-back refresh that is itself a stated target area.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
   {name:"William Saliba", sub:"24 · CB · France", club:"Real Madrid", pos:"CB", report:"~1 wk ago", src:"Marca / BBC gossip", tier:3, fee:"£80m+ (resisting)", truth:35, prob:10, light:'r', trend:'down',
@@ -993,7 +992,8 @@ const HUB = {
   skySportsBrunoGuimares: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11670/13569653/bruno-guimaraes-transfer-news-arsenal-agree-lb75m-fee-for-newcastle-midfielder"},
   dailyCannonChristianNorgaard: {l:"Daily Cannon", u:"https://dailycannon.com/2026/08/newcastle-bruno-arsenal-medical-fee-agreed/"},
   davidOrnsteinTheAthleticBrunoGuimaraes: {l:"David Ornstein, The Athletic", u:"https://www.theathletic.com/football/"},
-  eSPNChristianNorgaard: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49540382/everton-christian-norgaard-arsenal-transfer"}};
+  eSPNChristianNorgaard: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49540382/everton-christian-norgaard-arsenal-transfer"},
+  aSporGabrielMartinelli: {l:"A Spor", u:"https://www.aspor.com.tr/fenerbahce/2026/08/04/fenerbahcede-transfer-gundemi-gabriel-martinelli"}};
 const LINKMAP = {
   "Morgan Rogers": ["bbcArs","mokbel"],
   "Eli Junior Kroupi": ["bbcArs"],
@@ -1003,7 +1003,7 @@ const LINKMAP = {
   "Riccardo Calafiori": ["gazzetta"],
   "Leandro Trossard": ["bbcArs", "sportsMoleIllanMeslier"],
   "Christian Nørgaard": ["bbcArs"],
-  "Gabriel Martinelli": ["bbcArs"],
+  "Gabriel Martinelli": ["bbcArs", "aSporGabrielMartinelli"],
   "Ben White": ["bbcArs"],
   "William Saliba": ["marca","bbcGossip"],
   "Piero Hincapié": ["romano","afc", "arseblogNewsPieroHincapi"],
@@ -1015,7 +1015,7 @@ const LINKMAP = {
   "Christos Tzolis": ["sportsMoleIllanMeslier"],
   "Karl Hein": ["sportsMoleIllanMeslier"],
   "Jakub Kiwior": ["sportsMoleIllanMeslier"],
-  "Bruno Guimaraes": ["skySportsBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimaraes"],
+  "Bruno Guimaraes": ["skySportsBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimaraes", "ornstein"],
   "Christian Norgaard": ["dailyCannonChristianNorgaard", "eSPNChristianNorgaard"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",

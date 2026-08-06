@@ -855,10 +855,12 @@ const CONFIRMED_IN = [
   {name:"Connor Ronan", sub:"MF", club:"Colorado Rapids", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer confirmed."},
   {name:"Marius Muller", sub:"GK", club:"VfL Wolfsburg", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent signing, competing with Dimitar Mitov for the gloves."},
   {name:"Chris Cadden", sub:"DF", club:"Hibernian", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move, already made his debut in a win over Hearts."},
-  {name:"Ayoub Mouloua", sub:"ST", club:"Undisclosed", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moroccan striker, permanent signing."}
+  {name:"Ayoub Mouloua", sub:"ST", club:"Undisclosed", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moroccan striker, permanent signing."},
+  {name:"Lewis Smith", sub:"26 · Scotland · AM", club:"Livingston", pos:"AM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed and thrown straight in, starting against Brora Rangers in the Premier Sports Cup a day after joining. Robinson said Smith himself was surprised to start, with two departures and injuries in that area of the pitch. Fee undisclosed."}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
+  {name:"Marius Müller", sub:"32 · Germany · GK", club:"VfL Wolfsburg", pos:"GK", report:"Aberdeen are being linked with the Wolfsburg goalkeeper as Stephen Robinson reshapes his squad. The former Kaiserslautern, RB Leipzig and Luzern keeper features in the Press and Journal's running Pittodrie transfer coverage, but there is no confirmation of terms or a bid.", src:"Press and Journal", tier:2, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Weak sourcing so far. Local paper link only, no tier-1 German reporter has attached Aberdeen to Müller, and a Bundesliga keeper on Wolfsburg wages would be a stretch for the Dons.", lastSeen:"2026-08-06T08:09:17Z", baseProb:40}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -873,14 +875,16 @@ const HUB = {
   "gnews-mariusmuller": {l:"Related news search: Marius Muller", u:"https://news.google.com/search?q=Aberdeen%20Marius%20Muller%20transfer&hl=en-GB&gl=GB"},
   "gnews-chriscadden": {l:"Related news search: Chris Cadden", u:"https://news.google.com/search?q=Aberdeen%20Chris%20Cadden%20transfer&hl=en-GB&gl=GB"},
   "gnews-ayoubmouloua": {l:"Related news search: Ayoub Mouloua", u:"https://news.google.com/search?q=Aberdeen%20Ayoub%20Mouloua%20transfer&hl=en-GB&gl=GB"},
-  thePressandJournalConnorRonan: {l:"The Press and Journal", u:"https://www.pressandjournal.co.uk/tag/transfers/"}};
+  thePressandJournalConnorRonan: {l:"The Press and Journal", u:"https://www.pressandjournal.co.uk/tag/transfers/"},
+  pressandJournalMariusMller: {l:"Press and Journal", u:"https://www.pressandjournal.co.uk/fp/sport/football/aberdeen-fc/7035089/aberdeen-fc-summer-transfer-window-live-blog/"}};
 
 const LINKMAP = {
   "Connor Ronan": ["gnews-connorronan", "thePressandJournalConnorRonan"],
   "Marius Muller": ["gnews-mariusmuller"],
   "Chris Cadden": ["gnews-chriscadden"],
-  "Ayoub Mouloua": ["gnews-ayoubmouloua"]
-};
+  "Ayoub Mouloua": ["gnews-ayoubmouloua", "pressandJournalMariusMller"],
+  "Marius Müller": ["pressandJournalMariusMller"],
+  "Lewis Smith": ["pressandJournalMariusMller"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

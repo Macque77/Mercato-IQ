@@ -51,7 +51,7 @@ const INCOMING = [
   {name:"Rodri", sub:"30 · CDM · Spain", club:"Manchester City", pos:"CDM", report:"4 Aug 2026", src:"Fabrizio Romano / Nicolo Schira", tier:1, fee:"Opening bid €50-60m (City value ~€80m)", truth:65, prob:40, light:"y", trend:"flat", note:"Rejected a City contract renewal; personal terms reportedly agreed in principle to 2030, but the two clubs remain apart on fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Yan Diomandé", sub:"Winger/forward", club:"RB Leipzig", pos:"RW", report:"Romano gave a 'here we go' on a reported £113m deal, but the announcement has stalled after agent Max Gradel filed a FIFA complaint in a representation dispute; Leipzig's sporting director says it won't be held up by the agency battle, while other reports say Madrid has stepped back from finalising terms.", src:"Fabrizio Romano", tier:1, fee:"~£113m reported", truth:62, prob:50, light:"y", trend:"flat", note:"Genuinely messy situation - Here We Go status undermined by an active FIFA complaint and conflicting club statements.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
   {name:"Michael Olise", sub:"Winger", club:"Bayern Munich", pos:"RW", report:"Speculative reporting links Madrid with Olise as further attacking reinforcement.", src:"Various (aggregated)", tier:3, fee:"Speculative", truth:30, prob:12, light:"r", trend:"flat", note:"No direct sourcing beyond aggregator-level chatter; treat as background noise, not an active pursuit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
-  {name:"Yan Diomande", sub:"19 · Ivory Coast · W", club:"RB Leipzig", pos:"W", report:"Real Madrid are set to sign the Ivory Coast winger in a deal worth up to around €135m, which with add-ons would become a club-record fee, surpassing Jude Bellingham and Eden Hazard. Diomande was left out of Leipzig's pre-season camp squad as the deal advanced, with PSG having withdrawn from the race and Liverpool also previously interested.", src:"ESPN", tier:2, fee:"Up to €135m", truth:90, prob:85, light:"g", trend:"flat", note:"Fee figures vary between outlets, from €120m up to €140m with add-ons, so treat the headline number with caution until the club confirms it.", lastSeen:"2026-08-05T22:44:07Z", baseProb:85}
+  {name:"Yan Diomande", sub:"19 · Ivory Coast · W", club:"RB Leipzig", pos:"W", report:"Real Madrid have agreed a club-record package for the Ivorian teenager after a long negotiation, worth an initial 125m euros with a further 15m in add-ons. Diomande is travelling for his medical before signing, which would take him past Jude Bellingham as Madrid's most expensive signing ever. Leganes are due a slice of the fee from their original agreement. Paris Saint-Germain and Liverpool were also in the race.", src:"The Athletic; Florian Plettenberg (Sky Germany); PA", tier:1, fee:"€125m plus €15m add-ons (about £116m)", truth:93, prob:85, light:"g", trend:"flat", note:"Agreement rather than done deal. A rival agency, Maxidel Management, has filed a FIFA complaint alleging a breach of contract over who represents the player, and that dispute has already delayed matters once.", lastSeen:"2026-08-06T08:09:17Z", baseProb:85}
 ];
 
 const OUTGOING = [
@@ -103,7 +103,8 @@ const HUB = {
   teamTalkDenzelDumfries: {l:"TeamTalk", u:"https://www.teamtalk.com/news/every-completed-real-madrid-transfer-summer-2026-signings-sales-loans"},
   managingMadridFranGarca: {l:"Managing Madrid", u:"https://www.managingmadrid.com/109880/betis-real-madrid-fran-garcia-2026-news"},
   mundoBetisDaniCeballos: {l:"MundoBetis", u:"https://mundobetis.com/2026/06/26/oficial-dani-ceballos-deja-el-real-madrid-para-volver-al-real-betis/"},
-  eSPNYanDiomande: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49460425/real-madrid-set-sign-yan-diomande-135m-deal-rb-leipzig-transfer"}};
+  eSPNYanDiomande: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49460425/real-madrid-set-sign-yan-diomande-135m-deal-rb-leipzig-transfer"},
+  theAthleticYanDiomande: {l:"The Athletic", u:"https://www.theathletic.com/football/"}};
 
 const LINKMAP = {
   "Ibrahima Konaté": ["espn-konate", "eSPNIbrahimaKonat"],
@@ -123,7 +124,7 @@ const LINKMAP = {
   "Yan Diomandé": ["oneFootballYanDiomand"],
   "Michael Olise": ["aggregatednewssearchMichaelOlise"],
   "Endrick": ["aggregatednewssearchEndrick"],
-  "Yan Diomande": ["eSPNYanDiomande"]};
+  "Yan Diomande": ["eSPNYanDiomande", "theAthleticYanDiomande"]};
 const WL_LINKMAP = {
   "Vinícius Júnior": ["footballtransfers-vinijr"]
 };

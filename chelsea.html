@@ -922,7 +922,7 @@ const INCOMING = [
   {name:"Midfield control", sub:"Positional thread", club:"Market", pos:"CM", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Within £120-200m gross", truth:55, prob:50, light:'y', trend:'flat',
    note:"Carried from the v1 positions board (heat 50): tactical fit for Alonso in central midfield is a flagged need. Thread-level only; no named midfield targets were held in the v1 state.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
   {name:"Victor Osimhen", sub:"Linked but Tottenham reported as favourites", club:"Napoli", pos:"FW", report:"Chelsea have been credited with interest in the Nigerian striker but multiple reports now say Tottenham are leading the race at a fee north of €75m.", src:"CaughtOffside", tier:3, fee:"€75m+", truth:40, prob:15, light:"o", trend:"flat", note:"Spurs reported to be in pole position, cooling Chelsea's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Pep Chavarria", sub:"28 · Spain · LB", club:"Rayo Vallecano", pos:"Left-back", report:"Chelsea are close to completing a deal worth an initial £16.3m plus performance-related add-ons, well short of the defender's release clause. Personal terms are already agreed and Chavarria is expected to be granted permission for a medical once the clubs finalise details. Left-back became a priority after Marc Cucurella's move to Real Madrid left Jorrel Hato as the only senior option there.", src:"The Athletic; Fabrizio Romano", tier:1, fee:"£16.3m plus add-ons", truth:92, prob:88, light:"g", trend:"up", note:"Romano stressed the negotiation has been more complicated than expected, so Chelsea are staying cautious until signatures are on paper.", lastSeen:"2026-08-05T22:44:07Z", baseProb:88}
+  {name:"Pep Chavarria", sub:"28 · Spain · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea are close to agreeing a deal worth about £16.3m for the Rayo Vallecano left-back, a target they have chased for much of the window. All parties are confident it will be struck. Chavarria, who played the full 90 minutes of last season's Conference League final defeat by Crystal Palace, is contracted to 2030 with a reported €50m release clause, but Chelsea are negotiating a separate figure rather than triggering it. He would provide competition for Jorrel Hato following Marc Cucurella's exit.", src:"PA / The Athletic", tier:2, fee:"£16.3m", truth:92, prob:85, light:"g", trend:"down", note:"Solidly sourced through PA and The Athletic, though nothing is signed and the gap between the quoted fee and the release clause leaves room for late haggling.", lastSeen:"2026-08-06T08:09:17Z", baseProb:85}
 ];
 
 const OUTGOING = [
@@ -1000,7 +1000,8 @@ const HUB = {
   skySportsDannyWelbeck: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11668/13568440/chelsea-transfer-news-danny-welbeck-completes-move-to-stamford-bridge-from-brighton-for-undisclosed-fee"},
   theAthleticPepChavarria: {l:"The Athletic", u:"https://www.theathletic.com/football/"},
   fabrizioRomanoviaFootball365PedroNeto: {l:"Fabrizio Romano, via Football365", u:"https://www.football365.com/news/chelsea-romano-rates-chances-neto-man-city-maresca-transfer"},
-  fabrizioRomanoviaFootball365EnzoFernandez: {l:"Fabrizio Romano, via Football365", u:"https://www.football365.com/news/chelsea-enzo-fernandez-future-fabrizio-romano-update"}};
+  fabrizioRomanoviaFootball365EnzoFernandez: {l:"Fabrizio Romano, via Football365", u:"https://www.football365.com/news/chelsea-enzo-fernandez-future-fabrizio-romano-update"},
+  eSPNPAcopyPepChavarria: {l:"ESPN (PA copy)", u:"https://www.espn.com/soccer/story/_/id/49535743/chelsea-close-163m-pep-chavarria-deal-rayo-vallecano"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -1010,7 +1011,7 @@ const LINKMAP = {
   "Emmanuel Emegha": ["romano","lequipe","cfc"],
   "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "teamTalkMorganRogers"],
   "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra", "footballTransfersRomanoMorettoPepChavarra", "pAIrishNewsPepChavarra"],
-  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "teamTalkMorganRogers", "skySportsDannyWelbeck"],
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "teamTalkMorganRogers", "skySportsDannyWelbeck", "eSPNPAcopyPepChavarria"],
   "Victor Osimhen": ["footballTransfersRomanoMorettoPepChavarra"],
   "Mykhailo Mudryk": ["caughtOffsideMykhailoMudryk"],
   "Geovany Quenda": ["chelseaFCofficialGeovanyQuenda"],
@@ -1018,11 +1019,11 @@ const LINKMAP = {
   "Maxence Lacroix": ["teamTalkMorganRogers"],
   "Marco Palestra": ["chelseaFCofficialGeovanyQuenda"],
   "Valentin Barco": ["teamTalkMorganRogers"],
-  "Marc Cucurella": ["teamTalkMorganRogers"],
+  "Marc Cucurella": ["teamTalkMorganRogers", "eSPNPAcopyPepChavarria"],
   "Andrey Santos": ["teamTalkMorganRogers"],
   "Tyrique George": ["yahooSportsTyriqueGeorge"],
-  "Jordan Henderson": ["skySportsJordanHenderson"],
-  "Pep Chavarria": ["pAIrishNewsPepChavarra", "theAthleticPepChavarria"],
+  "Jordan Henderson": ["skySportsJordanHenderson", "eSPNPAcopyPepChavarria"],
+  "Pep Chavarria": ["pAIrishNewsPepChavarra", "theAthleticPepChavarria", "eSPNPAcopyPepChavarria"],
   "Pedro Neto": ["fabrizioRomanoviaFootball365PedroNeto"],
   "Enzo Fernandez": ["fabrizioRomanoviaFootball365EnzoFernandez"]};
 const WL_LINKMAP = {

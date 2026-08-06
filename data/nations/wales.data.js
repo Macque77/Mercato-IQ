@@ -16,7 +16,7 @@ const BY_LEAGUE = {"Championship": 0, "Cymru Premier": 0};
 const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 0}, {"slug": "cymru-premier", "name": "Cymru Premier", "count": 0}];
 
 const REPORT_META = {
-  asof: "05 Aug 2026",
-  updated: "2026-08-05T23:31:20.552175Z",
+  asof: "06 Aug 2026",
+  updated: "2026-08-06T08:09:18.069167Z",
   label: "Nation aggregation"
 };

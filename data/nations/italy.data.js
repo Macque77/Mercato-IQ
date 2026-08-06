@@ -6,7 +6,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 139
+  stories_count: 138
 };
 
 const TOP_STORIES = [  {
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Serie A": 128, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 127, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 128}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 127}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
-  asof: "05 Aug 2026",
-  updated: "2026-08-05T23:31:20.550325Z",
+  asof: "06 Aug 2026",
+  updated: "2026-08-06T08:09:18.067437Z",
   label: "Nation aggregation"
 };

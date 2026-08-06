@@ -43,7 +43,8 @@ const INCOMING = [
   {name:"Jahnoah Markelo", sub:"DF", club:"Coventry City", pos:"DF", report:"~1 wk ago", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:65, prob:55, light:'g', trend:'up', note:"Rangers reportedly in talks for the defender.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Mikey Moore", sub:"W", club:"Tottenham Hotspur", pos:"W", report:"~1 wk ago", src:"The Scotsman", tier:3, fee:"Undisclosed", truth:45, prob:30, light:'y', trend:'flat', note:"Competing with Bundesliga interest, player reportedly told to make a decision.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Fares Ghedjemis", sub:"23 · W · Algeria", club:"Frosinone", pos:"W", report:"4 Aug 2026", src:"Sky Sports Scotland (via GiveMeSport)", tier:2, fee:"£8m bid submitted", truth:48, prob:28, light:'o', trend:'up', note:"Rangers submitted an £8m offer attempting to hijack Celtic's move for the winger; Frosinone have rejected both bids so far and want £10m+.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
-  {name:"Camilo Mena", sub:"23 · RW · Colombia", club:"Lechia Gdansk", pos:"RW", report:"3 Aug 2026", src:"Purple Vert (via Yahoo Sports UK)", tier:3, fee:"~£3.4m", truth:35, prob:15, light:'o', trend:'flat', note:"Rangers are said to be monitoring the winger as a fallback option after Lechia's relegation lowered his valuation; no formal talks reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+  {name:"Camilo Mena", sub:"23 · RW · Colombia", club:"Lechia Gdansk", pos:"RW", report:"3 Aug 2026", src:"Purple Vert (via Yahoo Sports UK)", tier:3, fee:"~£3.4m", truth:35, prob:15, light:'o', trend:'flat', note:"Rangers are said to be monitoring the winger as a fallback option after Lechia's relegation lowered his valuation; no formal talks reported yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Couhaib Driouech", sub:"24 · Morocco · LW", club:"PSV Eindhoven", pos:"LW", report:"Rangers have opened talks and lodged a first bid for the Morocco youth international, who PSV are willing to sell. The initial offer was turned down and Derek McInnes is pushing for a second, improved proposal. RB Salzburg are also circling.", src:"De Telegraaf", tier:2, fee:"Undisclosed (multi-million)", truth:78, prob:45, light:"y", trend:"flat", note:"Telegraaf-led story with no PSV or Rangers confirmation, and Salzburg competition means this is far from settled. Treat the fee talk as guesswork for now.", lastSeen:"2026-08-06T08:09:17Z", baseProb:45}
 ];
 const OUTGOING = [
   {name:"Nicolas Raskin", sub:"25 · CDM · Belgium", club:"Real Betis", pos:"CDM", report:"19 Jul 2026", src:"Daily Record / FootballTransfers", tier:2, fee:"~€23.5m asking price", truth:55, prob:32, light:'y', trend:'flat', note:"Rangers have set a club-record-equalling asking price for the Belgium international following his World Cup showing; other outlets have separately named Aston Villa, Wolves, Hull and Fiorentina as suitors, suggesting a genuinely fluid situation on the destination.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
@@ -69,7 +70,9 @@ const HUB = {
   "givemesportYokota": {l:"GiveMeSport · Yokota", u:"https://www.givemesport.com/fabrizio-romano-rangers-reach-agreement-daisuke-yokota-transfer/"},
   "givemesportGhedjemis": {l:"GiveMeSport · Ghedjemis", u:"https://www.givemesport.com/breaking-rangers-submit-8m-offer-hijack-celtic-transfer-fares-ghedjemis/"},
   "yahooMena": {l:"Yahoo Sports UK · Mena", u:"https://uk.sports.yahoo.com/news/rangers-closely-monitor-camilo-mena-100941826.html"},
-  skySportsDaisukeYokota: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11788/13569962/rangers-transfer-news-daisuke-yokota-joins-from-hannover-96-to-become-derek-mcinnes-ninth-summer-signing"}};
+  skySportsDaisukeYokota: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11788/13569962/rangers-transfer-news-daisuke-yokota-joins-from-hannover-96-to-become-derek-mcinnes-ninth-summer-signing"},
+  deTelegraafCouhaibDriouech: {l:"De Telegraaf", u:"https://www.telegraaf.nl/sport/voetbal"},
+  rangersFCofficialDaisukeYokota: {l:"Rangers FC official", u:"https://www.rangers.co.uk/article/rangers-sign-daisuke-yokota-from-hannover-96/4GTGqYYVvr2xBM0yYocPFC"}};
 
 const LINKMAP = {
   "Lawrence Shankland": ["gnews-lawrenceshankland"],
@@ -80,10 +83,10 @@ const LINKMAP = {
   "Mikey Moore": ["scotsman"],
   "Nicolas Raskin": ["footballtransfersRaskin", "dailyrecord"],
   "Unnamed Rangers attacker": ["glasgowworld"],
-  "Daisuke Yokota": ["givemesportYokota", "skySportsDaisukeYokota"],
+  "Daisuke Yokota": ["givemesportYokota", "skySportsDaisukeYokota", "rangersFCofficialDaisukeYokota"],
   "Fares Ghedjemis": ["givemesportGhedjemis"],
-  "Camilo Mena": ["yahooMena"]
-};
+  "Camilo Mena": ["yahooMena"],
+  "Couhaib Driouech": ["deTelegraafCouhaibDriouech"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

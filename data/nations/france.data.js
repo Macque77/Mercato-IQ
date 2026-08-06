@@ -121,7 +121,7 @@ const BY_LEAGUE = {"Ligue 1": 75, "Championnat National": 0, "Championnat Nation
 const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 75}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
-  asof: "05 Aug 2026",
-  updated: "2026-08-05T23:31:20.549478Z",
+  asof: "06 Aug 2026",
+  updated: "2026-08-06T08:09:18.066612Z",
   label: "Nation aggregation"
 };

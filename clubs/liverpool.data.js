@@ -67,13 +67,12 @@ const INCOMING = [
    note:"Linked amid a reported contract dispute at Everton, having rejected new terms. On-profile for energy and directness. OBSTACLE: Everton's stance and valuation; sourcing is moderate.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
   {name:"Kennett Eichhorn", sub:"young · midfield", club:"(target)", pos:"CM", report:"~2 days ago", src:"Aggregated", tier:4, fee:"£15-25m", truth:35, prob:14, light:'r', trend:'up',
    note:"Liverpool intensifying interest after Bayern Munich reportedly withdrew. A young midfield prospect for the model. Early-warning sourcing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
-  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Liverpool are preparing an opening offer and have opened talks with PSG over the France winger, seen as a long-term successor to Mohamed Salah. Barcola has two years left and has indicated he will not sign a new deal amid frustration at his game time, with the move to Anfield appealing to him. PSG value him at around £128.5m, and Arsenal are also interested.", src:"Sky Sports News", tier:2, fee:"£128.5m valuation", truth:85, prob:45, light:"y", trend:"flat", note:"Interest is well sourced, but the gap between Liverpool's valuation and PSG's asking price is huge, and reports of a completed agreement circulating on fan sites are not supported by tier-one reporting.", lastSeen:"2026-08-05T22:44:07Z", baseProb:45},
+  {name:"Bradley Barcola", sub:"23 · France · LW", club:"Paris Saint-Germain", pos:"LW", report:"Barcola is Liverpool's main attacking target and the club are readying an opening offer of around £100m. PSG value him nearer £145m and Liverpool have no intention of going that high. The winger has told the European champions he wants to leave, will not sign a new contract and is drawn to Anfield by the promise of regular starts he does not get behind Kvaratskhelia, Doue and Dembele. Liverpool need attacking reinforcement after Mohamed Salah's free-transfer departure and with Hugo Ekitike out for the rest of 2026 with a ruptured Achilles.", src:"The Athletic", tier:2, fee:"c£100m", truth:88, prob:55, light:"g", trend:"up", note:"The interest and the player's desire are well established, but the valuation gap is huge and no bid has landed yet. Some of the more precise fee framing is coming from Football Insider rather than tier one, so treat exact numbers loosely.", lastSeen:"2026-08-06T08:09:17Z", baseProb:55},
   {name:"Ibrahim Mbaye", sub:"18 · Senegal · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool have explored the conditions of a deal for the teenager, who debuted for PSG at 16 and has 42 appearances to his name, as the search for a right winger continues after Salah's departure.", src:"Sky Sports", tier:2, fee:"Undisclosed, around €50m mooted", truth:80, prob:30, light:"y", trend:"flat", note:"This is exploratory rather than advanced. Bayer Leverkusen are reported to be in direct club-to-club talks, and Manchester City and Tottenham were said to be keener earlier in the window, so Liverpool are not front runners.", lastSeen:"2026-08-05T17:03:23Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"W/ST · Netherlands", club:"(seeking exit)", pos:"W", report:"~2 days ago", src:"Dutch press (traced via feed)", tier:3, fee:"£45-60m", truth:55, prob:45, light:'y', trend:'up',
-   note:"Reported to want to leave following Slot's exit. PRICING: a proven PL forward under contract holds a firm fee; a sale would part-fund the attacking rebuild. Player-driven, so leverage is mixed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+  {name:"Cody Gakpo", sub:"27 · Netherlands · LW", club:"Tottenham Hotspur", pos:"LW", report:"Tottenham have made Gakpo a target as they hunt attacking additions after a heavy spend elsewhere, and the Dutchman's camp are said to have held positive talks. Liverpool's stated position is that they do not want to sell to a domestic rival and it would take an enormous offer to open negotiations. Gakpo, contracted to 2030, is wary of a rotational role behind Alexander Isak.", src:"Fabrizio Romano (relayed)", tier:2, fee:"Undisclosed", truth:75, prob:30, light:"y", trend:"down", note:"Romano's comments are being relayed second hand by aggregating outlets and the player-side detail comes from TEAMtalk, so the strength of the Spurs push is unclear. Liverpool's public stance remains that he is not for sale.", lastSeen:"2026-08-06T08:09:17Z", baseProb:30},
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
    note:"Standard FSG churn of fringe and loan players to balance the squad and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
 ];
@@ -130,16 +129,17 @@ const HUB = {
   skySportsBradleyBarcola: {l:"Sky Sports", u:"https://www.skysports.com/transfer/news/12691/13567165/bradley-barcola-transfer-news-psg-value-france-forward-at-lb145m-amid-liverpool-and-arsenal-interest-paper-talk"},
   skySportsMohamedSalah: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13569969/mohamed-salah-former-liverpool-forward-set-to-join-turkish-club-trabzonspor-on-free-transfer-after-leaving-anfield"},
   skySportsBradleyBarcola1: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13567997/bradley-barcola-transfer-news-liverpool-set-to-open-talks-with-paris-saint-germain-over-winger-with-an-opening-offer-prepared"},
-  skySportsIbrahimMbaye: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11669/13569955/ibrahim-mbaye-liverpool-explore-deal-for-paris-saint-germain-winger"}};
+  skySportsIbrahimMbaye: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11669/13569955/ibrahim-mbaye-liverpool-explore-deal-for-paris-saint-germain-winger"},
+  tEAMtalkcitingFabrizioRomanoCodyGakpo: {l:"TEAMtalk, citing Fabrizio Romano", u:"https://www.teamtalk.com/tottenham-hotspur/romano-reveals-tottenham-sign-gakpo-liverpool-two-conditions-sale-u-turn"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
   "Iliman Ndiaye": ["echo","bbcGossip"],
   "Kennett Eichhorn": ["bbcGossip"],
-  "Cody Gakpo": ["vi","echo"],
+  "Cody Gakpo": ["vi","echo", "tEAMtalkcitingFabrizioRomanoCodyGakpo"],
   "Ibrahima Konaté": ["ninetymin"],
   "Fringe & loan army": ["echo"],
-  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1"],
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic"],
   "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"],
   "Mohamed Salah": ["skySportsMohamedSalah"],
   "Ibrahim Mbaye": ["skySportsIbrahimMbaye"]};
