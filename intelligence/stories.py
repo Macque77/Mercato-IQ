@@ -131,6 +131,11 @@ def build_stories(claims, resolutions):
             }
         stage = max((s['stage'] for s in sources.values()), key=lambda st: STAGE_RANK.get(st, 0))
 
+        # deal timeline: who reported it, when, at what stage (per-source first mention, in order)
+        timeline = [{'ts': c['ts'], 'source': c['source'], 'stage': c.get('stage', 'interest'),
+                     'tier': int(c.get('source_tier') or 3), 'url': c.get('source_url', '')}
+                    for c in ordered]
+
         # outcome. Only consider resolutions in a plausible window of the first report,
         # so a claim isn't "resolved" by the same player's unrelated move a season later.
         def _in_window(r):
@@ -164,7 +169,7 @@ def build_stories(claims, resolutions):
             'to_club': cl[0].get('to_club', ''), 'to_club_key': tk, 'club_slug': dest_slug,
             'stage': stage, 'first_stage': ordered[0].get('stage', 'interest'),
             'first_ts': breaker_ts, 'last_ts': ordered[-1]['ts'],
-            'breaker': ordered[0]['source_key'],
+            'breaker': ordered[0]['source_key'], 'timeline': timeline,
             'sources': sources, 'outcome': outcome, 'confirmed_at': confirmed_at,
             'confirmed_to_key': confirmed_to_key, 'confirmed_fee': confirmed_fee,
         })

@@ -7,6 +7,15 @@
    "completion_likelihood": 0.91,
    "momentum": "steady",
    "club_slug": "tottenham-hotspur",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "here-we-go",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -21,6 +30,15 @@
    "completion_likelihood": 0.895,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Les Nouvelles du Foot",
+     "stage": "here-we-go",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Les Nouvelles du Foot"
    ],
@@ -35,6 +53,15 @@
    "completion_likelihood": 0.895,
    "momentum": "steady",
    "club_slug": "cagliari",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "tuttomercatoweb.com",
+     "stage": "here-we-go",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "tuttomercatoweb.com"
    ],
@@ -49,6 +76,15 @@
    "completion_likelihood": 0.892,
    "momentum": "steady",
    "club_slug": "alanyaspor",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sporx",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sporx"
    ],
@@ -63,6 +99,15 @@
    "completion_likelihood": 0.892,
    "momentum": "steady",
    "club_slug": "erzurumspor",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sabah",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sabah"
    ],
@@ -77,6 +122,15 @@
    "completion_likelihood": 0.892,
    "momentum": "steady",
    "club_slug": "leicester-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Planet Nogomet",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Planet Nogomet"
    ],
@@ -91,6 +145,15 @@
    "completion_likelihood": 0.892,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tim Reedijk, VI.nl",
+     "stage": "here-we-go",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tim Reedijk, VI.nl"
    ],
@@ -105,6 +168,15 @@
    "completion_likelihood": 0.892,
    "momentum": "steady",
    "club_slug": "sc-paderborn",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports Germany",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports Germany"
    ],
@@ -119,6 +191,15 @@
    "completion_likelihood": 0.892,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Athletic",
+     "stage": "here-we-go",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Athletic"
    ],
@@ -133,6 +214,15 @@
    "completion_likelihood": 0.892,
    "momentum": "steady",
    "club_slug": "vitoria-guimaraes",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "A Bola",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "A Bola"
    ],
@@ -147,6 +237,15 @@
    "completion_likelihood": 0.884,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -161,6 +260,15 @@
    "completion_likelihood": 0.884,
    "momentum": "steady",
    "club_slug": "psv-eindhoven",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbal International",
+     "stage": "here-we-go",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbal International"
    ],
@@ -175,6 +283,15 @@
    "completion_likelihood": 0.883,
    "momentum": "steady",
    "club_slug": "arsenal",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "BBC Sport Football",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport Football"
    ],
@@ -189,6 +306,15 @@
    "completion_likelihood": 0.883,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "BBC Sport",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -203,6 +329,15 @@
    "completion_likelihood": 0.872,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -217,6 +352,15 @@
    "completion_likelihood": 0.872,
    "momentum": "steady",
    "club_slug": "torino",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "here-we-go",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -231,6 +375,15 @@
    "completion_likelihood": 0.87,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "David Ornstein",
+     "stage": "here-we-go",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "David Ornstein"
    ],
@@ -245,6 +398,15 @@
    "completion_likelihood": 0.499,
    "momentum": "steady",
    "club_slug": "as-roma",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Gianluca Di Marzio",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -259,6 +421,15 @@
    "completion_likelihood": 0.499,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "TuttoUdinese",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoUdinese"
    ],
@@ -273,6 +444,15 @@
    "completion_likelihood": 0.497,
    "momentum": "steady",
    "club_slug": "bradford-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pete O'Rourke",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pete O'Rourke"
    ],
@@ -287,6 +467,15 @@
    "completion_likelihood": 0.497,
    "momentum": "steady",
    "club_slug": "paris-saint-germain",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Gianluca Di Marzio",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -301,6 +490,15 @@
    "completion_likelihood": 0.486,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -315,6 +513,15 @@
    "completion_likelihood": 0.486,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -329,6 +536,15 @@
    "completion_likelihood": 0.486,
    "momentum": "steady",
    "club_slug": "inter-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -343,6 +559,15 @@
    "completion_likelihood": 0.486,
    "momentum": "steady",
    "club_slug": "paris-saint-germain",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -357,6 +582,15 @@
    "completion_likelihood": 0.485,
    "momentum": "steady",
    "club_slug": "fc-cologne",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -371,6 +605,15 @@
    "completion_likelihood": 0.485,
    "momentum": "steady",
    "club_slug": "paris-saint-germain",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -385,6 +628,15 @@
    "completion_likelihood": 0.485,
    "momentum": "steady",
    "club_slug": "tottenham-hotspur",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -399,6 +651,15 @@
    "completion_likelihood": 0.485,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -413,6 +674,15 @@
    "completion_likelihood": 0.481,
    "momentum": "steady",
    "club_slug": "nottingham-forest",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -427,6 +697,22 @@
    "completion_likelihood": 0.476,
    "momentum": "steady",
    "club_slug": "aston-villa",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "Transferfeed page",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano",
     "Transferfeed page"
@@ -442,6 +728,22 @@
    "completion_likelihood": 0.468,
    "momentum": "steady",
    "club_slug": "liverpool",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport",
     "Fabrizio Romano"
@@ -457,6 +759,22 @@
    "completion_likelihood": 0.45,
    "momentum": "heating",
    "club_slug": "as-roma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nicolo Schira",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T08:45:12Z",
+     "source": "Gianluca Di Marzio",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gianluca Di Marzio",
     "Nicolo Schira"
@@ -472,6 +790,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "antalyaspor",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yeni Alanya",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yeni Alanya"
    ],
@@ -486,6 +813,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "fulham",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Soccernet NG",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Soccernet NG"
    ],
@@ -500,6 +836,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "napoli",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Areniello",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Areniello"
    ],
@@ -514,6 +859,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "panaitolikos",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "monobala.gr",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "monobala.gr"
    ],
@@ -528,6 +882,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "panaitolikos",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "monobala.gr",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "monobala.gr"
    ],
@@ -542,6 +905,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "real-sociedad",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FútbolFantasy",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FútbolFantasy"
    ],
@@ -556,6 +928,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FútbolFantasy",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FútbolFantasy"
    ],
@@ -570,6 +951,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "santa-clara",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Gabriel Machado",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gabriel Machado"
    ],
@@ -584,6 +974,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "CaughtOffside",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "CaughtOffside"
    ],
@@ -598,6 +997,15 @@
    "completion_likelihood": 0.442,
    "momentum": "steady",
    "club_slug": "wigan-athletic",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Alan Nixon",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Alan Nixon"
    ],
@@ -612,6 +1020,15 @@
    "completion_likelihood": 0.441,
    "momentum": "steady",
    "club_slug": "mainz-05",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Get German Football News",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get German Football News"
    ],
@@ -626,6 +1043,15 @@
    "completion_likelihood": 0.441,
    "momentum": "steady",
    "club_slug": "celtic",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Daily Record",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Daily Record"
    ],
@@ -640,6 +1066,15 @@
    "completion_likelihood": 0.441,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "tuttomercatoweb.com",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "tuttomercatoweb.com"
    ],
@@ -654,6 +1089,15 @@
    "completion_likelihood": 0.441,
    "momentum": "steady",
    "club_slug": "rb-leipzig",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "sport1.de",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "sport1.de"
    ],
@@ -668,6 +1112,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "deportivo-la-coruna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "ElDesmarque",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "ElDesmarque"
    ],
@@ -682,6 +1135,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Ben Wignall",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Ben Wignall"
    ],
@@ -696,6 +1158,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "fc-porto",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "O Jogo",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "O Jogo"
    ],
@@ -710,6 +1181,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "fenerbahce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports Turkey",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports Turkey"
    ],
@@ -724,6 +1204,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FootballTransfers.com",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FootballTransfers.com"
    ],
@@ -738,6 +1227,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "fiorentina",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -752,6 +1250,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yorkshire",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yorkshire"
    ],
@@ -766,6 +1273,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "HullLive",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "HullLive"
    ],
@@ -780,6 +1296,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "leicester-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "@SportsPeteO / FLW",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "@SportsPeteO / FLW"
    ],
@@ -794,6 +1319,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Christian Heidel via Yahoo Sports",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Christian Heidel via Yahoo Sports"
    ],
@@ -808,6 +1342,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "olympique-lyon",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sport",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sport"
    ],
@@ -822,6 +1365,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "osasuna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "67 Hail Hail",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "67 Hail Hail"
    ],
@@ -836,6 +1388,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "real-betis",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fichajes.net",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fichajes.net"
    ],
@@ -850,6 +1411,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Estadio Deportivo",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Estadio Deportivo"
    ],
@@ -864,6 +1434,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports Germany",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports Germany"
    ],
@@ -878,6 +1457,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "sporting-cp",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nicolo Schira",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Nicolo Schira"
    ],
@@ -892,6 +1480,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "stade-brest",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sacha Tavolieri",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sacha Tavolieri"
    ],
@@ -906,6 +1503,15 @@
    "completion_likelihood": 0.434,
    "momentum": "steady",
    "club_slug": "westerlo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nico Schira",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Nico Schira"
    ],
@@ -920,6 +1526,15 @@
    "completion_likelihood": 0.433,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "CoventryLive",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "CoventryLive"
    ],
@@ -934,6 +1549,15 @@
    "completion_likelihood": 0.433,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Florian Plettenberg",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Florian Plettenberg"
    ],
@@ -948,6 +1572,15 @@
    "completion_likelihood": 0.433,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "John Townley",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "John Townley"
    ],
@@ -962,6 +1595,15 @@
    "completion_likelihood": 0.433,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "L'Equipe",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Equipe"
    ],
@@ -976,6 +1618,15 @@
    "completion_likelihood": 0.433,
    "momentum": "steady",
    "club_slug": "union-berlin",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Kicker",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Kicker"
    ],
@@ -990,6 +1641,15 @@
    "completion_likelihood": 0.433,
    "momentum": "steady",
    "club_slug": "sunderland",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:59:55Z",
+     "source": "Sunderland Echo",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sunderland Echo"
    ],
@@ -1001,9 +1661,18 @@
    "player": "Unknown RSL wing-back",
    "to_club": "Crystal Palace",
    "stage": "advanced",
-   "completion_likelihood": 0.432,
+   "completion_likelihood": 0.433,
    "momentum": "steady",
    "club_slug": "crystal-palace",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:13:57Z",
+     "source": "The Athletic",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Athletic"
    ],
@@ -1018,6 +1687,15 @@
    "completion_likelihood": 0.432,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "The Guardian",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Guardian"
    ],
@@ -1032,6 +1710,15 @@
    "completion_likelihood": 0.43,
    "momentum": "steady",
    "club_slug": "ascoli-picchio",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -1046,6 +1733,15 @@
    "completion_likelihood": 0.43,
    "momentum": "steady",
    "club_slug": "pisa",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -1060,6 +1756,15 @@
    "completion_likelihood": 0.424,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -1074,6 +1779,15 @@
    "completion_likelihood": 0.424,
    "momentum": "steady",
    "club_slug": "fulham",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -1088,6 +1802,15 @@
    "completion_likelihood": 0.424,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -1102,6 +1825,15 @@
    "completion_likelihood": 0.424,
    "momentum": "steady",
    "club_slug": "olympiacos",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -1116,6 +1848,15 @@
    "completion_likelihood": 0.424,
    "momentum": "steady",
    "club_slug": "rangers",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -1130,6 +1871,22 @@
    "completion_likelihood": 0.419,
    "momentum": "heating",
    "club_slug": "ipswich-town",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "East Anglian Daily Times",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "East Anglian Daily Times",
     "Sky Sports"
@@ -1145,6 +1902,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "as-roma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Matteo Moretto",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Matteo Moretto"
    ],
@@ -1159,6 +1925,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "as-roma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1173,6 +1948,22 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "como",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com",
     "Yahoo Sports"
@@ -1188,6 +1979,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "espanyol",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Matteo Moretto",
+     "stage": "advanced",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Matteo Moretto"
    ],
@@ -1202,6 +2002,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "fiorentina",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1216,6 +2025,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "frosinone",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -1230,6 +2048,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "frosinone",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -1244,6 +2071,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "monza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1258,6 +2094,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "napoli",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1272,6 +2117,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1286,6 +2140,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "torino",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1300,6 +2163,15 @@
    "completion_likelihood": 0.413,
    "momentum": "steady",
    "club_slug": "torino",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -1314,6 +2186,15 @@
    "completion_likelihood": 0.411,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -1328,6 +2209,15 @@
    "completion_likelihood": 0.397,
    "momentum": "steady",
    "club_slug": "atalanta",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Gianluca Di Marzio",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -1342,6 +2232,15 @@
    "completion_likelihood": 0.397,
    "momentum": "steady",
    "club_slug": "derby-county",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pete O'Rourke",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pete O'Rourke"
    ],
@@ -1356,6 +2255,22 @@
    "completion_likelihood": 0.394,
    "momentum": "steady",
    "club_slug": "parma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Gianluca Di Marzio",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Forza Parma",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Forza Parma",
     "Gianluca Di Marzio"
@@ -1371,6 +2286,15 @@
    "completion_likelihood": 0.387,
    "momentum": "steady",
    "club_slug": "atletico-madrid",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1385,6 +2309,15 @@
    "completion_likelihood": 0.387,
    "momentum": "steady",
    "club_slug": "sunderland",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Fabrizio Romano",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1399,6 +2332,15 @@
    "completion_likelihood": 0.386,
    "momentum": "steady",
    "club_slug": "lazio",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1413,6 +2355,15 @@
    "completion_likelihood": 0.386,
    "momentum": "steady",
    "club_slug": "lazio",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -1427,6 +2378,15 @@
    "completion_likelihood": 0.385,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1441,6 +2401,15 @@
    "completion_likelihood": 0.385,
    "momentum": "steady",
    "club_slug": "olympique-lyon",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -1455,6 +2424,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "nottingham-forest",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -1469,6 +2447,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -1483,6 +2470,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "ajax",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "vi.nl",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "vi.nl"
    ],
@@ -1497,6 +2493,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "ajax",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "vi.nl",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "vi.nl"
    ],
@@ -1511,6 +2516,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "stade-rennais",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "On-page rumour",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "On-page rumour"
    ],
@@ -1525,6 +2539,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "brentford",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "On-page rumour",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "On-page rumour"
    ],
@@ -1539,6 +2562,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "brentford",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "On-page rumour",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "On-page rumour"
    ],
@@ -1553,6 +2585,15 @@
    "completion_likelihood": 0.382,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "On-page rumour",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "On-page rumour"
    ],
@@ -1567,6 +2608,15 @@
    "completion_likelihood": 0.381,
    "momentum": "steady",
    "club_slug": "cercle-brugge",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbalkrant",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbalkrant"
    ],
@@ -1581,6 +2631,15 @@
    "completion_likelihood": 0.381,
    "momentum": "steady",
    "club_slug": "union-saint-gilloise",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbalkrant",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbalkrant"
    ],
@@ -1595,6 +2654,15 @@
    "completion_likelihood": 0.381,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "A Spor",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "A Spor"
    ],
@@ -1609,6 +2677,22 @@
    "completion_likelihood": 0.365,
    "momentum": "steady",
    "club_slug": "juventus",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Gazzetta dello Sport",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano",
     "Gazzetta dello Sport"
@@ -1624,6 +2708,22 @@
    "completion_likelihood": 0.364,
    "momentum": "steady",
    "club_slug": "west-ham",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Keith Downie",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T11:59:55Z",
+     "source": "Sky Sports",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Keith Downie",
     "Sky Sports"
@@ -1639,6 +2739,15 @@
    "completion_likelihood": 0.354,
    "momentum": "steady",
    "club_slug": "olympique-lyon",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "advanced",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -1653,6 +2762,22 @@
    "completion_likelihood": 0.353,
    "momentum": "steady",
    "club_slug": "ac-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Gianluca Di Marzio",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gianluca Di Marzio",
     "Sky Sport"
@@ -1668,6 +2793,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "aj-auxerre",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TOP Mercato",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TOP Mercato"
    ],
@@ -1682,6 +2816,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "alaves",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Superdeporte",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Superdeporte"
    ],
@@ -1696,6 +2839,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "alaves",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Juanfutbol",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Juanfutbol"
    ],
@@ -1710,6 +2862,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yeni Alanya",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yeni Alanya"
    ],
@@ -1724,6 +2885,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "aris-thessaloniki",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foxbet.gr",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foxbet.gr"
    ],
@@ -1738,6 +2908,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "aris-thessaloniki",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foxbet.gr",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foxbet.gr"
    ],
@@ -1752,6 +2931,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "as-roma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Betting market analysis",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Betting market analysis"
    ],
@@ -1766,6 +2954,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "barnsley",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Charlie Gregory",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Charlie Gregory"
    ],
@@ -1780,6 +2977,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Insider",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Insider"
    ],
@@ -1794,6 +3000,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "deportivo-la-coruna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Superdeporte",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Superdeporte"
    ],
@@ -1808,6 +3023,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "La Grada",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "La Grada"
    ],
@@ -1822,6 +3046,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "getafe",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercato",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercato"
    ],
@@ -1836,6 +3069,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "getafe",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Africafoot",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Africafoot"
    ],
@@ -1850,6 +3092,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW exclusive",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW exclusive"
    ],
@@ -1864,6 +3115,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -1878,6 +3138,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "SempreInter",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "SempreInter"
    ],
@@ -1892,6 +3161,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Blasting News",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Blasting News"
    ],
@@ -1906,6 +3184,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "leeds-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Simon Phillips",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Simon Phillips"
    ],
@@ -1920,6 +3207,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TEAMtalk",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TEAMtalk"
    ],
@@ -1934,6 +3230,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "F. Plettenberg",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "F. Plettenberg"
    ],
@@ -1948,6 +3253,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Manager Jack Wilshere",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Manager Jack Wilshere"
    ],
@@ -1962,6 +3276,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "ogc-nice",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Equipe",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Equipe"
    ],
@@ -1976,6 +3299,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "PEC Zwolle Nieuws",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "PEC Zwolle Nieuws"
    ],
@@ -1990,6 +3322,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "rangers",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Purple Vert",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Purple Vert"
    ],
@@ -2004,6 +3345,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "sporting-cp",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "A Bola",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "A Bola"
    ],
@@ -2018,6 +3368,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Alan Nixon",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Alan Nixon"
    ],
@@ -2032,6 +3391,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "O Jogo",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "O Jogo"
    ],
@@ -2046,6 +3414,15 @@
    "completion_likelihood": 0.346,
    "momentum": "steady",
    "club_slug": "willem-ii",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Brabants Dagblad",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Brabants Dagblad"
    ],
@@ -2060,6 +3437,15 @@
    "completion_likelihood": 0.345,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-05T13:15:33Z",
+     "source": "Goal",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Goal"
    ],
@@ -2074,6 +3460,15 @@
    "completion_likelihood": 0.345,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Lazionews",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Lazionews"
    ],
@@ -2088,6 +3483,15 @@
    "completion_likelihood": 0.345,
    "momentum": "steady",
    "club_slug": "werder-bremen",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Deichstube",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Deichstube"
    ],
@@ -2102,6 +3506,15 @@
    "completion_likelihood": 0.345,
    "momentum": "steady",
    "club_slug": "sunderland",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:36:31Z",
+     "source": "Sport",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sport"
    ],
@@ -2116,6 +3529,15 @@
    "completion_likelihood": 0.345,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "transferfeed",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "transferfeed"
    ],
@@ -2130,6 +3552,15 @@
    "completion_likelihood": 0.345,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "transferfeed",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "transferfeed"
    ],
@@ -2144,6 +3575,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Les Transferts",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Les Transferts"
    ],
@@ -2158,6 +3598,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "alaves",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Noticias de Álava",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Noticias de Álava"
    ],
@@ -2172,6 +3621,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "RMC Sport",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "RMC Sport"
    ],
@@ -2186,6 +3644,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sacha Tavolieri; AfricaFoot",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sacha Tavolieri; AfricaFoot"
    ],
@@ -2200,6 +3667,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Record",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Record"
    ],
@@ -2214,6 +3690,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttosport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttosport"
    ],
@@ -2228,6 +3713,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FootballTransfers.com",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FootballTransfers.com"
    ],
@@ -2242,6 +3736,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Mounir Boualin",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Mounir Boualin"
    ],
@@ -2256,6 +3759,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "GOAL",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "GOAL"
    ],
@@ -2270,6 +3782,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "blackburn-rovers",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Lancashire Post",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Lancashire Post"
    ],
@@ -2284,6 +3805,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "celta-vigo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Desmarque",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque"
    ],
@@ -2298,6 +3828,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "celta-vigo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Desmarque",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque"
    ],
@@ -2312,6 +3851,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "ElDesmarque",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "ElDesmarque"
    ],
@@ -2326,6 +3874,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "club-brugge",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "HLN",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "HLN"
    ],
@@ -2340,6 +3897,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TeamTalk",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TeamTalk"
    ],
@@ -2354,6 +3920,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoJuve",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoJuve"
    ],
@@ -2368,6 +3943,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "espanyol",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "AS.com",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "AS.com"
    ],
@@ -2382,6 +3966,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Radio MARCA Valladolid",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Radio MARCA Valladolid"
    ],
@@ -2396,6 +3989,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "estoril",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Record",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Record"
    ],
@@ -2410,6 +4012,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Record",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Record"
    ],
@@ -2424,6 +4035,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yahoo Sports"
    ],
@@ -2438,6 +4058,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yahoo Sports"
    ],
@@ -2452,6 +4081,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Globo Esporte",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Globo Esporte"
    ],
@@ -2466,6 +4104,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "getafe",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "AS",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "AS"
    ],
@@ -2480,6 +4127,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "inter-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Dicip Khetan",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Dicip Khetan"
    ],
@@ -2494,6 +4150,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sport Italia",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sport Italia"
    ],
@@ -2508,6 +4173,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yahoo Sports"
    ],
@@ -2522,6 +4196,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW exclusive",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW exclusive"
    ],
@@ -2536,6 +4219,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "malaga",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Radio Marca Málaga",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Radio Marca Málaga"
    ],
@@ -2550,6 +4242,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "oh-leuven",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get Belgian & Dutch Football News",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get Belgian & Dutch Football News"
    ],
@@ -2564,6 +4265,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nicolo Schira",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Nicolo Schira"
    ],
@@ -2578,6 +4288,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "olympique-lyon",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "RMC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "RMC Sport"
    ],
@@ -2592,6 +4311,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "olympique-lyon",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Equipe",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Equipe"
    ],
@@ -2606,6 +4334,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Equipe",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Equipe"
    ],
@@ -2620,6 +4357,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "osasuna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Diario de Navarra",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Diario de Navarra"
    ],
@@ -2634,6 +4380,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "pec-zwolle",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Mounir Boualin",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Mounir Boualin"
    ],
@@ -2648,6 +4403,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Juan Pérez",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Juan Pérez"
    ],
@@ -2662,6 +4426,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pablo Sánchez",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pablo Sánchez"
    ],
@@ -2676,6 +4449,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "rangers",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports Scotland",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports Scotland"
    ],
@@ -2690,6 +4472,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "rayo-vallecano",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "OneFootball",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "OneFootball"
    ],
@@ -2704,6 +4495,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sport Witness",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sport Witness"
    ],
@@ -2718,6 +4518,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky"
    ],
@@ -2732,6 +4541,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fichajes.net",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fichajes.net"
    ],
@@ -2746,6 +4564,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sjoerd Keizer, VI",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sjoerd Keizer, VI"
    ],
@@ -2760,6 +4587,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Darren Witcoop",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Darren Witcoop"
    ],
@@ -2774,6 +4610,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "sl-benfica",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrice Hawkins",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrice Hawkins"
    ],
@@ -2788,6 +4633,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Graham Smyth",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Graham Smyth"
    ],
@@ -2802,6 +4656,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Goal.com",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Goal.com"
    ],
@@ -2816,6 +4679,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Équipe",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Équipe"
    ],
@@ -2830,6 +4702,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "tottenham-hotspur",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TeamTalk",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TeamTalk"
    ],
@@ -2844,6 +4725,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Gianluigi Longari",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gianluigi Longari"
    ],
@@ -2858,6 +4748,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TeamTalk",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TeamTalk"
    ],
@@ -2872,6 +4771,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "valencia",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Desmarque",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque"
    ],
@@ -2886,6 +4794,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "vfb-stuttgart",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Goal.com",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Goal.com"
    ],
@@ -2900,6 +4817,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "werder-bremen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "meczyki.pl",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "meczyki.pl"
    ],
@@ -2914,6 +4840,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "West Brom News",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "West Brom News"
    ],
@@ -2928,6 +4863,15 @@
    "completion_likelihood": 0.338,
    "momentum": "steady",
    "club_slug": "west-ham",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Keith Downie",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Keith Downie"
    ],
@@ -2942,6 +4886,15 @@
    "completion_likelihood": 0.337,
    "momentum": "steady",
    "club_slug": "celtic",
+   "timeline": [
+    {
+     "ts": "2026-08-05T17:03:23Z",
+     "source": "The Scotsman",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Scotsman"
    ],
@@ -2956,6 +4909,15 @@
    "completion_likelihood": 0.337,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "kicker",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "kicker"
    ],
@@ -2970,6 +4932,15 @@
    "completion_likelihood": 0.337,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Noticias de Gipuzkoa",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Noticias de Gipuzkoa"
    ],
@@ -2984,6 +4955,15 @@
    "completion_likelihood": 0.337,
    "momentum": "steady",
    "club_slug": "sunderland",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:59:55Z",
+     "source": "BILD",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BILD"
    ],
@@ -2998,6 +4978,15 @@
    "completion_likelihood": 0.337,
    "momentum": "steady",
    "club_slug": "sunderland",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:59:55Z",
+     "source": "Santi Aouna",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Santi Aouna"
    ],
@@ -3012,6 +5001,15 @@
    "completion_likelihood": 0.334,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -3026,6 +5024,15 @@
    "completion_likelihood": 0.334,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -3040,6 +5047,15 @@
    "completion_likelihood": 0.334,
    "momentum": "steady",
    "club_slug": "cosenza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3054,6 +5070,15 @@
    "completion_likelihood": 0.334,
    "momentum": "steady",
    "club_slug": "lecce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -3068,6 +5093,15 @@
    "completion_likelihood": 0.334,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -3082,6 +5116,15 @@
    "completion_likelihood": 0.334,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3096,6 +5139,15 @@
    "completion_likelihood": 0.333,
    "momentum": "steady",
    "club_slug": "aston-villa",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "Transferfeed page",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Transferfeed page"
    ],
@@ -3110,6 +5162,22 @@
    "completion_likelihood": 0.329,
    "momentum": "heating",
    "club_slug": "ipswich-town",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "The Athletic",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports News",
     "The Athletic"
@@ -3125,6 +5193,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -3139,6 +5216,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -3153,6 +5239,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "borussia-dortmund",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Deutschland",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Deutschland"
    ],
@@ -3167,6 +5262,22 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "celtic",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "BBC",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nicolo Schira",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC",
     "Nicolo Schira"
@@ -3182,6 +5293,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -3196,6 +5316,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "espanyol",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Matteo Moretto",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Matteo Moretto"
    ],
@@ -3210,6 +5339,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "fc-cologne",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Deutschland",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Deutschland"
    ],
@@ -3224,6 +5362,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "fiorentina",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3238,6 +5385,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3252,6 +5408,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "le-mans-fc",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -3266,6 +5431,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "lecce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3280,6 +5454,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "monza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3294,6 +5477,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Matteo Moretto",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Matteo Moretto"
    ],
@@ -3308,6 +5500,22 @@
    "completion_likelihood": 0.319,
    "momentum": "heating",
    "club_slug": "samsunspor",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Equipe",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sporx",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Equipe",
     "Sporx"
@@ -3323,6 +5531,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbal International",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbal International"
    ],
@@ -3337,6 +5554,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "psv-eindhoven",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Deutschland",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Deutschland"
    ],
@@ -3351,6 +5577,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "rotterdam-sparta",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbal International",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbal International"
    ],
@@ -3365,6 +5600,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "sassuolo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3379,6 +5623,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "sassuolo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3393,6 +5646,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "torino",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3407,6 +5669,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3421,6 +5692,15 @@
    "completion_likelihood": 0.319,
    "momentum": "steady",
    "club_slug": "venezia",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -3435,6 +5715,15 @@
    "completion_likelihood": 0.317,
    "momentum": "steady",
    "club_slug": "barcelona",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -3449,6 +5738,15 @@
    "completion_likelihood": 0.317,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -3463,6 +5761,15 @@
    "completion_likelihood": 0.317,
    "momentum": "steady",
    "club_slug": "real-madrid",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -3477,6 +5784,15 @@
    "completion_likelihood": 0.317,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -3491,6 +5807,15 @@
    "completion_likelihood": 0.317,
    "momentum": "steady",
    "club_slug": "liverpool",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -3505,6 +5830,15 @@
    "completion_likelihood": 0.317,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:33:42Z",
+     "source": "BBC Sport",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -3519,6 +5853,22 @@
    "completion_likelihood": 0.308,
    "momentum": "steady",
    "club_slug": "frosinone",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nicolò Schira",
+     "stage": "talks",
+     "tier": 3,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia",
     "Nicolò Schira"
@@ -3534,6 +5884,22 @@
    "completion_likelihood": 0.301,
    "momentum": "heating",
    "club_slug": "az-alkmaar",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbal International",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Transfernieuws.nl",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Transfernieuws.nl",
     "Voetbal International"
@@ -3549,6 +5915,15 @@
    "completion_likelihood": 0.295,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3563,6 +5938,15 @@
    "completion_likelihood": 0.295,
    "momentum": "steady",
    "club_slug": "fc-utrecht",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FCUpdate.nl",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FCUpdate.nl"
    ],
@@ -3577,6 +5961,15 @@
    "completion_likelihood": 0.295,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FCUpdate.nl",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FCUpdate.nl"
    ],
@@ -3591,6 +5984,15 @@
    "completion_likelihood": 0.295,
    "momentum": "steady",
    "club_slug": "sassuolo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -3605,6 +6007,15 @@
    "completion_likelihood": 0.295,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "David Ornstein",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "David Ornstein"
    ],
@@ -3619,6 +6030,22 @@
    "completion_likelihood": 0.291,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "talks",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano",
     "Get French Football News"
@@ -3634,6 +6061,15 @@
    "completion_likelihood": 0.267,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -3648,6 +6084,15 @@
    "completion_likelihood": 0.267,
    "momentum": "steady",
    "club_slug": "olympique-lyon",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -3662,6 +6107,15 @@
    "completion_likelihood": 0.267,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -3676,6 +6130,22 @@
    "completion_likelihood": 0.236,
    "momentum": "heating",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "talks",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato",
     "Get French Football News"
@@ -3691,6 +6161,15 @@
    "completion_likelihood": 0.235,
    "momentum": "steady",
    "club_slug": "aek-athens",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -3705,6 +6184,15 @@
    "completion_likelihood": 0.235,
    "momentum": "steady",
    "club_slug": "aik-fotboll",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -3719,6 +6207,15 @@
    "completion_likelihood": 0.235,
    "momentum": "steady",
    "club_slug": "atletico-madrid",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -3733,6 +6230,15 @@
    "completion_likelihood": 0.235,
    "momentum": "steady",
    "club_slug": "feyenoord",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -3747,6 +6253,15 @@
    "completion_likelihood": 0.235,
    "momentum": "steady",
    "club_slug": "sc-heerenveen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports"
    ],
@@ -3761,6 +6276,15 @@
    "completion_likelihood": 0.215,
    "momentum": "steady",
    "club_slug": "as-roma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Gianluca Di Marzio",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Gianluca Di Marzio"
    ],
@@ -3775,6 +6299,15 @@
    "completion_likelihood": 0.207,
    "momentum": "steady",
    "club_slug": "tottenham-hotspur",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrizio Romano",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrizio Romano"
    ],
@@ -3789,6 +6322,15 @@
    "completion_likelihood": 0.205,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "On-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "On-page rumour"
    ],
@@ -3803,6 +6345,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbalkrant",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbalkrant"
    ],
@@ -3817,6 +6368,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "nottingham-forest",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -3831,6 +6391,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "nottingham-forest",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -3845,6 +6414,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "nottingham-forest",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -3859,6 +6437,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "nottingham-forest",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -3873,6 +6460,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -3887,6 +6483,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -3901,6 +6506,15 @@
    "completion_likelihood": 0.204,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "on-page rumour",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "on-page rumour"
    ],
@@ -3915,6 +6529,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "alaves",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Gol Digital",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Gol Digital"
    ],
@@ -3929,6 +6552,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "angers-sco",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Radio L1",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Radio L1"
    ],
@@ -3943,6 +6575,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "antalyaspor",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yeni Alanya",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yeni Alanya"
    ],
@@ -3957,6 +6598,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fichajes",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fichajes"
    ],
@@ -3971,6 +6621,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yahoo Sports"
    ],
@@ -3985,6 +6644,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "atletico-madrid",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Sun",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Sun"
    ],
@@ -3999,6 +6667,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "CaughtOffside",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "CaughtOffside"
    ],
@@ -4013,6 +6690,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "bayer-leverkusen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Goal.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Goal.com"
    ],
@@ -4027,6 +6713,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Graeme Bailey",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Graeme Bailey"
    ],
@@ -4041,6 +6736,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "blackpool",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW opinion",
+     "stage": "interest",
+     "tier": 4,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW opinion"
    ],
@@ -4055,6 +6759,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW"
    ],
@@ -4069,6 +6782,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW"
    ],
@@ -4083,6 +6805,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "borussia-dortmund",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Soy Fútbol",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Soy Fútbol"
    ],
@@ -4097,6 +6828,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW opinion",
+     "stage": "interest",
+     "tier": 4,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW opinion"
    ],
@@ -4111,6 +6851,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "braga",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Record / Bolanarede",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Record / Bolanarede"
    ],
@@ -4125,6 +6874,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "cambridge-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW opinion",
+     "stage": "interest",
+     "tier": 4,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW opinion"
    ],
@@ -4139,6 +6897,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "celta-vigo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Mundo Celeste",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Mundo Celeste"
    ],
@@ -4153,6 +6920,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "celta-vigo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Galicia Press",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Galicia Press"
    ],
@@ -4167,6 +6943,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "celtic",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yahoo Sports"
    ],
@@ -4181,6 +6966,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4195,6 +6989,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4209,6 +7012,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4223,6 +7035,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4237,6 +7058,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4251,6 +7081,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "derby-county",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football League World",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football League World"
    ],
@@ -4265,6 +7104,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "derby-county",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sunderland Echo",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sunderland Echo"
    ],
@@ -4279,6 +7127,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Scotsman",
+     "stage": "interest",
+     "tier": 4,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Scotsman"
    ],
@@ -4293,6 +7150,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "elche",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FútbolFantasy",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FútbolFantasy"
    ],
@@ -4307,6 +7173,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "elche",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TeleElx",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TeleElx"
    ],
@@ -4321,6 +7196,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "espanyol",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fichajes.net",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fichajes.net"
    ],
@@ -4335,6 +7219,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "O Jogo",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "O Jogo"
    ],
@@ -4349,6 +7242,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "fc-groningen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nieuwsbreak.nl",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Nieuwsbreak.nl"
    ],
@@ -4363,6 +7265,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "getafe",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Desmarque",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque"
    ],
@@ -4377,6 +7288,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Scotsman",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Scotsman"
    ],
@@ -4391,6 +7311,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "huddersfield-town",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW"
    ],
@@ -4405,6 +7334,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4419,6 +7357,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4433,6 +7380,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4447,6 +7403,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "hull-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4461,6 +7426,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pattern-based",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pattern-based"
    ],
@@ -4475,6 +7449,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "inter-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Il Sussidiario",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Il Sussidiario"
    ],
@@ -4489,6 +7472,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "ipswich-town",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TWTD / the72",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TWTD / the72"
    ],
@@ -4503,6 +7495,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports opinion",
+     "stage": "interest",
+     "tier": 4,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yahoo Sports opinion"
    ],
@@ -4517,6 +7518,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "leeds-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TEAMtalk",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TEAMtalk"
    ],
@@ -4531,6 +7541,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "leeds-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TEAMtalk",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TEAMtalk"
    ],
@@ -4545,6 +7564,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "leeds-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TEAMtalk",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TEAMtalk"
    ],
@@ -4559,6 +7587,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "leeds-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "S. Vidal",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "S. Vidal"
    ],
@@ -4573,6 +7610,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "leeds-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Insider",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Insider"
    ],
@@ -4587,6 +7633,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "S. Vidal",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "S. Vidal"
    ],
@@ -4601,6 +7656,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football media",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football media"
    ],
@@ -4615,6 +7679,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TEAMtalk",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TEAMtalk"
    ],
@@ -4629,6 +7702,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "leicester-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FLW",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FLW"
    ],
@@ -4643,6 +7725,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "malaga",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Gol Digital",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Gol Digital"
    ],
@@ -4657,6 +7748,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "malaga",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fichajes.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fichajes.com"
    ],
@@ -4671,6 +7771,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "ogc-nice",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Equipe",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Equipe"
    ],
@@ -4685,6 +7794,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "osasuna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Miguel Rubio",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Miguel Rubio"
    ],
@@ -4699,6 +7817,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "osasuna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Miguel Rubio",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Miguel Rubio"
    ],
@@ -4713,6 +7840,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "osasuna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fichajes.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fichajes.com"
    ],
@@ -4727,6 +7863,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "panathinaikos",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Turkish media",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Turkish media"
    ],
@@ -4741,6 +7886,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "paok",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foxbet.gr",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foxbet.gr"
    ],
@@ -4755,6 +7909,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "paok",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Turkish media",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Turkish media"
    ],
@@ -4769,6 +7932,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "preston-north-end",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sunderland Echo",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sunderland Echo"
    ],
@@ -4783,6 +7955,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "rangers",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Scotsman",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Scotsman"
    ],
@@ -4797,6 +7978,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "rayo-vallecano",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Gol Digital",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Gol Digital"
    ],
@@ -4811,6 +8001,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TeamTalk",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TeamTalk"
    ],
@@ -4825,6 +8024,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FútbolFantasy",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FútbolFantasy"
    ],
@@ -4839,6 +8047,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "santa-clara",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "NetVasco",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "NetVasco"
    ],
@@ -4853,6 +8070,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "sheffield-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Star",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Star"
    ],
@@ -4867,6 +8093,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "sheffield-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "City Xtra",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "City Xtra"
    ],
@@ -4881,6 +8116,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "sheffield-united",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Star",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Star"
    ],
@@ -4895,6 +8139,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Daily Record",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Daily Record"
    ],
@@ -4909,6 +8162,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "stade-brest",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TOPMercato.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TOPMercato.com"
    ],
@@ -4923,6 +8185,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "stade-brest",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "BUTFootballClub.fr / JeunesFooteux.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "BUTFootballClub.fr / JeunesFooteux.com"
    ],
@@ -4937,6 +8208,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sunderland Echo",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sunderland Echo"
    ],
@@ -4951,6 +8231,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "torino",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -4965,6 +8254,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "tottenham-hotspur",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TeamTalk",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TeamTalk"
    ],
@@ -4979,6 +8277,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "udinese",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -4993,6 +8300,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fichajes.net",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fichajes.net"
    ],
@@ -5007,6 +8323,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Barca Blaugranes",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Barca Blaugranes"
    ],
@@ -5021,6 +8346,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "venezia",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -5035,6 +8369,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "venezia",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -5049,6 +8392,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -5063,6 +8415,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -5077,6 +8438,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Kicker",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Kicker"
    ],
@@ -5091,6 +8461,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FútbolFantasy",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FútbolFantasy"
    ],
@@ -5105,6 +8484,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FútbolFantasy / OneFootball",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FútbolFantasy / OneFootball"
    ],
@@ -5119,6 +8507,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FútbolFantasy",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "FútbolFantasy"
    ],
@@ -5133,6 +8530,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "O Jogo",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "O Jogo"
    ],
@@ -5147,6 +8553,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "O Jogo",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "O Jogo"
    ],
@@ -5161,6 +8576,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "west-bromwich-albion",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sunderland Echo",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sunderland Echo"
    ],
@@ -5175,6 +8599,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "willem-ii",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tilbo transfer blog",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tilbo transfer blog"
    ],
@@ -5189,6 +8622,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "wolverhampton",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Pipe Sierra",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Pipe Sierra"
    ],
@@ -5203,6 +8645,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Konstantinos Lianos",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Konstantinos Lianos"
    ],
@@ -5217,6 +8668,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Lazio News 24",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Lazio News 24"
    ],
@@ -5231,6 +8691,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:36:31Z",
+     "source": "90min",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "90min"
    ],
@@ -5245,6 +8714,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:36:31Z",
+     "source": "Turkish press",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Turkish press"
    ],
@@ -5259,6 +8737,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "sunderland",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:59:55Z",
+     "source": "TeamTalk",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TeamTalk"
    ],
@@ -5273,6 +8760,15 @@
    "completion_likelihood": 0.18,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:59:55Z",
+     "source": "EFL reporting",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "EFL reporting"
    ],
@@ -5287,6 +8783,15 @@
    "completion_likelihood": 0.179,
    "momentum": "steady",
    "club_slug": "ac-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Milanistichannel",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Milanistichannel"
    ],
@@ -5301,6 +8806,15 @@
    "completion_likelihood": 0.179,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Nicolo Schira",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Nicolo Schira"
    ],
@@ -5315,6 +8829,15 @@
    "completion_likelihood": 0.179,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Daily Record",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Daily Record"
    ],
@@ -5329,6 +8852,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Hürriyet",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Hürriyet"
    ],
@@ -5343,6 +8875,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "alaves",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Andrés Guzmán",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Andrés Guzmán"
    ],
@@ -5357,6 +8898,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "alaves",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Flavio Pace",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Flavio Pace"
    ],
@@ -5371,6 +8921,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "angers-sco",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Équipe",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Équipe"
    ],
@@ -5385,6 +8944,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "as-roma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Corriere della Sera",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Corriere della Sera"
    ],
@@ -5399,6 +8967,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Desmarque",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque"
    ],
@@ -5413,6 +8990,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "atletico-madrid",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "ElDesmarque",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "ElDesmarque"
    ],
@@ -5427,6 +9013,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "bayer-leverkusen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Kicker",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Kicker"
    ],
@@ -5441,6 +9036,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "bayern-munich",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "CaughtOffside",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "CaughtOffside"
    ],
@@ -5455,6 +9059,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "borussia-dortmund",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Bild",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Bild"
    ],
@@ -5469,6 +9082,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "borussia-dortmund",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Yahoo Sports UK",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Yahoo Sports UK"
    ],
@@ -5483,6 +9105,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Desmarque",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque"
    ],
@@ -5497,6 +9128,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "AS",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "AS"
    ],
@@ -5511,6 +9151,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "celtic",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "67 Hail Hail",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "67 Hail Hail"
    ],
@@ -5525,6 +9174,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "La Dernière Heure",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "La Dernière Heure"
    ],
@@ -5539,6 +9197,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "coventry-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Ben Jacobs",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Ben Jacobs"
    ],
@@ -5553,6 +9220,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Mike Verweij",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Mike Verweij"
    ],
@@ -5567,6 +9243,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TwenteInsite.nl",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TwenteInsite.nl"
    ],
@@ -5581,6 +9266,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "galatasaray",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports Turkey",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports Turkey"
    ],
@@ -5595,6 +9289,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "getafe",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FutbolFantasy / Marca",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FutbolFantasy / Marca"
    ],
@@ -5609,6 +9312,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "LecceNews24",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "LecceNews24"
    ],
@@ -5623,6 +9335,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "losc-lille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "RMC Sport",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "RMC Sport"
    ],
@@ -5637,6 +9358,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "losc-lille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Équipe",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Équipe"
    ],
@@ -5651,6 +9381,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "malaga",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Superdeporte",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Superdeporte"
    ],
@@ -5665,6 +9404,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Equipe",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Equipe"
    ],
@@ -5679,6 +9427,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sacha Tavolieri",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sacha Tavolieri"
    ],
@@ -5693,6 +9450,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "olympique-marseille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fabrice Hawkins",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fabrice Hawkins"
    ],
@@ -5707,6 +9473,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "olympique-marseille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Sports News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Sports News"
    ],
@@ -5721,6 +9496,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "osasuna",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Flavio Pace",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Flavio Pace"
    ],
@@ -5735,6 +9519,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Noticias de Navarra",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Noticias de Navarra"
    ],
@@ -5749,6 +9542,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "panathinaikos",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Vanya Karpov",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Vanya Karpov"
    ],
@@ -5763,6 +9565,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "paris-saint-germain",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "L'Équipe",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "L'Équipe"
    ],
@@ -5777,6 +9588,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "pec-zwolle",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "VoetbalPrimeur.nl",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "VoetbalPrimeur.nl"
    ],
@@ -5791,6 +9611,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Lancashire Post",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Lancashire Post"
    ],
@@ -5805,6 +9634,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "racing-santander",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Nicolò Schira",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Nicolò Schira"
    ],
@@ -5819,6 +9657,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "racing-santander",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Juan Pérez",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Juan Pérez"
    ],
@@ -5833,6 +9680,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Daily Record",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Daily Record"
    ],
@@ -5847,6 +9703,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "real-betis",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Estadio Deportivo",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Estadio Deportivo"
    ],
@@ -5861,6 +9726,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Mundo Deportivo",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Mundo Deportivo"
    ],
@@ -5875,6 +9749,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Diario AS",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Diario AS"
    ],
@@ -5889,6 +9772,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Espana",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Espana"
    ],
@@ -5903,6 +9795,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "rizespor",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fotomaç",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fotomaç"
    ],
@@ -5917,6 +9818,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sjoerd Keizer, VI",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sjoerd Keizer, VI"
    ],
@@ -5931,6 +9841,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Fotomaç",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Fotomaç"
    ],
@@ -5945,6 +9864,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "sassuolo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.it",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.it"
    ],
@@ -5959,6 +9887,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "La Repubblica",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "La Repubblica"
    ],
@@ -5973,6 +9910,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "sl-benfica",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Portuguese media",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Portuguese media"
    ],
@@ -5987,6 +9933,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "A Bola",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "A Bola"
    ],
@@ -6001,6 +9956,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sport.fr",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sport.fr"
    ],
@@ -6015,6 +9979,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sport.fr",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sport.fr"
    ],
@@ -6029,6 +10002,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "standard-liege",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "RTBF",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "RTBF"
    ],
@@ -6043,6 +10025,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "stoke-city",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Insider",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Insider"
    ],
@@ -6057,6 +10048,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tavolieri / TEAMtalk",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tavolieri / TEAMtalk"
    ],
@@ -6071,6 +10071,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "torino",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -6085,6 +10094,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Calciomercato.com",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Calciomercato.com"
    ],
@@ -6099,6 +10117,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "La Dernière Heure",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "La Dernière Heure"
    ],
@@ -6113,6 +10140,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "vfb-stuttgart",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Bild",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Bild"
    ],
@@ -6127,6 +10163,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Kicker",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Kicker"
    ],
@@ -6141,6 +10186,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Slobodna Bosna",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Slobodna Bosna"
    ],
@@ -6155,6 +10209,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "werder-bremen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "The Daily Telegraph",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "The Daily Telegraph"
    ],
@@ -6169,6 +10232,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "werder-bremen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "DeichStube",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "DeichStube"
    ],
@@ -6183,6 +10255,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "west-ham",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Alan Nixon",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Alan Nixon"
    ],
@@ -6197,6 +10278,15 @@
    "completion_likelihood": 0.175,
    "momentum": "steady",
    "club_slug": "wolverhampton",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Luke Fletcher",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Luke Fletcher"
    ],
@@ -6211,6 +10301,15 @@
    "completion_likelihood": 0.174,
    "momentum": "steady",
    "club_slug": "bayern-munich",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Christian Falk",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Christian Falk"
    ],
@@ -6225,6 +10324,15 @@
    "completion_likelihood": 0.174,
    "momentum": "steady",
    "club_slug": "lazio",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "Corriere dello Sport",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Corriere dello Sport"
    ],
@@ -6239,6 +10347,15 @@
    "completion_likelihood": 0.174,
    "momentum": "steady",
    "club_slug": "real-sociedad",
+   "timeline": [
+    {
+     "ts": "2026-08-06T10:49:40Z",
+     "source": "El Desmarque",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque"
    ],
@@ -6253,6 +10370,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6267,6 +10393,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "ascoli-picchio",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6281,6 +10416,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "atalanta",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6295,6 +10439,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6309,6 +10462,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "benevento",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6323,6 +10485,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "benevento",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6337,6 +10508,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "benevento",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6351,6 +10531,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6365,6 +10554,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "cremonese",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6379,6 +10577,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -6393,6 +10600,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "lecce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6407,6 +10623,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "lecce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6421,6 +10646,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "lecce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6435,6 +10669,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "lecce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6449,6 +10692,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6463,6 +10715,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6477,6 +10738,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6491,6 +10761,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "monza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6505,6 +10784,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "monza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6519,6 +10807,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "monza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6533,6 +10830,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "monza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6547,6 +10853,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "monza",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6561,6 +10876,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "olympique-lyon",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -6575,6 +10899,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -6589,6 +10922,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "olympique-marseille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -6603,6 +10945,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "olympique-marseille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -6617,6 +10968,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "paris-fc",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -6631,6 +10991,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -6645,6 +11014,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "parma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6659,6 +11037,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "parma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6673,6 +11060,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "parma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6687,6 +11083,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "parma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6701,6 +11106,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6715,6 +11129,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "reggiana",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6729,6 +11152,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6743,6 +11175,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "sassuolo",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6757,6 +11198,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6771,6 +11221,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "udinese",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6785,6 +11244,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6799,6 +11267,15 @@
    "completion_likelihood": 0.173,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6813,6 +11290,15 @@
    "completion_likelihood": 0.172,
    "momentum": "steady",
    "club_slug": "sunderland",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:36:31Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -6827,6 +11313,15 @@
    "completion_likelihood": 0.172,
    "momentum": "steady",
    "club_slug": "aston-villa",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "Transferfeed page",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Transferfeed page"
    ],
@@ -6841,6 +11336,15 @@
    "completion_likelihood": 0.172,
    "momentum": "steady",
    "club_slug": "aston-villa",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "Transferfeed page",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Transferfeed page"
    ],
@@ -6855,6 +11359,15 @@
    "completion_likelihood": 0.172,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "Transferfeed page",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Transferfeed page"
    ],
@@ -6869,6 +11382,15 @@
    "completion_likelihood": 0.172,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -6883,6 +11405,22 @@
    "completion_likelihood": 0.168,
    "momentum": "steady",
    "club_slug": "aston-villa",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "El Desmarque",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    },
+    {
+     "ts": "2026-08-06T13:55:46Z",
+     "source": "Transferfeed page",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "El Desmarque",
     "Transferfeed page"
@@ -6898,6 +11436,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "atletico-madrid",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Matteo Moretto",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Matteo Moretto"
    ],
@@ -6912,6 +11459,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbal International",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbal International"
    ],
@@ -6926,6 +11482,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "como",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -6940,6 +11505,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "fiorentina",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -6954,6 +11528,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "fiorentina",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -6968,6 +11551,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -6982,6 +11574,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "juventus",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -6996,6 +11597,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "lazio",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7010,6 +11620,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -7024,6 +11643,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "napoli",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7038,6 +11666,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "olympique-marseille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -7052,6 +11689,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "paris-fc",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -7066,6 +11712,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "parma",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -7080,6 +11735,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -7094,6 +11758,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "TuttoMercatoWeb",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "TuttoMercatoWeb"
    ],
@@ -7108,6 +11781,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7122,6 +11804,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "udinese",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7136,6 +11827,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "udinese",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Tuttomercatoweb",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Tuttomercatoweb"
    ],
@@ -7150,6 +11850,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "vfl-bochum",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Sky Deutschland",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Sky Deutschland"
    ],
@@ -7164,6 +11873,15 @@
    "completion_likelihood": 0.163,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Voetbal International",
+     "stage": "interest",
+     "tier": 1,
+     "url": ""
+    }
+   ],
    "sources": [
     "Voetbal International"
    ],
@@ -7178,6 +11896,15 @@
    "completion_likelihood": 0.162,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T11:36:31Z",
+     "source": "Foot Mercato",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Foot Mercato"
    ],
@@ -7192,6 +11919,15 @@
    "completion_likelihood": 0.162,
    "momentum": "steady",
    "club_slug": "ac-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7206,6 +11942,15 @@
    "completion_likelihood": 0.162,
    "momentum": "steady",
    "club_slug": "ac-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7220,6 +11965,15 @@
    "completion_likelihood": 0.162,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:21:37Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7234,6 +11988,15 @@
    "completion_likelihood": 0.162,
    "momentum": "steady",
    "club_slug": "tottenham-hotspur",
+   "timeline": [
+    {
+     "ts": "2026-08-06T14:31:11Z",
+     "source": "BBC Sport",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "BBC Sport"
    ],
@@ -7248,6 +12011,15 @@
    "completion_likelihood": 0.152,
    "momentum": "steady",
    "club_slug": "ogc-nice",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7262,6 +12034,15 @@
    "completion_likelihood": 0.152,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7276,6 +12057,15 @@
    "completion_likelihood": 0.152,
    "momentum": "steady",
    "club_slug": "rc-strasbourg",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7290,6 +12080,15 @@
    "completion_likelihood": 0.152,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7304,6 +12103,15 @@
    "completion_likelihood": 0.152,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 3,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7318,6 +12126,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7332,6 +12149,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "fc-groningen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FCUpdate.nl",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FCUpdate.nl"
    ],
@@ -7346,6 +12172,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "fc-groningen",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FCUpdate.nl",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FCUpdate.nl"
    ],
@@ -7360,6 +12195,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "fc-utrecht",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FCUpdate.nl",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FCUpdate.nl"
    ],
@@ -7374,6 +12218,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "fc-utrecht",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "FCUpdate.nl",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "FCUpdate.nl"
    ],
@@ -7388,6 +12241,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "fiorentina",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7402,6 +12264,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "genoa",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7416,6 +12287,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7430,6 +12310,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "inter-milan",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7444,6 +12333,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "juventus",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7458,6 +12356,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "lazio",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7472,6 +12379,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "lazio",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7486,6 +12402,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "lecce",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7500,6 +12425,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "napoli",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7514,6 +12448,15 @@
    "completion_likelihood": 0.149,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Football Italia",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Football Italia"
    ],
@@ -7528,6 +12471,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7542,6 +12494,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7556,6 +12517,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "ogc-nice",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7570,6 +12540,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "ogc-nice",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7584,6 +12563,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "olympique-marseille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7598,6 +12586,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "olympique-marseille",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7612,6 +12609,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7626,6 +12632,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "rc-strasbourg",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7640,6 +12655,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "rc-strasbourg",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],
@@ -7654,6 +12678,15 @@
    "completion_likelihood": 0.132,
    "momentum": "steady",
    "club_slug": "rc-strasbourg",
+   "timeline": [
+    {
+     "ts": "2026-08-04T19:10:50Z",
+     "source": "Get French Football News",
+     "stage": "interest",
+     "tier": 2,
+     "url": ""
+    }
+   ],
    "sources": [
     "Get French Football News"
    ],

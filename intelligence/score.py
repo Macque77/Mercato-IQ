@@ -171,7 +171,7 @@ def build(min_resolved=MIN_RESOLVED):
         live.append({
             'player': story['player'], 'to_club': story['to_club'], 'stage': story['stage'],
             'completion_likelihood': round(conf, 3), 'momentum': momentum,
-            'club_slug': story.get('club_slug', ''),
+            'club_slug': story.get('club_slug', ''), 'timeline': story.get('timeline', []),
             'sources': sorted({s['source'] for s in story['sources'].values()}),
             'source_count': len(story['sources']),
             'first_ts': story['first_ts'], 'last_ts': story['last_ts'],
