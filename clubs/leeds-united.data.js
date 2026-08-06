@@ -95,7 +95,8 @@ const INCOMING = [
   {name:"Harvey Elliott", sub:"AM/W · England", club:"Liverpool", pos:"AM/W", report:"~2 days ago", src:"Football Insider", tier:3, fee:"£20-25m", truth:45, prob:20, light:'o', trend:'up',
    note:"Fresh link for the Liverpool creator seeking minutes, a clear quality and resale profile. Obstacle: Football Insider-tier sourcing, a likely crowded race for a player of his profile, and price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
-   note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18}
+   note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
+  {name:"James Trafford", sub:"20 · England · GK", club:"Manchester City", pos:"GK", report:"On verge of completing agreement with Manchester City", src:"David Ornstein", tier:1, fee:"£40m guaranteed plus bonuses", truth:92, prob:88, light:"g", trend:"flat", note:"Deal reported as imminent", lastSeen:"2026-08-06T14:33:42Z", baseProb:88}
 ];
 
 const OUTGOING = [
@@ -211,7 +212,8 @@ const HUB = {
   leedsUnitedofficialTarikMuharemovi: {l:"Leeds United (official)", u:"https://www.leedsunited.com/en/news/tarik-muharemovic-signs-for-leeds-united"},
   skySportsHarryWilson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13561731/harry-wilson-to-leeds-united-wales-international-makes-elland-road-switch-after-leaving-fulham"},
   leedsUnitedofficialPascalStruijk: {l:"Leeds United (official)", u:"https://www.leedsunited.com/en/news/pascal-struijk-joins-brighton-and-hove-albion"},
-  tSNKarlDarlow: {l:"TSN", u:"https://www.tsn.ca/soccer/article/wales-keeper-darlow-joins-united-on-free-from-leeds/"}};
+  tSNKarlDarlow: {l:"TSN", u:"https://www.tsn.ca/soccer/article/wales-keeper-darlow-joins-united-on-free-from-leeds/"},
+  davidOrnsteinonXJamesTrafford: {l:"David Ornstein on X", u:"https://x.com/David_Ornstein/status/2081803067859652704"}};
 const LINKMAP = {
   "Crysencio Summerville": ["leedslive","yep"],
   "Roony Bardghji": ["teamtalk","ypost"],
@@ -219,7 +221,7 @@ const LINKMAP = {
   "Hayden Hackney": ["nixon","teamtalk"],
   "Jonathan David": ["teamtalk"],
   "Lois Openda": ["teamtalk","leedslive"],
-  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford"],
+  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford", "davidOrnsteinonXJamesTrafford"],
   "Shea Charles": ["leedslive"],
   "Lutsharel Geertruida": ["yep"],
   "Liam Delap": ["bbcGossip","leedslive"],

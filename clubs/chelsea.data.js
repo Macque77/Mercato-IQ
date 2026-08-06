@@ -98,7 +98,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Pep Chavarria", sub:"Unknown · Spain · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea set to clinch deal to sign Rayo Vallecano left-back", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal reported as imminent", lastSeen:"2026-08-06T14:13:57Z", baseProb:80}
+  {name:"Pep Chavarria", sub:"Unknown · Spain · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea set to clinch deal to sign Rayo Vallecano left-back", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal reported as imminent", lastSeen:"2026-08-06T14:13:57Z", baseProb:80},
+  {name:"Dean Henderson", sub:"27 · England · GK", club:"Nottingham Forest", pos:"GK", report:"Chelsea confirm Henderson signing", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed by Chelsea", lastSeen:"2026-08-06T14:33:42Z", baseProb:100}
 ];
 
 const OUTGOING = [];

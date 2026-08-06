@@ -60,12 +60,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"24 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool ready to make Barcola third £100m signing", src:"BBC Sport", tier:2, fee:"£100m", truth:75, prob:60, light:"g", trend:"down", note:"BBC Sport reports Liverpool's readiness to pursue as third £100m signing", lastSeen:"2026-08-06T14:31:11Z", baseProb:60},
-  {name:"Raul Asencio", sub:"22 · Spain · D", club:"Real Madrid", pos:"Defender", report:"Intermediaries sounded Liverpool out on Asencio", src:"The Guardian", tier:2, fee:"Unknown", truth:65, prob:45, light:"y", trend:"up", note:"The Guardian reports intermediaries exploring Liverpool interest", lastSeen:"2026-08-06T14:31:11Z", baseProb:45}
+  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Liverpool ready to make Barcola third £100m signing", src:"BBC Sport", tier:2, fee:"£100m", truth:75, prob:60, light:"g", trend:"flat", note:"Sustained interest; fee figure reported", lastSeen:"2026-08-06T14:33:42Z", baseProb:60},
+  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Real Madrid", pos:"CB", report:"Intermediaries sounded Liverpool out on Asencio", src:"The Guardian", tier:2, fee:"Unknown", truth:65, prob:50, light:"y", trend:"up", note:"Exploratory contact via intermediaries", lastSeen:"2026-08-06T14:33:42Z", baseProb:50},
+  {name:"Mbaye", sub:"", club:"", pos:"", report:"Liverpool explore Mbaye deal", src:"BBC Sport", tier:2, fee:"", truth:50, prob:45, light:"y", trend:"flat", note:"Insufficient detail to confirm full identity; listed in gossip column", lastSeen:"2026-08-06T14:33:42Z", baseProb:45}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions fit", src:"BBC Sport", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"up", note:"BBC Sport explores whether Gakpo would be a good fit at Spurs amid transfer speculation", lastSeen:"2026-08-06T14:31:11Z", baseProb:40}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions fit", src:"BBC Sport", tier:2, fee:"Unknown", truth:70, prob:55, light:"g", trend:"up", note:"Spurs interest confirmed; questions raised over suitability", lastSeen:"2026-08-06T14:33:42Z", baseProb:55}
 ];
 const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
@@ -132,7 +133,8 @@ const HUB = {
   bBCSportFootballRamos: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cz6484p441yo"},
   bBCSportFootballRamos1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cz6484p441yo?at_medium=RSS&at_campaign=rss"},
   bBCSportFootballBradleyBarcola1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c5y3pd5xvpzo?at_medium=RSS&at_campaign=rss"},
-  bBCSportFootballCodyGakpo1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c98vnel56q6o?at_medium=RSS&at_campaign=rss"}};
+  bBCSportFootballCodyGakpo1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c98vnel56q6o?at_medium=RSS&at_campaign=rss"},
+  bBCSportFootballMbaye: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cr59z307my1o?at_medium=RSS&at_campaign=rss"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
@@ -147,7 +149,8 @@ const LINKMAP = {
   "Ibrahim Mbaye": ["skySportsIbrahimMbaye"],
   "Raul Asencio": ["tEAMtalkRaulAsencio", "theGuardianFootballRaulAsencio"],
   "Ramos": ["bBCSportFootballRamos", "bBCSportFootballRamos1"],
-  "Carlos Ramos": ["bBCSportFootballRamos"]};
+  "Carlos Ramos": ["bBCSportFootballRamos"],
+  "Mbaye": ["bBCSportFootballMbaye"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };
