@@ -10,11 +10,11 @@ const NATION = {
 };
 
 const TOP_STORIES = [  {
-    name: "Kodai Sano",prob: 92, truth: 88, bullshit: false,
-    club_origin: "nec", club_display_name: "N.E.C.", direction: "out",
-    from: "N.E.C.", to: "PSV",
+    name: "Kodai Sano",prob: 92, truth: 90, bullshit: false,
+    club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
+    from: "NEC Nijmegen", to: "PSV Eindhoven",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-04T14:30:00Z", league: "Eredivisie"
+    value: "Reduced from NEC's initial ~€20m asking price; final figure undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
     name: "Jasper Schendelaar",prob: 45, truth: 70, bullshit: false,
@@ -31,18 +31,18 @@ const TOP_STORIES = [  {
     value: "Undisclosed (ETV ~€20m)", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
   },
   {
-    name: "Marvin Young",prob: 40, truth: 60, bullshit: false,
-    club_origin: "rotterdam-sparta", club_display_name: "Sparta Rotterdam", direction: "out",
-    from: "Sparta Rotterdam", to: "TBD",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Eredivisie"
-  },
-  {
     name: "Thom van Bergen",prob: 40, truth: 60, bullshit: false,
     club_origin: "az-alkmaar", club_display_name: "AZ Alkmaar", direction: "in",
     from: "FC Groningen", to: "AZ Alkmaar",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Eredivisie"
+  },
+  {
+    name: "Marvin Young",prob: 40, truth: 60, bullshit: false,
+    club_origin: "rotterdam-sparta", club_display_name: "Sparta Rotterdam", direction: "out",
+    from: "Sparta Rotterdam", to: "TBD",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Eredivisie"
   },
   {
     name: "Shunsuke Mito",prob: 35, truth: 60, bullshit: false,
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 35},
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:21:39.642071Z",
+  updated: "2026-08-06T14:31:12.569186Z",
   label: "Nation aggregation"
 };

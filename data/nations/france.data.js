@@ -97,7 +97,7 @@ const TOP_STORIES = [  {
     name: "Mika Godts",prob: 35, truth: 55, bullshit: false,
     club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
     from: "Ajax", to: "Paris Saint-Germain",
-    tier: 1, coverage: 1, coverage_trend: 'down',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 76}, {"slu
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:21:39.641140Z",
+  updated: "2026-08-06T14:31:12.568116Z",
   label: "Nation aggregation"
 };

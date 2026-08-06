@@ -87,7 +87,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Bruno Guimaraes", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal have agreed a fee with Newcastle for the midfielder", src:"BBC Sport Football / Telegraph", tier:2, fee:"Undisclosed", truth:95, prob:90, light:"g", trend:"down", note:"Deal agreed between clubs; Telegraph reports fee is less than Newcastle's initial valuation", lastSeen:"2026-08-06T14:21:37Z", baseProb:90}
+  {name:"Bruno Guimarães", sub:"26 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal have agreed a fee with Newcastle for the midfielder", src:"BBC Sport, Telegraph", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"up", note:"Deal agreed; fee reported to be millions less than Newcastle's initial asking price", lastSeen:"2026-08-06T14:31:11Z", baseProb:95}
 ];
 const DEAD = [
   {name:"Giorgio Scalvini", sub:"20 · Italy · D", club:"", pos:"D", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:35, prob:25, light:"o", trend:"down", note:"No recent snippet confirmation; last update 30 Jul 2026", lastSeen:"2026-08-06T13:55:46Z", baseProb:25, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"in", deadAt:"2026-08-06T14:04:24Z"},

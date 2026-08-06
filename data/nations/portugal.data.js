@@ -6,10 +6,17 @@
 const NATION = {
   name: "Portugal",
   flag_emoji: "🇵🇹",
-  stories_count: 17
+  stories_count: 18
 };
 
 const TOP_STORIES = [  {
+    name: "Nestory Irankunda",prob: 45, truth: 55, bullshit: false,
+    club_origin: "sporting-cp", club_display_name: "Sporting CP", direction: "in",
+    from: "Watford", to: "Sporting CP",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "~€22m (bonuses included)", updated: "2026-07-29T00:00:00Z", league: "Liga Portugal"
+  },
+  {
     name: "Ahmed Sidibé",prob: 88, truth: 85, bullshit: false,
     club_origin: "vitoria-guimaraes", club_display_name: "Vitória SC", direction: "in",
     from: "Venezia", to: "Vitória SC",
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Liga Portugal"
   },
-  {
-    name: "Andrew",prob: 25, truth: 40, bullshit: false,
-    club_origin: "braga", club_display_name: "SC Braga", direction: "in",
-    from: "Gil Vicente", to: "SC Braga",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Liga Portugal"
-  },
 ];
 
-const BY_LEAGUE = {"Liga Portugal": 17, "Liga Portugal 2": 0};
+const BY_LEAGUE = {"Liga Portugal": 18, "Liga Portugal 2": 0};
 
-const LEAGUES_LIST = [{"slug": "liga-portugal", "name": "Liga Portugal", "count": 17}, {"slug": "liga-portugal-2", "name": "Liga Portugal 2", "count": 0}];
+const LEAGUES_LIST = [{"slug": "liga-portugal", "name": "Liga Portugal", "count": 18}, {"slug": "liga-portugal-2", "name": "Liga Portugal 2", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:21:39.642279Z",
+  updated: "2026-08-06T14:31:12.569456Z",
   label: "Nation aggregation"
 };

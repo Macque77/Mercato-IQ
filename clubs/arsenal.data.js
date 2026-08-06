@@ -75,11 +75,12 @@ const CONFIRMED_OUT = [
   {name:"Leandro Trossard", sub:"Winger exits after Tzolis arrival", club:"Beşiktaş", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Some outlets reported a fee around €20m"},
   {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Everton", pos:"Defensive midfield", fee:"Around £7m (€8m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by both clubs. Norgaard has signed a two-year deal at Everton a year after arriving from Brentford, having made just seven league starts in Arsenal's title-winning season. He missed the friendly against Real Betis to finalise the move."},
   {name:"Kristoffer Norgaard", sub:"25 · Denmark · CM", club:"Everton", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed move to Everton"},
-  {name:"Mathias Norgaard", sub:"Everton · Midfielder", club:"Everton", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Everton"}
+  {name:"Mathias Norgaard", sub:"Everton · Midfielder", club:"Everton", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Everton"},
+  {name:"Morten Thorsby", sub:"28 · Norway · CM", club:"Everton", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed move to Everton"}
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimarães", sub:"Newcastle United · Midfielder", club:"Newcastle United", pos:"Midfielder", report:"Arsenal closing on full agreement with Newcastle for midfielder Bruno Guimarães", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"flat", note:"Newcastle captain, negotiations advanced", lastSeen:"2026-08-06T14:21:37Z", baseProb:75}
+  {name:"Bruno Guimarães", sub:"25 · Brazil · CM", club:"Newcastle United", pos:"Midfielder", report:"Arsenal signing Newcastle captain Guimarães", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:95, prob:85, light:"g", trend:"up", note:"Closing on full agreement reported", lastSeen:"2026-08-06T14:31:11Z", baseProb:85}
 ];
 
 const OUTGOING = [];
@@ -206,7 +207,8 @@ const LINKMAP = {
   "Christian Norgaard": ["dailyCannonChristianNorgaard", "eSPNChristianNorgaard", "skySportsFootballChristianNorgaard", "bBCSportFootballChristianNorgaard"],
   "Mishel Nduka": ["davidOrnsteinTheAthleticBrunoGuimaraes"],
   "Kristoffer Norgaard": ["bBCSportFootballKristofferNorgaard"],
-  "Mathias Norgaard": ["skySportsFootballChristianNorgaard", "bBCSportFootballKristofferNorgaard"]};
+  "Mathias Norgaard": ["skySportsFootballChristianNorgaard", "bBCSportFootballKristofferNorgaard"],
+  "Morten Thorsby": ["skySportsFootballChristianNorgaard"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
   "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",

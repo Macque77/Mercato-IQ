@@ -62,8 +62,7 @@ const INCOMING = [
    note:"Romano says talks have genuinely started and the move is 'absolutely on', with De Zerbi personally driving the pursuit. The only obstacle is City's: Guardiola's side need a replacement winger lined up before sanctioning the sale, which is what's separating this from an imminent 'here we go'. It's a second attempt after Spurs were rebuffed in 2025, this time with City's leverage weaker.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Rafael Leão", sub:"27 · W · Portugal", club:"AC Milan", pos:"LW", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed, cheaper than Savinho/Gakpo", truth:48, prob:26, light:'o', trend:'up',
    note:"Romano's framing is telling: Fenerbahce are the only club with a concrete bid in, Milan want him gone, and Leão has reportedly asked to leave - meaning he could be Spurs' most gettable, and cheapest, marquee winger if De Zerbi decides to move. No direct Tottenham approach confirmed yet, which keeps this speculative rather than advanced. OBSTACLES: no bid from Spurs on record; Leão's wage demands remain a question mark.", lastSeen:"2026-08-04T19:10:50Z", baseProb:26},
-  {name:"Cody Gakpo", sub:"27 · W/F · Netherlands", club:"Liverpool", pos:"LW/ST", report:"29 Jul 2026", src:"Fabrizio Romano (Here We Go podcast)", tier:1, fee:"Not yet tested", truth:52, prob:20, light:'o', trend:'flat',
-   note:"Romano says to 'keep an eye' on this one, noting Spurs still like Gakpo and that 'there will be many movements about wingers' for Tottenham this window. But Liverpool value him highly within a settled front line, and would likely only sanction a sale if their own Bradley Barcola business strains the books. Background interest, not an active negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Linked as transfer target", src:"BBC Sport", tier:2, fee:"Not yet tested", truth:45, prob:35, light:"y", trend:"up", note:"Romano says to 'keep an eye' on this one, noting Spurs still like Gakpo and that 'there will be many movements about wingers' for Tottenham this window. But Liverpool value him highly within a settled front line, and would likely only sanction a sale if their own Bradley Barcola business strains the books. Background interest, not an active negotiation.", lastSeen:"2026-08-06T14:31:11Z", baseProb:35},
   {name:"Eli Junior Kroupi", sub:"20 · ST · France", club:"Bournemouth", pos:"ST", report:"29 Jul 2026", src:"TeamTalk / Gerard Romero", tier:2, fee:"£80-111m valuation, bid now shelved", truth:62, prob:12, light:'r', trend:'down',
    note:"Spurs were reportedly 24 hours from a £80m+ bid before Kroupi broke his foot and now needs surgery, ruling him out into the new year. De Zerbi remains 'a huge admirer' and the plan is to revisit next summer once fit - but for this window the move is dead, and the injury is precisely why the striker shortlist below has suddenly expanded.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
   {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"Hoffenheim", pos:"ST", report:"29 Jul 2026", src:"TeamTalk", tier:3, fee:"Not yet tested", truth:40, prob:27, light:'o', trend:'up',
@@ -148,7 +147,8 @@ const HUB = {
   football365FabrizioRomanoDjedSpence: {l:"Football365 (Fabrizio Romano)", u:"https://www.football365.com/news/tottenham-transfer-news-fabrizio-romano-cristian-romero-djed-spence-liverpool"},
   readTottenhamFabrizioRomanoMikeyMoore: {l:"Read Tottenham (Fabrizio Romano)", u:"https://readtottenham.com/2026/08/02/fabrizio-romano-confirms-mikey-moore-leaving-tottenham/"},
   teamTalkSandroTonali: {l:"TeamTalk", u:"https://www.teamtalk.com/tottenham-hotspur/every-completed-tottenham-transfer-summer-2026-signings-sales-loans"},
-  eSPNMartinDbravka: {l:"ESPN", u:"https://www.espn.com/soccer/team/transfers/_/id/367/tottenham-hotspur"}};
+  eSPNMartinDbravka: {l:"ESPN", u:"https://www.espn.com/soccer/team/transfers/_/id/367/tottenham-hotspur"},
+  bBCSportFootballCodyGakpo: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c98vnel56q6o?at_medium=RSS&at_campaign=rss"}};
 
 const LINKMAP = {
   "Sandro Tonali": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
@@ -164,7 +164,7 @@ const LINKMAP = {
   "Will Lankshear": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
   "Savinho": ["romano", "tEAMtalkSimonJonesDailyMailFabrizioRomanoSavinho"],
   "Rafael Leão": ["romano"],
-  "Cody Gakpo": ["romano", "caughtOffsideFabrizioRomanoCodyGakpo"],
+  "Cody Gakpo": ["romano", "caughtOffsideFabrizioRomanoCodyGakpo", "bBCSportFootballCodyGakpo"],
   "Eli Junior Kroupi": ["teamtalk"],
   "Fisnik Asllani": ["teamtalk"],
   "Ferran Torres": ["teamtalk", "readTottenhamFabrizioRomanoFerranTorres"],

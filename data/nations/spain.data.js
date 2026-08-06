@@ -94,6 +94,13 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
+    name: "Kingsley Ehizibue",prob: 45, truth: 55, bullshit: false,
+    club_origin: "valencia", club_display_name: "Valencia", direction: "in",
+    from: "Udinese (free agent)", to: "Valencia",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free transfer", updated: "2026-08-03T18:00:00Z", league: "La Liga"
+  },
+  {
     name: "Javi López",prob: 45, truth: 65, bullshit: false,
     club_origin: "real-sociedad", club_display_name: "Real Sociedad", direction: "out",
     from: "Real Sociedad", to: "Rayo Vallecano",
@@ -101,17 +108,10 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
   {
-    name: "Denis Suárez",prob: 45, truth: 75, bullshit: false,
-    club_origin: "celta-vigo", club_display_name: "RC Celta", direction: "in",
-    from: "Deportivo Alavés", to: "RC Celta",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
-  },
-  {
     name: "Rodri",prob: 45, truth: 65, bullshit: false,
     club_origin: "barcelona", club_display_name: "FC Barcelona", direction: "in",
     from: "Manchester City", to: "FC Barcelona",
-    tier: 2, coverage: 2, coverage_trend: 'down',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
 ];
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 78}, {"slu
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:21:39.642737Z",
+  updated: "2026-08-06T14:31:12.569953Z",
   label: "Nation aggregation"
 };

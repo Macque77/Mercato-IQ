@@ -10,11 +10,11 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Kodai Sano", prob: 92, truth: 88, bullshit: false,
-    club_origin: "nec", club_display_name: "N.E.C.", direction: "out",
-    from: "N.E.C.", to: "PSV",
+    name: "Kodai Sano", prob: 92, truth: 90, bullshit: false,
+    club_origin: "psv-eindhoven", club_display_name: "PSV Eindhoven", direction: "in",
+    from: "NEC Nijmegen", to: "PSV Eindhoven",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-04T14:30:00Z"
+    value: "Reduced from NEC's initial ~€20m asking price; final figure undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Jasper Schendelaar", prob: 45, truth: 70, bullshit: false,
@@ -31,18 +31,18 @@ const TOP_STORIES = [  {
     value: "Undisclosed (ETV ~€20m)", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Marvin Young", prob: 40, truth: 60, bullshit: false,
-    club_origin: "rotterdam-sparta", club_display_name: "Sparta Rotterdam", direction: "out",
-    from: "Sparta Rotterdam", to: "TBD",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
     name: "Thom van Bergen", prob: 40, truth: 60, bullshit: false,
     club_origin: "az-alkmaar", club_display_name: "AZ Alkmaar", direction: "in",
     from: "FC Groningen", to: "AZ Alkmaar",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Marvin Young", prob: 40, truth: 60, bullshit: false,
+    club_origin: "rotterdam-sparta", club_display_name: "Sparta Rotterdam", direction: "out",
+    from: "Sparta Rotterdam", to: "TBD",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Shunsuke Mito", prob: 35, truth: 60, bullshit: false,
@@ -151,12 +151,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"nec": 1, "pec-zwolle": 4, "az-alkmaar": 4, "rotterdam-sparta": 3, "willem-ii": 3, "fc-twente": 2, "feyenoord": 3, "psv-eindhoven": 1, "fc-groningen": 4, "sc-heerenveen": 1, "fc-utrecht": 5, "go-ahead-eagles": 1, "ajax": 3};
+const BY_CLUB = {"psv-eindhoven": 2, "pec-zwolle": 4, "az-alkmaar": 4, "rotterdam-sparta": 3, "willem-ii": 3, "fc-twente": 2, "feyenoord": 3, "fc-groningen": 4, "sc-heerenveen": 1, "fc-utrecht": 5, "go-ahead-eagles": 1, "ajax": 3};
 
-const CLUBS_LIST = [{"slug": "ado-den-haag", "name": "ADO Den Haag", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#4DDB8C"}, {"slug": "ajax", "name": "AFC Ajax", "count": 3, "badge": true, "primary": "#DC143C", "primaryBright": "#DC143C"}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 4, "badge": true, "primary": "#FFEB3B", "primaryBright": "#FFEB3B"}, {"slug": "fc-groningen", "name": "FC Groningen", "count": 4, "badge": false, "primary": "#00A650", "primaryBright": "#4DDB8C"}, {"slug": "fc-twente", "name": "FC Twente", "count": 2, "badge": false, "primary": "#E2001A", "primaryBright": "#FF4D5E"}, {"slug": "fc-utrecht", "name": "FC Utrecht", "count": 5, "badge": false, "primary": "#DA1A1A", "primaryBright": "#FF5C5C"}, {"slug": "feyenoord", "name": "Feyenoord Rotterdam", "count": 3, "badge": true, "primary": "#CC0000", "primaryBright": "#CC0000"}, {"slug": "fortuna-sittard", "name": "Fortuna Sittard", "count": 0, "badge": false, "primary": "#FFD400", "primaryBright": "#FFE566"}, {"slug": "go-ahead-eagles", "name": "Go Ahead Eagles", "count": 1, "badge": false, "primary": "#FFCC00", "primaryBright": "#FFE066"}, {"slug": "nec", "name": "N.E.C.", "count": 1, "badge": false, "primary": "#E2001A", "primaryBright": "#FF4D5E"}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 4, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 1, "badge": true, "primary": "#DD0000", "primaryBright": "#FF3333"}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "excelsior", "name": "SBV Excelsior", "count": 0, "badge": false, "primary": "#C8102E", "primaryBright": "#FF5C6E"}, {"slug": "sc-cambuur", "name": "SC Cambuur", "count": 0, "badge": false, "primary": "#0072CE", "primaryBright": "#66B2FF"}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 1, "badge": true, "primary": "#0066CC", "primaryBright": "#0066CC"}, {"slug": "telstar", "name": "SC Telstar", "count": 0, "badge": false, "primary": "#E30613", "primaryBright": "#FF6B75"}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 3, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "willem-ii", "name": "Willem II", "count": 3, "badge": false, "primary": "#E2001A", "primaryBright": "#FF4D5E"}];
+const CLUBS_LIST = [{"slug": "ado-den-haag", "name": "ADO Den Haag", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#4DDB8C"}, {"slug": "ajax", "name": "AFC Ajax", "count": 3, "badge": true, "primary": "#DC143C", "primaryBright": "#DC143C"}, {"slug": "az-alkmaar", "name": "AZ Alkmaar", "count": 4, "badge": true, "primary": "#FFEB3B", "primaryBright": "#FFEB3B"}, {"slug": "fc-groningen", "name": "FC Groningen", "count": 4, "badge": false, "primary": "#00A650", "primaryBright": "#4DDB8C"}, {"slug": "fc-twente", "name": "FC Twente", "count": 2, "badge": false, "primary": "#E2001A", "primaryBright": "#FF4D5E"}, {"slug": "fc-utrecht", "name": "FC Utrecht", "count": 5, "badge": false, "primary": "#DA1A1A", "primaryBright": "#FF5C5C"}, {"slug": "feyenoord", "name": "Feyenoord Rotterdam", "count": 3, "badge": true, "primary": "#CC0000", "primaryBright": "#CC0000"}, {"slug": "fortuna-sittard", "name": "Fortuna Sittard", "count": 0, "badge": false, "primary": "#FFD400", "primaryBright": "#FFE566"}, {"slug": "go-ahead-eagles", "name": "Go Ahead Eagles", "count": 1, "badge": false, "primary": "#FFCC00", "primaryBright": "#FFE066"}, {"slug": "nec", "name": "N.E.C.", "count": 0, "badge": false, "primary": "#E2001A", "primaryBright": "#FF4D5E"}, {"slug": "pec-zwolle", "name": "PEC Zwolle", "count": 4, "badge": true, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "psv-eindhoven", "name": "PSV Eindhoven", "count": 2, "badge": true, "primary": "#DD0000", "primaryBright": "#FF3333"}, {"slug": "rkc-waalwijk", "name": "RKC Waalwijk", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "excelsior", "name": "SBV Excelsior", "count": 0, "badge": false, "primary": "#C8102E", "primaryBright": "#FF5C6E"}, {"slug": "sc-cambuur", "name": "SC Cambuur", "count": 0, "badge": false, "primary": "#0072CE", "primaryBright": "#66B2FF"}, {"slug": "sc-heerenveen", "name": "SC Heerenveen", "count": 1, "badge": true, "primary": "#0066CC", "primaryBright": "#0066CC"}, {"slug": "telstar", "name": "SC Telstar", "count": 0, "badge": false, "primary": "#E30613", "primaryBright": "#FF6B75"}, {"slug": "rotterdam-sparta", "name": "Sparta Rotterdam", "count": 3, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "willem-ii", "name": "Willem II", "count": 3, "badge": false, "primary": "#E2001A", "primaryBright": "#FF4D5E"}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:21:39.646524Z",
+  updated: "2026-08-06T14:31:12.574255Z",
   label: "League aggregation"
 };

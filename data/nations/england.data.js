@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 174
+  stories_count: 172
 };
 
 const TOP_STORIES = [  {
@@ -50,13 +50,6 @@ const TOP_STORIES = [  {
     from: "Roma", to: "Sunderland",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "£30m", updated: "2026-07-31T09:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Nestory Irankunda",prob: 45, truth: 55, bullshit: false,
-    club_origin: "watford", club_display_name: "Watford", direction: "out",
-    from: "Watford", to: "Sporting CP",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~€22m (bonuses included)", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
     name: "Lucas Bergvall",prob: 45, truth: 82, bullshit: false,
@@ -108,20 +101,27 @@ const TOP_STORIES = [  {
     value: "TBC", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Cody Gakpo",prob: 20, truth: 52, bullshit: false,
-    club_origin: "tottenham-hotspur", club_display_name: "Tottenham Hotspur", direction: "in",
-    from: "Liverpool", to: "Tottenham Hotspur",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Not yet tested", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+    name: "Antoine Semenyo",prob: 10, truth: 60, bullshit: false,
+    club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
+    from: "Multiple PL clubs previously linked", to: "Bournemouth",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "£65m release clause (Jan 2027)", updated: "2026-06-06T00:00:00Z", league: "Premier League"
+  },
+  {
+    name: "Jurriën Timber",prob: 50, truth: 50, bullshit: false,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Arsenal",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
 ];
 
-const BY_LEAGUE = {"Premier League": 103, "Championship": 18, "League One": 53, "League Two": 0};
+const BY_LEAGUE = {"Premier League": 102, "Championship": 17, "League One": 53, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 18}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "premier-league", "name": "Premier League", "count": 102}, {"slug": "league-one", "name": "League One", "count": 53}, {"slug": "championship", "name": "Championship", "count": 17}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T14:21:39.640898Z",
+  updated: "2026-08-06T14:31:12.567822Z",
   label: "Nation aggregation"
 };
