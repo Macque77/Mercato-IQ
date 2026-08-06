@@ -51,7 +51,8 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
-  {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent from Celtic", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect signs a 5-year contract; Romano confirmed with 'Here We Go'."}
+  {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent from Celtic", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect signs a 5-year contract; Romano confirmed with 'Here We Go'."},
+  {name:"Ramos", sub:"", club:"", pos:"Midfielder", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."},
@@ -59,23 +60,22 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Yan Diomande", sub:"young · winger", club:"(target)", pos:"W", report:"~2 days ago", src:"TEAMtalk", tier:3, fee:"£20-30m", truth:55, prob:35, light:'y', trend:'up',
-   note:"Liverpool's determination to sign the pacey wide forward is growing, and Iraola is reported keen, a clean style fit for his press. OBSTACLE: T3 sourcing and competition; no fee agreed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Rayan", sub:"19 · winger", club:"Bournemouth", pos:"W", report:"~20h ago", src:"Liverpool.com", tier:3, fee:"£25-40m", truth:55, prob:22, light:'o', trend:'up',
-   note:"Iraola's arrival prompts a link to the teenager he knows from Bournemouth, who impressed with five goals in 15 league games. OBSTACLES: only six months at Bournemouth, who can demand a premium; early-stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
-  {name:"Iliman Ndiaye", sub:"W/AM · Senegal", club:"Everton", pos:"W", report:"~2 days ago", src:"Aggregated (traced via feed)", tier:3, fee:"£25-35m", truth:55, prob:18, light:'o', trend:'flat',
-   note:"Linked amid a reported contract dispute at Everton, having rejected new terms. On-profile for energy and directness. OBSTACLE: Everton's stance and valuation; sourcing is moderate.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
-  {name:"Kennett Eichhorn", sub:"young · midfield", club:"(target)", pos:"CM", report:"~2 days ago", src:"Aggregated", tier:4, fee:"£15-25m", truth:35, prob:14, light:'r', trend:'up',
-   note:"Liverpool intensifying interest after Bayern Munich reportedly withdrew. A young midfield prospect for the model. Early-warning sourcing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
-  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Liverpool and PSG are in official club-to-club talks, with Liverpool having told PSG of their intention to bid. The player is said to be open to the move, but PSG's asking price is around €170m and a resolution is not expected quickly, with France's World Cup run a further complication.", src:"Fabrizio Romano", tier:1, fee:"c.£145m", truth:80, prob:45, light:"y", trend:"down", note:"Romano's own words on the talks, relayed by TEAMtalk. No agreement close and the fee remains the obstacle, so treat the £100m-plus headline framing with care.", lastSeen:"2026-08-06T08:59:47Z", baseProb:45},
-  {name:"Ibrahim Mbaye", sub:"18 · Senegal · W", club:"Paris Saint-Germain", pos:"Winger", report:"Liverpool have explored the conditions of a deal for the teenager, who debuted for PSG at 16 and has 42 appearances to his name, as the search for a right winger continues after Salah's departure.", src:"Sky Sports", tier:2, fee:"Undisclosed, around €50m mooted", truth:80, prob:30, light:"y", trend:"flat", note:"This is exploratory rather than advanced. Bayer Leverkusen are reported to be in direct club-to-club talks, and Manchester City and Tottenham were said to be keener earlier in the window, so Liverpool are not front runners.", lastSeen:"2026-08-05T17:03:23Z", baseProb:30},
-  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Real Madrid", pos:"CB", report:"Intermediaries have sounded Liverpool out over the centre-back after he was told he can leave Real Madrid this summer. Andoni Iraola is a long-standing admirer and the Reds want more defensive versatility.", src:"TEAMtalk", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Single-outlet exclusive driven by intermediaries rather than club-to-club contact. No tier-one corroboration from Madrid or Merseyside, so this is agent chatter until Ornstein or Romano touch it.", lastSeen:"2026-08-06T08:59:47Z", baseProb:20}
+  {name:"Yan Diomande", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0},
+  {name:"Rayan", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0},
+  {name:"Iliman Ndiaye", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0},
+  {name:"Kennett Eichhorn", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"down", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0},
+  {name:"Bradley Barcola", sub:"", club:"PSG", pos:"", report:"Liverpool and PSG in official club-to-club talks", src:"BBC Sport", tier:2, fee:"~£100m", truth:75, prob:45, light:"y", trend:"flat", note:"Targeted as potential third £100m signing; early-stage negotiations", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
+  {name:"Ibrahim Mbaye", sub:"", club:"", pos:"", report:"Liverpool exploring deal conditions", src:"", tier:3, fee:"", truth:30, prob:20, light:"o", trend:"down", note:"Early exploratory stage; limited credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
+  {name:"Raul Asencio", sub:"", club:"", pos:"", report:"Intermediaries sounded Liverpool out", src:"The Guardian", tier:2, fee:"", truth:40, prob:25, light:"o", trend:"up", note:"Intermediary approach; early-stage interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:25}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"27 · Netherlands · LW", club:"Tottenham Hotspur", pos:"LW", report:"Tottenham have made Gakpo a target as they hunt attacking additions after a heavy spend elsewhere, and the Dutchman's camp are said to have held positive talks. Liverpool's stated position is that they do not want to sell to a domestic rival and it would take an enormous offer to open negotiations. Gakpo, contracted to 2030, is wary of a rotational role behind Alexander Isak.", src:"Fabrizio Romano (relayed)", tier:2, fee:"Undisclosed", truth:75, prob:30, light:"y", trend:"down", note:"Romano's comments are being relayed second hand by aggregating outlets and the player-side detail comes from TEAMtalk, so the strength of the Spurs push is unclear. Liverpool's public stance remains that he is not for sale.", lastSeen:"2026-08-06T08:09:17Z", baseProb:30},
+  {name:"Cody Gakpo", sub:"", club:"Tottenham", pos:"W", report:"Tottenham made Gakpo a target", src:"BBC Sport", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"up", note:"Tottenham interest; question over suitability", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
+  {name:"Rio Ngumoha", sub:"", club:"", pos:"", report:"On-page rumour", src:"", tier:3, fee:"", truth:0, prob:0, light:"r", trend:"flat", note:"Insufficient detail in snippet; no credible recent source provided", lastSeen:"2026-08-06T13:55:46Z", baseProb:0}
+];
+const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
-   note:"Standard FSG churn of fringe and loan players to balance the squad and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
+   note:"Standard FSG churn of fringe and loan players to balance the squad and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"Generic outgoing movement; not specific player(s)", dir:"out", deadAt:"2026-08-06T13:55:46Z"}
 ];
 
 const RISERS = [
@@ -134,20 +134,25 @@ const HUB = {
   tEAMtalkcitingFabrizioRomanoCodyGakpo: {l:"TEAMtalk, citing Fabrizio Romano", u:"https://www.teamtalk.com/tottenham-hotspur/romano-reveals-tottenham-sign-gakpo-liverpool-two-conditions-sale-u-turn"},
   fabrizioRomanoviaTEAMtalkBradleyBarcola: {l:"Fabrizio Romano (via TEAMtalk)", u:"https://www.teamtalk.com/liverpool/fabrizio-romano-reveals-new-development-bradley-barcola-transfer-liverpool"},
   tEAMtalkRaulAsencio: {l:"TEAMtalk", u:"https://www.teamtalk.com/liverpool/raul-ascencio-transfer-news-liverpool-in-contact-real-madrid-sale-iraola-mourinho"},
-  eSPNMohamedSalah: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49531510/mohamed-salah-transfer-trabzonspor-liverpool-egypt"}};
+  eSPNMohamedSalah: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49531510/mohamed-salah-transfer-trabzonspor-liverpool-egypt"},
+  bBCSportFootballBradleyBarcola: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c5y3pd5xvpzo"},
+  theGuardianFootballRaulAsencio: {l:"The Guardian Football", u:"https://www.theguardian.com/football/2026/aug/06/football-transfer-rumours-arsenal-ezri-konsa-raul-asencio-liverpool"},
+  bBCSportFootballCodyGakpo: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c98vnel56q6o"},
+  bBCSportFootballRamos: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cz6484p441yo"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
   "Iliman Ndiaye": ["echo","bbcGossip"],
   "Kennett Eichhorn": ["bbcGossip"],
-  "Cody Gakpo": ["vi","echo", "tEAMtalkcitingFabrizioRomanoCodyGakpo"],
+  "Cody Gakpo": ["vi","echo", "tEAMtalkcitingFabrizioRomanoCodyGakpo", "bBCSportFootballCodyGakpo"],
   "Ibrahima Konaté": ["ninetymin"],
   "Fringe & loan army": ["echo"],
-  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic", "fabrizioRomanoviaTEAMtalkBradleyBarcola"],
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic", "fabrizioRomanoviaTEAMtalkBradleyBarcola", "bBCSportFootballBradleyBarcola"],
   "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"],
   "Mohamed Salah": ["skySportsMohamedSalah", "eSPNMohamedSalah"],
   "Ibrahim Mbaye": ["skySportsIbrahimMbaye"],
-  "Raul Asencio": ["tEAMtalkRaulAsencio"]};
+  "Raul Asencio": ["tEAMtalkRaulAsencio", "theGuardianFootballRaulAsencio"],
+  "Ramos": ["bBCSportFootballRamos"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };

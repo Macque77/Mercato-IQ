@@ -6,22 +6,22 @@
 const LEAGUE = {
   name: "Premier League",
   nation: "England",
-  stories_count: 111
+  stories_count: 120
 };
 
 const TOP_STORIES = [  {
-    name: "Takehiro Tomiyasu", prob: 90, truth: 94, bullshit: false,
-    club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "in",
-    from: "Free agent", to: "Crystal Palace",
+    name: "Eberechi Eze", prob: 95, truth: 95, bullshit: false,
+    club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "out",
+    from: "Crystal Palace", to: "Arsenal",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Free", updated: "2026-08-03T12:48:44Z"
+    value: "£68m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Bruno Guimarães", prob: 88, truth: 92, bullshit: false,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
-    from: "Newcastle United", to: "Arsenal",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "£75m", updated: "2026-08-03T12:48:44Z"
+    name: "Bryan Mbeumo", prob: 90, truth: 95, bullshit: false,
+    club_origin: "brentford", club_display_name: "Brentford", direction: "out",
+    from: "Brentford", to: "Manchester United",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "£65m + £6m add-ons", updated: "2026-06-06T12:00:00Z"
   },
   {
     name: "Mishel Nduka", prob: 88, truth: 90, bullshit: false,
@@ -38,18 +38,11 @@ const TOP_STORIES = [  {
     value: "£75m", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Ousmane Diomande", prob: 80, truth: 90, bullshit: false,
-    club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
-    from: "Sporting CP", to: "Nottingham Forest",
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    value: "£34m", updated: "2026-07-30T14:00:00Z"
-  },
-  {
-    name: "Gerónimo Rulli", prob: 75, truth: 80, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "in",
-    from: "Marseille", to: "Manchester City",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed (~€5m)", updated: "2026-08-03T12:48:44Z"
+    name: "Marcus Rashford", prob: 85, truth: 85, bullshit: false,
+    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "out",
+    from: "Manchester United", to: "Barcelona",
+    tier: 1, coverage: 3, coverage_trend: 'up',
+    value: "Loan + Buy option", updated: "2026-08-03T12:48:44Z"
   },
   {
     name: "Cristian Romero", prob: 62, truth: 80, bullshit: false,
@@ -87,46 +80,11 @@ const TOP_STORIES = [  {
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Mykhailo Mudryk", prob: 40, truth: 65, bullshit: false,
-    club_origin: "chelsea", club_display_name: "Chelsea", direction: "out",
-    from: "Chelsea", to: "Coventry City / Strasbourg (multiple suitors)",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    name: "James Trafford", prob: 40, truth: 60, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
-    from: "Manchester City", to: "Leeds United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    name: "Carlos Baleba", prob: 35, truth: 55, bullshit: false,
-    club_origin: "manchester-united", club_display_name: "Manchester United", direction: "in",
-    from: "Brighton", to: "Manchester United",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~£70m", updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    name: "Noah Atubolu", prob: 30, truth: 80, bullshit: false,
-    club_origin: "brighton", club_display_name: "Brighton", direction: "in",
-    from: "SC Freiburg", to: "Brighton",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T12:48:44Z"
-  },
-  {
     name: "Arthur Theate", prob: 30, truth: 55, bullshit: false,
     club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
     from: "Eintracht Frankfurt", to: "Bournemouth",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-06-06T00:00:00Z"
-  },
-  {
-    name: "Tijjani Reijnders", prob: 30, truth: 70, bullshit: false,
-    club_origin: "nottingham-forest", club_display_name: "Nottingham Forest", direction: "in",
-    from: "Manchester City", to: "Nottingham Forest",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-30T14:00:00Z"
   },
   {
     name: "Rafael Leão", prob: 26, truth: 48, bullshit: false,
@@ -136,11 +94,11 @@ const TOP_STORIES = [  {
     value: "TBC", updated: "2026-08-03T12:48:44Z"
   },
   {
-    name: "Pedro Neto", prob: 25, truth: 85, bullshit: false,
-    club_origin: "chelsea", club_display_name: "Chelsea", direction: "out",
-    from: "Chelsea", to: "Manchester City",
+    name: "Mykhailo Mudryk", prob: 25, truth: 55, bullshit: false,
+    club_origin: "coventry-city", club_display_name: "Coventry City", direction: "in",
+    from: "Chelsea", to: "Coventry City",
     tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T12:48:44Z"
+    value: "Loan", updated: "2026-06-06T12:00:00Z"
   },
   {
     name: "Cody Gakpo", prob: 20, truth: 52, bullshit: false,
@@ -149,14 +107,56 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Not yet tested", updated: "2026-08-03T12:48:44Z"
   },
+  {
+    name: "Marc Guehi", prob: 15, truth: 40, bullshit: false,
+    club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "out",
+    from: "Crystal Palace", to: "Liverpool",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "£35m", updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    name: "Antoine Semenyo", prob: 10, truth: 60, bullshit: false,
+    club_origin: "bournemouth", club_display_name: "Bournemouth", direction: "in",
+    from: "Multiple PL clubs previously linked", to: "Bournemouth",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "£65m release clause (Jan 2027)", updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    name: "Jurriën Timber", prob: 50, truth: 50, bullshit: false,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Arsenal",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    name: "Declan Rice", prob: 50, truth: 50, bullshit: false,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Arsenal",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "TBC", updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    name: "Bruno Guimarães", prob: 95, truth: 90, bullshit: false,
+    club_origin: "newcastle-united", club_display_name: "Newcastle United", direction: "out",
+    from: "Newcastle United", to: "Arsenal",
+    tier: 2, coverage: 6, coverage_trend: 'up',
+    value: "£75m", updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    name: "Leon Bailey", prob: 88, truth: 92, bullshit: false,
+    club_origin: "hull-city", club_display_name: "Hull City", direction: "in",
+    from: "Aston Villa", to: "Hull City",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-06-06T00:00:00Z"
+  },
 ];
 
-const BY_CLUB = {"crystal-palace": 5, "arsenal": 11, "nottingham-forest": 5, "manchester-city": 3, "tottenham-hotspur": 7, "sunderland": 12, "manchester-united": 11, "chelsea": 4, "brighton": 5, "bournemouth": 5, "aston-villa": 3, "hull-city": 3, "coventry-city": 2, "ipswich-town": 2, "everton": 4, "fulham": 3, "newcastle-united": 8, "liverpool": 4, "brentford": 3, "leeds-united": 11};
+const BY_CLUB = {"crystal-palace": 7, "brentford": 4, "arsenal": 16, "manchester-united": 10, "tottenham-hotspur": 8, "sunderland": 12, "bournemouth": 7, "coventry-city": 4, "newcastle-united": 12, "hull-city": 3, "chelsea": 3, "ipswich-town": 2, "fulham": 3, "liverpool": 3, "nottingham-forest": 7, "leeds-united": 12, "everton": 1, "brighton": 4, "manchester-city": 2};
 
-const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 11, "badge": true, "primary": "#EF0107", "primaryBright": "#ff2630"}, {"slug": "aston-villa", "name": "Aston Villa", "count": 3, "badge": true, "primary": "#95BFE5", "primaryBright": "#afcfeb"}, {"slug": "bournemouth", "name": "Bournemouth", "count": 5, "badge": true, "primary": "#DA291C", "primaryBright": "#f0453a"}, {"slug": "brentford", "name": "Brentford", "count": 3, "badge": true, "primary": "#FBB800", "primaryBright": "#fcc93f"}, {"slug": "brighton", "name": "Brighton", "count": 5, "badge": true, "primary": "#FFCD00", "primaryBright": "#ffd93f"}, {"slug": "chelsea", "name": "Chelsea", "count": 4, "badge": true, "primary": "#DBA111", "primaryBright": "#e4b84c"}, {"slug": "coventry-city", "name": "Coventry City", "count": 2, "badge": true, "primary": "#6CADDF", "primaryBright": "#90c1e7"}, {"slug": "crystal-palace", "name": "Crystal Palace", "count": 5, "badge": true, "primary": "#C4122E", "primaryBright": "#e52a47"}, {"slug": "everton", "name": "Everton", "count": 4, "badge": true, "primary": "#003399", "primaryBright": "#1e5ae0"}, {"slug": "fulham", "name": "Fulham", "count": 3, "badge": true, "primary": "#ffffff", "primaryBright": "#ffffff"}, {"slug": "hull-city", "name": "Hull City", "count": 3, "badge": true, "primary": "#F18A01", "primaryBright": "#f4a740"}, {"slug": "ipswich-town", "name": "Ipswich Town", "count": 2, "badge": true, "primary": "#3A64A3", "primaryBright": "#4f7fc7"}, {"slug": "leeds-united", "name": "Leeds United", "count": 11, "badge": true, "primary": "#2f6fe0", "primaryBright": "#4d86f5"}, {"slug": "liverpool", "name": "Liverpool", "count": 4, "badge": true, "primary": "#00B2A9", "primaryBright": "#3fc5be"}, {"slug": "manchester-city", "name": "Manchester City", "count": 3, "badge": true, "primary": "#6CABDD", "primaryBright": "#90c0e5"}, {"slug": "manchester-united", "name": "Manchester United", "count": 11, "badge": true, "primary": "#DA020E", "primaryBright": "#ff2b1f"}, {"slug": "newcastle-united", "name": "Newcastle United", "count": 8, "badge": true, "primary": "#BFC4C9", "primaryBright": "#FFFFFF"}, {"slug": "nottingham-forest", "name": "Nottingham Forest", "count": 5, "badge": true, "primary": "#DD0000", "primaryBright": "#FF3333"}, {"slug": "sunderland", "name": "Sunderland", "count": 12, "badge": true, "primary": "#e21f26", "primaryBright": "#ff2b24"}, {"slug": "tottenham-hotspur", "name": "Tottenham Hotspur", "count": 7, "badge": true, "primary": "#132257", "primaryBright": "#2F4FA0"}];
+const CLUBS_LIST = [{"slug": "arsenal", "name": "Arsenal", "count": 16, "badge": true, "primary": "#EF0107", "primaryBright": "#ff2630"}, {"slug": "aston-villa", "name": "Aston Villa", "count": 0, "badge": true, "primary": "#95BFE5", "primaryBright": "#afcfeb"}, {"slug": "bournemouth", "name": "Bournemouth", "count": 7, "badge": true, "primary": "#DA291C", "primaryBright": "#f0453a"}, {"slug": "brentford", "name": "Brentford", "count": 4, "badge": true, "primary": "#FBB800", "primaryBright": "#fcc93f"}, {"slug": "brighton", "name": "Brighton", "count": 4, "badge": true, "primary": "#FFCD00", "primaryBright": "#ffd93f"}, {"slug": "chelsea", "name": "Chelsea", "count": 3, "badge": true, "primary": "#DBA111", "primaryBright": "#e4b84c"}, {"slug": "coventry-city", "name": "Coventry City", "count": 4, "badge": true, "primary": "#6CADDF", "primaryBright": "#90c1e7"}, {"slug": "crystal-palace", "name": "Crystal Palace", "count": 7, "badge": true, "primary": "#C4122E", "primaryBright": "#e52a47"}, {"slug": "everton", "name": "Everton", "count": 1, "badge": true, "primary": "#003399", "primaryBright": "#1e5ae0"}, {"slug": "fulham", "name": "Fulham", "count": 3, "badge": true, "primary": "#ffffff", "primaryBright": "#ffffff"}, {"slug": "hull-city", "name": "Hull City", "count": 3, "badge": true, "primary": "#F18A01", "primaryBright": "#f4a740"}, {"slug": "ipswich-town", "name": "Ipswich Town", "count": 2, "badge": true, "primary": "#3A64A3", "primaryBright": "#4f7fc7"}, {"slug": "leeds-united", "name": "Leeds United", "count": 12, "badge": true, "primary": "#2f6fe0", "primaryBright": "#4d86f5"}, {"slug": "liverpool", "name": "Liverpool", "count": 3, "badge": true, "primary": "#00B2A9", "primaryBright": "#3fc5be"}, {"slug": "manchester-city", "name": "Manchester City", "count": 2, "badge": true, "primary": "#6CABDD", "primaryBright": "#90c0e5"}, {"slug": "manchester-united", "name": "Manchester United", "count": 10, "badge": true, "primary": "#DA020E", "primaryBright": "#ff2b1f"}, {"slug": "newcastle-united", "name": "Newcastle United", "count": 12, "badge": true, "primary": "#BFC4C9", "primaryBright": "#FFFFFF"}, {"slug": "nottingham-forest", "name": "Nottingham Forest", "count": 7, "badge": true, "primary": "#DD0000", "primaryBright": "#FF3333"}, {"slug": "sunderland", "name": "Sunderland", "count": 12, "badge": true, "primary": "#e21f26", "primaryBright": "#ff2b24"}, {"slug": "tottenham-hotspur", "name": "Tottenham Hotspur", "count": 8, "badge": true, "primary": "#132257", "primaryBright": "#2F4FA0"}];
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T11:59:56.327373Z",
+  updated: "2026-08-06T13:55:47.449759Z",
   label: "League aggregation"
 };

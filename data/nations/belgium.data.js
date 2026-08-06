@@ -17,18 +17,18 @@ const TOP_STORIES = [  {
     value: "£17m bid rejected", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Issiaka Kamate",prob: 30, truth: 55, bullshit: false,
-    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
-    from: "Inter Milan", to: "KVC Westerlo",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
-  },
-  {
     name: "Davis Opoku",prob: 30, truth: 70, bullshit: false,
     club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "out",
     from: "OH Leuven", to: "Feyenoord",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+  },
+  {
+    name: "Issiaka Kamate",prob: 30, truth: 55, bullshit: false,
+    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
+    from: "Inter Milan", to: "KVC Westerlo",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
     name: "Cameron Congreve",prob: 80, truth: 75, bullshit: false,
@@ -52,18 +52,18 @@ const TOP_STORIES = [  {
     value: "€12m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
-    name: "Jelle Van Neck",prob: 30, truth: 55, bullshit: false,
-    club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "in",
-    from: "Olympique de Marseille", to: "OH Leuven",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
-  },
-  {
     name: "Aiham Ousou",prob: 30, truth: 55, bullshit: false,
     club_origin: "charleroi", club_display_name: "R Charleroi SC", direction: "out",
     from: "R Charleroi SC", to: "Ludogorets",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
+  },
+  {
+    name: "Jelle Van Neck",prob: 30, truth: 55, bullshit: false,
+    club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "in",
+    from: "Olympique de Marseille", to: "OH Leuven",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
     name: "Anouar Ait El-Hadj",prob: 20, truth: 45, bullshit: false,
@@ -108,6 +108,6 @@ const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 13},
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T11:59:56.321563Z",
+  updated: "2026-08-06T13:55:47.439810Z",
   label: "Nation aggregation"
 };

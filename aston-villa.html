@@ -923,26 +923,26 @@ const CONFIRMED_OUT = [
   {name:"Lucas Digne", sub:"Release clause triggered", club:"Paris Saint-Germain", pos:"DF", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Donyell Malen", sub:"Forward sold to Serie A", club:"Roma", pos:"FW", fee:"£21.6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Enzo Barrenechea", sub:"Midfielder departs for Portugal", club:"Benfica", pos:"MF", fee:"£10.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
-  {name:"Lewis Dobbin", sub:"Squad player sold to Southampton", club:"Southampton", pos:"MF", fee:"£9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
+  {name:"Lewis Dobbin", sub:"Squad player sold to Southampton", club:"Southampton", pos:"MF", fee:"£9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
+  {name:"Emiliano Martínez", sub:"32 · Argentina · GK", club:"Unknown", pos:"GK", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Dated 2 Aug 2026; unclear status"}
 ];
 
 const INCOMING = [
-  {name:"Lamine Camara", sub:"DM/CM · Senegal", club:"Monaco", pos:"CM", report:"~1 day ago", src:"OneFootball / Yahoo", tier:2, fee:"~€50m", truth:70, prob:35, light:'y', trend:'up',
-   note:"A primary midfield target with a high ceiling; the player reportedly favours Spurs or Villa, and Champions League football is a genuine lure. OBSTACLES: a multi-club race (Newcastle, Spurs, Liverpool) and a ~€50m fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Ilaix Moriba", sub:"CM · Guinea", club:"Celta Vigo", pos:"CM", report:"~1 day ago", src:"OneFootball", tier:3, fee:"£20-30m", truth:55, prob:22, light:'o', trend:'flat',
-   note:"Considered as a midfield option, a cheaper alternative to Camara. OBSTACLE: a step down in ceiling; more of a depth/value play.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
-  {name:"Marcus Rashford", sub:"W/ST · England", club:"(tracked)", pos:"W", report:"~1 day ago", src:"Aggregated roundup", tier:3, fee:"£40m+", truth:55, prob:15, light:'o', trend:'flat',
-   note:"Tracked alongside Spurs and Newcastle in a transfer roundup. OBSTACLES: wages, fee and a crowded field; an opportunistic link rather than a concrete move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Igor Paixão", sub:"Brazilian winger linked after strong Marseille season", club:"Marseille", pos:"FW", report:"Villa are exploring a move for the 26-year-old after he scored 12 goals with 7 assists last season; Champions League qualification seen as a selling point.", src:"L'Équipe (via Sports Mole)", tier:2, fee:"£30m", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Matteo Ruggeri", sub:"24 · Italy · LB", club:"Atlético Madrid", pos:"LB", report:"Villa have reached an agreement with Atlético Madrid for Ruggeri, lined up as their fifth summer arrival and as the long-term answer at left-back after Lucas Digne's departure. Fabrizio Romano reports Atlético want to bank sales, Molina and possibly Ruggeri, before pushing on with their own business.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:80, prob:72, light:"g", trend:"down", note:"Romano's update reached us relayed by TEAMtalk rather than through a primary link, and the deal is tied to Atlético's outgoings, so fee and timing remain fluid.", lastSeen:"2026-08-06T10:49:40Z", baseProb:72},
-  {name:"Zion Suzuki", sub:"23 · Japan · GK", club:"Parma", pos:"GK", report:"The Parma goalkeeper remains on Villa's list, but Romano says Juventus have made him a priority and PSG would sign him then look at a loan if Lucas Chevalier can be sold. Juventus' offer has so far fallen short of Parma's valuation. Villa's move depends on Emiliano Martínez's future.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:65, prob:25, light:"o", trend:"flat", note:"Weak for Villa specifically: the reporting centres on Juventus and PSG, and Villa only act if Martínez goes. Do not present this as an advanced Villa deal.", lastSeen:"2026-08-06T10:49:40Z", baseProb:25}
+  {name:"Lamine Camara", sub:"~22 · Senegal · M", club:"Unknown", pos:"M", report:"Incoming rumour reported ~1 day ago", src:"Transferfeed page", tier:3, fee:"Unknown", truth:45, prob:40, light:"y", trend:"up", note:"On-page rumour, no recent credible confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:40},
+  {name:"Ilaix Moriba", sub:"24 · Spain · M", club:"Unknown", pos:"M", report:"Incoming rumour reported ~1 day ago", src:"Transferfeed page", tier:3, fee:"Unknown", truth:35, prob:30, light:"y", trend:"up", note:"On-page rumour, no recent credible confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
+  {name:"Marcus Rashford", sub:"27 · England · W", club:"Manchester United", pos:"W", report:"Incoming rumour reported ~1 day ago", src:"Transferfeed page", tier:3, fee:"Unknown", truth:15, prob:10, light:"r", trend:"down", note:"Unlikely given United's position; low credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:10},
+  {name:"Igor Paixão", sub:"26 · Brazil · W", club:"Sporting CP", pos:"W", report:"Villa exploring a move for the 26-year-old", src:"Transferfeed page", tier:3, fee:"Unknown", truth:50, prob:45, light:"y", trend:"up", note:"Early-stage exploration mentioned on-page", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
+  {name:"Matteo Ruggeri", sub:"23 · Italy · D", club:"Atlético Madrid", pos:"D", report:"Villa have reached an agreement with Atlético Madrid", src:"Transferfeed page", tier:3, fee:"Unknown", truth:70, prob:65, light:"g", trend:"down", note:"Agreement reported; advanced stage", lastSeen:"2026-08-06T13:55:46Z", baseProb:65},
+  {name:"Zion Suzuki", sub:"22 · Japan · GK", club:"Parma", pos:"GK", report:"The Parma goalkeeper remains on Villa's list", src:"Transferfeed page", tier:3, fee:"Unknown", truth:40, prob:35, light:"y", trend:"up", note:"On-page interest; early-stage monitoring", lastSeen:"2026-08-06T13:55:46Z", baseProb:35}
 ];
 
 const OUTGOING = [
+  {name:"Ezri Konsa", sub:"26 · England · D", club:"Aston Villa", pos:"D", report:"Arsenal are said to view Konsa as a top target", src:"Transferfeed page", tier:3, fee:"Unknown", truth:35, prob:30, light:"y", trend:"up", note:"Arsenal interest reported; no confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:30}
+];
+const DEAD = [
+  {name:"Youri Tielemans", sub:"26 · Belgium · M", club:"Leicester City", pos:"M", report:"EXCL: Aston Villa have agreed a deal to sign Youri Tielemans. Doing medical before finalising contract. 26yo midfielder set to join as free agent after Leicester deal expired.", src:"David Ornstein", tier:1, fee:"Free", truth:95, prob:92, light:"g", trend:"flat", note:"Medical underway, imminent signing", lastSeen:"2026-08-06T13:55:46Z", baseProb:92, dir:"in", deadReason:"signed for manchester-united", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Fringe & loan returns", sub:"Squad trim", club:"Various", pos:"-", report:"~4 days ago", src:"Aston Villa News (aggregated)", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
-   note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Emiliano Martínez", sub:"33 · GK · Argentina", club:"Juventus", pos:"GK", report:"2 Aug 2026", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:50, prob:8, light:"r", trend:"flat", note:"Romano reported Juventus have informed Villa they will not proceed with a move — costs were judged too high, so this rumour has effectively collapsed for now.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8},
-  {name:"Ezri Konsa", sub:"28 · England · CB", club:"Arsenal", pos:"CB", report:"Arsenal are said to view Konsa as a top target to cover for the injured William Saliba, with the defender open to talks if a suitable offer arrives. Villa are not willing to listen below £60m and expect him to stay for another Champions League campaign, though they would be forced to sell in 2027 if no extension is signed.", src:"CaughtOffside, relayed by Sports Mole", tier:3, fee:"£60m", truth:45, prob:25, light:"o", trend:"down", note:"Weak sourcing. This traces back to CaughtOffside rather than a tier-1 name, and no Ornstein or Romano follow-up has emerged. Villa's £60m valuation is plausible but the player's stance is unverified, so treat as speculation while Konsa is on post-World Cup break.", lastSeen:"2026-08-06T08:45:12Z", baseProb:25}
+   note:"Underwhelming 2025 signings and loanees to be moved on as Emery refreshes depth and protects the cost ratio.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"Generic category, not a specific player", dir:"out", deadAt:"2026-08-06T13:55:46Z"}
 ];
 
 const RISERS = [
@@ -1005,27 +1005,29 @@ const HUB = {
   sportsMoleEzriKonsa: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/arsenal/transfer-talk/news/konsa-arsenal-stance-revealed-amid-transfer-interest_602295.html"},
   tEAMtalkrelayingFabrizioRomanoMatteoRuggeri: {l:"TEAMtalk (relaying Fabrizio Romano)", u:"https://www.teamtalk.com/aston-villa/aston-villa-reach-agreement-atletico-madrid-liverpool-tottenham-target-fifth-signing"},
   tEAMtalkrelayingFabrizioRomanoZionSuzuki: {l:"TEAMtalk (relaying Fabrizio Romano)", u:"https://www.teamtalk.com/aston-villa/fabrizio-romano-reveals-psg-juventus-plans-for-aston-villa-target-zion-suzuki"},
-  readAstonVillarelayingFabrizioRomanoJooGomes: {l:"Read Aston Villa (relaying Fabrizio Romano)", u:"https://readastonvilla.com/2026/07/16/here-we-go-fabrizio-romano-confirms-next-aston-villa-signing/"}};
+  readAstonVillarelayingFabrizioRomanoJooGomes: {l:"Read Aston Villa (relaying Fabrizio Romano)", u:"https://readastonvilla.com/2026/07/16/here-we-go-fabrizio-romano-confirms-next-aston-villa-signing/"},
+  transferfeedLamineCamara: {l:"Transferfeed", u:"https://transferfeed.com"},
+  davidOrnsteinTheAthleticYouriTielemans: {l:"David Ornstein / The Athletic", u:"https://x.com/David_Ornstein/status/1667570071844077572"}};
 const LINKMAP = {
-  "Lamine Camara": ["onefootball","yahoo","lequipe"],
-  "Ilaix Moriba": ["onefootball"],
-  "Marcus Rashford": ["bbcGossip"],
+  "Lamine Camara": ["onefootball","yahoo","lequipe", "transferfeedLamineCamara"],
+  "Ilaix Moriba": ["onefootball", "transferfeedLamineCamara"],
+  "Marcus Rashford": ["bbcGossip", "transferfeedLamineCamara"],
   "Morgan Rogers": ["bbcVilla","athletic", "readAstonVillaMyOldManSaidMorganRogers"],
   "Jadon Sancho": ["bmail","townley"],
   "Fringe & loan returns": ["bmail"],
   "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "skySportsAlejandroGarnacho"],
-  "Emiliano Martínez": ["fabrizioRomanoviaReadTottenhamEmilianoMartnez"],
-  "Igor Paixão": ["sportsMoleviaLquipeIgorPaixo"],
-  "Ezri Konsa": ["readAstonVillaEzriKonsa", "sportsMoleEzriKonsa"],
+  "Emiliano Martínez": ["fabrizioRomanoviaReadTottenhamEmilianoMartnez", "transferfeedLamineCamara"],
+  "Igor Paixão": ["sportsMoleviaLquipeIgorPaixo", "transferfeedLamineCamara"],
+  "Ezri Konsa": ["readAstonVillaEzriKonsa", "sportsMoleEzriKonsa", "transferfeedLamineCamara"],
   "Johan Manzambi": ["skySportsJohanManzambi"],
   "João Gomes": ["eSPNDailyPostJooGomes", "readAstonVillarelayingFabrizioRomanoJooGomes"],
-  "Youri Tielemans": ["readAstonVillaMyOldManSaidMorganRogers"],
+  "Youri Tielemans": ["readAstonVillaMyOldManSaidMorganRogers", "davidOrnsteinTheAthleticYouriTielemans"],
   "Lucas Digne": ["readAstonVillaMyOldManSaidMorganRogers", "sportsMoleLucasDigne"],
   "Donyell Malen": ["sportsMoleDonyellMalen"],
   "Enzo Barrenechea": ["sportsMoleDonyellMalen"],
   "Lewis Dobbin": ["sportsMoleDonyellMalen"],
-  "Matteo Ruggeri": ["marcaRubenUriaMatteoRuggeri", "tEAMtalkrelayingFabrizioRomanoMatteoRuggeri"],
-  "Zion Suzuki": ["tEAMtalkrelayingFabrizioRomanoZionSuzuki"]};
+  "Matteo Ruggeri": ["marcaRubenUriaMatteoRuggeri", "tEAMtalkrelayingFabrizioRomanoMatteoRuggeri", "transferfeedLamineCamara"],
+  "Zion Suzuki": ["tEAMtalkrelayingFabrizioRomanoZionSuzuki", "transferfeedLamineCamara"]};
 const WL_LINKMAP = {
   "Lamine Camara":"onefootball","Morgan Rogers":"bbcVilla","Loan flops":"bmail",
 };

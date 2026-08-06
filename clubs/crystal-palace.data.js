@@ -86,26 +86,31 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Manager appointment", sub:"Pierre Sage front-runner", club:"Lens", pos:"Head coach", report:"~5 days ago", src:"TeamTalk / BeFootball", tier:2, fee:"Compensation", truth:80, prob:45, light:'y', trend:'up',
-   note:"The gating decision of the summer. Iraola chose Liverpool; Lens coach Pierre Sage (ex-Lyon, Coupe de France winner, Ligue 1 runner-up) is the reported leading candidate, with talks advanced. Not yet confirmed; squad plans follow the appointment.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Europa-ready depth", sub:"Post-appointment additions", club:"Market", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:60, prob:35, light:'y', trend:'flat',
-   note:"Additions to handle a heavier European fixture load, paced to the new manager's preferences. Specific names firm up once the dugout is settled.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Forward depth (framing)", sub:"Support for Mateta", club:"Market", pos:"ST/W", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:25, light:'o', trend:'flat',
-   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged forward depth (support for Mateta) as a likely strengthening area once the manager is appointed; no named target was in circulation at the 6 Jun data date.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Midfield cover (framing)", sub:"Insurance against a Wharton bid", club:"Market", pos:"CM", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:22, light:'o', trend:'flat',
-   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged midfield cover as a strengthening area, insurance in case an elite bid lands for Wharton; no named target was in circulation at the 6 Jun data date.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
-  {name:"Ousmane Diao", sub:"Identified as top defensive target", club:"FC Midtjylland", pos:"DF", report:"Palace have identified the Senegalese centre-back as their leading option to help replace Marc Guehi and are set to hold talks now the season has finished.", src:"Sports Boom", tier:3, fee:"~€20m", truth:45, prob:30, light:"y", trend:"flat", note:"Competition reported from other Premier League and Bundesliga clubs", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Igor Julio", sub:"Talks reported to be underway", club:"Brighton", pos:"DF", report:"The young Brighton centre-back has emerged as a target to help fill the defensive gap left by Guehi's departure, with talks said to be under way.", src:"BBC Sport", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Fee not yet reported; competition for defensive reinforcements ongoing", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Takehiro Tomiyasu", sub:"27 · Japan · D", club:"Free agent", pos:"Defender", report:"Palace have agreed a free transfer for the former Arsenal defender after a trial and pre-season training spell at Beckenham. Fabrizio Romano says a medical has been completed in London, with the contract due to be signed within 48 hours. BBC Sport had reported talks over a permanent deal last week, and Pierre Sage is understood to have been pleased with his condition.", src:"Fabrizio Romano; BBC Sport", tier:1, fee:"Free", truth:94, prob:90, light:"g", trend:"flat", note:"Effectively done rather than a rumour, but no club announcement yet. Injury record over recent seasons is the obvious risk on a free deal.", lastSeen:"2026-08-06T10:49:40Z", baseProb:90},
-  {name:"Solly March", sub:"31 · England · W", club:"Brighton", pos:"Winger", report:"Palace are considering a move for the winger as a second addition once the Tomiyasu signing is completed, according to BBC Sport's round-up.", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Gossip-column level only, with no reporter putting numbers or a timeline to it. Treat as an idea Palace are weighing rather than an active negotiation until a tier-one name confirms contact.", lastSeen:"2026-08-06T10:49:40Z", baseProb:35}
+  {name:"Ousmane Diao", sub:"Centre-back · Senegal", club:"Unknown", pos:"CB", report:"Palace have identified the Senegalese centre-back", src:"On-page rumour", tier:3, fee:"Unknown", truth:45, prob:35, light:"y", trend:"up", note:"Identified target, no recent credible update", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
+  {name:"Igor Julio", sub:"Centre-back · Brighton", club:"Brighton", pos:"CB", report:"The young Brighton centre-back has emerged as a target", src:"On-page rumour", tier:3, fee:"Unknown", truth:40, prob:30, light:"y", trend:"up", note:"Emerged as target, no recent credible update", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
+  {name:"Takehiro Tomiyasu", sub:"Defender · Japan", club:"Arsenal", pos:"DEF", report:"Palace have agreed a free transfer for the former Arsenal defender", src:"On-page rumour", tier:3, fee:"Free", truth:60, prob:50, light:"y", trend:"down", note:"Agreement reported, awaiting completion", lastSeen:"2026-08-06T13:55:46Z", baseProb:50},
+  {name:"Solly March", sub:"Winger · Brighton", club:"Brighton", pos:"W", report:"Palace are considering a move for the winger", src:"On-page rumour", tier:3, fee:"Unknown", truth:35, prob:25, light:"o", trend:"down", note:"Being considered, no recent credible update", lastSeen:"2026-08-06T13:55:46Z", baseProb:25},
+  {name:"Real Salt Lake wing-back", sub:"Wing-back · USA", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal for Real Salt Lake wing-back", src:"The Athletic", tier:2, fee:"£11m", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks, deal worth £11m", lastSeen:"2026-08-06T13:55:46Z", baseProb:70}
 ];
 
 const OUTGOING = [
-  {name:"Adam Wharton", sub:"21 · CM · England", club:"Elite interest", pos:"CM", report:"~1 wk ago", src:"The Athletic / aggregated", tier:2, fee:"£60m+", truth:65, prob:30, light:'y', trend:'up',
-   note:"A prized young midfielder with persistent big-club interest. PRICING: youth, England pedigree and a long deal mean a steep holder's premium; Palace need not sell given Europa revenue, lowering probability and lifting the fee.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Adam Wharton", sub:"Midfielder · England", club:"Unknown", pos:"MF", report:"Adam Wharton linked with departure", src:"On-page rumour", tier:3, fee:"Unknown", truth:35, prob:25, light:"o", trend:"down", note:"Departure speculation, no recent credible update", lastSeen:"2026-08-06T13:55:46Z", baseProb:25},
+  {name:"Jean-Philippe Mateta", sub:"Forward · France", club:"Unknown", pos:"ST", report:"After a January transfer request and prior interest from clubs", src:"On-page rumour", tier:3, fee:"Unknown", truth:40, prob:30, light:"y", trend:"up", note:"Transfer request filed, no recent credible update on current status", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
+  {name:"Eberechi Eze", sub:"27 · Ghana · AM", club:"Arsenal", pos:"AM", report:"Arsenal reach agreement in principle to sign Eberechi Eze. Deal worth around £68m (matching release clause). Personal terms close.", src:"David Ornstein / The Athletic", tier:1, fee:"£68m", truth:95, prob:95, light:"g", trend:"flat", note:"Deal in principle, personal terms agreed, player set to complete after CPFC vs Fredrikstad", lastSeen:"2026-08-06T13:55:46Z", baseProb:95},
+  {name:"Marc Guehi", sub:"25 · England · CB", club:"Liverpool", pos:"CB", report:"Liverpool bid £35m for Marc Guehi. Medical undergone, deal agreed at £35m + 5yr contract. Deal fell through due to Palace replacement issues.", src:"David Ornstein / The Athletic", tier:1, fee:"£35m", truth:40, prob:15, light:"o", trend:"flat", note:"Deal sheet submitted, medical completed, agreement reached but move collapsed due to Palace replacement issues. Player set to stay.", lastSeen:"2026-08-06T13:55:46Z", baseProb:15}
+];
+const DEAD = [
+  {name:"Manager appointment", sub:"Pierre Sage front-runner", club:"Lens", pos:"Head coach", report:"~5 days ago", src:"TeamTalk / BeFootball", tier:2, fee:"Compensation", truth:80, prob:45, light:'y', trend:'up',
+   note:"The gating decision of the summer. Iraola chose Liverpool; Lens coach Pierre Sage (ex-Lyon, Coupe de France winner, Ligue 1 runner-up) is the reported leading candidate, with talks advanced. Not yet confirmed; squad plans follow the appointment.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Europa-ready depth", sub:"Post-appointment additions", club:"Market", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:60, prob:35, light:'y', trend:'flat',
+   note:"Additions to handle a heavier European fixture load, paced to the new manager's preferences. Specific names firm up once the dugout is settled.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Forward depth (framing)", sub:"Support for Mateta", club:"Market", pos:"ST/W", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:25, light:'o', trend:'flat',
+   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged forward depth (support for Mateta) as a likely strengthening area once the manager is appointed; no named target was in circulation at the 6 Jun data date.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Midfield cover (framing)", sub:"Insurance against a Wharton bid", club:"Market", pos:"CM", report:"~1 wk ago", src:"v1 positions panel", tier:3, fee:"TBD", truth:55, prob:22, light:'o', trend:'flat',
+   note:"FRAMING ROW, not a named rumour: split out of the v1 page's own positions panel during migration to v2. The old dashboard flagged midfield cover as a strengthening area, insurance in case an elite bid lands for Wharton; no named target was in circulation at the 6 Jun data date.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Prized defenders", sub:"Richards / Lacroix watch", club:"Various", pos:"CB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£30m+ each", truth:55, prob:30, light:'y', trend:'flat',
-   note:"Central defenders who shone in the European run will draw interest. PRICING: holder's premium; only strong bids move them.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Jean-Philippe Mateta", sub:"Contract offer on the table, no extension signed yet", club:"Interest previously from Juventus / Aston Villa / Chelsea", pos:"FW", report:"After a January transfer request and prior interest from Juventus, Aston Villa and Chelsea, Palace have instead offered Mateta a new long-term contract; as of mid-July no agreement had been signed, keeping his long-term future unresolved.", src:"Yahoo Sports / GOAL.com", tier:2, fee:"£35m (prior valuation)", truth:50, prob:20, light:"o", trend:"flat", note:"Club's current priority is a new deal, not a sale, but situation remains fluid", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+   note:"Central defenders who shone in the European run will draw interest. PRICING: holder's premium; only strong bids move them.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"no longer a current link", dir:"out", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Pierre Sage", club:"Lens", pos:"Head coach", dir:"in", age:"~5d", tier:2, note:"(Also in the main Incoming table.) Reported front-runner to replace Glasner; talks advanced, not confirmed.", dead:true, deadReason:"no longer a current link", deadAt:"2026-08-06T13:55:46Z"}
 ];
 
 const RISERS = [
@@ -136,8 +141,7 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Pierre Sage", club:"Lens", pos:"Head coach", dir:"in", age:"~5d", tier:2, note:"(Also in the main Incoming table.) Reported front-runner to replace Glasner; talks advanced, not confirmed."},
-  {name:"Adam Wharton", club:"Crystal Palace", pos:"CM", dir:"out", age:"~1 wk", tier:2, note:"(Also in main table.) Prized young midfielder; elite interest, £60m-plus holder's price."},
+  {name:"Adam Wharton", club:"Crystal Palace", pos:"CM", dir:"out", age:"~1 wk", tier:2, note:"(Also in main table.) Prized young midfielder; elite interest, £60m-plus holder's price."}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -164,7 +168,10 @@ const HUB = {
   crystalPalaceFCofficialBornaSosa: {l:"Crystal Palace FC official", u:"https://www.cpfc.co.uk/news/announcement/borna-sosa-joins-crystal-palace-announcement/"},
   skySportsMarcGuhi: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13495114/marc-guehi-man-city-sign-defender-from-crystal-palace-for-an-initial-lb20m-as-spending-reaches-lb425m-in-12-months"},
   teamTalkMaxenceLacroix: {l:"TeamTalk", u:"https://www.teamtalk.com/chelsea/every-completed-chelsea-transfer-summer-2026-signings-sales-loans"},
-  fabrizioRomanoTakehiroTomiyasu: {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"}};
+  fabrizioRomanoTakehiroTomiyasu: {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano"},
+  theAthleticRealSaltLakewingback: {l:"The Athletic", u:"https://www.theathletic.com/football/"},
+  davidOrnsteinEberechiEze: {l:"@David_Ornstein", u:"https://x.com/David_Ornstein/status/1958260267693048130"},
+  davidOrnsteinMarcGuehi: {l:"@David_Ornstein", u:"https://x.com/David_Ornstein/status/1962586980333556155"}};
 const LINKMAP = {
   "Manager appointment": ["teamtalk","lequipe","rmc"],
   "Europa-ready depth": ["bbcGossip","slp"],
@@ -182,7 +189,10 @@ const LINKMAP = {
   "Marc Guéhi": ["skySportsMarcGuhi"],
   "Maxence Lacroix": ["teamTalkMaxenceLacroix"],
   "Takehiro Tomiyasu": ["fabrizioRomanoTakehiroTomiyasu"],
-  "Solly March": ["bbcGossip"]};
+  "Solly March": ["bbcGossip"],
+  "Real Salt Lake wing-back": ["theAthleticRealSaltLakewingback"],
+  "Eberechi Eze": ["davidOrnsteinEberechiEze"],
+  "Marc Guehi": ["davidOrnsteinMarcGuehi"]};
 const WL_LINKMAP = {
   "Pierre Sage":"lequipe","Adam Wharton":"athletic",
 };

@@ -74,7 +74,8 @@ const CONFIRMED_IN = [
   {name:"Adam Aznou", sub:"Permanent, four-year deal", club:"Bayern Munich", pos:"DF", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"19-year-old Moroccan left-back, Everton's fourth summer signing"},
   {name:"Tyrique George", sub:"Permanent", club:"Chelsea", pos:"FW", fee:"£18m-£24m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young winger arrives from Chelsea to bolster attacking options"},
   {name:"Carlos Alcaraz", sub:"Loan made permanent", club:"Flamengo", pos:"MF", fee:"Undisclosed (option exercised)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Everton activated the buy option on the Argentine midfielder's loan"},
-  {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Arsenal", pos:"DM", fee:"£7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Two-year deal at Hill Dickinson Stadium after a single season at Arsenal. Agreement in principle broken by David Ornstein and relayed by Sky Sports News before completion; fee officially undisclosed but reported at around £7m."}
+  {name:"Christian Norgaard", sub:"32 · Denmark · DM", club:"Arsenal", pos:"DM", fee:"£7m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Two-year deal at Hill Dickinson Stadium after a single season at Arsenal. Agreement in principle broken by David Ornstein and relayed by Sky Sports News before completion; fee officially undisclosed but reported at around £7m."},
+  {name:"Norgaard", sub:"28 · Denmark · CM", club:"Arsenal", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed move from Arsenal"}
 ];
 const CONFIRMED_OUT = [
   {name:"Seamus Coleman", sub:"Released", club:"Free agent", pos:"DF", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving club captain released at contract expiry"},
@@ -82,23 +83,22 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Raul Jimenez", sub:"ST · Mexico", club:"Fulham (free)", pos:"ST", report:"~3 wks ago", src:"Football Insider", tier:3, fee:"FREE", truth:55, prob:30, light:'y', trend:'flat',
-   note:"Out of contract at Fulham, a proven, cost-efficient option for Moyes' striker hunt. OBSTACLE: at 35 he is a stop-gap; Everton may prefer a younger marquee signing alongside or instead.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Marquee striker", sub:"Friedkin-backed", club:"Various", pos:"ST", report:"~3 wks ago", src:"Football Insider / TeamTalk", tier:3, fee:"£40-70m", truth:55, prob:40, light:'y', trend:'up',
-   note:"The headline aim: a big-money goalscorer after Beto and Barry fell short. Links include Liam Delap (long admired) and Jarrod Bowen. OBSTACLES: fees and wages for proven names.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Jack Grealish", sub:"W · England", club:"Man City", pos:"W", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Loan/perm", truth:55, prob:35, light:'y', trend:'flat',
-   note:"A stay (loan-to-permanent) is reported as a concrete possibility after his spell at the club. OBSTACLES: wages and fitness complexities.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Alistair Johnston", sub:"Top target, negotiations ongoing", club:"Celtic", pos:"DF", report:"Everton's priority right-back target; an opening bid of around £12m has been tabled with add-ons potentially taking it to £15m, and David Moyes is a strong advocate for the move.", src:"TeamTalk", tier:2, fee:"£12m-£15m", truth:70, prob:60, light:"g", trend:"flat", note:"Johnston reportedly keen on the step up to the Premier League", lastSeen:"2026-08-04T19:10:50Z", baseProb:60},
-  {name:"Nahuel Molina", sub:"Strong move made", club:"Atlético Madrid", pos:"DF", report:"Everton have made a 'strong move' for the Argentine right-back, though Juventus are also reported to be monitoring the situation.", src:"Tutto Juve", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Competes for the same role as Alistair Johnston target", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Barış Alper Yılmaz", sub:"Monitored by Everton scouts", club:"Galatasaray", pos:"FW", report:"Turkish winger/forward with strong physical attributes has been linked with Everton, though a local journalist flagged limitations in his technical decision-making.", src:"Dogukan Yildirim", tier:3, fee:"Undisclosed", truth:30, prob:10, light:"r", trend:"flat", note:"Early-stage interest only", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
+  {name:"Raul Jimenez", sub:"33 · Mexico · F", club:"Unknown", pos:"Forward", report:"Incoming striker target", src:"On-page rumour", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"down", note:"Rumour ~3 weeks old; no recent credible update", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
+  {name:"Jack Grealish", sub:"28 · England · W", club:"Manchester City", pos:"Winger", report:"Incoming target", src:"On-page rumour", tier:3, fee:"", truth:15, prob:5, light:"r", trend:"down", note:"Rumour ~2 weeks old; highly unlikely given his Manchester City status", lastSeen:"2026-08-06T13:55:46Z", baseProb:5},
+  {name:"Alistair Johnston", sub:"24 · Canada · RB", club:"Celtic", pos:"Right-back", report:"Priority right-back target; opening bid mentioned", src:"On-page rumour", tier:3, fee:"", truth:50, prob:45, light:"y", trend:"down", note:"Active interest reported; credible target", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
+  {name:"Nahuel Molina", sub:"25 · Argentina · RB", club:"Atletico Madrid", pos:"Right-back", report:"Strong move made for Argentine defender", src:"On-page rumour", tier:3, fee:"", truth:45, prob:40, light:"y", trend:"up", note:"Described as 'strong move'; recent interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:40},
+  {name:"Barış Alper Yılmaz", sub:"24 · Turkey · W", club:"Galatasaray", pos:"Winger/Forward", report:"Turkish winger/forward with strong physical attributes", src:"On-page rumour", tier:3, fee:"", truth:55, prob:50, light:"y", trend:"up", note:"Target identified; recent interest", lastSeen:"2026-08-06T13:55:46Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Iliman Ndiaye", sub:"AM/W · Senegal", club:"Outside interest", pos:"AM", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£40m+", truth:55, prob:30, light:'y', trend:'flat',
-   note:"A prized creator drawing interest; some uncertainty over his future. PRICING: a holder's premium applies; Everton would resist unless a strong bid lands.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
+  {name:"Iliman Ndiaye", sub:"23 · Senegal · W", club:"Everton", pos:"Winger", report:"Outgoing; linked with exit", src:"On-page rumour", tier:3, fee:"", truth:50, prob:45, light:"y", trend:"up", note:"Rumour ~1 week old; active speculation", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
+  {name:"Tim Iroegbunam", sub:"20 · England · CM", club:"Everton", pos:"Midfielder", report:"Outgoing; deal entering final year", src:"On-page rumour", tier:3, fee:"", truth:55, prob:50, light:"y", trend:"up", note:"Contract situation suggests potential departure", lastSeen:"2026-08-06T13:55:46Z", baseProb:50}
+];
+const DEAD = [
+  {name:"Marquee striker", sub:"Friedkin-backed", club:"Various", pos:"ST", report:"~3 wks ago", src:"Football Insider / TeamTalk", tier:3, fee:"£40-70m", truth:55, prob:40, light:'y', trend:'up',
+   note:"The headline aim: a big-money goalscorer after Beto and Barry fell short. Links include Liam Delap (long admired) and Jarrod Bowen. OBSTACLES: fees and wages for proven names.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"Duplicate/vague on-page entry; subsumed by Raul Jimenez", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Underperforming forwards", sub:"Beto / Barry review", club:"Various", pos:"ST", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
-   note:"A new striker raises questions over the current pair. PRICING: limited leverage after underwhelming returns; the aim is balance and wages.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Tim Iroegbunam", sub:"Sale being considered with a year left on contract", club:"Hull City / Ipswich Town / Coventry City (interest)", pos:"MF", report:"With his deal entering its final year, Everton are open to cashing in; Hull, Ipswich and Coventry have all been credited with interest, alongside two Italian clubs, at a reported £20m valuation.", src:"TeamTalk", tier:2, fee:"~£20m", truth:55, prob:30, light:"y", trend:"flat", note:"No formal bids yet; sale would help fund further Moyes signings", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+   note:"A new striker raises questions over the current pair. PRICING: limited leverage after underwhelming returns; the aim is balance and wages.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link", dir:"out", deadAt:"2026-08-06T13:55:46Z"}
 ];
 
 const RISERS = [
@@ -129,9 +129,8 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Marquee striker", club:"Various", pos:"ST", dir:"in", age:"~3 wks", tier:3, note:"(Also in the main Incoming table.) The headline aim; Jimenez (free), Delap and Bowen among links."},
   {name:"Iliman Ndiaye", club:"Everton", pos:"AM", dir:"out", age:"~1 wk", tier:3, note:"(Also in main table.) Prized creator; retention is the key task amid interest."},
-  {name:"Jack Grealish", club:"Man City", pos:"W", dir:"in", age:"~2 wks", tier:3, note:"A stay (loan-to-permanent) is a concrete possibility."},
+  {name:"Jack Grealish", club:"Man City", pos:"W", dir:"in", age:"~2 wks", tier:3, note:"A stay (loan-to-permanent) is a concrete possibility."}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -163,7 +162,8 @@ const HUB = {
   yahooSportsTyriqueGeorge: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-everton-sign-tyrique-george-153951753.html"},
   theScoreCarlosAlcaraz: {l:"theScore", u:"https://www.thescore.com/news/3293953"},
   sportsMoleSeamusColeman: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/everton/transfer-talk/feature/everton-summer-transfers-all-confirmed-ins-and-outs-for-2026_599217.html"},
-  davidOrnsteinTheAthleticChristianNorgaard: {l:"David Ornstein, The Athletic", u:"https://www.theathletic.com/football/"}};
+  davidOrnsteinTheAthleticChristianNorgaard: {l:"David Ornstein, The Athletic", u:"https://www.theathletic.com/football/"},
+  bBCSportFootballNorgaard: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cm2gvlnjndpo?at_medium=RSS&at_campaign=rss"}};
 const LINKMAP = {
   "Raul Jimenez": ["fInsider","echo"],
   "Marquee striker": ["fInsider","teamtalk","echo"],
@@ -182,7 +182,8 @@ const LINKMAP = {
   "Carlos Alcaraz": ["theScoreCarlosAlcaraz"],
   "Seamus Coleman": ["sportsMoleSeamusColeman"],
   "Isaac Heath": ["sportsMoleSeamusColeman"],
-  "Christian Norgaard": ["davidOrnsteinTheAthleticChristianNorgaard"]};
+  "Christian Norgaard": ["davidOrnsteinTheAthleticChristianNorgaard"],
+  "Norgaard": ["bBCSportFootballNorgaard"]};
 const WL_LINKMAP = {
   "Marquee striker":"fInsider","Iliman Ndiaye":"echo","Jack Grealish":"bbcGossip",
 };

@@ -53,31 +53,31 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
 /* CONFIRMED BUSINESS - move items here as deals are officially done.
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
-  {name:"Antonio Silva", sub:"22 · CB · Portugal", club:"permanent from Benfica", pos:"CB", fee:"€25m + €5m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Independently reported by Romano, Di Marzio and Schira within days of each other; medical and signing were in progress as of 31 Jul."}
+  {name:"Antonio Silva", sub:"22 · CB · Portugal", club:"permanent from Benfica", pos:"CB", fee:"€25m + €5m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Independently reported by Romano, Di Marzio and Schira within days of each other; medical and signing were in progress as of 31 Jul."},
+  {name:"Juanlu", sub:"Spanish · Right-back", club:"Unknown", pos:"RB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish right-back signed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Jordan Zemura", sub:"LB · Zimbabwe", club:"loan to Watford", pos:"LB", fee:"Loan to 30 Jun 2027", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official season-long loan to Watford, confirmed via Di Marzio's live mercato digest."},
   {name:"Marcos Senesi", sub:"Free transfer to London rivals", club:"Tottenham Hotspur", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 
-const INCOMING = [
-  {name:"Young press-fit additions", sub:"Rose-system talent", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:55, prob:40, light:'y', trend:'up',
-   note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Avom & Hadj Moussa", sub:"Recycled aggregator links", club:"Aggregated feeds", pos:"-", report:"~60d+ / recycled", tier:4, fee:"n/a", truth:25, prob:8, light:'r', trend:'down', bullshit:true,
-   note:"Recycled aggregator repetition with no named original source behind it, resurfacing every few weeks without ever being freshly re-reported. Carried only to show it's been discounted, not as live business.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8},
-  {name:"Arthur Theate", sub:"Defensive reinforcement option", club:"Eintracht Frankfurt", pos:"DF", report:"Bournemouth continue to be linked with defensive cover as Marco Rose reshapes his backline ahead of the new season.", src:"The Athletic", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Tiago Gabriel", sub:"Centre-back shortlist name", club:"Lecce", pos:"DF", report:"Young Italian-based centre-back named among Bournemouth's defensive targets.", src:"Gianluca Di Marzio", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Jhon Lucumí", sub:"Colombian centre-back option", club:"Bologna", pos:"DF", report:"Linked as defensive cover option amid Bournemouth's search for centre-back depth.", src:"Nicolò Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
-];
-const OUTGOING = [
-  {name:"Prized young asset", sub:"The model in action", club:"Elite suitors", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40m+", truth:55, prob:50, light:'y', trend:'up',
-   note:"Bournemouth's best young players always attract bigger clubs (Huijsen to Real Madrid, Kerkez to Liverpool last year). PRICING: a holder's premium applies; a sale funds the next intake.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
-  {name:"Fringe & squad trim", sub:"Reinvestment churn", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
-   note:"Standard churn to balance the squad for a European campaign and keep the cost ratio healthy.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Rayan", sub:"Breakout Brazilian winger attracting suitors", club:"Multiple (Arsenal/Liverpool linked)", pos:"FW", report:"20-year-old right winger has scored 7 goals since a January move from Vasco da Gama; Bournemouth want £85m and a move this window is seen as unlikely.", src:"The Sun / OneFootball", tier:3, fee:"£85m", truth:45, prob:15, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Antoine Semenyo", sub:"New contract signed, release clause active from January", club:"Multiple PL clubs previously linked", pos:"FW", report:"Semenyo committed his future to Bournemouth with a new deal that includes a £65m release clause only active from January 2027; no active move this summer.", src:"BBC Sport", tier:1, fee:"£65m release clause (Jan 2027)", truth:60, prob:10, light:"r", trend:"flat", note:"Not a live summer target given new contract terms", lastSeen:"2026-08-04T19:10:50Z", baseProb:10}
-];
+const INCOMING = [];
+const OUTGOING = [];
 const DEAD = [
+  {name:"Young press-fit additions", sub:"Rose-system talent", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:55, prob:40, light:'y', trend:'up',
+   note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Avom & Hadj Moussa", sub:"Recycled aggregator links", club:"Aggregated feeds", pos:"-", report:"~60d+ / recycled", tier:4, fee:"n/a", truth:25, prob:8, light:'r', trend:'down', bullshit:true,
+   note:"Recycled aggregator repetition with no named original source behind it, resurfacing every few weeks without ever being freshly re-reported. Carried only to show it's been discounted, not as live business.", lastSeen:"2026-08-04T19:10:50Z", baseProb:8, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Arthur Theate", sub:"Defensive reinforcement option", club:"Eintracht Frankfurt", pos:"DF", report:"Bournemouth continue to be linked with defensive cover as Marco Rose reshapes his backline ahead of the new season.", src:"The Athletic", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"No credible update in 5+ weeks; vague on-page text", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Tiago Gabriel", sub:"Centre-back shortlist name", club:"Lecce", pos:"DF", report:"Young Italian-based centre-back named among Bournemouth's defensive targets.", src:"Gianluca Di Marzio", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"No credible update in 5+ weeks; vague on-page text", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Jhon Lucumí", sub:"Colombian centre-back option", club:"Bologna", pos:"DF", report:"Linked as defensive cover option amid Bournemouth's search for centre-back depth.", src:"Nicolò Schira", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No credible update in 5+ weeks; vague on-page text", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Prized young asset", sub:"The model in action", club:"Elite suitors", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40m+", truth:55, prob:50, light:'y', trend:'up',
+   note:"Bournemouth's best young players always attract bigger clubs (Huijsen to Real Madrid, Kerkez to Liverpool last year). PRICING: a holder's premium applies; a sale funds the next intake.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50, dead:true, deadReason:"no longer a current link", dir:"out", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Fringe & squad trim", sub:"Reinvestment churn", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
+   note:"Standard churn to balance the squad for a European campaign and keep the cost ratio healthy.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link", dir:"out", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Rayan", sub:"Breakout Brazilian winger attracting suitors", club:"Multiple (Arsenal/Liverpool linked)", pos:"FW", report:"20-year-old right winger has scored 7 goals since a January move from Vasco da Gama; Bournemouth want £85m and a move this window is seen as unlikely.", src:"The Sun / OneFootball", tier:3, fee:"£85m", truth:45, prob:15, light:"o", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"Vague outgoing link, no recent credible reporting", dir:"out", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Antoine Semenyo", sub:"New contract signed, release clause active from January", club:"Multiple PL clubs previously linked", pos:"FW", report:"Semenyo committed his future to Bournemouth with a new deal that includes a £65m release clause only active from January 2027; no active move this summer.", src:"BBC Sport", tier:1, fee:"£65m release clause (Jan 2027)", truth:60, prob:10, light:"r", trend:"flat", note:"Not a live summer target given new contract terms", lastSeen:"2026-08-04T19:10:50Z", baseProb:10, dead:true, deadReason:"Committed to Bournemouth; not an active outgoing link", dir:"out", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Prized young assets", club:"Bournemouth", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"The best young players draw elite interest; a premium sale is likely, per the model.", dead:true, deadReason:"no longer a current link", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Malik Tillman", sub:"AM · USA", club:"Bayer Leverkusen", pos:"AM", report:"~5 wks ago", src:"TeamTalk / ESPN", tier:3, fee:"£25-35m", truth:55, prob:25, light:'o', trend:'flat',
    note:"Bournemouth are credited with joining the race for the USMNT attacker, who would link up with Tyler Adams. OBSTACLE: a reported ~€35m clause for Bayern could shape the price; competition exists.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dir:"in", deadReason:"no fresh report in 5+ weeks", deadAt:"2026-08-06T10:24:32Z"}
 ];
@@ -110,9 +110,7 @@ const POSITIONS = [
 
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
-const WATCHLIST = [
-  {name:"Prized young assets", club:"Bournemouth", pos:"-", dir:"out", age:"~2 wks", tier:3, note:"The best young players draw elite interest; a premium sale is likely, per the model."}
-];
+const WATCHLIST = [];
 
 /* ---------- SOURCE LINKS ----------
    Exact URLs only where verified this refresh; otherwise the named source's hub.
@@ -133,7 +131,8 @@ const HUB = {
   nowArsenalviaTheSunRayan: {l:"Now Arsenal (via The Sun)", u:"https://www.nowarsenal.com/transfer-news/bournemouth-demand-85million-for-star-with-arsenal-interested/"},
   bBCSportAntoineSemenyo: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/cwy543n274wo"},
   skySportsAntonioSilva: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11743/13569014/antonio-silva-bournemouth-clinch-signing-of-portugal-international-defender-from-benfica"},
-  sportsMoleMarcosSenesi: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/bournemouth/transfer-talk/feature/bournemouth-summer-transfers-all-confirmed-ins-and-outs-for-2026_599225.html"}};
+  sportsMoleMarcosSenesi: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/bournemouth/transfer-talk/feature/bournemouth-summer-transfers-all-confirmed-ins-and-outs-for-2026_599225.html"},
+  bBCSportJuanlu: {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football/articles/cly91exewj2o?at_medium=RSS&at_campaign=rss"}};
 const LINKMAP = {
   "Malik Tillman": ["teamtalk","espn"],
   "Young press-fit additions": ["echo","bbcGossip"],
@@ -147,7 +146,8 @@ const LINKMAP = {
   "Jhon Lucumí": ["theAthleticviaRoundtableArthurTheate"],
   "Rayan": ["nowArsenalviaTheSunRayan"],
   "Antoine Semenyo": ["bBCSportAntoineSemenyo"],
-  "Marcos Senesi": ["sportsMoleMarcosSenesi"]};
+  "Marcos Senesi": ["sportsMoleMarcosSenesi"],
+  "Juanlu": ["bBCSportJuanlu"]};
 const WL_LINKMAP = {
   "Malik Tillman":"teamtalk","Prized young assets":"sky",
 };

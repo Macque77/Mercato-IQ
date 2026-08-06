@@ -72,23 +72,25 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Enzo Fernández", sub:"CM · Argentina", club:"(discussed)", pos:"CM", report:"~6 days ago", src:"Manchester Evening News", tier:2, fee:"£70m+", truth:70, prob:18, light:'o', trend:'flat',
-   note:"Discussed as a midfield-control option for Maresca, who knows him from Chelsea. OBSTACLES: a large fee and wages, and whether a sale materialises at the selling club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
-  {name:"Eli Junior Kroupi", sub:"19 · France · FW", club:"Bournemouth", pos:"ST/W", report:"~6 days ago", src:"Manchester Evening News", tier:2, fee:"£80m+", truth:70, prob:14, light:'r', trend:'flat',
-   note:"On the discussed list as City weigh forward refresh; also an Arsenal target, so a contested, expensive teenager. Early-stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
-  {name:"Ayyoub Bouaddi", sub:"18 · France · DM", club:"LOSC Lille", pos:"DM", report:"Negotiations between City and Lille for the France youth midfielder are picking up pace, according to Fabrizio Romano.", src:"Fabrizio Romano (relayed by CaughtOffside)", tier:3, fee:"Undisclosed", truth:65, prob:45, light:"y", trend:"flat", note:"Romano's reporting is reliable but we could only verify a second-hand write-up of it. No agreed fee has been reported.", lastSeen:"2026-08-06T10:49:40Z", baseProb:45},
-  {name:"Gerónimo Rulli", sub:"Backup goalkeeper, personal terms agreed", club:"Marseille", pos:"GK", report:"Rulli has agreed personal terms with City as a backup option and Romano expects the clubs to reach agreement within days.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed (~€5m)", truth:80, prob:75, light:"g", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:75},
-  {name:"Pedro Neto", sub:"26 · Portugal · RW", club:"Chelsea", pos:"RW", report:"City are said to be lining up a surprise bid for the Chelsea winger, valued at around £70m, as Enzo Maresca looks for extra width.", src:"Sun on Sunday, relayed in Sky Sports Paper Talk", tier:3, fee:"£70m", truth:45, prob:25, light:"o", trend:"flat", note:"Tabloid in origin and carried only in a newspaper round-up. No tier-one reporter has touched it and Chelsea have shown no willingness to sell, so treat it as a soft link.", lastSeen:"2026-08-06T10:49:40Z", baseProb:25}
+  {name:"Enzo Fernández", sub:"23 · Argentina · M", club:"Benfica", pos:"Midfielder", report:"Incoming link reported ~6 days ago", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"up", note:"Old report; no recent confirmation found", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
+  {name:"Eli Junior Kroupi", sub:"Age unknown · Unknown · Forward", club:"Unknown", pos:"Forward", report:"Incoming link reported ~6 days ago", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:30, prob:20, light:"o", trend:"up", note:"Minimal information; stale report", lastSeen:"2026-08-06T13:55:46Z", baseProb:20},
+  {name:"Ayyoub Bouaddi", sub:"Age unknown · France · Unknown", club:"Lille", pos:"Unknown", report:"Negotiations reported between City and Lille", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"down", note:"No recent updates; stale negotiations report", lastSeen:"2026-08-06T13:55:46Z", baseProb:25},
+  {name:"Gerónimo Rulli", sub:"Age unknown · Argentina · Goalkeeper", club:"Unknown", pos:"Goalkeeper", report:"Reported to have agreed personal terms as backup goalkeeper", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"down", note:"No recent confirmation; stale report", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
+  {name:"Pedro Neto", sub:"24 · Portugal · Winger", club:"Wolverhampton Wanderers", pos:"Winger", report:"City said to be lining up a surprise bid", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"flat", note:"Speculative report; no recent credible updates", lastSeen:"2026-08-06T13:55:46Z", baseProb:25}
 ];
 const OUTGOING = [
+  {name:"Rodri", sub:"28 · Spain · Midfielder", club:"Manchester City", pos:"Midfielder", report:"Barcelona and Real Madrid interest; City star mulling decision", src:"BBC Sport / Guardian / Telegraph", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"down", note:"Speculation from multiple sources; no confirmed exit talks. Recent reports suggest stalled negotiations with Real Madrid and Barcelona interest emerging.", lastSeen:"2026-08-06T13:55:46Z", baseProb:25},
+  {name:"Savinho", sub:"24 · Brazil · Winger", club:"Manchester City", pos:"Winger", report:"Fabrizio Romano reports roughly £60m move", src:"Fabrizio Romano", tier:1, fee:"£60m", truth:55, prob:35, light:"y", trend:"down", note:"Transfer reported by top-tier source but no destination confirmed; deal stage unclear", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
+  {name:"James Trafford", sub:"21 · England · Goalkeeper", club:"Manchester City", pos:"Goalkeeper", report:"Leeds intend to move for academy product Trafford", src:"transferfeed snapshot", tier:3, fee:"Loan", truth:45, prob:30, light:"y", trend:"down", note:"Likely loan interest from Leeds; stale report without recent updates", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
+  {name:"Tijjani Reijnders", sub:"26 · Netherlands · Midfielder", club:"AC Milan", pos:"Midfielder", report:"Reported to be open to an exit after 19 Premier League appearances", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"down", note:"Outdated report; Milan midfielder already established at club. Likely confused or stale.", lastSeen:"2026-08-06T13:55:46Z", baseProb:20}
+];
+const DEAD = [
   {name:"Senior core review", sub:"Silva / Stones / Ederson · framing thread", club:"Various", pos:"-", report:"~1 wk ago", src:"The Athletic", tier:1, fee:"Mixed", truth:85, prob:70, light:'g', trend:'up',
-   note:"The clearest business: a generational refresh sees several Guardiola-era seniors moved on (see ledger). PRICING: contract length and age set modest fees; the value is squad-list and wage relief.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70},
+   note:"The clearest business: a generational refresh sees several Guardiola-era seniors moved on (see ledger). PRICING: contract length and age set modest fees; the value is squad-list and wage relief.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70, dead:true, deadReason:"Generic backroom item; no specific player transfer", dir:"out", deadAt:"2026-08-06T13:55:46Z"},
   {name:"Fringe & loan army", sub:"Squad depth · framing thread", club:"Various", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
-   note:"Expect the usual City churn of loanees and fringe players to balance the books and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Rodri", sub:"30 · Spain · DM", club:"Real Madrid", pos:"DM", report:"Sky Sports have addressed the Real Madrid speculation surrounding Rodri and whether Enzo Maresca would sanction a sale, with City so far giving no encouragement to the idea of losing their midfield pivot.", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:70, prob:30, light:"y", trend:"down", note:"Sky frame this as speculation rather than an active negotiation, and other reporting suggests any exit is more likely next summer than this one.", lastSeen:"2026-08-06T10:49:40Z", baseProb:30},
-  {name:"Savinho", sub:"22 · Brazil · RW", club:"Tottenham Hotspur", pos:"RW", report:"Fabrizio Romano has described a roughly £60m move to Tottenham for the Brazilian winger as absolutely on, with the two clubs close on structure.", src:"Fabrizio Romano (relayed by Football365)", tier:3, fee:"£60m", truth:70, prob:60, light:"g", trend:"down", note:"Strong original sourcing but the version we can link is a relay and is now a fortnight old, so the fee and stage of talks may have moved. Worth refreshing before publication.", lastSeen:"2026-08-06T10:49:40Z", baseProb:60},
-  {name:"James Trafford", sub:"Leeds keen once Perri deal completes", club:"Leeds United", pos:"GK", report:"Leeds intend to move for academy product Trafford once they sell Lucas Perri to Torino; the player is described as keen on the switch, though no fee is agreed yet.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Tijjani Reijnders", sub:"28 · Netherlands · MF", club:"Nottingham Forest", pos:"MF", report:"Reported to be open to an exit after 19 Premier League starts in his debut season; Nottingham Forest are interested around £55m, with City said to want closer to £60m.", src:"PA / Yahoo Sport", tier:2, fee:"£55m", truth:60, prob:35, light:"y", trend:"flat", note:"Juventus and Galatasaray are also monitoring the Netherlands midfielder, signed from AC Milan for about £35m in June 2025. No fee has been agreed.", lastSeen:"2026-08-05T11:41:11Z", baseProb:35}
+   note:"Expect the usual City churn of loanees and fringe players to balance the books and the cost ratio under a new coach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"Generic outgoing batch; no specific player transfer", dir:"out", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Backroom rebuild", club:"Man City", pos:"-", dir:"out", age:"~2 wks", tier:1, note:"Most of Guardiola's staff (Lijnders, Buenaventura, Estiarte and others) have left; tracked as context, not a transfer.", dead:true, deadReason:"Generic backroom item; no specific player transfer", deadAt:"2026-08-06T13:55:46Z"},
+  {name:"Loan returns", club:"Man City", pos:"-", dir:"out", age:"~3 wks", tier:3, note:"City's large loan group will be assessed and traded under the new coach.", dead:true, deadReason:"Generic incoming batch; no specific player transfer", deadAt:"2026-08-06T13:55:46Z"}
 ];
 
 const RISERS = [
@@ -119,10 +121,7 @@ const POSITIONS = [
 
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
-const WATCHLIST = [
-  {name:"Backroom rebuild", club:"Man City", pos:"-", dir:"out", age:"~2 wks", tier:1, note:"Most of Guardiola's staff (Lijnders, Buenaventura, Estiarte and others) have left; tracked as context, not a transfer."},
-  {name:"Loan returns", club:"Man City", pos:"-", dir:"out", age:"~3 wks", tier:3, note:"City's large loan group will be assessed and traded under the new coach."},
-];
+const WATCHLIST = [];
 
 /* ---------- SOURCE LINKS ----------
    Exact URLs only where verified this refresh; otherwise the named source's hub.
@@ -148,7 +147,8 @@ const HUB = {
   skySportsPaperTalkPedroNeto: {l:"Sky Sports Paper Talk", u:"https://www.skysports.com/football/transfer-paper-talk/12709/13569111/myles-lewis-skelly-transfer-news-man-utd-considering-move-for-arsenal-player-paper-talk"},
   caughtOffsiderelayingFabrizioRomanoAyyoubBouaddi: {l:"CaughtOffside (relaying Fabrizio Romano)", u:"https://www.caughtoffside.com/2026/07/29/man-city-ayyoub-bouaddi-romano-transfer-update/"},
   skySportsRodri: {l:"Sky Sports", u:"https://www.skysports.com/football/video/30998/13569390/manchester-city-transfer-update-will-enzo-maresca-really-let-rodri-depart-for-real-madrid"},
-  football365relayingFabrizioRomanoSavinho: {l:"Football365 (relaying Fabrizio Romano)", u:"https://www.football365.com/news/savinho-tottenham-hotspur-manchester-city-fabrizio-romano-update"}};
+  football365relayingFabrizioRomanoSavinho: {l:"Football365 (relaying Fabrizio Romano)", u:"https://www.football365.com/news/savinho-tottenham-hotspur-manchester-city-fabrizio-romano-update"},
+  bBCSportRodri: {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football/articles/cglj6p6n9l8o"}};
 const LINKMAP = {
   "Elliot Anderson": ["men", "eSPNElliotAnderson"],
   "Enzo Fernández": ["men"],
@@ -157,7 +157,7 @@ const LINKMAP = {
   "Bernardo Silva": ["athletic","mcfc", "footballFanCastManuelAkanji"],
   "John Stones": ["athletic","mcfc", "tEAMtalkMathysDetourbet"],
   "Ederson": ["athletic","mcfc"],
-  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri"],
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri", "bBCSportRodri"],
   "Ayyoub Bouaddi": ["footballTransferscomAyyoubBouaddi", "caughtOffsiderelayingFabrizioRomanoAyyoubBouaddi"],
   "Gerónimo Rulli": ["footballTransferscomRomanoGernimoRulli"],
   "Savinho": ["yahooSportsviaRomanoTEAMtalkSavinho", "football365relayingFabrizioRomanoSavinho"],

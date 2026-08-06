@@ -17,16 +17,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Iván Cedric", prob: 80, truth: 85, bullshit: false,
-    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
-    from: "Vanspor FK", to: "Alanyaspor",
+    name: "Nariman Akhundzada", prob: 80, truth: 90, bullshit: false,
+    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
+    from: "Columbus Crew", to: "Erzurumspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Nariman Akhundzada", prob: 80, truth: 90, bullshit: false,
-    club_origin: "erzurumspor", club_display_name: "Erzurumspor", direction: "in",
-    from: "Columbus Crew", to: "Erzurumspor",
+    name: "Iván Cedric", prob: 80, truth: 85, bullshit: false,
+    club_origin: "alanyaspor", club_display_name: "Alanyaspor", direction: "in",
+    from: "Vanspor FK", to: "Alanyaspor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
@@ -73,18 +73,18 @@ const TOP_STORIES = [  {
     value: "€20m", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Franck Kessie", prob: 35, truth: 60, bullshit: false,
-    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
-    from: "Free agent (ex Al-Ahli)", to: "Beşiktaş",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Free", updated: "2026-07-29T00:00:00Z"
-  },
-  {
     name: "Francis Nzaba", prob: 35, truth: 85, bullshit: false,
     club_origin: "antalyaspor", club_display_name: "Antalyaspor", direction: "in",
     from: "İstanbul Başakşehir", to: "Antalyaspor",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Franck Kessie", prob: 35, truth: 60, bullshit: false,
+    club_origin: "besiktas", club_display_name: "Beşiktaş", direction: "in",
+    from: "Free agent (ex Al-Ahli)", to: "Beşiktaş",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Güray Vural", prob: 15, truth: 55, bullshit: false,
@@ -115,6 +115,6 @@ const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "coun
 
 const REPORT_META = {
   asof: "06 Aug 2026",
-  updated: "2026-08-06T11:59:56.329531Z",
+  updated: "2026-08-06T13:55:47.453366Z",
   label: "League aggregation"
 };
