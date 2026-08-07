@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "union-berlin", "name": "1. FC Union Berlin", "coun
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T14:34:29.830496Z",
+  updated: "2026-08-07T17:36:20.234489Z",
   label: "League aggregation"
 };
