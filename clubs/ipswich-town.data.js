@@ -57,7 +57,7 @@ const CONFIRMED_IN = [
   {name:"Issa Diop", sub:"29 · CB · France", club:"Fulham", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First of Ipswich's two raids on Fulham this summer, addressing centre-back depth for the top flight."},
   {name:"Florentino Luís", sub:"26 · Portugal · MF", club:"Burnley", pos:"MF", fee:"£16m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Defensive midfielder joins the newly promoted side on a five-year deal for an initial £16m plus a reported £3m in add-ons, chosen ahead of interest from Hull City. Made 33 appearances for Burnley last season."},
   {name:"Chris Atherton", sub:"unknown · unknown · unknown", club:"Chelsea", pos:"unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing from Chelsea"},
-  {name:"Florentino Luis", sub:"unknown · unknown · Midfielder", club:"Burnley", pos:"Midfielder", fee:"unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from relegated Burnley"}
+  {name:"Florentino Luis", sub:"24 · Portugal · M", club:"Burnley", pos:"M", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from relegated Burnley"}
 ];
 const CONFIRMED_OUT = [
   {name:"Arijanet Muric", sub:"27 · GK · Kosovo", club:"Sassuolo", pos:"GK", fee:"£6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ends his Ipswich spell (including a prior loan at Sassuolo) with a permanent move back to Serie A."},
@@ -68,7 +68,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Tim Iroegbunam", sub:"Midfielder", club:"Everton", pos:"M", report:"Hull City and Ipswich Town transfer rumours: Everton's Tim Iroegbunam", src:"BBC", tier:2, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"flat", note:"Rumour linking Iroegbunam to Ipswich", lastSeen:"2026-08-07T14:38:27Z", baseProb:60},
+  {name:"Tim Iroegbunam", sub:"20 · England · M", club:"Everton", pos:"M", report:"Hull City and Ipswich Town tracking Everton midfielder", src:"BBC", tier:2, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"flat", note:"Rumour linking Iroegbunam to Ipswich", lastSeen:"2026-08-07T23:07:30Z", baseProb:60},
   {name:"PL-ready survival signings (framing)", sub:"Spine upgrades", club:"Market", pos:"Spine", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£50-90m total", truth:55, prob:40, light:'y', trend:'up',
    note:"The core need: several Premier League-level additions to avoid a repeat of the 2024/25 drop. Names firm up once the manager question is settled.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
   {name:"Striker: goals for survival (framing)", sub:"Position need, no named target yet", club:"Market", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:35, light:'y', trend:'flat',
@@ -90,7 +90,7 @@ const OUTGOING = [
    note:"The pivotal uncertainty. McKenna is the bookies' favourite for Fulham after Silva's exit, with an £8m buy-out. Retention is Ipswich's priority one; his departure would reshape the entire summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link"},
   {name:"Fringe & squad trim", sub:"Promotion churn", club:"Various", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
    note:"Championship-level squad players moved on to make room for PL-quality upgrades.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
-  {name:"George Hirst", sub:"unknown · unknown · unknown", club:"Stoke City", pos:"unknown", report:"Stoke ready to pay £10m to land George Hirst", src:"Transfer rumour", tier:3, fee:"£10m", truth:65, prob:60, light:"g", trend:"down", note:"Stoke City interested in acquiring striker", lastSeen:"2026-08-07T17:40:24Z", baseProb:60}
+  {name:"George Hirst", sub:"23 · England · FW", club:"Ipswich Town", pos:"FW", report:"Stoke City ready to pay £10m to sign Ipswich Town striker", src:"BBC", tier:2, fee:"£10m", truth:70, prob:65, light:"g", trend:"up", note:"Stoke City interested in acquiring striker", lastSeen:"2026-08-07T23:07:30Z", baseProb:65}
 ];
 
 const RISERS = [

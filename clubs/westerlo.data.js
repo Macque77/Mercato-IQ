@@ -45,10 +45,10 @@ const CONFIRMED_OUT = [
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Cisse Sandra", sub:"28 · Senegal · M", club:"Club Brugge", pos:"M", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalBelgie / VoetbalPrimeur.be", tier:3, fee:"€18m", truth:100, prob:100, light:"g", trend:"up", note:"Deal confirmed, fee disclosed", lastSeen:"2026-08-07T20:08:12Z", baseProb:100}
+  {name:"Cisse Sandra", sub:"Club Brugge · Midfielder", club:"Club Brugge", pos:"M", report:"Transfer completed from Club Brugge", src:"VoetbalPrimeur.be", tier:3, fee:"€18m", truth:100, prob:100, light:"g", trend:"flat", note:"Official completion confirmed; fee reported as €18m", lastSeen:"2026-08-07T23:07:29Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"24 · Belgium · M", club:"Westerlo", pos:"M", report:"On way to Rangers; among most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Transfer reported as advanced", lastSeen:"2026-08-07T20:08:12Z", baseProb:80}
+  {name:"Jarne Rommens", sub:"KVC Westerlo · Defender", club:"Rangers", pos:"D", report:"On way to Rangers; among most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Transfer advanced; reported as one of Westerlo's priciest departures", lastSeen:"2026-08-07T23:07:29Z", baseProb:85}
 ];
 const RISERS = [];
 const FALLERS = [];

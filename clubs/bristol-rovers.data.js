@@ -34,7 +34,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Shaq Forde", sub:"unknown · unknown · unknown", club:"Bristol Rovers", pos:"unknown", report:"Bid rejected; transfer-listed", src:"bristolpost.co.uk", tier:3, fee:"unknown", truth:80, prob:70, light:"g", trend:"flat", note:"Bristol Rovers rejected a bid for the player; on transfer list", lastSeen:"2026-08-07T17:40:24Z", baseProb:70}
+  {name:"Shaq Forde", sub:"Unknown · Unknown · Unknown", club:"Bristol Rovers", pos:"Unknown", report:"Bid rejected; transfer-listed", src:"Bristol Live", tier:2, fee:"Unknown", truth:85, prob:50, light:"y", trend:"down", note:"Transfer-listed with rejected bid; seeking departure", lastSeen:"2026-08-07T23:07:30Z", baseProb:50}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -49,10 +49,11 @@ const HUB = {
   bristolRoversFootballClubKofiBalmer: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMilgFBVV95cUxNa0V0eDY0czNOelA5dHo5VEJ1WENjUzZQWEU5eUJ2ZFhqekgwWU9lV2xHbEwtWk1ITkVuTENBY1FJNFVteXVOSWJPSjNrY3RUWmFtdGhWZHpVSVNneUFWYzEwdWx5RDcwcEctN2pwTlVjTGVKTmZRZEl0REROMExadUFRS2xuWTc2aXBVY2NHY2VvejIzVHc?oc=5"},
   bristolRoversFootballClubTommyLeigh: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxNaE1WUVp5dS13eWZUQzY1TFRORUpYUFk1WnJ6ak1jbldRX2w0LTBiYTdJcWYwMEMzSnRJa2c0T0lMMnNSQVZJdlEycGhXQ0o0WEhvMHFycTFOdGVfYjMybzEyNlhXbzdfVWJXbHNWZ1V6bnAyQ2szeUtiaVZWeXJZV2piZ1Y1Tlk?oc=5"},
   bristolRoversFootballClubTomJames: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxNMDdPUFcxRkhzMDZvZHBpSTdWb3NEamt6NWlTckVEdHpYTXJWMy1wVnZ5cC00eWh3Z2J1ODdKVW56VEMzRlJSS250eHNmOGM2R1lNZnNTcjRGZkFLVDloeHJhWk9oVnBOWW5YYmx4NHpBQnhRZ3dNZTV6V0JwcUJRRDFuUE8?oc=5"},
-  bristolpostcoukShaqForde: {l:"bristolpost.co.uk", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxOZnZuRVVjeHgxM3d4cmFOTDJHanN2cWNFNmo5Z0Zta0JCdW5vdElnaVlFSV9FQ0dza3lTZFdjY3BsNW9QS0ptTkU3V0kyUDJ3azhGalYxeWhiOVhlMHlVQ1RndS0ySDB5MFFxdF9yQ2FidkR1ZkY3WjA3ZHFvc2RuSGFmZjNERDYxQjJCMTFRU2JNOWtvUFYwRkVKRDJ2V2dwM19R?oc=5"}};
+  bristolpostcoukShaqForde: {l:"bristolpost.co.uk", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxOZnZuRVVjeHgxM3d4cmFOTDJHanN2cWNFNmo5Z0Zta0JCdW5vdElnaVlFSV9FQ0dza3lTZFdjY3BsNW9QS0ptTkU3V0kyUDJ3azhGalYxeWhiOVhlMHlVQ1RndS0ySDB5MFFxdF9yQ2FidkR1ZkY3WjA3ZHFvc2RuSGFmZjNERDYxQjJCMTFRU2JNOWtvUFYwRkVKRDJ2V2dwM19R?oc=5"},
+  bristolRoversFootballClubRichieSmallwood1: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxPaDRyX3dROUotVjlpNlFDeWhJM1o4Q21qU0tlZ3hiZG5Zc2U4dF9LN1lzWmFQMnJubUJZaUN4MDJSVUN6Q081b1cHZzFjbGdvNjdCY1VJWEdBYXRSbVkwbUI2eU9IZnRacXVadXBua1FVVktGZENELTNVamw0R1FrVGcyR0pNV0lRMzJHRDQxWW02RG1mMnRCNWhB?oc=5"}};
 
 const LINKMAP = {
-  "Richie Smallwood": ["bristolRoversFootballClubRichieSmallwood"],
+  "Richie Smallwood": ["bristolRoversFootballClubRichieSmallwood", "bristolRoversFootballClubRichieSmallwood1"],
   "Kofi Balmer": ["bristolRoversFootballClubKofiBalmer"],
   "Tommy Leigh": ["bristolRoversFootballClubTommyLeigh"],
   "Tom James": ["bristolRoversFootballClubTomJames"],

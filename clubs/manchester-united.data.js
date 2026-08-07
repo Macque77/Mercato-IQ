@@ -59,13 +59,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Lewis Hall", sub:"21 · England · W", club:"Newcastle United", pos:"W", report:"David Ornstein confirms Manchester United interest; INEOS willing to pay £60m", src:"David Ornstein", tier:1, fee:"£60m", truth:85, prob:70, light:"g", trend:"flat", note:"Multiple Ornstein updates confirm talks ongoing; agreement structure discussed", lastSeen:"2026-08-07T17:40:24Z", baseProb:70},
-  {name:"Moussa Baleba", sub:"22 · Cameroon · CM", club:"Brighton & Hove Albion", pos:"CM", report:"Man Utd target Baleba suffers injury ruling him out for start of season; Ornstein update", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:70, prob:45, light:"y", trend:"flat", note:"Injury setback for target; will miss start of season which may complicate transfer timing", lastSeen:"2026-08-07T01:42:32Z", baseProb:45, dead:true, deadReason:"Injury ruling him out for start of season; no longer a viable summer target"},
+  {name:"Lewis Hall", sub:"21 · England · LB", club:"Newcastle United", pos:"LB", report:"David Ornstein confirms Manchester United interest; INEOS willing to pay £60m", src:"David Ornstein", tier:1, fee:"£60m", truth:85, prob:70, light:"g", trend:"flat", note:"Multiple updates from Ornstein; deal appears to be progressing but faces resistance from Newcastle", lastSeen:"2026-08-07T23:07:30Z", baseProb:70},
+  {name:"Moussa Baleba", sub:"21 · Senegal · CM", club:"Brighton & Hove Albion", pos:"CM", report:"Man Utd target Baleba suffers injury which will rule him out for the start of season", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:60, prob:20, light:"o", trend:"down", note:"Injury setback significantly reduces likelihood of imminent move; deal unlikely in near term", lastSeen:"2026-08-07T23:07:30Z", baseProb:20},
   {name:"Juventus midfielder", sub:"unknown", club:"Juventus", pos:"MID", report:"Man Utd told to offer £60m to sign Juventus star; one of Ornstein's two priority signings", src:"David Ornstein", tier:1, fee:"£60m", truth:70, prob:55, light:"g", trend:"up", note:"Player identity not yet disclosed in snippets; appears to be priority target alongside another signing", lastSeen:"2026-08-07T14:38:27Z", baseProb:55, dead:true, deadReason:"Unspecified/unnamed target; insufficient detail to track; Ornstein indicates Man Utd priorities shifting to 'cheaper' options"}
 ];
 
 const OUTGOING = [
-  {name:"Marcus Rashford", sub:"27 · England · W", club:"Manchester United", pos:"W", report:"£40m exit clause expires; summer departure unlikely post-deadline", src:"Various", tier:2, fee:"£40m", truth:25, prob:15, light:"o", trend:"down", note:"Exit clause has expired; transfer no longer viable on contractual terms", lastSeen:"2026-08-07T17:40:24Z", baseProb:15}
+  {name:"Marcus Rashford", sub:"26 · England · W", club:"Manchester United", pos:"W", report:"£40m exit clause expires; summer departure unlikely", src:"David Ornstein", tier:1, fee:"£40m", truth:75, prob:15, light:"o", trend:"flat", note:"Exit clause has expired as of recent window; departure now less likely despite previous speculation", lastSeen:"2026-08-07T23:07:30Z", baseProb:15}
 ];
 const DEAD = [
   {name:"Aurélien Tchouameni", sub:"Leading midfield target", club:"Real Madrid", pos:"MF", report:"United see Tchouameni as their leading 'premium midfielder' target; a Madrid source says he could still be sold this summer despite recently signing a new contract.", src:"David Ornstein", tier:1, fee:"~£70m", truth:65, prob:50, light:"y", trend:"flat", note:"", lastSeen:"2026-08-04T19:10:50Z", baseProb:50, dead:true, deadReason:"No recent credible reporting; stale rumour (5+ weeks old)", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -148,7 +148,9 @@ const HUB = {
   yahooSportsviaDavidOrnsteinLewisHall: {l:"Yahoo Sports via David Ornstein", u:"https://news.google.com/rss/articles/CBMilAFBVV95cUxPNkxwLXQ4Z0NESXFiVl9ITm1PMkJLdzFuUGVmcjFtbmk4ZnllWmpSVE1fclBpSWRLSGlwWjdwVEZVY3VuSlRDeC1tbUJZV2M5THdnQUZocm5JNmlTcFhaNFYxbFhMOWlVUTQ2R2xsWmUza0h1U3pCd3p2ZUNYekVQbVMyc3AtYWVTaVpSQ3NsZElXdjRI"},
   football365viaDavidOrnsteinJuventusmidfielder1: {l:"Football365 via David Ornstein", u:"https://news.google.com/rss/articles/CBMivgFBVV95cUxQbG5qV1ZEYi1wNEhReEJPdmdfZ1B1QW1UdHhIOVpCdzBXUll0NFZORmdzMDJZZUI2d3pWenlqN3oyYlVXUVpHaVFZWVZpNnZNdE4yN2xwSFU2dnBsZ0s1MmlLcklhT3JVdzBuQndLZkNxSkk3amJSUXBQVTJUNXY1V215UjlnMHZJQVNoNVNpOTBkc3VobnVpQjlqM2tGdEctY0FEc1lHYlY4R1E1bGhVVDFPM0s4Qzh5amNNZXd3"},
   theAthleticviaDavidOrnsteinMarcusRashford: {l:"The Athletic via David Ornstein", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxNamxYNnJrTy02aEE3M1o5Tm9vaWVyS2t1VXdhYTlSXzhvQ01QaEgzZGgwTFZHQUZVRmg4eDI1OHZIZDdMNGZJU3RDTHljOGgxMVpQMHdzd3lKRGZrV01zd3REdVBEMGpaNHlJSDlpT0QtdzF3WlZmZks3cERYOTVXLThzOXVIVGdaUk9ZWFdsV2pZRkNzeUJsWVdCcjRMalJnT2lJN01R"},
-  tEAMtalkviaDavidOrnsteinLewisHall: {l:"TEAMtalk (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxObE1QSHhlQjk2XzA1cXE4Zks2UFFkZFZfYmh2ZEQ1TDlLdkZRYzEwT3VWR3IzbGxlZHMySFdna2tiaXFKT1h3NWtQSUZBM25xTzlzZU9Cek41VnJVYWRfYWpmRFBNSHVrU1doRmRVSVJEMlllSUlNSkd3bVF5eUJNTjdYck1mYjlHU1V5WmhvUjIyakRGQVNhY2ZOVlJvb0xUS2lvaFZoZVNTbFFSVlFIN3NSdG1kdTFQZXJKcA?oc=5"}};
+  tEAMtalkviaDavidOrnsteinLewisHall: {l:"TEAMtalk (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxObE1QSHhlQjk2XzA1cXE4Zks2UFFkZFZfYmh2ZEQ1TDlLdkZRYzEwT3VWR3IzbGxlZHMySFdna2tiaXFKT1h3NWtQSUZBM25xTzlzZU9Cek41VnJVYWRfYWpmRFBNSHVrU1doRmRVSVJEMlllSUlNSkd3bVF5eUJNTjdYck1mYjlHU1V5WmhvUjIyakRGQVNhY2ZOVlJvb0xUS2lvaFZoZVNTbFFSVlFIN3NSdG1kdTFQZXJKcA?oc=5"},
+  tEAMtalkOrnsteinLewisHall: {l:"TEAMtalk (Ornstein)", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxObE1QSHhlQjk2XzA1cXE4Zks2UFFkZFZfYmh2ZEQ1TDlLdkZRYzEwT3VWR3IzbGxlZHMySFdna2tiaXFKT1h3NWtQSUZBM25xTzlzZU9Cek41VnJVYWRfYWpmRFBNSHVrU1doRmRVSVJEMlllSUlNSkd3bVF5eUJNTjdYck1mYjlHU1V5WmhvUjIyakRGQVNhY2ZOVlJvb0xUS2lvaFZoZVNTbFFSVlFIN3NSdG1kdTFQZXJKcA"},
+  tribalFootballOrnsteinMoussaBaleba: {l:"TribalFootball (Ornstein)", u:"https://news.google.com/rss/articles/CBMijwJBVV95cUxOVkdLMld6UXNocGFKX195TDlaVUQ2cWJsNDdrb3U3Uk1mYXdRTVRGaHp5WllLNnFNbFJnWDZrczFZN3V0dnZfVkRLd1ctSXJNZG5sN2lsYnRhTm1QZlRVRzlvQXYtOVRaUTlRb1VtNVhOWkUza3ZhRzRqQXlKZVlNbWNzRUliMmNyVXBLcFdRR0VaTkNDazJSakV5Y0VkakhXbzJnTW1YbFJaSEh5dDdxMjRMR2tVZTEzNU5xMGFjUzN6WkFHRnJTTnZaYm56YjlfWm5KTk5MRlV1ckcwdU9DakNuVGFrZzdLLTJVZGlqUU5RUHktQUREU1pXdmcwbVd1S2tMMmtyVE5CTVFuOVVJ"}};
 
 const LINKMAP = {
   "Andrey Santos": ["skyMUFC","manUtdNews", "tEAMtalkYouriTielemans"],
@@ -163,7 +165,7 @@ const LINKMAP = {
   "Mateus Fernandes": ["skyMUFC"],
   "Iliman Ndiaye": ["caughtoffside"],
   "Manu Kone": ["gazzetta","caughtoffside"],
-  "Lewis Hall": ["skyMUFC", "skySportsPaperTalkviaTheSunLewisHall", "davidOrnsteinviaGoogleNewsLewisHall", "yahooSportsviaDavidOrnsteinLewisHall", "tEAMtalkviaDavidOrnsteinLewisHall"],
+  "Lewis Hall": ["skyMUFC", "skySportsPaperTalkviaTheSunLewisHall", "davidOrnsteinviaGoogleNewsLewisHall", "yahooSportsviaDavidOrnsteinLewisHall", "tEAMtalkviaDavidOrnsteinLewisHall", "tEAMtalkOrnsteinLewisHall"],
   "Murillo": ["teamtalkMUFC"],
   "Aurélien Tchouaméni": ["asTchouameni"],
   "Marcus Rashford": ["gazzetta","caughtoffside", "fabrizioRomanoXMarcusRashford", "theAthleticviaDavidOrnsteinMarcusRashford"],
@@ -178,7 +180,7 @@ const LINKMAP = {
   "Gabby George": ["manchesterUnitedofficialGabbyGeorge"],
   "Cristiano Ronaldo": ["fabrizioRomanoXCristianoRonaldo"],
   "George": ["bBCSportFootballGeorge"],
-  "Moussa Baleba": ["tribalFootballviaDavidOrnsteinMoussaBaleba"],
+  "Moussa Baleba": ["tribalFootballviaDavidOrnsteinMoussaBaleba", "tribalFootballOrnsteinMoussaBaleba"],
   "Juventus midfielder": ["football365viaDavidOrnsteinJuventusmidfielder", "football365viaDavidOrnsteinJuventusmidfielder1"]};
 
 const WL_LINKMAP = {

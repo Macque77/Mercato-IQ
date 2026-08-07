@@ -87,15 +87,15 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Igor Julio", sub:"23 · Brazil · D", club:"Brighton", pos:"CB", report:"The young Brighton centre-back has emerged as a target", src:"Unknown", tier:3, fee:"Unknown", truth:60, prob:55, light:"g", trend:"up", note:"Young centre-back emerging as a target", lastSeen:"2026-08-07T01:42:32Z", baseProb:55, dead:true, deadReason:"No recent credible updates; snippet evidence insufficient to confirm active pursuit"},
-  {name:"Takehiro Tomiyasu", sub:"24 · Japan · RB", club:"Arsenal", pos:"RB", report:"Crystal Palace sign Takehiro Tomiyasu after successful trial", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Deal confirmed", lastSeen:"2026-08-07T17:40:24Z", baseProb:100},
-  {name:"Solly March", sub:"31 · England · LB", club:"Brighton", pos:"LB", report:"Crystal Palace set to sign Takehiro Tomiyasu and consider move for Solly March", src:"BBC", tier:2, fee:"Free", truth:70, prob:65, light:"g", trend:"flat", note:"Free transfer consideration", lastSeen:"2026-08-07T17:40:24Z", baseProb:65},
+  {name:"Takehiro Tomiyasu", sub:"Arsenal · Defender", club:"Arsenal", pos:"LB/RB", report:"Crystal Palace sign Takehiro Tomiyasu after successful trial", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing after trial", lastSeen:"2026-08-07T23:07:30Z", baseProb:100},
+  {name:"Solly March", sub:"31 · England · LB", club:"Brighton", pos:"LB", report:"Crystal Palace set to sign Takehiro Tomiyasu and consider move for Solly March", src:"BBC", tier:2, fee:"Free", truth:70, prob:65, light:"g", trend:"flat", note:"Free transfer consideration", lastSeen:"2026-08-07T17:40:24Z", baseProb:65, dead:true, deadReason:"Rumour aged; no fresh snippet confirming this link"},
   {name:"Unknown RSL wing-back", sub:"Wing-back · Real Salt Lake", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal for Real Salt Lake wing-back", src:"The Athletic", tier:2, fee:"£11m", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks; player name not disclosed in snippet", lastSeen:"2026-08-06T14:13:57Z", baseProb:70, dead:true, deadReason:"Cannot identify player; no credible source or player name provided"}
 ];
 
 const OUTGOING = [
-  {name:"Eberechi Eze", sub:"26 · England · AM", club:"Arsenal", pos:"AM", report:"Arsenal reach agreement in principle to sign Eberechi Eze", src:"Multiple", tier:1, fee:"Undisclosed", truth:90, prob:85, light:"g", trend:"up", note:"Agreement in principle reached", lastSeen:"2026-08-07T17:40:24Z", baseProb:85},
-  {name:"Marc Guehi", sub:"24 · England · CB", club:"Liverpool", pos:"CB", report:"Liverpool bid £35m for Marc Guehi. Medical undergoing", src:"Multiple", tier:2, fee:"£35m", truth:85, prob:80, light:"g", trend:"up", note:"Medical in progress", lastSeen:"2026-08-07T17:40:24Z", baseProb:80},
-  {name:"Aaron Wan-Bissaka", sub:"26 · England · RB", club:"Manchester United", pos:"RB", report:"Manchester United hopeful of finally completing Aaron Wan-Bissaka transfer from Crystal Palace", src:"Telegraph", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Hopeful of completion", lastSeen:"2026-08-07T17:40:24Z", baseProb:80}
+  {name:"Eberechi Eze", sub:"Arsenal · Midfielder", club:"Arsenal", pos:"AM", report:"Arsenal reach agreement in principle to sign Eberechi Eze", src:"on-page", tier:2, fee:"Undisclosed", truth:80, prob:80, light:"g", trend:"down", note:"Agreement in principle", lastSeen:"2026-08-07T23:07:30Z", baseProb:80},
+  {name:"Marc Guehi", sub:"Liverpool · Defender", club:"Liverpool", pos:"CB", report:"Liverpool bid £35m for Marc Guehi", src:"on-page", tier:2, fee:"£35m", truth:75, prob:75, light:"g", trend:"down", note:"Medical underway", lastSeen:"2026-08-07T23:07:30Z", baseProb:75},
+  {name:"Aaron Wan-Bissaka", sub:"Manchester United · Defender", club:"Manchester United", pos:"RB", report:"Manchester United hopeful of finally completing Aaron Wan-Bissaka transfer from Crystal Palace", src:"The Telegraph", tier:2, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Transfer being finalized", lastSeen:"2026-08-07T23:07:30Z", baseProb:85}
 ];
 const DEAD = [
   {name:"Real Salt Lake wing-back", sub:"Wing-back · Unknown", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal", src:"The Athletic", tier:2, fee:"£11m", truth:80, prob:75, light:"g", trend:"up", note:"Advanced negotiations", lastSeen:"2026-08-06T14:09:02Z", baseProb:75, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -140,7 +140,7 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Adam Wharton", club:"Crystal Palace", pos:"CM", dir:"out", age:"~1 wk", tier:2, note:"(Also in main table.) Prized young midfielder; elite interest, £60m-plus holder's price."}
+  {name:"Adam Wharton", club:"Crystal Palace", pos:"CM", dir:"out", age:"~1 wk", tier:2, note:"(Also in main table.) Prized young midfielder; elite interest, £60m-plus holder's price.", dead:true, deadReason:"No recent transfer activity reported; entry over 1 week old with no updates"}
 ];
 
 /* ---------- SOURCE LINKS ----------

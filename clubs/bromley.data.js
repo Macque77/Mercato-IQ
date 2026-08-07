@@ -39,7 +39,7 @@ const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Ethon Archer", sub:"Loan", club:"Luton Town", pos:"Unknown", report:"Signed on loan from Luton Town", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Loan arrival confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
   {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", report:"Signed from Wealdstone", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing from Wealdstone", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Victor Adeboyejo", sub:"Striker", club:"Free transfer", pos:"ST", report:"Bromley sign striker on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Free transfer confirmed", lastSeen:"2026-08-07T17:40:24Z", baseProb:100}
+  {name:"Victor Adeboyejo", sub:"Striker", club:"Free Transfer", pos:"ST", report:"Bromley sign striker on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T23:07:30Z", baseProb:100}
 ];
 const OUTGOING = [];
 const DEAD = [

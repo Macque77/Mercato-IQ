@@ -60,12 +60,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Ornstein reveals Barcola stance on joining Liverpool in stunning £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:65, prob:40, light:"y", trend:"down", note:"Player stance revealed; deal structure outlined but not agreed with PSG", lastSeen:"2026-08-07T17:40:24Z", baseProb:40},
-  {name:"Raul Asencio", sub:"22 · Spain · CB", club:"Real Madrid", pos:"Centre-back", report:"Intermediaries sounded Liverpool out on Asencio", src:"Multiple", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"down", note:"Early-stage interest; no formal approach confirmed", lastSeen:"2026-08-07T17:40:24Z", baseProb:25}
+  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Ornstein reveals Barcola stance on joining Liverpool in £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:60, light:"g", trend:"up", note:"Ornstein confirms medical done on Tuesday; player has agreed four-year deal", lastSeen:"2026-08-07T23:07:30Z", baseProb:60},
+  {name:"Raul Asencio", sub:"22 · Spain · CB", club:"Real Madrid", pos:"Centre-back", report:"Intermediaries sounded Liverpool out on Asencio", src:"Multiple", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"down", note:"Early-stage interest; no formal approach confirmed", lastSeen:"2026-08-07T17:40:24Z", baseProb:25, dead:true, deadReason:"No fresh snippet confirms or materially updates; intermediaries' initial sounding insufficient for live rumour without recent development"}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions Liverpool stance", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:50, prob:35, light:"y", trend:"down", note:"Tottenham interest reported; Liverpool have not indicated willingness to sell", lastSeen:"2026-08-07T17:40:24Z", baseProb:35}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions exit", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Speculative interest from Tottenham; no concrete progress reported", lastSeen:"2026-08-07T23:07:30Z", baseProb:35}
 ];
 const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',

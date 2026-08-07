@@ -41,11 +41,12 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Jan Virgili", sub:"Unknown · Spain · W", club:"RCD Mallorca", pos:"W", report:"Club Brugge close to signing Mallorca winger", src:"transferfeed", tier:3, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"flat", note:"Advanced talks reported", lastSeen:"2026-08-07T20:08:12Z", baseProb:60}
+  {name:"Jan Virgili", sub:"unknown · Spain · W", club:"Mallorca", pos:"W", report:"Club Brugge close to signing Mallorca winger", src:"Sacha Tavolieri", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"up", note:"Advanced talks reported", lastSeen:"2026-08-07T23:07:29Z", baseProb:65}
 ];
 
 const OUTGOING = [
-  {name:"Unknown player", sub:"Unknown · Unknown · Unknown", club:"Unknown competitor", pos:"Unknown", report:"Club Brugge loses player to competitor in Belgian Pro League", src:"Sacha Tavolieri", tier:2, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T20:08:12Z", baseProb:60}
+  {name:"Unknown player", sub:"Unknown · Unknown · Unknown", club:"Unknown competitor", pos:"Unknown", report:"Club Brugge loses player to competitor in Belgian Pro League", src:"Sacha Tavolieri", tier:2, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T20:08:12Z", baseProb:60, dead:true, deadReason:"Cannot identify player from on-page entry; no supporting snippet with player name found"},
+  {name:"Bisiwu", sub:"unknown · unknown · unknown", club:"Barcelona", pos:"unknown", report:"Club Brugge and Barcelona have reached an agreement over transfer", src:"Sacha Tavolieri", tier:3, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Agreement reported between clubs; full player details not disclosed in snippet", lastSeen:"2026-08-07T23:07:29Z", baseProb:70}
 ];
 
 const RISERS = [];
@@ -73,18 +74,20 @@ const HUB = {
   voetbalPrimeurbeJorenBisiwu: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxQRXN6VmxENWRsOF9DcDZ5ODBwaGUzLWJrTUhuNFJjdVkxLWZ6ajNLQkVhcjUxYmtNT3lVWDZxTlF2STJzZ0Rxd0hpTmNOdzhzYjZ1aEF6TXlsQnRFVVRNVE55a2FGZVBlangzYlRBNFpNWTdGVGZnMWc1TzF6aE9fQzYwdDlaWk8xaENydEE2XzAwdXpWWE9EYzFiSWRybzhwZnFGdWctZU5nMU5Sc1VHZ1pQZHB0Sk1DSHBDV0RBaXY0aW12"},
   voetbalPrimeurbePetarVasovic: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxPTjQ0ZVJieUFDWDlZMVlhNHJ1SnVxSk9hVVFWQkU1WG5va2ZkNEtHSDgzWVptaXBUQ29QSDhCRjJfWTlnRFduUWhDUUJmbWE4V2c3R1hpNWE0YnBjaUZYZXRrZGlhY2x2MWdybHlMUFcwRUI3OHAtbmxKLVVNdmdiTEwxUTFCTHFGNFoxR0lsN0p3Y1hHcFBnQldVV2k"},
   voetbalPrimeurbeUnknown15yearolddefender: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPM3lJajJLaGhBa1NXR1FQXzdERXdVcW1vZl9YMGFVRXRnT0o5cWpMTS03dVJLaHJzRm02UEtyTHdTX1QxVjlPa01TTFVmeWpEbWxnbGtEX292WGVfdjlFb3Zka2pFMGFyTXBkY2RIV0hEbVZ6QzRnQ1drN2hhR1Y4cXZLU2hfaEQ2TnBXWTVsd2FnVEVTRjJVQUd5UmRjdTVLZmlCMTBfZzlZTzVIbHNFeUdJVFFEV2ZXOTgtc1Z0eXQ2a1FPUGc"},
-  voetbal24beUnknownplayer: {l:"Voetbal24.be", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxONFZfb0Z0TmNOSkpxZEJ5Zm1ZcHRqRDhuNEJ1M28zbTZoaEI2Qnk0RDk3ancza21Zdk1VZlpaUnFQTDNGNHhHVVd6dE9BaDRZcnBBM3dpNWJYTDJmOXV4MGNHY1dERHMxaHBJVVR0UEpaUDN4Y3BkWGJmd25qZG9keHdqR2JwdE0"}};
+  voetbal24beUnknownplayer: {l:"Voetbal24.be", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxONFZfb0Z0TmNOSkpxZEJ5Zm1ZcHRqRDhuNEJ1M28zbTZoaEI2Qnk0RDk3ancza21Zdk1VZlpaUnFQTDNGNHhHVVd6dE9BaDRZcnBBM3dpNWJYTDJmOXV4MGNHY1dERHMxaHBJVVR0UEpaUDN4Y3BkWGJmd25qZG9keHdqR2JwdE0"},
+  voetbal24beJanVirgili: {l:"Voetbal24.be", u:"https://news.google.com/rss/articles/CBMiiwFBVV95cUxPclotMTlyX1ZIMU5BNnBVQlQ0UENicDNEZXBmRzQzSHRDYXFyNzFIUC1idndsT3hXbWljRGZCX0lLVkl2LVcxT1BCdVVaX25FN3ZCamtnN2lrN0ppSG1jZEdwcGE0OTdtTV9CNkpMU1BwRExCXzJWYmo4eEpvWGRpdk5yblhVcmRQS3hJ?oc=5"}};
 
 const LINKMAP = {
   "David Njoku": ["hln"],
   "Bisiwu": ["voetbalPrimeurbeBisiwu"],
   "Vasovic": ["voetbalPrimeurbeVasovic", "voetbalPrimeurSachaTavolieriVasovic"],
   "Cheveyo Tsawa": ["voetbalPrimeurbeCheveyoTsawa", "voetbalPrimeurbeCheveyoTsawa1"],
-  "Jan Virgili": ["hLNJanVirgili", "voetbalPrimeurSachaTavolieriJanVirgili", "hLNKristofTerreurJanVirgili"],
+  "Jan Virgili": ["hLNJanVirgili", "voetbalPrimeurSachaTavolieriJanVirgili", "hLNKristofTerreurJanVirgili", "voetbal24beJanVirgili"],
   "Joren Bisiwu": ["voetbalPrimeurbeJorenBisiwu"],
   "Petar Vasovic": ["voetbalPrimeurbePetarVasovic"],
   "Unknown 15-year-old defender": ["voetbalPrimeurbeUnknown15yearolddefender"],
-  "Unknown player": ["voetbal24beUnknownplayer"]};
+  "Unknown player": ["voetbal24beUnknownplayer"],
+  "unknown defender": ["voetbalPrimeurSachaTavolieriJanVirgili"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

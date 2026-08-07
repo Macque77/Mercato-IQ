@@ -37,8 +37,7 @@ const CONFIRMED_IN = [
   {name:"Kayden Jackson", sub:"", club:"Derby County", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departs Derby County for Bradford City"}
 ];
 const CONFIRMED_OUT = [
-  {name:"Ash Power", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Makes move to Wigan Athletic"},
-  {name:"Curtis Tilt", sub:"Unknown · Unknown · Centre-half", club:"Unknown", pos:"CB", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Makes surprise switch to League One rivals"}
+  {name:"Ash Power", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Makes move to Wigan Athletic"}
 ];
 const INCOMING = [
   {name:"Adam Phillips", sub:"MF", club:"Barnsley", pos:"MF", report:"Adam Phillips joins Bradford City", src:"Pete O'Rourke", tier:3, fee:"Undisclosed", truth:90, prob:90, light:"g", trend:"up", note:"On-page rumour, no fresh snippet detail", lastSeen:"2026-08-07T14:38:27Z", baseProb:90},

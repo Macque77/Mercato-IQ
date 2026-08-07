@@ -80,13 +80,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimarães", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle have agreed fee; player awaiting medical", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:95, prob:90, light:"g", trend:"flat", note:"Near total agreement reached; medical imminent", lastSeen:"2026-08-07T20:08:12Z", baseProb:90},
-  {name:"Vinícius Júnior", sub:"24 · Brazil · W", club:"Real Madrid", pos:"W", report:"Arsenal exploring improved offer; Ornstein rates chances", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"up", note:"Arsenal considering improved bid; significant hurdles remain with Real Madrid", lastSeen:"2026-08-07T20:08:12Z", baseProb:25}
+  {name:"Bruno Guimarães", sub:"28 · Brazil · M", club:"Newcastle United", pos:"M", report:"Arsenal and Newcastle have agreed fee; player awaiting medical", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"up", note:"Near total agreement reached; medical imminent", lastSeen:"2026-08-07T23:07:29Z", baseProb:95},
+  {name:"Vinícius Júnior", sub:"24 · Brazil · W", club:"Real Madrid", pos:"W", report:"Arsenal exploring improved offer; Ornstein rates chances", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"up", note:"Improved offer being explored; Real Madrid contract situation monitored", lastSeen:"2026-08-07T23:07:29Z", baseProb:35}
 ];
 
 const OUTGOING = [
   {name:"Mathias Norgaard", sub:"Midfielder", club:"Arsenal", pos:"MID", report:"BBC Sport and Sky Sports confirm Norgaard completed move to Everton", src:"BBC Sport Football / Sky Sports Football", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-06T14:33:42Z", baseProb:100, dead:true, deadReason:"Name mismatch correction — player is Christian Norgaard, not Mathias"},
-  {name:"Christian Norgaard", sub:"29 · Denmark · CM", club:"Everton", pos:"CM", report:"Everton reach agreement in principle; £7m transfer", src:"David Ornstein", tier:1, fee:"£7m", truth:85, prob:80, light:"g", trend:"down", note:"Agreement in principle with Everton reached", lastSeen:"2026-08-07T20:08:12Z", baseProb:80}
+  {name:"Christian Norgaard", sub:"29 · Denmark · M", club:"Everton", pos:"M", report:"Everton reach agreement in principle; £7m transfer", src:"David Ornstein", tier:1, fee:"£7m", truth:90, prob:90, light:"g", trend:"up", note:"Agreement in principle reached with Everton", lastSeen:"2026-08-07T23:07:29Z", baseProb:90}
 ];
 const DEAD = [
   {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No credible updates in recent snippets; link appears stale", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
@@ -195,7 +195,8 @@ const HUB = {
   davidOrnsteinFootball365BrunoGuimares: {l:"David Ornstein / Football365", u:"https://news.google.com/rss/articles/CBMikgFBVV95cUxONGZWOFc3SnVFTE5PSEhEU05ZSkFReURMeVJVY2dacGZMcjhmTGctMDQxbnVmNklfdFZlanhYU0RvLS1USHFtVVVLWUNCS1hmQUxHcTVlOWpvbkFIQmlqNDA1UmdnZWtBckhlMVQzaElQaS1DM202TGo2eEtycGtVTWU0UDVfejExX2FyamNjSTZlZw"},
   davidOrnsteinTheAthleticVinciusJnior: {l:"David Ornstein / The Athletic", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxObmF5RWlEVV9jcGNtaF9NV0xTeFJ0OElhVjdKanA1LTc5dFRXWnp6Tk1jVF9GRkJTVlFaalhMcERqQTN4VTc0b3otT2Y3UlNoaXB0ME1HRW5wdlB1WU1ZWnk3QUxReHl2QmZWNmpvTE0tX3hHa0hGN1lfdk5NbDJHMm5CYVBURThkNkpZMFpBdWxkQnQzeUFNSGFwYXU5c2FzRU5EdFU3bjM4c0dLa3pOcEtKcw"},
   theAthleticBrunoGuimares: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxNTHZ3OE1vTmh1V3NsenI0T3E3MndfbW1zNG9RRFhJdV84UDJvZS1rUkpjb3NQQVdEc1BsNkRuMHcyNWtkWEJaZno3WW5GbmczZmFFOXRvUUlIdVFUbVpYMDBhYkJmbmhueTMwSFZMQTNrYm0tM0x4b3FUdXhqdWphZVhmelBNb3VCaE91UlplQW9pTGVKNmNEUGUwcw"},
-  football365viaDavidOrnsteinVinciusJnior: {l:"Football365 via David Ornstein", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxNRm1Fa21zWFVBNlQyRENsVEtFV1lxSVAtWktZNzFzWW5PY2JxZ0hoNHl0R29ydWhhVV9LaDNZWm9WZG1Ma1R2aXVMMGZXUmJ4ay1CMnhrcjl2YzhfSXotNERueDFWSjdpZDI2UE9kNGMtdC1vV2ZfNG5veGdOdnJTYjJrMmhGN1MzdkYzRXVEVGxNQTU2MEhmTVZkRW5NeFpKUWR6bWd5WXJfOVdEWS1oZ1F0bw"}};
+  football365viaDavidOrnsteinVinciusJnior: {l:"Football365 via David Ornstein", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxNRm1Fa21zWFVBNlQyRENsVEtFV1lxSVAtWktZNzFzWW5PY2JxZ0hoNHl0R29ydWhhVV9LaDNZWm9WZG1Ma1R2aXVMMGZXUmJ4ay1CMnhrcjl2YzhfSXotNERueDFWSjdpZDI2UE9kNGMtdC1vV2ZfNG5veGdOdnJTYjJrMmhGN1MzdkYzRXVEVGxNQTU2MEhmTVZkRW5NeFpKUWR6bWd5WXJfOVdEWS1oZ1F0bw"},
+  davidOrnsteinTheAthleticVinciusJnior1: {l:"David Ornstein (The Athletic)", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxNR1hlYjFJdUpsZm5XcDU0LVVBdkxyWF9zb1hMM0x1U0lETlRFa2VhWVpnNHFnb0g0cDh0dHIyVTc1ZkIzdXo2THVJdE16blpYNGZhcDR5VGRFVFJPSEpPS3RYM0NQRmNEc05TclNsNTdwS01OREpKRVNuN0k4clM2QkYyTE9CenNGNkUtYUJXZGpBWkE3cUVJeFRDVmhqenQwUVhzX0ZPLThCVTBBbFhhVFBBNHl2NDRJVE40Vg"}};
 const LINKMAP = {
   "Morgan Rogers": ["bbcArs","mokbel"],
   "Eli Junior Kroupi": ["bbcArs"],
@@ -223,7 +224,7 @@ const LINKMAP = {
   "Kristoffer Norgaard": ["bBCSportFootballKristofferNorgaard"],
   "Mathias Norgaard": ["skySportsFootballChristianNorgaard", "bBCSportFootballKristofferNorgaard", "bBCSportMathiasNorgaard"],
   "Morten Thorsby": ["skySportsFootballChristianNorgaard"],
-  "Vinícius Júnior": ["theAthleticDavidOrnsteinVinciusJnior", "davidOrnsteinFootball365VinciusJnior", "davidOrnsteinTheAthleticVinciusJnior", "football365viaDavidOrnsteinVinciusJnior"]};
+  "Vinícius Júnior": ["theAthleticDavidOrnsteinVinciusJnior", "davidOrnsteinFootball365VinciusJnior", "davidOrnsteinTheAthleticVinciusJnior", "football365viaDavidOrnsteinVinciusJnior", "davidOrnsteinTheAthleticVinciusJnior1"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
   "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",

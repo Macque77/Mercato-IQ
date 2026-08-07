@@ -97,7 +97,7 @@ const INCOMING = [
   {name:"Harvey Elliott", sub:"AM/W · England", club:"Liverpool", pos:"AM/W", report:"~2 days ago", src:"Football Insider", tier:3, fee:"£20-25m", truth:45, prob:20, light:'o', trend:'up',
    note:"Fresh link for the Liverpool creator seeking minutes, a clear quality and resale profile. Obstacle: Football Insider-tier sourcing, a likely crowded race for a player of his profile, and price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
-   note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
+   note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18, dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
   {name:"James Trafford", sub:"24 · England · GK", club:"Manchester City", pos:"GK", report:"Joins from Manchester City in deal worth up to £45m", src:"BBC", tier:2, fee:"£45m", truth:100, prob:100, light:"g", trend:"flat", note:"Club-record deal, completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100, dead:true, deadReason:"Completed signing from Manchester City - moved to confirmed_in"}
 ];
 
@@ -107,13 +107,13 @@ const OUTGOING = [
   {name:"Joe Gelhardt", sub:"ST · England", club:"Hull / Rangers / Celtic", pos:"ST", report:"~9h ago", src:"Aggregated", tier:3, fee:"£4-8m / loan", truth:75, prob:50, light:'y', trend:'up',
    note:"One year left on his deal, so a decision is forced this window. Newly-promoted Hull could pay a fee; Rangers' move is described as 'difficult'; Celtic also keen. The short contract erodes Leeds' leverage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
   {name:"Ao Tanaka", sub:"27 · Japan · CM", club:"Newcastle / Everton / Bundesliga", pos:"CM", report:"~4 wks", src:"F. Plettenberg", tier:3, fee:"£12-18m", truth:70, prob:45, light:'y', trend:'up',
-   note:"Open to leaving after reduced minutes, with a long suitor list (Newcastle, Everton, Man Utd checks, plus Freiburg, Union Berlin, Southampton). PRICING: PL/Bundesliga demand holds a floor, but a player pushing to go softens it. A sale would trigger a midfield buy (Hackney/Charles).", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+   note:"Open to leaving after reduced minutes, with a long suitor list (Newcastle, Everton, Man Utd checks, plus Freiburg, Union Berlin, Southampton). PRICING: PL/Bundesliga demand holds a floor, but a player pushing to go softens it. A sale would trigger a midfield buy (Hackney/Charles).", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
   {name:"Wilfried Gnonto", sub:"W · Italy", club:"SC Freiburg", pos:"W", report:"~2 days ago", src:"S. Vidal", tier:3, fee:"£20-28m", truth:65, prob:40, light:'y', trend:'up',
    note:"Freiburg are keen and Leeds have SET a transfer fee, a holder's stance on a genuine resale asset. PRICING: still a saleable talent, so the price is firm; an exit here is the most likely funder of a 'blockbuster' incoming.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
   {name:"Largie Ramazani", sub:"W · DR Congo/Belgium", club:"Valencia", pos:"W", report:"~3 wks", src:"Football media", tier:3, fee:"£8-12m", truth:63, prob:38, light:'y', trend:'flat',
-   note:"On loan at Valencia, where he has impressed (6 goals); a permanent move or fresh loan is the likely outcome. Squad-trimming that helps SCR headroom.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
+   note:"On loan at Valencia, where he has impressed (6 goals); a permanent move or fresh loan is the likely outcome. Squad-trimming that helps SCR headroom.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38, dead:true, deadReason:"No fresh snippet evidence in 3+ weeks; presumed stale"},
   {name:"Mateo Joseph", sub:"22 · Spain · ST", club:"Mallorca / Leicester / Wrexham", pos:"ST", report:"~4 wks", src:"TEAMtalk", tier:3, fee:"£6-10m", truth:50, prob:25, light:'o', trend:'down',
-   note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+   note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
   {name:"Karl Darlow", sub:"33 · England · GK", club:"Leeds United", pos:"GK", report:"Signs with Manchester United after Leeds exit", src:"The Athletic", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Completed move to Manchester United", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
   {name:"Lucas Perri", sub:"23 · Brazil · GK", club:"Leeds United", pos:"GK", report:"Signing with Torino from Leeds United", src:"MOT Leeds News", tier:3, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"Torino interest in signing goalkeeper", lastSeen:"2026-08-07T14:38:27Z", baseProb:75}
 ];
@@ -178,14 +178,14 @@ const WATCHLIST = [
   {name:"Axel Disasi", club:"Chelsea", pos:"CB", dir:"in", age:"~13d", tier:3, note:"Football Insider: Leeds expect to lead the race if he is made available."},
   {name:"Nick Pope", club:"Newcastle", pos:"GK", dir:"in", age:"~13d", tier:4, note:"Farke reportedly weighing a £5-10m move, an experienced GK alternative to Trafford."},
   {name:"Dmytro Riznyk", club:"Shakhtar", pos:"GK", dir:"in", age:"~9d", tier:4, note:"A 'serious interest' GK link; approach reported, little corroboration."},
-  {name:"Santiago Bueno", club:"Wolves", pos:"CB", dir:"in", age:"~3 wks", tier:3, note:"Pete O'Rourke: Leeds targeting Wolves' defenders post-relegation."},
-  {name:"Kevin Mac Allister", club:"Union SG", pos:"CB", dir:"in", age:"~4 wks", tier:3, note:"Among several PL clubs tracking the Argentine defender."},
-  {name:"Daniel Svensson", club:"Dortmund", pos:"LB", dir:"in", age:"~3 wks", tier:3, note:"Tuttomercato: growing English interest in the 24-year-old left-back."},
-  {name:"Jhon Solis", club:"Girona", pos:"MF", dir:"in", age:"~3 wks", tier:4, note:"Leeds and Brentford credited with interest in the Colombian midfielder."},
+  {name:"Santiago Bueno", club:"Wolves", pos:"CB", dir:"in", age:"~3 wks", tier:3, note:"Pete O'Rourke: Leeds targeting Wolves' defenders post-relegation.", dead:true, deadReason:"No fresh snippet evidence in 3+ weeks; presumed stale"},
+  {name:"Kevin Mac Allister", club:"Union SG", pos:"CB", dir:"in", age:"~4 wks", tier:3, note:"Among several PL clubs tracking the Argentine defender.", dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
+  {name:"Daniel Svensson", club:"Dortmund", pos:"LB", dir:"in", age:"~3 wks", tier:3, note:"Tuttomercato: growing English interest in the 24-year-old left-back.", dead:true, deadReason:"No fresh snippet evidence in 3+ weeks; presumed stale"},
+  {name:"Jhon Solis", club:"Girona", pos:"MF", dir:"in", age:"~3 wks", tier:4, note:"Leeds and Brentford credited with interest in the Colombian midfielder.", dead:true, deadReason:"No fresh snippet evidence in 3+ weeks; presumed stale"},
   {name:"Gustavo Hamer", club:"Sheffield Utd", pos:"MF", dir:"in", age:"~3 wks", tier:4, note:"Sports Boom: monitoring the creative midfielder's situation."},
   {name:"Wilfried Gnonto", club:"SC Freiburg", pos:"W", dir:"out", age:"~2d", tier:3, note:"(Also in main table.) Freiburg target; Leeds have set a fee."},
-  {name:"Sebastiaan Bornauw", club:"FC Koln", pos:"CB", dir:"out", age:"~3 wks", tier:3, note:"Kicker: a candidate to return to Koln; on-loan centre-back."},
-  {name:"Maximilian Wober", club:"Werder Bremen", pos:"CB", dir:"out", age:"~4 wks", tier:3, note:"On loan at Werder; future beyond the season unclear, contract to 2027."},
+  {name:"Sebastiaan Bornauw", club:"FC Koln", pos:"CB", dir:"out", age:"~3 wks", tier:3, note:"Kicker: a candidate to return to Koln; on-loan centre-back.", dead:true, deadReason:"Recent snippets (Bornauw transfer won't happen) indicate deal collapsed"},
+  {name:"Maximilian Wober", club:"Werder Bremen", pos:"CB", dir:"out", age:"~4 wks", tier:3, note:"On loan at Werder; future beyond the season unclear, contract to 2027.", dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
   {name:"Sam Byram", club:"(seeking club)", pos:"DF", dir:"out", age:"~9d", tier:4, note:"Just 85 minutes all season; a likely free-agent-style departure."}
 ];
 
@@ -222,7 +222,8 @@ const HUB = {
   skySportsJamesTrafford1: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcllrZE53Sk9DWEZ4dGkyYVhqeTJWdFdnSmVxMEY4MzhkcGE4NzFFREw3VFpjd21GYUtDbzZ4bjZJLXpMNFBVdmU0Sk9kQ0hjVW52WEJEdzFlRWxaVjhENUFOcEV0WVpZV2RPdGVZQ1ZHckkxSlc2QXdRWlZPQ3IxWFZSd2JtR2RKdnVFdWVaUnZyeUNVcGxqMzBwYjdObGd6LTVsRzFMTWp5LUlHSjVUbnJ2OUxxMGFIRWJlc0VQLWpCOHZlTFVfMWpMZE9aMXhqaWpuVU1icjN6Rk0"},
   bBCJamesTrafford: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA5RUo5d3hqVmp2amlTSnhhbkQ3NlR3SURPQ0xtSEd2R3oxZFBkQXoyeWZBQjdQNE1OR0Z1OWJ1T2YxV3lubjZSOFhvak43akpBd3RKWExwQUt3NnpOX2hJdnRUVE16bms"},
   theAthleticKarlDarlow: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMijwFBVV95cUxOb2FTdnYtaUdtZWdmZ3dXcTFJanVVZmV0Q3lPSGwxWlV6Ukw5ZHJwNVhFUlNFYzZVODUzOWtFYlVoN0Rjd2ktNWptejJKZERoX2lxdGdJMFZwVGdTR1Qzak9CWFFicmRCU2ZXbF9kanBfN1ZGWml4X0tRMTR6VDVuazhfRXdSQTQ3cWlzTDVkaw"},
-  mOTLeedsNewsLucasPerri: {l:"MOT Leeds News", u:"https://news.google.com/rss/articles/CBMipwFBVV95cUxNRmdVOG01Vmh2eHQ0dEljRHpCV083bDU1Z09ra2RFTUJMX21NN3ZMSEsydXRRdWRTcTZSV0ExWUgzeU5GUGFRTzBnWmhzWG5QNGlGQnJJTlVnc2ZBTkhaUlBPN1VfUVlJZFlKNU0xaHNaNjRncVFQWmQ2RkVrLWZJWDh0azRMRmhjNFd4NDF3QTE1ODhnNGRTT080T2plUndVa2tRY0ZrSQ"}};
+  mOTLeedsNewsLucasPerri: {l:"MOT Leeds News", u:"https://news.google.com/rss/articles/CBMipwFBVV95cUxNRmdVOG01Vmh2eHQ0dEljRHpCV083bDU1Z09ra2RFTUJMX21NN3ZMSEsydXRRdWRTcTZSV0ExWUgzeU5GUGFRTzBnWmhzWG5QNGlGQnJJTlVnc2ZBTkhaUlBPN1VfUVlJZFlKNU0xaHNaNjRncVFQWmQ2RkVrLWZJWDh0azRMRmhjNFd4NDF3QTE1ODhnNGRTT080T2plUndVa2tRY0ZrSQ"},
+  bBCJamesTrafford1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA5RUo5d3hqVmp2amlTSnhhbkQ3NlR3SURPQ0xtSEd2R3oxZFBkQXoyeWZBQjdQNE1OR0Z1OWJ1T2YxV3lubjZSOFhvak43akpBd3RKWExwQUt3NnpOX2hJdnRUVE16bms?oc=5"}};
 const LINKMAP = {
   "Crysencio Summerville": ["leedslive","yep"],
   "Roony Bardghji": ["teamtalk","ypost"],
@@ -230,7 +231,7 @@ const LINKMAP = {
   "Hayden Hackney": ["nixon","teamtalk"],
   "Jonathan David": ["teamtalk"],
   "Lois Openda": ["teamtalk","leedslive"],
-  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford", "davidOrnsteinonXJamesTrafford", "skySportsJamesTrafford", "skySportsJamesTrafford1", "bBCJamesTrafford"],
+  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford", "davidOrnsteinonXJamesTrafford", "skySportsJamesTrafford", "skySportsJamesTrafford1", "bBCJamesTrafford", "bBCJamesTrafford1"],
   "Shea Charles": ["leedslive"],
   "Lutsharel Geertruida": ["yep"],
   "Liam Delap": ["bbcGossip","leedslive"],

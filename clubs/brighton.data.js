@@ -102,11 +102,11 @@ const CONFIRMED_OUT =
 const INCOMING = [
   {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Outgoing to Palace, not incoming to Brighton", lastSeen:"2026-08-07T01:42:32Z", baseProb:30, dead:true, deadReason:"Conflicting on-page entries (listed as both incoming and outgoing); no fresh snippet confirms movement; status unclear - retire to avoid duplication"},
   {name:"Gabby George", sub:"Unknown · Unknown · Unknown", club:"Manchester United", pos:"Unknown", report:"Gabby George joins Brighton & Hove Albion", src:"Manchester United Website", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer from Manchester United", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
-  {name:"Ayase Ueda", sub:"Striker · Feyenoord", club:"Feyenoord", pos:"ST", report:"Brighton make concrete move for Feyenoord striker", src:"Football Place", tier:3, fee:"", truth:65, prob:55, light:"g", trend:"flat", note:"Concrete move reported for striker", lastSeen:"2026-08-07T17:40:24Z", baseProb:55}
+  {name:"Ayase Ueda", sub:"24 · Japan · F", club:"Feyenoord", pos:"F", report:"Brighton make concrete move for Feyenoord striker", src:"Football Place", tier:3, fee:"", truth:65, prob:50, light:"y", trend:"down", note:"Concrete move reported for striker", lastSeen:"2026-08-07T23:07:29Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Jan Paul van Hecke", sub:"Defender · Brighton", club:"Brighton", pos:"DEF", report:"Tottenham agree £52million transfer with Brighton", src:"The Athletic", tier:1, fee:"£52m", truth:95, prob:85, light:"g", trend:"down", note:"Fee agreed with Tottenham", lastSeen:"2026-08-07T17:40:24Z", baseProb:85},
+  {name:"Jan Paul van Hecke", sub:"24 · Netherlands · D", club:"Tottenham", pos:"D", report:"Tottenham agree £52million Jan Paul van Hecke transfer with Brighton", src:"The Athletic", tier:2, fee:"£52m", truth:95, prob:95, light:"g", trend:"up", note:"Deal agreed with Tottenham", lastSeen:"2026-08-07T23:07:29Z", baseProb:95},
   {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Palace in advanced talks", lastSeen:"2026-08-07T01:42:32Z", baseProb:30, dead:true, deadReason:"Conflicting on-page entries (listed as both incoming and outgoing); no fresh snippet confirms movement; status unclear - retire to avoid duplication"}
 ];
 const DEAD = [

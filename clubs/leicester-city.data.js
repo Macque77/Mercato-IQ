@@ -43,10 +43,10 @@ const INCOMING = [
   {name:"Liam Cullen", sub:"ST", club:"Swansea City", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Departure described as imminent.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Dom Ballard", sub:"FW", club:"Leyton Orient", pos:"FW", report:"~1 wk ago", src:"FLW", tier:3, fee:"£5m+", truth:45, prob:35, light:'y', trend:'flat', note:"Contested with Bristol City, valuation a sticking point.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent update; rumour aged ~1 week with no confirmation"},
   {name:"Asmir Begovic", sub:"37 · Bosnia and Herzegovina · GK", club:"Free Agent", pos:"Goalkeeper", report:"Signed for Leicester City", src:"Various", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T17:40:24Z", baseProb:100},
-  {name:"Conor Chaplin", sub:"26 · England · F", club:"Ipswich Town", pos:"Forward", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T17:40:24Z", baseProb:100}
+  {name:"Conor Chaplin", sub:"28 · England · F", club:"Ipswich Town", pos:"F", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T23:07:30Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jeremy Monga", sub:"17 · Cameroon · W", club:"Manchester City", pos:"Winger", report:"Man City complete signing of 17-year-old Leicester City winger for £10m", src:"Sky Sports", tier:2, fee:"£10m", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed completed transfer", lastSeen:"2026-08-07T17:40:24Z", baseProb:100}
+  {name:"Jeremy Monga", sub:"17 · Ivory Coast · W", club:"Manchester City", pos:"W", report:"Man City complete signing of 17-year-old Leicester City winger", src:"Sky Sports", tier:2, fee:"£10m", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer", lastSeen:"2026-08-07T23:07:30Z", baseProb:100, dead:true, deadReason:"Confirmed transfer to Manchester City (moved to confirmed_out)"}
 ];
 const RISERS = [];
 const FALLERS = [];
