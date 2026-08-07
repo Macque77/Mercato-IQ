@@ -80,13 +80,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimarães", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle have agreed to Bruno Guimarães transfer; fee £75m; medical awaited", src:"David Ornstein", tier:1, fee:"£75m", truth:95, prob:95, light:"g", trend:"up", note:"Near total agreement reached; player awaiting medical", lastSeen:"2026-08-07T06:16:29Z", baseProb:95},
-  {name:"Vinícius Júnior", sub:"24 · Brazil · LW", club:"Real Madrid", pos:"LW", report:"Arsenal exploring deal for Vinícius Júnior; improved offer details revealed; agreement expected", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"up", note:"Arsenal pursuing with improved offer; Real Madrid's stance unclear but deal appears unlikely", lastSeen:"2026-08-07T06:16:29Z", baseProb:25}
+  {name:"Bruno Guimarães", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle have agreed to Bruno Guimarães transfer; near total agreement reached, awaiting medical", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:95, prob:90, light:"g", trend:"down", note:"Agreement confirmed between clubs; medical stage", lastSeen:"2026-08-07T10:18:48Z", baseProb:90},
+  {name:"Vinícius Júnior", sub:"24 · Brazil · W", club:"Real Madrid", pos:"W", report:"Arsenal exploring deal for Real Madrid winger Vinícius Junior; improved offer details revealed, agreement expected", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:60, prob:35, light:"y", trend:"up", note:"Early-stage exploration; Real Madrid contract situation noted", lastSeen:"2026-08-07T10:18:48Z", baseProb:35}
 ];
 
 const OUTGOING = [
   {name:"Mathias Norgaard", sub:"Midfielder", club:"Arsenal", pos:"MID", report:"BBC Sport and Sky Sports confirm Norgaard completed move to Everton", src:"BBC Sport Football / Sky Sports Football", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-06T14:33:42Z", baseProb:100, dead:true, deadReason:"Name mismatch correction — player is Christian Norgaard, not Mathias"},
-  {name:"Christian Norgaard", sub:"29 · Denmark · CM", club:"Everton", pos:"CM", report:"Everton reach agreement in principle with Arsenal to sign Christian Norgaard; £7m transfer", src:"David Ornstein", tier:1, fee:"£7m", truth:85, prob:85, light:"g", trend:"flat", note:"Agreement in principle reached between clubs", lastSeen:"2026-08-07T06:16:29Z", baseProb:85}
+  {name:"Christian Norgaard", sub:"29 · Denmark · CM", club:"Everton", pos:"CM", report:"Everton reach agreement in principle to sign Arsenal's Christian Norgaard", src:"David Ornstein", tier:1, fee:"£7m", truth:90, prob:85, light:"g", trend:"flat", note:"Agreement in principle reached with Everton", lastSeen:"2026-08-07T10:18:48Z", baseProb:85}
 ];
 const DEAD = [
   {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No credible updates in recent snippets; link appears stale", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
@@ -191,7 +191,9 @@ const HUB = {
   theAthleticDavidOrnsteinChristianNorgaard: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxPMTQycnNlVTFXQUZQSTNKRW95WUtIVFJwZGJOZXV5WVhfUUZ5SFpzTVBOcVR4eDBUQzRnVzBIUFkxV0R5RnJCZHA5U1Zqdm1rTlRkaUxkWnNpSG9KNFVfU2lnRWkzaEJQWlBoN01wNUVoOXJMU1E1b0NCdG9WbkRYQmFWdm1MN0o2Z3BxSlNOLTljZFRXdUNVVHltV0FwRU1aR3Jz"},
   davidOrnsteinTheAthleticBrunoGuimares: {l:"David Ornstein · The Athletic", u:"https://news.google.com/rss/articles/CBMikgFBVV95cUxONGZWOFc3SnVFTE5PSEhEU05ZSkFReURMeVJVY2dacGZMcjhmTGctMDQxbnVmNklfdFZlanhYU0RvLS1USHFtVVVLWUNCS1hmQUxHcTVlOWpvbkFIQmlqNDB1UmdnZWtBckhlMVQzaElQaS1DM202TGo2eEtycGtVTWU0UDVfejExX2FyamNjSTZlZw"},
   davidOrnsteinFootball365VinciusJnior: {l:"David Ornstein · Football365", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxNRm1Fa21zWFVBNlQyRENsVEtFV1lxSVAtWktZNzFzWW5PY2JxZ0hoNHl0R29ydWhhVV9LaDNZWm9WZG1Ma1R2aXVMMGZXUmJ4ay1CMnhrcjl2YzhfSXotNERueDFWSjdpZDI2UE9kNGMtdC1vV2ZfNG5veGdOdnJTYjJrMmhGN1MzdkYzRXVEVGxNQTU2MEhmTVZkRW5NeFpKUWR6bWd5WXJfOVdEWS1oZ1F0bw"},
-  bBCSportMathiasNorgaard: {l:"BBC Sport", u:"https://www.bbc.com"}};
+  bBCSportMathiasNorgaard: {l:"BBC Sport", u:"https://www.bbc.com"},
+  davidOrnsteinFootball365BrunoGuimares: {l:"David Ornstein / Football365", u:"https://news.google.com/rss/articles/CBMikgFBVV95cUxONGZWOFc3SnVFTE5PSEhEU05ZSkFReURMeVJVY2dacGZMcjhmTGctMDQxbnVmNklfdFZlanhYU0RvLS1USHFtVVVLWUNCS1hmQUxHcTVlOWpvbkFIQmlqNDA1UmdnZWtBckhlMVQzaElQaS1DM202TGo2eEtycGtVTWU0UDVfejExX2FyamNjSTZlZw"},
+  davidOrnsteinTheAthleticVinciusJnior: {l:"David Ornstein / The Athletic", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxObmF5RWlEVV9jcGNtaF9NV0xTeFJ0OElhVjdKanA1LTc5dFRXWnp6Tk1jVF9GRkJTVlFaalhMcERqQTN4VTc0b3otT2Y3UlNoaXB0ME1HRW5wdlB1WU1ZWnk3QUxReHl2QmZWNmpvTE0tX3hHa0hGN1lfdk5NbDJHMm5CYVBURThkNkpZMFpBdWxkQnQzeUFNSGFwYXU5c2FzRU5EdFU3bjM4c0dLa3pOcEtKcw"}};
 const LINKMAP = {
   "Morgan Rogers": ["bbcArs","mokbel"],
   "Eli Junior Kroupi": ["bbcArs"],
@@ -205,7 +207,7 @@ const LINKMAP = {
   "Ben White": ["bbcArs"],
   "William Saliba": ["marca","bbcGossip"],
   "Piero Hincapié": ["romano","afc", "arseblogNewsPieroHincapi"],
-  "Bruno Guimarães": ["football365viaFabrizioRomanoBrunoGuimares", "skySportsBrunoGuimares", "theGuardianFootballBrunoGuimares", "bBCSportFootballBrunoGuimares", "theAthleticDavidOrnsteinBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimares"],
+  "Bruno Guimarães": ["football365viaFabrizioRomanoBrunoGuimares", "skySportsBrunoGuimares", "theGuardianFootballBrunoGuimares", "bBCSportFootballBrunoGuimares", "theAthleticDavidOrnsteinBrunoGuimares", "davidOrnsteinTheAthleticBrunoGuimares", "davidOrnsteinFootball365BrunoGuimares"],
   "Ezri Konsa": ["sportsMoleviaCaughtOffsideEzriKonsa", "mailSportEzriKonsa"],
   "Rayan": ["nowArsenalviaTheSunRayan"],
   "Myles Lewis-Skelly": ["skySportsMylesLewisSkelly"],
@@ -219,7 +221,7 @@ const LINKMAP = {
   "Kristoffer Norgaard": ["bBCSportFootballKristofferNorgaard"],
   "Mathias Norgaard": ["skySportsFootballChristianNorgaard", "bBCSportFootballKristofferNorgaard", "bBCSportMathiasNorgaard"],
   "Morten Thorsby": ["skySportsFootballChristianNorgaard"],
-  "Vinícius Júnior": ["theAthleticDavidOrnsteinVinciusJnior", "davidOrnsteinFootball365VinciusJnior"]};
+  "Vinícius Júnior": ["theAthleticDavidOrnsteinVinciusJnior", "davidOrnsteinFootball365VinciusJnior", "davidOrnsteinTheAthleticVinciusJnior"]};
 const WL_LINKMAP = {
   "Khvicha Kvaratskhelia":"romano","Hugo Ekitike":"bbcGossip","Morgan Gibbs-White":"bbcGossip",
   "Jurriën Timber":"athletic","Declan Rice":"athletic","Ethan Nwaneri":"romano","Reiss Nelson":"standard",

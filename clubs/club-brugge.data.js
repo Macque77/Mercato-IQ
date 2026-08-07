@@ -41,7 +41,9 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Bisiwu", sub:"Unknown · Unknown · Unknown", club:"Barcelona", pos:"Unknown", report:"Club Brugge and Barcelona have reached an agreement", src:"Sacha Tavolieri via VoetbalPrimeur", tier:2, fee:"Unknown", truth:80, prob:80, light:"g", trend:"up", note:"Agreement reached between clubs", lastSeen:"2026-08-07T06:16:28Z", baseProb:80}
+  {name:"Bisiwu", sub:"Unknown · Unknown · Unknown", club:"Barcelona", pos:"Unknown", report:"Club Brugge and Barcelona have reached an agreement on transfer", src:"Sacha Tavolieri", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Agreement reached between clubs", lastSeen:"2026-08-07T10:18:48Z", baseProb:80},
+  {name:"Cheveyo Tsawa", sub:"", club:"", pos:"", report:"Club Brugge leading the race to sign Cheveyo Tsawa, but competition is increasing", src:"Sacha Tavolieri", tier:3, fee:"", truth:70, prob:65, light:"g", trend:"flat", note:"Early stage of negotiations; multiple clubs interested", lastSeen:"2026-08-07T10:18:48Z", baseProb:65},
+  {name:"Vasovic", sub:"", club:"", pos:"", report:"Club Brugge looking at young goalscorer Vasovic from Switzerland", src:"Sacha Tavolieri", tier:3, fee:"", truth:60, prob:55, light:"g", trend:"flat", note:"Early scouting interest", lastSeen:"2026-08-07T10:18:48Z", baseProb:55}
 ];
 
 const OUTGOING = [];

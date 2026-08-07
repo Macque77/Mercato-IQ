@@ -38,20 +38,18 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Fabio Ferraro", sub:"23 · LB", club:"FCV Dender EH", pos:"LB", fee:"€700k + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signs a three-year deal, returning to Belgian top flight via Charleroi's former RWDM/Dender pathway."},
   {name:"Norman Bassette", sub:"ST", club:"Coventry City", pos:"ST", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins on loan from Coventry, having previously been on Belgium's international radar."},
-  {name:"Cameron Congreve", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially confirmed by VoetbalFocus for four seasons"}
+  {name:"Issiaka Kamate", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", fee:"undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing"}
 ];
 const CONFIRMED_OUT = [
   {name:"Bryan Reynolds", sub:"25 · RB · USA", club:"Stade Rennais", pos:"RB", fee:"~€4.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"American international leaves for Ligue 1 after 146 appearances, having previously rejected an initial Rangers bid."},
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Cameron Congreve", sub:"22 · RW · Wales", club:"Swansea City", pos:"RW", report:"2 Aug 2026", src:"WalesOnline", tier:2, fee:"Undisclosed (7-figure)", truth:75, prob:80, light:"g", trend:"flat", note:"Deal described as imminent, with Swansea retaining a buy-back and sell-on clause; Congreve impressed on loan at Dundee last season.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80},
   {name:"Issiaka Kamate", sub:"MF", club:"Inter Milan", pos:"MF", report:"3 Jun 2026", src:"Nico Schira", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Nico Schira reported Westerlo closing in on an agreement with Inter for the player; no public update since early June.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"No recent credible reporting; presumed outdated entry or completed transfer details insufficient to verify as current live link"},
-  {name:"Cisse Sandra", sub:"Unknown · Unknown · Midfielder", club:"Club Brugge", pos:"Midfielder", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalPrimeur.be, VoetbalFocus, Lokaalnieuws.online", tier:3, fee:"€18 million", truth:95, prob:95, light:"g", trend:"up", note:"Multiple sources confirm deal in advanced/final stages with fee disclosed", lastSeen:"2026-08-07T06:16:29Z", baseProb:95}
+  {name:"Cisse Sandra", sub:"unknown · unknown · midfielder", club:"Club Brugge", pos:"M", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalPrimeur.be, VoetbalFocus, Lokaalnieuws.online", tier:3, fee:"€18m", truth:95, prob:100, light:"g", trend:"up", note:"Deal in final stages/completed; Club Brugge receiving substantial fee", lastSeen:"2026-08-07T10:18:48Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"Unknown · Unknown · Unknown", club:"Westerlo", pos:"Unknown", report:"On way to Rangers; among the most expensive outgoings for Westerlo", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Confirmed as one of club's record outgoing transfers to Rangers", lastSeen:"2026-08-07T06:16:29Z", baseProb:85},
-  {name:"Ferri", sub:"Unknown · Unknown · Unknown", club:"Westerlo", pos:"Unknown", report:"Principle agreement reached for exit from Westerlo", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:80, prob:80, light:"g", trend:"flat", note:"Principle agreement in place; destination not yet confirmed in snippets", lastSeen:"2026-08-07T06:16:29Z", baseProb:80}
+  {name:"Jarne Rommens", sub:"unknown · unknown · unknown", club:"Rangers", pos:"unknown", report:"On way to Rangers; among the most expensive outgoing transfers for Westerlo", src:"VoetbalPrimeur.be", tier:3, fee:"undisclosed", truth:85, prob:90, light:"g", trend:"up", note:"Advanced stage; considered one of club's costliest departures", lastSeen:"2026-08-07T10:18:48Z", baseProb:90}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -72,7 +70,8 @@ const HUB = {
   voetbalPrimeurbeJarneRommens: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNLWhFUXlaTkNoQjE0NXc5aTFxS2xSOGpHcEZzbGpnak1FS0dDbHd4RnNWcEx0X0NTVVBydno1T3VDZGFOVU8zSmJwRTdhMWJ3S2tyOUlxbnFZbVlWNXFudG9NWUtreXcwYmsxOEp0MEdVVlJOcWNqTXk2enMzMWQxTVlyZGs5RzZwdVVGbjZqN2dpV0dscFdydmpR"},
   voetbalPrimeurbeFerri: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxOTndPYkhNbjlCWWRPTm9BNm8zLVZ1c0tlLXd2RGlBUWRtQklIUzEwSjF5cDhhNXhIeXVCT0ptWEpxZHlRWUdTMEg2Q3V6MjkwUEd3NjdOamVTa2tjQlVyYlB0UmZkLVZoNWQ4S1B1SWZYNERlajB6SjRRTzliMjlqTU5fOWtxci14cW1XbzBWM1BHd21VWTVfOTV3dGRwamhiRFF4Z1pYTE9tRTVqbTE4"},
   voetbalPrimeurbeJarneRommens1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNLWhFUXlaTkNoQjE0NXc5aTFxS2xSOGpHcEZzbGpnak1FS0dDbHd4RnNWcEx0X0NTVVBydno1T3VDZGFUNU8zSmJwRTdhMWJ3S2tyOUlxbnFZbVlWNXFudG9NWUtreXcwYmsxOEp0MEdVVlJOcWNqTXk2enMzMWQxTVlyZGs5RzZwdVVGbjZqN2dpV0dscFdydmpR"},
-  voetbalFocusCameronCongreve: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMieEFVX3lxTFBvbXM2M2t4Ukc2ajR6TWdnRXRxdW5za3Npa05rRy1oajVEdGVVQnRHTW1OM0FPYVg0Y3g2dzk1VTBRRlFMdU0wY2pRWnJyXzdldjdWTnNpSlVzZzlOb3g3S3FkZmlVTVRucGZWU3U2eXVBRXkxTGRwSg"}};
+  voetbalFocusCameronCongreve: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMieEFVX3lxTFBvbXM2M2t4Ukc2ajR6TWdnRXRxdW5za3Npa05rRy1oajVEdGVVQnRHTW1OM0FPYVg0Y3g2dzk1VTBRRlFMdU0wY2pRWnJyXzdldjdWTnNpSlVzZzlOb3g3S3FkZmlVTVRucGZWU3U2eXVBRXkxTGRwSg"},
+  voetbalPrimeurbeCisseSandra: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcHJBLVkyZk9uRW5NRmZuVlkzZnA1Q3VnUGVVaV9RYVJvQk5hOWRHUE8yeE1ReW82ZXVRX1JBSTRTVVZ4NjFfZ2xjLWFROUVVT3dKZDNhOGxvSEFwYi1kaXdUU0FuODdncV9GN1JXT3ZYRFVTYUNvdVRteWw3MTRfMng4dW43R0ZENktkdThuYzNSRWNVV2lLVkRfcEJnbktkcWtYTUxYek5ZOGN1Q2U3Sk1Mbkt4WEpOcFZrMkxHeXNHT2M"}};
 
 const LINKMAP = {
   "Cameron Congreve": ["the72viaWalesOnlineCameronCongreve", "voetbalFocusCameronCongreve"],
@@ -81,7 +80,7 @@ const LINKMAP = {
   "Norman Bassette": ["sporzaNormanBassette"],
   "Bryan Reynolds": ["voetbalkrantviaSachaTavolieriBryanReynolds"],
   "Emin Bayram": ["voetbalkrantEminBayram"],
-  "Cisse Sandra": ["voetbalFocusCisseSandra"],
+  "Cisse Sandra": ["voetbalFocusCisseSandra", "voetbalPrimeurbeCisseSandra"],
   "Jarne Rommens": ["voetbalPrimeurbeJarneRommens", "voetbalPrimeurbeJarneRommens1"],
   "Ferri": ["voetbalPrimeurbeFerri"]};
 const WL_LINKMAP = {};

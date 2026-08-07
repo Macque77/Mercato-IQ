@@ -31,16 +31,13 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Daniel Jebbison", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer"}
+  {name:"Jayden Fevrier", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First signing confirmed"},
+  {name:"Unknown Brentford Midfielder", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer from Brentford confirmed"}
 ];
-const CONFIRMED_OUT = [
-  {name:"Ty Livesey", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed departure"}
-];
-const INCOMING = [
-  {name:"Daniel Jebbison", sub:"FW · Canada", club:"Preston North End", pos:"FW", report:"~1 wk ago", src:"Lancashire Post", tier:2, fee:"Loan + option", truth:65, prob:55, light:'g', trend:'up', note:"Consistent with Preston's own reporting on the same story, decent cross-corroboration.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
-];
+const CONFIRMED_OUT = [];
+const INCOMING = [];
 const OUTGOING = [
-  {name:"Ty Livesey", sub:"Winger", club:"Man City / Man Utd + 4 more", pos:"W", report:"~5 days ago", src:"Graeme Bailey", tier:3, fee:"Undisclosed", truth:55, prob:20, light:'o', trend:'flat', note:"Eye-catching six-club race claims should be read with real scepticism this early, no club has made a move yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Middlesbrough", pos:"Unknown", report:"Transfer to Middlesbrough with fee calculation discussed", src:"Lancashire Telegraph", tier:3, fee:"Unknown", truth:90, prob:90, light:"g", trend:"flat", note:"Move to Middlesbrough", lastSeen:"2026-08-07T10:18:48Z", baseProb:90}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -52,12 +49,16 @@ const WATCHLIST = [];
 const HUB = {
   "lancashirepost": {l:"Lancashire Post", u:"https://www.lep.co.uk/sport"},
   "bailey": {l:"Graeme Bailey (TeamTalk)", u:"https://x.com/GraemeBailey"},
-  lancashireTelegraphJaydenFevrier: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmZGYkptYUU1akU4eFV0cDVvZzhVZXNQeHJ1TC1RalhBR29MbnY4dW1leE81ZG9LUGhhcjZZVmZXMlhMVmdmZXp1RlU5NlE5QUJLMzRrY1MyclBDdFZ2ZHdDM3B1TlhpRkZkeUtHaUQzQjg0eWJYdjRWQjNfN0JWaDBYZXFpVkx1ZHpONVZvQTVhT3FrMGNlM3RzTEV0c0MtQ081cExOby1tTVM4X29fLQ"}};
+  lancashireTelegraphJaydenFevrier: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmZGYkptYUU1akU4eFV0cDVvZzhVZXNQeHJ1TC1RalhBR29MbnY4dW1leE81ZG9LUGhhcjZZVmZXMlhMVmdmZXp1RlU5NlE5QUJLMzRrY1MyclBDdFZ2ZHdDM3B1TlhpRkZkeUtHaUQzQjg0eWJYdjRWQjNfN0JWaDBYZXFpVkx1ZHpONVZvQTVhT3FrMGNlM3RzTEV0c0MtQ081cExOby1tTVM4X29fLQ"},
+  lancashireTelegraphAshPhillips: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxPVmZrSHFEUWZnUGVNLWRCcTRPMzkzNFhoMzFXbFhJUHRLMGxjcWNGdUNKX2lTbUVORWdOTUU5OTJuZkhSanE3WlB2WmktdmVVeEU4NkVxd0FOaWp0NDdwN3BIYkc3ODI5c1pheG9TZF9ZdTA2N2g3R3h1M0xQbUV1aWlIbHVSbVpCZ1VsaVQwTFB2bm92YWtXNi16aHRyV3Vjb09nRQ"},
+  lancashireTelegraphUnknownBrentfordMidfielder: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYUI1SDhpeXhzOWJQTzBRdExaNTN6U2RqMjVSUzctcjVHNTh1T040bEhkZFpIZG84S182QmpEQm9RSDFpd2ttcndLeXgtM1I0ODRfcUh3VElyRVdjdy1DNllmLTQ3TGROaVNiNS1weXVlSkoxN0h1VzV0LUZiakt6eElXWWJLQXRlalp5ZlRObHoyZFY5YktES3Z3WmZYZk1CeGQzcTJiNzQ"}};
 
 const LINKMAP = {
   "Daniel Jebbison": ["lancashirepost"],
   "Ty Livesey": ["bailey"],
-  "Jayden Fevrier": ["lancashireTelegraphJaydenFevrier"]};
+  "Jayden Fevrier": ["lancashireTelegraphJaydenFevrier"],
+  "Ash Phillips": ["lancashireTelegraphAshPhillips"],
+  "Unknown Brentford Midfielder": ["lancashireTelegraphUnknownBrentfordMidfielder"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
