@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Ligue 2",
   nation: "France",
-  stories_count: 10
+  stories_count: 9
 };
 
 const TOP_STORIES = [  {
@@ -59,13 +59,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Unknown player", prob: 80, truth: 75, bullshit: false,
-    club_origin: "as-nancy-lorraine", club_display_name: "AS Nancy-Lorraine", direction: "in",
-    from: "Troyes", to: "AS Nancy-Lorraine",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-07-29T00:00:00Z"
-  },
-  {
     name: "Moussa Konaté", prob: 75, truth: 75, bullshit: false,
     club_origin: "dijon", club_display_name: "Dijon FCO", direction: "out",
     from: "Dijon FCO", to: "Dijon FCO",
@@ -81,12 +74,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"as-nancy-lorraine": 2, "dijon": 3, "annecy": 2, "clermont-foot": 1, "asse-sochaux": 1, "sb-metz": 1};
+const BY_CLUB = {"as-nancy-lorraine": 1, "dijon": 3, "annecy": 2, "clermont-foot": 1, "asse-sochaux": 1, "sb-metz": 1};
 
-const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "dijon", "name": "Dijon FCO", "count": 3, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "annecy", "name": "FC Annecy", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sb-metz", "name": "FC Metz", "count": 1, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 1, "badge": true, "primary": "#F4CD1E", "primaryBright": "#FFE666"}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0, "badge": true, "primary": "#FF6C00", "primaryBright": "#FFA55C"}];
+const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "dijon", "name": "Dijon FCO", "count": 3, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "annecy", "name": "FC Annecy", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sb-metz", "name": "FC Metz", "count": 1, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 1, "badge": true, "primary": "#F4CD1E", "primaryBright": "#FFE666"}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0, "badge": true, "primary": "#FF6C00", "primaryBright": "#FFA55C"}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T20:04:12.878456Z",
+  updated: "2026-08-07T23:02:04.167538Z",
   label: "League aggregation"
 };

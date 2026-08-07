@@ -139,7 +139,7 @@ const TOP_STORIES = [  {
     name: "Victor Adeboyejo", prob: 100, truth: 100, bullshit: false,
     club_origin: "bromley", club_display_name: "Bromley", direction: "in",
     from: "Free transfer", to: "Bromley",
-    tier: 2, coverage: 3, coverage_trend: 'up',
+    tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "Free", updated: "2026-08-03T18:00:00Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "afc-wimbledon", "name": "AFC Wimbledon", "count": 
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T20:04:12.876760Z",
+  updated: "2026-08-07T23:02:04.165768Z",
   label: "League aggregation"
 };

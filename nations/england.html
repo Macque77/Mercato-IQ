@@ -665,7 +665,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">251</span>
+          <span class="stat-value">253</span>
         </div>
       </div>
     </div>
@@ -702,7 +702,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 251
+  stories_count: 253
 };
 
 const TOP_STORIES = [  {
@@ -737,7 +737,7 @@ const TOP_STORIES = [  {
     name: "Leon Bailey",prob: 100, truth: 100, bullshit: false,
     club_origin: "hull-city", club_display_name: "Hull City", direction: "in",
     from: "Aston Villa", to: "Hull City",
-    tier: 1, coverage: 4, coverage_trend: 'up',
+    tier: 1, coverage: 4, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-06-06T00:00:00Z", league: "Premier League"
   },
   {
@@ -765,21 +765,21 @@ const TOP_STORIES = [  {
     name: "Maxence Lacroix",prob: 85, truth: 90, bullshit: false,
     club_origin: "chelsea", club_display_name: "Chelsea", direction: "in",
     from: "Crystal Palace", to: "Chelsea",
-    tier: 1, coverage: 3, coverage_trend: 'up',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "£52m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Rodri",prob: 85, truth: 90, bullshit: false,
     club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
     from: "Manchester City", to: "Manchester City",
-    tier: 1, coverage: 8, coverage_trend: 'up',
+    tier: 1, coverage: 8, coverage_trend: 'flat',
     value: "€45m (Barcelona offer)", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
     name: "Youri Tielemans",prob: 85, truth: 90, bullshit: false,
     club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "out",
     from: "Aston Villa", to: "Aston Villa",
-    tier: 1, coverage: 4, coverage_trend: 'flat',
+    tier: 1, coverage: 5, coverage_trend: 'up',
     value: "£35m", updated: "2026-06-06T12:00:00Z", league: "Premier League"
   },
   {
@@ -790,17 +790,10 @@ const TOP_STORIES = [  {
     value: "€21m", updated: "2026-06-06T12:00:00Z", league: "Premier League"
   },
   {
-    name: "Christian Norgaard",prob: 85, truth: 90, bullshit: false,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
-    from: "Arsenal", to: "Arsenal",
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    value: "£7m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
     name: "Eberechi Eze",prob: 85, truth: 90, bullshit: false,
     club_origin: "crystal-palace", club_display_name: "Crystal Palace", direction: "out",
     from: "Crystal Palace", to: "Arsenal",
-    tier: 1, coverage: 2, coverage_trend: 'up',
+    tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
@@ -810,15 +803,22 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 2, coverage_trend: 'flat',
     value: "£117m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
+  {
+    name: "Christian Norgaard",prob: 80, truth: 85, bullshit: false,
+    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
+    from: "Arsenal", to: "Everton",
+    tier: 1, coverage: 5, coverage_trend: 'flat',
+    value: "£7m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
 ];
 
-const BY_LEAGUE = {"League One": 115, "Championship": 33, "Premier League": 102, "League Two": 1};
+const BY_LEAGUE = {"League One": 115, "Championship": 34, "Premier League": 103, "League Two": 1};
 
-const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 115}, {"slug": "premier-league", "name": "Premier League", "count": 102}, {"slug": "championship", "name": "Championship", "count": 33}, {"slug": "league-two", "name": "League Two", "count": 1}];
+const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 115}, {"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "championship", "name": "Championship", "count": 34}, {"slug": "league-two", "name": "League Two", "count": 1}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T20:04:12.866598Z",
+  updated: "2026-08-07T23:02:04.113190Z",
   label: "Nation aggregation"
 };
 

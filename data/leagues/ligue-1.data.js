@@ -97,7 +97,7 @@ const TOP_STORIES = [  {
     name: "Bradley Barcola", prob: 58, truth: 90, bullshit: false,
     club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "out",
     from: "Paris Saint-Germain", to: "Liverpool",
-    tier: 1, coverage: 3, coverage_trend: 'down',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "Nine figures sought", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "aj-auxerre", "name": "AJ Auxerre", "count": 5, "ba
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T20:04:12.878109Z",
+  updated: "2026-08-07T23:02:04.167199Z",
   label: "League aggregation"
 };

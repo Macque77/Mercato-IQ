@@ -17,6 +17,6 @@ const CLUBS_LIST = [{"slug": "almeria-b", "name": "Almer\u00eda B", "count": 0, 
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T20:04:12.880868Z",
+  updated: "2026-08-07T23:02:04.170467Z",
   label: "League aggregation"
 };
