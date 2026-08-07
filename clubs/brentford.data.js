@@ -83,16 +83,17 @@ const CONFIRMED_OUT = [
   {name:"Frank Onyeka", sub:"Midfielder drops to the Championship", club:"Coventry City", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Jordan Henderson", sub:"Unknown · Unknown · Midfielder", club:"Chelsea", pos:"Midfielder", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed exit to Chelsea"},
   {name:"Conor McManus", sub:"Unknown · Unknown · Unknown", club:"Gillingham", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move to Gillingham (Sky Bet League Two)"},
-  {name:"Mamadou Sangaré", sub:"Midfielder · Ivory Coast", club:"Brentford", pos:"Midfielder", fee:"Club-record fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Breaking: Brentford sign Mamadou Sangaré from Lens for club-record fee"}
+  {name:"Mamadou Sangaré", sub:"Midfielder · Ivory Coast", club:"Brentford", pos:"Midfielder", fee:"Club-record fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Breaking: Brentford sign Mamadou Sangaré from Lens for club-record fee"},
+  {name:"Iwan Morgan", sub:"Unknown · Unknown · Unknown", club:"Grimsby Town", pos:"Unknown", fee:"Permanent", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move to Grimsby Town"}
 ];
 
 const INCOMING = [
-  {name:"Pape Matar Sarr", sub:"Midfielder · Tottenham", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"up", note:"Offer reported; no recent snippet confirmation", lastSeen:"2026-08-07T14:38:27Z", baseProb:30}
+  {name:"Pape Matar Sarr", sub:"Unknown · Unknown · Midfielder", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"flat", note:"No fresh snippet provided; retained from page", lastSeen:"2026-08-07T17:40:24Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Bryan Mbeumo", sub:"Winger · Cameroon", club:"Brentford", pos:"Winger", report:"Manchester United submit improved bid exceeding £60m for Brentford's Bryan Mbeumo", src:"The Athletic", tier:2, fee:"£60m+", truth:85, prob:70, light:"g", trend:"up", note:"Improved bid reported by Laurie Whitwell", lastSeen:"2026-08-07T14:38:27Z", baseProb:70},
-  {name:"Jordan Henderson", sub:"34 · England · M", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford. Chelsea top contender among multiple PL clubs eyeing England midfielder as Brentford ready to grant free transfer.", src:"David Ornstein", tier:1, fee:"Free", truth:75, prob:60, light:"g", trend:"flat", note:"Multiple Premier League clubs interested; Brentford willing to release on free transfer", lastSeen:"2026-08-06T14:33:42Z", baseProb:60, dead:true, deadReason:"Confirmed exit to Chelsea"}
+  {name:"Bryan Mbeumo", sub:"Unknown · Unknown · Forward", club:"Brentford", pos:"Forward", report:"Manchester United submit improved bid exceeding £60m for Brentford's Bryan Mbeumo", src:"The Athletic", tier:2, fee:"£60m+", truth:85, prob:60, light:"g", trend:"down", note:"Improved bid confirmed by Laurie Whitwell at The Athletic", lastSeen:"2026-08-07T17:40:24Z", baseProb:60},
+  {name:"Jordan Henderson", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford", src:"On-page rumour", tier:3, fee:"Free", truth:50, prob:35, light:"y", trend:"down", note:"No fresh snippet provided; retained from page", lastSeen:"2026-08-07T17:40:24Z", baseProb:35}
 ];
 const DEAD = [
   {name:"Value & successor targets", sub:"Data-model intake", club:"Market", pos:"-", report:"window framing", src:"Model-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',
@@ -163,14 +164,16 @@ const HUB = {
   theAthleticBryanMbeumo: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMimAFBVV95cUxOMjV4RXV5eFhKVzZIS3poM1dUaTJyaWw1amVyYk9SZWFxQ0lRTzdMYUJPZGdSTXJqU0c1ZGE2cEFyaGljMnh2b2x2QkFPY1V2MDlWTC12WU50aDY4YkJETVprSWI0a0VDOExIa3NJRHVSQy13VjhCZjdIaXNlY0w0VHVNZDNmTXF3alNTb1BETHVFczJ2QlpRMw?oc=5"},
   brentfordFCMamadouSangar: {l:"Brentford FC", u:"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPaEs1Q0hBZElRSW9kOWJLbC1YQWZmU3l2RnJsXzJ0ZG5aU0l3dDhwdV84X2tqbFlWNkFIWjJsZDAkYlNfLWVrNUhYdmpqR212LUtEeWtzOGtMNi1rYmFldXhHLWNCaHhMdFRJY19XdnBycnNqQ19ncUU5UG9RMjlEZmpBVUdRV3Z3Q3NVdkRvdjFST096OVB4czVYUW4xbzRnT1pabk5Ub1ZNdw?oc=5"},
   skySportsJordanHenderson: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOYXNGaFRaRHZGRWdwTHdRREZqRllBcXJGN3ZqRTl3Z2c1YjRFTEl2U0RDTTNEaFJ5YVI1VEFEQ1IzMFFlRW9PYlBEUHpkVlQ2QWNQaFl2WUhpNU1JWjRtX1VOaEJMSjFfTkVVakNNRk1WZlZHOUw2WHVzaVRKdVc3WVBiMzh0U2oxYUdBbEZGQWNyWlZvMkJ0MEl4YVlWLWhmUHFVZVdtQzRaY2Q3TW9fM0l4anVKQVBPc2YyLUtjaTczcVJpODIyQ0Z3WTVwMlo2QmV2LUtscEkyaFZTUHhSSV9R?oc=5"},
-  brentfordFCConorMcManus: {l:"Brentford FC", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPY2czS0ZhUEE4MlVjQjEtUFZ0eHM3VWg0eklvcnloUnJIRjNmdlV3YkxzOEpRRXczV3BQUnZCS2VOU2YwalRPRlFONWV6WnZId09GbmhJeUU0NlRfU0dEYXF5WWJ6ODZlajFOTTJ5S3d1Vm1XaXdOREpPSS1ObU5MZXpMc0FydnNDNG40WHpZQ3ZMZ1ZIUV82WklndWxPRldWbEx4eHZjbmw?oc=5"}};
+  brentfordFCConorMcManus: {l:"Brentford FC", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPY2czS0ZhUEE4MlVjQjEtUFZ0eHM3VWg0eklvcnloUnJIRjNmdlV3YkxzOEpRRXczV3BQUnZCS2VOU2YwalRPRlFONWV6WnZId09GbmhJeUU0NlRfU0dEYXF5WWJ6ODZlajFOTTJ5S3d1Vm1XaXdOREpPSS1ObU5MZXpMc0FydnNDNG40WHpZQ3ZMZ1ZIUV82WklndWxPRldWbEx4eHZjbmw?oc=5"},
+  brentfordFCMamadouSangar1: {l:"Brentford FC", u:"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPaEs1Q0hBZElRSW9kOWJLbC1YQWZmU3l2RnJsXzJ0ZG5aU0l3dDhwdV84X2tqbFlWNkFIWjJsZDBkYlNfLWVrNUhYdmpqR212LUtEeWtzOGtMNi1rYmFldXhHLWNCaHhMdFRJY19XdnBycnNqQ19ncUU5UG9RMjlEZmpBVUdRV3Z3Q3NVdkRvdjFST096OVB4czVYUW4xbzRnT1pabk5Ub1ZNdw?oc=5"},
+  brentfordFCIwanMorgan: {l:"Brentford FC", u:"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOHNDYm8yZ3paY1B2MDA3ZnpvbDloaXcxVXJ0ZjRjeWxJOHR2UVpGeGJYRkV5N3B0UU42M0ZjdHhNMWtieXlGNmFLU3Z2OXRYNlFwY0dXWV9hV0RCMjZfZmM3NV90QlZpOS1FMEEyRy1JMm5ySHdoQ3hyUFBPU2VRX3F2UE5XZWp5dkxZSXV0bXlSdjJMWk1CZFdHcVZCQm9Dclh3dXBCVjlPZw?oc=5"}};
 const LINKMAP = {
   "Value & successor targets": ["bbcBees","athletic","wls"],
   "Forward depth options": ["bbcBees","wls"],
   "Midfield value options": ["bbcBees","wls"],
   "Prized asset (premium sale)": ["bbcBees","athletic"],
   "Fringe & squad trim": ["wls","sky"],
-  "Mamadou Sangaré": ["fabrizioRomanoviaEmpireoftheKopMamadouSangar", "brentfordFCMamadouSangar"],
+  "Mamadou Sangaré": ["fabrizioRomanoviaEmpireoftheKopMamadouSangar", "brentfordFCMamadouSangar", "brentfordFCMamadouSangar1"],
   "El Hadji Malick Diouf": ["westHamZoneYahooSportsElHadjiMalickDiouf"],
   "Pape Matar Sarr": ["toTheLaneAndBackPapeMatarSarr"],
   "Igor Thiago": ["yahooSportsviaESPNBrasilIgorThiago"],
@@ -180,7 +183,8 @@ const LINKMAP = {
   "Frank Onyeka": ["sportsMoleCallumWilson"],
   "Bryan Mbeumo": ["theAthleticDavidOrnsteinBryanMbeumo", "theAthleticBryanMbeumo"],
   "Jordan Henderson": ["davidOrnsteinXJordanHenderson", "skySportsJordanHenderson"],
-  "Conor McManus": ["brentfordFCConorMcManus"]};
+  "Conor McManus": ["brentfordFCConorMcManus"],
+  "Iwan Morgan": ["brentfordFCIwanMorgan"]};
 const WL_LINKMAP = {
   "Data-model targets":"bbcBees","Prized asset":"athletic",
 };

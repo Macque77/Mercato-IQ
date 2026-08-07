@@ -75,7 +75,8 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [
   {name:"Pascal Struijk", sub:"26 · CB · Netherlands", club:"Brighton & Hove Albion", pos:"DF", fee:"£18m (reported breakdown £15m + £3m add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"A surprise sale given Farke had told the board he should not be sold; Leeds retain a sell-on clause."},
-  {name:"Karl Darlow", sub:"35 · GK · Wales", club:"Manchester United", pos:"GK", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Established as first-choice for much of the promotion/survival season, Darlow leaves on a free for a back-up role at Old Trafford."}
+  {name:"Karl Darlow", sub:"35 · GK · Wales", club:"Manchester United", pos:"GK", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Established as first-choice for much of the promotion/survival season, Darlow leaves on a free for a back-up role at Old Trafford."},
+  {name:"Lucas Perri", sub:"Goalkeeper", club:"Torino", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signing with Torino from Leeds United"}
 ];
 
 const INCOMING = [

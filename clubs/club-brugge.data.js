@@ -41,10 +41,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Bisiwu", sub:"Unknown · Unknown · Unknown", club:"Barcelona", pos:"Unknown", report:"Club Brugge and Barcelona have reached an agreement over transfer", src:"Sacha Tavolieri", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Agreement reported between clubs", lastSeen:"2026-08-07T14:38:27Z", baseProb:85},
-  {name:"Cheveyo Tsawa", sub:"", club:"", pos:"", report:"Club Brugge leading the race to sign Cheveyo Tsawa, though competition is increasing", src:"Sacha Tavolieri", tier:3, fee:"", truth:75, prob:70, light:"g", trend:"up", note:"Club Brugge leading negotiations but facing competition", lastSeen:"2026-08-07T14:38:27Z", baseProb:70},
-  {name:"Vasovic", sub:"", club:"", pos:"", report:"Club Brugge looking at young goalscorer Vasovic from Switzerland", src:"Sacha Tavolieri", tier:3, fee:"", truth:70, prob:65, light:"g", trend:"up", note:"Rumour of interest in young Swiss player", lastSeen:"2026-08-07T14:38:27Z", baseProb:65},
-  {name:"Jan Virgili", sub:"20 · Spain · W", club:"Mallorca", pos:"Winger", report:"Club Brugge close to signing Mallorca winger Jan Virgili", src:"", tier:2, fee:"", truth:80, prob:80, light:"g", trend:"flat", note:"Young winger from Mallorca on way to Club Brugge", lastSeen:"2026-08-07T14:38:27Z", baseProb:80}
+  {name:"Jan Virgili", sub:"Unknown · Unknown · Winger", club:"Mallorca", pos:"Winger", report:"Club Brugge close to signing Mallorca winger Jan Virgili", src:"Sacha Tavolieri", tier:2, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"down", note:"Advanced talks reported", lastSeen:"2026-08-07T17:40:23Z", baseProb:60}
 ];
 
 const OUTGOING = [];
@@ -68,14 +65,15 @@ const HUB = {
   voetbalPrimeurbeCheveyoTsawa: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPUkVWMzBEc2hxWWNtZ2ZSYzFSS3lIY3BrSHFQYWJMMkRuVUVScjRnV2x3RnZ6Z0dWdmdwTjZmbXZDR1lNU2RMOEh1c0FlSm9aUjRMM2NKQmo0U1J4c01VR21ONHJTb1F3cXNUTWNlQS16dWJPSW15OTllWTFhQVN6aTRJckNKdzZoWExVdU1aOEsybEZwYjBvc2hrSk56YTg3SnI4emhkODlYemdWemRwbUdnRWhmUVdHQVNTRGlZUQ?oc=5"},
   hLNJanVirgili: {l:"HLN", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxOT2tnckN4QXhSM1hOUmdONmJmakkxSlhkLWp2M2pBdFdobERjZE9la3pZYWZLZTdJbkQ0XzA4bW41c3g2ZW9QZy1UMmhiLUR0ZTVwMWxadGdfdnNKbUl3N1BhOW5hQ1VCajlWLTVyTFNOTXlaM2hUWlhzMFJkZ3ZlRWlRZWdHeVJCdnJjUDJpck9Xd2YwQV9yb2ZjLS03YkF4TTlZaWx4YkdmTjk0aHRMRzFRRi10OUlzZXM1Ylk3VzliSzBZNkdnTkpjbU10bzhHUWFzaDJB?oc=5"},
   voetbalPrimeurSachaTavolieriVasovic: {l:"VoetbalPrimeur (Sacha Tavolieri)", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxOTjQ0ZVJieUFDWDlZMVlhNHJ1SnVxSk9hVVFWQkU1WG5va2ZkNEtHSDgzWVptaXBUQ29QSDhCRjJfWTlnRFduUWhDUUJmbWE4V2c3R1hpNWE0YnBjaUZYZXRrZGlhY2x2MWdybHlMUFcwRUI3OHAtbmxKLVVNdmdiTEwxUTFCTHFGNFoxR0lsN0p3Y1hHcFBnQldVV2k?oc=5"},
-  voetbalPrimeurSachaTavolieriJanVirgili: {l:"VoetbalPrimeur (Sacha Tavolieri)", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPM3lJajJLaGhBa1NXR1FQXzdERXdVcW1vZl9YMGFVRXRnT0o5cWpMTS03dVJLaHJzRm02UEtyTHdTX1QxVjlPa01TTFVmeWpEbWxnbGtEX292WGVfdjlFb3Zka2pFMGFyTXBkY2RIV0hEbVZ6QzRnQ1drN2hhR1Y4cXZLU2hfaEQ2TnBXWTVsd2FnVEVTRjJVQUd5UmRjdTVLZmlCMTBfZzlZTzVIbHNFeUdJVFFEV2ZXOTgtc1Z0eXQ2a1FPUGc?oc=5"}};
+  voetbalPrimeurSachaTavolieriJanVirgili: {l:"VoetbalPrimeur (Sacha Tavolieri)", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPM3lJajJLaGhBa1NXR1FQXzdERXdVcW1vZl9YMGFVRXRnT0o5cWpMTS03dVJLaHJzRm02UEtyTHdTX1QxVjlPa01TTFVmeWpEbWxnbGtEX292WGVfdjlFb3Zka2pFMGFyTXBkY2RIV0hEbVZ6QzRnQ1drN2hhR1Y4cXZLU2hfaEQ2TnBXWTVsd2FnVEVTRjJVQUd5UmRjdTVLZmlCMTBfZzlZTzVIbHNFeUdJVFFEV2ZXOTgtc1Z0eXQ2a1FPUGc?oc=5"},
+  hLNKristofTerreurJanVirgili: {l:"HLN (Kristof Terreur)", u:"https://news.google.com/rss/articles/CBMi4AFBVV95cUxQMDlqWTdWYXkyQUNvQ2F0REFwQXhXRWJOWjZCYnlQVVV5c0JxUjdGUzRpVmdFLVlrWS1ra2pOamZ6MmNzQ3hsYWlOTk1oYlhHSXYyNFlZMmo5WlBYamlnSENWVkFhODM0UXNpQ3VtbThYbUdtelJ1ZGtNQmNUeXZKNVM2MGFLNUNWeDJuZ0E0ekdJckpoTXFra3VGck9LNkUyQnktRW1NbnltUmpaay1PckVGcVpuUUtKX0w1NG9hb1VLVlhUMkU4enY5QzZPbXZ3UkgtQUVGNTgzNFJZOXBEVg?oc=5"}};
 
 const LINKMAP = {
   "David Njoku": ["hln"],
   "Bisiwu": ["voetbalPrimeurbeBisiwu"],
   "Vasovic": ["voetbalPrimeurbeVasovic", "voetbalPrimeurSachaTavolieriVasovic"],
   "Cheveyo Tsawa": ["voetbalPrimeurbeCheveyoTsawa"],
-  "Jan Virgili": ["hLNJanVirgili", "voetbalPrimeurSachaTavolieriJanVirgili"]};
+  "Jan Virgili": ["hLNJanVirgili", "voetbalPrimeurSachaTavolieriJanVirgili", "hLNKristofTerreurJanVirgili"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

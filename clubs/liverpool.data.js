@@ -60,12 +60,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Ornstein reveals Barcola stance on joining Liverpool in stunning £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:60, light:"g", trend:"down", note:"PSG winger; Ornstein confirms medical done on Tuesday and player has agreed four-year deal", lastSeen:"2026-08-07T14:38:27Z", baseProb:60},
-  {name:"Raul Asencio", sub:"21 · Spain · D", club:"Real Madrid", pos:"D", report:"Intermediaries sounded Liverpool out on Asencio", src:"Various", tier:3, fee:"Unknown", truth:45, prob:30, light:"y", trend:"down", note:"Real Madrid defender; exploratory interest", lastSeen:"2026-08-07T14:38:27Z", baseProb:30}
+  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Ornstein reveals Barcola stance on joining Liverpool in stunning £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:65, prob:40, light:"y", trend:"down", note:"Player stance revealed; deal structure outlined but not agreed with PSG", lastSeen:"2026-08-07T17:40:24Z", baseProb:40},
+  {name:"Raul Asencio", sub:"22 · Spain · CB", club:"Real Madrid", pos:"Centre-back", report:"Intermediaries sounded Liverpool out on Asencio", src:"Multiple", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"down", note:"Early-stage interest; no formal approach confirmed", lastSeen:"2026-08-07T17:40:24Z", baseProb:25}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions future", src:"BBC Sport", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"up", note:"Tottenham interest reported; uncertain if deal will materialize", lastSeen:"2026-08-07T14:38:27Z", baseProb:40}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions Liverpool stance", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:50, prob:35, light:"y", trend:"down", note:"Tottenham interest reported; Liverpool have not indicated willingness to sell", lastSeen:"2026-08-07T17:40:24Z", baseProb:35}
 ];
 const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
@@ -136,7 +136,8 @@ const HUB = {
   bBCSportFootballMbaye: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cr59z307my1o?at_medium=RSS&at_campaign=rss"},
   davidOrnsteinFootball365BradleyBarcola: {l:"David Ornstein / Football365", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQSmpVTUZwbHNCY2Rzcmo1d19lMVp0MFdQUXhGdGhiUTlVODhkZXUyV2pTWlhUbUxpSWx2Rk00TVlIWnp4R1VLN0hISmdPRTJWeVhxdW1ucGYzY09CcGpYS3FIZmRBOGR5YWtZLTdUclhMdm81a0Z3Y1dzek1XRlZ6MV85M2dwbl8xNVcyNFhlS2x0bmlIZTVMQVNiOGw"},
   bBCSportCodyGakpo: {l:"BBC Sport", u:"https://www.bbc.co.uk"},
-  davidOrnsteinTheEmpireofTheKopLiverpooltarget: {l:"David Ornstein / The Empire of The Kop", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxOSUtmOE9IWEJqV2VCTURCWkhlak0xUWNUbjBnQ3pSalB2SU9lNGZhWER2SmFuYWtVaE5oTnFXOFE4WTVRYU5uN3pZU096bGV0ZkhWZ2ZlSEU0OTR2MlNKWWFISE9hNWk0Unl3NkRHT2tGSWtlb3pFZUhHcFBPbmZweUx4QW8tRVlpN0d2VnRpeGtUanpuMXZjRmJGb3YxSEh1RER3Sy1mLWhiYnZwOTh4VldhbEZPOXR3aVN6a1Nnelo2d3BU0gHKAUFVX3lxTFB4LXZVZzBmWVhpRGg5VktWeEVoNFlJaW1nZ0JWalZ0MFg3TGZGSEpnQV90UjdDVEYwRVlwVW15R2RySFpLR1h6T21iSzVGeGswYzUtdEdWcldDY1h5eW40Wk5pT0x1Vy1DNWRTVG02aVRoc01NNkNRcDd6Yi1XaS1SR1lpRUVtMFh3SlZPdW5yTG9LeEczZjc1cFlpZzVyTmRnUkpISHBKWjN2YUJYVnI2QzZrY1EzNy05Wm1wdnF3NkRBdkdYUWVqQVE"}};
+  davidOrnsteinTheEmpireofTheKopLiverpooltarget: {l:"David Ornstein / The Empire of The Kop", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxOSUtmOE9IWEJqV2VCTURCWkhlak0xUWNUbjBnQ3pSalB2SU9lNGZhWER2SmFuYWtVaE5oTnFXOFE4WTVRYU5uN3pZU096bGV0ZkhWZ2ZlSEU0OTR2MlNKWWFISE9hNWk0Unl3NkRHT2tGSWtlb3pFZUhHcFBPbmZweUx4QW8tRVlpN0d2VnRpeGtUanpuMXZjRmJGb3YxSEh1RER3Sy1mLWhiYnZwOTh4VldhbEZPOXR3aVN6a1Nnelo2d3BU0gHKAUFVX3lxTFB4LXZVZzBmWVhpRGg5VktWeEVoNFlJaW1nZ0JWalZ0MFg3TGZGSEpnQV90UjdDVEYwRVlwVW15R2RySFpLR1h6T21iSzVGeGswYzUtdEdWcldDY1h5eW40Wk5pT0x1Vy1DNWRTVG02aVRoc01NNkNRcDd6Yi1XaS1SR1lpRUVtMFh3SlZPdW5yTG9LeEczZjc1cFlpZzVyTmRnUkpISHBKWjN2YUJYVnI2QzZrY1EzNy05Wm1wdnF3NkRBdkdYUWVqQVE"},
+  football365DavidOrnsteinBradleyBarcola: {l:"Football365 / David Ornstein", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQSmpVTUZwbHNCY2Rzcmo1d19lMVp0MFdQUXhGdGhiUTlVODhkZXUyV2pTWlhUbUxpSWx2Rk00TVlIWnp4R1VLN0hISmdPRTJWeVhxdW1ucGYzY09CcGpYS3FIZmRBOGR5YWtZLTdUclhMdm81a0Z3Y1dzek1XRlZ6MV85M2dwbl8xNVcyNFhlS2x0bmlIZTVMQVNiOGw?oc=5"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
@@ -145,7 +146,7 @@ const LINKMAP = {
   "Cody Gakpo": ["vi","echo", "tEAMtalkcitingFabrizioRomanoCodyGakpo", "bBCSportFootballCodyGakpo", "bBCSportFootballCodyGakpo1", "bBCSportCodyGakpo"],
   "Ibrahima Konaté": ["ninetymin"],
   "Fringe & loan army": ["echo"],
-  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic", "fabrizioRomanoviaTEAMtalkBradleyBarcola", "bBCSportFootballBradleyBarcola", "bBCSportFootballBradleyBarcola1", "davidOrnsteinFootball365BradleyBarcola"],
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic", "fabrizioRomanoviaTEAMtalkBradleyBarcola", "bBCSportFootballBradleyBarcola", "bBCSportFootballBradleyBarcola1", "davidOrnsteinFootball365BradleyBarcola", "football365DavidOrnsteinBradleyBarcola"],
   "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"],
   "Mohamed Salah": ["skySportsMohamedSalah", "eSPNMohamedSalah"],
   "Ibrahim Mbaye": ["skySportsIbrahimMbaye"],

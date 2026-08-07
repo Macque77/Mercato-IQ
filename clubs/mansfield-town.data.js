@@ -33,8 +33,9 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Michael Smith", sub:"Preston North End · Striker", club:"Preston North End", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on free transfer from Preston North End"},
   {name:"Jon Russell", sub:"Barnsley · Midfielder", club:"Barnsley", pos:"MID", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed midfielder after Barnsley exit"},
-  {name:"Tyler Roberts", sub:"Midfielder/Forward", club:"Unknown", pos:"MID", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed"},
-  {name:"George Abbott", sub:"Tottenham Hotspur · Defender", club:"Tottenham Hotspur", pos:"DEF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on loan from Tottenham"}
+  {name:"George Abbott", sub:"Tottenham Hotspur · Defender", club:"Tottenham Hotspur", pos:"DEF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on loan from Tottenham"},
+  {name:"Tyler Roberts", sub:"Position · Position", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed"},
+  {name:"David McGoldrick", sub:"Ipswich Town · Forward", club:"Ipswich Town", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Liam Thompson", sub:"Derby County · Midfielder", club:"Derby County", pos:"MID", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed to Derby County"},
@@ -64,7 +65,9 @@ const HUB = {
   bBCJonRussell: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9QTktyTFFxa3FNOTFSRGN5OC15dGVfOTdjZ1dEUUF1UzcwWWVyUUhTZzduaGdVaDJjcnJnMkRKSmJXalVFRllNamVhaV93ZnplNE4yeVE5dERSU0l5TEl1dTJHWEdyeVE"},
   bBCTylerRoberts: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBFME5kajM5bVp6LU1mS3BSNHJ0ZmtnNzhQRlNFMDBNZnhhdTRybDBTQTF2TGFvSzMtdWRmR1VhTVJxYktobml1ck9GdFdVZXBSRzVEWnFLOVUySXM4Q1VBd2dDU0tjbGM"},
   derbyshireLiveLiamThompson: {l:"Derbyshire Live", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRmtIdTNqS05aT1o1Sl96cEVsQnhnQ05ZYzBVOXoyWTR5MHdIdEE5S0JtV1hfMHA3ckVtU3Fvbkp1NGpScmx6alc2eXZVYVZ0V0RxNjBYMWVDUGRTaGNDSnVoSWl4VzBHWmdVcm5zYTNuSVN3ckJ6cjJabjFKb0pHMmtmcWVGM1VVYkRyNVNGcUJka21Ba2xINDM4djFuQ25mTmk5Ri1BZjJndTg"},
-  chadcoukWillEvans: {l:"chad.co.uk", u:"https://news.google.com/rss/articles/CBMiygFBVV95cUxNZFRlUkdEcGtobW5qeU1aaDVUc1RFVnFySXpINVBVS1lnVkI2QlpsOEJ5QTBVa3lmQnVueHR2aHAzdTJZZDF0U1RMTEA1VVdCR09kMFk5VHF5YmFUbi1nWTU2WWt3V0R1bzc5VUFoQl9QcDJRT3EyN0xQd1NwTzh5VzRNSGE4TUpabE9KWWVhSnRMX3o3cUo1cmQxNGc1T0MtVXg4d01ua080MWo0elpjeDdSTkkyTnZYTEFiSjgtN1RYSDJFSWY5ZlJ3"}};
+  chadcoukWillEvans: {l:"chad.co.uk", u:"https://news.google.com/rss/articles/CBMiygFBVV95cUxNZFRlUkdEcGtobW5qeU1aaDVUc1RFVnFySXpINVBVS1lnVkI2QlpsOEJ5QTBVa3lmQnVueHR2aHAzdTJZZDF0U1RMTEA1VVdCR09kMFk5VHF5YmFUbi1nWTU2WWt3V0R1bzc5VUFoQl9QcDJRT3EyN0xQd1NwTzh5VzRNSGE4TUpabE9KWWVhSnRMX3o3cUo1cmQxNGc1T0MtVXg4d01ua080MWo0elpjeDdSTkkyTnZYTEFiSjgtN1RYSDJFSWY5ZlJ3"},
+  mansfieldandAshfieldChadWillEvans: {l:"Mansfield and Ashfield Chad", u:"https://news.google.com/rss/articles/CBMiygFBVV95cUxNZFRlUkdEcGtobW5qeU1aaDVUc1RFVnFySXpINVBVS1lnVkI2QlpsOEJ5QTBVa3lmQnVueHR2aHAzdTJZZDF0U1RMTEA1VVdCR09kMFk5VHF5YmFUbi1nWTU2WWt3V0R1bzc5VUFoQl9QcDJRT3EyN0xQd1NwTzh5VzRNSGE4TUpabE9KWWVhSnRMX3o3cUo1cmQxNGc1T0MtVXg4d01ua084MWo0elpjeDdSTkkyTnZYTEFiSjgtN1RYSDJFSWY5ZlJ3"},
+  derbyCountyLiamThompson: {l:"Derby County", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxQN0VQOFVUbjhBUUJrWXh0YVdtWGltazdmdzB0WDA3cTNMYTJvZ1RqZXFnZFRoYkVycEJJNXF1UUQ0OFd0cURZYWxLbG4xVjgyalptbU01WUpsb3R5MUMydEJyNU1kcFVYWV83cEN3N0lGakYtOF9xOUQzc21QTmpnUEd0MmNRX0FyR0NlUUdB"}};
 
 const LINKMAP = {
   "David McGoldrick": ["gnews-davidmcgoldrick"],
@@ -72,8 +75,8 @@ const LINKMAP = {
   "Jon Russell": ["bBCJonRussell"],
   "Tyler Roberts": ["bBCTylerRoberts"],
   "George Abbott": ["bBCTylerRoberts"],
-  "Liam Thompson": ["derbyshireLiveLiamThompson"],
-  "Will Evans": ["chadcoukWillEvans"]};
+  "Liam Thompson": ["derbyshireLiveLiamThompson", "derbyCountyLiamThompson"],
+  "Will Evans": ["chadcoukWillEvans", "mansfieldandAshfieldChadWillEvans"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

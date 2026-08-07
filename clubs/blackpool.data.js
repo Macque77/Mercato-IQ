@@ -35,11 +35,12 @@ const CONFIRMED_OUT = [
   {name:"Ashley Fletcher", sub:"", club:"Huddersfield Town", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer to Huddersfield Town"}
 ];
 const INCOMING = [
-  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"Jay Fulton incoming", src:"FLW opinion", tier:0, fee:"Free", truth:30, prob:20, light:"o", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-07T14:38:27Z", baseProb:20}
+  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"Incoming rumour", src:"FLW opinion", tier:0, fee:"Free", truth:30, prob:20, light:"o", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-07T17:40:23Z", baseProb:20},
+  {name:"Munroe", sub:"", club:"", pos:"Striker", report:"Blackpool in talks for striker", src:"thestar.co.uk", tier:3, fee:"", truth:65, prob:55, light:"g", trend:"flat", note:"Blackpool reported to be in talks", lastSeen:"2026-08-07T17:40:23Z", baseProb:55}
 ];
 const OUTGOING = [
-  {name:"Franco Ravizzoli", sub:"GK", club:"Leicester City", pos:"GK", report:"Franco Ravizzoli outgoing", src:"FLW", tier:0, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-07T14:38:27Z", baseProb:40},
-  {name:"Josh Bowler", sub:"W", club:"Nottingham Forest", pos:"W", report:"Josh Bowler outgoing", src:"FLW", tier:0, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-07T14:38:27Z", baseProb:25},
+  {name:"Franco Ravizzoli", sub:"GK", club:"Leicester City", pos:"GK", report:"Outgoing rumour", src:"FLW", tier:0, fee:"Undisclosed", truth:55, prob:40, light:"y", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-07T17:40:23Z", baseProb:40},
+  {name:"Josh Bowler", sub:"W", club:"Nottingham Forest", pos:"W", report:"Outgoing rumour", src:"FLW", tier:0, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-07T17:40:23Z", baseProb:25},
   {name:"Ashley Fletcher", sub:"", club:"Huddersfield Town", pos:"", report:"Ashley Fletcher leaves Blackpool to join Huddersfield Town", src:"BBC", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed departure", lastSeen:"2026-08-07T01:42:32Z", baseProb:100, dead:true, deadReason:"Confirmed transfer to Huddersfield Town"}
 ];
 const RISERS = [];
@@ -51,13 +52,15 @@ const WATCHLIST = [];
 
 const HUB = {
   "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
-  bBCAshleyFletcher: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YTjQ1dFJlNVF6TG9NVXNSeEZqZlVPNDRBNXVnRVJMeW1uOGhPRW9hVHdUS29IaTBVT05DVURkTzRueEx5WHRZNVRoR0N6WFRzTXF0dUhxdi1VQ0FiaHhCWFNNRnoxYXc?oc=5"}};
+  bBCAshleyFletcher: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YTjQ1dFJlNVF6TG9NVXNSeEZqZlVPNDRBNXVnRVJMeW1uOGhPRW9hVHdUS29IaTBVT05DVURkTzRueEx5WHRZNVRoR0N6WFRzTXF0dUhxdi1VQ0FiaHhCWFNNRnoxYXc?oc=5"},
+  thestarcoukMunroe: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMivgFBVV95cUxQQTZ1WVZEaUxJRkROSlZiUE5YU1F1dUlfVGJwM0xacnNEVnRDQklTTFpJd3ZNdjRCUVd5MGpSam5DYm5BN2ZfalJXTGc2MGppY1ZPNkdGalZhRl9sMk5Zel9abXJ2aVZTUVJ4TGYwWDF1QTk5eXN2dlVEZGkzUUpHSkJCSVJmX1VpOHBfaVREeDFhZERBQWZBaDVJTExUeG1XbWppMlBhMWgtMDFvSVlZR09RMTFmMHpLVDB5c0N3?oc=5"}};
 
 const LINKMAP = {
   "Jay Fulton": ["flw"],
   "Franco Ravizzoli": ["flw"],
   "Josh Bowler": ["flw"],
-  "Ashley Fletcher": ["bBCAshleyFletcher"]};
+  "Ashley Fletcher": ["bBCAshleyFletcher"],
+  "Munroe": ["thestarcoukMunroe"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

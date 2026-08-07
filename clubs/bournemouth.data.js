@@ -62,8 +62,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Juanlu Sanchez", sub:"21 · Spain · D", club:"Sevilla", pos:"D", report:"Joins Bournemouth from Sevilla", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
-  {name:"Antonio Silva", sub:"20 · Portugal · D", club:"Benfica", pos:"D", report:"Bournemouth agree transfer from Benfica", src:"ESPN", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer announced", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
+  {name:"Juanlu Sanchez", sub:"21 · Spain · D", club:"Sevilla", pos:"D", report:"Sevilla defender Juanlu Sanchez joins Bournemouth", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-07T17:40:23Z", baseProb:100},
+  {name:"Antonio Silva", sub:"19 · Portugal · D", club:"Benfica", pos:"D", report:"Bournemouth announce the signing of Antonio Silva from Benfica", src:"ESPN", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-07T17:40:23Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Alex Scott", sub:"27 · England · W", club:"Bournemouth", pos:"W", report:"Alex Scott transfer interest from Arsenal and Man Utd; player keen on rivals", src:"Daily Mirror", tier:3, fee:"", truth:70, prob:60, light:"g", trend:"flat", note:"Multiple suitors including Arsenal and Man Utd; player interested", lastSeen:"2026-08-07T01:42:32Z", baseProb:60, dead:true, deadReason:"No recent credible transfer activity reported; interest from Arsenal not substantiated in current snippets"}

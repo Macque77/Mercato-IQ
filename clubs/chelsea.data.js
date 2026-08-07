@@ -98,16 +98,16 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Pep Chavarria", sub:"Unknown · Spain · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea set to clinch deal to sign Rayo Vallecano left-back", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal reported as imminent", lastSeen:"2026-08-06T14:13:57Z", baseProb:80, dead:true, deadReason:"Deal status unclear; removed from incoming due to lack of definitive confirmation in recent snippets"},
+  {name:"Pep Chavarria", sub:"Unknown · Unknown · Unknown", club:"Rayo Vallecano", pos:"Unknown", report:"Chelsea set to agree deal with Rayo Vallecano", src:"David Ornstein", tier:1, fee:"Unknown", truth:85, prob:80, light:"g", trend:"flat", note:"Close to finalising", lastSeen:"2026-08-07T17:40:24Z", baseProb:80},
   {name:"Dean Henderson", sub:"27 · England · GK", club:"Nottingham Forest", pos:"GK", report:"Chelsea confirm Henderson signing", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed by Chelsea", lastSeen:"2026-08-06T14:33:42Z", baseProb:100, dead:true, deadReason:"Page stated 'Chelsea confirm Henderson signing' but no recent snippet confirms completion; entry likely refers to prior window or needs verification"},
-  {name:"Morgan Rogers", sub:"23 · England · W", club:"Middlesbrough", pos:"Winger", report:"Chelsea reach verbal agreement for £117m transfer", src:"David Ornstein", tier:1, fee:"£117m", truth:85, prob:75, light:"g", trend:"flat", note:"Verbal agreement reached", lastSeen:"2026-08-07T01:42:32Z", baseProb:75},
-  {name:"Maxence Lacroix", sub:"24 · France · CB", club:"Crystal Palace", pos:"Centre-back", report:"Chelsea finalising £52m deal, set to undergo medical", src:"David Ornstein", tier:1, fee:"£52m", truth:90, prob:85, light:"g", trend:"flat", note:"Deal finalised, medical imminent", lastSeen:"2026-08-07T01:42:32Z", baseProb:85},
-  {name:"Danny Welbeck", sub:"33 · England · F", club:"Brighton & Hove Albion", pos:"Forward", report:"Chelsea exploring move for Danny Welbeck", src:"David Ornstein", tier:1, fee:"Free", truth:60, prob:45, light:"y", trend:"flat", note:"Exploring potential deal", lastSeen:"2026-08-07T01:42:32Z", baseProb:45},
-  {name:"Liam Delap", sub:"21 · England · F", club:"Ipswich Town", pos:"F", report:"Chelsea reach Liam Delap transfer agreement with Ipswich Town", src:"The Athletic", tier:2, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"flat", note:"Agreement reached; deal structure not disclosed", lastSeen:"2026-08-07T14:38:27Z", baseProb:75}
+  {name:"Morgan Rogers", sub:"Unknown · Unknown · Unknown", club:"Middlesbrough", pos:"Unknown", report:"Chelsea reach verbal agreement for £117m transfer", src:"David Ornstein", tier:1, fee:"£117m", truth:85, prob:80, light:"g", trend:"up", note:"Verbal agreement reached", lastSeen:"2026-08-07T17:40:24Z", baseProb:80},
+  {name:"Maxence Lacroix", sub:"Unknown · Unknown · Unknown", club:"Crystal Palace", pos:"Unknown", report:"Chelsea finalising £52m deal, set to undergo medical", src:"David Ornstein", tier:1, fee:"£52m", truth:90, prob:85, light:"g", trend:"flat", note:"Medical stage", lastSeen:"2026-08-07T17:40:24Z", baseProb:85},
+  {name:"Danny Welbeck", sub:"Unknown · Unknown · Unknown", club:"Brighton & Hove Albion", pos:"Unknown", report:"Chelsea exploring move for Danny Welbeck", src:"David Ornstein", tier:1, fee:"Unknown", truth:70, prob:65, light:"g", trend:"up", note:"In exploration stage", lastSeen:"2026-08-07T17:40:24Z", baseProb:65},
+  {name:"Liam Delap", sub:"Unknown · Unknown · Unknown", club:"Ipswich Town", pos:"Unknown", report:"Chelsea reach transfer agreement with Ipswich Town", src:"Laurie Whitwell", tier:1, fee:"Unknown", truth:85, prob:80, light:"g", trend:"up", note:"Agreement reached", lastSeen:"2026-08-07T17:40:24Z", baseProb:80}
 ];
 
 const OUTGOING = [
-  {name:"Enzo Fernández", sub:"23 · Argentina · M", club:"Chelsea", pos:"M", report:"Man City eyeing Enzo Fernández as Bernardo Silva replacement", src:"The Athletic", tier:2, fee:"Undisclosed", truth:60, prob:40, light:"y", trend:"down", note:"Man City interest reported; no advanced talks indicated", lastSeen:"2026-08-07T14:38:27Z", baseProb:40}
+  {name:"Enzo Fernández", sub:"Unknown · Unknown · Unknown", club:"Chelsea", pos:"Unknown", report:"Man City eyeing Enzo Fernández as Bernardo Silva replacement", src:"Laurie Whitwell", tier:1, fee:"Unknown", truth:65, prob:60, light:"g", trend:"up", note:"Interest from Man City", lastSeen:"2026-08-07T17:40:24Z", baseProb:60}
 ];
 const DEAD = [
   {name:"Victor Osimhen", sub:"Napoli · ST", club:"Napoli", pos:"ST", report:"Chelsea have been credited with interest", src:"Transfer Rumour", tier:3, fee:"Unknown", truth:40, prob:25, light:"o", trend:"up", note:"Interest reported, early stage", lastSeen:"2026-08-06T13:55:46Z", baseProb:25, dead:true, deadReason:"No recent credible snippet supporting active interest; superceded by confirmed signings", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
@@ -200,7 +200,9 @@ const HUB = {
   theAthleticDavidOrnsteinMaxenceLacroix: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNQzFURDJUSERjNjJUVUd4TEVHeVB1NGM1eXc0Tko2VVgzNUJTS191dEczVWxxR2NjVXZ2RlczMEpJS1lvQnVqOXVWV2lMZmNwZ1ZlZnpkY0pFalVRY19sSXhSbk0xOGlWa0FyZnU0Wl8ybXBQbVJPMEZiZktnTURTbUNrREdQcm56WHRZX1dTMzkyWUFOYzNZOEpucUlhdUNUVmliRHRKTVQ"},
   theNewYorkTimesDavidOrnsteinDannyWelbeck: {l:"The New York Times / David Ornstein", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxQUkJGUWFMT0xQdWZwRHp4Qm4zbjM1c0pWa2F6OWhIbEdFRzRTa05OV2ZJUXFJTFQ1QlJFZlpqcXNmME9pVm1PMmM4cXZJc01pOC1LYk5TUVJBVVUzYm1nLThIYk5YMGZndy1IeURVeHNWak1lNy1sRGN0QTdfa2RBZjY4dDk0anYycEN1cURhMTFFcktiblpj"},
   realGMLaurieWhitwellEnzoFernndez: {l:"RealGM / Laurie Whitwell", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxOVXpOYlFYXzR3UnIzcVBjT1lTTFh4M0tMTDdDVm01QXYtaUV4bFBaS3lWakgxdHhYQTlxWXI5ck9yWXFoTlhhS1p1SVYycFZzMWlTaFhadXM0WG5hUjBHV0pTUmlRQ2w5T3pkb2dmWXNqeUQ1NHVJaVhkZXZPamJYeTdfOEJZb09DUjFQa3REZThyZmZ0SUU3d0pyNXNZUE9vdk9sMg"},
-  laurieWhitwellLiamDelap: {l:"Laurie Whitwell", u:"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNamkwWEhUSlFueXhZRGtqbi1qVkdOeVczbXVTTzRNYXNlUHlvOExqVVUweDFvVGRBVnpWMENSaG5LRzVuTUNuRVp4VGt2V0VwT0V4bXcyemdYY2d1b2VVYVNQU25FX2cxQUtXcFRBaDRINk95SnBwdzVxblVDeGIzRURReG1ienF6"}};
+  laurieWhitwellLiamDelap: {l:"Laurie Whitwell", u:"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNamkwWEhUSlFueXhZRGtqbi1qVkdOeVczbXVTTzRNYXNlUHlvOExqVVUweDFvVGRBVnpWMENSaG5LRzVuTUNuRVp4VGt2V0VwT0V4bXcyemdYY2d1b2VVYVNQU25FX2cxQUtXcFRBaDRINk95SnBwdzVxblVDeGIzRURReG1ienF6"},
+  theAthleticDavidOrnsteinPepChavarria: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxNanZQcmFRVllILWgtcWFCNjB5djZJUmRWZFY2ZzVTbFRabUd1RjRrZ2ZRYXQwcjBlSlV6WExVbTRtTm41a3Q3MjlmREJjdklaRS1wZjVhazQwTDE4cF9tODR3YUNTWHg3UlFNamYxYW1xZ2V4WGdpdVNiQXpIMDE2MEFJVFR5aWdwekhQS3Z1Uml0bGxURjZBQ2dLUGxpU0pwaUtXS3R3"},
+  theAthleticDavidOrnsteinMaxenceLacroix1: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNQzFURDJUSERjNjJUVUd4TEVHeVB1NGM1eXc0Tko2VVgzNUJTS195dEczVWxxR2NjVXZ2RldzMEpJS1lvQnVqOXVWV2lMZmNwZ1ZlZnpkY0pFalVRY19sSXhSbk0xOGlWa0FyZnU0Wl8ybXBQbVJPMEZiZktnTURTbUNrREdQcm56WHRZX1dTMzkyWUFOYzNZOEpucUlhdUNUVmliRHRKTVQ"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -215,14 +217,14 @@ const LINKMAP = {
   "Mykhailo Mudryk": ["caughtOffsideMykhailoMudryk"],
   "Geovany Quenda": ["chelseaFCofficialGeovanyQuenda"],
   "Morgan Rogers": ["teamTalkMorganRogers", "theAthleticDavidOrnsteinMorganRogers"],
-  "Maxence Lacroix": ["teamTalkMorganRogers", "theAthleticDavidOrnsteinMaxenceLacroix"],
+  "Maxence Lacroix": ["teamTalkMorganRogers", "theAthleticDavidOrnsteinMaxenceLacroix", "theAthleticDavidOrnsteinMaxenceLacroix1"],
   "Marco Palestra": ["chelseaFCofficialGeovanyQuenda"],
   "Valentin Barco": ["teamTalkMorganRogers", "chelseaFCofficialsiteValentinBarco"],
   "Marc Cucurella": ["teamTalkMorganRogers", "eSPNPAcopyPepChavarria"],
   "Andrey Santos": ["teamTalkMorganRogers"],
   "Tyrique George": ["yahooSportsTyriqueGeorge"],
   "Jordan Henderson": ["skySportsJordanHenderson", "eSPNPAcopyPepChavarria"],
-  "Pep Chavarria": ["pAIrishNewsPepChavarra", "theAthleticPepChavarria", "eSPNPAcopyPepChavarria", "skySportsPepChavarria"],
+  "Pep Chavarria": ["pAIrishNewsPepChavarra", "theAthleticPepChavarria", "eSPNPAcopyPepChavarria", "skySportsPepChavarria", "theAthleticDavidOrnsteinPepChavarria"],
   "Pedro Neto": ["fabrizioRomanoviaFootball365PedroNeto"],
   "Enzo Fernandez": ["fabrizioRomanoviaFootball365EnzoFernandez", "fabrizioRomanocolumnFootballTransfersEnzoFernandez"],
   "Moisés Caicedo": ["fabrizioRomanoMoissCaicedo"],

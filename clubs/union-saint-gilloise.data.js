@@ -39,13 +39,13 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [
   {name:"Milan Hokke", sub:"CB · Netherlands", club:"ADO Den Haag", pos:"CB", report:"29 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Below asking price", truth:55, prob:35, light:"y", trend:"flat", note:"Union's bid sits under ADO's valuation, but the player has signalled he wants the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent snippet support; retiring from live list"},
-  {name:"Fedde Leysen", sub:"Unknown · Netherlands · Midfielder", club:"PSV", pos:"Midfielder", report:"Transfer from PSV to Royale Union Saint-Gilloise confirmed", src:"psv.nl", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation from PSV", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
+  {name:"Fedde Leysen", sub:"Unknown · Netherlands · Defender", club:"PSV", pos:"D", report:"Transfer from PSV confirmed", src:"PSV official", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Official transfer completed", lastSeen:"2026-08-07T17:40:23Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"29 Jul 2026", src:"The Athletic", tier:1, fee:"£17m bid rejected", truth:75, prob:40, light:"y", trend:"flat", note:"Forest's opening bid was rejected after Khalaili's record €25-32m Inter move collapsed on a failed medical; Bournemouth and Newcastle also circling.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"No recent snippet support; retiring from live list"},
   {name:"Anouar Ait El-Hadj", sub:"24 · MF", club:"Undisclosed", pos:"MF", report:"3 Aug 2026", src:"La Dernière Heure", tier:2, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Pointedly left out of Union's Champions League squad for Bodø/Glimt amid exit speculation, though no destination is confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent snippet support; retiring from live list"},
   {name:"Mamadou Barry", sub:"CB", club:"Saudi Pro League club", pos:"CB", report:"26 Jul 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Linked with a Saudi move alongside former teammate Wesley Hoedt.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent snippet support; retiring from live list"},
-  {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"Union Saint-Gilloise", pos:"Unknown", report:"Player departure confirmed; player statement released", src:"VoetbalPrimeur.be", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Official departure confirmed by club", lastSeen:"2026-08-07T10:18:48Z", baseProb:100}
+  {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"Union Saint-Gilloise", pos:"Unknown", report:"Player departure confirmed; player statement released", src:"VoetbalPrimeur", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Official departure confirmed", lastSeen:"2026-08-07T17:40:23Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];

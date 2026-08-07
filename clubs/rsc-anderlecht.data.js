@@ -38,7 +38,9 @@ const CONFIRMED_IN = [];
 
 const CONFIRMED_OUT = [];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Tomáš Souček", sub:"29 · Czech Republic · Midfielder", club:"West Ham United", pos:"Midfielder", report:"Reports indicate RSC Anderlecht are interested in signing the Czech midfielder, though Polish clubs are also pursuing him.", src:"VoetbalPrimeur.be", tier:3, fee:"", truth:45, prob:30, light:"y", trend:"flat", note:"Competition from Polish clubs; deal not advanced", lastSeen:"2026-08-07T17:40:23Z", baseProb:30}
+];
 
 const OUTGOING = [
   {name:"Unknown Attacker", sub:"Unknown · Unknown · Forward", club:"rsc-anderlecht", pos:"Forward", report:"Attacker departing RSC Anderlecht", src:"VoetbalBelgie", tier:3, fee:"", truth:70, prob:75, light:"g", trend:"flat", note:"Transfer reported but player name not specified in snippet", lastSeen:"2026-08-07T10:18:48Z", baseProb:75, dead:true, deadReason:"No specific player identified; cannot be tracked without a name"}
@@ -66,7 +68,8 @@ const LINKMAP = {
   "Denzel Dumfries": ["vrt"],
   "Matías Soticek": ["voetbalPrimeurbeMatasSoticek"],
   "Unknown Attacker": ["voetbalBelgieUnknownAttacker"],
-  "Mathias Soticek": ["voetbalPrimeurbeMathiasSoticek"]};
+  "Mathias Soticek": ["voetbalPrimeurbeMathiasSoticek"],
+  "Tomáš Souček": ["voetbalPrimeurbeMatasSoticek"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

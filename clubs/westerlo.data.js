@@ -44,11 +44,10 @@ const CONFIRMED_OUT = [
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Issiaka Kamate", sub:"MF", club:"Inter Milan", pos:"MF", report:"3 Jun 2026", src:"Nico Schira", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Nico Schira reported Westerlo closing in on an agreement with Inter for the player; no public update since early June.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"No recent credible reporting; presumed outdated entry or completed transfer details insufficient to verify as current live link"},
-  {name:"Cisse Sandra", sub:"Unknown · Unknown · Midfielder", club:"Club Brugge", pos:"Midfielder", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalPrimeur.be / VoetbalFocus / Lokaalnieuws.online", tier:3, fee:"€18m", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation of transfer; multiple sources cite €18m fee", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
+  {name:"Cisse Sandra", sub:"Unknown · Unknown · Midfielder", club:"Club Brugge", pos:"Midfielder", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalPrimeur.be, VoetbalFocus, Lokaalnieuws.online", tier:3, fee:"€18 million", truth:95, prob:95, light:"g", trend:"down", note:"Official confirmation from multiple Belgian sources; deal in advanced/final stages", lastSeen:"2026-08-07T17:40:23Z", baseProb:95}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"Unknown · Unknown · Unknown", club:"Rangers", pos:"Unknown", report:"On way to Rangers; among the most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Unknown", truth:85, prob:80, light:"g", trend:"down", note:"Transfer in advanced stages to Rangers", lastSeen:"2026-08-07T14:38:27Z", baseProb:80}
+  {name:"Jarne Rommens", sub:"Unknown · Unknown · Unknown", club:"Rangers", pos:"Unknown", report:"On way to Rangers; among the most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Unknown", truth:80, prob:80, light:"g", trend:"flat", note:"Deal in advanced stages", lastSeen:"2026-08-07T17:40:23Z", baseProb:80}
 ];
 const RISERS = [];
 const FALLERS = [];

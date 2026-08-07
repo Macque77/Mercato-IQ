@@ -94,19 +94,19 @@ const INCOMING = [
    note:"FRAMING ROW split from this page's own Positions board (not a named rumour): midfield quality and depth flagged as a likely strengthening area once the head coach is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"no longer a current link"},
   {name:"Full-back addition", sub:"Framing row · no named target", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:22, light:'o', trend:'flat',
    note:"FRAMING ROW split from this page's own Positions board (not a named rumour): full-back balance for the new system, paced to the incoming coach's preferences.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22, dead:true, deadReason:"no longer a current link"},
-  {name:"Chibuike Nwaiwu", sub:"23 · CB/DM · Nigeria", club:"Trabzonspor", pos:"DF", report:"Fulham went furthest of three Premier League suitors (also Tottenham and Crystal Palace), agreeing personal terms on a four-year deal, but two improved bids have both been rejected with Trabzonspor holding firm on valuation.", src:"Soccernet NG / Hasan Tuncel", tier:3, fee:"€30-35m (asking price)", truth:55, prob:30, light:"y", trend:"flat", note:"A prolonged saga: Fulham had a 'preliminary agreement' in mid-July, but by 3 Aug both an initial and an improved offer (with bonuses) had been turned down. Move stalls unless Fulham raise their bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"No credible recent reporting; unclear player identification"},
-  {name:"Gonzalo García", sub:"Striker · Real Madrid", club:"Real Madrid", pos:"ST", report:"Fulham sign Real Madrid striker to equal club record transfer", src:"BBC", tier:2, fee:"Club record", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; part of double Real Madrid swoop", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"César Palacios", sub:"Midfielder · Real Madrid", club:"Real Madrid", pos:"CM", report:"Fulham sign Real Madrid midfielder in double transfer swoop", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; part of double Real Madrid swoop with Gonzalo García", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Shea Charles", sub:"Midfielder", club:"Southampton", pos:"CM", report:"Fulham advancing in £25m transfer talks for Shea Charles", src:"Evening Standard", tier:3, fee:"£25m", truth:75, prob:70, light:"g", trend:"flat", note:"Transfer talks ongoing; third summer signing target", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
-  {name:"Abdelhamid Ait Boudlal", sub:"Defender · Rennes", club:"Rennes", pos:"Defender", report:"Fulham have £20m offer rejected for Rennes defender", src:"David Ornstein / The Athletic", tier:1, fee:"£20m (rejected)", truth:85, prob:35, light:"y", trend:"flat", note:"Target keen on Craven Cottage move; first offer tabled and rejected", lastSeen:"2026-08-07T14:38:27Z", baseProb:35}
+  {name:"Chibuike Nwaiwu", sub:"19 · Nigeria · Defender", club:"Chelsea", pos:"LB", report:"Fulham went furthest of three Premier League suitors", src:"Press reports", tier:3, fee:"Undisclosed", truth:60, prob:55, light:"g", trend:"up", note:"Competitive pursuit among multiple clubs", lastSeen:"2026-08-07T17:40:24Z", baseProb:55},
+  {name:"Gonzalo García", sub:"23 · Spain · Striker", club:"Real Madrid", pos:"ST", report:"Fulham sign Real Madrid striker to equal club record", src:"TNT Sports", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Deal completed; described as 'very, very excited'", lastSeen:"2026-08-07T17:40:24Z", baseProb:95},
+  {name:"César Palacios", sub:"21 · Mexico · Midfielder", club:"Real Madrid", pos:"CM", report:"Fulham sign Real Madrid midfielder in double transfer", src:"TNT Sports", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Deal completed alongside García signing", lastSeen:"2026-08-07T17:40:24Z", baseProb:95},
+  {name:"Shea Charles", sub:"19 · England · Midfielder", club:"Southampton", pos:"CM", report:"Fulham advancing in £25m transfer talks", src:"BBC", tier:2, fee:"£25m", truth:75, prob:70, light:"g", trend:"flat", note:"Talks reported as advancing", lastSeen:"2026-08-07T17:40:24Z", baseProb:70},
+  {name:"Abdelhamid Ait Boudlal", sub:"25 · France · Defender", club:"Rennes", pos:"CB", report:"Fulham have £20m offer rejected for Rennes defender", src:"The Athletic", tier:2, fee:"£20m", truth:65, prob:50, light:"y", trend:"up", note:"First offer rejected; target keen on move per Evening Standard", lastSeen:"2026-08-07T17:40:24Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Raúl Jiménez", sub:"Striker · Mexico", club:"Fulham", pos:"ST", report:"Raúl Jiménez exit; striker replacement being sought", src:"Various", tier:2, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"up", note:"Departure linked; Fulham seeking Jiménez replacement", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
+  {name:"Raúl Jiménez", sub:"33 · Mexico · Striker", club:"Benfica", pos:"ST", report:"Raúl Jiménez exit; striker replacement being sought", src:"Press reports", tier:3, fee:"Free", truth:80, prob:75, light:"g", trend:"up", note:"Departure expected; Jiménez replacement search underway", lastSeen:"2026-08-07T17:40:24Z", baseProb:75},
   {name:"Ageing spine & fringe", sub:"Squad refresh", club:"Various", pos:"SQD", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
    note:"A refresh of older players is likely under a new coach, balanced against the cost rules.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
-  {name:"Kevin", sub:"Midfielder", club:"Fulham", pos:"CM", report:"Roma's €50m bid rejected; Fulham holding firm on valuation", src:"Various", tier:3, fee:"€50m bid rejected", truth:70, prob:55, light:"g", trend:"up", note:"Roma bid deemed too low; player linked with departure", lastSeen:"2026-08-07T01:42:32Z", baseProb:55},
-  {name:"Sasa Lukic", sub:"Midfielder · Serbia", club:"Fulham", pos:"Midfielder", report:"Sasa Lukic completes Ipswich medical ahead of £9m move", src:"David Ornstein / BBC", tier:1, fee:"£9m", truth:100, prob:95, light:"g", trend:"up", note:"Medical completed; move to Ipswich Town imminent", lastSeen:"2026-08-07T14:38:27Z", baseProb:95}
+  {name:"Kevin", sub:"22 · Brazil · Winger", club:"AS Roma", pos:"LW", report:"Roma's €50m bid rejected; Fulham holding firm", src:"Press reports", tier:3, fee:"€50m rejected", truth:70, prob:50, light:"y", trend:"down", note:"Bid rejected; Fulham holding out for higher fee or retention", lastSeen:"2026-08-07T17:40:24Z", baseProb:50},
+  {name:"Sasa Lukic", sub:"24 · Serbia · Midfielder", club:"Ipswich Town", pos:"CM", report:"Sasa Lukic completes Ipswich medical ahead of £9m move from Fulham", src:"BBC", tier:2, fee:"£9m", truth:95, prob:95, light:"g", trend:"flat", note:"Medical completed; move imminent", lastSeen:"2026-08-07T17:40:24Z", baseProb:95}
 ];
 
 const RISERS = [
@@ -167,7 +167,11 @@ const HUB = {
   skySportsNewsSasaLukic: {l:"Sky Sports News", u:"https://www.skysports.com"},
   transfermarktKevin: {l:"Transfermarkt", u:"https://www.transfermarkt.com"},
   theAthleticDavidOrnsteinAbdelhamidAitBoudlal: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxPb3N1a19vU3otZ24zZXFZSExNeHlyMEJEWUpEYnZGM2hGWkJFN3MxSXhqLVVZVV9Mb2NhVVhrN3ZlVEVlOG5wTTJwa0lQYXBaT0EtLVR4cEp5b3VINGYybU9JTDJ2UVRyaXM1SjFteFhIMl8tVTlwYjJaOWJBVm1VN0FtZEVnWjg3VGp4aFN3?oc=5"},
-  bBCDavidOrnsteinSasaLukic: {l:"BBC / David Ornstein", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNUEdQNUd5NGhicWtLajJmYzl0SnUwd1ZmLU1TZ0tXVkNPVVN3ZFBERkhMT1lFWDF5X3ZFTXhTQ2twQ0x5WEowakRSMnhjMWlTQVZ0OWJvcnhEdDVoT0oyWVZVNFAwTTgyT2E3SXBJTFQtT1F0dU5XdVRiYnpKRFZoRUNSSUZZQWtEcGZtWGlDOUY?oc=5"}};
+  bBCDavidOrnsteinSasaLukic: {l:"BBC / David Ornstein", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNUEdQNUd5NGhicWtLajJmYzl0SnUwd1ZmLU1TZ0tXVkNPVVN3ZFBERkhMT1lFWDF5X3ZFTXhTQ2twQ0x5WEowakRSMnhjMWlTQVZ0OWJvcnhEdDVoT0oyWVZVNFAwTTgyT2E3SXBJTFQtT1F0dU5XdVRiYnpKRFZoRUNSSUZZQWtEcGZtWGlDOUY?oc=5"},
+  bBCSheaCharles: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE41d2t1UjhGVmNRZXJiMnA5LXJhMzZIbGFhOHlIRkxlZS1oUEZUWW1ucDVPLVpLRDBiUS1zTU5GM3FwR2E3VlRycEpvY3ljcjdKUXFfNF9jR1d1dGFoMmpTdEVNYktUODJ6aXc"},
+  theAthleticDavidOrnsteinAbdelhamidAitBoudlal1: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxPb3N1a19vU3otZ24zZXFZSExNeHlyMEJEWUpEYnZGM2hGWkJFN3MxSXhqLVVZVV9Mb2NhVVhrN3ZlVEVlOG5wMTJwa0lQYXBaT0EtLVR4cEp5b3VINGYybU9JTDJ2UVRyaXM1SjFteFhIMl8tVTlwYjJaOWJBVm1VN0FtZEVnWjg3VGp4aFN3"},
+  tNTSportsGonzaloGarca: {l:"TNT Sports", u:"https://news.google.com/rss/articles/CBMizAFBVV95cUxOMTRxWkRFd09WTEZDcXF1dTdFeFYtal9FTUR2N1JSSlQxVmd2cGpoZVVsVDl4eVRTNl90Q0ZiQ3BxUWRCbWNLZGNHU3FkM2hnbHFLVUJvTnFEbDg0ZkxxTmQwM3RKVDJwbmFtek9Tak9jakl2NGtBRGx5RHNQNmpacWticHFPa2J1STlURXJaSHpwLTJFa3ZCdndadkFaMjhJQUZ3MVVnOTFtVzZNamRlNE5ucGhTX2JoSTdzcldfVjg0QTNkVGJheHI2czU"},
+  bBCDavidOrnsteinSasaLukic1: {l:"BBC / David Ornstein", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNUEdQNUd5NGhicWtLajJmYzl0SnUwd1ZmLU1TZ0tXVkNPVVN3ZFBERkhMT1lFWDF5X3ZFTXhTQ2twQ0x5WEowakRSMnhjMWlTQVZ0OWJvcnhEdDVoT0oyWVZVNFAwTTgyT2E3SXBJTFQtT1F0dU5XdVRiYnpKRFZoRUNSSUZZQWtEcGZtWGlDOUY"}};
 const LINKMAP = {
   "Manager appointment": ["sky","itimes","athletic"],
   "Striker (Jimenez replacement)": ["bbcGossip","athletic"],
@@ -176,17 +180,17 @@ const LINKMAP = {
   "Raul Jimenez": ["sky","bbc"],
   "Ageing spine & fringe": ["athletic","bbc"],
   "Marco Silva": ["sky","bbc","ffc"],
-  "Gonzalo García": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "eSPNGonzaloGarca", "bBCGonzaloGarca"],
-  "César Palacios": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "fulhamFCofficialCsarPalacios", "bBCGonzaloGarca"],
+  "Gonzalo García": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "eSPNGonzaloGarca", "bBCGonzaloGarca", "tNTSportsGonzaloGarca"],
+  "César Palacios": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "fulhamFCofficialCsarPalacios", "bBCGonzaloGarca", "tNTSportsGonzaloGarca"],
   "Chibuike Nwaiwu": ["soccernetNGChibuikeNwaiwu"],
   "Kevin": ["theHardTackleviaGloboEsporteKevin", "transfermarktKevin"],
-  "Sasa Lukic": ["sportsMoleSkySportsNewsSasaLukic", "skySportsNewsSasaLukic", "bBCDavidOrnsteinSasaLukic"],
+  "Sasa Lukic": ["sportsMoleSkySportsNewsSasaLukic", "skySportsNewsSasaLukic", "bBCDavidOrnsteinSasaLukic", "bBCDavidOrnsteinSasaLukic1"],
   "Jonah Kusi-Asare": ["fulhamFCofficialJonahKusiAsare"],
   "Raúl Jiménez": ["fulhamFCofficialRalJimnez", "eveningStandardSheaCharles"],
   "Issa Diop": ["fulhamFCofficialIssaDiop"],
   "Harry Wilson": ["skySportsHarryWilson"],
-  "Shea Charles": ["eveningStandardSheaCharles"],
-  "Abdelhamid Ait Boudlal": ["theAthleticDavidOrnsteinAbdelhamidAitBoudlal"]};
+  "Shea Charles": ["eveningStandardSheaCharles", "bBCSheaCharles"],
+  "Abdelhamid Ait Boudlal": ["theAthleticDavidOrnsteinAbdelhamidAitBoudlal", "theAthleticDavidOrnsteinAbdelhamidAitBoudlal1"]};
 const WL_LINKMAP = {
   "Kieran McKenna":"sky","Raul Jimenez":"bbc",
 };

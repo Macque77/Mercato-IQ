@@ -40,7 +40,7 @@ const CONFIRMED_OUT = [
   {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
 ];
 const INCOMING = [
-  {name:"Dom Ballard", sub:"Striker · Leyton Orient", club:"Leyton Orient", pos:"ST", report:"Bristol City closing in on signing from Leyton Orient", src:"Bristol Live", tier:2, fee:"£5m", truth:95, prob:85, light:"g", trend:"down", note:"At Robins HPC for medical, deal in advanced stages", lastSeen:"2026-08-07T14:38:27Z", baseProb:85},
+  {name:"Dom Ballard", sub:"Striker · England", club:"Leyton Orient", pos:"ST", report:"Bristol City closing in on signing striker Dom Ballard from Leyton Orient", src:"bristolpost.co.uk", tier:2, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"down", note:"Advanced talks; player at HPC for medical", lastSeen:"2026-08-07T17:40:24Z", baseProb:75},
   {name:"Lorent Tolaj", sub:"striker · Kosovo · CF", club:"Plymouth Argyle", pos:"ST", report:"Bristol City sign striker Lorent Tolaj from Plymouth Argyle", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; signed from Plymouth Argyle", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [];

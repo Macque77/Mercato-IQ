@@ -72,11 +72,11 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Elliot Anderson", sub:"21 · England · M", club:"Nottingham Forest", pos:"M", report:"Agreement reached after improved offer to Nottm Forest", src:"David Ornstein", tier:1, fee:"£106m plus add-ons", truth:90, prob:85, light:"g", trend:"up", note:"Verbal agreement confirmed, deal described as 'agreement'", lastSeen:"2026-08-07T14:38:27Z", baseProb:85},
-  {name:"James Trafford", sub:"21 · England · GK", club:"Leeds United", pos:"GK", report:"Leeds in talks with Manchester City over goalkeeper", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Active negotiations reported", lastSeen:"2026-08-07T14:38:27Z", baseProb:70}
+  {name:"Elliot Anderson", sub:"21 · England · M", club:"Nottingham Forest", pos:"M", report:"Agreement reached after improved offer to Nottingham Forest", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"down", note:"Deal described as agreement reached", lastSeen:"2026-08-07T17:40:24Z", baseProb:80},
+  {name:"James Trafford", sub:"23 · England · GK", club:"Leeds United", pos:"GK", report:"Leeds in talks with Manchester City over goalkeeper", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:80, prob:75, light:"g", trend:"up", note:"Active talks reported", lastSeen:"2026-08-07T17:40:24Z", baseProb:75}
 ];
 const OUTGOING = [
-  {name:"Rodri", sub:"28 · Spain · M", club:"Real Madrid", pos:"M", report:"Real Madrid working on deal; Barcelona made €45m offer; Man City set price, deal very close", src:"David Ornstein", tier:1, fee:"€45m (Barcelona offer) / Set price not disclosed", truth:70, prob:65, light:"g", trend:"down", note:"Multiple bids reported; Real Madrid and Barcelona both pursuing; deal described as 'very close'", lastSeen:"2026-08-07T14:38:27Z", baseProb:65}
+  {name:"Rodri", sub:"28 · Spain · M", club:"Manchester City", pos:"M", report:"Real Madrid working on deal; Barcelona made €45m offer; deal described as very close", src:"David Ornstein", tier:1, fee:"€45m (Barcelona offer)", truth:90, prob:85, light:"g", trend:"up", note:"Multiple sources confirm advanced negotiations; Real Madrid pursuing; Barcelona's €45m bid reported", lastSeen:"2026-08-07T17:40:24Z", baseProb:85}
 ];
 const DEAD = [
   {name:"Enzo Fernández", sub:"23 · Argentina · M", club:"Benfica", pos:"Midfielder", report:"Incoming link reported ~6 days ago", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"up", note:"Old report; no recent confirmation found", lastSeen:"2026-08-06T13:55:46Z", baseProb:30, dead:true, deadReason:"No recent snippet support; likely stale rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
@@ -155,20 +155,23 @@ const HUB = {
   theAthleticGoogleNewsRodri: {l:"The Athletic / Google News", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxPMGphUGxJbjFBUXFFUm5ZU2pYNFhwdjUtb0xLaHREa1NlakhTc3k3YmdCT2VDVUh0NmQ1Y3djVjhSS0pPendPU2xyODR6OW1GZFBOaWFIenctb2ZfV2xrWTYzbFdyaEY4SmJpeVdWeU1mcDRibXU0bm1rWFpvWnJ2N2QzYmVIOVBOMEV0RW12M2JOUUNVb3h2NFhyWQ"},
   football365viaDavidOrnsteinElliotAnderson: {l:"Football365 (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPVEJkQ3hzUkI0aklGMEtTRnBDb1hlMUx4Zmx1b213ZU9fTmcxeEFydGlEeEh4bWNSZWt6T25HYWdLZVJlTWdYWVdVNjBiMGl4VmpvdWFzZ2xRZ0pscUV1NlJYbDh2VjkxWnZNM1FYbjRQWG1YbHp6M3hLYUNSVllsM01DWE1uRzF5VDJaM1lCZUltNFVZQ3h5MWRLNHY3Vlh4"},
   theAthleticviaDavidOrnsteinJamesTrafford: {l:"The Athletic (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxPSERhWXlDZnA3dnNSNk83djBHQkQxcFZnRGNjUzA3a3ZLM1Fsd3RBeG53bFNvUjNVX3RaMDdMM3p5RDExVkxRLUpzb1EySWtBcVJvdkZLb0lFSUlwOHdOV1hFMHppT2IzZ25ibTRORUdNN29URVNWVVlRNGkyTVdyUGp3bHpLR283RWh3YW03dzV4SGM"},
-  football365viaDavidOrnsteinRodri: {l:"Football365 (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPcnNHeUpkdnI3dC02OFQ2ZEUwdjEzZzkzNVNnQUt1M1ZablM1TkdZMEFVUDlVeWVTSEExTFpxWkVTZ1MwRm5SWTFROWJzcTZ3bS1vSzRFNlpwdVkxSi13TWZxNWNTVlVKeDBnTF9yNEtkcVNURHl5dEp6XzRyZnU1Nnh6OHBRb1FySlY4YmJjVDNnTi1UZUNrM1hhQUZUbmNCNTZMWDFuc0ZSeWMwWkJzQVJFdHJ0T3doemg1NkJ0MA"}};
+  football365viaDavidOrnsteinRodri: {l:"Football365 (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPcnNHeUpkdnI3dC02OFQ2ZEUwdjEzZzkzNVNnQUt1M1ZablM1TkdZMEFVUDlVeWVTSEExTFpxWkVTZ1MwRm5SWTFROWJzcTZ3bS1vSzRFNlpwdVkxSi13TWZxNWNTVlVKeDBnTF9yNEtkcVNURHl5dEp6XzRyZnU1Nnh6OHBRb1FySlY4YmJjVDNnTi1UZUNrM1hhQUZUbmNCNTZMWDFuc0ZSeWMwWkJzQVJFdHJ0T3doemg1NkJ0MA"},
+  football365viaDavidOrnsteinElliotAnderson1: {l:"Football365 (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPVEJkQ3hzUkI0aklGMEtTRnBDb1hlMUx4Zmx1b213ZU9fTmcxeEFydGlEeEh4bWNSZWt6T25HYWdLZVJlTWdYWVdVNjBiMGl4VmpvdWFzZ2xRZ0pscUV1NlJYbDh2VjkxWnZNM1FYbjRQWG1YbHp6M3hLYUNSVllsM01DWE1uRzF5VDJaM1lCZUltNFVZQ3h5MWRLNHY3Vlh4?oc=5"},
+  theAthleticviaDavidOrnsteinJamesTrafford1: {l:"The Athletic (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxPSERhWXlDZnA3dnNSNk83djBHQkQxcFZnRGNjUzA3a3ZLM1Fsd3RBeG53bFNvUjNVX3RaMDdMM3p5RDExVkxRLUpzb1EySWtBcVJvdkZLb0lFSUlwOHdOV1hFMHppT2IzZ25ibTRORUdNN29URVNWVVlRNGkyTVdyUGp3bHpLR283RWh3YW03dzV4SGM?oc=5"},
+  football365viaDavidOrnsteinRodri1: {l:"Football365 (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPcnNHeUpkdnI3dC02OFQ2ZEUwdjEzZzkzNVNnQUt1M1ZablM1TkdZMEFVUDlVeWVTSEExTFpxWkVTZ1MwRm5SWTFROWJzcTZ3bS1vSzRFNlpwdVkxSi13TWZxNWNTVlVKeDBnTF9yNEtkcVNURHl5dEp6XzRyZnU1Nnh6OHBRb1FySlY4YmJjVDNnTi1UZUNrM1hhQUZUbmNCNTZMWDFuc0ZSeWMwWkJzQVJFdHJ0T3doemg1NkJ0MA?oc=5"}};
 const LINKMAP = {
-  "Elliot Anderson": ["men", "eSPNElliotAnderson", "theAthleticGoogleNewsElliotAnderson", "football365viaDavidOrnsteinElliotAnderson"],
+  "Elliot Anderson": ["men", "eSPNElliotAnderson", "theAthleticGoogleNewsElliotAnderson", "football365viaDavidOrnsteinElliotAnderson", "football365viaDavidOrnsteinElliotAnderson1"],
   "Enzo Fernández": ["men"],
   "Eli Junior Kroupi": ["men"],
   "Senior core review": ["athletic","men"],
   "Bernardo Silva": ["athletic","mcfc", "footballFanCastManuelAkanji"],
   "John Stones": ["athletic","mcfc", "tEAMtalkMathysDetourbet"],
   "Ederson": ["athletic","mcfc"],
-  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri", "bBCSportRodri", "theGuardianFootballRodri", "theAthleticGoogleNewsRodri", "football365viaDavidOrnsteinRodri"],
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri", "bBCSportRodri", "theGuardianFootballRodri", "theAthleticGoogleNewsRodri", "football365viaDavidOrnsteinRodri", "football365viaDavidOrnsteinRodri1"],
   "Ayyoub Bouaddi": ["footballTransferscomAyyoubBouaddi", "caughtOffsiderelayingFabrizioRomanoAyyoubBouaddi"],
   "Gerónimo Rulli": ["footballTransferscomRomanoGernimoRulli"],
   "Savinho": ["yahooSportsviaRomanoTEAMtalkSavinho", "football365relayingFabrizioRomanoSavinho"],
-  "James Trafford": ["readManCitycomviaRomanoJamesTrafford", "theAthleticGoogleNewsJamesTrafford", "theAthleticviaDavidOrnsteinJamesTrafford"],
+  "James Trafford": ["readManCitycomviaRomanoJamesTrafford", "theAthleticGoogleNewsJamesTrafford", "theAthleticviaDavidOrnsteinJamesTrafford", "theAthleticviaDavidOrnsteinJamesTrafford1"],
   "Mathys Detourbet": ["tEAMtalkMathysDetourbet"],
   "Jeremy Monga": ["tEAMtalkMathysDetourbet"],
   "Pierce Charles": ["tEAMtalkMathysDetourbet"],
