@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Bundesliga",
   nation: "Germany",
-  stories_count: 51
+  stories_count: 52
 };
 
 const TOP_STORIES = [  {
@@ -94,17 +94,17 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Noah Atubolu", prob: 85, truth: 90, bullshit: false,
-    club_origin: "sc-freiburg", club_display_name: "SC Freiburg", direction: "out",
-    from: "SC Freiburg", to: "SC Freiburg",
-    tier: 2, coverage: 2, coverage_trend: 'up',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
-  },
-  {
     name: "Junior Dina Ebimbe", prob: 85, truth: 85, bullshit: false,
     club_origin: "schalke-04", club_display_name: "FC Schalke 04", direction: "in",
     from: "Eintracht Frankfurt", to: "FC Schalke 04",
     tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Noah Atubolu", prob: 85, truth: 90, bullshit: false,
+    club_origin: "sc-freiburg", club_display_name: "SC Freiburg", direction: "out",
+    from: "SC Freiburg", to: "SC Freiburg",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -151,12 +151,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"eintracht-frankfurt": 3, "rb-leipzig": 3, "fc-cologne": 2, "werder-bremen": 4, "vfb-stuttgart": 7, "bayern-munich": 3, "sc-freiburg": 2, "borussia-m\u00f6nchengladbach": 5, "tsg-hoffenheim": 3, "schalke-04": 3, "borussia-dortmund": 5, "1-fc-augsburg": 3, "union-berlin": 1, "mainz-05": 2, "sc-paderborn": 3, "bayer-leverkusen": 1, "sv-elversberg": 1};
+const BY_CLUB = {"eintracht-frankfurt": 3, "rb-leipzig": 4, "fc-cologne": 2, "werder-bremen": 4, "vfb-stuttgart": 7, "bayern-munich": 3, "sc-freiburg": 2, "borussia-m\u00f6nchengladbach": 5, "tsg-hoffenheim": 3, "schalke-04": 3, "borussia-dortmund": 5, "1-fc-augsburg": 3, "union-berlin": 1, "mainz-05": 2, "sc-paderborn": 3, "bayer-leverkusen": 1, "sv-elversberg": 1};
 
-const CLUBS_LIST = [{"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 1, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "mainz-05", "name": "1. FSV Mainz 05", "count": 2, "badge": true, "primary": "#C3141E", "primaryBright": "#FF5A62"}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 1, "badge": true, "primary": "#E32219", "primaryBright": "#FF6259"}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 3, "badge": true, "primary": "#DC143C", "primaryBright": "#FF4444"}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 5, "badge": true, "primary": "#FFD700", "primaryBright": "#FFED4E"}, {"slug": "borussia-m\u00f6nchengladbach", "name": "Borussia M\u00f6nchengladbach", "count": 5, "badge": true, "primary": "#00923F", "primaryBright": "#1EC85C"}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 3, "badge": true, "primary": "#E20E0E", "primaryBright": "#FF5252"}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 3, "badge": true, "primary": "#BA3733", "primaryBright": "#FF6259"}, {"slug": "fc-cologne", "name": "FC Cologne", "count": 2, "badge": true, "primary": "#EC2029", "primaryBright": "#FF5A62"}, {"slug": "schalke-04", "name": "FC Schalke 04", "count": 3, "badge": true, "primary": "#004B9F", "primaryBright": "#5CA9FF"}, {"slug": "hamburger-sv", "name": "Hamburger SV", "count": 0, "badge": true, "primary": "#00295B", "primaryBright": "#1E5FBF"}, {"slug": "rb-leipzig", "name": "RB Leipzig", "count": 3, "badge": true, "primary": "#DD0741", "primaryBright": "#FF4D77"}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 2, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "sc-paderborn", "name": "SC Paderborn 07", "count": 3, "badge": true, "primary": "#0055A4", "primaryBright": "#3D8FDD"}, {"slug": "sv-elversberg", "name": "SV 07 Elversberg", "count": 1, "badge": true, "primary": "#0057A8", "primaryBright": "#3D8FDD"}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 3, "badge": true, "primary": "#1C63B7", "primaryBright": "#5CA9FF"}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 7, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "werder-bremen", "name": "Werder Bremen", "count": 4, "badge": true, "primary": "#033D0B", "primaryBright": "#033D0B"}];
+const CLUBS_LIST = [{"slug": "union-berlin", "name": "1. FC Union Berlin", "count": 1, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "mainz-05", "name": "1. FSV Mainz 05", "count": 2, "badge": true, "primary": "#C3141E", "primaryBright": "#FF5A62"}, {"slug": "bayer-leverkusen", "name": "Bayer Leverkusen", "count": 1, "badge": true, "primary": "#E32219", "primaryBright": "#FF6259"}, {"slug": "bayern-munich", "name": "Bayern Munich", "count": 3, "badge": true, "primary": "#DC143C", "primaryBright": "#FF4444"}, {"slug": "borussia-dortmund", "name": "Borussia Dortmund", "count": 5, "badge": true, "primary": "#FFD700", "primaryBright": "#FFED4E"}, {"slug": "borussia-m\u00f6nchengladbach", "name": "Borussia M\u00f6nchengladbach", "count": 5, "badge": true, "primary": "#00923F", "primaryBright": "#1EC85C"}, {"slug": "eintracht-frankfurt", "name": "Eintracht Frankfurt", "count": 3, "badge": true, "primary": "#E20E0E", "primaryBright": "#FF5252"}, {"slug": "1-fc-augsburg", "name": "FC Augsburg", "count": 3, "badge": true, "primary": "#BA3733", "primaryBright": "#FF6259"}, {"slug": "fc-cologne", "name": "FC Cologne", "count": 2, "badge": true, "primary": "#EC2029", "primaryBright": "#FF5A62"}, {"slug": "schalke-04", "name": "FC Schalke 04", "count": 3, "badge": true, "primary": "#004B9F", "primaryBright": "#5CA9FF"}, {"slug": "hamburger-sv", "name": "Hamburger SV", "count": 0, "badge": true, "primary": "#00295B", "primaryBright": "#1E5FBF"}, {"slug": "rb-leipzig", "name": "RB Leipzig", "count": 4, "badge": true, "primary": "#DD0741", "primaryBright": "#FF4D77"}, {"slug": "sc-freiburg", "name": "SC Freiburg", "count": 2, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "sc-paderborn", "name": "SC Paderborn 07", "count": 3, "badge": true, "primary": "#0055A4", "primaryBright": "#3D8FDD"}, {"slug": "sv-elversberg", "name": "SV 07 Elversberg", "count": 1, "badge": true, "primary": "#0057A8", "primaryBright": "#3D8FDD"}, {"slug": "tsg-hoffenheim", "name": "TSG Hoffenheim", "count": 3, "badge": true, "primary": "#1C63B7", "primaryBright": "#5CA9FF"}, {"slug": "vfb-stuttgart", "name": "VfB Stuttgart", "count": 7, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "werder-bremen", "name": "Werder Bremen", "count": 4, "badge": true, "primary": "#033D0B", "primaryBright": "#033D0B"}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T01:53:17.025675Z",
+  updated: "2026-08-07T06:12:44.363103Z",
   label: "League aggregation"
 };

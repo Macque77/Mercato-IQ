@@ -52,18 +52,18 @@ const TOP_STORIES = [  {
     value: "Unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Glody Ngonda", prob: 80, truth: 80, bullshit: false,
-    club_origin: "dijon", club_display_name: "Dijon FCO", direction: "in",
-    from: "VClub", to: "Dijon FCO",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
     name: "Unknown player", prob: 80, truth: 75, bullshit: false,
     club_origin: "as-nancy-lorraine", club_display_name: "AS Nancy-Lorraine", direction: "in",
     from: "Troyes", to: "AS Nancy-Lorraine",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Glody Ngonda", prob: 80, truth: 80, bullshit: false,
+    club_origin: "dijon", club_display_name: "Dijon FCO", direction: "in",
+    from: "VClub", to: "Dijon FCO",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Moussa Konaté", prob: 75, truth: 75, bullshit: false,
@@ -87,6 +87,6 @@ const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "b
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T01:53:17.029763Z",
+  updated: "2026-08-07T06:12:44.367442Z",
   label: "League aggregation"
 };

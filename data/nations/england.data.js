@@ -55,7 +55,7 @@ const TOP_STORIES = [  {
     name: "Bruno Guimarães",prob: 85, truth: 95, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Newcastle United", to: "Arsenal",
-    tier: 1, coverage: 5, coverage_trend: 'down',
+    tier: 1, coverage: 5, coverage_trend: 'flat',
     value: "£75m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
@@ -104,24 +104,24 @@ const TOP_STORIES = [  {
     name: "Bradley Barcola",prob: 70, truth: 75, bullshit: false,
     club_origin: "liverpool", club_display_name: "Liverpool", direction: "in",
     from: "Paris Saint-Germain", to: "Liverpool",
-    tier: 1, coverage: 8, coverage_trend: 'up',
+    tier: 1, coverage: 8, coverage_trend: 'flat',
     value: "£116m", updated: "2026-06-06T00:00:00Z", league: "Premier League"
   },
   {
     name: "Rodri",prob: 70, truth: 75, bullshit: false,
     club_origin: "manchester-city", club_display_name: "Manchester City", direction: "out",
     from: "Manchester City", to: "Manchester City",
-    tier: 1, coverage: 6, coverage_trend: 'up',
+    tier: 1, coverage: 6, coverage_trend: 'flat',
     value: "Unknown", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
 ];
 
-const BY_LEAGUE = {"League One": 106, "Championship": 34, "Premier League": 103, "League Two": 0};
+const BY_LEAGUE = {"League One": 107, "Championship": 33, "Premier League": 103, "League Two": 0};
 
-const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 106}, {"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "championship", "name": "Championship", "count": 34}, {"slug": "league-two", "name": "League Two", "count": 0}];
+const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 107}, {"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "championship", "name": "Championship", "count": 33}, {"slug": "league-two", "name": "League Two", "count": 0}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T01:53:17.022411Z",
+  updated: "2026-08-07T06:12:44.359633Z",
   label: "Nation aggregation"
 };

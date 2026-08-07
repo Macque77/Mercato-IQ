@@ -6,7 +6,7 @@
 const NATION = {
   name: "Italy",
   flag_emoji: "🇮🇹",
-  stories_count: 137
+  stories_count: 136
 };
 
 const TOP_STORIES = [  {
@@ -24,9 +24,9 @@ const TOP_STORIES = [  {
     value: "€25-30m", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Yunus Musah",prob: 20, truth: 45, bullshit: false,
+    name: "Youssouf Fofana",prob: 20, truth: 40, bullshit: false,
     club_origin: "ac-milan", club_display_name: "AC Milan", direction: "out",
-    from: "AC Milan", to: "Unnamed Premier League clubs",
+    from: "AC Milan", to: "Premier League (unnamed clubs)",
     tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
@@ -38,9 +38,9 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Youssouf Fofana",prob: 20, truth: 40, bullshit: false,
+    name: "Yunus Musah",prob: 20, truth: 45, bullshit: false,
     club_origin: "ac-milan", club_display_name: "AC Milan", direction: "out",
-    from: "AC Milan", to: "Premier League (unnamed clubs)",
+    from: "AC Milan", to: "Unnamed Premier League clubs",
     tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
@@ -80,16 +80,16 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
-    club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
-    from: "Glasgow Rangers", to: "Atalanta",
+    name: "Noa Lang",prob: 45, truth: 70, bullshit: false,
+    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
+    from: "Napoli", to: "Ajax",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
   {
-    name: "Noa Lang",prob: 45, truth: 70, bullshit: false,
-    club_origin: "napoli", club_display_name: "Napoli", direction: "out",
-    from: "Napoli", to: "Ajax",
+    name: "Nicolas Raskin",prob: 45, truth: 70, bullshit: false,
+    club_origin: "atalanta", club_display_name: "Atalanta", direction: "in",
+    from: "Glasgow Rangers", to: "Atalanta",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Serie A"
   },
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Serie A": 126, "Serie C": 4, "Serie B": 7, "Serie D": 0};
+const BY_LEAGUE = {"Serie A": 125, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 
-const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 126}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
+const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 125}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T01:53:17.023324Z",
+  updated: "2026-08-07T06:12:44.360587Z",
   label: "Nation aggregation"
 };
