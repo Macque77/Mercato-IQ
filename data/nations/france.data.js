@@ -6,7 +6,7 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 92
+  stories_count: 93
 };
 
 const TOP_STORIES = [  {
@@ -94,6 +94,13 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
+    name: "Bradley Barcola",prob: 58, truth: 90, bullshit: false,
+    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "out",
+    from: "Paris Saint-Germain", to: "Liverpool",
+    tier: 1, coverage: 3, coverage_trend: 'down',
+    value: "Nine figures sought", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
     name: "Madison Ingram",prob: 55, truth: 71, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
@@ -107,21 +114,14 @@ const TOP_STORIES = [  {
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Angers value at ~€7m (rejected Monaco's €4m bid)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
-  {
-    name: "Geronimo Rulli",prob: 55, truth: 70, bullshit: false,
-    club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "out",
-    from: "Olympique de Marseille", to: "Manchester City",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 82, "Ligue 2": 10, "Championnat National": 0, "Championnat National 3": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 83, "Ligue 2": 10, "Championnat National": 0, "Championnat National 3": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 82}, {"slug": "ligue-2", "name": "Ligue 2", "count": 10}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 83}, {"slug": "ligue-2", "name": "Ligue 2", "count": 10}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T17:36:20.229747Z",
+  updated: "2026-08-07T20:04:12.866953Z",
   label: "Nation aggregation"
 };

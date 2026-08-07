@@ -5,18 +5,25 @@
 
 const LEAGUE = {
   name: "League Two",
-  nation: "Unknown",
-  stories_count: 0
+  nation: "England",
+  stories_count: 1
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Shaq Forde", prob: 70, truth: 80, bullshit: false,
+    club_origin: "bristol-rovers", club_display_name: "Bristol Rovers", direction: "out",
+    from: "Bristol Rovers", to: "Bristol Rovers",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "unknown", updated: "2026-07-29T00:00:00Z"
+  },
+];
 
-const BY_CLUB = {};
+const BY_CLUB = {"bristol-rovers": 1};
 
-const CLUBS_LIST = [{"slug": "bristol-rovers", "name": "Bristol Rovers", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}];
+const CLUBS_LIST = [{"slug": "bristol-rovers", "name": "Bristol Rovers", "count": 1, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T17:36:20.239348Z",
+  updated: "2026-08-07T20:04:12.877037Z",
   label: "League aggregation"
 };
