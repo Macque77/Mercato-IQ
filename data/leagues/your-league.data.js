@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "as-saint-\u00e9tienne", "name": "AS Saint-\u00c9tienne", "count": 0, "badge": true, "primary": "#1E7A3F", "primaryBright": "#3FCB8C"}, {"slug": "acad\u00e9mica", "name": "Associa\u00e7\u00e3o Acad\u00e9mica", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "preu\u00dfen-m\u00fcnster", "name": "Preu\u00dfen M\u00fcnster", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "osnabr\u00fcck", "name": "VfL Osnabr\u00fcck", "count": 0, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.581371Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.033236Z",
   label: "League aggregation"
 };

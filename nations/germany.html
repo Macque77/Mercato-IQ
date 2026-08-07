@@ -665,7 +665,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">36</span>
+          <span class="stat-value">61</span>
         </div>
       </div>
     </div>
@@ -702,20 +702,13 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 36
+  stories_count: 61
 };
 
 const TOP_STORIES = [  {
-    name: "Junior Dina Ebimbe",prob: 88, truth: 92, bullshit: false,
-    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "out",
-    from: "Eintracht Frankfurt", to: "Schalke 04",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "€1m plus 25% sell-on", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
-  {
     name: "Hrvoje Smolcic",prob: 85, truth: 88, bullshit: false,
-    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
-    from: "Arca Corum FK", to: "Eintracht Frankfurt",
+    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "out",
+    from: "Eintracht Frankfurt", to: "Arca Corum FK",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
@@ -762,63 +755,70 @@ const TOP_STORIES = [  {
     value: "~€150m mooted", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
-    name: "Yan Couto",prob: 80, truth: 75, bullshit: false,
-    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "out",
-    from: "Borussia Dortmund", to: "Como 1907",
+    name: "Sékou Manzambi",prob: 100, truth: 100, bullshit: false,
+    club_origin: "sc-freiburg", club_display_name: "SC Freiburg", direction: "in",
+    from: "SC Freiburg", to: "SC Freiburg",
     tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "€70m+", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+  },
+  {
+    name: "Jackson Irvine",prob: 100, truth: 100, bullshit: false,
+    club_origin: "st-pauli", club_display_name: "FC St. Pauli", direction: "out",
+    from: "FC St. Pauli", to: "Cerezo Osaka",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "2. Bundesliga"
+  },
+  {
+    name: "Kevin Müller",prob: 95, truth: 95, bullshit: false,
+    club_origin: "1-fc-heidenheim", club_display_name: "1. FC Heidenheim", direction: "in",
+    from: "FC Schalke 04", to: "1. FC Heidenheim",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "2. Bundesliga"
+  },
+  {
+    name: "Isac Lidberg",prob: 95, truth: 95, bullshit: false,
+    club_origin: "borussia-mönchengladbach", club_display_name: "Borussia Mönchengladbach", direction: "in",
+    from: "Darmstadt 98", to: "Borussia Mönchengladbach",
+    tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
-    name: "Noel Futkeu",prob: 68, truth: 85, bullshit: false,
-    club_origin: "eintracht-frankfurt", club_display_name: "Eintracht Frankfurt", direction: "in",
-    from: "Exit sought", to: "Eintracht Frankfurt",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    name: "Rocco Reitz",prob: 95, truth: 95, bullshit: false,
+    club_origin: "borussia-mönchengladbach", club_display_name: "Borussia Mönchengladbach", direction: "out",
+    from: "Borussia Mönchengladbach", to: "RB Leipzig",
+    tier: 2, coverage: 4, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
-    name: "João Palhinha",prob: 55, truth: 85, bullshit: false,
-    club_origin: "bayern-munich", club_display_name: "Bayern Munich", direction: "out",
-    from: "Bayern Munich", to: "Unattached suitors",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    name: "Marvin Friedrich",prob: 95, truth: 95, bullshit: false,
+    club_origin: "borussia-mönchengladbach", club_display_name: "Borussia Mönchengladbach", direction: "out",
+    from: "Borussia Mönchengladbach", to: "Union Berlin",
+    tier: 2, coverage: 3, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
-    name: "Mateo Kvasina",prob: 48, truth: 62, bullshit: false,
-    club_origin: "fc-cologne", club_display_name: "FC Cologne", direction: "in",
-    from: "Borussia Mönchengladbach", to: "FC Cologne",
+    name: "Mael Corboz",prob: 90, truth: 85, bullshit: false,
+    club_origin: "arminia-bielefeld", club_display_name: "Arminia Bielefeld", direction: "out",
+    from: "Arminia Bielefeld", to: "Arminia Bielefeld",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€8m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
+    value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "2. Bundesliga"
   },
   {
-    name: "Mats Wieffer",prob: 45, truth: 62, bullshit: false,
-    club_origin: "borussia-dortmund", club_display_name: "Borussia Dortmund", direction: "in",
-    from: "AZ Alkmaar", to: "Borussia Dortmund",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€25m", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
-  {
-    name: "Kastriot Imeri",prob: 45, truth: 70, bullshit: false,
-    club_origin: "union-berlin", club_display_name: "1. FC Union Berlin", direction: "in",
-    from: "Thun", to: "1. FC Union Berlin",
+    name: "Fisnik Asllani",prob: 85, truth: 85, bullshit: false,
+    club_origin: "tsg-hoffenheim", club_display_name: "TSG Hoffenheim", direction: "out",
+    from: "TSG Hoffenheim", to: "TSG Hoffenheim",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
-  },
-  {
-    name: "Noah Atubolu",prob: 45, truth: 60, bullshit: false,
-    club_origin: "sc-freiburg", club_display_name: "SC Freiburg", direction: "out",
-    from: "SC Freiburg", to: "Olympique Marseille / Premier League interest",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 35, "2. Bundesliga": 1, "3. Liga": 0, "Regionalliga": 0};
+const BY_LEAGUE = {"Bundesliga": 51, "2. Bundesliga": 10, "3. Liga": 0, "Regionalliga": 0};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 35}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 1}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 51}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 10}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.568412Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.022904Z",
   label: "Nation aggregation"
 };
 

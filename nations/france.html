@@ -665,7 +665,7 @@
       <div class="subtitle">
         <div class="stat">
           <span class="stat-label">Stories:</span>
-          <span class="stat-value">76</span>
+          <span class="stat-value">94</span>
         </div>
       </div>
     </div>
@@ -702,15 +702,64 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 76
+  stories_count: 94
 };
 
 const TOP_STORIES = [  {
-    name: "Maghnes Akliouche",prob: 88, truth: 90, bullshit: false,
-    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
-    from: "AS Monaco", to: "Paris Saint-Germain",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Around €50m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+    name: "Joseph Nonge",prob: 60, truth: 75, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
+    from: "Kocaelispor", to: "Stade Brestois 29",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "~€2.5m valuation", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Joris Chotard",prob: 55, truth: 65, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Moussa Koné",prob: 35, truth: 50, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
+    from: "Free Agent (ex-Nîmes)", to: "Stade Brestois 29",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Free (€0)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Kamory Doumbia",prob: 30, truth: 55, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Romain Del Castillo",prob: 30, truth: 45, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Ligue 1 rivals (unspecified)",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Hugo Magnetti",prob: 30, truth: 42, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Ligue 1 rivals (unspecified)",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Tochukwu Nnadi",prob: 25, truth: 45, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
+    from: "Marseille", to: "Stade Brestois 29",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan or reduced fee (valued ~€6m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
+  },
+  {
+    name: "Ludovic Ajorque",prob: 25, truth: 50, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
     name: "Lucas Digne",prob: 80, truth: 85, bullshit: false,
@@ -741,24 +790,10 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Joseph Nonge",prob: 60, truth: 75, bullshit: false,
-    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
-    from: "Kocaelispor", to: "Stade Brestois 29",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~€2.5m valuation", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
-    name: "Bradley Barcola",prob: 58, truth: 90, bullshit: false,
-    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "out",
-    from: "Paris Saint-Germain", to: "Liverpool",
-    tier: 1, coverage: 3, coverage_trend: 'flat',
-    value: "Nine figures sought", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
     name: "Madison Ingram",prob: 55, truth: 71, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     value: "€30m", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
@@ -769,56 +804,21 @@ const TOP_STORIES = [  {
     value: "Angers value at ~€7m (rejected Monaco's €4m bid)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
-    name: "Joris Chotard",prob: 55, truth: 65, bullshit: false,
-    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
-    from: "Stade Brestois 29", to: "Stade Brest",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
     name: "Geronimo Rulli",prob: 55, truth: 70, bullshit: false,
     club_origin: "olympique-marseille", club_display_name: "Olympique de Marseille", direction: "out",
     from: "Olympique de Marseille", to: "Manchester City",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
-  {
-    name: "Harouna Djibirin",prob: 35, truth: 65, bullshit: false,
-    club_origin: "angers-sco", club_display_name: "Angers SCO", direction: "out",
-    from: "Angers SCO", to: "Club Brugge",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~€15m asking price", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
-    name: "Mika Godts",prob: 35, truth: 55, bullshit: false,
-    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
-    from: "Ajax", to: "Paris Saint-Germain",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
-    name: "Diego Moreira",prob: 30, truth: 50, bullshit: false,
-    club_origin: "rc-strasbourg", club_display_name: "RC Strasbourg Alsace", direction: "out",
-    from: "RC Strasbourg Alsace", to: "AS Roma",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
-  {
-    name: "Yanis Zouaoui",prob: 70, truth: 80, bullshit: false,
-    club_origin: "le-havre-ac", club_display_name: "Le Havre AC", direction: "in",
-    from: "Nantes", to: "Le Havre AC",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
-  },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 76, "Championnat National": 0, "Championnat National 3": 0, "Ligue 2": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 84, "Ligue 2": 10, "Championnat National": 0, "Championnat National 3": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 76}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-2", "name": "Ligue 2", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 84}, {"slug": "ligue-2", "name": "Ligue 2", "count": 10}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.568116Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.022667Z",
   label: "Nation aggregation"
 };
 

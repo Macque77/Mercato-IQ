@@ -6,157 +6,157 @@
 const LEAGUE = {
   name: "League One",
   nation: "England",
-  stories_count: 53
+  stories_count: 106
 };
 
 const TOP_STORIES = [  {
-    name: "Admir Bristric", prob: 85, truth: 80, bullshit: false,
-    club_origin: "leicester-city", club_display_name: "Leicester City", direction: "in",
-    from: "Olimpija Ljubljana (on loan at Bravo)", to: "Leicester City",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "€1.7-2m", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Udoka Godwin-Malife", prob: 85, truth: 85, bullshit: false,
-    club_origin: "reading", club_display_name: "Reading", direction: "in",
-    from: "Burton Albion", to: "Reading",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Tommy Watson", prob: 75, truth: 75, bullshit: false,
-    club_origin: "leicester-city", club_display_name: "Leicester City", direction: "in",
-    from: "Brighton", to: "Leicester City",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Adam Phillips", prob: 70, truth: 75, bullshit: false,
-    club_origin: "barnsley", club_display_name: "Barnsley", direction: "out",
-    from: "Barnsley", to: "Bradford City",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    name: "Franco Ravizzoli", prob: 40, truth: 55, bullshit: false,
+    club_origin: "blackpool", club_display_name: "Blackpool", direction: "out",
+    from: "Blackpool", to: "Leicester City",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Luke Molyneux", prob: 70, truth: 75, bullshit: false,
-    club_origin: "doncaster-rovers", club_display_name: "Doncaster Rovers", direction: "out",
-    from: "Doncaster Rovers", to: "Salford City",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
+    name: "Josh Bowler", prob: 25, truth: 35, bullshit: false,
+    club_origin: "blackpool", club_display_name: "Blackpool", direction: "out",
+    from: "Blackpool", to: "Nottingham Forest",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Ike Ugbo", prob: 65, truth: 70, bullshit: false,
-    club_origin: "sheffield-wednesday", club_display_name: "Sheffield Wednesday", direction: "out",
-    from: "Sheffield Wednesday", to: "Various EFL/European clubs",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Dom Ballard", prob: 50, truth: 65, bullshit: false,
-    club_origin: "leyton-orient", club_display_name: "Leyton Orient", direction: "out",
-    from: "Leyton Orient", to: "Bristol City",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "£5m+", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Reggie Walsh", prob: 75, truth: 75, bullshit: false,
-    club_origin: "wigan-athletic", club_display_name: "Wigan Athletic", direction: "in",
-    from: "Chelsea", to: "Wigan Athletic",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Murphy Cooper", prob: 55, truth: 65, bullshit: false,
-    club_origin: "plymouth-argyle", club_display_name: "Plymouth Argyle", direction: "in",
-    from: "QPR", to: "Plymouth Argyle",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "~£500k", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Joe Walsh", prob: 55, truth: 60, bullshit: false,
-    club_origin: "wigan-athletic", club_display_name: "Wigan Athletic", direction: "in",
-    from: "QPR", to: "Wigan Athletic",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Tommi O'Reilly", prob: 50, truth: 60, bullshit: false,
-    club_origin: "notts-county", club_display_name: "Notts County", direction: "in",
-    from: "Aston Villa", to: "Notts County",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Adama Sidibeh", prob: 50, truth: 60, bullshit: false,
-    club_origin: "stockport-county", club_display_name: "Stockport County", direction: "out",
-    from: "Stockport County", to: "Middlesbrough / Rangers / Blackburn Rovers / Bristol City",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Relatively low cost", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Unnamed forwards (x2)", prob: 50, truth: 55, bullshit: false,
-    club_origin: "luton-town", club_display_name: "Luton Town", direction: "out",
-    from: "Luton Town", to: "Undisclosed",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Alfie Gilchrist", prob: 45, truth: 55, bullshit: false,
-    club_origin: "leyton-orient", club_display_name: "Leyton Orient", direction: "in",
-    from: "West Brom", to: "Leyton Orient",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "~£2m", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Conor Hazard", prob: 45, truth: 55, bullshit: false,
-    club_origin: "wycombe-wanderers", club_display_name: "Wycombe Wanderers", direction: "in",
-    from: "Free agent (ex-Plymouth Argyle)", to: "Wycombe Wanderers",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
+    name: "Jay Fulton", prob: 20, truth: 30, bullshit: false,
+    club_origin: "blackpool", club_display_name: "Blackpool", direction: "in",
+    from: "Free agent", to: "Blackpool",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Free", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Kyreece Lisbie", prob: 45, truth: 55, bullshit: false,
-    club_origin: "reading", club_display_name: "Reading", direction: "in",
-    from: "Colchester United", to: "Reading",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Six-figure fee", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Unnamed 24yo midfielder", prob: 45, truth: 45, bullshit: false,
-    club_origin: "barnsley", club_display_name: "Barnsley", direction: "in",
-    from: "Undisclosed", to: "Barnsley",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Brodie Spencer", prob: 45, truth: 55, bullshit: false,
-    club_origin: "oxford-united", club_display_name: "Oxford United", direction: "in",
-    from: "QPR / West Brom", to: "Oxford United",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Liam Cullen", prob: 45, truth: 55, bullshit: false,
+    name: "Asmir Begovic", prob: 100, truth: 100, bullshit: false,
     club_origin: "leicester-city", club_display_name: "Leicester City", direction: "in",
-    from: "Swansea City", to: "Leicester City",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
+    from: "Free", to: "Leicester City",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Sonny Perkins", prob: 100, truth: 100, bullshit: false,
+    club_origin: "wigan-athletic", club_display_name: "Wigan Athletic", direction: "in",
+    from: "Leyton Orient", to: "Wigan Athletic",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Max Power", prob: 100, truth: 100, bullshit: false,
+    club_origin: "wigan-athletic", club_display_name: "Wigan Athletic", direction: "in",
+    from: "Bradford City", to: "Wigan Athletic",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Connor Barrett", prob: 100, truth: 100, bullshit: false,
+    club_origin: "wigan-athletic", club_display_name: "Wigan Athletic", direction: "in",
+    from: "Walsall", to: "Wigan Athletic",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Harrison Bettoni", prob: 100, truth: 100, bullshit: false,
+    club_origin: "wigan-athletic", club_display_name: "Wigan Athletic", direction: "out",
+    from: "Wigan Athletic", to: "Chelsea",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Luka Smyth", prob: 100, truth: 95, bullshit: false,
+    club_origin: "notts-county", club_display_name: "Notts County", direction: "in",
+    from: "VPS", to: "Notts County",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "James Gibbons", prob: 100, truth: 95, bullshit: false,
+    club_origin: "notts-county", club_display_name: "Notts County", direction: "in",
+    from: "", to: "Notts County",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Callum Roberts", prob: 100, truth: 95, bullshit: false,
+    club_origin: "notts-county", club_display_name: "Notts County", direction: "in",
+    from: "", to: "Notts County",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Matt Baker", prob: 100, truth: 95, bullshit: false,
+    club_origin: "notts-county", club_display_name: "Notts County", direction: "in",
+    from: "Newport County", to: "Notts County",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Dennis", prob: 100, truth: 95, bullshit: false,
+    club_origin: "notts-county", club_display_name: "Notts County", direction: "out",
+    from: "Notts County", to: "Burton",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Ben Osborn", prob: 100, truth: 100, bullshit: false,
+    club_origin: "stockport-county", club_display_name: "Stockport County", direction: "in",
+    from: "Nottingham Forest", to: "Stockport County",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
   },
   {
-    name: "Reece Welch", prob: 45, truth: 55, bullshit: false,
-    club_origin: "bradford-city", club_display_name: "Bradford City", direction: "in",
-    from: "Undisclosed", to: "Bradford City",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
+    name: "Ryan Glover", prob: 100, truth: 100, bullshit: false,
+    club_origin: "stockport-county", club_display_name: "Stockport County", direction: "in",
+    from: "Barnet", to: "Stockport County",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Wood", prob: 100, truth: 100, bullshit: false,
+    club_origin: "stockport-county", club_display_name: "Stockport County", direction: "in",
+    from: "Shelbourne", to: "Stockport County",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Joseph Olowu", prob: 100, truth: 100, bullshit: false,
+    club_origin: "stockport-county", club_display_name: "Stockport County", direction: "out",
+    from: "Stockport County", to: "Leyton Orient",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Olly Sanderson", prob: 100, truth: 100, bullshit: false,
+    club_origin: "stevenage", club_display_name: "Stevenage", direction: "in",
+    from: "Fulham", to: "Stevenage",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Terry Taylor", prob: 100, truth: 100, bullshit: false,
+    club_origin: "stevenage", club_display_name: "Stevenage", direction: "in",
+    from: "Charlton Athletic", to: "Stevenage",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Tyreece Simpson", prob: 100, truth: 100, bullshit: false,
+    club_origin: "stevenage", club_display_name: "Stevenage", direction: "out",
+    from: "Stevenage", to: "Port Vale",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-08-03T18:00:00Z"
   },
 ];
 
-const BY_CLUB = {"leicester-city": 3, "reading": 4, "barnsley": 3, "doncaster-rovers": 2, "sheffield-wednesday": 5, "leyton-orient": 3, "wigan-athletic": 2, "plymouth-argyle": 4, "notts-county": 4, "stockport-county": 3, "luton-town": 2, "wycombe-wanderers": 3, "oxford-united": 3, "bradford-city": 3, "milton-keynes-dons": 1, "blackpool": 3, "stevenage": 2, "huddersfield-town": 1, "peterborough-united": 1, "cambridge-united": 1};
+const BY_CLUB = {"blackpool": 4, "leicester-city": 4, "wigan-athletic": 7, "notts-county": 9, "stockport-county": 7, "stevenage": 6, "afc-wimbledon": 7, "mansfield-town": 4, "burton-albion": 3, "peterborough-united": 3, "leyton-orient": 2, "bromley": 2, "plymouth-argyle": 6, "milton-keynes-dons": 6, "bradford-city": 4, "huddersfield-town": 6, "reading": 5, "barnsley": 3, "sheffield-wednesday": 5, "wycombe-wanderers": 5, "doncaster-rovers": 2, "luton-town": 2, "oxford-united": 3, "cambridge-united": 1};
 
-const CLUBS_LIST = [{"slug": "afc-wimbledon", "name": "AFC Wimbledon", "count": 0, "badge": false, "primary": "#041E42", "primaryBright": "#FFD700"}, {"slug": "barnsley", "name": "Barnsley", "count": 3, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "blackpool", "name": "Blackpool", "count": 3, "badge": false, "primary": "#F58220", "primaryBright": "#FFAB5E"}, {"slug": "bradford-city", "name": "Bradford City", "count": 3, "badge": false, "primary": "#7A263A", "primaryBright": "#FDB927"}, {"slug": "bromley", "name": "Bromley", "count": 0, "badge": false, "primary": "#1C2B4A", "primaryBright": "#8FA8FF"}, {"slug": "burton-albion", "name": "Burton Albion", "count": 0, "badge": false, "primary": "#C9A227", "primaryBright": "#FFE066"}, {"slug": "cambridge-united", "name": "Cambridge United", "count": 1, "badge": false, "primary": "#F8B334", "primaryBright": "#FFD97A"}, {"slug": "doncaster-rovers", "name": "Doncaster Rovers", "count": 2, "badge": false, "primary": "#C8102E", "primaryBright": "#FF6B7A"}, {"slug": "huddersfield-town", "name": "Huddersfield Town", "count": 1, "badge": false, "primary": "#0072CE", "primaryBright": "#5CA9FF"}, {"slug": "leicester-city", "name": "Leicester City", "count": 3, "badge": false, "primary": "#003090", "primaryBright": "#4D8FFF"}, {"slug": "leyton-orient", "name": "Leyton Orient", "count": 3, "badge": false, "primary": "#DA020E", "primaryBright": "#FF6259"}, {"slug": "luton-town", "name": "Luton Town", "count": 2, "badge": false, "primary": "#F68A1E", "primaryBright": "#FFB25E"}, {"slug": "mansfield-town", "name": "Mansfield Town", "count": 0, "badge": false, "primary": "#1B3A6B", "primaryBright": "#FFC846"}, {"slug": "milton-keynes-dons", "name": "Milton Keynes Dons", "count": 1, "badge": false, "primary": "#0D1B3E", "primaryBright": "#6E8CFF"}, {"slug": "notts-county", "name": "Notts County", "count": 4, "badge": false, "primary": "#1F2023", "primaryBright": "#E8E8E8"}, {"slug": "oxford-united", "name": "Oxford United", "count": 3, "badge": false, "primary": "#001C58", "primaryBright": "#FFD84D"}, {"slug": "peterborough-united", "name": "Peterborough United", "count": 1, "badge": false, "primary": "#0033A0", "primaryBright": "#6EA8FF"}, {"slug": "plymouth-argyle", "name": "Plymouth Argyle", "count": 4, "badge": false, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "reading", "name": "Reading", "count": 4, "badge": false, "primary": "#004494", "primaryBright": "#5CA9FF"}, {"slug": "sheffield-wednesday", "name": "Sheffield Wednesday", "count": 5, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "stevenage", "name": "Stevenage", "count": 2, "badge": false, "primary": "#E30613", "primaryBright": "#FF6B6B"}, {"slug": "stockport-county", "name": "Stockport County", "count": 3, "badge": false, "primary": "#005BAC", "primaryBright": "#6FB2FF"}, {"slug": "wigan-athletic", "name": "Wigan Athletic", "count": 2, "badge": false, "primary": "#1B458F", "primaryBright": "#6FA0FF"}, {"slug": "wycombe-wanderers", "name": "Wycombe Wanderers", "count": 3, "badge": false, "primary": "#0033A0", "primaryBright": "#7FB2FF"}];
+const CLUBS_LIST = [{"slug": "afc-wimbledon", "name": "AFC Wimbledon", "count": 7, "badge": false, "primary": "#041E42", "primaryBright": "#FFD700"}, {"slug": "barnsley", "name": "Barnsley", "count": 3, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "blackpool", "name": "Blackpool", "count": 4, "badge": false, "primary": "#F58220", "primaryBright": "#FFAB5E"}, {"slug": "bradford-city", "name": "Bradford City", "count": 4, "badge": false, "primary": "#7A263A", "primaryBright": "#FDB927"}, {"slug": "bromley", "name": "Bromley", "count": 2, "badge": false, "primary": "#1C2B4A", "primaryBright": "#8FA8FF"}, {"slug": "burton-albion", "name": "Burton Albion", "count": 3, "badge": false, "primary": "#C9A227", "primaryBright": "#FFE066"}, {"slug": "cambridge-united", "name": "Cambridge United", "count": 1, "badge": false, "primary": "#F8B334", "primaryBright": "#FFD97A"}, {"slug": "doncaster-rovers", "name": "Doncaster Rovers", "count": 2, "badge": false, "primary": "#C8102E", "primaryBright": "#FF6B7A"}, {"slug": "huddersfield-town", "name": "Huddersfield Town", "count": 6, "badge": false, "primary": "#0072CE", "primaryBright": "#5CA9FF"}, {"slug": "leicester-city", "name": "Leicester City", "count": 4, "badge": false, "primary": "#003090", "primaryBright": "#4D8FFF"}, {"slug": "leyton-orient", "name": "Leyton Orient", "count": 2, "badge": false, "primary": "#DA020E", "primaryBright": "#FF6259"}, {"slug": "luton-town", "name": "Luton Town", "count": 2, "badge": false, "primary": "#F68A1E", "primaryBright": "#FFB25E"}, {"slug": "mansfield-town", "name": "Mansfield Town", "count": 4, "badge": false, "primary": "#1B3A6B", "primaryBright": "#FFC846"}, {"slug": "milton-keynes-dons", "name": "Milton Keynes Dons", "count": 6, "badge": false, "primary": "#0D1B3E", "primaryBright": "#6E8CFF"}, {"slug": "notts-county", "name": "Notts County", "count": 9, "badge": false, "primary": "#1F2023", "primaryBright": "#E8E8E8"}, {"slug": "oxford-united", "name": "Oxford United", "count": 3, "badge": false, "primary": "#001C58", "primaryBright": "#FFD84D"}, {"slug": "peterborough-united", "name": "Peterborough United", "count": 3, "badge": false, "primary": "#0033A0", "primaryBright": "#6EA8FF"}, {"slug": "plymouth-argyle", "name": "Plymouth Argyle", "count": 6, "badge": false, "primary": "#00A650", "primaryBright": "#63E6A0"}, {"slug": "reading", "name": "Reading", "count": 5, "badge": false, "primary": "#004494", "primaryBright": "#5CA9FF"}, {"slug": "sheffield-wednesday", "name": "Sheffield Wednesday", "count": 5, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "stevenage", "name": "Stevenage", "count": 6, "badge": false, "primary": "#E30613", "primaryBright": "#FF6B6B"}, {"slug": "stockport-county", "name": "Stockport County", "count": 7, "badge": false, "primary": "#005BAC", "primaryBright": "#6FB2FF"}, {"slug": "wigan-athletic", "name": "Wigan Athletic", "count": 7, "badge": false, "primary": "#1B458F", "primaryBright": "#6FA0FF"}, {"slug": "wycombe-wanderers", "name": "Wycombe Wanderers", "count": 5, "badge": false, "primary": "#0033A0", "primaryBright": "#7FB2FF"}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.575620Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.028632Z",
   label: "League aggregation"
 };

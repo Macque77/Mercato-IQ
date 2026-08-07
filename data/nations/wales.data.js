@@ -6,17 +6,31 @@
 const NATION = {
   name: "Wales",
   flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
-  stories_count: 0
+  stories_count: 2
 };
 
-const TOP_STORIES = [];
+const TOP_STORIES = [  {
+    name: "Ben Whiteman",prob: 100, truth: 100, bullshit: false,
+    club_origin: "wrexham", club_display_name: "Wrexham", direction: "in",
+    from: "Preston North End", to: "Wrexham",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Championship"
+  },
+  {
+    name: "Danny Imray",prob: 100, truth: 100, bullshit: false,
+    club_origin: "wrexham", club_display_name: "Wrexham", direction: "in",
+    from: "Crystal Palace", to: "Wrexham",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Championship"
+  },
+];
 
-const BY_LEAGUE = {"Championship": 0, "Cymru Premier": 0};
+const BY_LEAGUE = {"Championship": 2, "Cymru Premier": 0};
 
-const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 0}, {"slug": "cymru-premier", "name": "Cymru Premier", "count": 0}];
+const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 2}, {"slug": "cymru-premier", "name": "Cymru Premier", "count": 0}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.570645Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.024669Z",
   label: "Nation aggregation"
 };

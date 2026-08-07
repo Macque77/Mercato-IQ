@@ -100,7 +100,7 @@ const BY_CLUB = {"alanyaspor": 2, "erzurumspor": 1, "rizespor": 1, "samsunspor":
 const CLUBS_LIST = [{"slug": "adana-demirspor", "name": "Adana Demirspor", "count": 0, "badge": false, "primary": "#001489", "primaryBright": "#5C7CFF"}, {"slug": "alanyaspor", "name": "Alanyaspor", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "antalyaspor", "name": "Antalyaspor", "count": 3, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "besiktas", "name": "Be\u015fikta\u015f", "count": 4, "badge": true, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "denizlispor", "name": "Denizlispor", "count": 0, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "erzurumspor", "name": "Erzurumspor", "count": 1, "badge": true, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "rizespor", "name": "Rizespor", "count": 1, "badge": true, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "samsunspor", "name": "Samsunspor", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sivasspor", "name": "Sivasspor", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "trabzonspor", "name": "Trabzonspor", "count": 0, "badge": true, "primary": "#7A1F2B", "primaryBright": "#B0475A"}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.581127Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.033044Z",
   label: "League aggregation"
 };

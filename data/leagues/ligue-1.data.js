@@ -6,15 +6,64 @@
 const LEAGUE = {
   name: "Ligue 1",
   nation: "France",
-  stories_count: 76
+  stories_count: 84
 };
 
 const TOP_STORIES = [  {
-    name: "Maghnes Akliouche", prob: 88, truth: 90, bullshit: false,
-    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
-    from: "AS Monaco", to: "Paris Saint-Germain",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Around €50m", updated: "2026-08-03T14:30:00Z"
+    name: "Joseph Nonge", prob: 60, truth: 75, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
+    from: "Kocaelispor", to: "Stade Brestois 29",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "~€2.5m valuation", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Joris Chotard", prob: 55, truth: 65, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Moussa Koné", prob: 35, truth: 50, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
+    from: "Free Agent (ex-Nîmes)", to: "Stade Brestois 29",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Free (€0)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Kamory Doumbia", prob: 30, truth: 55, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Romain Del Castillo", prob: 30, truth: 45, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Ligue 1 rivals (unspecified)",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Hugo Magnetti", prob: 30, truth: 42, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Ligue 1 rivals (unspecified)",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Tochukwu Nnadi", prob: 25, truth: 45, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
+    from: "Marseille", to: "Stade Brestois 29",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan or reduced fee (valued ~€6m)", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Ludovic Ajorque", prob: 25, truth: 50, bullshit: false,
+    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
+    from: "Stade Brestois 29", to: "Stade Brest",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Lucas Digne", prob: 80, truth: 85, bullshit: false,
@@ -45,24 +94,10 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Joseph Nonge", prob: 60, truth: 75, bullshit: false,
-    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "in",
-    from: "Kocaelispor", to: "Stade Brestois 29",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "~€2.5m valuation", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Bradley Barcola", prob: 58, truth: 90, bullshit: false,
-    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "out",
-    from: "Paris Saint-Germain", to: "Liverpool",
-    tier: 1, coverage: 3, coverage_trend: 'flat',
-    value: "Nine figures sought", updated: "2026-08-03T14:30:00Z"
-  },
-  {
     name: "Madison Ingram", prob: 55, truth: 71, bullshit: false,
     club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
     from: "Chelsea", to: "Olympique Lyonnais",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
+    tier: 1, coverage: 2, coverage_trend: 'up',
     value: "€30m", updated: "2026-08-03T14:30:00Z"
   },
   {
@@ -71,13 +106,6 @@ const TOP_STORIES = [  {
     from: "Angers SCO", to: "Lyon / Roma (Monaco also interested)",
     tier: 1, coverage: 1, coverage_trend: 'flat',
     value: "Angers value at ~€7m (rejected Monaco's €4m bid)", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Joris Chotard", prob: 55, truth: 65, bullshit: false,
-    club_origin: "stade-brest", club_display_name: "Stade Brestois 29", direction: "out",
-    from: "Stade Brestois 29", to: "Stade Brest",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed (valued ~€7m)", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Geronimo Rulli", prob: 55, truth: 70, bullshit: false,
@@ -108,55 +136,27 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
   },
   {
-    name: "Yanis Zouaoui", prob: 70, truth: 80, bullshit: false,
-    club_origin: "le-havre-ac", club_display_name: "Le Havre AC", direction: "in",
-    from: "Nantes", to: "Le Havre AC",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
+    name: "Charlie Cresswell", prob: 100, truth: 100, bullshit: false,
+    club_origin: "toulouse-fc", club_display_name: "Toulouse FC", direction: "out",
+    from: "Toulouse FC", to: "Toulouse FC",
+    tier: 2, coverage: 3, coverage_trend: 'flat',
+    value: "€25m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Maghnes Akliouche", prob: 100, truth: 100, bullshit: false,
+    club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "in",
+    from: "AS Monaco", to: "Paris Saint-Germain",
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Rayan Bamba", prob: 65, truth: 70, bullshit: false,
-    club_origin: "le-mans-fc", club_display_name: "Le Mans FC", direction: "in",
-    from: "Stade Rennais", to: "Le Mans FC",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Mohamed-Ali Cho", prob: 58, truth: 65, bullshit: false,
-    club_origin: "ogc-nice", club_display_name: "OGC Nice", direction: "out",
-    from: "OGC Nice", to: "Hull City",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€20m", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Rémy Labeau-Lascary", prob: 55, truth: 65, bullshit: false,
-    club_origin: "rc-lens", club_display_name: "RC Lens", direction: "in",
-    from: "AJ Auxerre", to: "RC Lens",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Loïs Openda", prob: 52, truth: 60, bullshit: false,
-    club_origin: "olympique-lyon", club_display_name: "Olympique Lyonnais", direction: "in",
-    from: "Juventus", to: "Olympique Lyonnais",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "Timothée Pembélé", prob: 52, truth: 60, bullshit: false,
-    club_origin: "le-havre-ac", club_display_name: "Le Havre AC", direction: "out",
-    from: "Le Havre AC", to: "Sunderland",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "TBD", updated: "2026-08-03T14:30:00Z"
   },
 ];
 
-const BY_CLUB = {"paris-saint-germain": 8, "olympique-lyon": 8, "stade-brest": 8, "angers-sco": 4, "olympique-marseille": 12, "rc-strasbourg": 5, "le-havre-ac": 2, "le-mans-fc": 1, "ogc-nice": 6, "rc-lens": 4, "losc-lille": 5, "as-monaco": 3, "aj-auxerre": 3, "paris-fc": 2, "stade-rennais": 3, "toulouse-fc": 1, "fc-lorient": 1};
+const BY_CLUB = {"stade-brest": 8, "paris-saint-germain": 8, "olympique-lyon": 7, "angers-sco": 4, "olympique-marseille": 11, "rc-strasbourg": 7, "toulouse-fc": 3, "le-mans-fc": 3, "stade-rennais": 4, "aj-auxerre": 5, "fc-lorient": 2, "ogc-nice": 8, "le-havre-ac": 3, "losc-lille": 5, "rc-lens": 2, "as-monaco": 1, "paris-fc": 3};
 
-const CLUBS_LIST = [{"slug": "aj-auxerre", "name": "AJ Auxerre", "count": 3, "badge": true, "primary": "#003D7C", "primaryBright": "#4E8FDE"}, {"slug": "as-monaco", "name": "AS Monaco", "count": 3, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "angers-sco", "name": "Angers SCO", "count": 4, "badge": true, "primary": "#0A0A0A", "primaryBright": "#8C8C8C"}, {"slug": "es-troyes-ac", "name": "ES Troyes AC", "count": 0, "badge": true, "primary": "#0033A0", "primaryBright": "#5CA9FF"}, {"slug": "fc-lorient", "name": "FC Lorient", "count": 1, "badge": true, "primary": "#FF6600", "primaryBright": "#FF9640"}, {"slug": "losc-lille", "name": "LOSC Lille", "count": 5, "badge": true, "primary": "#C8102E", "primaryBright": "#FF4C5E"}, {"slug": "le-havre-ac", "name": "Le Havre AC", "count": 2, "badge": true, "primary": "#4169E1", "primaryBright": "#7FA8FF"}, {"slug": "le-mans-fc", "name": "Le Mans FC", "count": 1, "badge": true, "primary": "#8B0000", "primaryBright": "#D4A017"}, {"slug": "ogc-nice", "name": "OGC Nice", "count": 6, "badge": true, "primary": "#ED1C24", "primaryBright": "#FF6B6B"}, {"slug": "olympique-lyon", "name": "Olympique Lyonnais", "count": 8, "badge": true, "primary": "#0056A8", "primaryBright": "#5CA9FF"}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 12, "badge": true, "primary": "#00A8E1", "primaryBright": "#5CD0FF"}, {"slug": "paris-fc", "name": "Paris FC", "count": 2, "badge": true, "primary": "#001E62", "primaryBright": "#3D6BC4"}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 8, "badge": true, "primary": "#004687", "primaryBright": "#0066CC"}, {"slug": "rc-lens", "name": "RC Lens", "count": 4, "badge": true, "primary": "#C8102E", "primaryBright": "#FDB927"}, {"slug": "rc-strasbourg", "name": "RC Strasbourg Alsace", "count": 5, "badge": true, "primary": "#0072CE", "primaryBright": "#5CB3FF"}, {"slug": "stade-brest", "name": "Stade Brestois 29", "count": 8, "badge": true, "primary": "#D2001C", "primaryBright": "#FF5C6C"}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 3, "badge": true, "primary": "#DA020E", "primaryBright": "#FF4C4C"}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 1, "badge": true, "primary": "#5B2A70", "primaryBright": "#9A5FC0"}];
+const CLUBS_LIST = [{"slug": "aj-auxerre", "name": "AJ Auxerre", "count": 5, "badge": true, "primary": "#003D7C", "primaryBright": "#4E8FDE"}, {"slug": "as-monaco", "name": "AS Monaco", "count": 1, "badge": true, "primary": "#E2001A", "primaryBright": "#FF6259"}, {"slug": "angers-sco", "name": "Angers SCO", "count": 4, "badge": true, "primary": "#0A0A0A", "primaryBright": "#8C8C8C"}, {"slug": "es-troyes-ac", "name": "ES Troyes AC", "count": 0, "badge": true, "primary": "#0033A0", "primaryBright": "#5CA9FF"}, {"slug": "fc-lorient", "name": "FC Lorient", "count": 2, "badge": true, "primary": "#FF6600", "primaryBright": "#FF9640"}, {"slug": "losc-lille", "name": "LOSC Lille", "count": 5, "badge": true, "primary": "#C8102E", "primaryBright": "#FF4C5E"}, {"slug": "le-havre-ac", "name": "Le Havre AC", "count": 3, "badge": true, "primary": "#4169E1", "primaryBright": "#7FA8FF"}, {"slug": "le-mans-fc", "name": "Le Mans FC", "count": 3, "badge": true, "primary": "#8B0000", "primaryBright": "#D4A017"}, {"slug": "ogc-nice", "name": "OGC Nice", "count": 8, "badge": true, "primary": "#ED1C24", "primaryBright": "#FF6B6B"}, {"slug": "olympique-lyon", "name": "Olympique Lyonnais", "count": 7, "badge": true, "primary": "#0056A8", "primaryBright": "#5CA9FF"}, {"slug": "olympique-marseille", "name": "Olympique de Marseille", "count": 11, "badge": true, "primary": "#00A8E1", "primaryBright": "#5CD0FF"}, {"slug": "paris-fc", "name": "Paris FC", "count": 3, "badge": true, "primary": "#001E62", "primaryBright": "#3D6BC4"}, {"slug": "paris-saint-germain", "name": "Paris Saint-Germain", "count": 8, "badge": true, "primary": "#004687", "primaryBright": "#0066CC"}, {"slug": "rc-lens", "name": "RC Lens", "count": 2, "badge": true, "primary": "#C8102E", "primaryBright": "#FDB927"}, {"slug": "rc-strasbourg", "name": "RC Strasbourg Alsace", "count": 7, "badge": true, "primary": "#0072CE", "primaryBright": "#5CB3FF"}, {"slug": "stade-brest", "name": "Stade Brestois 29", "count": 8, "badge": true, "primary": "#D2001C", "primaryBright": "#FF5C6C"}, {"slug": "stade-rennais", "name": "Stade Rennais FC", "count": 4, "badge": true, "primary": "#DA020E", "primaryBright": "#FF4C4C"}, {"slug": "toulouse-fc", "name": "Toulouse FC", "count": 3, "badge": true, "primary": "#5B2A70", "primaryBright": "#9A5FC0"}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.576713Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.029518Z",
   label: "League aggregation"
 };

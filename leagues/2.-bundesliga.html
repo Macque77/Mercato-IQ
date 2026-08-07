@@ -672,25 +672,88 @@
 const LEAGUE = {
   name: "2. Bundesliga",
   nation: "Germany",
-  stories_count: 1
+  stories_count: 10
 };
 
 const TOP_STORIES = [  {
+    name: "Jackson Irvine", prob: 100, truth: 100, bullshit: false,
+    club_origin: "st-pauli", club_display_name: "FC St. Pauli", direction: "out",
+    from: "FC St. Pauli", to: "Cerezo Osaka",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Kevin Müller", prob: 95, truth: 95, bullshit: false,
+    club_origin: "1-fc-heidenheim", club_display_name: "1. FC Heidenheim", direction: "in",
+    from: "FC Schalke 04", to: "1. FC Heidenheim",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Mael Corboz", prob: 90, truth: 85, bullshit: false,
+    club_origin: "arminia-bielefeld", club_display_name: "Arminia Bielefeld", direction: "out",
+    from: "Arminia Bielefeld", to: "Arminia Bielefeld",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Stefan Kersken", prob: 50, truth: 60, bullshit: false,
+    club_origin: "arminia-bielefeld", club_display_name: "Arminia Bielefeld", direction: "out",
+    from: "Arminia Bielefeld", to: "Arminia Bielefeld",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-07-29T00:00:00Z"
+  },
+  {
     name: "Elia Caprile", prob: 44, truth: 58, bullshit: false,
     club_origin: "vfl-bochum", club_display_name: "VfL Bochum", direction: "in",
     from: "Empoli", to: "VfL Bochum",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "€12m", updated: "2026-08-03T14:30:00Z"
   },
+  {
+    name: "Omar Traore", prob: 95, truth: 95, bullshit: false,
+    club_origin: "1-fc-heidenheim", club_display_name: "1. FC Heidenheim", direction: "out",
+    from: "1. FC Heidenheim", to: "FC Watford",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Stefan Schimmer", prob: 85, truth: 85, bullshit: false,
+    club_origin: "1-fc-heidenheim", club_display_name: "1. FC Heidenheim", direction: "in",
+    from: "Thai League", to: "1. FC Heidenheim",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Lannert", prob: 85, truth: 80, bullshit: false,
+    club_origin: "arminia-bielefeld", club_display_name: "Arminia Bielefeld", direction: "out",
+    from: "Arminia Bielefeld", to: "Arminia Bielefeld",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Unknown Leipzig talent", prob: 80, truth: 75, bullshit: false,
+    club_origin: "arminia-bielefeld", club_display_name: "Arminia Bielefeld", direction: "in",
+    from: "RB Leipzig", to: "Arminia Bielefeld",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Kofi Amoako", prob: 70, truth: 70, bullshit: false,
+    club_origin: "dynamo-dresden", club_display_name: "Dynamo Dresden", direction: "out",
+    from: "Dynamo Dresden", to: "Dynamo Dresden",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-07-29T00:00:00Z"
+  },
 ];
 
-const BY_CLUB = {"vfl-bochum": 1};
+const BY_CLUB = {"st-pauli": 1, "1-fc-heidenheim": 3, "arminia-bielefeld": 4, "vfl-bochum": 1, "dynamo-dresden": 1};
 
-const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 0, "badge": true, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "count": 0, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "dynamo-dresden", "name": "Dynamo Dresden", "count": 0, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "st-pauli", "name": "FC St. Pauli", "count": 0, "badge": true, "primary": "#5B3A29", "primaryBright": "#8F6A54"}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 1, "badge": true, "primary": "#00427A", "primaryBright": "#00427A"}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0, "badge": true, "primary": "#65B32E", "primaryBright": "#8FE05C"}];
+const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 3, "badge": true, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "count": 4, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "dynamo-dresden", "name": "Dynamo Dresden", "count": 1, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "st-pauli", "name": "FC St. Pauli", "count": 1, "badge": true, "primary": "#5B3A29", "primaryBright": "#8F6A54"}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 1, "badge": true, "primary": "#00427A", "primaryBright": "#00427A"}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0, "badge": true, "primary": "#65B32E", "primaryBright": "#8FE05C"}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.571101Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.025026Z",
   label: "League aggregation"
 };
 

@@ -121,7 +121,7 @@ const BY_LEAGUE = {"Eredivisie": 35, "Eerste Divisie": 0};
 const LEAGUES_LIST = [{"slug": "eredivisie", "name": "Eredivisie", "count": 35}, {"slug": "eerste-divisie", "name": "Eerste Divisie", "count": 0}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.569186Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.023532Z",
   label: "Nation aggregation"
 };

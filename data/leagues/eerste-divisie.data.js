@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "roda-jc", "name": "Roda JC Kerkrade", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "vitesse", "name": "Vitesse", "count": 0, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}];
 
 const REPORT_META = {
-  asof: "06 Aug 2026",
-  updated: "2026-08-06T14:31:12.573838Z",
+  asof: "07 Aug 2026",
+  updated: "2026-08-07T01:53:17.027197Z",
   label: "League aggregation"
 };
