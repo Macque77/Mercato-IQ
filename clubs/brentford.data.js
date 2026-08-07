@@ -82,16 +82,17 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [
   {name:"Frank Onyeka", sub:"Midfielder drops to the Championship", club:"Coventry City", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Jordan Henderson", sub:"Unknown · Unknown · Midfielder", club:"Chelsea", pos:"Midfielder", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed exit to Chelsea"},
-  {name:"Conor McManus", sub:"Unknown · Unknown · Unknown", club:"Gillingham", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move to Gillingham (Sky Bet League Two)"}
+  {name:"Conor McManus", sub:"Unknown · Unknown · Unknown", club:"Gillingham", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move to Gillingham (Sky Bet League Two)"},
+  {name:"Mamadou Sangaré", sub:"Midfielder · Ivory Coast", club:"Brentford", pos:"Midfielder", fee:"Club-record fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Breaking: Brentford sign Mamadou Sangaré from Lens for club-record fee"}
 ];
 
 const INCOMING = [
-  {name:"Pape Matar Sarr", sub:"Unknown · Unknown · Midfielder", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"Unknown", tier:3, fee:"Unknown", truth:40, prob:25, light:"o", trend:"down", note:"Offered by Tottenham; no recent snippet update", lastSeen:"2026-08-07T01:42:32Z", baseProb:25}
+  {name:"Pape Matar Sarr", sub:"Midfielder · Tottenham", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"up", note:"Offer reported; no recent snippet confirmation", lastSeen:"2026-08-07T14:38:27Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Bryan Mbeumo", sub:"Unknown · Unknown · Unknown", club:"Manchester United", pos:"Unknown", report:"Manchester United submit improved bid exceeding £60m", src:"The Athletic", tier:1, fee:"£60m+", truth:75, prob:60, light:"g", trend:"down", note:"Improved bid submitted by Manchester United", lastSeen:"2026-08-07T01:42:32Z", baseProb:60},
-  {name:"Jordan Henderson", sub:"34 · England · M", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford. Chelsea top contender among multiple PL clubs eyeing England midfielder as Brentford ready to grant free transfer.", src:"David Ornstein", tier:1, fee:"Free", truth:75, prob:60, light:"g", trend:"flat", note:"Multiple Premier League clubs interested; Brentford willing to release on free transfer", lastSeen:"2026-08-06T14:33:42Z", baseProb:60}
+  {name:"Bryan Mbeumo", sub:"Winger · Cameroon", club:"Brentford", pos:"Winger", report:"Manchester United submit improved bid exceeding £60m for Brentford's Bryan Mbeumo", src:"The Athletic", tier:2, fee:"£60m+", truth:85, prob:70, light:"g", trend:"up", note:"Improved bid reported by Laurie Whitwell", lastSeen:"2026-08-07T14:38:27Z", baseProb:70},
+  {name:"Jordan Henderson", sub:"34 · England · M", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford. Chelsea top contender among multiple PL clubs eyeing England midfielder as Brentford ready to grant free transfer.", src:"David Ornstein", tier:1, fee:"Free", truth:75, prob:60, light:"g", trend:"flat", note:"Multiple Premier League clubs interested; Brentford willing to release on free transfer", lastSeen:"2026-08-06T14:33:42Z", baseProb:60, dead:true, deadReason:"Confirmed exit to Chelsea"}
 ];
 const DEAD = [
   {name:"Value & successor targets", sub:"Data-model intake", club:"Market", pos:"-", report:"window framing", src:"Model-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',

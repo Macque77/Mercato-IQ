@@ -40,7 +40,7 @@ const CONFIRMED_OUT = [
   {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
 ];
 const INCOMING = [
-  {name:"Dom Ballard", sub:"striker · England · CF", club:"Leyton Orient", pos:"ST", report:"Bristol City confirm signing of Dom Ballard from Leyton Orient after closing in on deal; striker backed for 'big future'", src:"Bristol Live", tier:2, fee:"£5m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; Ballard signed from Leyton Orient", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Dom Ballard", sub:"Striker · Leyton Orient", club:"Leyton Orient", pos:"ST", report:"Bristol City closing in on signing from Leyton Orient", src:"Bristol Live", tier:2, fee:"£5m", truth:95, prob:85, light:"g", trend:"down", note:"At Robins HPC for medical, deal in advanced stages", lastSeen:"2026-08-07T14:38:27Z", baseProb:85},
   {name:"Lorent Tolaj", sub:"striker · Kosovo · CF", club:"Plymouth Argyle", pos:"ST", report:"Bristol City sign striker Lorent Tolaj from Plymouth Argyle", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; signed from Plymouth Argyle", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [];
@@ -60,15 +60,17 @@ const HUB = {
   "gnews-sinclairarmstrong": {l:"Related news search: Sinclair Armstrong", u:"https://news.google.com/search?q=Bristol%20City%20Sinclair%20Armstrong%20transfer&hl=en-GB&gl=GB"},
   "yahoosport": {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/"},
   bristolLiveDomBallard: {l:"Bristol Live", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQMEZfSGJPWVhlWXJ3U1RFdGRER0lha2R4ZXVKYWV3Z1F4ZXpMN1hwYlBST3FncDVPdndIZlNXODVxRTg5eHpENzJ0bFlPSGpzV2JDcko3NVFnQmxGMW01MkRaZGhCNFU1UHdoYkFEbUk0eV9rVFJ0VEk0dTRSNnlfeUlJRHVTWFY3RU1meXo4RlUtVmYteFZQZ29TYXE"},
-  bBCLorentTolaj: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kZ0NoU0RaclBMeExoWXVkbkVrV2NGZldEQ0ZqMm1hekVYV09YU2ZSRHNxOFRqTmQ2MGtqU2F1SFNhMzRvdjhuOGhEWFZ5bjk5NFFDd1ZKWGZtMkdrVUQ3UHFwYkVXbVk"}};
+  bBCLorentTolaj: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kZ0NoU0RaclBMeExoWXVkbkVrV2NGZldEQ0ZqMm1hekVYV09YU2ZSRHNxOFRqTmQ2MGtqU2F1SFNhMzRvdjhuOGhEWFZ5bjk5NFFDd1ZKWGZtMkdrVUQ3UHFwYkVXbVk"},
+  bristolLiveDomBallard1: {l:"Bristol Live", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxNMmhzeGN2YTk1ZlhGN3FtTjlNN2tHQVlfVEw5VVJlZmY1ZEVwNTBrY25tS3VFcUhHOENrYXRWc0dmdVNDMFJXTDlTUmpvbnczcjRLbi1YOUdxQ1VkSEZ3NTZaZWtTZVBlUE5oUzRyeWxBVktXR3Z2V0RRTkVQMnp1TUl3SU9vcE5Rb2tVNGNlWTJVV2pBVmZtSXYzN0wzMm9XYWc"},
+  bristolCityFCLorentTolaj: {l:"Bristol City FC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE9pMHNFaThGRnZXZXpvOHhwUzlLRjNEdEhzcGRCQW5sUUN1aTZ3WUwwWnlaVW1vVW5EOFhCby14VnRTMVFyZFJmejR0emdjRS0tRHRhOUFtaWVrUHNzNUtUSWN6V2JBZXdsR1E"}};
 
 const LINKMAP = {
   "Sam Tickle": ["gnews-samtickle"],
   "Brad Collins": ["gnews-bradcollins"],
   "Sinclair Armstrong": ["gnews-sinclairarmstrong"],
   "Rio Cardines": ["yahoosport"],
-  "Dom Ballard": ["bristolLiveDomBallard"],
-  "Lorent Tolaj": ["bBCLorentTolaj"]};
+  "Dom Ballard": ["bristolLiveDomBallard", "bristolLiveDomBallard1"],
+  "Lorent Tolaj": ["bBCLorentTolaj", "bristolCityFCLorentTolaj"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

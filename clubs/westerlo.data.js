@@ -37,8 +37,7 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Fabio Ferraro", sub:"23 · LB", club:"FCV Dender EH", pos:"LB", fee:"€700k + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signs a three-year deal, returning to Belgian top flight via Charleroi's former RWDM/Dender pathway."},
-  {name:"Norman Bassette", sub:"ST", club:"Coventry City", pos:"ST", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins on loan from Coventry, having previously been on Belgium's international radar."},
-  {name:"Issiaka Kamate", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", fee:"undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing"}
+  {name:"Norman Bassette", sub:"ST", club:"Coventry City", pos:"ST", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins on loan from Coventry, having previously been on Belgium's international radar."}
 ];
 const CONFIRMED_OUT = [
   {name:"Bryan Reynolds", sub:"25 · RB · USA", club:"Stade Rennais", pos:"RB", fee:"~€4.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"American international leaves for Ligue 1 after 146 appearances, having previously rejected an initial Rangers bid."},
@@ -46,10 +45,10 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [
   {name:"Issiaka Kamate", sub:"MF", club:"Inter Milan", pos:"MF", report:"3 Jun 2026", src:"Nico Schira", tier:1, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Nico Schira reported Westerlo closing in on an agreement with Inter for the player; no public update since early June.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"No recent credible reporting; presumed outdated entry or completed transfer details insufficient to verify as current live link"},
-  {name:"Cisse Sandra", sub:"unknown · unknown · midfielder", club:"Club Brugge", pos:"M", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalPrimeur.be, VoetbalFocus, Lokaalnieuws.online", tier:3, fee:"€18m", truth:95, prob:100, light:"g", trend:"up", note:"Deal in final stages/completed; Club Brugge receiving substantial fee", lastSeen:"2026-08-07T10:18:48Z", baseProb:100}
+  {name:"Cisse Sandra", sub:"Unknown · Unknown · Midfielder", club:"Club Brugge", pos:"Midfielder", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalPrimeur.be / VoetbalFocus / Lokaalnieuws.online", tier:3, fee:"€18m", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation of transfer; multiple sources cite €18m fee", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"unknown · unknown · unknown", club:"Rangers", pos:"unknown", report:"On way to Rangers; among the most expensive outgoing transfers for Westerlo", src:"VoetbalPrimeur.be", tier:3, fee:"undisclosed", truth:85, prob:90, light:"g", trend:"up", note:"Advanced stage; considered one of club's costliest departures", lastSeen:"2026-08-07T10:18:48Z", baseProb:90}
+  {name:"Jarne Rommens", sub:"Unknown · Unknown · Unknown", club:"Rangers", pos:"Unknown", report:"On way to Rangers; among the most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Unknown", truth:85, prob:80, light:"g", trend:"down", note:"Transfer in advanced stages to Rangers", lastSeen:"2026-08-07T14:38:27Z", baseProb:80}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -82,7 +81,8 @@ const LINKMAP = {
   "Emin Bayram": ["voetbalkrantEminBayram"],
   "Cisse Sandra": ["voetbalFocusCisseSandra", "voetbalPrimeurbeCisseSandra"],
   "Jarne Rommens": ["voetbalPrimeurbeJarneRommens", "voetbalPrimeurbeJarneRommens1"],
-  "Ferri": ["voetbalPrimeurbeFerri"]};
+  "Ferri": ["voetbalPrimeurbeFerri"],
+  "Congreve": ["voetbalFocusCameronCongreve"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -41,9 +41,10 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Bisiwu", sub:"Unknown · Unknown · Unknown", club:"Barcelona", pos:"Unknown", report:"Club Brugge and Barcelona have reached an agreement on transfer", src:"Sacha Tavolieri", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Agreement reached between clubs", lastSeen:"2026-08-07T10:18:48Z", baseProb:80},
-  {name:"Cheveyo Tsawa", sub:"", club:"", pos:"", report:"Club Brugge leading the race to sign Cheveyo Tsawa, but competition is increasing", src:"Sacha Tavolieri", tier:3, fee:"", truth:70, prob:65, light:"g", trend:"flat", note:"Early stage of negotiations; multiple clubs interested", lastSeen:"2026-08-07T10:18:48Z", baseProb:65},
-  {name:"Vasovic", sub:"", club:"", pos:"", report:"Club Brugge looking at young goalscorer Vasovic from Switzerland", src:"Sacha Tavolieri", tier:3, fee:"", truth:60, prob:55, light:"g", trend:"flat", note:"Early scouting interest", lastSeen:"2026-08-07T10:18:48Z", baseProb:55}
+  {name:"Bisiwu", sub:"Unknown · Unknown · Unknown", club:"Barcelona", pos:"Unknown", report:"Club Brugge and Barcelona have reached an agreement over transfer", src:"Sacha Tavolieri", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Agreement reported between clubs", lastSeen:"2026-08-07T14:38:27Z", baseProb:85},
+  {name:"Cheveyo Tsawa", sub:"", club:"", pos:"", report:"Club Brugge leading the race to sign Cheveyo Tsawa, though competition is increasing", src:"Sacha Tavolieri", tier:3, fee:"", truth:75, prob:70, light:"g", trend:"up", note:"Club Brugge leading negotiations but facing competition", lastSeen:"2026-08-07T14:38:27Z", baseProb:70},
+  {name:"Vasovic", sub:"", club:"", pos:"", report:"Club Brugge looking at young goalscorer Vasovic from Switzerland", src:"Sacha Tavolieri", tier:3, fee:"", truth:70, prob:65, light:"g", trend:"up", note:"Rumour of interest in young Swiss player", lastSeen:"2026-08-07T14:38:27Z", baseProb:65},
+  {name:"Jan Virgili", sub:"20 · Spain · W", club:"Mallorca", pos:"Winger", report:"Club Brugge close to signing Mallorca winger Jan Virgili", src:"", tier:2, fee:"", truth:80, prob:80, light:"g", trend:"flat", note:"Young winger from Mallorca on way to Club Brugge", lastSeen:"2026-08-07T14:38:27Z", baseProb:80}
 ];
 
 const OUTGOING = [];

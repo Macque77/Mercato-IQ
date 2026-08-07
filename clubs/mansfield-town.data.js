@@ -30,8 +30,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Michael Smith", sub:"Preston North End · Striker", club:"Preston North End", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on free transfer from Preston North End"},
+  {name:"Jon Russell", sub:"Barnsley · Midfielder", club:"Barnsley", pos:"MID", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed midfielder after Barnsley exit"},
+  {name:"Tyler Roberts", sub:"Midfielder/Forward", club:"Unknown", pos:"MID", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed"},
+  {name:"George Abbott", sub:"Tottenham Hotspur · Defender", club:"Tottenham Hotspur", pos:"DEF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on loan from Tottenham"}
+];
+const CONFIRMED_OUT = [
+  {name:"Liam Thompson", sub:"Derby County · Midfielder", club:"Derby County", pos:"MID", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed to Derby County"},
+  {name:"Will Evans", sub:"Midfielder", club:"Plymouth Argyle", pos:"MID", fee:"£400,000", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer fee agreed with Plymouth Argyle"}
+];
 const INCOMING = [
   {name:"David McGoldrick", sub:"ST", club:"Barnsley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:35, prob:20, light:'o', trend:'flat', note:"Barnsley reportedly confident he stays, so treat as a long shot.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No fresh confirmation snippet provided; treating as stale if not independently verified"},
   {name:"Michael Smith", sub:"Preston North End · Striker", club:"Preston North End", pos:"ST", report:"Signed on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},

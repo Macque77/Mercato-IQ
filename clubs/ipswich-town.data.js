@@ -67,7 +67,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Tim Iroegbunam", sub:"unknown · unknown · Midfielder", club:"Everton", pos:"Midfielder", report:"Transfer rumour linking Tim Iroegbunam to Ipswich Town", src:"BBC", tier:2, fee:"Undisclosed", truth:70, prob:60, light:"g", trend:"up", note:"Hull City also linked; Everton player", lastSeen:"2026-08-07T01:42:32Z", baseProb:60},
+  {name:"Tim Iroegbunam", sub:"Midfielder", club:"Everton", pos:"M", report:"Hull City and Ipswich Town transfer rumours: Everton's Tim Iroegbunam", src:"BBC", tier:2, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"flat", note:"Rumour linking Iroegbunam to Ipswich", lastSeen:"2026-08-07T14:38:27Z", baseProb:60},
   {name:"PL-ready survival signings (framing)", sub:"Spine upgrades", club:"Market", pos:"Spine", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£50-90m total", truth:55, prob:40, light:'y', trend:'up',
    note:"The core need: several Premier League-level additions to avoid a repeat of the 2024/25 drop. Names firm up once the manager question is settled.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
   {name:"Striker: goals for survival (framing)", sub:"Position need, no named target yet", club:"Market", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:35, light:'y', trend:'flat',
@@ -76,11 +76,11 @@ const INCOMING = [
    note:"Framing row from the positions board, not a named rumour: defensive solidity at the step up is flagged as a core requirement after the 2024/25 drop. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"no longer a current link"},
   {name:"Full-back: PL-level quality and pace (framing)", sub:"Position need, no named target yet", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:25, light:'o', trend:'flat',
    note:"Framing row from the positions board, not a named rumour: Premier League-level quality and pace at full-back is listed among the positions most likely strengthened. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"no longer a current link"},
-  {name:"Sasa Lukic", sub:"unknown · unknown · Midfielder", club:"Fulham", pos:"Midfielder", report:"The Athletic report that Lukic looks destined to Ipswich", src:"The Athletic", tier:2, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Advanced talks reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
-  {name:"Julio Enciso", sub:"unknown · Paraguay · Attacker", club:"Brighton", pos:"Attacker", report:"Ipswich are confident of re-signing the Paraguayan", src:"Unknown", tier:3, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"down", note:"Re-signing move (previously at Ipswich)", lastSeen:"2026-08-07T01:42:32Z", baseProb:55},
-  {name:"Florentino Luis", sub:"unknown · unknown · Midfielder", club:"Burnley", pos:"Midfielder", report:"Ipswich Town sign midfielder from relegated Burnley", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing from relegated Burnley", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Issa Diop", sub:"unknown · unknown · Defender", club:"Fulham", pos:"Defender", report:"Issa Diop joins from Fulham for £8.5m", src:"BBC", tier:2, fee:"£8.5m", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing from Fulham", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Armand Laurienté", sub:"unknown · unknown · Attacker", club:"Lorient", pos:"Attacker", report:"Ipswich Town explore move for Sunderland's former transfer target Armand Laurienté", src:"Sunderland Echo", tier:3, fee:"Undisclosed", truth:55, prob:45, light:"y", trend:"flat", note:"Exploratory move; was Sunderland target previously", lastSeen:"2026-08-07T01:42:32Z", baseProb:45}
+  {name:"Sasa Lukic", sub:"Midfielder", club:"Fulham", pos:"M", report:"The Athletic report that Lukic looks destined to Ipswich", src:"The Athletic", tier:2, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"down", note:"Rumoured transfer target", lastSeen:"2026-08-07T14:38:27Z", baseProb:65},
+  {name:"Julio Enciso", sub:"Winger", club:"Brighton", pos:"W", report:"Ipswich are confident of re-signing the Paraguayan", src:"Various", tier:2, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"up", note:"Confident of re-signing", lastSeen:"2026-08-07T14:38:27Z", baseProb:60},
+  {name:"Florentino Luis", sub:"Midfielder", club:"Burnley", pos:"M", report:"Ipswich Town sign midfielder from relegated Burnley", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Deal completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
+  {name:"Issa Diop", sub:"Centre-back", club:"Fulham", pos:"CB", report:"Issa Diop joins from Fulham for £8.5m", src:"BBC", tier:2, fee:"£8.5m", truth:100, prob:100, light:"g", trend:"up", note:"Deal completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
+  {name:"Armand Laurienté", sub:"Winger", club:"Sunderland", pos:"W", report:"Ipswich Town explore move for Sunderland's former transfer target Armand Laurienté", src:"sunderlandecho.com", tier:3, fee:"Undisclosed", truth:60, prob:55, light:"g", trend:"up", note:"Ipswich exploring move", lastSeen:"2026-08-07T14:38:27Z", baseProb:55}
 ];
 
 const OUTGOING = [
@@ -88,7 +88,7 @@ const OUTGOING = [
    note:"The pivotal uncertainty. McKenna is the bookies' favourite for Fulham after Silva's exit, with an £8m buy-out. Retention is Ipswich's priority one; his departure would reshape the entire summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link"},
   {name:"Fringe & squad trim", sub:"Promotion churn", club:"Various", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
    note:"Championship-level squad players moved on to make room for PL-quality upgrades.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
-  {name:"George Hirst", sub:"unknown · unknown · Striker", club:"Stoke City", pos:"Striker", report:"Stoke ready to pay £10m to land George Hirst", src:"ipswichstar.co.uk", tier:3, fee:"£10m", truth:60, prob:50, light:"y", trend:"flat", note:"Stoke City bidding for departure", lastSeen:"2026-08-07T01:42:32Z", baseProb:50}
+  {name:"George Hirst", sub:"Striker", club:"Stoke City", pos:"ST", report:"Stoke ready to pay £10m to land George Hirst", src:"Ipswich Star", tier:3, fee:"£10m", truth:70, prob:65, light:"g", trend:"up", note:"Stoke prepared to pay", lastSeen:"2026-08-07T14:38:27Z", baseProb:65}
 ];
 
 const RISERS = [
@@ -147,9 +147,10 @@ const HUB = {
   bBCTimIroegbunam: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE8weW1vN2xSckppQjEyNGdrWk82LU1iQnhvWXlkSXZpRmlfUHBOemJxOFZoMkVqQmNWUWdpQnk2STZUZkxFQ0Jzd1JyWHV1MWxUWEh5X1hhbUY3ZnZQRHhRaGF1SnAyYndrR1E"},
   sunderlandEchoArmandLaurient: {l:"Sunderland Echo", u:"https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcDdOb0lFcHYyRHhob0xjWW9VWEpXZW9LeHQ3QmpTMUpGODM0UDQyOUEzQkRXZWd6VlA3aGhJMUNKcjYyQm9KTWt0TW5RWWN0YnVWbVZWR2hXaEZWdndBTDMwNV9wUDZ3VUhtbkZ5d0pzTHFWV0tvUXZ1VHVwUXByR1BmNEhJWU5kdjRqc1FheGhLRmgtM3ZQTWFOWV9Qbk9XVzctdDJTNk1VYTE0M21uR0tHMWtleDZIMmYzUmR4M3FLUzdFRmhxaTJXY1VyYV9GWWUyemVRbnYzbkt5VFdLZlRfM3A"},
   ipswichstarcoukGeorgeHirst: {l:"ipswichstar.co.uk", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxOZWN3QjRhdVdZTFcxd09HSzRaUEdFLWwzZXdoLU9kXzJBT21mdHBUV0hnYWR2dXVUZkE5ajJvR2gzajljWktwN3RWLVA0ODNjMmtqM250R1RRcTF2MERXYS1kNnJXVVRMNk1SdTdBbmlVYm4zNldXUkJHZ0JkQXVJQVRGM0NTMjk3b2FNaFBua3psUWdpcVV0N3MyM3h2aVU"},
-  chelseaFCOfficialChrisAtherton: {l:"Chelsea FC Official", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxNb0U2WVlkZGVmM3hHZm1jTHNHYzcwRUxPT3JXWlhUaGV4M1lJeF9PNmhIMnl6MU1XRU9SQmh3YzRLbFRtZHFfZ19KMDlTV0pvRTNSRzBuX081cTlqTGFtQTQzYklaRndsR19XQXNWaGh0WjZQb3huY2w1d0JaYmo3Vw"}};
+  chelseaFCOfficialChrisAtherton: {l:"Chelsea FC Official", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxNb0U2WVlkZGVmM3hHZm1jTHNHYzcwRUxPT3JXWlhUaGV4M1lJeF9PNmhIMnl6MU1XRU9SQmh3YzRLbFRtZHFfZ19KMDlTV0pvRTNSRzBuX081cTlqTGFtQTQzYklaRndsR19XQXNWaGh0WjZQb3huY2w1d0JaYmo3Vw"},
+  bBCTimIroegbunam1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5JSTY1WkIyWnd6cFkzTWJLOTR4QnFvYlFubGJpN0hkMGxRNFZpZ05iWVZMZnN5X2E0ZFBxNDFnLVNadGd2dFdXNHlBa3NpYWtMRE1KcTVQU0YwLURJb18xMHYyTWkwaWc"}};
 const LINKMAP = {
-  "Tim Iroegbunam": ["twtd","eadt", "bBCTimIroegbunam"],
+  "Tim Iroegbunam": ["twtd","eadt", "bBCTimIroegbunam", "bBCTimIroegbunam1"],
   "PL-ready survival signings (framing)": ["eadt","twtd"],
   "Striker: goals for survival (framing)": ["eadt"],
   "Centre-back: solidity at the step up (framing)": ["eadt"],

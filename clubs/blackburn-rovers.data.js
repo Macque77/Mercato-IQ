@@ -31,13 +31,14 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Jayden Fevrier", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First signing confirmed"},
   {name:"Unknown Brentford Midfielder", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer from Brentford confirmed"}
 ];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"unknown", sub:"unknown · unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"lancashiretelegraph.co.uk", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed free transfer from Brentford - player name not specified in snippet", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
+];
 const OUTGOING = [
-  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Middlesbrough", pos:"Unknown", report:"Transfer to Middlesbrough with fee calculation discussed", src:"Lancashire Telegraph", tier:3, fee:"Unknown", truth:90, prob:90, light:"g", trend:"flat", note:"Move to Middlesbrough", lastSeen:"2026-08-07T10:18:48Z", baseProb:90}
+  {name:"Ash Phillips", sub:"unknown · unknown · unknown", club:"Middlesbrough", pos:"unknown", report:"How much Blackburn Rovers might get from Ash Phillips' move to Middlesbrough", src:"lancashiretelegraph.co.uk", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Transfer to Middlesbrough", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -58,7 +59,8 @@ const LINKMAP = {
   "Ty Livesey": ["bailey"],
   "Jayden Fevrier": ["lancashireTelegraphJaydenFevrier"],
   "Ash Phillips": ["lancashireTelegraphAshPhillips"],
-  "Unknown Brentford Midfielder": ["lancashireTelegraphUnknownBrentfordMidfielder"]};
+  "Unknown Brentford Midfielder": ["lancashireTelegraphUnknownBrentfordMidfielder"],
+  "unknown": ["lancashireTelegraphUnknownBrentfordMidfielder"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

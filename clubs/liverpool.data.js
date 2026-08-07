@@ -52,8 +52,7 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
   {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent from Celtic", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect signs a 5-year contract; Romano confirmed with 'Here We Go'."},
-  {name:"Ramos", sub:"", club:"", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed by Liverpool"},
-  {name:"Liverpool target", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ornstein confirms medical completed Tuesday; four-year deal agreed. Player identity not specified in snippet."}
+  {name:"Ramos", sub:"", club:"", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed by Liverpool"}
 ];
 const CONFIRMED_OUT = [
   {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."},
@@ -61,13 +60,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Ornstein reveals Barcola stance on joining Liverpool in £116m deal; Liverpool in strong position to complete third biggest signing ever", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:70, light:"g", trend:"up", note:"Ornstein confirms deal structure and Liverpool's strong position; player stance key to completion", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
-  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Real Madrid", pos:"CB", report:"Intermediaries sounded Liverpool out on Asencio", src:"The Guardian", tier:2, fee:"Unknown", truth:65, prob:50, light:"y", trend:"up", note:"Exploratory contact via intermediaries", lastSeen:"2026-08-06T14:33:42Z", baseProb:50, dead:true, deadReason:"No recent credible snippet confirming link; removed from active tracking"},
-  {name:"Mbaye", sub:"", club:"", pos:"", report:"Liverpool explore Mbaye deal", src:"BBC Sport", tier:2, fee:"", truth:50, prob:45, light:"y", trend:"flat", note:"Insufficient detail to confirm full identity; listed in gossip column", lastSeen:"2026-08-06T14:33:42Z", baseProb:45, dead:true, deadReason:"No recent credible snippet confirming link; removed from active tracking"}
+  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Ornstein reveals Barcola stance on joining Liverpool in stunning £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:60, light:"g", trend:"down", note:"PSG winger; Ornstein confirms medical done on Tuesday and player has agreed four-year deal", lastSeen:"2026-08-07T14:38:27Z", baseProb:60},
+  {name:"Raul Asencio", sub:"21 · Spain · D", club:"Real Madrid", pos:"D", report:"Intermediaries sounded Liverpool out on Asencio", src:"Various", tier:3, fee:"Unknown", truth:45, prob:30, light:"y", trend:"down", note:"Real Madrid defender; exploratory interest", lastSeen:"2026-08-07T14:38:27Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions potential move", src:"BBC Sport", tier:2, fee:"Unknown", truth:35, prob:25, light:"o", trend:"down", note:"Speculative interest from Tottenham; no firm evidence of player or Liverpool willingness", lastSeen:"2026-08-07T01:42:32Z", baseProb:25}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions future", src:"BBC Sport", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"up", note:"Tottenham interest reported; uncertain if deal will materialize", lastSeen:"2026-08-07T14:38:27Z", baseProb:40}
 ];
 const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',

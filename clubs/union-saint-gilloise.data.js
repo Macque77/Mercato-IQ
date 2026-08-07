@@ -34,11 +34,12 @@ const CONFIRMED_IN = [
   {name:"Keo Boets", sub:"22 · GK · Belgium", club:"Sint-Truiden", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as fourth-choice goalkeeper depth on a one-year deal."}
 ];
 const CONFIRMED_OUT = [
-  {name:"Kjell Scherpen", sub:"26 · GK · Netherlands", club:"Ipswich Town", pos:"GK", fee:"~€8-10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Number-one keeper departs for the Premier League after one title-winning season, with a 40% sell-on owed to Brighton."}
+  {name:"Kjell Scherpen", sub:"26 · GK · Netherlands", club:"Ipswich Town", pos:"GK", fee:"~€8-10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Number-one keeper departs for the Premier League after one title-winning season, with a 40% sell-on owed to Brighton."},
+  {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Player departure confirmed; player statement released"}
 ];
 const INCOMING = [
   {name:"Milan Hokke", sub:"CB · Netherlands", club:"ADO Den Haag", pos:"CB", report:"29 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Below asking price", truth:55, prob:35, light:"y", trend:"flat", note:"Union's bid sits under ADO's valuation, but the player has signalled he wants the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent snippet support; retiring from live list"},
-  {name:"Fedde Leysen", sub:"23 · Netherlands · Midfielder", club:"PSV", pos:"Midfielder", report:"Transfer from PSV to Union Saint-Gilloise confirmed", src:"PSV official", tier:1, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation of transfer", lastSeen:"2026-08-07T10:18:48Z", baseProb:100}
+  {name:"Fedde Leysen", sub:"Unknown · Netherlands · Midfielder", club:"PSV", pos:"Midfielder", report:"Transfer from PSV to Royale Union Saint-Gilloise confirmed", src:"psv.nl", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation from PSV", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"29 Jul 2026", src:"The Athletic", tier:1, fee:"£17m bid rejected", truth:75, prob:40, light:"y", trend:"flat", note:"Forest's opening bid was rejected after Khalaili's record €25-32m Inter move collapsed on a failed medical; Bournemouth and Newcastle also circling.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"No recent snippet support; retiring from live list"},

@@ -31,14 +31,15 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Victor Adeboyejo", sub:"Striker", club:"Unknown", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer signing"},
   {name:"Ethon Archer", sub:"Loan", club:"Luton Town", pos:"Unknown", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan arrival from Luton Town"},
-  {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Wealdstone"}
+  {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Wealdstone"},
+  {name:"Victor Adeboyejo", sub:"striker", club:"Free", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on free transfer"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Ethon Archer", sub:"Loan", club:"Luton Town", pos:"Unknown", report:"Signed on loan from Luton Town", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Loan arrival confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", report:"Signed from Wealdstone", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing from Wealdstone", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
+  {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", report:"Signed from Wealdstone", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing from Wealdstone", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Victor Adeboyejo", sub:"striker", club:"Free transfer", pos:"ST", report:"Bromley sign striker on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
 ];
 const OUTGOING = [];
 const DEAD = [
@@ -54,11 +55,12 @@ const WATCHLIST = [];
 const HUB = {
   "gnews-tiernanbrooks": {l:"Related news search: Tiernan Brooks", u:"https://news.google.com/search?q=Bromley%20Tiernan%20Brooks%20transfer&hl=en-GB&gl=GB"},
   bBCVictorAdeboyejo: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9SLUFqcV9PVW03S2c2WUFLbnRhY3VoQ0tZeWZMM05vWmo0aU5DVFd1amNKQV9BUlZDTEVMR091V3ZDdk0yR09vOTd4NE85eG5wbWFMNDBOMFdxUzUxTmg0bmZZajYzTlk?oc=5"},
-  bBCEthonArcher: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVS0xbFRmeGc3Z1p0NVVTYzdZejBiLWJENWhuVW14LUxGdmdHd193U3hKVEtZREJGaVBlRElkTG1KTU5IOGlGSXRCNFFFcGg2S0s4MGxHVEdjQ2FMUTZOQ2FTcEU0QU0?oc=5"}};
+  bBCEthonArcher: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVS0xbFRmeGc3Z1p0NVVTYzdZejBiLWJENWhuVW14LUxGdmdHd193U3hKVEtZREJGaVBlRElkTG1KTU5IOGlGSXRCNFFFcGg2S0s4MGxHVEdjQ2FMUTZOQ2FTcEU0QU0?oc=5"},
+  bBCVictorAdeboyejo1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9SLUFqcV9PVW03S2c2WUFLbnRhY3VoQ0tZeWZMM05vWmo0aU5DVFd1amNKQV9BUlZDTEVMR091V3ZDdk0yR09vOTd4NE85eG5wbWFMNDBOMFdxUzUxTmg0bmZZajYzTlk"}};
 
 const LINKMAP = {
   "Tiernan Brooks": ["gnews-tiernanbrooks"],
-  "Victor Adeboyejo": ["bBCVictorAdeboyejo"],
+  "Victor Adeboyejo": ["bBCVictorAdeboyejo", "bBCVictorAdeboyejo1"],
   "Ethon Archer": ["bBCEthonArcher"],
   "Deon Woodman": ["bBCEthonArcher"]};
 const WL_LINKMAP = {};

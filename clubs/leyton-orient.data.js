@@ -32,8 +32,7 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Joseph Olowu", sub:"Centre-back · Stockport County", club:"Stockport County", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Stockport County"},
-  {name:"Tony Springett", sub:"Goalkeeper · Norwich City", club:"Norwich City", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined after leaving Norwich City"},
-  {name:"Tariq Al Sadi", sub:"Short-term contract", club:"Unknown", pos:"Unknown", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Short-term contract signing"}
+  {name:"Tony Springett", sub:"Goalkeeper · Norwich City", club:"Norwich City", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined after leaving Norwich City"}
 ];
 const CONFIRMED_OUT = [
   {name:"Dom Ballard", sub:"Striker · Bristol City", club:"Bristol City", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined Bristol City from Leyton Orient"}
@@ -45,7 +44,7 @@ const INCOMING = [
   {name:"Tony Springett", sub:"Goalkeeper · Norwich City", club:"Norwich City", pos:"GK", report:"Tony Springett joins Leyton Orient after leaving Norwich City", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Dom Ballard", sub:"FW", club:"Bristol City", pos:"FW", report:"~1 wk ago", src:"FLW exclusive", tier:2, fee:"£5m+", truth:65, prob:50, light:'y', trend:'up', note:"Bristol City have had two bids rejected; Leicester City also interested; Orient holding firm on valuation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50}
+  {name:"Dom Ballard", sub:"unknown · unknown · unknown", club:"Bristol City", pos:"unknown", report:"Bristol City closing in on Dom Ballard signing with Leyton Orient striker at Robins HPC", src:"Bristol Live", tier:2, fee:"£5 million (reported)", truth:85, prob:80, light:"g", trend:"up", note:"Advanced talks; player at medical facility", lastSeen:"2026-08-07T14:38:27Z", baseProb:80}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -61,15 +60,19 @@ const HUB = {
   bBCJosephOlowu: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IYncxWW81SUpON0NLdXRoMDBDUU80M05ybElBRlJUd01yZkhacDdRSExfaDlBMTNOY041Z283bjBrdDZ1SXRFSkRIa3R4bmZBU1hIUXpHczlqSEpyS0szMlY0TDFWTkE"},
   bBCTonySpringett: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE81RWh2WVh2ZUJZX0Rpa0dyNlJjS1lPWVZfRWxKa0haR2V4bTA5dVByXzhNUHlSb3ZKaUU3MzFtc2sxamNyQS1LeEtMOVFqc2RFcnNwaXVsWXdkVGpCUHVLSDNzaE1xeUk"},
   bBCTariqAlSadi: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ub3VsTEdiM0xtOHl0RmJrc21tdkh2ZHNWRTE0Sm9yZUt0U2JqQ3RSUl9pb0JlQ0hTMHEyY09ub09LdFdIdkJ1a0J5NmQ3OTF4OTRWNmpuMHZxVFBDTnQ5UHpzQVZwYWs"},
-  bBCDomBallard: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE53WVBZeEtkcnNtYWlsc3hyUWU0RDBNRG5TQnVDX3RCaHpxLUk4cWctbTVYNmM3OEhsVDlBOGFyTzRRbE9IUmlEaldsbWNqVEotOVFsTEZ2bUN0RG1CNUV1T2doYmtOc095T1E"}};
+  bBCDomBallard: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE53WVBZeEtkcnNtYWlsc3hyUWU0RDBNRG5TQnVDX3RCaHpxLUk4cWctbTVYNmM3OEhsVDlBOGFyTzRRbE9IUmlEaldsbWNqVEotOVFsTEZ2bUN0RG1CNUV1T2doYmtOc095T1E"},
+  irishExaminerJazeKabia: {l:"Irish Examiner", u:"https://news.google.com/rss/articles/CBMibkFVX3lxTE9jNlpNQlJsMWF4YWI4aHZQXzBlUURTbEFGSlZkWmhyVFdoMDNPMzZrSGZfNjBjaUJZWXZfa1RqRWgtSTUzU1hMaTE3N05LM2E0STBCbmoyd1FyUWdpOVpJVXZETHRIXzN6cEFpWlJR"},
+  bBCTariqAlSadi1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ub3VsTEdiM0xtOHl0RmJrc21tdkh2ZHNWRTU0Sm9yZUt0U2JqQ3RSUl9pb0JlQ0hTMHEyY09ub09LdFdIdkJ1a0J5NmQ3OTF4OTRWNmpuMHZxVFBDTnQ5UHpzQVZwYWs"},
+  bristolLiveDomBallard: {l:"Bristol Live", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxNMmhzeGN2YTk1ZlhGN3FtTjlNN2tHQVlfVEw5VVJlZmY1ZEVwNTBrY25tS3VFcUhHOENrYXRWc0dmdVNDMFJXTDlTUmpvbnczcjRLbi1YOUdxQ1VkSEZ3NTZaZWtTZVBlUE5oUzRyeWxBVktXR3Z2V0RRTkVQMnp1TUl3SU9vcE5Rb2tVNGNlWTJVV2pBVmZtSXYzN0wzMm9XYWc"}};
 
 const LINKMAP = {
   "Alfie Gilchrist": ["gnews-alfiegilchrist"],
   "Owen Dale": ["gnews-owendale"],
-  "Dom Ballard": ["flw", "bBCDomBallard"],
+  "Dom Ballard": ["flw", "bBCDomBallard", "bristolLiveDomBallard"],
   "Joseph Olowu": ["bBCJosephOlowu"],
   "Tony Springett": ["bBCTonySpringett"],
-  "Tariq Al Sadi": ["bBCTariqAlSadi"]};
+  "Tariq Al Sadi": ["bBCTariqAlSadi", "bBCTariqAlSadi1"],
+  "Jaze Kabia": ["irishExaminerJazeKabia"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

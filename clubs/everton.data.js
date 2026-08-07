@@ -83,10 +83,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Alistair Johnston", sub:"24 · Canada · D", club:"Celtic", pos:"RB", report:"Everton pursuing Celtic defender", src:"Glasgow Times", tier:3, fee:"", truth:65, prob:50, light:"y", trend:"flat", note:"Major update on transfer pursuit", lastSeen:"2026-08-07T01:42:32Z", baseProb:50},
-  {name:"Douglas Luiz", sub:"25 · Brazil · CM", club:"Aston Villa", pos:"CM", report:"Everton still have transfer hope as midfielder responds", src:"Goodison News", tier:3, fee:"", truth:50, prob:35, light:"y", trend:"flat", note:"Everton retains hope despite midfielder's previous moves", lastSeen:"2026-08-07T01:42:32Z", baseProb:35},
-  {name:"Nathan Zeze", sub:"18 · France · D", club:"AS Monaco", pos:"CB", report:"How much Everton can pay to land Nathan Zeze transfer as NEOM stance shared", src:"Goodison News", tier:3, fee:"", truth:60, prob:45, light:"y", trend:"flat", note:"Monaco defender target with financial details discussed", lastSeen:"2026-08-07T01:42:32Z", baseProb:45},
-  {name:"Jack Grealish", sub:"29 · England · W", club:"Manchester City", pos:"LW", report:"How Pedro Neto could now aid Everton's transfer pursuit of Jack Grealish", src:"everton.news", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"flat", note:"Speculative link involving Pedro Neto context", lastSeen:"2026-08-07T01:42:32Z", baseProb:20}
+  {name:"Alistair Johnston", sub:"24 · Canada · D", club:"Celtic", pos:"D", report:"Everton pursuing Celtic defender; Chris Sutton reports £25m valuation", src:"Goodison News", tier:3, fee:"£25m", truth:65, prob:45, light:"y", trend:"down", note:"Recent claim of £25m fee from Chris Sutton after hearing about pursuit", lastSeen:"2026-08-07T14:38:27Z", baseProb:45},
+  {name:"Douglas Luiz", sub:"25 · Brazil · CM", club:"Aston Villa", pos:"CM", report:"Everton still have transfer hope as midfielder responds", src:"Goodison News", tier:3, fee:"", truth:50, prob:35, light:"y", trend:"flat", note:"Everton retains hope despite midfielder's previous moves", lastSeen:"2026-08-07T01:42:32Z", baseProb:35, dead:true, deadReason:"No new credible reporting; on-page entry appears stale"},
+  {name:"Nathan Zeze", sub:"18 · France · D", club:"AS Monaco", pos:"CB", report:"How much Everton can pay to land Nathan Zeze transfer as NEOM stance shared", src:"Goodison News", tier:3, fee:"", truth:60, prob:45, light:"y", trend:"flat", note:"Monaco defender target with financial details discussed", lastSeen:"2026-08-07T01:42:32Z", baseProb:45, dead:true, deadReason:"No new credible reporting; on-page entry appears stale"},
+  {name:"Jack Grealish", sub:"29 · England · W", club:"Manchester City", pos:"LW", report:"How Pedro Neto could now aid Everton's transfer pursuit of Jack Grealish", src:"everton.news", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"flat", note:"Speculative link involving Pedro Neto context", lastSeen:"2026-08-07T01:42:32Z", baseProb:20, dead:true, deadReason:"No new credible reporting in recent snippets; on-page entry appears stale"},
+  {name:"Krepin Diatta", sub:"26 · Senegal · W", club:"AS Monaco", pos:"W", report:"Everton in the race to sign 27-year-old forward; chase makes sense as Friedkins ready transfer", src:"Goodison News / EPL Index", tier:3, fee:"", truth:60, prob:40, light:"y", trend:"flat", note:"Recent reporting on Everton's interest in Monaco winger", lastSeen:"2026-08-07T14:38:27Z", baseProb:40},
+  {name:"Keito Nakamura", sub:"24 · Japan · W", club:"Reims", pos:"W", report:"Everton learn Nakamura transfer timeline as Reims president opens door to exit", src:"Goodison News", tier:3, fee:"", truth:55, prob:35, light:"y", trend:"flat", note:"Transfer timeline revealed; Reims president signals openness", lastSeen:"2026-08-07T14:38:27Z", baseProb:35}
 ];
 
 const OUTGOING = [];
@@ -166,18 +168,22 @@ const HUB = {
   glasgowTimesAlistairJohnston: {l:"Glasgow Times", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdHBzNjRDU2RZOUxZVUtiLXZLMUIxRDBwRng1blR5R2JPa1hmTDNrS2NjZ01aczBMRWNiY2FkQXdqNWJyd19RQlY4MGVEDDdPQnplRk5DenE5WFpuOGZOY0dENWpaaWxTWGI2LW16VVIzXzdLemZGbHdDX2pwM25DTzhoVWpjajJSQmxsekpXd0xaUm1NamJ2dEcxLWVIb2lZalZzY1lnSXh1SzQ?oc=5"},
   goodisonNewsDouglasLuiz: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxNeUM1RldJSFZ3WG05NEhSSUlrcXZBd3ZwNWhTekZnZGZOZEpMTkZ1b1VhQjVoWTUzSGEzZlpKa3FxWVhRTkZJU1NfczBNRVQyU0tXOW9YOWh2ZjN5d2NPMU5jNENiXzhhcEd2UEVhVWhFOEN6NERuT0c5UDVKblNaVUNiSXdRRk1veVhBa0RpdFVfMldMMGdfUVA0WGpNZHhKUFRkbi1KaW1mTllDMXRPNQ?oc=5"},
   goodisonNewsNathanZeze: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxOMFZYUFo3NVlQZURTbDJKei1yRzZ1ZTFUVE82THlhR0l6TEJ3UVlsYjdXS3M3SjhVNEhaUkRURWFpSTZBTWJ1SmdobmRHRjY1MFhkN2lkQUc5blBhdGhPN29uZnUyUkNtLTMtTEhnVnRkNnA1UWtneWt3bGZwTkRUb1pxaTJ0X1M0cFg5NnI4MFI3WWwyMC05bVNxcjU1cV9jZ0NxS2hHSmx5UDVDQzRPVTlsMkE?oc=5"},
-  evertonnewsJackGrealish: {l:"everton.news", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxQaU81a0h5aEZlZU1hNmZvbmhOVDJTNm1fLVltZktUSTg2bWhHc3BwN1g2WGhFWUUxcnZaRERMZFNsVUl6NnFBUUVTeDk3cjVtZ1dKSlU1SjUwQ3kyczJvUmVkSzVsRHVBOGJTVUR3V21hSHJURTJRUDhxYy1oNUxxbDVxLVhiUEtuX2l2TzFFLU11c3dSaU84aHJjSEdmQQ?oc=5"}};
+  evertonnewsJackGrealish: {l:"everton.news", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxQaU81a0h5aEZlZU1hNmZvbmhOVDJTNm1fLVltZktUSTg2bWhHc3BwN1g2WGhFWUUxcnZaRERMZFNsVUl6NnFBUUVTeDk3cjVtZ1dKSlU1SjUwQ3kyczJvUmVkSzVsRHVBOGJTVUR3V21hSHJURTJRUDhxYy1oNUxxbDVxLVhiUEtuX2l2TzFFLU11c3dSaU84aHJjSEdmQQ?oc=5"},
+  goodisonNewsAlistairJohnston: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRDA3Z0xwNER6NWtlWlVEZVRpNUdacFBiZWNfbGQ0Z3RkUHRtcGVQUXQ5d0ZaN0ZtejEtODRLU3FEM3Q1cFFpNWprRWNJUkxUeTZrOUVwWjBvWUFoaE42cl91bldIVUgxekprWTBfb2ZtTU80dzlydGlRak9zMUdvbXhBb0dNYkVBdXgyTjlXaUQ1QU1GbHhOQ1lKMEFrUmQ1T2RIdExmN2FHdWMzV1dhb1k3Ung5Mlo3NGcycURkcnJYQzc0TDRpWmJETWtRU200b1FF?oc=5"},
+  goodisonNewsKrepinDiatta: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPQURUS0xfb3BjNTkzcHkxZXZMR0JsX21ibXhBNjZVQ2hVVlFfVUlKVkhjTUk1Y0hzQWVJOGpvenlUSk9nX2N2TWYtM1NIRXJROXktN1JTQV9QcEdqZWFkR0Rsb1UzeV9rRjFldjYxNUZIMnRzR0dYVm1OUC1Lez5TaUJ3bDc1c2xLM3Y1Q1NrOElybzRZUWlyWkhEdTVyTkt0MnFMYUUzZk5iSUpGbHRhUmgtQktBQ25Udzc2aW5FV1MxYWxQLVE?oc=5"},
+  goodisonNewsKeitoNakamura: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNeWlxd0tYT3drUE5jNnFQRUw0NG44eW5CUWM3TVhsNktRUVp0V3pXTUR6ZWh4X09BbzVCMHZSMjEtWS0tRnVWbWFtMDZYc014R2ExcnN5eHctQjhBOG1Udm9BbXNydHBIeWN0bGFQX2liY3VfNW8yU1B5Z3hyMmlzWnA5MFN6Z2FNVms0OXNkbW1uc1RaX1hXMGZlS0hWYXJ1cXRMSG4yc3JpVnc0QUFmV3ZRZnFsYVFJMHJaQ0lCeVI?oc=5"},
+  royalBlueMerseyChristianNrgaard: {l:"Royal Blue Mersey", u:"https://news.google.com/rss/articles/CBMi2gFBVV95cUxObmptR2ZoZEtPZjg4TW5ULVdpelRoTi1HdnQ3ZG5sSGdUZGZiSjB5LThURDAwNzQ5cE5iczB2bTR1VDdMX1pZOVFyTEFKZU9pYnZubVpjOGNKN2pLLXBoMDlIRVBZd0hiZk5Kb3A0UnBXcTJfMkpmX0U5azJhcnE2NHR5cWNTNmltSlkwVmJsVFdlZUp4Szk5anUxa1k2NkZ5N0ZvSmxpLVFtUXpqVDBQc1h2djlJUUdOT0lEbnRiekd4cGY5WlBfSDlNRUlxZTJpWnBxUzhheU13Zw?oc=5"}};
 const LINKMAP = {
   "Raul Jimenez": ["fInsider","echo"],
   "Marquee striker": ["fInsider","teamtalk","echo"],
   "Jack Grealish": ["echo","bbcGossip", "goodisonNewsBBCSportJackGrealish", "evertonnewsJackGrealish"],
   "Iliman Ndiaye": ["echo","joeThomas","bbcGossip", "strettyNewsIlimanNdiaye"],
   "Underperforming forwards": ["echo","joeThomas"],
-  "Alistair Johnston": ["teamTalkAlistairJohnston", "glasgowTimesAlistairJohnston"],
+  "Alistair Johnston": ["teamTalkAlistairJohnston", "glasgowTimesAlistairJohnston", "goodisonNewsAlistairJohnston"],
   "Nahuel Molina": ["sportsMoleNahuelMolina"],
   "Barış Alper Yılmaz": ["sportsMoleNahuelMolina"],
   "Tim Iroegbunam": ["teamTalkTimIroegbunam"],
-  "Christian Nørgaard": ["yahooSportsDavidOrnsteinChristianNrgaard"],
+  "Christian Nørgaard": ["yahooSportsDavidOrnsteinChristianNrgaard", "royalBlueMerseyChristianNrgaard"],
   "Hayden Hackney": ["skySportsHaydenHackney"],
   "Merlin Röhl": ["bBCSportMerlinRhl"],
   "Adam Aznou": ["fotMobAdamAznou"],
@@ -188,7 +194,9 @@ const LINKMAP = {
   "Christian Norgaard": ["davidOrnsteinTheAthleticChristianNorgaard"],
   "Norgaard": ["bBCSportFootballNorgaard"],
   "Douglas Luiz": ["goodisonNewsDouglasLuiz"],
-  "Nathan Zeze": ["goodisonNewsNathanZeze"]};
+  "Nathan Zeze": ["goodisonNewsNathanZeze"],
+  "Krepin Diatta": ["goodisonNewsKrepinDiatta"],
+  "Keito Nakamura": ["goodisonNewsKeitoNakamura"]};
 const WL_LINKMAP = {
   "Marquee striker":"fInsider","Iliman Ndiaye":"echo","Jack Grealish":"bbcGossip",
 };

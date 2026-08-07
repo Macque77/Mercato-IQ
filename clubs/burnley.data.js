@@ -37,8 +37,7 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Lluc Castell", sub:"LW", club:"Espanyol", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival as Burnley rebuild for an immediate promotion push."},
-  {name:"Ben Amos", sub:"Goalkeeper", club:"Unknown", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer confirmed"}
+  {name:"Lluc Castell", sub:"LW", club:"Espanyol", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival as Burnley rebuild for an immediate promotion push."}
 ];
 const CONFIRMED_OUT = [
   {name:"Martin Dubravka", sub:"GK", club:"Tottenham Hotspur", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released on a free transfer."},
@@ -72,7 +71,8 @@ const HUB = {
   pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"},
   burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis: {l:"Burnley Express (fee via David Ornstein)", u:"https://www.burnleyexpress.net/sport/football/burnley-fc/burnley-ps16m-switch-premier-league-newcomers-8839366"},
   burnleyExpressBenAmos: {l:"Burnley Express", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNjBfbUxZS21zQTR4MGRWcnRlWS0yeTNFZERXV1UzTlk3T09mbldKOFNWQnZtYkVlY2dqaklBTDBhUnI4OVJ3MnZnc2haVEc2OGpXNWthNHIwNElhOHFGLW5SVVNRUllqTWw1TVpZVXhSUkNVeER1MmVwUUMtTkh2MzhqN1d3bTgybTFSSmNvRm1kQTY2RDNramhnZElfYl91aWdwbEZWVUZvcWc"},
-  bBCFlorentinoLuis: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTFBUSjVna3ZXd3c1TWNoX0tIM1FuZG4yRFB6UUlOSmk3cnY0N0ROcFVycWZyQkR0Y1g4dlhhcWpoaUdZa2tBbGNhZDVVNmpLaUQxRV81aHdnT0VnQ1doc3g0NFBRMGNRMFZ2Z2c"}};
+  bBCFlorentinoLuis: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTFBUSjVna3ZXd3c1TWNoX0tIM1FuZG4yRFB6UUlOSmk3cnY0N0ROcFVycWZyQkR0Y1g4dlhhcWpoaUdZa2tBbGNhZDVVNmpLaUQxRV81aHdnT0VnQ1doc3g0NFBRMGNRMFZ2Z2c"},
+  bBCviaDavidOrnsteinFlorentinoLuis: {l:"BBC (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxQRHJYQVFXUkc3cnRkMi05ZG91aExybHNYR1dKM1FEVMM1VV82b3VNSjZfdUc4bGxNZklzS29RdmVoLW1JVmlBa3N1SEE0Rzk"}};
 
 const LINKMAP = {
   "Lluc Castell": ["gnews-lluccastell"],
@@ -80,7 +80,7 @@ const LINKMAP = {
   "Jaidon Anthony": ["gnews-jaidonanthony"],
   "Loum Tchaouna": ["gnews-loumtchaouna"],
   "Maxime Esteve": ["gnews-maximeesteve"],
-  "Florentino Luis": ["romano", "eastanglian", "burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis", "bBCFlorentinoLuis"],
+  "Florentino Luis": ["romano", "eastanglian", "burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis", "bBCFlorentinoLuis", "bBCviaDavidOrnsteinFlorentinoLuis"],
   "Andreas Hountondji": ["schira"],
   "Florentino Luís": ["pAYahooSportFlorentinoLus"],
   "Ben Amos": ["burnleyExpressBenAmos"]};

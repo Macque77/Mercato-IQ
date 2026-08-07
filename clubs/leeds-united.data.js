@@ -97,7 +97,7 @@ const INCOMING = [
    note:"Fresh link for the Liverpool creator seeking minutes, a clear quality and resale profile. Obstacle: Football Insider-tier sourcing, a likely crowded race for a player of his profile, and price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
    note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
-  {name:"James Trafford", sub:"22 · England · GK", club:"Manchester City", pos:"Goalkeeper", report:"Completed move for club-record £40m deal from Manchester City", src:"Sky Sports", tier:2, fee:"£40m", truth:100, prob:100, light:"g", trend:"up", note:"Official completion confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100, dead:true, deadReason:"Confirmed completed transfer to Leeds United – moved from rumour to confirmed_in"}
+  {name:"James Trafford", sub:"24 · England · GK", club:"Manchester City", pos:"GK", report:"Joins from Manchester City in deal worth up to £45m", src:"BBC", tier:2, fee:"£45m", truth:100, prob:100, light:"g", trend:"flat", note:"Club-record deal, completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100, dead:true, deadReason:"Completed signing from Manchester City - moved to confirmed_in"}
 ];
 
 const OUTGOING = [
@@ -112,7 +112,9 @@ const OUTGOING = [
   {name:"Largie Ramazani", sub:"W · DR Congo/Belgium", club:"Valencia", pos:"W", report:"~3 wks", src:"Football media", tier:3, fee:"£8-12m", truth:63, prob:38, light:'y', trend:'flat',
    note:"On loan at Valencia, where he has impressed (6 goals); a permanent move or fresh loan is the likely outcome. Squad-trimming that helps SCR headroom.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
   {name:"Mateo Joseph", sub:"22 · Spain · ST", club:"Mallorca / Leicester / Wrexham", pos:"ST", report:"~4 wks", src:"TEAMtalk", tier:3, fee:"£6-10m", truth:50, prob:25, light:'o', trend:'down',
-   note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+   note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+  {name:"Karl Darlow", sub:"33 · England · GK", club:"Leeds United", pos:"GK", report:"Signs with Manchester United after Leeds exit", src:"The Athletic", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Completed move to Manchester United", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
+  {name:"Lucas Perri", sub:"23 · Brazil · GK", club:"Leeds United", pos:"GK", report:"Signing with Torino from Leeds United", src:"MOT Leeds News", tier:3, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"Torino interest in signing goalkeeper", lastSeen:"2026-08-07T14:38:27Z", baseProb:75}
 ];
 const DEAD = [
   {name:"James Trafford", sub:"GK · England", club:"Man City", pos:"GK", report:"~4-5 wks", src:"TEAMtalk", tier:3, fee:"~£30m", truth:45, prob:20, light:'o', trend:'down',
@@ -216,7 +218,10 @@ const HUB = {
   tSNKarlDarlow: {l:"TSN", u:"https://www.tsn.ca/soccer/article/wales-keeper-darlow-joins-united-on-free-from-leeds/"},
   davidOrnsteinonXJamesTrafford: {l:"David Ornstein on X", u:"https://x.com/David_Ornstein/status/2081803067859652704"},
   skySportsJamesTrafford: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcllrZE53Sk9DWEZ4dGkyYVhqeTJWdFdnSmVxMEY4MzhkcGE4NzFFREw3VFpjd25GYUtDbzZ4bjZJLXpMNFBVdmU0Sk9kQ0hjVW52WEJEdzFlRWxaVjhENUFOcEV0WVpZV2RPdGVZQ1ZHckkxSlc2QXdRWlZPQ3IxWFZSd2JtR2RKdnVFdWVaUnZyeUNVcGxqMzBwYjdObGd6LTVsRzFMTWp5LUlHSjVUbnJ2OUxxMGFIRWJlc0VQLWpCOHZlTFVfMWpMZE9aMXhqaWpuVU1icjN6Rk0"},
-  skySportsJamesTrafford1: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcllrZE53Sk9DWEZ4dGkyYVhqeTJWdFdnSmVxMEY4MzhkcGE4NzFFREw3VFpjd21GYUtDbzZ4bjZJLXpMNFBVdmU0Sk9kQ0hjVW52WEJEdzFlRWxaVjhENUFOcEV0WVpZV2RPdGVZQ1ZHckkxSlc2QXdRWlZPQ3IxWFZSd2JtR2RKdnVFdWVaUnZyeUNVcGxqMzBwYjdObGd6LTVsRzFMTWp5LUlHSjVUbnJ2OUxxMGFIRWJlc0VQLWpCOHZlTFVfMWpMZE9aMXhqaWpuVU1icjN6Rk0"}};
+  skySportsJamesTrafford1: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcllrZE53Sk9DWEZ4dGkyYVhqeTJWdFdnSmVxMEY4MzhkcGE4NzFFREw3VFpjd21GYUtDbzZ4bjZJLXpMNFBVdmU0Sk9kQ0hjVW52WEJEdzFlRWxaVjhENUFOcEV0WVpZV2RPdGVZQ1ZHckkxSlc2QXdRWlZPQ3IxWFZSd2JtR2RKdnVFdWVaUnZyeUNVcGxqMzBwYjdObGd6LTVsRzFMTWp5LUlHSjVUbnJ2OUxxMGFIRWJlc0VQLWpCOHZlTFVfMWpMZE9aMXhqaWpuVU1icjN6Rk0"},
+  bBCJamesTrafford: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA5RUo5d3hqVmp2amlTSnhhbkQ3NlR3SURPQ0xtSEd2R3oxZFBkQXoyeWZBQjdQNE1OR0Z1OWJ1T2YxV3lubjZSOFhvak43akpBd3RKWExwQUt3NnpOX2hJdnRUVE16bms"},
+  theAthleticKarlDarlow: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMijwFBVV95cUxOb2FTdnYtaUdtZWdmZ3dXcTFJanVVZmV0Q3lPSGwxWlV6Ukw5ZHJwNVhFUlNFYzZVODUzOWtFYlVoN0Rjd2ktNWptejJKZERoX2lxdGdJMFZwVGdTR1Qzak9CWFFicmRCU2ZXbF9kanBfN1ZGWml4X0tRMTR6VDVuazhfRXdSQTQ3cWlzTDVkaw"},
+  mOTLeedsNewsLucasPerri: {l:"MOT Leeds News", u:"https://news.google.com/rss/articles/CBMipwFBVV95cUxNRmdVOG01Vmh2eHQ0dEljRHpCV083bDU1Z09ra2RFTUJMX21NN3ZMSEsydXRRdWRTcTZSV0ExWUgzeU5GUGFRTzBnWmhzWG5QNGlGQnJJTlVnc2ZBTkhaUlBPN1VfUVlJZFlKNU0xaHNaNjRncVFQWmQ2RkVrLWZJWDh0azRMRmhjNFd4NDF3QTE1ODhnNGRTT080T2plUndVa2tRY0ZrSQ"}};
 const LINKMAP = {
   "Crysencio Summerville": ["leedslive","yep"],
   "Roony Bardghji": ["teamtalk","ypost"],
@@ -224,7 +229,7 @@ const LINKMAP = {
   "Hayden Hackney": ["nixon","teamtalk"],
   "Jonathan David": ["teamtalk"],
   "Lois Openda": ["teamtalk","leedslive"],
-  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford", "davidOrnsteinonXJamesTrafford", "skySportsJamesTrafford", "skySportsJamesTrafford1"],
+  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford", "davidOrnsteinonXJamesTrafford", "skySportsJamesTrafford", "skySportsJamesTrafford1", "bBCJamesTrafford"],
   "Shea Charles": ["leedslive"],
   "Lutsharel Geertruida": ["yep"],
   "Liam Delap": ["bbcGossip","leedslive"],
@@ -239,13 +244,13 @@ const LINKMAP = {
   "Wilfried Gnonto": ["yep","leedslive"],
   "Jack Harrison": ["leedslive"],
   "Largie Ramazani": ["leedslive"],
-  "Lucas Perri": ["leedslive", "leedsAllOverLucasPerri"],
+  "Lucas Perri": ["leedslive", "leedsAllOverLucasPerri", "mOTLeedsNewsLucasPerri"],
   "Mateo Joseph": ["teamtalk"],
   "Pascal Struijk": ["fInsider","yep", "leedsUnitedofficialPascalStruijk"],
   "Ethan Ampadu": ["lufc","philhay"],
   "Tarik Muharemović": ["leedsUnitedofficialTarikMuharemovi"],
   "Harry Wilson": ["skySportsHarryWilson"],
-  "Karl Darlow": ["tSNKarlDarlow"]};
+  "Karl Darlow": ["tSNKarlDarlow", "theAthleticKarlDarlow"]};
 const WL_LINKMAP = {
   "Haris Tabakovic":"kicker","Leo Scienza":"leedslive","Zian Flemming":"leedslive","Mikey Moore":"talksport",
   "Finn Azaz":"leedslive","Tammy Abraham":"bbcGossip","Ladislav Krejci":"teamtalk","Yassine Titraoui":"leedslive",

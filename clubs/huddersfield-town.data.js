@@ -31,21 +31,26 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Derensili Sanches Fernandes", sub:"W", club:"Excelsior (Netherlands)", pos:"W", fee:"Multi-million fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported close to completion pending visa formalities."}
+  {name:"Derensili Sanches Fernandes", sub:"W", club:"Excelsior (Netherlands)", pos:"W", fee:"Multi-million fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported close to completion pending visa formalities."},
+  {name:"Ibane Bowat", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer announced"},
+  {name:"Ethan Brierley", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move completed"},
+  {name:"Ashley Fletcher", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official announcement"}
 ];
 const CONFIRMED_OUT = [
-  {name:"Alfie May", sub:"ST", club:"Doncaster Rovers", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Doncaster entry."}
+  {name:"Alfie May", sub:"ST", club:"Doncaster Rovers", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Doncaster entry."},
+  {name:"Lee Nicholls", sub:"Unknown · Unknown · GK", club:"Preston North End", pos:"GK", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official transfer completed"}
 ];
 const INCOMING = [
-  {name:"Archie Collins", sub:"MF", club:"Free agent", pos:"MF", report:"~1 wk ago", src:"FLW", tier:3, fee:"Free", truth:55, prob:35, light:'y', trend:'flat', note:"Seven-club race for the free agent including Millwall, Sheffield Wednesday and Leicester.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Archie Collins", sub:"MF", club:"Free agent", pos:"MF", report:"~1 wk ago", src:"FLW", tier:3, fee:"Free", truth:55, prob:35, light:'y', trend:'flat', note:"Seven-club race for the free agent including Millwall, Sheffield Wednesday and Leicester.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent confirmation or update; stale rumour (>1 week, no snippet support)"},
   {name:"Ibane Bowat", sub:"", club:"", pos:"", report:"Transfer announced", src:"We Are Terriers", tier:3, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Signing confirmed by club announcement", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
   {name:"Derensili Sanches Fernandes", sub:"", club:"", pos:"Winger", report:"Four-year deal signed", src:"BBC", tier:2, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing on four-year contract", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
   {name:"Ethan Brierley", sub:"", club:"Brentford", pos:"", report:"Permanent move completed", src:"Brentford FC", tier:2, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Permanent transfer from Brentford confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Dutch winger", sub:"", club:"", pos:"Winger", report:"Signs on significant fee, beats continental interest", src:"Yorkshire Post", tier:2, fee:"Significant", truth:75, prob:75, light:"g", trend:"flat", note:"Dutch winger signed for significant fee; full player identity not disclosed in headline", lastSeen:"2026-08-07T01:42:32Z", baseProb:75}
+  {name:"Dutch winger", sub:"", club:"", pos:"Winger", report:"Signs on significant fee, beats continental interest", src:"Yorkshire Post", tier:2, fee:"Significant", truth:75, prob:75, light:"g", trend:"flat", note:"Dutch winger signed for significant fee; full player identity not disclosed in headline", lastSeen:"2026-08-07T01:42:32Z", baseProb:75, dead:true, deadReason:"Generic descriptor; no confirmed player name provided in snippets"}
 ];
 const OUTGOING = [
   {name:"Brodie Spencer", sub:"DF", club:"QPR / West Brom", pos:"DF", report:"~1 wk ago", src:"FLW exclusive", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Two Championship clubs reportedly interested.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
-  {name:"Ex-Huddersfield Town forward", sub:"", club:"Middlesbrough", pos:"Forward", report:"£2m deal agreed with Middlesbrough", src:"Yorkshire Post", tier:2, fee:"£2m", truth:70, prob:75, light:"g", trend:"flat", note:"Former Huddersfield player leaving Middlesbrough; specific identity unclear from headline", lastSeen:"2026-08-07T01:42:32Z", baseProb:75}
+  {name:"Ex-Huddersfield Town forward", sub:"", club:"Middlesbrough", pos:"Forward", report:"£2m deal agreed with Middlesbrough", src:"Yorkshire Post", tier:2, fee:"£2m", truth:70, prob:75, light:"g", trend:"flat", note:"Former Huddersfield player leaving Middlesbrough; specific identity unclear from headline", lastSeen:"2026-08-07T01:42:32Z", baseProb:75, dead:true, deadReason:"Generic descriptor referring to Middlesbrough £2m deal; no confirmed player name in available snippets"},
+  {name:"Lee Nicholls", sub:"Unknown · Unknown · GK", club:"Preston North End", pos:"GK", report:"Lee Nicholls joins Preston North End", src:"Huddersfield Town FC official", tier:1, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Official transfer completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -62,17 +67,23 @@ const HUB = {
   bBCDerensiliSanchesFernandes: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA4bXg1SWtwUWpkM0NVTjdrNUlodm9laWtKQTZxZWp2eVozMk5SRG5ROHowazhjM3phY09uRndabHVBYU5BZ2NhWlRyXzVWLUlxNnIzREllZXNyalBUalJWTnZGOEdmOU0?oc=5"},
   brentfordFCEthanBrierley: {l:"Brentford FC", u:"https://news.google.com/rss/articles/CBMimAFBVV95cUxNMmRfbmV2T08zVXYzMnRCaG5DRExfenZvcFFfczhQX2pYLWNWdEZudXR4TW5uU3c3bGRPS19tWm1SUFhHa3d0UW5vbTVkai1ZZFowdWlkc3k3OWRmZWRleHlfak0yRUcwQzlqazQtWEFNTkV4V2NkbExtLUtTM1ZYTGlIMVY2Si1zeEJZdGduWmtmX1ZMVThPUg?oc=5"},
   yorkshirePostDutchwinger: {l:"Yorkshire Post", u:"https://news.google.com/rss/articles/CBMi_gFBVV95cUxQZnJnMG9PWm44YVFObUs0eVhnZ0lEbllNX2wyeWV3aUZoRVRNUkxtYjN3YmpsRGUyNzVNdVVHQnlUcHc1VmJpZUhCV2tuQWtWbHlxMmtKTDZzRGlfbTRzMTI1QXFWUC01TUNHWjVSNGVwYVFTQTBvRWZBRkxUbFlXa0hSNTV1UlVHcnhqV0ZvMGdZQmREOTlCLUhzM2NXajVRU0txcUhFVXdDak5SbndHME81dGd5YzkyOFRUaEpibS1ZY2dNSkVibFFwTWdtbEcwakY4c1FPdHotNUFRQ2ZKSXJwUFNYTmpNa09pNE9ako3ZE82b1pOZU1IZzJIUQ?oc=5"},
-  yorkshirePostExHuddersfieldTownforward: {l:"Yorkshire Post", u:"https://news.google.com/rss/articles/CBMiwgFBVV95cUxObWJkUUhGeHZOckpwa3FSdWxUZy1nc2g5Ylo0R3JtREs2Y1F2UjJWVUdCUDROX19xUDlXZ1R6Q1J4M0hDQ2VIQnB2NVFDanFJcWZhRkUxeFFxREQ3MkJSWWV3T1ljaXV2d2l6elpPSUcyZW15ZTdBRHlxSUZhSkpQNHZkajhEOTFLTWN5Tlp5ZTNqVUNwRnU3aVUyRG0xQ3dQVFRXVjVyU3JaOS0yQ0habzJBbFhPdk5NczNpdzRsNlhDQQ?oc=5"}};
+  yorkshirePostExHuddersfieldTownforward: {l:"Yorkshire Post", u:"https://news.google.com/rss/articles/CBMiwgFBVV95cUxObWJkUUhGeHZOckpwa3FSdWxUZy1nc2g5Ylo0R3JtREs2Y1F2UjJWVUdCUDROX19xUDlXZ1R6Q1J4M0hDQ2VIQnB2NVFDanFJcWZhRkUxeFFxREQ3MkJSWWV3T1ljaXV2d2l6elpPSUcyZW15ZTdBRHlxSUZhSkpQNHZkajhEOTFLTWN5Tlp5ZTNqVUNwRnU3aVUyRG0xQ3dQVFRXVjVyU3JaOS0yQ0habzJBbFhPdk5NczNpdzRsNlhDQQ?oc=5"},
+  huddersfieldTownFCAshleyFletcher: {l:"Huddersfield Town FC", u:"https://news.google.com/rss/articles/CBMidkFVX3lxTFBBZVFmLXNMVHBjT1FlS3k1alpabDFHaThwOUwwMl8zbERNQ2hHa3ZTNUx5VmNpcmlNd1pEeHRSNDZWdGNZcldxWUZHUEw2T3ZLQ0tfc19KSkpRdVI0bmIyYl9tNUZyX1VuZWN3MlNySWd4NDBGRUE?oc=5"},
+  huddersfieldTownFCLeeNicholls: {l:"Huddersfield Town FC", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2txQS1kdlJlMVhUVnFhb1pCZGRMV0NNd0tpWFhEQjRidmItcWRkM1NidDhRZHVTbjZtbkRhcG1lQ2tHWkY0Y2loUXR2RVktQ05ORlpqbERWTVRxMDQ4UlJuUXo2SVN0SWVrZTV1QWYzNGQ3Mkt5YUpKMXlfVWNyWXloQVVUQVdLSEpTUnItb00?oc=5"},
+  huddersfieldTownFCDerensiliSanchesFernandes: {l:"Huddersfield Town FC", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxNTWl4dUQ4bTlXX0xTcTE0dlZ1TEhzbE5VTTBIV0p0VjJHU212Tnc5clliN2RiT01RVlBndDliQ1M2bHhFRlBhdV94ZnFlcXFXVVBFc0lDZmp4bmtOTWxBOEc1N1IzQUFxdGZsdTNGcHFEbTNoRDU1aGNaMTRXdmE5bW1iV2JxS0E?oc=5"},
+  unknownEthanBrierley: {l:"Unknown", u:"Unknown"}};
 
 const LINKMAP = {
-  "Derensili Sanches Fernandes": ["gnews-derensilisanchesfernande", "bBCDerensiliSanchesFernandes"],
+  "Derensili Sanches Fernandes": ["gnews-derensilisanchesfernande", "bBCDerensiliSanchesFernandes", "huddersfieldTownFCDerensiliSanchesFernandes"],
   "Alfie May": ["gnews-alfiemay"],
   "Archie Collins": ["flw"],
   "Brodie Spencer": ["flw"],
   "Ibane Bowat": ["weAreTerriersIbaneBowat"],
-  "Ethan Brierley": ["brentfordFCEthanBrierley"],
+  "Ethan Brierley": ["brentfordFCEthanBrierley", "unknownEthanBrierley"],
   "Dutch winger": ["yorkshirePostDutchwinger"],
-  "Ex-Huddersfield Town forward": ["yorkshirePostExHuddersfieldTownforward"]};
+  "Ex-Huddersfield Town forward": ["yorkshirePostExHuddersfieldTownforward"],
+  "Ashley Fletcher": ["huddersfieldTownFCAshleyFletcher"],
+  "Lee Nicholls": ["huddersfieldTownFCLeeNicholls"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

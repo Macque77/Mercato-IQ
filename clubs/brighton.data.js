@@ -100,12 +100,13 @@ const CONFIRMED_OUT =
 ];
 
 const INCOMING = [
-  {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Outgoing to Palace, not incoming to Brighton", lastSeen:"2026-08-07T01:42:32Z", baseProb:30}
+  {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Outgoing to Palace, not incoming to Brighton", lastSeen:"2026-08-07T01:42:32Z", baseProb:30, dead:true, deadReason:"Conflicting on-page entries (listed as both incoming and outgoing); no fresh snippet confirms movement; status unclear - retire to avoid duplication"},
+  {name:"Gabby George", sub:"Unknown · Unknown · Unknown", club:"Manchester United", pos:"Unknown", report:"Gabby George joins Brighton & Hove Albion", src:"Manchester United Website", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer from Manchester United", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
 ];
 
 const OUTGOING = [
-  {name:"Jan Paul van Hecke", sub:"23 · Belgium · D", club:"Brighton", pos:"D", report:"Tottenham agree £52million transfer with Brighton for Jan Paul van Hecke", src:"The Athletic", tier:1, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Deal agreed between clubs", lastSeen:"2026-08-07T01:42:32Z", baseProb:90},
-  {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Palace in advanced talks", lastSeen:"2026-08-07T01:42:32Z", baseProb:30}
+  {name:"Jan Paul van Hecke", sub:"Unknown · Unknown · Unknown", club:"Tottenham Hotspur", pos:"Unknown", report:"Tottenham agree £52million transfer with Brighton", src:"The Athletic", tier:1, fee:"£52m", truth:100, prob:100, light:"g", trend:"up", note:"Deal agreed between clubs", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
+  {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Palace in advanced talks", lastSeen:"2026-08-07T01:42:32Z", baseProb:30, dead:true, deadReason:"Conflicting on-page entries (listed as both incoming and outgoing); no fresh snippet confirms movement; status unclear - retire to avoid duplication"}
 ];
 const DEAD = [
   {name:"Said El Mala", sub:"Unknown · Unknown · Unknown", club:"Köln", pos:"Unknown", report:"Brighton pushing for final talks with Köln", src:"On-page rumour", tier:3, fee:"Unknown", truth:45, prob:40, light:"y", trend:"down", note:"Active negotiation reported", lastSeen:"2026-08-06T13:55:46Z", baseProb:40, dead:true, deadReason:"No recent credible reporting; transfer window context unclear", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -188,7 +189,8 @@ const HUB = {
   goalcomSollyMarch: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOR1NTWHc5c1VRbHoydmRkY01IT1QtX01tX0hnNi1sdDRBdWRVeUZxNEVMVHVGUzNEa1B2SjRIcDlTeXc3Q2gyZ3Vxb2FzZmdnUkVWYllXSFpXbmROQk01MGNMSGlDNGVoV0FueWRjNDNRN1kzTnZjRWpKcW1fek9nVFFyMDBlNXc4QjhkS0VHVjRNb3R5YVpfRldEZ2cyMHFRMGptTlhEZk00ODFBNTVxbTRmcUJTRGFpdFFnTUNmZS1xMlJnT0FQWjItVHFsZXJnOVJHLUJvd0dNbjJUc3NmY21B"},
   theAthleticJanPaulvanHecke: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxPM2Nua0Z2cXM0eS1ORjJLa1ZURFM3cFkwMUgzZGVneXFoaWVVeUNXeWh1dGZNVHFfYUs5dkJ0QnpUS1NDdEMzX3VZbWtIYnlUc0tlV0JKYUNNMm00RHVRbHptVDI3TVNWYUxKV1lpSTNOX2pUVVJwckVEVWc4amZfM0VNMVlkM0haRThDbFhqdEp4WDh6cjNyMG9sUQ"},
   manchesterUnitedWebsiteGabbyGeorge: {l:"Manchester United Website", u:"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMnFTNG4wTmR4UzBRY1d5cUhwcnE2ZlljOF9ZNW1aRlRJdEcwRC05Y1diZ2lSVlBlYkpyb0RrZHNQbHVsTkFocFZkNDE0c2FuSWtFdlhrVEVjT3E5MlIyblNUdUpWUHlNVUo3aDlVRWsxNzRDWnZ0Um9uOURqaklNbmpCVzAwTXcteER3"},
-  bBCCarlRushworth: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE16QUtjd191cmJSVUdQQkNqOC1tUE1HVU5ybnBZd1hMVW9DalpqNWZFSDFGa1JQMFBBbWRMTzdLdU53cGpQb1Rmb09qS3h3V1g0bFZVTDR4YlljMmczSkZHUjMxMm1HSWFNbUE"}};
+  bBCCarlRushworth: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE16QUtjd191cmJSVUdQQkNqOC1tUE1HVU5ybnBZd1hMVW9DalpqNWZFSDFGa1JQMFBBbWRMTzdLdU53cGpQb1Rmb09qS3h3V1g0bFZVTDR4YlljMmczSkZHUjMxMm1HSWFNbUE"},
+  manchesterUnitedWebsiteGabbyGeorge1: {l:"Manchester United Website", u:"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMnFTNG4wTmR4UzBRY1d5cUhwcnE2ZlljOF9ZNW1aRlRJdEcwRC05Y1diZ2lSVlBlYkpyb0RrZHNQbHVsTkFocFZkNDEEc2FuSWtFdlhrVEVjT3E5MlIyblNUdUpWUHlNVUo3aDlVRWsxNzRDWnZ0Um9uOURqaklNbmpCVzAwTXcteER3"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
@@ -213,7 +215,7 @@ const LINKMAP = {
   "Carl Rushworth": ["skySportsTransferCentreCarlRushworth", "bBCCarlRushworth"],
   "Diego Coppola": ["skySportsTransferCentreCarlRushworth"],
   "Brajan Gruda": ["skySportsTransferCentreCarlRushworth"],
-  "Gabby George": ["manchesterUnitedofficialsiteGabbyGeorge", "manchesterUnitedWebsiteGabbyGeorge"],
+  "Gabby George": ["manchesterUnitedofficialsiteGabbyGeorge", "manchesterUnitedWebsiteGabbyGeorge", "manchesterUnitedWebsiteGabbyGeorge1"],
   "George": ["bBCSportGeorge"],
   "Moisés Caicedo": ["xDavidOrnsteinMoissCaicedo"],
   "Joao Pedro": ["xDavidOrnsteinJoaoPedro"],

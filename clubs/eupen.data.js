@@ -33,7 +33,7 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Chris-Kévin Nadje", sub:"24 · France · CM", club:"Feyenoord", pos:"Midfielder", report:"Transfer agreed between Feyenoord and KAS Eupen", src:"Feyenoord official / FR-Fans.nl", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"up", note:"Deal officially confirmed by Feyenoord", lastSeen:"2026-08-07T10:18:48Z", baseProb:95}
+  {name:"Chris-Kévin Nadje", sub:"25 · France · M", club:"Feyenoord", pos:"M", report:"Transfer agreed between Feyenoord and KAS Eupen", src:"VoetbalPrimeur.be / fr-fans.nl", tier:3, fee:"Undisclosed", truth:90, prob:85, light:"g", trend:"down", note:"Multiple sources confirm deal agreed; player departing Feyenoord", lastSeen:"2026-08-07T14:38:27Z", baseProb:85}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -47,10 +47,11 @@ const HUB = {
   club: {l:"Eupen Official", u:"#"},
   fRFansnlChrisKvinNadje: {l:"FR-Fans.nl", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxQTUh2N0twaXltaURtUVNLUHI5YmpqV2RSeV9neWFtcFVZeldVRS1rM05ESlNQbnUwTGE5WmdReUVtYW9WcPA3MTJmSG5SWDJHdkRfTGdNRHB2cnhMdklRTl9mWGR5c2ZxQmY1VFR5RTRrZmFyZHRaMExZZWk0QmhGcw"},
   feyenoordGoogleNewsChrisKvinNadje: {l:"Feyenoord (Google News)", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxPSm5GdWJBeTJpR0hTSjNLYWYxMk9nN0NYRGlITU41LUJmVFo0YUNXWWNNcjAwSEV0ekN1QVYzdkdMRFhZQm5kNUxONVpMaEM5bk41dDBYRTZ4V1cyV0ozLUk4bmdCei1TbkhCRHZWdDJNODd3NHJ2YWFiTEYxbWNCMUctaWQyNTE6ejEzRVpTemdkVm54MnZZeFZSeVdrS2hHOE1xRWNR"},
-  fRFansnlChrisKvinNadje1: {l:"FR-Fans.nl", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxQTUh2N0twaXltaURtUVNLUHI5YmpqV2RSeV9neWFtcFVZeldVRS1rM05ESlNQbnUwTGE5WmdReUVtYW9WcHA3MTJmSG5SWDJHdkRfTGdNRHB2cnhMdklRTl9mWGR5c2ZxQmY1VFR5RTRrZmFyZHRaMExZZWk0QmhGcw"}};
+  fRFansnlChrisKvinNadje1: {l:"FR-Fans.nl", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxQTUh2N0twaXltaURtUVNLUHI5YmpqV2RSeV9neWFtcFVZeldVRS1rM05ESlNQbnUwTGE5WmdReUVtYW9WcHA3MTJmSG5SWDJHdkRfTGdNRHB2cnhMdklRTl9mWGR5c2ZxQmY1VFR5RTRrZmFyZHRaMExZZWk0QmhGcw"},
+  frfansnlChrisKvinNadje: {l:"fr-fans.nl", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxQTUh2N0twaXltaURtUVNLUHI5YmpqV2RSeV9neWFtcFVZeldVRS1rM05ESlNQbnUwTGE5WmdReUVtYW9WcPA3MTJmSG5SWDJHdkRfTGdNRHB2cnhMdklRTl9mWGR5c2ZxQmY1VFR5RTRrZmFyZHRaMExZZWk0QmhGcw?oc=5"}};
 
 const LINKMAP = {
-  "Chris-Kévin Nadje": ["fRFansnlChrisKvinNadje", "feyenoordGoogleNewsChrisKvinNadje", "fRFansnlChrisKvinNadje1"]};
+  "Chris-Kévin Nadje": ["fRFansnlChrisKvinNadje", "feyenoordGoogleNewsChrisKvinNadje", "fRFansnlChrisKvinNadje1", "frfansnlChrisKvinNadje"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

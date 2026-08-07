@@ -79,10 +79,9 @@ const INCOMING = [
    note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32, dead:true, deadReason:"no longer a current link"},
   {name:"Goalkeeper / depth", sub:"Framing · position need, no named target", club:"Market", pos:"GK", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:28, light:'o', trend:'flat',
    note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28, dead:true, deadReason:"no longer a current link"},
-  {name:"Konstantinos Tzolakis", sub:"23 · Greece · GK", club:"Olympiacos", pos:"GK", report:"Owner Acun Ilicali has publicly confirmed personal interest", src:"Hull Live", tier:2, fee:"Undisclosed", truth:85, prob:70, light:"g", trend:"up", note:"Owner confirmation of interest", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
-  {name:"Sorba Thomas", sub:"24 · England · LB", club:"Swansea City", pos:"LB", report:"HullLive and BBC Sport name Thomas as Hull target", src:"Hull Live / BBC Sport", tier:2, fee:"Undisclosed", truth:80, prob:65, light:"g", trend:"up", note:"Named as Hull number one target", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
-  {name:"Leon Bailey", sub:"27 · Jamaica · W", club:"Aston Villa", pos:"W", report:"Owner Acun Ilicali confirmed permanent move; medicals planned", src:"Hull Live", tier:2, fee:"Undisclosed", truth:95, prob:85, light:"g", trend:"down", note:"Deal on; three medicals planned", lastSeen:"2026-08-07T01:42:32Z", baseProb:85},
-  {name:"Manor Solomon", sub:"25 · Israel · W", club:"Tottenham Hotspur", pos:"W", report:"Hull City rival West Ham for £20m Tottenham forward", src:"BBC Sport / Goal.com / The i Paper", tier:2, fee:"£20m", truth:75, prob:60, light:"g", trend:"flat", note:"West Ham also competing for signature", lastSeen:"2026-08-07T01:42:32Z", baseProb:60}
+  {name:"Sorba Thomas", sub:"Age · Nation · Position unknown", club:"Huddersfield Town", pos:"Unknown", report:"HullLive and BBC Sport name Thomas as Hull target", src:"HullLive/BBC", tier:2, fee:"Unknown", truth:70, prob:65, light:"g", trend:"flat", note:"Named as target by multiple sources", lastSeen:"2026-08-07T14:38:27Z", baseProb:65},
+  {name:"Leon Bailey", sub:"Age · Nation · Position unknown", club:"Aston Villa", pos:"Forward/Winger", report:"Owner Acun Ilicali confirmed permanent move; medical in progress with three medicals planned", src:"Hull Live", tier:2, fee:"Undisclosed", truth:90, prob:85, light:"g", trend:"flat", note:"Medicals underway, deal progressing", lastSeen:"2026-08-07T14:38:27Z", baseProb:85},
+  {name:"Manor Solomon", sub:"Age · Nation · Position unknown", club:"Tottenham Hotspur", pos:"Forward", report:"Hull City rival West Ham for £20m Tottenham forward", src:"The i Paper", tier:3, fee:"£20m", truth:60, prob:50, light:"y", trend:"down", note:"Competing with West Ham for signature", lastSeen:"2026-08-07T14:38:27Z", baseProb:50}
 ];
 
 const OUTGOING = [
@@ -145,7 +144,11 @@ const HUB = {
   johnTownleyBirminghamLiveXLeonBailey: {l:"John Townley, BirminghamLive (X)", u:"https://x.com/johntownley11/status/2082836990739779698"},
   hullLiveLeonBailey: {l:"Hull Live", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxQSEE5c3c5TTE5ODRoZVRnLUIxbGdlbVNGajBoVkt2WU93dnkxZmZNTTYtbGVNMnVJcVo3bWd5VWZpVzFGM3dqeTZ6RHlHLV9vRWxwSmfSAacBQVVfeXFMTy1GLUJSWm1VM3BMbzBKcmUyMjYyTEVZaXhZQXBScHJPR2Q1RTQyczdvZEYzd0JMZFUwZUJDUHk0OVFkckpsaWllWlJQRnBBWFpYc0xGZmNXM1VOVFlTa2tJc3BVYjZnVGQ1di11OU0xWnBEY0xHODhnNEJOcmRLNHhyRVRWYWZYSUIwSE9PcXpPQXBhX1pidXJocWQya1RHM2VJUDBUb28"},
   theiPaperGoalcomBBCSportManorSolomon: {l:"The i Paper / Goal.com / BBC Sport", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmlpeVB4WEF3ZmJnWTVjRVVrV2h3Q3U2d0dxNTFWNFVFNjRnNGQ0WUhtUWtuLWhWN3RVSldsMjhDWGRMVDhTOUhHUHhkclF3VjE1NUxkMkkxZWNGNGQwd1VFWTZuaHZkdnRvTzBsQ3FZT1BoaFIyc1pzTF80MS1DVmdMcXlqcTZPQV9xYUZCQmRoVS14VERScERR"},
-  hullLiveKonstantinosTzolakis: {l:"Hull Live", u:"https://www.hulllive.co.uk"}};
+  hullLiveKonstantinosTzolakis: {l:"Hull Live", u:"https://www.hulllive.co.uk"},
+  hullLiveJensHjertDahl: {l:"Hull Live", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQdUlWT3NSeE9JYVVyVTVIc3Vkd3lpajZScUpiMmVEcktFNHgtUVBVNVRXcTh4SS1laVJtUXBPalltTWktWml3UnBwdExVcTdTdDdlVXZ1LTFHa2NmZmI4TWdEb1phcVoxSnFPR05JVjhzUnNhWlItaDZUcDFZN0Z2M2NIMXJmb0sxOHB6MW5YYVA5d1k1cEdiUlUwTzI"},
+  hullLiveLeonBailey1: {l:"Hull Live", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxQSEE5c3c5TTE5ODRoZVRnLUIxbGdlbVNGajBoVkt2WU93dnkxZmZNTTYtbGVNMnVJcVo3bWd5VWZpbVpOMDZ6Q0lSemw1MHZPeVpUNmhRNzBRLTVEN18xNHRjV3ZteHZzS1NJOEFKVnhqS0lkckhfakMyZVJNbmhNYzRsWWtqZE1vOTRWeW02MUYzd2p5NnpEeUctX29FUWxwSmfSAacBQVVfeXFMTy1GLUJSWm1VM3BMbzBKcmUyMjYyTEVZaXhZQXBScHJPR2Q1RTQyczdvZEYzd0JMZFUwZUJDUHk0OVFkckpsaWllWlJQRnBBWFpYc0xGZmNXM1VOVFlTa2tJc3BVYjZnVGQ1di11OU0xWnBEY0xHODhnNEJOcmRLNHhyRVRWYWZYSUIwSE9PcXpPQXBhX1pidXJocWQya1RHM2VJUDBUb28"},
+  bBCSportSorbaThomas: {l:"BBC Sport", u:"https://www.bbc.com"},
+  ownerconfirmationKonstantinosTzolakis: {l:"Owner confirmation", u:"https://news.google.com"}};
 const LINKMAP = {
   "PL-experienced rebuild": ["hullLive","bbcHull","sky"],
   "Goalscorer": ["hullLive","bbcGossip"],
@@ -153,8 +156,8 @@ const LINKMAP = {
   "Midfield control": ["hullLive","bbcGossip"],
   "Goalkeeper / depth": ["hullLive","bbcGossip"],
   "Championship-level players": ["hullLive","official"],
-  "Konstantinos Tzolakis": ["yahooSportsIlicaliconfirmationKonstantinosTzolakis", "hullLiveKonstantinosTzolakis"],
-  "Sorba Thomas": ["bBCSportHullLiveSorbaThomas", "hullLiveKonstantinosTzolakis"],
+  "Konstantinos Tzolakis": ["yahooSportsIlicaliconfirmationKonstantinosTzolakis", "hullLiveKonstantinosTzolakis", "ownerconfirmationKonstantinosTzolakis"],
+  "Sorba Thomas": ["bBCSportHullLiveSorbaThomas", "hullLiveKonstantinosTzolakis", "bBCSportSorbaThomas"],
   "Jack Butland": ["skySportsJackButland"],
   "Oscar Zambrano": ["tribalFootballOscarZambrano"],
   "Matt Targett": ["theYorkshirePostMattTargett"],
@@ -165,8 +168,9 @@ const LINKMAP = {
   "Ivor Pandur": ["skySportsJackButland"],
   "Kasey Palmer": ["sportsMoleAkinFamewo"],
   "Kyle Joseph": ["sportsMoleAkinFamewo"],
-  "Leon Bailey": ["johnTownleyBirminghamLiveXLeonBailey", "hullLiveLeonBailey"],
-  "Manor Solomon": ["theiPaperGoalcomBBCSportManorSolomon"]};
+  "Leon Bailey": ["johnTownleyBirminghamLiveXLeonBailey", "hullLiveLeonBailey", "hullLiveLeonBailey1"],
+  "Manor Solomon": ["theiPaperGoalcomBBCSportManorSolomon"],
+  "Jens Hjertø-Dahl": ["hullLiveJensHjertDahl"]};
 const WL_LINKMAP = {
   "PL-ready targets":"hullLive","Squad-trim sales":"official",
 };
