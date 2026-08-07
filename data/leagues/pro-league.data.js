@@ -6,7 +6,7 @@
 const LEAGUE = {
   name: "Pro League",
   nation: "Belgium",
-  stories_count: 26
+  stories_count: 23
 };
 
 const TOP_STORIES = [  {
@@ -45,25 +45,25 @@ const TOP_STORIES = [  {
     value: "unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
+    name: "Chris-Kévin Nadje", prob: 85, truth: 95, bullshit: false,
+    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
+    from: "Feyenoord", to: "KAS Eupen",
+    tier: 2, coverage: 2, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
     name: "Cameron Congreve", prob: 80, truth: 75, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
     from: "Swansea City", to: "KVC Westerlo",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "Undisclosed (7-figure)", updated: "2026-08-03T18:30:00Z"
   },
   {
-    name: "Jan Virgili", prob: 75, truth: 80, bullshit: false,
+    name: "Bisiwu", prob: 80, truth: 80, bullshit: false,
     club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
-    from: "Mallorca", to: "Club Brugge",
+    from: "Barcelona", to: "Club Brugge",
     tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "", updated: "2026-08-03T14:30:00Z"
-  },
-  {
-    name: "David Njoku", prob: 45, truth: 60, bullshit: false,
-    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
-    from: "Udinese", to: "Club Brugge",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "€18m", updated: "2026-08-03T14:30:00Z"
+    value: "Unknown", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Andi Zeqiri", prob: 38, truth: 56, bullshit: false,
@@ -101,32 +101,39 @@ const TOP_STORIES = [  {
     value: "unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Chris-Kévin Nadje", prob: 95, truth: 95, bullshit: false,
-    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
-    from: "Feyenoord", to: "KAS Eupen",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Cisse Sandra", prob: 85, truth: 85, bullshit: false,
+    name: "Cisse Sandra", prob: 95, truth: 95, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
     from: "Club Brugge", to: "KVC Westerlo",
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "€18m", updated: "2026-08-03T18:30:00Z"
+    value: "€18 million", updated: "2026-08-03T18:30:00Z"
+  },
+  {
+    name: "Lazare", prob: 95, truth: 95, bullshit: false,
+    club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "in",
+    from: "", to: "Cercle Brugge",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Jarne Rommens", prob: 85, truth: 85, bullshit: false,
+    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "out",
+    from: "KVC Westerlo", to: "Westerlo",
+    tier: 3, coverage: 2, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z"
+  },
+  {
+    name: "Claudio Katunda", prob: 85, truth: 85, bullshit: false,
+    club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "out",
+    from: "Cercle Brugge", to: "",
+    tier: 3, coverage: 2, coverage_trend: 'up',
+    value: "", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Ferri", prob: 80, truth: 80, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "out",
-    from: "KVC Westerlo", to: "KVC Westerlo",
+    from: "KVC Westerlo", to: "Westerlo",
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-08-03T18:30:00Z"
-  },
-  {
-    name: "Jarne Rommens", prob: 75, truth: 75, bullshit: false,
-    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "out",
-    from: "KVC Westerlo", to: "KVC Westerlo",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-08-03T18:30:00Z"
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z"
   },
   {
     name: "Ayase Ueda", prob: 70, truth: 75, bullshit: false,
@@ -134,13 +141,6 @@ const TOP_STORIES = [  {
     from: "Cercle Brugge", to: "Premier League (Unknown club)",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Bisiwu", prob: 70, truth: 75, bullshit: false,
-    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
-    from: "", to: "Club Brugge",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "", updated: "2026-08-03T14:30:00Z"
   },
   {
     name: "Warleson", prob: 65, truth: 70, bullshit: false,
@@ -151,12 +151,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"cercle-brugge": 4, "union-saint-gilloise": 6, "westerlo": 5, "oh-leuven": 2, "club-brugge": 5, "standard-liege": 1, "charleroi": 2, "eupen": 1};
+const BY_CLUB = {"cercle-brugge": 5, "union-saint-gilloise": 6, "westerlo": 5, "oh-leuven": 2, "eupen": 1, "club-brugge": 1, "standard-liege": 1, "charleroi": 2};
 
-const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 4, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "club-brugge", "name": "Club Brugge", "count": 5, "badge": false, "primary": "#2E5CC8", "primaryBright": "#2E5CC8"}, {"slug": "eupen", "name": "KAS Eupen", "count": 1, "badge": false, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "westerlo", "name": "KVC Westerlo", "count": 5, "badge": false, "primary": "#FFCC00", "primaryBright": "#FFE066"}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 2, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "charleroi", "name": "R Charleroi SC", "count": 2, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 0, "badge": false, "primary": "#8B0000", "primaryBright": "#8B0000"}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false, "primary": "#FF0000", "primaryBright": "#FF0000"}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 6, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "waasland-beveren", "name": "Waasland-Beveren", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
+const CLUBS_LIST = [{"slug": "cercle-brugge", "name": "Cercle Brugge", "count": 5, "badge": false, "primary": "#00843D", "primaryBright": "#3FCB8C"}, {"slug": "club-brugge", "name": "Club Brugge", "count": 1, "badge": false, "primary": "#2E5CC8", "primaryBright": "#2E5CC8"}, {"slug": "eupen", "name": "KAS Eupen", "count": 1, "badge": false, "primary": "#00539F", "primaryBright": "#5CA9FF"}, {"slug": "westerlo", "name": "KVC Westerlo", "count": 5, "badge": false, "primary": "#FFCC00", "primaryBright": "#FFE066"}, {"slug": "oh-leuven", "name": "OH Leuven", "count": 2, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "charleroi", "name": "R Charleroi SC", "count": 2, "badge": false, "primary": "#000000", "primaryBright": "#C0C0C0"}, {"slug": "rsc-anderlecht", "name": "RSC Anderlecht", "count": 0, "badge": false, "primary": "#8B0000", "primaryBright": "#8B0000"}, {"slug": "sint-truiden", "name": "Sint-Truidense VK", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "standard-liege", "name": "Standard Li\u00e8ge", "count": 1, "badge": false, "primary": "#FF0000", "primaryBright": "#FF0000"}, {"slug": "union-saint-gilloise", "name": "Union Saint-Gilloise", "count": 6, "badge": false, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "waasland-beveren", "name": "Waasland-Beveren", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T06:12:44.368776Z",
+  updated: "2026-08-07T10:14:54.501694Z",
   label: "League aggregation"
 };

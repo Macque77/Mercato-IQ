@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 84}, {"slu
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T06:12:44.359882Z",
+  updated: "2026-08-07T10:14:54.489288Z",
   label: "Nation aggregation"
 };

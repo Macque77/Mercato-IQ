@@ -265,6 +265,19 @@ const HEADLINES = [
     updated: "2026-08-03T18:00:00Z"
   },
   {
+    headline: "Bruno Guimarães",
+    club_display_name: "Arsenal",
+    summary: "Near total agreement reached; player awaiting medical",
+    value: "£75m",
+    from: "Newcastle United", to: "Arsenal",
+    direction: "in",
+    prob: 95, truth: 95, trend: 'up', bullshit: false,
+    tier: 1, coverage: 6, coverage_trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
     headline: "Kodai Sano",
     club_display_name: "N.E.C.",
     summary: "Breaking as of 4 August 2026; only medical/signing formalities remain.",
@@ -291,19 +304,6 @@ const HEADLINES = [
     updated: "2026-08-03T12:48:44Z"
   },
   {
-    headline: "Bruno Guimarães",
-    club_display_name: "Arsenal",
-    summary: "Multiple Ornstein reports confirm advanced talks and agreement on fee; medical s",
-    value: "£75m",
-    from: "Newcastle United", to: "Arsenal",
-    direction: "in",
-    prob: 85, truth: 95, trend: 'down', bullshit: false,
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
     headline: "Maxence Lacroix",
     club_display_name: "Chelsea",
     summary: "",
@@ -319,9 +319,9 @@ const HEADLINES = [
   {
     headline: "Youri Tielemans",
     club_display_name: "Aston Villa",
-    summary: "Release clause triggered",
+    summary: "Release clause being activated; deal in final stages",
     value: "£35m",
-    from: "Aston Villa", to: "Aston Villa",
+    from: "Aston Villa", to: "Manchester United",
     direction: "out",
     prob: 85, truth: 90, trend: 'flat', bullshit: false,
     tier: 1, coverage: 3, coverage_trend: 'flat',
@@ -332,11 +332,11 @@ const HEADLINES = [
   {
     headline: "Christian Norgaard",
     club_display_name: "Arsenal",
-    summary: "Agreement in principle reached; deal advanced",
+    summary: "Agreement in principle reached between clubs",
     value: "£7m",
     from: "Arsenal", to: "Everton",
     direction: "out",
-    prob: 85, truth: 90, trend: 'flat', bullshit: false,
+    prob: 85, truth: 85, trend: 'flat', bullshit: false,
     tier: 1, coverage: 5, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "arsenal",
@@ -789,7 +789,7 @@ const HEADLINES = [
 const NATIONS = [
   {
     name: "England", slug: "england", flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    stories_count: 243, league_count: 3
+    stories_count: 244, league_count: 3
   },
   {
     name: "Italy", slug: "italy", flag_emoji: "🇮🇹",
@@ -813,7 +813,7 @@ const NATIONS = [
   },
   {
     name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
-    stories_count: 26, league_count: 1
+    stories_count: 23, league_count: 1
   },
   {
     name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
@@ -842,7 +842,7 @@ const NATIONS = [
 ];
 
 const STATS = {
-  total_stories: 730,
+  total_stories: 728,
   clubs_covered: 198,
   tier1_count: 76,
   top_league: "Serie A",
@@ -853,6 +853,6 @@ const STATS = {
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T06:12:44.358846Z",
+  updated: "2026-08-07T10:14:54.488131Z",
   label: "Global aggregation from all clubs"
 };
