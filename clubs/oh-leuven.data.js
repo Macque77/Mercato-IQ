@@ -31,7 +31,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Jamie Lawrence", sub:"23 · CB · Germany", club:"WSG Tirol", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2.01m Bayern-academy defender signs until 2029 after two seasons in the Austrian Bundesliga."}
+  {name:"Jamie Lawrence", sub:"23 · CB · Germany", club:"WSG Tirol", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2.01m Bayern-academy defender signs until 2029 after two seasons in the Austrian Bundesliga."},
+  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from Celtic confirmed; described as having significant potential and right mentality"}
 ];
 const CONFIRMED_OUT = [
   {name:"Unknown Player", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"JPL champion departing to Eredivisie - official transfer"}
@@ -63,18 +64,23 @@ const HUB = {
   voetbalkrantcomUnknownPlayer: {l:"Voetbalkrant.com", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxPbGF6MU9RM0psVUZBYm9ZX2VLWjkzMGFYUW5kcDBIRXZLb0JMUWVVSE1TcDNmLThGeHBSa0VGcld1bVRKcjR5NkZ3VWtZOVVMSm81am5GUXpqX3FUNWFXNDZFZEVfVlppV0NBUVB5cU9LMXktVVNlZ0FzUHA1MHdqdlBLLVEyWlBKTTBvZ18wYk1aQXU0amdfQV9DcDQwWG90N3l2eGtDMDNYT3BvNnM4d9IBtgFBVV95cUxNUUdmb0czejB3YlhLZGhaNFNRUHlPY09wa0Vmb3hFU19jVTE5b2dJZHVnSXBzdm9xQkUyWEZtUE5TamFLUHN1WGc3cjJjSDctMVpEOTRxdHozb1hsMlpReGV2V2N0T0luYWs2cUsxbEhsX1NMSlZBOEhIaUtPY1dubEVocjhab0h6SlFVc1QyanhUM1kyWlpMTTFNMl90UWhtaDlqSzRZaGY2bktuVDQ2VWpTbWtuQQ"},
   robtvbeShinYamada: {l:"robtv.be", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxQUFVmTnc5MElxVFBpMlZ3d21EM2tEejJ0VlFEcUJsR1VIOE9FQWRxTmpIWm5DRDRBYzZqMWhPajNCbDZ4SEt2dl9SOWViTXYwYlp5T3kzRm9SdFZ4X0dUWjBOcHJwVVNpN3locDdBNW4wV3dfU3A0MHNDNFpqb2xhWnRUaWlETWwxVWltWEF6NlJMbEU?oc=5"},
   voetbalkrantcomUnknownexBayerntalent: {l:"Voetbalkrant.com", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxONHBwMEtaSlJoaGwwUy0xWklOblhnZjkzWGFPMWp1bC1nbXdkcmZwSUFxclloSjdVZG1HNERvZkg4YWpVZHptaVBET1FlSVY0Y2U2dXhHdERleGJ5S19wVDlzRjY2LWxkODBoRE1mVWVaMy1IWVJUamJmRWRVQm0tMG5FVDZub0liZW5ISGFHbU9VVGM4bGhTa0RNZFFHRzY1VlU3M3VmcmNUTVdicGFxQ3ViZjfSAboBQVVfeXFMTlNsbW80ZG5SLU55eFUzWndTeW5KNE5ZS0MzRTZuWlhmci1IamNRNXVHMl9kVmdFY0I4T0JEd1ladjlGcWpaeHlGUXB1aXBtOXIyQmQ1dVpoTENFOEJHSHcwZ0ZVbWQ3WDdxTUpncTlhNzJMcUpmUGtBNHBuTkR5RzIzOS1qb0pGenRvcEM4NVYtTDdsMUM5ZEg1TzBmbXN0WVBNUkRWUTVTcjhPeXZNYmNtSDlDV0p1Vnln?oc=5"},
-  robtvbeAurlieReynders: {l:"robtv.be", u:"https://news.google.com/rss/articles/CBMi_gFBVV95cUxOdm9WWmpPa253My1OYVhGRC1PWmZveEs1OUNKNDZ5ZzQ5T1RmNWZ4MnhXWmNzXzJHQzhSalJacnpwVWc5NTdtdW9YcktBd3RVd2NDMlNDOXExTG5CZzViVjJPMzEwOHFoZmh1YjgxRjZuZUpIZnl5S282SkN1SUUtNHRmcmF3dlRfSkR6d0dDZEtHa1U1NkVNd0tZYXlocGZyRFZ1MVNFMVJ6MTlpZVN4UmJia3hBdDBISTJGX0huUk84RHdUcGRueFRQQWdfdy01YURCS1VNT24wY0JucFZHbm1UcjFoOTMyZ24yemx0ZE5qcU1UNmc3RnR3VE1LQQ?oc=5"}};
+  robtvbeAurlieReynders: {l:"robtv.be", u:"https://news.google.com/rss/articles/CBMi_gFBVV95cUxOdm9WWmpPa253My1OYVhGRC1PWmZveEs1OUNKNDZ5ZzQ5T1RmNWZ4MnhXWmNzXzJHQzhSalJacnpwVWc5NTdtdW9YcktBd3RVd2NDMlNDOXExTG5CZzViVjJPMzEwOHFoZmh1YjgxRjZuZUpIZnl5S282SkN1SUUtNHRmcmF3dlRfSkR6d0dDZEtHa1U1NkVNd0tZYXlocGZyRFZ1MVNFMVJ6MTlpZVN4UmJia3hBdDBISTJGX0huUk84RHdUcGRueFRQQWdfdy01YURCS1VNT24wY0JucFZHbm1UcjFoOTMyZ24yemx0ZE5qcU1UNmc3RnR3VE1LQQ?oc=5"},
+  voetbalkrantcomUnknownexBayernplayer: {l:"Voetbalkrant.com", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxONHBwMEtaSlJoaGwwUy0xWklOblhnZjkzWGFPMWp1bC1nbXdkcmZwSUFxclloSjdVZG1HNERvZkg4YWpVZHptaVBET1FlSVY0Y2U2dXhHdERleGJ5S19wVDlzRjY2LWxkODBoRE1mVWVaMy1IWVJUamJmRWRVQm0tMG5FVDZub0liZW5ISGFHbU9VVGM4bGhTa0RNZFFHRzY1VlU3M3VmcmNUTVdicGFxQ3ViZjfSAboBQVVfeXFMTlNsbW80ZG5SLU55eFUzWndTeW5KNE5ZS0MzRTZuWlhmci1IamNRNXVHMl9kVmdFY0I4T0JEd1ladjlGcWpaeHlGUXB1aXBtOXIyQmQ1dVpoTENFOEJHSHcwZ0ZVbWQ3WDdxTUpncTlhNzJMcUpmUGtBNHBuTkR5RzIzOS1qb0pGenRvcEM4NVYtTDdsMUM5ZEg1TzBmbXN0WVBNUkRWUTVTcjhPeXZNYmNtSDlDV0p1Vnln"},
+  voetbalPrimeurbeSoryKaba: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxOZnBtYXFYeXN3UlcyMF84c09Dcl9yTXlYQzNILTktN1JzUDVQMnAtWkwxcXpnVGdjYkQ1dHlJYUZnNVVQYlo4WHFld2NiZkdkcHJZbEhURm9NYVdEcjhFaENkVl9say1iY192VEQ3MU11UHhZU1lSYk5VblQ5RkpoNjRaV2E"},
+  voetbalPrimeurbeVanDenHeuvel1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxQYkp5U0dTeXRneVhGNDZLdlpTdmJpQ0M4Y2FDa1RQQ2FubjBZd3dSV281S0p5UHBSaEpVeWFwS0ZwOHIyanpOV29nM2wzQlpvcDBnMGJIUEN4bF91RTZUX2xKLU12eDZFT0VvUTdxcFpQZ3YwaVAzTW1KZThNR3hUWmpuQ0dsYzFXVldnRWlfZUpqSVEtQlpEOWJiZ3J0Nl9zMEE"}};
 
 const LINKMAP = {
   "Jelle Van Neck": ["getBelgianDutchFootballNewsJelleVanNeck"],
   "Davis Opoku": ["voetbalkrantviaSachaTavolieriDavisOpoku"],
   "Jamie Lawrence": ["voetbalkrantJamieLawrence"],
   "Shin Yamada": ["rOBtvShinYamada", "robtvbeShinYamada"],
-  "Van Den Heuvel": ["voetbalPrimeurbeVanDenHeuvel"],
+  "Van Den Heuvel": ["voetbalPrimeurbeVanDenHeuvel", "voetbalPrimeurbeVanDenHeuvel1"],
   "Aurélie Reynders": ["sporzabeAurlieReynders", "robtvbeAurlieReynders"],
   "Nyakossi": ["voetbalPrimeurbeNyakossi"],
   "Unknown Player": ["voetbalkrantcomUnknownPlayer"],
-  "Unknown ex-Bayern talent": ["voetbalkrantcomUnknownexBayerntalent"]};
+  "Unknown ex-Bayern talent": ["voetbalkrantcomUnknownexBayerntalent"],
+  "Unknown ex-Bayern player": ["voetbalkrantcomUnknownexBayernplayer"],
+  "Sory Kaba": ["voetbalPrimeurbeSoryKaba"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

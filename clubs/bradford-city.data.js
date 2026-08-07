@@ -37,7 +37,8 @@ const CONFIRMED_IN = [
   {name:"Kayden Jackson", sub:"", club:"Derby County", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departs Derby County for Bradford City"}
 ];
 const CONFIRMED_OUT = [
-  {name:"Ash Power", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Makes move to Wigan Athletic"}
+  {name:"Ash Power", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Makes move to Wigan Athletic"},
+  {name:"Curtis Tilt", sub:"Unknown · Unknown · Centre-half", club:"Unknown", pos:"CB", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Makes surprise switch to League One rivals"}
 ];
 const INCOMING = [
   {name:"Adam Phillips", sub:"MF", club:"Barnsley", pos:"MF", report:"Adam Phillips joins Bradford City", src:"Pete O'Rourke", tier:3, fee:"Undisclosed", truth:90, prob:90, light:"g", trend:"up", note:"On-page rumour, no fresh snippet detail", lastSeen:"2026-08-07T14:38:27Z", baseProb:90},
@@ -74,11 +75,12 @@ const HUB = {
   yorkshirepostcoukCurtisTilt: {l:"yorkshirepost.co.uk", u:"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOdUZ4R0RwdGR6NlB6dkFUdVhPTXNTQmpBeGlvNXg2aU55dUx0ZjlnWFl6YUEybEZNWE1uSlR1OEZBTjhrSEt4T0FUU2tnaDZLU1E5d1BtQVA2T29vR1lQcDBoSjc5ZkY0ci0tcjR1M1FmWWk2NjhWTjRFdDdnMFZUZzI0NUdENlJTelAtSmtwWTBjNTdCSHpmVDhEVEgxNkRuTjRjRGtZdWJLamYydmU3dWhDVV84VERMSzZwTVdEUC1wTjVmS1Q0cEVNN3cxcG1FRnZST190U0ZXT2g3WW5nT1NBclRBZw"},
   bradfordCityAFCAdamPhillips: {l:"Bradford City AFC", u:"https://news.google.com/rss/articles/CBMie0FVX3lxTE1fQmVndmpKZHhNdXJWUTUyY1c0SkpnTkF3Z25BRGhwNFY2cWk4amlNcDZEcU9UaXU5QVNVSGQtUl9MaGdNcmRFamZVQTNQemlvRWRQQkJ1SkVuenVrajVDemVYaFI2V1haVlNxOW5USlp4OGw4SDJsMHJpcw"},
   bradfordCityAFCJakeBeesley2: {l:"Bradford City AFC", u:"https://news.google.com/rss/articles/CBMie0FVX3lxTE9zckFWbU5QR01HeTFwb2J0T2JpUjZsUENBUXBuckMzem51UHg5c3BHQXlKcE1wMlhBeU0tOHBUNFJvSTBZbS1VVTFRbVFnZXplTXpqZnFUSWNZRmQwdEFZWmp1MU83T3ZJV0pzSnMxUGFweHhKbzBSYXRjYw"},
-  derbyCountyKaydenJackson2: {l:"Derby County", u:"https://news.google.com/rss/articles/CBMilAFBVV95cUxNRjBTZEQtWTFvM1NxYmJqeURDc25nNHVrT1Z4Z0lLRGhVR3MtVGpXSmpsQTl0S3U0RlB1WERPd2hQMnA5NzFxNUlPdVF1RmJOMTVaeGMzUkpxMjh1UnVEWkFOb21oMllGUk5HNk5hZFFrNEFUX1Q0ZlNYWU00SDNaR3FpVDFqMThLQ3V6cXNxTDBIOER6"}};
+  derbyCountyKaydenJackson2: {l:"Derby County", u:"https://news.google.com/rss/articles/CBMilAFBVV95cUxNRjBTZEQtWTFvM1NxYmJqeURDc25nNHVrT1Z4Z0lLRGhVR3MtVGpXSmpsQTl0S3U0RlB1WERPd2hQMnA5NzFxNUlPdVF1RmJOMTVaeGMzUkpxMjh1UnVEWkFOb21oMllGUk5HNk5hZFFrNEFUX1Q0ZlNYWU00SDNaR3FpVDFqMThLQ3V6cXNxTDBIOER6"},
+  yorkshirePostReeceWelch1: {l:"Yorkshire Post", u:"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPeW0xc1F6LVBQY0hpSjVtV0VEdXptQU02bHVldTdMeVJzVkR3WUoxWVdzbU5YVHo2YV9BSXl1TXRtS2djbTFtNDVNT0dWdDI1elZqdE56Qzdla0FCQmZuVUE0V05HNm9CcVRkR0k4T21YOUNQQWNuVUdjeFFjZExKM2FJVFFOb3FjbWFzWnBROV8yYTc1ZUJFbEpGMGpjeUp4Wk9DZHZUVHBDZVZpOWFrdlRYc2VaNlhDOTFtT3ZKSUVySlMwWVZBR2ZXZzhVOXdVZ0RNcm1YRWVZUUlYcFE"}};
 
 const LINKMAP = {
   "Adam Phillips": ["orourke", "bradfordCityAFCAdamPhillips"],
-  "Reece Welch": ["gnews-reecewelch", "yorkshirePostReeceWelch", "yorkshirepostcoukReeceWelch"],
+  "Reece Welch": ["gnews-reecewelch", "yorkshirePostReeceWelch", "yorkshirepostcoukReeceWelch", "yorkshirePostReeceWelch1"],
   "Jake Beesley": ["gnews-jakebeesley", "bradfordCityAFCJakeBeesley", "bradfordCityAFCJakeBeesley1", "bradfordCityAFCJakeBeesley2"],
   "Lee Evans": ["flw"],
   "Kayden Jackson": ["derbyCountyKaydenJackson", "derbyCountyKaydenJackson1", "derbyCountyKaydenJackson2"],

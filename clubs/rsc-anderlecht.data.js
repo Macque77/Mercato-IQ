@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Tomáš Souček", sub:"29 · Czech Republic · Midfielder", club:"West Ham United", pos:"Midfielder", report:"Reports indicate RSC Anderlecht are interested in signing the Czech midfielder, though Polish clubs are also pursuing him.", src:"VoetbalPrimeur.be", tier:3, fee:"", truth:45, prob:30, light:"y", trend:"flat", note:"Competition from Polish clubs; deal not advanced", lastSeen:"2026-08-07T17:40:23Z", baseProb:30}
+  {name:"Tomáš Souček", sub:"29 · Czech Republic · CM", club:"West Ham United", pos:"CM", report:"RSC Anderlecht interested but Polish clubs also competing for signature", src:"VoetbalPrimeur.be", tier:3, fee:"", truth:45, prob:25, light:"o", trend:"down", note:"Competition from Polish clubs reported; deal not imminent", lastSeen:"2026-08-07T20:08:12Z", baseProb:25}
 ];
 
 const OUTGOING = [
@@ -69,7 +69,7 @@ const LINKMAP = {
   "Matías Soticek": ["voetbalPrimeurbeMatasSoticek"],
   "Unknown Attacker": ["voetbalBelgieUnknownAttacker"],
   "Mathias Soticek": ["voetbalPrimeurbeMathiasSoticek"],
-  "Tomáš Souček": ["voetbalPrimeurbeMatasSoticek"]};
+  "Tomáš Souček": ["voetbalPrimeurbeMatasSoticek", "voetbalPrimeurbeMathiasSoticek"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

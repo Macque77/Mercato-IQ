@@ -33,8 +33,7 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Joel Ndala", sub:"20 · LW · England", club:"Manchester City", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Man City academy graduate signs until 2030 after loan spells at Hull City and Sheffield Wednesday."},
   {name:"Gaetan Coucke", sub:"GK", club:"Sampdoria", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as goalkeeper cover following Warleson's exit."},
-  {name:"Lukas Mondele", sub:"22 · MF · Belgium", club:"Francs Borains", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Club Brugge youth product signs until 2029 with a one-year option."},
-  {name:"Claudio Katunda", sub:"unknown · unknown · DEF", club:"unknown", pos:"DEF", fee:"unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing"}
+  {name:"Lukas Mondele", sub:"22 · MF · Belgium", club:"Francs Borains", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Club Brugge youth product signs until 2029 with a one-year option."}
 ];
 const CONFIRMED_OUT = [
   {name:"Warleson", sub:"GK", club:"Botafogo", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed for Brazilian side Botafogo."},
@@ -42,13 +41,10 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [
   {name:"Claudio Katunda", sub:"19 · CB", club:"Schalke 04", pos:"CB", report:"10 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:50, prob:20, light:"o", trend:"flat", note:"Cercle among several Belgian clubs, including Standard, monitoring the 2m-tall 19-year-old Schalke defender; no bid confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent credible reports; rumour appears stale (dated 10 Jun 2026)"},
-  {name:"Joel Ndala", sub:"unknown · unknown · unknown", club:"Manchester City", pos:"unknown", report:"Cercle Brugge reaches agreement with Manchester City", src:"Fabrizio Romano / Tavolieri", tier:1, fee:"unknown", truth:95, prob:95, light:"g", trend:"up", note:"Deal agreed between clubs", lastSeen:"2026-08-07T17:40:23Z", baseProb:95},
-  {name:"Lukas Mondele", sub:"unknown · unknown · unknown", club:"Francs Borains", pos:"unknown", report:"Transfer from Francs Borains to Cercle Brugge confirmed", src:"HBVL / Maarten Martens", tier:2, fee:"unknown", truth:90, prob:90, light:"g", trend:"up", note:"Welcomed by Maarten Martens", lastSeen:"2026-08-07T17:40:23Z", baseProb:90}
+  {name:"Joel Ndala", sub:"Unknown · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Cercle Brugge reaches agreement with Manchester City", src:"Fabrizio Romano / Tavolieri", tier:1, fee:"Unknown", truth:85, prob:80, light:"g", trend:"down", note:"Deal agreed between clubs", lastSeen:"2026-08-07T20:08:12Z", baseProb:80},
+  {name:"Lukas Mondele", sub:"Unknown · Unknown · Unknown", club:"Francs Borains", pos:"Unknown", report:"Transfer from Francs Borains to Cercle Brugge confirmed", src:"Direct club statement", tier:2, fee:"Unknown", truth:90, prob:95, light:"g", trend:"up", note:"Coach Maarten Martens congratulated player on transfer", lastSeen:"2026-08-07T20:08:12Z", baseProb:95}
 ];
-const OUTGOING = [
-  {name:"Claudio Katunda", sub:"", club:"", pos:"", report:"Defender departure from Cercle Brugge", src:"", tier:3, fee:"", truth:85, prob:85, light:"g", trend:"flat", note:"OFFICIEEL Cercle Brugge laat verdediger vertrekken", lastSeen:"2026-08-07T06:16:28Z", baseProb:85, dead:true, deadReason:"Listed as both incoming (10 Jun 2026) and outgoing (Defender departure) - conflicting status; unclear which is current; insufficient recent snippet confirmation"},
-  {name:"Ayase Ueda", sub:"unknown · unknown · unknown", club:"unknown (Premier League)", pos:"unknown", report:"Ayase Ueda transferred to Premier League; Cercle Brugge receives bonus", src:"VoetbalBelgie", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"up", note:"Transfer completed to Premier League with bonus clause triggered", lastSeen:"2026-08-07T17:40:23Z", baseProb:95}
-];
+const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

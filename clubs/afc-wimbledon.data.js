@@ -35,16 +35,16 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"Signed from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
-  {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
-  {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Deal agreed", lastSeen:"2026-08-07T14:38:27Z", baseProb:95},
-  {name:"Steven Sessegnon", sub:"Player", club:"Wigan Athletic", pos:"Unknown", report:"Joined after leaving Wigan Athletic", src:"Unknown", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"down", note:"Transfer completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:85},
-  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:60, light:"g", trend:"flat", note:"Competition from Lincoln City", lastSeen:"2026-08-07T14:38:27Z", baseProb:60}
+  {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"Signed from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T20:08:12Z", baseProb:100},
+  {name:"Zack Nelson", sub:"Defender", club:"Free agent (Luton Town)", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T20:08:12Z", baseProb:100},
+  {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:95, prob:90, light:"g", trend:"down", note:"Deal agreed", lastSeen:"2026-08-07T20:08:12Z", baseProb:90},
+  {name:"Steven Sessegnon", sub:"Player", club:"Wigan Athletic", pos:"Unknown", report:"Joined after leaving Wigan Athletic", src:"Unknown", tier:3, fee:"Undisclosed", truth:80, prob:75, light:"g", trend:"down", note:"Existing rumour, no new snippet", lastSeen:"2026-08-07T20:08:12Z", baseProb:75},
+  {name:"Shaun Hutchinson", sub:"Defender", club:"Free agent (Millwall)", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Free", truth:75, prob:70, light:"g", trend:"up", note:"Former Millwall skipper, target", lastSeen:"2026-08-07T20:08:12Z", baseProb:70}
 ];
 const OUTGOING = [
-  {name:"Riley Harbottle", sub:"Player", club:"Bristol Rovers", pos:"Unknown", report:"Signed by Bristol Rovers from AFC Wimbledon", src:"Bristol Rovers Football Club", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
+  {name:"Riley Harbottle", sub:"Player", club:"Bristol Rovers", pos:"Unknown", report:"Signed by Bristol Rovers from AFC Wimbledon", src:"Bristol Rovers FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T20:08:12Z", baseProb:100},
   {name:"Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T10:18:48Z", baseProb:100, dead:true, deadReason:"no longer a current link"},
-  {name:"Osman Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T14:38:27Z", baseProb:100}
+  {name:"Osman Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T20:08:12Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];

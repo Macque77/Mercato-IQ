@@ -1,22 +1,22 @@
 {
  "talks": {
-  "logit": -0.674,
-  "rate": 0.333,
-  "n": 75
+  "logit": -0.836,
+  "rate": 0.298,
+  "n": 84
  },
  "interest": {
-  "logit": -1.281,
-  "rate": 0.209,
-  "n": 67
- },
- "advanced": {
-  "logit": -0.267,
-  "rate": 0.432,
-  "n": 81
+  "logit": -1.404,
+  "rate": 0.188,
+  "n": 69
  },
  "here-we-go": {
-  "logit": 1.321,
+  "logit": 1.323,
   "rate": 0.792,
-  "n": 259
+  "n": 288
+ },
+ "advanced": {
+  "logit": -0.386,
+  "rate": 0.402,
+  "n": 82
  }
 }

@@ -37,17 +37,18 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Fabio Ferraro", sub:"23 · LB", club:"FCV Dender EH", pos:"LB", fee:"€700k + bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signs a three-year deal, returning to Belgian top flight via Charleroi's former RWDM/Dender pathway."},
-  {name:"Norman Bassette", sub:"ST", club:"Coventry City", pos:"ST", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins on loan from Coventry, having previously been on Belgium's international radar."}
+  {name:"Norman Bassette", sub:"ST", club:"Coventry City", pos:"ST", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins on loan from Coventry, having previously been on Belgium's international radar."},
+  {name:"Cisse Sandra", sub:"28 · Senegal · M", club:"Club Brugge", pos:"M", fee:"€18m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed from Club Brugge"}
 ];
 const CONFIRMED_OUT = [
   {name:"Bryan Reynolds", sub:"25 · RB · USA", club:"Stade Rennais", pos:"RB", fee:"~€4.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"American international leaves for Ligue 1 after 146 appearances, having previously rejected an initial Rangers bid."},
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Cisse Sandra", sub:"Unknown · Unknown · Midfielder", club:"Club Brugge", pos:"Midfielder", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalPrimeur.be, VoetbalFocus, Lokaalnieuws.online", tier:3, fee:"€18 million", truth:95, prob:95, light:"g", trend:"down", note:"Official confirmation from multiple Belgian sources; deal in advanced/final stages", lastSeen:"2026-08-07T17:40:23Z", baseProb:95}
+  {name:"Cisse Sandra", sub:"28 · Senegal · M", club:"Club Brugge", pos:"M", report:"Transfer from Club Brugge completed; fee reported as €18 million", src:"VoetbalBelgie / VoetbalPrimeur.be", tier:3, fee:"€18m", truth:100, prob:100, light:"g", trend:"up", note:"Deal confirmed, fee disclosed", lastSeen:"2026-08-07T20:08:12Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"Unknown · Unknown · Unknown", club:"Rangers", pos:"Unknown", report:"On way to Rangers; among the most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Unknown", truth:80, prob:80, light:"g", trend:"flat", note:"Deal in advanced stages", lastSeen:"2026-08-07T17:40:23Z", baseProb:80}
+  {name:"Jarne Rommens", sub:"24 · Belgium · M", club:"Westerlo", pos:"M", report:"On way to Rangers; among most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Transfer reported as advanced", lastSeen:"2026-08-07T20:08:12Z", baseProb:80}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -69,7 +70,8 @@ const HUB = {
   voetbalPrimeurbeFerri: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxOTndPYkhNbjlCWWRPTm9BNm8zLVZ1c0tlLXd2RGlBUWRtQklIUzEwSjF5cDhhNXhIeXVCT0ptWEpxZHlRWUdTMEg2Q3V6MjkwUEd3NjdOamVTa2tjQlVyYlB0UmZkLVZoNWQ4S1B1SWZYNERlajB6SjRRTzliMjlqTU5fOWtxci14cW1XbzBWM1BHd21VWTVfOTV3dGRwamhiRFF4Z1pYTE9tRTVqbTE4"},
   voetbalPrimeurbeJarneRommens1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNLWhFUXlaTkNoQjE0NXc5aTFxS2xSOGpHcEZzbGpnak1FS0dDbHd4RnNWcEx0X0NTVVBydno1T3VDZGFUNU8zSmJwRTdhMWJ3S2tyOUlxbnFZbVlWNXFudG9NWUtreXcwYmsxOEp0MEdVVlJOcWNqTXk2enMzMWQxTVlyZGs5RzZwdVVGbjZqN2dpV0dscFdydmpR"},
   voetbalFocusCameronCongreve: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMieEFVX3lxTFBvbXM2M2t4Ukc2ajR6TWdnRXRxdW5za3Npa05rRy1oajVEdGVVQnRHTW1OM0FPYVg0Y3g2dzk1VTBRRlFMdU0wY2pRWnJyXzdldjdWTnNpSlVzZzlOb3g3S3FkZmlVTVRucGZWU3U2eXVBRXkxTGRwSg"},
-  voetbalPrimeurbeCisseSandra: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcHJBLVkyZk9uRW5NRmZuVlkzZnA1Q3VnUGVVaV9RYVJvQk5hOWRHUE8yeE1ReW82ZXVRX1JBSTRTVVZ4NjFfZ2xjLWFROUVVT3dKZDNhOGxvSEFwYi1kaXdUU0FuODdncV9GN1JXT3ZYRFVTYUNvdVRteWw3MTRfMng4dW43R0ZENktkdThuYzNSRWNVV2lLVkRfcEJnbktkcWtYTUxYek5ZOGN1Q2U3Sk1Mbkt4WEpOcFZrMkxHeXNHT2M"}};
+  voetbalPrimeurbeCisseSandra: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcHJBLVkyZk9uRW5NRmZuVlkzZnA1Q3VnUGVVaV9RYVJvQk5hOWRHUE8yeE1ReW82ZXVRX1JBSTRTVVZ4NjFfZ2xjLWFROUVVT3dKZDNhOGxvSEFwYi1kaXdUU0FuODdncV9GN1JXT3ZYRFVTYUNvdVRteWw3MTRfMng4dW43R0ZENktkdThuYzNSRWNVV2lLVkRfcEJnbktkcWtYTUxYek5ZOGN1Q2U3Sk1Mbkt4WEpOcFZrMkxHeXNHT2M"},
+  voetbalBelgieCisseSandra: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMidEFVX3lxTE1WSjZNUkJoa0pNdzZvZGh0SUVoLTdZVjJ0dmp2V1lDeC1RekQtbjF3SUZfR0xQNmFRS0ozdzYtLUNPTWVjSHNjM2ZoYWJfZ2pOZTZXOUl2bkZfZmR3a2FhRlpUTmxNZms1VlA3LTlLUFgzaXRz"}};
 
 const LINKMAP = {
   "Cameron Congreve": ["the72viaWalesOnlineCameronCongreve", "voetbalFocusCameronCongreve"],
@@ -78,7 +80,7 @@ const LINKMAP = {
   "Norman Bassette": ["sporzaNormanBassette"],
   "Bryan Reynolds": ["voetbalkrantviaSachaTavolieriBryanReynolds"],
   "Emin Bayram": ["voetbalkrantEminBayram"],
-  "Cisse Sandra": ["voetbalFocusCisseSandra", "voetbalPrimeurbeCisseSandra"],
+  "Cisse Sandra": ["voetbalFocusCisseSandra", "voetbalPrimeurbeCisseSandra", "voetbalBelgieCisseSandra"],
   "Jarne Rommens": ["voetbalPrimeurbeJarneRommens", "voetbalPrimeurbeJarneRommens1"],
   "Ferri": ["voetbalPrimeurbeFerri"],
   "Congreve": ["voetbalFocusCameronCongreve"]};

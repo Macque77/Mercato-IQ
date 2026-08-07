@@ -35,10 +35,11 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Unknown", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:3, fee:"Free", truth:85, prob:90, light:"g", trend:"down", note:"Free transfer from Brentford - player name not disclosed in snippet", lastSeen:"2026-08-07T17:40:23Z", baseProb:90}
+  {name:"Unknown", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:3, fee:"Free", truth:85, prob:90, light:"g", trend:"down", note:"Free transfer from Brentford - player name not disclosed in snippet", lastSeen:"2026-08-07T17:40:23Z", baseProb:90, dead:true, deadReason:"no longer a current link"},
+  {name:"Unknown Brentford midfielder", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:3, fee:"Free", truth:85, prob:100, light:"g", trend:"flat", note:"Free transfer completed; player name not specified in snippet", lastSeen:"2026-08-07T20:08:12Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Middlesbrough", pos:"Unknown", report:"How much Blackburn Rovers might get from Ash Phillips' move to Middlesbrough", src:"Lancashire Telegraph", tier:3, fee:"Unknown", truth:85, prob:85, light:"g", trend:"down", note:"Transfer to Middlesbrough", lastSeen:"2026-08-07T17:40:23Z", baseProb:85}
+  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Blackburn Rovers", pos:"Unknown", report:"How much Blackburn Rovers might get from Ash Phillips' move to Middlesbrough", src:"Lancashire Telegraph", tier:3, fee:"Unknown", truth:90, prob:95, light:"g", trend:"up", note:"Transfer to Middlesbrough reported", lastSeen:"2026-08-07T20:08:12Z", baseProb:95}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -53,16 +54,20 @@ const HUB = {
   lancashireTelegraphJaydenFevrier: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmZGYkptYUU1akU4eFV0cDVvZzhVZXNQeHJ1TC1RalhBR29MbnY4dW1leE81ZG9LUGhhcjZZVmZXMlhMVmdmZXp1RlU5NlE5QUJLMzRrY1MyclBDdFZ2ZHdDM3B1TlhpRkZkeUtHaUQzQjg0eWJYdjRWQjNfN0JWaDBYZXFpVkx1ZHpONVZvQTVhT3FrMGNlM3RzTEV0c0MtQ081cExOby1tTVM4X29fLQ"},
   lancashireTelegraphAshPhillips: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxPVmZrSHFEUWZnUGVNLWRCcTRPMzkzNFhoMzFXbFhJUHRLMGxjcWNGdUNKX2lTbUVORWdOTUU5OTJuZkhSanE3WlB2WmktdmVVeEU4NkVxd0FOaWp0NDdwN3BIYkc3ODI5c1pheG9TZF9ZdTA2N2g3R3h1M0xQbUV1aWlIbHVSbVpCZ1VsaVQwTFB2bm92YWtXNi16aHRyV3Vjb09nRQ"},
   lancashireTelegraphUnknownBrentfordMidfielder: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYUI1SDhpeXhzOWJQTzBRdExaNTN6U2RqMjVSUzctcjVHNTh1T040bEhkZFpIZG84S182QmpEQm9RSDFpd2ttcndLeXgtM1I0ODRfcUh3VElyRVdjdy1DNllmLTQ3TGROaVNiNS1weXVlSkoxN0h1VzV0LUZiakt6eElXWWJLQXRlalp5ZlRObHoyZFY5YktES3Z3WmZYZk1CeGQzcTJiNzQ"},
-  lancashireTelegraphUnknown: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYUI1SDhpeXhzOWJQTzBRdExaNTN6U2RqMjVSUzctcjVHNTh1T000bEhkZFpIZG84S182QmpEQm9RSDFpd2ttcndLeXgtM1I0ODRfcUh3VElyRVdjdy1DNllmLTQ3TGROaVNiNS1weXVlSkoxN0h1VzV0LUZiakt6eElXWWJLQXRlalp5ZlRObHoyZFY5YktES3Z3WmZYZk1CeGQzcTJiNzQ"}};
+  lancashireTelegraphUnknown: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYUI1SDhpeXhzOWJQTzBRdExaNTN6U2RqMjVSUzctcjVHNTh1T000bEhkZFpIZG84S182QmpEQm9RSDFpd2ttcndLeXgtM1I0ODRfcUh3VElyRVdjdy1DNllmLTQ3TGROaVNiNS1weXVlSkoxN0h1VzV0LUZiakt6eElXWWJLQXRlalp5ZlRObHoyZFY5YktES3Z3WmZYZk1CeGQzcTJiNzQ"},
+  lancashireTelegraphJaydenFevrier1: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmZGYkptYUU1akU4eFV0cDVvZzhVZXNQeHJ1TC1RalhBR29MbnY4dW1leE81ZG9LUGhhcjZZVmZXMlhMVmdmZXp1RlU5NlE5QUJLMzRrY1MyclBDdFZ2ZHdDM3B1TlhpRkZkeUtHaUQzQjg0eWJYdjRWQjNfN0JWaDBYZXFpVkx1ZHpONVZvQTVhT3FrMGNlM3RzTEV0c0MtQ081cExOby1tTVM4X29fLQ?oc=5"},
+  lancashireTelegraphUnknownBrentfordmidfielder: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYUI1SDhpeXhzOWJQTzBRdExaNTN6U2RqMjVSUzctcjVHNTh1T040bEhkZFpIZG84S182QmpEQm9RSDFpd2ttcndLeXgtM1I0ODRfcUh3VElyRVdjdy1DNllmLTQ3TGROaVNiNS1weXVlSkoxN0h1VzV0LUZiakt6eElXWWJLQXRlalp5ZlRObHoyZFY5YktES3Z3WmZYZk1CeGQzcTJiNzQ?oc=5"},
+  lancashireTelegraphAshPhillips1: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxPVmZrSHFEUWZnUGVNLWRCcTRPMzkzNFhoMzFXbFhJUHRLMGxjcWNGdUNKX2lTbUVORWdOTUU5OTJuZkhSanE3WlB2WmktdmVVeEU4NkVxd0FOaWp0NDdwN3BIYkc3ODI5c1pheG9TZF9ZdTA2N2g3R3h1M0xQbUV1aWlIbHVSbVpCZ1VsaVQwTFB2bm9WYWtXNi16aHRyV3Vjb09nRQ?oc=5"}};
 
 const LINKMAP = {
   "Daniel Jebbison": ["lancashirepost"],
   "Ty Livesey": ["bailey"],
-  "Jayden Fevrier": ["lancashireTelegraphJaydenFevrier"],
-  "Ash Phillips": ["lancashireTelegraphAshPhillips"],
+  "Jayden Fevrier": ["lancashireTelegraphJaydenFevrier", "lancashireTelegraphJaydenFevrier1"],
+  "Ash Phillips": ["lancashireTelegraphAshPhillips", "lancashireTelegraphAshPhillips1"],
   "Unknown Brentford Midfielder": ["lancashireTelegraphUnknownBrentfordMidfielder"],
   "unknown": ["lancashireTelegraphUnknownBrentfordMidfielder"],
-  "Unknown": ["lancashireTelegraphUnknown"]};
+  "Unknown": ["lancashireTelegraphUnknown"],
+  "Unknown Brentford midfielder": ["lancashireTelegraphUnknownBrentfordmidfielder"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
