@@ -6,7 +6,7 @@
 const NATION = {
   name: "Germany",
   flag_emoji: "🇩🇪",
-  stories_count: 62
+  stories_count: 61
 };
 
 const TOP_STORIES = [  {
@@ -73,6 +73,13 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "2. Bundesliga"
   },
   {
+    name: "Kevin Müller",prob: 95, truth: 95, bullshit: false,
+    club_origin: "1-fc-heidenheim", club_display_name: "1. FC Heidenheim", direction: "in",
+    from: "FC Schalke 04", to: "1. FC Heidenheim",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "2. Bundesliga"
+  },
+  {
     name: "Isac Lidberg",prob: 95, truth: 95, bullshit: false,
     club_origin: "borussia-mönchengladbach", club_display_name: "Borussia Mönchengladbach", direction: "in",
     from: "Darmstadt 98", to: "Borussia Mönchengladbach",
@@ -94,13 +101,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Bundesliga"
   },
   {
-    name: "Kevin Müller",prob: 95, truth: 95, bullshit: false,
-    club_origin: "1-fc-heidenheim", club_display_name: "1. FC Heidenheim", direction: "in",
-    from: "FC Schalke 04", to: "1. FC Heidenheim",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "2. Bundesliga"
-  },
-  {
     name: "Mael Corboz",prob: 90, truth: 85, bullshit: false,
     club_origin: "arminia-bielefeld", club_display_name: "Arminia Bielefeld", direction: "out",
     from: "Arminia Bielefeld", to: "Arminia Bielefeld",
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Bundesliga": 52, "2. Bundesliga": 10, "3. Liga": 0, "Regionalliga": 0};
+const BY_LEAGUE = {"Bundesliga": 51, "2. Bundesliga": 10, "3. Liga": 0, "Regionalliga": 0};
 
-const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 52}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 10}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
+const LEAGUES_LIST = [{"slug": "bundesliga", "name": "Bundesliga", "count": 51}, {"slug": "2.-bundesliga", "name": "2. Bundesliga", "count": 10}, {"slug": "3.-liga", "name": "3. Liga", "count": 0}, {"slug": "regionalliga", "name": "Regionalliga", "count": 0}];
 
 const REPORT_META = {
   asof: "07 Aug 2026",
-  updated: "2026-08-07T10:14:54.489618Z",
+  updated: "2026-08-07T14:34:29.807889Z",
   label: "Nation aggregation"
 };
