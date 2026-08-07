@@ -35,15 +35,15 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"Signed from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Transfer agreed, signing expected", lastSeen:"2026-08-07T01:42:32Z", baseProb:90},
-  {name:"Steven Sessegnon", sub:"Midfielder", club:"Wigan Athletic", pos:"MID", report:"Joined after leaving Wigan Athletic", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"", truth:70, prob:65, light:"g", trend:"flat", note:"Former Millwall captain of interest", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
+  {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"Signed from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T06:16:29Z", baseProb:100},
+  {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T06:16:29Z", baseProb:100},
+  {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Deal agreed", lastSeen:"2026-08-07T06:16:29Z", baseProb:90},
+  {name:"Steven Sessegnon", sub:"Midfielder", club:"Wigan Athletic", pos:"MID", report:"Joined after leaving Wigan Athletic", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T06:16:29Z", baseProb:100},
+  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"flat", note:"Interest confirmed, competing with Lincoln City", lastSeen:"2026-08-07T06:16:29Z", baseProb:65}
 ];
 const OUTGOING = [
-  {name:"Riley Harbottle", sub:"Player", club:"Bristol Rovers", pos:"Unknown", report:"Signed by Bristol Rovers from AFC Wimbledon", src:"Bristol Rovers FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Riley Harbottle", sub:"Defender", club:"Bristol Rovers", pos:"DEF", report:"Signed by Bristol Rovers from AFC Wimbledon", src:"Bristol Rovers", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T06:16:29Z", baseProb:100},
+  {name:"Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T06:16:29Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -57,17 +57,24 @@ const HUB = {
   bBCJaydenStockley: {l:"BBC", u:"https://www.bbc.com"},
   tribalFootballJamesTilly: {l:"TribalFootball", u:"https://www.tribalfootball.com"},
   sportsBoomUKShaunHutchinson: {l:"SportsBoom UK", u:"https://www.sportsboom.co.uk"},
-  bristolRoversFootballClubRileyHarbottle: {l:"Bristol Rovers Football Club", u:"https://www.bristolrovers.co.uk"}};
+  bristolRoversFootballClubRileyHarbottle: {l:"Bristol Rovers Football Club", u:"https://www.bristolrovers.co.uk"},
+  bBCJaydenStockley1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFByN0dtb20wX3RMSDhOTC1DOVhXczlvbm9mbC1sdndDcjYyY0tOS00talBMZ252SGtSdHNDNmJYWDM5cWpuRUhrUnRkTFBtNHF3YkN1V0xpdkdVbnNGNmJnN3BXNkZPVDA?oc=5"},
+  bBCZackNelson: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBXc216elo1X0dKMlJnZS15cXpZR2cwMjQwR2VaS3FYN05HV0gzeTFSTzlINkFIbGhKc09udkp6NEEwc1RMY1ZLNmxvLWJZN3MwWVZyMHAyeURleUZhc1BCVmROZlRSbVU?oc=5"},
+  tribalFootballJamesTilly1: {l:"TribalFootball", u:"https://news.google.com/rss/articles/CBMi7wFBVV95cUxPdmYwZTc1QmdxTUQ3Y3hEcU4tOHNxQy1Jd0hYeUdCRkhpOGtMNWN1MVNTSjNPWmljUlE4clN4MWdBOVFKYlV1dk9TNDlTSWZ1eWtaTTNuT3pnbUhSa3IzMzBiSUhaR0tDWmtua3UwZU1oU2JtMXBHS2Z5blpEUnQyVE5DQ0VIMmZHd0lTLWJQSDRyR3JTUGQtVUdvdU01bXZRTEgwRmJURGJrMmkzdkNnQUF5azJCeEk5VlpsWUlnb3VncG5CdUlDQm9yWGdadUN4emV2bnBYcjM3UzVsZmRrMTY1WHBCa255THdPZjVVaw?oc=5"},
+  bBCStevenSessegnon: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA3TjJqdFViNU9CS2tPeFFlSjVQR01WVkdFcVNzc0VicWpVMWVLa3R1ckdoVTE4RkRQbEtrZXliUTRycXB0ZnhmWUo4blVUYk80UThiNU9aQ3JJaGdpS2tacWFOLWUyRWs?oc=5"},
+  sportsBoomUKShaunHutchinson1: {l:"SportsBoom UK", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxOREFSOEMyVEZlT0U4TWdUTUtJdXVKb2xEY2s1ZDM4bmpKeVRlYnBIOUVHNmEwS05UTm1CUUlkZ1FrVXQyVnFqVkRkWGtOZFM4T3hTTjRQSlZla0JMdlVTcGNzb0JsdEd2NTI5Y2xxTlQzazRvOHk5VzUwcXkteG8zNDd4VjEzb3E1V1NMQ2RKbzNqdlo4dXY2X2tQdzJJRXlOSGJDaEFwX21OeVVzQlEyb0R0WFJ2cjFSWXdHVUI5VUdCaDdBclFvUkhCaUoxZmh4cFNpUVpnWlRmSnc?oc=5"},
+  bristolRoversRileyHarbottle: {l:"Bristol Rovers", u:"https://news.google.com/rss/articles/CBMijwFBVV95cUxQX203TzZuV3B1SmZXWExTOGxUS215VElFaFpkM1l1eFRZcTZmSUZfeHRwV1hwY3RRcFZlZW40STlIV21ETTdEV3NLOVpzT2R4WFF4bVg4cUU4cWhiS1dvSmN0bGhpa3BHNTZZMURRR1pIdmIyd0JudzlTczRlVXdUc2lrMlRicXNQWkFCLXA5dw?oc=5"},
+  bBCFoyo: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAxZE1FbUotMHVpQ3g4WkhhdEhQVjJZZ3lhRDlMZEJSNkg1R2p0akd0MTZiOWsyeXRNTFNOdDZ4ZHEyRF9ScG5fcDNoNnpYWlpBTERxNlluRGFidWctX2VKX21BZnRHMW8?oc=5"}};
 
 const LINKMAP = {
   "Ollie Harrison": ["gnews-ollieharrison"],
-  "Jayden Stockley": ["bBCJaydenStockley"],
-  "Zack Nelson": ["bBCJaydenStockley"],
-  "James Tilly": ["tribalFootballJamesTilly"],
-  "Steven Sessegnon": ["bBCJaydenStockley"],
-  "Shaun Hutchinson": ["sportsBoomUKShaunHutchinson"],
-  "Riley Harbottle": ["bristolRoversFootballClubRileyHarbottle"],
-  "Foyo": ["bBCJaydenStockley"]};
+  "Jayden Stockley": ["bBCJaydenStockley", "bBCJaydenStockley1"],
+  "Zack Nelson": ["bBCJaydenStockley", "bBCZackNelson"],
+  "James Tilly": ["tribalFootballJamesTilly", "tribalFootballJamesTilly1"],
+  "Steven Sessegnon": ["bBCJaydenStockley", "bBCStevenSessegnon"],
+  "Shaun Hutchinson": ["sportsBoomUKShaunHutchinson", "sportsBoomUKShaunHutchinson1"],
+  "Riley Harbottle": ["bristolRoversFootballClubRileyHarbottle", "bristolRoversRileyHarbottle"],
+  "Foyo": ["bBCJaydenStockley", "bBCFoyo"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

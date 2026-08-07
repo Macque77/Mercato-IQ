@@ -41,11 +41,13 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [
   {name:"Claudio Katunda", sub:"19 · CB", club:"Schalke 04", pos:"CB", report:"10 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:50, prob:20, light:"o", trend:"flat", note:"Cercle among several Belgian clubs, including Standard, monitoring the 2m-tall 19-year-old Schalke defender; no bid confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent credible reports; rumour appears stale (dated 10 Jun 2026)"},
-  {name:"Joel Ndala", sub:"age unknown · nation unknown · position unknown", club:"Manchester City", pos:"Unknown", report:"Cercle Brugge reaches agreement with Manchester City over Joel Ndala", src:"Fabrizio Romano / Tavolieri", tier:1, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal agreed with Manchester City", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+  {name:"Joel Ndala", sub:"age unknown · nation unknown · position unknown", club:"Manchester City", pos:"Unknown", report:"Cercle Brugge reaches agreement with Manchester City over Joel Ndala", src:"Fabrizio Romano / Tavolieri", tier:1, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal agreed with Manchester City", lastSeen:"2026-08-07T01:42:32Z", baseProb:80, dead:true, deadReason:"Manchester City agreement reached but no confirmed completion; awaiting official confirmation"},
+  {name:"Lazare", sub:"", club:"", pos:"", report:"OFFICIEEL: Cercle Brugge haalt Lazare terug naar de Pro League", src:"VoetbalPrimeur.be", tier:3, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Official announcement of return to Pro League", lastSeen:"2026-08-07T06:16:28Z", baseProb:95}
 ];
 const OUTGOING = [
   {name:"Ayase Ueda", sub:"age unknown · nation Japan · Forward", club:"Premier League (Unknown club)", pos:"Forward", report:"Ayase Ueda to Premier League, bonus for Cercle Brugge", src:"VoetbalBelgie", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"flat", note:"Transfer to Premier League with bonus clause", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
-  {name:"Warleson", sub:"age unknown · nation Brazil · position unknown", club:"Brazil (Unknown club)", pos:"Unknown", report:"Cercle Brugge sees Warleson depart to Brazil", src:"VoetbalFocus", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"flat", note:"Departure to Brazilian club", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
+  {name:"Warleson", sub:"age unknown · nation Brazil · position unknown", club:"Brazil (Unknown club)", pos:"Unknown", report:"Cercle Brugge sees Warleson depart to Brazil", src:"VoetbalFocus", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"flat", note:"Departure to Brazilian club", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
+  {name:"Claudio Katunda", sub:"", club:"", pos:"", report:"Defender departure from Cercle Brugge", src:"", tier:3, fee:"", truth:85, prob:85, light:"g", trend:"flat", note:"OFFICIEEL Cercle Brugge laat verdediger vertrekken", lastSeen:"2026-08-07T06:16:28Z", baseProb:85}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -62,10 +64,11 @@ const HUB = {
   voetbalPrimeurbeJoelNdala: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxObjMyeDFxZUZ4a2JKSXh3OWZLU29KazZfT1F2X3QzQmxsNllFZmhudXpkdFctMm9mUE1CdThjQ3hrWFkxZVdrNVlkcXU4VHE1eE1rMzZxbEQ1cnNpMEF3aG1ocWZyY2hSN3QwYVV1bkZ0YkZlTlBPNUc1ZkFrRGxHTEdYdWRkR0luVGNhQmhmZW5nVlVaZkl2OXVR"},
   voetbalPrimeurbeLazare: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxONFBDaWN1OHZiV2JRTlZqVkh2VGVTbVhNTTl0bkVlNm5ZQXV5TS1INjhKTG9sMFlkYl9VV0djbXFkZWJaWTk2cGI3WUxEZ3lQZmdFQjg1QWZNQ0hqVG9WNVh2RU1sVENUMURKWkFycFhObmxqTG9rUXAxWnEzc19MdEdlaEJpWHJMcXBOMkFzVmtfbWlLYm1sUGkzWHhPOFBnQnc"},
   voetbalBelgieAyaseUeda: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbVhrZ2pNU1FxX1hZVm5yNUctYXRVbjlXVG15OW9tcmk2eGFCazl1MXVPeXBOTTdBTGtBSFRyQnFfM3kwemRsM0JsU1dMeUVmUHJUbmhieGEzSTZoX0k4akIxS0VIaGNaTHpkMW1jXzA3dVd4V2Z4eUY1azJXb3JtVEVXRHBjNXIz"},
-  voetbalFocusWarleson: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE80VW9lLVp2cFZjX3JJZW0tWVl1LXp1YjR2Nk5HQnRQakx5SktIMExhUXNYcVdONDQxRXYyTTI0bDRnbGZJTHpGaWtGWEtiTVFFLVRtT0xHZ1RZcnZQNkxFWG5GcXVFTGdhZ3pxbVJTWWh3YUF2aEpuOVF2VUI"}};
+  voetbalFocusWarleson: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE80VW9lLVp2cFZjX3JJZW0tWVl1LXp1YjR2Nk5HQnRQakx5SktIMExhUXNYcVdONDQxRXYyTTI0bDRnbGZJTHpGaWtGWEtiTVFFLVRtT0xHZ1RZcnZQNkxFWG5GcXVFTGdhZ3pxbVJTWWh3YUF2aEpuOVF2VUI"},
+  voetbalkrantcomClaudioKatunda: {l:"Voetbalkrant.com", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxONWdDUm1Ha3pnNlFqdDRkc3R4d2JmQUxUMG1odGlFUXJLd1V1UjV6ZThVd2psNm5jSEotYm91Z0tjSmRYLVlLT2dGaXZfUDZ0SGpraVg1OHFScmNNWVNSenhBRVlEZlBtLUxNX045WjdIb09NU3Rzb1RqcDZPREpobWEwN09JcFdCRDJTdnNUQ1JsWGYxTTluUTRKVGI1Z9IBowFBVV95cUxOdEFTb3hvek91Nmo3UHZ2LTNLV2dHLUdoUjQyVHNGMkszeHhITDdhX2JGMEdOMDMyR0FBUF83bEFqckxYbGN1eGlrZnRTY28wZFpOcFBJQmZFT1pHSVhnaElXbFZMNFU2WW5CN18xV2VLWlRhaDY1TjJBVF9yYk9ocWtCT21HLVpBZy1iaHU4YUkzcjQwZ2xMZTFFTG9rdWhnWEVF"}};
 
 const LINKMAP = {
-  "Claudio Katunda": ["voetbalkrantClaudioKatunda"],
+  "Claudio Katunda": ["voetbalkrantClaudioKatunda", "voetbalkrantcomClaudioKatunda"],
   "Joel Ndala": ["voetbalkrantviaSachaTavolieriJoelNdala", "voetbalPrimeurbeJoelNdala"],
   "Gaetan Coucke": ["voetbalkrantGaetanCoucke"],
   "Lukas Mondele": ["voetbalkrantGaetanCoucke"],
