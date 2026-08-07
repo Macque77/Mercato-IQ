@@ -89,25 +89,26 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"PL-level quality additions", sub:"Augment the core", club:"Market", pos:"MULTI", report:"window framing", src:"Pattern-based", tier:3, fee:"£40-80m total", truth:55, prob:42, light:'y', trend:'up',
-   note:"A small number of high-impact, survival-ready signings to lift a settled, title-winning squad. Lampard's connections (notably Chelsea) may aid deals. Specific names firm up as the window opens; none fabricated here.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42},
+   note:"A small number of high-impact, survival-ready signings to lift a settled, title-winning squad. Lampard's connections (notably Chelsea) may aid deals. Specific names firm up as the window opens; none fabricated here.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42, dead:true, deadReason:"no longer a current link"},
   {name:"Striker / goals", sub:"Framing, no named target", club:"Market", pos:"ST", report:"window framing", src:"Pattern-based", tier:3, fee:"Within £40-80m envelope", truth:55, prob:34, light:'y', trend:'flat',
-   note:"Cutting edge against Premier League defences is the clearest single need in the v1 framing. Decomposed from the aggregate additions row via the old POSITIONS heat (60/75); no named target existed pre-window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:34},
+   note:"Cutting edge against Premier League defences is the clearest single need in the v1 framing. Decomposed from the aggregate additions row via the old POSITIONS heat (60/75); no named target existed pre-window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:34, dead:true, deadReason:"no longer a current link"},
   {name:"Centre-back", sub:"Framing, no named target", club:"Market", pos:"CB", report:"window framing", src:"Pattern-based", tier:3, fee:"Within £40-80m envelope", truth:55, prob:29, light:'o', trend:'flat',
-   note:"Solidity at the step up: a Premier League-grade defender to shore up a Championship-built back line. Decomposed from the aggregate additions row via the old POSITIONS heat (52/75); no named target existed pre-window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:29},
+   note:"Solidity at the step up: a Premier League-grade defender to shore up a Championship-built back line. Decomposed from the aggregate additions row via the old POSITIONS heat (52/75); no named target existed pre-window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:29, dead:true, deadReason:"no longer a current link"},
   {name:"Midfield quality", sub:"Framing, no named target", club:"Market", pos:"CM", report:"window framing", src:"Pattern-based", tier:3, fee:"Within £40-80m envelope", truth:55, prob:27, light:'o', trend:'flat',
-   note:"Composure on the ball against better pressing sides. Decomposed from the aggregate additions row via the old POSITIONS heat (48/75); no named target existed pre-window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:27},
-  {name:"Mykhailo Mudryk", sub:"Loan interest registered", club:"Chelsea", pos:"FW", report:"Newly-promoted Coventry are among clubs exploring a loan for the Ukrainian winger, who is available again after his doping ban; Frank Lampard knows him from Chelsea and rates his pace and technique.", src:"Ben Jacobs (TheHardTackle)", tier:1, fee:"Loan", truth:55, prob:25, light:"o", trend:"flat", note:"Competing with Strasbourg and other PL clubs for his signature; match sharpness a concern", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Tim Iroegbunam", sub:"Approach expected", club:"Everton", pos:"MF", report:"Coventry are one of three English clubs (with Hull City and Ipswich Town) plus two Italian sides showing interest in the Everton midfielder, whose contract has a year left to run.", src:"TeamTalk", tier:2, fee:"~£20m", truth:55, prob:20, light:"o", trend:"flat", note:"No formal offers yet; loan-with-obligation structure possible", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Fikayo Tomori", sub:"Long-shot interest, Liverpool now favourites", club:"AC Milan", pos:"DF", report:"Frank Lampard's Coventry held the strongest interest in bringing his former Chelsea player back to England, but Liverpool have since entered talks with Milan, all but ending Coventry's hopes.", src:"TuttoJuve (via Sports Mole)", tier:2, fee:"€15m-€20m", truth:50, prob:10, light:"r", trend:"flat", note:"Liverpool's move for defensive cover effectively ends Coventry's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:10},
-  {name:"Harvey Elliott", sub:"Speculative interest from a promoted club", club:"Liverpool", pos:"MF", report:"Elliott struggled on loan at Aston Villa and Liverpool are open to offers this summer; former Everton CEO Keith Wyness suggested a promoted club could move for him, with Coventry among names mentioned.", src:"Football Insider", tier:3, fee:"~£25m", truth:30, prob:15, light:"o", trend:"flat", note:"No concrete negotiations reported; speculative at this stage", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Caleb Yirenkyi", sub:"21 · Ghana · M", club:"FC Nordsjaelland", pos:"Midfielder", report:"Coventry have agreed a deal with Nordsjaelland for the Ghanaian, who would become the club's record signing as they strengthen for their first Premier League season.", src:"CoventryLive", tier:2, fee:"Club record, reported around 27m euros", truth:85, prob:80, light:"g", trend:"flat", note:"The agreement is well sourced by the club's beat reporting, but the headline fee figure comes from lower-tier relays and should be treated as an estimate until confirmed.", lastSeen:"2026-08-06T10:49:40Z", baseProb:80}
+   note:"Composure on the ball against better pressing sides. Decomposed from the aggregate additions row via the old POSITIONS heat (48/75); no named target existed pre-window.", lastSeen:"2026-08-04T19:10:50Z", baseProb:27, dead:true, deadReason:"no longer a current link"},
+  {name:"Mykhailo Mudryk", sub:"23 · Ukraine · W", club:"Arsenal", pos:"Winger", report:"Coventry are among clubs exploring option; deal 'agreed' with urgency needed on £30m striker", src:"Coventry Telegraph", tier:3, fee:"Loan", truth:35, prob:25, light:"o", trend:"flat", note:"Xabi Alonso's Bayer Leverkusen comment suggests move unlikely; low credibility of Coventry involvement", lastSeen:"2026-08-07T01:42:32Z", baseProb:25},
+  {name:"Tim Iroegbunam", sub:"Approach expected", club:"Everton", pos:"MF", report:"Coventry are one of three English clubs (with Hull City and Ipswich Town) plus two Italian sides showing interest in the Everton midfielder, whose contract has a year left to run.", src:"TeamTalk", tier:2, fee:"~£20m", truth:55, prob:20, light:"o", trend:"flat", note:"No formal offers yet; loan-with-obligation structure possible", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent credible reporting; link appears stale (last reported weeks ago with Aston Villa)"},
+  {name:"Fikayo Tomori", sub:"Long-shot interest, Liverpool now favourites", club:"AC Milan", pos:"DF", report:"Frank Lampard's Coventry held the strongest interest in bringing his former Chelsea player back to England, but Liverpool have since entered talks with Milan, all but ending Coventry's hopes.", src:"TuttoJuve (via Sports Mole)", tier:2, fee:"€15m-€20m", truth:50, prob:10, light:"r", trend:"flat", note:"Liverpool's move for defensive cover effectively ends Coventry's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:10, dead:true, deadReason:"No recent credible reporting; interest claimed by Frank Lampard Coventry but no current updates"},
+  {name:"Harvey Elliott", sub:"Speculative interest from a promoted club", club:"Liverpool", pos:"MF", report:"Elliott struggled on loan at Aston Villa and Liverpool are open to offers this summer; former Everton CEO Keith Wyness suggested a promoted club could move for him, with Coventry among names mentioned.", src:"Football Insider", tier:3, fee:"~£25m", truth:30, prob:15, light:"o", trend:"flat", note:"No concrete negotiations reported; speculative at this stage", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; historical loan context insufficient for current window activity"},
+  {name:"Caleb Yirenkyi", sub:"20 · Ghana · F", club:"Nordsjaelland", pos:"Forward", report:"Coventry have agreed a deal with Nordsjaelland for World Cup star Caleb Yirenkyi", src:"Coventry Telegraph / FourFourTwo", tier:3, fee:"£25.7m", truth:95, prob:95, light:"g", trend:"up", note:"Deal reported as agreed; club-record transfer", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Gustavo Hamer", sub:"28 · Netherlands · M", club:"Sheffield United", pos:"Midfielder", report:"Coventry City remain in talks over Gustavo Hamer deal but gap in valuation exists", src:"Coventry Observer", tier:3, fee:"Undisclosed", truth:60, prob:55, light:"g", trend:"flat", note:"Ongoing talks but valuation gap remains; Sheffield United holding firm", lastSeen:"2026-08-07T01:42:32Z", baseProb:55}
 ];
 
 const OUTGOING = [
   {name:"Fringe & squad trim", sub:"Step-up churn", club:"Various", pos:"MULTI", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:35, light:'y', trend:'flat',
-   note:"Limited outgoings; the title-winning core is largely retained. PRICING: standard floors on fringe names; a standout sold only at a premium.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+   note:"Limited outgoings; the title-winning core is largely retained. PRICING: standard floors on fringe names; a standout sold only at a premium.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"no longer a current link"},
   {name:"Standout core asset", sub:"Premium-only scenario", club:"Unknown suitors", pos:"MULTI", report:"window framing", src:"Pattern-based", tier:3, fee:"Premium only", truth:55, prob:12, light:'r', trend:'flat',
-   note:"Split out from the v1 outgoing note: any sale from the title-winning core happens only at a heavy premium, and the stated plan is retention. No suitor or player was named pre-window; treated as a low-likelihood scenario, not a live thread.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12}
+   note:"Split out from the v1 outgoing note: any sale from the title-winning core happens only at a heavy premium, and the stated plan is retention. No suitor or player was named pre-window; treated as a low-likelihood scenario, not a live thread.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12, dead:true, deadReason:"no longer a current link"}
 ];
 const DEAD = [
   {name:"Ellis Simms", sub:"Wolves interest reported to have cooled", club:"Wolverhampton Wanderers", pos:"FW", report:"Wolves had been linked with a move for the Coventry striker but are reported to have cooled their interest after securing a free-agent alternative instead.", src:"Coventry Telegraph", tier:2, fee:"~£10m (mooted)", truth:55, prob:15, light:"o", trend:"flat", note:"Deal appears to have stalled; Simms more likely to stay for now", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dir:"out", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
@@ -141,8 +142,8 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"PL-ready targets", club:"Market", pos:"MULTI", dir:"in", age:"framing", tier:3, note:"A few high-impact additions to augment the title-winning core; Lampard's connections may help. Names firm up as the window opens."},
-  {name:"Core retention", club:"Coventry City", pos:"MULTI", dir:"out", age:"framing", tier:3, note:"The promotion-winning core is largely kept; only fringe players expected to move."},
+  {name:"PL-ready targets", club:"Market", pos:"MULTI", dir:"in", age:"framing", tier:3, note:"A few high-impact additions to augment the title-winning core; Lampard's connections may help. Names firm up as the window opens.", dead:true, deadReason:"no longer a current link"},
+  {name:"Core retention", club:"Coventry City", pos:"MULTI", dir:"out", age:"framing", tier:3, note:"The promotion-winning core is largely kept; only fringe players expected to move.", dead:true, deadReason:"no longer a current link"}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -164,7 +165,10 @@ const HUB = {
   coventryTelegraphEllisSimms: {l:"Coventry Telegraph", u:"https://www.coventrytelegraph.net/sport/football/transfer-news/coventry-city-ellis-simms-wolves-34099886"},
   bBCSportMiguelngelBrau: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/c8e4l36e8j8o"},
   sportsMoleJamieAllen: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/coventry-city/transfer-talk/feature/coventry-summer-transfers-all-confirmed-ins-and-outs-for-2026_599293.html"},
-  coventryLiveCalebYirenkyi: {l:"CoventryLive", u:"https://www.coventrytelegraph.net/sport/football/transfer-news/"}};
+  coventryLiveCalebYirenkyi: {l:"CoventryLive", u:"https://www.coventrytelegraph.net/sport/football/transfer-news/"},
+  coventryTelegraphCalebYirenkyi: {l:"Coventry Telegraph", u:"https://news.google.com/rss/articles/CBMirgFBVV95cUxNd0phU2pXaFB0RXB0UDEyU2oyLUhTamtTRjhGTjNhYzYweXc1b3ZXc0NNRTNQeWswRFFxd21oRVNKd1FHaEdodnQ4ZGJIWTNmaC1pY0RjQ3JvOXl1UGFSQ25ValYwWGtFU3JRWW5HZHZEYUFOZkx3V281eUxMTGN2aVlYeERQWGtJc3M1aDZia3NfZFRSRk1MZG9EdklJbFBsVXdJdjZEeXhRbE8tZUHSAbMBQVVfeXFMT0VyV3VFek15R2dBNTBpSk5UcXNmT1hwcDZMeS14N2ZKTG9aTjk1Q0ZvOENyVEZYTUh0U0w5T0Y3RG9CY0M0cWRGanlzdVJxNjc5U0VEcFF5UVIzcm82eThVUHZpbGtzNVhUYmxOTjJaZTA5RTFFaTAzazNPVjEyZDFzcVJ1d0ItRUhRYmZyQjRIWlpLX1NobUF3SlZlaU4xS1JJcXlFWjdhMHVzTzU3dDFsUG8?oc=5"},
+  coventryTelegraphMykhailoMudryk: {l:"Coventry Telegraph", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQVZQUldVV0s2Ynpuc0c0VVhZbk1RYnNZNVhXR0VCaVNlb0EtNVVlOHRqLXVwX1VFOVNXcm8xRG9ZVWw1aXdkWEUzTUpta1hmbDJwY1JPWVBPZGZ5OURIbjBvY19iSDFvUnAyM19GeHQyak9BbE43ZlQtOXE3eVJZMGk5bFBudmtWNFllMkgtQ19VTDdyUVdNdHlWbnZjRVpUZ19JRTVyREV3WnM?oc=5"},
+  coventryObserverGustavoHamer: {l:"Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxObjFsS3gwWmRZS3VHMkthVExMeVF1bGt6Wkt6d2daRll3bUtsZzhZSEdIUGdCT0xDZnpnRHNNWVZjZVdFUUtybHBnalRZUk1ZaUc1alZuallaVVJVMHNDNE9zblh2a1ItUDFLaTE4WVlXNWhUWWNUZVc3V1dmd1d6OGlVQnU1c2MxejdNUjJxcnc4VElmMGZoWmFRYWNvRDNZd0tDVUZnNU5uMlVSejAwQTY4dnZxV2h4NVNfRDR2c3lTWXlHNllF?oc=5"}};
 const LINKMAP = {
   "PL-level quality additions": ["covTel","bbcCov","sky"],
   "Striker / goals": ["covTel","bbcGossip"],
@@ -172,7 +176,7 @@ const LINKMAP = {
   "Midfield quality": ["covTel","bbcGossip"],
   "Fringe & squad trim": ["covTel","ccfc"],
   "Standout core asset": ["covTel","athletic"],
-  "Mykhailo Mudryk": ["theHardTackleBenJacobsMykhailoMudryk"],
+  "Mykhailo Mudryk": ["theHardTackleBenJacobsMykhailoMudryk", "coventryTelegraphMykhailoMudryk"],
   "Tim Iroegbunam": ["teamTalkTimIroegbunam"],
   "Fikayo Tomori": ["sportsMoleFikayoTomori"],
   "Harvey Elliott": ["footballInsiderHarveyElliott"],
@@ -180,8 +184,9 @@ const LINKMAP = {
   "Miguel Ángel Brau": ["bBCSportMiguelngelBrau"],
   "Jamie Allen": ["sportsMoleJamieAllen"],
   "Bradley Collins": ["sportsMoleJamieAllen"],
-  "Caleb Yirenkyi": ["coventryLiveCalebYirenkyi"],
-  "Carl Rushworth": ["coventryLiveCalebYirenkyi"]};
+  "Caleb Yirenkyi": ["coventryLiveCalebYirenkyi", "coventryTelegraphCalebYirenkyi"],
+  "Carl Rushworth": ["coventryLiveCalebYirenkyi"],
+  "Gustavo Hamer": ["coventryObserverGustavoHamer"]};
 const WL_LINKMAP = {
   "PL-ready targets":"covTel","Core retention":"ccfc",
 };

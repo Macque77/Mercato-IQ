@@ -44,7 +44,9 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Rayan Bamba", sub:"22-year-old defender, returning from loan spell at Nancy", club:"Stade Rennais", pos:"RB", report:"Le Mans, newly promoted to Ligue 1, are set to take Rennes right-back Rayan Bamba on loan again to add competition at right-back after his 20-appearance Ligue 2 loan at Nancy.", src:"Foot Mercato", tier:2, fee:"Loan", truth:70, prob:65, light:"g", trend:"flat", note:"Reported alongside separate Actu.fr coverage of Le Mans needing right-back depth.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65}
+  {name:"Rayan Bamba", sub:"22-year-old defender, returning from loan spell at Nancy", club:"Stade Rennais", pos:"RB", report:"Le Mans, newly promoted to Ligue 1, are set to take Rennes right-back Rayan Bamba on loan again to add competition at right-back after his 20-appearance Ligue 2 loan at Nancy.", src:"Foot Mercato", tier:2, fee:"Loan", truth:70, prob:65, light:"g", trend:"flat", note:"Reported alongside separate Actu.fr coverage of Le Mans needing right-back depth.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65, dead:true, deadReason:"Existing rumour without fresh snippet confirmation; no materially new information in recent snippets"},
+  {name:"Louis Mafouta", sub:"24 · France · F", club:"Guingamp", pos:"Attacker", report:"Official arrival from Guingamp until 2028", src:"L'Équipe", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal officially confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Yasser Larouci", sub:"24 · France · D", club:"Liverpool", pos:"Left-back", report:"Experienced left-back signing confirmed", src:"Ouest-France", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal officially announced", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 
 const OUTGOING = [];
@@ -71,11 +73,13 @@ const HUB = {
   "ligue1-lemans": {l:"Ligue1.com · Troyes and Le Mans prepare for Ligue 1", u:"https://ligue1.com/en/articles/l1_article_5560-promoted-pair-troyes-and-le-mans-prepare-for-the-ligue-1-challenge"},
   actufrRayanBamba: {l:"Actu.fr", u:"https://actu.fr/pays-de-la-loire/le-mans_72181/mercato-un-nouveau-lateral-droit-devrait-apporter-de-la-concurrence-dans-les-rangs-du-mans-fc_64604081.html"},
   ouestFranceLouisMafouta: {l:"Ouest-France", u:"https://www.ouest-france.fr/sport/football/le-mans-fc/mercato-le-mans-fc-louis-mafouta-sur-le-depart-a-guingamp-et-en-route-vers-la-ligue-1-459503cc-7c68-11f1-a3cc-61ee167b6bba"},
-  maxifootDaoudaTraore: {l:"Maxifoot", u:"https://www.msn.com/fr-fr/sport/football/mercato-le-mans-daouda-traor%C3%A9-arrive-en-pr%C3%AAt/ar-AA29fAz8"}};
+  maxifootDaoudaTraore: {l:"Maxifoot", u:"https://www.msn.com/fr-fr/sport/football/mercato-le-mans-daouda-traor%C3%A9-arrive-en-pr%C3%AAt/ar-AA29fAz8"},
+  lquipeLouisMafouta: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPb2JxaEJrZVd2ZnExOGlFRElhWDJHMkwzaExGTFJDQ3dEcmxsRnhUUW9hZENIQTdlWGo5U2M1TzlwTzlWT3FaNlh0UlBtWDVCSVZpVE9tMkcwOTVmQ2I2X2xPMWtlcl8yM0tvVnp3ZGtMWUx2WDhnZ3NscUtOMXlhX0g3YzB1TElRSFN4TFJnejJ5cktDUjB0Z3I3NHBzZmpiMTdSSm9aZXk1amtzVlZ6Rk5tOUhNY1gzVmdUY2NaVXRxU0cwcVJhY3IyMXF4YUVFekVvRWRhUXB5NEk"},
+  ouestFranceYasserLarouci: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi-AFBVV95cUxOQS1BWXhkc0ZVNzRhRmVFLVpXdWZSRUlrbl9PWTFZeVM0YV9OLVhXUU5MZVBVOEJGaWhCdTA0aEc3djYzRmpuTGRjY0N2ZS1zNm13MFlvTkRoZFpTQ05fWWtXOXB1VHJ4MklaaU9VejR4WXFFZ3RRbEVBeXE0cUtxeFZkTktrWktwbEctX0s4Ukp0dEl2bUpKNXo4OF9NMW5pQXlFajBZektBZ0dJNjE3cXBtWmFBSVdod1p6andmVmRNYm8zb05KVGlBU1hFVUxNemZQRnQ3b3gzbS16cDdQUVU0NTduclhPeXdrUWJBU0hiRHRYUnhmQQ"}};
 
 const LINKMAP = {
-  "Yasser Larouci": ["gffn-lemans"],
-  "Louis Mafouta": ["ligue1-lemans", "ouestFranceLouisMafouta"],
+  "Yasser Larouci": ["gffn-lemans", "ouestFranceYasserLarouci"],
+  "Louis Mafouta": ["ligue1-lemans", "ouestFranceLouisMafouta", "lquipeLouisMafouta"],
   "Billal Brahimi": ["ligue1-lemans"],
   "Rayan Bamba": ["actufrRayanBamba"],
   "Daouda Traore": ["maxifootDaoudaTraore"]};

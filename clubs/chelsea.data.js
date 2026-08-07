@@ -98,11 +98,16 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Pep Chavarria", sub:"Unknown · Spain · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea set to clinch deal to sign Rayo Vallecano left-back", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal reported as imminent", lastSeen:"2026-08-06T14:13:57Z", baseProb:80},
-  {name:"Dean Henderson", sub:"27 · England · GK", club:"Nottingham Forest", pos:"GK", report:"Chelsea confirm Henderson signing", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed by Chelsea", lastSeen:"2026-08-06T14:33:42Z", baseProb:100}
+  {name:"Pep Chavarria", sub:"Unknown · Spain · LB", club:"Rayo Vallecano", pos:"LB", report:"Chelsea set to clinch deal to sign Rayo Vallecano left-back", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal reported as imminent", lastSeen:"2026-08-06T14:13:57Z", baseProb:80, dead:true, deadReason:"Deal status unclear; removed from incoming due to lack of definitive confirmation in recent snippets"},
+  {name:"Dean Henderson", sub:"27 · England · GK", club:"Nottingham Forest", pos:"GK", report:"Chelsea confirm Henderson signing", src:"Sky Sports", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed by Chelsea", lastSeen:"2026-08-06T14:33:42Z", baseProb:100},
+  {name:"Morgan Rogers", sub:"23 · England · W", club:"Middlesbrough", pos:"Winger", report:"Chelsea reach verbal agreement for £117m transfer", src:"David Ornstein", tier:1, fee:"£117m", truth:85, prob:75, light:"g", trend:"flat", note:"Verbal agreement reached", lastSeen:"2026-08-07T01:42:32Z", baseProb:75},
+  {name:"Maxence Lacroix", sub:"24 · France · CB", club:"Crystal Palace", pos:"Centre-back", report:"Chelsea finalising £52m deal, set to undergo medical", src:"David Ornstein", tier:1, fee:"£52m", truth:90, prob:85, light:"g", trend:"flat", note:"Deal finalised, medical imminent", lastSeen:"2026-08-07T01:42:32Z", baseProb:85},
+  {name:"Danny Welbeck", sub:"33 · England · F", club:"Brighton & Hove Albion", pos:"Forward", report:"Chelsea exploring move for Danny Welbeck", src:"David Ornstein", tier:1, fee:"Free", truth:60, prob:45, light:"y", trend:"flat", note:"Exploring potential deal", lastSeen:"2026-08-07T01:42:32Z", baseProb:45}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Enzo Fernández", sub:"23 · Argentina · CM", club:"Manchester City", pos:"Midfielder", report:"Man City eyeing Enzo Fernández as Bernardo Silva replacement", src:"Laurie Whitwell", tier:1, fee:"Undisclosed", truth:65, prob:50, light:"y", trend:"flat", note:"City interest reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:50}
+];
 const DEAD = [
   {name:"Victor Osimhen", sub:"Napoli · ST", club:"Napoli", pos:"ST", report:"Chelsea have been credited with interest", src:"Transfer Rumour", tier:3, fee:"Unknown", truth:40, prob:25, light:"o", trend:"up", note:"Interest reported, early stage", lastSeen:"2026-08-06T13:55:46Z", baseProb:25, dead:true, deadReason:"No recent credible snippet supporting active interest; superceded by confirmed signings", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
   {name:"Pedro Neto", sub:"Chelsea · W", club:"Manchester City", pos:"W", report:"Manchester City have made a formal approach", src:"Transfer Rumour", tier:3, fee:"Unknown", truth:50, prob:40, light:"y", trend:"up", note:"City inquiry reported", lastSeen:"2026-08-06T13:55:46Z", baseProb:40, dead:true, deadReason:"No recent snippet confirming ongoing Chelsea interest or Manchester City approach", dir:"out", deadAt:"2026-08-06T14:04:24Z"},
@@ -189,7 +194,11 @@ const HUB = {
   chelseaFCofficialsiteValentinBarco: {l:"Chelsea FC official site", u:"https://www.chelseafc.com/en/news/article/valentin-barco-signs-for-chelsea"},
   skySportsPepChavarria: {l:"Sky Sports", u:"https://www.skysports.com/premier-league-news"},
   fabrizioRomanoMoissCaicedo: {l:"Fabrizio Romano", u:"https://x.com/FabrizioRomano/status/1690834448105840641"},
-  davidOrnsteinMasonMount: {l:"David Ornstein", u:"https://x.com/David_Ornstein/status/1674444022960537600"}};
+  davidOrnsteinMasonMount: {l:"David Ornstein", u:"https://x.com/David_Ornstein/status/1674444022960537600"},
+  theAthleticDavidOrnsteinMorganRogers: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxQOVFuNHFqRjlKUnExQy1UWjRBdVdmQXYyLVd0ZkxpeXVUNmNrT3dWdU5sRHlBdk1yQ0tITEhQUWduaGM3MTdrR1NRS3cxUzEwSlZlYXUyeHpyRjFvR3VZTnk1TTEzUUN4NTY2ME5KaFVtTGtOTUZRRURNLXRpcUtaMndBcWVzWTlhRVI1UGtRallmOTUwSUhtMzNRUEJpLXNrMDNxWg"},
+  theAthleticDavidOrnsteinMaxenceLacroix: {l:"The Athletic / David Ornstein", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNQzFURDJUSERjNjJUVUd4TEVHeVB1NGM1eXc0Tko2VVgzNUJTS191dEczVWxxR2NjVXZ2RlczMEpJS1lvQnVqOXVWV2lMZmNwZ1ZlZnpkY0pFalVRY19sSXhSbk0xOGlWa0FyZnU0Wl8ybXBQbVJPMEZiZktnTURTbUNrREdQcm56WHRZX1dTMzkyWUFOYzNZOEpucUlhdUNUVmliRHRKTVQ"},
+  theNewYorkTimesDavidOrnsteinDannyWelbeck: {l:"The New York Times / David Ornstein", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxQUkJGUWFMT0xQdWZwRHp4Qm4zbjM1c0pWa2F6OWhIbEdFRzRTa05OV2ZJUXFJTFQ1QlJFZlpqcXNmME9pVm1PMmM4cXZJc01pOC1LYk5TUVJBVVUzYm1nLThIYk5YMGZndy1IeURVeHNWak1lNy1sRGN0QTdfa2RBZjY4dDk0anYycEN1cURhMTFFcktiblpj"},
+  realGMLaurieWhitwellEnzoFernndez: {l:"RealGM / Laurie Whitwell", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxOVXpOYlFYXzR3UnIzcVBjT1lTTFh4M0tMTDdDVm01QXYtaUV4bFBaS3lWakgxdHhYQTlxWXI5ck9yWXFoTlhhS1p1SVYycFZzMWlTaFhadXM0WG5hUjBHV0pTUmlRQ2w5T3pkb2dmWXNqeUQ1NHVJaVhkZXZPamJYeTdfOEJZb09DUjFQa3REZThyZmZ0SUU3d0pyNXNZUE9vdk9sMg"}};
 const LINKMAP = {
   "Alonso-fit additions": ["bbcChe","athletic","law"],
   "Defensive balance": ["bbcChe","law"],
@@ -199,12 +208,12 @@ const LINKMAP = {
   "Emmanuel Emegha": ["romano","lequipe","cfc"],
   "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "teamTalkMorganRogers"],
   "Pep Chavarría": ["nicoloSchiraviaCaughtOffsidePepChavarra", "footballTransfersRomanoMorettoPepChavarra", "pAIrishNewsPepChavarra"],
-  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "teamTalkMorganRogers", "skySportsDannyWelbeck", "eSPNPAcopyPepChavarria"],
+  "Danny Welbeck": ["gianlucaDiMarzioDannyWelbeck", "teamTalkMorganRogers", "skySportsDannyWelbeck", "eSPNPAcopyPepChavarria", "theNewYorkTimesDavidOrnsteinDannyWelbeck"],
   "Victor Osimhen": ["footballTransfersRomanoMorettoPepChavarra"],
   "Mykhailo Mudryk": ["caughtOffsideMykhailoMudryk"],
   "Geovany Quenda": ["chelseaFCofficialGeovanyQuenda"],
-  "Morgan Rogers": ["teamTalkMorganRogers"],
-  "Maxence Lacroix": ["teamTalkMorganRogers"],
+  "Morgan Rogers": ["teamTalkMorganRogers", "theAthleticDavidOrnsteinMorganRogers"],
+  "Maxence Lacroix": ["teamTalkMorganRogers", "theAthleticDavidOrnsteinMaxenceLacroix"],
   "Marco Palestra": ["chelseaFCofficialGeovanyQuenda"],
   "Valentin Barco": ["teamTalkMorganRogers", "chelseaFCofficialsiteValentinBarco"],
   "Marc Cucurella": ["teamTalkMorganRogers", "eSPNPAcopyPepChavarria"],
@@ -216,7 +225,8 @@ const LINKMAP = {
   "Enzo Fernandez": ["fabrizioRomanoviaFootball365EnzoFernandez", "fabrizioRomanocolumnFootballTransfersEnzoFernandez"],
   "Moisés Caicedo": ["fabrizioRomanoMoissCaicedo"],
   "Mason Mount": ["davidOrnsteinMasonMount"],
-  "Dean Henderson": ["skySportsPepChavarria"]};
+  "Dean Henderson": ["skySportsPepChavarria"],
+  "Enzo Fernández": ["realGMLaurieWhitwellEnzoFernndez"]};
 const WL_LINKMAP = {
   "Emmanuel Emegha":"romano","Loan army":"athletic","Alonso targets":"law",
 };

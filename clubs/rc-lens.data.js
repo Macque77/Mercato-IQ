@@ -87,7 +87,8 @@ const HUB = {
   getFrenchFootballNewsFootMercatoLoAschiRmyLabeauLascary: {l:"Get French Football News (Foot Mercato / Léo Aschi)", u:"https://www.getfootballnewsfrance.com/2026/lens-remy-labeau-lascary-set-to-join-auxerre/"},
   getFrenchFootballNewsBastienChevalMamadouSangar: {l:"Get French Football News (Bastien Cheval)", u:"https://www.getfootballnewsfrance.com/2026/official-brentford-sign-mamadou-sangare-from-lens-in-club-record-e48m-deal/"},
   getFrenchFootballNewsHervKoffi: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-union-saint-gilloise-sign-lens-goalkeeper-herve-koffi-on-loan/"},
-  topMercatoYacineTitraoui: {l:"Top Mercato", u:"https://www.topmercato.com/"}};
+  topMercatoYacineTitraoui: {l:"Top Mercato", u:"https://www.topmercato.com/"},
+  lquipeYacineTitraoui: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxORDRQbEpydm1HcTlicGJTOHU5RUJoTmhwSE44WW8zRWwwaFNobkJDZmN3WEZSLTd6ZFBwVlRYM1p4aXczbXUta0FjMWFjWFlMSnBDUVJTSm1mLVVwbVBFQ3ZkMTNfZVJzX3NDd2xPcWJpSW5yWEpGRjhHOWM3dG1IWDNEcllMeExPekd2SkstUDU0UFJuQzBwRkszcnVUd3ZNRXFhZndBc21GU2tqZ2M3aUFHNkVlZTdoWFJqMGdBaW5hYnlLa3FjLVFYbW1JVTJOYjNDMFNR"}};
 
 const LINKMAP = {
   "Rafael Leão": ["lequipe"],
@@ -96,7 +97,7 @@ const LINKMAP = {
   "Saud Abdulhamid": ["gffn-lens"],
   "Adrien Thomasson": ["gffn-lens"],
   "Mamadou Sangaré": ["fabrizioRomanoviaEmpireoftheKopMamadouSangar", "getFrenchFootballNewsBastienChevalMamadouSangar"],
-  "Yacine Titraoui": ["getFrenchFootballNewsNicholasHartlandYacineTitraoui", "topMercatoYacineTitraoui"],
+  "Yacine Titraoui": ["getFrenchFootballNewsNicholasHartlandYacineTitraoui", "topMercatoYacineTitraoui", "lquipeYacineTitraoui"],
   "Adama Camara": ["getFrenchFootballNewsFootMercatoAdamaCamara"],
   "Melayro Bogarde": ["getFrenchFootballNewsFootMercatoLoAschiMelayroBogarde"],
   "Rémy Labeau-Lascary": ["getFrenchFootballNewsFootMercatoLoAschiRmyLabeauLascary"],

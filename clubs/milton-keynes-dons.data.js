@@ -35,9 +35,15 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Matty Young", sub:"DF/W", club:"Sunderland", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Loan", truth:50, prob:40, light:'y', trend:'flat', note:"MK Dons competing with Sheffield Wednesday, Leicester and Cardiff for the loan.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Matty Young", sub:"DF/W", club:"Sunderland", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Loan", truth:50, prob:40, light:'y', trend:'flat', note:"MK Dons competing with Sheffield Wednesday, Leicester and Cardiff for the loan.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Curtis Nelson", sub:"unknown · unknown · Defender", club:"Derby County", pos:"Defender", report:"Curtis Nelson departs Derby County for Milton Keynes Dons", src:"Google News", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Transfer confirmed via news report", lastSeen:"2026-08-07T01:42:32Z", baseProb:90},
+  {name:"Kane Wilson", sub:"unknown · unknown · unknown", club:"Derby County", pos:"unknown", report:"Kane Wilson departs Derby County for Milton Keynes Dons", src:"Google News", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Transfer confirmed via news report", lastSeen:"2026-08-07T01:42:32Z", baseProb:90},
+  {name:"Marvin Ekpiteta", sub:"unknown · unknown · Defender", club:"Hibernian", pos:"Defender", report:"Milton Keynes Dons sign Hibernian defender Marvin Ekpiteta", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Signing confirmed by BBC", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
 ];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Brooklyn Ilunga", sub:"unknown · unknown · Wing-back", club:"Bromley", pos:"Wing-back", report:"Brooklyn Ilunga departs Milton Keynes Dons for Bromley on permanent transfer", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Permanent transfer to Bromley confirmed by BBC", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Tommy Leigh", sub:"unknown · unknown · Midfielder", club:"Bradford City", pos:"Midfielder", report:"Tommy Leigh departs Milton Keynes Dons for Bradford City", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Midfielder added by Bradford City from Milton Keynes Dons, confirmed by BBC", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -47,13 +53,21 @@ const WATCHLIST = [];
 
 const HUB = {
   "gnews-samnombe": {l:"Related news search: Sam Nombe", u:"https://news.google.com/search?q=Milton%20Keynes%20Dons%20Sam%20Nombe%20transfer&hl=en-GB&gl=GB"},
-  "gnews-mattyyoung": {l:"Related news search: Matty Young", u:"https://news.google.com/search?q=Milton%20Keynes%20Dons%20Matty%20Young%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-mattyyoung": {l:"Related news search: Matty Young", u:"https://news.google.com/search?q=Milton%20Keynes%20Dons%20Matty%20Young%20transfer&hl=en-GB&gl=GB"},
+  googleNewsCurtisNelson: {l:"Google News", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxPT282bmZrd0lESVd3UHU1UF9jWEdNbV91V2xzM3ZyVnJPMVdkYVd2aWxOR25jSjBZcjRoWmV2NmRiRmcweGkzemNYRHdwakZWOEVxZ3hYX0xFMnp2R05USTcyek1wMGs5VGdVQXQ4M1NUcFU4NTBNVTk5ZVY5V2hLNklaM0M0aTJPUng4M3VXX21kTndicTdXZ1lB?oc=5"},
+  googleNewsKaneWilson: {l:"Google News", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxNaWJoeUJ1b0ZxR05VSHY4R3kzc3UtWFlmc3ZSV1RpZnFXbXlScGI1Y2txck9UN05tOUg3ZkhTbnZjdGRkQktsSjFFMnRMelFQQWp0YUtCREhaNHczc0c2Si1CU2pZdEoyaDZlUW9IVGJNMGoyY2xJNWxEcDFoNHQxN0ZmR0x0R0F5Mm9rc2VVS2Z0Q19lY2tr?oc=5"},
+  bBCMarvinEkpiteta: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1TdktLTG1LdklfSFJ6TjdrOFR5Z1g2X0lVakI2N3J0ZnZNajVrdUg2RWcxR3ZuTVRTZ01yUnFlWkcxYV9fZzdTRFd6ZS1SNmt6T3p3WElRTUdaQmlUcDBzSnVoU3U3cWM?oc=5"},
+  bBCBrooklynIlunga: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5KX24tMG5qaWRaNGRlOVhkMTlxZi1TN2luMVVWVHdlZVJRZjg5VmVFaXQ5Y2lMUVc1QmhuVG42Zjg0NmhrRmFLZXAwQmYzVTNYQUp2OXY5VE9zQlh1RmhscmhuT2E2VFE?oc=5"},
+  bBCTommyLeigh: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA4VmRxMTJqQ1FSZl9GSzNLSXlVT282X0tia01PZ3JfelBHbXMzR04taVVFTEtKLXpmZDNTNGMxTUl3YXRWNmVNSV9Gajl2WnNxOHpzMkVFZDkxZHV2cnZBR1Fsc0MwQmM?oc=5"}};
 
 const LINKMAP = {
   "Sam Nombe": ["gnews-samnombe"],
-  "Matty Young": ["gnews-mattyyoung"]
-};
+  "Matty Young": ["gnews-mattyyoung"],
+  "Curtis Nelson": ["googleNewsCurtisNelson"],
+  "Kane Wilson": ["googleNewsKaneWilson"],
+  "Marvin Ekpiteta": ["bBCMarvinEkpiteta"],
+  "Brooklyn Ilunga": ["bBCBrooklynIlunga"],
+  "Tommy Leigh": ["bBCTommyLeigh"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

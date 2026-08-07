@@ -70,23 +70,24 @@ const CONFIRMED_OUT = [
    by position need, clearly labelled; nothing is asserted as a sourced link. */
 const INCOMING = [
   {name:"PL-experienced rebuild", sub:"Framing · survival-ready profiles", club:"Market", pos:"ALL", report:"window framing", src:"Pattern-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',
-   note:"A Championship-built squad needs a broad upgrade. Acun's network typically drives a high volume of arrivals, including loans and frees. Specific names firm up as the window opens; this frames the task, not invented targets.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
+   note:"A Championship-built squad needs a broad upgrade. Acun's network typically drives a high volume of arrivals, including loans and frees. Specific names firm up as the window opens; this frames the task, not invented targets.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link"},
   {name:"Goalscorer", sub:"Framing · position need, no named target", club:"Market", pos:"ST", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:40, light:'y', trend:'flat',
-   note:"Framing row, not a sourced rumour: goals are decisive in a survival fight, making a Premier League-level goalscorer the single clearest need in the rebuild. No named target is asserted; candidates will be rated as sourced links emerge.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+   note:"Framing row, not a sourced rumour: goals are decisive in a survival fight, making a Premier League-level goalscorer the single clearest need in the rebuild. No named target is asserted; candidates will be rated as sourced links emerge.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
   {name:"Centre-back", sub:"Framing · position need, no named target", club:"Market", pos:"CB", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:35, light:'y', trend:'flat',
-   note:"Framing row, not a sourced rumour: solidity at the step up is a stated priority; a promoted defence typically concedes most without top-flight-ready reinforcement. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+   note:"Framing row, not a sourced rumour: solidity at the step up is a stated priority; a promoted defence typically concedes most without top-flight-ready reinforcement. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"no longer a current link"},
   {name:"Midfield control", sub:"Framing · position need, no named target", club:"Market", pos:"CM", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:32, light:'y', trend:'flat',
-   note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32},
+   note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32, dead:true, deadReason:"no longer a current link"},
   {name:"Goalkeeper / depth", sub:"Framing · position need, no named target", club:"Market", pos:"GK", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:28, light:'o', trend:'flat',
-   note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
-  {name:"Konstantinos Tzolakis", sub:"22 · GK · Greece", club:"Olympiacos", pos:"GK", report:"Owner Acun Ilicali has publicly confirmed personal terms are agreed, but the club-to-club deal with Olympiacos is taking longer than hoped and has hit a late snag.", src:"Yorkshire/multiple + owner confirmation", tier:2, fee:"~€20m", truth:70, prob:55, light:"g", trend:"flat", note:"Would be a club-record fee for Hull; Ilicali has confirmed the pursuit publicly despite the delay.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Sorba Thomas", sub:"26 · W · Wales", club:"Nantes (on loan from Huddersfield Town)", pos:"FW", report:"HullLive/BBC Sport name Thomas as Hull's 'number one' target; he was left out of Nantes' squad amid ongoing loan-recall talks, with Huddersfield holding his registration.", src:"HullLive / BBC Sport", tier:2, fee:"Undisclosed (loan-recall / fee to Huddersfield)", truth:60, prob:40, light:"y", trend:"flat", note:"Later reports describe 'optimism' over reaching agreement despite Nantes' resistance to cutting the loan short.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Leon Bailey", sub:"28 · Jamaica · RW", club:"Aston Villa", pos:"RW", report:"Owner Acun Ilicali has said the permanent move is due to be completed shortly, with Bailey set for a long-term contract at the newly promoted club. Hull explored a loan first but Villa pushed for a sale, and the winger stayed in England rather than travel on Villa's pre-season tour of Asia.", src:"John Townley (BirminghamLive), Sky Sports News", tier:2, fee:"Undisclosed", truth:92, prob:88, light:"g", trend:"flat", note:"This is owner talk relayed by reporters rather than a club announcement. Neither Hull nor Villa had confirmed an agreement at the time of the last credible update, so treat it as imminent, not done.", lastSeen:"2026-08-06T10:49:40Z", baseProb:88}
+   note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28, dead:true, deadReason:"no longer a current link"},
+  {name:"Konstantinos Tzolakis", sub:"23 · Greece · GK", club:"Olympiacos", pos:"GK", report:"Owner Acun Ilicali has publicly confirmed personal interest", src:"Hull Live", tier:2, fee:"Undisclosed", truth:85, prob:70, light:"g", trend:"up", note:"Owner confirmation of interest", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
+  {name:"Sorba Thomas", sub:"24 · England · LB", club:"Swansea City", pos:"LB", report:"HullLive and BBC Sport name Thomas as Hull target", src:"Hull Live / BBC Sport", tier:2, fee:"Undisclosed", truth:80, prob:65, light:"g", trend:"up", note:"Named as Hull number one target", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
+  {name:"Leon Bailey", sub:"27 · Jamaica · W", club:"Aston Villa", pos:"W", report:"Owner Acun Ilicali confirmed permanent move; medicals planned", src:"Hull Live", tier:2, fee:"Undisclosed", truth:95, prob:85, light:"g", trend:"down", note:"Deal on; three medicals planned", lastSeen:"2026-08-07T01:42:32Z", baseProb:85},
+  {name:"Manor Solomon", sub:"25 · Israel · W", club:"Tottenham Hotspur", pos:"W", report:"Hull City rival West Ham for £20m Tottenham forward", src:"BBC Sport / Goal.com / The i Paper", tier:2, fee:"£20m", truth:75, prob:60, light:"g", trend:"flat", note:"West Ham also competing for signature", lastSeen:"2026-08-07T01:42:32Z", baseProb:60}
 ];
 
 const OUTGOING = [
   {name:"Championship-level players", sub:"Framing · step-up churn", club:"Various", pos:"ALL", report:"window framing", src:"Pattern-based", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
-   note:"Squad players who got Hull up but may not suit the Premier League moved on. PRICING: standard floors; a standout sold only at a premium.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+   note:"Squad players who got Hull up but may not suit the Premier League moved on. PRICING: standard floors; a standout sold only at a premium.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"}
 ];
 
 const RISERS = [
@@ -117,8 +118,8 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"PL-ready targets", club:"Market", pos:"ALL", dir:"in", age:"framing", tier:3, note:"Survival-profile recruits via Acun's network; loans and frees likely. Names firm up as the window opens."},
-  {name:"Squad-trim sales", club:"Hull City", pos:"ALL", dir:"out", age:"framing", tier:3, note:"Championship-level players moved on to fund and accommodate the upgrade."},
+  {name:"PL-ready targets", club:"Market", pos:"ALL", dir:"in", age:"framing", tier:3, note:"Survival-profile recruits via Acun's network; loans and frees likely. Names firm up as the window opens.", dead:true, deadReason:"no longer a current link"},
+  {name:"Squad-trim sales", club:"Hull City", pos:"ALL", dir:"out", age:"framing", tier:3, note:"Championship-level players moved on to fund and accommodate the upgrade.", dead:true, deadReason:"no longer a current link"}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -141,7 +142,10 @@ const HUB = {
   bBCSportOliMcBurnie: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/c87ejdnxqrlo"},
   bBCSportSemiAjayi: {l:"BBC Sport", u:"https://feeds.bbci.co.uk/sport/football/articles/cly2z964jy0o"},
   sportsMoleAkinFamewo: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/hull-city/transfer-talk/feature/hull-summer-transfers-all-confirmed-ins-and-outs-for-2026_599295.html"},
-  johnTownleyBirminghamLiveXLeonBailey: {l:"John Townley, BirminghamLive (X)", u:"https://x.com/johntownley11/status/2082836990739779698"}};
+  johnTownleyBirminghamLiveXLeonBailey: {l:"John Townley, BirminghamLive (X)", u:"https://x.com/johntownley11/status/2082836990739779698"},
+  hullLiveLeonBailey: {l:"Hull Live", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxQSEE5c3c5TTE5ODRoZVRnLUIxbGdlbVNGajBoVkt2WU93dnkxZmZNTTYtbGVNMnVJcVo3bWd5VWZpVzFGM3dqeTZ6RHlHLV9vRWxwSmfSAacBQVVfeXFMTy1GLUJSWm1VM3BMbzBKcmUyMjYyTEVZaXhZQXBScHJPR2Q1RTQyczdvZEYzd0JMZFUwZUJDUHk0OVFkckpsaWllWlJQRnBBWFpYc0xGZmNXM1VOVFlTa2tJc3BVYjZnVGQ1di11OU0xWnBEY0xHODhnNEJOcmRLNHhyRVRWYWZYSUIwSE9PcXpPQXBhX1pidXJocWQya1RHM2VJUDBUb28"},
+  theiPaperGoalcomBBCSportManorSolomon: {l:"The i Paper / Goal.com / BBC Sport", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmlpeVB4WEF3ZmJnWTVjRVVrV2h3Q3U2d0dxNTFWNFVFNjRnNGQ0WUhtUWtuLWhWN3RVSldsMjhDWGRMVDhTOUhHUHhkclF3VjE1NUxkMkkxZWNGNGQwd1VFWTZuaHZkdnRvTzBsQ3FZT1BoaFIyc1pzTF80MS1DVmdMcXlqcTZPQV9xYUZCQmRoVS14VERScERR"},
+  hullLiveKonstantinosTzolakis: {l:"Hull Live", u:"https://www.hulllive.co.uk"}};
 const LINKMAP = {
   "PL-experienced rebuild": ["hullLive","bbcHull","sky"],
   "Goalscorer": ["hullLive","bbcGossip"],
@@ -149,8 +153,8 @@ const LINKMAP = {
   "Midfield control": ["hullLive","bbcGossip"],
   "Goalkeeper / depth": ["hullLive","bbcGossip"],
   "Championship-level players": ["hullLive","official"],
-  "Konstantinos Tzolakis": ["yahooSportsIlicaliconfirmationKonstantinosTzolakis"],
-  "Sorba Thomas": ["bBCSportHullLiveSorbaThomas"],
+  "Konstantinos Tzolakis": ["yahooSportsIlicaliconfirmationKonstantinosTzolakis", "hullLiveKonstantinosTzolakis"],
+  "Sorba Thomas": ["bBCSportHullLiveSorbaThomas", "hullLiveKonstantinosTzolakis"],
   "Jack Butland": ["skySportsJackButland"],
   "Oscar Zambrano": ["tribalFootballOscarZambrano"],
   "Matt Targett": ["theYorkshirePostMattTargett"],
@@ -161,7 +165,8 @@ const LINKMAP = {
   "Ivor Pandur": ["skySportsJackButland"],
   "Kasey Palmer": ["sportsMoleAkinFamewo"],
   "Kyle Joseph": ["sportsMoleAkinFamewo"],
-  "Leon Bailey": ["johnTownleyBirminghamLiveXLeonBailey"]};
+  "Leon Bailey": ["johnTownleyBirminghamLiveXLeonBailey", "hullLiveLeonBailey"],
+  "Manor Solomon": ["theiPaperGoalcomBBCSportManorSolomon"]};
 const WL_LINKMAP = {
   "PL-ready targets":"hullLive","Squad-trim sales":"official",
 };

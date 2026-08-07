@@ -79,7 +79,10 @@ const HUB = {
   yahooSportsPaulNebel: {l:"Yahoo Sports", u:"https://sports.yahoo.com/"},
   zeitdeSportschauRansfordKnigsdrffer: {l:"Zeit.de / Sportschau", u:"https://www.zeit.de/news"},
   sportschauEricMartel: {l:"Sportschau", u:"https://www.sportschau.de/"},
-  allgemeineZeitungOttoRuoppi: {l:"Allgemeine Zeitung", u:"https://www.allgemeine-zeitung.de/"}};
+  allgemeineZeitungOttoRuoppi: {l:"Allgemeine Zeitung", u:"https://www.allgemeine-zeitung.de/"},
+  absolutFussballLaurinCurda: {l:"Absolut Fussball", u:"https://news.google.com/rss/articles/CBMi9AFBVV95cUxNclZ0clRGczFMOGVmLWtVckJtemlEdEVnMzNLd1oxc0piSXIzaVRHZUtGY2RMdWREbUpQYTU0SEw5WjY4a2NCU3R6OU9ub3Rnd25uV0F2ZGVtZDFWY0NQOVlXdFVjRHNjajEzRnN3SDI1RldybnJhQjVBWjZmZDBpSEZKSEhlMjZnV3lZc1lUeGJsd0hCZDRUdThqVF8zMTJvNXBJLWs3WGM4NE5fVGFSWUcyaUo0SS1NNEp4YWczTUI5MUdJcmZJRF92OXlrTlRFeldOWHlPZGhOaHRDMVZ0NTI3MlBFUzh0eEhOQV9iaG8weUZi"},
+  absolutFussballNikolasVeratschnig: {l:"Absolut Fussball", u:"https://news.google.com/rss/articles/CBMi7wFBVV95cUxQREFjQlFUX29kS201RXAyYjFPenl4LWVHaWZlTVlYeVowZGFFQUpuWnBtcVRMQXY4Y0ROeE9kQjUxdkZ1VHBXc295Tm1kVE91MUY4NVYtUjdYVkQ1YmlCckUyM3U3Z3ZMNVRqNkt5SzFLRE5KRUFEQjhJQmtxOHZaMU0tb3Rsbng3TW5IT2N3di13RVU2YWswYjBtdEFMLXYtZnBDdm9xdGNwWHNSd1hienhkX1A3QUtacjZUOV9hVkhLOFl0SVJReUxZa0haZ2RoUEppTUZ1c2ZwdGNjQW9pNjNBeHZncUh6Y1FmQVNuUQ"},
+  absolutFussballBenBobzien: {l:"Absolut Fussball", u:"https://news.google.com/rss/articles/CBMi7wFBVV95cUxPbl9yOTRGMXNjRFoyU1JhY1VuNUpjWlpsdDdTZzNPTlM0SUpZYXRpcmxrd3lqUm53R25VRnFTNVhPdlprUXpCTngxdWtsMmlSR001bmdVTnFuTEVMU3gwek5uQmgtd2VXYTFVbHV5UWtvQVJLT0w5Q2lWLTBrTHBBYjVLbjgxNkloSE9NMm0waktqcUk5dENOdVpRa0lHT2JUMFR1ZzAzVzN6R2luQm0tbUh5OENIdldzU2FUVFQ4UGxOZE1ac2JmZlRsQ2JBVHYyZVhUVmtpcXhELTRUdHZXaUhaTnFTbkluWUlEZXpoUQ"}};
 
 const LINKMAP = {
   "Stefan Posch": ["gfn", "skySportsGermanyStefanPosch"],
@@ -87,7 +90,10 @@ const LINKMAP = {
   "Paul Nebel": ["yahooSportsPaulNebel"],
   "Ransford Königsdörffer": ["zeitdeSportschauRansfordKnigsdrffer"],
   "Eric Martel": ["sportschauEricMartel"],
-  "Otto Ruoppi": ["allgemeineZeitungOttoRuoppi"]};
+  "Otto Ruoppi": ["allgemeineZeitungOttoRuoppi"],
+  "Laurin Curda": ["absolutFussballLaurinCurda"],
+  "Nikolas Veratschnig": ["absolutFussballNikolasVeratschnig"],
+  "Ben Bobzien": ["absolutFussballBenBobzien"]};
 const WL_LINKMAP = {
   "Nadiem Amiri": ["gfnamiri"]
 };

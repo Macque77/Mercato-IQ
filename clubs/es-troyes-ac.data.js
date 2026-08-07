@@ -74,15 +74,16 @@ const HUB = {
   footMercatoviaLEstclairPatrickBeach: {l:"Foot Mercato (via L'Est Éclair)", u:"https://www.footmercato.net/a8676576281722061817-troyes-va-soffrir-lune-des-revelations-de-la-coupe-du-monde-2026"},
   ouestFranceIronGomis: {l:"Ouest-France", u:"https://www.ouest-france.fr/sport/football/ea-guingamp/mercato-ea-guingamp-iron-gomis-sest-engage-a-troyes-d4ed9866-812e-11f1-9d8e-98fb5a42b8f3"},
   sFGateAPMathysDetourbet: {l:"SFGate (AP)", u:"https://www.sfgate.com/sports/article/promoted-troyes-sells-forward-detourbet-to-22323461.php"},
-  yahooSportsSankhounDiawara: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-milan-sign-diawara-troyes-111000761.html"}};
+  yahooSportsSankhounDiawara: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-milan-sign-diawara-troyes-111000761.html"},
+  footSur7RenaudRipart: {l:"Foot Sur 7", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE5PTHJOVHF3S1ItRmx0RlNyOU01cWd3M05oSUtRdDAydHE0eXdhb3Fnc1h0ZjZrVDllU3NncWxHVFJGcDhETjdTZkNoeXVWaEpzOFEtbWZFX3lwQ2tkS2wtaVU5Yk94cXA1eGRqSFlLZXJzZkhHWjN5dTJqbGI?oc=5"}};
 
 const LINKMAP = {
   "Patrick Beach": ["estac", "footMercatoviaLEstclairPatrickBeach"],
   "Iron Gomis": ["estac", "ouestFranceIronGomis"],
   "Sankhoun Diawara": ["gffn-troyes", "yahooSportsSankhounDiawara"],
   "Thierno Baldé": ["estac"],
-  "Mathys Detourbet": ["gffn-troyes", "sFGateAPMathysDetourbet"]
-};
+  "Mathys Detourbet": ["gffn-troyes", "sFGateAPMathysDetourbet"],
+  "Renaud Ripart": ["footSur7RenaudRipart"]};
 const WL_LINKMAP = {
   "Mathys Detourbet": ["gffn-troyes"]
 };

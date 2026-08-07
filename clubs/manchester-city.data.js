@@ -71,9 +71,12 @@ const CONFIRMED_OUT = [
   {name:"Jahmai Simpson-Pusey", sub:"Academy product sold", club:"Köln", pos:"DF", fee:"£4.65m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Elliot Anderson", sub:"unknown · unknown · Midfielder", club:"Nottingham Forest", pos:"Midfielder", report:"Manchester City make £106m plus add-ons verbal offer; Ornstein reveals agreement after improved offer to Nottm Forest", src:"David Ornstein", tier:1, fee:"£106m plus add-ons", truth:85, prob:75, light:"g", trend:"flat", note:"Verbal offer made and agreement reportedly reached", lastSeen:"2026-08-07T01:42:32Z", baseProb:75},
+  {name:"James Trafford", sub:"unknown · unknown · Goalkeeper", club:"Leeds United", pos:"Goalkeeper", report:"Leeds in talks with Manchester City over James Trafford", src:"David Ornstein", tier:1, fee:"Unknown", truth:70, prob:60, light:"g", trend:"flat", note:"Talks ongoing", lastSeen:"2026-08-07T01:42:32Z", baseProb:60}
+];
 const OUTGOING = [
-  {name:"Rodri", sub:"28 · Spain · M", club:"Manchester City", pos:"Midfielder", report:"Barcelona and Real Madrid both keen on signing Manchester City midfielder Rodri; Real Madrid talks have stalled", src:"The Guardian", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Multiple clubs circling but no advanced agreement reported; City appear reluctant to sell", lastSeen:"2026-08-06T14:33:42Z", baseProb:35}
+  {name:"Rodri", sub:"unknown · Spain · Midfielder", club:"Manchester City", pos:"Midfielder", report:"Real Madrid working on deal to sign Rodri from Manchester City", src:"David Ornstein", tier:1, fee:"Unknown", truth:75, prob:70, light:"g", trend:"up", note:"Real Madrid actively working on deal; Barcelona also keen", lastSeen:"2026-08-07T01:42:32Z", baseProb:70}
 ];
 const DEAD = [
   {name:"Enzo Fernández", sub:"23 · Argentina · M", club:"Benfica", pos:"Midfielder", report:"Incoming link reported ~6 days ago", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"up", note:"Old report; no recent confirmation found", lastSeen:"2026-08-06T13:55:46Z", baseProb:30, dead:true, deadReason:"No recent snippet support; likely stale rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
@@ -146,20 +149,23 @@ const HUB = {
   skySportsRodri: {l:"Sky Sports", u:"https://www.skysports.com/football/video/30998/13569390/manchester-city-transfer-update-will-enzo-maresca-really-let-rodri-depart-for-real-madrid"},
   football365relayingFabrizioRomanoSavinho: {l:"Football365 (relaying Fabrizio Romano)", u:"https://www.football365.com/news/savinho-tottenham-hotspur-manchester-city-fabrizio-romano-update"},
   bBCSportRodri: {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football/articles/cglj6p6n9l8o"},
-  theGuardianFootballRodri: {l:"The Guardian Football", u:"https://www.theguardian.com/football/2026/aug/06/barcelona-rodri-alvarez-manchester-city-real-madrid-transfers"}};
+  theGuardianFootballRodri: {l:"The Guardian Football", u:"https://www.theguardian.com/football/2026/aug/06/barcelona-rodri-alvarez-manchester-city-real-madrid-transfers"},
+  theAthleticGoogleNewsElliotAnderson: {l:"The Athletic / Google News", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxOcFZHenRsVjNOQWZCUi1wS19TOXhJUkhVcGZOQU1FdFlYa3kxa1dVZGhnWEN6cVVHSFJCUTMyWTlpUUhmVnRjeTVUR1lhMkRwZVdBbHdPZURmYk1Sd3RQalZwQjRlb05BRXFRV2ltMVdMWEUya2t2WElTNXhoUFBqSDdYS1R3STRieGs2Q3luU0tUUWJqS0dXZUJDckpvaFFUZFE"},
+  theAthleticGoogleNewsJamesTrafford: {l:"The Athletic / Google News", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxIRGFZeUNmcDd2c1I2Tzd2MEdCRDFwVmdEY2NTQTDRM3ZLM1Fsd3RBeG53bFNvUjNVX3RaMDdMM3p5RDExVkxRLUpzb1EySWtBcVJvdkZLb0lFSUlwOHdOV1hFMHppT2IzZ25ibTRORUdNN29URVNWVVlRNGkyTVdyUGp3bHpLR283RWh3YW03dzV4SGM"},
+  theAthleticGoogleNewsRodri: {l:"The Athletic / Google News", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxPMGphUGxJbjFBUXFFUm5ZU2pYNFhwdjUtb0xLaHREa1NlakhTc3k3YmdCT2VDVUh0NmQ1Y3djVjhSS0pPendPU2xyODR6OW1GZFBOaWFIenctb2ZfV2xrWTYzbFdyaEY4SmJpeVdWeU1mcDRibXU0bm1rWFpvWnJ2N2QzYmVIOVBOMEV0RW12M2JOUUNVb3h2NFhyWQ"}};
 const LINKMAP = {
-  "Elliot Anderson": ["men", "eSPNElliotAnderson"],
+  "Elliot Anderson": ["men", "eSPNElliotAnderson", "theAthleticGoogleNewsElliotAnderson"],
   "Enzo Fernández": ["men"],
   "Eli Junior Kroupi": ["men"],
   "Senior core review": ["athletic","men"],
   "Bernardo Silva": ["athletic","mcfc", "footballFanCastManuelAkanji"],
   "John Stones": ["athletic","mcfc", "tEAMtalkMathysDetourbet"],
   "Ederson": ["athletic","mcfc"],
-  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri", "bBCSportRodri", "theGuardianFootballRodri"],
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri", "bBCSportRodri", "theGuardianFootballRodri", "theAthleticGoogleNewsRodri"],
   "Ayyoub Bouaddi": ["footballTransferscomAyyoubBouaddi", "caughtOffsiderelayingFabrizioRomanoAyyoubBouaddi"],
   "Gerónimo Rulli": ["footballTransferscomRomanoGernimoRulli"],
   "Savinho": ["yahooSportsviaRomanoTEAMtalkSavinho", "football365relayingFabrizioRomanoSavinho"],
-  "James Trafford": ["readManCitycomviaRomanoJamesTrafford"],
+  "James Trafford": ["readManCitycomviaRomanoJamesTrafford", "theAthleticGoogleNewsJamesTrafford"],
   "Mathys Detourbet": ["tEAMtalkMathysDetourbet"],
   "Jeremy Monga": ["tEAMtalkMathysDetourbet"],
   "Pierce Charles": ["tEAMtalkMathysDetourbet"],

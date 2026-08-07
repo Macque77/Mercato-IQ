@@ -35,9 +35,11 @@ const CONFIRMED_IN = [
   {name:"Iker Bravo", sub:"ST · Spain", club:"permanent from Udinese", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer confirmed via Di Marzio's live mercato digest."}
 ];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Martin Payero", sub:"Midfielder", club:"Udinese", pos:"MF", report:"Watford close in on transfer for Udinese midfielder", src:"BBC", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:70}
+];
 const OUTGOING = [
-  {name:"Nestory Irankunda", sub:"20 · W · Australia", club:"Sporting CP", pos:"W", report:"31 Jul 2026", src:"Nicolo Schira", tier:1, fee:"~€22m (bonuses included)", truth:55, prob:45, light:"y", trend:"flat", note:"Schira: agreement in principle on personal terms to 2031, with Sporting racing other suitors to close the deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
+  {name:"Nestory Irankunda", sub:"Midfielder · Australia", club:"Watford", pos:"MF", report:"Watford accept Sporting CP's $24.5m offer; transfer talks advanced", src:"football360.com.au / Watford Observer / Hull Live", tier:3, fee:"$24.5m", truth:85, prob:80, light:"g", trend:"up", note:"Offer accepted; Hull City also mentioned in talks", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -50,12 +52,17 @@ const HUB = {
   club: {l:"Watford Official", u:"#"},
   nicoloSchiraNestoryIrankunda: {l:"Nicolo Schira", u:"https://www.transferfeed.com/transfers/nestory-irankunda-watford-sporting-cp/43982109"},
   gianlucaDiMarzioJordanZemura: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-giornata-2-agosto-2026-495426"},
-  gianlucaDiMarzioIkerBravo: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-news-24-luglio-2026-495120"}};
+  gianlucaDiMarzioIkerBravo: {l:"Gianluca Di Marzio", u:"https://www.gianlucadimarzio.com/calciomercato/calciomercato-live-notizie-news-24-luglio-2026-495120"},
+  sofascoreFedericoRavaglia: {l:"Sofascore", u:"https://news.google.com/rss/articles/CBMiekFVX3lxTE1CSW5xTUpmUF9zbE41VXBRa3cwMllfMmdVWHJERmN5RUNKY3dGem1nSTFWbjBHTFZudXN3YTdJY0JkR2NjQWFiei0zVUxxdlh4aE4yank0djBVcEZGNGxRMUJPWmJGNDV4Y1RSaEt0NU5tZWlGRW13bWF3"},
+  bBCMartinPayero: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE05elZwaHJsdXR4WVotdG1EWFFqU1FqNDNwVThVdXZod2dRb0R2OGJ2cTRvQmdEOS1ZLUZWOE1TdFQ2cWRrRlVHU2ZXT3J6cXJQenJJZFRQS2dudjFEVl9kRWdvaklORlk"},
+  football360comauNestoryIrankunda: {l:"football360.com.au", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPM2luVE1RSjdtNXktSVNOekZxSnpMaWV6d3NSOC01cnFFLXpod1R2eVBKdkU2S3lqUURhMkZhRG1aSEl3am54cF9udUVNOVo2elVNYmFNVi1relA5ckEwc2laQl9vQ2Ewd3FVOE83T2lfNXlqNlZmLTR3T0d2cEp4ZUpvcUEzclBsSFF1Z0x3WmZZTV85QWgyVUxzakxDZWUtSEtWMTMyUDlPTjk3YVNtUnV1RV85dl96OEZ5NE10SQ"}};
 
 const LINKMAP = {
-  "Nestory Irankunda": ["nicoloSchiraNestoryIrankunda"],
+  "Nestory Irankunda": ["nicoloSchiraNestoryIrankunda", "football360comauNestoryIrankunda"],
   "Jordan Zemura": ["gianlucaDiMarzioJordanZemura"],
-  "Iker Bravo": ["gianlucaDiMarzioIkerBravo"]};
+  "Iker Bravo": ["gianlucaDiMarzioIkerBravo"],
+  "Federico Ravaglia": ["sofascoreFedericoRavaglia"],
+  "Martin Payero": ["bBCMartinPayero"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

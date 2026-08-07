@@ -32,7 +32,10 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Ilyes Housni", sub:"Unknown · France · Unknown", club:"Paris", pos:"Unknown", report:"Young talent signed from Paris academy", src:"Ouest-France", tier:2, fee:"Unknown", truth:90, prob:95, light:"g", trend:"flat", note:"Official signing reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Unknown player", sub:"Unknown · Unknown · Unknown", club:"Troyes", pos:"Unknown", report:"Second loan signing from Troyes", src:"L'Est Républicain", tier:3, fee:"Loan", truth:75, prob:80, light:"g", trend:"flat", note:"Player name not specified in snippet; second Troyes loan deal reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -42,10 +45,15 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"As-Nancy-Lorraine Official", u:"#"}
-};
+  club: {l:"As-Nancy-Lorraine Official", u:"#"},
+  leRepublicainLorrainLoganNdenbe: {l:"Le Republicain Lorrain", u:"https://news.google.com/rss/articles/CBMi5gFBVV95cUxQZndteko3aWZPcUJOSExoaFVYVUZhWktiejRscEpNd3BtT016d2ZWX2ppbVFnQW10Rl95Qks0OFFJLUJIRXotU0xUeWQydURkSFRPSk15VEZVQkZlelFRWjdidWpIQ2pVWm1ILW1IeHA0YzlYSGhLRl9zVEpaaTFrekpIZDhEWF9SU0EtUlZDOFZYVXN6Wk9Ka1BUcmNFbGlGYi10TC1iLUJHc05NZ0JFMGE3c0pZSFVmWG8wUTNvcjFMR21TUGM0ZG1JMmpacWFLOThlLXJRN3N2TmtaQVQzWGZTSWY2Zw?oc=5"},
+  ouestFranceIlyesHousni: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNZ3lrVEFrdHJRblhaWVNSLUh2TWpwajVXV2EwZlpWMjR6emFOeTlidWljRHhVa2pQRUpIVjI2akZUR3ZUNlZTMEZiRTAzWnltODFYQUQ4VDRLR1NPQXVOZjVLaS01WFhfQVJYV2NzQzk1bjBkNGhDckJydHc4UXZHekxmUzRyeVNfSzh2TWFvZ29ldFNuTWhpb2czX1hPOThBSU03Y0RxX1c0d29WUEJzZjFIT2lPeFc2NnVYNTN3WGlpVkVQYmhMRjZTTEdCcDUzWUhB?oc=5"},
+  lEstRpublicainUnknownplayer: {l:"L'Est Républicain", u:"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPeHhhZV9ROE9vX01OV1NPeUphREV2cnJUdWZkUlV1cGZTeklCN091bW0zblUtbmhIZ0Uwa2FXa0pYVkcxSTlsb2laSWg3b09weVVndWpKbjZqNG56Vm9DVXpXNVdQdkgyc3pWVmZlenp3UXRRWGJQYTI0ZkxDS0VaNHNyRjZwUEVDV3pTNVQ5N2hqcnF6dy0tYjNmNzAVeUVtVkwzcjgzdDduUlZ6Y3lGOXN4UVZWcDdWdms0?oc=5"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Logan Ndenbe": ["leRepublicainLorrainLoganNdenbe"],
+  "Ilyes Housni": ["ouestFranceIlyesHousni"],
+  "Unknown player": ["lEstRpublicainUnknownplayer"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

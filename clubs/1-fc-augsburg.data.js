@@ -43,20 +43,22 @@ const CONFIRMED_IN = [
 
 const CONFIRMED_OUT = [
   {name:"Cedric Zesiger", sub:"27 · CB · Switzerland", to:"permanent to BSC Young Boys", club:"BSC Young Boys", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swiss centre-back returns to his homeland, Augsburg's largest confirmed sale of the summer."},
-  {name:"Elvis Rexhbecaj", sub:"28 · CM", to:"free to VfL Wolfsburg", club:"VfL Wolfsburg", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; midfielder departs on a free transfer."},
-  {name:"Cédric Zesiger", sub:"Returns to Switzerland", club:"BSC Young Boys", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Swiss centre-back left to return to Bern, confirmed 03.07.2026."},
+  {name:"Elvis Rexhbeçaj", sub:"Kosovo · CM", club:"VfL Wolfsburg", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"kicker lists Rexhbeçaj among the summer arrivals at second-tier clubs, leaving Augsburg after the 2025/26 season. The fee has not been published and the structure of the exit is unclear, so it is logged as undisclosed rather than free."},
   {name:"Henri Koudossou", sub:"Permanent move completed", club:"Arminia Bielefeld", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure to Arminia Bielefeld, dated 25.06.2026."},
   {name:"Maximilian Bauer", sub:"Joins Arminia Bielefeld permanently", club:"Arminia Bielefeld", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 25.05.2026 on the club's official departures list."},
   {name:"Elias Saad", sub:"Loaned to MLS side", club:"Nashville SC", pos:"LW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 16.07.2026."},
   {name:"Kyliane Dong", sub:"Loaned to Championship side", club:"Bolton Wanderers", pos:"CM", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 07.07.2026."},
   {name:"Felix Meiser", sub:"Joins fellow German second-tier side", club:"Fortuna Düsseldorf", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure dated 10.07.2026."},
-  {name:"Elvis Rexhbeçaj", sub:"Kosovo · CM", club:"VfL Wolfsburg", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"kicker lists Rexhbeçaj among the summer arrivals at second-tier clubs, leaving Augsburg after the 2025/26 season. The fee has not been published and the structure of the exit is unclear, so it is logged as undisclosed rather than free."}
+  {name:"Dimitris Giannoulis", sub:"Unknown · Greece · D", club:"Unknown", pos:"D", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left Augsburg and returned to Greece"}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Wolfsburg striker (potential comeback)", sub:"Unknown · Unknown · F", club:"Wolfsburg", pos:"F", report:"Augsburg considering a Wolfsburg striker in a possible comeback move", src:"fussballdaten.de", tier:3, fee:"", truth:45, prob:35, light:"y", trend:"flat", note:"No player name identified in snippet; considered but unconfirmed interest", lastSeen:"2026-08-07T01:42:32Z", baseProb:35}
+];
 
 const OUTGOING = [
-  {name:"Mert Kömür", sub:"Hull City 'making progress'; Galatasaray also circling", club:"Hull City", pos:"RW", report:"Hull City have reportedly made progress in talks over the winger, with head coach Manuel Baum also fielding questions on his future amid Galatasaray interest.", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"flat", note:"Described as 'positive talks' by Hull's camp; Galatasaray interest adds competition.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Mert Kömür", sub:"Unknown · Unknown · Unknown", club:"Hull City", pos:"Unknown", report:"Hull City have made progress in talks to sign Kömür from Augsburg", src:"Unknown", tier:3, fee:"Undisclosed", truth:60, prob:65, light:"g", trend:"up", note:"Ongoing negotiations; talks have progressed", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
+  {name:"Chrislain Matsima", sub:"Unknown · Unknown · D", club:"Crystal Palace", pos:"D", report:"Crystal Palace increased their offer for defender Matsima; earlier reports indicated the transfer had collapsed described as unseriös (unserious)", src:"Sky.de / Absolut Fussball", tier:2, fee:"", truth:55, prob:50, light:"y", trend:"flat", note:"Deal reported fallen through as unseriös, then Palace raised bid again; conflicting signals suggest talks remain uncertain", lastSeen:"2026-08-07T01:42:32Z", baseProb:50}
 ];
 
 const RISERS = [];
@@ -83,7 +85,12 @@ const HUB = {
   bundesligacomoffiziellerTransfermarktYannikKeitel: {l:"Bundesliga.com (offizieller Transfermarkt)", u:"https://www.bundesliga.com/de/bundesliga/news/offizieller-transfermarkt-alle-wechsel-transfers-ubersicht-11850"},
   kickerFelixMeiser: {l:"kicker", u:"https://www.kicker.de/fc-augsburg/team-transfers"},
   kickerTomWisbereit: {l:"kicker", u:"https://www.kicker.de/fc-augsburg/team-news"},
-  kickerElvisRexhbeaj: {l:"kicker", u:"https://www.kicker.de/die-sommer-neuzugaenge-der-zweitligisten-im-ueberblick-953724/artikel"}};
+  kickerElvisRexhbeaj: {l:"kicker", u:"https://www.kicker.de/die-sommer-neuzugaenge-der-zweitligisten-im-ueberblick-953724/artikel"},
+  fussballdatendeWolfsburgstrikerpotentialcomeback: {l:"fussballdaten.de", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxQOHJwTWp0VnhLdHBlSkRrUWdodUw4UUtDaTJBTFBFS2U4SDc4WUZZSEEzazZ6QV9MTEhLdkRCUGhPZGx0ZS1wTkFvRzNOMkxYT19vRk5LU1MzRXZmM0Vmc19fa2VqMU1NT1owNnZ1cWQ1YS1qMWNaVlVFOGctdk9QzMxESDk2YjBNTHFYXzJUdGVUT05RTi1SOHpoRzlYV0oyOXI2N0RqbE0zcVZY"},
+  merkurU20GermaninternationalBundesligatransfer: {l:"Merkur", u:"https://news.google.com/rss/articles/CBMi6AFBVV95cUxQb2NIMmxmMkxaTUlVbGtKMlJiSkNUaXZ2VnlVdVU2QjlZMC1Ja08wbDNjdGZtYWJwWWl2TmdSWUp6M3FDNzlNWnMzMWoxYnYxSWZSWjBNOGxZcEkreDFyNWEzb1VnRTNmYXZoaGFZQk5TYS00cFI3RGdyUjQ1aFBPUjRYQUwxZWhrWkxHNmpYWjR5VG1Qckhsc2lJckx5OHllQTlBMVAtTGFCanVlb2t3b3F2clRyVlBNeVFyeWxfRFhXUWIxWlo5bFhhdF9VcDFxY0V0X3hsdWJiOGdQVFNiOGhEMDNSbGx6"},
+  skydeChrislainMatsima: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxQM0Ntc3dCcGZvN0ItejhQQlR4cEI2Q3AzZDN0TVVqZkxwakg0SEg4U1doLXJ4bTFXWng4OUZ3VVlFb3ZZOW10NXZ4WmlxU1NrSERUZjBvNWpwYTV4R0xZNjBrWDBBSGNyOE9ISk5hQlZuZUhjN2VXcXJYbmhIUjZ4TUdRS2Z3blVkdWxLS2dHMXBlcG1GdDdRaG8yM3QwbUtjOHdpS2paQktZVllMVTNOVUE2VTY0NndWaTRseDdFSQ"},
+  fussballdatendeDefender25mbid: {l:"fussballdaten.de", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQa0lTZV8xV2ZxVXlqRGd0cV9WdlRNQUdXVUVDdl9YSS1uem5ZN3plVE0zYWRZNHkyd1NWbjlVTzJqcXBlR21fNzY1dzZFUnBNM19TNHZ6OGhlajh3OUg2NnhRS2VTSTUtNHZ0MkR2WFlvRVp5TlRjMzY2VU1lRFpOWVNJRDJ2MV9TNk5MSEtsdkVZWXlxenhOamdrTVdIdS12UldRbnIzS1I"},
+  merkurDimitrisGiannoulis: {l:"Merkur", u:"https://news.google.com/rss/articles/CBMi8gFBVV95cUxOd29RczA3WFh5ZHYyRlFBT0lpUnZqcV9HZkJHNmdJTTV5b2kxak9WNWtVQzlJTThPdHJjZkt1eXpjQ3dOSlROQUt2LWRSU09NRkxybGhpNFl2bXJwX1VXZGJPN1Fjalg1WW5DTjFkTVotZ0NRZkZ2SDVjUlU1ZWdWRk93WDdtbVZCcXpYQjRLSTFGZVpWX0RHN2Jwd3N4MEo0Q01BQjVWWWtfeDNibGx2ZG5yRnRvZjk2dEhiQ2ZLakZtS2pUa2w5WVRvXzBUTndUMmt4bkwweUlPdVdkQXV0Z1dSMWg4M1JZRm5La21FMDB3Zw"}};
 
 const LINKMAP = {
   "Mert Kömür": ["bBCSportMertKmr"],
@@ -100,7 +107,12 @@ const LINKMAP = {
   "Felix Meiser": ["fCAugsburgOfficialTomWisbereit", "kickerFelixMeiser"],
   "Hennes Behrens": ["bundesligacomHennesBehrens"],
   "Yannik Keitel": ["bundesligacomoffiziellerTransfermarktYannikKeitel"],
-  "Elvis Rexhbeçaj": ["kickerElvisRexhbeaj"]};
+  "Elvis Rexhbeçaj": ["kickerElvisRexhbeaj"],
+  "Wolfsburg striker (potential comeback)": ["fussballdatendeWolfsburgstrikerpotentialcomeback"],
+  "U20 German international (Bundesliga transfer)": ["merkurU20GermaninternationalBundesligatransfer"],
+  "Chrislain Matsima": ["skydeChrislainMatsima"],
+  "Defender (25m bid)": ["fussballdatendeDefender25mbid"],
+  "Dimitris Giannoulis": ["merkurDimitrisGiannoulis"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

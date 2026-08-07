@@ -42,10 +42,17 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Bristol-Rovers Official", u:"#"}
-};
+  club: {l:"Bristol-Rovers Official", u:"#"},
+  bristolRoversFootballClubRichieSmallwood: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxPaDRyX3dROUotVjlpNlFDeWhJM1o4Q21qU0tlZ3hiZG5Zc2U4dF9LN1lzWmFQMnJubUJZaUN4MFJVR3pDT19PN29XazFjbGdvNjdCY1VJWEdBYXRSbVkwbUI2eU9IZnRacXVadXBua1FVVktGZENELTNVamw0R1FrVGcyR0pNV0lRMzJHRDQxWW02RG1mMnRCNWhB?oc=5"},
+  bristolRoversFootballClubKofiBalmer: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMilgFBVV95cUxNa0V0eDY0czNOelA5dHo5VEJ1WENjUzZQWEU5eUJ2ZFhqekgwWU9lV2xHbEwtWk1ITkVuTENBY1FJNFVteXVOSWJPSjNrY3RUWmFtdGhWZHpVSVNneUFWYzEwdWx5RDcwcEctN2pwTlVjTGVKTmZRZEl0REROMExadUFRS2xuWTc2aXBVY2NHY2VvejIzVHc?oc=5"},
+  bristolRoversFootballClubTommyLeigh: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxNaE1WUVp5dS13eWZUQzY1TFRORUpYUFk1WnJ6ak1jbldRX2w0LTBiYTdJcWYwMEMzSnRJa2c0T0lMMnNSQVZJdlEycGhXQ0o0WEhvMHFycTFOdGVfYjMybzEyNlhXbzdfVWJXbHNWZ1V6bnAyQ2szeUtiaVZWeXJZV2piZ1Y1Tlk?oc=5"},
+  bristolRoversFootballClubTomJames: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxNMDdPUFcxRkhzMDZvZHBpSTdWb3NEamt6NWlTckVEdHpYTXJWMy1wVnZ5cC00eWh3Z2J1ODdKVW56VEMzRlJSS250eHNmOGM2R1lNZnNTcjRGZkFLVDloeHJhWk9oVnBOWW5YYmx4NHpBQnhRZ3dNZTV6V0JwcUJRRDFuUE8?oc=5"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Richie Smallwood": ["bristolRoversFootballClubRichieSmallwood"],
+  "Kofi Balmer": ["bristolRoversFootballClubKofiBalmer"],
+  "Tommy Leigh": ["bristolRoversFootballClubTommyLeigh"],
+  "Tom James": ["bristolRoversFootballClubTomJames"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

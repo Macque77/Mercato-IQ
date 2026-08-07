@@ -52,7 +52,8 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
   {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent from Celtic", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect signs a 5-year contract; Romano confirmed with 'Here We Go'."},
-  {name:"Ramos", sub:"", club:"", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed by Liverpool"}
+  {name:"Ramos", sub:"", club:"", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed by Liverpool"},
+  {name:"Liverpool target", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ornstein confirms medical completed Tuesday; four-year deal agreed. Player identity not specified in snippet."}
 ];
 const CONFIRMED_OUT = [
   {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."},
@@ -60,13 +61,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Liverpool ready to make Barcola third £100m signing", src:"BBC Sport", tier:2, fee:"£100m", truth:75, prob:60, light:"g", trend:"flat", note:"Sustained interest; fee figure reported", lastSeen:"2026-08-06T14:33:42Z", baseProb:60},
-  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Real Madrid", pos:"CB", report:"Intermediaries sounded Liverpool out on Asencio", src:"The Guardian", tier:2, fee:"Unknown", truth:65, prob:50, light:"y", trend:"up", note:"Exploratory contact via intermediaries", lastSeen:"2026-08-06T14:33:42Z", baseProb:50},
-  {name:"Mbaye", sub:"", club:"", pos:"", report:"Liverpool explore Mbaye deal", src:"BBC Sport", tier:2, fee:"", truth:50, prob:45, light:"y", trend:"flat", note:"Insufficient detail to confirm full identity; listed in gossip column", lastSeen:"2026-08-06T14:33:42Z", baseProb:45}
+  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"W", report:"Ornstein reveals Barcola stance on joining Liverpool in £116m deal; Liverpool in strong position to complete third biggest signing ever", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:70, light:"g", trend:"up", note:"Ornstein confirms deal structure and Liverpool's strong position; player stance key to completion", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
+  {name:"Raul Asencio", sub:"23 · Spain · CB", club:"Real Madrid", pos:"CB", report:"Intermediaries sounded Liverpool out on Asencio", src:"The Guardian", tier:2, fee:"Unknown", truth:65, prob:50, light:"y", trend:"up", note:"Exploratory contact via intermediaries", lastSeen:"2026-08-06T14:33:42Z", baseProb:50, dead:true, deadReason:"No recent credible snippet confirming link; removed from active tracking"},
+  {name:"Mbaye", sub:"", club:"", pos:"", report:"Liverpool explore Mbaye deal", src:"BBC Sport", tier:2, fee:"", truth:50, prob:45, light:"y", trend:"flat", note:"Insufficient detail to confirm full identity; listed in gossip column", lastSeen:"2026-08-06T14:33:42Z", baseProb:45, dead:true, deadReason:"No recent credible snippet confirming link; removed from active tracking"}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions fit", src:"BBC Sport", tier:2, fee:"Unknown", truth:70, prob:55, light:"g", trend:"up", note:"Spurs interest confirmed; questions raised over suitability", lastSeen:"2026-08-06T14:33:42Z", baseProb:55}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"W", report:"Tottenham made Gakpo a target; BBC Sport questions potential move", src:"BBC Sport", tier:2, fee:"Unknown", truth:35, prob:25, light:"o", trend:"down", note:"Speculative interest from Tottenham; no firm evidence of player or Liverpool willingness", lastSeen:"2026-08-07T01:42:32Z", baseProb:25}
 ];
 const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
@@ -134,23 +135,27 @@ const HUB = {
   bBCSportFootballRamos1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cz6484p441yo?at_medium=RSS&at_campaign=rss"},
   bBCSportFootballBradleyBarcola1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c5y3pd5xvpzo?at_medium=RSS&at_campaign=rss"},
   bBCSportFootballCodyGakpo1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c98vnel56q6o?at_medium=RSS&at_campaign=rss"},
-  bBCSportFootballMbaye: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cr59z307my1o?at_medium=RSS&at_campaign=rss"}};
+  bBCSportFootballMbaye: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cr59z307my1o?at_medium=RSS&at_campaign=rss"},
+  davidOrnsteinFootball365BradleyBarcola: {l:"David Ornstein / Football365", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQSmpVTUZwbHNCY2Rzcmo1d19lMVp0MFdQUXhGdGhiUTlVODhkZXUyV2pTWlhUbUxpSWx2Rk00TVlIWnp4R1VLN0hISmdPRTJWeVhxdW1ucGYzY09CcGpYS3FIZmRBOGR5YWtZLTdUclhMdm81a0Z3Y1dzek1XRlZ6MV85M2dwbl8xNVcyNFhlS2x0bmlIZTVMQVNiOGw"},
+  bBCSportCodyGakpo: {l:"BBC Sport", u:"https://www.bbc.co.uk"},
+  davidOrnsteinTheEmpireofTheKopLiverpooltarget: {l:"David Ornstein / The Empire of The Kop", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxOSUtmOE9IWEJqV2VCTURCWkhlak0xUWNUbjBnQ3pSalB2SU9lNGZhWER2SmFuYWtVaE5oTnFXOFE4WTVRYU5uN3pZU096bGV0ZkhWZ2ZlSEU0OTR2MlNKWWFISE9hNWk0Unl3NkRHT2tGSWtlb3pFZUhHcFBPbmZweUx4QW8tRVlpN0d2VnRpeGtUanpuMXZjRmJGb3YxSEh1RER3Sy1mLWhiYnZwOTh4VldhbEZPOXR3aVN6a1Nnelo2d3BU0gHKAUFVX3lxTFB4LXZVZzBmWVhpRGg5VktWeEVoNFlJaW1nZ0JWalZ0MFg3TGZGSEpnQV90UjdDVEYwRVlwVW15R2RySFpLR1h6T21iSzVGeGswYzUtdEdWcldDY1h5eW40Wk5pT0x1Vy1DNWRTVG02aVRoc01NNkNRcDd6Yi1XaS1SR1lpRUVtMFh3SlZPdW5yTG9LeEczZjc1cFlpZzVyTmRnUkpISHBKWjN2YUJYVnI2QzZrY1EzNy05Wm1wdnF3NkRBdkdYUWVqQVE"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk"],
   "Rayan": ["lcom"],
   "Iliman Ndiaye": ["echo","bbcGossip"],
   "Kennett Eichhorn": ["bbcGossip"],
-  "Cody Gakpo": ["vi","echo", "tEAMtalkcitingFabrizioRomanoCodyGakpo", "bBCSportFootballCodyGakpo", "bBCSportFootballCodyGakpo1"],
+  "Cody Gakpo": ["vi","echo", "tEAMtalkcitingFabrizioRomanoCodyGakpo", "bBCSportFootballCodyGakpo", "bBCSportFootballCodyGakpo1", "bBCSportCodyGakpo"],
   "Ibrahima Konaté": ["ninetymin"],
   "Fringe & loan army": ["echo"],
-  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic", "fabrizioRomanoviaTEAMtalkBradleyBarcola", "bBCSportFootballBradleyBarcola", "bBCSportFootballBradleyBarcola1"],
+  "Bradley Barcola": ["fabrizioRomanoviaCaughtOffsideBradleyBarcola", "skySportsBradleyBarcola", "skySportsBradleyBarcola1", "athletic", "fabrizioRomanoviaTEAMtalkBradleyBarcola", "bBCSportFootballBradleyBarcola", "bBCSportFootballBradleyBarcola1", "davidOrnsteinFootball365BradleyBarcola"],
   "Dara Jikiemi": ["fabrizioRomanoviaRoundtableDaraJikiemi"],
   "Mohamed Salah": ["skySportsMohamedSalah", "eSPNMohamedSalah"],
   "Ibrahim Mbaye": ["skySportsIbrahimMbaye"],
   "Raul Asencio": ["tEAMtalkRaulAsencio", "theGuardianFootballRaulAsencio"],
   "Ramos": ["bBCSportFootballRamos", "bBCSportFootballRamos1"],
   "Carlos Ramos": ["bBCSportFootballRamos"],
-  "Mbaye": ["bBCSportFootballMbaye"]};
+  "Mbaye": ["bBCSportFootballMbaye"],
+  "Liverpool target": ["davidOrnsteinTheEmpireofTheKopLiverpooltarget"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };

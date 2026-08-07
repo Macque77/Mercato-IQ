@@ -87,7 +87,7 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Bruno Guimarães", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal have agreed a fee with Newcastle for the captain", src:"BBC Sport, Sky Sports, Telegraph", tier:2, fee:"Undisclosed", truth:95, prob:90, light:"g", trend:"down", note:"Deal agreed; fee reported as less than Newcastle's asking price", lastSeen:"2026-08-06T14:33:42Z", baseProb:90}
+  {name:"Bruno Guimarães", sub:"27 · Brazil · M", club:"Newcastle United", pos:"Midfielder", report:"Arsenal have agreed fee with Newcastle for Bruno Guimarães", src:"On-page rumour", tier:2, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"down", note:"Existing on-page entry; no fresh snippet provided to update", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
 ];
 const DEAD = [
   {name:"Giorgio Scalvini", sub:"20 · Italy · D", club:"", pos:"D", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:35, prob:25, light:"o", trend:"down", note:"No recent snippet confirmation; last update 30 Jul 2026", lastSeen:"2026-08-06T13:55:46Z", baseProb:25, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
@@ -175,7 +175,8 @@ const HUB = {
   theGuardianFootballBrunoGuimares: {l:"The Guardian Football", u:"https://www.theguardian.com/football/2026/aug/05/arsenal-agree-75m-fee-with-newcastle-for-bruno-guimaraes-as-clubs-reach-compromise"},
   bBCSportFootballBrunoGuimares: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/clyl2e351vlo"},
   skySportsFootballMatthiasJaissle: {l:"Sky Sports Football", u:"https://www.skysports.com/football/news/12040/13568428/newcastle-united-appoint-matthias-jaissle-as-head-coach-following-eddie-howes-departure-from-st-james-park"},
-  bBCSportFootballBrunoGuimares1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/clyl2e351vlo?at_medium=RSS&at_campaign=rss"}};
+  bBCSportFootballBrunoGuimares1: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/clyl2e351vlo?at_medium=RSS&at_campaign=rss"},
+  googleNewsDavidOrnsteinUnknownPlayer: {l:"Google News / David Ornstein", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxOMTBCUTFUYlVtcGc3YWJmNENGNDJOTWtvVlhvM0tGRnNkTFdMdmstMG5lbWxYZngtc1F2c3ctNXJmMmJnblFZOWRJNjJTYWQ5V3NTbEx5UTd5aWxhUmp0OFBwd3JKS2xpSUhtRDRST09XYXdFczdSNjg1bWVqWmRlTExVbGtlMUpUNVh2RFFsWHF5clZCWVpuajFkb21RZw?oc=5"}};
 const LINKMAP = {
   "Sean Steur": ["skyNUFC","nufcOfficial", "skySportsSeanSteur"],
   "Bazoumana Touré": ["skyNUFC","nufcOfficial", "eSPNBazoumanaTour"],
@@ -203,7 +204,8 @@ const LINKMAP = {
   "Nick Pope": ["shieldsGaz","leeRyder"],
   "Joe Willock": ["willockNW","shieldsGaz"],
   "Angelo Stiller": ["yahooSportsviaSportBILDKickerAngeloStiller"],
-  "Bruno Guimaraes": ["skySportsTransferCentreBrunoGuimaraes", "bBCSportFootballBrunoGuimares1", "bBCSportFootballBrunoGuimares"]};
+  "Bruno Guimaraes": ["skySportsTransferCentreBrunoGuimaraes", "bBCSportFootballBrunoGuimares1", "bBCSportFootballBrunoGuimares"],
+  "Unknown Player": ["googleNewsDavidOrnsteinUnknownPlayer"]};
 const WL_LINKMAP = {
   "Nick Woltemade":"athletic","Yoane Wissa":"athletic",
   "Dan Burn & Fabian Schär":"teamtalk","Kieran McKenna / Antonio Conte":"khelnow",

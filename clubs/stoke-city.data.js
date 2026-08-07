@@ -35,10 +35,10 @@ const CONFIRMED_IN = [
   {name:"Lewis Koumas", sub:"18 · FW", club:"Liverpool", pos:"FW", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"BBC Sport confirms the loan; already ineligible for the season opener due to being registered too late."}
 ];
 const CONFIRMED_OUT = [];
-const INCOMING = [
-  {name:"George Hirst", sub:"27 · ST · Scotland", club:"Ipswich Town", pos:"ST", report:"~3 days ago", src:"Football Insider (Pete O'Rourke)", tier:2, fee:"Loan + option", truth:65, prob:35, light:'y', trend:'flat', note:"O'Rourke is a genuine EFL-focused reporter, described as an approach expected in the coming days rather than a live negotiation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+const INCOMING = [];
+const OUTGOING = [
+  {name:"Jaden Dixon", sub:"Unknown · Unknown · Unknown", club:"Arsenal", pos:"Unknown", report:"Joined Arsenal", src:"Arsenal.com", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Departed Stoke City", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
-const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -49,14 +49,15 @@ const WATCHLIST = [];
 const HUB = {
   "gnews-ethangalbraith": {l:"Related news search: Ethan Galbraith", u:"https://news.google.com/search?q=Stoke%20City%20Ethan%20Galbraith%20transfer&hl=en-GB&gl=GB"},
   "gnews-lewiskoumas": {l:"Related news search: Lewis Koumas", u:"https://news.google.com/search?q=Stoke%20City%20Lewis%20Koumas%20transfer&hl=en-GB&gl=GB"},
-  "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"}
-};
+  "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"},
+  stokeCityFCGeorgeHirst: {l:"Stoke City FC", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxPdmdtZS1wcXlEQlQyYzdubVRQNkFJcEhTYld2eVdJZmd5SE1ybHhyV0tHdldEbmI3SHlza0c2dF9TRjNFWTN3SDVSNXhCajZzRXp4dHRvdExIZnJ2a3RaN19JWXBuMnNiUU5VMk93MWg2bnhaT21aWmhxTUttYWdGRGhBS1p3cElpZ1RFUzNfUUtyamJsSmVUWWJDaWI5RDZkRXZ5Ny16TE5PQnFTYXFSZUEzSQ"},
+  arsenalcomJadenDixon: {l:"Arsenal.com", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxOS0NwbFJyNXRjN3pRNG10TmIzM0hHU2tPMmR5QmJnNHlKSDNOdnZ6YkpXd3JTTFUxOUxkYVdmSlhQZ0FLSzk1T1otZG5MN24zWENGWVJnRVpzcC0zR1BibVpjanRuRl9vM3pQZEY3YjBHQVZUcERNMXdJVnNmcXhreQ"}};
 
 const LINKMAP = {
   "Ethan Galbraith": ["gnews-ethangalbraith"],
   "Lewis Koumas": ["gnews-lewiskoumas"],
-  "George Hirst": ["orourke"]
-};
+  "George Hirst": ["orourke", "stokeCityFCGeorgeHirst"],
+  "Jaden Dixon": ["arsenalcomJadenDixon"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

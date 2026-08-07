@@ -87,23 +87,25 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Manager appointment", sub:"McKenna / Frank linked", club:"TBC", pos:"Head coach", report:"~4 days ago", src:"Sky Sports / Irish Times", tier:1, fee:"Compensation", truth:85, prob:50, light:'y', trend:'up',
-   note:"The gating decision. Kieran McKenna (Ipswich, ~£8m compensation) and the available Thomas Frank are among early names; Khan says the club will move deliberately. Squad plans follow the appointment. True is high (elite-tier reporting on the vacancy); Happens sits at evens on any single named outcome.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
+   note:"The gating decision. Kieran McKenna (Ipswich, ~£8m compensation) and the available Thomas Frank are among early names; Khan says the club will move deliberately. Squad plans follow the appointment. True is high (elite-tier reporting on the vacancy); Happens sits at evens on any single named outcome.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50, dead:true, deadReason:"no longer a current link"},
   {name:"Striker (Jimenez replacement)", sub:"Goals up front", club:"Market", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£25-45m", truth:55, prob:35, light:'y', trend:'flat',
-   note:"With Jimenez leaving on a free, a new forward is a clear need. Names firm up once the manager is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+   note:"With Jimenez leaving on a free, a new forward is a clear need. Names firm up once the manager is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"no longer a current link"},
   {name:"Central midfield need", sub:"Framing row · no named target", club:"Market", pos:"CM", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:25, light:'o', trend:'flat',
-   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): midfield quality and depth flagged as a likely strengthening area once the head coach is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
+   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): midfield quality and depth flagged as a likely strengthening area once the head coach is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"no longer a current link"},
   {name:"Full-back addition", sub:"Framing row · no named target", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:22, light:'o', trend:'flat',
-   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): full-back balance for the new system, paced to the incoming coach's preferences.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
-  {name:"Chibuike Nwaiwu", sub:"23 · CB/DM · Nigeria", club:"Trabzonspor", pos:"DF", report:"Fulham went furthest of three Premier League suitors (also Tottenham and Crystal Palace), agreeing personal terms on a four-year deal, but two improved bids have both been rejected with Trabzonspor holding firm on valuation.", src:"Soccernet NG / Hasan Tuncel", tier:3, fee:"€30-35m (asking price)", truth:55, prob:30, light:"y", trend:"flat", note:"A prolonged saga: Fulham had a 'preliminary agreement' in mid-July, but by 3 Aug both an initial and an improved offer (with bonuses) had been turned down. Move stalls unless Fulham raise their bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+   note:"FRAMING ROW split from this page's own Positions board (not a named rumour): full-back balance for the new system, paced to the incoming coach's preferences.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22, dead:true, deadReason:"no longer a current link"},
+  {name:"Chibuike Nwaiwu", sub:"23 · CB/DM · Nigeria", club:"Trabzonspor", pos:"DF", report:"Fulham went furthest of three Premier League suitors (also Tottenham and Crystal Palace), agreeing personal terms on a four-year deal, but two improved bids have both been rejected with Trabzonspor holding firm on valuation.", src:"Soccernet NG / Hasan Tuncel", tier:3, fee:"€30-35m (asking price)", truth:55, prob:30, light:"y", trend:"flat", note:"A prolonged saga: Fulham had a 'preliminary agreement' in mid-July, but by 3 Aug both an initial and an improved offer (with bonuses) had been turned down. Move stalls unless Fulham raise their bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"No credible recent reporting; unclear player identification"},
+  {name:"Gonzalo García", sub:"Striker · Real Madrid", club:"Real Madrid", pos:"ST", report:"Fulham sign Real Madrid striker to equal club record transfer", src:"BBC", tier:2, fee:"Club record", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; part of double Real Madrid swoop", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"César Palacios", sub:"Midfielder · Real Madrid", club:"Real Madrid", pos:"CM", report:"Fulham sign Real Madrid midfielder in double transfer swoop", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; part of double Real Madrid swoop with Gonzalo García", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Shea Charles", sub:"Midfielder", club:"Southampton", pos:"CM", report:"Fulham advancing in £25m transfer talks for Shea Charles", src:"Evening Standard", tier:3, fee:"£25m", truth:75, prob:70, light:"g", trend:"flat", note:"Transfer talks ongoing; third summer signing target", lastSeen:"2026-08-07T01:42:32Z", baseProb:70}
 ];
 
 const OUTGOING = [
-  {name:"Raul Jimenez", sub:"ST · Mexico", club:"Free agent", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"FREE", truth:55, prob:60, light:'g', trend:'up',
-   note:"Out of contract at the end of June and set to leave (Everton among those linked). PRICING: a free departure; the priority becomes replacing his goals.", lastSeen:"2026-08-04T19:10:50Z", baseProb:60},
+  {name:"Raúl Jiménez", sub:"Striker · Mexico", club:"Fulham", pos:"ST", report:"Raúl Jiménez exit; striker replacement being sought", src:"Various", tier:2, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"up", note:"Departure linked; Fulham seeking Jiménez replacement", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
   {name:"Ageing spine & fringe", sub:"Squad refresh", club:"Various", pos:"SQD", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
-   note:"A refresh of older players is likely under a new coach, balanced against the cost rules.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Kevin", sub:"23 · W · Brazil", club:"AS Roma", pos:"FW", report:"Roma's €50m bid has been rejected as too low, with Fulham demanding more for the Brazilian winger; an improved Roma offer is expected imminently.", src:"Globo Esporte (via TheHardTackle)", tier:2, fee:"€50m+ (bid rejected)", truth:65, prob:45, light:"y", trend:"flat", note:"Kevin cost Fulham €45m from Shakhtar Donetsk last summer but managed only 1,469 minutes across 31 games; Roma want him as a direct replacement winger.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Sasa Lukic", sub:"29 · CM · Serbia", club:"Ipswich Town", pos:"MF", report:"Sky Sports News reports Ipswich are targeting a second raid on Fulham after signing Issa Diop, with Gary O'Neil keen to add the Serbian midfielder to strengthen his engine room.", src:"Sky Sports News", tier:2, fee:"Undisclosed (12 months left on contract)", truth:55, prob:25, light:"o", trend:"flat", note:"Early stage: report says no club-to-club contact has been established yet, but it is 'one to keep an eye on'.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+   note:"A refresh of older players is likely under a new coach, balanced against the cost rules.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
+  {name:"Kevin", sub:"Midfielder", club:"Fulham", pos:"CM", report:"Roma's €50m bid rejected; Fulham holding firm on valuation", src:"Various", tier:3, fee:"€50m bid rejected", truth:70, prob:55, light:"g", trend:"up", note:"Roma bid deemed too low; player linked with departure", lastSeen:"2026-08-07T01:42:32Z", baseProb:55},
+  {name:"Sasa Lukic", sub:"Midfielder · Serbia", club:"Fulham", pos:"CM", report:"Sky Sports News reports Ipswich Town targeting Sasa Lukic", src:"Sky Sports News", tier:2, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"up", note:"Interest from Ipswich Town confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
 ];
 
 const RISERS = [
@@ -134,8 +136,8 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Kieran McKenna", club:"Ipswich", pos:"Head coach", dir:"in", age:"~4d", tier:1, note:"(Also in the main Incoming table via the manager row.) Linked to the vacancy; ~£8m compensation, not yet contacted formally."},
-  {name:"Raul Jimenez", club:"Fulham", pos:"ST", dir:"out", age:"~1 wk", tier:3, note:"(Also in main table.) Out of contract; set to leave on a free."},
+  {name:"Kieran McKenna", club:"Ipswich", pos:"Head coach", dir:"in", age:"~4d", tier:1, note:"(Also in the main Incoming table via the manager row.) Linked to the vacancy; ~£8m compensation, not yet contacted formally.", dead:true, deadReason:"Managerial appointment, not first-team player transfer"},
+  {name:"Raul Jimenez", club:"Fulham", pos:"ST", dir:"out", age:"~1 wk", tier:3, note:"(Also in main table.) Out of contract; set to leave on a free."}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -158,7 +160,11 @@ const HUB = {
   fulhamFCofficialJonahKusiAsare: {l:"Fulham FC (official)", u:"https://www.fulhamfc.com/news/2026/june/27/kusi-asare-signs-permanently/"},
   fulhamFCofficialRalJimnez: {l:"Fulham FC (official)", u:"https://www.fulhamfc.com/news/2026/june/09/raul-leaves-fulham/"},
   fulhamFCofficialIssaDiop: {l:"Fulham FC (official)", u:"https://www.fulhamfc.com/news/2026/july/22/diop-departs/"},
-  skySportsHarryWilson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13561731/harry-wilson-to-leeds-united-wales-international-makes-elland-road-switch-after-leaving-fulham"}};
+  skySportsHarryWilson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13561731/harry-wilson-to-leeds-united-wales-international-makes-elland-road-switch-after-leaving-fulham"},
+  bBCGonzaloGarca: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1iZEp2UFc0bkdtYmlHTXN4akx3eFJ5ZDdYWm9PSzFXaFdqNlc2MzdlUUFlMWNFSWVpWEZBd1FZR2w1QnREaVlNX3pvR3Nvb0lsS1ZhWU1JWDRCNkZiakxZZ3BrekhTRkk"},
+  eveningStandardSheaCharles: {l:"Evening Standard", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxQdmlVVlNZMTJ1MWtZY0YySDkxSVVHd19tY1duazI2SC1DRmRmX0ZDbTJYbThpS2JlZ1M0OE5JV051NXZZQkxleXdVSUZsdl8zQ0xCQi1nUXpiQWIxNlVLNGRRb29GS21OaHFMNlhLSnNWQm9uMjdKNDlJdENWcVJWSl9PZERJVXFLQ3BNMXB5QkhyUng0ZVhZ"},
+  skySportsNewsSasaLukic: {l:"Sky Sports News", u:"https://www.skysports.com"},
+  transfermarktKevin: {l:"Transfermarkt", u:"https://www.transfermarkt.com"}};
 const LINKMAP = {
   "Manager appointment": ["sky","itimes","athletic"],
   "Striker (Jimenez replacement)": ["bbcGossip","athletic"],
@@ -167,15 +173,16 @@ const LINKMAP = {
   "Raul Jimenez": ["sky","bbc"],
   "Ageing spine & fringe": ["athletic","bbc"],
   "Marco Silva": ["sky","bbc","ffc"],
-  "Gonzalo García": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "eSPNGonzaloGarca"],
-  "César Palacios": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "fulhamFCofficialCsarPalacios"],
+  "Gonzalo García": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "eSPNGonzaloGarca", "bBCGonzaloGarca"],
+  "César Palacios": ["fabrizioRomanoviaFootballTransfersGonzaloGarca", "fulhamFCofficialCsarPalacios", "bBCGonzaloGarca"],
   "Chibuike Nwaiwu": ["soccernetNGChibuikeNwaiwu"],
-  "Kevin": ["theHardTackleviaGloboEsporteKevin"],
-  "Sasa Lukic": ["sportsMoleSkySportsNewsSasaLukic"],
+  "Kevin": ["theHardTackleviaGloboEsporteKevin", "transfermarktKevin"],
+  "Sasa Lukic": ["sportsMoleSkySportsNewsSasaLukic", "skySportsNewsSasaLukic"],
   "Jonah Kusi-Asare": ["fulhamFCofficialJonahKusiAsare"],
-  "Raúl Jiménez": ["fulhamFCofficialRalJimnez"],
+  "Raúl Jiménez": ["fulhamFCofficialRalJimnez", "eveningStandardSheaCharles"],
   "Issa Diop": ["fulhamFCofficialIssaDiop"],
-  "Harry Wilson": ["skySportsHarryWilson"]};
+  "Harry Wilson": ["skySportsHarryWilson"],
+  "Shea Charles": ["eveningStandardSheaCharles"]};
 const WL_LINKMAP = {
   "Kieran McKenna":"sky","Raul Jimenez":"bbc",
 };

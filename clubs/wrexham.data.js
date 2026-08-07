@@ -31,14 +31,17 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Ben Whiteman", sub:"30 · England · CM", club:"Preston North End", pos:"CM", fee:"Undisclosed (reported £3m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wrexham's second signing of the summer, on a three-year contract with the option of a further year until at least 2029. The Preston captain made more than 220 appearances at Deepdale, and manager Paul Heckingbottom publicly accused him of crossing a line in pushing for the move."}
+  {name:"Ben Whiteman", sub:"30 · England · CM", club:"Preston North End", pos:"CM", fee:"Undisclosed (reported £3m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wrexham's second signing of the summer, on a three-year contract with the option of a further year until at least 2029. The Preston captain made more than 220 appearances at Deepdale, and manager Paul Heckingbottom publicly accused him of crossing a line in pushing for the move."},
+  {name:"Danny Imray", sub:"20 · England · D", club:"Crystal Palace", pos:"D", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Crystal Palace defender"}
 ];
 const CONFIRMED_OUT = [
   {name:"Paul Mullin", sub:"ST", club:"Released", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract terminated by mutual consent."},
   {name:"Tom O'Connor", sub:"MF", club:"Released", pos:"MF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract terminated by mutual consent."}
 ];
 const INCOMING = [
-  {name:"Anthony Patterson", sub:"GK", club:"Sunderland", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Freshly promoted Wrexham exploring goalkeeping options; nothing concrete lodged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25}
+  {name:"Anthony Patterson", sub:"GK", club:"Sunderland", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Freshly promoted Wrexham exploring goalkeeping options; nothing concrete lodged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"Rumour from ~1 week ago; no confirmation or fresh update found in recent snippets"},
+  {name:"Ben Whiteman", sub:"27 · England · M", club:"Preston North End", pos:"M", report:"Preston North End captain signed by Wrexham", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Danny Imray", sub:"20 · England · D", club:"Crystal Palace", pos:"D", report:"Crystal Palace defender signed by Wrexham", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -52,13 +55,16 @@ const HUB = {
   "gnews-paulmullin": {l:"Related news search: Paul Mullin", u:"https://news.google.com/search?q=Wrexham%20Paul%20Mullin%20transfer&hl=en-GB&gl=GB"},
   "gnews-tomoconnor": {l:"Related news search: Tom O'Connor", u:"https://news.google.com/search?q=Wrexham%20Tom%20O%27Connor%20transfer&hl=en-GB&gl=GB"},
   "gnews-anthonypatterson": {l:"Related news search: Anthony Patterson", u:"https://news.google.com/search?q=Wrexham%20Anthony%20Patterson%20transfer&hl=en-GB&gl=GB"},
-  wrexhamAFCofficialBenWhiteman: {l:"Wrexham AFC official", u:"https://www.wrexhamafc.co.uk/news/2026/august/05/ben-whiteman-signs-for-wrexham-from-preston-north-end/"}};
+  wrexhamAFCofficialBenWhiteman: {l:"Wrexham AFC official", u:"https://www.wrexhamafc.co.uk/news/2026/august/05/ben-whiteman-signs-for-wrexham-from-preston-north-end/"},
+  bBCBenWhiteman: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5DSS1jOGdRQkZ6MEw4VzlrNVhOdXFMb284akszbk91SnU5Tmc2OGFzb1I0V25ndXpkenBkek4zdHZockJGWHVBZTYxQ3Q1WHlDd0g5Vk9RcllFRlFvUHI5QzMxcS1ZV3c"},
+  bBCDannyImray: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1fQUtWY0FGTF80Vi1sTGFhRllMbU44ODROOHRKQWJLSmZaN1QzX1FnLWhFeVRvcnFQbTNuNEU3c1RwcVVkQVB0WGMwMS1oRU8xRzhQV2p6eWxmQ1hTWGJlNTFjNm03dUlOREE"}};
 
 const LINKMAP = {
   "Paul Mullin": ["gnews-paulmullin"],
   "Tom O'Connor": ["gnews-tomoconnor"],
   "Anthony Patterson": ["gnews-anthonypatterson"],
-  "Ben Whiteman": ["wrexhamAFCofficialBenWhiteman"]};
+  "Ben Whiteman": ["wrexhamAFCofficialBenWhiteman", "bBCBenWhiteman"],
+  "Danny Imray": ["bBCDannyImray"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

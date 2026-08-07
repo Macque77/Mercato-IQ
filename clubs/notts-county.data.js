@@ -37,12 +37,17 @@ const CONFIRMED_OUT = [
   {name:"Matthew Dennis", sub:"ST", club:"Burton Albion", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Burton Albion entry."}
 ];
 const INCOMING = [
-  {name:"Tommi O'Reilly", sub:"MF", club:"Aston Villa", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:50, light:'y', trend:'up', note:"Notts reportedly set to beat Sheffield Wednesday to the signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50},
-  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Racing Plymouth Argyle for the striker's signature.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Devon Matthews", sub:"DF", club:"Undisclosed", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Competing with Wigan Athletic.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Tommi O'Reilly", sub:"MF", club:"Aston Villa", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:60, prob:50, light:'y', trend:'up', note:"Notts reportedly set to beat Sheffield Wednesday to the signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50, dead:true, deadReason:"No fresh snippet found; treated as stale (1+ week old without confirmation)"},
+  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Racing Plymouth Argyle for the striker's signature.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"No fresh snippet found; treated as stale (1+ week old without confirmation)"},
+  {name:"Devon Matthews", sub:"DF", club:"Undisclosed", pos:"DF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Competing with Wigan Athletic.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No fresh snippet found; treated as stale (1+ week old without confirmation)"},
+  {name:"Luka Smyth", sub:"Australian · Forward", club:"VPS", pos:"F", report:"Signed from Finnish side VPS", src:"BBC", tier:2, fee:"", truth:95, prob:100, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"James Gibbons", sub:"", club:"", pos:"", report:"Signed", src:"BBC", tier:2, fee:"", truth:95, prob:100, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Callum Roberts", sub:"", club:"", pos:"", report:"Returns to club", src:"BBC", tier:2, fee:"", truth:95, prob:100, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Matt Baker", sub:"Defender", club:"Newport County", pos:"D", report:"Signed ex-Newport County defender", src:"BBC", tier:2, fee:"", truth:95, prob:100, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Alassana Jatta", sub:"ST", club:"Undisclosed (Danish top flight)", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"£425k", truth:55, prob:40, light:'y', trend:'flat', note:"Bolton Wanderers and Bradford City reportedly trying to hijack the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Alassana Jatta", sub:"ST", club:"Undisclosed (Danish top flight)", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"£425k", truth:55, prob:40, light:'y', trend:'flat', note:"Bolton Wanderers and Bradford City reportedly trying to hijack the move.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
+  {name:"Dennis", sub:"Forward", club:"Burton", pos:"F", report:"Signed by Burton Albion", src:"BBC", tier:2, fee:"", truth:95, prob:100, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -57,8 +62,11 @@ const HUB = {
   "gnews-tommioreilly": {l:"Related news search: Tommi O'Reilly", u:"https://news.google.com/search?q=Notts%20County%20Tommi%20O%27Reilly%20transfer&hl=en-GB&gl=GB"},
   "gnews-michaelmellon": {l:"Related news search: Michael Mellon", u:"https://news.google.com/search?q=Notts%20County%20Michael%20Mellon%20transfer&hl=en-GB&gl=GB"},
   "gnews-devonmatthews": {l:"Related news search: Devon Matthews", u:"https://news.google.com/search?q=Notts%20County%20Devon%20Matthews%20transfer&hl=en-GB&gl=GB"},
-  "gnews-alassanajatta": {l:"Related news search: Alassana Jatta", u:"https://news.google.com/search?q=Notts%20County%20Alassana%20Jatta%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-alassanajatta": {l:"Related news search: Alassana Jatta", u:"https://news.google.com/search?q=Notts%20County%20Alassana%20Jatta%20transfer&hl=en-GB&gl=GB"},
+  bBCLukaSmyth: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE54V0dLbEp2U01XbExyNzA2T3ZRYmRmMGxNcDBJdlAxdjl0dDlkdXBzajE2SGdrNlJwbHU1b212bWJFdXJRTC1wQl94MW1TbV9VeVE4bmxNaUU1S2xSV0w2ZTNvLXpfSDg"},
+  bBCJamesGibbons: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVNzJuMEhzdkViR0ZIXzN2SzE3VWV1ckEtcjFKbmFpNWR3WXBCTlN3dDhLemZxSGFkWXRZSVhaLTVVVDllVmsybWFsYWpRblZDVDBwVTlrYWh4a3BuMXdQb0VubW9lcGs"},
+  bBCMattBaker: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9WWnFLRXZEc0xMMjlrNjZUSWRlWW5PbjF4cXdKSmZwV1ZGc2VOLWdnUkl5eHYzMUZNbDhmbzNtaEdObEY1NTNyNDNRc0lDY0diWlFGRW5QV0JhQ2NHbDJYemI2eUVrYmc"},
+  bBCDennis: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE9YTHZZUWxHZXBJV3JIdUZOMGVnWmpBdXhNQVdBZ1czb1lGU2VHU0FYOFJPbE1jSHJJdThqWDZNYTB1cUIyZHgydjhaeFhjT0xUWXQxWTdCWVV0WnhUQlRxc0ZnTV8zQXNMTGc"}};
 
 const LINKMAP = {
   "Emile Acquah": ["gnews-emileacquah"],
@@ -66,8 +74,12 @@ const LINKMAP = {
   "Tommi O'Reilly": ["gnews-tommioreilly"],
   "Michael Mellon": ["gnews-michaelmellon"],
   "Devon Matthews": ["gnews-devonmatthews"],
-  "Alassana Jatta": ["gnews-alassanajatta"]
-};
+  "Alassana Jatta": ["gnews-alassanajatta"],
+  "Luka Smyth": ["bBCLukaSmyth"],
+  "James Gibbons": ["bBCJamesGibbons"],
+  "Callum Roberts": ["bBCJamesGibbons"],
+  "Matt Baker": ["bBCMattBaker"],
+  "Dennis": ["bBCDennis"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

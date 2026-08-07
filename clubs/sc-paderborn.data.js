@@ -43,10 +43,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Deniz Zeitler", sub:"Highly-rated attacking prospect", club:"TSG Hoffenheim", pos:"CAM", report:"Newly promoted Paderborn have opened talks with Hoffenheim over a move for young attacking prospect Zeitler, described as young, versatile and developable, fitting the club's recruitment profile.", src:"Sky Sports Germany / Neue Westfälische", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage talks reported; no fee or medical scheduled yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Deniz Zeitler", sub:"Highly-rated attacking prospect", club:"TSG Hoffenheim", pos:"CAM", report:"Newly promoted Paderborn have opened talks with Hoffenheim over a move for young attacking prospect Zeitler, described as young, versatile and developable, fitting the club's recruitment profile.", src:"Sky Sports Germany / Neue Westfälische", tier:2, fee:"Unknown", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage talks reported; no fee or medical scheduled yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"Snippet references do not confirm this link; no fresh reporting found on Zeitler talks with Paderborn"},
+  {name:"Batista Meier", sub:"Unknown · Unknown · Midfielder", club:"1. FC Nürnberg", pos:"Midfielder", report:"Transfer completed from 1. FC Nürnberg", src:"Westfalen-Blatt", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed as perfect", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Mats Daehli", sub:"Unknown · Unknown · Unknown", club:"Hannover 96", pos:"Unknown", report:"Hannover 96 player has filed transfer request to join SC Paderborn", src:"Neue Westfälische", tier:3, fee:"Unknown", truth:50, prob:45, light:"y", trend:"flat", note:"Transfer wish filed; speculation about potential move", lastSeen:"2026-08-07T01:42:32Z", baseProb:45}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Welcome back to the Bundesliga</b>: Paderborn secured promotion with a dramatic 2-1 aggregate play-off win over VfL Wolfsburg, returning to the top flight for the first time since 2019/20."}
@@ -69,13 +72,17 @@ const HUB = {
   sport1: {l:"Sport1", u:"https://www.sport1.de/news/fussball/bundesliga/2026/05/aufsteiger-paderborn-holt-baack-aus-nuernberg"},
   neueWestflischeDenizZeitler: {l:"Neue Westfälische", u:"https://www.nw.de/sport/"},
   skyGermanyZEITOliverBatistaMeier: {l:"Sky Germany / ZEIT", u:"https://www.zeit.de/"},
-  tribalFootballYahooSportsFilipBilbija: {l:"Tribal Football / Yahoo Sports", u:"https://www.onefootball.com/"}};
+  tribalFootballYahooSportsFilipBilbija: {l:"Tribal Football / Yahoo Sports", u:"https://www.onefootball.com/"},
+  westfalenBlattBatistaMeier: {l:"Westfalen-Blatt", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxOcjktVE5uUkZxWFk3eEl0UFJxQ21MS1M3YWEydFFsRnpwRk5tV2R3UTcyMUJkbmhZTUxCa2V0RlVzY0dkVDl2bmdKd2Y5TVFBZF9CbUc5WWtyamFYN0lCYUtUd2UxcGpRcDFXVE91YmtROWRBLUx0NGtPM2otQ2pBRXpFVlZTMkpyS0E1cjFEQnBQSEZTcHJCZ1dFZTNha01S"},
+  neueWestflischeMatsDaehli: {l:"Neue Westfälische", u:"https://news.google.com/rss/articles/CBMizgFBVV95cUxPWGp2bWpKaXR1d0x2WXdBeUlMaGFpMy1PbUNQeHR6VnJhcGczaE5GS2JFc2dIVWVTLVpyTEhSQkQ2MUhhZi1sMUZtTUVqcGlwc1FiZnF1TTc0dmNYSC05WGVJVjd5b3FTaURId00wbnFObzZteF9PamRZTnZpTDZCb0pOVVlYaW84cFJrLUxDcWh2YnJTQmlET2kxcEYtS0hrWTRkMk01WTIxU2dxMHB3cE5FdFJ2dy15NDZnSWJmZUp1SDhoQnhnUm5iZUxOZw"}};
 
 const LINKMAP = {
   "Tom Baack": ["sport1"],
   "Deniz Zeitler": ["neueWestflischeDenizZeitler"],
   "Oliver Batista Meier": ["skyGermanyZEITOliverBatistaMeier"],
-  "Filip Bilbija": ["tribalFootballYahooSportsFilipBilbija"]};
+  "Filip Bilbija": ["tribalFootballYahooSportsFilipBilbija"],
+  "Batista Meier": ["westfalenBlattBatistaMeier"],
+  "Mats Daehli": ["neueWestflischeMatsDaehli"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -58,7 +58,11 @@ const CONFIRMED_OUT = [
   {name:"George", sub:"unknown · unknown · Defender", club:"Brighton", pos:"Defender", fee:"unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure to Brighton per BBC Sport"}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Lewis Hall", sub:"21 · England · W", club:"Newcastle United", pos:"W", report:"David Ornstein confirms Man Utd interest in Lewis Hall from Newcastle; multiple reports of talks and progress on the transfer", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Ornstein has provided multiple updates on Hall to Man Utd; described as 'determined' pursuit; Newcastle also linked with alternative target", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
+  {name:"Moussa Baleba", sub:"22 · Cameroon · CM", club:"Brighton & Hove Albion", pos:"CM", report:"Man Utd target Baleba suffers injury ruling him out for start of season; Ornstein update", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:70, prob:45, light:"y", trend:"flat", note:"Injury setback for target; will miss start of season which may complicate transfer timing", lastSeen:"2026-08-07T01:42:32Z", baseProb:45},
+  {name:"Juventus midfielder", sub:"Unknown · Unknown · CM", club:"Juventus", pos:"CM", report:"Man Utd told to offer £60m to sign Juventus star; Ornstein confirms 'two' priority signings", src:"David Ornstein", tier:1, fee:"£60m", truth:65, prob:50, light:"y", trend:"flat", note:"Generic reference to Juventus midfielder from Ornstein confirmation of priority signings; specific player name not identified in snippets", lastSeen:"2026-08-07T01:42:32Z", baseProb:50}
+];
 
 const OUTGOING = [];
 const DEAD = [
@@ -135,7 +139,10 @@ const HUB = {
   manchesterUnitedofficialGabbyGeorge: {l:"Manchester United official", u:"https://www.manutd.com/en/news/gabby-george-joins-brighton-and-hove-albion-aug-2026"},
   fabrizioRomanoXMarcusRashford: {l:"Fabrizio Romano (X)", u:"https://x.com/FabrizioRomano/status/1946571680861638857"},
   fabrizioRomanoXCristianoRonaldo: {l:"Fabrizio Romano (X)", u:"https://x.com/FabrizioRomano/status/1431282505311739907"},
-  bBCSportFootballGeorge: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cdewgg2xe7yo?at_medium=RSS&at_campaign=rss"}};
+  bBCSportFootballGeorge: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cdewgg2xe7yo?at_medium=RSS&at_campaign=rss"},
+  davidOrnsteinviaGoogleNewsLewisHall: {l:"David Ornstein via Google News", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxQeUt5NkgzQ2o4dlg4Tk1weTNubGxzR0M5b3dLU0hpVjE0cVZDUW9DVnowbjVfUmpVOWxpQlJoUFQzVF9qYnFaRVBVMkliWE5DdjkwQWF3cXBKc1NhOVBnTEs1U0RDaG1nVFZuaXdrZGtsSVByMXBRV2daSFY4NUJ0dUNzNXN0eGFjOTlib21aS0h1dHZyWGNvalFURnJTUEpTMDFZ?oc=5"},
+  tribalFootballviaDavidOrnsteinMoussaBaleba: {l:"TribalFootball via David Ornstein", u:"https://news.google.com/rss/articles/CBMijwJBVV95cUxOVkdLMld6UXNocGFKX195TDlaVUQ2cWJsNDdrb3U3Uk1mYXdRTVRGaHp5WllLNnFNbFJnWDZrczFZN3V0dnZfVkRLd1ctSXJNZG5sN2lsYnRhTm1QZlRVRzlvQXYtOVRaUTlRb1VtNVhOWkUza3ZhRzRqQXlKZVlNbWNzRUliMmNyVXBLcFdRR0VaTkNDazJSakV5Y0VkakhXbzJnTW1YbFJaSEh5dDdxMjRMR2tVZTEzNU5xMGFjUzN6WkFHRnJTTnZaYm56YjlfWm5KTk5MRlV1ckcwdU9DakNuVGFrZzdLLTJVZGlqUU5RUHktQUREU1pXdmcwbVd1S2tMMmtyVE5CTVFuOVVJ?oc=5"},
+  football365viaDavidOrnsteinJuventusmidfielder: {l:"Football365 via David Ornstein", u:"https://news.google.com/rss/articles/CBMivgFBVV95cUxQbG5qV1ZEYi1wNEhReEJPdmdfZ1B1QW1UdHhIOVpCdzBXUll0NFZORmdzMDJZZUI2d3pWenlqN3oyYlVXUVpHaVFZWVZpNnZNdE4yN2xwSFU2dnBsZ0s1MmlLcklhT3JVdzBuQndLZkNxSkk3amJSUXBQVTJUNXY1V215UjlnMHZJQVNoNVNpOTBkc3VobnVpQjlqM2tGdEctY0FEc1lHYlY4R1E1bGhVVDFPM0s4Qzh5amNNZXd3?oc=5"}};
 
 const LINKMAP = {
   "Andrey Santos": ["skyMUFC","manUtdNews", "tEAMtalkYouriTielemans"],
@@ -150,7 +157,7 @@ const LINKMAP = {
   "Mateus Fernandes": ["skyMUFC"],
   "Iliman Ndiaye": ["caughtoffside"],
   "Manu Kone": ["gazzetta","caughtoffside"],
-  "Lewis Hall": ["skyMUFC", "skySportsPaperTalkviaTheSunLewisHall"],
+  "Lewis Hall": ["skyMUFC", "skySportsPaperTalkviaTheSunLewisHall", "davidOrnsteinviaGoogleNewsLewisHall"],
   "Murillo": ["teamtalkMUFC"],
   "Aurélien Tchouaméni": ["asTchouameni"],
   "Marcus Rashford": ["gazzetta","caughtoffside", "fabrizioRomanoXMarcusRashford"],
@@ -164,7 +171,9 @@ const LINKMAP = {
   "Amad Diallo": ["caughtOffsideviaRomanoAmadDiallo"],
   "Gabby George": ["manchesterUnitedofficialGabbyGeorge"],
   "Cristiano Ronaldo": ["fabrizioRomanoXCristianoRonaldo"],
-  "George": ["bBCSportFootballGeorge"]};
+  "George": ["bBCSportFootballGeorge"],
+  "Moussa Baleba": ["tribalFootballviaDavidOrnsteinMoussaBaleba"],
+  "Juventus midfielder": ["football365viaDavidOrnsteinJuventusmidfielder"]};
 
 const WL_LINKMAP = {
   "Antonee Robinson": "skyMUFC",

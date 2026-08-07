@@ -37,10 +37,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Gift Orban", sub:"Unknown · Unknown · Unknown", club:"Lyon", pos:"Unknown", report:"Toulouse ready to move for Lyon player", src:"Unknown", tier:3, fee:"Unknown", truth:50, prob:45, light:"y", trend:"up", note:"On-page rumour without recent snippet support", lastSeen:"2026-08-06T14:21:37Z", baseProb:45}
+  {name:"Gift Orban", sub:"unknown · unknown · unknown", club:"Lyon", pos:"unknown", report:"Toulouse ready to move for Lyon player", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:40, light:"y", trend:"down", note:"Existing rumour, no fresh snippet provided", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Charlie Cresswell", sub:"24 · England · D", club:"Toulouse FC", pos:"Defender", report:"Agreed transfer to Stade Rennais for €25m", src:"ladepeche.fr, Foot Mercato", tier:2, fee:"€25m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal agreed between Toulouse and Rennes; second-largest sale in club history", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Guillaume Restes", sub:"unknown · unknown · unknown", club:"Toulouse FC", pos:"unknown", report:"Departure reported ~4 days ago", src:"On-page rumour", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"flat", note:"Existing rumour, no fresh snippet provided", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
+];
 
 const RISERS = [];
 
@@ -66,10 +69,11 @@ const HUB = {
   lesTransfertsCristianCasseresJr: {l:"Les Transferts", u:"https://www.les-transferts.com/rumeurs-transferts/lol-veut-doubler-lens-pour-ce-milieu-de-toulouse/"},
   mSNSportYannGboho: {l:"MSN Sport", u:"https://www.msn.com"},
   laDepecheMaxifootCharlieCresswell: {l:"La Depeche / Maxifoot", u:"https://news.maxifoot.fr/rennes/"},
-  topMercatoSrdjanKuzmic: {l:"Top Mercato", u:"https://www.topmercato.com/"}};
+  topMercatoSrdjanKuzmic: {l:"Top Mercato", u:"https://www.topmercato.com/"},
+  ladepechefrCharlieCresswell: {l:"ladepeche.fr", u:"https://news.google.com/rss/articles/CBMipAJBVV95cUxPcDBCNVg5SEhLNWx4UE5kdTl5b1NSOUIxWTdZamh6Z2VQQU1BV3ZxNDh5c0hRZ2w2N1lsTVc2MmFUelNoZlluRVAtQ1hQcnJEWVNlOU9ETzNuWnVOQ1EyWmwzd1FpcHcwTDlnTDMwSUtFR1lzQk42aUEwckdhNWp3YnJXOFduOGFrOENBeWxDLWNJdTZjRVFfTEN6ZVB0T1hfZEg0SlRIYUVUOUJjODh0c0hiWTU2cVBqU05WTUZhWmZYSnBqd3ltYy13NVd6MGp1eENpM0NzZExhckR6UjMxcGFETEhnb0hKbkZVMDdMTW5yR3J4MDRUeFBnS3ZrM2JKSFhXYkR3TG9NOTBRQ3FrNmRGZDVuSlIyMS1SSVoyUVo0REMx"}};
 
 const LINKMAP = {
-  "Charlie Cresswell": ["gffn-toulouse", "laDepecheMaxifootCharlieCresswell"],
+  "Charlie Cresswell": ["gffn-toulouse", "laDepecheMaxifootCharlieCresswell", "ladepechefrCharlieCresswell"],
   "Guillaume Restes": ["gffn-toulouse"],
   "Gift Orban": ["mSNSportGiftOrban"],
   "Cristian Casseres Jr.": ["lesTransfertsCristianCasseresJr"],

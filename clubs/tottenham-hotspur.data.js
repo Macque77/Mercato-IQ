@@ -67,7 +67,8 @@ const INCOMING = [
    note:"Spurs were reportedly 24 hours from a £80m+ bid before Kroupi broke his foot and now needs surgery, ruling him out into the new year. De Zerbi remains 'a huge admirer' and the plan is to revisit next summer once fit - but for this window the move is dead, and the injury is precisely why the striker shortlist below has suddenly expanded.", lastSeen:"2026-08-04T19:10:50Z", baseProb:12},
   {name:"Fisnik Asllani", sub:"23 · ST · Kosovo", club:"Hoffenheim", pos:"ST", report:"29 Jul 2026", src:"TeamTalk", tier:3, fee:"Not yet tested", truth:40, prob:27, light:'o', trend:'up',
    note:"Emerged as a direct fallback once Kroupi's injury forced a rethink, with RB Leipzig and Barcelona also credited with interest. Nothing beyond shortlist-level exclusive reporting so far, but the timing (named within hours of the Kroupi news breaking) suggests genuine internal discussion at Spurs rather than pure speculation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:27},
-  {name:"Ferran Torres", sub:"Attacker weighing his options as contract runs down", club:"Barcelona", pos:"FW", report:"With under a year left on his Barcelona deal, Torres is being pursued by PSG, Liverpool and Tottenham, though PSG appear best placed if he decides to leave, leaving Spurs as an outsider.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:70, prob:15, light:"o", trend:"flat", note:"Barcelona hope to retain him; decision described as in the player's hands", lastSeen:"2026-08-04T19:10:50Z", baseProb:15}
+  {name:"Ferran Torres", sub:"Attacker weighing his options as contract runs down", club:"Barcelona", pos:"FW", report:"With under a year left on his Barcelona deal, Torres is being pursued by PSG, Liverpool and Tottenham, though PSG appear best placed if he decides to leave, leaving Spurs as an outsider.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:70, prob:15, light:"o", trend:"flat", note:"Barcelona hope to retain him; decision described as in the player's hands", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
+  {name:"Nicolo Tresoldi", sub:"", club:"", pos:"", report:"Agreement reached, medical booked", src:"London Evening Standard", tier:3, fee:"", truth:85, prob:90, light:"g", trend:"flat", note:"Latest summer transfer deal agreed with medical scheduled", lastSeen:"2026-08-07T01:42:32Z", baseProb:90}
 ];
 
 const OUTGOING = [
@@ -81,7 +82,8 @@ const OUTGOING = [
    note:"Gazzetta reports Vicario 'quietly edging closer' to Juventus as their fallback should the Emi Martínez pursuit fail, with Inter Milan previously sniffing too. The key domestic detail: De Zerbi has made Antonin Kinsky his No.1, which is precisely what has freed the club to sanction Vicario's departure if the £20m valuation is met.", lastSeen:"2026-08-04T19:10:50Z", baseProb:36},
   {name:"Richarlison", sub:"29 · ST/W · Brazil", club:"Juventus or Fenerbahce", pos:"ST", report:"24 Jul 2026", src:"CaughtOffside", tier:3, fee:"€20-25m (£17-21m)", truth:45, prob:28, light:'o', trend:'flat',
    note:"Talks are described as open rather than advanced, with Juventus eyeing him as a Kolo Muani alternative and Fenerbahce also credited with interest - Richarlison reportedly prefers Serie A. A single-source story at this stage, worth tracking rather than trusting outright, and complicated by an earlier scout claim (now discounted, see Ignore list) that he'd move as part of a Tonali part-exchange.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28},
-  {name:"Mikey Moore", sub:"Loan to Bundesliga advancing fast", club:"FC Köln", pos:"FW", report:"Köln have sent an official bid to sign the winger on loan, with negotiations at an advanced stage and Moore open to the move; several clubs were keen but Köln are now clear favourites.", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:85, prob:70, light:"g", trend:"flat", note:"Romano: deal could be completed within a week", lastSeen:"2026-08-04T19:10:50Z", baseProb:70}
+  {name:"Mikey Moore", sub:"Loan to Bundesliga advancing fast", club:"FC Köln", pos:"FW", report:"Köln have sent an official bid to sign the winger on loan, with negotiations at an advanced stage and Moore open to the move; several clubs were keen but Köln are now clear favourites.", src:"Fabrizio Romano", tier:1, fee:"Loan", truth:85, prob:70, light:"g", trend:"flat", note:"Romano: deal could be completed within a week", lastSeen:"2026-08-04T19:10:50Z", baseProb:70},
+  {name:"Manor Solomon", sub:"", club:"Tottenham Hotspur", pos:"", report:"West Ham and Tottenham negotiations over Manor Solomon currently off", src:"The Athletic", tier:2, fee:"", truth:75, prob:40, light:"y", trend:"flat", note:"Talks with West Ham have stalled", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
 ];
 const DEAD = [
   {name:"Kerim Alajbegovic", club:"Bayer Leverkusen", pos:"W", dir:"in", age:"~1 wk", tier:2, note:"18-year-old Bosnian winger; Schira reports Spurs and Chelsea have both approached his camp, with Leverkusen holding out for €30m. Longer-term project rather than an immediate deadline-day play.", deadReason:"signed for juventus", deadAt:"2026-08-06T10:24:32Z"},
@@ -148,7 +150,9 @@ const HUB = {
   readTottenhamFabrizioRomanoMikeyMoore: {l:"Read Tottenham (Fabrizio Romano)", u:"https://readtottenham.com/2026/08/02/fabrizio-romano-confirms-mikey-moore-leaving-tottenham/"},
   teamTalkSandroTonali: {l:"TeamTalk", u:"https://www.teamtalk.com/tottenham-hotspur/every-completed-tottenham-transfer-summer-2026-signings-sales-loans"},
   eSPNMartinDbravka: {l:"ESPN", u:"https://www.espn.com/soccer/team/transfers/_/id/367/tottenham-hotspur"},
-  bBCSportFootballCodyGakpo: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c98vnel56q6o?at_medium=RSS&at_campaign=rss"}};
+  bBCSportFootballCodyGakpo: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/c98vnel56q6o?at_medium=RSS&at_campaign=rss"},
+  eveningStandardNicoloTresoldi: {l:"Evening Standard", u:"https://news.google.com/rss/articles/CBMirgFBVV95cUxOaHBDU0xDVlJDRklMcUtEN3RmSFZwaEpicExJNXBxcXJQSEliSVZnSk56V1B5bEp3dnd3NERhY1JmNHNxa0lld3dWdDFVaDNnUlhSQ2NRUFl2bU5uWE8wLThKMGYwd09EOW9XSUxjRWRvXzRqbDcxdUYwdVBqM2ZIeDFzcjlkZG1oTTgwMjRZRVhISjlad3hLV1NkUEk1VzBMSTNPUnREUlptWF9jMUE"},
+  theAthleticManorSolomon: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxPd0hwUFF2U3hFWFVvYUxjdTdCdV9sNnJzeGRnSGJ4U1NvMlZzYVVBWmVmU0pyYW5zdzlJTk5YVWpzbjlEbUhQUEZoOHg3S2FJdU1xZ0ZIcXhTY3dSZHZPZFZIendFTmJOaE5uN2RiYndFVDZGY3ZFV0dWNVhNMnFJc2xIZTh4NTFRSUZkb3h3"}};
 
 const LINKMAP = {
   "Sandro Tonali": ["teamtalk","sportsMole", "teamTalkSandroTonali"],
@@ -175,7 +179,9 @@ const LINKMAP = {
   "Richarlison": ["caughtOffside"],
   "Mikey Moore": ["readTottenhamFabrizioRomanoMikeyMoore"],
   "Jan Paul van Hecke": ["teamTalkSandroTonali"],
-  "Martin Dúbravka": ["eSPNMartinDbravka"]};
+  "Martin Dúbravka": ["eSPNMartinDbravka"],
+  "Nicolo Tresoldi": ["eveningStandardNicoloTresoldi"],
+  "Manor Solomon": ["theAthleticManorSolomon"]};
 const WL_LINKMAP = {
   "Martin Baturina": "teamtalk",
   "Kerim Alajbegovic": "schira",

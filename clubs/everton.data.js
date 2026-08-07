@@ -82,7 +82,12 @@ const CONFIRMED_OUT = [
   {name:"Isaac Heath", sub:"Free transfer", club:"Cambridge United", pos:"FW", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young left-winger moves down to League One/Two on a free"}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Alistair Johnston", sub:"24 · Canada · D", club:"Celtic", pos:"RB", report:"Everton pursuing Celtic defender", src:"Glasgow Times", tier:3, fee:"", truth:65, prob:50, light:"y", trend:"flat", note:"Major update on transfer pursuit", lastSeen:"2026-08-07T01:42:32Z", baseProb:50},
+  {name:"Douglas Luiz", sub:"25 · Brazil · CM", club:"Aston Villa", pos:"CM", report:"Everton still have transfer hope as midfielder responds", src:"Goodison News", tier:3, fee:"", truth:50, prob:35, light:"y", trend:"flat", note:"Everton retains hope despite midfielder's previous moves", lastSeen:"2026-08-07T01:42:32Z", baseProb:35},
+  {name:"Nathan Zeze", sub:"18 · France · D", club:"AS Monaco", pos:"CB", report:"How much Everton can pay to land Nathan Zeze transfer as NEOM stance shared", src:"Goodison News", tier:3, fee:"", truth:60, prob:45, light:"y", trend:"flat", note:"Monaco defender target with financial details discussed", lastSeen:"2026-08-07T01:42:32Z", baseProb:45},
+  {name:"Jack Grealish", sub:"29 · England · W", club:"Manchester City", pos:"LW", report:"How Pedro Neto could now aid Everton's transfer pursuit of Jack Grealish", src:"everton.news", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"flat", note:"Speculative link involving Pedro Neto context", lastSeen:"2026-08-07T01:42:32Z", baseProb:20}
+];
 
 const OUTGOING = [];
 const DEAD = [
@@ -157,14 +162,18 @@ const HUB = {
   theScoreCarlosAlcaraz: {l:"theScore", u:"https://www.thescore.com/news/3293953"},
   sportsMoleSeamusColeman: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/everton/transfer-talk/feature/everton-summer-transfers-all-confirmed-ins-and-outs-for-2026_599217.html"},
   davidOrnsteinTheAthleticChristianNorgaard: {l:"David Ornstein, The Athletic", u:"https://www.theathletic.com/football/"},
-  bBCSportFootballNorgaard: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cm2gvlnjndpo?at_medium=RSS&at_campaign=rss"}};
+  bBCSportFootballNorgaard: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cm2gvlnjndpo?at_medium=RSS&at_campaign=rss"},
+  glasgowTimesAlistairJohnston: {l:"Glasgow Times", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdHBzNjRDU2RZOUxZVUtiLXZLMUIxRDBwRng1blR5R2JPa1hmTDNrS2NjZ01aczBMRWNiY2FkQXdqNWJyd19RQlY4MGVEDDdPQnplRk5DenE5WFpuOGZOY0dENWpaaWxTWGI2LW16VVIzXzdLemZGbHdDX2pwM25DTzhoVWpjajJSQmxsekpXd0xaUm1NamJ2dEcxLWVIb2lZalZzY1lnSXh1SzQ?oc=5"},
+  goodisonNewsDouglasLuiz: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxNeUM1RldJSFZ3WG05NEhSSUlrcXZBd3ZwNWhTekZnZGZOZEpMTkZ1b1VhQjVoWTUzSGEzZlpKa3FxWVhRTkZJU1NfczBNRVQyU0tXOW9YOWh2ZjN5d2NPMU5jNENiXzhhcEd2UEVhVWhFOEN6NERuT0c5UDVKblNaVUNiSXdRRk1veVhBa0RpdFVfMldMMGdfUVA0WGpNZHhKUFRkbi1KaW1mTllDMXRPNQ?oc=5"},
+  goodisonNewsNathanZeze: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxOMFZYUFo3NVlQZURTbDJKei1yRzZ1ZTFUVE82THlhR0l6TEJ3UVlsYjdXS3M3SjhVNEhaUkRURWFpSTZBTWJ1SmdobmRHRjY1MFhkN2lkQUc5blBhdGhPN29uZnUyUkNtLTMtTEhnVnRkNnA1UWtneWt3bGZwTkRUb1pxaTJ0X1M0cFg5NnI4MFI3WWwyMC05bVNxcjU1cV9jZ0NxS2hHSmx5UDVDQzRPVTlsMkE?oc=5"},
+  evertonnewsJackGrealish: {l:"everton.news", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxQaU81a0h5aEZlZU1hNmZvbmhOVDJTNm1fLVltZktUSTg2bWhHc3BwN1g2WGhFWUUxcnZaRERMZFNsVUl6NnFBUUVTeDk3cjVtZ1dKSlU1SjUwQ3kyczJvUmVkSzVsRHVBOGJTVUR3V21hSHJURTJRUDhxYy1oNUxxbDVxLVhiUEtuX2l2TzFFLU11c3dSaU84aHJjSEdmQQ?oc=5"}};
 const LINKMAP = {
   "Raul Jimenez": ["fInsider","echo"],
   "Marquee striker": ["fInsider","teamtalk","echo"],
-  "Jack Grealish": ["echo","bbcGossip", "goodisonNewsBBCSportJackGrealish"],
+  "Jack Grealish": ["echo","bbcGossip", "goodisonNewsBBCSportJackGrealish", "evertonnewsJackGrealish"],
   "Iliman Ndiaye": ["echo","joeThomas","bbcGossip", "strettyNewsIlimanNdiaye"],
   "Underperforming forwards": ["echo","joeThomas"],
-  "Alistair Johnston": ["teamTalkAlistairJohnston"],
+  "Alistair Johnston": ["teamTalkAlistairJohnston", "glasgowTimesAlistairJohnston"],
   "Nahuel Molina": ["sportsMoleNahuelMolina"],
   "Barış Alper Yılmaz": ["sportsMoleNahuelMolina"],
   "Tim Iroegbunam": ["teamTalkTimIroegbunam"],
@@ -177,7 +186,9 @@ const LINKMAP = {
   "Seamus Coleman": ["sportsMoleSeamusColeman"],
   "Isaac Heath": ["sportsMoleSeamusColeman"],
   "Christian Norgaard": ["davidOrnsteinTheAthleticChristianNorgaard"],
-  "Norgaard": ["bBCSportFootballNorgaard"]};
+  "Norgaard": ["bBCSportFootballNorgaard"],
+  "Douglas Luiz": ["goodisonNewsDouglasLuiz"],
+  "Nathan Zeze": ["goodisonNewsNathanZeze"]};
 const WL_LINKMAP = {
   "Marquee striker":"fInsider","Iliman Ndiaye":"echo","Jack Grealish":"bbcGossip",
 };

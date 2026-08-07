@@ -54,15 +54,20 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
   {name:"Antonio Silva", sub:"22 · CB · Portugal", club:"permanent from Benfica", pos:"CB", fee:"€25m + €5m add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Independently reported by Romano, Di Marzio and Schira within days of each other; medical and signing were in progress as of 31 Jul."},
-  {name:"Juanlu", sub:"Unknown · Spain · RB", club:"Unknown", pos:"RB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish right-back signed by Bournemouth"}
+  {name:"Juanlu Sanchez", sub:"21 · Spain · D", club:"Sevilla", pos:"D", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed from Sevilla"}
 ];
 const CONFIRMED_OUT = [
   {name:"Jordan Zemura", sub:"LB · Zimbabwe", club:"loan to Watford", pos:"LB", fee:"Loan to 30 Jun 2027", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official season-long loan to Watford, confirmed via Di Marzio's live mercato digest."},
   {name:"Marcos Senesi", sub:"Free transfer to London rivals", club:"Tottenham Hotspur", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Juanlu Sanchez", sub:"21 · Spain · D", club:"Sevilla", pos:"D", report:"Juanlu Sanchez joins Bournemouth from Sevilla", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Antonio Silva", sub:"20 · Portugal · D", club:"Benfica", pos:"D", report:"Bournemouth agree transfer for Antonio Silva at fraction of £87m release clause", src:"The Sun", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal agreed, former Man Utd target", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+];
+const OUTGOING = [
+  {name:"Alex Scott", sub:"27 · England · W", club:"Bournemouth", pos:"W", report:"Alex Scott transfer interest from Arsenal and Man Utd; player keen on rivals", src:"Daily Mirror", tier:3, fee:"", truth:70, prob:60, light:"g", trend:"flat", note:"Multiple suitors including Arsenal and Man Utd; player interested", lastSeen:"2026-08-07T01:42:32Z", baseProb:60}
+];
 const DEAD = [
   {name:"Young press-fit additions", sub:"Rose-system talent", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:55, prob:40, light:'y', trend:'up',
    note:"With sales likely, expect several young, high-energy signings that suit Rose's pressing and the buy-develop-sell model. Names firm up as the window opens.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
@@ -133,14 +138,17 @@ const HUB = {
   skySportsAntonioSilva: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11743/13569014/antonio-silva-bournemouth-clinch-signing-of-portugal-international-defender-from-benfica"},
   sportsMoleMarcosSenesi: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/bournemouth/transfer-talk/feature/bournemouth-summer-transfers-all-confirmed-ins-and-outs-for-2026_599225.html"},
   bBCSportJuanlu: {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football/articles/cly91exewj2o?at_medium=RSS&at_campaign=rss"},
-  bBCSportFootballJuanlu: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cly91exewj2o"}};
+  bBCSportFootballJuanlu: {l:"BBC Sport Football", u:"https://www.bbc.co.uk/sport/football/articles/cly91exewj2o"},
+  bBCSportJuanluSanchez: {l:"BBC Sport", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE5sSmkxVDZUOFhNQ2xvUnNlSnNWVFZ4SEI2Uk5paUxRWldheGFicTJGcVIySTFUd2E4NTZZNW9ISnNGNmoxSlZSa1RkemFlbUtlUlUxODM2THY4Y1U4LXN1X3o1NFFtUFMzLUE"},
+  theSunAntonioSilva: {l:"The Sun", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxNTDRLNDF0VFBjQ2w1anNyZkhGNW9fLW56UUJOT0M0Um0xV1FiLURhVDVncUp1Rl9JQ2I1MzVJTzloeGdrc3NTNXEwRlhPOUVZS3VIT2lHMkh1NUd4ZW0zR0RDb2VZemtsUWM3TVQwWU02VWFZVzBGQ3dIazFNVng0Z0hBVDJpN3JXVHVMT2ZkMUVNMjMzYlQ0RDRrZw"},
+  dailyMirrorAlexScott: {l:"Daily Mirror", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxQSnZQWHZndkFZMlU4Q0RuWktlLV9RX0tsazhOSERaVDJqWlZwUHJ1ZXR0SVF1dlhmaTc0eVRySllGYzJtS013V3JlVkFnZmNnSjAweURxTk4yNUpZbnpjQzBVakZtQkxsM1hhZEFQWEI2bF9sZ1d5TFpMV3ZIY3ZXY0J6NUg5dER1RHRmSk1PSlFURndwclpiSV9VUGNwbG_SAaQBQVVfeXFMTVQ5ekxPQ2hTQmRRaVVmb1Q1ckN1ZktXUjlnR1FON19oUWZkVzVQVlVydHNieVdYRzNVS3VtVWsyV09lRFdNVWZnQ3NwczQwNW10a2dIY00wdXBHeVN3T280ZXBsS2xRZ05MbURwU1ExZDhhWFdudVBUTktYQkNqdGVBQjM3ZjdGZzU0cURVVjJQNFozaF9WOXhZZ3ZFVVZuU0JFRUs"}};
 const LINKMAP = {
   "Malik Tillman": ["teamtalk","espn"],
   "Young press-fit additions": ["echo","bbcGossip"],
   "Prized young asset": ["sky","athletic"],
   "Fringe & squad trim": ["echo"],
   "Avom & Hadj Moussa": [],
-  "Antonio Silva": ["eSPNcitingNicoloSchiraAntonioSilva", "skySportsAntonioSilva"],
+  "Antonio Silva": ["eSPNcitingNicoloSchiraAntonioSilva", "skySportsAntonioSilva", "theSunAntonioSilva"],
   "Jordan Zemura": ["gianlucaDiMarzioJordanZemura"],
   "Arthur Theate": ["theAthleticviaRoundtableArthurTheate"],
   "Tiago Gabriel": ["theAthleticviaRoundtableArthurTheate"],
@@ -148,7 +156,9 @@ const LINKMAP = {
   "Rayan": ["nowArsenalviaTheSunRayan"],
   "Antoine Semenyo": ["bBCSportAntoineSemenyo"],
   "Marcos Senesi": ["sportsMoleMarcosSenesi"],
-  "Juanlu": ["bBCSportJuanlu", "bBCSportFootballJuanlu"]};
+  "Juanlu": ["bBCSportJuanlu", "bBCSportFootballJuanlu"],
+  "Juanlu Sanchez": ["bBCSportJuanluSanchez"],
+  "Alex Scott": ["dailyMirrorAlexScott"]};
 const WL_LINKMAP = {
   "Malik Tillman":"teamtalk","Prized young assets":"sky",
 };

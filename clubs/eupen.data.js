@@ -32,7 +32,9 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Chris-Kévin Nadje", sub:"Unknown · Unknown · Midfielder", club:"Feyenoord", pos:"Midfielder", report:"Transfer agreed between Feyenoord and KAS Eupen", src:"Multiple sources", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Deal officially confirmed by Dutch media; multiple sources report agreement reached", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -42,10 +44,11 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Eupen Official", u:"#"}
-};
+  club: {l:"Eupen Official", u:"#"},
+  fRFansnlChrisKvinNadje: {l:"FR-Fans.nl", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxQTUh2N0twaXltaURtUVNLUHI5YmpqV2RSeV9neWFtcFVZeldVRS1rM05ESlNQbnUwTGE5WmdReUVtYW9WcPA3MTJmSG5SWDJHdkRfTGdNRHB2cnhMdklRTl9mWGR5c2ZxQmY1VFR5RTRrZmFyZHRaMExZZWk0QmhGcw"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Chris-Kévin Nadje": ["fRFansnlChrisKvinNadje"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

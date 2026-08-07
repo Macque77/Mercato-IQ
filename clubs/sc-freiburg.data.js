@@ -41,13 +41,15 @@ const CONFIRMED_OUT = [
   {name:"Johan Manzambi", sub:"19 · CM/W · Switzerland", to:"permanent to Aston Villa", club:"Aston Villa", fee:"£59.5m (~€60m, club-record)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed late Jul via Fabrizio Romano and Freiburg's official channels: a club-record sale for the highly-rated Swiss talent, beating out Newcastle's interest. A major statement fee for a club known for developing and selling young players."},
   {name:"Junior Adamu", sub:"25 · ST · Austria", to:"permanent to FC Schalke 04", club:"FC Schalke 04", fee:"~€800k", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 11 Jun: Austrian forward, who joined in 2023, transfers to newly-promoted Schalke following a loan at Celtic. Hartenbach: 'Junior is a wonderful person we'll remember fondly.'"},
   {name:"Daniel-Kofi Kyereh", sub:"27 · AM · Ghana", to:"free agent", club:"free agent", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; attacking midfielder departs on a free transfer."},
-  {name:"Nicolas Höfler", sub:"34 · DM · Germany", to:"retired", club:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving club captain retires from professional football."}
+  {name:"Nicolas Höfler", sub:"34 · DM · Germany", to:"retired", club:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Long-serving club captain retires from professional football."},
+  {name:"Sékou Manzambi", sub:"Unknown · Unknown · Unknown", club:"Aston Villa", pos:"Unknown", fee:"€70m+", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Record transfer for SC Freiburg; deal officially completed"}
 ];
 
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Noah Atubolu", sub:"Germany U21 goalkeeper wanted abroad", club:"Olympique Marseille / Premier League interest", pos:"GK", report:"Atubolu is looking to make a big move away from Freiburg this summer, with Marseille showing concrete interest alongside continued Premier League links; report also floats an unnamed German 'Rekordmeister' (record champion, i.e. Bayern Munich) entering the race.", src:"Sky Sports Germany / Sport1 / Fussball Transfers", tier:2, fee:"Unknown", truth:60, prob:45, light:"y", trend:"flat", note:"Multiple clubs credited with interest but no advanced negotiations confirmed publicly yet; Atubolu was left out of a recent Germany squad in favour of Bayern's Jonas Urbig.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
+  {name:"Noah Atubolu", sub:"Unknown · Unknown · GK", club:"SC Freiburg", pos:"Goalkeeper", report:"Seeking move away from Freiburg; training separately; departure expected following Backhaus signing", src:"SWR.de", tier:2, fee:"Undisclosed", truth:90, prob:85, light:"g", trend:"up", note:"Not travelling to training camp; clear exit path emerging with Backhaus arrival", lastSeen:"2026-08-07T01:42:32Z", baseProb:85},
+  {name:"Sékou Manzambi", sub:"Unknown · Unknown · Unknown", club:"SC Freiburg", pos:"Unknown", report:"Completed transfer to Aston Villa for €70m+ (Freiburg record sale)", src:"Transfermarkt", tier:2, fee:"€70m+", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; Aston Villa officially presented player; Freiburg's 7th club to exceed €60m sale threshold", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 
 const RISERS = [
@@ -74,14 +76,20 @@ const HUB = {
   club: {l:"SC Freiburg Official", u:"https://www.scfreiburg.com/en/latest/first-team/news/2026-27/johan-manzambi-joins-aston-villa/"},
   baden24: {l:"Baden24", u:"https://www.baden24.de/sport/sc-freiburg/transfer-ticker-sport-club-scf-sommer-neuzugang-abgang-wechsel-infos-news-94318691.html"},
   skySportsGermanyNoahAtubolu: {l:"Sky Sports Germany", u:"https://sports.yahoo.com/"},
-  s90minSportschauYannickEngelhardt: {l:"90min / Sportschau", u:"https://www.90min.com/"}};
+  s90minSportschauYannickEngelhardt: {l:"90min / Sportschau", u:"https://www.90min.com/"},
+  skydeYannikEngelhardt: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMiywFBVV95cUxNa0c2eHh5Q1dkcEtXM2hjN0R1dW5LMVFSd0ppZEhWeDVFSnlWUWtvUjhRRGV2WlNSbzhYaTV5T1dSVGRrRVBfeEV5QmpBNFZfSVBLMVRpNEMtanJ3VXBhbzRxLVp6TDB4VjlILUU0WWJWLUprTjVObmR0ZVR3QjhKeHBxXzl2em9EM09lNTBfLTJtY2hwcnhrQjNiWGlySUZCYWVLYXMtNWJsZk96MlkxcGFscklkdFRMbjJqZHF3RUdaVnE0VFNXXzhkQQ"},
+  sWRdeMioBackhaus: {l:"SWR.de", u:"https://news.google.com/rss/articles/CBMigwFBVV95cUxOd2ZqUDd1X2ZrYnAxVTl1YTZaNlp5VThEalJCRF9pMlhPclpiRlR4bDQxTjRrZ0VMdnRXXzNYNjN4VXliLU9YM2RMUFBJZDZVZEdkd1QtcUVSbE5lRlBzRHpiUFpkcjFLTVVSTE9PSm9RdVQ5RTg4alZiUzRlYjM0QUowMA"},
+  sWRdeNoahAtubolu: {l:"SWR.de", u:"https://news.google.com/rss/articles/CBMilAFBVV95cUxOYy1nWlp3T1pJdjFOS25IaU5BVjRfVWxWOVN0QnlTZHh2YnZqZGdSNkNwWFZlY1p4OWdYZTQ3RUJxaUVCSlZ0YS1mblhHb0pMNXhFLW9Qd1FRUjlMZ2ZpTkxkMVI2U29VZnZFeDU5bXRFU3MtalZzMDhyWlhXSXZSSXU1Vy1ZTGNuY3hra3FqMXFwMEpq"},
+  transfermarktSkouManzambi: {l:"Transfermarkt", u:"https://news.google.com/rss/articles/CBMizwFBVV95cUxPaFNCZFplMFNxQjBSZElqSkVFaTNtNDNHaHVzQXhxUHR0Z0hZcGFBYjVGWllTSkNFb0w4SzlOZnJnejZ1b0Y0anQ3SkdQdG1zMEpBRnlQa1VXR1NreVBnVGlSaEd1Q1lPTXVRRVdxb3JlTzc5SUMtM2sxYjBOd2pfYlVuMlpGZ1lEeEh1b0hzTkR0RkRpdzlHZXlLRElfT28teXpIVFZhNHdBRmNrZEhhbnNZZldSS1hDSU9JSzFad3JJOWp4U1pEUGZ5SEoxeGs"}};
 
 const LINKMAP = {
   "Johan Manzambi": ["sky","club", "skySportsGermanyNoahAtubolu"],
-  "Yannik Engelhardt": ["baden24"],
+  "Yannik Engelhardt": ["baden24", "skydeYannikEngelhardt"],
   "Junior Adamu": ["baden24"],
-  "Noah Atubolu": ["skySportsGermanyNoahAtubolu"],
-  "Yannick Engelhardt": ["s90minSportschauYannickEngelhardt"]};
+  "Noah Atubolu": ["skySportsGermanyNoahAtubolu", "sWRdeNoahAtubolu"],
+  "Yannick Engelhardt": ["s90minSportschauYannickEngelhardt"],
+  "Mio Backhaus": ["sWRdeMioBackhaus"],
+  "Sékou Manzambi": ["transfermarktSkouManzambi"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

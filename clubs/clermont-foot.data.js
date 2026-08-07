@@ -32,7 +32,9 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Jean Grillot", sub:"Unknown · France · Unknown", club:"Girondins de Bordeaux", pos:"Unknown", report:"Former Bordeaux player joining Clermont Foot", src:"WebGirondins / La Montagne", tier:3, fee:"Unknown", truth:85, prob:90, light:"g", trend:"flat", note:"Multiple sources confirm Jean Grillot has left Bordeaux and joined Clermont Foot. Deal appears official.", lastSeen:"2026-08-07T01:42:32Z", baseProb:90}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -42,10 +44,11 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Clermont-Foot Official", u:"#"}
-};
+  club: {l:"Clermont-Foot Official", u:"#"},
+  webGirondinsJeanGrillot: {l:"WebGirondins", u:"https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSm5MbEo4YjRnUDVzdlUxUU1Pc3Jhb0J2ZkN0NlcyNVEwWGlCaVZjMzFXaV9udldQMk84Y3BSQmVWTTd5dzUwclo4UUJ6aUVEb0hkVERlV3k1enlfdUE2eEZsa3g1V2Y0d0lLRlM5S00wcUdTeWFua2xvaU1yQ2NTckdKcTBBUGdtd2hQUmY1VmxZNGJWS1lqYndrYjlETEdvYS1wRVlBZFZRdmhCa3FpTzFKMjRJRFpmUjA1Y0k1VjBoN3ZQUHRuc01FVndBZTJxQlE"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Jean Grillot": ["webGirondinsJeanGrillot"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

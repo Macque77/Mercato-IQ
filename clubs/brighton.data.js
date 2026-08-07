@@ -99,9 +99,14 @@ const CONFIRMED_OUT =
   {name:"Joao Pedro", sub:"23 · Brazil · Forward", club:"Chelsea", pos:"FW", fee:"£50m+", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal completed with Chelsea in excess of £50m. 7-year contract. Medical arranged."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Outgoing to Palace, not incoming to Brighton", lastSeen:"2026-08-07T01:42:32Z", baseProb:30}
+];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Jan Paul van Hecke", sub:"23 · Belgium · D", club:"Brighton", pos:"D", report:"Tottenham agree £52million transfer with Brighton for Jan Paul van Hecke", src:"The Athletic", tier:1, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Deal agreed between clubs", lastSeen:"2026-08-07T01:42:32Z", baseProb:90},
+  {name:"Solly March", sub:"Brighton defender", club:"Brighton", pos:"D", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:50, prob:30, light:"y", trend:"flat", note:"Palace in advanced talks", lastSeen:"2026-08-07T01:42:32Z", baseProb:30}
+];
 const DEAD = [
   {name:"Said El Mala", sub:"Unknown · Unknown · Unknown", club:"Köln", pos:"Unknown", report:"Brighton pushing for final talks with Köln", src:"On-page rumour", tier:3, fee:"Unknown", truth:45, prob:40, light:"y", trend:"down", note:"Active negotiation reported", lastSeen:"2026-08-06T13:55:46Z", baseProb:40, dead:true, deadReason:"No recent credible reporting; transfer window context unclear", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
   {name:"Noah Atubolu", sub:"Unknown · Unknown · Goalkeeper", club:"Freiburg", pos:"GK", report:"Brighton shortlisted as suitors for Freiburg goalkeeper", src:"On-page rumour", tier:3, fee:"Unknown", truth:40, prob:35, light:"y", trend:"up", note:"One of several interested clubs", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No recent credible reporting; transfer window context unclear", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -179,7 +184,11 @@ const HUB = {
   xDavidOrnsteinCarlosBaleba: {l:"X / David Ornstein", u:"https://x.com/David_Ornstein/status/1956381216447578184"},
   bBCSportGeorge: {l:"BBC Sport", u:"https://www.bbc.co.uk/sport/football/articles/cdewgg2xe7yo?at_medium=RSS&at_campaign=rss"},
   xDavidOrnsteinMoissCaicedo: {l:"X / David Ornstein", u:"https://x.com/David_Ornstein/status/1690839408503627776"},
-  xDavidOrnsteinJoaoPedro: {l:"X / David Ornstein", u:"https://x.com/David_Ornstein/status/1939384559252217961"}};
+  xDavidOrnsteinJoaoPedro: {l:"X / David Ornstein", u:"https://x.com/David_Ornstein/status/1939384559252217961"},
+  goalcomSollyMarch: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMi4gFBVV95cUxOR1NTWHc5c1VRbHoydmRkY01IT1QtX01tX0hnNi1sdDRBdWRVeUZxNEVMVHVGUzNEa1B2SjRIcDlTeXc3Q2gyZ3Vxb2FzZmdnUkVWYllXSFpXbmROQk01MGNMSGlDNGVoV0FueWRjNDNRN1kzTnZjRWpKcW1fek9nVFFyMDBlNXc4QjhkS0VHVjRNb3R5YVpfRldEZ2cyMHFRMGptTlhEZk00ODFBNTVxbTRmcUJTRGFpdFFnTUNmZS1xMlJnT0FQWjItVHFsZXJnOVJHLUJvd0dNbjJUc3NmY21B"},
+  theAthleticJanPaulvanHecke: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxPM2Nua0Z2cXM0eS1ORjJLa1ZURFM3cFkwMUgzZGVneXFoaWVVeUNXeWh1dGZNVHFfYUs5dkJ0QnpUS1NDdEMzX3VZbWtIYnlUc0tlV0JKYUNNMm00RHVRbHptVDI3TVNWYUxKV1lpSTNOX2pUVVJwckVEVWc4amZfM0VNMVlkM0haRThDbFhqdEp4WDh6cjNyMG9sUQ"},
+  manchesterUnitedWebsiteGabbyGeorge: {l:"Manchester United Website", u:"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMnFTNG4wTmR4UzBRY1d5cUhwcnE2ZlljOF9ZNW1aRlRJdEcwRC05Y1diZ2lSVlBlYkpyb0RrZHNQbHVsTkFocFZkNDE0c2FuSWtFdlhrVEVjT3E5MlIyblNUdUpWUHlNVUo3aDlVRWsxNzRDWnZ0Um9uOURqaklNbmpCVzAwTXcteER3"},
+  bBCCarlRushworth: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE16QUtjd191cmJSVUdQQkNqOC1tUE1HVU5ybnBZd1hMVW9DalpqNWZFSDFGa1JQMFBBbWRMTzdLdU53cGpQb1Rmb09qS3h3V1g0bFZVTDR4YlljMmczSkZHUjMxMm1HSWFNbUE"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
@@ -195,16 +204,16 @@ const LINKMAP = {
   "Bart Verbruggen": ["teamTalkBartVerbruggen"],
   "Zadok Yohanna": ["eSPNZadokYohanna"],
   "Costinha": ["brightonHoveAlbionofficialCostinha"],
-  "Jan Paul van Hecke": ["skySportsJanPaulvanHecke", "skySportsTransferCentreCarlRushworth"],
+  "Jan Paul van Hecke": ["skySportsJanPaulvanHecke", "skySportsTransferCentreCarlRushworth", "theAthleticJanPaulvanHecke"],
   "Jeremy Sarmiento": ["sportsMoleJeremySarmiento"],
   "Adam Webster": ["sportsMoleJeremySarmiento"],
   "Joel Veltman": ["sportsMoleJeremySarmiento", "skySportsTransferCentreCarlRushworth"],
-  "Solly March": ["sportsMoleJeremySarmiento"],
+  "Solly March": ["sportsMoleJeremySarmiento", "goalcomSollyMarch"],
   "James Milner": ["sportsMoleJeremySarmiento"],
-  "Carl Rushworth": ["skySportsTransferCentreCarlRushworth"],
+  "Carl Rushworth": ["skySportsTransferCentreCarlRushworth", "bBCCarlRushworth"],
   "Diego Coppola": ["skySportsTransferCentreCarlRushworth"],
   "Brajan Gruda": ["skySportsTransferCentreCarlRushworth"],
-  "Gabby George": ["manchesterUnitedofficialsiteGabbyGeorge"],
+  "Gabby George": ["manchesterUnitedofficialsiteGabbyGeorge", "manchesterUnitedWebsiteGabbyGeorge"],
   "George": ["bBCSportGeorge"],
   "Moisés Caicedo": ["xDavidOrnsteinMoissCaicedo"],
   "Joao Pedro": ["xDavidOrnsteinJoaoPedro"],

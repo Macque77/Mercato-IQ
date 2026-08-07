@@ -40,28 +40,29 @@ const CONFIRMED_IN = [
 ];
 
 const CONFIRMED_OUT = [
-  {name:"Maxime Dupé", sub:"GK", club:"FC Nantes", pos:"GK", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed as a free agent, confirmed 24 Jun 2026."},
+  {name:"Maxime Dupe", sub:"Goalkeeper", club:"FC Nantes", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free-agent return to Nantes confirmed 24/06."},
   {name:"Charles Vanhoutte", sub:"Midfielder", club:"Feyenoord", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure confirmed 19/06."},
   {name:"Gabin Bernardeau", sub:"Midfielder", club:"FC Lorient", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure confirmed 09/07."},
   {name:"Kail Boudache", sub:"Defender", club:"Olympique Lyonnais", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free transfer to Lyon confirmed 15/06."},
-  {name:"Maxime Dupe", sub:"Goalkeeper", club:"FC Nantes", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free-agent return to Nantes confirmed 24/06."},
   {name:"Jeremie Boga", sub:"29 · Ivory Coast · W", club:"Undisclosed", pos:"", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Listed among Nice's 2026/27 departures alongside Aliou Balde, Charles Vanhoutte and Gabin Bernardeau. Destination and fee not confirmed in this check, so publish the exit only, not a landing spot."}
 ];
 
 const INCOMING = [
-  {name:"Franck Magri", sub:"ST", club:"Free agent (ex-Toulouse)", pos:"ST", report:"29 Jul 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:48, prob:24, light:"o", trend:"flat", note:"The free-agent forward is on Nice's radar following Elye Wahi's loan departure.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24},
-  {name:"James Tavernier", sub:"34 · RB · England", club:"Free agent (ex-Rangers)", pos:"RB", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:50, prob:24, light:"o", trend:"flat", note:"Nice are one of two French suitors (with Paris FC) for the veteran Rangers captain.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24},
-  {name:"Robbie Ure", sub:"FW", club:"IK Sirius", pos:"FW", report:"4 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:20, light:"o", trend:"flat", note:"The Allsvenskan top scorer is being tracked by Nice alongside Strasbourg and Lyon.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Kevin Carlos", sub:"MF", club:"Getafe", pos:"MF", report:"12 Jul 2026", src:"Get French Football News", tier:3, fee:"Loan with option", truth:40, prob:22, light:"o", trend:"flat", note:"Turkish side Samsunspor are reported to be pursuing the same player on a loan-with-option deal, complicating Nice's interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
-  {name:"William Mikelbrencis", sub:"Defender, under consideration", club:"FC Lugano", pos:"LB", report:"Nice are tracking Lugano full-back William Mikelbrencis, though he has also received a contract offer from Valencia, complicating any move to the Cote d'Azur.", src:"L'Equipe", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Competing Valencia interest reported the same week reduces the likelihood of Nice winning the race.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Bamba Dieng", sub:"Forward, striker shortlist option", club:"Lorient", pos:"ST", report:"Bamba Dieng features on Nice's striker shortlist as the club looks to replace departing forwards this summer.", src:"L'Equipe", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Shortlisted alongside Simon Banza; no formal approach confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Franck Magri", sub:"ST", club:"Free agent (ex-Toulouse)", pos:"ST", report:"29 Jul 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:48, prob:24, light:"o", trend:"flat", note:"The free-agent forward is on Nice's radar following Elye Wahi's loan departure.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24, dead:true, deadReason:"No recent snippet support; appears stale from on-page entry dated 29 Jul 2026"},
+  {name:"James Tavernier", sub:"34 · RB · England", club:"Free agent (ex-Rangers)", pos:"RB", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:50, prob:24, light:"o", trend:"flat", note:"Nice are one of two French suitors (with Paris FC) for the veteran Rangers captain.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24, dead:true, deadReason:"Listed as both incoming and outgoing on page; no recent confirmation of either direction; appears contradictory and stale"},
+  {name:"Robbie Ure", sub:"FW", club:"IK Sirius", pos:"FW", report:"4 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:20, light:"o", trend:"flat", note:"The Allsvenskan top scorer is being tracked by Nice alongside Strasbourg and Lyon.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent snippet support; appears stale from on-page entry dated 4 Jul 2026"},
+  {name:"Kevin Carlos", sub:"MF", club:"Getafe", pos:"MF", report:"12 Jul 2026", src:"Get French Football News", tier:3, fee:"Loan with option", truth:40, prob:22, light:"o", trend:"flat", note:"Turkish side Samsunspor are reported to be pursuing the same player on a loan-with-option deal, complicating Nice's interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22, dead:true, deadReason:"Listed as both incoming and outgoing on page; no recent snippet support; conflicting status"},
+  {name:"William Mikelbrencis", sub:"Defender, under consideration", club:"FC Lugano", pos:"LB", report:"Nice are tracking Lugano full-back William Mikelbrencis, though he has also received a contract offer from Valencia, complicating any move to the Cote d'Azur.", src:"L'Equipe", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"flat", note:"Competing Valencia interest reported the same week reduces the likelihood of Nice winning the race.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"No recent snippet support; on-page entry incomplete and unconfirmed"},
+  {name:"Bamba Dieng", sub:"Forward, striker shortlist option", club:"Lorient", pos:"ST", report:"Bamba Dieng features on Nice's striker shortlist as the club looks to replace departing forwards this summer.", src:"L'Equipe", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Shortlisted alongside Simon Banza; no formal approach confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent snippet support; on-page entry indicates only on shortlist, no active pursuit confirmed"},
+  {name:"Gauthier Hein", sub:"Unknown · France · Unknown", club:"Metz", pos:"Unknown", report:"Gauthier Hein officially signed with OGC Nice from Metz", src:"MadeInFOOT", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Adama Camara", sub:"Unknown · Unknown · Unknown", club:"Paris FC", pos:"Unknown", report:"RC Lens and OGC Nice are courting Paris FC's Adama Camara", src:"TOP Mercato", tier:3, fee:"Unknown", truth:60, prob:40, light:"y", trend:"flat", note:"Nice among clubs interested; Paris FC taking position", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Mohamed-Ali Cho", sub:"22 · FW · France", club:"Hull City", pos:"FW", report:"2 Aug 2026", src:"Get French Football News", tier:2, fee:"€20m", truth:65, prob:58, light:"g", trend:"up", note:"Hull City's reported €20m offer is described as 'on the verge of finalising' - a big sale for a club needing to hit financial savings targets.", lastSeen:"2026-08-04T19:10:50Z", baseProb:58},
-  {name:"Kojo Peprah Oppong", sub:"Centre-back, Premier League interest", club:"Burnley", pos:"CB", report:"Burnley have registered interest in Nice centre-back Kojo Peprah Oppong as they look to bolster their defensive options following promotion.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Described as growing interest rather than a concrete approach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Kevin Carlos", sub:"Forward, loan option", club:"Samsunspor", pos:"ST", report:"Samsunspor are targeting Nice forward Kevin Carlos via a loan-with-option-to-buy structure as he looks for regular game time.", src:"L'Equipe", tier:2, fee:"Loan + option", truth:55, prob:40, light:"y", trend:"flat", note:"Structure reported as loan with option to buy rather than permanent sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"James Tavernier", sub:"Defender, veteran free-agent option", club:"Rangers", pos:"RB", report:"Rangers captain James Tavernier is being courted by both Nice and Paris FC as a possible experienced addition at right-back.", src:"Foot Mercato", tier:2, fee:"Free transfer", truth:55, prob:30, light:"y", trend:"flat", note:"Same player linked to two of the tracked Ligue 1 clubs simultaneously, indicating early speculative interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+  {name:"Mohamed-Ali Cho", sub:"22 · FW · France", club:"Hull City", pos:"FW", report:"2 Aug 2026", src:"Get French Football News", tier:2, fee:"€20m", truth:65, prob:58, light:"g", trend:"up", note:"Hull City's reported €20m offer is described as 'on the verge of finalising' - a big sale for a club needing to hit financial savings targets.", lastSeen:"2026-08-04T19:10:50Z", baseProb:58, dead:true, deadReason:"Listed twice as outgoing with no recent snippet confirmation; appears stale"},
+  {name:"Kojo Peprah Oppong", sub:"Centre-back, Premier League interest", club:"Burnley", pos:"CB", report:"Burnley have registered interest in Nice centre-back Kojo Peprah Oppong as they look to bolster their defensive options following promotion.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Described as growing interest rather than a concrete approach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent snippet support; on-page entry incomplete and unconfirmed"},
+  {name:"Kevin Carlos", sub:"Forward, loan option", club:"Samsunspor", pos:"ST", report:"Samsunspor are targeting Nice forward Kevin Carlos via a loan-with-option-to-buy structure as he looks for regular game time.", src:"L'Equipe", tier:2, fee:"Loan + option", truth:55, prob:40, light:"y", trend:"flat", note:"Structure reported as loan with option to buy rather than permanent sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"Listed as both incoming and outgoing on page; no recent snippet support; conflicting status"},
+  {name:"James Tavernier", sub:"Defender, veteran free-agent option", club:"Rangers", pos:"RB", report:"Rangers captain James Tavernier is being courted by both Nice and Paris FC as a possible experienced addition at right-back.", src:"Foot Mercato", tier:2, fee:"Free transfer", truth:55, prob:30, light:"y", trend:"flat", note:"Same player linked to two of the tracked Ligue 1 clubs simultaneously, indicating early speculative interest.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dead:true, deadReason:"Listed as both incoming and outgoing on page; no recent confirmation of either direction; appears contradictory and stale"}
 ];
 
 const RISERS = [
@@ -83,7 +84,7 @@ const IGNORE = [
 const POSITIONS = [];
 
 const WATCHLIST = [
-  {name:"Mohamed-Ali Cho", club:"OGC Nice", pos:"FW", dir:"out", age:"~1 day", tier:2, note:"Hull City's €20m bid reported close to being finalised."}
+  {name:"Mohamed-Ali Cho", club:"OGC Nice", pos:"FW", dir:"out", age:"~1 day", tier:2, note:"Hull City's €20m bid reported close to being finalised.", dead:true, deadReason:"Listed twice as outgoing with no recent snippet confirmation; appears stale"}
 ];
 
 const HUB = {
@@ -99,7 +100,9 @@ const HUB = {
   getFrenchFootballNewsFootMercatoJamesTavernier: {l:"Get French Football News (Foot Mercato)", u:"https://www.getfootballnewsfrance.com/2026/rangers-legend-james-tavernier-courted-by-paris-fc-and-nice/"},
   footMercatoGauthierHein: {l:"Foot Mercato", u:"https://www.footmercato.net/club/ogc-nice/actualite"},
   getFrenchFootballNewsMaximeDupe: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-maxime-dupe-returns-to-fc-nantes/"},
-  footMercatoGauthierHein1: {l:"Foot Mercato", u:"https://www.footmercato.net/club/ogc-nice/tableau/"}};
+  footMercatoGauthierHein1: {l:"Foot Mercato", u:"https://www.footmercato.net/club/ogc-nice/tableau/"},
+  madeInFOOTGauthierHein: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMiywFBVV95cUxQWDBIQTFjdmJoY3JCekxndWRuaHRGaWJEY1NteWZ0OFdUM0R3dUxfYmFfeUFHZFBfMzJIWkU1Uk45M0FBM0RxOXh4cnRHTEI3bEpuZlA0LXNKX25IclNIR0RUYmlZbmdxN1ZyeVA3eWVDOGJQLXZEZ19ScTBxWDNaMTlqX1JObnhKM0RreFpTaGdCODFWUjdxWlJWeHYxVjFCQTVDcTI5TDJhR2dOdk9HRTVaQ1dqMklBdFJudUstYjUwZXhxMjJEcm5R"},
+  tOPMercatoAdamaCamara: {l:"TOP Mercato", u:"https://news.google.com/rss/articles/CBMiugFBVV95cUxPbnI2NXBNdDVwV24zMGg1QTlLVWxvY3hUb002ZS1OQV8telpvd0xSb2pmNmIyZ2Ftd01MVUk3X0xMa2VRWXZZQmJDbGlYLU4wLVQtVzRqa0xybXJpZjFadWNvZFlDT2g0ZmlpbW0tSkx6Z3hXVmJmWUozM0VKeXdDM1FDaEUwckQ5bTBIZ3pZckhwNlRYcldMSl9jSnpLYl9hdUJLRnBCOXg5eTh4YlFDZlZSNTdOb1o5Z2c"}};
 
 const LINKMAP = {
   "Maxime Dupé": ["gffn-nice"],
@@ -111,13 +114,14 @@ const LINKMAP = {
   "William Mikelbrencis": ["gffn-nice", "getFrenchFootballNewsLEquipeWilliamMikelbrencis"],
   "Bamba Dieng": ["getFrenchFootballNewsLEquipeBambaDieng"],
   "Kojo Peprah Oppong": ["getFrenchFootballNewsLEquipeKojoPeprahOppong"],
-  "Gauthier Hein": ["footMercatoGauthierHein", "footMercatoGauthierHein1"],
+  "Gauthier Hein": ["footMercatoGauthierHein", "footMercatoGauthierHein1", "madeInFOOTGauthierHein"],
   "Laurent Abergel": ["footMercatoGauthierHein"],
   "Charles Vanhoutte": ["footMercatoGauthierHein", "footMercatoGauthierHein1"],
   "Gabin Bernardeau": ["footMercatoGauthierHein"],
   "Kail Boudache": ["footMercatoGauthierHein"],
   "Maxime Dupe": ["getFrenchFootballNewsMaximeDupe"],
-  "Jeremie Boga": ["footMercatoGauthierHein1"]};
+  "Jeremie Boga": ["footMercatoGauthierHein1"],
+  "Adama Camara": ["tOPMercatoAdamaCamara"]};
 const WL_LINKMAP = {
   "Mohamed-Ali Cho": ["gffn-nice"]
 };

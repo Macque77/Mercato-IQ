@@ -42,9 +42,13 @@ const CONFIRMED_OUT = [
   {name:"Maghnes Akliouche", sub:"France international completes big-money move to PSG", club:"Paris Saint-Germain", pos:"CAM", fee:"€50m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal in preparation for roughly two years finally completed; Akliouche signs a five-year contract at PSG after Liverpool also monitored the situation."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Mathys Detourbet", sub:"Young · France · Midfielder", club:"Manchester City", pos:"Midfielder", report:"Manchester City to buy Detourbet and loan him to Monaco", src:"Fabrice Hawkins / Yahoo Actualités", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"flat", note:"Manchester City acquiring Detourbet with loan to Monaco confirmed in multiple sources", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
+];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Maghnes Akliouche", sub:"23 · France · Winger", club:"PSG", pos:"Winger", report:"Total agreement between PSG and Monaco for transfer of Akliouche", src:"Fabrice Hawkins / Yahoo Actualités", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Multiple sources confirm total agreement reached between clubs", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+];
 const DEAD = [
   {name:"Erik Lira", sub:"26 · CM · Mexico", club:"Cruz Azul", pos:"CM", report:"29 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:24, light:"o", trend:"flat", note:"Monaco have shown concrete interest in the Cruz Azul midfielder as squad depth is assessed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24, dead:true, deadReason:"No recent snippet support; likely stale (29 Jul 2026 date appears erroneous)", dir:"in", deadAt:"2026-08-06T14:21:38Z"},
   {name:"Simon Adingra", sub:"24 · W · Ivory Coast", club:"Brighton (on loan at Sunderland)", pos:"W", report:"6 Jul 2026", src:"Get French Football News", tier:2, fee:"Loan", truth:48, prob:20, light:"o", trend:"flat", note:"Monaco explored re-signing the winger on loan; talks described as preliminary.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent snippet support; likely stale (6 Jul 2026 date appears erroneous)", dir:"in", deadAt:"2026-08-06T14:21:38Z"},
@@ -88,7 +92,9 @@ const HUB = {
   topMercatoLamineCamara: {l:"Top Mercato", u:"https://www.topmercato.com/2122930-mercato-las-monaco-doit-vendre-pour-150-me-les-4-favoris-pour-un-depart-cet-ete"},
   tuttoMercatoWebJoeyVeerman: {l:"TuttoMercatoWeb", u:"https://www.tuttomercatoweb.com/"},
   footMercatoMaghnesAkliouche: {l:"Foot Mercato", u:"https://www.footmercato.net/"},
-  footMercatoAnsuFati: {l:"Foot Mercato", u:"https://www.footmercato.net/club/as-monaco/tableau/"}};
+  footMercatoAnsuFati: {l:"Foot Mercato", u:"https://www.footmercato.net/club/as-monaco/tableau/"},
+  scorefrMathysDetourbet: {l:"score.fr", u:"https://news.google.com/rss/articles/CBMizAFBVV95cUxOOVVFazJZbm4tcWI0R3lGMEpfejdjeVI1UXI4R28zUTVPT0RfSzhIQXcxT3VPUEstOWFFM2pTaEtZR3kwTEduc0J6cHJXNVlvTW9ULWl1SHRfcGdYZDAxQjQza0liUkw1cGNXN1VqRjRybDhxRFI4THBFVy16VWtlcy1raTNzdE9TOHNRM1d3anhFNFVqRGpWUlFzLVI1RTdUYW5pRFhsQjdrT1FFV1dOOWZpM0xpdUtucUs3SXlVenlaaFJZVEhzT3pReGs"},
+  yahooActualitsMaghnesAkliouche: {l:"Yahoo Actualités", u:"https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ1BiRU1MRld2RnB5OVNVRjg5N0tTU0ZMalpnZXpsamIzSUpDZkdpSEZKUTJIUXNmN09FVW5JRXpRVWZuYXVHX3VKSWszWnJkbDl4cUFtN2tsNVFQcWxoZjMtYUpranlTQklpcnVLOHNUUDRsUjg1TGNabDQ0dE04V3NjOA"}};
 
 const LINKMAP = {
   "Matthis Abline": ["asmonaco", "gffn-monaco", "yahooSportsMatthisAbline"],
@@ -96,10 +102,10 @@ const LINKMAP = {
   "Boubakar Dembaga": ["gffn-monaco"],
   "Erik Lira": ["gffn-monaco"],
   "Simon Adingra": ["gffn-monaco"],
-  "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche", "fabriceHawkinsRMCSportMaghnesAkliouche", "footMercatoMaghnesAkliouche"],
+  "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche", "fabriceHawkinsRMCSportMaghnesAkliouche", "footMercatoMaghnesAkliouche", "yahooActualitsMaghnesAkliouche"],
   "Fares Ghedjemis": ["yahooSportsFaresGhedjemis"],
   "Folarin Balogun": ["yahooSportsFolarinBalogun"],
-  "Mathys Detourbet": ["yahooSportsMathysDetourbet"],
+  "Mathys Detourbet": ["yahooSportsMathysDetourbet", "scorefrMathysDetourbet"],
   "Lamine Camara": ["topMercatoLamineCamara"],
   "Joey Veerman": ["tuttoMercatoWebJoeyVeerman"],
   "Ansu Fati": ["footMercatoAnsuFati"]};

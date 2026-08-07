@@ -30,8 +30,12 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Daniel Jebbison", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer"}
+];
+const CONFIRMED_OUT = [
+  {name:"Ty Livesey", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed departure"}
+];
 const INCOMING = [
   {name:"Daniel Jebbison", sub:"FW · Canada", club:"Preston North End", pos:"FW", report:"~1 wk ago", src:"Lancashire Post", tier:2, fee:"Loan + option", truth:65, prob:55, light:'g', trend:'up', note:"Consistent with Preston's own reporting on the same story, decent cross-corroboration.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55}
 ];
@@ -47,13 +51,13 @@ const WATCHLIST = [];
 
 const HUB = {
   "lancashirepost": {l:"Lancashire Post", u:"https://www.lep.co.uk/sport"},
-  "bailey": {l:"Graeme Bailey (TeamTalk)", u:"https://x.com/GraemeBailey"}
-};
+  "bailey": {l:"Graeme Bailey (TeamTalk)", u:"https://x.com/GraemeBailey"},
+  lancashireTelegraphJaydenFevrier: {l:"Lancashire Telegraph", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmZGYkptYUU1akU4eFV0cDVvZzhVZXNQeHJ1TC1RalhBR29MbnY4dW1leE81ZG9LUGhhcjZZVmZXMlhMVmdmZXp1RlU5NlE5QUJLMzRrY1MyclBDdFZ2ZHdDM3B1TlhpRkZkeUtHaUQzQjg0eWJYdjRWQjNfN0JWaDBYZXFpVkx1ZHpONVZvQTVhT3FrMGNlM3RzTEV0c0MtQ081cExOby1tTVM4X29fLQ"}};
 
 const LINKMAP = {
   "Daniel Jebbison": ["lancashirepost"],
-  "Ty Livesey": ["bailey"]
-};
+  "Ty Livesey": ["bailey"],
+  "Jayden Fevrier": ["lancashireTelegraphJaydenFevrier"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

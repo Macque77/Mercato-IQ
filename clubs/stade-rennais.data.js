@@ -50,7 +50,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Yerson Mosquera", sub:"Colombian centre-back linked as depth option", club:"Wolverhampton Wanderers", pos:"CB", report:"Rennes searching for a central defender", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"Described as one of several defensive targets rather than a firm negotiation; recent ACL history may affect Rennes' final decision.", lastSeen:"2026-08-06T14:21:37Z", baseProb:50}
+  {name:"Yerson Mosquera", sub:"Colombian centre-back linked as depth option", club:"Wolverhampton Wanderers", pos:"CB", report:"Rennes searching for a central defender", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"Described as one of several defensive targets rather than a firm negotiation; recent ACL history may affect Rennes' final decision.", lastSeen:"2026-08-06T14:21:37Z", baseProb:50},
+  {name:"Charlie", sub:"", club:"", pos:"", report:"Stade Rennais announced signing", src:"Stade Rennais official", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Official announcement from club", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 
 const OUTGOING = [
@@ -89,7 +90,8 @@ const HUB = {
   maxifootNordanMukiele: {l:"Maxifoot", u:"https://news.maxifoot.fr/rennes/mukiele-prete-a-montpellier-officiel-foot-461083.htm"},
   aFPviaFrance24EliezerMayenda: {l:"AFP via France 24", u:"https://www.france24.com/en/live-news/20260706-rennes-buy-young-striker-mayenda-from-sunderland"},
   footMercatoJeremyJacquet: {l:"Foot Mercato", u:"https://www.footmercato.net/club/stade-rennais-fc/tableau/"},
-  topmercatoAbdelhamidAitBoudlal: {l:"topmercato", u:"https://www.topmercato.com/"}};
+  topmercatoAbdelhamidAitBoudlal: {l:"topmercato", u:"https://www.topmercato.com/"},
+  stadeRennaisCharlie: {l:"Stade Rennais", u:"https://news.google.com/rss/articles/CBMif0FVX3lxTFBDb3lSSVdLcE40WG5BWVB0T2FRbUkyY0NkdFltSTZqQTUzNWMwd1RFOVBvMkNGVWZDcW50QmFPcGtXYVVTYzhDNUVyZFFrY2dqV0JmMzJzT2puWVNRb0d1RnM4MHZCZFhlMmlxTXZlSTJtcFlEN0JNLWV6NjRQak0"}};
 
 const LINKMAP = {
   "Charlie Cresswell": ["gffn-rennes", "leTelegrammeMaxifootCharlieCresswell"],
@@ -107,7 +109,8 @@ const LINKMAP = {
   "Nordan Mukiele": ["maxifootNordanMukiele"],
   "Mikayil Faye": ["ouestFranceYersonMosquera"],
   "Jeremy Jacquet": ["footMercatoJeremyJacquet"],
-  "Abdelhamid Ait Boudlal": ["topmercatoAbdelhamidAitBoudlal"]};
+  "Abdelhamid Ait Boudlal": ["topmercatoAbdelhamidAitBoudlal"],
+  "Charlie": ["stadeRennaisCharlie"]};
 const WL_LINKMAP = {
   "Martin Terrier": ["gffn-rennes"]
 };

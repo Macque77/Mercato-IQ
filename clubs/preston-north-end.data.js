@@ -35,11 +35,12 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:20, light:'o', trend:'flat', note:"One of six clubs credited with interest in a loan, genuinely early-stage with Brighton yet to decide anything.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"Tommy Watson incoming", src:"Sunderland Echo", tier:3, fee:"Loan", truth:50, prob:50, light:"y", trend:"up", note:"On-page rumour, no fresh snippet details available", lastSeen:"2026-08-07T01:42:32Z", baseProb:50},
+  {name:"Lee Nicholls", sub:"Goalkeeper", club:"Huddersfield Town", pos:"GK", report:"Lee Nicholls joins Preston North End", src:"htafc.com", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official announcement from Huddersfield Town", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Daniel Jebbison", sub:"FW · Canada", club:"Blackburn Rovers", pos:"FW", report:"~1 wk ago", src:"Lancashire Post", tier:2, fee:"Loan + option", truth:65, prob:55, light:'g', trend:'up', note:"Specific and cross-corroborated by Blackburn's own reporting, but no medical or here-we-go yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Michael Smith", sub:"FW", club:"Mansfield Town", pos:"FW", report:"~2 wks ago", src:"Lancashire Post", tier:2, fee:"Undisclosed", truth:60, prob:30, light:'y', trend:'flat', note:"Explicitly reported that the numbers do not work for all parties, so this is stalling rather than advancing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+  {name:"Daniel Jebbison", sub:"FW · Canada", club:"Blackburn Rovers", pos:"FW", report:"Daniel Jebbison outgoing", src:"Lancashire Post", tier:3, fee:"Loan + option", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet details available", lastSeen:"2026-08-07T01:42:32Z", baseProb:50},
+  {name:"Michael Smith", sub:"Striker", club:"Mansfield Town", pos:"ST", report:"Michael Smith joins Mansfield Town on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"up", note:"Official confirmed departure", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -51,14 +52,15 @@ const WATCHLIST = [];
 const HUB = {
   "gnews-leenicholls": {l:"Related news search: Lee Nicholls", u:"https://news.google.com/search?q=Preston%20North%20End%20Lee%20Nicholls%20transfer&hl=en-GB&gl=GB"},
   "sunderlandecho": {l:"Sunderland Echo", u:"https://www.sunderlandecho.com/sport/football"},
-  "lancashirepost": {l:"Lancashire Post", u:"https://www.lep.co.uk/sport"}
-};
+  "lancashirepost": {l:"Lancashire Post", u:"https://www.lep.co.uk/sport"},
+  htafccomLeeNicholls: {l:"htafc.com", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2txQS1kdlJlMVhUVnFhb1pCZGRMV0NNd0tpWFhEQjRidmItcWRkM1NidDhRZHVTbjZtbkRhcG1lQ2tHWkY0Y2loUXR2RVktQ05ORlpqbERWTVRxMDQ4UlJuUXo2SVN0SWVrZTV1QWYzNGQ3Mkt5YUpKMXlfVWNyWXloQVVUQVdLSEpTUnItb00?oc=5"},
+  bBCMichaelSmith: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9BUVA0dFkxS3E5WFp4eHZ2ZGFiTzIzX0FYUDZVc0w5cURaMnpDMzZjZzZNSkFqYVhrSG83SldOODR3UFJFMVUzbWFGYmpHcEhQbVlPWk5zSUNFZ2h5Y1dvX1FKcldWb28?oc=5"}};
 
 const LINKMAP = {
-  "Lee Nicholls": ["gnews-leenicholls"],
+  "Lee Nicholls": ["gnews-leenicholls", "htafccomLeeNicholls"],
   "Tommy Watson": ["sunderlandecho"],
   "Daniel Jebbison": ["lancashirepost"],
-  "Michael Smith": ["lancashirepost"]
+  "Michael Smith": ["lancashirepost", "bBCMichaelSmith"]
 };
 const WL_LINKMAP = {};
 

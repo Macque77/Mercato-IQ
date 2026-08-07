@@ -45,11 +45,13 @@ const CONFIRMED_OUT = [
   {name:"Arouna Sangante", sub:"22 · CB · France", club:"Sevilla FC", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 16 Jun 2026 on a five-year deal - a significant sale to La Liga."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Junior Mwanga", sub:"", club:"", pos:"", report:"Le HAC va rapatrier Junior Mwanga", src:"MadeInFOOT", tier:3, fee:"", truth:65, prob:65, light:"g", trend:"flat", note:"Return/repatriation reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
+];
 
 const OUTGOING = [
   {name:"Timothée Pembélé", sub:"24 · LB · France", club:"Sunderland", pos:"LB", report:"15 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Sunderland are reported to be set to complete a permanent deal for the defender after his loan spell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:52},
-  {name:"Yanis Zouaoui", sub:"28 · Algeria · LB", club:"Nantes", pos:"LB", report:"Nantes are on the brink of a full agreement with Le Havre for the left-back, who has a year left on his contract in Normandy. Talks are described as very advanced and the Canaries do not intend to stop there.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:80, prob:70, light:"g", trend:"down", note:"Originally an L'Equipe story since relayed by several French outlets. The fee has not been reported.", lastSeen:"2026-08-06T10:49:40Z", baseProb:70}
+  {name:"Yanis Zouaoui", sub:"28 · Algeria · LB", club:"Nantes", pos:"LB", report:"Nantes on the brink of full agreement with Le Havre", src:"score.fr", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Imminent transfer to Nantes", lastSeen:"2026-08-07T01:42:32Z", baseProb:85}
 ];
 
 const RISERS = [
@@ -78,16 +80,18 @@ const HUB = {
   footNationalKaitoMizuta: {l:"Foot National", u:"https://www.msn.com/fr-fr/sport/football/le-havre-tient-sa-premi%C3%A8re-recrue-de-l-%C3%A9t%C3%A9/ar-AA27pbz8"},
   lEquipeJoshMaja: {l:"L'Equipe", u:"https://www.lequipe.fr/Football/Actualites/Libre-de-tout-contrat-josh-maja-revient-en-ligue-1-et-rejoint-le-havre/1708263"},
   lEquipeYanisZouaoui1: {l:"L'Equipe", u:"https://www.lequipe.fr/Football/"},
-  mediaSportifJuniorMwanga: {l:"MediaSportif", u:"https://mediasportif.fr/"}};
+  mediaSportifJuniorMwanga: {l:"MediaSportif", u:"https://mediasportif.fr/"},
+  madeInFOOTJuniorMwanga: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxQcVhmTk9DNTBkOWpLVFdQTXRqT2VrTDZndW15OEwtQ1V5UGtUVk9SZFRBNnd4RkVBd1pJVnJPb01PYkpETjlxLUlybjlHeVdOS3Jad3lpQjlXODNGS3B5R2IzUkVwWlB3d1ltUzk4Mnowbi0tWHdydzdyNVF6cFR5SWR1Sm1qX25UWl9KaUZ4YjA1QWROZjFuMEM4N1A2QlFHM0h0WG1OV19mTjRoOE51bzh5Q3o"},
+  scorefrYanisZouaoui: {l:"score.fr", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxOWEhCRTIySzBvU0xEMDd1a0xIRmFqTTY0dWxQNHVnSUdwUDB6Vi1aYnpETEd3clMtdl9JTTNCaVB2czJETXMzemJfZjJINm1qaGV1RTFUNFhxMG12UVVrTk5TbU00RjQ5NTFhWE50OHBRN2pOeWljaUlPN3NSdHpJTkIxUmdueVd2Z2R0OERkYVhxOERlNVM5YjdxdmFOSUlINllWYzRDdVZKREpPSThDRHNFSmhMdw"}};
 
 const LINKMAP = {
   "Josh Maja": ["gffn-lehavre", "lEquipeJoshMaja"],
   "Amir Richardson": ["gffn-lehavre"],
   "Arouna Sangante": ["gffn-lehavre"],
   "Timothée Pembélé": ["gffn-lehavre"],
-  "Yanis Zouaoui": ["lEquipeYanisZouaoui", "lEquipeYanisZouaoui1"],
+  "Yanis Zouaoui": ["lEquipeYanisZouaoui", "lEquipeYanisZouaoui1", "scorefrYanisZouaoui"],
   "Kaito Mizuta": ["footNationalKaitoMizuta"],
-  "Junior Mwanga": ["mediaSportifJuniorMwanga"]};
+  "Junior Mwanga": ["mediaSportifJuniorMwanga", "madeInFOOTJuniorMwanga"]};
 const WL_LINKMAP = {
   "Timothée Pembélé": ["gffn-lehavre"]
 };

@@ -40,7 +40,9 @@ const CONFIRMED_IN = [
 
 const CONFIRMED_OUT = [];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Amara Condé", sub:"Unknown · Unknown · Unknown", club:"Essen", pos:"Unknown", report:"Ex-Essener Amara Condé wechselt zur SV 07 Elversberg", src:"Media Sportservice", tier:3, fee:"Unknown", truth:70, prob:75, light:"g", trend:"flat", note:"Transfer from Essen reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:75}
+];
 
 const OUTGOING = [];
 const DEAD = [
@@ -67,12 +69,14 @@ const HUB = {
   club: {l:"SV Elversberg Official", u:"https://www.sv-elversberg.de/"},
   bILDTransfermarktdeEliasEgouli: {l:"BILD / Transfermarkt.de", u:"https://www.transfermarkt.de/"},
   yahooSportsLucaSirch: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-elversberg-snap-kaiserslautern-defensive-080500796.html"},
-  eSPNColeCampbell: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49315578/us-cole-campbell-joins-elversberg-borussia-dortmund"}};
+  eSPNColeCampbell: {l:"ESPN", u:"https://www.espn.com/soccer/story/_/id/49315578/us-cole-campbell-joins-elversberg-borussia-dortmund"},
+  mediaSportserviceAmaraCond: {l:"Media Sportservice", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxQMER5bDFieGNXdzkxaFV5YWM2ZnBDSkczbWdJdS04VGZhanUxZDRKUzB2ODNKMUQ2eXRJOV84NUhoZGcyT0FXSU1nMHpMSHlqWDMyVTFXSlN1cUV0Q0p6VGRac3dDVEV2Vmh2aXF5R3VPUTVLS2l2U2FRbEJHQ1VMMDZXVkoxcEl4d011YnlFemM?oc=5"}};
 
 const LINKMAP = {
   "Elias Egouli": ["bILDTransfermarktdeEliasEgouli"],
   "Luca Sirch": ["yahooSportsLucaSirch"],
-  "Cole Campbell": ["eSPNColeCampbell"]};
+  "Cole Campbell": ["eSPNColeCampbell"],
+  "Amara Condé": ["mediaSportserviceAmaraCond"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

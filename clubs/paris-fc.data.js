@@ -42,13 +42,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"James Tavernier", sub:"34 · RB · England", club:"Free agent (ex-Rangers)", pos:"RB", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:50, prob:26, light:"o", trend:"flat", note:"Paris FC are one of two French suitors (with Nice) for the veteran Rangers captain, now a free agent.", lastSeen:"2026-08-04T19:10:50Z", baseProb:26},
-  {name:"Ibrahima Cisse", sub:"Striker, 18-year-old prospect", club:"KAA Gent", pos:"ST", report:"Paris FC are among the candidates, along with Lyon and Bournemouth, to sign Gent's highly rated 18-year-old striker Ibrahima Cisse.", src:"Foot Mercato", tier:2, fee:"Undisclosed", truth:55, prob:30, light:"y", trend:"flat", note:"Competing directly with Lyon and Bournemouth for the same young forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Mory Kera", sub:"Prospect, multi-club interest", club:"Undisclosed academy", pos:"CM", report:"Paris FC are reported to be in the race for young prospect Mory Kera, alongside Monaco and other Ligue 1 clubs.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Multiple Ligue 1 clubs credited with interest in the same prospect; early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"James Tavernier", sub:"34 · Scotland · RB", club:"Rangers", pos:"RB", report:"Rangers captain linked to Paris FC", src:"transferfeed snapshot", tier:3, fee:"Free transfer", truth:45, prob:35, light:"y", trend:"up", note:"Duplicate entries on page; age and status uncertain", lastSeen:"2026-08-07T01:42:32Z", baseProb:35, dead:true, deadReason:"Duplicate entry removed; unclear status and age"},
+  {name:"Ibrahima Cisse", sub:"Striker, 18-year-old prospect", club:"KAA Gent", pos:"ST", report:"Paris FC among candidates along with Lyon", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Incomplete information; player details not available", lastSeen:"2026-08-07T01:42:32Z", baseProb:30},
+  {name:"Mory Kera", sub:"Prospect, multi-club interest", club:"Undisclosed academy", pos:"CM", report:"Paris FC reported to be in the race for young player", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"up", note:"Incomplete information; player details not available", lastSeen:"2026-08-07T01:42:32Z", baseProb:25}
 ];
 
 const OUTGOING = [
-  {name:"Ilan Kebbal", sub:"Winger, manager wants to keep him", club:"Marseille / Coventry City", pos:"RW", report:"Both Marseille and Coventry City have been credited with interest in Paris FC winger Ilan Kebbal, but new manager Liam Rosenior has publicly said he wants to keep the player.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:45, prob:20, light:"o", trend:"flat", note:"Manager's public comments push against an exit, lowering the likelihood of a sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Ilan Kebbal", sub:"Winger, manager wants to keep him", club:"Paris FC", pos:"RW", report:"Marseille and Coventry City credited with interest", src:"TOP Mercato", tier:3, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"up", note:"OM threatened in Ligue 1 for Paris FC star", lastSeen:"2026-08-07T01:42:32Z", baseProb:45}
 ];
 
 const RISERS = [
@@ -66,7 +66,7 @@ const IGNORE = [];
 const POSITIONS = [];
 
 const WATCHLIST = [
-  {name:"James Tavernier", club:"Free agent", pos:"RB", dir:"in", age:"~2 days", tier:2, note:"Also being pursued by OGC Nice."}
+  {name:"James Tavernier", club:"Free agent", pos:"RB", dir:"in", age:"~2 days", tier:2, note:"Also being pursued by OGC Nice.", dead:true, deadReason:"Duplicate entry removed; unclear status and age"}
 ];
 
 const HUB = {
@@ -78,7 +78,8 @@ const HUB = {
   getFrenchFootballNewsFootMercatoIlanKebbal: {l:"Get French Football News (Foot Mercato)", u:"https://www.getfootballnewsfrance.com/2026/i-want-to-keep-him-paris-fcs-new-manager-liam-rosenior-rules-out-departure-of-coventry-city-target-ilan-kebbal/"},
   getFrenchFootballNewsLassineSinayoko: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-paris-fc-sign-lassine-sinayoko-from-auxerre/"},
   getFrenchFootballNewsLEquipePabloPagis: {l:"Get French Football News (L'Equipe)", u:"https://www.getfootballnewsfrance.com/2026/paris-fc-to-complete-e15m-move-for-lorients-pablo-pagis/"},
-  getFrenchFootballNewsAndriaKvirikadze: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-i-georgias-andria-kvirikadze-signs-with-paris-fc/"}};
+  getFrenchFootballNewsAndriaKvirikadze: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-i-georgias-andria-kvirikadze-signs-with-paris-fc/"},
+  tOPMercatoIlanKebbal: {l:"TOP Mercato", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxObHBCU2FoWHpUUUJ0ZUhkZW1CTVhUOV9wbDBGNkVJQVFwaE1oRGNlMUZiVU12MGpNaWlCMEI3S1F2STEySGVoWUVVdzJtblJJOTlyMktQLWRQVHBMVThuVXZpOXJEUE1Gd3E0X0Mwd3gzcXV6TVdaWGtQLTFRZFZCRE11SVRjRnMwVGNhWkY2ZWZQZFZ4dmc4anFPQjJzaC1VczVqNg"}};
 
 const LINKMAP = {
   "Lassine Sinayoko": ["gffn-parisfc", "getFrenchFootballNewsLassineSinayoko"],
@@ -88,7 +89,7 @@ const LINKMAP = {
   "Ibrahima Cisse": ["getFrenchFootballNewsFootMercatoIbrahimaCisse"],
   "Mory Kera": ["footMercatoMoryKera"],
   "Willem Geubbels": ["getFrenchFootballNewsLEquipeWillemGeubbels", "footMercatoMoryKera"],
-  "Ilan Kebbal": ["getFrenchFootballNewsFootMercatoIlanKebbal"],
+  "Ilan Kebbal": ["getFrenchFootballNewsFootMercatoIlanKebbal", "tOPMercatoIlanKebbal"],
   "Emmanuel Mbemba": ["footMercatoMoryKera"]};
 const WL_LINKMAP = {
   "James Tavernier": ["gffn-parisfc"]

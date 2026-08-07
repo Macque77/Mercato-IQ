@@ -30,13 +30,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Liam Cullen", sub:"24 · Wales · W", club:"Swansea City", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed from Swansea City"}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Admir Bristric", sub:"ST", club:"Olimpija Ljubljana (on loan at Bravo)", pos:"ST", report:"~2 wks ago", src:"Planet Nogomet / FLW", tier:2, fee:"€1.7-2m", truth:80, prob:85, light:'g', trend:'up', note:"Player already in England for a medical per reporting.", lastSeen:"2026-08-04T19:10:50Z", baseProb:85},
   {name:"Tommy Watson", sub:"W", club:"Brighton", pos:"W", report:"~3 days ago", src:"@SportsPeteO / FLW", tier:2, fee:"Loan", truth:75, prob:75, light:'g', trend:'up', note:"Loan agreement reportedly reached.", lastSeen:"2026-08-04T19:10:50Z", baseProb:75},
   {name:"Liam Cullen", sub:"ST", club:"Swansea City", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Departure described as imminent.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Dom Ballard", sub:"FW", club:"Leyton Orient", pos:"FW", report:"~1 wk ago", src:"FLW", tier:3, fee:"£5m+", truth:45, prob:35, light:'y', trend:'flat', note:"Contested with Bristol City, valuation a sticking point.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Dom Ballard", sub:"FW", club:"Leyton Orient", pos:"FW", report:"~1 wk ago", src:"FLW", tier:3, fee:"£5m+", truth:45, prob:35, light:'y', trend:'flat', note:"Contested with Bristol City, valuation a sticking point.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Asmir Begovic", sub:"39 · Bosnia and Herzegovina · GK", club:"Free", pos:"Goalkeeper", report:"Signed for Leicester City", src:"Leicester City Official", tier:1, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official announcement from LCFC website", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -50,15 +53,16 @@ const HUB = {
   "src-planetnogomet": {l:"Planet Nogomet", u:"https://news.google.com/search?q=Planet%20Nogomet%20Leicester%20City%20transfer&hl=en-GB&gl=GB"},
   "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
   "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"},
-  "gnews-liamcullen": {l:"Related news search: Liam Cullen", u:"https://news.google.com/search?q=Leicester%20City%20Liam%20Cullen%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-liamcullen": {l:"Related news search: Liam Cullen", u:"https://news.google.com/search?q=Leicester%20City%20Liam%20Cullen%20transfer&hl=en-GB&gl=GB"},
+  lCFCOfficialAsmirBegovic: {l:"LCFC Official", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxOSzZ2bzJadDBYZDFMYUtGQ1p3bWllQjlJZ0ZCRVJXcFlHSzlnUWFxRFJVVks0dmdUbjA1bjZyWE42WEM4b0RpMVBFZEJJN0N5UTlzQUgxZDR0djRGMDVrMFp5bVFMajJxVVQ3S0RpVkVENXZJcVM1OEJpMzUyUC1XTW5ZUUtRRTNsUGs3NmN3"},
+  swanseaCityOfficialLiamCullen: {l:"Swansea City Official", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxQeG90ZXE2ZFQ3MmpxVW5lY1VpWjMxLXh0MGxuR0JnRzdnNE43NVBJTGMwQkhqUXZydWJzemtubmpBRkJwQ2h4amdOU1UxS1g3RjY4dHZkeS1wSVdEWTNoekpqanFENGxwSG5ucXpBbUYtVTVqMVowUUpCTWxxc19aMlRlbzM"}};
 
 const LINKMAP = {
   "Admir Bristric": ["src-planetnogomet", "flw"],
   "Tommy Watson": ["orourke", "flw"],
-  "Liam Cullen": ["gnews-liamcullen"],
-  "Dom Ballard": ["flw"]
-};
+  "Liam Cullen": ["gnews-liamcullen", "swanseaCityOfficialLiamCullen"],
+  "Dom Ballard": ["flw"],
+  "Asmir Begovic": ["lCFCOfficialAsmirBegovic"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

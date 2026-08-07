@@ -34,8 +34,17 @@ const CONFIRMED_IN = [
   {name:"Ollie Harrison", sub:"MF/FW", club:"Chelsea", pos:"MF", fee:"Undisclosed development fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Youth signing confirmed via club's official channels."}
 ];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"Signed from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Transfer agreed, signing expected", lastSeen:"2026-08-07T01:42:32Z", baseProb:90},
+  {name:"Steven Sessegnon", sub:"Midfielder", club:"Wigan Athletic", pos:"MID", report:"Joined after leaving Wigan Athletic", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"", truth:70, prob:65, light:"g", trend:"flat", note:"Former Millwall captain of interest", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
+];
+const OUTGOING = [
+  {name:"Riley Harbottle", sub:"Player", club:"Bristol Rovers", pos:"Unknown", report:"Signed by Bristol Rovers from AFC Wimbledon", src:"Bristol Rovers FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -44,12 +53,21 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  "gnews-ollieharrison": {l:"Related news search: Ollie Harrison", u:"https://news.google.com/search?q=AFC%20Wimbledon%20Ollie%20Harrison%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-ollieharrison": {l:"Related news search: Ollie Harrison", u:"https://news.google.com/search?q=AFC%20Wimbledon%20Ollie%20Harrison%20transfer&hl=en-GB&gl=GB"},
+  bBCJaydenStockley: {l:"BBC", u:"https://www.bbc.com"},
+  tribalFootballJamesTilly: {l:"TribalFootball", u:"https://www.tribalfootball.com"},
+  sportsBoomUKShaunHutchinson: {l:"SportsBoom UK", u:"https://www.sportsboom.co.uk"},
+  bristolRoversFootballClubRileyHarbottle: {l:"Bristol Rovers Football Club", u:"https://www.bristolrovers.co.uk"}};
 
 const LINKMAP = {
-  "Ollie Harrison": ["gnews-ollieharrison"]
-};
+  "Ollie Harrison": ["gnews-ollieharrison"],
+  "Jayden Stockley": ["bBCJaydenStockley"],
+  "Zack Nelson": ["bBCJaydenStockley"],
+  "James Tilly": ["tribalFootballJamesTilly"],
+  "Steven Sessegnon": ["bBCJaydenStockley"],
+  "Shaun Hutchinson": ["sportsBoomUKShaunHutchinson"],
+  "Riley Harbottle": ["bristolRoversFootballClubRileyHarbottle"],
+  "Foyo": ["bBCJaydenStockley"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -36,8 +36,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Luke Molyneux", sub:"W", club:"Salford City", pos:"W", report:"~1 wk ago", src:"Ben Wignall / FLW", tier:2, fee:"Undisclosed", truth:75, prob:70, light:'g', trend:'up', note:"Exclusive reporting describes the move as closing in.", lastSeen:"2026-08-04T19:10:50Z", baseProb:70},
-  {name:"Owen Bailey", sub:"MF", club:"Sheffield Wednesday / Bradford City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Contested by two rival League One clubs.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Luke Molyneux", sub:"Unknown · Unknown · Unknown", club:"Doncaster Rovers", pos:"Unknown", report:"Deal agreed with League Two club", src:"Doncaster Free Press", tier:3, fee:"Unknown", truth:75, prob:70, light:"g", trend:"flat", note:"Transfer to L2 club reported as agreed", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
+  {name:"Owen Bailey", sub:"Unknown · Unknown · W", club:"Doncaster Rovers", pos:"W", report:"Winger completed move to League Two outfit", src:"Yorkshire Post", tier:3, fee:"Unknown", truth:85, prob:85, light:"g", trend:"up", note:"Transfer to League Two club completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:85}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -50,13 +50,14 @@ const HUB = {
   "gnews-alfiemay": {l:"Related news search: Alfie May", u:"https://news.google.com/search?q=Doncaster%20Rovers%20Alfie%20May%20transfer&hl=en-GB&gl=GB"},
   "src-benwignall": {l:"Ben Wignall", u:"https://news.google.com/search?q=Ben%20Wignall%20Doncaster%20Rovers%20transfer&hl=en-GB&gl=GB"},
   "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
-  "gnews-owenbailey": {l:"Related news search: Owen Bailey", u:"https://news.google.com/search?q=Doncaster%20Rovers%20Owen%20Bailey%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-owenbailey": {l:"Related news search: Owen Bailey", u:"https://news.google.com/search?q=Doncaster%20Rovers%20Owen%20Bailey%20transfer&hl=en-GB&gl=GB"},
+  doncasterFreePressLukeMolyneux: {l:"Doncaster Free Press", u:"https://news.google.com/rss/articles/CBMigwJBVV95cUxQWmVaYUd5Q2ZLX24yTWNPRzRzRi1SOEZfdVM3aTdEUlNXNzNUMFE4Q2U2UDRBUGVrVGtXNTh5T05mWEpSV01TVFBwbXdmX05CczB1eGF0bzcyQVZ1NVhZVkJHQUUyd2VFYXI1LUhXUGhNenRmRXc4VTRSaU1OOTVMZDZ5ZjhiWjFUaWt5NnNFWW1kME9xTUFuX2c4QzZZeVZPaV90MTlBVVBjby1TcFVlTFNacUw1NTRqMjBWaG5aYlcyeC1BM2xTRjJOX2dKcm42andHbFg1WDEweERiMHZBbWsxWk9NTG4xdEVETHBMTDdaT2lPV2hiMG1ndVppMVJ3M1Z3"},
+  yorkshirePostOwenBailey: {l:"Yorkshire Post", u:"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPNjlWNHFvTy1CODRDVlE5VU9oUWY0WW1SZXNfUmM0bF83RlozTGJwbmZrQzJMeVlwNXg3SzVOMGVYNTdjUFZtR0RvOVR1NUtsX2tVLW9ZZzlMelB3dnUxcEFRd0Z2Z1BXTVYxX012aXVfVXNOMGhnUjkxVVlFdkJGWHB3LTJXTUJiZUFMX3d5UENHaFdpb20tN0pDY2I0alpCQnpGc1BMbGsyY1pxT1M0c0lqa01YVGpnY3VlUlB2Mmlhc0FWM3RHd2ZmUUxIaFpYb2Y4V1FfY081ZTJYMzRDMldZZmRjYUZaeHpLaVhTekZRRVU"}};
 
 const LINKMAP = {
   "Alfie May": ["gnews-alfiemay"],
-  "Luke Molyneux": ["src-benwignall", "flw"],
-  "Owen Bailey": ["gnews-owenbailey"]
+  "Luke Molyneux": ["src-benwignall", "flw", "doncasterFreePressLukeMolyneux"],
+  "Owen Bailey": ["gnews-owenbailey", "yorkshirePostOwenBailey"]
 };
 const WL_LINKMAP = {};
 

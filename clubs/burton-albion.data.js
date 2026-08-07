@@ -31,14 +31,19 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Matthew Dennis", sub:"ST", club:"Notts County", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed incoming alongside Notts County's own reported departure."}
+  {name:"Matthew Dennis", sub:"ST", club:"Notts County", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed incoming alongside Notts County's own reported departure."},
+  {name:"Gbemi Arubi", sub:"Unknown · Nigeria · Forward", club:"Dundalk FC", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer from Dundalk FC"}
 ];
 const CONFIRMED_OUT = [
-  {name:"Udoka Godwin-Malife", sub:"DF", club:"Reading", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Captain's move to Reading, medical reported underway."}
+  {name:"Udoka Godwin-Malife", sub:"DF", club:"Reading", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Captain's move to Reading, medical reported underway."},
+  {name:"Jake Beesley", sub:"Unknown · England · Forward", club:"Bradford City", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Bradford City"}
 ];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Gbemi Arubi", sub:"Unknown · Nigeria · Forward", club:"Dundalk FC", pos:"Forward", report:"Transfer to Burton Albion confirmed from Dundalk FC", src:"Dundalk FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed by Dundalk FC", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Brad Collins", sub:"Unknown · England · Goalkeeper", club:"Coventry City", pos:"Goalkeeper", report:"Burton Albion targeting permanent deal for Coventry keeper Brad Collins", src:"SportsBoom UK", tier:3, fee:"", truth:60, prob:50, light:"y", trend:"flat", note:"Loan player targeted for permanent transfer", lastSeen:"2026-08-07T01:42:32Z", baseProb:50}
+];
 const OUTGOING = [
-  {name:"Jake Beesley", sub:"ST", club:"Bradford City", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"See Bradford City entry, competing with Stockport County.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Jake Beesley", sub:"Unknown · England · Forward", club:"Bradford City", pos:"Forward", report:"Jake Beesley joins Bradford City from Burton Albion", src:"Burton Albion FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -50,14 +55,17 @@ const WATCHLIST = [];
 const HUB = {
   "gnews-matthewdennis": {l:"Related news search: Matthew Dennis", u:"https://news.google.com/search?q=Burton%20Albion%20Matthew%20Dennis%20transfer&hl=en-GB&gl=GB"},
   "gnews-udokagodwinmalife": {l:"Related news search: Udoka Godwin-Malife", u:"https://news.google.com/search?q=Burton%20Albion%20Udoka%20Godwin-Malife%20transfer&hl=en-GB&gl=GB"},
-  "gnews-jakebeesley": {l:"Related news search: Jake Beesley", u:"https://news.google.com/search?q=Burton%20Albion%20Jake%20Beesley%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-jakebeesley": {l:"Related news search: Jake Beesley", u:"https://news.google.com/search?q=Burton%20Albion%20Jake%20Beesley%20transfer&hl=en-GB&gl=GB"},
+  dundalkFCGbemiArubi: {l:"Dundalk FC", u:"https://news.google.com/rss/articles/CBMidkFVX3lxTE5yNUxMMmR2VlZmaUhNVUltNW1TTWR2elN5c2FZeTRkdU10YkROaTBiRDVDb212LVpud280NXpOdDgtUFVhbks1bERVdC1GWTZ0QURzeWxZcERySGVyRVBQdGtZd290TDBBZWlwazhxbnNob1BKM3c"},
+  sportsBoomUKBradCollins: {l:"SportsBoom UK", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxObXljSkZ2SmxXRGJYNklKcHZEaWs2WTZzMDd4YXZ6QWdWQ3NkcGw4N0ptMEZsWkFtajBTWWZOMEVHQUpkWUxkSlpuc05WMWJIR0V1d1hkVW0zZHlVYWFZaTJSTkVkdG96SWtqWTd1d213YWk2M1hVOVk5ZGM1ek9JeDhUUDFQODhiZDU3M192cTRLcURoMjZXNTFPNGhtTE5qVmY3T1Y1N1Q5ZDVfc01FYV9ZdGQ3QQ"},
+  burtonAlbionFCJakeBeesley: {l:"Burton Albion FC", u:"https://news.google.com/rss/articles/CBMijwFBVV95cUxOeEZJQVNBMmEtUHNwVTRUUUF2S1V2ZGQ4cWc3cjBSOUtpSUFXVEptVUVwZ1g1bVB4dUNlZEVEdWc2YnBWcm43clFEaU9kSzFqbHJHNzhfZy1aV1MxQzhwNzJnaTZ0R2l3cmJwdE1pTjdmbl93US16T2RMWTM0QWwtRUg3LTllWHVmSlEwbnQxcw"}};
 
 const LINKMAP = {
   "Matthew Dennis": ["gnews-matthewdennis"],
   "Udoka Godwin-Malife": ["gnews-udokagodwinmalife"],
-  "Jake Beesley": ["gnews-jakebeesley"]
-};
+  "Jake Beesley": ["gnews-jakebeesley", "burtonAlbionFCJakeBeesley"],
+  "Gbemi Arubi": ["dundalkFCGbemiArubi"],
+  "Brad Collins": ["sportsBoomUKBradCollins"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

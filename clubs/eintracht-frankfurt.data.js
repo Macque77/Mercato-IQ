@@ -50,12 +50,14 @@ const CONFIRMED_OUT = [
   {name:"Aurèle Amenda", sub:"Switzerland international centre-back", club:"Coventry City", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed 17 July 2026 after two years at Frankfurt."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Louey Ben Farhat", sub:"Unknown · Unknown · Unknown", club:"Karlsruher SC", pos:"Unknown", report:"Ben Farhat wants immediate move to Frankfurt; multiple interested parties reported", src:"Sky.de / Florian Plettenberg", tier:2, fee:"", truth:75, prob:60, light:"g", trend:"flat", note:"Player keen to join; further interest mentioned but Frankfurt actively pursuing", lastSeen:"2026-08-07T01:42:32Z", baseProb:60}
+];
 
 const OUTGOING = [
-  {name:"Junior Dina Ebimbe", sub:"25 · France · CM", club:"Schalke 04", pos:"Midfielder", report:"Frankfurt and Schalke have settled the final details of a permanent transfer. A package of around 1.3m euros was discussed, with Eintracht banking roughly 1m euros plus a 25 per cent sell-on clause. Ebimbe has agreed personal terms on a contract to 2028 after Schalke lodged a written offer earlier in the week.", src:"Florian Plettenberg (Sky Germany)", tier:1, fee:"€1m plus 25% sell-on", truth:92, prob:88, light:"g", trend:"flat", note:"Details agreed but not yet announced by either club, so treat as advanced rather than done.", lastSeen:"2026-08-06T10:49:40Z", baseProb:88},
-  {name:"Hrvoje Smolcic", sub:"25 · Croatia · CB", club:"Arca Corum FK", pos:"Centre-back", report:"Smolcic had no future at Frankfurt even after his loan spell at Kocaelispor ended and the Hessians are now cutting him loose for good. He is signing a two-year deal with an option at the newly promoted Turkish top-flight side.", src:"Fabrizio Romano, relayed by kicker", tier:1, fee:"Undisclosed", truth:88, prob:85, light:"g", trend:"flat", note:"Fee not disclosed; a permanent exit rather than another loan.", lastSeen:"2026-08-06T10:49:40Z", baseProb:85},
-  {name:"Noel Futkeu", sub:"23 · Germany · ST", club:"Exit sought", pos:"Striker", report:"Frankfurt triggered their recall option on Futkeu after he won the 2. Bundesliga golden boot with 19 goals on loan at Greuther Furth, but new head coach Adi Hutter has cut him from the plans. He was left out of the squad for the Grassau training camp and has been told to find a new club.", src:"kicker", tier:2, fee:"Undisclosed", truth:85, prob:68, light:"g", trend:"flat", note:"No concrete destination reported yet, so the exit is a stated intention rather than a live negotiation.", lastSeen:"2026-08-06T10:49:40Z", baseProb:68}
+  {name:"Junior Dina Ebimbe", sub:"Unknown · Unknown · Unknown", club:"Eintracht Frankfurt", pos:"Unknown", report:"Frankfurt and Schalke 04 have reached agreement on final details", src:"Sky.de / Florian Plettenberg", tier:2, fee:"€1m plus 25% sell-on", truth:90, prob:85, light:"g", trend:"down", note:"Deal settled between clubs; move to Schalke imminent", lastSeen:"2026-08-07T01:42:32Z", baseProb:85},
+  {name:"Hrvoje Smolcic", sub:"25 · Croatia · CB", club:"Arca Corum FK", pos:"Centre-back", report:"Smolcic had no future at Frankfurt even after his loan spell at Kocaelispor ended and the Hessians are now cutting him loose for good. He is signing a two-year deal with an option at the newly promoted Turkish top-flight side.", src:"Fabrizio Romano, relayed by kicker", tier:1, fee:"Undisclosed", truth:88, prob:85, light:"g", trend:"flat", note:"Fee not disclosed; a permanent exit rather than another loan.", lastSeen:"2026-08-06T10:49:40Z", baseProb:85, dead:true, deadReason:"No fresh snippet; no future at Frankfurt"},
+  {name:"Noel Futkeu", sub:"23 · Germany · ST", club:"Exit sought", pos:"Striker", report:"Frankfurt triggered their recall option on Futkeu after he won the 2. Bundesliga golden boot with 19 goals on loan at Greuther Furth, but new head coach Adi Hutter has cut him from the plans. He was left out of the squad for the Grassau training camp and has been told to find a new club.", src:"kicker", tier:2, fee:"Undisclosed", truth:85, prob:68, light:"g", trend:"flat", note:"No concrete destination reported yet, so the exit is a stated intention rather than a live negotiation.", lastSeen:"2026-08-06T10:49:40Z", baseProb:68, dead:true, deadReason:"Frankfurt triggered recall option; no fresh snippet on outcome"}
 ];
 
 const RISERS = [
@@ -77,7 +79,7 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Elias Baum", club:"Eintracht Frankfurt", pos:"RB", dir:"in", age:"~2 days", tier:2, note:"Retained by Hütter despite Dortmund's interest, developed via a loan at SV Elversberg under new BVB sporting director Nils Ole Book."}
+  {name:"Elias Baum", club:"Eintracht Frankfurt", pos:"RB", dir:"in", age:"~2 days", tier:2, note:"Retained by Hütter despite Dortmund's interest, developed via a loan at SV Elversberg under new BVB sporting director Nils Ole Book.", dead:true, deadReason:"Marked as ~2 days on page; no recent snippet confirms arrival"}
 ];
 
 const HUB = {
@@ -92,7 +94,9 @@ const HUB = {
   plettenbergviaGetGermanFootballNewsJuniorDinaEbimbe: {l:"Plettenberg via Get German Football News", u:"https://www.getfootballnewsgermany.com/2026/schalke-ebimbe-done/"},
   kickerRomanoHrvojeSmolcic: {l:"kicker (Romano)", u:"https://www.kicker.de/eintracht-frankfurt/team-transfers"},
   kickerNoelFutkeu: {l:"kicker", u:"https://www.kicker.de/eintracht-frankfurt/team-news"},
-  getGermanFootballNewsSportBildRaphaelOnyedika: {l:"Get German Football News (Sport Bild)", u:"https://www.getfootballnewsgermany.com/2026/onyedika-frankfurt-official/"}};
+  getGermanFootballNewsSportBildRaphaelOnyedika: {l:"Get German Football News (Sport Bild)", u:"https://www.getfootballnewsgermany.com/2026/onyedika-frankfurt-official/"},
+  skydeFlorianPlettenbergLoueyBenFarhat: {l:"Sky.de (Florian Plettenberg)", u:"https://news.google.com/rss/articles/CBMisgFBVV95cUxPZWJJOV9wZzZpMVN4LUl6ZE1haWtiQW5vVEtIeDRqRlQ2aTQ2SUlvVFBPdmJWYzlneVc5Tk5XUzVCVkhVaHlJZFNFVnJqX21Nc1RqcFFVVEQyMGp3UE9MOHo3UGlVbU1Kd04zRTdDbGZyLUdSU2FrM0NrYmlfTkxQVElEc1VGLVVjWXh1a1Z3ekFCZEY2TmpyV1B4WmxxOWNvY0s2N2pIUGkzbTVfcFV1Y0l3?oc=5"},
+  skydeFlorianPlettenbergJuniorDinaEbimbe: {l:"Sky.de (Florian Plettenberg)", u:"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPaVEtVXh3eHNrV3FkLVYteE5JMEVvcjh6WjNOa2Rwa0VZem84N3pMcEZ6OGZXNUx0U3dCZFNHRDVKWmZPejk0VEdYVkM5MGFRN01BdGlzVllzMUNKYjYzVGktSS11QzltMzllS2U1aVhTRVJBdzFQTmJmT0xCblZPZm11dFZ5UUFSTXhkVFJzc241Qi1CYjJ4Z3FJTl9SSkJveXU4ZnhHUjVmcmltc1VWSnVKSklIZTYyWVZEaU1DYXY?oc=5"}};
 
 const LINKMAP = {
   "Noel Aseko Nkili": ["bundesliga","gfn"],
@@ -104,9 +108,10 @@ const LINKMAP = {
   "Noel Aseko": ["bundesligacomNoelAseko"],
   "Aurèle Amenda": ["bundesligacomNoelAseko"],
   "Rasmus Kristensen": ["wikipediaclubtransferlogMalikPimpong"],
-  "Junior Dina Ebimbe": ["plettenbergviaGetGermanFootballNewsJuniorDinaEbimbe"],
+  "Junior Dina Ebimbe": ["plettenbergviaGetGermanFootballNewsJuniorDinaEbimbe", "skydeFlorianPlettenbergJuniorDinaEbimbe"],
   "Hrvoje Smolcic": ["kickerRomanoHrvojeSmolcic"],
-  "Noel Futkeu": ["kickerNoelFutkeu"]};
+  "Noel Futkeu": ["kickerNoelFutkeu"],
+  "Louey Ben Farhat": ["skydeFlorianPlettenbergLoueyBenFarhat"]};
 const WL_LINKMAP = {
   "Elias Baum": ["gfnbaum"]
 };

@@ -50,12 +50,13 @@ const INCOMING = [
   {name:"Lucas Digne", sub:"Release clause return to Paris", club:"Aston Villa", pos:"LB", report:"PSG are set to activate Digne's €10m release clause, with the left-back said to have already agreed personal terms on a three-year deal.", src:"Fabrizio Romano", tier:1, fee:"€10m (release clause)", truth:85, prob:80, light:"g", trend:"flat", note:"Would provide cover for Nuno Mendes; Digne previously at PSG 2013-15", lastSeen:"2026-08-04T19:10:50Z", baseProb:80},
   {name:"Ferran Torres", sub:"Agreement in principle as Barcola cover", club:"Barcelona", pos:"ST", report:"Torres has reportedly reached an agreement in principle to join PSG as the club lines up forward reinforcements with only a year left on his Barcelona deal.", src:"Gianluca Di Marzio", tier:1, fee:"Undisclosed", truth:70, prob:62, light:"g", trend:"flat", note:"One of several forward targets alongside Monaco's Akliouche and Leipzig's Diomandé", lastSeen:"2026-08-04T19:10:50Z", baseProb:62},
   {name:"Guéla Doué", sub:"Eyed as long-term Hakimi cover", club:"RC Strasbourg", pos:"RB", report:"PSG have registered interest in Strasbourg's Ivorian full-back as a potential long-term replacement option for Achraf Hakimi.", src:"L'Équipe", tier:2, fee:"€20m (valuation)", truth:52, prob:35, light:"y", trend:"flat", note:"No significant progress yet; Doué under contract at Strasbourg until 2029", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Maghnes Akliouche", sub:"24 · France · AM", club:"AS Monaco", pos:"AM", report:"Club-to-club talks have broken through after Monaco knocked back an earlier €45m approach, with an agreement described as being in its final stages and the player's green light already given. Luis Enrique gets the creator he wanted for the front line.", src:"Fabrizio Romano", tier:1, fee:"Around €50m", truth:90, prob:88, light:"g", trend:"flat", note:"Romano flagged a 'here we go' as the next step rather than a completed deal, so until Paris publish the announcement it stays a rumour, not a signing.", lastSeen:"2026-08-06T10:49:40Z", baseProb:88}
+  {name:"Maghnes Akliouche", sub:"24 · France · W", club:"AS Monaco", pos:"W", report:"PSG have officially signed Maghnes Akliouche from Monaco", src:"Le Parisien / TF1 Info", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Deal completed and officially announced", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 
 const OUTGOING = [
   {name:"Bradley Barcola", sub:"23 · France · W", club:"Liverpool", pos:"LW", report:"Official club-to-club talks are open with Liverpool, who have made the France winger their number one wide target after Mohamed Salah's exit and are preparing an opening offer. Barcola wants the move; PSG are open to selling but only at a price they consider steep.", src:"Fabrizio Romano", tier:1, fee:"Nine figures sought", truth:90, prob:58, light:"g", trend:"up", note:"Romano has actively cooled the timeline: no agreement on fee, no agreement on personal terms, and he does not expect a resolution soon. The valuation gap is the whole story here.", lastSeen:"2026-08-06T10:49:40Z", baseProb:58},
-  {name:"Ibrahim Mbaye", sub:"Premier League and Bundesliga circling academy winger", club:"Manchester City (shortlisted)", pos:"RW", report:"PSG's 18-year-old academy forward Mbaye has been shortlisted by Manchester City, with Aston Villa, Tottenham and Borussia Dortmund also interested.", src:"Get French Football News", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Highly rated prospect with growing international experience", lastSeen:"2026-08-04T19:10:50Z", baseProb:35}
+  {name:"Ibrahim Mbaye", sub:"Premier League and Bundesliga circling academy winger", club:"Manchester City (shortlisted)", pos:"RW", report:"PSG's 18-year-old academy forward Mbaye has been shortlisted by Manchester City, with Aston Villa, Tottenham and Borussia Dortmund also interested.", src:"Get French Football News", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Highly rated prospect with growing international experience", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Khalil Ayari", sub:"21 · Tunisia · W", club:"Dunkerque", pos:"W", report:"PSG have loaned winger Khalil Ayari to Dunkerque in Ligue 2", src:"L'Équipe / MadeInFOOT", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"flat", note:"Loan deal officially confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 
 const RISERS = [
@@ -95,7 +96,9 @@ const HUB = {
   getFrenchFootballNewsBastienChevalLeeKangin: {l:"Get French Football News (Bastien Cheval)", u:"https://www.getfootballnewsfrance.com/2026/official-atletico-de-madrid-sign-kang-in-lee-from-psg/"},
   gianlucadimarziocomZionSuzuki: {l:"gianlucadimarzio.com", u:"https://www.gianlucadimarzio.com/calciomercato/psg-juventus-suzuki-offerta-28-bonus-parma-495439"},
   getFrenchFootballNewsrelayingFabrizioRomanoMaghnesAkliouche: {l:"Get French Football News (relaying Fabrizio Romano)", u:"https://www.getfootballnewsfrance.com/2026/psg-reach-breakthrough-with-monaco-in-maghnes-akliouche-talks/"},
-  teamTalkrelayingFabrizioRomanoBradleyBarcola: {l:"TeamTalk (relaying Fabrizio Romano)", u:"https://www.teamtalk.com/liverpool/bradley-barcola-transfer-news-fabrizio-romano-opening-bid-new-talks-psg"}};
+  teamTalkrelayingFabrizioRomanoBradleyBarcola: {l:"TeamTalk (relaying Fabrizio Romano)", u:"https://www.teamtalk.com/liverpool/bradley-barcola-transfer-news-fabrizio-romano-opening-bid-new-talks-psg"},
+  leParisienMaghnesAkliouche: {l:"Le Parisien", u:"https://news.google.com/rss/articles/CBMisgJBVV95cUxNMm5LeFVfVHNsUVNlYkZmNEFQVHp1YkREQ1htaWxsaW1rMS1HNmE4V2czMWphV3pXdGUwT1NJSmpJVXBibUpaYmtHYWV6MnpTdFZpWFRwcTd4b1B1MFB1SFhyLVVJenVicEdhcFV4UWVoQVBPNHp2a3pCeDVMWHZ1Rl9TR1U4cTgzTWE1dGdJSHF6TUg3ZktlTnhSS3Yybl84a1JpVFFsU2FvRGtxRExIYUtqVUVCbHROOWtZc1QyM2pxVHJWOVNwTWtCdlBIZkkxTzRrMFVtTzhjUm1fTTZ5UWtraWU4MFZZbGNFWjdXbnkyNGk3bmFmYnZUUVhNczlPMW9VQm4xN3B1T3RoQWVHR3lRLXJXTVQ2UHFROHd0eUlJNHRicGdza3lvdXVtTTNqSnc"},
+  lquipeKhalilAyari: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi6gFBVV95cUxObUp0dEljSWR3eENwX1RGclZMVzNNTXJ0UVFwdWZNZFg1N0JRV0tpX000X0doZ05ydnZxcEl5UlJqNk1hc091T3FkV3ltWmZtekJmVmpNVUtHVUZfejhicFRBX0I0bk9LbzlzazNya1k1Wk9lSTJnSVAxT0E4RnF5SGgybl83SzIybDktblQzaU1aMC04MTh6TWVuZ2FGLTRSWlVLWWRPYTU5ejA2RzNIRkR6V3QtX1c1UndvampXcndadkNPRW95QVNwb0dqRnE5VjFYS3laVXJXTTFIdThDMlJFeUxVSnN4RHc"}};
 
 const LINKMAP = {
   "João Neves": ["gnews-jooneves"],
@@ -109,7 +112,8 @@ const LINKMAP = {
   "Guéla Doué": ["getFrenchFootballNewsLquipeLoAschiGulaDou"],
   "Ibrahim Mbaye": ["getFrenchFootballNewsIbrahimMbaye"],
   "Lee Kang-in": ["getFrenchFootballNewsBastienChevalLeeKangin"],
-  "Maghnes Akliouche": ["getFrenchFootballNewsrelayingFabrizioRomanoMaghnesAkliouche"]};
+  "Maghnes Akliouche": ["getFrenchFootballNewsrelayingFabrizioRomanoMaghnesAkliouche", "leParisienMaghnesAkliouche"],
+  "Khalil Ayari": ["lquipeKhalilAyari"]};
 const WL_LINKMAP = {
   "João Neves": ["gnews-jooneves"]
 };

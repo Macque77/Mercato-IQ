@@ -37,19 +37,19 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Lluc Castell", sub:"LW", club:"Espanyol", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival as Burnley rebuild for an immediate promotion push."}
+  {name:"Lluc Castell", sub:"LW", club:"Espanyol", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival as Burnley rebuild for an immediate promotion push."},
+  {name:"Ben Amos", sub:"Goalkeeper", club:"Unknown", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer confirmed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Martin Dubravka", sub:"GK", club:"Tottenham Hotspur", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released on a free transfer."},
   {name:"Jaidon Anthony", sub:"LW", club:"Brentford", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent exit."},
   {name:"Loum Tchaouna", sub:"LW", club:"Coventry City", pos:"LW", fee:"£20m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale as part of Burnley's post-relegation rebuild."},
   {name:"Maxime Esteve", sub:"CB", club:"RB Leipzig", pos:"CB", fee:"£27.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale, one of the bigger fees of Burnley's summer clear-out."},
-  {name:"Florentino Luís", sub:"26 · Portugal · MF", club:"Ipswich Town", pos:"MF", fee:"£16m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sold to newly promoted Ipswich on a five-year deal worth an initial £16m plus a reported £3m in add-ons, shortly after his own permanent move from Benfica."},
   {name:"Florentino Luis", sub:"26 · Portugal · DM", club:"Ipswich Town", pos:"Defensive midfield", fee:"£16m plus £3m in add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Portugal midfielder has signed a five-year deal at Portman Road, leaving Turf Moor after one season and a relegation. Burnley had been obliged to make his Benfica loan permanent for just over £20m in June, so this represents a loss on the outlay. Fee detail per David Ornstein."}
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Andreas Hountondji", sub:"24 · ST · Benin", club:"Frosinone", pos:"ST", report:"~1 wk ago", src:"Nicolò Schira", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Schira has a mixed but not terrible track record here, edging closer language suggests it is real but terms are still to be nailed down.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
+  {name:"Florentino Luis", sub:"Midfielder", club:"Ipswich Town", pos:"CM", report:"Completed transfer to Ipswich Town", src:"BBC / David Ornstein", tier:1, fee:"£16m", truth:100, prob:100, light:"g", trend:"flat", note:"Initial fee £16m, deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -70,7 +70,9 @@ const HUB = {
   "eastanglian": {l:"East Anglian Daily Times", u:"https://www.eadt.co.uk/sport"},
   "schira": {l:"Nicolò Schira", u:"https://x.com/NicoSchira"},
   pAYahooSportFlorentinoLus: {l:"PA / Yahoo Sport", u:"https://sports.yahoo.com/articles/ipswich-town-complete-signing-florentino-172500458.html"},
-  burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis: {l:"Burnley Express (fee via David Ornstein)", u:"https://www.burnleyexpress.net/sport/football/burnley-fc/burnley-ps16m-switch-premier-league-newcomers-8839366"}};
+  burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis: {l:"Burnley Express (fee via David Ornstein)", u:"https://www.burnleyexpress.net/sport/football/burnley-fc/burnley-ps16m-switch-premier-league-newcomers-8839366"},
+  burnleyExpressBenAmos: {l:"Burnley Express", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNjBfbUxZS21zQTR4MGRWcnRlWS0yeTNFZERXV1UzTlk3T09mbldKOFNWQnZtYkVlY2dqaklBTDBhUnI4OVJ3MnZnc2haVEc2OGpXNWthNHIwNElhOHFGLW5SVVNRUllqTWw1TVpZVXhSUkNVeER1MmVwUUMtTkh2MzhqN1d3bTgybTFSSmNvRm1kQTY2RDNramhnZElfYl91aWdwbEZWVUZvcWc"},
+  bBCFlorentinoLuis: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTFBUSjVna3ZXd3c1TWNoX0tIM1FuZG4yRFB6UUlOSmk3cnY0N0ROcFVycWZyQkR0Y1g4dlhhcWpoaUdZa2tBbGNhZDVVNmpLaUQxRV81aHdnT0VnQ1doc3g0NFBRMGNRMFZ2Z2c"}};
 
 const LINKMAP = {
   "Lluc Castell": ["gnews-lluccastell"],
@@ -78,9 +80,10 @@ const LINKMAP = {
   "Jaidon Anthony": ["gnews-jaidonanthony"],
   "Loum Tchaouna": ["gnews-loumtchaouna"],
   "Maxime Esteve": ["gnews-maximeesteve"],
-  "Florentino Luis": ["romano", "eastanglian", "burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis"],
+  "Florentino Luis": ["romano", "eastanglian", "burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis", "bBCFlorentinoLuis"],
   "Andreas Hountondji": ["schira"],
-  "Florentino Luís": ["pAYahooSportFlorentinoLus"]};
+  "Florentino Luís": ["pAYahooSportFlorentinoLus"],
+  "Ben Amos": ["burnleyExpressBenAmos"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

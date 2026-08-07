@@ -62,20 +62,10 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Ousmane Diomande", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"Forest in advanced talks and have agreed personal terms", src:"on-page rumour", tier:3, fee:"unknown", truth:70, prob:75, light:"g", trend:"down", note:"Advanced stage reported", lastSeen:"2026-08-06T13:55:46Z", baseProb:75},
-  {name:"Arne Engels", sub:"unknown · Belgium · unknown", club:"unknown", pos:"unknown", report:"Forest have stepped up their pursuit", src:"on-page rumour", tier:3, fee:"unknown", truth:55, prob:50, light:"y", trend:"up", note:"Pursuit escalated", lastSeen:"2026-08-06T13:55:46Z", baseProb:50},
-  {name:"Folarin Balogun", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"Forest have made contact over potential move", src:"on-page rumour", tier:3, fee:"unknown", truth:45, prob:40, light:"y", trend:"up", note:"Initial contact stage", lastSeen:"2026-08-06T13:55:46Z", baseProb:40},
-  {name:"Tijjani Reijnders", sub:"unknown · Netherlands · unknown", club:"unknown", pos:"Midfielder", report:"Forest have turned attention to Dutch midfielder", src:"on-page rumour", tier:3, fee:"unknown", truth:40, prob:35, light:"y", trend:"up", note:"Recently targeted", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
-  {name:"Cathal McCarthy", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"On-page rumour (~3 weeks old)", src:"on-page rumour", tier:3, fee:"unknown", truth:40, prob:35, light:"y", trend:"flat", note:"Stale rumour (3+ weeks, no recent confirmation)", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
-  {name:"Dodo", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"On-page rumour (~2 weeks old)", src:"on-page rumour", tier:3, fee:"unknown", truth:45, prob:40, light:"y", trend:"flat", note:"Recent but no new confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:40}
+  {name:"James McAtee", sub:"Unknown · England · Midfielder", club:"Manchester City", pos:"Midfielder", report:"Nottingham Forest target", src:"James Ducker, The Telegraph", tier:1, fee:"", truth:65, prob:55, light:"g", trend:"flat", note:"Recently reported as a target", lastSeen:"2026-08-07T01:42:32Z", baseProb:55}
 ];
 
-const OUTGOING = [
-  {name:"Murillo", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"On-page rumour (6 Jun 2026 date)", src:"on-page rumour", tier:3, fee:"unknown", truth:35, prob:30, light:"y", trend:"up", note:"Very old date, likely stale", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
-  {name:"Morgan Gibbs-White", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"On-page rumour (24 Jul 2026 date)", src:"on-page rumour", tier:3, fee:"unknown", truth:40, prob:35, light:"y", trend:"up", note:"Outdated date", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
-  {name:"Chris Wood", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"On-page rumour (~3 weeks old)", src:"on-page rumour", tier:3, fee:"unknown", truth:40, prob:35, light:"y", trend:"flat", note:"Stale rumour", lastSeen:"2026-08-06T13:55:46Z", baseProb:35},
-  {name:"Ola Aina", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", report:"On-page rumour (~4 days old)", src:"on-page rumour", tier:3, fee:"unknown", truth:50, prob:45, light:"y", trend:"flat", note:"Very recent", lastSeen:"2026-08-06T13:55:46Z", baseProb:45}
-];
+const OUTGOING = [];
 const DEAD = [
   {name:"Lucas Bergvall", sub:"20 · CM · Sweden", club:"Tottenham Hotspur", pos:"CM", report:"27 Jul 2026", src:"The Guardian / TEAMtalk / football365", tier:1, fee:"£50-65m (Spurs valuation)", truth:74, prob:40, light:'y', trend:'up',
    note:"Genuinely live: the Guardian reports Bergvall has formally told Tottenham he wants to leave, naming Forest as his preferred destination, with playing time set to shrink behind new signings Sandro Tonali and Mateus Fernandes. Forest's opening £38m bid was rejected in mid-July against a £50m Spurs valuation that has since been quoted as high as £65m, and head coach Di Zerbi is described as 'relaxed' rather than combative about a sale. The player wants it; the fee gap is now the only real obstacle, and Forest may need patience rather than a fresh bid straight away.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"Outdated date (27 Jul 2026), no credible recent confirmation; stale rumour", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
@@ -120,10 +110,10 @@ const POSITIONS = [
 ];
 
 const WATCHLIST = [
-  {name:"Cathal McCarthy", club:"Hull City", pos:"CB", dir:"in", age:"~3 wks", tier:3, note:"19-year-old Irish centre-back; Forest's seven-figure bid was rejected, an improved offer is expected, with a Championship loan likely if he signs."},
-  {name:"Dodo", club:"Fiorentina", pos:"RB", dir:"in", age:"~2 wks", tier:3, note:"27-year-old attacking full-back being 'lined up' alongside the Read pursuit; explosive going forward, considered weaker defensively than Aina."},
-  {name:"Chris Wood", club:"Contract situation", pos:"ST", dir:"out", age:"~3 wks", tier:3, note:"Entering the final year of his deal at 34; local reporting suggests a sale makes sense to avoid losing him free next summer, but no interested club has been named yet."},
-  {name:"Ola Aina", club:"Contract/squad status", pos:"RB", dir:"out", age:"~4 days", tier:3, note:"Injury-hit 2025/26 (28 matches missed) and now facing fresh competition from the Read pursuit; no external suitor reported, but his standing is visibly eroding."}
+  {name:"Cathal McCarthy", club:"Hull City", pos:"CB", dir:"in", age:"~3 wks", tier:3, note:"19-year-old Irish centre-back; Forest's seven-figure bid was rejected, an improved offer is expected, with a Championship loan likely if he signs.", dead:true, deadReason:"No recent credible update; rumour stale (3+ weeks)"},
+  {name:"Dodo", club:"Fiorentina", pos:"RB", dir:"in", age:"~2 wks", tier:3, note:"27-year-old attacking full-back being 'lined up' alongside the Read pursuit; explosive going forward, considered weaker defensively than Aina.", dead:true, deadReason:"No recent credible update; rumour stale (2+ weeks)"},
+  {name:"Chris Wood", club:"Contract situation", pos:"ST", dir:"out", age:"~3 wks", tier:3, note:"Entering the final year of his deal at 34; local reporting suggests a sale makes sense to avoid losing him free next summer, but no interested club has been named yet.", dead:true, deadReason:"No recent credible update; rumour stale (3+ weeks)"},
+  {name:"Ola Aina", club:"Contract/squad status", pos:"RB", dir:"out", age:"~4 days", tier:3, note:"Injury-hit 2025/26 (28 matches missed) and now facing fresh competition from the Read pursuit; no external suitor reported, but his standing is visibly eroding.", dead:true, deadReason:"No recent credible update to confirm departure"}
 ];
 
 const HUB = {
@@ -163,7 +153,8 @@ const HUB = {
   yahooSportsSkySportsArneEngels: {l:"Yahoo Sports (Sky Sports)", u:"https://sports.yahoo.com/articles/nottingham-forest-step-pursuit-celtic-073500362.html"},
   footballFanCastFolarinBalogun: {l:"FootballFanCast", u:"https://www.footballfancast.com/fabrizio-romano-nottingham-forest-transfer-talks-ousmane-diomande-glasner/"},
   sportsMoleXaverSchlager: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/nottingham-forest/transfer-talk/feature/nottingham-forest-summer-transfers-all-confirmed-ins-and-outs-for-2026_598980.html"},
-  pAYahooSportTijjaniReijnders: {l:"PA / Yahoo Sport", u:"https://ca.sports.yahoo.com/news/nottingham-forest-target-tijjani-reijnders-153500623.html"}};
+  pAYahooSportTijjaniReijnders: {l:"PA / Yahoo Sport", u:"https://ca.sports.yahoo.com/news/nottingham-forest-target-tijjani-reijnders-153500623.html"},
+  theTelegraphJamesMcAtee: {l:"The Telegraph", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU?oc=5"}};
 
 const LINKMAP = {
   "Xaver Schlager": ["ggfnSchlager","forestOfficialGlasner", "sportsMoleXaverSchlager"],
@@ -182,7 +173,8 @@ const LINKMAP = {
   "Morgan Gibbs-White": ["yahooGibbsWhite"],
   "Arne Engels": ["yahooSportsSkySportsArneEngels"],
   "Folarin Balogun": ["footballFanCastFolarinBalogun"],
-  "Tijjani Reijnders": ["pAYahooSportTijjaniReijnders", "romanoX"]};
+  "Tijjani Reijnders": ["pAYahooSportTijjaniReijnders", "romanoX"],
+  "James McAtee": ["theTelegraphJamesMcAtee"]};
 const WL_LINKMAP = {
   "Cathal McCarthy": "forestNewsMcCarthy",
   "Dodo": "fiDodo",

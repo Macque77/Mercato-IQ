@@ -39,7 +39,8 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Shea Charles", sub:"23 · MF · Northern Ireland", club:"Leeds United", pos:"MF", report:"22 Jul 2026", src:"Graham Smyth / Yorkshire Evening Post", tier:2, fee:"~£30m valuation", truth:60, prob:40, light:"y", trend:"up", note:"Leeds have lodged what they're calling their 'best and final' bid after two rejected offers; Southampton are holding out for closer to their valuation. Crystal Palace and Fulham also linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Shea Charles", sub:"22 · Grenada · Midfielder", club:"Southampton", pos:"Midfielder", report:"Premier League move imminent; told it is 'when, not if'", src:"The League Paper / BBC", tier:2, fee:"~£30m valuation", truth:85, prob:80, light:"g", trend:"up", note:"Midfielder told Premier League move is matter of 'when, not if'; exit nears", lastSeen:"2026-08-07T01:42:32Z", baseProb:80},
+  {name:"Jay Robinson", sub:"19 · England · Winger", club:"Southampton", pos:"Winger", report:"Set to join Monza in Serie A", src:"Football Italia", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"19-year-old winger expected to move to Italian club Monza", lastSeen:"2026-08-07T01:42:32Z", baseProb:70}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -53,16 +54,19 @@ const HUB = {
   "gnews-danielperetz": {l:"Related news search: Daniel Peretz", u:"https://news.google.com/search?q=Southampton%20Daniel%20Peretz%20transfer&hl=en-GB&gl=GB"},
   "gnews-lewisdobbin": {l:"Related news search: Lewis Dobbin", u:"https://news.google.com/search?q=Southampton%20Lewis%20Dobbin%20transfer&hl=en-GB&gl=GB"},
   beinRamsdale: {l:"beIN Sports · Ramsdale", u:"https://www.beinsports.com/en-us/soccer/premier-league/articles/newcastle-let-ramsdale-return-to-southampton-as-schar-signs-new-contract-2026-06-02"},
-  yorkshireeveningpostCharles: {l:"Yorkshire Evening Post · Charles", u:"https://www.yorkshireeveningpost.co.uk/sport/football/leeds-united/leeds-united-transfers-shea-charles-southampton-8815706"}
-};
+  yorkshireeveningpostCharles: {l:"Yorkshire Evening Post · Charles", u:"https://www.yorkshireeveningpost.co.uk/sport/football/leeds-united/leeds-united-transfers-shea-charles-southampton-8815706"},
+  bBCLoueyBenFarhat: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1BdXFCT2hnR0ZrdGRkTHNyUzFBanl2c25Dblh3LWR4U280V2p0UzZjOV9OQlMtcHdaVGFvRjZKd3BPX3lySk9WZnZPdmYxQ0J3dV9lZy1GR2NTR3ozcExZSnVaeTNOek5WclE"},
+  theLeaguePaperBBCSheaCharles: {l:"The League Paper / BBC", u:"https://news.google.com/rss/articles/CBMiiwJBVV95cUxPUnFaNUxQVGxuQVBfZEZRUVZmaDlieU5HLTFab0VveVp5bWNfZUVTSXVRbFVGd0ZLMFFlSzZfWnFkcFl1TlR5bEZzWGJBNThYWm1lcFN6b1JiZWpfTHhpQkpIa0k4b29yQWN3eVRHRE1NNThpZU5uZ2ZJd0xFWl9JRTh3SzNfQkFYTHRlWjBlMnZnWXpKcnJkNkRPMzlnMDNNVUR0X0k2VkJwZkNmdW9zQ1Vpbl9abkZWcWREakNrRHVTMDVDODkxTTFNUF8yRU54MVVYV1JsTHB5UlFnd3pmQ2RVaVVmNWV3UXZjNzFyaXIxT2RaVjFtYThaa3dwVXB0VDB0M2VJTld4UTg"},
+  footballItaliaJayRobinson: {l:"Football Italia", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxPdFpuT19WaXhCV2dxZXYzbTBhS2VLeG8zOE5PdEZETWRYZ1Z6dlpsWVVJQVVKMTFIbnVwUFBTbFRIVV9ydjZ0d2pXZUJabHdQSDRSNUlGOFhhVjNfZnhFQW1wTXJkVkRBZUo5VTNXWGNUVFdZaXlWWk1uaEt2UVlfRdIBhgFBVV95cUxNQTFkYVM1Rk9HeFR4amFScEpNZHNsQTNpWmM3SEdDZGRaYVlFdEdpZzVtZWl1WFdxQ1R6WlhfNThSdmxUaDdwNFYtUU5CTjVfVDVTQUlod0ZCMmxPaE50UWhBSXJUSXpDNXp3VWVWRk9qaWtTRnpNdUI5RnBXSHhWWkVlNUk5Zw"}};
 
 const LINKMAP = {
   "Cyle Larin": ["gnews-cylelarin"],
   "Daniel Peretz": ["gnews-danielperetz"],
   "Lewis Dobbin": ["gnews-lewisdobbin"],
   "Aaron Ramsdale": ["beinRamsdale"],
-  "Shea Charles": ["yorkshireeveningpostCharles"]
-};
+  "Shea Charles": ["yorkshireeveningpostCharles", "theLeaguePaperBBCSheaCharles"],
+  "Louey Ben Farhat": ["bBCLoueyBenFarhat"],
+  "Jay Robinson": ["footballItaliaJayRobinson"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -33,7 +33,9 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Elson Mendes", sub:"Unknown · Unknown · Unknown", club:"Turkish 1st Division", pos:"Unknown", report:"Departed to Turkish first division", src:"maCommune.info", tier:3, fee:"Unknown", truth:85, prob:90, light:"g", trend:"flat", note:"Quitte le FC Sochaux-Montbéliard pour la 1re division turque", lastSeen:"2026-08-07T01:42:32Z", baseProb:90}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -42,10 +44,19 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Sochaux Official", u:"#"}
-};
+  club: {l:"Sochaux Official", u:"#"},
+  fCSochauxMontbliardVictorLobry: {l:"FC Sochaux-Montbéliard", u:"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQR0wxNVJWMlNOLVhSS2F5NVhFVFNhM0F3eHc1QjkwYUhhMGoxS3Y2SVQ1Mi05elJwdjJBckQ2MHdrS0poSHJwaVUzYzFkYjVYWENiLVFlaU8xa2N6ZWxyaVYwS1U2eFNaUDZCbTBEMFgwTDBQb1JaSWhNQWgzeE1zRjl6Q092ck"},
+  icifrSaadAgouzoul: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMi8wFBVV95cUxNaV80ZUJsTG5IOWZ4bVltU3FUS2tYYmc5UzU1c2pWM3JKUXVscExWcXplQXFrTTN2TTBld0FobXgxOGdYQ25qYWZzdGdJZGxwN2lKeUVydFc4UUpoeDh6b3h1Y3hCTFlocFE5VFU1X0Fsd0VmdzUzbjFWZ2Z6OTRYdjN2NUo3ZHpPRV9oczlMeW9DVnU0ZDNsN1NtcTR5bmhleDFlVzRTUXRsRzVCN3hDc1lZdEliMWFsLWdwZzBjYi1sLWJoYVNlRmZVcXpWQ1I3bGNPMW5leGtlMUJvVDlTU1FZT2lnOFFEUjhLdTg3MlJXaG8"},
+  fCSochauxMontbliardSamyBaghdadi: {l:"FC Sochaux-Montbéliard", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxOYVNsLS1MaWd1eV9VZ0tOMmkyVGcyUmt0TzlnM2JkX1FZOGlaSVhMRzU3ZDJWZDJzOEoxVmFzTjJpUEx3VXYzb0JxcVRnVk1TWEFpQW42VFpMaGMtbHJwTldqS2U4RXJhWjQ5LVZubi1pTmFZMU9vaDBKRlVmRHdLNklfWUVBWVF2cXdYWFh3"},
+  fCSochauxMontbliardJonathanMexique: {l:"FC Sochaux-Montbéliard", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxORjRxcmFHSXlNX3NxWXp5MWhlNDlQYzhuRGdTUzg5REV0a0p4Z3UzOTVqQVNLWHZKTXIwRTBPVnBUdHlkT3JRWVhHU2tyUnpUQk1qbGM5aEY3cnZROUxTcVp5dTJlczVaZ2VWbERrQkEwQ2x3WEp4R283MThmMUVVekV1d1Y5VkVWRUJvR3Z3YjE"},
+  maCommuneinfoElsonMendes: {l:"maCommune.info", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxOV1pzdFpPY1hZbjFPdEpORWdOREV3bjBjTXpBbVJQQmtRQi1URnU2T2hfWHlpLTRCbUFycGNnczdvTjh2LWlNX1l6Z0lIc0dxbmlabnpSbHZ2SU5HNzVsc2tlSXN1MVlvX2FxOTFCMzFsMXJDTVI1M0hlZ1NtY3pPem9jRm5sckNHMVFFb2R0U0ppUUZFMmVYdmNRMF9hWDVZaTRv"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Victor Lobry": ["fCSochauxMontbliardVictorLobry"],
+  "Saad Agouzoul": ["icifrSaadAgouzoul"],
+  "Samy Baghdadi": ["fCSochauxMontbliardSamyBaghdadi"],
+  "Jonathan Mexique": ["fCSochauxMontbliardJonathanMexique"],
+  "Elson Mendes": ["maCommuneinfoElsonMendes"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

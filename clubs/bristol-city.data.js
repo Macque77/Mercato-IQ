@@ -32,12 +32,17 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Sam Tickle", sub:"GK", club:"Wigan Athletic", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
-  {name:"Brad Collins", sub:"GK", club:"Coventry City", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed free transfer."}
+  {name:"Brad Collins", sub:"GK", club:"Coventry City", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed free transfer."},
+  {name:"Dom Ballard", sub:"striker · England · CF", club:"Leyton Orient", pos:"ST", fee:"£5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Leyton Orient"},
+  {name:"Lorent Tolaj", sub:"striker · Kosovo · CF", club:"Plymouth Argyle", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Plymouth Argyle"}
 ];
 const CONFIRMED_OUT = [
   {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
 ];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Dom Ballard", sub:"striker · England · CF", club:"Leyton Orient", pos:"ST", report:"Bristol City confirm signing of Dom Ballard from Leyton Orient after closing in on deal; striker backed for 'big future'", src:"Bristol Live", tier:2, fee:"£5m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; Ballard signed from Leyton Orient", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Lorent Tolaj", sub:"striker · Kosovo · CF", club:"Plymouth Argyle", pos:"ST", report:"Bristol City sign striker Lorent Tolaj from Plymouth Argyle", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; signed from Plymouth Argyle", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+];
 const OUTGOING = [];
 const DEAD = [
   {name:"Rio Cardines", sub:"Full-back", club:"Crystal Palace", pos:"FB", report:"~1 wk ago", src:"Yahoo Sports", tier:3, fee:"Loan", truth:55, prob:45, light:'y', trend:'flat', note:"Manager Michael Skubala's own still open for business quote lends this some weight, but nothing official and he stressed there is no rush.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"No fresh snippet evidence of an active transfer; rumour from ~1 week ago with no material update or confirmation", dir:"in", deadAt:"2026-08-06T14:21:38Z"}
@@ -53,15 +58,17 @@ const HUB = {
   "gnews-samtickle": {l:"Related news search: Sam Tickle", u:"https://news.google.com/search?q=Bristol%20City%20Sam%20Tickle%20transfer&hl=en-GB&gl=GB"},
   "gnews-bradcollins": {l:"Related news search: Brad Collins", u:"https://news.google.com/search?q=Bristol%20City%20Brad%20Collins%20transfer&hl=en-GB&gl=GB"},
   "gnews-sinclairarmstrong": {l:"Related news search: Sinclair Armstrong", u:"https://news.google.com/search?q=Bristol%20City%20Sinclair%20Armstrong%20transfer&hl=en-GB&gl=GB"},
-  "yahoosport": {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/"}
-};
+  "yahoosport": {l:"Yahoo Sports", u:"https://uk.sports.yahoo.com/"},
+  bristolLiveDomBallard: {l:"Bristol Live", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQMEZfSGJPWVhlWXJ3U1RFdGRER0lha2R4ZXVKYWV3Z1F4ZXpMN1hwYlBST3FncDVPdndIZlNXODVxRTg5eHpENzJ0bFlPSGpzV2JDcko3NVFnQmxGMW01MkRaZGhCNFU1UHdoYkFEbUk0eV9rVFJ0VEk0dTRSNnlfeUlJRHVTWFY3RU1meXo4RlUtVmYteFZQZ29TYXE"},
+  bBCLorentTolaj: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kZ0NoU0RaclBMeExoWXVkbkVrV2NGZldEQ0ZqMm1hekVYV09YU2ZSRHNxOFRqTmQ2MGtqU2F1SFNhMzRvdjhuOGhEWFZ5bjk5NFFDd1ZKWGZtMkdrVUQ3UHFwYkVXbVk"}};
 
 const LINKMAP = {
   "Sam Tickle": ["gnews-samtickle"],
   "Brad Collins": ["gnews-bradcollins"],
   "Sinclair Armstrong": ["gnews-sinclairarmstrong"],
-  "Rio Cardines": ["yahoosport"]
-};
+  "Rio Cardines": ["yahoosport"],
+  "Dom Ballard": ["bristolLiveDomBallard"],
+  "Lorent Tolaj": ["bBCLorentTolaj"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

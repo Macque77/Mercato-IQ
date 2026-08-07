@@ -55,16 +55,17 @@ const INCOMING = [
   {name:"Djibril Sidibé", sub:"33 · RB · France", club:"Free agent", pos:"RB", report:"22 Jul 2026", src:"Get French Football News", tier:2, fee:"Free transfer", truth:40, prob:16, light:"o", trend:"flat", note:"The 2018 World Cup winner has been mentioned as a possible experienced free-agent option.", lastSeen:"2026-08-04T19:10:50Z", baseProb:16},
   {name:"Memphis Depay", sub:"Forward, out-of-contract option", club:"Corinthians", pos:"ST", report:"Marseille have made contact over a possible move for Memphis Depay, whose contract at Corinthians expired, but his wage demands are seen as a major obstacle.", src:"Foot Mercato", tier:2, fee:"Free transfer", truth:50, prob:20, light:"o", trend:"flat", note:"Reported as unlikely to progress due to prohibitive wage demands.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Ilan Kebbal", sub:"Winger, monitored", club:"Paris FC", pos:"RW", report:"Marseille are exploring a move for Paris FC winger Ilan Kebbal, though the newly promoted club's manager has publicly said he wants to keep him.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"flat", note:"Paris FC boss Liam Rosenior has publicly ruled out a departure, cooling the rumour.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Guillaume Restes", sub:"Goalkeeper, depth option", club:"Toulouse FC", pos:"GK", report:"Marseille have been credited with interest in Toulouse goalkeeper Guillaume Restes as competition/succession for the current No.1 spot.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Speculative given uncertainty over Rulli's future in Marseille.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Guillaume Restes", sub:"Goalkeeper, depth option", club:"Toulouse FC", pos:"GK", report:"Marseille have been credited with interest in Toulouse goalkeeper Guillaume Restes as competition/succession for the current No.1 spot.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Speculative given uncertainty over Rulli's future in Marseille.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
+  {name:"Marcin Bułka", sub:"goalkeeper", club:"OGC Nice", pos:"GK", report:"Olympique de Marseille has submitted a first offer for goalkeeper Marcin Bułka as they seek a new starting keeper", src:"MadeInMarseillais", tier:3, fee:"Undisclosed", truth:65, prob:40, light:"y", trend:"flat", note:"Initial offer submitted; negotiations ongoing", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Igor Paixão", sub:"25 · W · Brazil", club:"Leeds United", pos:"W", report:"1 Aug 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:45, prob:18, light:"o", trend:"flat", note:"Leeds United reported to have included the winger on their shortlist, though nothing concrete has emerged.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
-  {name:"Gerónimo Rulli", sub:"34 · GK · Argentina", club:"Manchester City", pos:"GK", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:20, light:"o", trend:"flat", note:"Manchester City reported to have submitted an offer for the veteran shot-stopper.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Pierre-Emile Højbjerg", sub:"30 · CM · Denmark", club:"AC Milan", pos:"CM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:42, prob:14, light:"r", trend:"flat", note:"AC Milan reported to have considered the Danish midfielder as an option.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
+  {name:"Igor Paixao", sub:"Winger, valuation gap", club:"Leeds United", pos:"LW", report:"Leeds United have placed Igor Paixao third on their shortlist, but a large valuation gap (OM want 50m euros, Leeds offering 30-35m) makes the deal difficult.", src:"Foot Mercato", tier:2, fee:"€50m demanded / €30-35m offered", truth:60, prob:30, light:"y", trend:"flat", note:"Significant gap between valuation and offer reduces the near-term likelihood of a deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Geronimo Rulli", sub:"Goalkeeper, offer submitted", club:"Manchester City", pos:"GK", report:"Manchester City have submitted an offer for Marseille goalkeeper Geronimo Rulli, though Marseille want to control the timing and line up a replacement before letting him leave.", src:"Fabrizio Romano", tier:1, fee:"Undisclosed", truth:70, prob:55, light:"g", trend:"flat", note:"Marseille reportedly want a replacement (e.g. Restes) lined up before sanctioning the sale.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Pierre-Emile Hojbjerg", sub:"Midfielder, Serie A interest", club:"AC Milan", pos:"CDM", report:"AC Milan are considering a move for Marseille midfielder Pierre-Emile Hojbjerg as they look to add experience to their midfield.", src:"Sky Sport", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Described as under consideration rather than an active bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Igor Paixao", sub:"Winger, valuation gap", club:"Leeds United", pos:"LW", report:"Leeds United have placed Igor Paixao third on their shortlist, but a large valuation gap (OM want 50m euros, Leeds offering 30-35m) makes the deal difficult.", src:"Foot Mercato", tier:2, fee:"€50m demanded / €30-35m offered", truth:60, prob:30, light:"y", trend:"flat", note:"Significant gap between valuation and offer reduces the near-term likelihood of a deal.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30}
+  {name:"Pierre-Emile Højbjerg", sub:"30 · CM · Denmark", club:"AC Milan", pos:"CM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:42, prob:14, light:"r", trend:"flat", note:"AC Milan reported to have considered the Danish midfielder as an option.", lastSeen:"2026-08-04T19:10:50Z", baseProb:14},
+  {name:"Pierre-Emile Hojbjerg", sub:"Midfielder, Serie A interest", club:"AC Milan", pos:"CDM", report:"AC Milan are considering a move for Marseille midfielder Pierre-Emile Hojbjerg as they look to add experience to their midfield.", src:"Sky Sport", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Described as under consideration rather than an active bid.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"no longer a current link"},
+  {name:"Nayef Aguerd", sub:"defender", club:"Olympique de Marseille", pos:"CB", report:"Olympique de Marseille close to an agreement with a Qatari club for Nayef Aguerd; club rejected an initial offer from Real Sociedad and has set an expected price to release the player", src:"MadeInFOOT", tier:3, fee:"Undisclosed", truth:70, prob:55, light:"g", trend:"flat", note:"Advanced negotiations with Qatari club; Real Sociedad bid rejected", lastSeen:"2026-08-07T01:42:32Z", baseProb:55},
+  {name:"Facundo Medina", sub:"defender", club:"Olympique de Marseille", pos:"LB", report:"Olympique de Marseille has refused an offer from Bayer Leverkusen and set an expected price to release Facundo Medina", src:"MadeInFOOT", tier:3, fee:"Undisclosed", truth:75, prob:45, light:"y", trend:"flat", note:"Leverkusen bid rejected; OM holding firm on valuation", lastSeen:"2026-08-07T01:42:32Z", baseProb:45}
 ];
 const DEAD = [
   {name:"Martin Terrier", sub:"29 · FW · France", club:"Bayer Leverkusen", pos:"FW", report:"30 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:30, light:"y", trend:"flat", note:"Marseille are competing with Rennes, Terrier's former club, to sign the striker.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30, dir:"in", deadReason:"signed for stade-rennais", deadAt:"2026-08-06T14:21:38Z"},
@@ -106,7 +107,10 @@ const HUB = {
   getFrenchFootballNewsFootMercatoNayefAguerd: {l:"Get French Football News (Foot Mercato)", u:"https://www.getfootballnewsfrance.com/2026/rennes-plot-move-to-bring-nayef-aguerd-back-from-marseille/"},
   getFrenchFootballNewsFootMercatoIgorPaixao: {l:"Get French Football News (Foot Mercato)", u:"https://www.getfootballnewsfrance.com/2026/marseilles-igor-paixao-included-on-leeds-united-shortlist-but/"},
   getFrenchFootballNewsLePhoceenFacundoMedina: {l:"Get French Football News (Le Phoceen)", u:"https://www.getfootballnewsfrance.com/2026/bayer-leverkusen-target-marseilles-facundo-medina/"},
-  footMercatoFacundoMedina: {l:"Foot Mercato", u:"https://www.footmercato.net/club/om/tableau/"}};
+  footMercatoFacundoMedina: {l:"Foot Mercato", u:"https://www.footmercato.net/club/om/tableau/"},
+  madeInMarseillaisMarcinBuka: {l:"MadeInMarseillais", u:"https://news.google.com/rss/articles/CBMingJBVV95cUxPV1NURkx0anBzejJYMXVvZEpLRzgxeUdnRlVCSS1UcDNhYXlVWVBuQUhqQWkxNmVMeUJnNXlvYW1Pc2dqZm5JQ3cwc3J4bU1WdkJmWmVXRnQ5STFoVncyVkxBNEJQeERMcUFXY19WTGttanJlWHFXVVppaWpsaHBDNzF1UHEyVXVyQlB2MFNGNjFuOUNiUFlXUWxOcWFrWDZnSV9OMU1ZRlI5d2R2SHBOczZhdmpMRVJrY1YxMTZtS2hFYURzVW9qZ29KeV9mRGtjUk9pYlFJOTIwcFRNeDR5TXBkM2dtXzJwVTVCellIU2NoZnhfaGQ0Q2dzVTJhYzZSWFFQYmZ4ZFZjREFwNDdGbk53elJvQWx4Wk9nTzF3"},
+  madeInFOOTNayefAguerd: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi6AFBVV95cUxQNHhsZi0wcS1OajVnQWh0NGhzMGJ1cWhObVhNaHktanVLdlowNG5uOGdnUjZGUndGNk9KekE4YWlhSGZhejBuekZ2WmNEUk8tMWhkZDE4Nk1DYkRtVXY5WVBlcUZpZThGWExBSi1Sd1VMeldScWd2a2FvVHpBeEhhXy1TVVNXZVRnZExSTW0yNkhxRXk1WUJGcDMyZDhfaTVfRGlIQzVXb01UbXUwdUd4Ym9Nal9JNmNJQWNzYl80VXh2a1NUNTU3NFI4MTFQODNjTVlTeE1Qd0s5T2N1NFRpbXFxTlV0dWEw"},
+  madeInFOOTFacundoMedina: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMiigJBVV95cUxOUHJtQV96ZE1QTkJMbWpFOXpqMHd5OFh5c0JSWmJ4aUs5Q3ByelZJMzJKMkdvYWlwdUNadmQ5UkV6RHAwUC1FckNCajhxeUtsd19mZzhuS2lkRnRfTjRObGhaMGxVQkZLNmplT2paRmE3T29hb1p1enFRQlRmVjVGU0E1bXByNlNKbmF4S0poeXhiOTVJX0VwQWVKVnlNWGx5Rlo5aXJMOHdTNWJhMWlpbERVWGl2V3dmSGtrVndHTmdIaS01OXlDb1Z4UEJ1UDVyV09yVmNaaGNIeS05eXlQWFgyTFNjRzZhcEJpMi1VNV9Fa1lkM1kyVE1ZaFhNNjUxclVjX0FCNjlMUQ"}};
 
 const LINKMAP = {
   "Matteo Guendouzi": ["gnews-matteoguendouzi"],
@@ -116,7 +120,7 @@ const LINKMAP = {
   "Moris Valinčić": ["gffn-marseille"],
   "Djibril Sidibé": ["gffn-marseille"],
   "Igor Paixão": ["gffn-marseille"],
-  "Nayef Aguerd": ["gffn-marseille", "getFrenchFootballNewsFootMercatoNayefAguerd"],
+  "Nayef Aguerd": ["gffn-marseille", "getFrenchFootballNewsFootMercatoNayefAguerd", "madeInFOOTNayefAguerd"],
   "Gerónimo Rulli": ["gffn-marseille"],
   "Pierre-Emile Højbjerg": ["gffn-marseille"],
   "Mason Greenwood": ["fabrizioRomanoviaFootballTransfersMasonGreenwood", "footMercatoGuillaumeRestes", "footMercatoFacundoMedina"],
@@ -126,12 +130,13 @@ const LINKMAP = {
   "Geronimo Rulli": ["getFrenchFootballNewsFabrizioRomanoGeronimoRulli"],
   "Pierre-Emile Hojbjerg": ["getFrenchFootballNewsSkySportPierreEmileHojbjerg"],
   "Igor Paixao": ["getFrenchFootballNewsFootMercatoIgorPaixao"],
-  "Facundo Medina": ["getFrenchFootballNewsLePhoceenFacundoMedina", "footMercatoFacundoMedina"],
+  "Facundo Medina": ["getFrenchFootballNewsLePhoceenFacundoMedina", "footMercatoFacundoMedina", "madeInFOOTFacundoMedina"],
   "Pierre-Emerick Aubameyang": ["footMercatoGuillaumeRestes", "footMercatoFacundoMedina"],
   "Sacha Lung": ["footMercatoGuillaumeRestes"],
   "Adam El Boughlamy": ["footMercatoGuillaumeRestes"],
   "Bilal Nadir": ["footMercatoGuillaumeRestes"],
-  "Timothy Weah": ["footMercatoFacundoMedina"]};
+  "Timothy Weah": ["footMercatoFacundoMedina"],
+  "Marcin Bułka": ["madeInMarseillaisMarcinBuka"]};
 const WL_LINKMAP = {
   "Martin Terrier": ["gffn-marseille"]
 };

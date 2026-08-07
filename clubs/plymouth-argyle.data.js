@@ -38,10 +38,13 @@ const INCOMING = [
   {name:"Murphy Cooper", sub:"GK", club:"QPR", pos:"GK", report:"~1 wk ago", src:"Various", tier:3, fee:"~£500k", truth:65, prob:55, light:'g', trend:'up', note:"Plymouth reportedly set to beat Sheffield Wednesday and MK Dons to the signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
   {name:"Jayden Wareham", sub:"FW", club:"Exeter City", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Fan-backed target as a possible Tolaj replacement.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
   {name:"Callum Robinson", sub:"FW", club:"Undisclosed", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:35, prob:25, light:'o', trend:'flat', note:"Alternate Tolaj replacement option floated.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Competing with Notts County for the striker.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Michael Mellon", sub:"ST", club:"Burnley", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Competing with Notts County for the striker.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Will Evans", sub:"striker", club:"Mansfield Town", pos:"ST", report:"Mansfield Town agree £400,000 transfer fee for sale of Will Evans to Plymouth Argyle", src:"chad.co.uk", tier:2, fee:"£400,000", truth:90, prob:95, light:"g", trend:"flat", note:"Deal agreed between clubs", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Alex Mitchell", sub:"midfielder", club:"Charlton Athletic", pos:"MID", report:"Alex Mitchell joins Plymouth Argyle", src:"Charlton Athletic Football Club", tier:2, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:90}
 ];
 const OUTGOING = [
-  {name:"Bim Pepple", sub:"FW", club:"Portsmouth", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Release clause", truth:55, prob:45, light:'y', trend:'flat', note:"Release clause reportedly likely to be triggered.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45}
+  {name:"Bim Pepple", sub:"FW", club:"Portsmouth", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Release clause", truth:55, prob:45, light:'y', trend:'flat', note:"Release clause reportedly likely to be triggered.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link"},
+  {name:"Lorent Tolaj", sub:"striker", club:"Plymouth Argyle", pos:"ST", report:"Lorent Tolaj departs Argyle", src:"Plymouth Argyle", tier:2, fee:"Undisclosed", truth:95, prob:100, light:"g", trend:"flat", note:"Departure confirmed by official club statement", lastSeen:"2026-08-07T01:42:32Z", baseProb:100, dead:true, deadReason:"Confirmed departure from Plymouth Argyle"}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -56,17 +59,20 @@ const HUB = {
   "gnews-jaydenwareham": {l:"Related news search: Jayden Wareham", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Jayden%20Wareham%20transfer&hl=en-GB&gl=GB"},
   "gnews-callumrobinson": {l:"Related news search: Callum Robinson", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Callum%20Robinson%20transfer&hl=en-GB&gl=GB"},
   "gnews-michaelmellon": {l:"Related news search: Michael Mellon", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Michael%20Mellon%20transfer&hl=en-GB&gl=GB"},
-  "gnews-bimpepple": {l:"Related news search: Bim Pepple", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Bim%20Pepple%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-bimpepple": {l:"Related news search: Bim Pepple", u:"https://news.google.com/search?q=Plymouth%20Argyle%20Bim%20Pepple%20transfer&hl=en-GB&gl=GB"},
+  chadWillEvans: {l:"Chad", u:"https://news.google.com/rss/articles/CBMiywFBVV95cUxNZFRlUkdEcGtobW5qeU1aaDVUc1RFVnFySXpINVBVS1lnVkI2QlpsOEJ5QTBVa3lmQnVueHR2aHAzdTJZZDF0U1RMTEA1VVdCR09kMFk5VHF5YmFUbi1nWTU2WWt3V0R1bzc5VUFoQl9QcDJRT3EyN0xQd1NwTzh5VzRNSGE4TUpabE9KWWVhSnRMX3o3cUo1cmQxNGc1T0MtVXg4d01ua084MWo0elpjeDdSTkkyTnZYTEFiSjgtN1RYSDJFSWY5ZlJ3?oc=5"},
+  charltonAthleticAlexMitchell: {l:"Charlton Athletic", u:"https://news.google.com/rss/articles/CBMicEFVX3lxTE9TNThzTUk1LWx1Z1FneFNKeUZkQ19yaC1EVGJYTHE4dWlEZG5CQkFDWUxyaWVNSWUwUHRPZWg5Z1EyY25Pd2h6anQ1LVBzVVlvcGFXcEdfQUIxcHRSZlVNMDRTdGFhdzJFeFBwOHphNzM?oc=5"},
+  plymouthArgyleLorentTolaj: {l:"Plymouth Argyle", u:"https://news.google.com/rss/articles/CBMiZkFVX3lxTFBFYk9nWENvNVAtamxxRUs3MHI5Y2dERnNBR3gyR1MtZUw0dEVJNXp4UzhNX0M1b290NUNnOEIydmdEal9PVHJoaW1GRlBHa3ZSQVRUVzBtcnZCdTYtTWc5NURYUTIydw?oc=5"}};
 
 const LINKMAP = {
-  "Lorent Tolaj": ["gnews-lorenttolaj"],
+  "Lorent Tolaj": ["gnews-lorenttolaj", "plymouthArgyleLorentTolaj"],
   "Murphy Cooper": ["gnews-murphycooper"],
   "Jayden Wareham": ["gnews-jaydenwareham"],
   "Callum Robinson": ["gnews-callumrobinson"],
   "Michael Mellon": ["gnews-michaelmellon"],
-  "Bim Pepple": ["gnews-bimpepple"]
-};
+  "Bim Pepple": ["gnews-bimpepple"],
+  "Will Evans": ["chadWillEvans"],
+  "Alex Mitchell": ["charltonAthleticAlexMitchell"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

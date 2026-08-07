@@ -30,7 +30,12 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Simon Adingra", sub:"21 · Ivory Coast · W", club:"Brighton", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed 3 Aug 2026"},
+  {name:"Wilson Isidor", sub:"24 · France · F", club:"Lens", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed 3 Aug 2026"},
+  {name:"Troy Parrott", sub:"22 · Republic of Ireland · F", club:"Tottenham", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed 3 Aug 2026"},
+  {name:"Joel Veltman", sub:"34 · Netherlands · D", club:"Brighton", pos:"Defender", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer confirmed"}
+];
 const CONFIRMED_OUT = [
   {name:"Mateus Fernandes", sub:"21 · CM · Portugal", club:"Tottenham Hotspur", pos:"CM", fee:"£85m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed as part of Spurs' summer rebuild - a club-record sale for West Ham as Fernandes completes a £85m move to Tottenham alongside their Sandro Tonali deal."},
   {name:"Freddie Potts", sub:"MF", club:"Club Brugge", pos:"MF", fee:"£10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Given permission to undergo a medical, per Ben Jacobs, about as advanced as it gets short of the unveiling."},
@@ -40,7 +45,7 @@ const INCOMING = [
   {name:"Simon Adingra", sub:"24 · LW · Ivory Coast", club:"Sunderland", pos:"LW", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:1, fee:"Loan (poss. obligation to buy)", truth:60, prob:42, light:"y", trend:"up", note:"West Ham opened loan talks as a direct replacement following Summerville's sale; Sunderland value the winger at around £30m and are yet to agree terms.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42},
   {name:"Wilson Isidor", sub:"25 · ST · Haiti", club:"Sunderland", pos:"ST", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:2, fee:"~£20m loan-to-buy approach reported", truth:48, prob:22, light:"o", trend:"flat", note:"Downie reports Sunderland will not entertain offers, calling Isidor integral to their Europa League squad - directly contradicted same-day by reports of a fresh West Ham loan-to-buy approach, a genuinely live and unresolved situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
   {name:"Troy Parrott", sub:"24 · ST · Republic of Ireland", club:"AZ Alkmaar", pos:"ST", report:"3 Aug 2026", src:"Alan Nixon (The72)", tier:2, fee:"Undisclosed", truth:42, prob:20, light:"o", trend:"flat", note:"West Ham have joined a crowded field (also including Fulham, Ajax, Como, Real Betis, PSV) as competition for striker Taty Castellanos.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Joel Veltman", sub:"32 · Netherlands · D", club:"Free Agent", pos:"D", report:"Signed on a free transfer", src:"Voetbal Internationaal", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"up", note:"Dutch defender joins as free agent", lastSeen:"2026-08-06T14:21:37Z", baseProb:100}
+  {name:"Joel Veltman", sub:"34 · Netherlands · D", club:"Brighton", pos:"Defender", report:"West Ham sign former Brighton defender Joel Veltman as free transfer", src:"The New York Times", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Free transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 const OUTGOING = [];
 const RISERS = [
@@ -65,7 +70,8 @@ const HUB = {
   the72Isidor: {l:"The72 · Isidor", u:"https://the72.co.uk/2026/08/03/west-ham-target-wilson-isidor-sunderland-stay/"},
   the72Parrott: {l:"The72 · Parrott", u:"https://the72.co.uk/2026/08/03/west-ham-target-az-alkmaar-striker-troy-parrott/"},
   voetbalInternationalJoelVeltman: {l:"Voetbal International", u:"https://www.vi.nl/"},
-  voetbalInternationaalJoelVeltman: {l:"Voetbal Internationaal", u:"https://www.vi.nl/nieuws/transfervrije-veltman-tekent-bij-west-ham-united"}};
+  voetbalInternationaalJoelVeltman: {l:"Voetbal Internationaal", u:"https://www.vi.nl/nieuws/transfervrije-veltman-tekent-bij-west-ham-united"},
+  theNewYorkTimesJoelVeltman: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV"}};
 
 const LINKMAP = {
   "Mateus Fernandes": ["gnews-mateusfernandes"],
@@ -74,7 +80,7 @@ const LINKMAP = {
   "Simon Adingra": ["readwesthamAdingra"],
   "Wilson Isidor": ["the72Isidor"],
   "Troy Parrott": ["the72Parrott"],
-  "Joel Veltman": ["voetbalInternationalJoelVeltman", "voetbalInternationaalJoelVeltman"]};
+  "Joel Veltman": ["voetbalInternationalJoelVeltman", "voetbalInternationaalJoelVeltman", "theNewYorkTimesJoelVeltman"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

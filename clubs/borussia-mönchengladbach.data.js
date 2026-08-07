@@ -51,9 +51,16 @@ const CONFIRMED_OUT = [
   {name:"Yannik Engelhardt", sub:"Midfielder (loan return)", club:"SC Freiburg", pos:"CM", fee:"N/A (loan return)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Returned to parent club Freiburg permanently on 15 July 2026 after a 2025/26 loan spell at Gladbach."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Jan Leszczynski", sub:"unknown · Poland · defender", club:"Legia Warsaw", pos:"D", report:"Transfer imminent from Legia Warsaw", src:"Sky.de", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Reported as 'vor Transfer' (before transfer)", lastSeen:"2026-08-07T01:42:32Z", baseProb:80},
+  {name:"Isac Lidberg", sub:"unknown · Sweden · forward", club:"Darmstadt 98", pos:"F", report:"Signed from Darmstadt 98", src:"Sky.de", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Reported as 'holt' (brings in/signs)", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Enzo Leopold", sub:"unknown · Germany · defender", club:"Hannover 96", pos:"D", report:"Transfer imminent from Hannover 96 captain", src:"Sky.de", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Reported as 'kurz vor Verpflichtung' (about to sign)", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Rocco Reitz", sub:"unknown · Germany · midfielder", club:"RB Leipzig", pos:"M", report:"Transferred to RB Leipzig", src:"Sky.de", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Reported as completed transfer 'wechselt...nach Leipzig' (switches to Leipzig)", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Marvin Friedrich", sub:"unknown · Germany · defender", club:"Union Berlin", pos:"D", report:"Transferred to Union Berlin", src:"Sky.de", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Reported as completed transfer 'wechselt...zu Union Berlin' (switches to Union Berlin)", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Rocco Reitz departure confirmed</b>: the club captain's €20m+ move to RB Leipzig is done, closing a saga that began with talks in March."}
@@ -81,24 +88,30 @@ const HUB = {
   club: {l:"Borussia Mönchengladbach Official", u:"https://www.borussia.de/en"},
   bundesligacomDaikiHashioka: {l:"Bundesliga.com", u:"https://www.bundesliga.com/en/bundesliga/clubs/borussia-moenchengladbach/news"},
   wikipediaclubtransferlogEnzoLeopold: {l:"Wikipedia (club transfer log)", u:"https://en.wikipedia.org/wiki/2026%E2%80%9327_Borussia_M%C3%B6nchengladbach_season"},
-  sport1TransfertickerGiovanniReyna: {l:"Sport1 Transferticker", u:"https://www.sport1.de/transfermarkt"}};
+  sport1TransfertickerGiovanniReyna: {l:"Sport1 Transferticker", u:"https://www.sport1.de/transfermarkt"},
+  skydeJanLeszczynski: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMiygFBVV95cUxNcE1RTkRTYXNFU1FoZlNtSmRYYUdVdEFpWkhuRUdnTUpmcWotbEdjbk9acXRWUGFMT0x2SkpvMHNYeFdDNEIyWmVHMlh3c0oyaVI3ZXhRcS1PYUJFWnVLeGRKdDFya0QwMzF5bnRqT0lCT011OURzRl8tMVFOcFF5NFlUQ21HdE85SzJBeV9NREVZYjEwOGgwZHFfWTNzbEIxZmpJc2k5SDB5eXBOUEZKaTc3dGFlR0dfQUExLWdoa0VJNWMzU2xrWldR?oc=5"},
+  skydeIsacLidberg: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMisgFBVV95cUxObGRpVnk2Q2dxR0hMbEx4M3BPcWl5dGctaUlYX2FKSHlBZGRBVldWcFhTTVNNQmlNY2dVZjg1a19KTFYwOU5xcUZnMmYzSXN3VHIxaUxsS19nRnRCNlR3MFJUQ2RiTWlkVHltaXZseHRMTy01WTgtdHRmM0dWTU1vOHFveV9xNkg0TE1wTTR2SzBtTXRwRlBnUHI5Z3hlQ29vUFpCU3NuM3dMclVOc1Q1cUxn?oc=5"},
+  skydeEnzoLeopold: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVHFSTzBTT2dlQVZmekVlcFVPQzFFaWhVaWJKT1ljdzRiUW1FNkhzNDR2dzI2dlZkcWpFc0hNdmxtaDI2aTBrcWpIR2lPdDdoaFJaTkxEZXJKMC1xUjRpLW9NNUU1d1Y1Qnlhb3Zpb2g0ODF3X2lVMjIyMVpYYjd1UHNhSHVKVVhDUE9zQTdFN1JoZmEtZnJwa1ZjYjdyU3V6WlF2OVZYMERwb3hNakI1dTlqaVdMVHNOT1hneGhEUGIycHl4VUJMRWx2c3dzaVJwVVE?oc=5"},
+  skydeRoccoReitz: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMitwFBVV95cUxNUHhKVmswWFhjQVdwSnNZc1RPdUV4YzFLNXFlUHdxOFQ1R2xzWnZoSWhlTWZaaGdoMVAwQ2s3SXZNYmZ3MGxpN19CU1VhTFZQMXZQWUZlWllvY0NqSEhUcmdGMDYwTDRBc0phcENxdkdteFNpQzY1UXAzOFAtcHNXV0VqdnFZQTJMdXRfbVNIMFUzaE1abGR5X05KTVdobVVmVWxsSUZERU83VDNwb01nRlhGYVF4SEk?oc=5"},
+  skydeMarvinFriedrich: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNMWUyalk5LWFBTGJ2dkt6cy1OME9wRTIzYWZVcjdEcEhYcTdwQ2R1Y21NVzVEbWV3NHJLZjVmblJlSnNRMFdRM2dsc2xtUElaRFBmLUZqdWFva0RabUtmOWdjTDhqempmWnVNNGFOYUlad2NJN0c3d1E1RnNXaC1NdlFvV1pzakRYc3o4YTVZdzNGWTg5UjNDSkFLVExNTzVOeDVNRjNrelh0bVFRQVJWSmRQOFEwTGZiS1hRZmNSczd4Zw?oc=5"}};
 
 const LINKMAP = {
-  "Rocco Reitz": ["gfn","rbl", "wikipediaclubtransferlogEnzoLeopold"],
-  "Marvin Friedrich": ["bundesliga", "wikipediaclubtransferlogEnzoLeopold"],
+  "Rocco Reitz": ["gfn","rbl", "wikipediaclubtransferlogEnzoLeopold", "skydeRoccoReitz"],
+  "Marvin Friedrich": ["bundesliga", "wikipediaclubtransferlogEnzoLeopold", "skydeMarvinFriedrich"],
   "David Herold": ["club", "wikipediaclubtransferlogEnzoLeopold"],
-  "Isac Lidberg": ["club", "wikipediaclubtransferlogEnzoLeopold"],
+  "Isac Lidberg": ["club", "wikipediaclubtransferlogEnzoLeopold", "skydeIsacLidberg"],
   "Yukhym Konoplya": ["club"],
   "Jonas Omlin": ["club", "wikipediaclubtransferlogEnzoLeopold"],
   "Daiki Hashioka": ["bundesligacomDaikiHashioka"],
   "Zento Uno": ["bundesligacomDaikiHashioka"],
-  "Enzo Leopold": ["wikipediaclubtransferlogEnzoLeopold"],
+  "Enzo Leopold": ["wikipediaclubtransferlogEnzoLeopold", "skydeEnzoLeopold"],
   "Yukhym Konoplia": ["wikipediaclubtransferlogEnzoLeopold"],
   "Hugo Bolin": ["wikipediaclubtransferlogEnzoLeopold"],
   "Daniel Batz": ["wikipediaclubtransferlogEnzoLeopold"],
   "Giovanni Reyna": ["sport1TransfertickerGiovanniReyna"],
   "Shio Fukuda": ["wikipediaclubtransferlogEnzoLeopold"],
-  "Yannik Engelhardt": ["bundesligacomDaikiHashioka"]};
+  "Yannik Engelhardt": ["bundesligacomDaikiHashioka"],
+  "Jan Leszczynski": ["skydeJanLeszczynski"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -35,8 +35,7 @@ const CONFIRMED_IN = [
   {name:"Jack Moylan", sub:"24 · Republic of Ireland · AM", club:"Lincoln City", pos:"Attacking midfield", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by Cardiff. The attacking midfielder has signed a four-year deal in South Wales on a permanent transfer, ending a slow start to the Bluebirds' window after promotion. He scored 12 goals as Lincoln won League One."}
 ];
 const CONFIRMED_OUT = [];
-const INCOMING = [
-];
+const INCOMING = [];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -48,11 +47,12 @@ const WATCHLIST = [];
 const HUB = {
   "gnews-omarikellyman": {l:"Related news search: Omari Kellyman", u:"https://news.google.com/search?q=Cardiff%20City%20Omari%20Kellyman%20transfer&hl=en-GB&gl=GB"},
   peteORourkeJackMoylan: {l:"Pete O'Rourke", u:"https://x.com/SportsPeteO/status/2083511106371236130"},
-  cardiffCityFCofficialJackMoylan: {l:"Cardiff City FC (official)", u:"https://x.com/CardiffCityFC/status/2085034344289108124"}};
+  cardiffCityFCofficialJackMoylan: {l:"Cardiff City FC (official)", u:"https://x.com/CardiffCityFC/status/2085034344289108124"},
+  walesOnlineJackMoylan: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxNUWRUbnh4NmRGVmJnZDNNM2ZmbHlKeWdnWTlYbVhiNXJvanA4UlMyS2psSHVEdk9GOFFYenZHbEJhblZyUkVzQmhyb3YyWDJueXNncFRxRmh5MktJTEdTTmJzdTdXanlTWnoxcXFsbkpqQVZtY0tSZmh2RlJ0ZzVsMFd5Vy0yb1h3aFNvY3RYZWJHN3dkTnhDaGRtR2oyd1NYN3hn0gGoAUFVX3lxTFBPM3FIXzYyM1VrU0pnU3g1bFl6b3M4aDhZNDljM1JBaDhkekhPUDRueWVfQ2tKOUhlYVcwYnFnVXRKUDBOUVVRbS16WkZIU1E2RDA3QUFtYU9GZjhjbHFHOXQ4cTJVdEczcTBORVB5YXRJQllLWlZUT3FTWTVDVmtEX25lRlhuY2FYc0c1THRMank0d1VNMm9RNHh2WmlOOXoxUTVRVFVzYQ?oc=5"}};
 
 const LINKMAP = {
   "Omari Kellyman": ["gnews-omarikellyman"],
-  "Jack Moylan": ["peteORourkeJackMoylan", "cardiffCityFCofficialJackMoylan"]};
+  "Jack Moylan": ["peteORourkeJackMoylan", "cardiffCityFCofficialJackMoylan", "walesOnlineJackMoylan"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

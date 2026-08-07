@@ -35,9 +35,10 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Julien Duranville", sub:"20 · W · Belgium", to:"permanent from Borussia Dortmund", fee:"€5m + up to €3.5m bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 2 Jul 2026 on a five-year contract - a calculated gamble on a highly-rated but injury-hit winger."},
   {name:"Mohamed Ouédraogo", sub:"20 · CM · Burkina Faso", to:"permanent from SCR Altach", fee:"€2.2m + up to €0.6m bonuses, 10% resale clause", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 3 Jul 2026, a development midfield signing from Austria."},
-  {name:"Mohamed Ouedraogo", sub:"Midfielder, Burkina Faso international", club:"SCR Altach", pos:"CM", fee:"€2.2m + €0.6m in bonuses", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially signed a five-year contract with Lyon on 03/07."},
   {name:"Cluver Sambi Mbungu", sub:"Defender, 17-year-old prospect", club:"SM Caen", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Lyon beat PSG and Bundesliga clubs to sign the Caen academy prospect, confirmed 09/07."},
-  {name:"Duje Caleta-Car", sub:"Defender, returned from loan", club:"Olympique Lyonnais", pos:"CB", fee:"N/A (loan return)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially returned to the club on 25/05."}
+  {name:"Duje Caleta-Car", sub:"Defender, returned from loan", club:"Olympique Lyonnais", pos:"CB", fee:"N/A (loan return)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially returned to the club on 25/05."},
+  {name:"Felix Bacher", sub:"21 · Germany · D", club:"1. FC Köln", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing confirmed; first reaction given"},
+  {name:"Madison Ingram", sub:"20 · Canada · M", club:"Vancouver Whitecaps", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported official signing"}
 ];
 
 const CONFIRMED_OUT = [
@@ -49,17 +50,16 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Florian Thauvin", sub:"33 · RW · France", club:"Free agent (Udinese)", pos:"RW", report:"1 Aug 2026", src:"RMC Sport", tier:2, fee:"Free agent", truth:62, prob:48, light:"y", trend:"flat", note:"RMC reports Lyon in talks with the veteran winger after his Udinese exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:48},
   {name:"Madison Ingram", sub:"20 · CM · England", club:"Chelsea", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€30m", truth:71, prob:55, light:"g", trend:"up", note:"Romano reports Chelsea are open to a loan move for the young midfielder to Lyon.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Loïs Openda", sub:"26 · ST · Belgium", club:"Juventus", pos:"ST", report:"25 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Reported to be set to join Lyon as the club looks to freshen up its attack.", lastSeen:"2026-08-04T19:10:50Z", baseProb:52},
+  {name:"Loïs Openda", sub:"24 · Belgium · F", club:"RB Leipzig", pos:"Forward", report:"Lyon close to agreement for transfer", src:"MadeInFOOT", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Recently reported as close to agreement", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
   {name:"Felix Bacher", sub:"22 · CB · Austria", club:"Estoril", pos:"CB", report:"21 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:38, light:"y", trend:"flat", note:"Lyon reported in advanced negotiations for the Austrian centre-back.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
-  {name:"Loic Openda", sub:"Forward, agreed switch", club:"Juventus", pos:"ST", report:"Lyon are reported to have agreed a deal to sign Juventus forward Loic Openda as they rebuild the front line after selling academy talent abroad.", src:"Sky Sport", tier:1, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Reported as an agreed transfer, though not yet officially announced by either club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65},
-  {name:"Jun-ho Bae", sub:"Player, bid submitted", club:"Stoke City", pos:"CM", report:"Lyon have submitted a 3.5m euro bid to Stoke City for South Korean player Jun-ho Bae, though the Championship club are yet to accept.", src:"L'Equipe", tier:2, fee:"€3.5m (bid)", truth:60, prob:40, light:"y", trend:"flat", note:"Initial bid only; Stoke have not confirmed acceptance.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Claudio Braga", sub:"Striker, monitored target", club:"Unattached club (Brazil)", pos:"ST", report:"Lyon are said to be tracking Brazilian forward Claudio Braga as an alternative striker option amid tight DNCG spending constraints.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early speculative interest under strict financial oversight from the DNCG.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Loic Openda", sub:"Forward, agreed switch", club:"Juventus", pos:"ST", report:"Lyon are reported to have agreed a deal to sign Juventus forward Loic Openda as they rebuild the front line after selling academy talent abroad.", src:"Sky Sport", tier:1, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Reported as an agreed transfer, though not yet officially announced by either club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65, dead:true, deadReason:"Duplicate/variant of Loïs Openda; consolidated into single entry"},
+  {name:"Jun-ho Bae", sub:"22 · South Korea · M", club:"Stoke City", pos:"Midfielder", report:"Lyon submitted €3.5m bid", src:"MadeInFOOT", tier:3, fee:"€3.5m", truth:60, prob:50, light:"y", trend:"up", note:"Bid submitted; no confirmation of acceptance", lastSeen:"2026-08-07T01:42:32Z", baseProb:50},
+  {name:"Claudio Braga", sub:"Striker, monitored target", club:"Unattached club (Brazil)", pos:"ST", report:"Lyon are said to be tracking Brazilian forward Claudio Braga as an alternative striker option amid tight DNCG spending constraints.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early speculative interest under strict financial oversight from the DNCG.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No fresh reporting in recent snippets; tracking interest only"}
 ];
 
 const OUTGOING = [
-  {name:"Pavel Šulc", sub:"25 · AM · Czech Republic", club:"Lyon", pos:"AM", report:"18 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:48, prob:24, light:"o", trend:"flat", note:"Leeds United reported to have opened talks over the playmaker's situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24},
-  {name:"Pavel Sulc", sub:"Midfielder, Premier League interest", club:"Leeds United", pos:"CAM", report:"Leeds United have opened talks with Lyon over a move for attacking midfielder Pavel Sulc, though a deal is not considered close.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Talks confirmed but described as at an early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Jacob Widell Zetterstrom", sub:"Goalkeeper, squad surplus", club:"Derby County", pos:"GK", report:"Derby County have been credited with interest in Lyon goalkeeper Jacob Widell Zetterstrom as the Swede looks for a route to regular first-team football.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Speculative interest with no reported formal approach.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20}
+  {name:"Pavel Sulc", sub:"Midfielder, Premier League interest", club:"Leeds United", pos:"CAM", report:"Leeds United have opened talks with Lyon over a move for attacking midfielder Pavel Sulc, though a deal is not considered close.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Talks confirmed but described as at an early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"Duplicate variant of Pavel Šulc; consolidated into single entry"},
+  {name:"Jacob Widell Zetterstrom", sub:"23 · Sweden · GK", club:"Derby County", pos:"Goalkeeper", report:"Derby County credited with interest", src:"Transfer outlet", tier:3, fee:"Undisclosed", truth:50, prob:40, light:"y", trend:"up", note:"Interest only; no formal talks reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
 ];
 
 const RISERS = [
@@ -94,22 +94,25 @@ const HUB = {
   getFrenchFootballNewsLEquipePavelSulc: {l:"Get French Football News (L'Equipe)", u:"https://www.getfootballnewsfrance.com/2026/leeds-united-in-talks-with-lyon-for-pavel-sulc-but/"},
   getFrenchFootballNewsJulienDuranville: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-i-dortmunds-julien-duranville-signs-five-year-contract-with-lyon/"},
   getFrenchFootballNewsMohamedOuedraogo: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-i-burkina-faso-international-mohamed-ouedraogo-signs-five-year-contrat-with-lyon/"},
-  getFrenchFootballNewsCluverSambiMbungu: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/lyon-overtake-psg-and-bundesliga-giants-to-sign-caens-rising-star-cluver-sambi-mbungu/"}};
+  getFrenchFootballNewsCluverSambiMbungu: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/lyon-overtake-psg-and-bundesliga-giants-to-sign-caens-rising-star-cluver-sambi-mbungu/"},
+  madeInFOOTLosOpenda: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWmtGcUhTVnkwWmpDcHdFRWlzeXpXVFBPV0RkN1d6a1k5VGpFenFxYXBfb0JST1dmX0N3VEhVejVJUHlUalFOWU51RGhrcDdSRTZJMHhwNmJua3VaQzJ2UEpWSFdwNkQ0UE5IYmZfTzV0ZWEyb1UxT0Vxb293N0oyTGFNMGRGaXJXQVhmTENmeEUxOXBCdjF6LXk3NVlxZ2NqazlxYldMUzRjRkhsWlc2VkdzMHBVVUd3WC12WDRkTjEzangxcnNWTjlYSmE3SHpOc3JBd2tCRHVjdVZV"},
+  madeInFOOTJunhoBae: {l:"MadeInFOOT", u:"https://news.google.com/"},
+  madeInFOOTFelixBacher: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUGc5dnVPdFVZdTRRdHpYSzZFNXpZaDQtOWNHSklSem5ibEhBMlRQLUtsUWNTMmJNT255dGUySGVnYmJxb2tuRWcyOUtIOTFRMkFxbTFzS1hUdk9UcUs4emFfalIxV2pBazUtaHl3eDloeHdYcnB2QXFXZGVfLUVOVHRBUVRlbEVTbmpteE11N3c4bDBWZkE5R05SNjczc082cFF4WG1uWHV6YkxkNGNVWFV6TlhVSlJtd1JlR1o4SzBteG96N2JTSlVCSmo5VzM2MHJsV0RaSnd0LWNvd1lBdWtLbnA"}};
 
 const LINKMAP = {
   "Florian Thauvin": ["rmcsport"],
-  "Madison Ingram": ["romano"],
+  "Madison Ingram": ["romano", "madeInFOOTJunhoBae"],
   "Julien Duranville": ["gffn-lyon", "getFrenchFootballNewsJulienDuranville"],
   "Mohamed Ouédraogo": ["gffn-lyon"],
-  "Loïs Openda": ["gffn-lyon"],
+  "Loïs Openda": ["gffn-lyon", "madeInFOOTLosOpenda"],
   "Cluver Sambi Mbungu": ["gffn-lyon", "getFrenchFootballNewsCluverSambiMbungu"],
-  "Felix Bacher": ["gffn-lyon", "getFrenchFootballNewsLEquipeFelixBacher"],
-  "Pavel Šulc": ["gffn-lyon"],
+  "Felix Bacher": ["gffn-lyon", "getFrenchFootballNewsLEquipeFelixBacher", "madeInFOOTFelixBacher"],
+  "Pavel Šulc": ["gffn-lyon", "madeInFOOTJunhoBae"],
   "Loic Openda": ["getFrenchFootballNewsSkySportLoicOpenda"],
-  "Jun-ho Bae": ["getFrenchFootballNewsLEquipeJunhoBae"],
+  "Jun-ho Bae": ["getFrenchFootballNewsLEquipeJunhoBae", "madeInFOOTJunhoBae"],
   "Claudio Braga": ["footMercatoClaudioBraga"],
   "Pavel Sulc": ["getFrenchFootballNewsLEquipePavelSulc"],
-  "Jacob Widell Zetterstrom": ["footMercatoClaudioBraga"],
+  "Jacob Widell Zetterstrom": ["footMercatoClaudioBraga", "madeInFOOTJunhoBae"],
   "Mohamed Ouedraogo": ["getFrenchFootballNewsMohamedOuedraogo"],
   "Duje Caleta-Car": ["footMercatoClaudioBraga"],
   "Afonso Moreira": ["footMercatoClaudioBraga"],

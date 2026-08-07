@@ -32,8 +32,14 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
-const OUTGOING = [];
+const INCOMING = [
+  {name:"Unknown Leipzig talent", sub:"Unknown · Unknown · Unknown", club:"RB Leipzig", pos:"Unknown", report:"Arminia Bielefeld have loaned in a talent from Leipzig (Neuzugang Nummer zwei)", src:"Neue Westfälische", tier:3, fee:"Loan", truth:75, prob:80, light:"g", trend:"flat", note:"Reported as second new signing; player identity not disclosed in snippet", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+];
+const OUTGOING = [
+  {name:"Mael Corboz", sub:"Unknown · Unknown · Unknown", club:"Arminia Bielefeld", pos:"Unknown", report:"Mael Corboz transfers from Arminia Bielefeld to Grenoble Foot", src:"Sky.de", tier:2, fee:"Unknown", truth:85, prob:90, light:"g", trend:"flat", note:"Transfer confirmed by Sky.de", lastSeen:"2026-08-07T01:42:32Z", baseProb:90},
+  {name:"Lannert", sub:"Unknown · Unknown · Unknown", club:"Arminia Bielefeld", pos:"Unknown", report:"Lannert transfers from Arminia Bielefeld", src:"Radio Bielefeld", tier:3, fee:"Unknown", truth:80, prob:85, light:"g", trend:"flat", note:"Transfer confirmed in match report; destination club not specified in snippet", lastSeen:"2026-08-07T01:42:32Z", baseProb:85},
+  {name:"Stefan Kersken", sub:"Unknown · Unknown · GK", club:"Arminia Bielefeld", pos:"GK", report:"Goalkeeper Kersken reportedly has interest in a move to England; potential departure rumour", src:"Sky", tier:2, fee:"Unknown", truth:60, prob:50, light:"y", trend:"flat", note:"Rumour of English interest; no confirmation of agreed deal or destination", lastSeen:"2026-08-07T01:42:32Z", baseProb:50}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -42,10 +48,17 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Arminia-Bielefeld Official", u:"#"}
-};
+  club: {l:"Arminia-Bielefeld Official", u:"#"},
+  neueWestflischeUnknownLeipzigtalent: {l:"Neue Westfälische", u:"https://news.google.com/rss/articles/CBMi0wFBVV95cUxOWkhVaEVQNDc4cWdSaV9aREwzTjJoV0ZDN0JrdkM2SUFyRE1jVUs5RGtXS1lWS2hlWjZ3UUhiXzdNVlJzanVkMU9mb21vT1ZnR2VZeUI4UkV3SmU2cFMwbjdaRTJ4ZEswcjVuTGpiSVpVeVBFOVVPT29uYUNJTHBETE51UWR1WnJ0Vk0wQVE2OGYxeUctQ3RTR1YwVmNkWkhSeVdoclpfcmVfeDFSczZkS3hCVlkwb2liS1NXQ1BLTXByNi1aZTl1NXFpMzVwM1hwQWN3?oc=5"},
+  skydeMaelCorboz: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMisgFBVV95cUxPejhSdV9IXzJEcXVNak5HendaSVhiU0dGSzR5VG0ycW9RQ0JuUVB2Y2lqY0wyRkNUZW9VOEpRSU5yN2MyMVF1QVhpdU9lT1o1Nl9HRlZBZTJhbndGTEREVUlPZ3BRMUQ0djNvZWc4VWVjNkVfek9UMGZxYWNBeW1LWjFoM3gtLS1KSkhjX1Y0TGFHX1k5NHpzS3JRa0w4d2RzejIwXzlISVBhLTFUQ1hiQ3hB?oc=5"},
+  radioBielefeldLannert: {l:"Radio Bielefeld", u:"https://news.google.com/rss/articles/CBMitwFBVV95cUxQUGM4d2w5R2xIYnlSb1drTFJjNDFFckVHX01MazNTRUNib1JWV0dJNU9RRWhyZVA4RHd3VDE5eW84X0RXSm5yZmxDX3JxR0F0QkwwVF9BUGtxMGg4dXo3a2hYNDY5UGMxNVlYU1dIMnVhV25RTnkzUm1HbWFxT3Z0bGViYk02UWFRRnNkdXlVaUFvNjdvR2JXQmpSOEhGMm16ek81ZFVMdWswS0F5QUpFLXhveWZBMHc?oc=5"},
+  skyRadioBielefeldStefanKersken: {l:"Sky / Radio Bielefeld", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxNV0dmMFljTnhCVnFXZ1F5ODg3a3JCdVlwaXVJT1NZbnBDUGJnbEl0QktLaDhpVlZ3UTZBbVl6YnlMYmVjVTEzY3hVOTlWSEwyWDN5eXFJSGU0aDFPaWIzSVpiYVhBTGNFeWlCU3NscGZxZkQtcWpDQndPV3hPMGY0cGx0TXI1NUpWbEtJdjFnU1BWR3BKQ3NBMENZd0pQRzNjdV83Zl9JVlBUcTEwUUpSb21SXzhJQXEwQnFJZWhERDVGWjE1N0NaZEdYVlMybDMwR190NENn?oc=5"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Unknown Leipzig talent": ["neueWestflischeUnknownLeipzigtalent"],
+  "Mael Corboz": ["skydeMaelCorboz"],
+  "Lannert": ["radioBielefeldLannert"],
+  "Stefan Kersken": ["skyRadioBielefeldStefanKersken"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

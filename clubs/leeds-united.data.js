@@ -70,7 +70,8 @@ const CONFIRMED_IN = [
   {name:"Ethan Ampadu", sub:"25 · CM/CB · captain", to:"Stays, new deal to 2030", fee:"NEW DEAL", free:true, status:"done", statusTxt:"NEW DEAL SIGNED",
    note:"Confirmed 4 Jun: the club captain signs a fresh four-year contract to 2030, ending uncertainty over a deal that had been ticking toward its final year (2027 plus an option). Chairman Paraag Marathe called it a signal to the market ahead of the window. Not a transfer, but the summer's first locked-in piece of business and the spine of the consolidation plan, securing the squad's most-used outfield player (most tackles, duels and passes last season)."},
   {name:"Tarik Muharemović", sub:"23 · CB · Bosnia & Herzegovina", club:"Sassuolo", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"6ft 4in World Cup defender signs a five-year deal after a Serie B title-winning loan spell at Sassuolo; 17 senior Bosnia caps."},
-  {name:"Harry Wilson", sub:"29 · AM · Wales", club:"Fulham", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wales international arrives on a free transfer on a four-year deal after leaving Fulham at contract expiry."}
+  {name:"Harry Wilson", sub:"29 · AM · Wales", club:"Fulham", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wales international arrives on a free transfer on a four-year deal after leaving Fulham at contract expiry."},
+  {name:"James Trafford", sub:"22 · England · GK", club:"Manchester City", pos:"Goalkeeper", fee:"£40m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record signing completed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Pascal Struijk", sub:"26 · CB · Netherlands", club:"Brighton & Hove Albion", pos:"DF", fee:"£18m (reported breakdown £15m + £3m add-ons)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"A surprise sale given Farke had told the board he should not be sold; Leeds retain a sell-on clause."},
@@ -96,7 +97,7 @@ const INCOMING = [
    note:"Fresh link for the Liverpool creator seeking minutes, a clear quality and resale profile. Obstacle: Football Insider-tier sourcing, a likely crowded race for a player of his profile, and price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
    note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18},
-  {name:"James Trafford", sub:"20 · England · GK", club:"Manchester City", pos:"GK", report:"On verge of completing agreement with Manchester City", src:"David Ornstein", tier:1, fee:"£40m guaranteed plus bonuses", truth:92, prob:88, light:"g", trend:"flat", note:"Deal reported as imminent", lastSeen:"2026-08-06T14:33:42Z", baseProb:88}
+  {name:"James Trafford", sub:"22 · England · GK", club:"Manchester City", pos:"Goalkeeper", report:"Completed move for club-record £40m deal from Manchester City", src:"Sky Sports", tier:2, fee:"£40m", truth:100, prob:100, light:"g", trend:"up", note:"Official completion confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100, dead:true, deadReason:"Confirmed completed transfer to Leeds United – moved from rumour to confirmed_in"}
 ];
 
 const OUTGOING = [
@@ -213,7 +214,9 @@ const HUB = {
   skySportsHarryWilson: {l:"Sky Sports", u:"https://www.skysports.com/football/news/11095/13561731/harry-wilson-to-leeds-united-wales-international-makes-elland-road-switch-after-leaving-fulham"},
   leedsUnitedofficialPascalStruijk: {l:"Leeds United (official)", u:"https://www.leedsunited.com/en/news/pascal-struijk-joins-brighton-and-hove-albion"},
   tSNKarlDarlow: {l:"TSN", u:"https://www.tsn.ca/soccer/article/wales-keeper-darlow-joins-united-on-free-from-leeds/"},
-  davidOrnsteinonXJamesTrafford: {l:"David Ornstein on X", u:"https://x.com/David_Ornstein/status/2081803067859652704"}};
+  davidOrnsteinonXJamesTrafford: {l:"David Ornstein on X", u:"https://x.com/David_Ornstein/status/2081803067859652704"},
+  skySportsJamesTrafford: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcllrZE53Sk9DWEZ4dGkyYVhqeTJWdFdnSmVxMEY4MzhkcGE4NzFFREw3VFpjd25GYUtDbzZ4bjZJLXpMNFBVdmU0Sk9kQ0hjVW52WEJEdzFlRWxaVjhENUFOcEV0WVpZV2RPdGVZQ1ZHckkxSlc2QXdRWlZPQ3IxWFZSd2JtR2RKdnVFdWVaUnZyeUNVcGxqMzBwYjdObGd6LTVsRzFMTWp5LUlHSjVUbnJ2OUxxMGFIRWJlc0VQLWpCOHZlTFVfMWpMZE9aMXhqaWpuVU1icjN6Rk0"},
+  skySportsJamesTrafford1: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcllrZE53Sk9DWEZ4dGkyYVhqeTJWdFdnSmVxMEY4MzhkcGE4NzFFREw3VFpjd21GYUtDbzZ4bjZJLXpMNFBVdmU0Sk9kQ0hjVW52WEJEdzFlRWxaVjhENUFOcEV0WVpZV2RPdGVZQ1ZHckkxSlc2QXdRWlZPQ3IxWFZSd2JtR2RKdnVFdWVaUnZyeUNVcGxqMzBwYjdObGd6LTVsRzFMTWp5LUlHSjVUbnJ2OUxxMGFIRWJlc0VQLWpCOHZlTFVfMWpMZE9aMXhqaWpuVU1icjN6Rk0"}};
 const LINKMAP = {
   "Crysencio Summerville": ["leedslive","yep"],
   "Roony Bardghji": ["teamtalk","ypost"],
@@ -221,7 +224,7 @@ const LINKMAP = {
   "Hayden Hackney": ["nixon","teamtalk"],
   "Jonathan David": ["teamtalk"],
   "Lois Openda": ["teamtalk","leedslive"],
-  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford", "davidOrnsteinonXJamesTrafford"],
+  "James Trafford": ["teamtalk","yep", "yorkshireEveningPostJamesTrafford", "davidOrnsteinonXJamesTrafford", "skySportsJamesTrafford", "skySportsJamesTrafford1"],
   "Shea Charles": ["leedslive"],
   "Lutsharel Geertruida": ["yep"],
   "Liam Delap": ["bbcGossip","leedslive"],

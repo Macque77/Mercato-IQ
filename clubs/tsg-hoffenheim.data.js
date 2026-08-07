@@ -47,10 +47,13 @@ const CONFIRMED_OUT = [
   {name:"Luca Erlein", sub:"Right-back", club:"Bayer Leverkusen", pos:"RB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"19-year-old Germany U19 international right-back signed for Bayer Leverkusen; Sky Germany first reported the agreement before Leverkusen confirmed it officially."}
 ];
 
-const INCOMING = [];
+const INCOMING = [
+  {name:"Cajetan Lenz", sub:"Unknown · Germany · Defender", club:"VfL Bochum", pos:"Defender", report:"Transfer from VfL Bochum to TSG Hoffenheim", src:"Sky.de", tier:2, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"Reported as imminent transfer", lastSeen:"2026-08-07T01:42:32Z", baseProb:75},
+  {name:"Sean Dulic", sub:"Unknown · Germany · Unknown", club:"TSV 1860 München", pos:"Unknown", report:"Transfer from TSV 1860 München to TSG Hoffenheim", src:"Sky.de", tier:2, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"Reported as completed transfer", lastSeen:"2026-08-07T01:42:32Z", baseProb:75}
+];
 
 const OUTGOING = [
-  {name:"Fisnik Asllani", sub:"Kosovo · M", club:"RB Leipzig", pos:"M", report:"Transfer imminent to RB Leipzig", src:"sport1.de", tier:3, fee:"Release clause", truth:85, prob:85, light:"g", trend:"up", note:"Deal described as standing before completion", lastSeen:"2026-08-06T14:21:37Z", baseProb:85}
+  {name:"Fisnik Asllani", sub:"Unknown · Unknown · Midfielder", club:"TSG Hoffenheim", pos:"Midfielder", report:"Transfer to RB Leipzig imminent", src:"Sky.de", tier:2, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"flat", note:"Clear indicator of transfer reported by multiple sources", lastSeen:"2026-08-07T01:42:32Z", baseProb:85}
 ];
 
 const RISERS = [
@@ -85,15 +88,24 @@ const HUB = {
   yahooSportsviaKickerMuhammedDamar: {l:"Yahoo Sports (via Kicker)", u:"https://sports.yahoo.com/articles/official-damar-joins-wolfsburg-tsg-152600372.html"},
   yahooSportsviaSkyGermanyLucaErlein: {l:"Yahoo Sports (via Sky Germany)", u:"https://sports.yahoo.com/articles/wolfsburg-leverkusen-close-hoffenheim-duo-115800467.html"},
   skyDeutschlandreportcarriedbyGetGermanFootballNewsAdamDaghim: {l:"Sky Deutschland report, carried by Get German Football News", u:"https://sports.yahoo.com/articles/report-hoffenheim-reach-agreement-sign-195000069.html"},
-  sport1FisnikAsllani: {l:"Sport1", u:"https://www.sport1.de/transfermarkt"}};
+  sport1FisnikAsllani: {l:"Sport1", u:"https://www.sport1.de/transfermarkt"},
+  skydeCajetanLenz: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxNMjAxdDJ4aHhUOVZWU2x0ZjlOMlZpb3ZGOTB0dzJSUGxRcXlrc1ZzMnhCRkRoVHlfMmZPU2ppbXdJc0FSSF9UdU1CNWNodnR2NDQxb0xEck1xQXhTOEJoU0xOTjBtUk41ZjFLWDBFU2pBUDhBQVRhWHI4dFcwS1lFMFJUY0pqdml5SzBpZ1BIX2YzQkxidXAtVTZmY18yZnJPclBKdVA4RFlkXzRhSXd5dg"},
+  skydeSeanDulic: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMiywFBVV95cUxNemN3NmNqR0E5dmpEY2h1d0RMLXNtR1RldktPSlEtdi1uNHdaSXdqUUVWSXk5ZDViMkFoLTRXM19DNlBxTkxNbU1lQ3J6S3BUXzRYUjZwZ21lNjRybDRmRFFPcUJrU3dkcWVSaWo3dXNRMjlMZV9CQkZGbEJPUDNVclE2LUFLdDlYSkFwdFc1cmVVUDZBS1lVWXdtZ0lYazFyYlAwWXNUQndlV1NYdjA5V3J4SGJvNzRfbWFpa0NWTGJFdmRrczVVZmxB"},
+  skydeNathanDeCat: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxPbzFoN2RYcElFaXZudS1YYXFfbU5xSmtPZlYzV2ZBVVN2QXdIWWtXdlZMTlYxMjhxVUdMOXZJTjBGZ1JxWTlYQTFPZTJjRGlFYkVxR2EyWmI0QkV6QjViMWxkUWdBemhSa0daSmNtb0VjcXNwUDZuRXRMRHJENE80WFg3aVR5ODF0QjBfYTl5X2N1dWpfLV8weTEwTF9xN3VIdmFGczZxdzlrMzFNQzVPa1VqWTVVTkdqZlRjUkFoeUtwak1weEhn"},
+  skydeKodaiSano: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxObmx2V2xLYUJfcEx4c2lLSEhpdHI5WU41aTdkejNlb1N3cGRxUG5vdnMzV2diN1MxTU8xVEhMVW5ObzF1VDlaa2lraWlPb3dRQ19OUUtDVlBXMGdsWXVwQlRQWGVxRlhrZDJBYlJPQzBhR0hRT190cnlYdVpmdVM3c1lyX3FYWGJEbWRyZ2xCRkYxdklQQmFvTUZnM2QtdU9EbkN6MVpDSFNERmRQTi1uLTlKOA"},
+  sport1deFisnikAsllani: {l:"sport1.de", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxNSktFaWZHbVVwcmRqU1RGWTZKU3dmNFFFMjR4UVZ4aktZOU5BYmRScXpsWmNzeURyRmFaQUxNdHhpM3EzV2JDakVnLWhIamFBNUNjcXltVFp4ekVKZHk1ZFNBV25sdWJ5azFxSy1lbi1sSUYwMXNtZGlTMW1PU0xQODdYSmZaaHFHQUQ1QjRNaDZzNmVSc0pCY3dRNEg0QQ"}};
 
 const LINKMAP = {
   "Adam Daghim": ["gfn", "sportschauARDAdamDaghim", "skyDeutschlandreportcarriedbyGetGermanFootballNewsAdamDaghim"],
   "Bazoumana Touré": ["sky","espn","yahoo", "oneFootballBazoumanaTour"],
-  "Fisnik Asllani": ["gfn", "yahooSportsviaSportBildFisnikAsllani", "sport1FisnikAsllani"],
+  "Fisnik Asllani": ["gfn", "yahooSportsviaSportBildFisnikAsllani", "sport1FisnikAsllani", "sport1deFisnikAsllani"],
   "Patrick Wimmer": ["sportschauARDPatrickWimmer"],
   "Muhammed Damar": ["yahooSportsviaKickerMuhammedDamar"],
-  "Luca Erlein": ["yahooSportsviaSkyGermanyLucaErlein"]};
+  "Luca Erlein": ["yahooSportsviaSkyGermanyLucaErlein"],
+  "Cajetan Lenz": ["skydeCajetanLenz"],
+  "Sean Dulic": ["skydeSeanDulic"],
+  "Nathan De Cat": ["skydeNathanDeCat"],
+  "Kodai Sano": ["skydeKodaiSano"]};
 const WL_LINKMAP = {
   "Fisnik Asllani": ["gfn"]
 };

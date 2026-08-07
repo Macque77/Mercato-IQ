@@ -41,10 +41,12 @@ const CONFIRMED_IN = [
 
 const CONFIRMED_OUT = [
   {name:"Pablo Pagis", sub:"25 · FW · France", club:"Paris FC", pos:"FW", fee:"€15m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported finalised 15 Jul 2026 - Lorient's biggest sale of the window."},
-  {name:"Isaac Monnier", sub:"DF", club:"SC Bastia", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sent out on loan to the Ligue 2 side."}
+  {name:"Isaac Monnier", sub:"DF", club:"SC Bastia", pos:"DF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sent out on loan to the Ligue 2 side."},
+  {name:"Bamba Dieng", sub:"Age · Nation · Position unknown", club:"Free agent", pos:"Unknown", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left Lorient, remains a free agent"}
 ];
 
 const INCOMING = [
+  {name:"Souleymane Faye", sub:"Age · Nation · Position unknown", club:"Sporting CP", pos:"Unknown", report:"Loan from Sporting CP", src:"L'Équipe", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Third signing confirmed for Lorient", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
 ];
 
 const OUTGOING = [
@@ -74,10 +76,11 @@ const HUB = {
   "fclorient": {l:"FC Lorient Official News", u:"https://www.fclorient.bzh/actualites"},
   leTelegrammeSouleymaneFaye: {l:"Le Telegramme", u:"https://www.letelegramme.fr/sports/football/fc-lorient/clause-liberatoire-a-80-millions-deuros-espagne-et-senegal-qui-est-souleymane-faye-troisieme-recrue-du-fc-lorient-7094260.php"},
   oneFootballFootMercatoBambaDieng: {l:"OneFootball / Foot Mercato", u:"https://onefootball.com"},
-  footMercatoPabloPagis: {l:"Foot Mercato", u:"https://www.footmercato.net"}};
+  footMercatoPabloPagis: {l:"Foot Mercato", u:"https://www.footmercato.net"},
+  lquipeSouleymaneFaye: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxPdWxyd1FOQnBUcWxfRUsxd2pjb1VqOGx1M0dnSkU0YmFJeXJFck5pak1kaVJOZ2thOGpIQWtONDBjOEtaUkV0Nkt0OHgyMnRGVkFtLXlMYkoteWw5dVNCMFBOWnpIZnUxeFBUd0huV0w2blNxU09LTG1uT29WU2tTbWRKbXVzTXhuZ29UVmhqX2dhTDVhbWxfa19aVXRRQXhMX0NyOEJkTnQ0bXN0TGZ4aEJ2c0ktQQ?oc=5"}};
 
 const LINKMAP = {
-  "Souleymane Faye": ["fclorient", "leTelegrammeSouleymaneFaye"],
+  "Souleymane Faye": ["fclorient", "leTelegrammeSouleymaneFaye", "lquipeSouleymaneFaye"],
   "Gabin Bernardeau": ["fclorient"],
   "Pablo Pagis": ["gffn-lorient", "footMercatoPabloPagis"],
   "Isaac Monnier": ["fclorient"],

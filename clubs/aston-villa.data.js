@@ -77,21 +77,19 @@ const CONFIRMED_OUT = [
   {name:"Lucas Digne", sub:"Release clause triggered", club:"Paris Saint-Germain", pos:"DF", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Donyell Malen", sub:"Forward sold to Serie A", club:"Roma", pos:"FW", fee:"£21.6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
   {name:"Enzo Barrenechea", sub:"Midfielder departs for Portugal", club:"Benfica", pos:"MF", fee:"£10.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
-  {name:"Lewis Dobbin", sub:"Squad player sold to Southampton", club:"Southampton", pos:"MF", fee:"£9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""},
-  {name:"Emiliano Martínez", sub:"32 · Argentina · GK", club:"Unknown", pos:"GK", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Dated 2 Aug 2026; unclear status"}
+  {name:"Lewis Dobbin", sub:"Squad player sold to Southampton", club:"Southampton", pos:"MF", fee:"£9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:""}
 ];
 
 const INCOMING = [
-  {name:"Lamine Camara", sub:"~22 · Senegal · M", club:"Unknown", pos:"M", report:"Incoming rumour reported ~1 day ago", src:"Transferfeed page", tier:3, fee:"Unknown", truth:45, prob:40, light:"y", trend:"up", note:"On-page rumour, no recent credible confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:40},
-  {name:"Ilaix Moriba", sub:"24 · Spain · M", club:"Unknown", pos:"M", report:"Incoming rumour reported ~1 day ago", src:"Transferfeed page", tier:3, fee:"Unknown", truth:35, prob:30, light:"y", trend:"up", note:"On-page rumour, no recent credible confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:30},
-  {name:"Marcus Rashford", sub:"27 · England · W", club:"Manchester United", pos:"W", report:"Incoming rumour reported ~1 day ago", src:"Transferfeed page", tier:3, fee:"Unknown", truth:15, prob:10, light:"r", trend:"down", note:"Unlikely given United's position; low credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:10},
-  {name:"Igor Paixão", sub:"26 · Brazil · W", club:"Sporting CP", pos:"W", report:"Villa exploring a move for the 26-year-old", src:"Transferfeed page", tier:3, fee:"Unknown", truth:50, prob:45, light:"y", trend:"up", note:"Early-stage exploration mentioned on-page", lastSeen:"2026-08-06T13:55:46Z", baseProb:45},
-  {name:"Matteo Ruggeri", sub:"23 · Italy · D", club:"Atlético Madrid", pos:"D", report:"Villa have reached an agreement with Atlético Madrid", src:"Transferfeed page", tier:3, fee:"Unknown", truth:70, prob:65, light:"g", trend:"down", note:"Agreement reported; advanced stage", lastSeen:"2026-08-06T13:55:46Z", baseProb:65},
-  {name:"Zion Suzuki", sub:"22 · Japan · GK", club:"Parma", pos:"GK", report:"The Parma goalkeeper remains on Villa's list", src:"Transferfeed page", tier:3, fee:"Unknown", truth:40, prob:35, light:"y", trend:"up", note:"On-page interest; early-stage monitoring", lastSeen:"2026-08-06T13:55:46Z", baseProb:35}
+  {name:"Marcus Rashford", sub:"27 · England · W", club:"Manchester United", pos:"W", report:"Incoming rumour reported ~1 day ago", src:"Transferfeed page", tier:3, fee:"Unknown", truth:15, prob:10, light:"r", trend:"down", note:"Unlikely given United's position; low credibility", lastSeen:"2026-08-06T13:55:46Z", baseProb:10, dead:true, deadReason:"No recent snippet; no credible evidence of active link"},
+  {name:"Igor Paixão", sub:"26 · Brazil · W", club:"Sporting CP", pos:"W", report:"Villa exploring a move for the 26-year-old", src:"Transferfeed page", tier:3, fee:"Unknown", truth:50, prob:45, light:"y", trend:"up", note:"Early-stage exploration mentioned on-page", lastSeen:"2026-08-06T13:55:46Z", baseProb:45, dead:true, deadReason:"No recent snippet; exploration stage with no confirmed progress"},
+  {name:"Matteo Ruggeri", sub:"19 · Italy · LB", club:"Atlético Madrid", pos:"LB", report:"Villa have reached an agreement with Atlético Madrid", src:"Multiple sources", tier:3, fee:"€21m", truth:85, prob:80, light:"g", trend:"up", note:"Final talks underway", lastSeen:"2026-08-07T01:42:32Z", baseProb:80},
+  {name:"Zion Suzuki", sub:"22 · Japan · GK", club:"Parma", pos:"GK", report:"The Parma goalkeeper remains on Villa's list", src:"Transferfeed page", tier:3, fee:"Unknown", truth:40, prob:35, light:"y", trend:"up", note:"On-page interest; early-stage monitoring", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No recent snippet; remains on list but no active progress reported"}
 ];
 
 const OUTGOING = [
-  {name:"Ezri Konsa", sub:"26 · England · D", club:"Aston Villa", pos:"D", report:"Arsenal are said to view Konsa as a top target", src:"Transferfeed page", tier:3, fee:"Unknown", truth:35, prob:30, light:"y", trend:"up", note:"Arsenal interest reported; no confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:30}
+  {name:"Ezri Konsa", sub:"26 · England · CB", club:"Aston Villa", pos:"CB", report:"Liverpool rival Arsenal for the defender; Villa adamant Konsa is staying", src:"Sky Sports / Football365", tier:2, fee:"Unknown", truth:60, prob:30, light:"y", trend:"flat", note:"Villa willing to lose bigger names to keep Konsa", lastSeen:"2026-08-07T01:42:32Z", baseProb:30},
+  {name:"Youri Tielemans", sub:"27 · Belgium · CM", club:"Aston Villa", pos:"CM", report:"Manchester United set to finalise move due to £35m release clause", src:"David Ornstein", tier:1, fee:"£35m", truth:90, prob:85, light:"g", trend:"flat", note:"Release clause triggered", lastSeen:"2026-08-07T01:42:32Z", baseProb:85}
 ];
 const DEAD = [
   {name:"Youri Tielemans", sub:"26 · Belgium · M", club:"Leicester City", pos:"M", report:"EXCL: Aston Villa have agreed a deal to sign Youri Tielemans. Doing medical before finalising contract. 26yo midfielder set to join as free agent after Leicester deal expired.", src:"David Ornstein", tier:1, fee:"Free", truth:95, prob:92, light:"g", trend:"flat", note:"Medical underway, imminent signing", lastSeen:"2026-08-06T13:55:46Z", baseProb:92, dir:"in", deadReason:"signed for manchester-united", deadAt:"2026-08-06T13:55:46Z"},
@@ -126,7 +124,7 @@ const POSITIONS = [
 /* WATCHLIST - the comprehensive long tail. Lower-credibility / monitoring-only / cooling links,
    aggregated (incl. TransferFeed feed). dir: 'in' | 'out'. Kept compact, not full analysis. */
 const WATCHLIST = [
-  {name:"Lamine Camara", club:"Monaco", pos:"CM", dir:"in", age:"~1d", tier:2, note:"(Also in main table.) Primary midfield target; player favours Villa or Spurs."},
+  {name:"Lamine Camara", club:"Monaco", pos:"CM", dir:"in", age:"~1d", tier:2, note:"(Also in main table.) Primary midfield target; player favours Villa or Spurs.", dead:true, deadReason:"Duplicate entry on page; no fresh snippet confirms move"}
 ];
 
 /* ---------- SOURCE LINKS ----------
@@ -161,7 +159,10 @@ const HUB = {
   tEAMtalkrelayingFabrizioRomanoZionSuzuki: {l:"TEAMtalk (relaying Fabrizio Romano)", u:"https://www.teamtalk.com/aston-villa/fabrizio-romano-reveals-psg-juventus-plans-for-aston-villa-target-zion-suzuki"},
   readAstonVillarelayingFabrizioRomanoJooGomes: {l:"Read Aston Villa (relaying Fabrizio Romano)", u:"https://readastonvilla.com/2026/07/16/here-we-go-fabrizio-romano-confirms-next-aston-villa-signing/"},
   transferfeedLamineCamara: {l:"Transferfeed", u:"https://transferfeed.com"},
-  davidOrnsteinTheAthleticYouriTielemans: {l:"David Ornstein / The Athletic", u:"https://x.com/David_Ornstein/status/1667570071844077572"}};
+  davidOrnsteinTheAthleticYouriTielemans: {l:"David Ornstein / The Athletic", u:"https://x.com/David_Ornstein/status/1667570071844077572"},
+  the4thOfficialMatteoRuggeri: {l:"The 4th Official", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxNRXRKZkJ4cjV6WGVBZ3dJUG45OHlsMnk1cG1yeXJpSUVGTkxUczdYYTZoTTdGYW5NdlRja2F2aXc0MC1OaWhkRklDeUFJRFNMZnhJNUZEcF9NQ3VaVnpNcjlXMjZwY0pHVnpqaGltbm1sLVJvUkdtYU9IYmV6TGtxVG9sX1puWUgzNkM0VFJKZFFPZDVqRlYwMWVUVVFNdDF3TkJUVGhxeE84NzJucUZ4NHI0YzNrLWV6SXJQTGhHLTBzUWt4Z2VB"},
+  theAthleticTheNewYorkTimesDavidOrnsteinYouriTielemans: {l:"The Athletic / The New York Times (David Ornstein)", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQU3lHaTE0RDBkRGJwdlRRVklLeXRnSU9Od011X1pIdWlJcGdEdzJ1Zy1QS3ZuT3QxWGV0NlhiVVYxdHlaR3lXTnBpMG5lUGFSd3BVMmFGenVxM2NpVjU0Tk95MUZ2RzNZLVBiczBfS2xQNWU5Z2dfTktTc3lweGR6ZVR4N3NTSV8zQk9xWFhUQXZ1M3cwcmptUDgtVVNNSXMybjROVlUwb3VWWTA"},
+  skySportsEzriKonsa: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi_AFBVV95cUxQRWtPdlpBRTNpOWVoeWhNTFFVZE5mcU0zM0twX0xYU292cElOSGRLUUN3RHdScVNhTExmRlBYUXpiT0REaG43LWxaVmVQTU10TEJHV3ZVN3BMMFF5Yzc1ZmljTnpBbUV2NGVKZEtoeFdDck9oWE9Ub2wzeGhXZXdEWU05MkI5eTh1bF9ReWJXb1gtbFVndGQtaTBWN0hxWEhBZ0pwa25RcUQ1NmpmRGlMQXBGNDhpLVFVLTNHMENKRWhna19NcDlzVXJsam9iT2JhcWo0ODNNdnNGX2hyc1JuMnBGWWx0cFpDNVN2N0t2TFc3RkgwLUlsTUNadzQ"}};
 const LINKMAP = {
   "Lamine Camara": ["onefootball","yahoo","lequipe", "transferfeedLamineCamara"],
   "Ilaix Moriba": ["onefootball", "transferfeedLamineCamara"],
@@ -172,15 +173,15 @@ const LINKMAP = {
   "Alejandro Garnacho": ["fabrizioRomanoviaFootballTransfersAlejandroGarnacho", "skySportsAlejandroGarnacho"],
   "Emiliano Martínez": ["fabrizioRomanoviaReadTottenhamEmilianoMartnez", "transferfeedLamineCamara"],
   "Igor Paixão": ["sportsMoleviaLquipeIgorPaixo", "transferfeedLamineCamara"],
-  "Ezri Konsa": ["readAstonVillaEzriKonsa", "sportsMoleEzriKonsa", "transferfeedLamineCamara"],
+  "Ezri Konsa": ["readAstonVillaEzriKonsa", "sportsMoleEzriKonsa", "transferfeedLamineCamara", "skySportsEzriKonsa"],
   "Johan Manzambi": ["skySportsJohanManzambi"],
   "João Gomes": ["eSPNDailyPostJooGomes", "readAstonVillarelayingFabrizioRomanoJooGomes"],
-  "Youri Tielemans": ["readAstonVillaMyOldManSaidMorganRogers", "davidOrnsteinTheAthleticYouriTielemans"],
+  "Youri Tielemans": ["readAstonVillaMyOldManSaidMorganRogers", "davidOrnsteinTheAthleticYouriTielemans", "theAthleticTheNewYorkTimesDavidOrnsteinYouriTielemans"],
   "Lucas Digne": ["readAstonVillaMyOldManSaidMorganRogers", "sportsMoleLucasDigne"],
   "Donyell Malen": ["sportsMoleDonyellMalen"],
   "Enzo Barrenechea": ["sportsMoleDonyellMalen"],
   "Lewis Dobbin": ["sportsMoleDonyellMalen"],
-  "Matteo Ruggeri": ["marcaRubenUriaMatteoRuggeri", "tEAMtalkrelayingFabrizioRomanoMatteoRuggeri", "transferfeedLamineCamara"],
+  "Matteo Ruggeri": ["marcaRubenUriaMatteoRuggeri", "tEAMtalkrelayingFabrizioRomanoMatteoRuggeri", "transferfeedLamineCamara", "the4thOfficialMatteoRuggeri"],
   "Zion Suzuki": ["tEAMtalkrelayingFabrizioRomanoZionSuzuki", "transferfeedLamineCamara"]};
 const WL_LINKMAP = {
   "Lamine Camara":"onefootball","Morgan Rogers":"bbcVilla","Loan flops":"bmail",

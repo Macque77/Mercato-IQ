@@ -31,8 +31,12 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
-const INCOMING = [];
+const CONFIRMED_OUT = [
+  {name:"Gauthier Hein", sub:"25 · France · Defender", club:"OGC Nice", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former FC Metz captain officially transferred to OGC Nice for Ligue 1"}
+];
+const INCOMING = [
+  {name:"Vincent Gomis", sub:"Unknown · Senegal · Forward", club:"Génération Foot", pos:"Forward", report:"Vincent Gomis from Génération Foot is joining FC Metz", src:"wiwsport", tier:3, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"Transfer reported by wiwsport", lastSeen:"2026-08-07T01:42:32Z", baseProb:75}
+];
 const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
@@ -42,10 +46,13 @@ const POSITIONS = [];
 const WATCHLIST = [];
 
 const HUB = {
-  club: {l:"Sb-Metz Official", u:"#"}
-};
+  club: {l:"Sb-Metz Official", u:"#"},
+  wiwsportVincentGomis: {l:"wiwsport", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNRmV5SWxUdlBLUXowTTM1V09UR2lEOEpTVk5aZ19RMVZhWFRRUFJIR0RnQUN0MGtpMkdpMTEzSlZFZF9UU3ZlZm4yWUwwMVAybV9US0RhbXM1X2cyNEo1WmczX3c0YnhqbWNHTk1TZmsxTTM2NVlaVEhndkF1UzIyRVo5V0MwSDhKc2t3QTNoNl9mT3NBc0tLeU1n"},
+  leRepublicainLorrainGauthierHein: {l:"Le Republicain Lorrain", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxPaXNnYVczT0NNd044ektCX1hBenN4amtiZ0t2cklpRjJ4V1BOOVh5Q2RkMWZhYnk0Y1pQcnV0MkJnc0o3b2xKMUt6OFpYNDRtaThLVWJ0X0xMM2pPZC02Q0FjUURPUXBfeWJUTUg4Q2lPWjUxbXJtMnJObF8zSFJ0c3Flb29RQWRabUo1Y2xzbFdmYmpWdXNBZ0YtMFVlM2NQcGZMenIxUzNGVUlaUFJ5RHJwQmxaNW1XYkM3bA"}};
 
-const LINKMAP = {};
+const LINKMAP = {
+  "Vincent Gomis": ["wiwsportVincentGomis"],
+  "Gauthier Hein": ["leRepublicainLorrainGauthierHein"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
