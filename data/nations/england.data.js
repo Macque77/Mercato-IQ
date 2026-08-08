@@ -6,7 +6,7 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 271
+  stories_count: 274
 };
 
 const TOP_STORIES = [  {
@@ -27,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Tommy Watson",prob: 50, truth: 50, bullshit: false,
     club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
     from: "Brighton", to: "Derby County",
-    tier: 0, coverage: 1, coverage_trend: 'down',
+    tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
@@ -76,7 +76,7 @@ const TOP_STORIES = [  {
     name: "Florentino Luis",prob: 100, truth: 100, bullshit: false,
     club_origin: "burnley", club_display_name: "Burnley", direction: "out",
     from: "Burnley", to: "Ipswich Town",
-    tier: 1, coverage: 5, coverage_trend: 'flat',
+    tier: 1, coverage: 6, coverage_trend: 'up',
     value: "£16m", updated: "2026-08-03T14:30:00Z", league: "Championship"
   },
   {
@@ -87,6 +87,13 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-06-06T00:00:00Z", league: "Premier League"
   },
   {
+    name: "Chris Atherton",prob: 100, truth: 100, bullshit: false,
+    club_origin: "ipswich-town", club_display_name: "Ipswich Town", direction: "in",
+    from: "Chelsea", to: "Ipswich Town",
+    tier: 1, coverage: 2, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-06-06T00:00:00Z", league: "Premier League"
+  },
+  {
     name: "Matheus Nunes",prob: 100, truth: 100, bullshit: false,
     club_origin: "wolverhampton", club_display_name: "Wolverhampton Wanderers", direction: "in",
     from: "Manchester City", to: "Wolverhampton Wanderers",
@@ -94,34 +101,27 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
-    name: "Bruno Guimarães",prob: 95, truth: 95, bullshit: false,
+    name: "Elliot Anderson",prob: 90, truth: 95, bullshit: false,
+    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "in",
+    from: "Nottingham Forest", to: "Manchester City",
+    tier: 1, coverage: 6, coverage_trend: 'flat',
+    value: "£106m plus add-ons", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+  },
+  {
+    name: "Bruno Guimarães",prob: 90, truth: 95, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Newcastle United", to: "Arsenal",
     tier: 1, coverage: 8, coverage_trend: 'flat',
     value: "£75m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
-  {
-    name: "Maxence Lacroix",prob: 95, truth: 95, bullshit: false,
-    club_origin: "chelsea", club_display_name: "Chelsea", direction: "in",
-    from: "Crystal Palace", to: "Chelsea",
-    tier: 1, coverage: 4, coverage_trend: 'flat',
-    value: "£52m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Sasa Lukic",prob: 95, truth: 95, bullshit: false,
-    club_origin: "fulham", club_display_name: "Fulham", direction: "out",
-    from: "Fulham", to: "Ipswich Town",
-    tier: 1, coverage: 4, coverage_trend: 'flat',
-    value: "£9m", updated: "2026-06-06T00:00:00Z", league: "Premier League"
-  },
 ];
 
-const BY_LEAGUE = {"Championship": 45, "League One": 118, "Premier League": 103, "League Two": 5};
+const BY_LEAGUE = {"Championship": 47, "League One": 119, "Premier League": 103, "League Two": 5};
 
-const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 118}, {"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "championship", "name": "Championship", "count": 45}, {"slug": "league-two", "name": "League Two", "count": 5}];
+const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 119}, {"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "championship", "name": "Championship", "count": 47}, {"slug": "league-two", "name": "League Two", "count": 5}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T09:58:49.044075Z",
+  updated: "2026-08-08T11:14:07.219472Z",
   label: "Nation aggregation"
 };

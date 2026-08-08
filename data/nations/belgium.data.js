@@ -21,7 +21,7 @@ const TOP_STORIES = [  {
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "in",
     from: "PSV", to: "Union Saint-Gilloise",
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
     name: "Aurélie Reynders",prob: 95, truth: 90, bullshit: false,
@@ -62,8 +62,15 @@ const TOP_STORIES = [  {
     name: "Cisse Sandra",prob: 100, truth: 100, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
     from: "Club Brugge", to: "KVC Westerlo",
-    tier: 3, coverage: 6, coverage_trend: 'up',
-    value: "€18m", updated: "2026-08-03T18:30:00Z", league: "Pro League"
+    tier: 3, coverage: 7, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
+  },
+  {
+    name: "Chris-Kévin Nadje",prob: 95, truth: 95, bullshit: false,
+    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
+    from: "Feyenoord", to: "KAS Eupen",
+    tier: 3, coverage: 9, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
     name: "Sadiki",prob: 95, truth: 95, bullshit: false,
@@ -80,11 +87,11 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Chris-Kévin Nadje",prob: 85, truth: 90, bullshit: false,
-    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
-    from: "Feyenoord", to: "KAS Eupen",
-    tier: 3, coverage: 8, coverage_trend: 'up',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+    name: "Jarne Rommens",prob: 85, truth: 85, bullshit: false,
+    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "out",
+    from: "KVC Westerlo", to: "Rangers",
+    tier: 3, coverage: 3, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
     name: "Davis Opoku",prob: 80, truth: 75, bullshit: false,
@@ -101,13 +108,6 @@ const TOP_STORIES = [  {
     value: "", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
-    name: "Jarne Rommens",prob: 80, truth: 85, bullshit: false,
-    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "out",
-    from: "KVC Westerlo", to: "KVC Westerlo",
-    tier: 3, coverage: 3, coverage_trend: 'up',
-    value: "Unknown", updated: "2026-08-03T18:30:00Z", league: "Pro League"
-  },
-  {
     name: "Unknown striker from Westerlo",prob: 75, truth: 85, bullshit: false,
     club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "in",
     from: "Westerlo", to: "OH Leuven",
@@ -122,6 +122,6 @@ const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 27},
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T09:58:49.043732Z",
+  updated: "2026-08-08T11:14:07.219124Z",
   label: "Nation aggregation"
 };
