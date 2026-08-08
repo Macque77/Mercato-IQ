@@ -35,13 +35,13 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Curtis Nelson", sub:"28 · England · D", club:"Derby County", pos:"D", report:"Curtis Nelson departs Derby County for Milton Keynes Dons", src:"Google News", tier:2, fee:"Undisclosed", truth:90, prob:95, light:"g", trend:"up", note:"Transfer confirmed by Derby County and Milton Keynes Dons", lastSeen:"2026-08-08T16:04:57Z", baseProb:95},
-  {name:"Kane Wilson", sub:"20 · England · D", club:"Derby County", pos:"D", report:"Kane Wilson departs Derby County for Milton Keynes Dons", src:"Google News", tier:2, fee:"Undisclosed", truth:90, prob:95, light:"g", trend:"up", note:"Transfer confirmed by Derby County and Milton Keynes Dons", lastSeen:"2026-08-08T16:04:57Z", baseProb:95},
-  {name:"Marvin Ekpiteta", sub:"26 · England · D", club:"Hibernian", pos:"D", report:"Milton Keynes Dons sign Hibernian defender Marvin Ekpiteta", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:98, light:"g", trend:"up", note:"Transfer confirmed by Milton Keynes Dons and Hibernian", lastSeen:"2026-08-08T16:04:57Z", baseProb:98}
+  {name:"Curtis Nelson", sub:"Defender · England", club:"Derby County", pos:"D", report:"Curtis Nelson departs Derby County for Milton Keynes Dons", src:"Google News", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Transfer confirmed by Derby County and Milton Keynes Dons", lastSeen:"2026-08-08T18:06:10Z", baseProb:95},
+  {name:"Kane Wilson", sub:"Defender · England", club:"Derby County", pos:"D", report:"Kane Wilson departs Derby County for Milton Keynes Dons", src:"Google News", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Transfer confirmed by Derby County and Milton Keynes Dons", lastSeen:"2026-08-08T18:06:10Z", baseProb:95},
+  {name:"Marvin Ekpiteta", sub:"Defender · England", club:"Hibernian", pos:"D", report:"Milton Keynes Dons sign Hibernian defender Marvin Ekpiteta", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Transfer confirmed by Milton Keynes Dons and Hibernian", lastSeen:"2026-08-08T18:06:10Z", baseProb:95}
 ];
 const OUTGOING = [
-  {name:"Brooklyn Ilunga", sub:"23 · Belgium · WB", club:"Bromley", pos:"WB", report:"Brooklyn Ilunga: Bromley sign Milton Keynes Dons wing-back on permanent transfer", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:98, light:"g", trend:"up", note:"Permanent transfer confirmed", lastSeen:"2026-08-08T16:04:57Z", baseProb:98},
-  {name:"Tommy Leigh", sub:"26 · England · M", club:"Bradford City", pos:"M", report:"Tommy Leigh: Bradford City add midfielder from Milton Keynes Dons", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:98, light:"g", trend:"up", note:"Transfer confirmed", lastSeen:"2026-08-08T16:04:57Z", baseProb:98}
+  {name:"Brooklyn Ilunga", sub:"Defender · England", club:"Bromley", pos:"D", report:"Brooklyn Ilunga: Bromley sign Milton Keynes Dons wing-back on permanent transfer", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Permanent transfer", lastSeen:"2026-08-08T18:06:10Z", baseProb:95},
+  {name:"Tommy Leigh", sub:"Midfielder · England", club:"Bradford City", pos:"M", report:"Tommy Leigh: Bradford City add midfielder from Milton Keynes Dons", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Transfer confirmed", lastSeen:"2026-08-08T18:06:10Z", baseProb:95}
 ];
 const RISERS = [];
 const FALLERS = [];

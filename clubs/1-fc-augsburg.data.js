@@ -49,16 +49,17 @@ const CONFIRMED_OUT = [
   {name:"Elias Saad", sub:"Loaned to MLS side", club:"Nashville SC", pos:"LW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 16.07.2026."},
   {name:"Kyliane Dong", sub:"Loaned to Championship side", club:"Bolton Wanderers", pos:"CM", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed loan move dated 07.07.2026."},
   {name:"Felix Meiser", sub:"Joins fellow German second-tier side", club:"Fortuna Düsseldorf", pos:"CB", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed departure dated 10.07.2026."},
-  {name:"Dimitris Giannoulis", sub:"Unknown · Greece · D", club:"Unknown", pos:"D", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left Augsburg and returned to Greece"}
+  {name:"Dimitris Giannoulis", sub:"Unknown · Greece · Unknown", club:"1-fc-augsburg", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer back to Greece"}
 ];
 
 const INCOMING = [
-  {name:"Wolfsburg striker (potential comeback)", sub:"Unknown · Unknown · F", club:"Wolfsburg", pos:"F", report:"Augsburg considering a Wolfsburg striker in a possible comeback move", src:"fussballdaten.de", tier:3, fee:"", truth:45, prob:35, light:"y", trend:"flat", note:"No player name identified in snippet; considered but unconfirmed interest", lastSeen:"2026-08-07T01:42:32Z", baseProb:35}
+  {name:"Wolfsburg striker (potential comeback)", sub:"Unknown · Unknown · F", club:"Wolfsburg", pos:"F", report:"Augsburg considering a Wolfsburg striker in a possible comeback move", src:"fussballdaten.de", tier:3, fee:"", truth:45, prob:35, light:"y", trend:"flat", note:"No player name identified in snippet; considered but unconfirmed interest", lastSeen:"2026-08-07T01:42:32Z", baseProb:35, dead:true, deadReason:"no longer a current link"},
+  {name:"Unknown Wolfsburg striker", sub:"Unknown · Unknown · Forward", club:"VfL Wolfsburg", pos:"Forward", report:"Augsburg considering a possible return of a Wolfsburg striker", src:"fussballdaten.de via Florian Plettenberg", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"flat", note:"Player identity not disclosed in reports; described as potential comeback", lastSeen:"2026-08-08T18:06:11Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Mert Kömür", sub:"Unknown · Unknown · Unknown", club:"Hull City", pos:"Unknown", report:"Hull City have made progress in talks to sign Kömür from Augsburg", src:"Unknown", tier:3, fee:"Undisclosed", truth:60, prob:65, light:"g", trend:"up", note:"Ongoing negotiations; talks have progressed", lastSeen:"2026-08-07T01:42:32Z", baseProb:65},
-  {name:"Chrislain Matsima", sub:"Unknown · Unknown · D", club:"Crystal Palace", pos:"D", report:"Crystal Palace increased their offer for defender Matsima; earlier reports indicated the transfer had collapsed described as unseriös (unserious)", src:"Sky.de / Absolut Fussball", tier:2, fee:"", truth:55, prob:50, light:"y", trend:"flat", note:"Deal reported fallen through as unseriös, then Palace raised bid again; conflicting signals suggest talks remain uncertain", lastSeen:"2026-08-07T01:42:32Z", baseProb:50}
+  {name:"Mert Kömür", sub:"Unknown · Unknown · Unknown", club:"1-fc-augsburg", pos:"Unknown", report:"Hull City have made progress in talks to sign Kömür", src:"Unknown", tier:3, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"down", note:"Negotiations advancing with Hull City", lastSeen:"2026-08-08T18:06:11Z", baseProb:55},
+  {name:"Chrislain Matsima", sub:"Unknown · Unknown · Defender", club:"1-fc-augsburg", pos:"Defender", report:"Crystal Palace have increased their offer for defender Matsima", src:"Sky.de", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"up", note:"Improved bid from Crystal Palace; talks progressing", lastSeen:"2026-08-08T18:06:11Z", baseProb:70}
 ];
 
 const RISERS = [];
@@ -90,7 +91,9 @@ const HUB = {
   merkurU20GermaninternationalBundesligatransfer: {l:"Merkur", u:"https://news.google.com/rss/articles/CBMi6AFBVV95cUxQb2NIMmxmMkxaTUlVbGtKMlJiSkNUaXZ2VnlVdVU2QjlZMC1Ja08wbDNjdGZtYWJwWWl2TmdSWUp6M3FDNzlNWnMzMWoxYnYxSWZSWjBNOGxZcEkreDFyNWEzb1VnRTNmYXZoaGFZQk5TYS00cFI3RGdyUjQ1aFBPUjRYQUwxZWhrWkxHNmpYWjR5VG1Qckhsc2lJckx5OHllQTlBMVAtTGFCanVlb2t3b3F2clRyVlBNeVFyeWxfRFhXUWIxWlo5bFhhdF9VcDFxY0V0X3hsdWJiOGdQVFNiOGhEMDNSbGx6"},
   skydeChrislainMatsima: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxQM0Ntc3dCcGZvN0ItejhQQlR4cEI2Q3AzZDN0TVVqZkxwakg0SEg4U1doLXJ4bTFXWng4OUZ3VVlFb3ZZOW10NXZ4WmlxU1NrSERUZjBvNWpwYTV4R0xZNjBrWDBBSGNyOE9ISk5hQlZuZUhjN2VXcXJYbmhIUjZ4TUdRS2Z3blVkdWxLS2dHMXBlcG1GdDdRaG8yM3QwbUtjOHdpS2paQktZVllMVTNOVUE2VTY0NndWaTRseDdFSQ"},
   fussballdatendeDefender25mbid: {l:"fussballdaten.de", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQa0lTZV8xV2ZxVXlqRGd0cV9WdlRNQUdXVUVDdl9YSS1uem5ZN3plVE0zYWRZNHkyd1NWbjlVTzJqcXBlR21fNzY1dzZFUnBNM19TNHZ6OGhlajh3OUg2NnhRS2VTSTUtNHZ0MkR2WFlvRVp5TlRjMzY2VU1lRFpOWVNJRDJ2MV9TNk5MSEtsdkVZWXlxenhOamdrTVdIdS12UldRbnIzS1I"},
-  merkurDimitrisGiannoulis: {l:"Merkur", u:"https://news.google.com/rss/articles/CBMi8gFBVV95cUxOd29RczA3WFh5ZHYyRlFBT0lpUnZqcV9HZkJHNmdJTTV5b2kxak9WNWtVQzlJTThPdHJjZkt1eXpjQ3dOSlROQUt2LWRSU09NRkxybGhpNFl2bXJwX1VXZGJPN1Fjalg1WW5DTjFkTVotZ0NRZkZ2SDVjUlU1ZWdWRk93WDdtbVZCcXpYQjRLSTFGZVpWX0RHN2Jwd3N4MEo0Q01BQjVWWWtfeDNibGx2ZG5yRnRvZjk2dEhiQ2ZLakZtS2pUa2w5WVRvXzBUTndUMmt4bkwweUlPdVdkQXV0Z1dSMWg4M1JZRm5La21FMDB3Zw"}};
+  merkurDimitrisGiannoulis: {l:"Merkur", u:"https://news.google.com/rss/articles/CBMi8gFBVV95cUxOd29RczA3WFh5ZHYyRlFBT0lpUnZqcV9HZkJHNmdJTTV5b2kxak9WNWtVQzlJTThPdHJjZkt1eXpjQ3dOSlROQUt2LWRSU09NRkxybGhpNFl2bXJwX1VXZGJPN1Fjalg1WW5DTjFkTVotZ0NRZkZ2SDVjUlU1ZWdWRk93WDdtbVZCcXpYQjRLSTFGZVpWX0RHN2Jwd3N4MEo0Q01BQjVWWWtfeDNibGx2ZG5yRnRvZjk2dEhiQ2ZLakZtS2pUa2w5WVRvXzBUTndUMmt4bkwweUlPdVdkQXV0Z1dSMWg4M1JZRm5La21FMDB3Zw"},
+  fussballdatendeUnknownWolfsburgstriker: {l:"fussballdaten.de", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxQOHJwTWp0VnhLdHBlSkRrUWdodUw4UUtDaTJBTFBFS2U4SDc4WUZZSEEzazZ6QV9MTEhLdkRCUGhPZGx0ZS1wTkFvRzNOMkxYT19vRk5LU1MzRXZmM0Vmc19fa2VqMU1NT1owNnZ1cWQ1YS1qMWNaVlVFOGctdk9QzMUEHDk2YjBNTHFYXzJUdGVUT01RTi1SOHpoRzlYV0oyOXI2N0RqbE0zcVZY"},
+  skydeChrislainMatsima1: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxQM0Ntc3dCcGZvN0ItejhQQlR4cEI2Q3AzZDN0TVVqZkxwakg0SEg4U1doLXJ4bTFXWng4OUZ3VVlFb3ZZOW10NXZ4WmlxVVNrSERUZjBvNWpwYTV4R0xZNjBrWDBBSGNyOE9ISk5hQlZuZUhjN2VXcXJYbmhIUjZ4TUdRS2Z3blVkdWxLS2dHMXBlcG1GdDdRaG8yM3QwbUtjOHdpS2paQktZVllMVTNOVUE2VTY0NndWaTRseDdFSQ"}};
 
 const LINKMAP = {
   "Mert Kömür": ["bBCSportMertKmr"],
@@ -110,9 +113,10 @@ const LINKMAP = {
   "Elvis Rexhbeçaj": ["kickerElvisRexhbeaj"],
   "Wolfsburg striker (potential comeback)": ["fussballdatendeWolfsburgstrikerpotentialcomeback"],
   "U20 German international (Bundesliga transfer)": ["merkurU20GermaninternationalBundesligatransfer"],
-  "Chrislain Matsima": ["skydeChrislainMatsima"],
+  "Chrislain Matsima": ["skydeChrislainMatsima", "skydeChrislainMatsima1"],
   "Defender (25m bid)": ["fussballdatendeDefender25mbid"],
-  "Dimitris Giannoulis": ["merkurDimitrisGiannoulis"]};
+  "Dimitris Giannoulis": ["merkurDimitrisGiannoulis"],
+  "Unknown Wolfsburg striker": ["fussballdatendeUnknownWolfsburgstriker"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

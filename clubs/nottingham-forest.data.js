@@ -62,13 +62,15 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"James McAtee", sub:"23 · England · M", club:"Manchester City", pos:"M", report:"Nottingham Forest target James McAtee", src:"James Ducker", tier:1, fee:"", truth:65, prob:45, light:"y", trend:"down", note:"Telegraph reports Forest targeting City midfielder", lastSeen:"2026-08-08T07:40:33Z", baseProb:45},
-  {name:"Ousmane Diomande", sub:"· Ivory Coast · Defender", club:"Sporting CP", pos:"Defender", report:"Nottingham Forest set to sign Ousmane Diomande from Sporting CP for €40m", src:"David Ornstein", tier:1, fee:"€40m", truth:85, prob:80, light:"g", trend:"flat", note:"Advanced negotiations reported; Sporting boss has commented on the situation", lastSeen:"2026-08-08T16:04:57Z", baseProb:80}
+  {name:"James McAtee", sub:"21 · England · AM", club:"Manchester City", pos:"AM", report:"Nottingham Forest target James McAtee", src:"James Ducker", tier:1, fee:"Undisclosed", truth:70, prob:60, light:"g", trend:"up", note:"Early-stage target; City player development pathway suggests unlikely departure", lastSeen:"2026-08-08T18:06:10Z", baseProb:60},
+  {name:"Ousmane Diomande", sub:"21 · Ivory Coast · CB", club:"Sporting CP", pos:"CB", report:"Nottingham Forest set to sign Ousmane Diomande from Sporting CP for €40m", src:"David Ornstein", tier:1, fee:"€40m", truth:90, prob:85, light:"g", trend:"up", note:"Deal agreed; Ornstein reports completion imminent", lastSeen:"2026-08-08T18:06:10Z", baseProb:85},
+  {name:"Cathal McCarthy", sub:"20 · Ireland · GK", club:"Coventry City", pos:"GK", report:"Loan target; recent snippet activity", src:"Multiple", tier:3, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"flat", note:"Appears on page; ~3 weeks old; limited recent corroboration", lastSeen:"2026-08-08T18:06:10Z", baseProb:45},
+  {name:"Dodo", sub:"25 · Brazil · LB", club:"Atlético Madrid", pos:"LB", report:"Target for left-back reinforcement", src:"Multiple", tier:3, fee:"Undisclosed", truth:45, prob:40, light:"y", trend:"flat", note:"Appears on page; ~2 weeks old; limited corroboration in recent snippets", lastSeen:"2026-08-08T18:06:10Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Ola Aina", sub:"28 · Nigeria · D", club:"Nottingham Forest", pos:"D", report:"Ola Aina exit", src:"Multiple sources", tier:2, fee:"", truth:70, prob:60, light:"g", trend:"flat", note:"Recent reports suggest defender departure", lastSeen:"2026-08-08T07:40:33Z", baseProb:60},
-  {name:"Chris Wood", sub:"32 · Scotland · F", club:"Nottingham Forest", pos:"F", report:"Chris Wood exit", src:"Multiple sources", tier:2, fee:"", truth:65, prob:50, light:"y", trend:"flat", note:"Reported departure ~3 weeks ago", lastSeen:"2026-08-08T07:40:33Z", baseProb:50}
+  {name:"Ola Aina", sub:"28 · Nigeria · RB", club:"Nottingham Forest", pos:"RB", report:"Exit in progress", src:"Multiple", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Recent snippet (~4 days) confirms ongoing departure talks", lastSeen:"2026-08-08T18:06:10Z", baseProb:70},
+  {name:"Chris Wood", sub:"32 · New Zealand · ST", club:"Nottingham Forest", pos:"ST", report:"Exit confirmed", src:"Multiple", tier:2, fee:"Undisclosed", truth:95, prob:90, light:"g", trend:"up", note:"Striker exit; appears twice on page indicating confirmed departure talks", lastSeen:"2026-08-08T18:06:10Z", baseProb:90}
 ];
 const DEAD = [
   {name:"Lucas Bergvall", sub:"20 · CM · Sweden", club:"Tottenham Hotspur", pos:"CM", report:"27 Jul 2026", src:"The Guardian / TEAMtalk / football365", tier:1, fee:"£50-65m (Spurs valuation)", truth:74, prob:40, light:'y', trend:'up',
@@ -160,7 +162,8 @@ const HUB = {
   pAYahooSportTijjaniReijnders: {l:"PA / Yahoo Sport", u:"https://ca.sports.yahoo.com/news/nottingham-forest-target-tijjani-reijnders-153500623.html"},
   theTelegraphJamesMcAtee: {l:"The Telegraph", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU?oc=5"},
   telegraphGoogleNewsJamesMcAtee: {l:"Telegraph / Google News", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU"},
-  googleNewsTheNewYorkTimesOusmaneDiomande: {l:"Google News / The New York Times", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxOVE5Fdk1Wb0xaMy1RbWpZblJydHE2d0ZZM0QxQ04teGhaMVlrVk15RXcyeGVBc0NUOFZERHRQenNySzNoMmlnOVdUMnJLOFFlTlBTQVRIcGVvOVpKMlN3cmN4a3BJeXQ3VUE4NXEybFlRYzJCU0tKVS03ZjdlVy1tWXdzX2FtQ243ZmxBa3NTOGVyZ3prYW5SVHNUTFk"}};
+  googleNewsTheNewYorkTimesOusmaneDiomande: {l:"Google News / The New York Times", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxOVE5Fdk1Wb0xaMy1RbWpZblJydHE2d0ZZM0QxQ04teGhaMVlrVk15RXcyeGVBc0NUOFZERHRQenNySzNoMmlnOVdUMnJLOFFlTlBTQVRIcGVvOVpKMlN3cmN4a3BJeXQ3VUE4NXEybFlRYzJCU0tKVS03ZjdlVy1tWXdzX2FtQ243ZmxBa3NTOGVyZ3prYW5SVHNUTFk"},
+  theNewYorkTimesDavidOrnsteinOusmaneDiomande: {l:"The New York Times / David Ornstein", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxOVE5Fdk1Wb0xaMy1RbWpZblJydHE2d0ZZM0QxQ04teGhaMVlrVk15RXcyeGVBc0NUOFZERHRQenNySzNoMmlnOVdUMnJLOFFlTlBTQVRIcGVvOVpKMlN3cmN4a3BJeXQ3VUE4NXEybFlRYzJCU0tKVS03ZjdlVy1tWXdzX2FtQ243ZmxBa3NTOGVyZ3prYW5SVHNUTFk?oc=5"}};
 
 const LINKMAP = {
   "Xaver Schlager": ["ggfnSchlager","forestOfficialGlasner", "sportsMoleXaverSchlager"],
@@ -169,7 +172,7 @@ const LINKMAP = {
   "David Carmo": ["soccernewsTransfers", "sportsMoleXaverSchlager"],
   "Jota Silva": ["soccernewsTransfers", "sportsMoleXaverSchlager"],
   "Angus Gunn, Stefan Ortega & Willy Boly": ["soccernewsTransfers"],
-  "Ousmane Diomande": ["romanoDiomandeX","forestNewsDiomande","eotkDiomande", "nottinghamForestNewsOusmaneDiomande", "romanoX", "googleNewsTheNewYorkTimesOusmaneDiomande"],
+  "Ousmane Diomande": ["romanoDiomandeX","forestNewsDiomande","eotkDiomande", "nottinghamForestNewsOusmaneDiomande", "romanoX", "googleNewsTheNewYorkTimesOusmaneDiomande", "theNewYorkTimesDavidOrnsteinOusmaneDiomande"],
   "Lucas Bergvall": ["f365Bergvall","forestNewsBergvall"],
   "Liam Delap": ["chelseaFCO"],
   "Givairo Read": ["insideFutbolRead","pulseAina"],

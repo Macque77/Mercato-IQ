@@ -32,21 +32,22 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Kieran Trippier", sub:"35 · RB · England", club:"Newcastle United", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer, medical completed 8 June 2026 on a two-year deal with an optional third."},
-  {name:"Raúl Jiménez", sub:"35 · Mexico · ST", club:"Benfica", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Return to Wolverhampton"}
+  {name:"Raúl Jiménez", sub:"35 · Mexico · ST", club:"Benfica", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Return to Wolverhampton"},
+  {name:"Matheus Nunes", sub:"", club:"Manchester City", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing from Manchester City"}
 ];
 const CONFIRMED_OUT = [
   {name:"Matt Doherty", sub:"34 · RB · Ireland", club:"Sheffield United", pos:"RB", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Released on a free transfer, confirmed by Sheffield United's own unveiling."},
   {name:"Tolu Arokodare", sub:"ST · Nigeria", club:"Ajax", pos:"ST", fee:"~£18.8m / €22m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 29 Jul 2026 by BBC Sport: loan-to-buy move to Ajax following a reported training-ground dispute with the manager."}
 ];
 const INCOMING = [
-  {name:"Niko Sigur", sub:"22 · DM/RB · Canada", club:"Hajduk Split", pos:"DM", report:"7 Jul 2026", src:"Luke Fletcher / Last Word On Football (via Sky Sports News)", tier:2, fee:"~£2.5m", truth:55, prob:38, light:"y", trend:"flat", note:"Wolves are pursuing the Canadian World Cup performer as inexpensive midfield/defensive depth for their Championship campaign.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38, dead:true, deadReason:"No recent credible reporting; likely stale rumour from July 2026"},
-  {name:"Brayan Medina", sub:"24 · CB · Colombia", club:"CD Tondela", pos:"CB", report:"29 Jul 2026", src:"Pipe Sierra (via The72)", tier:3, fee:"Undisclosed", truth:28, prob:10, light:"r", trend:"down", note:"New manager Cesar Peixoto has enquired about the 195cm defender following Tondela's relegation, competing with Genoa and Olympiacos; Medina has since signed a contract extension with Tondela through 2030, reducing near-term likelihood.", lastSeen:"2026-08-04T19:10:50Z", baseProb:10, dead:true, deadReason:"No recent credible reporting; likely stale rumour from July 2026"},
+  {name:"Niko Sigur", sub:"22 · DM/RB · Canada", club:"Hajduk Split", pos:"DM", report:"Incoming transfer", src:"Luke Fletcher / Last Word On Football (via Sky Sports News)", tier:0, fee:"~£2.5m", truth:55, prob:38, light:"y", trend:"down", note:"Wolves are pursuing the Canadian World Cup performer as inexpensive midfield/defensive depth for their Championship campaign.", lastSeen:"2026-08-08T18:06:11Z", baseProb:38},
+  {name:"Brayan Medina", sub:"24 · CB · Colombia", club:"CD Tondela", pos:"CB", report:"Incoming transfer", src:"Pipe Sierra (via The72)", tier:0, fee:"Undisclosed", truth:28, prob:10, light:"r", trend:"down", note:"New manager Cesar Peixoto has enquired about the 195cm defender following Tondela's relegation, competing with Genoa and Olympiacos; Medina has since signed a contract extension with Tondela through 2030, reducing near-term likelihood.", lastSeen:"2026-08-08T18:06:11Z", baseProb:10},
   {name:"Matheus Nunes", sub:"unknown · unknown · unknown", club:"Manchester City", pos:"unknown", report:"Confirmed signing from Manchester City", src:"On-page record", tier:2, fee:"unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
   {name:"Kieran Trippier", sub:"unknown · unknown · unknown", club:"Newcastle United", pos:"Defender", report:"Poised to join Wolverhampton Wanderers on a free transfer", src:"OneFootball", tier:3, fee:"Free", truth:85, prob:80, light:"g", trend:"flat", note:"Free transfer agreement reported", lastSeen:"2026-08-08T16:04:57Z", baseProb:80}
 ];
 const OUTGOING = [
-  {name:"Jose Sa", sub:"33 · GK · Portugal", club:"Olympiacos", pos:"GK", report:"15 Jul 2026", src:"Konstantinos Lianos (The72)", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Olympiacos are eyeing Sa as a replacement for their departing keeper Tzolakis; Sa (170 Wolves appearances, contract to 2027) is reportedly open to a fresh challenge following relegation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; likely stale rumour from July 2026"},
-  {name:"Joao Gomes", sub:"unknown · unknown · unknown", club:"Aston Villa", pos:"Midfielder", report:"To undergo Aston Villa medical ahead of £38m transfer", src:"Goal.com", tier:2, fee:"£38m", truth:95, prob:90, light:"g", trend:"down", note:"Medical scheduled, deal advanced", lastSeen:"2026-08-08T16:04:57Z", baseProb:90}
+  {name:"Jose Sa", sub:"33 · GK · Portugal", club:"Olympiacos", pos:"GK", report:"Outgoing transfer", src:"Konstantinos Lianos (The72)", tier:0, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"down", note:"Olympiacos are eyeing Sa as a replacement for their departing keeper Tzolakis; Sa (170 Wolves appearances, contract to 2027) is reportedly open to a fresh challenge following relegation.", lastSeen:"2026-08-08T18:06:11Z", baseProb:15},
+  {name:"Joao Gomes", sub:"unknown · unknown · unknown", club:"Aston Villa", pos:"Midfielder", report:"To undergo medical ahead of £38m transfer", src:"Goal.com", tier:3, fee:"£38m", truth:85, prob:90, light:"g", trend:"flat", note:"Medical stage as of latest report", lastSeen:"2026-08-08T18:06:11Z", baseProb:90}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -72,10 +73,11 @@ const HUB = {
   theTimesToluArokodare: {l:"The Times", u:"https://www.thetimes.co.uk"},
   oneFootballKieranTrippier1: {l:"OneFootball", u:"https://onefootball.com"},
   oneFootballKieranTrippier2: {l:"OneFootball", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxOaXh4VGZHR3FhNUIwSWNqLXptWXh1RGtOenR1dnpCMmNmWTA5cmhhZ0UwU280LVROV2xILUZkbjRzRTVFaDFkQU93Q1oyNjhqWHJBeTFoMUxDc2N0NTJkdEJtZVd2VUZTdXJfYmZSNFhMTGVnczA4ZEVOaFJWTG5UVXJkaThJQWw4b002YWtHekFJLTA0eHBMSDItQXQ4TjFEUTVVSFhNMF9ZR2N6Zmp6TUJTc0M"},
-  goalcomJoaoGomes1: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxQaGJHWC1PYnI4bGpQUDNsRjJYWm1TTG5UQUp0UmFsU2RXQTEtRmF6d29sTXBfRHpmRDVyZ0MyTUJUcFowQmotWDZuRjYzX192Ujd6bXdMU0YwRGFHUTVUWndTeFY1Yk5xd3Z1elAyOWNabWQ5eGtTci1SRmVGbnVTNS1yVXhNVnVTRmVvam9LalZtdWJhTkxtc190M3BIdWp3QVJtaXlzOHR4Mk1UbWxKVE8ycGVlaHdwQ1piUE5fNFNUaEtnSDdV"}};
+  goalcomJoaoGomes1: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxQaGJHWC1PYnI4bGpQUDNsRjJYWm1TTG5UQUp0UmFsU2RXQTEtRmF6d29sTXBfRHpmRDVyZ0MyTUJUcFowQmotWDZuRjYzX192Ujd6bXdMU0YwRGFHUTVUWndTeFY1Yk5xd3Z1elAyOWNabWQ5eGtTci1SRmVGbnVTNS1yVXhNVnVTRmVvam9LalZtdWJhTkxtc190M3BIdWp3QVJtaXlzOHR4Mk1UbWxKVE8ycGVlaHdwQ1piUE5fNFNUaEtnSDdV"},
+  oneFootballKieranTrippier3: {l:"OneFootball", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxOaXh4VGZHR3FhNUIwSWNqLXptWXh1RGtOenR1dnpCMmNmWTA5cmhhZ0UwU280LVROV2xILUZkbjRzRTVFaDFkQU93Q1oyNjhqWHJBeTFoMUxDc2N0NTJkdEJtZVd2VUZTdXJfYmZSNFhMTGVnczA4ZEVOaFJWTG5UVXJkaThJQWw4b282YWtHekFJLTA0eHBMSDItQXQ4TjFEUTVVSFhNMF9ZR2N6Zmp6TUJTc0M"}};
 
 const LINKMAP = {
-  "Kieran Trippier": ["gnews-kierantrippier", "oneFootballKieranTrippier", "oneFootballKieranTrippier1", "oneFootballKieranTrippier2"],
+  "Kieran Trippier": ["gnews-kierantrippier", "oneFootballKieranTrippier", "oneFootballKieranTrippier1", "oneFootballKieranTrippier2", "oneFootballKieranTrippier3"],
   "Matt Doherty": ["gnews-mattdoherty"],
   "João Gomes": ["bbc", "molineuxnews"],
   "Tolu Arokodare": ["bbcArokodare", "theTimesToluArokodare"],

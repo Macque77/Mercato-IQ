@@ -48,18 +48,9 @@ const CONFIRMED_OUT = [
   {name:"Max-Edgar Chabot", sub:"18 · GK · France", club:"free to Manchester City", pos:"GK", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Highly-rated academy goalkeeper refused a first professional contract at Angers and moved to Manchester City as a free agent, confirmed around 29 July 2026."}
 ];
 
-const INCOMING = [
-  {name:"Joseph Kalulu", sub:"21 · LB · —", club:"Pau FC", pos:"LB", report:"17-18 Jul 2026", src:"L'Équipe (via AfricaFoot / Angers Info)", tier:2, fee:"~€2m (est. market value)", truth:55, prob:30, light:"y", trend:"flat", note:"Angers are scouting the Pau FC left-back, who has impressed in Ligue 2, but face competition from FC Basel and reportedly Hamburg.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Paulos Abraham", sub:"24 · ST · Sweden", club:"Hammarby", pos:"ST", report:"2 Aug 2026", src:"Radio L1 (X)", tier:3, fee:"Undisclosed", truth:35, prob:15, light:"o", trend:"flat", note:"Single-source report says Angers are interested in the Hammarby striker (9 goals this season); contract runs to Dec 2028.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15},
-  {name:"Amine El Ouazzani", sub:"", club:"", pos:"", report:"Angers SCO has signed Amine El Ouazzani as part of their ongoing summer transfer activity", src:"Angers Info", tier:3, fee:"", truth:70, prob:75, light:"g", trend:"flat", note:"Recent arrival confirmed by local source", lastSeen:"2026-08-08T07:40:33Z", baseProb:75},
-  {name:"Van den Boomen", sub:"", club:"", pos:"", report:"Van den Boomen towards a permanent transfer to Angers SCO", src:"LesViolets.Com", tier:3, fee:"", truth:65, prob:70, light:"g", trend:"flat", note:"Transfer reported as ongoing or imminent", lastSeen:"2026-08-08T07:40:33Z", baseProb:70}
-];
+const INCOMING = [];
 
-const OUTGOING = [
-  {name:"Yahia Jlidi", sub:"17 · AM/winger · Tunisia", club:"Lyon / Roma (Monaco also interested)", pos:"AM", report:"24 Jul – 4 Aug 2026", src:"RMC Sport / Foot Mercato / AfricaFoot", tier:1, fee:"Angers value at ~€7m (rejected Monaco's €4m bid)", truth:75, prob:55, light:"g", trend:"flat", note:"Monaco's €4m bid was rejected in July; by early August Lyon and AS Roma were both reported to be accelerating pursuit of the highly-rated Tunisian U17 international.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Harouna Djibirin", sub:"19 · FW · Cameroon", club:"Club Brugge", pos:"FW", report:"5 May 2026 (renewed 31 Jul 2026)", src:"Sacha Tavolieri (via Walfoot); AfricaFoot", tier:1, fee:"~€15m asking price", truth:65, prob:35, light:"y", trend:"flat", note:"Brugge's interest, first reported by insider Sacha Tavolieri, resurfaced in late July with the Belgian club resuming discussions, though no bid is confirmed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Lanroy Machine", sub:"", club:"Angers SCO", pos:"", report:"Angers SCO officially confirms the loan of Lanroy Machine to the Netherlands", src:"Ouest-France", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Official loan departure to Dutch club", lastSeen:"2026-08-08T07:40:33Z", baseProb:95}
-];
+const OUTGOING = [];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Van den Boomen signs as a free agent</b>: experienced midfielder arrives after leaving Ajax by mutual consent."}
@@ -96,7 +87,8 @@ const HUB = {
   angersInfoAmineElOuazzani: {l:"Angers Info", u:"https://news.google.com/rss/articles/CBMipAJBVV95cUxPN1dUT1JyZGIxcmxheFd2clVzQ01BUjh6a0tIVmJVTnVrbVFZN1FnZi0wNzRCRTlWcWlJb0JJaFlva0kzN012SDhnOGkxWUdqeFdTNmxGZlZxTF92TWtyMlFEc3dOM1ByY2JaR3BRNGFSVWlvS0txeVV6dWJheFRzRS1keW56WjczRVU4aEs0RDJlUEFUbGhIWnZ1MzNmOXRha25yQzV0OXBVb21iMGpVNjRMTHdyMW9GMG9aelVVeGJqa0lTVTNPUFB4bnZxOXhIdWdRS2s0Y1M5TFk5MU5CdjktQzFRand2U3k5Wl9DV3F5c0VvQWJBWnJZdS0yYUJWcEZTaWRGRE5VbDQtcVFHWXo3Z2dzVDVlZ1BENHJtcjdmUjZq0gGqAkFVX3lxTE5aVmJmM2pzdFVhTGdQWjdSQWhvbHZNNmVEYzZrZkpEcDZMSENLcXFlcW9aVWN5MUZaNjdSZ0dKeGtMWF9fVVRPQkpUaTRBZEFnbEl4V3RVeDVSSVBwR20yNmxJbm5fX3FmaVhHT1M3MFpMSTJaNEc2YjFfZWV0RnR3LXlpV0VZWHN2bmpoRVduWTVzZEtDUlphZEw0dTFXbC1EQzlQTGFxUXN0V1dBTmdfYm1QOVI0OElFOUFiR251TWZJODFLaHRGcGNCMi1acURNWnpFRVNkM3psRGtqY2hrRS1RNzhoOEVlbWwySVU1Y0FmNGpKdk8wMTR0am04dWFpcEwxa3VJUGI3aVF0V21pLU5fUHpaekxheE1Ha1o2Mnd5NkpuZ2NNR2c?oc=5"},
   lesVioletsComVandenBoomen: {l:"LesViolets.Com", u:"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPcE1kRlU4NXltM3hqTG4yT1pMSnlJelpJa1FKT0FYZkpNbFpzUU12UzBENVdXMk56T0dGVWNnb2JGWjdUa1VFckxrWUxCWlVYRWN5MkFvRFdfUDVEYU5hSlpibHRlVjVoOFphY1BmaEhiU2VJRWZqdTJyT3V0ZkdQQXFkdWd0a1lDNkFmYVVtQXk3UVdHeGtseGtXQW1HWVV5V19uQ191Y2JQUQ?oc=5"},
   ouestFranceLanroyMachine: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi-AFBVV95cUxOYWdETFZvbG80VjhtRUJCdlc1WGh0bW80MXJLMnRybDZKMDNybXVuUF9OVEhPR1pwSVRJUUszaS1HOEx4TkRlVkRCX1hEOHlmaGdTREJVdGdLV3ZwVmh6UDgtc3bicDIxd05oVUFkVEtuZ2ktQ3c1NlBFZ1ZLWFA0TzhPQUlUXzZ5UTJ2SHc1Y0tYdlV4RDh4MFp5Wm5kdDdzdUVtRk1NZmNCdmEtcFRTSE9lQXB1Q2VQWGd0RU8yelJfQV9pc3RrWDFBc21UZEZFZlllbVBaaFctRTFZbXMzN0xwUkc4dnFZd05SWl9qaXlLWGp3N1V3bg?oc=5"},
-  ouestFranceLanroyMachine1: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi-AFBVV95cUxOYWdETFZvbG80VjhtRUJCdlc1WGh0bW80MXJLMnRybDZKMDNybXVuUF9OVEhPR1pwSVRJUUszaS1HOEx4TkRlVkRCX1hEOHlmaGdTREJVdGdLV3ZwVmh6UDgtc3bicDIxd05oVUFkVEtuZ2ktQ3c1NlBFZ1ZLWEY0TzhPQUlUXzZ5UTJ2SHc1Y0tYdlV4RDh4MFp5Wm5kdDdzdUVtRk1NZmNCdmEtcFRTSE9lQXB1Q2VQWGd0RU8yelJfQV9pc3RrWDFBc21UZEZFZlllbVBaaFctRTFZbXMzN0xwUkc4dnFZd05SWl9qaXlLWGp3N1V3bg?oc=5"}};
+  ouestFranceLanroyMachine1: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi-AFBVV95cUxOYWdETFZvbG80VjhtRUJCdlc1WGh0bW80MXJLMnRybDZKMDNybXVuUF9OVEhPR1pwSVRJUUszaS1HOEx4TkRlVkRCX1hEOHlmaGdTREJVdGdLV3ZwVmh6UDgtc3bicDIxd05oVUFkVEtuZ2ktQ3c1NlBFZ1ZLWEY0TzhPQUlUXzZ5UTJ2SHc1Y0tYdlV4RDh4MFp5Wm5kdDdzdUVtRk1NZmNCdmEtcFRTSE9lQXB1Q2VQWGd0RU8yelJfQV9pc3RrWDFBc21UZEZFZlllbVBaaFctRTFZbXMzN0xwUkc4dnFZd05SWl9qaXlLWGp3N1V3bg?oc=5"},
+  ouestFranceLanroyMachine2: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi-AFBVV95cUxOYWdETFZvbG80VjhtRUJCdlc1WGh0bW80MXJLMnRybDZKMDNybXVuUF9OVEhPR1pwSVRJUUszaS1HOEx4TkRlVkRCX1hEOHlmaGdTREJVdGdLV3ZwVmh6UDgtc3bicDIxd05oVUFkVEtuZ2ktQ3c1NlBFZ1ZLWFE0TzhPQUlUXzZ5UTJ2SHc1Y0tYdlV4RDh4MFp5Wm5kdDdzdUVtRk1NZmNCdmEtcFRTSE9lQXB1Q2VQWGd0RU8yelJfQV9pc3RrWDFBc21UZEZFZlllbVBaaFctRTFZbXMzN0xwUkc4dnFZd05SWl9qaXlLWGp3N1V3bg?oc=5"}};
 
 const LINKMAP = {
   "Branco van den Boomen": ["gffn-angers"],
@@ -111,7 +103,7 @@ const LINKMAP = {
   "Hervé Koffi": ["euroFootNewsHervKoffi"],
   "Goduine Koyalipou": ["euroFootNewsHervKoffi"],
   "Sidiki Chérif": ["foot01SidikiChrif"],
-  "Lanroy Machine": ["footballKOLanroyMachine", "ouestFranceLanroyMachine", "ouestFranceLanroyMachine1"],
+  "Lanroy Machine": ["footballKOLanroyMachine", "ouestFranceLanroyMachine", "ouestFranceLanroyMachine1", "ouestFranceLanroyMachine2"],
   "Dan Sinaté": ["footballKODanSinat"],
   "Florent Hanin": ["angersSCOofficialFlorentHanin"],
   "Max-Edgar Chabot": ["angersInfoMaxEdgarChabot"],

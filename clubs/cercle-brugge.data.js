@@ -43,11 +43,10 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [
   {name:"Claudio Katunda", sub:"19 · CB", club:"Schalke 04", pos:"CB", report:"10 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:50, prob:20, light:"o", trend:"flat", note:"Cercle among several Belgian clubs, including Standard, monitoring the 2m-tall 19-year-old Schalke defender; no bid confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent credible reports; rumour appears stale (dated 10 Jun 2026)"},
-  {name:"Joel Ndala", sub:"Unknown · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Cercle Brugge reaches agreement with Manchester City", src:"Fabrizio Romano / Tavolieri", tier:1, fee:"Unknown", truth:85, prob:80, light:"g", trend:"down", note:"Deal agreed between clubs", lastSeen:"2026-08-07T20:08:12Z", baseProb:80},
-  {name:"Lukas Mondele", sub:"Unknown · Unknown · Unknown", club:"Francs Borains", pos:"Unknown", report:"Transfer from Francs Borains to Cercle Brugge confirmed", src:"Direct club statement", tier:2, fee:"Unknown", truth:90, prob:95, light:"g", trend:"up", note:"Coach Maarten Martens congratulated player on transfer", lastSeen:"2026-08-07T20:08:12Z", baseProb:95}
+  {name:"Joel Ndala", sub:"Unknown · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Cercle Brugge reaches agreement with Manchester City over Joel Ndala", src:"Tavolieri", tier:1, fee:"Unknown", truth:85, prob:85, light:"g", trend:"up", note:"Agreement reached with Manchester City", lastSeen:"2026-08-08T18:06:10Z", baseProb:85},
+  {name:"Lukas Mondele", sub:"Unknown · Unknown · Unknown", club:"Francs Borains", pos:"Unknown", report:"Transfer from Francs Borains to Cercle Brugge confirmed; coach Maarten Martens congratulated him", src:"HBVL", tier:2, fee:"Unknown", truth:90, prob:90, light:"g", trend:"down", note:"Coach Maarten Martens confirmed the transfer and congratulated the player", lastSeen:"2026-08-08T18:06:10Z", baseProb:90}
 ];
 const OUTGOING = [
-  {name:"Ayase Ueda", sub:"Unknown · Unknown · FW", club:"Cercle Brugge", pos:"FW", report:"Move to Premier League with bonus for Cercle Brugge", src:"VoetbalBelgie", tier:3, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Departing to Premier League", lastSeen:"2026-08-07T23:07:29Z", baseProb:70},
   {name:"Warleson", sub:"Unknown · Brazil · Unknown", club:"Cercle Brugge", pos:"Unknown", report:"Expected departure to Brazil, emotional decision", src:"VoetbalFocus", tier:3, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"Departing to Brazil", lastSeen:"2026-08-07T23:07:29Z", baseProb:60, dead:true, deadReason:"Expected departure to Brazil marked as resolved"}
 ];
 const RISERS = [];

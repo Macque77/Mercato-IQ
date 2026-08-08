@@ -34,10 +34,10 @@ const CONFIRMED_IN = [
   {name:"Glen Kamara", sub:"MF · Finland", club:"Rennes", pos:"MF", fee:"Loan (option to buy)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"BBC confirmation corroborated by prior Fabrizio Romano reporting on the paperwork stage, as solid as EFL transfer news gets."},
   {name:"Justin Obikwu", sub:"", club:"Coventry City", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent deal from Coventry City"},
   {name:"Richard Kone", sub:"", club:"Wycombe Wanderers", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined Queens Park Rangers"},
-  {name:"Nicolas Madsen", sub:"Defender · Unknown · DF", club:"Unknown", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer to Queens Park Rangers"},
   {name:"Isaac Hayden", sub:"Midfielder · England · MF", club:"Newcastle United", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Queens Park Rangers"},
   {name:"Rhys Norrington-Davies", sub:"Defender · Wales · LB", club:"Fulham", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Queens Park Rangers"},
-  {name:"Koki Saito", sub:"Forward · Japan · FW", club:"Urawa Red Diamonds", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Queens Park Rangers"}
+  {name:"Koki Saito", sub:"Forward · Japan · FW", club:"Urawa Red Diamonds", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Queens Park Rangers"},
+  {name:"Nicolas Madsen", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
@@ -66,12 +66,13 @@ const HUB = {
   theCoventryObserverJustinObikwu2: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb200a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrc3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv"},
   wycombeWanderersFootballClubRichardKone1: {l:"Wycombe Wanderers Football Club", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxOajBzem1GZzhPOUtJZmYyQUo3c1RvaU9YcmVoWlFUSm5NYjlFNVVVTjNoaWVhckZORy1lWEVRdzVuQnluVm9KQm9JVTA0SkFFRWtVRTlMLThmMjBPcDJ1anBfYkZpMXozTXVIeWZkdHNWMF9NYkJmSGN3cnVZNlp4Mi1KSGZzZWc"},
   oneFootballNicolasMadsen1: {l:"OneFootball", u:"https://news.google.com/rss/articles/CBMiWEFVX3lxTFBrNUF2NGNTUEFSQk9iak51LUwtZU44QlVGcE53NzRNTzlOd0ExZ1NNdkI0VmtYUjIzN3JweER0LURjOU9LWUtxeGhyNVA4WHpCejBvS2psb0s"},
-  bBCIsaacHayden1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9kSXc0NjE5M2ZkTkJBcm5IRFd6d2xWYmFUQUNpUFV2eFFxT2ZvV0wzcUhTanNHNlh2bGdDVXh3aThkaEl1UWEwdTk5TENvMXJyYlJ2TmJobDlIU05TYmdKZndrMEpySzA"}};
+  bBCIsaacHayden1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9kSXc0NjE5M2ZkTkJBcm5IRFd6d2xWYmFUQUNpUFV2eFFxT2ZvV0wzcUhTanNHNlh2bGdDVXh3aThkaEl1UWEwdTk5TENvMXJyYlJ2TmJobDlIU05TYmdKZndrMEpySzA"},
+  theCoventryObserverJustinObikwu3: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb280a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrd3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv"}};
 
 const LINKMAP = {
   "Glen Kamara": ["gnews-glenkamara"],
   "Nicolas Madsen": ["oneFootballNicolasMadsen", "oneFootballNicolasMadsen1"],
-  "Justin Obikwu": ["theCoventryObserverJustinObikwu", "theCoventryObserverJustinObikwu1", "theCoventryObserverJustinObikwu2"],
+  "Justin Obikwu": ["theCoventryObserverJustinObikwu", "theCoventryObserverJustinObikwu1", "theCoventryObserverJustinObikwu2", "theCoventryObserverJustinObikwu3"],
   "Isaac Hayden": ["bBCIsaacHayden", "bBCIsaacHayden1"],
   "Rhys Norrington-Davies": ["bBCIsaacHayden", "bBCIsaacHayden1"],
   "Koki Saito": ["bBCIsaacHayden", "bBCIsaacHayden1"],

@@ -73,14 +73,15 @@ const HUB = {
   bBCJosephOlowu2: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IYncxWW81SUpON0NLdXRoMDBDUU80M05ybElBRlJUd01yZkhacDdRSExfaDlBMTNOY081Z243bjBrdDZ1SXRFSkRIa3R4bmZBU1hIUXpHczlqSEpyS0szMlY0TDFWTkE"},
   bBCSomtoBoniface: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hX3RDaEotZGxheWZhdUNKM2JhZjdNSm1ibl9HRzk5eUZMMFllbktlLXcxVUdyREtmQmJnemFUQVJiMC1JOFpBQVdhMWxHN3cxVWZHb1BHNm04a05zcTNCSVdEY28tYkU"},
   bBCJosephOlowu3: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IYncxWW81SUpON0NLdXRoMDBDUU80M05ybElBRlJUd01yZkhacDdRSExfaDlBMTNOY001Z283bjBrdDZ1SXRFSkRIa3R4bmZBU1hIUXpHczlqSEpyS0szMlY0TDFWTkE"},
-  echoLiveJazeKabia: {l:"Echo Live", u:"https://news.google.com/rss/articles/CBMiYkFVX3lxTE9sRG16VVhKd1JXclpkRXZ6TTFCaTRqbTZxbG5sWmFMXzNoemlGOVpFbGJBeGhZNjBMbExBTUdJLXFwMDhPRFEtY1IzLVp0NDFpZHozTkZaeFFfM3J2ZGEyTWR3"}};
+  echoLiveJazeKabia: {l:"Echo Live", u:"https://news.google.com/rss/articles/CBMiYkFVX3lxTE9sRG16VVhKd1JXclpkRXZ6TTFCaTRqbTZxbG5sWmFMXzNoemlGOVpFbGJBeGhZNjBMbExBTUdJLXFwMDhPRFEtY1IzLVp0NDFpZHozTkZaeFFfM3J2ZGEyTWR3"},
+  unknownTonySpringett: {l:"Unknown", u:"Unknown"}};
 
 const LINKMAP = {
   "Alfie Gilchrist": ["gnews-alfiegilchrist"],
   "Owen Dale": ["gnews-owendale"],
   "Dom Ballard": ["flw", "bBCDomBallard", "bristolLiveDomBallard"],
   "Joseph Olowu": ["bBCJosephOlowu", "bBCJosephOlowu1", "bBCJosephOlowu2", "bBCJosephOlowu3"],
-  "Tony Springett": ["bBCTonySpringett"],
+  "Tony Springett": ["bBCTonySpringett", "unknownTonySpringett"],
   "Tariq Al Sadi": ["bBCTariqAlSadi", "bBCTariqAlSadi1", "bBCTariqAlSadi2", "bBCTariqAlSadi3"],
   "Jaze Kabia": ["irishExaminerJazeKabia", "rTEJazeKabia", "echoLiveJazeKabia"],
   "Somto Boniface": ["bBCSomtoBoniface"]};

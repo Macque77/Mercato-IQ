@@ -37,7 +37,9 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Sekou Fofana", sub:"Franco-Ivorian left-back signed from Lausanne-Sport", club:"Lausanne-Sport", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a four-year deal after 50 appearances for Lausanne since 2021."},
   {name:"Romain Faivre", sub:"Loan spell renewed for a second consecutive season", club:"AFC Bournemouth", pos:"CAM", fee:"Loan, no purchase option", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Bournemouth and Auxerre agreed a fresh season-long loan without a buy option, extending Faivre's stay after his 2025-26 loan spell."},
-  {name:"Arthur Piedfort", sub:"21 · Belgium · CM", club:"KVC Westerlo", pos:"CM", fee:"€5.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by Auxerre, who handed the Belgian midfielder a four-year deal. Foot Mercato lists him as the club's biggest outlay of the window."}
+  {name:"Arthur Piedfort", sub:"21 · Belgium · CM", club:"KVC Westerlo", pos:"CM", fee:"€5.5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed by Auxerre, who handed the Belgian midfielder a four-year deal. Foot Mercato lists him as the club's biggest outlay of the window."},
+  {name:"Paul Nardi", sub:"· France · GK", club:"Queens Park Rangers", pos:"Goalkeeper", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Experienced goalkeeper joins on free transfer from QPR"},
+  {name:"Rémy Labeau-Lascary", sub:"· France · LB", club:"AS Saint-Étienne", pos:"Left-back", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back formed at Saint-Étienne joins Auxerre"}
 ];
 
 const CONFIRMED_OUT = [
@@ -45,13 +47,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Tim Meyer", sub:"Swiss revelation targeted as defensive midfield reinforcement", club:"Grasshopper Zurich", pos:"CDM", report:"Auxerre have moved into the acquisition phase for Tim Meyer", src:"TOP Mercato", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"down", note:"Early-stage interest reported by an aggregator outlet; no formal bid confirmed yet.", lastSeen:"2026-08-08T07:40:33Z", baseProb:40},
+  {name:"Tim Meyer", sub:"Swiss revelation targeted as defensive midfield reinforcement", club:"Grasshopper Zurich", pos:"CDM", report:"Auxerre have moved into the acquisition phase for Tim Meyer", src:"TOP Mercato", tier:3, fee:"", truth:50, prob:50, light:"y", trend:"up", note:"Limited detail available", lastSeen:"2026-08-08T18:06:11Z", baseProb:50},
   {name:"Paul Nardi", sub:"Goalkeeper", club:"Free agent", pos:"GK", report:"Experienced goalkeeper Paul Nardi joins Auxerre from Queens Park Rangers on a free transfer", src:"L'Équipe", tier:2, fee:"Free", truth:95, prob:95, light:"g", trend:"flat", note:"Free agent signing confirmed by official announcement", lastSeen:"2026-08-08T07:40:33Z", baseProb:95},
   {name:"Rémy Labeau-Lascary", sub:"Defender", club:"Saint-Étienne", pos:"LB", report:"Left-back formed at Saint-Étienne, Auxerre in advanced negotiations to recruit him", src:"Foot Mercato", tier:3, fee:"", truth:85, prob:80, light:"g", trend:"flat", note:"Advanced negotiations reported; official announcement expected", lastSeen:"2026-08-08T07:40:33Z", baseProb:80}
 ];
 
 const OUTGOING = [
-  {name:"Kevin Danois", sub:"West Ham and Newcastle monitoring, Hull City bid rejected", club:"West Ham United / Newcastle United (interest)", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old midfielder closely after Hull City's ~€15m offer was seen as below Auxerre's €20m valuation.", src:"Les Transferts", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Danois is contracted through June 2029, giving Auxerre strong leverage; a departure this window looks unlikely unless valuation is met.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent reporting; move likely stalled or off (reported watching from two years ago)"},
+  {name:"Kevin Danois", sub:"22 · · ", club:"AJ Auxerre", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old", src:"Les Transferts", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"up", note:"Attracting Premier League interest but no advanced talks reported", lastSeen:"2026-08-08T18:06:11Z", baseProb:40},
   {name:"Lassine Sinayoko", sub:"Forward", club:"Paris FC", pos:"FW", report:"Deal agreed with Paris FC; Lassine Sinayoko officially departed Auxerre and remains in Ligue 1", src:"Foot Mercato / ici.fr", tier:2, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Transfer completed to Paris FC", lastSeen:"2026-08-08T07:40:33Z", baseProb:95}
 ];
 const DEAD = [
@@ -89,10 +91,11 @@ const HUB = {
   lquipePaulNardi1: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPZlJXeURJLThYOUZZNDlfUFhOMF9mcnJvVGNKYmpEZ1l6Q1Z3UUtKU192ZEpmdkNPWkF0YU1yV3RuUmhlTU91aEI2ODc2U2JrZnlfbFExMEg1Si15ZjBEeGY2bXRLOW5ad1pFN2t5U0RIdFlneXV5c1J4SExMRTloSmNZMTUtcEFLRWFSU2pyZzFCMXpqS0FVZDk5S0xmZW9oUi1mUlN2bHVEVHBHTlJMN25KdFMwRDhTYnNRdHhVckEwTTFRWWk2M1BEZHRWWjRtMkhOVEdyZkFBcTJBZWU3LVNQN0tjeDhVdUdSRy1PZTU0a0E"},
   footMercatoRmyLabeauLascary1: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxNLXJvUnl3ekEyU0NKZ3puY2pnU295VGtack9RLUVNaVZVOVVYWHhOMDR5SVJMZjh0c2xtMGpaYUk5Uk83cjh2cXNweDFBZ2ROd1YxdUItVHBFNFB1WlpkR0hzZ1YyYzFCdm5Lbk03UjladWxueXJMSVU1QW94bWsxeUhkeXcxR2E4UG5DY0U4a2lueGhhang4"},
   footMercatoLassineSinayoko1: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxPT3FaVlNOMWpxX2ZlaHUxSk1FZEluc0pDUG51TG5ULXdhSVJYREMwNDY3cGVjdmI5dmJaQ0ctdlBwa2R5SC1sVmN5a2JnTW9Db1BHbFRZVjN4TERGamQ1TkVIcDgtY0lSZVh3ZFJIWkNmbW9yMkVxZkE2WGpubFItMmlsbkppSGI0YjdUN0JsVVRZbXowMFVKb2xGRVVjY2tYdDZ4dWxR"},
-  icifrLassineSinayoko1: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSTUyLUIzY2g0bnpGcWJxSTAxaUxnajRTV1o2ZGVsb1BRQkE4ZFJ6VjhWbzcwaS14MDBQUXhXNkdtVHBBdngzRnFHTEotOUZGcUVxR01wQVpIZmlpQXUzdWt4VGlwaUtxVV9pLS1DNEZQdnk4ajBqdk5DRnhpN3dwc2plSFlZaVNCTWdialhsbk1lSzVySDFKTEJFbmxPeTBfZ081VXdXN21VNUluUzg0WlVrek9RelhOOVNiaTdVbjdCQmJDcDRKaUxrcTIwVFZ5UGdTSUFmU2RuTnhiNmdfc3pKbw"}};
+  icifrLassineSinayoko1: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSTUyLUIzY2g0bnpGcWJxSTAxaUxnajRTV1o2ZGVsb1BRQkE4ZFJ6VjhWbzcwaS14MDBQUXhXNkdtVHBBdngzRnFHTEotOUZGcUVxR01wQVpIZmlpQXUzdWt4VGlwaUtxVV9pLS1DNEZQdnk4ajBqdk5DRnhpN3dwc2plSFlZaVNCTWdialhsbk1lSzVySDFKTEJFbmxPeTBfZ081VXdXN21VNUluUzg0WlVrek9RelhOOVNiaTdVbjdCQmJDcDRKaUxrcTIwVFZ5UGdTSUFmU2RuTnhiNmdfc3pKbw"},
+  icifrLassineSinayoko2: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSTUyLUIzY2g0bnpGcWJxSTAxaUxnajRTV1o2ZGVsb1BRQkE4ZFJ6VjhWbzcwaS14MDBQUXhXNkdtVHBBdngzRnFHTEotOUZGcUVxR01wQVpIZmlpQXUzdWt4VGlwaUtxVV9pLS1DNEZQdnk4ajBqdk5DRnhpN3dwc2plSFlZaVNCTWdialhsbk1lSzVySDFKTEJFbmxPeTBfZ080VXdXN21VNUluUzg0WlVrek9RelhOOVNiaTdVbjdCQmJDcDRKaUxrcTIwVFZ5UGdTSUFmU2RuTnhiNmdfc3pKbw"}};
 
 const LINKMAP = {
-  "Lassine Sinayoko": ["gffn-auxerre", "maliactuLassineSinayoko", "footMercatoLassineSinayoko", "icifrLassineSinayoko", "footMercatoLassineSinayoko1", "icifrLassineSinayoko1"],
+  "Lassine Sinayoko": ["gffn-auxerre", "maliactuLassineSinayoko", "footMercatoLassineSinayoko", "icifrLassineSinayoko", "footMercatoLassineSinayoko1", "icifrLassineSinayoko1", "icifrLassineSinayoko2"],
   "Kévin Danois": ["gffn-auxerre"],
   "Mathys Detourbet": ["gffn-auxerre"],
   "Tim Meyer": ["tOPMercatoTimMeyer"],

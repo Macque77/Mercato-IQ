@@ -54,14 +54,16 @@ const HUB = {
   "orourke": {l:"Pete O'Rourke (Football Insider)", u:"https://x.com/talkSPORT_PeteO"},
   stokeCityFCGeorgeHirst: {l:"Stoke City FC", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxPdmdtZS1wcXlEQlQyYzdubVRQNkFJcEhTYld2eVdJZmd5SE1ybHhyV0tHdldEbmI3SHlza0c2dF9TRjNFWTN3SDVSNXhCajZzRXp4dHRvdExIZnJ2a3RaN19JWXBuMnNiUU5VMk93MWg2bnhaT21aWmhxTUttYWdGRGhBS1p3cElpZ1RFUzNfUUtyamJsSmVUWWJDaWI5RDZkRXZ5Ny16TE5PQnFTYXFSZUEzSQ"},
   arsenalcomJadenDixon: {l:"Arsenal.com", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxOS0NwbFJyNXRjN3pRNG10TmIzM0hHU2tPMmR5QmJnNHlKSDNOdnZ6YkpXd3JTTFUxOUxkYVdmSlhQZ0FLSzk1T1otZG5MN24zWENGWVJnRVpzcC0zR1BibVpjanRuRl9vM3pQZEY3YjBHQVZUcERNMXdJVnNmcXhreQ"},
-  stokeCityFCLukeGraham: {l:"Stoke City FC", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxOVXJxbVdWelBUU3NZSGxpY2VQZVFCNmZVSlJIWjltSDcyX2VXbGpEREF3el9OQnRwc0RYVnNoOHoxN0NKejBQYmhBWVprdGNnQnpYQnkwdGxRanpOeFZaanF1OUNEenlVLU0zdHZ3SVJyeU5hdVZkV3ZiMkJIaE1uYllLVzZuYlhxRk9BQ0dYRmV1cGdGU0lNakUzTDZSV21rTVk1VVVIYTZkb2xG"}};
+  stokeCityFCLukeGraham: {l:"Stoke City FC", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxOVXJxbVdWelBUU3NZSGxpY2VQZVFCNmZVSlJIWjltSDcyX2VXbGpEREF3el9OQnRwc0RYVnNoOHoxN0NKejBQYmhBWVprdGNnQnpYQnkwdGxRanpOeFZaanF1OUNEenlVLU0zdHZ3SVJyeU5hdVZkV3ZiMkJIaE1uYllLVzZuYlhxRk9BQ0dYRmV1cGdGU0lNakUzTDZSV21rTVk1VVVIYTZkb2xG"},
+  theSentinelAshleyPhillips: {l:"The Sentinel", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxQUktweGZfSzNrVE9NWGlMMmdPYXc3dVpYUEtwUi1RR25IM2J2QUloSFdBblQ5MlNrVUI3VXVaeW1iazFpMXRZd0ZkVHp0X3B1VzBLenN4QmVrTXh1NE90aXBhQ3JQWnhRM05jVWp6SVVsb0h2eTZhU3V0aHo1d3VsQlVJVHRTN1dELUhpS2U3dU9CcnN0cWhtY3NCaFAtc1V1bTQxag"}};
 
 const LINKMAP = {
   "Ethan Galbraith": ["gnews-ethangalbraith"],
   "Lewis Koumas": ["gnews-lewiskoumas"],
   "George Hirst": ["orourke", "stokeCityFCGeorgeHirst"],
   "Jaden Dixon": ["arsenalcomJadenDixon"],
-  "Luke Graham": ["stokeCityFCLukeGraham"]};
+  "Luke Graham": ["stokeCityFCLukeGraham"],
+  "Ashley Phillips": ["theSentinelAshleyPhillips"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

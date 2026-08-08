@@ -41,7 +41,6 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Shea Charles", sub:"20 · England · M", club:"Southampton", pos:"M", report:"Premier League move imminent; told it is 'when, not if'", src:"BBC", tier:2, fee:"~£30m valuation", truth:85, prob:80, light:"g", trend:"flat", note:"Exit nears", lastSeen:"2026-08-08T16:04:57Z", baseProb:80},
   {name:"Jay Robinson", sub:"21 · England · D", club:"Southampton", pos:"D", report:"Completed loan switch to AC Monza", src:"Southampton FC Official Site", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"19-year-old winger expected to move to Italian club Monza", lastSeen:"2026-08-08T16:04:57Z", baseProb:100, dead:true, deadReason:"Loan completed to AC Monza; moved from rumour to outgoing"}
 ];
 const RISERS = [];

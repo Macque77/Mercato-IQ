@@ -31,8 +31,7 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Kyreece Lisbie", sub:"position · nation · age unknown", club:"Colchester United", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Colchester United"},
-  {name:"Jacob Brown", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer confirmed"}
+  {name:"Kyreece Lisbie", sub:"position · nation · age unknown", club:"Colchester United", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Colchester United"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [

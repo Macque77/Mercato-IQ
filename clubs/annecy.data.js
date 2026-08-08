@@ -33,12 +33,10 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Lucas Mounguenou", sub:"Unknown · Unknown · Unknown", club:"PSG", pos:"Unknown", report:"Lucas Mounguenou signed to Annecy", src:"lestitisdupsg.fr", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
-  {name:"Abdel Hbouch", sub:"Unknown · Unknown · Unknown", club:"FC Annecy", pos:"Unknown", report:"Clubs from Ligue 2 interested in Abdel Hbouch", src:"Le Dauphiné Libéré", tier:2, fee:"Unknown", truth:70, prob:40, light:"y", trend:"flat", note:"Outgoing interest from other Ligue 2 clubs", lastSeen:"2026-08-07T01:42:32Z", baseProb:40},
-  {name:"Ben Hamed Touré", sub:"", club:"", pos:"", report:"Ben Hamed Touré signing announced by FC Annecy", src:"FC Annecy", tier:2, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Official club announcement", lastSeen:"2026-08-08T07:40:33Z", baseProb:95}
+  {name:"Abdel Hbouch", sub:"Unknown · Unknown · Unknown", club:"FC Annecy", pos:"Unknown", report:"Clubs from Ligue 2 interested in Abdel Hbouch", src:"Le Dauphiné Libéré", tier:2, fee:"Unknown", truth:70, prob:40, light:"y", trend:"flat", note:"Outgoing interest from other Ligue 2 clubs", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
 ];
 const OUTGOING = [
-  {name:"Abdel Hbouch", sub:"Unknown · Unknown · Unknown", club:"Annecy", pos:"Unknown", report:"Clubs from Ligue 2 interested in Abdel Hbouch", src:"Le Dauphiné Libéré", tier:2, fee:"Unknown", truth:75, prob:65, light:"g", trend:"up", note:"Interest from multiple Ligue 2 clubs", lastSeen:"2026-08-08T07:40:33Z", baseProb:65}
+  {name:"Abdel Hbouch", sub:"Unknown · Unknown · Unknown", club:"Annecy", pos:"Unknown", report:"Clubs from Ligue 2 interested in Abdel Hbouch", src:"Le Dauphiné Libéré", tier:2, fee:"Unknown", truth:60, prob:50, light:"y", trend:"down", note:"Interest from Ligue 2 clubs reported", lastSeen:"2026-08-08T18:06:11Z", baseProb:50}
 ];
 const RISERS = [];
 const FALLERS = [];

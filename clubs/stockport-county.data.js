@@ -49,7 +49,7 @@ const INCOMING = [
 ];
 const OUTGOING = [
   {name:"Adama Sidibeh", sub:"ST", club:"Middlesbrough / Rangers / Blackburn Rovers / Bristol City", pos:"ST", report:"~1 wk ago", src:"Alan Nixon", tier:3, fee:"Relatively low cost", truth:60, prob:50, light:'y', trend:'flat', note:"Four clubs credited with interest in the Gambia international.", lastSeen:"2026-08-04T19:10:50Z", baseProb:50, dead:true, deadReason:"no longer a current link"},
-  {name:"Joseph Olowu", sub:"Centre-back", club:"Leyton Orient", pos:"D", report:"Centre-back signs for Leyton Orient", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer to Leyton Orient completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Joseph Olowu", sub:"unknown · unknown · CB", club:"Leyton Orient", pos:"CB", report:"Centre-back departs for Leyton Orient", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:98, light:"g", trend:"down", note:"Confirmed departure to Leyton Orient", lastSeen:"2026-08-08T18:06:10Z", baseProb:98}
 ];
 const RISERS = [];
 const FALLERS = [];

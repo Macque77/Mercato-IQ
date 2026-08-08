@@ -38,7 +38,8 @@ const CONFIRMED_IN = [
   {name:"Bryan Reynolds", sub:"USMNT right-back completes move after strong Belgian spell", club:"KVC Westerlo", pos:"RB", fee:"€3.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed a four-year deal; presented alongside fellow new arrival Mayenda."},
   {name:"Nayef Aguerd", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jul 2026"},
   {name:"Martin Terrier", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 30 Jul 2026"},
-  {name:"Nicolas Lemaître", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 26 Jun 2026"}
+  {name:"Nicolas Lemaître", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 26 Jun 2026"},
+  {name:"Charlie", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Stade Rennais announced signing per on-page entry"}
 ];
 
 const CONFIRMED_OUT = [
@@ -51,12 +52,15 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Yerson Mosquera", sub:"Colombian centre-back linked as depth option", club:"Wolverhampton Wanderers", pos:"CB", report:"Rennes searching for a central defender", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"Described as one of several defensive targets rather than a firm negotiation; recent ACL history may affect Rennes' final decision.", lastSeen:"2026-08-06T14:21:37Z", baseProb:50},
-  {name:"Charlie", sub:"", club:"", pos:"", report:"Stade Rennais announced signing", src:"Stade Rennais official", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Official announcement from club", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Charlie", sub:"", club:"", pos:"", report:"Stade Rennais announced signing", src:"Stade Rennais official", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Official announcement from club", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Aaron Cresswell", sub:"34 · England · LB", club:"West Ham United", pos:"LB", report:"Transfer to Stade Rennais validated by analysts", src:"LesViolets.Com", tier:3, fee:"Undisclosed", truth:80, prob:75, light:"g", trend:"flat", note:"After Foot commentary on deal structure suggests advanced talks", lastSeen:"2026-08-08T18:06:11Z", baseProb:75}
 ];
 
 const OUTGOING = [
   {name:"Esteban Lepaul", sub:"Striker attracting outside interest but going nowhere this window", club:"Multiple suitors (unspecified)", pos:"ST", report:"Despite interest from elsewhere, Rennes holding", src:"On-page rumour", tier:3, fee:"N/A", truth:50, prob:30, light:"y", trend:"up", note:"Club is reportedly planning to cash in only in summer 2027 once his valuation peaks further.", lastSeen:"2026-08-06T14:21:37Z", baseProb:30},
-  {name:"Abdelhamid Ait Boudlal", sub:"", club:"", pos:"", report:"Rennes received €23m offer for their prospect", src:"topmercato", tier:3, fee:"€23m", truth:70, prob:45, light:"y", trend:"flat", note:"Incoming offer reported", lastSeen:"2026-08-06T14:21:37Z", baseProb:45}
+  {name:"Abdelhamid Ait Boudlal", sub:"", club:"", pos:"", report:"Rennes received €23m offer for their prospect", src:"topmercato", tier:3, fee:"€23m", truth:70, prob:45, light:"y", trend:"flat", note:"Incoming offer reported", lastSeen:"2026-08-06T14:21:37Z", baseProb:45},
+  {name:"Breel Embolo", sub:"27 · Switzerland · FW", club:"Stade Rennais", pos:"FW", report:"Not retained by Stade Rennais; attracting Italian interest", src:"MadeInFOOT", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"flat", note:"Two Italian top clubs reportedly interested after being deemed surplus", lastSeen:"2026-08-08T18:06:11Z", baseProb:70},
+  {name:"Ludovic Blas", sub:"25 · France · MF", club:"Stade Rennais", pos:"MF", report:"OM transfer interest but with reported complications", src:"But! Football Club", tier:3, fee:"Undisclosed", truth:60, prob:50, light:"y", trend:"flat", note:"Bad news reported in OM's pursuit; deal status unclear", lastSeen:"2026-08-08T18:06:11Z", baseProb:50}
 ];
 
 const RISERS = [
@@ -91,7 +95,10 @@ const HUB = {
   aFPviaFrance24EliezerMayenda: {l:"AFP via France 24", u:"https://www.france24.com/en/live-news/20260706-rennes-buy-young-striker-mayenda-from-sunderland"},
   footMercatoJeremyJacquet: {l:"Foot Mercato", u:"https://www.footmercato.net/club/stade-rennais-fc/tableau/"},
   topmercatoAbdelhamidAitBoudlal: {l:"topmercato", u:"https://www.topmercato.com/"},
-  stadeRennaisCharlie: {l:"Stade Rennais", u:"https://news.google.com/rss/articles/CBMif0FVX3lxTFBDb3lSSVdLcE40WG5BWVB0T2FRbUkyY0NkdFltSTZqQTUzNWMwd1RFOVBvMkNGVWZDcW50QmFPcGtXYVVTYzhDNUVyZFFrY2dqV0JmMzJzT2puWVNRb0d1RnM4MHZCZFhlMmlxTXZlSTJtcFlEN0JNLWV6NjRQak0"}};
+  stadeRennaisCharlie: {l:"Stade Rennais", u:"https://news.google.com/rss/articles/CBMif0FVX3lxTFBDb3lSSVdLcE40WG5BWVB0T2FRbUkyY0NkdFltSTZqQTUzNWMwd1RFOVBvMkNGVWZDcW50QmFPcGtXYVVTYzhDNUVyZFFrY2dqV0JmMzJzT2puWVNRb0d1RnM4MHZCZFhlMmlxTXZlSTJtcFlEN0JNLWV6NjRQak0"},
+  lesVioletsComAaronCresswell: {l:"LesViolets.Com", u:"https://news.google.com/rss/articles/CBMiywFBVV95cUxQazNMckhadjFTTVozdnBEN2RRY3B2T2dwUHRLMk1oNWt6aE84ZHBySU1ld2pSeHdEYXMyWlE5U2ZHXzNXWmk3WHFYTnlDSjlYaXZfdkR5dTVYdURzQXU0SU0ySWxOcl9xSnBVN0h2S2oxdHE3V1h5RWtfaVI3Wks5R2JsazlHRnFSSkhvTUZyM1lqZWh6NjNEdEhJclhFS0VpdVY4cjhrRTZua05rdUNRVHRydkZNcGpqRFhEYnEzbFhEUXJ4N3I1ZzJFdw"},
+  madeInFOOTBreelEmbolo: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi-wFBVV95cUxOMTVpMnZjMnREVXJZa2RocTlnYTBCaGxLVi1GVnJWNndjcExoSXRVWlFUVkJOZDRaNmxGMlh4RHU5cXNWazExTC15Q19Hc0ZzNFBONDZaLVROU3JVQndyMElpNHhtTUhVZTVTT0hoc3YtcjJGcEFkdW50Y2FrcG5iREVCR0Y5Ykl0alFMX2N0R1FoTVdEOHpURTFPb1VXd2ZlRzhFOTg1WHJKRllrRTdVYUlkNzB6NWoxTzhDbm5Td1F6UmgteUJ4d2t2M1E1c1RNMHNrOTFXYmE1cHFQUndPYzVBS096SWFoQjVRSzJRMlA1Y0RmMTQwaDQtaw"},
+  butFootballClubLudovicBlas: {l:"But! Football Club", u:"https://news.google.com/rss/articles/CBMisAFBVV95cUxQUjM0WWJROVBQTDFrb3puRW5CV0o2MjlkVW14MjhiSzhuUmM1Q1F6dnNqnpzjaTdWQXpBdlZBcUMyN2RfQnQtMFdUUm8yNmthODQ2bzV0OF9YQVFJSVgySzhKTzVaNzdJZWxRVXNwalNrYjBNQ1Y4Wmd1ZF9CdGNLTkJXY1h6azR6OUUxZ2dNWnROeF9fZGRLUlR3U3B0SzdUU2dwZ2IySWZtSV9zQUpFSw"}};
 
 const LINKMAP = {
   "Charlie Cresswell": ["gffn-rennes", "leTelegrammeMaxifootCharlieCresswell"],
@@ -102,7 +109,7 @@ const LINKMAP = {
   "Nayef Aguerd": ["gffn-rennes"],
   "Martin Terrier": ["gffn-rennes", "footMercatoMartinTerrier"],
   "Nicolas Lemaître": ["gffn-rennes"],
-  "Breel Embolo": ["gffn-rennes"],
+  "Breel Embolo": ["gffn-rennes", "madeInFOOTBreelEmbolo"],
   "Yerson Mosquera": ["ouestFranceYersonMosquera"],
   "Esteban Lepaul": ["tOPMercatoEstebanLepaul"],
   "Bryan Reynolds": ["leTelegrammeBryanReynolds"],
@@ -110,7 +117,9 @@ const LINKMAP = {
   "Mikayil Faye": ["ouestFranceYersonMosquera"],
   "Jeremy Jacquet": ["footMercatoJeremyJacquet"],
   "Abdelhamid Ait Boudlal": ["topmercatoAbdelhamidAitBoudlal"],
-  "Charlie": ["stadeRennaisCharlie"]};
+  "Charlie": ["stadeRennaisCharlie"],
+  "Aaron Cresswell": ["lesVioletsComAaronCresswell"],
+  "Ludovic Blas": ["butFootballClubLudovicBlas"]};
 const WL_LINKMAP = {
   "Martin Terrier": ["gffn-rennes"]
 };

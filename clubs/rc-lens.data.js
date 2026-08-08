@@ -37,7 +37,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Michaël Cuisance", sub:"26 · CM · France", to:"permanent from Hertha BSC", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 26 Jun 2026 - the first summer signing of the Dino Toppmöller era."},
   {name:"Saud Abdulhamid", sub:"25 · RB · Saudi Arabia", to:"permanent, purchase option triggered from AS Roma", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 4 Jun 2026 - Lens make his loan move permanent."},
-  {name:"Yacine Titraoui", sub:"Confirmed arrival", club:"Royal Charleroi", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"23-year-old Algerian international joins as Sangaré's replacement"}
+  {name:"Yacine Titraoui", sub:"Confirmed arrival", club:"Royal Charleroi", pos:"CM", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"23-year-old Algerian international joins as Sangaré's replacement"},
+  {name:"Ismaël Ganiou", sub:"Unknown · Unknown · Unknown", club:"RC Lens", pos:"Unknown", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract extension confirmed despite interest from AC Milan and Crystal Palace"}
 ];
 
 const CONFIRMED_OUT = [
@@ -88,7 +89,9 @@ const HUB = {
   getFrenchFootballNewsBastienChevalMamadouSangar: {l:"Get French Football News (Bastien Cheval)", u:"https://www.getfootballnewsfrance.com/2026/official-brentford-sign-mamadou-sangare-from-lens-in-club-record-e48m-deal/"},
   getFrenchFootballNewsHervKoffi: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/official-union-saint-gilloise-sign-lens-goalkeeper-herve-koffi-on-loan/"},
   topMercatoYacineTitraoui: {l:"Top Mercato", u:"https://www.topmercato.com/"},
-  lquipeYacineTitraoui: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxORDRQbEpydm1HcTlicGJTOHU5RUJoTmhwSE44WW8zRWwwaFNobkJDZmN3WEZSLTd6ZFBwVlRYM1p4aXczbXUta0FjMWFjWFlMSnBDUVJTSm1mLVVwbVBFQ3ZkMTNfZVJzX3NDd2xPcWJpSW5yWEpGRjhHOWM3dG1IWDNEcllMeExPekd2SkstUDU0UFJuQzBwRkszcnVUd3ZNRXFhZndBc21GU2tqZ2M3aUFHNkVlZTdoWFJqMGdBaW5hYnlLa3FjLVFYbW1JVTJOYjNDMFNR"}};
+  lquipeYacineTitraoui: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxORDRQbEpydm1HcTlicGJTOHU5RUJoTmhwSE44WW8zRWwwaFNobkJDZmN3WEZSLTd6ZFBwVlRYM1p4aXczbXUta0FjMWFjWFlMSnBDUVJTSm1mLVVwbVBFQ3ZkMTNfZVJzX3NDd2xPcWJpSW5yWEpGRjhHOWM3dG1IWDNEcllMeExPekd2SkstUDU0UFJuQzBwRkszcnVUd3ZNRXFhZndBc21GU2tqZ2M3aUFHNkVlZTdoWFJqMGdBaW5hYnlLa3FjLVFYbW1JVTJOYjNDMFNR"},
+  footMercatoFranjoIvanovi: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMisgFBVV95cUxNVm5HWUhGMzE2SFRKNnVrRERpRVIyQnRxY3dBbXBkVTMxWFRod3JUUkhDYk1OeHBNeWFhQ3BNVTFvaVJnZUFBOUU0aVJLLXQ3cGE5Mm1peU1obFZwNWs5TTB2RWMtTzkxUmJRY2JCSnNFUHRLN1NBZUl0VUpGLWlWRUNqdVhfQnhFNXM2MnQ5bmhaQW5kMkhFdWRlbnBJN1g3NTZtSFFKbGVGUlBhNEFEam5R?oc=5"},
+  madeInFOOTLquipeIsmalGaniou: {l:"MadeInFOOT / L'Équipe", u:"https://news.google.com/rss/articles/CBMi6wFBVV95cUxOanlyUlY5MW5tTE9Kc3VWSzF5VGU4d2g2SjM0aUVHTFRBb1lxYXJ0MU5ualN0ZXA2RmNpZnJnaHZSVnZHaEJjNDZXMjF4bEtMeXIyS29DQnVBYTZJQmc5LXBfeW9veGphMS1GVktkN2lrX3RIalN6NE5iSDhqUE91NUl4dkJXZ1Ffeldac1NVb3BSNl9mY0l4d2Y0bmcyTjFyQmpaMGE2Z21GaHdaU3NNcjdQY1ZndTk2SS1CMzZEUFg0aXBzQjR0T3RzYU9sOXRMR1Y4MExBOW1UelpEaW44b0NxenZSR1FfbnZZ?oc=5"}};
 
 const LINKMAP = {
   "Rafael Leão": ["lequipe"],
@@ -101,7 +104,9 @@ const LINKMAP = {
   "Adama Camara": ["getFrenchFootballNewsFootMercatoAdamaCamara"],
   "Melayro Bogarde": ["getFrenchFootballNewsFootMercatoLoAschiMelayroBogarde"],
   "Rémy Labeau-Lascary": ["getFrenchFootballNewsFootMercatoLoAschiRmyLabeauLascary"],
-  "Hervé Koffi": ["getFrenchFootballNewsHervKoffi"]};
+  "Hervé Koffi": ["getFrenchFootballNewsHervKoffi"],
+  "Franjo Ivanović": ["footMercatoFranjoIvanovi"],
+  "Ismaël Ganiou": ["madeInFOOTLquipeIsmalGaniou"]};
 const WL_LINKMAP = {
   "Jonathan David": ["sky"]
 };

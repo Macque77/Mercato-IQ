@@ -38,28 +38,32 @@ const CONFIRMED_IN = [
   {name:"Cluver Sambi Mbungu", sub:"Defender, 17-year-old prospect", club:"SM Caen", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Lyon beat PSG and Bundesliga clubs to sign the Caen academy prospect, confirmed 09/07."},
   {name:"Duje Caleta-Car", sub:"Defender, returned from loan", club:"Olympique Lyonnais", pos:"CB", fee:"N/A (loan return)", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially returned to the club on 25/05."},
   {name:"Felix Bacher", sub:"21 · Germany · D", club:"1. FC Köln", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing confirmed; first reaction given"},
-  {name:"Madison Ingram", sub:"20 · Canada · M", club:"Vancouver Whitecaps", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported official signing"}
+  {name:"Madison Ingram", sub:"20 · Canada · M", club:"Vancouver Whitecaps", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported official signing"},
+  {name:"Florian Thauvin", sub:"32 · France · W", club:"Como", pos:"W", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed 1 August 2026"}
 ];
 
 const CONFIRMED_OUT = [
   {name:"Afonso Moreira", sub:"Defender", club:"Bayer Leverkusen", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure confirmed 18/06 after agreement reached 17/06."},
   {name:"Mads Bidstrup", sub:"Midfielder", club:"FC Salzburg", pos:"CM", fee:"€10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreement confirmed 15/06."},
-  {name:"Kail Boudache", sub:"Defender, moved on a free", club:"OGC Nice", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free transfer to Nice confirmed 15/06."}
+  {name:"Kail Boudache", sub:"Defender, moved on a free", club:"OGC Nice", pos:"CB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official free transfer to Nice confirmed 15/06."},
+  {name:"Orel Mangala", sub:"26 · France · M", club:"Getafe", pos:"M", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan move officially confirmed"}
 ];
 
 const INCOMING = [
   {name:"Florian Thauvin", sub:"33 · RW · France", club:"Free agent (Udinese)", pos:"RW", report:"1 Aug 2026", src:"RMC Sport", tier:2, fee:"Free agent", truth:62, prob:48, light:"y", trend:"flat", note:"RMC reports Lyon in talks with the veteran winger after his Udinese exit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:48},
   {name:"Madison Ingram", sub:"20 · CM · England", club:"Chelsea", pos:"CM", report:"28 Jul 2026", src:"Fabrizio Romano", tier:1, fee:"€30m", truth:71, prob:55, light:"g", trend:"up", note:"Romano reports Chelsea are open to a loan move for the young midfielder to Lyon.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55},
-  {name:"Loïs Openda", sub:"24 · Belgium · F", club:"RB Leipzig", pos:"Forward", report:"Lyon close to agreement for transfer", src:"MadeInFOOT", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Recently reported as close to agreement", lastSeen:"2026-08-07T01:42:32Z", baseProb:70},
+  {name:"Loïs Openda", sub:"24 · Belgium · F", club:"RC Lens", pos:"F", report:"Lyon close to agreement for transfer", src:"transferfeed", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"up", note:"Multiple reports of advanced talks; deal structure being finalized", lastSeen:"2026-08-08T18:06:11Z", baseProb:80},
   {name:"Felix Bacher", sub:"22 · CB · Austria", club:"Estoril", pos:"CB", report:"21 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:50, prob:38, light:"y", trend:"flat", note:"Lyon reported in advanced negotiations for the Austrian centre-back.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38},
   {name:"Loic Openda", sub:"Forward, agreed switch", club:"Juventus", pos:"ST", report:"Lyon are reported to have agreed a deal to sign Juventus forward Loic Openda as they rebuild the front line after selling academy talent abroad.", src:"Sky Sport", tier:1, fee:"Undisclosed", truth:75, prob:65, light:"g", trend:"flat", note:"Reported as an agreed transfer, though not yet officially announced by either club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65, dead:true, deadReason:"Duplicate/variant of Loïs Openda; consolidated into single entry"},
-  {name:"Jun-ho Bae", sub:"22 · South Korea · M", club:"Stoke City", pos:"Midfielder", report:"Lyon submitted €3.5m bid", src:"MadeInFOOT", tier:3, fee:"€3.5m", truth:60, prob:50, light:"y", trend:"up", note:"Bid submitted; no confirmation of acceptance", lastSeen:"2026-08-07T01:42:32Z", baseProb:50},
+  {name:"Jun-ho Bae", sub:"22 · South Korea · M", club:"FC Seoul", pos:"M", report:"Lyon submitted €3.5m bid; fonden on international midfielder", src:"Foot Mercato", tier:3, fee:"€3.5m", truth:60, prob:50, light:"y", trend:"flat", note:"Initial bid submitted; negotiations ongoing", lastSeen:"2026-08-08T18:06:11Z", baseProb:50},
   {name:"Claudio Braga", sub:"Striker, monitored target", club:"Unattached club (Brazil)", pos:"ST", report:"Lyon are said to be tracking Brazilian forward Claudio Braga as an alternative striker option amid tight DNCG spending constraints.", src:"Foot Mercato", tier:3, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Early speculative interest under strict financial oversight from the DNCG.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No fresh reporting in recent snippets; tracking interest only"}
 ];
 
 const OUTGOING = [
   {name:"Pavel Sulc", sub:"Midfielder, Premier League interest", club:"Leeds United", pos:"CAM", report:"Leeds United have opened talks with Lyon over a move for attacking midfielder Pavel Sulc, though a deal is not considered close.", src:"L'Equipe", tier:2, fee:"Undisclosed", truth:55, prob:35, light:"y", trend:"flat", note:"Talks confirmed but described as at an early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"Duplicate variant of Pavel Šulc; consolidated into single entry"},
-  {name:"Jacob Widell Zetterstrom", sub:"23 · Sweden · GK", club:"Derby County", pos:"Goalkeeper", report:"Derby County credited with interest", src:"Transfer outlet", tier:3, fee:"Undisclosed", truth:50, prob:40, light:"y", trend:"up", note:"Interest only; no formal talks reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
+  {name:"Jacob Widell Zetterstrom", sub:"23 · Sweden · GK", club:"Derby County", pos:"Goalkeeper", report:"Derby County credited with interest", src:"Transfer outlet", tier:3, fee:"Undisclosed", truth:50, prob:40, light:"y", trend:"up", note:"Interest only; no formal talks reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:40, dead:true, deadReason:"Derby County interest stalled; no recent credible updates"},
+  {name:"Malick Fofana", sub:"21 · Belgium · W", club:"Olympique Lyon", pos:"W", report:"Italian club tracking Belgian winger; €40m valuation", src:"Le Soir", tier:3, fee:"€40m", truth:55, prob:45, light:"y", trend:"flat", note:"Interest from unnamed Italian club; early-stage enquiry", lastSeen:"2026-08-08T18:06:11Z", baseProb:45},
+  {name:"Orel Mangala", sub:"26 · France · M", club:"Olympique Lyon", pos:"M", report:"Loan move to Getafe confirmed", src:"MadeInFOOT", tier:3, fee:"Loan", truth:100, prob:100, light:"g", trend:"flat", note:"Official loan announcement confirmed", lastSeen:"2026-08-08T18:06:11Z", baseProb:100}
 ];
 
 const RISERS = [
@@ -97,7 +101,10 @@ const HUB = {
   getFrenchFootballNewsCluverSambiMbungu: {l:"Get French Football News", u:"https://www.getfootballnewsfrance.com/2026/lyon-overtake-psg-and-bundesliga-giants-to-sign-caens-rising-star-cluver-sambi-mbungu/"},
   madeInFOOTLosOpenda: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWmtGcUhTVnkwWmpDcHdFRWlzeXpXVFBPV0RkN1d6a1k5VGpFenFxYXBfb0JST1dmX0N3VEhVejVJUHlUalFOWU51RGhrcDdSRTZJMHhwNmJua3VaQzJ2UEpWSFdwNkQ0UE5IYmZfTzV0ZWEyb1UxT0Vxb293N0oyTGFNMGRGaXJXQVhmTENmeEUxOXBCdjF6LXk3NVlxZ2NqazlxYldMUzRjRkhsWlc2VkdzMHBVVUd3WC12WDRkTjEzangxcnNWTjlYSmE3SHpOc3JBd2tCRHVjdVZV"},
   madeInFOOTJunhoBae: {l:"MadeInFOOT", u:"https://news.google.com/"},
-  madeInFOOTFelixBacher: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUGc5dnVPdFVZdTRRdHpYSzZFNXpZaDQtOWNHSklSem5ibEhBMlRQLUtsUWNTMmJNT255dGUySGVnYmJxb2tuRWcyOUtIOTFRMkFxbTFzS1hUdk9UcUs4emFfalIxV2pBazUtaHl3eDloeHdYcnB2QXFXZGVfLUVOVHRBUVRlbEVTbmpteE11N3c4bDBWZkE5R05SNjczc082cFF4WG1uWHV6YkxkNGNVWFV6TlhVSlJtd1JlR1o4SzBteG96N2JTSlVCSmo5VzM2MHJsV0RaSnd0LWNvd1lBdWtLbnA"}};
+  madeInFOOTFelixBacher: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUGc5dnVPdFVZdTRRdHpYSzZFNXpZaDQtOWNHSklSem5ibEhBMlRQLUtsUWNTMmJNT255dGUySGVnYmJxb2tuRWcyOUtIOTFRMkFxbTFzS1hUdk9UcUs4emFfalIxV2pBazUtaHl3eDloeHdYcnB2QXFXZGVfLUVOVHRBUVRlbEVTbmpteE11N3c4bDBWZkE5R05SNjczc082cFF4WG1uWHV6YkxkNGNVWFV6TlhVSlJtd1JlR1o4SzBteG96N2JTSlVCSmo5VzM2MHJsV0RaSnd0LWNvd1lBdWtLbnA"},
+  footMercatoJunhoBae: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSHNwWXRtWXNtamlLcTVQcEVwbjNfYkNldEx5Q0U2R3NqRDE4cjBSc3FOb2pZak0wWVFiOGNCSTlHZXpNNkFkcnJRaEpEVWFVU0s0dksydWpiRlRwMFlhSWhmMFVCQTdvUUF2S3FZeDA4ckVWVU9mTnE3MFpNczZBVzFtTTNLR3hpbk9LVDBVTnRRRWJfLWtEcjJhVTFsVFlBRkNKRVZkZ1MtZw"},
+  leSoirMalickFofana: {l:"Le Soir", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxNOVBkdVZXM3JSbWIxcVRmQlJmZ1R0RnBGYjdjQnVGd3ZPTUotQjFFSktYdkRKYTI1SExUX2xHSXdvRl9rQ2d4VktZYXhQWnZrTk1nYldTcFQ1R2F0MG1ic3VUQ1hyNnp1NENWeDRNd1IybGRQcUNKVXJBMW9YVGF3ZWlOVEwzSWhad0tZZExKSEJYZHV0VzJsempuTURoZmtNcmN5TUtSMFRRU1J2Z3M0dzUzdWhwTDcyeEp4dDdqaw"},
+  madeInFOOTOrelMangala: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUUo5enRfUVh5Rjk5WXpNV2NodTZZZHJlbzBTVmtFTHZiTU50ZzJjV1FyNUFibXExWTMxVG84eUU1STB3Y3VBTEc1b2lzTkJEc2dEN3FZbXA4dG5XMWZ0ZHAzOVNJRjIzU09FbkNNTG9sLUxEaEo5S2JLUjdXeTB6MXVKZy1VVEZkdUtnTm1NZVBUamV0TXRteUdXeURaQU9NVzR6R0RBaE5DSVQycUpDMXljNzBTVjNUQkM3a1M1TldneHg2VXU5NTBGZTRuODRQYl9NS0ZDZmo"}};
 
 const LINKMAP = {
   "Florian Thauvin": ["rmcsport"],
@@ -109,7 +116,7 @@ const LINKMAP = {
   "Felix Bacher": ["gffn-lyon", "getFrenchFootballNewsLEquipeFelixBacher", "madeInFOOTFelixBacher"],
   "Pavel Šulc": ["gffn-lyon", "madeInFOOTJunhoBae"],
   "Loic Openda": ["getFrenchFootballNewsSkySportLoicOpenda"],
-  "Jun-ho Bae": ["getFrenchFootballNewsLEquipeJunhoBae", "madeInFOOTJunhoBae"],
+  "Jun-ho Bae": ["getFrenchFootballNewsLEquipeJunhoBae", "madeInFOOTJunhoBae", "footMercatoJunhoBae"],
   "Claudio Braga": ["footMercatoClaudioBraga"],
   "Pavel Sulc": ["getFrenchFootballNewsLEquipePavelSulc"],
   "Jacob Widell Zetterstrom": ["footMercatoClaudioBraga", "madeInFOOTJunhoBae"],
@@ -117,7 +124,9 @@ const LINKMAP = {
   "Duje Caleta-Car": ["footMercatoClaudioBraga"],
   "Afonso Moreira": ["footMercatoClaudioBraga"],
   "Mads Bidstrup": ["footMercatoClaudioBraga"],
-  "Kail Boudache": ["footMercatoClaudioBraga"]};
+  "Kail Boudache": ["footMercatoClaudioBraga"],
+  "Malick Fofana": ["leSoirMalickFofana"],
+  "Orel Mangala": ["madeInFOOTOrelMangala"]};
 const WL_LINKMAP = {
   "Loïs Openda": ["gffn-lyon"]
 };

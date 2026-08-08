@@ -30,19 +30,21 @@ const REPORT_META = {
   label: "Updated 03 Aug 2026 · Toulouse FC"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Sion Oppong", sub:"18 · Sweden · W", club:"Unknown", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed until 2030"}
+];
 
 const CONFIRMED_OUT = [
   {name:"Charlie Cresswell", sub:"23 · CB · England", club:"Stade Rennais", pos:"CB", fee:"€25m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Agreed 1 Aug 2026 - Toulouse's biggest sale of the window."}
 ];
 
 const INCOMING = [
-  {name:"Gift Orban", sub:"unknown · unknown · unknown", club:"Lyon", pos:"unknown", report:"Toulouse ready to move for Lyon player", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:40, light:"y", trend:"down", note:"Existing rumour, no fresh snippet provided", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
+  {name:"Gift Orban", sub:"unknown · unknown · unknown", club:"Lyon", pos:"unknown", report:"Toulouse ready to move for Lyon player", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:40, light:"y", trend:"down", note:"Existing rumour, no fresh snippet provided", lastSeen:"2026-08-07T01:42:32Z", baseProb:40, dead:true, deadReason:"No recent snippet confirms this link; appears stale"}
 ];
 
 const OUTGOING = [
-  {name:"Charlie Cresswell", sub:"24 · England · D", club:"Toulouse FC", pos:"Defender", report:"Agreed transfer to Stade Rennais for €25m", src:"ladepeche.fr, Foot Mercato", tier:2, fee:"€25m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal agreed between Toulouse and Rennes; second-largest sale in club history", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Guillaume Restes", sub:"unknown · unknown · unknown", club:"Toulouse FC", pos:"unknown", report:"Departure reported ~4 days ago", src:"On-page rumour", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"flat", note:"Existing rumour, no fresh snippet provided", lastSeen:"2026-08-07T01:42:32Z", baseProb:40}
+  {name:"Charlie Cresswell", sub:"24 · England · D", club:"Toulouse FC", pos:"D", report:"Defender agreed transfer to Stade Rennais", src:"ici.fr", tier:2, fee:"€25m", truth:90, prob:85, light:"g", trend:"down", note:"Transfer agreement reached with Stade Rennais", lastSeen:"2026-08-08T18:06:11Z", baseProb:85},
+  {name:"Guillaume Restes", sub:"unknown · unknown · unknown", club:"Toulouse FC", pos:"unknown", report:"Departure reported ~4 days ago", src:"On-page rumour", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"flat", note:"Existing rumour, no fresh snippet provided", lastSeen:"2026-08-07T01:42:32Z", baseProb:40, dead:true, deadReason:"Departure reported ~4 days ago but no recent confirmation of completed move; status unclear"}
 ];
 
 const RISERS = [];
@@ -60,7 +62,7 @@ const IGNORE = [];
 const POSITIONS = [];
 
 const WATCHLIST = [
-  {name:"Guillaume Restes", club:"Toulouse FC", pos:"GK", dir:"out", age:"~4 days", tier:2, note:"Marseille and Aston Villa credited with interest."}
+  {name:"Guillaume Restes", club:"Toulouse FC", pos:"GK", dir:"out", age:"~4 days", tier:2, note:"Marseille and Aston Villa credited with interest.", dead:true, deadReason:"Departure reported ~4 days ago but no recent confirmation of completed move; status unclear"}
 ];
 
 const HUB = {
@@ -70,15 +72,18 @@ const HUB = {
   mSNSportYannGboho: {l:"MSN Sport", u:"https://www.msn.com"},
   laDepecheMaxifootCharlieCresswell: {l:"La Depeche / Maxifoot", u:"https://news.maxifoot.fr/rennes/"},
   topMercatoSrdjanKuzmic: {l:"Top Mercato", u:"https://www.topmercato.com/"},
-  ladepechefrCharlieCresswell: {l:"ladepeche.fr", u:"https://news.google.com/rss/articles/CBMipAJBVV95cUxPcDBCNVg5SEhLNWx4UE5kdTl5b1NSOUIxWTdZamh6Z2VQQU1BV3ZxNDh5c0hRZ2w2N1lsTVc2MmFUelNoZlluRVAtQ1hQcnJEWVNlOU9ETzNuWnVOQ1EyWmwzd1FpcHcwTDlnTDMwSUtFR1lzQk42aUEwckdhNWp3YnJXOFduOGFrOENBeWxDLWNJdTZjRVFfTEN6ZVB0T1hfZEg0SlRIYUVUOUJjODh0c0hiWTU2cVBqU05WTUZhWmZYSnBqd3ltYy13NVd6MGp1eENpM0NzZExhckR6UjMxcGFETEhnb0hKbkZVMDdMTW5yR3J4MDRUeFBnS3ZrM2JKSFhXYkR3TG9NOTBRQ3FrNmRGZDVuSlIyMS1SSVoyUVo0REMx"}};
+  ladepechefrCharlieCresswell: {l:"ladepeche.fr", u:"https://news.google.com/rss/articles/CBMipAJBVV95cUxPcDBCNVg5SEhLNWx4UE5kdTl5b1NSOUIxWTdZamh6Z2VQQU1BV3ZxNDh5c0hRZ2w2N1lsTVc2MmFUelNoZlluRVAtQ1hQcnJEWVNlOU9ETzNuWnVOQ1EyWmwzd1FpcHcwTDlnTDMwSUtFR1lzQk42aUEwckdhNWp3YnJXOFduOGFrOENBeWxDLWNJdTZjRVFfTEN6ZVB0T1hfZEg0SlRIYUVUOUJjODh0c0hiWTU2cVBqU05WTUZhWmZYSnBqd3ltYy13NVd6MGp1eENpM0NzZExhckR6UjMxcGFETEhnb0hKbkZVMDdMTW5yR3J4MDRUeFBnS3ZrM2JKSFhXYkR3TG9NOTBRQ3FrNmRGZDVuSlIyMS1SSVoyUVo0REMx"},
+  lquipeSionOppong: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQY3FZV3pUYjVvamZyR2xlODQyN25WcUtKeHRoa0xQeEY4WDZ1LUNpLVR6em1Ba3pxSkNISVFTb3c0SE4taFJ0elVCd2FVa3pnVWlyRWJ4NENGb0JUaE1mTzBsNFpINkdMalp1aVAxVE84TnBhTUNaZGNLY2E4aW51Qi1JSTVkSmdGZkZsWlFoRXYzTmlucXZObHA2bkhQaEhRdHNtRTB1dUppRklYU0cxMW82UDc5cWdmeklKSi1qWFdpb05qSEoxSm85WGhPWmYw?oc=5"},
+  icifrCharlieCresswell: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMiywFBVV95cUxPamtvSVVqbE9QLS1EcnZYcnR0T2tWZV8yRFprN0ZERUNlRlBDODg2WlFzODlzZ3hJMTFjb0o3d1hEd3hYQy04UlFyaEhFVkRrRXNZYUFBQW4waUVQeGlldWJmWkcxaEZqM2t4RFJmOGJfZGk5SFR3VzYyaUdLVWZCd2ZmRmRpeDZGOUhBbmxqbTc5NUNtUHdXNGRkRmN0QU9vSTRUbXpNV3pHSDhEYmliakhUZGxwMUF2MXNKblRwZG90bDFFTmZZQUdn?oc=5"}};
 
 const LINKMAP = {
-  "Charlie Cresswell": ["gffn-toulouse", "laDepecheMaxifootCharlieCresswell", "ladepechefrCharlieCresswell"],
+  "Charlie Cresswell": ["gffn-toulouse", "laDepecheMaxifootCharlieCresswell", "ladepechefrCharlieCresswell", "icifrCharlieCresswell"],
   "Guillaume Restes": ["gffn-toulouse"],
   "Gift Orban": ["mSNSportGiftOrban"],
   "Cristian Casseres Jr.": ["lesTransfertsCristianCasseresJr"],
   "Yann Gboho": ["mSNSportYannGboho"],
-  "Srdjan Kuzmic": ["topMercatoSrdjanKuzmic"]};
+  "Srdjan Kuzmic": ["topMercatoSrdjanKuzmic"],
+  "Sion Oppong": ["lquipeSionOppong"]};
 const WL_LINKMAP = {
   "Guillaume Restes": ["gffn-toulouse"]
 };

@@ -33,7 +33,7 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Chris-Kévin Nadje", sub:"Unknown · Unknown · Midfielder", club:"Feyenoord", pos:"Midfielder", report:"Transfer agreed between Feyenoord and KAS Eupen", src:"FR-Fans.nl", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"up", note:"Official confirmation reported", lastSeen:"2026-08-08T16:04:56Z", baseProb:95}
+  {name:"Chris-Kévin Nadje", sub:"23 · France · M", club:"Feyenoord", pos:"M", report:"Transfer agreed between Feyenoord and KAS Eupen", src:"FR-Fans.nl", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Official announcement; deal confirmed by multiple sources", lastSeen:"2026-08-08T18:06:10Z", baseProb:95}
 ];
 const OUTGOING = [];
 const RISERS = [];

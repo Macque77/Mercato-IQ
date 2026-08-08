@@ -72,11 +72,11 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Elliot Anderson", sub:"21 · England · M", club:"Nottingham Forest", pos:"M", report:"Agreement reached after improved offer to Nottingham Forest", src:"David Ornstein", tier:1, fee:"£106m plus add-ons", truth:95, prob:90, light:"g", trend:"flat", note:"Verbal offer made; agreement confirmed", lastSeen:"2026-08-08T16:04:57Z", baseProb:90},
-  {name:"James Trafford", sub:"21 · England · GK", club:"Leeds United", pos:"GK", report:"Leeds in talks with Manchester City over goalkeeper", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"flat", note:"Talks ongoing", lastSeen:"2026-08-08T16:04:57Z", baseProb:75}
+  {name:"Elliot Anderson", sub:"21 · England · M", club:"Nottingham Forest", pos:"M", report:"Agreement reached after improved offer to Nottingham Forest; Manchester City make £106m plus add-ons verbal offer", src:"David Ornstein", tier:1, fee:"£106m plus add-ons", truth:92, prob:85, light:"g", trend:"down", note:"Deal described as agreement reached following improved offer", lastSeen:"2026-08-08T18:06:10Z", baseProb:85},
+  {name:"James Trafford", sub:"21 · England · GK", club:"Leeds United", pos:"GK", report:"Leeds in talks with Manchester City over goalkeeper", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"down", note:"Early-stage talks between clubs", lastSeen:"2026-08-08T18:06:10Z", baseProb:70}
 ];
 const OUTGOING = [
-  {name:"Rodri", sub:"28 · Spain · M", club:"Real Madrid", pos:"M", report:"Real Madrid working on deal to sign Rodri; Barcelona made €45m offer (rejected as unserious); deal very close", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:80, prob:70, light:"g", trend:"flat", note:"Barcelona's €45m offer rejected; Man City have set price; Real Madrid pursuing deal", lastSeen:"2026-08-08T16:04:57Z", baseProb:70}
+  {name:"Rodri", sub:"28 · Spain · M", club:"Manchester City", pos:"M", report:"Real Madrid working on deal to sign Rodri; Barcelona make €45m offer which Man City refuse to engage with as unserious; deal described as very close with Real Madrid", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:88, prob:80, light:"g", trend:"up", note:"Man City set a price; Real Madrid deal very close. Barcelona €45m bid rejected as unserious.", lastSeen:"2026-08-08T18:06:10Z", baseProb:80}
 ];
 const DEAD = [
   {name:"Enzo Fernández", sub:"23 · Argentina · M", club:"Benfica", pos:"Midfielder", report:"Incoming link reported ~6 days ago", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"up", note:"Old report; no recent confirmation found", lastSeen:"2026-08-06T13:55:46Z", baseProb:30, dead:true, deadReason:"No recent snippet support; likely stale rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},
@@ -159,7 +159,8 @@ const HUB = {
   football365viaDavidOrnsteinElliotAnderson1: {l:"Football365 (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPVEJkQ3hzUkI0aklGMEtTRnBDb1hlMUx4Zmx1b213ZU9fTmcxeEFydGlEeEh4bWNSZWt6T25HYWdLZVJlTWdYWVdVNjBiMGl4VmpvdWFzZ2xRZ0pscUV1NlJYbDh2VjkxWnZNM1FYbjRQWG1YbHp6M3hLYUNSVllsM01DWE1uRzF5VDJaM1lCZUltNFVZQ3h5MWRLNHY3Vlh4?oc=5"},
   theAthleticviaDavidOrnsteinJamesTrafford1: {l:"The Athletic (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxPSERhWXlDZnA3dnNSNk83djBHQkQxcFZnRGNjUzA3a3ZLM1Fsd3RBeG53bFNvUjNVX3RaMDdMM3p5RDExVkxRLUpzb1EySWtBcVJvdkZLb0lFSUlwOHdOV1hFMHppT2IzZ25ibTRORUdNN29URVNWVVlRNGkyTVdyUGp3bHpLR283RWh3YW03dzV4SGM?oc=5"},
   football365viaDavidOrnsteinRodri1: {l:"Football365 (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPcnNHeUpkdnI3dC02OFQ2ZEUwdjEzZzkzNVNnQUt1M1ZablM1TkdZMEFVUDlVeWVTSEExTFpxWkVTZ1MwRm5SWTFROWJzcTZ3bS1vSzRFNlpwdVkxSi13TWZxNWNTVlVKeDBnTF9yNEtkcVNURHl5dEp6XzRyZnU1Nnh6OHBRb1FySlY4YmJjVDNnTi1UZUNrM1hhQUZUbmNCNTZMWDFuc0ZSeWMwWkJzQVJFdHJ0T3doemg1NkJ0MA?oc=5"},
-  theAthleticOrnsteinElliotAnderson: {l:"The Athletic (Ornstein)", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPVEJkQ3hzUkI0aklGMEtTRnBDb1hlMUx4Zmx1b213ZU9fTmcxeEFydGljSGxJSHhBJmcxeEFydGljSGxJSHhBJmcxeEFydGljSGxJSHgdeSBMQ0JISHhWNGJsOHZWOTFadk0zUVhuNFBYbVhseno"}};
+  theAthleticOrnsteinElliotAnderson: {l:"The Athletic (Ornstein)", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPVEJkQ3hzUkI0aklGMEtTRnBDb1hlMUx4Zmx1b213ZU9fTmcxeEFydGljSGxJSHhBJmcxeEFydGljSGxJSHhBJmcxeEFydGljSGxJSHgdeSBMQ0JISHhWNGJsOHZWOTFadk0zUVhuNFBYbVhseno"},
+  readManCityDavidOrnsteinRodri: {l:"Read Man City (David Ornstein)", u:"https://news.google.com/rss/articles/CBMimAFBVV95cUxORDBmX3lxRWh6T2pqcXhsR0xjNk9OY2R3cWxvRGVXTnNtbXdhX0ZldXBzTkVTaU9BZklqWkxEdi1hMEpEam5ibDh2U0hOSzNBYTdmbWhNbWtqQnUxOXZUaVAyTEhYWEFLRjI4Q1dTcWV3cGFPX3lOLTRSXy1aNi10WUVzQTdJa2o0S2JCeDIwdUUtSE1SaUxJQw"}};
 const LINKMAP = {
   "Elliot Anderson": ["men", "eSPNElliotAnderson", "theAthleticGoogleNewsElliotAnderson", "football365viaDavidOrnsteinElliotAnderson", "football365viaDavidOrnsteinElliotAnderson1", "theAthleticOrnsteinElliotAnderson"],
   "Enzo Fernández": ["men"],
@@ -168,7 +169,7 @@ const LINKMAP = {
   "Bernardo Silva": ["athletic","mcfc", "footballFanCastManuelAkanji"],
   "John Stones": ["athletic","mcfc", "tEAMtalkMathysDetourbet"],
   "Ederson": ["athletic","mcfc"],
-  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri", "bBCSportRodri", "theGuardianFootballRodri", "theAthleticGoogleNewsRodri", "football365viaDavidOrnsteinRodri", "football365viaDavidOrnsteinRodri1"],
+  "Rodri": ["fabrizioRomanoviaFootballTransfersRodri", "footballTransferscomRomanoGernimoRulli", "skySportsRodri", "bBCSportRodri", "theGuardianFootballRodri", "theAthleticGoogleNewsRodri", "football365viaDavidOrnsteinRodri", "football365viaDavidOrnsteinRodri1", "readManCityDavidOrnsteinRodri"],
   "Ayyoub Bouaddi": ["footballTransferscomAyyoubBouaddi", "caughtOffsiderelayingFabrizioRomanoAyyoubBouaddi"],
   "Gerónimo Rulli": ["footballTransferscomRomanoGernimoRulli"],
   "Savinho": ["yahooSportsviaRomanoTEAMtalkSavinho", "football365relayingFabrizioRomanoSavinho"],

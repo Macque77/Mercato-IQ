@@ -43,12 +43,12 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"James Tavernier", sub:"34 · Scotland · RB", club:"Rangers", pos:"RB", report:"Rangers captain linked to Paris FC", src:"transferfeed snapshot", tier:3, fee:"Free transfer", truth:45, prob:35, light:"y", trend:"up", note:"Duplicate entries on page; age and status uncertain", lastSeen:"2026-08-07T01:42:32Z", baseProb:35, dead:true, deadReason:"Duplicate entry removed; unclear status and age"},
-  {name:"Ibrahima Cisse", sub:"Striker, 18-year-old prospect", club:"KAA Gent", pos:"ST", report:"Paris FC among candidates along with Lyon", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Incomplete information; player details not available", lastSeen:"2026-08-07T01:42:32Z", baseProb:30},
-  {name:"Mory Kera", sub:"Prospect, multi-club interest", club:"Undisclosed academy", pos:"CM", report:"Paris FC reported to be in the race for young player", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"up", note:"Incomplete information; player details not available", lastSeen:"2026-08-07T01:42:32Z", baseProb:25}
+  {name:"Ibrahima Cisse", sub:"Striker, 18-year-old prospect", club:"KAA Gent", pos:"ST", report:"Paris FC among candidates along with Lyon", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:40, prob:30, light:"y", trend:"flat", note:"Incomplete information; player details not available", lastSeen:"2026-08-07T01:42:32Z", baseProb:30, dead:true, deadReason:"No recent snippet support; stale rumour"},
+  {name:"Mory Kera", sub:"Prospect, multi-club interest", club:"Undisclosed academy", pos:"CM", report:"Paris FC reported to be in the race for young player", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:35, prob:25, light:"o", trend:"up", note:"Incomplete information; player details not available", lastSeen:"2026-08-07T01:42:32Z", baseProb:25, dead:true, deadReason:"No recent snippet support; stale rumour"}
 ];
 
 const OUTGOING = [
-  {name:"Ilan Kebbal", sub:"Winger, manager wants to keep him", club:"Paris FC", pos:"RW", report:"Marseille and Coventry City credited with interest", src:"TOP Mercato", tier:3, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"up", note:"OM threatened in Ligue 1 for Paris FC star", lastSeen:"2026-08-07T01:42:32Z", baseProb:45}
+  {name:"Ilan Kebbal", sub:"Winger, manager wants to keep him", club:"Paris FC", pos:"RW", report:"Marseille and Coventry City credited with interest", src:"TOP Mercato", tier:3, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"up", note:"OM threatened in Ligue 1 for Paris FC star", lastSeen:"2026-08-07T01:42:32Z", baseProb:45, dead:true, deadReason:"No recent snippet support; stale rumour"}
 ];
 
 const RISERS = [

@@ -32,18 +32,21 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Jamie Lawrence", sub:"23 · CB · Germany", club:"WSG Tirol", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2.01m Bayern-academy defender signs until 2029 after two seasons in the Austrian Bundesliga."},
-  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from Celtic confirmed; described as having significant potential and right mentality"}
+  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from Celtic confirmed; described as having significant potential and right mentality"},
+  {name:"Juma Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from Celtic confirmed; described as having much potential and right mentality"}
 ];
 const CONFIRMED_OUT = [
-  {name:"Unknown Player", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"JPL champion departing to Eredivisie - official transfer"}
+  {name:"Unknown Player", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"JPL champion departing to Eredivisie - official transfer"},
+  {name:"Sory Kaba", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure from OH Leuven; JPL champion departing to Eredivisie"}
 ];
 const INCOMING = [
-  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Defender", club:"Celtic", pos:"Defender", report:"Transfer from Celtic confirmed", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"up", note:"Described as having significant potential and right mentality", lastSeen:"2026-08-08T16:04:56Z", baseProb:95},
-  {name:"Unknown striker from Westerlo", sub:"Unknown · Unknown · Forward", club:"Westerlo", pos:"Forward", report:"OH Leuven signs striker from Westerlo", src:"VoetbalBelgie", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Player identity not yet confirmed in snippets", lastSeen:"2026-08-08T16:04:56Z", baseProb:85}
+  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Defender", club:"Celtic", pos:"Defender", report:"Transfer from Celtic confirmed", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"up", note:"Described as having significant potential and right mentality", lastSeen:"2026-08-08T16:04:56Z", baseProb:95, dead:true, deadReason:"no longer a current link"},
+  {name:"Unknown striker from Westerlo", sub:"Unknown · Unknown · Forward", club:"Westerlo", pos:"Forward", report:"OH Leuven signs striker from Westerlo", src:"VoetbalBelgie", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Player identity not yet confirmed in snippets", lastSeen:"2026-08-08T16:04:56Z", baseProb:85, dead:true, deadReason:"no longer a current link"},
+  {name:"Unknown striker", sub:"Unknown · Unknown · Forward", club:"Westerlo", pos:"Forward", report:"OH Leuven signs striker from Westerlo", src:"VoetbalBelgie", tier:3, fee:"Undisclosed", truth:70, prob:70, light:"g", trend:"flat", note:"Striker from Westerlo; identity not yet confirmed in snippets", lastSeen:"2026-08-08T18:06:10Z", baseProb:70}
 ];
 const OUTGOING = [
-  {name:"Aurélie Reynders", sub:"18 · Belgium · Midfielder", club:"OH Leuven", pos:"Midfielder", report:"Most expensive outgoing transfer from Belgium; dreaming of Barcelona", src:"Sporza", tier:2, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Player reportedly dreams of Barcelona and feels she may be outgrowing OH Leuven", lastSeen:"2026-08-08T16:04:56Z", baseProb:70},
-  {name:"Nyakossi", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", report:"Expected to generate significant/gigantic transfer fee", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Described as potentially major income for the club", lastSeen:"2026-08-07T14:38:27Z", baseProb:70, dead:true, deadReason:"No recent credible updates or confirmed transfer; no current snippet evidence of active negotiations"},
+  {name:"Aurélie Reynders", sub:"18 · Belgium · Forward", club:"OH Leuven", pos:"Forward", report:"Most expensive outgoing transfer from Belgium; dreaming of Barcelona move", src:"Sporza", tier:2, fee:"Undisclosed", truth:75, prob:60, light:"g", trend:"down", note:"Young talent targeting top clubs; speculation about Barcelona interest", lastSeen:"2026-08-08T18:06:10Z", baseProb:60},
+  {name:"Nyakossi", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", report:"Expected to generate significant/gigantic transfer fee", src:"Unknown", tier:3, fee:"Unknown", truth:50, prob:50, light:"y", trend:"down", note:"Limited information; awaiting confirmed departure", lastSeen:"2026-08-08T18:06:10Z", baseProb:50},
   {name:"Sory Kaba", sub:"Unknown · Unknown · Forward", club:"OH Leuven", pos:"Forward", report:"Official departure from OH Leuven", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Officially departed; destination unknown from snippet", lastSeen:"2026-08-08T16:04:56Z", baseProb:95}
 ];
 const RISERS = [];
@@ -84,9 +87,11 @@ const LINKMAP = {
   "Unknown Player": ["voetbalkrantcomUnknownPlayer"],
   "Unknown ex-Bayern talent": ["voetbalkrantcomUnknownexBayerntalent", "voetbalkrantcomUnknownexBayernplayer"],
   "Unknown ex-Bayern player": ["voetbalkrantcomUnknownexBayernplayer"],
-  "Sory Kaba": ["voetbalPrimeurbeSoryKaba", "voetbalPrimeurbeSoryKaba1"],
+  "Sory Kaba": ["voetbalPrimeurbeSoryKaba", "voetbalPrimeurbeSoryKaba1", "voetbalkrantcomUnknownPlayer"],
   "Unknown striker from Westerlo": ["voetbalBelgieUnknownstrikerfromWesterlo"],
-  "Unknown": ["voetbalkrantcomUnknownexBayerntalent"]};
+  "Unknown": ["voetbalkrantcomUnknownexBayerntalent"],
+  "Unknown striker": ["voetbalBelgieUnknownstrikerfromWesterlo"],
+  "Juma Van Den Heuvel": ["voetbalPrimeurbeVanDenHeuvel"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

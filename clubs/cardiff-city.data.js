@@ -36,7 +36,9 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Kion Etete", sub:"Unknown · Unknown · Unknown", club:"Cardiff City", pos:"Unknown", report:"New club keen on Kion Etete", src:"Wales Online", tier:2, fee:"Unknown", truth:70, prob:70, light:"g", trend:"flat", note:"Interest from another club reported", lastSeen:"2026-08-08T18:06:10Z", baseProb:70}
+];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -55,11 +57,13 @@ const HUB = {
   walesOnlineKionEtete1: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPbkxZM1BxU3FSS1VwWEVCQzRWUHEwTWZVRGdDekMySHdvLTZvODllN3JnWFF4YjRwVU5lUXlWd29QMGJ3ekFwTTZONjBOQmVoRElQNHJPTDg5NlZnMVhzZzhicy1xNUJNalZheVh6YzMwR0NuMHZUMDlySkxtNUlRcmkxN3VGb2w5YnBNVXNURUpZQ2EyaEF5YjZUdGhXcjR6"},
   walesOnlineJackMoylan2: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxNUWRUbnh4NmRGVmJnZDNNM2ZmbHlKeWdnWTlYbVhiNXJvanA4UlMyS2psSHVEdk9GOFFYenZHbEJhblZyUkVzQmhyb3YyWDJueXNncFRxRmh5MktJTEdTTmJzdTdXanlTWnoxcXFsbkpqQVZtY0tSZmh2RlJ0ZzVsMFd5Vy0yb1h3aFNvY3RYZWJHN3dkTnhDaGRtR2oyd1NYN3hn"},
   cardiffCityFCNathanTrott: {l:"Cardiff City FC", u:"https://news.google.com/rss/articles/CBMilgFBVV95cUxPNno4Mkw3NGdpeFlyNUJmVGpSTkppTEh5RDBGY2xoVHhWWElibThVdUQ3THNJX3pSV1VFT0piQ0stQ2FmMnNtb3Y5UnJKN0lvbEtCVlczcmF3M2hhVXZPOVJLdk1YYmk0TTdfb0NfSWlZUkRKWEk1aEs0ZURCNURXWXhzVUF4N29ycmJ2aVRqYTV4b1lCZEE?oc=5"},
-  walesOnlineKionEtete2: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPbkxZM1BxU3FSS1VwWEVCQzRWUHEwTWZVRGdDekMySHdvLTZvODllN3JnWFF4YjRwVU5lUXlWd29QMGJ3ekFwTTZONjBOQmVoRElQNHJPTDg5NlZnMVhzZzhacy1xNUJNalZheVh6YzMwR0NuMHZUMDlySkxtNUlRcmkxN3VGb2w5YnBNVXNURUpZQ2EyaEF5YjZUdGhXcjR6?oc=5"}};
+  walesOnlineKionEtete2: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxPbkxZM1BxU3FSS1VwWEVCQzRWUHEwTWZVRGdDekMySHdvLTZvODllN3JnWFF4YjRwVU5lUXlWd29QMGJ3ekFwTTZONjBOQmVoRElQNHJPTDg5NlZnMVhzZzhacy1xNUJNalZheVh6YzMwR0NuMHZUMDlySkxtNUlRcmkxN3VGb2w5YnBNVXNURUpZQ2EyaEF5YjZUdGhXcjR6?oc=5"},
+  googleNewsJackMoylan: {l:"Google News", u:"https://news.google.com/rss/articles/CBMiaEFVX3lxTE9LZC1qZ0hnOTdRdlNfTEFQUmFvTHNGWlVKeXRGcDRnQkpxWEp1dWd2akF5c05PRHQ4eE9zSnVuVEdlTW5BSHZScTZxc3N1R0RHVXNQbXp3dFZidUd6aUxYeVhzMV9XZXFX?oc=5"},
+  walesOnlineOmariKellyman: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxQaDB3NklMY0NJT25vdjZmZk82WGtSSTlzMVlOMFJEbGxCX0IzRktscFBZejlFcVFjdFlvNVFubUZvWFdoNEZYclc0V2lfY1phUmZwTHRuQjZONjNqTnhSR2lTb3FYVFFQYzVISEMtYW9ULVowT1FYRGJ0a25WV19USjdiRzFmWkRuRlZtMWR4aXBwazBvMVl0dDVQTDVNZXJ2?oc=5"}};
 
 const LINKMAP = {
-  "Omari Kellyman": ["gnews-omarikellyman"],
-  "Jack Moylan": ["peteORourkeJackMoylan", "cardiffCityFCofficialJackMoylan", "walesOnlineJackMoylan", "walesOnlineJackMoylan1", "walesOnlineJackMoylan2"],
+  "Omari Kellyman": ["gnews-omarikellyman", "walesOnlineOmariKellyman"],
+  "Jack Moylan": ["peteORourkeJackMoylan", "cardiffCityFCofficialJackMoylan", "walesOnlineJackMoylan", "walesOnlineJackMoylan1", "walesOnlineJackMoylan2", "googleNewsJackMoylan"],
   "Kion Etete": ["walesOnlineKionEtete", "walesOnlineKionEtete1", "walesOnlineKionEtete2"],
   "Nathan Trott": ["cardiffCityNathanTrott", "cardiffCityFCNathanTrott"]};
 const WL_LINKMAP = {};

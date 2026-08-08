@@ -30,7 +30,9 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Jean Grillot", sub:"Unknown · Unknown · Unknown", club:"Bordeaux", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially joins Clermont Foot from Bordeaux"}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Jean Grillot", sub:"Unknown · Unknown · Unknown", club:"Bordeaux", pos:"Unknown", report:"Jean Grillot officially joins Clermont Foot from Bordeaux", src:"WebGirondins", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Official announcement confirmed from Bordeaux departure", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}

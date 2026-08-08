@@ -31,13 +31,11 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Mason Burstow", sub:"ST", club:"Hull City", pos:"ST", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan completed and confirmed."},
-  {name:"Tyler Onyango", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer deal confirmed with contract length revealed"}
+  {name:"Mason Burstow", sub:"ST", club:"Hull City", pos:"ST", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan completed and confirmed."}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Mark O'Mahony", sub:"FW", club:"Brighton (youth)", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Young attacker linked, early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Tyler Onyango", sub:"23 · Kenya · D", club:"Northampton Town", pos:"D", report:"Transfer deal confirmed with contract length revealed", src:"thestar.co.uk", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Deal confirmed by Sheffield Wednesday", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
   {name:"Reece James", sub:"W", club:"Free agent (ex-Wednesday)", pos:"W", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:45, prob:35, light:'y', trend:'flat', note:"Trial return, fans keen on a re-signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Davis Keillor-Dunn", sub:"FW", club:"Wrexham", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Wednesday reportedly want a deal for the forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];

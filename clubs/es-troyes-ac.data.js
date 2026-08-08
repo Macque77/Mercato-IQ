@@ -76,7 +76,8 @@ const HUB = {
   sFGateAPMathysDetourbet: {l:"SFGate (AP)", u:"https://www.sfgate.com/sports/article/promoted-troyes-sells-forward-detourbet-to-22323461.php"},
   yahooSportsSankhounDiawara: {l:"Yahoo Sports", u:"https://sports.yahoo.com/articles/official-milan-sign-diawara-troyes-111000761.html"},
   footSur7RenaudRipart: {l:"Foot Sur 7", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE5PTHJOVHF3S1ItRmx0RlNyOU01cWd3M05oSUtRdDAydHE0eXdhb3Fnc1h0ZjZrVDllU3NncWxHVFJGcDhETjdTZkNoeXVWaEpzOFEtbWZFX3lwQ2tkS2wtaVU5Yk94cXA1eGRqSFlLZXJzZkhHWjN5dTJqbGI?oc=5"},
-  footSur7RenaudRipart1: {l:"Foot Sur 7", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE5OTHJOVHF3S1ItRmx0RlNyOU01cWd3M05oSS1RdDAydHE0eXdhb3Fnc1h0ZjZrVDllU3NncWxHVFJGcDhETjdTZkNoeXVWaEpzOFEtbWZFX3lwQ2tkS2wtaVU5Yk94cXA1eGRqSFlLZXJzZkhHWjN5dTJqbGI?oc=5"}};
+  footSur7RenaudRipart1: {l:"Foot Sur 7", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE5OTHJOVHF3S1ItRmx0RlNyOU01cWd3M05oSS1RdDAydHE0eXdhb3Fnc1h0ZjZrVDllU3NncWxHVFJGcDhETjdTZkNoeXVWaEpzOFEtbWZFX3lwQ2tkS2wtaVU5Yk94cXA1eGRqSFlLZXJzZkhHWjN5dTJqbGI?oc=5"},
+  footSur7RenaudRipart2: {l:"Foot Sur 7", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE5OTHJUVHF3S1ItRmx0RlNyOU01cWd3M05oSUtRdDAydHE0eXdhb3Fnc1h0ZjZrVDllU3NncWxHVFJGcDhETjdTZkNoeXVWaEpzOFEtbWZFX3lwQ2tkS2wtaVU5Yk94cXA1eGRqSFlLZXJzZkhHWjN5dTJqbGI"}};
 
 const LINKMAP = {
   "Patrick Beach": ["estac", "footMercatoviaLEstclairPatrickBeach"],
@@ -84,7 +85,7 @@ const LINKMAP = {
   "Sankhoun Diawara": ["gffn-troyes", "yahooSportsSankhounDiawara"],
   "Thierno Baldé": ["estac"],
   "Mathys Detourbet": ["gffn-troyes", "sFGateAPMathysDetourbet"],
-  "Renaud Ripart": ["footSur7RenaudRipart", "footSur7RenaudRipart1"]};
+  "Renaud Ripart": ["footSur7RenaudRipart", "footSur7RenaudRipart1", "footSur7RenaudRipart2"]};
 const WL_LINKMAP = {
   "Mathys Detourbet": ["gffn-troyes"]
 };

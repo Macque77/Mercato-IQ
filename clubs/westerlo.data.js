@@ -45,11 +45,11 @@ const CONFIRMED_OUT = [
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Cisse Sandra", sub:"24 · Belgium · M", club:"Club Brugge", pos:"M", report:"Transfer completed from Club Brugge to KVC Westerlo", src:"VoetbalFocus", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100}
+  {name:"Cisse Sandra", sub:"25 · Belgium · M", club:"Club Brugge", pos:"M", report:"Transfer completed from Club Brugge; fee reported as undisclosed but described as 'forse som' (substantial sum)", src:"voetbalfocus.be, VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal finalized; player signed", lastSeen:"2026-08-08T18:06:10Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"23 · Belgium · M", club:"Rangers", pos:"M", report:"On way to Rangers; among most expensive outgoing transfers", src:"VoetbalPrimeur", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Advanced stage of transfer", lastSeen:"2026-08-08T16:04:56Z", baseProb:85},
-  {name:"Ferri", sub:"Unknown · Unknown · Unknown", club:"Feyenoord", pos:"Unknown", report:"Principle agreement reached for exit to Feyenoord", src:"VoetbalPrimeur", tier:3, fee:"Undisclosed", truth:80, prob:80, light:"g", trend:"up", note:"Principle agreement in place", lastSeen:"2026-08-08T16:04:56Z", baseProb:80}
+  {name:"Jarne Rommens", sub:"24 · Belgium · M", club:"KVC Westerlo", pos:"M", report:"On way to Rangers; among most expensive outgoing transfers of the club", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"flat", note:"Advanced talks with Rangers", lastSeen:"2026-08-08T18:06:10Z", baseProb:85},
+  {name:"Ferri", sub:"Unknown · Unknown · Unknown", club:"KVC Westerlo", pos:"Unknown", report:"Principle agreement reached for exit to Feyenoord", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:80, prob:80, light:"g", trend:"flat", note:"Principle agreement in place; deal advancing", lastSeen:"2026-08-08T18:06:10Z", baseProb:80}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -80,7 +80,8 @@ const HUB = {
   voetbalPrimeurbeJarneRommens2: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNLWhFUXlaTkNoQjE0NXc5aTFxS2xSOGpHcEZzbGpnak1FS0dDbHd4RnNWcEx0X0NTVVBydno1T3VDZGFUNU8zSmJwRTdhMWJ3S2tyOUlxbnFZbVlWNXFudG9NWUtreXcwYmsxOEp0MEdVVlJOcWNqTXk2enMzMWQxTVlyZGs5RzZwdVVGbjZqN2dpV0dscFdydmpR?oc=5"},
   voetbalPrimeurbeCisseSandra2: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcHJBLVkyZk9uRW5NRmZuVlkzZnA1Q3VnUGVVaV9RYVJvQk5hOWRHUE8yeE1ReW82ZXVRX1JBSTRTVVZ4NjFfZ2xjLWFROUVVT3dKZDNhOGxvSEFwYi1kaXdUU0FuODdncV9GN1JXT3ZYRFVTYUNvdVRteWw3MTRfMng4dW43R0ZENktkdThuYzNSRWNVV2lLVkRfcEJnbktkcWtYTUxYek5ZOGN1Q2U3Sk1Mbkt4WEpOcFZrMkxHeXNHT2M?oc=5"},
   lokaalnieuwsonlineCisseSandra2: {l:"Lokaalnieuws.online", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxOdlJ0WHFtMEttbnlYWTZtYTRtTzVJMk91dUNiVXhGRDBOdEtpTlpqWFphOVBUUG5YN21YR2dQMnhkRmhlQWljUXBFQ0x4RVRlNFZDWTRqQzFuQndiTFhkekpETEFfWFpMQTc4RWFWX2MxRjFGYlNqNjVlSGRRd2o1TE4zbVNVa3h4RW9uV3d5em4yeEo3TEl3cWZncVhHbC1KOXdWM0hGT3FUY2w5"},
-  voetbalFocusCisseSandra1: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxPYkIyaU1zV0prZVg5cW1meXZKbHZZaUtqbmtEUlIzMTJJd3piTmNFWkpwTFJ1VWZzZ3QxakkyaUdSdlJHNThlamFONnpiZVpNTTNyUXdyWjYyMmFKU1RjaEZhWkJVdHBPQ2Z0VURsb2ZVRVQzdkV1T1lxOXFXNEN3aEEtVEo"}};
+  voetbalFocusCisseSandra1: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxPYkIyaU1zV0prZVg5cW1meXZKbHZZaUtqbmtEUlIzMTJJd3piTmNFWkpwTFJ1VWZzZ3QxakkyaUdSdlJHNThlamFONnpiZVpNTTNyUXdyWjYyMmFKU1RjaEZhWkJVdHBPQ2Z0VURsb2ZVRVQzdkV1T1lxOXFXNEN3aEEtVEo"},
+  voetbalPrimeurbeFerri1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxOTndPYkhNbjlCWWRPTm9BNm8zLVZ1c0tlLXd2RGlBUWRtQklIUzEwSjF5cDhhNXhIeXVCT0ptWEpxZHlRWUdTMEg2Q3V6MjkwUEd3NjdOamVTa2tjQlVyYlB0UmZkLVZoNWQ4S1B1SWZYNERlajB6SjRRTzliMjlqTU5fOWtxci14cW1XbzBWM1BHd21VWTVfOTV3dGRwamhiRFF4Z1pYTE9tRTVqbTE4?oc=5"}};
 
 const LINKMAP = {
   "Cameron Congreve": ["the72viaWalesOnlineCameronCongreve", "voetbalFocusCameronCongreve"],
@@ -91,7 +92,7 @@ const LINKMAP = {
   "Emin Bayram": ["voetbalkrantEminBayram"],
   "Cisse Sandra": ["voetbalFocusCisseSandra", "voetbalPrimeurbeCisseSandra", "voetbalBelgieCisseSandra", "voetbalPrimeurbeCisseSandra1", "lokaalnieuwsonlineCisseSandra", "lokaalnieuwsonlineCisseSandra1", "voetbalPrimeurbeCisseSandra2", "lokaalnieuwsonlineCisseSandra2", "voetbalFocusCisseSandra1"],
   "Jarne Rommens": ["voetbalPrimeurbeJarneRommens", "voetbalPrimeurbeJarneRommens1", "voetbalPrimeurbeJarneRommens2"],
-  "Ferri": ["voetbalPrimeurbeFerri"],
+  "Ferri": ["voetbalPrimeurbeFerri", "voetbalPrimeurbeFerri1"],
   "Congreve": ["voetbalFocusCameronCongreve", "voetbalFocusCongreve"]};
 const WL_LINKMAP = {};
 

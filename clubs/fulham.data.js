@@ -82,7 +82,8 @@ const CONFIRMED_OUT = [
    note:"Left after five years to replace Mourinho at Benfica; his Fulham deal expired. A successor is not yet confirmed. Flagged so no planning item treats him as the current coach."},
   {name:"Raúl Jiménez", sub:"35 · ST · Mexico", club:"Wolverhampton Wanderers", pos:"FW", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"World Cup-bound Mexico striker leaves on a free and rejoins Wolves, where he spent six years before his Fulham switch."},
   {name:"Issa Diop", sub:"29 · CB · France", club:"Ipswich Town", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Fulham's fringe centre-back completes a permanent move to newly-promoted Ipswich, the first of two raids by Kieran McKenna's side on the Cottagers this summer."},
-  {name:"Harry Wilson", sub:"29 · AM · Wales", club:"Leeds United", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wales international leaves on a free at contract expiry and signs a four-year deal at Elland Road."}
+  {name:"Harry Wilson", sub:"29 · AM · Wales", club:"Leeds United", pos:"MF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wales international leaves on a free at contract expiry and signs a four-year deal at Elland Road."},
+  {name:"Sasa Lukic", sub:"Unknown · Serbia · Midfielder", club:"Ipswich Town", pos:"CM", fee:"£9m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Medical completed, deal finalised"}
 ];
 
 const INCOMING = [
@@ -94,16 +95,16 @@ const INCOMING = [
    note:"FRAMING ROW split from this page's own Positions board (not a named rumour): midfield quality and depth flagged as a likely strengthening area once the head coach is appointed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"no longer a current link"},
   {name:"Full-back addition", sub:"Framing row · no named target", club:"Market", pos:"FB", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:22, light:'o', trend:'flat',
    note:"FRAMING ROW split from this page's own Positions board (not a named rumour): full-back balance for the new system, paced to the incoming coach's preferences.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22, dead:true, deadReason:"no longer a current link"},
-  {name:"Gonzalo García", sub:"Unknown · Spain · Forward", club:"Real Madrid", pos:"Forward", report:"Fulham sign Real Madrid striker", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
-  {name:"César Palacios", sub:"Unknown · Spain · Midfielder", club:"Real Madrid", pos:"Midfielder", report:"Fulham sign Real Madrid midfielder", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
-  {name:"Abdelhamid Ait Boudlal", sub:"Unknown · France · Defender", club:"Rennes", pos:"Defender", report:"Fulham have £20m offer rejected for Rennes defender", src:"The Athletic", tier:2, fee:"£20m", truth:70, prob:40, light:"y", trend:"flat", note:"First offer rejected; target keen on move", lastSeen:"2026-08-08T16:04:56Z", baseProb:40}
+  {name:"Gonzalo García", sub:"Unknown · Spain · Striker", club:"Real Madrid", pos:"ST", report:"Fulham sign Real Madrid striker", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T18:06:10Z", baseProb:100, dead:true, deadReason:"Completed signing - moved to confirmed_in"},
+  {name:"César Palacios", sub:"Unknown · Spain · Midfielder", club:"Real Madrid", pos:"CM", report:"Fulham sign Real Madrid midfielder", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T18:06:10Z", baseProb:100, dead:true, deadReason:"Completed signing - moved to confirmed_in"},
+  {name:"Abdelhamid Ait Boudlal", sub:"Unknown · France · Defender", club:"Rennes", pos:"DEF", report:"Fulham have £20m offer rejected for Rennes defender", src:"The Athletic", tier:2, fee:"£20m", truth:75, prob:40, light:"y", trend:"flat", note:"Offer rejected but target keen on move", lastSeen:"2026-08-08T18:06:10Z", baseProb:40}
 ];
 
 const OUTGOING = [
   {name:"Ageing spine & fringe", sub:"Squad refresh", club:"Various", pos:"SQD", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
    note:"A refresh of older players is likely under a new coach, balanced against the cost rules.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
-  {name:"Kevin", sub:"Unknown · Brazil · Midfielder", club:"Roma", pos:"Midfielder", report:"Roma's €50m bid rejected; Fulham holding firm", src:"Unknown", tier:3, fee:"€50m", truth:70, prob:35, light:"y", trend:"up", note:"Bid rejected; Fulham rejecting advances", lastSeen:"2026-08-08T16:04:56Z", baseProb:35},
-  {name:"Sasa Lukic", sub:"Unknown · Serbia · Midfielder", club:"Ipswich Town", pos:"Midfielder", report:"Sasa Lukic completes Ipswich medical ahead of £9m move from Fulham", src:"The Athletic", tier:1, fee:"£9m", truth:100, prob:100, light:"g", trend:"flat", note:"Medical completed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100}
+  {name:"Kevin", sub:"Unknown · Brazil · Midfielder", club:"AS Roma", pos:"CM", report:"Roma's €50m bid rejected; Fulham holding firm", src:"Unknown", tier:3, fee:"€50m", truth:70, prob:50, light:"y", trend:"up", note:"Offer rejected but holding negotiations", lastSeen:"2026-08-08T18:06:10Z", baseProb:50},
+  {name:"Sasa Lukic", sub:"Unknown · Serbia · Midfielder", club:"Ipswich Town", pos:"CM", report:"Sasa Lukic completes Ipswich medical ahead of £9m move", src:"The Athletic", tier:1, fee:"£9m", truth:100, prob:100, light:"g", trend:"flat", note:"Medical completed", lastSeen:"2026-08-08T18:06:10Z", baseProb:100}
 ];
 
 const RISERS = [

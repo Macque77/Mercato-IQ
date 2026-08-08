@@ -33,7 +33,7 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Ilyes Housni", sub:"Young talent · France · Forward", club:"Paris", pos:"Forward", report:"Signed from Paris academy", src:"MadeInParisiens", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Official signing confirmed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Ilyes Housni", sub:"Unknown · France · Unknown", club:"Paris", pos:"Unknown", report:"Signed from Paris academy", src:"MadeInParisiens", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-08T18:06:11Z", baseProb:100},
   {name:"Unknown player", sub:"Unknown · Unknown · Unknown", club:"Troyes", pos:"Unknown", report:"Second loan signing from Troyes", src:"L'Est Républicain", tier:3, fee:"Loan", truth:75, prob:80, light:"g", trend:"flat", note:"Player name not specified in snippet; second Troyes loan deal reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:80, dead:true, deadReason:"Cannot identify specific player from Troyes loan snippet; kept only named player Ilyes Housni"}
 ];
 const OUTGOING = [];

@@ -103,13 +103,13 @@ const CONFIRMED_OUT =
 const INCOMING = [
   {name:"Solly March", sub:"30 · England · D/M", club:"Crystal Palace", pos:"D/M", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:60, prob:40, light:"y", trend:"up", note:"Palace exploring move after contract situation; multiple sources confirm interest", lastSeen:"2026-08-08T04:21:31Z", baseProb:40, dead:true, deadReason:"Duplicate entry removed (kept as incoming rumour to Crystal Palace, not outgoing to same club)"},
   {name:"Gabby George", sub:"Unknown · Unknown · Unknown", club:"Manchester United", pos:"Unknown", report:"Gabby George joins Brighton & Hove Albion", src:"Manchester United Website", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer from Manchester United", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
-  {name:"Ayase Ueda", sub:"striker", club:"Feyenoord", pos:"ST", report:"Brighton make concrete move for Feyenoord striker", src:"transferfeed", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"down", note:"Concrete move reported but no recent update", lastSeen:"2026-08-08T16:04:56Z", baseProb:40}
+  {name:"Ayase Ueda", sub:"striker", club:"Feyenoord", pos:"ST", report:"Brighton make concrete move for Feyenoord striker", src:"unknown", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"flat", note:"Concrete move reported but no recent update", lastSeen:"2026-08-08T18:06:10Z", baseProb:40}
 ];
 
 const OUTGOING = [
-  {name:"Jan Paul van Hecke", sub:"defender", club:"Tottenham", pos:"DEF", report:"Tottenham agree £52million Jan Paul van Hecke transfer", src:"David Ornstein", tier:1, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Agreement reached on transfer fee", lastSeen:"2026-08-08T16:04:56Z", baseProb:90},
+  {name:"Jan Paul van Hecke", sub:"defender", club:"Brighton", pos:"CB", report:"Tottenham agree £52million Jan Paul van Hecke transfer", src:"The Athletic", tier:2, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Deal agreed with Tottenham", lastSeen:"2026-08-08T18:06:10Z", baseProb:90},
   {name:"Solly March", sub:"30 · England · W", club:"Brighton", pos:"W", report:"Crystal Palace consider shock free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:70, prob:60, light:"g", trend:"up", note:"Palace exploring move after contract situation; multiple recent reports of interest", lastSeen:"2026-08-08T11:19:01Z", baseProb:60, dead:true, deadReason:"Rumour listed as both incoming and outgoing with conflicting directions; no recent confirmation of actual movement"},
-  {name:"Facundo Buonanotte", sub:"20 · Argentina · W", club:"Elche", pos:"Winger", report:"Brighton's Facundo Buonanotte joins Elche on season-long loan transfer", src:"The New York Times", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Season-long loan", lastSeen:"2026-08-08T14:10:31Z", baseProb:95}
+  {name:"Facundo Buonanotte", sub:"midfielder", club:"Brighton", pos:"MF", report:"Brighton's Facundo Buonanotte joins Elche on season-long loan", src:"BBC", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Season-long loan completed", lastSeen:"2026-08-08T18:06:10Z", baseProb:100}
 ];
 const DEAD = [
   {name:"Said El Mala", sub:"Unknown · Unknown · Unknown", club:"Köln", pos:"Unknown", report:"Brighton pushing for final talks with Köln", src:"On-page rumour", tier:3, fee:"Unknown", truth:45, prob:40, light:"y", trend:"down", note:"Active negotiation reported", lastSeen:"2026-08-06T13:55:46Z", baseProb:40, dead:true, deadReason:"No recent credible reporting; transfer window context unclear", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -202,7 +202,9 @@ const HUB = {
   theAthleticviaDavidOrnsteinJanPaulvanHecke: {l:"The Athletic (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxPM2Nua0Z2cXM0eS1ORjJLa1ZERFM3cFkwMUgzZGVneXFoaWVVeUNXeWh1dGZNVHFfYUs5dkJ0QnpUS1NDdEMzX3VZbWtIYnlUc0tlV0JKYUNNMm00RHVRbHptVDI3TVNWYUxKV1lpSTNOX2pUVVJwckVEVWc4amZfM0VNMVlkM0haRThDbFhqdEp4WDh6cjNyMG9sUQ?oc=5"},
   manchesterUnitedWebsiteGabbyGeorge2: {l:"Manchester United Website", u:"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMnFTNG4wTmR4UzBRY1d5cUhwcnE2ZlljOF9ZNW1aRlRJdEcwRC05Y1diZ2lSVlBlYkpyb0RrZHNQbHVsTkFocFZkNDE0c2FuSWtFdlhrVEVjT3E5MlIyblNUdUpWUHlNVUo3aDlVRWsxNzRDWnZ0Um9uOURqaklNbmpCVzAwTXcteER3?oc=5"},
   bBCFacundoBuonanotte: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE5mWkh0YWZYVjJwbUN3Uk05c0RlUDRQWWFydDZTVlRZSS1SdHlzT2U2d29tTHNrNUo0aW1KZDgwWndvV3o0N3BuVEo3dHY5ZE85Z19OUHJmSWtPWWNhTXZVdG9IdkpJTjNJeUE?oc=5"},
-  theNewYorkTimesJoelVeltman1: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV?oc=5"}};
+  theNewYorkTimesJoelVeltman1: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV?oc=5"},
+  theAthleticDavidOrnsteinJanPaulvanHecke: {l:"The Athletic (David Ornstein)", u:"https://news.google.com/rss/articles/CBMimwFBVV95cUxPM2Nua0Z2cXM0eS1ORjJLa1ZURFM3cFkwMUgzZGVneXFoaWVVeUNXeWh1dGZNVHFfYUs5dkJ0QnpUS1NDdEMzX3VZbWtIYnlUc0tlV0JKYUNNMm00RHVRbHptVDI3TVNWYUxKV1lpSTNOX2pUVVJwckVEVWc4amZfM0VNMVlkM0haRThDbFhqdEp4WDh6cjNyMG9sUQ?oc=5"},
+  bBCFacundoBuonanotte1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE5mWkh0YWZYVjJwbUN3Uk05c0RlUDRQWWFydDZTVlRZSS1SdHlzT2U2d29tTHNrNUo0aW1KZDgwWndvV3o0N3BuVEo3dHY5ZE81Z19OUHJmSWtPWWNhTXZVdG9IdkpJTjNJeUE?oc=5"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
@@ -218,7 +220,7 @@ const LINKMAP = {
   "Bart Verbruggen": ["teamTalkBartVerbruggen"],
   "Zadok Yohanna": ["eSPNZadokYohanna"],
   "Costinha": ["brightonHoveAlbionofficialCostinha"],
-  "Jan Paul van Hecke": ["skySportsJanPaulvanHecke", "skySportsTransferCentreCarlRushworth", "theAthleticJanPaulvanHecke", "theAthleticviaDavidOrnsteinJanPaulvanHecke"],
+  "Jan Paul van Hecke": ["skySportsJanPaulvanHecke", "skySportsTransferCentreCarlRushworth", "theAthleticJanPaulvanHecke", "theAthleticviaDavidOrnsteinJanPaulvanHecke", "theAthleticDavidOrnsteinJanPaulvanHecke"],
   "Jeremy Sarmiento": ["sportsMoleJeremySarmiento"],
   "Adam Webster": ["sportsMoleJeremySarmiento"],
   "Joel Veltman": ["sportsMoleJeremySarmiento", "skySportsTransferCentreCarlRushworth", "theNewYorkTimesJoelVeltman", "theNewYorkTimesJoelVeltman1"],
@@ -234,7 +236,7 @@ const LINKMAP = {
   "Evan Ferguson": ["bBCSportGeorge"],
   "Leny Yoro": ["bBCSportGeorge"],
   "Ayase Ueda": ["footballPlaceAyaseUeda"],
-  "Facundo Buonanotte": ["theNewYorkTimesFacundoBuonanotte", "bBCFacundoBuonanotte"]};
+  "Facundo Buonanotte": ["theNewYorkTimesFacundoBuonanotte", "bBCFacundoBuonanotte", "bBCFacundoBuonanotte1"]};
 const WL_LINKMAP = {
   "Data-model targets":"athletic","Prized asset":"naylor",
 };

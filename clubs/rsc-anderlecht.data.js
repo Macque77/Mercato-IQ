@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Tomáš Souček", sub:"29 · Czech Republic · CM", club:"West Ham United", pos:"CM", report:"RSC Anderlecht interested but facing competition", src:"On-page rumour", tier:3, fee:"", truth:35, prob:25, light:"o", trend:"down", note:"No recent snippet update; kept as live rumour pending retirement if no news in 5+ weeks", lastSeen:"2026-08-08T16:04:56Z", baseProb:25}
+  {name:"Tomáš Souček", sub:"29 · Czech Republic · M", club:"West Ham United", pos:"Midfielder", report:"RSC Anderlecht interested but facing competition", src:"On-page rumour", tier:3, fee:"", truth:50, prob:30, light:"y", trend:"up", note:"Existing rumour maintained; no fresh snippet provided", lastSeen:"2026-08-08T18:06:10Z", baseProb:30}
 ];
 
 const OUTGOING = [

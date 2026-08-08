@@ -43,11 +43,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Mathys Detourbet", sub:"youth · France · M", club:"Manchester City", pos:"M", report:"Manchester City to buy Detourbet and loan him to Monaco", src:"Fabrice Hawkins", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"up", note:"Deal agreed; Manchester City purchase with immediate loan to Monaco", lastSeen:"2026-08-08T07:40:33Z", baseProb:80}
+  {name:"Mathys Detourbet", sub:"young · France · forward", club:"Manchester City", pos:"F", report:"Manchester City to buy Detourbet and loan him to Monaco", src:"Fabrice Hawkins / Yahoo Actualités", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Deal confirmed by multiple sources; Manchester City purchase with loan to Monaco", lastSeen:"2026-08-08T18:06:11Z", baseProb:80},
+  {name:"Romelu Lukaku", sub:"31 · Belgium · F", club:"Napoli", pos:"F", report:"AS Monaco positioning for Romelu Lukaku as successor to Folarin Balogun", src:"MadeInMonegasque", tier:3, fee:"", truth:40, prob:35, light:"y", trend:"flat", note:"Early stage interest reported; speculative link", lastSeen:"2026-08-08T18:06:11Z", baseProb:35},
+  {name:"Farès Ghedjemis", sub:"young · Algeria · defender", club:"Frosinone", pos:"D", report:"Monaco pursuing Farès Ghedjemis from Frosinone", src:"L'Équipe", tier:2, fee:"", truth:60, prob:50, light:"y", trend:"flat", note:"Active pursuit reported", lastSeen:"2026-08-08T18:06:11Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Maghnes Akliouche", sub:"22 · Algeria · W", club:"AS Monaco", pos:"W", report:"Total agreement between PSG and Monaco for transfer", src:"Fabrice Hawkins", tier:3, fee:"Undisclosed", truth:90, prob:85, light:"g", trend:"up", note:"Deal confirmed as agreed between clubs; Monaco seeking replacement", lastSeen:"2026-08-08T07:40:33Z", baseProb:85}
+  {name:"Maghnes Akliouche", sub:"22 · Algeria · W", club:"PSG", pos:"W", report:"Total agreement between PSG and Monaco for transfer of Maghnes Akliouche", src:"Fabrice Hawkins / Yahoo Actualités", tier:3, fee:"Undisclosed", truth:90, prob:85, light:"g", trend:"flat", note:"Deal reportedly agreed in principle", lastSeen:"2026-08-08T18:06:11Z", baseProb:85}
 ];
 const DEAD = [
   {name:"Erik Lira", sub:"26 · CM · Mexico", club:"Cruz Azul", pos:"CM", report:"29 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:24, light:"o", trend:"flat", note:"Monaco have shown concrete interest in the Cruz Azul midfielder as squad depth is assessed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24, dead:true, deadReason:"No recent snippet support; likely stale (29 Jul 2026 date appears erroneous)", dir:"in", deadAt:"2026-08-06T14:21:38Z"},
@@ -94,7 +96,9 @@ const HUB = {
   footMercatoMaghnesAkliouche: {l:"Foot Mercato", u:"https://www.footmercato.net/"},
   footMercatoAnsuFati: {l:"Foot Mercato", u:"https://www.footmercato.net/club/as-monaco/tableau/"},
   scorefrMathysDetourbet: {l:"score.fr", u:"https://news.google.com/rss/articles/CBMizAFBVV95cUxOOVVFazJZbm4tcWI0R3lGMEpfejdjeVI1UXI4R28zUTVPT0RfSzhIQXcxT3VPUEstOWFFM2pTaEtZR3kwTEduc0J6cHJXNVlvTW9ULWl1SHRfcGdYZDAxQjQza0liUkw1cGNXN1VqRjRybDhxRFI4THBFVy16VWtlcy1raTNzdE9TOHNRM1d3anhFNFVqRGpWUlFzLVI1RTdUYW5pRFhsQjdrT1FFV1dOOWZpM0xpdUtucUs3SXlVenlaaFJZVEhzT3pReGs"},
-  yahooActualitsMaghnesAkliouche: {l:"Yahoo Actualités", u:"https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ1BiRU1MRld2RnB5OVNVRjg5N0tTU0ZMalpnZXpsamIzSUpDZkdpSEZKUTJIUXNmN09FVW5JRXpRVWZuYXVHX3VKSWszWnJkbDl4cUFtN2tsNVFQcWxoZjMtYUpranlTQklpcnVLOHNUUDRsUjg1TGNabDQ0dE04V3NjOA"}};
+  yahooActualitsMaghnesAkliouche: {l:"Yahoo Actualités", u:"https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ1BiRU1MRld2RnB5OVNVRjg5N0tTU0ZMalpnZXpsamIzSUpDZkdpSEZKUTJIUXNmN09FVW5JRXpRVWZuYXVHX3VKSWszWnJkbDl4cUFtN2tsNVFQcWxoZjMtYUpranlTQklpcnVLOHNUUDRsUjg1TGNabDQ0dE04V3NjOA"},
+  madeInMonegasqueRomeluLukaku: {l:"MadeInMonegasque", u:"https://news.google.com/rss/articles/CBMi_wFBVV95cUxPb0tkSXhNWGVYanpkbWlqbnNVQThQeVJkYlFVUVRtMllqTmhRQTlXd3VCN29DS2h2VklQMnR6UHEtN1VrUTlfMXlNOU5Fcmk5NjFJTlc2d1VaaDF5NTJiSk83OHFwYWwxNVA1REpYc1UwS1VjejdENllyVFhwR0diOFUyVUw3ODNtdVNXVlJMNFNmNEFuNURxeXhzUmtIZVRuSWJ4N0VEYlhEUTNpX3RGMEduTjB3cE55SG5uZWh0VkZ1VE1rcmlGZmt4OUtmazkzSXN0bkVFclFielhyamd4eHo5Q0RxWTNtRXg0ZE4xZHVYa0pOOW5lcUFseGRGeDg"},
+  lquipeFarsGhedjemis: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxOVF9XQjVDVG5pVjdEVDN1cmM1eFFyVWxhSkRzTVRnYXBkQW9TN0FBQXc3TTZxSGRtVlFscmFtVXNvT1FqaXZOMC1WSWh2YzBoU2ZKQnNOSWlxbDZERmNMWnNtRmZ3aHVVdGQxZ3ZOanJzTG5hbG1GR0RKZDQtaUUxUkZnRWVEbnpIZlVLU2pZeVROeDdVb19zSXF5dUV5ZjFaMk5R"}};
 
 const LINKMAP = {
   "Matthis Abline": ["asmonaco", "gffn-monaco", "yahooSportsMatthisAbline"],
@@ -104,11 +108,13 @@ const LINKMAP = {
   "Simon Adingra": ["gffn-monaco"],
   "Maghnes Akliouche": ["gffn-monaco", "sportfrMaghnesAkliouche", "fabriceHawkinsRMCSportMaghnesAkliouche", "footMercatoMaghnesAkliouche", "yahooActualitsMaghnesAkliouche"],
   "Fares Ghedjemis": ["yahooSportsFaresGhedjemis"],
-  "Folarin Balogun": ["yahooSportsFolarinBalogun"],
+  "Folarin Balogun": ["yahooSportsFolarinBalogun", "madeInMonegasqueRomeluLukaku"],
   "Mathys Detourbet": ["yahooSportsMathysDetourbet", "scorefrMathysDetourbet"],
   "Lamine Camara": ["topMercatoLamineCamara"],
   "Joey Veerman": ["tuttoMercatoWebJoeyVeerman"],
-  "Ansu Fati": ["footMercatoAnsuFati"]};
+  "Ansu Fati": ["footMercatoAnsuFati"],
+  "Romelu Lukaku": ["madeInMonegasqueRomeluLukaku"],
+  "Farès Ghedjemis": ["lquipeFarsGhedjemis"]};
 const WL_LINKMAP = {
   "Maghnes Akliouche": ["gffn-monaco"]
 };

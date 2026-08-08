@@ -36,7 +36,9 @@ const CONFIRMED_IN = [
   {name:"Victor Adeboyejo", sub:"striker", club:"Free", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on free transfer"},
   {name:"Deji Elerewe", sub:"Defender", club:"Lincoln City", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Lincoln City"}
 ];
-const CONFIRMED_OUT = [];
+const CONFIRMED_OUT = [
+  {name:"Jude Arthurs", sub:"Midfielder", club:"Crawley Town", pos:"MID", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Crawley Town"}
+];
 const INCOMING = [
   {name:"Ethon Archer", sub:"· · ·", club:"Luton Town", pos:"·", report:"Signed on loan", src:"On-page", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Existing on-page entry", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
   {name:"Deon Woodman", sub:"· · ·", club:"Wealdstone", pos:"·", report:"Signed", src:"On-page", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"up", note:"Existing on-page entry", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
@@ -66,14 +68,15 @@ const HUB = {
   bBCEthonArcher1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVS0xbFRmeGc3Z1p0NVVTYzdZejBiLWJENWhuVW14LUxGdmdHd193U3hKVEtZREJGaVBlRElkTG1KTU5IOGlGSXRCNFFFcGg2S0s4MGxHVEdjQ2FMUTZOQ2FTcEU0QU0"},
   bBCDejiElerewe1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNnanFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU01mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs?oc=5"},
   bBCJudeArthurs: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02enkxVEctbVd1akVkNmpmcVo3SVRZVWZZYzhGTElYR25mUHZnMXBRT2pfYXhjU0xpX1JLek5XRTBBZFNiREtSUnl6ZFdieUJtUjdXalZyQ2JURTdNZERVdzNYQzZHV2s?oc=5"},
-  bBCDejiElerewe2: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNganFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU01mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs?oc=5"}};
+  bBCDejiElerewe2: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNganFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU01mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs?oc=5"},
+  bBCDejiElerewe3: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNnanFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU05mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs?oc=5"}};
 
 const LINKMAP = {
   "Tiernan Brooks": ["gnews-tiernanbrooks"],
   "Victor Adeboyejo": ["bBCVictorAdeboyejo", "bBCVictorAdeboyejo1", "bBCVictorAdeboyejo2"],
   "Ethon Archer": ["bBCEthonArcher", "bBCVictorAdeboyejo2", "bBCEthonArcher1"],
   "Deon Woodman": ["bBCEthonArcher", "bBCVictorAdeboyejo2", "bBCEthonArcher1"],
-  "Deji Elerewe": ["bBCDejiElerewe", "bBCDejiElerewe1", "bBCDejiElerewe2"],
+  "Deji Elerewe": ["bBCDejiElerewe", "bBCDejiElerewe1", "bBCDejiElerewe2", "bBCDejiElerewe3"],
   "Jude Arthurs": ["bBCJudeArthurs"]};
 const WL_LINKMAP = {};
 

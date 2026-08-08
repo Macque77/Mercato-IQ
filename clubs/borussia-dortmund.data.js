@@ -47,19 +47,21 @@ const CONFIRMED_OUT = [
   {name:"Cole Campbell", sub:"18 · CM · England", to:"permanent to SV Elversberg", club:"SV Elversberg", fee:"~€6m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy midfielder sold to the newly-promoted side."},
   {name:"Salih Özcan", sub:"28 · DM · Turkey/Germany", to:"free to Besiktas", club:"Besiktas", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired; defensive midfielder departs on a free transfer."},
   {name:"Niklas Süle", sub:"30 · CB · Germany", to:"retired", club:"retired", fee:"N/A", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back retires from professional football."},
-  {name:"Jadon Adeyemi", sub:"22 · Germany · W", club:"FC Barcelona", pos:"W", fee:"unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer to Barcelona completed"}
+  {name:"Jadon Adeyemi", sub:"22 · Germany · W", club:"FC Barcelona", pos:"W", fee:"unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer to Barcelona completed"},
+  {name:"Jadon Sancho", sub:"unknown · England · W", club:"unknown", pos:"W", fee:"unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Sixth BVB departure confirmed"}
 ];
 
 const INCOMING = [
   {name:"Mats Wieffer", sub:"24 · CM · Netherlands", club:"AZ Alkmaar", pos:"CM", report:"2 Aug 2026", src:"Sky Deutschland / Christian Falk", tier:2, fee:"€25m", truth:62, prob:45, light:"y", trend:"up", note:"Falk reports Dortmund pursuing Dutch midfielder from AZ Alkmaar. Talks progressing steadily.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"Duplicate entry on page; consolidating"},
-  {name:"Moussa Diaby", sub:"25 · LW · France", club:"Bayer Leverkusen", pos:"LW", report:"1 Aug 2026", src:"Bild / Sky Deutschland", tier:2, fee:"€40m", truth:55, prob:35, light:"y", trend:"flat", note:"German media reports Dortmund as one of several clubs interested in Leverkusen winger. Deal unlikely given Leverkusen's asking price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
+  {name:"Moussa Diaby", sub:"25 · LW · France", club:"Bayer Leverkusen", pos:"LW", report:"1 Aug 2026", src:"Bild / Sky Deutschland", tier:2, fee:"€40m", truth:55, prob:35, light:"y", trend:"flat", note:"German media reports Dortmund as one of several clubs interested in Leverkusen winger. Deal unlikely given Leverkusen's asking price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No fresh snippet confirmation; marking as stale unless new evidence emerges"},
   {name:"Gilberto Mora", sub:"Early-stage interest in Mexican wonderkid", club:"Club Tijuana (Xolos)", pos:"CAM", report:"Dortmund and Benfica have officially reached out to explore signing the highly-rated 18-year-old, in a club long known for developing young talents like Bellingham and Haaland.", src:"Soy Fútbol", tier:3, fee:"Undisclosed", truth:50, prob:15, light:"o", trend:"flat", note:"Very early-stage interest; several European clubs reportedly circling the Mexican international.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"Incomplete snippet; insufficient evidence of active pursuit"},
   {name:"Fisnik Asllani", sub:"On shortlist, but RB Leipzig now favourites", club:"TSG Hoffenheim", pos:"ST", report:"Asllani remains on Dortmund's shortlist of attacking targets and is 'open' to the move, though recent reporting points to RB Leipzig as the frontrunner for the €30m-rated striker.", src:"Yahoo Sports UK", tier:2, fee:"Undisclosed", truth:55, prob:15, light:"o", trend:"flat", note:"Leipzig reported to have overtaken Dortmund in the race for this target.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"Incomplete snippet; no recent substantive update"}
 ];
 
 const OUTGOING = [
   {name:"Yan Couto", sub:"Loan to Como nearing completion", club:"Como 1907", pos:"RB", report:"Couto is now set for a loan move to Serie A side Como, with a purchase option reportedly included after several weeks of difficult negotiations.", src:"Yahoo Sports", tier:2, fee:"Undisclosed", truth:75, prob:80, light:"g", trend:"flat", note:"Described as close to completion, with Como manager Fabregas confirming continued market activity.", lastSeen:"2026-08-04T19:10:50Z", baseProb:80},
-  {name:"Jadon Sancho", sub:"24 · England · W", club:"Manchester United", pos:"W", report:"Sixth BVB departure confirmed", src:"RevierSport", tier:3, fee:"unknown", truth:95, prob:95, light:"g", trend:"flat", note:"Departure confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
+  {name:"Jadon Sancho", sub:"24 · England · W", club:"Manchester United", pos:"W", report:"Sixth BVB departure confirmed", src:"RevierSport", tier:3, fee:"unknown", truth:95, prob:95, light:"g", trend:"flat", note:"Departure confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Jamal Musiala", sub:"unknown · Germany · W", club:"FC Barcelona", pos:"W", report:"Transfer to Barcelona reportedly completed", src:"RevierSport", tier:3, fee:"unknown", truth:50, prob:30, light:"y", trend:"flat", note:"Conflicting reports; requires confirmation", lastSeen:"2026-08-08T18:06:11Z", baseProb:30}
 ];
 const DEAD = [
   {name:"Said El Mala", sub:"Protracted, rocky negotiations with Köln", club:"1. FC Köln", pos:"RW", report:"Talks have repeatedly stalled over the fee, with Köln reportedly ending negotiations after an 'insulting' offer and RB Leipzig and Roma both joining the race for the winger.", src:"Yahoo Sports (Sky Germany feed)", tier:2, fee:"Undisclosed", truth:60, prob:25, light:"o", trend:"flat", note:"Multiple reports of collapsed negotiations; deal now seen as genuinely in doubt with rivals circling.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dir:"in", deadReason:"link went cold", deadAt:"2026-08-06T10:24:32Z"}
@@ -104,7 +106,8 @@ const HUB = {
   skydeKonstantinosKaretsas: {l:"Sky.de", u:"https://news.google.com/rss/articles/CBMizAFBVV95cUxOVmNsNlg5dERSaFEzOFRHaVlWZzlTRnVHMlRRa3BudFRQNHdRb09KYXh6eDBIZ3JaNTRtTFlhWC1aOVZYeHpOS2V1ZWJPSGx2QVFINi1kTk5DVGlLSnJtd3JRdWh6dDVQMWh3UE54Q1FOQmIwRjBKMG95RjBjMTYwcHdBbkN2aXNVNkdhQWxmdXc3NnRxbXZJT3dNYi13Yzctakc0ZTJTNzBqTWZHMUpMUDNtc3hwQlVnQm9iOHphZVFDZ3lIUjZBa2Y4VUY"},
   revierSportJadonSancho: {l:"RevierSport", u:"https://news.google.com/rss/articles/CBMi3wFBVV95cUxPY2UtMVpNbVpuUWRFNGdTUWF3elhuMVFIZ2ZDeWxIUm5iclNkMURJNURoTXcxOTRJUWFCTlR3ZXNJWEtxOXdzYmQ0TzJ2U1VqSnhtc2Fpd1JnTnNZaHNUNmN1bFhVeDNla0xzMGlJRGFRWllPbTBQZlZWS3NyRVhWbWdWckJYbnMxRVVYZ0c5UVpNSl9MWEpIVllBNjR5ZmxpLTA2SjR4TjZaNER1eEI1a1N0bEFvUUo1R05naUljcW82b3lYNHVPUmltSnhBTklDTDl6Wm9mUVJ0V1VsdzZN"},
   absolutFussballMoussaDiaby: {l:"Absolut Fussball", u:"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQX1VNQUVvdFVGaUc1SEY1TDFFbVNfbTdPWHlGVTM3SE5rcUZrckFCOTAxNzNodWhIOGNjNDVpZDA3Wm5aZ2NDc0lMSThkYkdBMlV5bnJWMV9RQWtNQnRhM3JsTDlmM3lyVWNFX1Z0T1dJazFGOHVKZjFETjNienc1Q3VwRU5Mc3RoT2FqQUIyN2xIZ2ZoVjMtZHpXRXg3SV8yZ2ZGVk92d1E3a3VRQi1TVG1MeDRqcnZWM3d6MHBBOEs0WVFhcUZ5MTl6SjMxSFhDRHc"},
-  revierSportJadonAdeyemi: {l:"RevierSport", u:"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTzdIWFowM002NnVmTWlZRnhORDM3SHJmbzZfbzN6aHpsQnNBcGhvcVZfcGxkelgtci1MMndwWkdCYTdMNE9wR1RfY2tiZXFyaERNWVhiSWF5eTlQeTc4cnhBb0k0TEIzUXo3NDZ0dWtJYnotdTd5UEk2Q3NuZHk4eXBwbzRVd1AyQVhrRlpuX1NWMll5R1NTX1ZzYzJlU2VXZVFPQ2lmU0J3T0tVVlptWTR6ajM4bzdUcjNn"}};
+  revierSportJadonAdeyemi: {l:"RevierSport", u:"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTzdIWFowM002NnVmTWlZRnhORDM3SHJmbzZfbzN6aHpsQnNBcGhvcVZfcGxkelgtci1MMndwWkdCYTdMNE9wR1RfY2tiZXFyaERNWVhiSWF5eTlQeTc4cnhBb0k0TEIzUXo3NDZ0dWtJYnotdTd5UEk2Q3NuZHk4eXBwbzRVd1AyQVhrRlpuX1NWMll5R1NTX1ZzYzJlU2VXZVFPQ2lmU0J3T0tVVlptWTR6ajM4bzdUcjNn"},
+  wELTJamalMusiala: {l:"WELT", u:"https://news.google.com/rss/articles/CBMilwJBVV95cUxOVlBmSlhycXFDVTByTllNX19lVk1IWHZsb0FVY0tOY0pvbFhrWEtlaXR2MTF1QlFMTFdoLU9Oa09YQXE5XzJMUUd2clhhaWtXSUlwZHZBRHpnVF9HeEtNRGEzYmdSTmpqY0p2TlY0bzdvTjZ3Ylk5dkZvb3RUQzdmSU9UWThGOTY1cWhXUDhjMUwwcDcxMlBkRjZsQUJWSDh0OXg0cUNrWE1DYUlfVXZOaWJacVdXYzEybE5ZYU9DeFhuSDVJMko3RU5kMjAxNjlNWGhUbjBfb3AwX2RpckNSbDN0SFZzNG12Wk9KRnpxdTY0WHhSd09BS2tVaGx4Sl9vSmFQdUpkeGdhYzR2eTFPVDJFcW1BM28"}};
 
 const LINKMAP = {
   "Mats Wieffer": ["skydeutschland", "falk"],
@@ -122,7 +125,8 @@ const LINKMAP = {
   "Fisnik Asllani": ["yahooSportsUKFisnikAsllani"],
   "Yan Couto": ["yahooSportsYanCouto"],
   "Jadon Sancho": ["revierSportJadonSancho"],
-  "Jadon Adeyemi": ["revierSportJadonAdeyemi"]};
+  "Jadon Adeyemi": ["revierSportJadonAdeyemi"],
+  "Jamal Musiala": ["wELTJamalMusiala"]};
 const WL_LINKMAP = {
   "Mats Wieffer": ["gnews-matswieffer"]
 };

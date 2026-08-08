@@ -46,7 +46,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Souleymane Faye", sub:"Sporting CP · Defender", club:"Sporting CP", pos:"D", report:"Loan from Sporting CP", src:"L'Équipe", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Confirmed loan arrival", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
+  {name:"Souleymane Faye", sub:"· · ·", club:"Sporting CP", pos:"·", report:"Loan from Sporting CP confirmed", src:"L'Équipe / MadeInFOOT", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"flat", note:"Third signing of the window; talent seeking confirmation", lastSeen:"2026-08-08T18:06:11Z", baseProb:100}
 ];
 
 const OUTGOING = [

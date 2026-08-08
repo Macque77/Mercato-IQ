@@ -40,7 +40,7 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [
   {name:"Gbemi Arubi", sub:"Dundalk · F", club:"Dundalk", pos:"F", report:"Transfer to Burton Albion confirmed from Dundalk", src:"Dundalk FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation from Dundalk FC", lastSeen:"2026-08-08T04:21:31Z", baseProb:100, dead:true, deadReason:"Transfer completed and confirmed; moved to confirmed_in"},
-  {name:"Brad Collins", sub:"Coventry City · GK", club:"Coventry City", pos:"GK", report:"Burton Albion targeting permanent deal for Coventry keeper", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:75, prob:60, light:"g", trend:"flat", note:"Loan player, permanent move being pursued", lastSeen:"2026-08-08T16:04:56Z", baseProb:60}
+  {name:"Brad Collins", sub:"Coventry City · GK", club:"Coventry City", pos:"GK", report:"Burton Albion targeting permanent deal for Coventry keeper", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"up", note:"Loan player; Burton seeking permanent transfer", lastSeen:"2026-08-08T18:06:10Z", baseProb:65}
 ];
 const OUTGOING = [
   {name:"Jake Beesley", sub:"Bradford City · Forward", club:"Bradford City", pos:"FW", report:"Jake Beesley joins Bradford City from Burton Albion", src:"Burton Albion FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Move confirmed by Burton Albion", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}

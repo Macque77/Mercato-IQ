@@ -30,14 +30,19 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
-const CONFIRMED_OUT = [];
+const CONFIRMED_IN = [
+  {name:"Mickaël Le Bihan", sub:"Midfielder · France · M", club:"AJ Auxerre", pos:"M", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from AJ Auxerre for three seasons"},
+  {name:"Glody Ngonda", sub:"Unknown · DR Congo · Unknown", club:"VClub", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from VClub to Dijon FCO"}
+];
+const CONFIRMED_OUT = [
+  {name:"Eliott Sorin", sub:"Unknown · France · Unknown", club:"AS Vitré", pos:"Unknown", fee:"Undisclosed", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined AS Vitré (CFA), rejoined his father"}
+];
 const INCOMING = [
   {name:"Mickaël Le Bihan", sub:"· France · M", club:"AJ Auxerre", pos:"M", report:"Transfer to Dijon FCO for three seasons", src:"Le Progrès", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"up", note:"Confirmed from Auxerre on a three-year deal", lastSeen:"2026-08-08T07:40:33Z", baseProb:90},
   {name:"Glody Ngonda", sub:"· Congo (DR) · FW", club:"VClub", pos:"FW", report:"Transfer from VClub to Dijon FCO", src:"Foot RDC", tier:3, fee:"Undisclosed", truth:80, prob:85, light:"g", trend:"up", note:"VClub confirmed significant fee received", lastSeen:"2026-08-08T07:40:33Z", baseProb:85}
 ];
 const OUTGOING = [
-  {name:"Moussa Konaté", sub:"· · ·", club:"Dijon FCO", pos:"Unknown", report:"Moving to Saudi Arabia", src:"wiwsport.com", tier:3, fee:"Undisclosed", truth:80, prob:85, light:"g", trend:"up", note:"Saudi Arabian move confirmed", lastSeen:"2026-08-08T07:40:33Z", baseProb:85},
+  {name:"Moussa Konaté", sub:"· · ·", club:"Dijon FCO", pos:"Unknown", report:"Moving to Saudi Arabia", src:"wiwsport.com", tier:3, fee:"Undisclosed", truth:80, prob:85, light:"g", trend:"up", note:"Saudi Arabian move confirmed", lastSeen:"2026-08-08T07:40:33Z", baseProb:85, dead:true, deadReason:"Move to Saudi Arabia confirmed as outgoing"},
   {name:"Eliott Sorin", sub:"· France · ·", club:"Dijon FCO", pos:"Unknown", report:"Joins AS Vitré (CFA)", src:"Foot Amateur", tier:3, fee:"Undisclosed", truth:75, prob:80, light:"g", trend:"flat", note:"Departure to CFA club AS Vitré, joins his father", lastSeen:"2026-08-08T07:40:33Z", baseProb:80}
 ];
 const RISERS = [];

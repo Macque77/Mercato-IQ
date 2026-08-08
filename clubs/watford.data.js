@@ -37,13 +37,13 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Martin Payero", sub:"28 · Argentina · Midfielder", club:"Udinese", pos:"Midfielder", report:"Watford close in on transfer for Udinese midfielder", src:"BBC", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks reported", lastSeen:"2026-08-08T16:04:57Z", baseProb:70},
+  {name:"Martin Payero", sub:"28 · Argentina · Midfielder", club:"Udinese", pos:"Midfielder", report:"Watford close in on transfer for Udinese midfielder", src:"BBC", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks reported", lastSeen:"2026-08-08T18:06:11Z", baseProb:70},
   {name:"Federico Ravaglia", sub:"22 · Italy · GK", club:"", pos:"Goalkeeper", report:"Confirmed signing", src:"OneFootball", tier:3, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
-  {name:"Stephy Mavididi", sub:"24 · England · Forward", club:"Leicester City", pos:"Forward", report:"Watford and Derby County Add Leicester's Stephy Mavididi to Transfer Shortlist", src:"SportsBoom UK", tier:3, fee:"", truth:45, prob:35, light:"y", trend:"flat", note:"On shortlist alongside Derby County", lastSeen:"2026-08-08T16:04:57Z", baseProb:35}
+  {name:"Stephy Mavididi", sub:"23 · England · Winger", club:"Leicester City", pos:"Winger", report:"Watford and Derby County add Leicester's Stephy Mavididi to transfer shortlist", src:"SportsBoom UK", tier:3, fee:"", truth:55, prob:45, light:"y", trend:"up", note:"On shortlist alongside Derby County", lastSeen:"2026-08-08T18:06:11Z", baseProb:45}
 ];
 const OUTGOING = [
-  {name:"Nestory Irankunda", sub:"21 · Australia · Forward", club:"Watford", pos:"Forward", report:"Watford accept Sporting's $24.5m offer for Socceroos star", src:"football360.com.au", tier:3, fee:"$24.5m", truth:85, prob:80, light:"g", trend:"flat", note:"Offer accepted; transfer talks advancing", lastSeen:"2026-08-08T16:04:57Z", baseProb:80},
-  {name:"Imran Louza", sub:"25 · Morocco · Midfielder", club:"Watford", pos:"Midfielder", report:"Watford value Imran Louza at €10 Million Amid Growing Transfer Interest", src:"Morocco World News", tier:3, fee:"€10m", truth:65, prob:55, light:"g", trend:"up", note:"Valuation set; multiple interested clubs", lastSeen:"2026-08-08T16:04:57Z", baseProb:55}
+  {name:"Nestory Irankunda", sub:"21 · Australia · Winger", club:"Watford", pos:"Winger", report:"Watford accept Sporting's $24.5m offer for Socceroos star", src:"Football360.com.au", tier:3, fee:"$24.5m", truth:85, prob:80, light:"g", trend:"flat", note:"Deal accepted; transfer talks progressing", lastSeen:"2026-08-08T18:06:11Z", baseProb:80},
+  {name:"Imran Louza", sub:"25 · Morocco · Midfielder", club:"Watford", pos:"Midfielder", report:"Watford value Imran Louza at €10 million amid growing transfer interest", src:"Morocco World News", tier:3, fee:"€10m", truth:65, prob:55, light:"g", trend:"flat", note:"Valuation set; interest from other clubs", lastSeen:"2026-08-08T18:06:11Z", baseProb:55}
 ];
 const RISERS = [];
 const FALLERS = [];

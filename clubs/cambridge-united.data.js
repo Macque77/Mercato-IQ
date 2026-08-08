@@ -41,10 +41,12 @@ const INCOMING = [
   {name:"Callum Stead", sub:"Barnet · Striker", club:"Barnet", pos:"ST", report:"Signed as first summer signing", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"First summer signing confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
   {name:"Callum Perry", sub:"Coventry City · ", club:"Coventry City", pos:"Unknown", report:"Season-long loan from Coventry City", src:"The Coventry Observer", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Season-long loan confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
   {name:"Patrick Bauer", sub:"AFC Wimbledon · Defender", club:"AFC Wimbledon", pos:"DEF", report:"Signed from AFC Wimbledon", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Defender signed confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
-  {name:"Sean Raggett", sub:"Rotherham United · Defender", club:"Rotherham United", pos:"DEF", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Defender loan confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100}
+  {name:"Sean Raggett", sub:"Rotherham United · Defender", club:"Rotherham United", pos:"DEF", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Defender loan confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"Heath", sub:"", club:"", pos:"", report:"Heath joins the ranks", src:"Google News", tier:3, fee:"", truth:85, prob:80, light:"g", trend:"flat", note:"New signing announced", lastSeen:"2026-08-08T18:06:10Z", baseProb:80},
+  {name:"Adam Mayor", sub:"", club:"", pos:"", report:"Signs until end of season", src:"Google News", tier:3, fee:"", truth:85, prob:90, light:"g", trend:"flat", note:"Short-term signing", lastSeen:"2026-08-08T18:06:10Z", baseProb:90}
 ];
 const OUTGOING = [
-  {name:"Maldini Kacurri", sub:"Arsenal · Defender", club:"Arsenal", pos:"DEF", report:"Cambridge United joining chase for Albanian defender (implies departure interest)", src:"SportsBoom UK", tier:3, fee:"Unknown", truth:45, prob:35, light:"y", trend:"up", note:"Cambridge United reported to be in chase; unclear if player is leaving or incoming target", lastSeen:"2026-08-08T16:04:56Z", baseProb:35}
+  {name:"Maldini Kacurri", sub:"Arsenal · Defender", club:"Arsenal", pos:"Defender", report:"Cambridge United join chase for Arsenal's Albanian Defender", src:"Google News", tier:3, fee:"Unknown", truth:60, prob:35, light:"y", trend:"flat", note:"Linked with a move away; reported as target for other clubs", lastSeen:"2026-08-08T18:06:10Z", baseProb:35}
 ];
 const RISERS = [];
 const FALLERS = [];

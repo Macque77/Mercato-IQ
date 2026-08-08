@@ -35,11 +35,9 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Nicolas Valentini", sub:"25 · CB · Argentina", club:"Fiorentina", pos:"CB", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:25, light:'o', trend:'flat', note:"Explicitly framed as United exploring with no official approach lodged yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"No recent snippet support; rumour older than 2 weeks with no fresh news"},
-  {name:"Kalvin Phillips", sub:"30 · MF · England", club:"Manchester City", pos:"MF", report:"~1 wk ago", src:"City Xtra / The Star", tier:3, fee:"Loan", truth:55, prob:35, light:'y', trend:'up', note:"Player reportedly keen and City want to trim wages, gives this more legs than the average kite-flying loan link.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"Snippet reference is generic commentary ('Chris Wilder has already made Sheffield United transfer priority clear amid Man City link - that isn't Kalvin Phillips'); no confirmation of deal completion or fresh loan details"},
-  {name:"Rabbi Matondo", sub:"W", club:"SK Brann", pos:"W", report:"~2 wks ago", src:"The Star", tier:3, fee:"Undisclosed", truth:45, prob:20, light:'o', trend:'flat', note:"Described as under consideration only, nothing concrete.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent snippet support; rumour older than 2 weeks with no fresh news"},
+  {name:"Kalvin Phillips", sub:"Unknown · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Loan move reported close", src:"Yahoo Sports via Google News", tier:3, fee:"Loan", truth:70, prob:70, light:"g", trend:"up", note:"Phillips close to Sheffield United loan deal", lastSeen:"2026-08-08T18:06:10Z", baseProb:70},
   {name:"Gus Hamer", sub:"Unknown · Unknown · Unknown", club:"Coventry City", pos:"Unknown", report:"Sheffield United braced for second bid from Coventry City", src:"Coventry Telegraph", tier:3, fee:"Unknown", truth:65, prob:55, light:"g", trend:"flat", note:"Second bid expected; ball in Coventry's court", lastSeen:"2026-08-07T01:42:32Z", baseProb:55, dead:true, deadReason:"no longer a current link"},
-  {name:"Gustavo Hamer", sub:"25 · Netherlands · M", club:"Coventry City", pos:"M", report:"Coventry City see latest bid for Gustavo Hamer rejected by Sheffield United", src:"The Coventry Observer", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Multiple bids rejected; player remains at Coventry", lastSeen:"2026-08-08T16:04:57Z", baseProb:35}
+  {name:"Gustavo Hamer", sub:"Unknown · Unknown · Unknown", club:"Coventry City", pos:"Unknown", report:"Coventry latest bid rejected by Sheffield United", src:"The Coventry Observer via Google News", tier:3, fee:"Unknown", truth:60, prob:40, light:"y", trend:"up", note:"Coventry City's latest bid for Gustavo Hamer rejected; Sheffield United resisting sale", lastSeen:"2026-08-08T18:06:10Z", baseProb:40}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -55,15 +53,17 @@ const HUB = {
   "src-cityxtra": {l:"City Xtra", u:"https://news.google.com/search?q=City%20Xtra%20Sheffield%20United%20transfer&hl=en-GB&gl=GB"},
   coventryTelegraphGusHamer: {l:"Coventry Telegraph", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxPUU81NVR5aFN4M25HaUpwWVRPNm9CVTIyTF9lWVUzd1Q3ZU11dExQT2RIaXVnS3FKX1lHdXZCMEI3QWlEcUVfTnNSaUV6ZGJzUzhiNGM4b0MxajR1NTRsSng3cnlja2pOU2piUmctUVpwYWlkOUNiN2hlRG1MRjliOWNsQm9BUHlUUWJYN25SSm1CVGd6bkgtN1M2OXROZ1dzMDlGUlpId051ZV9SMjhDMmptX1Q"},
   theCoventryObserverGustavoHamer: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPdndtS1M1UEJvd29LcGdwOC1QRE9Pd3R2b2lpcDZVWVBOc1UxWXBidlpuYnlhYjJTZzBEXy0tMDJfLTU4QnJEODRJTTluSEQtRk5DUUxMWXN6RWtzejhxNHBRdGpzTTNCeXlON3k3UjZTVGpsV1EzTHJ0ekNZVkxhSkhyV2Vjc0dhb182QjE3ZFYwXzc1eUlUczlQakFDNmxaa3JraW52MGFvUkxiSUhtMUNvdFJqb29XMXlLOVM2QQ?oc=5"},
-  theCoventryObserverGustavoHamer1: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPdndtS1M1UEJvd29LcGdwOC1QRE9Pd3R2b2lpcDZVWVBOc1UxWXBidlpuYnlhYjJTZzBEXy0tMDJfLTU4QnJEODRJTTluSEQtRk5DUUxMWXN6RWtzejhxNHBRdGpzTTNCeXlON3k3UjZTVGpsV1EzTHJ0ekNZVkxhSkhyV2Vjc0dhb282QjE3ZFYwXzc1eUlUczlQakFDNmxaa3JraW52MGFvUkxiSUhtMUNvdFJqb29XMXlLOVM2QQ?oc=5"}};
+  theCoventryObserverGustavoHamer1: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPdndtS1M1UEJvd29LcGdwOC1QRE9Pd3R2b2lpcDZVWVBOc1UxWXBidlpuYnlhYjJTZzBEXy0tMDJfLTU4QnJEODRJTTluSEQtRk5DUUxMWXN6RWtzejhxNHBRdGpzTTNCeXlON3k3UjZTVGpsV1EzTHJ0ekNZVkxhSkhyV2Vjc0dhb282QjE3ZFYwXzc1eUlUczlQakFDNmxaa3JraW52MGFvUkxiSUhtMUNvdFJqb29XMXlLOVM2QQ?oc=5"},
+  yahooSportsKalvinPhillips: {l:"Yahoo Sports", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxOTlNDYWViUHdRX1E5VzZxYnZQVEJNQUdJY3FYZ05QM0tBcy1kaGlva2E3TUo4NmExTFh1QW9WQ21zTTZMTGR4TzVLTFdvbmRhTTBpMk96UUx5dDdQbzlVWDBNZXkwWDZ4Z1BEMldwQ19sS1IwYlZwbkhfNVh3UWp3Tk8wSnQ4N0M1dFp1bzFTem8"},
+  theCoventryObserverGustavoHamer2: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPdndtS1M1UEJvd29LcGdwOC1QRE9Pd3R2b2lpcDZVWVBOc1UxWXBidlpuYnlhYjJTZzBEXy0tMDJfLTU4QnJEODRJTTluSEQtRk5DUUxMWXN6RWtzejhxNHBRdGpzTTNCeXlON3k3UjZTVGpsV1EzTHJ0ekNZVkxhSkhyV2Vjc0dhb282QjE3ZFYwXzc1eUlUczlQakFDNmxaa3JraW52MGFvUkxiSUhtMUNvdFJqb29XMXlLOVM2QQ"}};
 
 const LINKMAP = {
   "Matt Doherty": ["gnews-mattdoherty"],
   "Nicolas Valentini": ["thestar"],
-  "Kalvin Phillips": ["src-cityxtra", "thestar"],
+  "Kalvin Phillips": ["src-cityxtra", "thestar", "yahooSportsKalvinPhillips"],
   "Rabbi Matondo": ["thestar"],
   "Gus Hamer": ["coventryTelegraphGusHamer"],
-  "Gustavo Hamer": ["theCoventryObserverGustavoHamer", "theCoventryObserverGustavoHamer1"]};
+  "Gustavo Hamer": ["theCoventryObserverGustavoHamer", "theCoventryObserverGustavoHamer1", "theCoventryObserverGustavoHamer2"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

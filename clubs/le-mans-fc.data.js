@@ -44,12 +44,13 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Rayan Bamba", sub:"22-year-old defender, returning from loan spell at Nancy", club:"Stade Rennais", pos:"RB", report:"Le Mans, newly promoted to Ligue 1, are set to take Rennes right-back Rayan Bamba on loan again to add competition at right-back after his 20-appearance Ligue 2 loan at Nancy.", src:"Foot Mercato", tier:2, fee:"Loan", truth:70, prob:65, light:"g", trend:"flat", note:"Reported alongside separate Actu.fr coverage of Le Mans needing right-back depth.", lastSeen:"2026-08-04T19:10:50Z", baseProb:65, dead:true, deadReason:"Existing rumour without fresh snippet confirmation; no materially new information in recent snippets"},
   {name:"Louis Mafouta", sub:"24 · France · F", club:"Guingamp", pos:"Attacker", report:"Official arrival from Guingamp until 2028", src:"L'Équipe", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal officially confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
   {name:"Yasser Larouci", sub:"24 · France · D", club:"Liverpool", pos:"Left-back", report:"Experienced left-back signing confirmed", src:"Ouest-France", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal officially announced", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Dame Gueye", sub:"unknown · unknown · Forward", club:"Le Mans FC", pos:"Forward", report:"Attacker attracting interest from several clubs", src:"MadeInFOOT", tier:3, fee:"unknown", truth:60, prob:45, light:"y", trend:"flat", note:"Multiple clubs reported interested; no concrete offer details", lastSeen:"2026-08-08T18:06:11Z", baseProb:45}
+];
 
 const RISERS = [
   {ar:"⬆", t:"<b>Larouci signs as a free agent</b>: former Liverpool left-back arrives on a three-year deal."},
@@ -75,14 +76,17 @@ const HUB = {
   ouestFranceLouisMafouta: {l:"Ouest-France", u:"https://www.ouest-france.fr/sport/football/le-mans-fc/mercato-le-mans-fc-louis-mafouta-sur-le-depart-a-guingamp-et-en-route-vers-la-ligue-1-459503cc-7c68-11f1-a3cc-61ee167b6bba"},
   maxifootDaoudaTraore: {l:"Maxifoot", u:"https://www.msn.com/fr-fr/sport/football/mercato-le-mans-daouda-traor%C3%A9-arrive-en-pr%C3%AAt/ar-AA29fAz8"},
   lquipeLouisMafouta: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPb2JxaEJrZVd2ZnExOGlFRElhWDJHMkwzaExGTFJDQ3dEcmxsRnhUUW9hZENIQTdlWGo5U2M1TzlwTzlWT3FaNlh0UlBtWDVCSVZpVE9tMkcwOTVmQ2I2X2xPMWtlcl8yM0tvVnp3ZGtMWUx2WDhnZ3NscUtOMXlhX0g3YzB1TElRSFN4TFJnejJ5cktDUjB0Z3I3NHBzZmpiMTdSSm9aZXk1amtzVlZ6Rk5tOUhNY1gzVmdUY2NaVXRxU0cwcVJhY3IyMXF4YUVFekVvRWRhUXB5NEk"},
-  ouestFranceYasserLarouci: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi-AFBVV95cUxOQS1BWXhkc0ZVNzRhRmVFLVpXdWZSRUlrbl9PWTFZeVM0YV9OLVhXUU5MZVBVOEJGaWhCdTA0aEc3djYzRmpuTGRjY0N2ZS1zNm13MFlvTkRoZFpTQ05fWWtXOXB1VHJ4MklaaU9VejR4WXFFZ3RRbEVBeXE0cUtxeFZkTktrWktwbEctX0s4Ukp0dEl2bUpKNXo4OF9NMW5pQXlFajBZektBZ0dJNjE3cXBtWmFBSVdod1p6andmVmRNYm8zb05KVGlBU1hFVUxNemZQRnQ3b3gzbS16cDdQUVU0NTduclhPeXdrUWJBU0hiRHRYUnhmQQ"}};
+  ouestFranceYasserLarouci: {l:"Ouest-France", u:"https://news.google.com/rss/articles/CBMi-AFBVV95cUxOQS1BWXhkc0ZVNzRhRmVFLVpXdWZSRUlrbl9PWTFZeVM0YV9OLVhXUU5MZVBVOEJGaWhCdTA0aEc3djYzRmpuTGRjY0N2ZS1zNm13MFlvTkRoZFpTQ05fWWtXOXB1VHJ4MklaaU9VejR4WXFFZ3RRbEVBeXE0cUtxeFZkTktrWktwbEctX0s4Ukp0dEl2bUpKNXo4OF9NMW5pQXlFajBZektBZ0dJNjE3cXBtWmFBSVdod1p6andmVmRNYm8zb05KVGlBU1hFVUxNemZQRnQ3b3gzbS16cDdQUVU0NTduclhPeXdrUWJBU0hiRHRYUnhmQQ"},
+  unknownRayanBamba: {l:"unknown", u:"unknown"},
+  madeInFOOTDameGueye: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi3gFBVV95cUxPRTJfZHJGUEYtaE5MbWhfYWxQNlVzbFdEZnVNSkVSYXd3NXFnQjRLYjNJR3l4enI2b1ZqV3NiUXJpdFVBUkRfZVBXeXJYejVhcDBNZXNfVE5xcUJ2VDJnODhBUGFCU01Hc3RBQ0dwdHYwbWloQkNxVVhwOVRXZFVDelF3RWhLUGk3MnpyRldTX3BnSUNpRGtvNzJ0TWt5UndZZDJLN0U2S3d0OG1YaWJTY1B0Rl9sRGFNemxyc2tkdk45cVFUSzdieDlXdkhrZXJWWVZTc1NzZkZYeWRNMmc"}};
 
 const LINKMAP = {
   "Yasser Larouci": ["gffn-lemans", "ouestFranceYasserLarouci"],
   "Louis Mafouta": ["ligue1-lemans", "ouestFranceLouisMafouta", "lquipeLouisMafouta"],
   "Billal Brahimi": ["ligue1-lemans"],
-  "Rayan Bamba": ["actufrRayanBamba"],
-  "Daouda Traore": ["maxifootDaoudaTraore"]};
+  "Rayan Bamba": ["actufrRayanBamba", "unknownRayanBamba"],
+  "Daouda Traore": ["maxifootDaoudaTraore"],
+  "Dame Gueye": ["madeInFOOTDameGueye"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
