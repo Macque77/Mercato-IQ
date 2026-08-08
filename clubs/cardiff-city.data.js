@@ -32,13 +32,12 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Omari Kellyman", sub:"19 · AM · England", club:"Chelsea", pos:"AM", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Cardiff's third summer signing under Brian Barry-Murphy, on the record with player quotes already given."},
-  {name:"Jack Moylan", sub:"24 · Republic of Ireland · AM", club:"Lincoln City", pos:"Attacking midfield", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by Cardiff. The attacking midfielder has signed a four-year deal in South Wales on a permanent transfer, ending a slow start to the Bluebirds' window after promotion. He scored 12 goals as Lincoln won League One."}
+  {name:"Jack Moylan", sub:"24 · Republic of Ireland · AM", club:"Lincoln City", pos:"Attacking midfield", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Announced by Cardiff. The attacking midfielder has signed a four-year deal in South Wales on a permanent transfer, ending a slow start to the Bluebirds' window after promotion. He scored 12 goals as Lincoln won League One."},
+  {name:"Nathan Trott", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer completed"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [];
-const OUTGOING = [
-  {name:"Kion Etete", sub:"unknown · unknown · unknown", club:"Cardiff City", pos:"unknown", report:"New club keen on Kion Etete", src:"Wales Online", tier:3, fee:"unknown", truth:55, prob:50, light:"y", trend:"flat", note:"Interest from another club reported; transfer under discussion", lastSeen:"2026-08-08T11:19:01Z", baseProb:50}
-];
+const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];

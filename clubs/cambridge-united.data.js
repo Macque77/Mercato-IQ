@@ -30,16 +30,23 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Callum Stead", sub:"", club:"Barnet", pos:"Striker", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as first summer signing"},
+  {name:"Callum Perry", sub:"", club:"Coventry City", pos:"", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan"},
+  {name:"Patrick Bauer", sub:"", club:"AFC Wimbledon", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from AFC Wimbledon"},
+  {name:"Sean Raggett", sub:"", club:"Rotherham United", pos:"Defender", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan signing"}
+];
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Callum Stead", sub:"unknown · unknown · Striker", club:"Barnet", pos:"Striker", report:"Signed as first summer signing", src:"BBC", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed signing from Barnet", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
   {name:"Callum Perry", sub:"unknown · unknown · unknown", club:"Coventry City", pos:"unknown", report:"Season-long loan from Coventry City", src:"The Coventry Observer", tier:3, fee:"Loan", truth:95, prob:95, light:"g", trend:"down", note:"Season-long loan confirmed", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
   {name:"Patrick Bauer", sub:"unknown · unknown · Defender", club:"AFC Wimbledon", pos:"Defender", report:"Signed from AFC Wimbledon", src:"BBC", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed signing from AFC Wimbledon", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
-  {name:"Sean Raggett", sub:"unknown · unknown · Defender", club:"Rotherham United", pos:"Defender", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed loan signing", lastSeen:"2026-08-08T11:19:01Z", baseProb:95}
+  {name:"Sean Raggett", sub:"unknown · unknown · Defender", club:"Rotherham United", pos:"Defender", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed loan signing", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
+  {name:"Heath", sub:"", club:"", pos:"", report:"Joins Cambridge United", src:"Google News", tier:3, fee:"", truth:70, prob:80, light:"g", trend:"flat", note:"Snippet title only; full details unclear from headline alone", lastSeen:"2026-08-08T14:10:31Z", baseProb:80},
+  {name:"Adam Mayor", sub:"", club:"", pos:"", report:"Signs until end of season", src:"Google News", tier:3, fee:"", truth:75, prob:85, light:"g", trend:"flat", note:"Short-term signing confirmed by club", lastSeen:"2026-08-08T14:10:31Z", baseProb:85}
 ];
 const OUTGOING = [
-  {name:"Maldini Kacurri", sub:"unknown · Albanian · Defender", club:"Arsenal", pos:"Defender", report:"Cambridge United joining chase (implies departure sought)", src:"SportsBoom UK", tier:3, fee:"unknown", truth:40, prob:30, light:"y", trend:"up", note:"Rumour of transfer chase; unclear if player is leaving or if Cambridge is just interested in signing him from elsewhere", lastSeen:"2026-08-08T11:19:01Z", baseProb:30}
+  {name:"Maldini Kacurri", sub:"unknown · Albanian · Defender", club:"Arsenal", pos:"Defender", report:"Cambridge United joining chase (implies departure sought)", src:"SportsBoom UK", tier:3, fee:"unknown", truth:40, prob:30, light:"y", trend:"up", note:"Rumour of transfer chase; unclear if player is leaving or if Cambridge is just interested in signing him from elsewhere", lastSeen:"2026-08-08T11:19:01Z", baseProb:30, dead:true, deadReason:"Snippet indicates Cambridge United are chasing him (incoming interest), not a departure; misclassified on page as outgoing"}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -55,16 +62,23 @@ const HUB = {
   bBCPatrickBauer: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5qLXhEZEhXQUk0MmYydk1hMFdCRXFqSjVzY0VrQ3dwN1hFbDc2ZlA2dktXQUhVS3BYUDZreWFPT3ZZM09uTW14UHYtX204RHRjQ00wYXFaSldGTm9mZ05CeUtXaFFkb0U?oc=5"},
   bBCSeanRaggett: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZV050ZzZIWkJjNm5hYUkxTmNRanF2enVuLXNqTGxWSEtvQ21zUmhDanRRWTBKRWpudnJvOTZObnJiSEI0QkM5bFRpbWUtUFVqS19PVW9xQ1J4ZVpuRWpMRWxXbE1DQk0?oc=5"},
   cambridgeUnitedAdamMayor: {l:"Cambridge United", u:"https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZTFRJTXB0aE1pU2hjbjRxRmpwZF9YYm42UDZEUHpvUDhmaTJ0dnRnczRUaUhGQVVNWXpVaVdJSnZBelkyTEphRUtvSTNNUktZcnJPUk1EYi1XSUtjX2ZEbVJoNlFWWUMtV2JzQjNpbHpPWDNtY0wya0ZB?oc=5"},
-  sportsboomcoukMaldiniKacurri: {l:"sportsboom.co.uk", u:"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQSEhEdTJtcy1mNmZGUzhEbU5aUGRkYXhibnNNdmdXVXo3R21LXzVwdHp6bFBudjdBRWtwWmxmUVhoS0d2VENfRjFjZ0N1QktUSkg3MVdZQlJmV2wyQ3NvVTJhWHN4RTZOM2ZmYm5tTlNUQk9TVXRYUFA2d0hVRzBfOV93SHhYZ0tRSW1TUDhwZ3NaT2xKdnpDMkFxeWpqdWswRW1FZjIxS2J6cXBTSzh4LWVMbENpdlJNV1RDZFYxcGxwbWk5cHYzV091ak9ySEQ0NU9RN281ZHc?oc=5"}};
+  sportsboomcoukMaldiniKacurri: {l:"sportsboom.co.uk", u:"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQSEhEdTJtcy1mNmZGUzhEbU5aUGRkYXhibnNNdmdXVXo3R21LXzVwdHp6bFBudjdBRWtwWmxmUVhoS0d2VENfRjFjZ0N1QktUSkg3MVdZQlJmV2wyQ3NvVTJhWHN4RTZOM2ZmYm5tTlNUQk9TVXRYUFA2d0hVRzBfOV93SHhYZ0tRSW1TUDhwZ3NaT2xKdnpDMkFxeWpqdWswRW1FZjIxS2J6cXBTSzh4LWVMbENpdlJNV1RDZFYxcGxwbWk5cHYzV091ak9ySEQ0NU9RN281ZHc?oc=5"},
+  cambridgeUnitedGoogleNewsHeath: {l:"Cambridge United (Google News)", u:"https://news.google.com/rss/articles/CBMiZEFVX3lxTE9LZTlJLXV0QzRMdzZoR1F1azlCVjExeGRvSVA4bnNwMWdnLVNJUkdXeE8yeXZjQ1ZTLWoyTlRCVUdZbTVmT05iMmZvd24zdC1iR3Z3OHFwLWlSVk5xX3E5cVFvcEk"},
+  cambridgeUnitedGoogleNewsAdamMayor: {l:"Cambridge United (Google News)", u:"https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZTFRJTXB0aE1pU2hjbjRxRmpwZF9YYm42UDZEUHpvUDhmaTJ0dnRnczRUaUhGQVVNWXpVaVdJSnZBelkyTEphRUtvSTNNUktZcnJPUk1EYi1XSUtjX2ZEbVJoNlFWWUMtV2JzQjNpbHpPWDNtY0wya0ZB"},
+  bBCGoogleNewsCallumStead: {l:"BBC (Google News)", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15bmpfQmduNVRYU1BORjd6MEFqRnZPMzRjdlNUVGhET0ZHM1kzUTZ5NDktanVkX0N6aUJpOHhVZU9RWlFuMHVGeHJYektVaG11OWlDNDBFa3A5aUZiWDZxci1rS1ExV00"},
+  theCoventryObserverGoogleNewsCallumPerry: {l:"The Coventry Observer (Google News)", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxNSlE3bGlTcFZrQU0zUGhqczNJSUdoVG9GLWZ3X19jcjlXQS1HeXpKN19oeVJxMWtzS1NheVc0QnEtV1FLaWp3U0xieVpMM09tM0Nza0hfdGt3bmk2UmRna1VKd3VrODgtWlV0NTFFeXpGRmFGWVZHUGlHRzA2Y2Uzc1h1bnBSbGdBNnkzQ3hTMnNMLWoxelM0MnczN3EwUXN5MUc1d2pnbHBFMVBsd2NtXzhzbFI4dFZiUFI5dGJZUHc3YU5I"},
+  bBCGoogleNewsPatrickBauer: {l:"BBC (Google News)", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5qLXhEZEhXQUk0MmYydk1hMFdCRXFqSjVzY0VrQ3dwN1hFbDc2ZlA2dktXQUhVS3BYUDZreWFPT3ZZM09uTW14UHYtX204RHRjQ00wYXFaSldGTm9mZ05CeUtXaFFkb0U"},
+  bBCGoogleNewsSeanRaggett: {l:"BBC (Google News)", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZV050ZzZIWkJjNm5hYUkxTmNRanF2enVuLXNqTGxWSEtvQ21zUmhDanRRWTBKRWpudnJvOTZObnJiSEI0QkM5bFRpbWUtUFVqS19PVW9xQ1J4ZVpuRWpMRWxXbE1DQk0"}};
 
 const LINKMAP = {
   "Luke Berry": ["flw"],
-  "Callum Stead": ["bBCCallumStead"],
-  "Callum Perry": ["theCoventryObserverCallumPerry"],
-  "Patrick Bauer": ["bBCPatrickBauer"],
-  "Sean Raggett": ["bBCSeanRaggett"],
-  "Adam Mayor": ["cambridgeUnitedAdamMayor"],
-  "Maldini Kacurri": ["sportsboomcoukMaldiniKacurri"]};
+  "Callum Stead": ["bBCCallumStead", "bBCGoogleNewsCallumStead"],
+  "Callum Perry": ["theCoventryObserverCallumPerry", "theCoventryObserverGoogleNewsCallumPerry"],
+  "Patrick Bauer": ["bBCPatrickBauer", "bBCGoogleNewsPatrickBauer"],
+  "Sean Raggett": ["bBCSeanRaggett", "bBCGoogleNewsSeanRaggett"],
+  "Adam Mayor": ["cambridgeUnitedAdamMayor", "cambridgeUnitedGoogleNewsAdamMayor"],
+  "Maldini Kacurri": ["sportsboomcoukMaldiniKacurri"],
+  "Heath": ["cambridgeUnitedGoogleNewsHeath"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

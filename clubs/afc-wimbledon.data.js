@@ -36,18 +36,20 @@ const CONFIRMED_IN = [
   {name:"Zack Nelson", sub:"unknown · unknown · Defender", club:"Luton Town", pos:"Defender", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed after Luton Town release"},
   {name:"James Tilly", sub:"unknown · unknown · Midfielder", club:"Wycombe Wanderers", pos:"Midfielder", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal agreed with Wycombe"},
   {name:"Steven Sessegnon", sub:"unknown · unknown · unknown", club:"Wigan Athletic", pos:"unknown", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined after leaving Wigan Athletic"},
-  {name:"Shaun Hutchinson", sub:"unknown · unknown · Defender", club:"Millwall", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Millwall skipper, wanted by AFC Wimbledon and Lincoln City"}
+  {name:"Shaun Hutchinson", sub:"unknown · unknown · Defender", club:"Millwall", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Millwall skipper, wanted by AFC Wimbledon and Lincoln City"},
+  {name:"Layton Stewart", sub:"forward", club:"Liverpool", pos:"FW", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Liverpool forward on loan"}
 ];
 const CONFIRMED_OUT = [
   {name:"Riley Harbottle", sub:"unknown · unknown · unknown", club:"Bristol Rovers", pos:"unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Bristol Rovers from AFC Wimbledon"},
-  {name:"Osman Foyo", sub:"unknown · unknown · Forward", club:"Rhode Island FC", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Striker signs for Rhode Island FC"}
+  {name:"Osman Foyo", sub:"unknown · unknown · Forward", club:"Rhode Island FC", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Striker signs for Rhode Island FC"},
+  {name:"Patrick Bauer", sub:"defender", club:"Cambridge United", pos:"DEF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Cambridge United sign AFC Wimbledon defender"}
 ];
 const INCOMING = [
   {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"Signed from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100},
   {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100},
   {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"down", note:"Transfer agreed", lastSeen:"2026-08-07T23:07:29Z", baseProb:85},
   {name:"Steven Sessegnon", sub:"Player", club:"Wigan Athletic", pos:"Unknown", report:"Joined after leaving Wigan Athletic", src:"Unknown", tier:3, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"On-page entry retained pending confirmation", lastSeen:"2026-08-07T23:07:29Z", baseProb:75},
-  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"down", note:"Former Millwall skipper target", lastSeen:"2026-08-07T23:07:29Z", baseProb:65},
+  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"down", note:"Former Millwall skipper target", lastSeen:"2026-08-07T23:07:29Z", baseProb:65, dead:true, deadReason:"Only reported as 'wanted by' AFC Wimbledon and Lincoln City; no confirmed signing"},
   {name:"Layton Stewart", sub:"unknown · unknown · Forward", club:"Liverpool", pos:"Forward", report:"AFC Wimbledon sign ex-Liverpool forward on loan", src:"BBC", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Loan signing from Liverpool", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
 ];
 const OUTGOING = [
@@ -87,20 +89,22 @@ const HUB = {
   bBCLaytonStewart: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA2NjZlU3lTcHVTY0JVUmZ3dGQ4Y3JsSmM2VWZwOFdySjVKWEFRVVVaUXBGTTFJUmlHOGhhNFkwUDhkd3o3cEU0b3ZiMmRwN3FIekVKNVZweDlvOXh4S3pZNm9PbFBjN0E"},
   bBCPatrickBauer: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5qLXhEZEhXQUk0MmYydk1hMFdCRXFqSjVzY0VrQ3dwN1hFbDc2ZlA2dktXQUhVS3BYUDZreWFPT3ZZM09uTW14UHYtX204RHRjQ00wYXFaSldGTm9mZ05CeUtXaFFkb0U"},
   bBCLaytonStewart1: {l:"BBC", u:"https://news.google.com/"},
-  tribalFootballJamesTilly3: {l:"TribalFootball", u:"https://news.google.com/rss/articles/CBMi7wFBVV95cUxPdmYwZTc1QmdxTUQ3Y3hEcU4tOHNxQy1Jd0hYeUdCRkhpOGtMNWN1MVNTSjNPWmljUlE4clN4MWdBOVFKYlV1dk9TNDlTSWZ1eWtaTTNuT3pnbUhSa3IzMzBiSUhaR0tDWmtua3UwZU1oS2JtMXBHS2Z5blpEUnQyVE5DQ0VIMmZHd0lTLWJQSDRyR3JTUGQtVUdvdU01bXZRTEgwRmJURGJrMmkzdkNnQUF5azJCeEk5VlpsWUlnb3VncG5CdUlDQm9yWGdadUN4emV2bnBYcjM3UzVsZmRrMTY1WHBCa255THdPZjVVaw?oc=5"}};
+  tribalFootballJamesTilly3: {l:"TribalFootball", u:"https://news.google.com/rss/articles/CBMi7wFBVV95cUxPdmYwZTc1QmdxTUQ3Y3hEcU4tOHNxQy1Jd0hYeUdCRkhpOGtMNWN1MVNTSjNPWmljUlE4clN4MWdBOVFKYlV1dk9TNDlTSWZ1eWtaTTNuT3pnbUhSa3IzMzBiSUhaR0tDWmtua3UwZU1oS2JtMXBHS2Z5blpEUnQyVE5DQ0VIMmZHd0lTLWJQSDRyR3JTUGQtVUdvdU01bXZRTEgwRmJURGJrMmkzdkNnQUF5azJCeEk5VlpsWUlnb3VncG5CdUlDQm9yWGdadUN4emV2bnBYcjM3UzVsZmRrMTY1WHBCa255THdPZjVVaw?oc=5"},
+  tribalFootballJamesTilly4: {l:"TribalFootball", u:"https://tribalfootball.com"},
+  googleNewsStevenSessegnon: {l:"Google News", u:"https://news.google.com"}};
 
 const LINKMAP = {
   "Ollie Harrison": ["gnews-ollieharrison"],
   "Jayden Stockley": ["bBCJaydenStockley", "bBCJaydenStockley1", "bBCJaydenStockley2"],
   "Zack Nelson": ["bBCJaydenStockley", "bBCZackNelson", "bBCZackNelson1"],
-  "James Tilly": ["tribalFootballJamesTilly", "tribalFootballJamesTilly1", "tribalFootballJamesTilly2", "tribalFootballJamesTilly3"],
-  "Steven Sessegnon": ["bBCJaydenStockley", "bBCStevenSessegnon", "bBCStevenSessegnon1", "bBCLaytonStewart1"],
+  "James Tilly": ["tribalFootballJamesTilly", "tribalFootballJamesTilly1", "tribalFootballJamesTilly2", "tribalFootballJamesTilly3", "tribalFootballJamesTilly4"],
+  "Steven Sessegnon": ["bBCJaydenStockley", "bBCStevenSessegnon", "bBCStevenSessegnon1", "bBCLaytonStewart1", "googleNewsStevenSessegnon"],
   "Shaun Hutchinson": ["sportsBoomUKShaunHutchinson", "sportsBoomUKShaunHutchinson1", "sportsBoomUKShaunHutchinson2"],
   "Riley Harbottle": ["bristolRoversFootballClubRileyHarbottle", "bristolRoversRileyHarbottle", "bristolRoversFootballClubRileyHarbottle1", "bristolRoversRileyHarbottle1"],
   "Foyo": ["bBCJaydenStockley", "bBCFoyo"],
-  "Osman Foyo": ["bBCOsmanFoyo", "bBCFoyo"],
-  "Layton Stewart": ["bBCLaytonStewart", "bBCLaytonStewart1"],
-  "Patrick Bauer": ["bBCPatrickBauer", "bBCLaytonStewart1"]};
+  "Osman Foyo": ["bBCOsmanFoyo", "bBCFoyo", "bBCJaydenStockley"],
+  "Layton Stewart": ["bBCLaytonStewart", "bBCLaytonStewart1", "googleNewsStevenSessegnon"],
+  "Patrick Bauer": ["bBCPatrickBauer", "bBCLaytonStewart1", "googleNewsStevenSessegnon"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

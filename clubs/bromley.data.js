@@ -38,13 +38,13 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Ethon Archer", sub:"Loan", club:"Luton Town", pos:"Unknown", report:"Signed on loan from Luton Town", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Loan arrival confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", report:"Signed from Wealdstone", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing from Wealdstone", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Victor Adeboyejo", sub:"striker", club:"Free transfer", pos:"ST", report:"Bromley sign striker on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T11:19:01Z", baseProb:100},
-  {name:"Deji Elerewe", sub:"defender", club:"Lincoln City", pos:"DEF", report:"Bromley sign defender Deji Elerewe from Lincoln City", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Confirmed signing", lastSeen:"2026-08-08T11:19:01Z", baseProb:100}
+  {name:"Ethon Archer", sub:"· · ·", club:"Luton Town", pos:"·", report:"Signed on loan", src:"On-page", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Existing on-page entry", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
+  {name:"Deon Woodman", sub:"· · ·", club:"Wealdstone", pos:"·", report:"Signed", src:"On-page", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"up", note:"Existing on-page entry", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
+  {name:"Victor Adeboyejo", sub:"· · ·", club:"·", pos:"Striker", report:"Signed on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed via BBC", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
+  {name:"Deji Elerewe", sub:"· · Defender", club:"Lincoln City", pos:"Defender", report:"Signed", src:"BBC", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed via BBC", lastSeen:"2026-08-08T14:10:31Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jude Arthurs", sub:"midfielder", club:"Crawley Town", pos:"MID", report:"Crawley Town sign midfielder from Bromley", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed departure", lastSeen:"2026-08-08T11:19:01Z", baseProb:100}
+  {name:"Jude Arthurs", sub:"· · Midfielder", club:"Crawley Town", pos:"Midfielder", report:"Signed by Crawley Town", src:"BBC", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed via BBC", lastSeen:"2026-08-08T14:10:31Z", baseProb:100}
 ];
 const DEAD = [
   {name:"Tiernan Brooks", sub:"GK", club:"Gateshead", pos:"GK", report:"~9 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:30, prob:15, light:'o', trend:'flat', note:"Named among four monitoring clubs in a stale article, unconfirmed whether still live.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dir:"in", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}

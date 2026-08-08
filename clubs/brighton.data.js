@@ -96,18 +96,20 @@ const CONFIRMED_OUT =
   {name:"Diego Coppola", sub:"22 · Italy · CB", club:"Paris FC", pos:"Centre-back", fee:"£17m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed on Sky Sports' window tracker."},
   {name:"Brajan Gruda", sub:"22 · Germany · W", club:"RB Leipzig", pos:"Winger", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season loan listed on Sky's tracker. No option or obligation detail published."},
   {name:"Moisés Caicedo", sub:"Unknown · Ecuador · Midfielder", club:"Chelsea", pos:"CM", fee:"£115m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Chelsea; British record fee of £115m plus sell-on clause. 8-year contract with option for 9th year."},
-  {name:"Joao Pedro", sub:"23 · Brazil · Forward", club:"Chelsea", pos:"FW", fee:"£50m+", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal completed with Chelsea in excess of £50m. 7-year contract. Medical arranged."}
+  {name:"Joao Pedro", sub:"23 · Brazil · Forward", club:"Chelsea", pos:"FW", fee:"£50m+", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Deal completed with Chelsea in excess of £50m. 7-year contract. Medical arranged."},
+  {name:"Facundo Buonanotte", sub:"20 · Argentina · W", club:"Elche", pos:"Winger", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Season-long loan"}
 ];
 
 const INCOMING = [
   {name:"Solly March", sub:"30 · England · D/M", club:"Crystal Palace", pos:"D/M", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:60, prob:40, light:"y", trend:"up", note:"Palace exploring move after contract situation; multiple sources confirm interest", lastSeen:"2026-08-08T04:21:31Z", baseProb:40, dead:true, deadReason:"Duplicate entry removed (kept as incoming rumour to Crystal Palace, not outgoing to same club)"},
   {name:"Gabby George", sub:"Unknown · Unknown · Unknown", club:"Manchester United", pos:"Unknown", report:"Gabby George joins Brighton & Hove Albion", src:"Manchester United Website", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer from Manchester United", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
-  {name:"Ayase Ueda", sub:"24 · Japan · F", club:"Feyenoord", pos:"F", report:"Brighton make concrete move for Feyenoord striker", src:"transferfeed", tier:3, fee:"", truth:65, prob:50, light:"y", trend:"down", note:"Concrete interest reported but no recent updates on progression", lastSeen:"2026-08-08T11:19:01Z", baseProb:50}
+  {name:"Ayase Ueda", sub:"24 · Japan · F", club:"Feyenoord", pos:"Striker", report:"Brighton make concrete move for Feyenoord striker", src:"Football Place", tier:3, fee:"", truth:65, prob:50, light:"y", trend:"flat", note:"Concrete interest reported but no recent updates on progression", lastSeen:"2026-08-08T14:10:31Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Jan Paul van Hecke", sub:"24 · Belgium · D", club:"Brighton", pos:"D", report:"Tottenham agree £52million Jan Paul van Hecke transfer", src:"The Athletic", tier:2, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Deal agreed per David Ornstein reporting", lastSeen:"2026-08-08T11:19:01Z", baseProb:90},
-  {name:"Solly March", sub:"30 · England · W", club:"Brighton", pos:"W", report:"Crystal Palace consider shock free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:70, prob:60, light:"g", trend:"up", note:"Palace exploring move after contract situation; multiple recent reports of interest", lastSeen:"2026-08-08T11:19:01Z", baseProb:60}
+  {name:"Jan Paul van Hecke", sub:"23 · Belgium · D", club:"Tottenham Hotspur", pos:"Defender", report:"Tottenham agree £52million Jan Paul van Hecke transfer with Brighton", src:"The Athletic", tier:2, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Deal agreed per David Ornstein reporting", lastSeen:"2026-08-08T14:10:31Z", baseProb:90},
+  {name:"Solly March", sub:"30 · England · W", club:"Brighton", pos:"W", report:"Crystal Palace consider shock free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:70, prob:60, light:"g", trend:"up", note:"Palace exploring move after contract situation; multiple recent reports of interest", lastSeen:"2026-08-08T11:19:01Z", baseProb:60, dead:true, deadReason:"Rumour listed as both incoming and outgoing with conflicting directions; no recent confirmation of actual movement"},
+  {name:"Facundo Buonanotte", sub:"20 · Argentina · W", club:"Elche", pos:"Winger", report:"Brighton's Facundo Buonanotte joins Elche on season-long loan transfer", src:"The New York Times", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Season-long loan", lastSeen:"2026-08-08T14:10:31Z", baseProb:95}
 ];
 const DEAD = [
   {name:"Said El Mala", sub:"Unknown · Unknown · Unknown", club:"Köln", pos:"Unknown", report:"Brighton pushing for final talks with Köln", src:"On-page rumour", tier:3, fee:"Unknown", truth:45, prob:40, light:"y", trend:"down", note:"Active negotiation reported", lastSeen:"2026-08-06T13:55:46Z", baseProb:40, dead:true, deadReason:"No recent credible reporting; transfer window context unclear", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -195,7 +197,8 @@ const HUB = {
   footballPlaceAyaseUeda: {l:"Football Place", u:"https://news.google.com/rss/articles/CBMiggFBVV95cUxNTWxtOW50NTRvS2hSRVlTZnhfMDVSa0N4SWo0VXJFOEVTcHFaZkpSZC1iZ2ZZR2FfT2xtcXBuVU5uMjd3NmlPMmk5N3ctWFFCNG1ZNGU1LTB0RXF5NGhCdGU1bklfNldhdUQ3S3kzcGE2d2ROcUxxX0U1bjU2dWxQVjJ3"},
   goalcomSollyMarch1: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUWN5Nk1wZWp2ZlZxQS1uZ01tZXRMUmZETzlNYlRLQTFBendpRWtERlpLQnNyRHlFa3VvN3N5NTltakRIRklKb0lLcGNBSTdYc1JCY1A1dFJFLWxVT0ZQUEd4RWJWaUxjZV9EekFvZFpZSVlYdW1kemFBbV82eWlrTnMxOU96UmZnY0tEZXRIY3VFOFh2NXVydTNBOXJsdk5rc0RvVS1GZERYZGY1enNrM1dTUFdRQ0RvaDFDZVVXaUpBNlJDbldGY0t3LTRvSklCTjQyMTN4Wk4tNW5HWk9DTGhpb0xsQQ"},
   theNewYorkTimesJoelVeltman: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV"},
-  goalcomSollyMarch2: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUWN5Nk1wZWp2ZlZxQS1uZ01tZXRMUmZETzlNYlRLQTFBendpRWtERlpLQnNyRHlFa3VvN3N5NTltakRIRklKb0lLcGNBSTdYc1JCY1A1dFJFLWxVT0ZQUEd4RWJWaUxjZV9EekFvZFpZSVlYdW1kemFBbV82eWlrNnMxOU96UmZnY0tEZXRIY3VFOFh2NXVydTNBOXJsdk5rc0RvVS1GZERYZGY1enNrM1dTUFdRQ0RvaDFDZVVXaUpBNlJDbldGY0t3LTRvSklCTjQyMTN4Wk4tNW5HWk9DTGhpb0xsQQ"}};
+  goalcomSollyMarch2: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUWN5Nk1wZWp2ZlZxQS1uZ01tZXRMUmZETzlNYlRLQTFBendpRWtERlpLQnNyRHlFa3VvN3N5NTltakRIRklKb0lLcGNBSTdYc1JCY1A1dFJFLWxVT0ZQUEd4RWJWaUxjZV9EekFvZFpZSVlYdW1kemFBbV82eWlrNnMxOU96UmZnY0tEZXRIY3VFOFh2NXVydTNBOXJsdk5rc0RvVS1GZERYZGY1enNrM1dTUFdRQ0RvaDFDZVVXaUpBNlJDbldGY0t3LTRvSklCTjQyMTN4Wk4tNW5HWk9DTGhpb0xsQQ"},
+  theNewYorkTimesFacundoBuonanotte: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxORGpYbFZ3SVJZOFVzV1ZnOENLQjZvZWhZQ0N5U1M1MFdIa3htbFBDSFBiUl9OeG11cVhOZFNUV21EcC1hX1dLek02dTEyTDluMkNGRGpGQlhiV1RCb3FpZ0QtUHh2SVd0cFhmcHo1LWVNaXd1NFRjV3Y4ekF1QUNsdnpzQTE1NklkeEEtYlB5SFdHdUpxTXdCR3VRZm0"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
@@ -226,7 +229,8 @@ const LINKMAP = {
   "Joao Pedro": ["xDavidOrnsteinJoaoPedro"],
   "Evan Ferguson": ["bBCSportGeorge"],
   "Leny Yoro": ["bBCSportGeorge"],
-  "Ayase Ueda": ["footballPlaceAyaseUeda"]};
+  "Ayase Ueda": ["footballPlaceAyaseUeda"],
+  "Facundo Buonanotte": ["theNewYorkTimesFacundoBuonanotte"]};
 const WL_LINKMAP = {
   "Data-model targets":"athletic","Prized asset":"naylor",
 };

@@ -35,11 +35,12 @@ const CONFIRMED_OUT = [
   {name:"Ashley Fletcher", sub:"", club:"Huddersfield Town", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer to Huddersfield Town"}
 ];
 const INCOMING = [
-  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"Incoming rumour", src:"FLW opinion", tier:0, fee:"Free", truth:30, prob:20, light:"o", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-08T11:19:01Z", baseProb:20}
+  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"Incoming rumour", src:"FLW opinion", tier:3, fee:"Free", truth:30, prob:20, light:"o", trend:"down", note:"On-page rumour retained pending fresh snippet", lastSeen:"2026-08-08T14:10:31Z", baseProb:20},
+  {name:"Munroe", sub:"", club:"", pos:"Striker", report:"Blackpool in talks for Munroe", src:"thestar.co.uk", tier:2, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"Sheffield Wednesday rivals reject bid; Blackpool in talks", lastSeen:"2026-08-08T14:10:31Z", baseProb:60}
 ];
 const OUTGOING = [
-  {name:"Franco Ravizzoli", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:0, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour; no fresh snippet provided", lastSeen:"2026-08-08T11:19:01Z", baseProb:45},
-  {name:"Josh Bowler", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:0, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour; no fresh snippet provided", lastSeen:"2026-08-08T11:19:01Z", baseProb:45},
+  {name:"Franco Ravizzoli", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:3, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour retained pending fresh snippet", lastSeen:"2026-08-08T14:10:31Z", baseProb:45},
+  {name:"Josh Bowler", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:3, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour retained pending fresh snippet", lastSeen:"2026-08-08T14:10:31Z", baseProb:45},
   {name:"Ashley Fletcher", sub:"", club:"Huddersfield Town", pos:"", report:"Ashley Fletcher leaves Blackpool to join Huddersfield Town", src:"BBC", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed departure", lastSeen:"2026-08-07T01:42:32Z", baseProb:100, dead:true, deadReason:"Confirmed transfer to Huddersfield Town"}
 ];
 const RISERS = [];
@@ -53,14 +54,15 @@ const HUB = {
   "flw": {l:"Football League World", u:"https://www.footballleagueworld.co.uk/"},
   bBCAshleyFletcher: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YTjQ1dFJlNVF6TG9NVXNSeEZqZlVPNDRBNXVnRVJMeW1uOGhPRW9hVHdUS29IaTBVT05DVURkTzRueEx5WHRZNVRoR0N6WFRzTXF0dUhxdi1VQ0FiaHhCWFNNRnoxYXc?oc=5"},
   thestarcoukMunroe: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMivgFBVV95cUxQQTZ1WVZEaUxJRkROSlZiUE5YU1F1dUlfVGJwM0xacnNEVnRDQklTTFpJd3ZNdjRCUVd5MGpSam5DYm5BN2ZfalJXTGc2MGppY1ZPNkdGalZhRl9sMk5Zel9abXJ2aVZTUVJ4TGYwWDF1QTk5eXN2dlVEZGkzUUpHSkJCSVJmX1VpOHBfaVREeDFhZERBQWZBaDVJTExUeG1XbWppMlBhMWgtMDFvSVlZR09RMTFmMHpLVDB5c0N3?oc=5"},
-  thestarcoukMunroe1: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMivgFBVV95cUxQQTZ1WVZEaUxJRkROSlZiUE5YU1F1dUlfVGJwM0xacnNEVnRDQklTTFpJd3ZNdjRCUVd5MGpSam5DYm5BN2ZfalJXTGc2MGppY1ZPNkdGalZhRl9sMk5Zel9abXJ2aVZTUVJ4TGYwWDF1QTk5eXN2dlVEZGkzUUpHSkJCSVJmX1VpOHBfaVREeDFhZERBQWZBaDVJTExUeG1XbWppMlBhMWgtMDFvSVlZR09RMTFmMHpLVDB5c0N3"}};
+  thestarcoukMunroe1: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMivgFBVV95cUxQQTZ1WVZEaUxJRkROSlZiUE5YU1F1dUlfVGJwM0xacnNEVnRDQklTTFpJd3ZNdjRCUVd5MGpSam5DYm5BN2ZfalJXTGc2MGppY1ZPNkdGalZhRl9sMk5Zel9abXJ2aVZTUVJ4TGYwWDF1QTk5eXN2dlVEZGkzUUpHSkJCSVJmX1VpOHBfaVREeDFhZERBQWZBaDVJTExUeG1XbWppMlBhMWgtMDFvSVlZR09RMTFmMHpLVDB5c0N3"},
+  thestarcoukMunroe2: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMivgFBVV95cUxQQTZ1WVZEaUxJRkROSlZiUE5YU1F1dUlfVGJwM0xacnNEVnRDQklTTFpJd3ZNdjRCUVd5MGpSam5DYm5BN2ZjalJXTGc2MGppY1ZPNkdGalZhRl9sMk5Zel9abXJ2aVZTUVJ4TGYwWDF1QTk5eXN2dlVEZGkzUUpHSkJCSVJmX1VpOHBfaVREeDFhZERBQWZBaDVJTExUeG1XbWppMlBhMWgtMDFvSVlZR09RMTFmMHpLVDB5c0N3"}};
 
 const LINKMAP = {
   "Jay Fulton": ["flw"],
   "Franco Ravizzoli": ["flw"],
   "Josh Bowler": ["flw"],
   "Ashley Fletcher": ["bBCAshleyFletcher"],
-  "Munroe": ["thestarcoukMunroe", "thestarcoukMunroe1"]};
+  "Munroe": ["thestarcoukMunroe", "thestarcoukMunroe1", "thestarcoukMunroe2"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

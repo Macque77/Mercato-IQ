@@ -31,14 +31,15 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Keo Boets", sub:"22 · GK · Belgium", club:"Sint-Truiden", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as fourth-choice goalkeeper depth on a one-year deal."}
+  {name:"Keo Boets", sub:"22 · GK · Belgium", club:"Sint-Truiden", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as fourth-choice goalkeeper depth on a one-year deal."},
+  {name:"Fedde Leysen", sub:"Unknown · Unknown · Unknown", club:"PSV", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from PSV"}
 ];
 const CONFIRMED_OUT = [
   {name:"Kjell Scherpen", sub:"26 · GK · Netherlands", club:"Ipswich Town", pos:"GK", fee:"~€8-10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Number-one keeper departs for the Premier League after one title-winning season, with a 40% sell-on owed to Brighton."},
   {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Player departure confirmed; player statement released"}
 ];
 const INCOMING = [
-  {name:"Fedde Leysen", sub:"PSV", club:"PSV", pos:"DEF", report:"Transfer from PSV confirmed", src:"transferfeed snapshot", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Already confirmed on page", lastSeen:"2026-08-08T11:19:01Z", baseProb:100}
+  {name:"Fedde Leysen", sub:"Unknown · Unknown · Unknown", club:"PSV", pos:"Unknown", report:"Transfer from PSV confirmed", src:"Unknown", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer", lastSeen:"2026-08-08T14:10:31Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"Departure linked", src:"The Athletic", tier:3, fee:"£17m bid rejected", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 29 Jul 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50, dead:true, deadReason:"No recent credible link; stale rumour"},
@@ -65,7 +66,8 @@ const HUB = {
   voetbalPrimeurbeSadiki: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPS0dSZUs5b0c4cVN2aUhCb1M4dGx0S0ZKXzhTZ1kwbUF0X0FRR0lUeUtES0dDTEU2VkRjTWFudnNNam9CNW16U1hiS3JhX1pYX3dXRHdIWkpjd09BZXhkVnR4azBpLXNCSjJDQXowSkJ0Zm5ZSHVlRUpBNzM5cUU4eGhiZGN3b2I0X29UWEZLblptNEhfelpYTzVCTS1BaHJ3R1o5ZWVXNVg3eXVhQTd3MkYwQ0JZOHo0WXpHalhZTkRNaG10Q3c"},
   voetbalBelgieMilanHokke: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxPd0RhMmNJMG5VMkN3V2ZNcGlkb0tNMnZxcTNkdW9IQXQ0YWFQa2I2Vk5rSFB3UTJQNDJTNGFLVkxjYlVfOVh5X1dhTFdSaHNNakJ1Z2RlZTEyU1NNNU5MRWZfSmpYc1JURmZQU3YtbnFmbWhPUC0zN3h5V0ltRXZGa3g5NG1UTkM5VWptbHhfMGdMQjBfS2M0QjFzQTZvZnk2MFktTWZQY0NzelZWQ2ln"},
   unknownFeddeLeysen: {l:"unknown", u:"unknown"},
-  voetbalPrimeurbeSadiki1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPS0dSZUs5b0c4cVN2aUhCb1M4dGx0S0ZKXzhTZ1kwbUF0X0FRR0lUeUtES0dDTEU2VkRjTWFudnNNam9CNW16U1giS3JhX1pYX3dXRHdIWkpjd09BZXhkVnR4azBpLXNCSjJDQXowSkJ0Zm5ZSHVlRUpBNzM5cUU4eGhiZGN3b2I0X29UWEZLblptNEhfelpYTzVCTS1BaHJ3R1o5ZWVXNVg3eXVhQTd3MkYwQ0JZOHo0WXpHalhZTkRNaG10Q3c"}};
+  voetbalPrimeurbeSadiki1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPS0dSZUs5b0c4cVN2aUhCb1M4dGx0S0ZKXzhTZ1kwbUF0X0FRR0lUeUtES0dDTEU2VkRjTWFudnNNam9CNW16U1giS3JhX1pYX3dXRHdIWkpjd09BZXhkVnR4azBpLXNCSjJDQXowSkJ0Zm5ZSHVlRUpBNzM5cUU4eGhiZGN3b2I0X29UWEZLblptNEhfelpYTzVCTS1BaHJ3R1o5ZWVXNVg3eXVhQTd3MkYwQ0JZOHo0WXpHalhZTkRNaG10Q3c"},
+  unknownFeddeLeysen1: {l:"Unknown", u:"Unknown"}};
 
 const LINKMAP = {
   "Milan Hokke": ["voetbalkrantMilanHokke", "voetbalBelgieMilanHokke"],
@@ -74,7 +76,7 @@ const LINKMAP = {
   "Mamadou Barry": ["voetbalkrantMamadouBarry"],
   "Keo Boets": ["voetbalkrantKeoBoets"],
   "Kjell Scherpen": ["beINSportsKjellScherpen"],
-  "Fedde Leysen": ["pSVFeddeLeysen", "unknownFeddeLeysen"],
+  "Fedde Leysen": ["pSVFeddeLeysen", "unknownFeddeLeysen", "unknownFeddeLeysen1"],
   "Sadiki": ["voetbalPrimeurbeSadiki", "voetbalPrimeurbeSadiki1"]};
 const WL_LINKMAP = {};
 

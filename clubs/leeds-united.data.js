@@ -98,7 +98,7 @@ const INCOMING = [
    note:"Fresh link for the Liverpool creator seeking minutes, a clear quality and resale profile. Obstacle: Football Insider-tier sourcing, a likely crowded race for a player of his profile, and price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"Medical reported as 'possible' but no confirmed deal in latest snippets"},
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
    note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18, dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
-  {name:"James Trafford", sub:"23 · England · GK", club:"Manchester City", pos:"GK", report:"James Trafford joins from Manchester City in deal worth up to £45m", src:"BBC", tier:2, fee:"£45m", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
+  {name:"James Trafford", sub:"24 · England · GK", club:"Manchester City", pos:"GK", report:"Joins from Manchester City in deal worth up to £45m", src:"BBC", tier:2, fee:"£45m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T14:10:32Z", baseProb:100}
 ];
 
 const OUTGOING = [

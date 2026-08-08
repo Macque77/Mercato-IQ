@@ -43,7 +43,8 @@ const INCOMING = [
   {name:"Conor Chaplin", sub:"Unknown · Unknown · Forward", club:"Ipswich Town", pos:"Forward", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jeremy Monga", sub:"17 · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Man City complete signing of 17-year-old Leicester", src:"transferfeed snapshot", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed to Manchester City", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
+  {name:"Jeremy Monga", sub:"17 · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Man City complete signing of 17-year-old Leicester", src:"transferfeed snapshot", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed to Manchester City", lastSeen:"2026-08-08T10:03:40Z", baseProb:100},
+  {name:"Abdul Fatawu", sub:"Winger", club:"Ipswich Town", pos:"W", report:"Ipswich complete £20m deal for Leicester City winger Abdul Fatawu", src:"BBC", tier:2, fee:"£20m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T14:10:32Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -64,7 +65,9 @@ const HUB = {
   leicesterCityOfficialAlexMcCarthy: {l:"Leicester City Official", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxNbXZOQngzYnJuVjRFb3hZelJhcTUtNWM3Q2FIUGhfYkVyRmtwXzFtd0lxUnRfNE9razZIUzg3ZjFFUGNpMS1GMm9XcllXM21kQU9vQmd3RnN4aGhyR0pwdk4tM0VWRGNsQ01lSkxObmhzQ1FlV2QxLTQ4SFdZVy1zX1pYUnNsUmpFWEE"},
   leicesterMercuryTommyWatson: {l:"Leicester Mercury", u:"https://news.google.com/rss/articles/CBMisgFBVV95cUxNRVJ2MThpNlI5SG1BZ1JEZkkyajNCVFU1cF85eWU2d0tMQ1E2ZHhyUDU1T2dlR1JoYkhfS25GM0prM2F0TDVMMEFvRkVUMmszTVNwMEUwd2drWTJtbFlTMEhaaUVNVUF4MGZqYmo5T0wwUDhsZi0xdExZUVNUWFJEU1ZzUTFROG1IVEVZVHhKT0tmT2tZUFN2dUg3aklkR2R6RTVVQlZBc3BXNnRGYllsd3R3?oc=5"},
   swanseaCityLiamCullen: {l:"Swansea City", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxQeG90ZXE2ZFQ3MmpxVW5lY1VpWjMxLXh0MGxuR0JnRzdnNE43NVBJTGMwQkhqUXZydWJzemtubmpBRkJwQ2h4amdOU1UxS1g3RjY4dHZkeS1wSVdEWTNoekpqanFENGxwSG5ucXpBbUYtVTVqMVowUUpCTWxxc19aMlRlbzM?oc=5"},
-  lCFCOfficialWebsiteAlexMcCarthy: {l:"LCFC Official Website", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxNbXZOQngzYnJuVjRFb3hZelJhcTUtNWM3Q2FIUGhfYkVyRmtwXzFtd0lxUnRfNE9razZIUzg3ZjFFUGNpMS1GMm9XcllXM21kQU9vQmd3RnN4aGhyR0pwdk4tM0VWRGNsQ01lSkxObmhzQ1FlV2QxLTQ4SFdZVy1zX1pYUnNsUmpFWEE?oc=5"}};
+  lCFCOfficialWebsiteAlexMcCarthy: {l:"LCFC Official Website", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxNbXZOQngzYnJuVjRFb3hZelJhcTUtNWM3Q2FIUGhfYkVyRmtwXzFtd0lxUnRfNE9razZIUzg3ZjFFUGNpMS1GMm9XcllXM21kQU9vQmd3RnN4aGhyR0pwdk4tM0VWRGNsQ01lSkxObmhzQ1FlV2QxLTQ4SFdZVy1zX1pYUnNsUmpFWEE?oc=5"},
+  lCFCOfficialWebsiteAlexMcCarthy1: {l:"LCFC Official Website", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxNbXZOQngzYnJuVjRFb3hZelJhcTUtNWM3Q2FIUGhfYkVyRmtwXzFtd0lxUnRfNE9yazZIUzg3ZjFFUGNpMS1GMm9XcllXM21kQU9vQmd3RnN4aGhyR0pwdk4tM0VWRGNsQ01lSkxObmhzQ1FlV2QxLTQ4SFdZVy1zX1pYUnNsUmpFWEE"},
+  bBCAbdulFatawu: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9KblZhQkNYN2t3dHQ5OVVvOU5BNWtlVGtPM1VBY2VIRTZFSFNuQ3JINDZBV0gybks2YXpsU2k3MTdZeDBMRllrU3JDcnFaN2VZMFA1VnJDZXVUNEFmcDNtOGZ3UGZPdGs"}};
 
 const LINKMAP = {
   "Admir Bristric": ["src-planetnogomet", "flw"],
@@ -74,7 +77,8 @@ const LINKMAP = {
   "Asmir Begovic": ["lCFCOfficialAsmirBegovic"],
   "Conor Chaplin": ["bBCConorChaplin"],
   "Jeremy Monga": ["skySportsJeremyMonga"],
-  "Alex McCarthy": ["leicesterCityOfficialAlexMcCarthy", "lCFCOfficialWebsiteAlexMcCarthy"]};
+  "Alex McCarthy": ["leicesterCityOfficialAlexMcCarthy", "lCFCOfficialWebsiteAlexMcCarthy", "lCFCOfficialWebsiteAlexMcCarthy1"],
+  "Abdul Fatawu": ["bBCAbdulFatawu"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

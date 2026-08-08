@@ -36,10 +36,10 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Unknown", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Free transfer from Brentford - player name not specified in available snippets", lastSeen:"2026-08-08T07:40:33Z", baseProb:100, dead:true, deadReason:"no longer a current link"},
-  {name:"Unknown Brentford midfielder", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:2, fee:"Free", truth:95, prob:95, light:"g", trend:"down", note:"Free transfer completed, player name not yet identified in snippet", lastSeen:"2026-08-08T11:19:01Z", baseProb:95}
+  {name:"Unknown Brentford midfielder", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:2, fee:"Free", truth:95, prob:95, light:"g", trend:"down", note:"Free transfer completed, player name not yet identified in snippet", lastSeen:"2026-08-08T11:19:01Z", baseProb:95, dead:true, deadReason:"Player name not confirmed in snippet - only generic reference available"}
 ];
 const OUTGOING = [
-  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Blackburn Rovers", pos:"Unknown", report:"How much Blackburn Rovers might get from Ash Phillips transfer", src:"Lancashire Telegraph", tier:2, fee:"Unknown", truth:70, prob:65, light:"g", trend:"up", note:"Potential departure under discussion", lastSeen:"2026-08-08T11:19:01Z", baseProb:65}
+  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Blackburn Rovers", pos:"Unknown", report:"Blackburn Rovers may receive transfer fee from Ash Phillips departure", src:"Unknown", tier:3, fee:"Unknown", truth:50, prob:50, light:"y", trend:"down", note:"Potential departure", lastSeen:"2026-08-08T14:10:31Z", baseProb:50}
 ];
 const RISERS = [];
 const FALLERS = [];

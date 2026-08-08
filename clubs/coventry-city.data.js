@@ -80,7 +80,9 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T12:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
   {name:"Miguel Ángel Brau", sub:"Permanent, four-year contract", club:"Granada", pos:"DF", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Left-back and Frank Lampard's first signing since promotion, pending work permit/international clearance"},
-  {name:"Carl Rushworth", sub:"25 · England · GK", club:"Brighton", pos:"Goalkeeper", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Formally announced by Coventry, with the keeper describing it as joining a club he already calls home."}
+  {name:"Carl Rushworth", sub:"25 · England · GK", club:"Brighton", pos:"Goalkeeper", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Formally announced by Coventry, with the keeper describing it as joining a club he already calls home."},
+  {name:"Caleb Yirenkyi", sub:"20 · Denmark · F", club:"FC Nordsjaelland", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record signing from FC Nordsjaelland"},
+  {name:"Aurele Amenda", sub:"22 · France · CB", club:"Reggina", pos:"CB", fee:"£17m+", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Reggina"}
 ];
 const CONFIRMED_OUT = [
   {name:"Jamie Allen", sub:"Released", club:"Free agent", pos:"MF", fee:"Released", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract expired at end of Championship-winning season"},
@@ -100,9 +102,9 @@ const INCOMING = [
   {name:"Tim Iroegbunam", sub:"Approach expected", club:"Everton", pos:"MF", report:"Coventry are one of three English clubs (with Hull City and Ipswich Town) plus two Italian sides showing interest in the Everton midfielder, whose contract has a year left to run.", src:"TeamTalk", tier:2, fee:"~£20m", truth:55, prob:20, light:"o", trend:"flat", note:"No formal offers yet; loan-with-obligation structure possible", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent credible reporting; link appears stale (last reported weeks ago with Aston Villa)"},
   {name:"Fikayo Tomori", sub:"Long-shot interest, Liverpool now favourites", club:"AC Milan", pos:"DF", report:"Frank Lampard's Coventry held the strongest interest in bringing his former Chelsea player back to England, but Liverpool have since entered talks with Milan, all but ending Coventry's hopes.", src:"TuttoJuve (via Sports Mole)", tier:2, fee:"€15m-€20m", truth:50, prob:10, light:"r", trend:"flat", note:"Liverpool's move for defensive cover effectively ends Coventry's chances", lastSeen:"2026-08-04T19:10:50Z", baseProb:10, dead:true, deadReason:"No recent credible reporting; interest claimed by Frank Lampard Coventry but no current updates"},
   {name:"Harvey Elliott", sub:"Speculative interest from a promoted club", club:"Liverpool", pos:"MF", report:"Elliott struggled on loan at Aston Villa and Liverpool are open to offers this summer; former Everton CEO Keith Wyness suggested a promoted club could move for him, with Coventry among names mentioned.", src:"Football Insider", tier:3, fee:"~£25m", truth:30, prob:15, light:"o", trend:"flat", note:"No concrete negotiations reported; speculative at this stage", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"No recent credible reporting; historical loan context insufficient for current window activity"},
-  {name:"Caleb Yirenkyi", sub:"20 · Ghana · F", club:"FC Nordsjaelland", pos:"Forward", report:"Coventry City have completed the signing of Caleb Yirenkyi from FC Nordsjaelland in a club-record deal", src:"BBC / Official Coventry City", tier:2, fee:"£25.7m", truth:100, prob:100, light:"g", trend:"up", note:"Deal completed and officially announced", lastSeen:"2026-08-08T11:19:01Z", baseProb:100},
+  {name:"Caleb Yirenkyi", sub:"20 · Denmark · F", club:"FC Nordsjaelland", pos:"F", report:"Coventry City have completed the signing of Caleb Yirenkyi from FC Nordsjaelland in a club-record deal", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Club-record signing completed", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
   {name:"Gustavo Hamer", sub:"28 · Netherlands · M", club:"Sheffield United", pos:"Midfielder", report:"Coventry City remain in talks over Gustavo Hamer deal but gap in valuation exists", src:"Coventry Observer", tier:3, fee:"Undisclosed", truth:60, prob:55, light:"g", trend:"flat", note:"Ongoing talks but valuation gap remains; Sheffield United holding firm", lastSeen:"2026-08-07T01:42:32Z", baseProb:55, dead:true, deadReason:"Latest bid rejected by Sheffield United; deal appears off as of latest reporting"},
-  {name:"Aurele Amenda", sub:"19 · Italy · D", club:"Reggina", pos:"Centre-back", report:"Coventry City sign Aurele Amenda from Reggina in a deal worth more than £17m", src:"BBC", tier:2, fee:"£17m+", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T11:19:01Z", baseProb:100}
+  {name:"Aurele Amenda", sub:"22 · France · CB", club:"Reggina", pos:"CB", report:"Coventry City sign Aurele Amenda from Reggina in a deal worth more than £17m", src:"BBC", tier:2, fee:"£17m+", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T14:10:31Z", baseProb:100}
 ];
 
 const OUTGOING = [
@@ -185,7 +187,8 @@ const HUB = {
   bBCAureleAmenda: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1oWExLd081QzlDV0Z1VjZsVmd4cjZoSW9VWm5qamFLRUJnWm1FYmdfSWp5Z1NhRlhlYUdpSEw2QXRrR19pcll4MUh4ZkZNdktmSWtKS3VyMlNRdnMyeGlHX3Q3SVRjc2dfWWc"},
   theCoventryObserverGustavoHamer: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxObjFsS3gwWmRZS3VHMkthVExMeVF1bGt6Wkt6d2daRll3bUtsZzhZSEdIUGdCT0xDZnpnRHNNWVZjZVdFUUtybHBnalRZUk1ZaUc1alZuallaVVJVMHNDNE9zblh2a1ItUDFLaTE4WVlXNWhUWWNUZVc3V1dmd1d6OGlVQnU1c2MxejdNUjJxcnc4VElmMGZoWmFRYWNvRDNZd0tDVUZnNU5uMlVSejAwQTY4dnZxV2h4NVNfRDR2c3lTWXlHNllF"},
   bBCOfficialCalebYirenkyi: {l:"BBC / Official", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxOeTF0ZnRQMWtCejMtRS1tVUY5eFdyeS1yY0M3c2JIc19BNDVSYTlfdVpLU0dkdXI2bUR1NDRvc1JkNG5LYlM1UTQ1Rzk5Qko2T3RfcHRYUXMwSjRDSWloclJsUWdhbTBfelBuWjZIcDJBbDNNTmNWM1pVUFMyR2poT3NXb20xckZPTXdEWFNsRlpST19McWZrNGtlWmhyWXBX"},
-  coventryTelegraphObserverGustavoHamer: {l:"Coventry Telegraph / Observer", u:"https://news.google.com/rss/articles/CBMipwFBVV95cUxPdndtS1M1UEJvd29LcGdwOC1QRE9Pd3R2b2lpcDZVWVBOc1UxWXBidlpuYnlhYjJTZzBEXy0tMDJfLTU4QnJEODRJTTluSEQtRk5DUUxMWXN6RWtzejhxNHBRdGpzTTNCeXlON3k3UjZTVGpsV1EzTHJ0ekNZVkxhSkhyV2Vjc0dhb182QjE3ZFYwXzc1eUlUczlQakFDNmxaa3JraW52MGFvUkxiSUhtMUNvdFJqb29XMXlLOVM2QQ"}};
+  coventryTelegraphObserverGustavoHamer: {l:"Coventry Telegraph / Observer", u:"https://news.google.com/rss/articles/CBMipwFBVV95cUxPdndtS1M1UEJvd29LcGdwOC1QRE9Pd3R2b2lpcDZVWVBOc1UxWXBidlpuYnlhYjJTZzBEXy0tMDJfLTU4QnJEODRJTTluSEQtRk5DUUxMWXN6RWtzejhxNHBRdGpzTTNCeXlON3k3UjZTVGpsV1EzTHJ0ekNZVkxhSkhyV2Vjc0dhb182QjE3ZFYwXzc1eUlUczlQakFDNmxaa3JraW52MGFvUkxiSUhtMUNvdFJqb29XMXlLOVM2QQ"},
+  bBCSportCalebYirenkyi: {l:"BBC Sport", u:"https://www.bbc.co.uk"}};
 const LINKMAP = {
   "PL-level quality additions": ["covTel","bbcCov","sky"],
   "Striker / goals": ["covTel","bbcGossip"],
@@ -201,10 +204,10 @@ const LINKMAP = {
   "Miguel Ángel Brau": ["bBCSportMiguelngelBrau"],
   "Jamie Allen": ["sportsMoleJamieAllen"],
   "Bradley Collins": ["sportsMoleJamieAllen"],
-  "Caleb Yirenkyi": ["coventryLiveCalebYirenkyi", "coventryTelegraphCalebYirenkyi", "coventryTelegraphCalebYirenkyi1", "coventryTelegraphCalebYirenkyi2", "coventryTelegraphCalebYirenkyi3", "coventryTelegraphCalebYirenkyi4", "bBCOfficialCalebYirenkyi"],
+  "Caleb Yirenkyi": ["coventryLiveCalebYirenkyi", "coventryTelegraphCalebYirenkyi", "coventryTelegraphCalebYirenkyi1", "coventryTelegraphCalebYirenkyi2", "coventryTelegraphCalebYirenkyi3", "coventryTelegraphCalebYirenkyi4", "bBCOfficialCalebYirenkyi", "bBCSportCalebYirenkyi"],
   "Carl Rushworth": ["coventryLiveCalebYirenkyi", "coventryCityFootballClubCarlRushworth", "coventryCityFootballClubCarlRushworth1", "coventryCityFootballClubCarlRushworth2", "coventryCityFootballClubCarlRushworth3"],
   "Gustavo Hamer": ["coventryObserverGustavoHamer", "bBCGustavoHamer", "coventryObserverGustavoHamer1", "coventryObserverGustavoHamer2", "theCoventryObserverGustavoHamer", "coventryTelegraphObserverGustavoHamer"],
-  "Aurele Amenda": ["bBCAureleAmenda"]};
+  "Aurele Amenda": ["bBCAureleAmenda", "bBCSportCalebYirenkyi"]};
 const WL_LINKMAP = {
   "PL-ready targets":"covTel","Core retention":"ccfc",
 };
