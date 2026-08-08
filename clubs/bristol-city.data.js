@@ -34,13 +34,15 @@ const CONFIRMED_IN = [
   {name:"Sam Tickle", sub:"GK", club:"Wigan Athletic", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival."},
   {name:"Brad Collins", sub:"GK", club:"Coventry City", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed free transfer."},
   {name:"Dom Ballard", sub:"striker · England · CF", club:"Leyton Orient", pos:"ST", fee:"£5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Leyton Orient"},
-  {name:"Lorent Tolaj", sub:"striker · Kosovo · CF", club:"Plymouth Argyle", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Plymouth Argyle"}
+  {name:"Lorent Tolaj", sub:"striker · Kosovo · CF", club:"Plymouth Argyle", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Plymouth Argyle"},
+  {name:"Yah", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed for Bristol City"},
+  {name:"Eissat", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed for Bristol City"}
 ];
 const CONFIRMED_OUT = [
   {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
 ];
 const INCOMING = [
-  {name:"Dom Ballard", sub:"Striker", club:"Leyton Orient", pos:"ST", report:"Bristol City closing in on signing striker Dom Ballard from Leyton Orient; striker at Robins HPC for medical", src:"Bristol Live", tier:2, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"flat", note:"At Robins HPC undergoing medical/training, deal imminent", lastSeen:"2026-08-08T07:40:33Z", baseProb:75},
+  {name:"Dom Ballard", sub:"Striker · Leyton Orient", club:"Leyton Orient", pos:"ST", report:"Bristol City closing in on signing striker from Leyton Orient; player at Robins HPC for medical", src:"Bristol Live", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"up", note:"Advanced negotiations, medical stage", lastSeen:"2026-08-08T10:03:39Z", baseProb:80},
   {name:"Lorent Tolaj", sub:"Striker", club:"Plymouth Argyle", pos:"ST", report:"Bristol City sign striker Lorent Tolaj", src:"Bristol City FC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Signing confirmed by official Bristol City announcement", lastSeen:"2026-08-08T07:40:33Z", baseProb:95}
 ];
 const OUTGOING = [];
@@ -62,7 +64,9 @@ const HUB = {
   bristolLiveDomBallard: {l:"Bristol Live", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQMEZfSGJPWVhlWXJ3U1RFdGRER0lha2R4ZXVKYWV3Z1F4ZXpMN1hwYlBST3FncDVPdndIZlNXODVxRTg5eHpENzJ0bFlPSGpzV2JDcko3NVFnQmxGMW01MkRaZGhCNFU1UHdoYkFEbUk0eV9rVFJ0VEk0dTRSNnlfeUlJRHVTWFY3RU1meXo4RlUtVmYteFZQZ29TYXE"},
   bBCLorentTolaj: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kZ0NoU0RaclBMeExoWXVkbkVrV2NGZldEQ0ZqMm1hekVYV09YU2ZSRHNxOFRqTmQ2MGtqU2F1SFNhMzRvdjhuOGhEWFZ5bjk5NFFDd1ZKWGZtMkdrVUQ3UHFwYkVXbVk"},
   bristolLiveDomBallard1: {l:"Bristol Live", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxNMmhzeGN2YTk1ZlhGN3FtTjlNN2tHQVlfVEw5VVJlZmY1ZEVwNTBrY25tS3VFcUhHOENrYXRWc0dmdVNDMFJXTDlTUmpvbnczcjRLbi1YOUdxQ1VkSEZ3NTZaZWtTZVBlUE5oUzRyeWxBVktXR3Z2V0RRTkVQMnp1TUl3SU9vcE5Rb2tVNGNlWTJVV2pBVmZtSXYzN0wzMm9XYWc"},
-  bristolCityFCLorentTolaj: {l:"Bristol City FC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE9pMHNFaThGRnZXZXpvOHhwUzlLRjNEdEhzcGRCQW5sUUN1aTZ3WUwwWnlaVW1vVW5EOFhCby14VnRTMVFyZFJmejR0emdjRS0tRHRhOUFtaWVrUHNzNUtUSWN6V2JBZXdsR1E"}};
+  bristolCityFCLorentTolaj: {l:"Bristol City FC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE9pMHNFaThGRnZXZXpvOHhwUzlLRjNEdEhzcGRCQW5sUUN1aTZ3WUwwWnlaVW1vVW5EOFhCby14VnRTMVFyZFJmejR0emdjRS0tRHRhOUFtaWVrUHNzNUtUSWN6V2JBZXdsR1E"},
+  bristolCityFCLorentTolaj1: {l:"Bristol City FC", u:"https://news.google.com/rss/articles/CBMia0FVX3lxTFAxaUpuUjM1TE1ibE8zNTM2UmppalpGcGFpV1ZrQ0JoUG9PSjh2XzRiOFpweF9sdmJfLVVWNlZfS2JDaWpWajVlQi1fUDlHc1ZJZEJxNTA3WlpIcERHZEllT21SalFDWWJTblBJ"},
+  bristolCityFCYah: {l:"Bristol City FC", u:"https://news.google.com/rss/articles/CBMiYEFVX3lxTFBBa19Ra0ItdHFrbkJnVG9HS1RVNUtzYzdpdDFEOUpic1pQRHFVSUF4d3F6SmRzczczUmpPdUJjWGhlWXAtYlliT00tNElpeUdrdFVYTEVoVWpqSFM5NVBtYw"}};
 
 const LINKMAP = {
   "Sam Tickle": ["gnews-samtickle"],
@@ -70,7 +74,9 @@ const LINKMAP = {
   "Sinclair Armstrong": ["gnews-sinclairarmstrong"],
   "Rio Cardines": ["yahoosport"],
   "Dom Ballard": ["bristolLiveDomBallard", "bristolLiveDomBallard1"],
-  "Lorent Tolaj": ["bBCLorentTolaj", "bristolCityFCLorentTolaj"]};
+  "Lorent Tolaj": ["bBCLorentTolaj", "bristolCityFCLorentTolaj", "bristolCityFCLorentTolaj1"],
+  "Yah": ["bristolCityFCYah"],
+  "Eissat": ["bristolCityFCLorentTolaj1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

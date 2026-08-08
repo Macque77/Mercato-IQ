@@ -39,13 +39,14 @@ const CONFIRMED_OUT = [
   {name:"Liam Thompson", sub:"", club:"Mansfield Town", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer to Mansfield Town confirmed"}
 ];
 const INCOMING = [
-  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"Incoming transfer", src:"Pete O'Rourke", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T07:40:33Z", baseProb:50},
-  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"Incoming transfer", src:"Football League World", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T07:40:33Z", baseProb:50},
-  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"Incoming transfer", src:"Sunderland Echo", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T07:40:33Z", baseProb:50}
+  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"Incoming transfer", src:"Pete O'Rourke", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T10:03:40Z", baseProb:50},
+  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"Incoming transfer", src:"Football League World", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T10:03:40Z", baseProb:50},
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"Incoming transfer", src:"Sunderland Echo", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T10:03:40Z", baseProb:50}
 ];
 const OUTGOING = [
   {name:"Dajaune Brown", sub:"unknown · unknown · Striker", club:"Rochdale", pos:"Striker", report:"Loan switch to Rochdale", src:"Derby County", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Brown makes loan switch to Rochdale after joining Derby", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Thompson", sub:"unknown · unknown · unknown", club:"Mansfield Town", pos:"unknown", report:"Departs for Mansfield Town", src:"Derby County", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"flat", note:"Thompson transfer departure confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95, dead:true, deadReason:"Identified as Liam Thompson, confirmed transfer to Mansfield Town completed"}
+  {name:"Thompson", sub:"unknown · unknown · unknown", club:"Mansfield Town", pos:"unknown", report:"Departs for Mansfield Town", src:"Derby County", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"flat", note:"Thompson transfer departure confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95, dead:true, deadReason:"Identified as Liam Thompson, confirmed transfer to Mansfield Town completed"},
+  {name:"Liam Thompson", sub:"", club:"Mansfield Town", pos:"", report:"Transfer confirmed", src:"derbytelegraph.co.uk", tier:3, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Thompson departs for Mansfield Town", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -65,16 +66,17 @@ const HUB = {
   derbyCountyOfficialDajauneBrown: {l:"Derby County (Official)", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxORVFkVjlfNjZzZmoxM3NpS1NIRTQzbnVOVFdvREhrVEFaTUJnaEMtQnVEOWViLTJFenBxSlNwS2NCWEhjU2I1VVQ4SG93VDhkTW1xYnh2bFRsUmRFakF6Q1RQVFBtN3FsUUZPOFhBNHlJUkcyMlRVNEZORDBuZEFIZEVOX0RGYmdYQmc"},
   derbyCountyOfficialThompson: {l:"Derby County (Official)", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxQN0VQOFVUbjhBUUJrWXh0YVdtWGltazdmdzB0WDA3cTNMYTJvZ1RqZXFnZFRoYkVycEJJNXF1UUQ0OFd0cURZYWxLbG4xVjgyalptbU01WUpsb3R5MUMydEJyNU1kcFVYWV83cEN3N0lGakYtOF9xOUQzc21QTmpnUEd0MmNRX0FyR0NlUUdB"},
   derbyshireLiveDajauneBrown1: {l:"Derbyshire Live", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxNOExDTW8zWVl5Rkg3RUZDT0pGSnZLaHZac3RlaTJmX2tjS2ZqRmVJbGk5RUctM0ZmYVRpcU9wUDVCZzNqdGlseDhfTW1vdnRITmIzY1c4ckZ3bDh4N091bXdBV2tmN1NWU2ZYdmxQbnpfVUc0ajdUdDRTYUo4bFdOcnh4U194emRLNU0wN1BRdFQ1UXVFQzVLcFV6Wk1mVGEzNTdkSXlR"},
-  derbyshireLiveLiamThompson: {l:"Derbyshire Live", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX1RRTkJKMzlxcXR4TlpRdGFjR1dOcU1oMVZLcl80U3Q3Y0pKb2RkUmR1QVBsWUhGUVRkc3ZfVGM3WXk5eGdYWVlQclNDb05iZ2ZtMFItY1dJUld1aDQzUkFJR1N0RGdTY1RvTE5uVXZ1MkR1Y0M2N1hMSmFHQmpIZGFDWUliT3VJRTlJY1ByX1U2OUV2b0VQWmUyMHVMTGJlLUVCem5iN29CM2c"}};
+  derbyshireLiveLiamThompson: {l:"Derbyshire Live", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX1RRTkJKMzlxcXR4TlpRdGFjR1dOcU1oMVZLcl80U3Q3Y0pKb2RkUmR1QVBsWUhGUVRkc3ZfVGM3WXk5eGdYWVlQclNDb05iZ2ZtMFItY1dJUld1aDQzUkFJR1N0RGdTY1RvTE5uVXZ1MkR1Y0M2N1hMSmFHQmpIZGFDWUliT3VJRTlJY1ByX1U2OUV2b0VQWmUyMHVMTGJlLUVCem5iN29CM2c"},
+  googleNewsDerbyCountyDajauneBrown: {l:"Google News / Derby County", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxORVFkVjlfNjZzZmoxM3NpS1NIRTQzbnVOVFdvREhrVEFaTUJnaEMtQnVEOWViLTJFenBxSlNwU2NCWEhjU2I1VVQ4SG93VDhkTW1xYnh2bFRsUmRFakF6Q1RQVFBtN3FsUUZPOFhBNHlJUkcyMlRVNEZORDBuZEFIZEVOX0RGYmdYQmc"}};
 
 const LINKMAP = {
   "Bobby Clark": ["gnews-bobbyclark"],
   "Divin Mubama": ["orourke"],
   "Stephen Mfuni": ["flw"],
   "Tommy Watson": ["sunderlandecho"],
-  "Dajaune Brown": ["derbyshireLiveDajauneBrown", "derbyCountyDajauneBrown", "derbyCountyOfficialDajauneBrown", "derbyshireLiveDajauneBrown1"],
+  "Dajaune Brown": ["derbyshireLiveDajauneBrown", "derbyCountyDajauneBrown", "derbyCountyOfficialDajauneBrown", "derbyshireLiveDajauneBrown1", "googleNewsDerbyCountyDajauneBrown"],
   "Thompson": ["derbyCountyThompson", "derbyCountyOfficialThompson"],
-  "Liam Thompson": ["derbyshireLiveLiamThompson", "derbyCountyThompson"]};
+  "Liam Thompson": ["derbyshireLiveLiamThompson", "derbyCountyThompson", "derbyCountyOfficialThompson"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

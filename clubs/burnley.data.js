@@ -46,7 +46,9 @@ const CONFIRMED_OUT = [
   {name:"Maxime Esteve", sub:"CB", club:"RB Leipzig", pos:"CB", fee:"£27.3m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed sale, one of the bigger fees of Burnley's summer clear-out."},
   {name:"Florentino Luis", sub:"26 · Portugal · DM", club:"Ipswich Town", pos:"Defensive midfield", fee:"£16m plus £3m in add-ons", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"The Portugal midfielder has signed a five-year deal at Portman Road, leaving Turf Moor after one season and a relegation. Burnley had been obliged to make his Benfica loan permanent for just over £20m in June, so this represents a loss on the outlay. Fee detail per David Ornstein."}
 ];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Ben Amos", sub:"Goalkeeper", club:"Bolton Wanderers", pos:"GK", report:"Free transfer arrival at Burnley", src:"Burnley Express", tier:3, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing; free transfer", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
+];
 const OUTGOING = [
   {name:"Florentino Luis", sub:"Midfielder", club:"Ipswich Town", pos:"CM", report:"Completed transfer to Ipswich Town", src:"BBC / David Ornstein", tier:1, fee:"£16m", truth:100, prob:100, light:"g", trend:"flat", note:"Initial fee £16m, deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
 ];
@@ -72,7 +74,8 @@ const HUB = {
   burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis: {l:"Burnley Express (fee via David Ornstein)", u:"https://www.burnleyexpress.net/sport/football/burnley-fc/burnley-ps16m-switch-premier-league-newcomers-8839366"},
   burnleyExpressBenAmos: {l:"Burnley Express", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNjBfbUxZS21zQTR4MGRWcnRlWS0yeTNFZERXV1UzTlk3T09mbldKOFNWQnZtYkVlY2dqaklBTDBhUnI4OVJ3MnZnc2haVEc2OGpXNWthNHIwNElhOHFGLW5SVVNRUllqTWw1TVpZVXhSUkNVeER1MmVwUUMtTkh2MzhqN1d3bTgybTFSSmNvRm1kQTY2RDNramhnZElfYl91aWdwbEZWVUZvcWc"},
   bBCFlorentinoLuis: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTFBUSjVna3ZXd3c1TWNoX0tIM1FuZG4yRFB6UUlOSmk3cnY0N0ROcFVycWZyQkR0Y1g4dlhhcWpoaUdZa2tBbGNhZDVVNmpLaUQxRV81aHdnT0VnQ1doc3g0NFBRMGNRMFZ2Z2c"},
-  bBCviaDavidOrnsteinFlorentinoLuis: {l:"BBC (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxQRHJYQVFXUkc3cnRkMi05ZG91aExybHNYR1dKM1FEVMM1VV82b3VNSjZfdUc4bGxNZklzS29RdmVoLW1JVmlBa3N1SEE0Rzk"}};
+  bBCviaDavidOrnsteinFlorentinoLuis: {l:"BBC (via David Ornstein)", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxQRHJYQVFXUkc3cnRkMi05ZG91aExybHNYR1dKM1FEVMM1VV82b3VNSjZfdUc4bGxNZklzS29RdmVoLW1JVmlBa3N1SEE0Rzk"},
+  theNewYorkTimesDavidOrnsteinFlorentinoLuis: {l:"The New York Times (David Ornstein)", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxQRHJYQVFXUkc3cnRkMi05ZG91aExybHNYR1dKM1FEVGM1VV82b3VNSjZfdUc4bGxNZklzS29RdmVoLW1JVmlBa3N1SEE0Rzk1RGlHSFlsZmlLLU1scWlPTXBDRUp3d2FMc1BXWHlnVnE4VUNKOUtiV2dnLTQweUhqMlp4UmVKY3FVd3pHbU8wbmM2UTUtSndz"}};
 
 const LINKMAP = {
   "Lluc Castell": ["gnews-lluccastell"],
@@ -80,7 +83,7 @@ const LINKMAP = {
   "Jaidon Anthony": ["gnews-jaidonanthony"],
   "Loum Tchaouna": ["gnews-loumtchaouna"],
   "Maxime Esteve": ["gnews-maximeesteve"],
-  "Florentino Luis": ["romano", "eastanglian", "burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis", "bBCFlorentinoLuis", "bBCviaDavidOrnsteinFlorentinoLuis"],
+  "Florentino Luis": ["romano", "eastanglian", "burnleyExpressfeeviaDavidOrnsteinFlorentinoLuis", "bBCFlorentinoLuis", "bBCviaDavidOrnsteinFlorentinoLuis", "theNewYorkTimesDavidOrnsteinFlorentinoLuis"],
   "Andreas Hountondji": ["schira"],
   "Florentino Luís": ["pAYahooSportFlorentinoLus"],
   "Ben Amos": ["burnleyExpressBenAmos"]};

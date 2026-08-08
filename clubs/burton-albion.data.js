@@ -39,11 +39,11 @@ const CONFIRMED_OUT = [
   {name:"Jake Beesley", sub:"Unknown · England · Forward", club:"Bradford City", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Bradford City"}
 ];
 const INCOMING = [
-  {name:"Gbemi Arubi", sub:"Dundalk · F", club:"Dundalk", pos:"F", report:"Transfer to Burton Albion confirmed from Dundalk", src:"Dundalk FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation from Dundalk FC", lastSeen:"2026-08-08T04:21:31Z", baseProb:100},
-  {name:"Brad Collins", sub:"Coventry City · GK", club:"Coventry City", pos:"GK", report:"Burton Albion targeting permanent deal for Coventry City keeper", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:60, light:"g", trend:"flat", note:"Loan player; Burton seeking to make move permanent", lastSeen:"2026-08-08T07:40:33Z", baseProb:60}
+  {name:"Gbemi Arubi", sub:"Dundalk · F", club:"Dundalk", pos:"F", report:"Transfer to Burton Albion confirmed from Dundalk", src:"Dundalk FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation from Dundalk FC", lastSeen:"2026-08-08T04:21:31Z", baseProb:100, dead:true, deadReason:"Transfer completed and confirmed; moved to confirmed_in"},
+  {name:"Brad Collins", sub:"Coventry City · Goalkeeper", club:"Coventry City", pos:"GK", report:"Burton Albion targeting permanent deal for Coventry City keeper", src:"sportsboom.co.uk", tier:3, fee:"Undisclosed", truth:65, prob:55, light:"g", trend:"down", note:"Loan spell at Burton; permanent move being pursued", lastSeen:"2026-08-08T10:03:39Z", baseProb:55}
 ];
 const OUTGOING = [
-  {name:"Jake Beesley", sub:"Bradford City · F", club:"Bradford City", pos:"F", report:"Joins Bradford City from Burton Albion", src:"Burton Albion FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation of departure", lastSeen:"2026-08-08T04:21:31Z", baseProb:100}
+  {name:"Jake Beesley", sub:"Bradford City · Forward", club:"Bradford City", pos:"FW", report:"Jake Beesley joins Bradford City from Burton Albion", src:"Burton Albion FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Move confirmed by Burton Albion", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];

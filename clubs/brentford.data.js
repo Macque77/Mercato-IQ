@@ -88,12 +88,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Pape Matar Sarr", sub:"midfielder · Tottenham", club:"Tottenham", pos:"M", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"flat", note:"Offer reported; no recent update on status", lastSeen:"2026-08-08T07:40:33Z", baseProb:30}
+  {name:"Pape Matar Sarr", sub:"Midfielder · Tottenham", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"flat", note:"Offer reported; no recent update on status", lastSeen:"2026-08-08T10:03:39Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Bryan Mbeumo", sub:"winger · Brentford", club:"Manchester United", pos:"W", report:"Manchester United submit improved bid exceeding £60m for Brentford's Bryan Mbeumo", src:"The Athletic", tier:2, fee:"£60m+", truth:80, prob:75, light:"g", trend:"up", note:"Improved bid from Manchester United", lastSeen:"2026-08-08T07:40:33Z", baseProb:75},
-  {name:"Jordan Henderson", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford", src:"On-page rumour", tier:3, fee:"Free", truth:50, prob:35, light:"y", trend:"down", note:"No fresh snippet provided; retained from page", lastSeen:"2026-08-07T17:40:24Z", baseProb:35}
+  {name:"Bryan Mbeumo", sub:"Winger · Brentford", club:"Brentford", pos:"Winger", report:"Manchester United submit improved bid exceeding £60m", src:"The Athletic", tier:2, fee:"£60m+", truth:75, prob:45, light:"y", trend:"down", note:"Improved bid reported by Laurie Whitwell", lastSeen:"2026-08-08T10:03:39Z", baseProb:45},
+  {name:"Jordan Henderson", sub:"Midfielder · Brentford", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford", src:"On-page rumour", tier:3, fee:"Free", truth:60, prob:50, light:"y", trend:"up", note:"No fresh snippet provided; retained from page", lastSeen:"2026-08-08T10:03:39Z", baseProb:50}
 ];
 const DEAD = [
   {name:"Value & successor targets", sub:"Data-model intake", club:"Market", pos:"-", report:"window framing", src:"Model-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',

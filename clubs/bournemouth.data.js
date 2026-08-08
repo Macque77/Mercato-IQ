@@ -62,11 +62,11 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Juanlu Sanchez", sub:"Defender · Spain", club:"Sevilla", pos:"D", report:"Sevilla defender Juanlu Sanchez joins Bournemouth", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
-  {name:"Antonio Silva", sub:"Defender · Portugal", club:"Benfica", pos:"D", report:"Bournemouth announce signing of Antonio Silva at fraction of £87m release clause", src:"The Sun", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
+  {name:"Juanlu Sanchez", sub:"21 · Spain · D", club:"Sevilla", pos:"D", report:"Sevilla defender Juanlu Sanchez joins Bournemouth", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T10:03:39Z", baseProb:100},
+  {name:"Antonio Silva", sub:"21 · Portugal · D", club:"Benfica", pos:"D", report:"Bournemouth agree surprise transfer for former Man Utd target Antonio Silva at fraction of £87m release clause", src:"The Sun", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Alex Scott", sub:"Defender · England", club:"Bournemouth", pos:"D", report:"Arsenal and Manchester United interest in Bournemouth's Alex Scott", src:"Various", tier:3, fee:"", truth:65, prob:45, light:"y", trend:"flat", note:"Interest from Arsenal and Manchester United reported", lastSeen:"2026-08-08T07:40:33Z", baseProb:45}
+  {name:"Alex Scott", sub:"23 · England · W", club:"Bournemouth", pos:"W", report:"Arsenal and Manchester United interest in Bournemouth defender Alex Scott", src:"Various", tier:3, fee:"", truth:65, prob:45, light:"y", trend:"flat", note:"Interest from top clubs reported; deal not advanced", lastSeen:"2026-08-08T10:03:39Z", baseProb:45}
 ];
 const DEAD = [
   {name:"Young press-fit additions", sub:"Rose-system talent", club:"Market", pos:"-", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"£40-80m total", truth:55, prob:40, light:'y', trend:'up',

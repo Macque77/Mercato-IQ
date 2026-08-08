@@ -59,7 +59,8 @@ const CONFIRMED_IN = [
   {name:"Semi Ajayi", sub:"31 · CB · Nigeria", club:"West Bromwich Albion", pos:"DF", fee:"Free transfer", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signs a two-year deal after being released by West Brom, adding Premier League-proven centre-back depth."},
   {name:"Jens Hjertø-Dahl", sub:"· Norway · Midfielder", club:"Molde", pos:"Midfielder", fee:"£8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Five-year deal completed"},
   {name:"Leon Bailey", sub:"27 · Jamaica · W", club:"Aston Villa", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move confirmed by owner Acun Ilicali; medical completed"},
-  {name:"Dimitar Tzolakis", sub:"25 · Greece · Goalkeeper", club:"Olympiakos", pos:"Goalkeeper", fee:"Club-record", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record transfer from Olympiakos"}
+  {name:"Dimitar Tzolakis", sub:"25 · Greece · Goalkeeper", club:"Olympiakos", pos:"Goalkeeper", fee:"Club-record", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club-record transfer from Olympiakos"},
+  {name:"Konstantinos Tzolakis", sub:"28 · Greece · GK", club:"Olympiakos", pos:"GK", fee:"Club-record", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Goalkeeper signing"}
 ];
 const CONFIRMED_OUT = [
   {name:"Akin Famewo", sub:"27 · CB · England", club:"Bolton Wanderers", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Centre-back departs as Hull trims its promotion-winning squad."},
@@ -85,8 +86,9 @@ const INCOMING = [
   {name:"Sorba Thomas", sub:"25 · England · W", club:"Huddersfield Town", pos:"W", report:"HullLive and BBC Sport name Thomas as Hull transfer target", src:"HullLive / BBC Sport", tier:2, fee:"Unknown", truth:65, prob:50, light:"y", trend:"down", note:"Active target during this window", lastSeen:"2026-08-07T23:07:30Z", baseProb:50, dead:true, deadReason:"No current snippet evidence; previous rumour without recent confirmation"},
   {name:"Leon Bailey", sub:"· Jamaica · Winger", club:"Aston Villa", pos:"Winger", report:"Owner Acun Ilicali confirmed permanent move; medical completed", src:"Hull City Official", tier:1, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Medical completed, permanent transfer", lastSeen:"2026-08-07T17:40:24Z", baseProb:100, dead:true, deadReason:"Reported as confirmed by owner in earlier window; no new snippet evidence of current active status"},
   {name:"Manor Solomon", sub:"24 · Israel · W", club:"Tottenham Hotspur", pos:"W", report:"Hull City rivals West Ham for £20m Tottenham forward", src:"Transfer reporting", tier:3, fee:"£20m", truth:60, prob:45, light:"y", trend:"down", note:"Competing with West Ham for signature", lastSeen:"2026-08-07T23:07:30Z", baseProb:45, dead:true, deadReason:"No current snippet evidence; previous rumour status unclear"},
-  {name:"Jens Hjertø-Dahl", sub:"22 · Norway · M", club:"Molde", pos:"M", report:"Signed on five-year deal, club-record £8m transfer", src:"BBC Sport", tier:2, fee:"£8m", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
-  {name:"Dimitar Tzolakis", sub:"26 · Greece · GK", club:"Olympiakos", pos:"GK", report:"Signed from Olympiakos in club-record transfer", src:"Ekathimerini", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
+  {name:"Jens Hjertø-Dahl", sub:"21 · Norway · M", club:"Molde", pos:"M", report:"Signed on five-year deal, club-record £8m transfer", src:"BBC Sport", tier:2, fee:"£8m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100},
+  {name:"Dimitar Tzolakis", sub:"26 · Greece · GK", club:"Olympiakos", pos:"GK", report:"Signed from Olympiakos in club-record transfer", src:"Ekathimerini", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100, dead:true, deadReason:"Page entry refers to 'Dimitar' but confirmed signing is 'Konstantinos Tzolakis' (different player); page entry appears to be an error"},
+  {name:"Konstantinos Tzolakis", sub:"28 · Greece · GK", club:"Olympiakos", pos:"GK", report:"Signed from Olympiakos in club-record transfer", src:"BBC Sport", tier:2, fee:"Club-record", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
 ];
 
 const OUTGOING = [
@@ -157,7 +159,8 @@ const HUB = {
   bBCSportJensHjertDahl: {l:"BBC Sport", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1zalZ6NFVPUzAxVzJIWFdwVkRHLUNUT1pSUnMzcW9ZbHRZc2JFSjBfbnhvMHR2czEwMTQtempTcTlTdmZZejVlY2VfYjNxVnJWNkFYMEVUOTFhNVhqTXdFSlpfYURoZk42cEE"},
   hayterscomLeonBailey: {l:"hayters.com", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxPYU81SGZpbjRTNDZmR2NPcGNZSUJ6WnhOaXB2Rk51V3NSTXVSVUFMZUJOcmNUa1FTdW9oVmFsWE9HOUlpQXN6S0U4bUJYb1hxTnRoQ19SZTNYY2E0ZVRTOHpvbzAzUHdnNmtiQ2dOS1dlNEdoMFZlWXl6aWRqQnU1MzE3NlA4WWIxdFZLTTVnOUhrQ01OWjR5ekRwY25CQlVYdGMxedIBqgFBVV95cUxQZlIyc2xpWDBrYUVrQnJ2ZWY2c3k2eTRfNUdvb1ZTZFlmdUhmSFVLZnc2b1preDhYQlZ5RDcwSllJRjNKM1NWS1lFbTJOeG9VSWJhdm5hWVlKMVQySzN0U0ltMGxEVkN2Q1MyWXFkUW1NS3pOeGN2SDNqNHhQclBpZk9Sc2ZCdFRmVDNsY2FIV1N6c0VseVB2R3ZHQlkxOUxkQlB6aTF3dDQwUQ"},
   ekathimerinicomDimitarTzolakis: {l:"ekathimerini.com", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxNUE9OZWVnTkZBLTYydlI4dEQwUk9rRThYTFd0RHBzb3U2ellEUDNPV2J2d05ycy1FOHdjQ3F6Rk9JcmlPRndMLWxWemY1X19ORzlTUlJOdTJ6N0w3NDNmVGF1Z1FlM2h4MENkREdMSW84RWlWUzlSdTJFbDNueGlyVWJkVzk4VTlWZDNVWEtYVHFIYUpoSzZsYXpySVAtbWNpbGx1M3ZTdm80ZlAwRktBZW5HQWRoa3JfYXVmY1RCNXF1WV9VbTFn"},
-  eKathimerinicomDimitarTzolakis: {l:"eKathimerini.com", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxNUE9OZWVnTkZBLTYydlI4dEQwUk9rRThYTFd0RHBzb3U2ellEUDNPV2J2d05ycy1FOHdjQ3F6Rk9JcmlPRndMLWxWemY1X19ORzlTUlJOdTJ6N0w3NDNmVGF1Z1FlM2h4MENkREdMSW84RWlWUzlSdTJFbDNueGlyVWJkVzk4VTlWZDNVWEtYVHFIYUpoSzZsYXpySVAtbWNpbHUzdlN2bzRmUDBGS0FlbkdBZGhra19hdWZjVEI1cXVZX1VtMWc"}};
+  eKathimerinicomDimitarTzolakis: {l:"eKathimerini.com", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxNUE9OZWVnTkZBLTYydlI4dEQwUk9rRThYTFd0RHBzb3U2ellEUDNPV2J2d05ycy1FOHdjQ3F6Rk9JcmlPRndMLWxWemY1X19ORzlTUlJOdTJ6N0w3NDNmVGF1Z1FlM2h4MENkREdMSW84RWlWUzlSdTJFbDNueGlyVWJkVzk4VTlWZDNVWEtYVHFIYUpoSzZsYXpySVAtbWNpbHUzdlN2bzRmUDBGS0FlbkdBZGhra19hdWZjVEI1cXVZX1VtMWc"},
+  bBCSportKonstantinosTzolakis: {l:"BBC Sport", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE5XeWJ1MEdXQW1vWnlNZWVUZEFqMXVscUZydFhzVDYtV1BjOWdNdEIzYUdRVS1NZ19TVzYtb3F4WkNBcGFYNjlGak55YUl0YXBYX2RIN09GSWZ0Q3VoY1ViLTRLX1VwR0dmdFE"}};
 const LINKMAP = {
   "PL-experienced rebuild": ["hullLive","bbcHull","sky"],
   "Goalscorer": ["hullLive","bbcGossip"],
@@ -165,7 +168,7 @@ const LINKMAP = {
   "Midfield control": ["hullLive","bbcGossip"],
   "Goalkeeper / depth": ["hullLive","bbcGossip"],
   "Championship-level players": ["hullLive","official"],
-  "Konstantinos Tzolakis": ["yahooSportsIlicaliconfirmationKonstantinosTzolakis", "hullLiveKonstantinosTzolakis", "ownerconfirmationKonstantinosTzolakis"],
+  "Konstantinos Tzolakis": ["yahooSportsIlicaliconfirmationKonstantinosTzolakis", "hullLiveKonstantinosTzolakis", "ownerconfirmationKonstantinosTzolakis", "bBCSportKonstantinosTzolakis"],
   "Sorba Thomas": ["bBCSportHullLiveSorbaThomas", "hullLiveKonstantinosTzolakis", "bBCSportSorbaThomas"],
   "Jack Butland": ["skySportsJackButland"],
   "Oscar Zambrano": ["tribalFootballOscarZambrano"],

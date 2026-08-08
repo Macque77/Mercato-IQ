@@ -37,7 +37,7 @@ const CONFIRMED_OUT = [
   {name:"Owen Bailey", sub:"Unknown · Unknown · Unknown", club:"Doncaster Rovers", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed move to League Two outfit"}
 ];
 const INCOMING = [
-  {name:"Jordan Thomas", sub:"Unknown · Unknown · Unknown", club:"Cheltenham Town", pos:"Unknown", report:"Agrees move from Cheltenham Town", src:"Gloucestershire Live", tier:3, fee:"Unknown", truth:85, prob:85, light:"g", trend:"up", note:"Deal agreed", lastSeen:"2026-08-08T07:40:33Z", baseProb:85}
+  {name:"Jordan Thomas", sub:"Unknown · Unknown · Unknown", club:"Cheltenham Town", pos:"Unknown", report:"Jordan Thomas agrees move from Cheltenham Town", src:"Gloucestershire Live", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"flat", note:"Agreement reached for move from Cheltenham Town", lastSeen:"2026-08-08T10:03:40Z", baseProb:85}
 ];
 const OUTGOING = [];
 const RISERS = [];

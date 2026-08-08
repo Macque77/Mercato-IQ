@@ -38,12 +38,12 @@ const CONFIRMED_OUT = [
   {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Player departure confirmed; player statement released"}
 ];
 const INCOMING = [
-  {name:"Fedde Leysen", sub:"unknown · unknown · unknown", club:"PSV", pos:"unknown", report:"Transfer from PSV confirmed", src:"unknown", tier:2, fee:"unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Already confirmed on page", lastSeen:"2026-08-08T07:40:32Z", baseProb:100}
+  {name:"Fedde Leysen", sub:"PSV", club:"PSV", pos:"Defender", report:"Transfer from PSV confirmed", src:"transferfeed snapshot", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Already confirmed on page", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"Departure linked", src:"The Athletic", tier:3, fee:"£17m bid rejected", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 29 Jul 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50},
-  {name:"Anouar Ait El-Hadj", sub:"24 · MF", club:"Undisclosed", pos:"MF", report:"Departure linked", src:"La Dernière Heure", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 3 Aug 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50},
-  {name:"Mamadou Barry", sub:"CB", club:"Saudi Pro League club", pos:"CB", report:"Departure linked", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 26 Jul 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50},
+  {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"Departure linked", src:"The Athletic", tier:3, fee:"£17m bid rejected", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 29 Jul 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50, dead:true, deadReason:"No recent credible link; stale rumour"},
+  {name:"Anouar Ait El-Hadj", sub:"24 · MF", club:"Undisclosed", pos:"MF", report:"Departure linked", src:"La Dernière Heure", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 3 Aug 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50, dead:true, deadReason:"No recent credible link; stale rumour"},
+  {name:"Mamadou Barry", sub:"CB", club:"Saudi Pro League club", pos:"CB", report:"Departure linked", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 26 Jul 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50, dead:true, deadReason:"No recent credible link; stale rumour"},
   {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"Union Saint-Gilloise", pos:"Unknown", report:"Player departure confirmed; player statement released", src:"VoetbalPrimeur.be", tier:3, fee:"Unknown", truth:95, prob:95, light:"g", trend:"down", note:"Departure confirmed with player farewell statement", lastSeen:"2026-08-07T23:07:29Z", baseProb:95}
 ];
 const RISERS = [];

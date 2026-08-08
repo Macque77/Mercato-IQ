@@ -33,22 +33,17 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Liam Cullen", sub:"24 · Wales · W", club:"Swansea City", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed from Swansea City"},
   {name:"Asmir Begovic", sub:"37 · Bosnia and Herzegovina · GK", club:"Everton", pos:"Goalkeeper", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Goalkeeper signed"},
-  {name:"Conor Chaplin", sub:"26 · England · F", club:"Ipswich Town", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Ipswich Town forward signed"},
-  {name:"Alex McCarthy", sub:"Unknown · Unknown · Goalkeeper", club:"Unknown", pos:"Goalkeeper", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Goalkeeper signed for Leicester City"}
+  {name:"Conor Chaplin", sub:"26 · England · F", club:"Ipswich Town", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Ipswich Town forward signed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Jeremy Monga", sub:"17 · Cameroon · W", club:"Manchester City", pos:"Winger", fee:"£10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Manchester City"}
 ];
 const INCOMING = [
-  {name:"Admir Bristric", sub:"ST", club:"Olimpija Ljubljana (on loan at Bravo)", pos:"ST", report:"~2 wks ago", src:"Planet Nogomet / FLW", tier:2, fee:"€1.7-2m", truth:80, prob:85, light:'g', trend:'up', note:"Player already in England for a medical per reporting.", lastSeen:"2026-08-04T19:10:50Z", baseProb:85, dead:true, deadReason:"No recent update; rumour aged ~2 weeks with no confirmation"},
-  {name:"Liam Cullen", sub:"ST", club:"Swansea City", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Departure described as imminent.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
-  {name:"Dom Ballard", sub:"FW", club:"Leyton Orient", pos:"FW", report:"~1 wk ago", src:"FLW", tier:3, fee:"£5m+", truth:45, prob:35, light:'y', trend:'flat', note:"Contested with Bristol City, valuation a sticking point.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent update; rumour aged ~1 week with no confirmation"},
-  {name:"Asmir Begovic", sub:"37 · Bosnia and Herzegovina · GK", club:"Free Agent", pos:"Goalkeeper", report:"Signed for Leicester City", src:"Various", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T17:40:24Z", baseProb:100},
-  {name:"Conor Chaplin", sub:"28 · England · F", club:"Ipswich Town", pos:"F", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T23:07:30Z", baseProb:100},
-  {name:"Alex McCarthy", sub:"34 · England · GK", club:"Southampton", pos:"GK", report:"Goalkeeper signs for Leicester City", src:"lcfc.com", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-08T04:21:32Z", baseProb:100}
+  {name:"Liam Cullen", sub:"Unknown · Unknown · Forward", club:"Swansea City", pos:"Forward", report:"Liam Cullen completes transfer to Leicester City", src:"Swansea City official", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"up", note:"Transfer completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100},
+  {name:"Conor Chaplin", sub:"Unknown · Unknown · Forward", club:"Ipswich Town", pos:"Forward", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jeremy Monga", sub:"17 · Ivory Coast · W", club:"Manchester City", pos:"W", report:"Man City complete signing of 17-year-old Leicester City winger", src:"Sky Sports", tier:2, fee:"£10m", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer", lastSeen:"2026-08-07T23:07:30Z", baseProb:100, dead:true, deadReason:"Confirmed transfer to Manchester City (moved to confirmed_out)"}
+  {name:"Jeremy Monga", sub:"17 · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Man City complete signing of 17-year-old Leicester", src:"transferfeed snapshot", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed to Manchester City", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];

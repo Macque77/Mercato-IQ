@@ -39,7 +39,7 @@ const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Tomáš Souček", sub:"29 · Czech Republic · M", club:"West Ham United", pos:"Midfielder", report:"RSC Anderlecht interested but facing competition from Polish clubs", src:"VoetbalPrimeur.be", tier:3, fee:"", truth:45, prob:30, light:"y", trend:"up", note:"Transfer described as distant; Polish interest reportedly stronger", lastSeen:"2026-08-08T07:40:32Z", baseProb:30}
+  {name:"Tomáš Souček", sub:"29 · Czech Republic · M", club:"West Ham United", pos:"M", report:"RSC Anderlecht interested but facing competition from Polish clubs", src:"VoetbalPrimeur.be", tier:3, fee:"", truth:45, prob:25, light:"o", trend:"down", note:"Polish clubs reportedly closer to signing; Anderlecht facing strong competition", lastSeen:"2026-08-08T10:03:39Z", baseProb:25}
 ];
 
 const OUTGOING = [
