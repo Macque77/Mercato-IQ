@@ -39,12 +39,14 @@ const INCOMING = [
   {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100},
   {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"down", note:"Transfer agreed", lastSeen:"2026-08-07T23:07:29Z", baseProb:85},
   {name:"Steven Sessegnon", sub:"Player", club:"Wigan Athletic", pos:"Unknown", report:"Joined after leaving Wigan Athletic", src:"Unknown", tier:3, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"On-page entry retained pending confirmation", lastSeen:"2026-08-07T23:07:29Z", baseProb:75},
-  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"down", note:"Former Millwall skipper target", lastSeen:"2026-08-07T23:07:29Z", baseProb:65}
+  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"down", note:"Former Millwall skipper target", lastSeen:"2026-08-07T23:07:29Z", baseProb:65},
+  {name:"Layton Stewart", sub:"23 · Jamaica · F", club:"FC Thun", pos:"F", report:"AFC Wimbledon sign ex-Liverpool forward on loan from FC Thun", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Loan signing", lastSeen:"2026-08-08T04:21:31Z", baseProb:95}
 ];
 const OUTGOING = [
   {name:"Riley Harbottle", sub:"Player", club:"Bristol Rovers", pos:"Unknown", report:"Signed by Bristol Rovers from AFC Wimbledon", src:"Bristol Rovers", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100},
   {name:"Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T10:18:48Z", baseProb:100, dead:true, deadReason:"no longer a current link"},
-  {name:"Osman Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100}
+  {name:"Osman Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100, dead:true, deadReason:"Duplicate entry - same player listed twice in outgoing; kept as single 'Foyo' entry on page"},
+  {name:"Patrick Bauer", sub:"32 · Germany · D", club:"Cambridge United", pos:"D", report:"Cambridge United sign AFC Wimbledon defender", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T04:21:31Z", baseProb:95}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -73,7 +75,9 @@ const HUB = {
   sportsBoomUKShaunHutchinson2: {l:"SportsBoom UK", u:"https://news.google.com/rss/articles/CBMi2wFBVV95cUxOREFSOEMyVEZlT0U4TWdUTUtJdXVKb2xEY2s1ZDM4bmpKeVRlYnBIOUVHNmEwS05UTm1CUUlkZ1FrVXQyVnFqVkRkWGtOZFM4T3hTTjRQSlZla0JMdlVTcGNzb0JsdEd2NTI5Y2xxTlQzazRvOHk5VzUwcXkteG8zNDd4VjEzb3E1V1NMQ2RKbzNqdlo4dXY2X2tQdzJJRXlOSGJDaEFwX21OeVVzQlEyb0R0WFJ2cjFSWXdHVUI5VUdCaDdBclFvUkhCaUoxZmh4cFNpUVpnWlRmSnc"},
   bristolRoversFootballClubRileyHarbottle1: {l:"Bristol Rovers Football Club", u:"https://news.google.com/rss/articles/CBMijwFBVV95cUxQX203TzZuV3B1SmZXWExTOGxUS215VElFaFpkM1l1eFRZcTZmSUZfeHRwV1hwY3RRcFZlZW40STlIV21ETTdEV3NLOVpzT2R4WFF4bVg4cUU4cWhiS1dvSmN0bGhpa3BHNTZZMURRR1pIdmIyd0JudzlTczRlVXdUc2lrMlRicXNQWkFCLXA5dw"},
   bBCOsmanFoyo: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAxZE1FbUotMHVpQ3g4WkhhdEhQVjJZZ3lhRDlMZEJSNkg1R2p0akd0MTZiOWsyeXRNTFNOdDZ4ZHEyRF9ScG5fcDNoNnpYWlpBTERxNlluRGFidWctX2VKX21BZnRHMW8"},
-  bristolRoversRileyHarbottle1: {l:"Bristol Rovers", u:"https://news.google.com/rss/articles/CBMijwFBVV95cUxQX203TzZuV3B1SmZXWExTOGxUS215VElFaFpkM1l1eFRZcTZmSUZfeHRwV1hwY3RRcFZlZW40STlIV21ETTdEV3NLOVpzT2R4WFF4bVg4cUU4cWhiS1dvSmN0bGhia3BHNTZZMURRR1pIdmIyd0JudzlTczRlVXdUc2lrMlRicXNQWkFCLXA5dw"}};
+  bristolRoversRileyHarbottle1: {l:"Bristol Rovers", u:"https://news.google.com/rss/articles/CBMijwFBVV95cUxQX203TzZuV3B1SmZXWExTOGxUS215VElFaFpkM1l1eFRZcTZmSUZfeHRwV1hwY3RRcFZlZW40STlIV21ETTdEV3NLOVpzT2R4WFF4bVg4cUU4cWhiS1dvSmN0bGhia3BHNTZZMURRR1pIdmIyd0JudzlTczRlVXdUc2lrMlRicXNQWkFCLXA5dw"},
+  bBCLaytonStewart: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA2NjZlU3lTcHVTY0JVUmZ3dGQ4Y3JsSmM2VWZwOFdySjVKWEFRVVVaUXBGTTFJUmlHOGhhNFkwUDhkd3o3cEU0b3ZiMmRwN3FIekVKNVZweDlvOXh4S3pZNm9PbFBjN0E"},
+  bBCPatrickBauer: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5qLXhEZEhXQUk0MmYydk1hMFdCRXFqSjVzY0VrQ3dwN1hFbDc2ZlA2dktXQUhVS3BYUDZreWFPT3ZZM09uTW14UHYtX204RHRjQ00wYXFaSldGTm9mZ05CeUtXaFFkb0U"}};
 
 const LINKMAP = {
   "Ollie Harrison": ["gnews-ollieharrison"],
@@ -84,7 +88,9 @@ const LINKMAP = {
   "Shaun Hutchinson": ["sportsBoomUKShaunHutchinson", "sportsBoomUKShaunHutchinson1", "sportsBoomUKShaunHutchinson2"],
   "Riley Harbottle": ["bristolRoversFootballClubRileyHarbottle", "bristolRoversRileyHarbottle", "bristolRoversFootballClubRileyHarbottle1", "bristolRoversRileyHarbottle1"],
   "Foyo": ["bBCJaydenStockley", "bBCFoyo"],
-  "Osman Foyo": ["bBCOsmanFoyo"]};
+  "Osman Foyo": ["bBCOsmanFoyo"],
+  "Layton Stewart": ["bBCLaytonStewart"],
+  "Patrick Bauer": ["bBCPatrickBauer"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -41,12 +41,14 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 
 const INCOMING = [
-  {name:"Jan Virgili", sub:"unknown · Spain · W", club:"Mallorca", pos:"W", report:"Club Brugge close to signing Mallorca winger", src:"Sacha Tavolieri", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"up", note:"Advanced talks reported", lastSeen:"2026-08-07T23:07:29Z", baseProb:65}
+  {name:"Jan Virgili", sub:"unknown · Spain · W", club:"Mallorca", pos:"W", report:"Club Brugge close to signing Mallorca winger", src:"Sacha Tavolieri", tier:2, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"flat", note:"Advanced talks reported", lastSeen:"2026-08-08T04:21:31Z", baseProb:65},
+  {name:"Cheveyo Tsawa", sub:"", club:"", pos:"", report:"Club Brugge leading the race for Tsawa, but competition increasing", src:"Sacha Tavolieri", tier:2, fee:"", truth:60, prob:50, light:"y", trend:"flat", note:"", lastSeen:"2026-08-08T04:21:31Z", baseProb:50},
+  {name:"Vasovic", sub:"", club:"", pos:"F", report:"Club Brugge looking again at Switzerland, following young prolific scorer", src:"Sacha Tavolieri", tier:2, fee:"", truth:50, prob:40, light:"y", trend:"flat", note:"Young Swiss forward", lastSeen:"2026-08-08T04:21:31Z", baseProb:40}
 ];
 
 const OUTGOING = [
   {name:"Unknown player", sub:"Unknown · Unknown · Unknown", club:"Unknown competitor", pos:"Unknown", report:"Club Brugge loses player to competitor in Belgian Pro League", src:"Sacha Tavolieri", tier:2, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T20:08:12Z", baseProb:60, dead:true, deadReason:"Cannot identify player from on-page entry; no supporting snippet with player name found"},
-  {name:"Bisiwu", sub:"unknown · unknown · unknown", club:"Barcelona", pos:"unknown", report:"Club Brugge and Barcelona have reached an agreement over transfer", src:"Sacha Tavolieri", tier:3, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Agreement reported between clubs; full player details not disclosed in snippet", lastSeen:"2026-08-07T23:07:29Z", baseProb:70}
+  {name:"Bisiwu", sub:"unknown · unknown · unknown", club:"Barcelona", pos:"unknown", report:"Club Brugge and Barcelona have reached an agreement on transfer", src:"Sacha Tavolieri", tier:2, fee:"", truth:85, prob:80, light:"g", trend:"up", note:"Agreement reached", lastSeen:"2026-08-08T04:21:31Z", baseProb:80}
 ];
 
 const RISERS = [];

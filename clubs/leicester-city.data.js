@@ -32,7 +32,8 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Liam Cullen", sub:"24 · Wales · W", club:"Swansea City", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed from Swansea City"},
-  {name:"Asmir Begovic", sub:"37 · Bosnia and Herzegovina · GK", club:"Everton", pos:"Goalkeeper", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Goalkeeper signed"}
+  {name:"Asmir Begovic", sub:"37 · Bosnia and Herzegovina · GK", club:"Everton", pos:"Goalkeeper", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Goalkeeper signed"},
+  {name:"Conor Chaplin", sub:"26 · England · F", club:"Ipswich Town", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Ipswich Town forward signed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Jeremy Monga", sub:"17 · Cameroon · W", club:"Manchester City", pos:"Winger", fee:"£10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Manchester City"}
@@ -43,7 +44,8 @@ const INCOMING = [
   {name:"Liam Cullen", sub:"ST", club:"Swansea City", pos:"ST", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:45, light:'y', trend:'up', note:"Departure described as imminent.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45},
   {name:"Dom Ballard", sub:"FW", club:"Leyton Orient", pos:"FW", report:"~1 wk ago", src:"FLW", tier:3, fee:"£5m+", truth:45, prob:35, light:'y', trend:'flat', note:"Contested with Bristol City, valuation a sticking point.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent update; rumour aged ~1 week with no confirmation"},
   {name:"Asmir Begovic", sub:"37 · Bosnia and Herzegovina · GK", club:"Free Agent", pos:"Goalkeeper", report:"Signed for Leicester City", src:"Various", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T17:40:24Z", baseProb:100},
-  {name:"Conor Chaplin", sub:"28 · England · F", club:"Ipswich Town", pos:"F", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T23:07:30Z", baseProb:100}
+  {name:"Conor Chaplin", sub:"28 · England · F", club:"Ipswich Town", pos:"F", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T23:07:30Z", baseProb:100},
+  {name:"Alex McCarthy", sub:"34 · England · GK", club:"Southampton", pos:"GK", report:"Goalkeeper signs for Leicester City", src:"lcfc.com", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official signing confirmed", lastSeen:"2026-08-08T04:21:32Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Jeremy Monga", sub:"17 · Ivory Coast · W", club:"Manchester City", pos:"W", report:"Man City complete signing of 17-year-old Leicester City winger", src:"Sky Sports", tier:2, fee:"£10m", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer", lastSeen:"2026-08-07T23:07:30Z", baseProb:100, dead:true, deadReason:"Confirmed transfer to Manchester City (moved to confirmed_out)"}
@@ -63,7 +65,8 @@ const HUB = {
   lCFCOfficialAsmirBegovic: {l:"LCFC Official", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxOSzZ2bzJadDBYZDFMYUtGQ1p3bWllQjlJZ0ZCRVJXcFlHSzlnUWFxRFJVVks0dmdUbjA1bjZyWE42WEM4b0RpMVBFZEJJN0N5UTlzQUgxZDR0djRGMDVrMFp5bVFMajJxVVQ3S0RpVkVENXZJcVM1OEJpMzUyUC1XTW5ZUUtRRTNsUGs3NmN3"},
   swanseaCityOfficialLiamCullen: {l:"Swansea City Official", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxQeG90ZXE2ZFQ3MmpxVW5lY1VpWjMxLXh0MGxuR0JnRzdnNE43NVBJTGMwQkhqUXZydWJzemtubmpBRkJwQ2h4amdOU1UxS1g3RjY4dHZkeS1wSVdEWTNoekpqanFENGxwSG5ucXpBbUYtVTVqMVowUUpCTWxxc19aMlRlbzM"},
   bBCConorChaplin: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBYU1hicnQxOEozRERVNnhxRmxFTmFHbHJKYU51MUN2TlFPSzZVZjF4TEEwOEpqbWxBQ1ZaZW0zOFB5ZnJiaENvS1Z0SU4yVVFtT0U3MjdIUVczYVozTG1sRnl1U2NkZGs"},
-  skySportsJeremyMonga: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxOTW04czdJdUFaUGloM0hCTzJkUFpQU2JHRUM4MzJVOFU2a3REanV2X0VYclNyb0J2Tm54U1NMZGxpb3k3anNLTlZrejBJUmc5WW9sR0xUVS00UnM3bjlZM28zdmxxNHU1VVdnb2pkTzdnMWVlSE53V0hzTDdHa09qaHZzbDV2VHRLTW5uSUI4OUw1cmNHeWpyeUtZZUFHaV9vZkpYUVpvb1RLeFMxWTZuc0JrM2FMTHZJR0RlUEFZSmhRUF9UX3YzTXZUN0Q0N1I3QV9Td09n"}};
+  skySportsJeremyMonga: {l:"Sky Sports", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxOTW04czdJdUFaUGloM0hCTzJkUFpQU2JHRUM4MzJVOFU2a3REanV2X0VYclNyb0J2Tm54U1NMZGxpb3k3anNLTlZrejBJUmc5WW9sR0xUVS00UnM3bjlZM28zdmxxNHU1VVdnb2pkTzdnMWVlSE53V0hzTDdHa09qaHZzbDV2VHRLTW5uSUI4OUw1cmNHeWpyeUtZZUFHaV9vZkpYUVpvb1RLeFMxWTZuc0JrM2FMTHZJR0RlUEFZSmhRUF9UX3YzTXZUN0Q0N1I3QV9Td09n"},
+  leicesterCityOfficialAlexMcCarthy: {l:"Leicester City Official", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxNbXZOQngzYnJuVjRFb3hZelJhcTUtNWM3Q2FIUGhfYkVyRmtwXzFtd0lxUnRfNE9razZIUzg3ZjFFUGNpMS1GMm9XcllXM21kQU9vQmd3RnN4aGhyR0pwdk4tM0VWRGNsQ01lSkxObmhzQ1FlV2QxLTQ4SFdZVy1zX1pYUnNsUmpFWEE"}};
 
 const LINKMAP = {
   "Admir Bristric": ["src-planetnogomet", "flw"],
@@ -72,7 +75,8 @@ const LINKMAP = {
   "Dom Ballard": ["flw"],
   "Asmir Begovic": ["lCFCOfficialAsmirBegovic"],
   "Conor Chaplin": ["bBCConorChaplin"],
-  "Jeremy Monga": ["skySportsJeremyMonga"]};
+  "Jeremy Monga": ["skySportsJeremyMonga"],
+  "Alex McCarthy": ["leicesterCityOfficialAlexMcCarthy"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

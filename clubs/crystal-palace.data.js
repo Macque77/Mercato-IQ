@@ -87,15 +87,15 @@ const CONFIRMED_OUT = [
 
 const INCOMING = [
   {name:"Igor Julio", sub:"23 · Brazil · D", club:"Brighton", pos:"CB", report:"The young Brighton centre-back has emerged as a target", src:"Unknown", tier:3, fee:"Unknown", truth:60, prob:55, light:"g", trend:"up", note:"Young centre-back emerging as a target", lastSeen:"2026-08-07T01:42:32Z", baseProb:55, dead:true, deadReason:"No recent credible updates; snippet evidence insufficient to confirm active pursuit"},
-  {name:"Takehiro Tomiyasu", sub:"Arsenal · Defender", club:"Arsenal", pos:"LB/RB", report:"Crystal Palace sign Takehiro Tomiyasu after successful trial", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing after trial", lastSeen:"2026-08-07T23:07:30Z", baseProb:100},
-  {name:"Solly March", sub:"31 · England · LB", club:"Brighton", pos:"LB", report:"Crystal Palace set to sign Takehiro Tomiyasu and consider move for Solly March", src:"BBC", tier:2, fee:"Free", truth:70, prob:65, light:"g", trend:"flat", note:"Free transfer consideration", lastSeen:"2026-08-07T17:40:24Z", baseProb:65, dead:true, deadReason:"Rumour aged; no fresh snippet confirming this link"},
+  {name:"Takehiro Tomiyasu", sub:"27 · Japan · D", club:"Arsenal", pos:"D", report:"Crystal Palace sign Takehiro Tomiyasu after successful trial", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Signing confirmed", lastSeen:"2026-08-08T04:21:32Z", baseProb:100},
+  {name:"Solly March", sub:"31 · England · W", club:"Brighton", pos:"W", report:"Crystal Palace set to sign Takehiro Tomiyasu and consider move for Solly March", src:"BBC", tier:2, fee:"Free", truth:75, prob:70, light:"g", trend:"up", note:"Linked as potential move", lastSeen:"2026-08-08T04:21:32Z", baseProb:70},
   {name:"Unknown RSL wing-back", sub:"Wing-back · Real Salt Lake", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal for Real Salt Lake wing-back", src:"The Athletic", tier:2, fee:"£11m", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks; player name not disclosed in snippet", lastSeen:"2026-08-06T14:13:57Z", baseProb:70, dead:true, deadReason:"Cannot identify player; no credible source or player name provided"}
 ];
 
 const OUTGOING = [
-  {name:"Eberechi Eze", sub:"Arsenal · Midfielder", club:"Arsenal", pos:"AM", report:"Arsenal reach agreement in principle to sign Eberechi Eze", src:"on-page", tier:2, fee:"Undisclosed", truth:80, prob:80, light:"g", trend:"down", note:"Agreement in principle", lastSeen:"2026-08-07T23:07:30Z", baseProb:80},
-  {name:"Marc Guehi", sub:"Liverpool · Defender", club:"Liverpool", pos:"CB", report:"Liverpool bid £35m for Marc Guehi", src:"on-page", tier:2, fee:"£35m", truth:75, prob:75, light:"g", trend:"down", note:"Medical underway", lastSeen:"2026-08-07T23:07:30Z", baseProb:75},
-  {name:"Aaron Wan-Bissaka", sub:"Manchester United · Defender", club:"Manchester United", pos:"RB", report:"Manchester United hopeful of finally completing Aaron Wan-Bissaka transfer from Crystal Palace", src:"The Telegraph", tier:2, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Transfer being finalized", lastSeen:"2026-08-07T23:07:30Z", baseProb:85}
+  {name:"Eberechi Eze", sub:"Arsenal · Midfielder", club:"Arsenal", pos:"AM", report:"Arsenal reach agreement in principle to sign Eberechi Eze", src:"on-page", tier:2, fee:"Undisclosed", truth:80, prob:80, light:"g", trend:"down", note:"Agreement in principle", lastSeen:"2026-08-07T23:07:30Z", baseProb:80, dead:true, deadReason:"No new snippet confirmation; move appears to have stalled or been reported weeks ago without follow-up"},
+  {name:"Marc Guehi", sub:"Liverpool · Defender", club:"Liverpool", pos:"CB", report:"Liverpool bid £35m for Marc Guehi", src:"on-page", tier:2, fee:"£35m", truth:75, prob:75, light:"g", trend:"down", note:"Medical underway", lastSeen:"2026-08-07T23:07:30Z", baseProb:75, dead:true, deadReason:"No new snippet confirmation; Liverpool bid reported but no recent update on status"},
+  {name:"Aaron Wan-Bissaka", sub:"26 · England · D", club:"Crystal Palace", pos:"D", report:"Manchester United hopeful of finally completing Aaron Wan-Bissaka transfer from Crystal Palace", src:"The Telegraph", tier:2, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"down", note:"Transfer talks progressing", lastSeen:"2026-08-08T04:21:32Z", baseProb:80}
 ];
 const DEAD = [
   {name:"Real Salt Lake wing-back", sub:"Wing-back · Unknown", club:"Real Salt Lake", pos:"WB", report:"Crystal Palace in advanced talks over £11m deal", src:"The Athletic", tier:2, fee:"£11m", truth:80, prob:75, light:"g", trend:"up", note:"Advanced negotiations", lastSeen:"2026-08-06T14:09:02Z", baseProb:75, dead:true, deadReason:"no longer a current link", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -177,7 +177,9 @@ const HUB = {
   bBCTakehiroTomiyasu: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE84LWtqdG9GaTFwX0o4OU5NcE16TFBRdWxQNWVWYmdPYVNzeWozTmdObERNOUM3RjRwNVpRN2c3ZDRTcXpzMlAxU2E1LXRRaklRTlJqdUdwbjk4T0dXWDM4V2cycDlnZTJPX0E"},
   bBCSollyMarch: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE43RjAwLWZQNDFNLWpLWjBFelJacFN3clZkeGtRYnVTeTJaeTdkaERXNUtmS3hnb3ZLNUNjSkhzanFNUHNMb25wWXdRTWpnZXJPVlIyNHh3X2syNFkwcV9ZRjI5ZlZfOTNkX3c"},
   pressEberechiEze: {l:"Press", u:"https://news.google.com/"},
-  davidOrnsteinAdamWharton: {l:"David Ornstein", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxNNjFXYWJhdG1CZUhYelNZcVhjOUIxNDJNSFRvc3BVZndCeVhEbF9OWGZ6SkxDRTVRb0xsWXhYOGJIZTJqemZ1TE9HbjVZc25rLUFmSEYxN1JSZmhxSWx5QjVHLUNlOXJnekVTV0Rtd3lFOERnSTZCdk1haHJ5VDNLM0pudEx3WXJmeHZNeWJXQWEwenZqU0tZUDhXd0NLaWwwb09JVlFST09XWkFhQU1RblBEZGg1eW5zc29VNjVkRmZ5b09u"}};
+  davidOrnsteinAdamWharton: {l:"David Ornstein", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxNNjFXYWJhdG1CZUhYelNZcVhjOUIxNDJNSFRvc3BVZndCeVhEbF9OWGZ6SkxDRTVRb0xsWXhYOGJIZTJqemZ1TE9HbjVZc25rLUFmSEYxN1JSZmhxSWx5QjVHLUNlOXJnekVTV0Rtd3lFOERnSTZCdk1haHJ5VDNLM0pudEx3WXJmeHZNeWJXQWEwenZqU0tZUDhXd0NLaWwwb09JVlFST09XWkFhQU1RblBEZGg1eW5zc29VNjVkRmZ5b09u"},
+  bBCTakehiroTomiyasu1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE84LWtqdG9GaTFwX0o4OU5NcE16TFBRdWxQNWVWYmdPYVN6eWozTmdObERNOUM3RjRwNVpRN2c3ZDRTcXpzMlAxU2E1LXRRaklRTlJqdUdwbjk4T0dXWDM4V2cycDlnZTJPX0E"},
+  bBCSollyMarch1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA3TTlDczV0eTVqelBMMDFGdW1zc2NtOGpxakF2akxINGNMRFNuTEdJWjhPbVZNQXRIUG1EZmIzSWNseUhabWtpdUZ0WDJETDNuWHVwWTJuNzdRSk9GQkZnaTY4bVJ2YTg"}};
 const LINKMAP = {
   "Manager appointment": ["teamtalk","lequipe","rmc"],
   "Europa-ready depth": ["bbcGossip","slp"],
@@ -194,8 +196,8 @@ const LINKMAP = {
   "Borna Sosa": ["crystalPalaceFCofficialBornaSosa"],
   "Marc Guéhi": ["skySportsMarcGuhi"],
   "Maxence Lacroix": ["teamTalkMaxenceLacroix"],
-  "Takehiro Tomiyasu": ["fabrizioRomanoTakehiroTomiyasu", "tEAMtalkTakehiroTomiyasu", "bBCTakehiroTomiyasu"],
-  "Solly March": ["bbcGossip", "goalcomSollyMarch", "bBCSollyMarch"],
+  "Takehiro Tomiyasu": ["fabrizioRomanoTakehiroTomiyasu", "tEAMtalkTakehiroTomiyasu", "bBCTakehiroTomiyasu", "bBCTakehiroTomiyasu1"],
+  "Solly March": ["bbcGossip", "goalcomSollyMarch", "bBCSollyMarch", "bBCSollyMarch1"],
   "Real Salt Lake wing-back": ["theAthleticRealSaltLakewingback"],
   "Eberechi Eze": ["davidOrnsteinEberechiEze", "pressEberechiEze"],
   "Marc Guehi": ["davidOrnsteinMarcGuehi", "pressEberechiEze"],

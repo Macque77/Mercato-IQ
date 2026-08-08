@@ -33,13 +33,13 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Joel Ndala", sub:"20 · LW · England", club:"Manchester City", pos:"LW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Man City academy graduate signs until 2030 after loan spells at Hull City and Sheffield Wednesday."},
   {name:"Gaetan Coucke", sub:"GK", club:"Sampdoria", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed as goalkeeper cover following Warleson's exit."},
-  {name:"Lukas Mondele", sub:"22 · MF · Belgium", club:"Francs Borains", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Club Brugge youth product signs until 2029 with a one-year option."},
-  {name:"Lazare", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Officially returned to Pro League"}
+  {name:"Lukas Mondele", sub:"22 · MF · Belgium", club:"Francs Borains", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Club Brugge youth product signs until 2029 with a one-year option."}
 ];
 const CONFIRMED_OUT = [
   {name:"Warleson", sub:"GK", club:"Botafogo", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed for Brazilian side Botafogo."},
   {name:"Beni Mpanzu", sub:"Winger", club:"FC Dordrecht", pos:"W", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Moved on to Dutch second-tier side Dordrecht."},
-  {name:"Unknown Defender", sub:"Unknown · Unknown · DEF", club:"Cercle Brugge", pos:"DEF", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure"}
+  {name:"Unknown Defender", sub:"Unknown · Unknown · DEF", club:"Cercle Brugge", pos:"DEF", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure"},
+  {name:"Ayase Ueda", sub:"Unknown · Unknown · FW", club:"Unknown", pos:"FW", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Move to Premier League confirmed with bonus clause for Cercle Brugge"}
 ];
 const INCOMING = [
   {name:"Claudio Katunda", sub:"19 · CB", club:"Schalke 04", pos:"CB", report:"10 Jun 2026", src:"Voetbalkrant", tier:3, fee:"Undisclosed", truth:50, prob:20, light:"o", trend:"flat", note:"Cercle among several Belgian clubs, including Standard, monitoring the 2m-tall 19-year-old Schalke defender; no bid confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"No recent credible reports; rumour appears stale (dated 10 Jun 2026)"},
@@ -48,7 +48,7 @@ const INCOMING = [
 ];
 const OUTGOING = [
   {name:"Ayase Ueda", sub:"Unknown · Unknown · FW", club:"Cercle Brugge", pos:"FW", report:"Move to Premier League with bonus for Cercle Brugge", src:"VoetbalBelgie", tier:3, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Departing to Premier League", lastSeen:"2026-08-07T23:07:29Z", baseProb:70},
-  {name:"Warleson", sub:"Unknown · Brazil · Unknown", club:"Cercle Brugge", pos:"Unknown", report:"Expected departure to Brazil, emotional decision", src:"VoetbalFocus", tier:3, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"Departing to Brazil", lastSeen:"2026-08-07T23:07:29Z", baseProb:60}
+  {name:"Warleson", sub:"Unknown · Brazil · Unknown", club:"Cercle Brugge", pos:"Unknown", report:"Expected departure to Brazil, emotional decision", src:"VoetbalFocus", tier:3, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"Departing to Brazil", lastSeen:"2026-08-07T23:07:29Z", baseProb:60, dead:true, deadReason:"Expected departure to Brazil marked as resolved"}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -89,7 +89,8 @@ const LINKMAP = {
   "Ayase Ueda": ["voetbalBelgieAyaseUeda", "voetbalBelgieAyaseUeda1"],
   "Abdoulie Manneh": ["voetbalPrimeurbeAbdoulieManneh", "voetbalPrimeurbeAbdoulieManneh1"],
   "Unknown Norwegian (20yr, €6m)": ["voetbalBelgieUnknownNorwegian20yr6m"],
-  "Unknown Defender": ["voetbalkrantcomUnknownDefender"]};
+  "Unknown Defender": ["voetbalkrantcomUnknownDefender"],
+  "Lazare Sambia": ["voetbalPrimeurbeLazare1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

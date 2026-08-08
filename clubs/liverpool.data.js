@@ -60,12 +60,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Ornstein reveals Barcola stance on joining Liverpool in £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:60, light:"g", trend:"up", note:"Ornstein confirms medical done on Tuesday; player has agreed four-year deal", lastSeen:"2026-08-07T23:07:30Z", baseProb:60},
-  {name:"Raul Asencio", sub:"22 · Spain · CB", club:"Real Madrid", pos:"Centre-back", report:"Intermediaries sounded Liverpool out on Asencio", src:"Multiple", tier:2, fee:"Undisclosed", truth:45, prob:25, light:"o", trend:"down", note:"Early-stage interest; no formal approach confirmed", lastSeen:"2026-08-07T17:40:24Z", baseProb:25, dead:true, deadReason:"No fresh snippet confirms or materially updates; intermediaries' initial sounding insufficient for live rumour without recent development"}
+  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Ornstein reveals Barcola stance on joining Liverpool in stunning £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:45, light:"y", trend:"down", note:"Ornstein confirms deal structure; player's personal stance reported", lastSeen:"2026-08-08T04:21:32Z", baseProb:45},
+  {name:"Raul Asencio", sub:"21 · Spain · CB", club:"Real Madrid", pos:"Centre-Back", report:"Intermediaries sounded Liverpool out on Asencio", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"up", note:"Early contact stage; exploring possibility", lastSeen:"2026-08-08T04:21:32Z", baseProb:35},
+  {name:"Yan Diomande", sub:"24 · Ivory Coast · CB", club:"RB Leipzig", pos:"Centre-Back", report:"Ornstein drops huge Diomande to Liverpool update after Leipzig star declares 'love' for PSG; crushing blow confirmed", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Player has expressed preference for PSG; Liverpool facing strong competition and player's stance reportedly unfavourable", lastSeen:"2026-08-08T04:21:32Z", baseProb:20, dead:true, deadReason:"Ornstein confirms player has declared love for PSG and Liverpool face a 'crushing blow'; deal highly unlikely"}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions exit", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Speculative interest from Tottenham; no concrete progress reported", lastSeen:"2026-08-07T23:07:30Z", baseProb:35}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions move", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"down", note:"Tottenham interest reported; player's future uncertain", lastSeen:"2026-08-08T04:21:32Z", baseProb:30}
 ];
 const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
@@ -137,9 +138,10 @@ const HUB = {
   davidOrnsteinFootball365BradleyBarcola: {l:"David Ornstein / Football365", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQSmpVTUZwbHNCY2Rzcmo1d19lMVp0MFdQUXhGdGhiUTlVODhkZXUyV2pTWlhUbUxpSWx2Rk00TVlIWnp4R1VLN0hISmdPRTJWeVhxdW1ucGYzY09CcGpYS3FIZmRBOGR5YWtZLTdUclhMdm81a0Z3Y1dzek1XRlZ6MV85M2dwbl8xNVcyNFhlS2x0bmlIZTVMQVNiOGw"},
   bBCSportCodyGakpo: {l:"BBC Sport", u:"https://www.bbc.co.uk"},
   davidOrnsteinTheEmpireofTheKopLiverpooltarget: {l:"David Ornstein / The Empire of The Kop", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxOSUtmOE9IWEJqV2VCTURCWkhlak0xUWNUbjBnQ3pSalB2SU9lNGZhWER2SmFuYWtVaE5oTnFXOFE4WTVRYU5uN3pZU096bGV0ZkhWZ2ZlSEU0OTR2MlNKWWFISE9hNWk0Unl3NkRHT2tGSWtlb3pFZUhHcFBPbmZweUx4QW8tRVlpN0d2VnRpeGtUanpuMXZjRmJGb3YxSEh1RER3Sy1mLWhiYnZwOTh4VldhbEZPOXR3aVN6a1Nnelo2d3BU0gHKAUFVX3lxTFB4LXZVZzBmWVhpRGg5VktWeEVoNFlJaW1nZ0JWalZ0MFg3TGZGSEpnQV90UjdDVEYwRVlwVW15R2RySFpLR1h6T21iSzVGeGswYzUtdEdWcldDY1h5eW40Wk5pT0x1Vy1DNWRTVG02aVRoc01NNkNRcDd6Yi1XaS1SR1lpRUVtMFh3SlZPdW5yTG9LeEczZjc1cFlpZzVyTmRnUkpISHBKWjN2YUJYVnI2QzZrY1EzNy05Wm1wdnF3NkRBdkdYUWVqQVE"},
-  football365DavidOrnsteinBradleyBarcola: {l:"Football365 / David Ornstein", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQSmpVTUZwbHNCY2Rzcmo1d19lMVp0MFdQUXhGdGhiUTlVODhkZXUyV2pTWlhUbUxpSWx2Rk00TVlIWnp4R1VLN0hISmdPRTJWeVhxdW1ucGYzY09CcGpYS3FIZmRBOGR5YWtZLTdUclhMdm81a0Z3Y1dzek1XRlZ6MV85M2dwbl8xNVcyNFhlS2x0bmlIZTVMQVNiOGw?oc=5"}};
+  football365DavidOrnsteinBradleyBarcola: {l:"Football365 / David Ornstein", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQSmpVTUZwbHNCY2Rzcmo1d19lMVp0MFdQUXhGdGhiUTlVODhkZXUyV2pTWlhUbUxpSWx2Rk00TVlIWnp4R1VLN0hISmdPRTJWeVhxdW1ucGYzY09CcGpYS3FIZmRBOGR5YWtZLTdUclhMdm81a0Z3Y1dzek1XRlZ6MV85M2dwbl8xNVcyNFhlS2x0bmlIZTVMQVNiOGw?oc=5"},
+  football365DavidOrnsteinYanDiomande: {l:"Football365 / David Ornstein", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxPOHpfenNlQTltNlVmUU9fWVlKcXhhczhsUXhIVThLVW9yZ0F2MktVOTd0dnJtcDVoNEhtektVRDFaOUxSNjhjVWE1OGNiZlAxV00yM1lfNlpKV0I0bVp5NzZXbWN4UTFUY21YQTYtaHJlOWszWDlTYnVjOG5IZFlEY042VjRsZVVoVWxsb19R?oc=5"}};
 const LINKMAP = {
-  "Yan Diomande": ["teamtalk"],
+  "Yan Diomande": ["teamtalk", "football365DavidOrnsteinYanDiomande"],
   "Rayan": ["lcom"],
   "Iliman Ndiaye": ["echo","bbcGossip"],
   "Kennett Eichhorn": ["bbcGossip"],

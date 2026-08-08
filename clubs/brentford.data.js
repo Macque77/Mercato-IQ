@@ -88,11 +88,11 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Pape Matar Sarr", sub:"23 · Senegal · Midfielder", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:35, light:"y", trend:"up", note:"No recent snippet update; retaining as live but unconfirmed", lastSeen:"2026-08-07T23:07:29Z", baseProb:35}
+  {name:"Pape Matar Sarr", sub:"midfielder · Tottenham", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"down", note:"Offer reported; no recent update on status", lastSeen:"2026-08-08T04:21:31Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Bryan Mbeumo", sub:"24 · Cameroon · Winger", club:"Brentford", pos:"Winger", report:"Manchester United submit improved bid exceeding £60m for Bryan Mbeumo", src:"The Athletic (Laurie Whitwell)", tier:1, fee:"£60m+", truth:85, prob:70, light:"g", trend:"up", note:"Improved bid reported; deal not yet agreed", lastSeen:"2026-08-07T23:07:29Z", baseProb:70},
+  {name:"Bryan Mbeumo", sub:"Winger · Brentford", club:"Brentford", pos:"Winger", report:"Manchester United submit improved bid exceeding £60m for Brentford's Bryan Mbeumo", src:"The Athletic", tier:2, fee:"£60m+", truth:85, prob:60, light:"g", trend:"down", note:"Improved bid submitted; ongoing negotiations", lastSeen:"2026-08-08T04:21:31Z", baseProb:60},
   {name:"Jordan Henderson", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford", src:"On-page rumour", tier:3, fee:"Free", truth:50, prob:35, light:"y", trend:"down", note:"No fresh snippet provided; retained from page", lastSeen:"2026-08-07T17:40:24Z", baseProb:35}
 ];
 const DEAD = [
@@ -185,7 +185,7 @@ const LINKMAP = {
   "Bryan Mbeumo": ["theAthleticDavidOrnsteinBryanMbeumo", "theAthleticBryanMbeumo"],
   "Jordan Henderson": ["davidOrnsteinXJordanHenderson", "skySportsJordanHenderson", "brentfordFCJordanHenderson"],
   "Conor McManus": ["brentfordFCConorMcManus"],
-  "Iwan Morgan": ["brentfordFCIwanMorgan"]};
+  "Iwan Morgan": ["brentfordFCIwanMorgan", "brentfordFCMamadouSangar1"]};
 const WL_LINKMAP = {
   "Data-model targets":"bbcBees","Prized asset":"athletic",
 };

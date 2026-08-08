@@ -89,7 +89,8 @@ const INCOMING = [
   {name:"Jack Grealish", sub:"29 · England · W", club:"Manchester City", pos:"LW", report:"How Pedro Neto could now aid Everton's transfer pursuit of Jack Grealish", src:"everton.news", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"flat", note:"Speculative link involving Pedro Neto context", lastSeen:"2026-08-07T01:42:32Z", baseProb:20, dead:true, deadReason:"No new credible reporting in recent snippets; on-page entry appears stale"},
   {name:"Krepin Diatta", sub:"26 · Senegal · W", club:"AS Monaco", pos:"W", report:"Everton in the race to sign 27-year-old forward; chase makes sense as Friedkins ready transfer", src:"Goodison News / EPL Index", tier:3, fee:"", truth:60, prob:40, light:"y", trend:"flat", note:"Recent reporting on Everton's interest in Monaco winger", lastSeen:"2026-08-07T14:38:27Z", baseProb:40},
   {name:"Keito Nakamura", sub:"24 · Japan · W", club:"Reims", pos:"W", report:"Everton learn Nakamura transfer timeline as Reims president opens door to exit", src:"Goodison News", tier:3, fee:"", truth:55, prob:35, light:"y", trend:"flat", note:"Transfer timeline revealed; Reims president signals openness", lastSeen:"2026-08-07T14:38:27Z", baseProb:35},
-  {name:"Christian Norgaard", sub:"29 · Denmark · CM", club:"Arsenal", pos:"CM", report:"Everton reach agreement in principle to sign Arsenal's Christian Norgaard in £7m transfer", src:"The Athletic", tier:2, fee:"£7m", truth:85, prob:75, light:"g", trend:"flat", note:"Agreement in principle reached", lastSeen:"2026-08-07T23:07:30Z", baseProb:75}
+  {name:"Christian Norgaard", sub:"29 · Denmark · CM", club:"Arsenal", pos:"CM", report:"Everton reach agreement in principle to sign Arsenal's Christian Norgaard in £7m transfer", src:"The Athletic", tier:2, fee:"£7m", truth:85, prob:75, light:"g", trend:"flat", note:"Agreement in principle reached", lastSeen:"2026-08-07T23:07:30Z", baseProb:75, dead:true, deadReason:"no longer a current link"},
+  {name:"Christian Nørgaard", sub:"29 · Denmark · M", club:"Arsenal", pos:"M", report:"Everton sign Christian Nørgaard from Arsenal", src:"Royal Blue Mersey", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T04:21:32Z", baseProb:100, dead:true, deadReason:"Confirmed signing; moved from incoming rumour to confirmed_in"}
 ];
 
 const OUTGOING = [];
@@ -175,7 +176,8 @@ const HUB = {
   goodisonNewsKeitoNakamura: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNeWlxd0tYT3drUE5jNnFQRUw0NG44eW5CUWM3TVhsNktRUVp0V3pXTUR6ZWh4X09BbzVCMHZSMjEtWS0tRnVWbWFtMDZYc014R2ExcnN5eHctQjhBOG1Udm9BbXNydHBIeWN0bGFQX2liY3VfNW8yU1B5Z3hyMmlzWnA5MFN6Z2FNVms0OXNkbW1uc1RaX1hXMGZlS0hWYXJ1cXRMSG4yc3JpVnc0QUFmV3ZRZnFsYVFJMHJaQ0lCeVI?oc=5"},
   royalBlueMerseyChristianNrgaard: {l:"Royal Blue Mersey", u:"https://news.google.com/rss/articles/CBMi2gFBVV95cUxObmptR2ZoZEtPZjg4TW5ULVdpelRoTi1HdnQ3ZG5sSGdUZGZiSjB5LThURDAwNzQ5cE5iczB2bTR1VDdMX1pZOVFyTEFKZU9pYnZubVpjOGNKN2pLLXBoMDlIRVBZd0hiZk5Kb3A0UnBXcTJfMkpmX0U5azJhcnE2NHR5cWNTNmltSlkwVmJsVFdlZUp4Szk5anUxa1k2NkZ5N0ZvSmxpLVFtUXpqVDBQc1h2djlJUUdOT0lEbnRiekd4cGY5WlBfSDlNRUlxZTJpWnBxUzhheU13Zw?oc=5"},
   theAthleticTheNewYorkTimesChristianNorgaard: {l:"The Athletic / The New York Times", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxPMTQycnNlVTFXQUZQSTNKRW95WUtIVFJwZGJOZXV5WVhfUUZ5SFpzTVBOcVR4eDBUQzRnVzBIUFkxV0R5RnJCZHA5U1Zqdm1rTlRkaUxkWnNpSG9KNFVfU2lnRWkzaEJQWlBoN01wNUVoOXJMU1E1b0NCdG9WbkRYQmFWdm1MN0o2Z3BxSlNOLTljZFRXdUNVVHltV0FwRU1aR3Jz"},
-  theAthleticChristianNorgaard: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxPMTQycnNlVTFXQUZQSTNKRW95WUtIVFJwZGJOZXV5WVhfUUZ5SFpzTVBOcVR4eDBUQzRnVzBIUFkxV0R5RnJCZHA5U1Zodi1rTlRkaUxkWnNpSG9KNFVfU2lnRWkzaEJQWlBoN01wNUVoOXJMU1E1b0NCdG9WbkRYQmFWdm1MN0o2Z3BxSlNOLTljZFRXdUNVVHltV0FwRU1aR3Jz"}};
+  theAthleticChristianNorgaard: {l:"The Athletic", u:"https://news.google.com/rss/articles/CBMiowFBVV95cUxPMTQycnNlVTFXQUZQSTNKRW95WUtIVFJwZGJOZXV5WVhfUUZ5SFpzTVBOcVR4eDBUQzRnVzBIUFkxV0R5RnJCZHA5U1Zodi1rTlRkaUxkWnNpSG9KNFVfU2lnRWkzaEJQWlBoN01wNUVoOXJMU1E1b0NCdG9WbkRYQmFWdm1MN0o2Z3BxSlNOLTljZFRXdUNVVHltV0FwRU1aR3Jz"},
+  royalBlueMerseyChristianNrgaard1: {l:"Royal Blue Mersey", u:"https://news.google.com/rss/articles/CBMi2gFBVV95cUxObmptR2ZoZEtPZjg4TW5ULVdpelRoTi1HdnQ3ZG5sSGdUZGZiSjB5LThURDAwNzQ5cE5iczB2bTR1VDdMX1pZOVFyTEFKZU9pYnZubVpjOGNKN2pLLXBoMDlIRVBZd0hiZk5Kb3A0UnBXcTJfMkpmX0U5azJhcnE2NHR5cWNTNmltSlkwVmJsVFdlZUp4Szk5anUxa1k2NkZ5N0ZvSmxpLVFtUXpqVDBQc1h2djlJUUdOT0lEbnRiekd4cGY5WlBfSDlNRUlxZTJpWnBxUzhheU13Zw"}};
 const LINKMAP = {
   "Raul Jimenez": ["fInsider","echo"],
   "Marquee striker": ["fInsider","teamtalk","echo"],
@@ -186,7 +188,7 @@ const LINKMAP = {
   "Nahuel Molina": ["sportsMoleNahuelMolina"],
   "Barış Alper Yılmaz": ["sportsMoleNahuelMolina"],
   "Tim Iroegbunam": ["teamTalkTimIroegbunam"],
-  "Christian Nørgaard": ["yahooSportsDavidOrnsteinChristianNrgaard", "royalBlueMerseyChristianNrgaard"],
+  "Christian Nørgaard": ["yahooSportsDavidOrnsteinChristianNrgaard", "royalBlueMerseyChristianNrgaard", "royalBlueMerseyChristianNrgaard1"],
   "Hayden Hackney": ["skySportsHaydenHackney"],
   "Merlin Röhl": ["bBCSportMerlinRhl"],
   "Adam Aznou": ["fotMobAdamAznou"],

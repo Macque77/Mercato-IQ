@@ -39,7 +39,8 @@ const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Ethon Archer", sub:"Loan", club:"Luton Town", pos:"Unknown", report:"Signed on loan from Luton Town", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Loan arrival confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
   {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", report:"Signed from Wealdstone", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed signing from Wealdstone", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Victor Adeboyejo", sub:"Striker", club:"Free Transfer", pos:"ST", report:"Bromley sign striker on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T23:07:30Z", baseProb:100}
+  {name:"Victor Adeboyejo", sub:"Striker", club:"Free Transfer", pos:"ST", report:"Bromley sign striker on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-07T23:07:30Z", baseProb:100},
+  {name:"Deji Elerewe", sub:"Defender · Lincoln City", club:"Lincoln City", pos:"D", report:"Bromley sign defender Deji Elerewe from Lincoln City", src:"BBC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"flat", note:"Recently signed from Lincoln City", lastSeen:"2026-08-08T04:21:31Z", baseProb:95}
 ];
 const OUTGOING = [];
 const DEAD = [
@@ -57,13 +58,16 @@ const HUB = {
   bBCVictorAdeboyejo: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9SLUFqcV9PVW03S2c2WUFLbnRhY3VoQ0tZeWZMM05vWmo0aU5DVFd1amNKQV9BUlZDTEVMR091V3ZDdk0yR09vOTd4NE85eG5wbWFMNDBOMFdxUzUxTmg0bmZZajYzTlk?oc=5"},
   bBCEthonArcher: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVS0xbFRmeGc3Z1p0NVVTYzdZejBiLWJENWhuVW14LUxGdmdHd193U3hKVEtZREJGaVBlRElkTG1KTU5IOGlGSXRCNFFFcGg2S0s4MGxHVEdjQ2FMUTZOQ2FTcEU0QU0?oc=5"},
   bBCVictorAdeboyejo1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9SLUFqcV9PVW03S2c2WUFLbnRhY3VoQ0tZeWZMM05vWmo0aU5DVFd1amNKQV9BUlZDTEVMR091V3ZDdk0yR09vOTd4NE85eG5wbWFMNDBOMFdxUzUxTmg0bmZZajYzTlk"},
-  bBCVictorAdeboyejo2: {l:"BBC", u:"https://www.bbc.com"}};
+  bBCVictorAdeboyejo2: {l:"BBC", u:"https://www.bbc.com"},
+  bBCDejiElerewe: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNjanFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU01mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs"},
+  bBCEthonArcher1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVS0xbFRmeGc3Z1p0NVVTYzdZejBiLWJENWhuVW14LUxGdmdHd193U3hKVEtZREJGaVBlRElkTG1KTU5IOGlGSXRCNFFFcGg2S0s4MGxHVEdjQ2FMUTZOQ2FTcEU0QU0"}};
 
 const LINKMAP = {
   "Tiernan Brooks": ["gnews-tiernanbrooks"],
   "Victor Adeboyejo": ["bBCVictorAdeboyejo", "bBCVictorAdeboyejo1", "bBCVictorAdeboyejo2"],
-  "Ethon Archer": ["bBCEthonArcher", "bBCVictorAdeboyejo2"],
-  "Deon Woodman": ["bBCEthonArcher", "bBCVictorAdeboyejo2"]};
+  "Ethon Archer": ["bBCEthonArcher", "bBCVictorAdeboyejo2", "bBCEthonArcher1"],
+  "Deon Woodman": ["bBCEthonArcher", "bBCVictorAdeboyejo2", "bBCEthonArcher1"],
+  "Deji Elerewe": ["bBCDejiElerewe"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -38,7 +38,7 @@ const CONFIRMED_OUT = [
   {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Player departure confirmed; player statement released"}
 ];
 const INCOMING = [
-  {name:"Fedde Leysen", sub:"Unknown · Netherlands · Midfielder", club:"PSV", pos:"Midfielder", report:"Transfer from PSV confirmed", src:"PSV", tier:2, fee:"Unknown", truth:95, prob:95, light:"g", trend:"down", note:"Transfer confirmed by PSV", lastSeen:"2026-08-07T23:07:29Z", baseProb:95}
+  {name:"Fedde Leysen", sub:"unknown · unknown · unknown", club:"PSV", pos:"unknown", report:"Transfer from PSV confirmed", src:"unknown", tier:2, fee:"unknown", truth:100, prob:100, light:"g", trend:"up", note:"Confirmed transfer", lastSeen:"2026-08-08T04:21:31Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"29 Jul 2026", src:"The Athletic", tier:1, fee:"£17m bid rejected", truth:75, prob:40, light:"y", trend:"flat", note:"Forest's opening bid was rejected after Khalaili's record €25-32m Inter move collapsed on a failed medical; Bournemouth and Newcastle also circling.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"No recent snippet support; retiring from live list"},
@@ -63,7 +63,8 @@ const HUB = {
   beINSportsKjellScherpen: {l:"beIN Sports", u:"https://www.beinsports.com/en-us/soccer/premier-league/articles/ipswich-continue-summer-spree-by-signing-six-foot-nine-goalkeeper-scherpen-2026-07-28"},
   pSVFeddeLeysen: {l:"PSV", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxOSFFrR2NZMERWb25DbVdiVWZ2QThEWW9fVnIyalNFenlOSTJjWDVDcmlZZFFKa1dvTW9vWk8xWnppQVF5Nks1Qmo3bEVRdTYxOEFGazRJZnRQaV9wSFJtNnJUVHpKNjBqd2xGalNXaEhDaS1HRi1WdDNUWVlEaGQ1X0hpRVJPemstaFl4QnJwS28zNnc3eG9SaGw4Ykk5WXlZ"},
   voetbalPrimeurbeSadiki: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPS0dSZUs5b0c4cVN2aUhCb1M4dGx0S0ZKXzhTZ1kwbUF0X0FRR0lUeUtES0dDTEU2VkRjTWFudnNNam9CNW16U1hiS3JhX1pYX3dXRHdIWkpjd09BZXhkVnR4azBpLXNCSjJDQXowSkJ0Zm5ZSHVlRUpBNzM5cUU4eGhiZGN3b2I0X29UWEZLblptNEhfelpYTzVCTS1BaHJ3R1o5ZWVXNVg3eXVhQTd3MkYwQ0JZOHo0WXpHalhZTkRNaG10Q3c"},
-  voetbalBelgieMilanHokke: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxPd0RhMmNJMG5VMkN3V2ZNcGlkb0tNMnZxcTNkdW9IQXQ0YWFQa2I2Vk5rSFB3UTJQNDJTNGFLVkxjYlVfOVh5X1dhTFdSaHNNakJ1Z2RlZTEyU1NNNU5MRWZfSmpYc1JURmZQU3YtbnFmbWhPUC0zN3h5V0ltRXZGa3g5NG1UTkM5VWptbHhfMGdMQjBfS2M0QjFzQTZvZnk2MFktTWZQY0NzelZWQ2ln"}};
+  voetbalBelgieMilanHokke: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxPd0RhMmNJMG5VMkN3V2ZNcGlkb0tNMnZxcTNkdW9IQXQ0YWFQa2I2Vk5rSFB3UTJQNDJTNGFLVkxjYlVfOVh5X1dhTFdSaHNNakJ1Z2RlZTEyU1NNNU5MRWZfSmpYc1JURmZQU3YtbnFmbWhPUC0zN3h5V0ltRXZGa3g5NG1UTkM5VWptbHhfMGdMQjBfS2M0QjFzQTZvZnk2MFktTWZQY0NzelZWQ2ln"},
+  unknownFeddeLeysen: {l:"unknown", u:"unknown"}};
 
 const LINKMAP = {
   "Milan Hokke": ["voetbalkrantMilanHokke", "voetbalBelgieMilanHokke"],
@@ -72,7 +73,7 @@ const LINKMAP = {
   "Mamadou Barry": ["voetbalkrantMamadouBarry"],
   "Keo Boets": ["voetbalkrantKeoBoets"],
   "Kjell Scherpen": ["beINSportsKjellScherpen"],
-  "Fedde Leysen": ["pSVFeddeLeysen"],
+  "Fedde Leysen": ["pSVFeddeLeysen", "unknownFeddeLeysen"],
   "Sadiki": ["voetbalPrimeurbeSadiki"]};
 const WL_LINKMAP = {};
 

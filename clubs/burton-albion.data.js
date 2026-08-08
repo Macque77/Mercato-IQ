@@ -39,11 +39,11 @@ const CONFIRMED_OUT = [
   {name:"Jake Beesley", sub:"Unknown · England · Forward", club:"Bradford City", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Bradford City"}
 ];
 const INCOMING = [
-  {name:"Gbemi Arubi", sub:"Unknown · Nigeria · Forward", club:"Dundalk FC", pos:"Forward", report:"Transfer to Burton Albion confirmed from Dundalk FC", src:"Dundalk FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed by Dundalk FC", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Brad Collins", sub:"Coventry City · GK", club:"Coventry City", pos:"GK", report:"Burton Albion targeting permanent deal for Coventry keeper", src:"SportsBoom UK", tier:3, fee:"", truth:70, prob:65, light:"g", trend:"up", note:"Loan player; club seeking permanent transfer", lastSeen:"2026-08-07T23:07:30Z", baseProb:65}
+  {name:"Gbemi Arubi", sub:"Dundalk · F", club:"Dundalk", pos:"F", report:"Transfer to Burton Albion confirmed from Dundalk", src:"Dundalk FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation from Dundalk FC", lastSeen:"2026-08-08T04:21:31Z", baseProb:100},
+  {name:"Brad Collins", sub:"Coventry City · GK", club:"Coventry City", pos:"GK", report:"Burton Albion targeting permanent deal for Coventry keeper", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"down", note:"Permanent deal being targeted from loan", lastSeen:"2026-08-08T04:21:31Z", baseProb:60}
 ];
 const OUTGOING = [
-  {name:"Jake Beesley", sub:"Unknown · England · Forward", club:"Bradford City", pos:"Forward", report:"Jake Beesley joins Bradford City from Burton Albion", src:"Burton Albion FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Jake Beesley", sub:"Bradford City · F", club:"Bradford City", pos:"F", report:"Joins Bradford City from Burton Albion", src:"Burton Albion FC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation of departure", lastSeen:"2026-08-08T04:21:31Z", baseProb:100}
 ];
 const RISERS = [];
 const FALLERS = [];
