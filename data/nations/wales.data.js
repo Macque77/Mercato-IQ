@@ -6,7 +6,7 @@
 const NATION = {
   name: "Wales",
   flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
-  stories_count: 6
+  stories_count: 5
 };
 
 const TOP_STORIES = [  {
@@ -44,21 +44,14 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
-  {
-    name: "Kion Etete",prob: 50, truth: 55, bullshit: false,
-    club_origin: "cardiff-city", club_display_name: "Cardiff City", direction: "out",
-    from: "Cardiff City", to: "Cardiff City",
-    tier: 3, coverage: 3, coverage_trend: 'flat',
-    value: "unknown", updated: "2026-07-29T00:00:00Z", league: "Championship"
-  },
 ];
 
-const BY_LEAGUE = {"Championship": 6, "Cymru Premier": 0};
+const BY_LEAGUE = {"Championship": 5, "Cymru Premier": 0};
 
-const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 6}, {"slug": "cymru-premier", "name": "Cymru Premier", "count": 0}];
+const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 5}, {"slug": "cymru-premier", "name": "Cymru Premier", "count": 0}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T14:05:34.176733Z",
+  updated: "2026-08-08T16:00:43.526248Z",
   label: "Nation aggregation"
 };

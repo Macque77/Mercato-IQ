@@ -6,7 +6,7 @@
 const NATION = {
   name: "Belgium",
   flag_emoji: "🇧🇪",
-  stories_count: 26
+  stories_count: 25
 };
 
 const TOP_STORIES = [  {
@@ -17,39 +17,18 @@ const TOP_STORIES = [  {
     value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Jan Virgili",prob: 100, truth: 100, bullshit: false,
-    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
-    from: "Mallorca", to: "Club Brugge",
-    tier: 2, coverage: 5, coverage_trend: 'up',
-    value: "€12m", updated: "2026-08-03T14:30:00Z", league: "Pro League"
-  },
-  {
     name: "Fedde Leysen",prob: 100, truth: 100, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "in",
     from: "PSV", to: "Union Saint-Gilloise",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
-  },
-  {
-    name: "Chris-Kévin Nadje",prob: 95, truth: 95, bullshit: false,
-    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
-    from: "Feyenoord", to: "KAS Eupen",
-    tier: 2, coverage: 9, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+    tier: 2, coverage: 3, coverage_trend: 'up',
+    value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
     name: "Lukas Mondele",prob: 95, truth: 90, bullshit: false,
     club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "in",
     from: "Francs Borains", to: "Cercle Brugge",
-    tier: 2, coverage: 3, coverage_trend: 'flat',
+    tier: 2, coverage: 4, coverage_trend: 'up',
     value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
-  },
-  {
-    name: "Bisiwu",prob: 80, truth: 85, bullshit: false,
-    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "out",
-    from: "Club Brugge", to: "Club Brugge",
-    tier: 2, coverage: 2, coverage_trend: 'up',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
     name: "Aurélie Reynders",prob: 65, truth: 70, bullshit: false,
@@ -83,22 +62,36 @@ const TOP_STORIES = [  {
     name: "Cisse Sandra",prob: 100, truth: 100, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
     from: "Club Brugge", to: "KVC Westerlo",
-    tier: 3, coverage: 7, coverage_trend: 'flat',
+    tier: 3, coverage: 8, coverage_trend: 'up',
     value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
     name: "Sadiki",prob: 95, truth: 95, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
     from: "Union Saint-Gilloise", to: "Union Saint-Gilloise",
-    tier: 3, coverage: 2, coverage_trend: 'up',
+    tier: 3, coverage: 2, coverage_trend: 'flat',
     value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+  },
+  {
+    name: "Chris-Kévin Nadje",prob: 90, truth: 85, bullshit: false,
+    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
+    from: "Feyenoord", to: "KAS Eupen",
+    tier: 3, coverage: 9, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
     name: "Van Den Heuvel",prob: 90, truth: 85, bullshit: false,
     club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "in",
     from: "Celtic", to: "OH Leuven",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
+    tier: 3, coverage: 3, coverage_trend: 'up',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+  },
+  {
+    name: "Bisiwu",prob: 80, truth: 85, bullshit: false,
+    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
+    from: "Barcelona", to: "Club Brugge",
+    tier: 3, coverage: 2, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
     name: "Jarne Rommens",prob: 80, truth: 85, bullshit: false,
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
+  {
+    name: "Ferri",prob: 75, truth: 80, bullshit: false,
+    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "out",
+    from: "KVC Westerlo", to: "Feyenoord",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
+  },
 ];
 
-const BY_LEAGUE = {"Pro League": 26, "Challenger Pro League": 0, "Division 1": 0};
+const BY_LEAGUE = {"Pro League": 25, "Challenger Pro League": 0, "Division 1": 0};
 
-const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 26}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
+const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 25}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T14:05:34.172964Z",
+  updated: "2026-08-08T16:00:43.522352Z",
   label: "Nation aggregation"
 };

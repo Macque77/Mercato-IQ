@@ -6,17 +6,10 @@
 const NATION = {
   name: "Spain",
   flag_emoji: "🇪🇸",
-  stories_count: 75
+  stories_count: 74
 };
 
 const TOP_STORIES = [  {
-    name: "Matteo Ruggeri",prob: 72, truth: 80, bullshit: false,
-    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "out",
-    from: "Atlético Madrid", to: "Aston Villa",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "La Liga"
-  },
-  {
     name: "Igor Julio",prob: 40, truth: 85, bullshit: false,
     club_origin: "espanyol", club_display_name: "RCD Espanyol", direction: "in",
     from: "Brighton & Hove Albion", to: "RCD Espanyol",
@@ -114,14 +107,21 @@ const TOP_STORIES = [  {
     tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "La Liga"
   },
+  {
+    name: "Gabriel Jesus",prob: 42, truth: 65, bullshit: false,
+    club_origin: "atletico-madrid", club_display_name: "Atlético Madrid", direction: "in",
+    from: "Manchester City", to: "Atlético Madrid",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "€45m", updated: "2026-08-03T14:30:00Z", league: "La Liga"
+  },
 ];
 
-const BY_LEAGUE = {"La Liga": 75, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
+const BY_LEAGUE = {"La Liga": 74, "La Liga 2": 0, "Primera Federaci\u00f3n": 0, "Segunda Divisi\u00f3n B": 0, "Segunda Federaci\u00f3n": 0};
 
-const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 75}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
+const LEAGUES_LIST = [{"slug": "la-liga", "name": "La Liga", "count": 74}, {"slug": "la-liga-2", "name": "La Liga 2", "count": 0}, {"slug": "primera-federaci\u00f3n", "name": "Primera Federaci\u00f3n", "count": 0}, {"slug": "segunda-divisi\u00f3n-b", "name": "Segunda Divisi\u00f3n B", "count": 0}, {"slug": "segunda-federaci\u00f3n", "name": "Segunda Federaci\u00f3n", "count": 0}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T14:05:34.175882Z",
+  updated: "2026-08-08T16:00:43.525397Z",
   label: "Nation aggregation"
 };
