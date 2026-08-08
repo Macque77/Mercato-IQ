@@ -1,94 +1,94 @@
 {
- "n_resolved": 694,
- "base_rate": 0.604,
- "brier": 0.1692,
- "baseline_brier": 0.2392,
- "skill": 0.293,
+ "n_resolved": 719,
+ "base_rate": 0.609,
+ "brier": 0.1675,
+ "baseline_brier": 0.2381,
+ "skill": 0.296,
  "buckets": [
   {
    "lo": 0.1,
    "hi": 0.2,
-   "n": 13,
+   "n": 6,
    "avg_pred": 0.186,
-   "actual_rate": 0.077
+   "actual_rate": 0.167
   },
   {
    "lo": 0.2,
    "hi": 0.3,
-   "n": 131,
-   "avg_pred": 0.251,
-   "actual_rate": 0.198
+   "n": 138,
+   "avg_pred": 0.257,
+   "actual_rate": 0.167
   },
   {
    "lo": 0.3,
    "hi": 0.4,
-   "n": 47,
-   "avg_pred": 0.354,
-   "actual_rate": 0.34
+   "n": 41,
+   "avg_pred": 0.331,
+   "actual_rate": 0.634
   },
   {
    "lo": 0.4,
    "hi": 0.5,
-   "n": 84,
-   "avg_pred": 0.444,
-   "actual_rate": 0.5
+   "n": 81,
+   "avg_pred": 0.449,
+   "actual_rate": 0.321
   },
   {
    "lo": 0.5,
    "hi": 0.6,
-   "n": 19,
-   "avg_pred": 0.518,
-   "actual_rate": 0.789
+   "n": 34,
+   "avg_pred": 0.528,
+   "actual_rate": 0.765
   },
   {
    "lo": 0.6,
    "hi": 0.7,
-   "n": 6,
-   "avg_pred": 0.631,
-   "actual_rate": 0.667
+   "n": 3,
+   "avg_pred": 0.653,
+   "actual_rate": 0.333
   },
   {
    "lo": 0.7,
    "hi": 0.8,
-   "n": 47,
-   "avg_pred": 0.774,
-   "actual_rate": 0.255
+   "n": 77,
+   "avg_pred": 0.778,
+   "actual_rate": 0.338
   },
   {
    "lo": 0.8,
    "hi": 0.9,
-   "n": 327,
-   "avg_pred": 0.846,
-   "actual_rate": 0.865
+   "n": 317,
+   "avg_pred": 0.847,
+   "actual_rate": 0.905
   },
   {
    "lo": 0.9,
    "hi": 1.0,
-   "n": 20,
-   "avg_pred": 0.908,
+   "n": 22,
+   "avg_pred": 0.907,
    "actual_rate": 1.0
   }
  ],
  "learned_priors": {
   "interest": {
-   "logit": -1.016,
-   "rate": 0.26,
-   "n": 77
+   "logit": -1.305,
+   "rate": 0.205,
+   "n": 73
   },
   "talks": {
-   "logit": -0.967,
-   "rate": 0.271,
-   "n": 96
+   "logit": -0.693,
+   "rate": 0.33,
+   "n": 109
   },
   "here-we-go": {
-   "logit": 1.361,
-   "rate": 0.797,
-   "n": 395
+   "logit": 1.398,
+   "rate": 0.803,
+   "n": 417
   },
   "advanced": {
-   "logit": -0.157,
-   "rate": 0.46,
-   "n": 126
+   "logit": -0.264,
+   "rate": 0.433,
+   "n": 120
   }
  }
 }

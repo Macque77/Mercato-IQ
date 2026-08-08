@@ -31,7 +31,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Kyreece Lisbie", sub:"position · nation · age unknown", club:"Colchester United", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Colchester United"}
+  {name:"Kyreece Lisbie", sub:"position · nation · age unknown", club:"Colchester United", pos:"Winger", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Colchester United"},
+  {name:"Jacob Brown", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Free transfer confirmed"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
@@ -57,14 +58,15 @@ const HUB = {
   "gnews-charliesavage": {l:"Related news search: Charlie Savage", u:"https://news.google.com/search?q=Reading%20Charlie%20Savage%20transfer&hl=en-GB&gl=GB"},
   theTilehurstEndJacobBrown: {l:"The Tilehurst End", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxQSHZCYUEzc1BRRnJ3TlFzTXFvS0hCTElSWlRMN0I5TlJJYTRJUGxRYnRfTkhsSW1rZjVvUl90Ujd5Mm5tcUVLR2pZazJpcHBBQmNPY290eHJrcUw3N0NVNFJCVTdSWjA5MHVJTDJTSmozMDRJU2RlRlA3TVdqVmtGNkVyQXJvTGJQOG12NEY3UnFSeE1kVHJuUC1nQmxnQQ"},
   derbyCountyRyanNyambe: {l:"Derby County", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxQTkhKQURhdDVmMG9KSUVWV0sxd2llSTFQV2VfaWMydDBIckQyVFRzekFLZlBPYWxoNm5WZE5QTXc5di1lYUFMNVRYS2xLUUNucjBEZjk4SFZOZkJVeThPY1hvSlBGOFlHOTNwcExwMTdHSHVvdTVIendKZmlzRlZVVmZmN2U4WGI0aDhSdmV3"},
-  bBCKyreeceLisbie: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE05TDBlQVk3S0xJdEs5UFpVaWx4RjJhQUtNWmpXZU81dHpzdWpQRHlxVnBCX0FOaWhoRkhuYWphNHM4UF84R28ydjN5T0ZuWlhCV04tTE9SdENOZk1wOG9aN3o2cVhOMGs"}};
+  bBCKyreeceLisbie: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE05TDBlQVk3S0xJdEs5UFpVaWx4RjJhQUtNWmpXZU81dHpzdWpQRHlxVnBCX0FOaWhoRkhuYWphNHM4UF84R28ydjN5T0ZuWlhCV04tTE9SdENOZk1wOG9aN3o2cVhOMGs"},
+  thetilehurstendsbnationcomJacobBrown: {l:"thetilehurstend.sbnation.com", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxQSHZCYUEzc1BRRnJ3TlFzTXFvS0hCTElSWlRMN0I5TlJJYTRJUGxRYnRfTkhsSW1rZjVvUl90Ujd5Mm5tcUVLR2pZazJpcHBBYmNPY290eHJrcUw3N0NVNFJCVTdSWjA5MHVJTDJTSmozMDRJU2RlRlA3TVdqVmtGNkVyQXJvTGJQOG12NEY3UnFSeE1kVHJuUC1nQmxnQQ?oc=5"}};
 
 const LINKMAP = {
   "Udoka Godwin-Malife": ["orourke"],
   "Kyreece Lisbie": ["gnews-kyreecelisbie", "bBCKyreeceLisbie"],
   "Andy Rinomhota": ["gnews-andyrinomhota"],
   "Charlie Savage": ["gnews-charliesavage"],
-  "Jacob Brown": ["theTilehurstEndJacobBrown"],
+  "Jacob Brown": ["theTilehurstEndJacobBrown", "thetilehurstendsbnationcomJacobBrown"],
   "Ryan Nyambe": ["derbyCountyRyanNyambe"]};
 const WL_LINKMAP = {};
 

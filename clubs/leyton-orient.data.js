@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Joseph Olowu", sub:"Centre-back · Stockport County", club:"Stockport County", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Stockport County"},
   {name:"Tony Springett", sub:"Goalkeeper · Norwich City", club:"Norwich City", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined after leaving Norwich City"},
-  {name:"Jaze Kabia", sub:"Forward", club:"Cork City", pos:"Forward", fee:"Club record", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club record signing"}
+  {name:"Jaze Kabia", sub:"Forward", club:"Cork City", pos:"Forward", fee:"Club record", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Club record signing"},
+  {name:"Somto Boniface", sub:"Unknown · Unknown · Unknown", club:"Ipswich Town", pos:"Unknown", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan deal from Ipswich Town"}
 ];
 const CONFIRMED_OUT = [
   {name:"Dom Ballard", sub:"Striker · Bristol City", club:"Bristol City", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined Bristol City from Leyton Orient"}
@@ -70,16 +71,18 @@ const HUB = {
   rTEJazeKabia: {l:"RTE", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxPT1RPYzh0dHowdk5TVUNIWmdqdmRzQzRyY1U0VWQ4S3VvOXpnbFh0VV9RQjFjOGRtbTEzUFdmMi1iTnhuZUc0bVg2VUlkaXlGQjF4TlIxWndUNzBkTWdGaDBRMkFmSFBUbnRFMkJSMWhEbGh0V01KX2lJV0hBRVZlRGppNE5ZdElaZWFtbVktRmU0Q19SRkhWWWJNX1RfUF9fVXc"},
   bBCTariqAlSadi3: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1keGFKa2tpSFlQU1FXT3lfRENDUG9SQUU3U1FwVDBNVDI2eTViZDlIUGlkeTNweUpwbjVsNm41LWJ2YU9mMS14RGxIQmZJLUVRMFZFZjg0cUdSa0U3TzZJMExsTU04V3ZBZnc"},
   bBCJosephOlowu2: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IYncxWW81SUpON0NLdXRoMDBDUU80M05ybElBRlJUd01yZkhacDdRSExfaDlBMTNOY081Z243bjBrdDZ1SXRFSkRIa3R4bmZBU1hIUXpHczlqSEpyS0szMlY0TDFWTkE"},
-  bBCSomtoBoniface: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hX3RDaEotZGxheWZhdUNKM2JhZjdNSm1ibl9HRzk5eUZMMFllbktlLXcxVUdyREtmQmJnemFUQVJiMC1JOFpBQVdhMWxHN3cxVWZHb1BHNm04a05zcTNCSVdEY28tYkU"}};
+  bBCSomtoBoniface: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hX3RDaEotZGxheWZhdUNKM2JhZjdNSm1ibl9HRzk5eUZMMFllbktlLXcxVUdyREtmQmJnemFUQVJiMC1JOFpBQVdhMWxHN3cxVWZHb1BHNm04a05zcTNCSVdEY28tYkU"},
+  bBCJosephOlowu3: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IYncxWW81SUpON0NLdXRoMDBDUU80M05ybElBRlJUd01yZkhacDdRSExfaDlBMTNOY001Z283bjBrdDZ1SXRFSkRIa3R4bmZBU1hIUXpHczlqSEpyS0szMlY0TDFWTkE"},
+  echoLiveJazeKabia: {l:"Echo Live", u:"https://news.google.com/rss/articles/CBMiYkFVX3lxTE9sRG16VVhKd1JXclpkRXZ6TTFCaTRqbTZxbG5sWmFMXzNoemlGOVpFbGJBeGhZNjBMbExBTUdJLXFwMDhPRFEtY1IzLVp0NDFpZHozTkZaeFFfM3J2ZGEyTWR3"}};
 
 const LINKMAP = {
   "Alfie Gilchrist": ["gnews-alfiegilchrist"],
   "Owen Dale": ["gnews-owendale"],
   "Dom Ballard": ["flw", "bBCDomBallard", "bristolLiveDomBallard"],
-  "Joseph Olowu": ["bBCJosephOlowu", "bBCJosephOlowu1", "bBCJosephOlowu2"],
+  "Joseph Olowu": ["bBCJosephOlowu", "bBCJosephOlowu1", "bBCJosephOlowu2", "bBCJosephOlowu3"],
   "Tony Springett": ["bBCTonySpringett"],
   "Tariq Al Sadi": ["bBCTariqAlSadi", "bBCTariqAlSadi1", "bBCTariqAlSadi2", "bBCTariqAlSadi3"],
-  "Jaze Kabia": ["irishExaminerJazeKabia", "rTEJazeKabia"],
+  "Jaze Kabia": ["irishExaminerJazeKabia", "rTEJazeKabia", "echoLiveJazeKabia"],
   "Somto Boniface": ["bBCSomtoBoniface"]};
 const WL_LINKMAP = {};
 

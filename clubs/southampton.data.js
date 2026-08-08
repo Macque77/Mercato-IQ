@@ -41,8 +41,8 @@ const CONFIRMED_OUT = [
 ];
 const INCOMING = [];
 const OUTGOING = [
-  {name:"Shea Charles", sub:"22 · Grenada · Midfielder", club:"Southampton", pos:"Midfielder", report:"Premier League move imminent; told it is 'when, not if'", src:"The League Paper / BBC", tier:2, fee:"~£30m valuation", truth:85, prob:80, light:"g", trend:"up", note:"Midfielder told Premier League move is matter of 'when, not if'; exit nears", lastSeen:"2026-08-07T01:42:32Z", baseProb:80},
-  {name:"Jay Robinson", sub:"19 · England · Winger", club:"Southampton", pos:"Winger", report:"Set to join Monza in Serie A", src:"Football Italia", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"19-year-old winger expected to move to Italian club Monza", lastSeen:"2026-08-07T01:42:32Z", baseProb:70}
+  {name:"Shea Charles", sub:"20 · England · M", club:"Southampton", pos:"M", report:"Premier League move imminent; told it is 'when, not if'", src:"BBC", tier:2, fee:"~£30m valuation", truth:85, prob:80, light:"g", trend:"flat", note:"Exit nears", lastSeen:"2026-08-08T16:04:57Z", baseProb:80},
+  {name:"Jay Robinson", sub:"21 · England · D", club:"Southampton", pos:"D", report:"Completed loan switch to AC Monza", src:"Southampton FC Official Site", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"19-year-old winger expected to move to Italian club Monza", lastSeen:"2026-08-08T16:04:57Z", baseProb:100, dead:true, deadReason:"Loan completed to AC Monza; moved from rumour to outgoing"}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -68,7 +68,7 @@ const LINKMAP = {
   "Daniel Peretz": ["gnews-danielperetz"],
   "Lewis Dobbin": ["gnews-lewisdobbin"],
   "Aaron Ramsdale": ["beinRamsdale"],
-  "Shea Charles": ["yorkshireeveningpostCharles", "theLeaguePaperBBCSheaCharles"],
+  "Shea Charles": ["yorkshireeveningpostCharles", "theLeaguePaperBBCSheaCharles", "bBCSportLoueyBenFarhat"],
   "Louey Ben Farhat": ["bBCLoueyBenFarhat", "bBCSportLoueyBenFarhat"],
   "Jay Robinson": ["footballItaliaJayRobinson", "southamptonFCOfficialJayRobinson"]};
 const WL_LINKMAP = {};

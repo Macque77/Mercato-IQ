@@ -34,19 +34,18 @@ const CONFIRMED_IN = [
   {name:"Matt Ingram", sub:"GK", club:"Free agent", pos:"GK", fee:"Free", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed arrival among a batch of summer signings."},
   {name:"Jimmy-Jay Morgan", sub:"Unknown · Unknown · Unknown", club:"Chelsea", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing from Chelsea"},
   {name:"Alfie Gilchrist", sub:"Unknown · Unknown · Unknown", club:"Chelsea", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official signing from Chelsea"},
-  {name:"Nat Phillips", sub:"Unknown · Unknown · Unknown", club:"Liverpool FC", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completes permanent transfer from Liverpool"}
+  {name:"Nat Phillips", sub:"Unknown · Unknown · Unknown", club:"Liverpool FC", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completes permanent transfer from Liverpool"},
+  {name:"Carter Pinnington", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joins West Bromwich Albion in permanent transfer"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"~1 wk ago", src:"Sunderland Echo", tier:3, fee:"Loan", truth:45, prob:15, light:'o', trend:'flat', note:"Very early, Brighton have not decided their plan for him yet, background noise for now.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dead:true, deadReason:"No fresh confirmation or detail in snippets; stale on-page rumour"},
   {name:"Jimmy-Jay Morgan", sub:"Unknown · Unknown · Unknown", club:"Chelsea", pos:"Unknown", report:"Official signing from Chelsea", src:"We Ain't Got No History", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed official transfer", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
   {name:"Alfie Gilchrist", sub:"Unknown · Unknown · Unknown", club:"Chelsea", pos:"Unknown", report:"Official signing from Chelsea", src:"We Ain't Got No History", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed official transfer", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
   {name:"Nat Phillips", sub:"Unknown · Unknown · Defender", club:"Liverpool", pos:"Defender", report:"Completes permanent transfer from Liverpool", src:"Liverpool FC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed permanent transfer", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
   {name:"Carter Pinnington", sub:"Unknown · Unknown · GK", club:"Liverpool FC", pos:"GK", report:"Joins West Bromwich Albion in permanent transfer from Liverpool FC", src:"Liverpool FC official", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Permanent transfer completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Eseosa Sule", sub:"Winger", club:"Undisclosed", pos:"W", report:"~4 days ago", src:"West Brom News", tier:2, fee:"Undisclosed", truth:60, prob:55, light:'g', trend:'up', note:"Club's own dedicated transfer reporter using strong imminent language, worth some credence.", lastSeen:"2026-08-04T19:10:50Z", baseProb:55, dead:true, deadReason:"No fresh confirmation or detail in snippets; stale on-page rumour"},
-  {name:"Isaac Price", sub:"Unknown · Unknown · Unknown", club:"West Bromwich Albion", pos:"Unknown", report:"Everton target in return bid", src:"SportsBoom UK", tier:3, fee:"Unknown", truth:35, prob:30, light:"y", trend:"flat", note:"Everton linked with a move", lastSeen:"2026-08-07T01:42:32Z", baseProb:30, dead:true, deadReason:"Everton interest confirmed in recent snippet but no confirmed departure from West Brom; remains a target but not a confirmed outgoing"}
+  {name:"Isaac Price", sub:"Unknown · Unknown · Unknown", club:"Everton", pos:"Unknown", report:"Everton target in return bid", src:"Google News / SportsBoom UK", tier:3, fee:"Unknown", truth:65, prob:60, light:"g", trend:"up", note:"Return bid from Everton; confirmation/advancement status unclear", lastSeen:"2026-08-08T16:04:57Z", baseProb:60}
 ];
 const RISERS = [];
 const FALLERS = [];

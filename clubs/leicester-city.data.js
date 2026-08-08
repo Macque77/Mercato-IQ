@@ -36,11 +36,13 @@ const CONFIRMED_IN = [
   {name:"Conor Chaplin", sub:"26 · England · F", club:"Ipswich Town", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Former Ipswich Town forward signed"}
 ];
 const CONFIRMED_OUT = [
-  {name:"Jeremy Monga", sub:"17 · Cameroon · W", club:"Manchester City", pos:"Winger", fee:"£10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Manchester City"}
+  {name:"Jeremy Monga", sub:"17 · Cameroon · W", club:"Manchester City", pos:"Winger", fee:"£10m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed transfer to Manchester City"},
+  {name:"Abdul Fatawu", sub:"Winger", club:"Ipswich Town", pos:"W", fee:"£20m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ipswich complete £20m deal"}
 ];
 const INCOMING = [
   {name:"Liam Cullen", sub:"Unknown · Unknown · Forward", club:"Swansea City", pos:"Forward", report:"Liam Cullen completes transfer to Leicester City", src:"Swansea City official", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"up", note:"Transfer completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100},
-  {name:"Conor Chaplin", sub:"Unknown · Unknown · Forward", club:"Ipswich Town", pos:"Forward", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
+  {name:"Conor Chaplin", sub:"Unknown · Unknown · Forward", club:"Ipswich Town", pos:"Forward", report:"Leicester City sign former Ipswich Town forward", src:"BBC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100},
+  {name:"Alex McCarthy", sub:"Goalkeeper", club:"Southampton", pos:"GK", report:"Goalkeeper signs for Leicester City", src:"LCFC Official Website", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official announcement", lastSeen:"2026-08-08T16:04:57Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Jeremy Monga", sub:"17 · Unknown · Unknown", club:"Manchester City", pos:"Unknown", report:"Man City complete signing of 17-year-old Leicester", src:"transferfeed snapshot", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed to Manchester City", lastSeen:"2026-08-08T10:03:40Z", baseProb:100},

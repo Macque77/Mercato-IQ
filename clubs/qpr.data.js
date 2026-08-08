@@ -33,7 +33,11 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Glen Kamara", sub:"MF · Finland", club:"Rennes", pos:"MF", fee:"Loan (option to buy)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"BBC confirmation corroborated by prior Fabrizio Romano reporting on the paperwork stage, as solid as EFL transfer news gets."},
   {name:"Justin Obikwu", sub:"", club:"Coventry City", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent deal from Coventry City"},
-  {name:"Richard Kone", sub:"", club:"Wycombe Wanderers", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined Queens Park Rangers"}
+  {name:"Richard Kone", sub:"", club:"Wycombe Wanderers", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined Queens Park Rangers"},
+  {name:"Nicolas Madsen", sub:"Defender · Unknown · DF", club:"Unknown", pos:"DF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer to Queens Park Rangers"},
+  {name:"Isaac Hayden", sub:"Midfielder · England · MF", club:"Newcastle United", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Queens Park Rangers"},
+  {name:"Rhys Norrington-Davies", sub:"Defender · Wales · LB", club:"Fulham", pos:"LB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Queens Park Rangers"},
+  {name:"Koki Saito", sub:"Forward · Japan · FW", club:"Urawa Red Diamonds", pos:"FW", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Queens Park Rangers"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
@@ -58,16 +62,20 @@ const HUB = {
   theCoventryObserverJustinObikwu: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb240a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrc3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv?oc=5"},
   bBCIsaacHayden: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9kSXc0NjE5M2ZkTkJBcm5IRFd6d2xWYmFUQUNpUFV2eFFxT2ZvV0wzcUhTanNHNlh2bGdDVXh3aThkaEl1UWEwdTk5TENvMXJyYlJ2TmJobDlIU05TYmdKZndrMEpySzA?oc=5"},
   wycombeWanderersFootballClubRichardKone: {l:"Wycombe Wanderers Football Club", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxOajBzem1GZzhPOUtJZmYyQUo3c1RvaU9YcmVoWlFUSm5NYjlFNVVVTjNoaWVhckZORy1lWEVRdzVuQnluVm9KQm9JVTA0SkFFRWtVRTlMLThmMjBPcDJ1anBfYkZpMXozTXVIeWZkdHNWMF9NYkJmSGN3cnVZNlp4Mi1KSGZzZWc?oc=5"},
-  theCoventryObserverJustinObikwu1: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb200a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrc3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv?oc=5"}};
+  theCoventryObserverJustinObikwu1: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb200a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrc3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv?oc=5"},
+  theCoventryObserverJustinObikwu2: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb200a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrc3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv"},
+  wycombeWanderersFootballClubRichardKone1: {l:"Wycombe Wanderers Football Club", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxOajBzem1GZzhPOUtJZmYyQUo3c1RvaU9YcmVoWlFUSm5NYjlFNVVVTjNoaWVhckZORy1lWEVRdzVuQnluVm9KQm9JVTA0SkFFRWtVRTlMLThmMjBPcDJ1anBfYkZpMXozTXVIeWZkdHNWMF9NYkJmSGN3cnVZNlp4Mi1KSGZzZWc"},
+  oneFootballNicolasMadsen1: {l:"OneFootball", u:"https://news.google.com/rss/articles/CBMiWEFVX3lxTFBrNUF2NGNTUEFSQk9iak51LUwtZU44QlVGcE53NzRNTzlOd0ExZ1NNdkI0VmtYUjIzN3JweER0LURjOU9LWUtxeGhyNVA4WHpCejBvS2psb0s"},
+  bBCIsaacHayden1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9kSXc0NjE5M2ZkTkJBcm5IRFd6d2xWYmFUQUNpUFV2eFFxT2ZvV0wzcUhTanNHNlh2bGdDVXh3aThkaEl1UWEwdTk5TENvMXJyYlJ2TmJobDlIU05TYmdKZndrMEpySzA"}};
 
 const LINKMAP = {
   "Glen Kamara": ["gnews-glenkamara"],
-  "Nicolas Madsen": ["oneFootballNicolasMadsen"],
-  "Justin Obikwu": ["theCoventryObserverJustinObikwu", "theCoventryObserverJustinObikwu1"],
-  "Isaac Hayden": ["bBCIsaacHayden"],
-  "Rhys Norrington-Davies": ["bBCIsaacHayden"],
-  "Koki Saito": ["bBCIsaacHayden"],
-  "Richard Kone": ["wycombeWanderersFootballClubRichardKone"]};
+  "Nicolas Madsen": ["oneFootballNicolasMadsen", "oneFootballNicolasMadsen1"],
+  "Justin Obikwu": ["theCoventryObserverJustinObikwu", "theCoventryObserverJustinObikwu1", "theCoventryObserverJustinObikwu2"],
+  "Isaac Hayden": ["bBCIsaacHayden", "bBCIsaacHayden1"],
+  "Rhys Norrington-Davies": ["bBCIsaacHayden", "bBCIsaacHayden1"],
+  "Koki Saito": ["bBCIsaacHayden", "bBCIsaacHayden1"],
+  "Richard Kone": ["wycombeWanderersFootballClubRichardKone", "wycombeWanderersFootballClubRichardKone1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

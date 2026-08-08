@@ -31,7 +31,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Mason Burstow", sub:"ST", club:"Hull City", pos:"ST", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan completed and confirmed."}
+  {name:"Mason Burstow", sub:"ST", club:"Hull City", pos:"ST", fee:"Season-long loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan completed and confirmed."},
+  {name:"Tyler Onyango", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer deal confirmed with contract length revealed"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
@@ -61,12 +62,13 @@ const HUB = {
   "witcoop": {l:"Darren Witcoop", u:"https://x.com/DarrenWitcoop"},
   "gnews-owenbailey": {l:"Related news search: Owen Bailey", u:"https://news.google.com/search?q=Sheffield%20Wednesday%20Owen%20Bailey%20transfer&hl=en-GB&gl=GB"},
   "gnews-tommioreilly": {l:"Related news search: Tommi O'Reilly", u:"https://news.google.com/search?q=Sheffield%20Wednesday%20Tommi%20O%27Reilly%20transfer&hl=en-GB&gl=GB"},
-  thestarcoukTylerOnyango: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxQUk81dXRnWTBiS3hkYzlCU1hTWDFETDRVeTZJTEhzRWktVVM1NzRkVTJ3UGxQbll2Vk5RYmh1TDJGdko2OXlXaDJGdzRDT2FrQWQ4NGRpRVl0Z192LXVab2FsbHgwMEJ0dW12MW5TNXV3SVpDNWozM2Q4bTlGdnpXUmkyYnpRUkhXSFNQb1FwNUxkREcyLXFmNHpJMUpTODU0d0wwVnlDeC10UllnOGg4?oc=5"}};
+  thestarcoukTylerOnyango: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxQUk81dXRnWTBiS3hkYzlCU1hTWDFETDRVeTZJTEhzRWktVVM1NzRkVTJ3UGxQbll2Vk5RYmh1TDJGdko2OXlXaDJGdzRDT2FrQWQ4NGRpRVl0Z192LXVab2FsbHgwMEJ0dW12MW5TNXV3SVpDNWozM2Q4bTlGdnpXUmkyYnpRUkhXSFNQb1FwNUxkREcyLXFmNHpJMUpTODU0d0wwVnlDeC10UllnOGg4?oc=5"},
+  thestarcoukTylerOnyango1: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMisgFBVV95cUxPMmoxN3ZzMDYxTFlDbzRrR3FqclMwZkxvZEdkNWFzS095Q3hCWWJ3MTJDTGxRQnk5V0sydml0UHJBRU43MXJSQ1ZVOWJ2bmVySWF4cHRTV0wzYlVpT0oycHVWSzhXQkJRME1ZblhXUXZweWJMSmx3NGFWV2UwcFZrZVhwTEE3eGNxeUZkNXlKbGVkNFFDc1J5Z1NkelpPVmRPZUJqaHlxd1BVOGVweFQ0dklR"}};
 
 const LINKMAP = {
   "Mason Burstow": ["gnews-masonburstow"],
   "Mark O'Mahony": ["gnews-markomahony"],
-  "Tyler Onyango": ["gnews-tyleronyango", "thestarcoukTylerOnyango"],
+  "Tyler Onyango": ["gnews-tyleronyango", "thestarcoukTylerOnyango", "thestarcoukTylerOnyango1"],
   "Reece James": ["gnews-reecejames"],
   "Davis Keillor-Dunn": ["gnews-daviskeillordunn"],
   "Ike Ugbo": ["witcoop"],

@@ -38,15 +38,13 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Callum Stead", sub:"unknown · unknown · Striker", club:"Barnet", pos:"Striker", report:"Signed as first summer signing", src:"BBC", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed signing from Barnet", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
-  {name:"Callum Perry", sub:"unknown · unknown · unknown", club:"Coventry City", pos:"unknown", report:"Season-long loan from Coventry City", src:"The Coventry Observer", tier:3, fee:"Loan", truth:95, prob:95, light:"g", trend:"down", note:"Season-long loan confirmed", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
-  {name:"Patrick Bauer", sub:"unknown · unknown · Defender", club:"AFC Wimbledon", pos:"Defender", report:"Signed from AFC Wimbledon", src:"BBC", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed signing from AFC Wimbledon", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
-  {name:"Sean Raggett", sub:"unknown · unknown · Defender", club:"Rotherham United", pos:"Defender", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed loan signing", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
-  {name:"Heath", sub:"", club:"", pos:"", report:"Joins Cambridge United", src:"Google News", tier:3, fee:"", truth:70, prob:80, light:"g", trend:"flat", note:"Snippet title only; full details unclear from headline alone", lastSeen:"2026-08-08T14:10:31Z", baseProb:80},
-  {name:"Adam Mayor", sub:"", club:"", pos:"", report:"Signs until end of season", src:"Google News", tier:3, fee:"", truth:75, prob:85, light:"g", trend:"flat", note:"Short-term signing confirmed by club", lastSeen:"2026-08-08T14:10:31Z", baseProb:85}
+  {name:"Callum Stead", sub:"Barnet · Striker", club:"Barnet", pos:"ST", report:"Signed as first summer signing", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"First summer signing confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"Callum Perry", sub:"Coventry City · ", club:"Coventry City", pos:"Unknown", report:"Season-long loan from Coventry City", src:"The Coventry Observer", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Season-long loan confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"Patrick Bauer", sub:"AFC Wimbledon · Defender", club:"AFC Wimbledon", pos:"DEF", report:"Signed from AFC Wimbledon", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Defender signed confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"Sean Raggett", sub:"Rotherham United · Defender", club:"Rotherham United", pos:"DEF", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Defender loan confirmed", lastSeen:"2026-08-08T16:04:56Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Maldini Kacurri", sub:"unknown · Albanian · Defender", club:"Arsenal", pos:"Defender", report:"Cambridge United joining chase (implies departure sought)", src:"SportsBoom UK", tier:3, fee:"unknown", truth:40, prob:30, light:"y", trend:"up", note:"Rumour of transfer chase; unclear if player is leaving or if Cambridge is just interested in signing him from elsewhere", lastSeen:"2026-08-08T11:19:01Z", baseProb:30, dead:true, deadReason:"Snippet indicates Cambridge United are chasing him (incoming interest), not a departure; misclassified on page as outgoing"}
+  {name:"Maldini Kacurri", sub:"Arsenal · Defender", club:"Arsenal", pos:"DEF", report:"Cambridge United joining chase for Albanian defender (implies departure interest)", src:"SportsBoom UK", tier:3, fee:"Unknown", truth:45, prob:35, light:"y", trend:"up", note:"Cambridge United reported to be in chase; unclear if player is leaving or incoming target", lastSeen:"2026-08-08T16:04:56Z", baseProb:35}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -68,7 +66,8 @@ const HUB = {
   bBCGoogleNewsCallumStead: {l:"BBC (Google News)", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE15bmpfQmduNVRYU1BORjd6MEFqRnZPMzRjdlNUVGhET0ZHM1kzUTZ5NDktanVkX0N6aUJpOHhVZU9RWlFuMHVGeHJYektVaG11OWlDNDBFa3A5aUZiWDZxci1rS1ExV00"},
   theCoventryObserverGoogleNewsCallumPerry: {l:"The Coventry Observer (Google News)", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxNSlE3bGlTcFZrQU0zUGhqczNJSUdoVG9GLWZ3X19jcjlXQS1HeXpKN19oeVJxMWtzS1NheVc0QnEtV1FLaWp3U0xieVpMM09tM0Nza0hfdGt3bmk2UmRna1VKd3VrODgtWlV0NTFFeXpGRmFGWVZHUGlHRzA2Y2Uzc1h1bnBSbGdBNnkzQ3hTMnNMLWoxelM0MnczN3EwUXN5MUc1d2pnbHBFMVBsd2NtXzhzbFI4dFZiUFI5dGJZUHc3YU5I"},
   bBCGoogleNewsPatrickBauer: {l:"BBC (Google News)", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5qLXhEZEhXQUk0MmYydk1hMFdCRXFqSjVzY0VrQ3dwN1hFbDc2ZlA2dktXQUhVS3BYUDZreWFPT3ZZM09uTW14UHYtX204RHRjQ00wYXFaSldGTm9mZ05CeUtXaFFkb0U"},
-  bBCGoogleNewsSeanRaggett: {l:"BBC (Google News)", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZV050ZzZIWkJjNm5hYUkxTmNRanF2enVuLXNqTGxWSEtvQ21zUmhDanRRWTBKRWpudnJvOTZObnJiSEI0QkM5bFRpbWUtUFVqS19PVW9xQ1J4ZVpuRWpMRWxXbE1DQk0"}};
+  bBCGoogleNewsSeanRaggett: {l:"BBC (Google News)", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ZV050ZzZIWkJjNm5hYUkxTmNRanF2enVuLXNqTGxWSEtvQ21zUmhDanRRWTBKRWpudnJvOTZObnJiSEI0QkM5bFRpbWUtUFVqS19PVW9xQ1J4ZVpuRWpMRWxXbE1DQk0"},
+  cambridgeUnitedHeath: {l:"Cambridge United", u:"https://news.google.com/rss/articles/CBMiZEFVX3lxTE9LZTlJLXV0QzRMdzZoR1F1azlCVjExeGRvSVA4bnNwMWdnLVNJUkdXeE8yeXZjQ1ZTLWoyTlRCVUdZbTVmT05iMmZvd24zdC1iR3Z3OHFwLWlSVk5xX3E5cVFvcEk?oc=5"}};
 
 const LINKMAP = {
   "Luke Berry": ["flw"],
@@ -78,7 +77,7 @@ const LINKMAP = {
   "Sean Raggett": ["bBCSeanRaggett", "bBCGoogleNewsSeanRaggett"],
   "Adam Mayor": ["cambridgeUnitedAdamMayor", "cambridgeUnitedGoogleNewsAdamMayor"],
   "Maldini Kacurri": ["sportsboomcoukMaldiniKacurri"],
-  "Heath": ["cambridgeUnitedGoogleNewsHeath"]};
+  "Heath": ["cambridgeUnitedGoogleNewsHeath", "cambridgeUnitedHeath"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

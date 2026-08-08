@@ -67,7 +67,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Tim Iroegbunam", sub:"midfielder · Everton", club:"Everton", pos:"M", report:"Hull City and Ipswich Town tracking Everton midfielder", src:"BBC", tier:2, fee:"Undisclosed", truth:65, prob:50, light:"y", trend:"down", note:"Both clubs in pursuit", lastSeen:"2026-08-08T14:10:32Z", baseProb:50},
+  {name:"Tim Iroegbunam", sub:"unknown · England · MF", club:"Everton", pos:"MF", report:"Hull City and Ipswich Town tracking Everton midfielder", src:"BBC", tier:2, fee:"Unknown", truth:65, prob:50, light:"y", trend:"flat", note:"Both clubs tracking; no advanced talks reported", lastSeen:"2026-08-08T16:04:57Z", baseProb:50},
   {name:"PL-ready survival signings (framing)", sub:"Spine upgrades", club:"Market", pos:"Spine", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"£50-90m total", truth:55, prob:40, light:'y', trend:'up',
    note:"The core need: several Premier League-level additions to avoid a repeat of the 2024/25 drop. Names firm up once the manager question is settled.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
   {name:"Striker: goals for survival (framing)", sub:"Position need, no named target yet", club:"Market", pos:"ST", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"TBC", truth:55, prob:35, light:'y', trend:'flat',
@@ -78,10 +78,10 @@ const INCOMING = [
    note:"Framing row from the positions board, not a named rumour: Premier League-level quality and pace at full-back is listed among the positions most likely strengthened. No individual target has yet been credibly linked.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"no longer a current link"},
   {name:"Sasa Lukic", sub:"24 · Serbia · CM", club:"Torino", pos:"Midfielder", report:"Lukic looks destined for Ipswich Town move", src:"The Athletic", tier:2, fee:"Undisclosed", truth:70, prob:60, light:"g", trend:"down", note:"Rumoured transfer target", lastSeen:"2026-08-08T07:40:33Z", baseProb:60, dead:true, deadReason:"No recent confirmation or update; stale rumour"},
   {name:"Julio Enciso", sub:"21 · Paraguay · RW", club:"Brighton & Hove Albion", pos:"Winger", report:"Ipswich confident of re-signing Paraguayan", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:45, light:"y", trend:"down", note:"Confident of re-signing", lastSeen:"2026-08-08T07:40:33Z", baseProb:45, dead:true, deadReason:"No recent confirmation or update; stale rumour"},
-  {name:"Florentino Luis", sub:"midfielder · Burnley", club:"Burnley", pos:"M", report:"Ipswich Town sign midfielder from relegated Burnley", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T14:10:32Z", baseProb:100},
-  {name:"Issa Diop", sub:"centre-back · Fulham", club:"Fulham", pos:"CB", report:"Issa Diop joins from Fulham for £8.5m", src:"BBC", tier:2, fee:"£8.5m", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T14:10:32Z", baseProb:100},
+  {name:"Florentino Luis", sub:"unknown · Portugal · MF", club:"Burnley", pos:"MF", report:"Ipswich Town sign midfielder from relegated Burnley", src:"BBC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
+  {name:"Issa Diop", sub:"26 · France · CB", club:"Fulham", pos:"CB", report:"Issa Diop joins from Fulham for £8.5m", src:"BBC", tier:2, fee:"£8.5m", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
   {name:"Armand Laurienté", sub:"24 · France · LW", club:"Sunderland", pos:"Winger", report:"Ipswich Town explore move for Sunderland's former loanee", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:"y", trend:"down", note:"Ipswich exploring move", lastSeen:"2026-08-08T07:40:33Z", baseProb:40, dead:true, deadReason:"No recent confirmation or update; stale rumour"},
-  {name:"Chris Atherton", sub:"defender · Chelsea", club:"Chelsea", pos:"D", report:"Chris Atherton joins Ipswich Town", src:"Official", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T14:10:32Z", baseProb:100}
+  {name:"Chris Atherton", sub:"unknown · England · GK", club:"Chelsea", pos:"GK", report:"Chris Atherton joins Ipswich Town", src:"Chelsea FC Official", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T16:04:57Z", baseProb:100}
 ];
 
 const OUTGOING = [
@@ -89,7 +89,7 @@ const OUTGOING = [
    note:"The pivotal uncertainty. McKenna is the bookies' favourite for Fulham after Silva's exit, with an £8m buy-out. Retention is Ipswich's priority one; his departure would reshape the entire summer.", lastSeen:"2026-08-04T19:10:50Z", baseProb:45, dead:true, deadReason:"no longer a current link"},
   {name:"Fringe & squad trim", sub:"Promotion churn", club:"Various", pos:"Squad", report:"~1 wk ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:40, light:'y', trend:'flat',
    note:"Championship-level squad players moved on to make room for PL-quality upgrades.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
-  {name:"George Hirst", sub:"striker · Ipswich Town", club:"Stoke City", pos:"ST", report:"Stoke City ready to pay £10m to sign George Hirst", src:"Ipswich Star", tier:3, fee:"£10m", truth:70, prob:65, light:"g", trend:"down", note:"Stoke preparing bid", lastSeen:"2026-08-08T14:10:32Z", baseProb:65},
+  {name:"George Hirst", sub:"unknown · England · FW", club:"Stoke City", pos:"FW", report:"Stoke City ready to pay £10m to sign George Hirst", src:"Ipswich Star", tier:3, fee:"£10m", truth:70, prob:65, light:"g", trend:"flat", note:"Stoke ready to pay reported fee", lastSeen:"2026-08-08T16:04:57Z", baseProb:65},
   {name:"Kieran McKenna", sub:"37 · Scotland · Manager", club:"Ipswich Town", pos:"Manager", report:"Manager departure risk reported ~3 days ago", src:"Various", tier:3, fee:"", truth:40, prob:30, light:"y", trend:"flat", note:"Managerial position, included per on-page entry but may not be transfer-relevant", lastSeen:"2026-08-08T07:40:33Z", baseProb:30, dead:true, deadReason:"Managerial position, not a player transfer; retention as manager is outcome, not transfer"}
 ];
 
@@ -179,7 +179,7 @@ const LINKMAP = {
   "Florentino Luís": ["pAYahooSportFlorentinoLus"],
   "Julio Enciso": ["eastAnglianDailyTimesJulioEnciso"],
   "Sam Szmodics": ["ipswichStarEastAnglianDailyTimesSamSzmodics"],
-  "Florentino Luis": ["bBCFlorentinoLuis", "bBCFlorentinoLuis1"],
+  "Florentino Luis": ["bBCFlorentinoLuis", "bBCFlorentinoLuis1", "bBCIssaDiop"],
   "Armand Laurienté": ["sunderlandEchoArmandLaurient"],
   "George Hirst": ["ipswichstarcoukGeorgeHirst", "transferrumourGeorgeHirst", "ipswichStarGeorgeHirst", "ipswichStarGeorgeHirst1", "ipswichStarGeorgeHirst2"],
   "Chris Atherton": ["chelseaFCOfficialChrisAtherton", "chelseaFCOfficialChrisAtherton1"]};

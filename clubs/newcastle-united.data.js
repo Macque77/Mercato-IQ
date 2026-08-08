@@ -87,8 +87,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Bruno Guimarães", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"Midfielder", report:"Arsenal have agreed fee with Newcastle for Bruno Guimarães", src:"On-page rumour", tier:1, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"up", note:"Fee agreed between clubs; awaiting player agreement", lastSeen:"2026-08-08T14:10:32Z", baseProb:75},
-  {name:"Anthony Gordon", sub:"23 · England · W", club:"Newcastle United", pos:"Winger", report:"David Ornstein reveals Newcastle's stance on Anthony Gordon's future", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"up", note:"Newcastle open to offers; Ornstein confirms potential departure", lastSeen:"2026-08-08T14:10:32Z", baseProb:65}
+  {name:"Bruno Guimarães", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"Midfielder", report:"Arsenal have agreed fee with Newcastle for Bruno Guimarães", src:"On-page rumour", tier:2, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"down", note:"Transfer fee agreed between clubs", lastSeen:"2026-08-08T16:04:57Z", baseProb:70},
+  {name:"Anthony Gordon", sub:"23 · England · W", club:"Newcastle United", pos:"Winger", report:"David Ornstein reveals Newcastle's stance on Anthony Gordon departure", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:65, prob:60, light:"g", trend:"down", note:"Newcastle manager/transfer stance revelation", lastSeen:"2026-08-08T16:04:57Z", baseProb:60}
 ];
 const DEAD = [
   {name:"Giorgio Scalvini", sub:"20 · Italy · D", club:"", pos:"D", report:"Incoming rumour", src:"On-page", tier:3, fee:"", truth:35, prob:25, light:"o", trend:"down", note:"No recent snippet confirmation; last update 30 Jul 2026", lastSeen:"2026-08-06T13:55:46Z", baseProb:25, dead:true, deadReason:"No recent credible reporting; no snippet support", dir:"in", deadAt:"2026-08-06T14:04:24Z"},

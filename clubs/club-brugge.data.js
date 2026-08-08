@@ -35,7 +35,8 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"David Njoku", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 August 2026"}
+  {name:"David Njoku", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 1 August 2026"},
+  {name:"Jan Virgili", sub:"27 · Spain · W", club:"Unknown", pos:"W", fee:"€12m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish winger signed until 2031"}
 ];
 
 const CONFIRMED_OUT = [];
@@ -44,7 +45,7 @@ const INCOMING = [];
 
 const OUTGOING = [
   {name:"Unknown player", sub:"Unknown · Unknown · Unknown", club:"Unknown competitor", pos:"Unknown", report:"Club Brugge loses player to competitor in Belgian Pro League", src:"Sacha Tavolieri", tier:2, fee:"", truth:65, prob:60, light:"g", trend:"flat", note:"", lastSeen:"2026-08-07T20:08:12Z", baseProb:60, dead:true, deadReason:"Cannot identify player from on-page entry; no supporting snippet with player name found"},
-  {name:"Bisiwu", sub:"Unknown · Unknown · Unknown", club:"Barcelona", pos:"Unknown", report:"Club Brugge and Barcelona have reached agreement on Bisiwu transfer", src:"VoetbalPrimeur", tier:3, fee:"Unknown", truth:85, prob:80, light:"g", trend:"flat", note:"Deal agreed between clubs", lastSeen:"2026-08-08T14:10:31Z", baseProb:80}
+  {name:"Bisiwu", sub:"Unknown · Unknown · Unknown", club:"Barcelona", pos:"Unknown", report:"Club Brugge and Barcelona have reached agreement on Bisiwu transfer", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Agreement reached between clubs", lastSeen:"2026-08-08T16:04:56Z", baseProb:80}
 ];
 
 const RISERS = [];

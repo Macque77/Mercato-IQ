@@ -39,7 +39,7 @@ const CONFIRMED_OUT = [
   {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Player departure confirmed; player statement released"}
 ];
 const INCOMING = [
-  {name:"Fedde Leysen", sub:"Unknown · Unknown · Unknown", club:"PSV", pos:"Unknown", report:"Transfer from PSV confirmed", src:"Unknown", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer", lastSeen:"2026-08-08T14:10:31Z", baseProb:100}
+  {name:"Fedde Leysen", sub:"PSV", club:"PSV", pos:"Unknown", report:"Transfer from PSV confirmed", src:"On-page", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Already confirmed on page", lastSeen:"2026-08-08T16:04:56Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"Departure linked", src:"The Athletic", tier:3, fee:"£17m bid rejected", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 29 Jul 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50, dead:true, deadReason:"No recent credible link; stale rumour"},

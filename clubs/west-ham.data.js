@@ -46,10 +46,10 @@ const INCOMING = [
   {name:"Wilson Isidor", sub:"25 · ST · Haiti", club:"Sunderland", pos:"ST", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:2, fee:"~£20m loan-to-buy approach reported", truth:48, prob:22, light:"o", trend:"flat", note:"Downie reports Sunderland will not entertain offers, calling Isidor integral to their Europa League squad - directly contradicted same-day by reports of a fresh West Ham loan-to-buy approach, a genuinely live and unresolved situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
   {name:"Troy Parrott", sub:"24 · ST · Republic of Ireland", club:"AZ Alkmaar", pos:"ST", report:"3 Aug 2026", src:"Alan Nixon (The72)", tier:2, fee:"Undisclosed", truth:42, prob:20, light:"o", trend:"flat", note:"West Ham have joined a crowded field (also including Fulham, Ajax, Como, Real Betis, PSV) as competition for striker Taty Castellanos.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
   {name:"Joel Veltman", sub:"34 · Netherlands · D", club:"Brighton", pos:"Defender", report:"West Ham sign former Brighton defender Joel Veltman as free transfer", src:"The New York Times", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Free transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Arne Engels", sub:"unknown · Belgium · Midfielder", club:"Celtic", pos:"Midfielder", report:"West Ham address interest in Arne Engels as Celtic deliver clear stance on potential transfer", src:"GlasgowWorld", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"flat", note:"Celtic have made clear their position; talks ongoing", lastSeen:"2026-08-08T07:40:33Z", baseProb:40}
+  {name:"Arne Engels", sub:"20 · Belgium · M", club:"Celtic", pos:"M", report:"West Ham address interest in Arne Engels as Celtic deliver clear stance", src:"GlasgowWorld", tier:3, fee:"", truth:65, prob:45, light:"y", trend:"up", note:"West Ham working on deal; Celtic indicate player not for sale but talks ongoing", lastSeen:"2026-08-08T16:04:57Z", baseProb:45}
 ];
 const OUTGOING = [
-  {name:"Mateus Fernandes", sub:"unknown · unknown · Midfielder", club:"West Ham", pos:"Midfielder", report:"West Ham intend to demand £80 million for Mateus Fernandes", src:"The Athletic", tier:2, fee:"£80m", truth:75, prob:55, light:"g", trend:"flat", note:"West Ham's asking price set; interest from other clubs expected", lastSeen:"2026-08-08T07:40:33Z", baseProb:55}
+  {name:"Mateus Fernandes", sub:"21 · Portugal · M", club:"West Ham", pos:"M", report:"West Ham intend to demand £80 million for Mateus Fernandes", src:"Multiple", tier:2, fee:"£80m", truth:70, prob:50, light:"y", trend:"down", note:"West Ham holding firm on valuation; limited concrete interest reported", lastSeen:"2026-08-08T16:04:57Z", baseProb:50}
 ];
 const RISERS = [
   {ar:"⬆", t:"<b>Simon Adingra emerges as Summerville's replacement</b>: West Ham have opened loan talks with Sunderland."}
@@ -76,7 +76,8 @@ const HUB = {
   voetbalInternationaalJoelVeltman: {l:"Voetbal Internationaal", u:"https://www.vi.nl/nieuws/transfervrije-veltman-tekent-bij-west-ham-united"},
   theNewYorkTimesJoelVeltman: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV"},
   glasgowWorldArneEngels: {l:"GlasgowWorld", u:"https://news.google.com/rss/articles/CBMizgFBVV95cUxQeHZabnk4MlAyTDNQMFlIU2YzX2ZnSkdPNlU3TmtKQkhCWjBJOHhCaEc3dE5oQUhyR3JBRnNQZG5pVmJKQkxDeHVhOVp6THByNm9TX2VYanBfTlRiRi0xMFU5V1NTODlQR0VTeG1DdWZKXzk2eGozSXh5MzNreXhoWEJ6Y3V5ZmJLZ0J5X3NDQW0xdURhaGVuY29KN1h4QXVaQW4xRVRxZ3pJbnc2ZmgwSzdwdHRxSEEzYnYtaTZ5VVY2cHMzYVYxX2dPVXZQQQ"},
-  theAthleticLaurieWhitwellMateusFernandes: {l:"The Athletic (Laurie Whitwell)", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNNXlxMG5YSjVnMy1YTFNRV2dJNV83X0d6R0haVkdSaUNfaVZEMVg5TllrV040UXE3MXpBa3Vxdy1UMnZlN1l2UXRHemt0UFdUMEkzcFh5UktHaGpLLWJmRnA2ZE5ieEhBcW9tNWlwekp4dG9XNWZKYWZITjE2T0tPWU8zM0FJSWJINkhVWHd4WHFrOU9Ucm8xVUJn"}};
+  theAthleticLaurieWhitwellMateusFernandes: {l:"The Athletic (Laurie Whitwell)", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNNXlxMG5YSjVnMy1YTFNRV2dJNV83X0d6R0haVkdSaUNfaVZEMVg5TllrV040UXE3MXpBa3Vxdy1UMnZlN1l2UXRHemt0UFdUMEkzcFh5UktHaGpLLWJmRnA2ZE5ieEhBcW9tNWlwekp4dG9XNWZKYWZITjE2T0tPWU8zM0FJSWJINkhVWHd4WHFrOU9Ucm8xVUJn"},
+  glasgowWorldArneEngels1: {l:"GlasgowWorld", u:"https://news.google.com/rss/articles/CBMizgFBVV95cUxQeHZabnk4MlAyTDNQMFlIU2YzX2ZnSkdPNlU3TmtKQkhCWjBJOHhCaEc3tE5oQUhyR3JBRnNQZG5pVmJKQkxDeHVhOVp6THByNm9TX2VYanBfTlRiRi0xMFU5V1NTODlQR0VTeG1DdWZKXzk2eGozSXh5MzNreXhoWEJ6Y3V5ZmJLZ0J5X3NDQW0xdURhaGVuY29KN1h4QXVaQW4xRVRxZ3pJbnc2ZmgwSzdwdHRxSEEzYnYtaTZ5VVY2cHMzYVYxX2dPVXZQQQ"}};
 
 const LINKMAP = {
   "Mateus Fernandes": ["gnews-mateusfernandes", "theAthleticLaurieWhitwellMateusFernandes"],
@@ -86,7 +87,7 @@ const LINKMAP = {
   "Wilson Isidor": ["the72Isidor"],
   "Troy Parrott": ["the72Parrott"],
   "Joel Veltman": ["voetbalInternationalJoelVeltman", "voetbalInternationaalJoelVeltman", "theNewYorkTimesJoelVeltman"],
-  "Arne Engels": ["glasgowWorldArneEngels"]};
+  "Arne Engels": ["glasgowWorldArneEngels", "glasgowWorldArneEngels1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

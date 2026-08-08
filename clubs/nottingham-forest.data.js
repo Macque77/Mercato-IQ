@@ -62,7 +62,8 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"James McAtee", sub:"23 · England · M", club:"Manchester City", pos:"M", report:"Nottingham Forest target James McAtee", src:"James Ducker", tier:1, fee:"", truth:65, prob:45, light:"y", trend:"down", note:"Telegraph reports Forest targeting City midfielder", lastSeen:"2026-08-08T07:40:33Z", baseProb:45}
+  {name:"James McAtee", sub:"23 · England · M", club:"Manchester City", pos:"M", report:"Nottingham Forest target James McAtee", src:"James Ducker", tier:1, fee:"", truth:65, prob:45, light:"y", trend:"down", note:"Telegraph reports Forest targeting City midfielder", lastSeen:"2026-08-08T07:40:33Z", baseProb:45},
+  {name:"Ousmane Diomande", sub:"· Ivory Coast · Defender", club:"Sporting CP", pos:"Defender", report:"Nottingham Forest set to sign Ousmane Diomande from Sporting CP for €40m", src:"David Ornstein", tier:1, fee:"€40m", truth:85, prob:80, light:"g", trend:"flat", note:"Advanced negotiations reported; Sporting boss has commented on the situation", lastSeen:"2026-08-08T16:04:57Z", baseProb:80}
 ];
 
 const OUTGOING = [
@@ -158,7 +159,8 @@ const HUB = {
   sportsMoleXaverSchlager: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/nottingham-forest/transfer-talk/feature/nottingham-forest-summer-transfers-all-confirmed-ins-and-outs-for-2026_598980.html"},
   pAYahooSportTijjaniReijnders: {l:"PA / Yahoo Sport", u:"https://ca.sports.yahoo.com/news/nottingham-forest-target-tijjani-reijnders-153500623.html"},
   theTelegraphJamesMcAtee: {l:"The Telegraph", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU?oc=5"},
-  telegraphGoogleNewsJamesMcAtee: {l:"Telegraph / Google News", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU"}};
+  telegraphGoogleNewsJamesMcAtee: {l:"Telegraph / Google News", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU"},
+  googleNewsTheNewYorkTimesOusmaneDiomande: {l:"Google News / The New York Times", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxOVE5Fdk1Wb0xaMy1RbWpZblJydHE2d0ZZM0QxQ04teGhaMVlrVk15RXcyeGVBc0NUOFZERHRQenNySzNoMmlnOVdUMnJLOFFlTlBTQVRIcGVvOVpKMlN3cmN4a3BJeXQ3VUE4NXEybFlRYzJCU0tKVS03ZjdlVy1tWXdzX2FtQ243ZmxBa3NTOGVyZ3prYW5SVHNUTFk"}};
 
 const LINKMAP = {
   "Xaver Schlager": ["ggfnSchlager","forestOfficialGlasner", "sportsMoleXaverSchlager"],
@@ -167,7 +169,7 @@ const LINKMAP = {
   "David Carmo": ["soccernewsTransfers", "sportsMoleXaverSchlager"],
   "Jota Silva": ["soccernewsTransfers", "sportsMoleXaverSchlager"],
   "Angus Gunn, Stefan Ortega & Willy Boly": ["soccernewsTransfers"],
-  "Ousmane Diomande": ["romanoDiomandeX","forestNewsDiomande","eotkDiomande", "nottinghamForestNewsOusmaneDiomande", "romanoX"],
+  "Ousmane Diomande": ["romanoDiomandeX","forestNewsDiomande","eotkDiomande", "nottinghamForestNewsOusmaneDiomande", "romanoX", "googleNewsTheNewYorkTimesOusmaneDiomande"],
   "Lucas Bergvall": ["f365Bergvall","forestNewsBergvall"],
   "Liam Delap": ["chelseaFCO"],
   "Givairo Read": ["insideFutbolRead","pulseAina"],

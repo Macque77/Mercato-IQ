@@ -98,7 +98,7 @@ const INCOMING = [
    note:"Fresh link for the Liverpool creator seeking minutes, a clear quality and resale profile. Obstacle: Football Insider-tier sourcing, a likely crowded race for a player of his profile, and price.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20, dead:true, deadReason:"Medical reported as 'possible' but no confirmed deal in latest snippets"},
   {name:"Ayase Ueda", sub:"27 · Japan · ST", club:"Feyenoord", pos:"ST", report:"~4 wks", src:"Aggregated", tier:3, fee:"£12-18m", truth:43, prob:18, light:'o', trend:'flat',
    note:"Tracked by Leeds and Tottenham, a proven Eredivisie goalscorer in a friendly market. Obstacle: 27 is older than the ideal resale band, competition from Spurs, no recency refresh.", lastSeen:"2026-08-04T19:10:50Z", baseProb:18, dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
-  {name:"James Trafford", sub:"24 · England · GK", club:"Manchester City", pos:"GK", report:"Joins from Manchester City in deal worth up to £45m", src:"BBC", tier:2, fee:"£45m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T14:10:32Z", baseProb:100}
+  {name:"James Trafford", sub:"24 · England · GK", club:"Manchester City", pos:"GK", report:"Joins from Manchester City in deal worth up to £45m", src:"BBC", tier:2, fee:"£45m", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation", lastSeen:"2026-08-08T16:04:57Z", baseProb:100}
 ];
 
 const OUTGOING = [
@@ -114,8 +114,8 @@ const OUTGOING = [
    note:"On loan at Valencia, where he has impressed (6 goals); a permanent move or fresh loan is the likely outcome. Squad-trimming that helps SCR headroom.", lastSeen:"2026-08-04T19:10:50Z", baseProb:38, dead:true, deadReason:"No fresh snippet evidence in 3+ weeks; presumed stale"},
   {name:"Mateo Joseph", sub:"22 · Spain · ST", club:"Mallorca / Leicester / Wrexham", pos:"ST", report:"~4 wks", src:"TEAMtalk", tier:3, fee:"£6-10m", truth:50, prob:25, light:'o', trend:'down',
    note:"Leeds were prepared to sanction a sale, but an ACL injury has stalled momentum and weakened any fee. Likely to stay until fit unless a buyer gambles.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25, dead:true, deadReason:"No fresh snippet evidence in 4+ weeks; presumed stale"},
-  {name:"Karl Darlow", sub:"33 · England · GK", club:"Manchester United", pos:"GK", report:"Signs with Manchester United after Leeds exit", src:"Unknown", tier:3, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100, dead:true, deadReason:"No recent snippet support; unclear status"},
-  {name:"Lucas Perri", sub:"24 · Brazil · GK", club:"Torino", pos:"GK", report:"Signing with Torino from Leeds United", src:"Unknown", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100, dead:true, deadReason:"No recent snippet support; unclear status"}
+  {name:"Karl Darlow", sub:"32 · England · GK", club:"Leeds United", pos:"GK", report:"Signs with Manchester United after Leeds exit", src:"Various", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
+  {name:"Lucas Perri", sub:"23 · Brazil · GK", club:"Leeds United", pos:"GK", report:"Signing with Torino from Leeds United", src:"Various", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Official confirmation", lastSeen:"2026-08-08T16:04:57Z", baseProb:100}
 ];
 const DEAD = [
   {name:"James Trafford", sub:"GK · England", club:"Man City", pos:"GK", report:"~4-5 wks", src:"TEAMtalk", tier:3, fee:"~£30m", truth:45, prob:20, light:'o', trend:'down',

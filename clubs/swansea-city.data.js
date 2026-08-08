@@ -41,7 +41,8 @@ const CONFIRMED_OUT = [
   {name:"Ollie Cooper", sub:"MF", club:"Notts County", pos:"MF", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed season-long loan exit."},
   {name:"Cameron Congreve", sub:"W", club:"KVC Westerlo", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."},
   {name:"Liam Cullen", sub:"ST", club:"Leicester City", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."},
-  {name:"Ethan Galbraith", sub:"MF", club:"Stoke City", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
+  {name:"Ethan Galbraith", sub:"MF", club:"Stoke City", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."},
+  {name:"Kyrell Wilson", sub:"unknown · unknown · unknown", club:"Gent", pos:"unknown", fee:"unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer to Gent sealed"}
 ];
 const INCOMING = [
   {name:"Tiago Parente", sub:"Portugal · Midfielder", club:"Benfica", pos:"MID", report:"Loan seal for Benfica midfielder", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Loan deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:95}
@@ -71,21 +72,24 @@ const HUB = {
   walesOnlineZanVipotnik: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxQeGkxUnVrWW9xUGVVSUZFbVB4ZzRwekRsdkRsSzg2WDNCSUJwYThTd0tjREpBa2xyRlFLMDUtZ2M2ZkJQXzRwZFZMSXVmSksydEpJVDV4c1U2cTg3T1pRTVZVMmxvUmowUmdfY0FoVS1sblllYW93M2RrUXQ2MGlmZ280OUZaSXR4Q09qaC00R3BNMjlaa0ZOTlg5UHQ2WU13UVlCaNIBqgFBVV95cUxOMHlNdzN2S1pqcVNTcDJ0c1N6ZVZ2TEVIU1VwUldsbGlUTDBhc1d6c09zN0h0TlVVY2theG5YdjRQWE53ZFI0UVpoeENTRS1ObHczamdNWUEtc0lDMjdfT2NseHpNV1FzSHVXSVNkaDFaV3VGOXFURjFkR2NFRFNVSzB6Tnh6S2FTMTJxSGVBeDdzY2FGWVdpMXNYQWxFOG9mazNzZ1BycXRBZw?oc=5"},
   bBCTiagoParente: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE45dmlNdUFncGxzbmVXNmRwSDZNX3BFYmVMRjlSenJBQTUtd0FhRFYteU41aktmSGxWMWNyWUdqbF9oQTFJNF9aTmNWbzZDbFBtd0EtbVQydDREaTR5QzdhV0VUQW5kWkE?oc=5"},
   swanseaCityKyrellWilson: {l:"Swansea City", u:"https://news.google.com/rss/articles/CBMidEFVX3lxTE5YMm1DeW02dXNweHZQMUtIYzNoUnhNZzdVMklzUzRMV2VpcF9aSUpmQWJNYjNkbkZFNVYyNWJCWDNEc1RTSVpQYVFEQkZtU3NkdDhZODU5dUlCNDRXdFFzWmNZeUI4bk9qblAtYS1UN3R5YlN2?oc=5"},
-  swanseaCityLiamCullen: {l:"Swansea City", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxQeG90ZXE2ZFQ3MmpxVW5lY1VpWjMxLXh0MGxuR0JnRzdnNE43NVBJTGMwQkhqUXZydWJzemtubmpBRkJwQ2h4amdOU1UxS1g3RjY4dHZkeS1wSVdEWTNoekpqanFENGxwSG5ucXpBbUYtVTVqMVowUUpCTWxxc19aMlRlbzM?oc=5"}};
+  swanseaCityLiamCullen: {l:"Swansea City", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxQeG90ZXE2ZFQ3MmpxVW5lY1VpWjMxLXh0MGxuR0JnRzdnNE43NVBJTGMwQkhqUXZydWJzemtubmpBRkJwQ2h4amdOU1UxS1g3RjY4dHZkeS1wSVdEWTNoekpqanFENGxwSG5ucXpBbUYtVTVqMVowUUpCTWxxc19aMlRlbzM?oc=5"},
+  walesOnlineZanVipotnik1: {l:"Wales Online", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxQeGkxUnVrWW9xUGVVSUZFbVB4ZzRwekRsdkRsSzg2WDNCSUJwYThTd0tjREpBa2xyRlFLMDUtZ2M2ZkJQXzRwZFZMSXVmSksydEpJVDV4c1U2cTg3T1pRTVZVMmxvUmowUmdfY0FoVS1sblllYW93M2RrUXQ2MGlmZ280OUZaSXR4Q09qaC00R3BNMjlaa0ZOTlg5UHQ2WU13UVlCaNIBqgFBVV95cUxOMHlNdzN2S1pqcVNTcDJ0c1N6ZVZ2TEVIU1VwUldscGlUTDBhc1d6c09zN0h0TlVVY2theG5YdjRQWE53ZFI0UVpoeENTRS1ObHczamdNWUEtc0lDMjdfT2NseHpNV1FzSHVXSVNkaDFaV3VGOXFURjFkR2NFRFNVSzB6Tnh6S2FTMTJxSGVBeDdzY2FGWVdpMXNYQWxFOG9mazNzZ1BycXRBZw?oc=5"},
+  swanseaCityWalesOnlineElijahJust: {l:"Swansea City / Wales Online", u:"https://news.google.com/rss/articles/CBMifEFVX3lxTE9LQ1V4ZFpMOW9OYVJlNWpHUVBsS2k3ZTlDOWs1Ul9YMFBhaXM2enZmWVNBVF9FeVJ0U1I2OGdIS19LRWNVX3dKc3Vrc05mU0hDdDFuVURDYTV6Y0ljT2lKWllBb29YSFAzVXNPOFNxbm1uU1dIcHA1eFFjWEY?oc=5"},
+  unknownKyrellWilson: {l:"unknown", u:"unknown"}};
 
 const LINKMAP = {
   "Tiago Parente": ["gnews-tiagoparente", "bBCTiagoParente"],
-  "Elijah Just": ["gnews-elijahjust"],
+  "Elijah Just": ["gnews-elijahjust", "swanseaCityWalesOnlineElijahJust"],
   "Joseph Opoku": ["gnews-josephopoku"],
   "Moussa Yeo": ["gnews-moussayeo"],
   "Stephen Welsh": ["gnews-stephenwelsh"],
   "Ollie Cooper": ["gnews-olliecooper"],
   "Cameron Congreve": ["gnews-cameroncongreve"],
-  "Liam Cullen": ["gnews-liamcullen", "swanseaCityLiamCullen"],
+  "Liam Cullen": ["gnews-liamcullen", "swanseaCityLiamCullen", "unknownKyrellWilson"],
   "Ethan Galbraith": ["gnews-ethangalbraith"],
   "Ross Stewart": ["bBCRossStewart"],
-  "Zan Vipotnik": ["walesOnlineZanVipotnik"],
-  "Kyrell Wilson": ["swanseaCityKyrellWilson"]};
+  "Zan Vipotnik": ["walesOnlineZanVipotnik", "walesOnlineZanVipotnik1"],
+  "Kyrell Wilson": ["swanseaCityKyrellWilson", "unknownKyrellWilson"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -45,18 +45,18 @@ const CONFIRMED_OUT = [
   {name:"Patrick Bauer", sub:"defender", club:"Cambridge United", pos:"DEF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Cambridge United sign AFC Wimbledon defender"}
 ];
 const INCOMING = [
-  {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"Signed from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100},
-  {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"Signed after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100},
-  {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"Deal agreed with Wycombe", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"down", note:"Transfer agreed", lastSeen:"2026-08-07T23:07:29Z", baseProb:85},
-  {name:"Steven Sessegnon", sub:"Player", club:"Wigan Athletic", pos:"Unknown", report:"Joined after leaving Wigan Athletic", src:"Unknown", tier:3, fee:"Undisclosed", truth:75, prob:75, light:"g", trend:"flat", note:"On-page entry retained pending confirmation", lastSeen:"2026-08-07T23:07:29Z", baseProb:75},
-  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"down", note:"Former Millwall skipper target", lastSeen:"2026-08-07T23:07:29Z", baseProb:65, dead:true, deadReason:"Only reported as 'wanted by' AFC Wimbledon and Lincoln City; no confirmed signing"},
-  {name:"Layton Stewart", sub:"unknown · unknown · Forward", club:"Liverpool", pos:"Forward", report:"AFC Wimbledon sign ex-Liverpool forward on loan", src:"BBC", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Loan signing from Liverpool", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
+  {name:"Jayden Stockley", sub:"Striker", club:"Port Vale", pos:"ST", report:"AFC Wimbledon sign striker from Port Vale", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"Zack Nelson", sub:"Defender", club:"Luton Town", pos:"DEF", report:"AFC Wimbledon sign defender after Luton Town release", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"James Tilly", sub:"Midfielder", club:"Wycombe Wanderers", pos:"MID", report:"AFC Wimbledon agree deal with Wycombe for midfielder James Tilly", src:"TribalFootball", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"flat", note:"Deal agreed", lastSeen:"2026-08-08T16:04:56Z", baseProb:85},
+  {name:"Steven Sessegnon", sub:"Defender", club:"Wigan Athletic", pos:"DEF", report:"AFC Wimbledon sign defender from Wigan Athletic", src:"Wimbledon Guardian", tier:3, fee:"Undisclosed", truth:90, prob:90, light:"g", trend:"up", note:"Summer signing announced", lastSeen:"2026-08-08T16:04:56Z", baseProb:90},
+  {name:"Shaun Hutchinson", sub:"Defender", club:"Millwall", pos:"DEF", report:"Former Millwall Skipper Shaun Hutchinson wanted by AFC Wimbledon and Lincoln City", src:"SportsBoom UK", tier:3, fee:"Undisclosed", truth:70, prob:60, light:"g", trend:"down", note:"Target, competing with Lincoln City", lastSeen:"2026-08-08T16:04:56Z", baseProb:60},
+  {name:"Layton Stewart", sub:"Forward", club:"Liverpool", pos:"FW", report:"AFC Wimbledon sign ex-Liverpool forward on loan", src:"AFC Wimbledon", tier:2, fee:"Loan", truth:90, prob:90, light:"g", trend:"down", note:"Loan signing", lastSeen:"2026-08-08T16:04:56Z", baseProb:90}
 ];
 const OUTGOING = [
-  {name:"Riley Harbottle", sub:"Player", club:"Bristol Rovers", pos:"Unknown", report:"Signed by Bristol Rovers from AFC Wimbledon", src:"Bristol Rovers", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100},
+  {name:"Riley Harbottle", sub:"Player", club:"Bristol Rovers", pos:"DEF", report:"Bristol Rovers sign Riley Harbottle from AFC Wimbledon", src:"Bristol Rovers Football Club", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
   {name:"Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T10:18:48Z", baseProb:100, dead:true, deadReason:"no longer a current link"},
-  {name:"Osman Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"Signed for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T23:07:29Z", baseProb:100, dead:true, deadReason:"Duplicate entry - same player listed twice in outgoing; kept as single 'Foyo' entry on page"},
-  {name:"Patrick Bauer", sub:"unknown · unknown · Defender", club:"Cambridge United", pos:"Defender", report:"Cambridge United sign AFC Wimbledon defender", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Defender departure to Cambridge United", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
+  {name:"Osman Foyo", sub:"Striker", club:"Rhode Island FC", pos:"ST", report:"AFC Wimbledon striker Osman Foyo signs for Rhode Island FC", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"Patrick Bauer", sub:"Defender", club:"Cambridge United", pos:"DEF", report:"Cambridge United sign AFC Wimbledon defender Patrick Bauer", src:"Cambridge United", tier:2, fee:"Undisclosed", truth:90, prob:90, light:"g", trend:"down", note:"Transfer reported", lastSeen:"2026-08-08T16:04:56Z", baseProb:90}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -91,20 +91,24 @@ const HUB = {
   bBCLaytonStewart1: {l:"BBC", u:"https://news.google.com/"},
   tribalFootballJamesTilly3: {l:"TribalFootball", u:"https://news.google.com/rss/articles/CBMi7wFBVV95cUxPdmYwZTc1QmdxTUQ3Y3hEcU4tOHNxQy1Jd0hYeUdCRkhpOGtMNWN1MVNTSjNPWmljUlE4clN4MWdBOVFKYlV1dk9TNDlTSWZ1eWtaTTNuT3pnbUhSa3IzMzBiSUhaR0tDWmtua3UwZU1oS2JtMXBHS2Z5blpEUnQyVE5DQ0VIMmZHd0lTLWJQSDRyR3JTUGQtVUdvdU01bXZRTEgwRmJURGJrMmkzdkNnQUF5azJCeEk5VlpsWUlnb3VncG5CdUlDQm9yWGdadUN4emV2bnBYcjM3UzVsZmRrMTY1WHBCa255THdPZjVVaw?oc=5"},
   tribalFootballJamesTilly4: {l:"TribalFootball", u:"https://tribalfootball.com"},
-  googleNewsStevenSessegnon: {l:"Google News", u:"https://news.google.com"}};
+  googleNewsStevenSessegnon: {l:"Google News", u:"https://news.google.com"},
+  wimbledonGuardianStevenSessegnon: {l:"Wimbledon Guardian", u:"https://www.wimbledonguardian.co.uk"},
+  sportsBoomUKShaunHutchinson3: {l:"SportsBoom UK", u:"https://sportsboom.uk"},
+  aFCWimbledonLaytonStewart: {l:"AFC Wimbledon", u:"https://www.afcwimbledon.co.uk"},
+  cambridgeUnitedPatrickBauer: {l:"Cambridge United", u:"https://www.cambridgeunited.co.uk"}};
 
 const LINKMAP = {
   "Ollie Harrison": ["gnews-ollieharrison"],
   "Jayden Stockley": ["bBCJaydenStockley", "bBCJaydenStockley1", "bBCJaydenStockley2"],
   "Zack Nelson": ["bBCJaydenStockley", "bBCZackNelson", "bBCZackNelson1"],
   "James Tilly": ["tribalFootballJamesTilly", "tribalFootballJamesTilly1", "tribalFootballJamesTilly2", "tribalFootballJamesTilly3", "tribalFootballJamesTilly4"],
-  "Steven Sessegnon": ["bBCJaydenStockley", "bBCStevenSessegnon", "bBCStevenSessegnon1", "bBCLaytonStewart1", "googleNewsStevenSessegnon"],
-  "Shaun Hutchinson": ["sportsBoomUKShaunHutchinson", "sportsBoomUKShaunHutchinson1", "sportsBoomUKShaunHutchinson2"],
+  "Steven Sessegnon": ["bBCJaydenStockley", "bBCStevenSessegnon", "bBCStevenSessegnon1", "bBCLaytonStewart1", "googleNewsStevenSessegnon", "wimbledonGuardianStevenSessegnon"],
+  "Shaun Hutchinson": ["sportsBoomUKShaunHutchinson", "sportsBoomUKShaunHutchinson1", "sportsBoomUKShaunHutchinson2", "sportsBoomUKShaunHutchinson3"],
   "Riley Harbottle": ["bristolRoversFootballClubRileyHarbottle", "bristolRoversRileyHarbottle", "bristolRoversFootballClubRileyHarbottle1", "bristolRoversRileyHarbottle1"],
   "Foyo": ["bBCJaydenStockley", "bBCFoyo"],
   "Osman Foyo": ["bBCOsmanFoyo", "bBCFoyo", "bBCJaydenStockley"],
-  "Layton Stewart": ["bBCLaytonStewart", "bBCLaytonStewart1", "googleNewsStevenSessegnon"],
-  "Patrick Bauer": ["bBCPatrickBauer", "bBCLaytonStewart1", "googleNewsStevenSessegnon"]};
+  "Layton Stewart": ["bBCLaytonStewart", "bBCLaytonStewart1", "googleNewsStevenSessegnon", "aFCWimbledonLaytonStewart"],
+  "Patrick Bauer": ["bBCPatrickBauer", "bBCLaytonStewart1", "googleNewsStevenSessegnon", "cambridgeUnitedPatrickBauer"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

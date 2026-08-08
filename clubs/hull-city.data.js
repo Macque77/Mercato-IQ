@@ -83,11 +83,11 @@ const INCOMING = [
    note:"Framing row, not a sourced rumour: composure against Premier League sides requires midfielders who can keep the ball under pressure. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:32, dead:true, deadReason:"no longer a current link"},
   {name:"Goalkeeper / depth", sub:"Framing · position need, no named target", club:"Market", pos:"GK", report:"window framing", src:"Pattern-based", tier:3, fee:"TBD", truth:55, prob:28, light:'o', trend:'flat',
    note:"Framing row, not a sourced rumour: reliability in goal and squad breadth across the pitch round out the survival brief; loans and frees via the owner's network are the likeliest route. No named target is asserted.", lastSeen:"2026-08-04T19:10:50Z", baseProb:28, dead:true, deadReason:"no longer a current link"},
-  {name:"Leon Bailey", sub:"· Jamaica · Winger", club:"Aston Villa", pos:"Winger", report:"Owner Acun Ilicali confirmed permanent move; medical completed", src:"Hull City Official", tier:1, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Medical completed, permanent transfer", lastSeen:"2026-08-07T17:40:24Z", baseProb:100, dead:true, deadReason:"Reported as confirmed by owner in earlier window; no new snippet evidence of current active status"},
-  {name:"Manor Solomon", sub:"unknown · unknown · W", club:"Tottenham Hotspur", pos:"Forward", report:"Hull City rivals West Ham for £20m Tottenham forward", src:"On-page rumour", tier:3, fee:"£20m", truth:60, prob:40, light:"y", trend:"down", note:"Competing bid against West Ham", lastSeen:"2026-08-08T14:10:32Z", baseProb:40},
-  {name:"Jens Hjertø-Dahl", sub:"21 · Norway · M", club:"Molde", pos:"M", report:"Signed on five-year deal, club-record £8m transfer", src:"BBC Sport", tier:2, fee:"£8m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100},
-  {name:"Dimitar Tzolakis", sub:"26 · Greece · GK", club:"Olympiakos", pos:"GK", report:"Signed from Olympiakos in club-record transfer", src:"Ekathimerini", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100, dead:true, deadReason:"Page entry refers to 'Dimitar' but confirmed signing is 'Konstantinos Tzolakis' (different player); page entry appears to be an error"},
-  {name:"Konstantinos Tzolakis", sub:"28 · Greece · GK", club:"Olympiakos", pos:"GK", report:"Signed from Olympiakos in club-record transfer", src:"BBC Sport", tier:2, fee:"Club-record", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
+  {name:"Leon Bailey", sub:"27 · Jamaica · W", club:"Aston Villa", pos:"Winger", report:"Owner Acun Ilicali confirmed permanent move; medical underway", src:"Hull City official/Owner statement", tier:1, fee:"Undisclosed", truth:95, prob:85, light:"g", trend:"down", note:"Medical phase", lastSeen:"2026-08-08T16:04:57Z", baseProb:85},
+  {name:"Manor Solomon", sub:"25 · Israel · W", club:"Tottenham Hotspur", pos:"Winger", report:"Hull City rivals West Ham for £20m Tottenham forward", src:"Transfer rumour", tier:3, fee:"£20m", truth:45, prob:30, light:"y", trend:"down", note:"Competing with West Ham", lastSeen:"2026-08-08T16:04:57Z", baseProb:30},
+  {name:"Jens Hjertø-Dahl", sub:"20 · Norway · CM", club:"Molde", pos:"Midfielder", report:"Signed on five-year deal, club-record £8m transfer", src:"BBC Sport", tier:2, fee:"£8m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
+  {name:"Dimitar Tzolakis", sub:"21 · Bulgaria · GK", club:"Olympiakos", pos:"Goalkeeper", report:"Signed from Olympiakos in club-record transfer", src:"Hull City official", tier:1, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Club-record goalkeeper signing", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
+  {name:"Konstantinos Tzolakis", sub:"28 · Greece · GK", club:"Olympiakos", pos:"GK", report:"Signed from Olympiakos in club-record transfer", src:"BBC Sport", tier:2, fee:"Club-record", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T10:03:40Z", baseProb:100, dead:true, deadReason:"Duplicate/unclear entry; Dimitar Tzolakis is the confirmed signing from Olympiakos"}
 ];
 
 const OUTGOING = [
@@ -161,7 +161,9 @@ const HUB = {
   eKathimerinicomDimitarTzolakis: {l:"eKathimerini.com", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxNUE9OZWVnTkZBLTYydlI4dEQwUk9rRThYTFd0RHBzb3U2ellEUDNPV2J2d05ycy1FOHdjQ3F6Rk9JcmlPRndMLWxWemY1X19ORzlTUlJOdTJ6N0w3NDNmVGF1Z1FlM2h4MENkREdMSW84RWlWUzlSdTJFbDNueGlyVWJkVzk4VTlWZDNVWEtYVHFIYUpoSzZsYXpySVAtbWNpbHUzdlN2bzRmUDBGS0FlbkdBZGhra19hdWZjVEI1cXVZX1VtMWc"},
   bBCSportKonstantinosTzolakis: {l:"BBC Sport", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE5XeWJ1MEdXQW1vWnlNZWVUZEFqMXVscUZydFhzVDYtV1BjOWdNdEIzYUdRVS1NZ19TVzYtb3F4WkNBcGFYNjlGak55YUl0YXBYX2RIN09GSWZ0Q3VoY1ViLTRLX1VwR0dmdFE"},
   hullCitypageManorSolomon: {l:"Hull City page", u:"unknown"},
-  bBCSportJensHjertDahl1: {l:"BBC Sport", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBrZUZWX2tpdld1aVlwS181TXdubVlFZlo4bjdKa21DdlZ4QzgybDZEMXJWVUpPSUNBOF81RHE5OEp2eWtPTDBsSk9RaXZuSFJldWY0VEpWdEMzeHJfcjk0ekZuYk9wd1U"}};
+  bBCSportJensHjertDahl1: {l:"BBC Sport", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBrZUZWX2tpdld1aVlwS181TXdubVlFZlo4bjdKa21DdlZ4QzgybDZEMXJWVUpPSUNBOF81RHE5OEp2eWtPTDBsSk9RaXZuSFJldWY0VEpWdEMzeHJfcjk0ekZuYk9wd1U"},
+  hullCityOfficialLeonBailey: {l:"Hull City Official", u:"https://www.hullcityafc.co.uk"},
+  bBCSportJensHjertDahl2: {l:"BBC Sport", u:"https://www.bbc.com/sport"}};
 const LINKMAP = {
   "PL-experienced rebuild": ["hullLive","bbcHull","sky"],
   "Goalscorer": ["hullLive","bbcGossip"],
@@ -181,10 +183,10 @@ const LINKMAP = {
   "Ivor Pandur": ["skySportsJackButland"],
   "Kasey Palmer": ["sportsMoleAkinFamewo"],
   "Kyle Joseph": ["sportsMoleAkinFamewo"],
-  "Leon Bailey": ["johnTownleyBirminghamLiveXLeonBailey", "hullLiveLeonBailey", "hullLiveLeonBailey1", "hayterscomLeonBailey", "hullCitypageManorSolomon"],
+  "Leon Bailey": ["johnTownleyBirminghamLiveXLeonBailey", "hullLiveLeonBailey", "hullLiveLeonBailey1", "hayterscomLeonBailey", "hullCitypageManorSolomon", "hullCityOfficialLeonBailey"],
   "Manor Solomon": ["theiPaperGoalcomBBCSportManorSolomon", "hullCitypageManorSolomon"],
-  "Jens Hjertø-Dahl": ["hullLiveJensHjertDahl", "bBCSportJensHjertDahl", "bBCSportJensHjertDahl1"],
-  "Dimitar Tzolakis": ["ekathimerinicomDimitarTzolakis", "eKathimerinicomDimitarTzolakis", "hullCitypageManorSolomon"]};
+  "Jens Hjertø-Dahl": ["hullLiveJensHjertDahl", "bBCSportJensHjertDahl", "bBCSportJensHjertDahl1", "bBCSportJensHjertDahl2"],
+  "Dimitar Tzolakis": ["ekathimerinicomDimitarTzolakis", "eKathimerinicomDimitarTzolakis", "hullCitypageManorSolomon", "hullCityOfficialLeonBailey"]};
 const WL_LINKMAP = {
   "PL-ready targets":"hullLive","Squad-trim sales":"official",
 };

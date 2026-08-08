@@ -37,12 +37,13 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Martin Payero", sub:"26 · Argentina · CM", club:"Udinese", pos:"Midfielder", report:"Watford close in on transfer for Udinese midfielder", src:"BBC", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks reported", lastSeen:"2026-08-08T07:40:33Z", baseProb:70},
-  {name:"Federico Ravaglia", sub:"22 · Italy · GK", club:"", pos:"Goalkeeper", report:"Confirmed signing", src:"OneFootball", tier:3, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
+  {name:"Martin Payero", sub:"28 · Argentina · Midfielder", club:"Udinese", pos:"Midfielder", report:"Watford close in on transfer for Udinese midfielder", src:"BBC", tier:2, fee:"", truth:75, prob:70, light:"g", trend:"flat", note:"Advanced talks reported", lastSeen:"2026-08-08T16:04:57Z", baseProb:70},
+  {name:"Federico Ravaglia", sub:"22 · Italy · GK", club:"", pos:"Goalkeeper", report:"Confirmed signing", src:"OneFootball", tier:3, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal confirmed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Stephy Mavididi", sub:"24 · England · Forward", club:"Leicester City", pos:"Forward", report:"Watford and Derby County Add Leicester's Stephy Mavididi to Transfer Shortlist", src:"SportsBoom UK", tier:3, fee:"", truth:45, prob:35, light:"y", trend:"flat", note:"On shortlist alongside Derby County", lastSeen:"2026-08-08T16:04:57Z", baseProb:35}
 ];
 const OUTGOING = [
-  {name:"Nestory Irankunda", sub:"20 · Australia · W", club:"Sporting CP", pos:"Winger", report:"Watford accept Sporting's $24.5m offer", src:"football360.com.au", tier:3, fee:"$24.5m", truth:85, prob:80, light:"g", trend:"flat", note:"Transfer talks stepped up; deal close", lastSeen:"2026-08-08T07:40:33Z", baseProb:80},
-  {name:"Imran Louza", sub:"26 · Morocco · CM", club:"", pos:"Midfielder", report:"Watford value Imran Louza at €10m amid growing transfer interest", src:"Morocco World News", tier:3, fee:"€10m", truth:60, prob:50, light:"y", trend:"flat", note:"Transfer interest reported; valuation set", lastSeen:"2026-08-08T07:40:33Z", baseProb:50}
+  {name:"Nestory Irankunda", sub:"21 · Australia · Forward", club:"Watford", pos:"Forward", report:"Watford accept Sporting's $24.5m offer for Socceroos star", src:"football360.com.au", tier:3, fee:"$24.5m", truth:85, prob:80, light:"g", trend:"flat", note:"Offer accepted; transfer talks advancing", lastSeen:"2026-08-08T16:04:57Z", baseProb:80},
+  {name:"Imran Louza", sub:"25 · Morocco · Midfielder", club:"Watford", pos:"Midfielder", report:"Watford value Imran Louza at €10 Million Amid Growing Transfer Interest", src:"Morocco World News", tier:3, fee:"€10m", truth:65, prob:55, light:"g", trend:"up", note:"Valuation set; multiple interested clubs", lastSeen:"2026-08-08T16:04:57Z", baseProb:55}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -61,7 +62,8 @@ const HUB = {
   football360comauNestoryIrankunda: {l:"football360.com.au", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPM2luVE1RSjdtNXktSVNOekZxSnpMaWV6d3NSOC01cnFFLXpod1R2eVBKdkU2S3lqUURhMkZhRG1aSEl3am54cF9udUVNOVo2elVNYmFNVi1relA5ckEwc2laQl9vQ2Ewd3FVOE83T2lfNXlqNlZmLTR3T0d2cEp4ZUpvcUEzclBsSFF1Z0x3WmZZTV85QWgyVUxzakxDZWUtSEtWMTMyUDlPTjk3YVNtUnV1RV85dl96OEZ5NE10SQ"},
   oneFootballFedericoRavaglia: {l:"OneFootball", u:"https://news.google.com/rss/articles/CBMiWEFVX3lxTE1tczhsSEMxVllOSGFNTTFxamZpSGhaS1NudVFBaE5VcktsZXg2YXpYQjZhXzc0T214alM2ek05c2ZKdFVRdVQxc2ZaT3diRjc5bVdyN3ZzM0M"},
   football360comauNestoryIrankunda1: {l:"football360.com.au", u:"https://news.google.com/rss/articles/CBMivwFBVV95cUxPTzJpblRNUUo3bTV5LUlTTnpGcUp6TGllend3NSRC01ycWUtendod1R2eVBKdkU2S3lqUURhMkZhRG1aSEl3am54cF9udUVNOVo2elVNYmFNVi1relA5ckEwc2laQl9vQ2Ewd3FVOE83T2lfNXlqNlZmLTR3T0d2cEp4ZUpvcUEzclBsSFF1Z0x3WmZZTV85QWgyVUxzakxDZWUtSEtWMTMyUDlPTjk3YVNtUnV1RV85dl96OEZ5NE10SQ"},
-  moroccoWorldNewsImranLouza: {l:"Morocco World News", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxNdlpuQ1B1OVgzNDBRc0hDb0tMRUtUZHY0UHlEZEJZMGUwTXk4WTRaa1NBUjYxZ24zVVNoMzBzSlhudktyTXpWUnhQVGUtVkgtWV90Y091OFB3UDJ6ZTlWU3M2SlBfUDVKNGhablplNUVtcU9mU2ZRMG5wUE1TeS03YnhGSDBWYldVNXlNUkx2aFBVaUthV2VMTTNaVnV6WmNXM0w4WjNNLW5oNlZEREZhQkpVRjBrQTI2WDVlTw"}};
+  moroccoWorldNewsImranLouza: {l:"Morocco World News", u:"https://news.google.com/rss/articles/CBMivAFBVV95cUxNdlpuQ1B1OVgzNDBRc0hDb0tMRUtUZHY0UHlEZEJZMGUwTXk4WTRaa1NBUjYxZ24zVVNoMzBzSlhudktyTXpWUnhQVGUtVkgtWV90Y091OFB3UDJ6ZTlWU3M2SlBfUDVKNGhablplNUVtcU9mU2ZRMG5wUE1TeS03YnhGSDBWYldVNXlNUkx2aFBVaUthV2VMTTNaVnV6WmNXM0w4WjNNLW5oNlZEREZhQkpVRjBrQTI2WDVlTw"},
+  sportsBoomUKStephyMavididi: {l:"SportsBoom UK", u:"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNd1lJWVJidmVFa09EYm1NUWVsdEQ4VUpTanYyZEUwTC1NWXJid2xpSzJ0M01jZWEwSGE2WVYza2lUNHFKTXdmeHBESFZHSm1XdktMMmVpYTY3X2hrQ0p3U1pCQjIzSk9oT0lpQWtiMUVZblFVZVJuYkN4dVNfN0ZkUGU1SUYtWko2N1RvakRNanFuMmVGZEVrUWs1VzA1bW5zdkhmMGIydEhtR3doVlpzM0lLTWVCaXNKUVZ1V2RMSEFVTnVjTmRDQw"}};
 
 const LINKMAP = {
   "Nestory Irankunda": ["nicoloSchiraNestoryIrankunda", "football360comauNestoryIrankunda", "football360comauNestoryIrankunda1"],
@@ -69,7 +71,8 @@ const LINKMAP = {
   "Iker Bravo": ["gianlucaDiMarzioIkerBravo"],
   "Federico Ravaglia": ["sofascoreFedericoRavaglia", "oneFootballFedericoRavaglia"],
   "Martin Payero": ["bBCMartinPayero"],
-  "Imran Louza": ["moroccoWorldNewsImranLouza"]};
+  "Imran Louza": ["moroccoWorldNewsImranLouza"],
+  "Stephy Mavididi": ["sportsBoomUKStephyMavididi"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -88,12 +88,12 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Pape Matar Sarr", sub:"Midfielder · Tottenham", club:"Tottenham", pos:"Midfielder", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"flat", note:"Offer reported; no recent update on status", lastSeen:"2026-08-08T14:10:31Z", baseProb:30}
+  {name:"Pape Matar Sarr", sub:"22 · Senegal · Midfielder", club:"Tottenham", pos:"M", report:"Tottenham offered the midfielder to Brentford", src:"On-page rumour", tier:3, fee:"Unknown", truth:50, prob:30, light:"y", trend:"flat", note:"Existing rumour, no fresh snippet update", lastSeen:"2026-08-08T16:04:56Z", baseProb:30}
 ];
 
 const OUTGOING = [
-  {name:"Bryan Mbeumo", sub:"Winger · Brentford", club:"Brentford", pos:"Winger", report:"Manchester United submit improved bid exceeding £60m", src:"The Athletic (Laurie Whitwell)", tier:2, fee:"£60m+", truth:75, prob:55, light:"g", trend:"down", note:"United have made an improved bid", lastSeen:"2026-08-08T14:10:31Z", baseProb:55},
-  {name:"Jordan Henderson", sub:"Midfielder · Brentford", club:"Brentford", pos:"Midfielder", report:"Chelsea working to sign Jordan Henderson from Brentford; Brentford near deal for Henderson replacement after Chelsea move", src:"London Evening Standard", tier:3, fee:"Free", truth:70, prob:60, light:"g", trend:"up", note:"Chelsea progressing talks; Brentford already searching for replacement", lastSeen:"2026-08-08T14:10:31Z", baseProb:60}
+  {name:"Bryan Mbeumo", sub:"25 · Cameroon · Winger", club:"Brentford", pos:"W", report:"Manchester United submit improved bid exceeding £60m", src:"The Athletic", tier:2, fee:"£60m+", truth:85, prob:65, light:"g", trend:"up", note:"Improved bid submitted; negotiations ongoing", lastSeen:"2026-08-08T16:04:56Z", baseProb:65},
+  {name:"Jordan Henderson", sub:"34 · England · Midfielder", club:"Brentford", pos:"M", report:"Chelsea working to sign Jordan Henderson from Brentford", src:"On-page rumour", tier:3, fee:"Free", truth:60, prob:50, light:"y", trend:"down", note:"Existing rumour, no fresh snippet update confirming deal progress", lastSeen:"2026-08-08T16:04:56Z", baseProb:50}
 ];
 const DEAD = [
   {name:"Value & successor targets", sub:"Data-model intake", club:"Market", pos:"-", report:"window framing", src:"Model-based", tier:3, fee:"£40-80m total", truth:55, prob:45, light:'y', trend:'up',

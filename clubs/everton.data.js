@@ -83,15 +83,15 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Alistair Johnston", sub:"24 · Canada · RB", club:"Celtic", pos:"RB", report:"Everton pursuing Celtic defender; major update and scepticism from insiders reported", src:"Glasgow Times / Yahoo Sports", tier:2, fee:"£25m", truth:65, prob:35, light:"y", trend:"down", note:"Recent reports indicate insiders sceptical of progress despite headlines", lastSeen:"2026-08-08T14:10:32Z", baseProb:35},
-  {name:"Douglas Luiz", sub:"25 · Brazil · CM", club:"Aston Villa", pos:"CM", report:"Everton still have transfer hope as midfielder responds", src:"Goodison News", tier:3, fee:"", truth:50, prob:35, light:"y", trend:"flat", note:"Everton retains hope despite midfielder's previous moves", lastSeen:"2026-08-07T01:42:32Z", baseProb:35, dead:true, deadReason:"No new credible reporting; on-page entry appears stale"},
+  {name:"Alistair Johnston", sub:"24 · Canada · D", club:"Celtic", pos:"RB", report:"Everton pursuing Celtic defender", src:"Glasgow Times", tier:3, fee:"£25m", truth:70, prob:60, light:"g", trend:"up", note:"Prime Minister makes transfer plea; ongoing pursuit", lastSeen:"2026-08-08T16:04:56Z", baseProb:60},
+  {name:"Douglas Luiz", sub:"25 · Brazil · CM", club:"Aston Villa", pos:"CM", report:"Everton still have transfer hope as midfielder remains target", src:"Transfer media", tier:3, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"flat", note:"Persistent link but limited recent confirmation", lastSeen:"2026-08-08T16:04:56Z", baseProb:35},
   {name:"Nathan Zeze", sub:"18 · France · D", club:"AS Monaco", pos:"CB", report:"How much Everton can pay to land Nathan Zeze transfer as NEOM stance shared", src:"Goodison News", tier:3, fee:"", truth:60, prob:45, light:"y", trend:"flat", note:"Monaco defender target with financial details discussed", lastSeen:"2026-08-07T01:42:32Z", baseProb:45, dead:true, deadReason:"No new credible reporting; on-page entry appears stale"},
   {name:"Jack Grealish", sub:"29 · England · W", club:"Manchester City", pos:"LW", report:"How Pedro Neto could now aid Everton's transfer pursuit of Jack Grealish", src:"everton.news", tier:3, fee:"", truth:35, prob:20, light:"o", trend:"flat", note:"Speculative link involving Pedro Neto context", lastSeen:"2026-08-07T01:42:32Z", baseProb:20, dead:true, deadReason:"No new credible reporting in recent snippets; on-page entry appears stale"},
-  {name:"Krepin Diatta", sub:"27 · Senegal · W", club:"Monaco", pos:"RW", report:"Everton in the race to sign 27-year-old forward; Friedkins ready transfer steal", src:"Goodison News / BBC", tier:3, fee:"£42m", truth:70, prob:65, light:"g", trend:"up", note:"Recent analysis of Everton chase; makes sense for squad; potential £42m deal", lastSeen:"2026-08-08T10:03:40Z", baseProb:65, dead:true, deadReason:"Mentioned in general rumour roundup but no active recent reporting"},
+  {name:"Krepin Diatta", sub:"27 · Senegal · W", club:"AS Monaco", pos:"W", report:"Everton in the race to sign 27-year-old forward", src:"BBC Sport / Goodison News", tier:2, fee:"£42m", truth:65, prob:55, light:"g", trend:"down", note:"Active pursuit; multiple sources confirm ongoing interest", lastSeen:"2026-08-08T16:04:56Z", baseProb:55},
   {name:"Keito Nakamura", sub:"24 · Japan · W", club:"Reims", pos:"W", report:"Everton learn Nakamura transfer timeline as Reims president opens door to exit", src:"Goodison News", tier:3, fee:"", truth:55, prob:35, light:"y", trend:"flat", note:"Transfer timeline revealed; Reims president signals openness", lastSeen:"2026-08-07T14:38:27Z", baseProb:35, dead:true, deadReason:"No recent snippet support; stale rumour (5+ weeks old)"},
   {name:"Christian Norgaard", sub:"29 · Denmark · CM", club:"Arsenal", pos:"CM", report:"Everton reach agreement in principle to sign Arsenal's Christian Norgaard in £7m transfer", src:"The Athletic", tier:2, fee:"£7m", truth:85, prob:75, light:"g", trend:"flat", note:"Agreement in principle reached", lastSeen:"2026-08-07T23:07:30Z", baseProb:75, dead:true, deadReason:"no longer a current link"},
   {name:"Christian Nørgaard", sub:"29 · Denmark · M", club:"Arsenal", pos:"M", report:"CONFIRMED: Everton sign Christian Nørgaard from Arsenal", src:"Royal Blue Mersey", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T11:19:01Z", baseProb:100},
-  {name:"Axel Tuanzebe", sub:"26 · France · CB", club:"Nottingham Forest", pos:"CB", report:"Everton eye defender transfer", src:"Goodison News", tier:3, fee:"", truth:50, prob:40, light:"y", trend:"flat", note:"Recent mention in transfer rumours roundup", lastSeen:"2026-08-08T14:10:32Z", baseProb:40}
+  {name:"Axel Tuanzebe", sub:"26 · Cameroon · D", club:"Ipswich Town", pos:"CB", report:"Everton eye defender transfer", src:"Transfer media", tier:3, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"up", note:"Defender target; limited recent updates", lastSeen:"2026-08-08T16:04:56Z", baseProb:45}
 ];
 
 const OUTGOING = [];
@@ -181,14 +181,17 @@ const HUB = {
   royalBlueMerseyChristianNrgaard1: {l:"Royal Blue Mersey", u:"https://news.google.com/rss/articles/CBMi2gFBVV95cUxObmptR2ZoZEtPZjg4TW5ULVdpelRoTi1HdnQ3ZG5sSGdUZGZiSjB5LThURDAwNzQ5cE5iczB2bTR1VDdMX1pZOVFyTEFKZU9pYnZubVpjOGNKN2pLLXBoMDlIRVBZd0hiZk5Kb3A0UnBXcTJfMkpmX0U5azJhcnE2NHR5cWNTNmltSlkwVmJsVFdlZUp4Szk5anUxa1k2NkZ5N0ZvSmxpLVFtUXpqVDBQc1h2djlJUUdOT0lEbnRiekd4cGY5WlBfSDlNRUlxZTJpWnBxUzhheU13Zw"},
   glasgowTimesAlistairJohnston1: {l:"Glasgow Times", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdHBzNjRDU2RZOUxZVUtiLXZLMUIxRDBwRng1blR5R2JPa1hmTDNrS2NjZ01aczBMRWNiY2FkQXdqNWJyd19RQlY4MGVEMDdPQnplRk5DenE5WFpuOGZOY0dENWpaaWxTWGI2LW16VVIzXzdLemZGbHdDX2pwM25DTzhoVWpjajJSQmxsekpXd0xaUm1NamJ2dEcxLWVIb2lZalZzY1lnSXh1SzQ?oc=5"},
   glasgowTimesYahooSportsAlistairJohnston: {l:"Glasgow Times / Yahoo Sports", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdHBzNjRDU2RZOUxZVUtiLXZLMUIxRDBwRng1blR5R2JPa1hmTDNrS2NjZ01aczBMRWNiY2FkQXdqNWJyd19RQlY4MGVEDDA3T0J6ZUZOQzp5OVhablOGZOY0dENWpaaWxTWGI2LW16VVIzXzdLemZGbHdDX2pwM25DTzhoVWpjajJSQmxsekpXd0xaUm1NamJ2dEcxLWVIb2lZalZzY1lnSXh1SzQ"},
-  goodisonNewsAxelTuanzebe: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxQamF5NW1TcS0yMTNVclBJYXNRemtHUi1UbXlieF9EMnFrTVRkeHlzdkdKbktaQnhPZ1BOaWUwY1dYcm1MQmUwQ0lZSjNQcEJzT0RfVTNGalN2WXhmeTJBVzczMHpzazF5ZnRRckRCX0t2SXFYZjVqVFRaWWVIZjVLVnRRSWI1Ukc1S2plRTc4UF95Z28"}};
+  goodisonNewsAxelTuanzebe: {l:"Goodison News", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxQamF5NW1TcS0yMTNVclBJYXNRemtHUi1UbXlieF9EMnFrTVRkeHlzdkdKbktaQnhPZ1BOaWUwY1dYcm1MQmUwQ0lZSjNQcEJzT0RfVTNGalN2WXhmeTJBVzczMHpzazF5ZnRRckRCX0t2SXFYZjVqVFRaWWVIZjVLVnRRSWI1Ukc1S2plRTc4UF95Z28"},
+  glasgowTimesAlistairJohnston2: {l:"Glasgow Times", u:"https://news.google.com/rss/articles/CBMitwFBVV95cUxOeTNHME5nWGU3SUgwakczRUdSNk1iY0dFTlBEVDVOdlMyLXVmTFdYcGwwZHljaEVvT0lOQ0FUUVc2TXZSVTR6c3BCZTVYTTZkVmFydmItSUtGbWlzaXhNb3pHcGh6N1JoREpPWGtPd0h0UzBsMlAzalhZSXpGOXNmY3FoVkN5N3NyUng3TGY3ME5iMzBySUpjZGloaDljeWVMNkVKNGpsdmxScVFRUDNQT0paTGdRQms?oc=5"},
+  transfermediaDouglasLuiz: {l:"Transfer media", u:"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQRWdCSmlsaUNkLW9PZURsU3dkT3NXWGJSNk5STGdrczQzZmp4MU1sR0ZsRmlnSVlqckMzSVczYThvWWZzc2w3dl9rMWkwM19sdVYzNFBNM3UwOUdLaXhacFNhTGlXY1BjbERFQi1fci1ISER4eHI3SEx2aUJsUk9oTFFBLUJqVy1nWldXYUFBMFRQcXhvcnNadmtWWjlXQkcwVFlwQjFPOWJqWHVldXhhVmRZMGFRTWxPQjFWYmJPdGZ2Zw?oc=5"},
+  bBCSportKrepinDiatta: {l:"BBC Sport", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA5Q1d0T2NUSDFoSU83R1JPSG8zbnpfTS1NVTA5U2ZFTDN6THVzb2p3ekdjbTBpOFUzSTRacHR0dkdzbHo3Q3RWYlFnUk9XdVpCWW5WZlBpWHo1SDg4RWVYWWplNGRlZ0U?oc=5"}};
 const LINKMAP = {
   "Raul Jimenez": ["fInsider","echo"],
   "Marquee striker": ["fInsider","teamtalk","echo"],
   "Jack Grealish": ["echo","bbcGossip", "goodisonNewsBBCSportJackGrealish", "evertonnewsJackGrealish"],
   "Iliman Ndiaye": ["echo","joeThomas","bbcGossip", "strettyNewsIlimanNdiaye"],
   "Underperforming forwards": ["echo","joeThomas"],
-  "Alistair Johnston": ["teamTalkAlistairJohnston", "glasgowTimesAlistairJohnston", "goodisonNewsAlistairJohnston", "glasgowTimesAlistairJohnston1", "glasgowTimesYahooSportsAlistairJohnston"],
+  "Alistair Johnston": ["teamTalkAlistairJohnston", "glasgowTimesAlistairJohnston", "goodisonNewsAlistairJohnston", "glasgowTimesAlistairJohnston1", "glasgowTimesYahooSportsAlistairJohnston", "glasgowTimesAlistairJohnston2"],
   "Nahuel Molina": ["sportsMoleNahuelMolina"],
   "Barış Alper Yılmaz": ["sportsMoleNahuelMolina"],
   "Tim Iroegbunam": ["teamTalkTimIroegbunam"],
@@ -202,9 +205,9 @@ const LINKMAP = {
   "Isaac Heath": ["sportsMoleSeamusColeman"],
   "Christian Norgaard": ["davidOrnsteinTheAthleticChristianNorgaard", "theAthleticTheNewYorkTimesChristianNorgaard", "theAthleticChristianNorgaard"],
   "Norgaard": ["bBCSportFootballNorgaard"],
-  "Douglas Luiz": ["goodisonNewsDouglasLuiz"],
+  "Douglas Luiz": ["goodisonNewsDouglasLuiz", "transfermediaDouglasLuiz"],
   "Nathan Zeze": ["goodisonNewsNathanZeze"],
-  "Krepin Diatta": ["goodisonNewsKrepinDiatta"],
+  "Krepin Diatta": ["goodisonNewsKrepinDiatta", "bBCSportKrepinDiatta"],
   "Keito Nakamura": ["goodisonNewsKeitoNakamura"],
   "Axel Tuanzebe": ["goodisonNewsAxelTuanzebe"]};
 const WL_LINKMAP = {

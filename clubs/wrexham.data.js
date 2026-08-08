@@ -32,7 +32,8 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Ben Whiteman", sub:"30 · England · CM", club:"Preston North End", pos:"CM", fee:"Undisclosed (reported £3m)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Wrexham's second signing of the summer, on a three-year contract with the option of a further year until at least 2029. The Preston captain made more than 220 appearances at Deepdale, and manager Paul Heckingbottom publicly accused him of crossing a line in pushing for the move."},
-  {name:"Danny Imray", sub:"20 · England · D", club:"Crystal Palace", pos:"D", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Crystal Palace defender"}
+  {name:"Danny Imray", sub:"20 · England · D", club:"Crystal Palace", pos:"D", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Crystal Palace defender"},
+  {name:"Anthony Patterson", sub:"Keeper", club:"Sunderland", pos:"GK", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Wrexham"}
 ];
 const CONFIRMED_OUT = [
   {name:"Paul Mullin", sub:"ST", club:"Released", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Contract terminated by mutual consent."},
@@ -58,14 +59,16 @@ const HUB = {
   wrexhamAFCofficialBenWhiteman: {l:"Wrexham AFC official", u:"https://www.wrexhamafc.co.uk/news/2026/august/05/ben-whiteman-signs-for-wrexham-from-preston-north-end/"},
   bBCBenWhiteman: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5DSS1jOGdRQkZ6MEw4VzlrNVhOdXFMb284akszbk91SnU5Tmc2OGFzb1I0V25ndXpkenBkek4zdHZockJGWHVBZTYxQ3Q1WHlDd0g5Vk9RcllFRlFvUHI5QzMxcS1ZV3c"},
   bBCDannyImray: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1fQUtWY0FGTF80Vi1sTGFhRllMbU44ODROOHRKQWJLSmZaN1QzX1FnLWhFeVRvcnFQbTNuNEU3c1RwcVVkQVB0WGMwMS1oRU8xRzhQV2p6eWxmQ1hTWGJlNTFjNm03dUlOREE"},
-  bBCBenWhiteman1: {l:"BBC", u:"https://www.bbc.com"}};
+  bBCBenWhiteman1: {l:"BBC", u:"https://www.bbc.com"},
+  eSPNBenWhiteman: {l:"ESPN", u:"https://news.google.com/rss/articles/CBMikwFBVV95cUxOVFBRNTNibHNVOUdpZkZaeTBOUjdOSTZReGR4Zm94cFFwVnFYM1VSdENlLXhfYjVndG1qcW9sZXkwMTN3bFNOaGx3Ym1TS3hhRWFBbktpc2JEY1I2amI5U1hVcFVWZ2Z5cXhFUlhPTlNjeTVTLWJCVGJNeFlVUjladTQ3VUhEZTk2blJEdGtRLTlsNjg?oc=5"},
+  bBCDannyImray1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9TUVN4Qk5RZktPSHdUbmI1QnktY2FVOTY1RGpjUS1OTmMwOXdOc3RfdEZKcGt6SENYYV84RmRGOWwzanJiMEpLU00tM2tON3dpSzBjMEtDRHhGbXpNOXhrdnNteGlRVDQ?oc=5"}};
 
 const LINKMAP = {
   "Paul Mullin": ["gnews-paulmullin"],
   "Tom O'Connor": ["gnews-tomoconnor"],
   "Anthony Patterson": ["gnews-anthonypatterson"],
-  "Ben Whiteman": ["wrexhamAFCofficialBenWhiteman", "bBCBenWhiteman", "bBCBenWhiteman1"],
-  "Danny Imray": ["bBCDannyImray"]};
+  "Ben Whiteman": ["wrexhamAFCofficialBenWhiteman", "bBCBenWhiteman", "bBCBenWhiteman1", "eSPNBenWhiteman"],
+  "Danny Imray": ["bBCDannyImray", "bBCDannyImray1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

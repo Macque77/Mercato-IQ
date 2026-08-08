@@ -72,11 +72,11 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Elliot Anderson", sub:"21 · England · M", club:"Nottingham Forest", pos:"M", report:"Agreement reached after improved offer to Nottingham Forest", src:"David Ornstein", tier:1, fee:"£106m plus add-ons", truth:95, prob:90, light:"g", trend:"flat", note:"Verbal offer made; agreement confirmed by Ornstein", lastSeen:"2026-08-08T14:10:32Z", baseProb:90},
-  {name:"James Trafford", sub:"22 · England · GK", club:"Leeds United", pos:"GK", report:"Leeds in talks with Manchester City over goalkeeper", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"up", note:"Active negotiations reported", lastSeen:"2026-08-08T14:10:32Z", baseProb:75}
+  {name:"Elliot Anderson", sub:"21 · England · M", club:"Nottingham Forest", pos:"M", report:"Agreement reached after improved offer to Nottingham Forest", src:"David Ornstein", tier:1, fee:"£106m plus add-ons", truth:95, prob:90, light:"g", trend:"flat", note:"Verbal offer made; agreement confirmed", lastSeen:"2026-08-08T16:04:57Z", baseProb:90},
+  {name:"James Trafford", sub:"21 · England · GK", club:"Leeds United", pos:"GK", report:"Leeds in talks with Manchester City over goalkeeper", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"flat", note:"Talks ongoing", lastSeen:"2026-08-08T16:04:57Z", baseProb:75}
 ];
 const OUTGOING = [
-  {name:"Rodri", sub:"28 · Spain · M", club:"Real Madrid", pos:"M", report:"Real Madrid working on deal to sign Rodri; Barcelona made €45m offer which Man City refused as unserious", src:"David Ornstein", tier:1, fee:"€45m (Barcelona bid, rejected)", truth:80, prob:70, light:"g", trend:"down", note:"Deal described as 'very close'; Man City set a price; Barcelona's €45m bid rejected", lastSeen:"2026-08-08T14:10:32Z", baseProb:70}
+  {name:"Rodri", sub:"28 · Spain · M", club:"Real Madrid", pos:"M", report:"Real Madrid working on deal to sign Rodri; Barcelona made €45m offer (rejected as unserious); deal very close", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:80, prob:70, light:"g", trend:"flat", note:"Barcelona's €45m offer rejected; Man City have set price; Real Madrid pursuing deal", lastSeen:"2026-08-08T16:04:57Z", baseProb:70}
 ];
 const DEAD = [
   {name:"Enzo Fernández", sub:"23 · Argentina · M", club:"Benfica", pos:"Midfielder", report:"Incoming link reported ~6 days ago", src:"transferfeed snapshot", tier:3, fee:"Undisclosed", truth:45, prob:30, light:"y", trend:"up", note:"Old report; no recent confirmation found", lastSeen:"2026-08-06T13:55:46Z", baseProb:30, dead:true, deadReason:"No recent snippet support; likely stale rumour", dir:"in", deadAt:"2026-08-06T14:04:24Z"},

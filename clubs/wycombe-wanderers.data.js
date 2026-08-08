@@ -37,14 +37,14 @@ const CONFIRMED_IN = [
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Joel Randall", sub:"FW", club:"Free agent (released by Bolton)", pos:"FW", report:"Joel Randall joins Wycombe Wanderers", src:"Various", tier:0, fee:"Free", truth:40, prob:30, light:"y", trend:"down", note:"On-page entry retained; no fresh snippet data", lastSeen:"2026-08-08T07:40:33Z", baseProb:30},
-  {name:"Conor Hazard", sub:"GK", club:"Free agent (ex-Plymouth Argyle)", pos:"GK", report:"Conor Hazard signs on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"up", note:"Northern Ireland goalkeeper confirmed on free transfer", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
-  {name:"Aaron Morley", sub:"Unknown · Unknown · Unknown", club:"Bolton Wanderers", pos:"Unknown", report:"Aaron Morley joins from Bolton Wanderers", src:"Bolton Wanderers FC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"up", note:"Transfer confirmed by Bolton Wanderers", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Joel Randall", sub:"FW", club:"Free agent (released by Bolton)", pos:"FW", report:"Joel Randall joins Wycombe Wanderers", src:"Various", tier:0, fee:"Free", truth:40, prob:30, light:"y", trend:"down", note:"On-page entry retained; no fresh snippet data", lastSeen:"2026-08-08T16:04:57Z", baseProb:30},
+  {name:"Conor Hazard", sub:"GK", club:"Free agent (ex-Plymouth Argyle)", pos:"GK", report:"Signed on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Northern Ireland goalkeeper", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
+  {name:"Aaron Morley", sub:"Unknown · Unknown · Unknown", club:"Bolton Wanderers", pos:"Unknown", report:"Joins from Bolton Wanderers", src:"Bolton Wanderers FC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer confirmed by Bolton Wanderers", lastSeen:"2026-08-08T16:04:57Z", baseProb:100},
   {name:"Stoke City winger", sub:"Unknown · Unknown · Winger", club:"Stoke City", pos:"W", report:"Wycombe Wanderers sign former Stoke City winger on free transfer", src:"Bucks Free Press", tier:3, fee:"Free", truth:70, prob:75, light:"g", trend:"flat", note:"Player name not provided in snippet", lastSeen:"2026-08-07T01:42:32Z", baseProb:75, dead:true, deadReason:"Insufficient information to identify player; no confirmed signing details in snippets"},
-  {name:"Matt Macey", sub:"", club:"", pos:"GK", report:"Matt Macey signs on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Former Arsenal, Luton Town and Portsmouth goalkeeper confirmed on free transfer", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
+  {name:"Matt Macey", sub:"", club:"", pos:"GK", report:"Signed on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Former Arsenal, Luton Town and Portsmouth goalkeeper", lastSeen:"2026-08-08T16:04:57Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Fred Onyedinma", sub:"Unknown · Unknown · Unknown", club:"Wycombe Wanderers", pos:"Unknown", report:"Discussions ongoing with Wycombe Wanderers", src:"Bucks Free Press", tier:3, fee:"Unknown", truth:50, prob:50, light:"y", trend:"down", note:"Exit discussions ongoing; no deal confirmed", lastSeen:"2026-08-08T07:40:33Z", baseProb:50}
+  {name:"Fred Onyedinma", sub:"Unknown · Unknown · Unknown", club:"Wycombe Wanderers", pos:"Unknown", report:"Discussions ongoing regarding departure", src:"Bucks Free Press", tier:3, fee:"Unknown", truth:60, prob:50, light:"y", trend:"flat", note:"Talks underway", lastSeen:"2026-08-08T16:04:57Z", baseProb:50}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -64,14 +64,17 @@ const HUB = {
   belfastTelegraphConorHazard: {l:"Belfast Telegraph", u:"https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVWw1U2R4OUdfaXE3RjFKV3lwMkgyUldqdmRLbl9meTRFV0FKM0s4a3JQamUwXzB1ZFc3ZmZZRkdWY19oOEcweFEtby1uaURGYU1aZEtkRVNKQmw4VlNpY1ZkWl9kLUNmQ3J6MHlsZUYzOS1OR3dLakVlX1ptVEVGR3pYUVF0dzRFRXV0RWlGRXdDLVBteFdpU2UwVXhlZUtteXpWSzZVYzBPemN6cnhyc0x2YUk5ai0wY29lUWJGRXlMNm9hcm9yNWVaQVI3VWVES2I1NVlR"},
   bBCConorHazard: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBqWVBTODhodnM5NXRGbmdZRUg4Q05JMlBSTDdndXU0SDJ1RDhGRExNZU9adEl4VTdaVmxweFNLWWl6Y3dQSE1XTzlCNUxmNmtSQWJFVFJkLTRPYlNIajJ3QlMtbUhJZEU"},
   boltonWanderersFCAaronMorley1: {l:"Bolton Wanderers FC", u:"https://news.google.com/rss/articles/CBMickFVX3lxTFBad3ZmT2F6c2E5WUNMeDVoeHNqOTRxamY4MXpuNFUyNndoS3BGQlRKQlkyVjE1Q1VXbXlvdDdfZnpIUjZZeVZrVVVHOVZjSW9KSzlXOEVta1ZpOFFITjZXZFVCeWlGLXp5dDBaZDEzSS1Zdw"},
-  bBCMattMacey1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVZndST00yT3otQS1OWUVuSm82M1VMMEtCc0RyZHlCQ1V0MG0yVGxNWEpPcno4QXZuMFo2UXFyV2oxQ040RkgtbHA0cUx4dG1pdVZOUWhzU2tSUEQ2Z05SckJDYjhDSjA"}};
+  bBCMattMacey1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBVZndST00yT3otQS1OWUVuSm82M1VMMEtCc0RyZHlCQ1V0MG0yVGxNWEpPcno4QXZuMFo2UXFyV2oxQ040RkgtbHA0cUx4dG1pdVZOUWhzU2tSUEQ2Z05SckJDYjhDSjA"},
+  bBCSportConorHazard: {l:"BBC Sport", u:"https://www.bbc.com"},
+  boltonWanderersFCAaronMorley2: {l:"Bolton Wanderers FC", u:"https://www.bwfc.co.uk"},
+  bucksFreePressFredOnyedinma1: {l:"Bucks Free Press", u:"https://www.bucksfreepress.co.uk"}};
 
 const LINKMAP = {
   "Joel Randall": ["gnews-joelrandall"],
-  "Conor Hazard": ["gnews-conorhazard", "belfastTelegraphConorHazard", "bBCConorHazard"],
-  "Fred Onyedinma": ["gnews-fredonyedinma", "bucksFreePressFredOnyedinma"],
-  "Aaron Morley": ["boltonWanderersFCAaronMorley", "boltonWanderersFCAaronMorley1"],
-  "Matt Macey": ["bBCMattMacey", "bBCMattMacey1"],
+  "Conor Hazard": ["gnews-conorhazard", "belfastTelegraphConorHazard", "bBCConorHazard", "bBCSportConorHazard"],
+  "Fred Onyedinma": ["gnews-fredonyedinma", "bucksFreePressFredOnyedinma", "bucksFreePressFredOnyedinma1"],
+  "Aaron Morley": ["boltonWanderersFCAaronMorley", "boltonWanderersFCAaronMorley1", "boltonWanderersFCAaronMorley2"],
+  "Matt Macey": ["bBCMattMacey", "bBCMattMacey1", "bBCSportConorHazard"],
   "Stoke City winger": ["bucksFreePressStokeCitywinger"]};
 const WL_LINKMAP = {};
 

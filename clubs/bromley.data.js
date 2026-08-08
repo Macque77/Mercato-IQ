@@ -40,11 +40,11 @@ const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Ethon Archer", sub:"· · ·", club:"Luton Town", pos:"·", report:"Signed on loan", src:"On-page", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Existing on-page entry", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
   {name:"Deon Woodman", sub:"· · ·", club:"Wealdstone", pos:"·", report:"Signed", src:"On-page", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"up", note:"Existing on-page entry", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
-  {name:"Victor Adeboyejo", sub:"· · ·", club:"·", pos:"Striker", report:"Signed on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed via BBC", lastSeen:"2026-08-08T14:10:31Z", baseProb:100},
-  {name:"Deji Elerewe", sub:"· · Defender", club:"Lincoln City", pos:"Defender", report:"Signed", src:"BBC", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed via BBC", lastSeen:"2026-08-08T14:10:31Z", baseProb:100}
+  {name:"Victor Adeboyejo", sub:"striker", club:"·", pos:"ST", report:"Signed on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T16:04:56Z", baseProb:100},
+  {name:"Deji Elerewe", sub:"defender", club:"Lincoln City", pos:"DEF", report:"Signed from Lincoln City", src:"BBC", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T16:04:56Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jude Arthurs", sub:"· · Midfielder", club:"Crawley Town", pos:"Midfielder", report:"Signed by Crawley Town", src:"BBC", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed via BBC", lastSeen:"2026-08-08T14:10:31Z", baseProb:100}
+  {name:"Jude Arthurs", sub:"midfielder", club:"Crawley Town", pos:"MID", report:"Signed by Crawley Town", src:"BBC", tier:2, fee:"·", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed departure", lastSeen:"2026-08-08T16:04:56Z", baseProb:100}
 ];
 const DEAD = [
   {name:"Tiernan Brooks", sub:"GK", club:"Gateshead", pos:"GK", report:"~9 months ago", src:"Various", tier:4, fee:"Undisclosed", truth:30, prob:15, light:'o', trend:'flat', note:"Named among four monitoring clubs in a stale article, unconfirmed whether still live.", lastSeen:"2026-08-04T19:10:50Z", baseProb:15, dir:"in", deadReason:"no fresh report in over a month", deadAt:"2026-08-06T10:24:32Z"}
@@ -65,14 +65,15 @@ const HUB = {
   bBCDejiElerewe: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNjanFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU01mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs"},
   bBCEthonArcher1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8yVS0xbFRmeGc3Z1p0NVVTYzdZejBiLWJENWhuVW14LUxGdmdHd193U3hKVEtZREJGaVBlRElkTG1KTU5IOGlGSXRCNFFFcGg2S0s4MGxHVEdjQ2FMUTZOQ2FTcEU0QU0"},
   bBCDejiElerewe1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNnanFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU01mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs?oc=5"},
-  bBCJudeArthurs: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02enkxVEctbVd1akVkNmpmcVo3SVRZVWZZYzhGTElYR25mUHZnMXBRT2pfYXhjU0xpX1JLek5XRTBBZFNiREtSUnl6ZFdieUJtUjdXalZyQ2JURTdNZERVdzNYQzZHV2s?oc=5"}};
+  bBCJudeArthurs: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE02enkxVEctbVd1akVkNmpmcVo3SVRZVWZZYzhGTElYR25mUHZnMXBRT2pfYXhjU0xpX1JLek5XRTBBZFNiREtSUnl6ZFdieUJtUjdXalZyQ2JURTdNZERVdzNYQzZHV2s?oc=5"},
+  bBCDejiElerewe2: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9meW5TZ1hRNjJUVWVpOVpGSWNGZ09xX2NVSEp0VUNganFDQURHRkJ4bXpOV0hLbTMySTRSQWpkU3pobEhZU01mSXVGbnhaZEluRkRUNTRReU4wTEtBUXpEMGRObkJ1aWs?oc=5"}};
 
 const LINKMAP = {
   "Tiernan Brooks": ["gnews-tiernanbrooks"],
   "Victor Adeboyejo": ["bBCVictorAdeboyejo", "bBCVictorAdeboyejo1", "bBCVictorAdeboyejo2"],
   "Ethon Archer": ["bBCEthonArcher", "bBCVictorAdeboyejo2", "bBCEthonArcher1"],
   "Deon Woodman": ["bBCEthonArcher", "bBCVictorAdeboyejo2", "bBCEthonArcher1"],
-  "Deji Elerewe": ["bBCDejiElerewe", "bBCDejiElerewe1"],
+  "Deji Elerewe": ["bBCDejiElerewe", "bBCDejiElerewe1", "bBCDejiElerewe2"],
   "Jude Arthurs": ["bBCJudeArthurs"]};
 const WL_LINKMAP = {};
 

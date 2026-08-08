@@ -31,12 +31,12 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Reggie Walsh", sub:"Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed ~2 days ago per page"},
-  {name:"Joe Walsh", sub:"Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed ~1 week ago per page"},
   {name:"Sonny Perkins", sub:"Unknown · F", club:"Leyton Orient", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Leyton Orient"},
   {name:"Max Power", sub:"Unknown · M", club:"Bradford City", pos:"M", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Re-signed from Bradford City on two-year deal"},
   {name:"Connor Barrett", sub:"Unknown · WB", club:"Walsall", pos:"WB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Walsall for undisclosed fee"},
-  {name:"Joe Taylor", sub:"Unknown · F", club:"Huddersfield Town", pos:"F", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Huddersfield Town"}
+  {name:"Joe Taylor", sub:"Unknown · F", club:"Huddersfield Town", pos:"F", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Huddersfield Town"},
+  {name:"Reggie Walsh", sub:"Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Recently signed by Wigan Athletic"},
+  {name:"Joe Walsh", sub:"Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Recently signed by Wigan Athletic"}
 ];
 const CONFIRMED_OUT = [
   {name:"Harrison Bettoni", sub:"Unknown · Unknown", club:"Chelsea", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed by Chelsea from Wigan Athletic"}
@@ -73,7 +73,10 @@ const HUB = {
   bBCMaxPower1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1reHhJemxfN0hTeEROd0dTbUgzSlp5NGpQWk5NOXZseEE0OEdUaVgyR2U3NUpQNU0wcEhqcGhDd3AwMFE2cFZXMDBfVnZla1pqbzRUUEhFdEloaUdqWWZZR0VmeUgzMVU?oc=5"},
   bBCConnorBarrett1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBwUmJpOURnVGRUeHN4TTNBZTN3aEJGd1Rid0hRaHFoNWhOLUVXWjVyS1pGYkh5UEZJcWlkbU5veTBEVG02RGNiT0E2V3ljRHZPR0wwNTZVUDBRRmpBaldzeGNBZlJFenc?oc=5"},
   wiganAthleticFCJoeTaylor1: {l:"Wigan Athletic FC", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxQY3VLNV9iTzR0WS1mcFhCYnJnZ2YxLTRHNDc1di1qc0N2ZnZKd2lSak5UVXRnbU9aT2hRS1dqS21jSk9jXzlNdlRla1ZnVTZ0cU9VaXJNVVRxT1Z4Z0E1RjBiMnNFb0NyTDFBTXE2bUZIQTZodjIzNWc0WVlVX0dvR3gtMHktSjlkd2ZwZzJCSzljSE9YQVd5ckxHekxjZw?oc=5"},
-  weAintGotNoHistoryHarrisonBettoni: {l:"We Ain't Got No History", u:"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQenBObV96LXJTOEdqVVRrU3NkYk0ta2k4UWkzbTRET1E1cWt4NkZ2X2RYdjVOTWJ1aTMtdWRfNkVIdDRjbjYxOVF6eDZaSVhtTFUtZ2VhVThPZG1MX0Nac0ZxTDdjWTBWUG1jeDZ4dEx5bUZma2tlMzZZdlJlWndaemdwVXZCeVlGeGVsWlhWam9wZE91Rl96QnhCUTdUdnE1eEVVRnJfR2NBMEN4b0lacUs3SzhTamw2ODhvand0cEpFYWJJbFcta0dDdzJBZXlPQThCZw?oc=5"}};
+  weAintGotNoHistoryHarrisonBettoni: {l:"We Ain't Got No History", u:"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQenBObV96LXJTOEdqVVRrU3NkYk0ta2k4UWkzbTRET1E1cWt4NkZ2X2RYdjVOTWJ1aTMtdWRfNkVIdDRjbjYxOVF6eDZaSVhtTFUtZ2VhVThPZG1MX0Nac0ZxTDdjWTBWUG1jeDZ4dEx5bUZma2tlMzZZdlJlWndaemdwVXZCeVlGeGVsWlhWam9wZE91Rl96QnhCUTdUdnE1eEVVRnJfR2NBMEN4b0lacUs3SzhTamw2ODhvand0cEpFYWJJbFcta0dDdzJBZXlPQThCZw?oc=5"},
+  sportsBoomUKJeffHendrick1: {l:"SportsBoom UK", u:"https://news.google.com/rss/articles/CBMi5wFBVV95cUxOdHVvWTdrSm14TFBIMUprZy1VVDBrR19RcTJLTnpaZjAxU3ctUG5UMldnQzBRT3lWWXRVUGppZTJtc0FXZFNaQi1kM1NnNlpVbEVjY3hpT0VBMDJkYnFVMDNzdDNWQ200cmRHRnNQUU5FUTBnLXI3TTQyc2ZsclpZeDZnVmJkVXRQRy0xb1dvT3FEU09jZjZWY3FaLUJIYWYzUEtIbjhGTjZnck5mMGh0SjVYN3BaQ2p1bEFjbDZnVEU5Z0VDN2cxa3RNUlh3MU5JYzBXWkxHOHJrNHU2RGhvc0g0RDJDZU0"},
+  wiganAthleticFCJoeTaylor2: {l:"Wigan Athletic FC", u:"https://news.google.com/rss/articles/CBMingFBVV95cUxQY3VLNV9iTzR0WS1mcFhCYnJnZ2YxLTRHNDc1di1qc0N2ZnZKd2lSak5UVXRnbU9aT2hRS1dqS21jSk9jXzlNdlRla1ZnVTZ0cU9VaXJNVVRxT1Z4Z0E1RjBiMnNFb0NyTDFBTXE2bUZIQTZodjIzNWc0WVlVX0dvR3gtMHktSjlkd2ZwZzJCSzljSE9YQVd5ckxHekxjZw"},
+  weAintGotNoHistoryHarrisonBettoni1: {l:"We Ain't Got No History", u:"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQenBObV96LXJTOEdqVVRrU3NkYk0ta2k4UWkzbTRET1E1cWt4NkZ2X2RYdjVOTWJ1aTMtdWRfNkVIdDRjbjYxOVF6eDZaSVhtTFUtZ2VhVThPZG1MX0Nac0ZxTDdjWTBWUG1jeDZ4dEx5bUZma2tlMzZZdlJlWndaemdwVXZCeVlGeGVsWlhWam9wZE91Rl96QnhCUTdUdnE1eEVVRnJfR2NBMEN4b0lacUs3SzhTamw2ODhvand0cEpFYWJJbFcta0dDdzJBZXlPQThCZw"}};
 
 const LINKMAP = {
   "Reggie Walsh": ["nixon"],
@@ -82,9 +85,9 @@ const LINKMAP = {
   "Sonny Perkins": ["bBCSonnyPerkins", "bBCSonnyPerkins1"],
   "Max Power": ["bBCMaxPower", "bBCMaxPower1"],
   "Connor Barrett": ["bBCConnorBarrett", "bBCConnorBarrett1"],
-  "Joe Taylor": ["wiganAthleticFCJoeTaylor", "wiganAthleticFCJoeTaylor1"],
-  "Harrison Bettoni": ["bBCHarrisonBettoni", "weAintGotNoHistoryHarrisonBettoni"],
-  "Jeff Hendrick": ["sportsBoomUKJeffHendrick"]};
+  "Joe Taylor": ["wiganAthleticFCJoeTaylor", "wiganAthleticFCJoeTaylor1", "wiganAthleticFCJoeTaylor2"],
+  "Harrison Bettoni": ["bBCHarrisonBettoni", "weAintGotNoHistoryHarrisonBettoni", "weAintGotNoHistoryHarrisonBettoni1"],
+  "Jeff Hendrick": ["sportsBoomUKJeffHendrick", "sportsBoomUKJeffHendrick1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
