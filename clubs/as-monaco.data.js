@@ -43,11 +43,11 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Mathys Detourbet", sub:"Young · France · Midfielder", club:"Manchester City", pos:"Midfielder", report:"Manchester City to buy Detourbet and loan him to Monaco", src:"Fabrice Hawkins / Yahoo Actualités", tier:3, fee:"Undisclosed", truth:70, prob:65, light:"g", trend:"flat", note:"Manchester City acquiring Detourbet with loan to Monaco confirmed in multiple sources", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
+  {name:"Mathys Detourbet", sub:"youth · France · M", club:"Manchester City", pos:"M", report:"Manchester City to buy Detourbet and loan him to Monaco", src:"Fabrice Hawkins", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"up", note:"Deal agreed; Manchester City purchase with immediate loan to Monaco", lastSeen:"2026-08-08T07:40:33Z", baseProb:80}
 ];
 
 const OUTGOING = [
-  {name:"Maghnes Akliouche", sub:"23 · France · Winger", club:"PSG", pos:"Winger", report:"Total agreement between PSG and Monaco for transfer of Akliouche", src:"Fabrice Hawkins / Yahoo Actualités", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"flat", note:"Multiple sources confirm total agreement reached between clubs", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+  {name:"Maghnes Akliouche", sub:"22 · Algeria · W", club:"AS Monaco", pos:"W", report:"Total agreement between PSG and Monaco for transfer", src:"Fabrice Hawkins", tier:3, fee:"Undisclosed", truth:90, prob:85, light:"g", trend:"up", note:"Deal confirmed as agreed between clubs; Monaco seeking replacement", lastSeen:"2026-08-08T07:40:33Z", baseProb:85}
 ];
 const DEAD = [
   {name:"Erik Lira", sub:"26 · CM · Mexico", club:"Cruz Azul", pos:"CM", report:"29 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:52, prob:24, light:"o", trend:"flat", note:"Monaco have shown concrete interest in the Cruz Azul midfielder as squad depth is assessed.", lastSeen:"2026-08-04T19:10:50Z", baseProb:24, dead:true, deadReason:"No recent snippet support; likely stale (29 Jul 2026 date appears erroneous)", dir:"in", deadAt:"2026-08-06T14:21:38Z"},

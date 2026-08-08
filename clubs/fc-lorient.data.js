@@ -46,7 +46,7 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Souleymane Faye", sub:"Age · Nation · Position unknown", club:"Sporting CP", pos:"Unknown", report:"Loan from Sporting CP", src:"L'Équipe", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Third signing confirmed for Lorient", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
+  {name:"Souleymane Faye", sub:"Sporting CP · Defender", club:"Sporting CP", pos:"D", report:"Loan from Sporting CP", src:"L'Équipe", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"up", note:"Confirmed loan arrival", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
 ];
 
 const OUTGOING = [
@@ -77,14 +77,16 @@ const HUB = {
   leTelegrammeSouleymaneFaye: {l:"Le Telegramme", u:"https://www.letelegramme.fr/sports/football/fc-lorient/clause-liberatoire-a-80-millions-deuros-espagne-et-senegal-qui-est-souleymane-faye-troisieme-recrue-du-fc-lorient-7094260.php"},
   oneFootballFootMercatoBambaDieng: {l:"OneFootball / Foot Mercato", u:"https://onefootball.com"},
   footMercatoPabloPagis: {l:"Foot Mercato", u:"https://www.footmercato.net"},
-  lquipeSouleymaneFaye: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxPdWxyd1FOQnBUcWxfRUsxd2pjb1VqOGx1M0dnSkU0YmFJeXJFck5pak1kaVJOZ2thOGpIQWtONDBjOEtaUkV0Nkt0OHgyMnRGVkFtLXlMYkoteWw5dVNCMFBOWnpIZnUxeFBUd0huV0w2blNxU09LTG1uT29WU2tTbWRKbXVzTXhuZ29UVmhqX2dhTDVhbWxfa19aVXRRQXhMX0NyOEJkTnQ0bXN0TGZ4aEJ2c0ktQQ?oc=5"}};
+  lquipeSouleymaneFaye: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxPdWxyd1FOQnBUcWxfRUsxd2pjb1VqOGx1M0dnSkU0YmFJeXJFck5pak1kaVJOZ2thOGpIQWtONDBjOEtaUkV0Nkt0OHgyMnRGVkFtLXlMYkoteWw5dVNCMFBOWnpIZnUxeFBUd0huV0w2blNxU09LTG1uT29WU2tTbWRKbXVzTXhuZ29UVmhqX2dhTDVhbWxfa19aVXRRQXhMX0NyOEJkTnQ0bXN0TGZ4aEJ2c0ktQQ?oc=5"},
+  lquipeSouleymaneFaye1: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxPdWxyd1FOQnBUcWxfRUsxd2pjb1VqOGx1M0dnSkU0YmFJeXJFck5pak1kaVJOZ2thOGpIQWtONDBjOEtaUkV0Nkt0OHgyMnRGVkFtLXlMYkoteWw5dVNCMFBOWnpIZnUxeFBUd0huV0w2blNxU09LTG1uT29WU2tTbWRKbXVzTXhuZ29UVmhqX2dhTDVhbWxfa19aVXRRQXhMX0NyOEJkTnQ0bXN0TGZ4aEJ2c0ktQQ"},
+  mercatoBambaDieng: {l:"Mercato", u:"https://mercato.com"}};
 
 const LINKMAP = {
-  "Souleymane Faye": ["fclorient", "leTelegrammeSouleymaneFaye", "lquipeSouleymaneFaye"],
+  "Souleymane Faye": ["fclorient", "leTelegrammeSouleymaneFaye", "lquipeSouleymaneFaye", "lquipeSouleymaneFaye1"],
   "Gabin Bernardeau": ["fclorient"],
   "Pablo Pagis": ["gffn-lorient", "footMercatoPabloPagis"],
   "Isaac Monnier": ["fclorient"],
-  "Bamba Dieng": ["oneFootballFootMercatoBambaDieng"]};
+  "Bamba Dieng": ["oneFootballFootMercatoBambaDieng", "mercatoBambaDieng"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

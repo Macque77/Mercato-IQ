@@ -37,11 +37,9 @@ const CONFIRMED_OUT = [
   {name:"Owen Bailey", sub:"Unknown · Unknown · Unknown", club:"Doncaster Rovers", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Completed move to League Two outfit"}
 ];
 const INCOMING = [
-  {name:"Jordan Thomas", sub:"Unknown · Unknown · Unknown", club:"Cheltenham Town", pos:"Unknown", report:"Agrees move from Cheltenham Town", src:"On-page rumour", tier:3, fee:"Unknown", truth:75, prob:75, light:"g", trend:"down", note:"On-page entry retained; no fresh snippet confirmation", lastSeen:"2026-08-08T04:21:32Z", baseProb:75}
+  {name:"Jordan Thomas", sub:"Unknown · Unknown · Unknown", club:"Cheltenham Town", pos:"Unknown", report:"Agrees move from Cheltenham Town", src:"Gloucestershire Live", tier:3, fee:"Unknown", truth:85, prob:85, light:"g", trend:"up", note:"Deal agreed", lastSeen:"2026-08-08T07:40:33Z", baseProb:85}
 ];
-const OUTGOING = [
-  {name:"Owen Bailey", sub:"Unknown · Unknown · Winger", club:"Doncaster Rovers", pos:"Winger", report:"Completed move to League Two outfit", src:"Unknown", tier:3, fee:"Unknown", truth:95, prob:95, light:"g", trend:"up", note:"Winger completed move to League Two club", lastSeen:"2026-08-07T14:38:27Z", baseProb:95}
-];
+const OUTGOING = [];
 const RISERS = [];
 const FALLERS = [];
 const NEW = [];
@@ -64,13 +62,14 @@ const HUB = {
   gloucestershireLiveJordanThomas2: {l:"Gloucestershire Live", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxQT1pxVUx3b3NYU1dQMHJ4YnR0QlI4dkU4alZSZGhQS2d5dkxpQ3U3UldUUDMtdXNBME83MldWNzM1NUEyZU9GQnEtU184TGthemVGSDB6cXZfUkpVUlVXSUE2cHF4T29KM0pldndLdW9QQjBRbVhIWWRpVlhpRjk0MnViVVZtZXJUam9CWkdfVEdOQU1wT1Z0eFBlYmJiUndNZWhhWVZ4R0FXa3c4WnlhT0lBVdIBuAFBVV95cUxNZVAwU0ZQR2VBM1BPNzdzeWxjalh5WU55Tmlhak9sajM5S2JyOFljQ1NPbEIxNHNDQ2lzWHBiQjY0UVVSdGc3Zkt3SXBQQTdBbmVYNEpkQnZUdmtlQTRQdlU3S1V4VUx4WlVkc24xOWF5Nm1HRGhPRWdsZmhQR0gzOTlrQmM0YXd0RWNISER6WWFtMldCWTVMTWZvR25rWW5SamtPWXpmNF9MMEpjS1BRVTZWZWF3N2hq"},
   doncasterFreePressLukeMolyneux3: {l:"Doncaster Free Press", u:"https://news.google.com/rss/articles/CBMi-gFBVV95cUxOaW54V3JvaG5wNy1NRmo5YjNTV19xUGdqWXU1Mm04eXJNR0tpU2tmaTdWMURiXzFSZEg0YnAzOXo4cnFYWGM2MHZXbE1CMW5yRUNBYzVEckx6cnhJRTJNUWtlTnFaQVI2T0lyTW91aXJYeVdWZ2VyQm9scllPeWRFb2lNRHR1YlVCNUtXbWswa2FkWlJ2S1NESG9DcGRLX2xwSm1CVlVEcGl1UEFqZUU0a1ZvbER6c2tXQWRDaGhIaE9hR25hOG85eFZBbjY3YUZOQklPMzhBVGhsOHBRYnd2c2czWWd5RXUtaU4tQWQ5YUF5OU9ZTWF2ODRB"},
   doncasterFreePressLukeMolyneux4: {l:"Doncaster Free Press", u:"https://news.google.com/rss/articles/CBMi7gFBVV95cUxQcXEwSVQwSFZIQ3ExRzgzNDRlTnNoRlk1d0JEWkhtRjF2N2ZuNmJvaXFqQy1tRmFWdV9JVWlWRWNydGdHb3d3TTBJMUFSTGUwY0llRWN4cTBaNjJHTU5sTmsweGtDZGpsTzd6dFpxb1VQOEdmSXdXeXFLTGUwN3d6TEpTRHd1MnRzbFJrdEwzTmE2X1QtblRJVzJBX2xhV3NIRENwSFVqVkVRcDJYdldVWkp2Z2NQMTVoaDB5S1ByR3FuVGFGc3Y4M19PcVVlRmZhSGppNzI5NDFGSExuVC1tcGs0Z1ViTDg5UHJqekRn"},
-  doncasterFreePressGlennMiddleton: {l:"Doncaster Free Press", u:"https://news.google.com/rss/articles/CBMi9wFBVV95cUxOb1RVQmJ0cEdRcVdKaUdjTml2OGJTR1BFcWdUd1dudjl6bDVXVlpUdTFXUnFMUTQwWGpFRzNIZk9zSDUtZ0ludXhoNWJPSURtOTZ4YWZCbDFxQ3N0WF85VEtUOWs0Z1FFWVktcjBrcER0Ukl6VW5RdlptUjdxQzFiLW5ic1g3M25wUy1vQkZSVjVRR081WUhXWmlTTXdrb0ZFMVc3SEVEN2gwTUhSNjlsRDZVNDJ3dnp4OVJVdnhBNkY3dTc4S09QZ1FiUV9pUElCMWRSY3o3VGJSMklycDc1UU82YVNFR0t6cUJkY3ZBOTRLMGw2RjNV"}};
+  doncasterFreePressGlennMiddleton: {l:"Doncaster Free Press", u:"https://news.google.com/rss/articles/CBMi9wFBVV95cUxOb1RVQmJ0cEdRcVdKaUdjTml2OGJTR1BFcWdUd1dudjl6bDVXVlpUdTFXUnFMUTQwWGpFRzNIZk9zSDUtZ0ludXhoNWJPSURtOTZ4YWZCbDFxQ3N0WF85VEtUOWs0Z1FFWVktcjBrcER0Ukl6VW5RdlptUjdxQzFiLW5ic1g3M25wUy1vQkZSVjVRR081WUhXWmlTTXdrb0ZFMVc3SEVEN2gwTUhSNjlsRDZVNDJ3dnp4OVJVdnhBNkY3dTc4S09QZ1FiUV9pUElCMWRSY3o3VGJSMklycDc1UU82YVNFR0t6cUJkY3ZBOTRLMGw2RjNV"},
+  gloucestershireLiveJordanThomas3: {l:"Gloucestershire Live", u:"https://news.google.com/rss/articles/CBMiswFBVV95cUxQT1pxVUx3b3NYU1dQMHJ4YnR0QlI4dkU4alZSZGhQS2d5dkxpQ3U3UldUUDMtdXNBME83MldWNzM1NUEyZU9GQnEtU084TGthemVGSDB6cXZfUkpVUlVXSUE2cHF4T29KM0pldndLdW9QQjBRbVhIWWRpVlhpRjk0MnViVVZtZXJUam9CWkdfVEdOQU1wT1Z0eFBlYmJiUndNZWhhWVZ4R0FXa3c4WnlhT0lBVdIBuAFBVV95cUxNZVAwU0ZQR2VBM1BPNzdzeWxjalh5WU55Tmlhak9sajM5S2JyOFljQ1NPbEIxNHNDQ2lzWHBiQjY0UVVSdGc3Zkt3SXBQQTdBbmVYNEpkQnZUdmtlQTRQdlU3S1V4VUx4WlVkc24xOWF5Nm1HRGhPRWdsZmhQR0gzOTlrQmM0YXd0RWNISER6WWFtMldCWTVMTWZvR25rWW5SamtPWXpmNF9MMEpjS1BRVTZWZWF3N2hq"}};
 
 const LINKMAP = {
   "Alfie May": ["gnews-alfiemay"],
   "Luke Molyneux": ["src-benwignall", "flw", "doncasterFreePressLukeMolyneux", "doncasterFreePressLukeMolyneux1", "doncasterFreePressLukeMolyneux2", "doncasterFreePressLukeMolyneux3", "doncasterFreePressLukeMolyneux4"],
   "Owen Bailey": ["gnews-owenbailey", "yorkshirePostOwenBailey", "yorkshirePostOwenBailey1"],
-  "Jordan Thomas": ["gloucestershireLiveJordanThomas", "gloucestershireLiveJordanThomas1", "gloucestershireLiveJordanThomas2"],
+  "Jordan Thomas": ["gloucestershireLiveJordanThomas", "gloucestershireLiveJordanThomas1", "gloucestershireLiveJordanThomas2", "gloucestershireLiveJordanThomas3"],
   "Glenn Middleton": ["doncasterFreePressGlennMiddleton"]};
 const WL_LINKMAP = {};
 

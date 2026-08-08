@@ -36,7 +36,7 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Mark O'Mahony", sub:"FW", club:"Brighton (youth)", pos:"FW", report:"~1 wk ago", src:"Various", tier:4, fee:"Undisclosed", truth:40, prob:30, light:'y', trend:'flat', note:"Young attacker linked, early stage.", lastSeen:"2026-08-04T19:10:50Z", baseProb:30},
-  {name:"Tyler Onyango", sub:"MF", club:"Free agent (ex-Everton)", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Free", truth:50, prob:40, light:'y', trend:'flat', note:"Reported on trial with the club.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
+  {name:"Tyler Onyango", sub:"23 · Kenya · D", club:"Northampton Town", pos:"D", report:"Transfer deal confirmed with contract length revealed", src:"thestar.co.uk", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Deal confirmed by Sheffield Wednesday", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
   {name:"Reece James", sub:"W", club:"Free agent (ex-Wednesday)", pos:"W", report:"~1 wk ago", src:"Various", tier:4, fee:"Free", truth:45, prob:35, light:'y', trend:'flat', note:"Trial return, fans keen on a re-signing.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
   {name:"Davis Keillor-Dunn", sub:"FW", club:"Wrexham", pos:"FW", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Wednesday reportedly want a deal for the forward.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
 ];
@@ -60,13 +60,13 @@ const HUB = {
   "gnews-daviskeillordunn": {l:"Related news search: Davis Keillor-Dunn", u:"https://news.google.com/search?q=Sheffield%20Wednesday%20Davis%20Keillor-Dunn%20transfer&hl=en-GB&gl=GB"},
   "witcoop": {l:"Darren Witcoop", u:"https://x.com/DarrenWitcoop"},
   "gnews-owenbailey": {l:"Related news search: Owen Bailey", u:"https://news.google.com/search?q=Sheffield%20Wednesday%20Owen%20Bailey%20transfer&hl=en-GB&gl=GB"},
-  "gnews-tommioreilly": {l:"Related news search: Tommi O'Reilly", u:"https://news.google.com/search?q=Sheffield%20Wednesday%20Tommi%20O%27Reilly%20transfer&hl=en-GB&gl=GB"}
-};
+  "gnews-tommioreilly": {l:"Related news search: Tommi O'Reilly", u:"https://news.google.com/search?q=Sheffield%20Wednesday%20Tommi%20O%27Reilly%20transfer&hl=en-GB&gl=GB"},
+  thestarcoukTylerOnyango: {l:"thestar.co.uk", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxQUk81dXRnWTBiS3hkYzlCU1hTWDFETDRVeTZJTEhzRWktVVM1NzRkVTJ3UGxQbll2Vk5RYmh1TDJGdko2OXlXaDJGdzRDT2FrQWQ4NGRpRVl0Z192LXVab2FsbHgwMEJ0dW12MW5TNXV3SVpDNWozM2Q4bTlGdnpXUmkyYnpRUkhXSFNQb1FwNUxkREcyLXFmNHpJMUpTODU0d0wwVnlDeC10UllnOGg4?oc=5"}};
 
 const LINKMAP = {
   "Mason Burstow": ["gnews-masonburstow"],
   "Mark O'Mahony": ["gnews-markomahony"],
-  "Tyler Onyango": ["gnews-tyleronyango"],
+  "Tyler Onyango": ["gnews-tyleronyango", "thestarcoukTylerOnyango"],
   "Reece James": ["gnews-reecejames"],
   "Davis Keillor-Dunn": ["gnews-daviskeillordunn"],
   "Ike Ugbo": ["witcoop"],

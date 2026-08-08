@@ -40,8 +40,8 @@ const CONFIRMED_OUT = [
   {name:"Sinclair Armstrong", sub:"ST", club:"Göztepe", pos:"ST", fee:"£1.8m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed permanent sale."}
 ];
 const INCOMING = [
-  {name:"Dom Ballard", sub:"Unknown · Unknown · Striker", club:"Leyton Orient", pos:"ST", report:"Bristol City closing in on signing striker Dom Ballard from Leyton Orient", src:"Bristol Live", tier:2, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"down", note:"Striker at Robins HPC for medical/final stages", lastSeen:"2026-08-08T04:21:31Z", baseProb:75},
-  {name:"Lorent Tolaj", sub:"striker · Kosovo · CF", club:"Plymouth Argyle", pos:"ST", report:"Bristol City sign striker Lorent Tolaj from Plymouth Argyle", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed; signed from Plymouth Argyle", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Dom Ballard", sub:"Striker", club:"Leyton Orient", pos:"ST", report:"Bristol City closing in on signing striker Dom Ballard from Leyton Orient; striker at Robins HPC for medical", src:"Bristol Live", tier:2, fee:"Undisclosed", truth:85, prob:75, light:"g", trend:"flat", note:"At Robins HPC undergoing medical/training, deal imminent", lastSeen:"2026-08-08T07:40:33Z", baseProb:75},
+  {name:"Lorent Tolaj", sub:"Striker", club:"Plymouth Argyle", pos:"ST", report:"Bristol City sign striker Lorent Tolaj", src:"Bristol City FC", tier:2, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"down", note:"Signing confirmed by official Bristol City announcement", lastSeen:"2026-08-08T07:40:33Z", baseProb:95}
 ];
 const OUTGOING = [];
 const DEAD = [

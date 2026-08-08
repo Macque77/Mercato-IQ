@@ -45,13 +45,11 @@ const CONFIRMED_OUT = [
   {name:"Arouna Sangante", sub:"22 · CB · France", club:"Sevilla FC", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed 16 Jun 2026 on a five-year deal - a significant sale to La Liga."}
 ];
 
-const INCOMING = [
-  {name:"Junior Mwanga", sub:"", club:"", pos:"", report:"Le HAC va rapatrier Junior Mwanga", src:"MadeInFOOT", tier:3, fee:"", truth:65, prob:65, light:"g", trend:"flat", note:"Return/repatriation reported", lastSeen:"2026-08-07T01:42:32Z", baseProb:65}
-];
+const INCOMING = [];
 
 const OUTGOING = [
-  {name:"Timothée Pembélé", sub:"24 · LB · France", club:"Sunderland", pos:"LB", report:"15 Jul 2026", src:"Get French Football News", tier:2, fee:"TBD", truth:60, prob:52, light:"g", trend:"up", note:"Sunderland are reported to be set to complete a permanent deal for the defender after his loan spell.", lastSeen:"2026-08-04T19:10:50Z", baseProb:52},
-  {name:"Yanis Zouaoui", sub:"28 · Algeria · LB", club:"Nantes", pos:"LB", report:"Nantes on the brink of full agreement with Le Havre", src:"score.fr", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Imminent transfer to Nantes", lastSeen:"2026-08-07T01:42:32Z", baseProb:85}
+  {name:"Yanis Zouaoui", sub:"Unknown · Unknown · Unknown", club:"Nantes", pos:"Unknown", report:"Nantes on the brink of full agreement with Le Havre for Yanis Zouaoui", src:"Score.fr", tier:3, fee:"Undisclosed", truth:80, prob:75, light:"g", trend:"down", note:"6e recrue estivale for Nantes", lastSeen:"2026-08-08T07:40:33Z", baseProb:75},
+  {name:"Elias Jelert", sub:"Unknown · Unknown · Latéral", club:"Galatasaray", pos:"Latéral", report:"Le Havre discusses loan of Elias Jelert to Galatasaray", src:"MercatoLive", tier:3, fee:"Loan", truth:65, prob:60, light:"g", trend:"flat", note:"", lastSeen:"2026-08-08T07:40:33Z", baseProb:60}
 ];
 
 const RISERS = [
@@ -82,16 +80,20 @@ const HUB = {
   lEquipeYanisZouaoui1: {l:"L'Equipe", u:"https://www.lequipe.fr/Football/"},
   mediaSportifJuniorMwanga: {l:"MediaSportif", u:"https://mediasportif.fr/"},
   madeInFOOTJuniorMwanga: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxQcVhmTk9DNTBkOWpLVFdQTXRqT2VrTDZndW15OEwtQ1V5UGtUVk9SZFRBNnd4RkVBd1pJVnJPb01PYkpETjlxLUlybjlHeVdOS3Jad3lpQjlXODNGS3B5R2IzUkVwWlB3d1ltUzk4Mnowbi0tWHdydzdyNVF6cFR5SWR1Sm1qX25UWl9KaUZ4YjA1QWROZjFuMEM4N1A2QlFHM0h0WG1OV19mTjRoOE51bzh5Q3o"},
-  scorefrYanisZouaoui: {l:"score.fr", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxOWEhCRTIySzBvU0xEMDd1a0xIRmFqTTY0dWxQNHVnSUdwUDB6Vi1aYnpETEd3clMtdl9JTTNCaVB2czJETXMzemJfZjJINm1qaGV1RTFUNFhxMG12UVVrTk5TbU00RjQ5NTFhWE50OHBRN2pOeWljaUlPN3NSdHpJTkIxUmdueVd2Z2R0OERkYVhxOERlNVM5YjdxdmFOSUlINllWYzRDdVZKREpPSThDRHNFSmhMdw"}};
+  scorefrYanisZouaoui: {l:"score.fr", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxOWEhCRTIySzBvU0xEMDd1a0xIRmFqTTY0dWxQNHVnSUdwUDB6Vi1aYnpETEd3clMtdl9JTTNCaVB2czJETXMzemJfZjJINm1qaGV1RTFUNFhxMG12UVVrTk5TbU00RjQ5NTFhWE50OHBRN2pOeWljaUlPN3NSdHpJTkIxUmdueVd2Z2R0OERkYVhxOERlNVM5YjdxdmFOSUlINllWYzRDdVZKREpPSThDRHNFSmhMdw"},
+  madeInFOOTJuniorMwanga1: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxQcVhmTk9DNTBkOWpLVFdQTXRqT2VrTDZndW15OEwtQ1V5UGtUVk9SZFRBNnd4RkVBd1pJVnJPb01PYkpETjlxLUlybjlHeVdOS3Jad3lpQjlXODNGS3B5R2IzUkVwWlB3d1ltUzk4Mnowbi0tWHdydzdyNVF6cFR5SWR1Sm1qX25UWl9KaUZ4YjA1QWROZjFuMEM4N1A2QlFHM0h0WG1OV19mTjRoOE51bzh5Q3o?oc=5"},
+  scorefrYanisZouaoui1: {l:"Score.fr", u:"https://news.google.com/rss/articles/CBMitgFBVV95cUxOWEhCRTIySzBvU0xEMDd1a0xIRmFqTTY0dWxQNHVnSUdwUDB6Vi1aYnpETEd3clMtdl9JTTNCaVB2czJETXMzemJfZjJINm1qaGV1RTFUNFhxMG12UVVrTk5TbU40RjQ5NTFhWE50OHBRN2pOeWljaUlPN3NSdHpJTkIxUmdueVd2Z2R0OERkYVhxOERlNVM5YjdxdmFOSUlINllWYzRDdVZKREpPSThDRHNFSmhMdw?oc=5"},
+  mercatoLiveEliasJelert: {l:"MercatoLive", u:"https://news.google.com/rss/articles/CBMipAFBVV95cUxPaTN4QndqSGZuZzVLQk9vV2RPaXVfa0VNaUVRY0V0djZRZTZoa2xxSU5vamc4X2hmOW9CTm92MWFmLXlqZU5IUk9Qbm9ueE5XNl9vRTlsTXl3cXppS2p4M2g2NVNiaWlBbUttaFBJTmxPNVRqR2FqSUFiNXg4bWdPZ1F1SnJDV01vUW9sZFRCX2t3TXFrek82LW1NYzdKeTV2WUpTcw?oc=5"}};
 
 const LINKMAP = {
   "Josh Maja": ["gffn-lehavre", "lEquipeJoshMaja"],
   "Amir Richardson": ["gffn-lehavre"],
   "Arouna Sangante": ["gffn-lehavre"],
   "Timothée Pembélé": ["gffn-lehavre"],
-  "Yanis Zouaoui": ["lEquipeYanisZouaoui", "lEquipeYanisZouaoui1", "scorefrYanisZouaoui"],
+  "Yanis Zouaoui": ["lEquipeYanisZouaoui", "lEquipeYanisZouaoui1", "scorefrYanisZouaoui", "scorefrYanisZouaoui1"],
   "Kaito Mizuta": ["footNationalKaitoMizuta"],
-  "Junior Mwanga": ["mediaSportifJuniorMwanga", "madeInFOOTJuniorMwanga"]};
+  "Junior Mwanga": ["mediaSportifJuniorMwanga", "madeInFOOTJuniorMwanga", "madeInFOOTJuniorMwanga1"],
+  "Elias Jelert": ["mercatoLiveEliasJelert"]};
 const WL_LINKMAP = {
   "Timothée Pembélé": ["gffn-lehavre"]
 };

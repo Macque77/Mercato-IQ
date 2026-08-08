@@ -45,10 +45,10 @@ const CONFIRMED_OUT = [
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Cisse Sandra", sub:"unknown · unknown · Midfielder", club:"Club Brugge", pos:"Midfielder", report:"Transfer completed from Club Brugge; fee reported as significant sum", src:"VoetbalPrimeur.be, VoetbalFocus", tier:3, fee:"Reported ~€18m", truth:100, prob:100, light:"g", trend:"flat", note:"Multiple sources confirm arrival; fee details from VoetbalBelgie headline", lastSeen:"2026-08-08T04:21:31Z", baseProb:100}
+  {name:"Cisse Sandra", sub:"Club Brugge · M", club:"Club Brugge", pos:"M", report:"Transfer completed from Club Brugge to KVC Westerlo", src:"Multiple Belgian sources", tier:3, fee:"€18m", truth:100, prob:100, light:"g", trend:"flat", note:"Deal finalized; fee reported as approximately €18 million", lastSeen:"2026-08-08T07:40:32Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"unknown · unknown · unknown", club:"Rangers", pos:"unknown", report:"On way to Rangers; among most expensive outgoing transfers for Westerlo", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"down", note:"Deal reportedly advanced; described as significant outgoing transfer", lastSeen:"2026-08-08T04:21:31Z", baseProb:80}
+  {name:"Jarne Rommens", sub:"KVC Westerlo · D", club:"KVC Westerlo", pos:"D", report:"On way to Rangers; among most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Unknown", truth:85, prob:80, light:"g", trend:"flat", note:"Advanced transfer talks with Rangers; ranks among Westerlo's most expensive departures", lastSeen:"2026-08-08T07:40:32Z", baseProb:80}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -73,7 +73,10 @@ const HUB = {
   voetbalPrimeurbeCisseSandra: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcHJBLVkyZk9uRW5NRmZuVlkzZnA1Q3VnUGVVaV9RYVJvQk5hOWRHUE8yeE1ReW82ZXVRX1JBSTRTVVZ4NjFfZ2xjLWFROUVVT3dKZDNhOGxvSEFwYi1kaXdUU0FuODdncV9GN1JXT3ZYRFVTYUNvdVRteWw3MTRfMng4dW43R0ZENktkdThuYzNSRWNVV2lLVkRfcEJnbktkcWtYTUxYek5ZOGN1Q2U3Sk1Mbkt4WEpOcFZrMkxHeXNHT2M"},
   voetbalBelgieCisseSandra: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMidEFVX3lxTE1WSjZNUkJoa0pNdzZvZGh0SUVoLTdZVjJ0dmp2V1lDeC1RekQtbjF3SUZfR0xQNmFRS0ozdzYtLUNPTWVjSHNjM2ZoYWJfZ2pOZTZXOUl2bkZfZmR3a2FhRlpUTmxNZms1VlA3LTlLUFgzaXRz"},
   voetbalPrimeurbeCisseSandra1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcHJBLVkyZk9uRW5NRmZuVlkzZnA1Q3VnUGVVaV9RYVJvQk5hOWRHUE8yeE1ReW82ZXVRX1JBSTRTVVZ4NjFfZ2xjLWFROUVVT3dKZDNhOGxvSEFwYi1kaXdUU0FuODdncV9GN1JXT3ZYRFVTYUNvdVRteWw3MTRfMng4dW43R0ZENktkdThuYzNSRWNVV2lLVkRfcEJnbktkcWtYTUxYek5ZOGN1Q2U3Sk1Mbkt4WEpOcFZrMkxHeXNHT2M/oc=5"},
-  lokaalnieuwsonlineCisseSandra: {l:"Lokaalnieuws.online", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxOdlJ0WHFtMEttbnlYWTZtYTRtTzVJMk91dUNiVXhGRDBOdEtpTlpqWFphOVBUUG5YN21YR2dQMnhkRmhlQWljUXBFQ0x4RVRlNFZDWTRqQzFuQndiTFhkekpETEFfWFpMQTc4RWFWX2MxRjFGYlNqNjVlSGRRd2o1TE4zbVNVa3h4RW9uV3d5em4yeEo3TEl3cWZncVhHbC1KOXdWM0hGT3FUY2w5/oc=5"}};
+  lokaalnieuwsonlineCisseSandra: {l:"Lokaalnieuws.online", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxOdlJ0WHFtMEttbnlYWTZtYTRtTzVJMk91dUNiVXhGRDBOdEtpTlpqWFphOVBUUG5YN21YR2dQMnhkRmhlQWljUXBFQ0x4RVRlNFZDWTRqQzFuQndiTFhkekpETEFfWFpMQTc4RWFWX2MxRjFGYlNqNjVlSGRRd2o1TE4zbVNVa3h4RW9uV3d5em4yeEo3TEl3cWZncVhHbC1KOXdWM0hGT3FUY2w5/oc=5"},
+  lokaalnieuwsonlineCisseSandra1: {l:"Lokaalnieuws.online", u:"https://news.google.com/rss/articles/CBMirAFBVV95cUxOdlJ0WHFtMEttbnlYWTZtYTRtTzVJMk91dUNiVXhGRDBOdEtpTlpqWFphOVBUUG5YN21YR2dQMnhkRmhlQWljUXBFQ0x4RVRlNFZDWTRqQzFuQndiTFhkekpETEFfWFpMQTc4RWFWX2MxRjFGYlNqNjVlSGRRd2o1TE4zbVNVa3h4RW9uV3d5em4yeEo3TEl3cWZncVhHbC1KOXdWM0hGT3FUY2w5?oc=5"},
+  voetbalFocusCongreve: {l:"VoetbalFocus", u:"https://news.google.com/rss/articles/CBMieEFVX3lxTFBvbXM2M2t4Ukc2ajR6TWdnRXRxdW5za3Npa05rRy1oajVEdGVVQnRHTW1OM0FPYVg0Y3g2dzk1VTBRRlFMdU0wY2pRWnJyXzdldjdWTnNpSlVzZzlOb3g3S3FkZmlVTVRucGZWU3U2eXVBRXkxTGRwSg?oc=5"},
+  voetbalPrimeurbeJarneRommens2: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNLWhFUXlaTkNoQjE0NXc5aTFxS2xSOGpHcEZzbGpnak1FS0dDbHd4RnNWcEx0X0NTVVBydno1T3VDZGFUNU8zSmJwRTdhMWJ3S2tyOUlxbnFZbVlWNXFudG9NWUtreXcwYmsxOEp0MEdVVlJOcWNqTXk2enMzMWQxTVlyZGs5RzZwdVVGbjZqN2dpV0dscFdydmpR?oc=5"}};
 
 const LINKMAP = {
   "Cameron Congreve": ["the72viaWalesOnlineCameronCongreve", "voetbalFocusCameronCongreve"],
@@ -82,10 +85,10 @@ const LINKMAP = {
   "Norman Bassette": ["sporzaNormanBassette"],
   "Bryan Reynolds": ["voetbalkrantviaSachaTavolieriBryanReynolds"],
   "Emin Bayram": ["voetbalkrantEminBayram"],
-  "Cisse Sandra": ["voetbalFocusCisseSandra", "voetbalPrimeurbeCisseSandra", "voetbalBelgieCisseSandra", "voetbalPrimeurbeCisseSandra1", "lokaalnieuwsonlineCisseSandra"],
-  "Jarne Rommens": ["voetbalPrimeurbeJarneRommens", "voetbalPrimeurbeJarneRommens1"],
+  "Cisse Sandra": ["voetbalFocusCisseSandra", "voetbalPrimeurbeCisseSandra", "voetbalBelgieCisseSandra", "voetbalPrimeurbeCisseSandra1", "lokaalnieuwsonlineCisseSandra", "lokaalnieuwsonlineCisseSandra1"],
+  "Jarne Rommens": ["voetbalPrimeurbeJarneRommens", "voetbalPrimeurbeJarneRommens1", "voetbalPrimeurbeJarneRommens2"],
   "Ferri": ["voetbalPrimeurbeFerri"],
-  "Congreve": ["voetbalFocusCameronCongreve"]};
+  "Congreve": ["voetbalFocusCameronCongreve", "voetbalFocusCongreve"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

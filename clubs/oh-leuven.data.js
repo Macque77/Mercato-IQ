@@ -32,13 +32,16 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Jamie Lawrence", sub:"23 · CB · Germany", club:"WSG Tirol", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2.01m Bayern-academy defender signs until 2029 after two seasons in the Austrian Bundesliga."},
-  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from Celtic confirmed; described as having significant potential and right mentality"}
+  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from Celtic confirmed; described as having significant potential and right mentality"},
+  {name:"Shin Yamada", sub:"Unknown · Japan · Forward", club:"Unknown", pos:"Forward", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First official transfer for OH Leuven this window"}
 ];
 const CONFIRMED_OUT = [
-  {name:"Unknown Player", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"JPL champion departing to Eredivisie - official transfer"}
+  {name:"Unknown Player", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"JPL champion departing to Eredivisie - official transfer"},
+  {name:"Sory Kaba", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure announced"}
 ];
 const INCOMING = [
-  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", report:"Transfer from Celtic with significant potential and right mentality", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Club expressed satisfaction with potential and mentality", lastSeen:"2026-08-07T14:38:27Z", baseProb:90, dead:true, deadReason:"Confirmed transfer from Celtic completed; should move to confirmed_in but full name/details insufficient to confirm from snippets alone"}
+  {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", report:"Transfer from Celtic with significant potential and right mentality", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Club expressed satisfaction with potential and mentality", lastSeen:"2026-08-07T14:38:27Z", baseProb:90, dead:true, deadReason:"Confirmed transfer from Celtic completed; should move to confirmed_in but full name/details insufficient to confirm from snippets alone"},
+  {name:"Unknown striker from Westerlo", sub:"Unknown · Unknown · Forward", club:"Westerlo", pos:"Forward", report:"OH Leuven finds striker at Westerlo", src:"VoetbalBelgie", tier:3, fee:"Unknown", truth:85, prob:75, light:"g", trend:"flat", note:"Transfer link with Westerlo striker", lastSeen:"2026-08-08T07:40:32Z", baseProb:75}
 ];
 const OUTGOING = [
   {name:"Davis Opoku", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", report:"Departing OH Leuven", src:"Unknown", tier:3, fee:"Undisclosed", truth:75, prob:80, light:"g", trend:"up", note:"On-page rumour from 27 Jul 2026", lastSeen:"2026-08-07T14:38:27Z", baseProb:80},
@@ -67,7 +70,8 @@ const HUB = {
   robtvbeAurlieReynders: {l:"robtv.be", u:"https://news.google.com/rss/articles/CBMi_gFBVV95cUxOdm9WWmpPa253My1OYVhGRC1PWmZveEs1OUNKNDZ5ZzQ5T1RmNWZ4MnhXWmNzXzJHQzhSalJacnpwVWc5NTdtdW9YcktBd3RVd2NDMlNDOXExTG5CZzViVjJPMzEwOHFoZmh1YjgxRjZuZUpIZnl5S282SkN1SUUtNHRmcmF3dlRfSkR6d0dDZEtHa1U1NkVNd0tZYXlocGZyRFZ1MVNFMVJ6MTlpZVN4UmJia3hBdDBISTJGX0huUk84RHdUcGRueFRQQWdfdy01YURCS1VNT24wY0JucFZHbm1UcjFoOTMyZ24yemx0ZE5qcU1UNmc3RnR3VE1LQQ?oc=5"},
   voetbalkrantcomUnknownexBayernplayer: {l:"Voetbalkrant.com", u:"https://news.google.com/rss/articles/CBMitAFBVV95cUxONHBwMEtaSlJoaGwwUy0xWklOblhnZjkzWGFPMWp1bC1nbXdkcmZwSUFxclloSjdVZG1HNERvZkg4YWpVZHptaVBET1FlSVY0Y2U2dXhHdERleGJ5S19wVDlzRjY2LWxkODBoRE1mVWVaMy1IWVJUamJmRWRVQm0tMG5FVDZub0liZW5ISGFHbU9VVGM4bGhTa0RNZFFHRzY1VlU3M3VmcmNUTVdicGFxQ3ViZjfSAboBQVVfeXFMTlNsbW80ZG5SLU55eFUzWndTeW5KNE5ZS0MzRTZuWlhmci1IamNRNXVHMl9kVmdFY0I4T0JEd1ladjlGcWpaeHlGUXB1aXBtOXIyQmQ1dVpoTENFOEJHSHcwZ0ZVbWQ3WDdxTUpncTlhNzJMcUpmUGtBNHBuTkR5RzIzOS1qb0pGenRvcEM4NVYtTDdsMUM5ZEg1TzBmbXN0WVBNUkRWUTVTcjhPeXZNYmNtSDlDV0p1Vnln"},
   voetbalPrimeurbeSoryKaba: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMihAFBVV95cUxOZnBtYXFYeXN3UlcyMF84c09Dcl9yTXlYQzNILTktN1JzUDVQMnAtWkwxcXpnVGdjYkQ1dHlJYUZnNVVQYlo4WHFld2NiZkdkcHJZbEhURm9NYVdEcjhFaENkVl9say1iY192VEQ3MU11UHhZU1lSYk5VblQ5RkpoNjRaV2E"},
-  voetbalPrimeurbeVanDenHeuvel1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxQYkp5U0dTeXRneVhGNDZLdlpTdmJpQ0M4Y2FDa1RQQ2FubjBZd3dSV281S0p5UHBSaEpVeWFwS0ZwOHIyanpOV29nM2wzQlpvcDBnMGJIUEN4bF91RTZUX2xKLU12eDZFT0VvUTdxcFpQZ3YwaVAzTW1KZThNR3hUWmpuQ0dsYzFXVldnRWlfZUpqSVEtQlpEOWJiZ3J0Nl9zMEE"}};
+  voetbalPrimeurbeVanDenHeuvel1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxQYkp5U0dTeXRneVhGNDZLdlpTdmJpQ0M4Y2FDa1RQQ2FubjBZd3dSV281S0p5UHBSaEpVeWFwS0ZwOHIyanpOV29nM2wzQlpvcDBnMGJIUEN4bF91RTZUX2xKLU12eDZFT0VvUTdxcFpQZ3YwaVAzTW1KZThNR3hUWmpuQ0dsYzFXVldnRWlfZUpqSVEtQlpEOWJiZ3J0Nl9zMEE"},
+  voetbalBelgieUnknownstrikerfromWesterlo: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMie0FVX3lxTE1FYW5GNzNWby1JZmVLb0M4T0UwZEpSWEFGNl9BSWwyVUEzbjJhU0RQZlI5UllhSE9qMWRRVnFhdVZoWWotTVZFZ1RUdEoyNkNVNkYxeEVyeS1weVZaSDNUSXVKR09rclVqZkE1TFIyb2tubW1sdFFGZ1MwOA"}};
 
 const LINKMAP = {
   "Jelle Van Neck": ["getBelgianDutchFootballNewsJelleVanNeck"],
@@ -78,9 +82,10 @@ const LINKMAP = {
   "Aurélie Reynders": ["sporzabeAurlieReynders", "robtvbeAurlieReynders"],
   "Nyakossi": ["voetbalPrimeurbeNyakossi"],
   "Unknown Player": ["voetbalkrantcomUnknownPlayer"],
-  "Unknown ex-Bayern talent": ["voetbalkrantcomUnknownexBayerntalent"],
+  "Unknown ex-Bayern talent": ["voetbalkrantcomUnknownexBayerntalent", "voetbalkrantcomUnknownexBayernplayer"],
   "Unknown ex-Bayern player": ["voetbalkrantcomUnknownexBayernplayer"],
-  "Sory Kaba": ["voetbalPrimeurbeSoryKaba"]};
+  "Sory Kaba": ["voetbalPrimeurbeSoryKaba"],
+  "Unknown striker from Westerlo": ["voetbalBelgieUnknownstrikerfromWesterlo"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -30,11 +30,21 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [];
+const CONFIRMED_IN = [
+  {name:"Richie Smallwood", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer"},
+  {name:"Kofi Balmer", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer"},
+  {name:"Tommy Leigh", sub:"", club:"", pos:"", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan deal"},
+  {name:"Tom James", sub:"", club:"", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed"}
+];
 const CONFIRMED_OUT = [];
-const INCOMING = [];
+const INCOMING = [
+  {name:"Richie Smallwood", sub:"", club:"", pos:"", report:"Permanent transfer secured", src:"bristolrovers.co.uk", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Kofi Balmer", sub:"", club:"", pos:"", report:"Permanent transfer completed", src:"bristolrovers.co.uk", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Tommy Leigh", sub:"", club:"", pos:"", report:"Loan deal secured", src:"bristolrovers.co.uk", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Tom James", sub:"", club:"", pos:"", report:"Transfer completed", src:"bristolrovers.co.uk", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
+];
 const OUTGOING = [
-  {name:"Shaq Forde", sub:"Unknown · Unknown · Unknown", club:"Bristol Rovers", pos:"Unknown", report:"Bid rejected; transfer-listed", src:"Bristol Live", tier:2, fee:"Unknown", truth:85, prob:50, light:"y", trend:"down", note:"Transfer-listed with rejected bid; seeking departure", lastSeen:"2026-08-07T23:07:30Z", baseProb:50}
+  {name:"Shaq Forde", sub:"Unknown · Unknown · Unknown", club:"Bristol Rovers", pos:"Unknown", report:"Bid rejected; transfer-listed", src:"Bristol Live", tier:2, fee:"Unknown", truth:85, prob:50, light:"y", trend:"down", note:"Transfer-listed with rejected bid; seeking departure", lastSeen:"2026-08-07T23:07:30Z", baseProb:50, dead:true, deadReason:"Bid rejected and transfer-listed; no recent concrete exit reported"}
 ];
 const RISERS = [];
 const FALLERS = [];

@@ -33,7 +33,8 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Ethon Archer", sub:"Loan", club:"Luton Town", pos:"Unknown", fee:"Loan", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Loan arrival from Luton Town"},
   {name:"Deon Woodman", sub:"Unknown", club:"Wealdstone", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Wealdstone"},
-  {name:"Victor Adeboyejo", sub:"striker", club:"Free", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on free transfer"}
+  {name:"Victor Adeboyejo", sub:"striker", club:"Free", pos:"ST", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed on free transfer"},
+  {name:"Deji Elerewe", sub:"Defender", club:"Lincoln City", pos:"Defender", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Signed from Lincoln City"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [

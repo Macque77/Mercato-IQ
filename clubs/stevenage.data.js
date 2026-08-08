@@ -41,7 +41,8 @@ const CONFIRMED_OUT = [
 const INCOMING = [
   {name:"Olly Sanderson", sub:"Unknown · Unknown · Forward", club:"Fulham", pos:"Forward", report:"Fulham striker signs for Stevenage", src:"BBC", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
   {name:"Jack Taylor", sub:"Unknown · Unknown · Unknown", club:"Sutton United", pos:"Unknown", report:"Jack Taylor completes Stevenage move", src:"Sutton United FC", tier:3, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Terry Taylor", sub:"Unknown · Unknown · Midfielder", club:"Charlton Athletic", pos:"Midfielder", report:"Ex-Charlton midfielder Terry Taylor signs for Stevenage on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Terry Taylor", sub:"Unknown · Unknown · Midfielder", club:"Charlton Athletic", pos:"Midfielder", report:"Ex-Charlton midfielder Terry Taylor signs for Stevenage on free transfer", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Terence Vancooten", sub:"Defender · Burton Albion", club:"Burton Albion", pos:"D", report:"Stevenage re-sign defender from Burton Albion", src:"BBC", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Re-signing", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Harvey White", sub:"MF", club:"Plymouth Argyle", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:45, prob:35, light:'y', trend:'flat', note:"Plymouth reportedly backed to complete a deal for the midfielder.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"Rumour from ~1 week ago; no recent confirmation of deal. Snippets reference interest but not completion."},
@@ -61,15 +62,21 @@ const HUB = {
   bBCOllySanderson: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE5FMUxteEVxZ3VvNnBpRVJrWGNqY0xwYTEyTDJRNUt6Qy0tZURQY1Nrc2EtN2lkM1JkYkk5MGlObFhVRERuc3R6SUUwVWtoNWVvczRVSFZXMERWdHR5cVFtNFdMcnU4dFIyVmc?oc=5"},
   suttonUnitedFCJackTaylor: {l:"Sutton United FC", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxNdXZrel9JZFhQS2MwVmpEanRaZ2ZlRVJwclFCcWlDVUpVWEhmVFgzdEZmcXBuaFFTWG5EdmVjS0prNW5ScUF4MXJQX1ZQaEJaNFR4Z3B0N3ZWYVp1bktJZ3dYbU5obi1LZkZfQ2o4c2Y4Ym8zWFBqRUtxZEhCRUxPRA?oc=5"},
   bBCTerryTaylor: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xTHVKaEpZS19xSEctWFgzOEVhTDRSZGxzejV5U1RsZ3BhNEx5aEdtdEtXaXZKQ2x6MmVrSnZNWUR5N2FyTTdNOXBHcTVlWEJSdndtY1hFRVdrcmlqUWR5Q2FMQnpSZWc?oc=5"},
-  bBCTyreeceSimpson: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5RWVhVQUlJMDAxcDRNS29nanlKLWotcFhreDNMS2hJNGE0LXktcjluVUs2TlNNOGhpXy1ncUMwQjROV3R5LTMzblB6emplQXRXd2hac3hod2hzVVRDLWVxUXdaUWVibFE?oc=5"}};
+  bBCTyreeceSimpson: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5RWVhVQUlJMDAxcDRNS29nanlKLWotcFhreDNMS2hJNGE0LXktcjluVUs2TlNNOGhpXy1ncUMwQjROV3R5LTMzblB6emplQXRXd2hac3hod2hzVVRDLWVxUXdaUWVibFE?oc=5"},
+  bBCTerenceVancooten: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBUWEhfeENhRXQ5UlA4Qm56Z0tpb0Z6RlFFR0Qwamx6RmE2YTF4Uk82TjlfeF9nNG9FalJNM21Kbm5KU3d6T1laVlBwNkpUdnBqM2owT1hDZ0JESEtnWlNVNzFJV2I4c28"},
+  bBCOllySanderson1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE5FMUxteEVxZ3VvNnBpRVJrWGNqY0xwYTEyTDJRNUt6Qy0tZURQY1Nrc2EtN2lkM1JkYkk5MGlObFhVRERuc3R6SUUwVWtoNWVvczRVSFZXMERWdHR5cVFtNFdMcnU4dFIyVmc"},
+  suttonUnitedJackTaylor: {l:"Sutton United", u:"https://news.google.com/rss/articles/CBMigAFBVV95cUxNdXZrel9JZFhQS2MwVmpEanRaZ2ZlRVJwclFCcWlDVUpVWEhmVFgzdEZmcXBuaFFTWG5EdmVjS0prNW5ScUF4MXJQX1ZQaEJaNFR4Z3B0N3ZWYVp1bktJZ3dYbU5obi1LZkZfQ2o4c2Y4Ym8zWFBqRUtxZEhCRUxPRA"},
+  bBCTerryTaylor1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xTHVKaEpZS19xSEctWFgzOEVhTDRSZGxzejV5U1RsZ3BhNEx5aEdtdEtXaXZKQ2x6MmVrSnZNWUR5N2FyTTdNOXBHcTVlWEJSdndtY1hFRVdrcmlqUWR5Q2FMQnpSZWc"},
+  bBCTyreeceSimpson1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5RWVhVQUlJMDAxcDRNS29nanlKLWotcFhreDNMS2hJNGE0LXktcjluVUs2TlNNOGhpXy1ncUMwQjROV3R5LTMzblB6emplQXRXd2hac3hod2hzVVRDLWVxUXdaUWVibFE"}};
 
 const LINKMAP = {
   "Harvey White": ["gnews-harveywhite"],
   "Dan Phillips": ["gnews-danphillips"],
-  "Olly Sanderson": ["bBCOllySanderson"],
-  "Jack Taylor": ["suttonUnitedFCJackTaylor"],
-  "Terry Taylor": ["bBCTerryTaylor"],
-  "Tyreece Simpson": ["bBCTyreeceSimpson"]};
+  "Olly Sanderson": ["bBCOllySanderson", "bBCOllySanderson1"],
+  "Jack Taylor": ["suttonUnitedFCJackTaylor", "suttonUnitedJackTaylor"],
+  "Terry Taylor": ["bBCTerryTaylor", "bBCTerryTaylor1"],
+  "Tyreece Simpson": ["bBCTyreeceSimpson", "bBCTyreeceSimpson1"],
+  "Terence Vancooten": ["bBCTerenceVancooten"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

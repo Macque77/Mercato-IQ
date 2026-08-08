@@ -80,13 +80,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bruno Guimarães", sub:"27 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle have agreed fee; player awaiting medical", src:"David Ornstein", tier:1, fee:"£75m", truth:95, prob:90, light:"g", trend:"down", note:"Near total agreement reached; Ornstein confirms deal progressing to medical stage", lastSeen:"2026-08-08T04:21:31Z", baseProb:90},
-  {name:"Vinícius Júnior", sub:"24 · Brazil · W", club:"Real Madrid", pos:"W", report:"Arsenal exploring improved offer; Ornstein rates chances of signing", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:60, prob:25, light:"o", trend:"down", note:"Arsenal actively exploring options; Ornstein indicates 'agreement' expected but low probability given Real Madrid's reluctance to sell", lastSeen:"2026-08-08T04:21:31Z", baseProb:25}
+  {name:"Bruno Guimarães", sub:"28 · Brazil · CM", club:"Newcastle United", pos:"CM", report:"Arsenal and Newcastle have agreed fee (£75m); player awaiting medical", src:"David Ornstein", tier:1, fee:"£75m", truth:95, prob:95, light:"g", trend:"up", note:"Near total agreement, player waiting for medical", lastSeen:"2026-08-08T07:40:32Z", baseProb:95},
+  {name:"Vinícius Júnior", sub:"24 · Brazil · LW", club:"Real Madrid", pos:"LW", report:"Arsenal exploring improved offer; Ornstein rates chances as active", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:45, prob:35, light:"y", trend:"up", note:"Arsenal working on move with improved offer details emerging", lastSeen:"2026-08-08T07:40:32Z", baseProb:35}
 ];
 
 const OUTGOING = [
   {name:"Mathias Norgaard", sub:"Midfielder", club:"Arsenal", pos:"MID", report:"BBC Sport and Sky Sports confirm Norgaard completed move to Everton", src:"BBC Sport Football / Sky Sports Football", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-06T14:33:42Z", baseProb:100, dead:true, deadReason:"Name mismatch correction — player is Christian Norgaard, not Mathias"},
-  {name:"Christian Norgaard", sub:"29 · Denmark · CM", club:"Everton", pos:"CM", report:"Everton reach agreement in principle; £7m transfer", src:"David Ornstein", tier:1, fee:"£7m", truth:90, prob:85, light:"g", trend:"down", note:"Agreement in principle reached with Everton", lastSeen:"2026-08-08T04:21:31Z", baseProb:85}
+  {name:"Christian Norgaard", sub:"32 · Denmark · CM", club:"Everton", pos:"CM", report:"Everton reach agreement in principle; £7m transfer", src:"David Ornstein", tier:1, fee:"£7m", truth:90, prob:85, light:"g", trend:"flat", note:"Agreement in principle reached", lastSeen:"2026-08-08T07:40:32Z", baseProb:85}
 ];
 const DEAD = [
   {name:"Hugo Ekitike", sub:"22 · France · Forward", club:"PSG", pos:"Forward", report:"Arsenal linked with signing", src:"On-page rumour", tier:3, fee:"Undisclosed", truth:40, prob:35, light:"y", trend:"flat", note:"Rumour from ~2 weeks ago, limited recent confirmation", lastSeen:"2026-08-06T13:55:46Z", baseProb:35, dead:true, deadReason:"No credible updates in recent snippets; link appears stale", dir:"in", deadAt:"2026-08-06T14:04:24Z"},

@@ -38,14 +38,12 @@ const CONFIRMED_OUT = [
   {name:"Dom Ballard", sub:"Striker · Bristol City", club:"Bristol City", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined Bristol City from Leyton Orient"}
 ];
 const INCOMING = [
-  {name:"Alfie Gilchrist", sub:"21 · England · D", club:"Chelsea", pos:"D", report:"Alfie Gilchrist joins Leyton Orient", src:"Unknown", tier:3, fee:"Loan", truth:95, prob:95, light:"g", trend:"up", note:"Recent arrival", lastSeen:"2026-08-08T04:21:32Z", baseProb:95},
-  {name:"Owen Dale", sub:"23 · England · M", club:"Crewe Alexandra", pos:"M", report:"Owen Dale joins Leyton Orient", src:"Unknown", tier:3, fee:"Undisclosed", truth:95, prob:95, light:"g", trend:"up", note:"Recent arrival", lastSeen:"2026-08-08T04:21:32Z", baseProb:95},
-  {name:"Joseph Olowu", sub:"27 · England · D", club:"Stockport County", pos:"D", report:"Leyton Orient sign centre-back from Stockport County", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T04:21:32Z", baseProb:100},
-  {name:"Tony Springett", sub:"20 · England · D", club:"Norwich City", pos:"D", report:"Tony Springett joins Leyton Orient after leaving Norwich City", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T04:21:32Z", baseProb:100},
-  {name:"Jaze Kabia", sub:"23 · Ireland · F", club:"Cork City", pos:"F", report:"Leyton Orient sign Jaze Kabia in club-record deal", src:"BBC", tier:2, fee:"Club-record", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T04:21:32Z", baseProb:100}
+  {name:"Joseph Olowu", sub:"centre-back · position confirmed", club:"Stockport County", pos:"CB", report:"Leyton Orient sign centre-back from Stockport County", src:"BBC", tier:2, fee:"undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Tony Springett", sub:"goalkeeper · Norwich City departure", club:"Norwich City", pos:"GK", report:"Tony Springett joins Leyton Orient after leaving Norwich City", src:"BBC", tier:2, fee:"undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Jaze Kabia", sub:"Douglas native · position unknown", club:"Cork City", pos:"unknown", report:"Leyton Orient sign Jaze Kabia in club-record deal", src:"BBC, RTE.ie, Echo Live", tier:2, fee:"Club record (undisclosed)", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed club-record signing", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Dom Ballard", sub:"24 · England · F", club:"Bristol City", pos:"F", report:"Bristol City closing in on Dom Ballard signing with Leyton Orient striker at Robins HPC", src:"Bristol Live", tier:2, fee:"£5m+", truth:85, prob:80, light:"g", trend:"flat", note:"Advanced talks, medical underway", lastSeen:"2026-08-08T04:21:32Z", baseProb:80}
+  {name:"Dom Ballard", sub:"striker · Leyton Orient departure", club:"Bristol City", pos:"ST", report:"Bristol City closing in on Dom Ballard signing with Leyton Orient striker at Robins HPC", src:"Bristol Live", tier:2, fee:"undisclosed", truth:90, prob:85, light:"g", trend:"up", note:"Advanced talks; player at medical", lastSeen:"2026-08-08T07:40:33Z", baseProb:85}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -68,13 +66,14 @@ const HUB = {
   bBCTariqAlSadi2: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1keGFKa2tpSFlQU1FXT3lfRENDUG9SQVU3U1FwVDBNVDI2eTViZDlIUGlkeTNweUpwbjVsNm41LWJ2YU9mMS14RGxIQmZJLUVRMFZFZjg0cUdSa0U3TzZJMExsTU04V3ZBZnc"},
   bBCJosephOlowu1: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IYncxWW81SUpON0NLdXRoMDBDUU80M05ybElBRlJUd01yZkhacDdRSExfaDlBMTNOY041Z243bjBrdDZ1SXRFSkRIa3R4bmZBU1hIUXpHczlqSEpyS0szMlY0TDFWTkE"},
   rTEJazeKabia: {l:"RTE", u:"https://news.google.com/rss/articles/CBMiogFBVV95cUxPT1RPYzh0dHowdk5TVUNIWmdqdmRzQzRyY1U0VWQ4S3VvOXpnbFh0VV9RQjFjOGRtbTEzUFdmMi1iTnhuZUc0bVg2VUlkaXlGQjF4TlIxWndUNzBkTWdGaDBRMkFmSFBUbnRFMkJSMWhEbGh0V01KX2lJV0hBRVZlRGppNE5ZdElaZWFtbVktRmU0Q19SRkhWWWJNX1RfUF9fVXc"},
-  bBCTariqAlSadi3: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1keGFKa2tpSFlQU1FXT3lfRENDUG9SQUU3U1FwVDBNVDI2eTViZDlIUGlkeTNweUpwbjVsNm41LWJ2YU9mMS14RGxIQmZJLUVRMFZFZjg0cUdSa0U3TzZJMExsTU04V3ZBZnc"}};
+  bBCTariqAlSadi3: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiakFVX3lxTE1keGFKa2tpSFlQU1FXT3lfRENDUG9SQUU3U1FwVDBNVDI2eTViZDlIUGlkeTNweUpwbjVsNm41LWJ2YU9mMS14RGxIQmZJLUVRMFZFZjg0cUdSa0U3TzZJMExsTU04V3ZBZnc"},
+  bBCJosephOlowu2: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9IYncxWW81SUpON0NLdXRoMDBDUU80M05ybElBRlJUd01yZkhacDdRSExfaDlBMTNOY081Z243bjBrdDZ1SXRFSkRIa3R4bmZBU1hIUXpHczlqSEpyS0szMlY0TDFWTkE"}};
 
 const LINKMAP = {
   "Alfie Gilchrist": ["gnews-alfiegilchrist"],
   "Owen Dale": ["gnews-owendale"],
   "Dom Ballard": ["flw", "bBCDomBallard", "bristolLiveDomBallard"],
-  "Joseph Olowu": ["bBCJosephOlowu", "bBCJosephOlowu1"],
+  "Joseph Olowu": ["bBCJosephOlowu", "bBCJosephOlowu1", "bBCJosephOlowu2"],
   "Tony Springett": ["bBCTonySpringett"],
   "Tariq Al Sadi": ["bBCTariqAlSadi", "bBCTariqAlSadi1", "bBCTariqAlSadi2", "bBCTariqAlSadi3"],
   "Jaze Kabia": ["irishExaminerJazeKabia", "rTEJazeKabia"]};

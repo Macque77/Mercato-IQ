@@ -45,9 +45,12 @@ const INCOMING = [
   {name:"Simon Adingra", sub:"24 · LW · Ivory Coast", club:"Sunderland", pos:"LW", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:1, fee:"Loan (poss. obligation to buy)", truth:60, prob:42, light:"y", trend:"up", note:"West Ham opened loan talks as a direct replacement following Summerville's sale; Sunderland value the winger at around £30m and are yet to agree terms.", lastSeen:"2026-08-04T19:10:50Z", baseProb:42},
   {name:"Wilson Isidor", sub:"25 · ST · Haiti", club:"Sunderland", pos:"ST", report:"3 Aug 2026", src:"Keith Downie / Sky Sports", tier:2, fee:"~£20m loan-to-buy approach reported", truth:48, prob:22, light:"o", trend:"flat", note:"Downie reports Sunderland will not entertain offers, calling Isidor integral to their Europa League squad - directly contradicted same-day by reports of a fresh West Ham loan-to-buy approach, a genuinely live and unresolved situation.", lastSeen:"2026-08-04T19:10:50Z", baseProb:22},
   {name:"Troy Parrott", sub:"24 · ST · Republic of Ireland", club:"AZ Alkmaar", pos:"ST", report:"3 Aug 2026", src:"Alan Nixon (The72)", tier:2, fee:"Undisclosed", truth:42, prob:20, light:"o", trend:"flat", note:"West Ham have joined a crowded field (also including Fulham, Ajax, Como, Real Betis, PSV) as competition for striker Taty Castellanos.", lastSeen:"2026-08-04T19:10:50Z", baseProb:20},
-  {name:"Joel Veltman", sub:"34 · Netherlands · D", club:"Brighton", pos:"Defender", report:"West Ham sign former Brighton defender Joel Veltman as free transfer", src:"The New York Times", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Free transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Joel Veltman", sub:"34 · Netherlands · D", club:"Brighton", pos:"Defender", report:"West Ham sign former Brighton defender Joel Veltman as free transfer", src:"The New York Times", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Free transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Arne Engels", sub:"unknown · Belgium · Midfielder", club:"Celtic", pos:"Midfielder", report:"West Ham address interest in Arne Engels as Celtic deliver clear stance on potential transfer", src:"GlasgowWorld", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"flat", note:"Celtic have made clear their position; talks ongoing", lastSeen:"2026-08-08T07:40:33Z", baseProb:40}
 ];
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Mateus Fernandes", sub:"unknown · unknown · Midfielder", club:"West Ham", pos:"Midfielder", report:"West Ham intend to demand £80 million for Mateus Fernandes", src:"The Athletic", tier:2, fee:"£80m", truth:75, prob:55, light:"g", trend:"flat", note:"West Ham's asking price set; interest from other clubs expected", lastSeen:"2026-08-08T07:40:33Z", baseProb:55}
+];
 const RISERS = [
   {ar:"⬆", t:"<b>Simon Adingra emerges as Summerville's replacement</b>: West Ham have opened loan talks with Sunderland."}
 ];
@@ -71,16 +74,19 @@ const HUB = {
   the72Parrott: {l:"The72 · Parrott", u:"https://the72.co.uk/2026/08/03/west-ham-target-az-alkmaar-striker-troy-parrott/"},
   voetbalInternationalJoelVeltman: {l:"Voetbal International", u:"https://www.vi.nl/"},
   voetbalInternationaalJoelVeltman: {l:"Voetbal Internationaal", u:"https://www.vi.nl/nieuws/transfervrije-veltman-tekent-bij-west-ham-united"},
-  theNewYorkTimesJoelVeltman: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV"}};
+  theNewYorkTimesJoelVeltman: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV"},
+  glasgowWorldArneEngels: {l:"GlasgowWorld", u:"https://news.google.com/rss/articles/CBMizgFBVV95cUxQeHZabnk4MlAyTDNQMFlIU2YzX2ZnSkdPNlU3TmtKQkhCWjBJOHhCaEc3dE5oQUhyR3JBRnNQZG5pVmJKQkxDeHVhOVp6THByNm9TX2VYanBfTlRiRi0xMFU5V1NTODlQR0VTeG1DdWZKXzk2eGozSXh5MzNreXhoWEJ6Y3V5ZmJLZ0J5X3NDQW0xdURhaGVuY29KN1h4QXVaQW4xRVRxZ3pJbnc2ZmgwSzdwdHRxSEEzYnYtaTZ5VVY2cHMzYVYxX2dPVXZQQQ"},
+  theAthleticLaurieWhitwellMateusFernandes: {l:"The Athletic (Laurie Whitwell)", u:"https://news.google.com/rss/articles/CBMimgFBVV95cUxNNXlxMG5YSjVnMy1YTFNRV2dJNV83X0d6R0haVkdSaUNfaVZEMVg5TllrV040UXE3MXpBa3Vxdy1UMnZlN1l2UXRHemt0UFdUMEkzcFh5UktHaGpLLWJmRnA2ZE5ieEhBcW9tNWlwekp4dG9XNWZKYWZITjE2T0tPWU8zM0FJSWJINkhVWHd4WHFrOU9Ucm8xVUJn"}};
 
 const LINKMAP = {
-  "Mateus Fernandes": ["gnews-mateusfernandes"],
+  "Mateus Fernandes": ["gnews-mateusfernandes", "theAthleticLaurieWhitwellMateusFernandes"],
   "Freddie Potts": ["gnews-freddiepotts"],
   "Crysencio Summerville": ["skySummerville"],
   "Simon Adingra": ["readwesthamAdingra"],
   "Wilson Isidor": ["the72Isidor"],
   "Troy Parrott": ["the72Parrott"],
-  "Joel Veltman": ["voetbalInternationalJoelVeltman", "voetbalInternationaalJoelVeltman", "theNewYorkTimesJoelVeltman"]};
+  "Joel Veltman": ["voetbalInternationalJoelVeltman", "voetbalInternationaalJoelVeltman", "theNewYorkTimesJoelVeltman"],
+  "Arne Engels": ["glasgowWorldArneEngels"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

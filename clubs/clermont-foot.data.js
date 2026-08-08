@@ -33,7 +33,7 @@ const REPORT_META = {
 const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Jean Grillot", sub:"Unknown · France · Unknown", club:"Girondins de Bordeaux", pos:"Unknown", report:"Former Bordeaux player joining Clermont Foot", src:"WebGirondins / La Montagne", tier:3, fee:"Unknown", truth:85, prob:90, light:"g", trend:"flat", note:"Multiple sources confirm Jean Grillot has left Bordeaux and joined Clermont Foot. Deal appears official.", lastSeen:"2026-08-07T01:42:32Z", baseProb:90}
+  {name:"Jean Grillot", sub:"Unknown · Unknown · Unknown", club:"Bordeaux", pos:"Unknown", report:"Jean Grillot officially joins Clermont Foot from Bordeaux", src:"WebGirondins", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"up", note:"Official announcement confirmed from Bordeaux departure", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -45,10 +45,13 @@ const WATCHLIST = [];
 
 const HUB = {
   club: {l:"Clermont-Foot Official", u:"#"},
-  webGirondinsJeanGrillot: {l:"WebGirondins", u:"https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSm5MbEo4YjRnUDVzdlUxUU1Pc3Jhb0J2ZkN0NlcyNVEwWGlCaVZjMzFXaV9udldQMk84Y3BSQmVWTTd5dzUwclo4UUJ6aUVEb0hkVERlV3k1enlfdUE2eEZsa3g1V2Y0d0lLRlM5S00wcUdTeWFua2xvaU1yQ2NTckdKcTBBUGdtd2hQUmY1VmxZNGJWS1lqYndrYjlETEdvYS1wRVlBZFZRdmhCa3FpTzFKMjRJRFpmUjA1Y0k1VjBoN3ZQUHRuc01FVndBZTJxQlE"}};
+  webGirondinsJeanGrillot: {l:"WebGirondins", u:"https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSm5MbEo4YjRnUDVzdlUxUU1Pc3Jhb0J2ZkN0NlcyNVEwWGlCaVZjMzFXaV9udldQMk84Y3BSQmVWTTd5dzUwclo4UUJ6aUVEb0hkVERlV3k1enlfdUE2eEZsa3g1V2Y0d0lLRlM5S00wcUdTeWFua2xvaU1yQ2NTckdKcTBBUGdtd2hQUmY1VmxZNGJWS1lqYndrYjlETEdvYS1wRVlBZFZRdmhCa3FpTzFKMjRJRFpmUjA1Y0k1VjBoN3ZQUHRuc01FVndBZTJxQlE"},
+  madeInFOOTJuniorSambia: {l:"MadeInFOOT", u:"https://news.google.com/rss/articles/CBMi7gFBVV95cUxPZWo0TDJBUExZeWs5WlhyVHBHNGZPTkFaRFNBWkRJZTRFOGE1RzlZNnA2R0x5cHpybklzN2VlaG5SR2tMNEpBMXJ3dUYwbUozNDZfbW9PVzJGa3lvS3diOWpYai1FQmNObUJtYzh1MEJqRXlPZTZBRTBoQUZRMGhpV0xQQVBFaVhUWUsxQzl0OHhDVnhCTU5wajc0OVlkeWxzbk52YTRoVVdSS2UyZGlHRU8zSk9CREl1cEQ1ekZEakhqbUFXOEgwUXAtT29jLTUwUkZDWk1jUmNrLWJHTEM5YkNBY09vWHZIR2ZRc0xn"},
+  webGirondinsJeanGrillot1: {l:"WebGirondins", u:"https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSm5MbEo4YjRnUDVzdlUxUU1Pc3Jhb0J2ZkN0NlcyNVEwWGlCaVZjMzFXaV9udldQMk84Y3BSQmVWZTd5dzUwclo4UUJ6aUVEb0hkVERlV3k1enlfdUE2eEZsa3g1V2Y0d0lLRlM5S00wcUdTeWFua2xvaU1yQ2NTckdKcTBBUGdtd2hQUmY1VmxZNGJWS1lqYndrYjlETEdvYS1wRVlBZFZRdmhCa3FpTzFKMjRJRFpmUjA1Y0k1VjBoN3ZQUHRuc01FVndBZTJxQlE"}};
 
 const LINKMAP = {
-  "Jean Grillot": ["webGirondinsJeanGrillot"]};
+  "Jean Grillot": ["webGirondinsJeanGrillot", "webGirondinsJeanGrillot1"],
+  "Junior Sambia": ["madeInFOOTJuniorSambia"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

@@ -40,8 +40,8 @@ const INCOMING = [
   {name:"Ryan Nyambe", sub:"position · nation · age unknown", club:"Derby County", pos:"Unknown", report:"Loan move to Reading", src:"Derby County", tier:3, fee:"Loan", truth:85, prob:90, light:"g", trend:"flat", note:"Loan transfer from Derby County", lastSeen:"2026-08-07T01:42:32Z", baseProb:90}
 ];
 const OUTGOING = [
-  {name:"Andy Rinomhota", sub:"MF", club:"Sheffield Wednesday", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Interest described as a sensible fit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40},
-  {name:"Charlie Savage", sub:"MF", club:"Cardiff City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Cardiff reportedly ahead of Sheffield Wednesday in the race.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40}
+  {name:"Andy Rinomhota", sub:"MF", club:"Sheffield Wednesday", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:50, prob:40, light:'y', trend:'flat', note:"Interest described as a sensible fit.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"},
+  {name:"Charlie Savage", sub:"MF", club:"Cardiff City", pos:"MF", report:"~1 wk ago", src:"Various", tier:3, fee:"Undisclosed", truth:55, prob:40, light:'y', trend:'flat', note:"Cardiff reportedly ahead of Sheffield Wednesday in the race.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"no longer a current link"}
 ];
 const RISERS = [];
 const FALLERS = [];

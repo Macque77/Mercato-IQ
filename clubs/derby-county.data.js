@@ -39,9 +39,9 @@ const CONFIRMED_OUT = [
   {name:"Liam Thompson", sub:"", club:"Mansfield Town", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer to Mansfield Town confirmed"}
 ];
 const INCOMING = [
-  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"Incoming transfer", src:"Pete O'Rourke", tier:3, fee:"Loan", truth:50, prob:50, light:"y", trend:"flat", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T04:21:32Z", baseProb:50},
-  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"Incoming transfer", src:"Football League World", tier:3, fee:"Loan", truth:50, prob:50, light:"y", trend:"up", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T04:21:32Z", baseProb:50},
-  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"Incoming transfer", src:"Sunderland Echo", tier:3, fee:"Loan", truth:50, prob:50, light:"y", trend:"up", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T04:21:32Z", baseProb:50}
+  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"Incoming transfer", src:"Pete O'Rourke", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T07:40:33Z", baseProb:50},
+  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"Incoming transfer", src:"Football League World", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T07:40:33Z", baseProb:50},
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"Incoming transfer", src:"Sunderland Echo", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T07:40:33Z", baseProb:50}
 ];
 const OUTGOING = [
   {name:"Dajaune Brown", sub:"unknown · unknown · Striker", club:"Rochdale", pos:"Striker", report:"Loan switch to Rochdale", src:"Derby County", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Brown makes loan switch to Rochdale after joining Derby", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},

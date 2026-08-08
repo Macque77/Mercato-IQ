@@ -52,7 +52,8 @@ const REPORT_META = { asof: "6 Jun 2026", updated: "2026-06-06T00:00:00Z", label
    free:true renders the fee in gold. status: 'done' (signed in), 'exit' (departure locked), 'pending'. */
 const CONFIRMED_IN = [
   {name:"Dara Jikiemi", sub:"Scotland U16 captain", club:"permanent from Celtic", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Young academy prospect signs a 5-year contract; Romano confirmed with 'Here We Go'."},
-  {name:"Ramos", sub:"", club:"", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed by Liverpool"}
+  {name:"Ramos", sub:"", club:"", pos:"MF", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Spanish midfielder signed by Liverpool"},
+  {name:"Arne Slot", sub:"45 · Netherlands · Manager", club:"Feyenoord", pos:"Manager", fee:"", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed as Liverpool manager with four staff members agreed"}
 ];
 const CONFIRMED_OUT = [
   {name:"Andy Robertson", sub:"32 · LB · Scotland", club:"Tottenham Hotspur", pos:"LB", fee:"Free", free:true, status:"done", statusTxt:"DONE, OFFICIAL", note:"Departed on a free transfer at contract expiry, joining Tottenham to give De Zerbi cover and leadership at left-back."},
@@ -60,13 +61,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Bradley Barcola", sub:"23 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Ornstein reveals Barcola stance on joining Liverpool in stunning £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:45, light:"y", trend:"down", note:"Ornstein confirms deal structure; player's personal stance reported", lastSeen:"2026-08-08T04:21:32Z", baseProb:45},
-  {name:"Raul Asencio", sub:"21 · Spain · CB", club:"Real Madrid", pos:"Centre-Back", report:"Intermediaries sounded Liverpool out on Asencio", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"up", note:"Early contact stage; exploring possibility", lastSeen:"2026-08-08T04:21:32Z", baseProb:35},
-  {name:"Yan Diomande", sub:"24 · Ivory Coast · CB", club:"RB Leipzig", pos:"Centre-Back", report:"Ornstein drops huge Diomande to Liverpool update after Leipzig star declares 'love' for PSG; crushing blow confirmed", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Player has expressed preference for PSG; Liverpool facing strong competition and player's stance reportedly unfavourable", lastSeen:"2026-08-08T04:21:32Z", baseProb:20, dead:true, deadReason:"Ornstein confirms player has declared love for PSG and Liverpool face a 'crushing blow'; deal highly unlikely"}
+  {name:"Bradley Barcola", sub:"22 · France · W", club:"Paris Saint-Germain", pos:"Winger", report:"Ornstein reveals Barcola stance on joining Liverpool in stunning £116m deal", src:"David Ornstein", tier:1, fee:"£116m", truth:75, prob:45, light:"y", trend:"flat", note:"Ornstein reports on player's stance regarding move", lastSeen:"2026-08-08T07:40:33Z", baseProb:45},
+  {name:"Raul Asencio", sub:"21 · Spain · CB", club:"Real Madrid", pos:"Centre-Back", report:"Intermediaries sounded Liverpool out on Asencio", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:65, prob:35, light:"y", trend:"up", note:"Early contact stage; exploring possibility", lastSeen:"2026-08-08T04:21:32Z", baseProb:35, dead:true, deadReason:"No fresh update in snippets; stale rumour from intermediaries sounding out Liverpool"},
+  {name:"Yan Diomande", sub:"24 · Ivory Coast · CB", club:"RB Leipzig", pos:"Centre-Back", report:"Ornstein drops huge Diomande to Liverpool update after Leipzig star declares 'love' for PSG; crushing blow confirmed", src:"David Ornstein", tier:1, fee:"Undisclosed", truth:40, prob:20, light:"o", trend:"flat", note:"Player has expressed preference for PSG; Liverpool facing strong competition and player's stance reportedly unfavourable", lastSeen:"2026-08-08T04:21:32Z", baseProb:20, dead:true, deadReason:"Ornstein confirms player has declared love for PSG and Liverpool face a 'crushing blow'; deal highly unlikely"},
+  {name:"Rio Ngumoha", sub:"16 · England · W", club:"Liverpool", pos:"Winger", report:"Rio Ngumoha wanted by Bayern Munich – Liverpool dismiss sale", src:"David Ornstein", tier:1, fee:"", truth:85, prob:5, light:"r", trend:"flat", note:"Liverpool dismiss Bayern interest; player staying", lastSeen:"2026-08-08T07:40:33Z", baseProb:5}
 ];
 
 const OUTGOING = [
-  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions move", src:"BBC Sport", tier:2, fee:"Undisclosed", truth:50, prob:30, light:"y", trend:"down", note:"Tottenham interest reported; player's future uncertain", lastSeen:"2026-08-08T04:21:32Z", baseProb:30}
+  {name:"Cody Gakpo", sub:"25 · Netherlands · W", club:"Liverpool", pos:"Winger", report:"Tottenham made Gakpo a target; BBC Sport questions", src:"BBC Sport / various", tier:2, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"down", note:"Tottenham interest reported but player commitment to Liverpool unclear", lastSeen:"2026-08-08T07:40:33Z", baseProb:25}
 ];
 const DEAD = [
   {name:"Fringe & loan army", sub:"Squad trim", club:"Various", pos:"MIX", report:"~2 wks ago", src:"Aggregated", tier:3, fee:"Mixed", truth:55, prob:45, light:'y', trend:'flat',
@@ -139,7 +141,9 @@ const HUB = {
   bBCSportCodyGakpo: {l:"BBC Sport", u:"https://www.bbc.co.uk"},
   davidOrnsteinTheEmpireofTheKopLiverpooltarget: {l:"David Ornstein / The Empire of The Kop", u:"https://news.google.com/rss/articles/CBMixAFBVV95cUxOSUtmOE9IWEJqV2VCTURCWkhlak0xUWNUbjBnQ3pSalB2SU9lNGZhWER2SmFuYWtVaE5oTnFXOFE4WTVRYU5uN3pZU096bGV0ZkhWZ2ZlSEU0OTR2MlNKWWFISE9hNWk0Unl3NkRHT2tGSWtlb3pFZUhHcFBPbmZweUx4QW8tRVlpN0d2VnRpeGtUanpuMXZjRmJGb3YxSEh1RER3Sy1mLWhiYnZwOTh4VldhbEZPOXR3aVN6a1Nnelo2d3BU0gHKAUFVX3lxTFB4LXZVZzBmWVhpRGg5VktWeEVoNFlJaW1nZ0JWalZ0MFg3TGZGSEpnQV90UjdDVEYwRVlwVW15R2RySFpLR1h6T21iSzVGeGswYzUtdEdWcldDY1h5eW40Wk5pT0x1Vy1DNWRTVG02aVRoc01NNkNRcDd6Yi1XaS1SR1lpRUVtMFh3SlZPdW5yTG9LeEczZjc1cFlpZzVyTmRnUkpISHBKWjN2YUJYVnI2QzZrY1EzNy05Wm1wdnF3NkRBdkdYUWVqQVE"},
   football365DavidOrnsteinBradleyBarcola: {l:"Football365 / David Ornstein", u:"https://news.google.com/rss/articles/CBMinAFBVV95cUxQSmpVTUZwbHNCY2Rzcmo1d19lMVp0MFdQUXhGdGhiUTlVODhkZXUyV2pTWlhUbUxpSWx2Rk00TVlIWnp4R1VLN0hISmdPRTJWeVhxdW1ucGYzY09CcGpYS3FIZmRBOGR5YWtZLTdUclhMdm81a0Z3Y1dzek1XRlZ6MV85M2dwbl8xNVcyNFhlS2x0bmlIZTVMQVNiOGw?oc=5"},
-  football365DavidOrnsteinYanDiomande: {l:"Football365 / David Ornstein", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxPOHpfenNlQTltNlVmUU9fWVlKcXhhczhsUXhIVThLVW9yZ0F2MktVOTd0dnJtcDVoNEhtektVRDFaOUxSNjhjVWE1OGNiZlAxV00yM1lfNlpKV0I0bVp5NzZXbWN4UTFUY21YQTYtaHJlOWszWDlTYnVjOG5IZFlEY042VjRsZVVoVWxsb19R?oc=5"}};
+  football365DavidOrnsteinYanDiomande: {l:"Football365 / David Ornstein", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxPOHpfenNlQTltNlVmUU9fWVlKcXhhczhsUXhIVThLVW9yZ0F2MktVOTd0dnJtcDVoNEhtektVRDFaOUxSNjhjVWE1OGNiZlAxV00yM1lfNlpKV0I0bVp5NzZXbWN4UTFUY21YQTYtaHJlOWszWDlTYnVjOG5IZFlEY042VjRsZVVoVWxsb19R?oc=5"},
+  thisIsAnfieldRioNgumoha: {l:"This Is Anfield", u:"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOc29mX1NJZXpOREVrRm5tcHFibW9NNjlmaVRxSzdaTGh5QjVHbC1YU2hzS0M0c3JvV0VuR3NLdm5sbmxtNDVsM2dCNnFxZVlFRVN4TzR5MVgwUUJ3TzNHbFgtdERFVmNzanNCckEwbWFfS0FTa01BLWxUZXBuQXpTQ3FhbFlJcEVjWlRXeXI1amxya0NQaFFTRGlucDVmY25WS0lITlpHbmo"},
+  football365ArneSlot: {l:"Football365", u:"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSlFldnVybkxXX3l2MEpFMVhoUFpjM0pyMWFULW94LWNxNkdBVVgwektCSlNGV2Q0eUNwRWpGaDhHbUVvaUcyOVA2emxIamQ1NzVmbFpYNkYzWlZRVWlZalpEbjRoY2NSVXRnbmNvVHNLNFBqVmctRDFpZ20tc2hsV2ZxUE1FR0FBYTRGRnMxR0IzajRiMW9ELUFFVFEteEtBWkM3enNEV3o0VjlKdEo5MERob1kwdjkwZGMtRzBpUXpjZw"}};
 const LINKMAP = {
   "Yan Diomande": ["teamtalk", "football365DavidOrnsteinYanDiomande"],
   "Rayan": ["lcom"],
@@ -156,7 +160,9 @@ const LINKMAP = {
   "Ramos": ["bBCSportFootballRamos", "bBCSportFootballRamos1"],
   "Carlos Ramos": ["bBCSportFootballRamos"],
   "Mbaye": ["bBCSportFootballMbaye"],
-  "Liverpool target": ["davidOrnsteinTheEmpireofTheKopLiverpooltarget"]};
+  "Liverpool target": ["davidOrnsteinTheEmpireofTheKopLiverpooltarget"],
+  "Rio Ngumoha": ["thisIsAnfieldRioNgumoha"],
+  "Arne Slot": ["football365ArneSlot"]};
 const WL_LINKMAP = {
   "Andy Robertson":"sky","Rio Ngumoha":"echo","Iliman Ndiaye":"echo",
 };

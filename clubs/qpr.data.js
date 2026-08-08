@@ -31,12 +31,18 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Glen Kamara", sub:"MF · Finland", club:"Rennes", pos:"MF", fee:"Loan (option to buy)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"BBC confirmation corroborated by prior Fabrizio Romano reporting on the paperwork stage, as solid as EFL transfer news gets."}
+  {name:"Glen Kamara", sub:"MF · Finland", club:"Rennes", pos:"MF", fee:"Loan (option to buy)", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"BBC confirmation corroborated by prior Fabrizio Romano reporting on the paperwork stage, as solid as EFL transfer news gets."},
+  {name:"Justin Obikwu", sub:"", club:"Coventry City", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent deal from Coventry City"},
+  {name:"Richard Kone", sub:"", club:"Wycombe Wanderers", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Joined Queens Park Rangers"}
 ];
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Justin Obikwu", sub:"Unknown · Unknown · Unknown", club:"Coventry City", pos:"Unknown", report:"Coventry City youngster Justin Obikwu joins Queens Park Rangers in permanent deal", src:"The Coventry Observer", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Permanent deal confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
-  {name:"Richard Kone", sub:"Unknown · Unknown · Unknown", club:"Wycombe Wanderers", pos:"Unknown", report:"Richard Kone joins Queens Park Rangers", src:"Wycombe Wanderers Football Club", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100}
+  {name:"Richard Kone", sub:"Unknown · Unknown · Unknown", club:"Wycombe Wanderers", pos:"Unknown", report:"Richard Kone joins Queens Park Rangers", src:"Wycombe Wanderers Football Club", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Transfer confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:100},
+  {name:"Nicolas Madsen", sub:"", club:"", pos:"", report:"Confirmed transfer to Queens Park Rangers", src:"OneFootball", tier:3, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Isaac Hayden", sub:"", club:"", pos:"", report:"Signed by Queens Park Rangers", src:"BBC", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Rhys Norrington-Davies", sub:"", club:"", pos:"", report:"Signed by Queens Park Rangers", src:"BBC", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100},
+  {name:"Koki Saito", sub:"", club:"", pos:"", report:"Signed by Queens Park Rangers", src:"BBC", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Deal completed", lastSeen:"2026-08-08T07:40:33Z", baseProb:100}
 ];
 const OUTGOING = [];
 const RISERS = [];
@@ -51,12 +57,13 @@ const HUB = {
   oneFootballNicolasMadsen: {l:"OneFootball", u:"https://news.google.com/rss/articles/CBMiWEFVX3lxTFBrNUF2NGNTUEFSQk9iak51LUwtZU44QlVGcE53NzRNTzlOd0ExZ1NNdkI0VmtYUjIzN3JweER0LURjOU9LWUtxeGhyNVA4WHpCejBvS2psb0s?oc=5"},
   theCoventryObserverJustinObikwu: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb240a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrc3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv?oc=5"},
   bBCIsaacHayden: {l:"BBC", u:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9kSXc0NjE5M2ZkTkJBcm5IRFd6d2xWYmFUQUNpUFV2eFFxT2ZvV0wzcUhTanNHNlh2bGdDVXh3aThkaEl1UWEwdTk5TENvMXJyYlJ2TmJobDlIU05TYmdKZndrMEpySzA?oc=5"},
-  wycombeWanderersFootballClubRichardKone: {l:"Wycombe Wanderers Football Club", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxOajBzem1GZzhPOUtJZmYyQUo3c1RvaU9YcmVoWlFUSm5NYjlFNVVVTjNoaWVhckZORy1lWEVRdzVuQnluVm9KQm9JVTA0SkFFRWtVRTlMLThmMjBPcDJ1anBfYkZpMXozTXVIeWZkdHNWMF9NYkJmSGN3cnVZNlp4Mi1KSGZzZWc?oc=5"}};
+  wycombeWanderersFootballClubRichardKone: {l:"Wycombe Wanderers Football Club", u:"https://news.google.com/rss/articles/CBMihwFBVV95cUxOajBzem1GZzhPOUtJZmYyQUo3c1RvaU9YcmVoWlFUSm5NYjlFNVVVTjNoaWVhckZORy1lWEVRdzVuQnluVm9KQm9JVTA0SkFFRWtVRTlMLThmMjBPcDJ1anBfYkZpMXozTXVIeWZkdHNWMF9NYkJmSGN3cnVZNlp4Mi1KSGZzZWc?oc=5"},
+  theCoventryObserverJustinObikwu1: {l:"The Coventry Observer", u:"https://news.google.com/rss/articles/CBMixwFBVV95cUxOWkh1UExzUFhjS2tHcXMyOWZqOHMtTkZwTjZCR0NadjRwZW9Sb200a3ZJQXFZVzdIMnhVVHgtZ0J2TElYaDExS2RZclQ0bWdEVE94cW5jbEtPMmxpZllOWnh4b2M3RmZMV3VpUnJuWWRZNnpmUndCX1pYbzJ0SVRrc3p6QVZ6cG14NFFVckFzNUE0aEZRdFdaUzlDemtpT2xxdE5HVGNHZlozM2tpWW9iSDNWb1MzUVBoOENZbFFXVjBtcjJaUHJv?oc=5"}};
 
 const LINKMAP = {
   "Glen Kamara": ["gnews-glenkamara"],
   "Nicolas Madsen": ["oneFootballNicolasMadsen"],
-  "Justin Obikwu": ["theCoventryObserverJustinObikwu"],
+  "Justin Obikwu": ["theCoventryObserverJustinObikwu", "theCoventryObserverJustinObikwu1"],
   "Isaac Hayden": ["bBCIsaacHayden"],
   "Rhys Norrington-Davies": ["bBCIsaacHayden"],
   "Koki Saito": ["bBCIsaacHayden"],

@@ -45,14 +45,14 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"Tim Meyer", sub:"Swiss revelation targeted as defensive midfield reinforcement", club:"Grasshopper Zurich", pos:"CDM", report:"Auxerre have moved into the acquisition phase for the Swiss defensive midfielder, who impressed for Grasshoppers last season.", src:"TOP Mercato", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"flat", note:"Early-stage interest reported by an aggregator outlet; no formal bid confirmed yet.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"Incomplete on-page entry with no supporting evidence in snippets; cannot verify player details"},
-  {name:"Paul Nardi", sub:"Goalkeeper", club:"Queens Park Rangers", pos:"GK", report:"Free agent goalkeeper joins Auxerre", src:"L'Équipe", tier:2, fee:"Free", truth:95, prob:95, light:"g", trend:"flat", note:"Officially announced arrival", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
-  {name:"Rémy Labeau-Lascary", sub:"Defender", club:"AS Saint-Étienne", pos:"LB", report:"Left-back formed at Saint-Étienne in advanced negotiations with Auxerre", src:"Foot Mercato", tier:2, fee:"", truth:80, prob:80, light:"g", trend:"flat", note:"Transfer in progress", lastSeen:"2026-08-07T01:42:32Z", baseProb:80}
+  {name:"Tim Meyer", sub:"Swiss revelation targeted as defensive midfield reinforcement", club:"Grasshopper Zurich", pos:"CDM", report:"Auxerre have moved into the acquisition phase for Tim Meyer", src:"TOP Mercato", tier:3, fee:"", truth:55, prob:40, light:"y", trend:"down", note:"Early-stage interest reported by an aggregator outlet; no formal bid confirmed yet.", lastSeen:"2026-08-08T07:40:33Z", baseProb:40},
+  {name:"Paul Nardi", sub:"Goalkeeper", club:"Free agent", pos:"GK", report:"Experienced goalkeeper Paul Nardi joins Auxerre from Queens Park Rangers on a free transfer", src:"L'Équipe", tier:2, fee:"Free", truth:95, prob:95, light:"g", trend:"flat", note:"Free agent signing confirmed by official announcement", lastSeen:"2026-08-08T07:40:33Z", baseProb:95},
+  {name:"Rémy Labeau-Lascary", sub:"Defender", club:"Saint-Étienne", pos:"LB", report:"Left-back formed at Saint-Étienne, Auxerre in advanced negotiations to recruit him", src:"Foot Mercato", tier:3, fee:"", truth:85, prob:80, light:"g", trend:"flat", note:"Advanced negotiations reported; official announcement expected", lastSeen:"2026-08-08T07:40:33Z", baseProb:80}
 ];
 
 const OUTGOING = [
-  {name:"Kevin Danois", sub:"West Ham and Newcastle monitoring, Hull City bid rejected", club:"West Ham United / Newcastle United (interest)", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old midfielder closely after Hull City's ~€15m offer was seen as below Auxerre's €20m valuation.", src:"Les Transferts", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Danois is contracted through June 2029, giving Auxerre strong leverage; a departure this window looks unlikely unless valuation is met.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35},
-  {name:"Lassine Sinayoko", sub:"Forward", club:"Paris FC", pos:"FW", report:"Deal agreed with Paris FC, officially departed Auxerre", src:"Foot Mercato", tier:2, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Confirmed departure to Paris FC within Ligue 1", lastSeen:"2026-08-07T01:42:32Z", baseProb:95}
+  {name:"Kevin Danois", sub:"West Ham and Newcastle monitoring, Hull City bid rejected", club:"West Ham United / Newcastle United (interest)", pos:"CM", report:"Two Premier League clubs are watching the 22-year-old midfielder closely after Hull City's ~€15m offer was seen as below Auxerre's €20m valuation.", src:"Les Transferts", tier:2, fee:"", truth:60, prob:35, light:"y", trend:"flat", note:"Danois is contracted through June 2029, giving Auxerre strong leverage; a departure this window looks unlikely unless valuation is met.", lastSeen:"2026-08-04T19:10:50Z", baseProb:35, dead:true, deadReason:"No recent reporting; move likely stalled or off (reported watching from two years ago)"},
+  {name:"Lassine Sinayoko", sub:"Forward", club:"Paris FC", pos:"FW", report:"Deal agreed with Paris FC; Lassine Sinayoko officially departed Auxerre and remains in Ligue 1", src:"Foot Mercato / ici.fr", tier:2, fee:"", truth:95, prob:95, light:"g", trend:"flat", note:"Transfer completed to Paris FC", lastSeen:"2026-08-08T07:40:33Z", baseProb:95}
 ];
 const DEAD = [
   {name:"Mathys Detourbet", club:"AJ Auxerre", pos:"W", dir:"out", age:"~7mo", tier:2, note:"Manchester City have been credited with long-standing interest in the teenage winger.", deadReason:"completed move to as-monaco, manchester-city", deadAt:"2026-08-06T10:24:32Z"}
@@ -85,10 +85,14 @@ const HUB = {
   lquipePaulNardi: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPZlJXeURJLThYOUZZNDlfUFhOMF9mcnJvVGNKYmpEZ1l6Q1Z3UUtKU192ZEpmdkNPWkF0YU1yV3RuUmhlTU91aEI2ODc2U2JrZnlfbFExMEg1Si15ZjBEeGY2bXRLOW5ad1pFN2t5U0RIdFlneXV5c1J4SExMRTloSmNZMTUtcEFLRWFSU2pyZzFCMXpqS0FVZDk5S0xmZW9oUi1mUlN2bHVEVHBHTlJMN25KdFMwRDhTYnNRdHhVckEwTTFRWWk2M1BEZHRWWjRtMkhOVEdyZkFBcTJBZWU3LVNQN0tjeDhVdUdSRy1PZTU0a0E?oc=5"},
   footMercatoRmyLabeauLascary: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxNLXJvUnl3ekEyU0NKZ3puY2pnU295VGtack9RLUVNaVZVOVVYWHhOMDR5SVJMZjh0c2xtMGpaYUk5Uk83cjh2cXNweDFBZ2ROd1YxdUItVHBFNFB1WlpkR0hzZ1YyYzFCdm5Lbk03UjladWxueXJMSVU1QW94bWsxeUhkeXcxR2E4UG5DY0U4a2lueGhhang4?oc=5"},
   footMercatoLassineSinayoko: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxPT3FaVlNOMWpxX2ZlaHUxSk1FZEluc0pDUG51TG5ULXdhSVJYREMwNDY3cGVjdmI5dmJaQ0ctdlBwa2R5SC1sVmN5a2JnTW9Db1BHbFRZVjN4TERGamQ1TkVIcDgtY0lSZVh3ZFJIWkNmbW9yMkVxZkE2WGpubFItMmlsbkppSGI0YjdUN0JsVVRZbXowMFVKb2xGRVVjY2tYdDZ4dWxR?oc=5"},
-  icifrLassineSinayoko: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSTUyLUIzY2g0bnpGcWJxSTAxaUxnajRTV1o2ZGVsb1BRQkE4ZFJ6VjhWbzcwaS14MDBQUXhXNkdtVHBBdngzRnFHTEotOUZGcUVxR01wQVpIZmlpQXUzdWt4VGlwaUtxVV9pLS1DNEZQdnk4ajBqdk5DRnhpN3dwc2plSFlZaVNCTWdialhsbk1lSzVySDFKTEJFbmxPeTBfZ084VXdXN21VNUluUzg0WlVrek9RelhOOVNiaTdVbjdCQmJDcDRKaUxrcTIwVFZ5UGdTSUFmU2RuTnhiNmdfc3pKbw?oc=5"}};
+  icifrLassineSinayoko: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSTUyLUIzY2g0bnpGcWJxSTAxaUxnajRTV1o2ZGVsb1BRQkE4ZFJ6VjhWbzcwaS14MDBQUXhXNkdtVHBBdngzRnFHTEotOUZGcUVxR01wQVpIZmlpQXUzdWt4VGlwaUtxVV9pLS1DNEZQdnk4ajBqdk5DRnhpN3dwc2plSFlZaVNCTWdialhsbk1lSzVySDFKTEJFbmxPeTBfZ084VXdXN21VNUluUzg0WlVrek9RelhOOVNiaTdVbjdCQmJDcDRKaUxrcTIwVFZ5UGdTSUFmU2RuTnhiNmdfc3pKbw?oc=5"},
+  lquipePaulNardi1: {l:"L'Équipe", u:"https://news.google.com/rss/articles/CBMi8wFBVV95cUxPZlJXeURJLThYOUZZNDlfUFhOMF9mcnJvVGNKYmpEZ1l6Q1Z3UUtKU192ZEpmdkNPWkF0YU1yV3RuUmhlTU91aEI2ODc2U2JrZnlfbFExMEg1Si15ZjBEeGY2bXRLOW5ad1pFN2t5U0RIdFlneXV5c1J4SExMRTloSmNZMTUtcEFLRWFSU2pyZzFCMXpqS0FVZDk5S0xmZW9oUi1mUlN2bHVEVHBHTlJMN25KdFMwRDhTYnNRdHhVckEwTTFRWWk2M1BEZHRWWjRtMkhOVEdyZkFBcTJBZWU3LVNQN0tjeDhVdUdSRy1PZTU0a0E"},
+  footMercatoRmyLabeauLascary1: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxNLXJvUnl3ekEyU0NKZ3puY2pnU295VGtack9RLUVNaVZVOVVYWHhOMDR5SVJMZjh0c2xtMGpaYUk5Uk83cjh2cXNweDFBZ2ROd1YxdUItVHBFNFB1WlpkR0hzZ1YyYzFCdm5Lbk03UjladWxueXJMSVU1QW94bWsxeUhkeXcxR2E4UG5DY0U4a2lueGhhang4"},
+  footMercatoLassineSinayoko1: {l:"Foot Mercato", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxPT3FaVlNOMWpxX2ZlaHUxSk1FZEluc0pDUG51TG5ULXdhSVJYREMwNDY3cGVjdmI5dmJaQ0ctdlBwa2R5SC1sVmN5a2JnTW9Db1BHbFRZVjN4TERGamQ1TkVIcDgtY0lSZVh3ZFJIWkNmbW9yMkVxZkE2WGpubFItMmlsbkppSGI0YjdUN0JsVVRZbXowMFVKb2xGRVVjY2tYdDZ4dWxR"},
+  icifrLassineSinayoko1: {l:"ici.fr", u:"https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSTUyLUIzY2g0bnpGcWJxSTAxaUxnajRTV1o2ZGVsb1BRQkE4ZFJ6VjhWbzcwaS14MDBQUXhXNkdtVHBBdngzRnFHTEotOUZGcUVxR01wQVpIZmlpQXUzdWt4VGlwaUtxVV9pLS1DNEZQdnk4ajBqdk5DRnhpN3dwc2plSFlZaVNCTWdialhsbk1lSzVySDFKTEJFbmxPeTBfZ081VXdXN21VNUluUzg0WlVrek9RelhOOVNiaTdVbjdCQmJDcDRKaUxrcTIwVFZ5UGdTSUFmU2RuTnhiNmdfc3pKbw"}};
 
 const LINKMAP = {
-  "Lassine Sinayoko": ["gffn-auxerre", "maliactuLassineSinayoko", "footMercatoLassineSinayoko", "icifrLassineSinayoko"],
+  "Lassine Sinayoko": ["gffn-auxerre", "maliactuLassineSinayoko", "footMercatoLassineSinayoko", "icifrLassineSinayoko", "footMercatoLassineSinayoko1", "icifrLassineSinayoko1"],
   "Kévin Danois": ["gffn-auxerre"],
   "Mathys Detourbet": ["gffn-auxerre"],
   "Tim Meyer": ["tOPMercatoTimMeyer"],
@@ -96,8 +100,8 @@ const LINKMAP = {
   "Sekou Fofana": ["lquipeSekouFofana"],
   "Romain Faivre": ["lquipeRomainFaivre"],
   "Arthur Piedfort": ["footMercatoArthurPiedfort"],
-  "Paul Nardi": ["lquipePaulNardi"],
-  "Rémy Labeau-Lascary": ["footMercatoRmyLabeauLascary"]};
+  "Paul Nardi": ["lquipePaulNardi", "lquipePaulNardi1"],
+  "Rémy Labeau-Lascary": ["footMercatoRmyLabeauLascary", "footMercatoRmyLabeauLascary1"]};
 const WL_LINKMAP = {
   "Mathys Detourbet": ["gffn-auxerre"]
 };

@@ -62,10 +62,13 @@ const CONFIRMED_OUT = [
 ];
 
 const INCOMING = [
-  {name:"James McAtee", sub:"Unknown · England · Midfielder", club:"Manchester City", pos:"Midfielder", report:"Nottingham Forest target", src:"James Ducker, The Telegraph", tier:1, fee:"", truth:65, prob:55, light:"g", trend:"flat", note:"Recently reported as a target", lastSeen:"2026-08-07T01:42:32Z", baseProb:55}
+  {name:"James McAtee", sub:"23 · England · M", club:"Manchester City", pos:"M", report:"Nottingham Forest target James McAtee", src:"James Ducker", tier:1, fee:"", truth:65, prob:45, light:"y", trend:"down", note:"Telegraph reports Forest targeting City midfielder", lastSeen:"2026-08-08T07:40:33Z", baseProb:45}
 ];
 
-const OUTGOING = [];
+const OUTGOING = [
+  {name:"Ola Aina", sub:"28 · Nigeria · D", club:"Nottingham Forest", pos:"D", report:"Ola Aina exit", src:"Multiple sources", tier:2, fee:"", truth:70, prob:60, light:"g", trend:"flat", note:"Recent reports suggest defender departure", lastSeen:"2026-08-08T07:40:33Z", baseProb:60},
+  {name:"Chris Wood", sub:"32 · Scotland · F", club:"Nottingham Forest", pos:"F", report:"Chris Wood exit", src:"Multiple sources", tier:2, fee:"", truth:65, prob:50, light:"y", trend:"flat", note:"Reported departure ~3 weeks ago", lastSeen:"2026-08-08T07:40:33Z", baseProb:50}
+];
 const DEAD = [
   {name:"Lucas Bergvall", sub:"20 · CM · Sweden", club:"Tottenham Hotspur", pos:"CM", report:"27 Jul 2026", src:"The Guardian / TEAMtalk / football365", tier:1, fee:"£50-65m (Spurs valuation)", truth:74, prob:40, light:'y', trend:'up',
    note:"Genuinely live: the Guardian reports Bergvall has formally told Tottenham he wants to leave, naming Forest as his preferred destination, with playing time set to shrink behind new signings Sandro Tonali and Mateus Fernandes. Forest's opening £38m bid was rejected in mid-July against a £50m Spurs valuation that has since been quoted as high as £65m, and head coach Di Zerbi is described as 'relaxed' rather than combative about a sale. The player wants it; the fee gap is now the only real obstacle, and Forest may need patience rather than a fresh bid straight away.", lastSeen:"2026-08-04T19:10:50Z", baseProb:40, dead:true, deadReason:"Outdated date (27 Jul 2026), no credible recent confirmation; stale rumour", dir:"in", deadAt:"2026-08-06T13:55:46Z"},
@@ -154,7 +157,8 @@ const HUB = {
   footballFanCastFolarinBalogun: {l:"FootballFanCast", u:"https://www.footballfancast.com/fabrizio-romano-nottingham-forest-transfer-talks-ousmane-diomande-glasner/"},
   sportsMoleXaverSchlager: {l:"Sports Mole", u:"https://www.sportsmole.co.uk/football/nottingham-forest/transfer-talk/feature/nottingham-forest-summer-transfers-all-confirmed-ins-and-outs-for-2026_598980.html"},
   pAYahooSportTijjaniReijnders: {l:"PA / Yahoo Sport", u:"https://ca.sports.yahoo.com/news/nottingham-forest-target-tijjani-reijnders-153500623.html"},
-  theTelegraphJamesMcAtee: {l:"The Telegraph", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU?oc=5"}};
+  theTelegraphJamesMcAtee: {l:"The Telegraph", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU?oc=5"},
+  telegraphGoogleNewsJamesMcAtee: {l:"Telegraph / Google News", u:"https://news.google.com/rss/articles/CBMinwFBVV95cUxNQlVQVGdpSVB2bktPQ3RXMFM1elVLZ1ktX1k5bEtDbnhZYkFiWDliY3BaZ0huZERCclV1UHZpSzhqQmhkdEVnMDFDaTUyelhsTllPOUhWa1FfOU1tX2hoUjdKVmVpaHJ5eEtDVlllaDl0aU8xYnExd0xFUzgtMmNFbE9DTFRZeTZseFh3SUxtVDFpMXRDWDQtVmlYdGd4aEU"}};
 
 const LINKMAP = {
   "Xaver Schlager": ["ggfnSchlager","forestOfficialGlasner", "sportsMoleXaverSchlager"],
@@ -174,7 +178,7 @@ const LINKMAP = {
   "Arne Engels": ["yahooSportsSkySportsArneEngels"],
   "Folarin Balogun": ["footballFanCastFolarinBalogun"],
   "Tijjani Reijnders": ["pAYahooSportTijjaniReijnders", "romanoX"],
-  "James McAtee": ["theTelegraphJamesMcAtee"]};
+  "James McAtee": ["theTelegraphJamesMcAtee", "telegraphGoogleNewsJamesMcAtee"]};
 const WL_LINKMAP = {
   "Cathal McCarthy": "forestNewsMcCarthy",
   "Dodo": "fiDodo",

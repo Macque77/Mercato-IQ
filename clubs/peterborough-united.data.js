@@ -31,8 +31,7 @@ const REPORT_META = {
 };
 
 const CONFIRMED_IN = [
-  {name:"Tom O'Connor", sub:"unknown · unknown · unknown", club:"Wrexham", pos:"unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer from Wrexham"},
-  {name:"Harrison Jones", sub:"unknown · unknown · unknown", club:"unknown", pos:"unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed"}
+  {name:"Tom O'Connor", sub:"unknown · unknown · unknown", club:"Wrexham", pos:"unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer from Wrexham"}
 ];
 const CONFIRMED_OUT = [
   {name:"Kyrell Lisbie", sub:"unknown · unknown · W", club:"Millwall", pos:"W", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent transfer to Millwall on long-term deal"}
