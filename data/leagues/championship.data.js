@@ -5,16 +5,65 @@
 
 const LEAGUE = {
   name: "Championship",
-  nation: "England",
-  stories_count: 37
+  nation: "Wales",
+  stories_count: 51
 };
 
 const TOP_STORIES = [  {
+    name: "Danny Imray", prob: 100, truth: 100, bullshit: false,
+    club_origin: "wrexham", club_display_name: "Wrexham", direction: "in",
+    from: "Crystal Palace", to: "Wrexham",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
+    name: "Divin Mubama", prob: 50, truth: 50, bullshit: false,
+    club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
+    from: "Manchester City", to: "Derby County",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Stephen Mfuni", prob: 50, truth: 50, bullshit: false,
+    club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
+    from: "Manchester City", to: "Derby County",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Tommy Watson", prob: 50, truth: 50, bullshit: false,
+    club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
+    from: "Brighton", to: "Derby County",
+    tier: 0, coverage: 1, coverage_trend: 'down',
+    value: "Loan", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Daniel Jebbison", prob: 50, truth: 50, bullshit: false,
+    club_origin: "preston-north-end", club_display_name: "Preston North End", direction: "out",
+    from: "Preston North End", to: "Blackburn Rovers",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan + option", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Anthony Patterson", prob: 25, truth: 45, bullshit: false,
+    club_origin: "wrexham", club_display_name: "Wrexham", direction: "in",
+    from: "Sunderland", to: "Wrexham",
+    tier: 0, coverage: 1, coverage_trend: 'down',
+    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
+  },
+  {
     name: "Florentino Luis", prob: 100, truth: 100, bullshit: false,
     club_origin: "burnley", club_display_name: "Burnley", direction: "out",
     from: "Burnley", to: "Ipswich Town",
     tier: 1, coverage: 5, coverage_trend: 'flat',
     value: "£16m", updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    name: "Matheus Nunes", prob: 100, truth: 100, bullshit: false,
+    club_origin: "wolverhampton", club_display_name: "Wolverhampton Wanderers", direction: "in",
+    from: "Manchester City", to: "Wolverhampton Wanderers",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Simon Adingra", prob: 42, truth: 60, bullshit: false,
@@ -24,10 +73,17 @@ const TOP_STORIES = [  {
     value: "Loan (poss. obligation to buy)", updated: "2026-07-29T00:00:00Z"
   },
   {
+    name: "Unknown", prob: 100, truth: 100, bullshit: false,
+    club_origin: "blackburn-rovers", club_display_name: "Blackburn Rovers", direction: "in",
+    from: "Brentford", to: "Blackburn Rovers",
+    tier: 2, coverage: 3, coverage_trend: 'up',
+    value: "Free", updated: "2026-07-29T00:00:00Z"
+  },
+  {
     name: "Unknown Brentford midfielder", prob: 100, truth: 100, bullshit: false,
     club_origin: "blackburn-rovers", club_display_name: "Blackburn Rovers", direction: "in",
     from: "Brentford", to: "Blackburn Rovers",
-    tier: 2, coverage: 2, coverage_trend: 'up',
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "Free", updated: "2026-07-29T00:00:00Z"
   },
   {
@@ -45,10 +101,17 @@ const TOP_STORIES = [  {
     value: "Free", updated: "2026-07-29T00:00:00Z"
   },
   {
+    name: "Ben Whiteman", prob: 100, truth: 100, bullshit: false,
+    club_origin: "preston-north-end", club_display_name: "Preston North End", direction: "out",
+    from: "Preston North End", to: "Wrexham",
+    tier: 2, coverage: 1, coverage_trend: 'down',
+    value: "", updated: "2026-07-29T00:00:00Z"
+  },
+  {
     name: "Justin Obikwu", prob: 100, truth: 100, bullshit: false,
     club_origin: "qpr", club_display_name: "Queens Park Rangers", direction: "in",
     from: "Coventry City", to: "Queens Park Rangers",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "Unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
@@ -59,104 +122,41 @@ const TOP_STORIES = [  {
     value: "Unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Matheus Nunes", prob: 100, truth: 100, bullshit: false,
-    club_origin: "wolverhampton", club_display_name: "Wolverhampton Wanderers", direction: "in",
-    from: "Manchester City", to: "Wolverhampton Wanderers",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Lorent Tolaj", prob: 100, truth: 100, bullshit: false,
-    club_origin: "bristol-city", club_display_name: "Bristol City", direction: "in",
-    from: "Plymouth Argyle", to: "Bristol City",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Nat Phillips", prob: 100, truth: 100, bullshit: false,
-    club_origin: "west-bromwich-albion", club_display_name: "West Bromwich Albion", direction: "in",
-    from: "Liverpool", to: "West Bromwich Albion",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Ben Whiteman", prob: 100, truth: 100, bullshit: false,
-    club_origin: "wrexham", club_display_name: "Wrexham", direction: "in",
-    from: "Preston North End", to: "Wrexham",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Danny Imray", prob: 100, truth: 100, bullshit: false,
-    club_origin: "wrexham", club_display_name: "Wrexham", direction: "in",
-    from: "Crystal Palace", to: "Wrexham",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:00:00Z"
-  },
-  {
-    name: "Jaden Dixon", prob: 100, truth: 100, bullshit: false,
-    club_origin: "stoke-city", club_display_name: "Stoke City", direction: "out",
-    from: "Stoke City", to: "Arsenal",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Joel Veltman", prob: 100, truth: 100, bullshit: false,
-    club_origin: "west-ham", club_display_name: "West Ham United", direction: "in",
-    from: "Brighton", to: "West Ham United",
-    tier: 2, coverage: 3, coverage_trend: 'flat',
-    value: "Free", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Dajaune Brown", prob: 95, truth: 95, bullshit: false,
-    club_origin: "derby-county", club_display_name: "Derby County", direction: "out",
-    from: "Derby County", to: "Rochdale",
-    tier: 2, coverage: 4, coverage_trend: 'flat',
-    value: "Loan", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Thompson", prob: 95, truth: 95, bullshit: false,
-    club_origin: "derby-county", club_display_name: "Derby County", direction: "out",
-    from: "Derby County", to: "Mansfield Town",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "unknown", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Joao Gomes", prob: 85, truth: 90, bullshit: false,
-    club_origin: "wolverhampton", club_display_name: "Wolverhampton Wanderers", direction: "out",
-    from: "Wolverhampton Wanderers", to: "Aston Villa",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "£38m", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Shea Charles", prob: 80, truth: 85, bullshit: false,
-    club_origin: "southampton", club_display_name: "Southampton", direction: "out",
-    from: "Southampton", to: "Southampton",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "~£30m valuation", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Jay Robinson", prob: 70, truth: 75, bullshit: false,
-    club_origin: "southampton", club_display_name: "Southampton", direction: "in",
-    from: "Southampton", to: "Southampton",
+    name: "Isaac Hayden", prob: 100, truth: 100, bullshit: false,
+    club_origin: "qpr", club_display_name: "Queens Park Rangers", direction: "in",
+    from: "", to: "Queens Park Rangers",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Martin Payero", prob: 70, truth: 75, bullshit: false,
-    club_origin: "watford", club_display_name: "Watford", direction: "in",
-    from: "Udinese", to: "Watford",
+    name: "Rhys Norrington-Davies", prob: 100, truth: 100, bullshit: false,
+    club_origin: "qpr", club_display_name: "Queens Park Rangers", direction: "in",
+    from: "", to: "Queens Park Rangers",
     tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Koki Saito", prob: 100, truth: 100, bullshit: false,
+    club_origin: "qpr", club_display_name: "Queens Park Rangers", direction: "in",
+    from: "", to: "Queens Park Rangers",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Liam Cullen", prob: 100, truth: 100, bullshit: false,
+    club_origin: "swansea-city", club_display_name: "Swansea City", direction: "out",
+    from: "Swansea City", to: "Swansea City",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "", updated: "2026-07-29T00:00:00Z"
   },
 ];
 
-const BY_CLUB = {"burnley": 1, "west-ham": 2, "blackburn-rovers": 3, "preston-north-end": 3, "qpr": 2, "wolverhampton": 6, "bristol-city": 1, "west-bromwich-albion": 5, "wrexham": 2, "stoke-city": 1, "derby-county": 4, "southampton": 2, "watford": 1, "sheffield-united": 4};
+const BY_CLUB = {"wrexham": 2, "derby-county": 5, "preston-north-end": 4, "burnley": 1, "wolverhampton": 6, "west-ham": 3, "blackburn-rovers": 3, "qpr": 6, "swansea-city": 3, "west-bromwich-albion": 6, "stoke-city": 1, "bristol-city": 1, "southampton": 2, "watford": 3, "cardiff-city": 1, "sheffield-united": 4};
 
-const CLUBS_LIST = [{"slug": "blackburn-rovers", "name": "Blackburn Rovers", "count": 3, "badge": true, "primary": "#009EE0", "primaryBright": "#5CD2FF"}, {"slug": "bristol-city", "name": "Bristol City", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "burnley", "name": "Burnley", "count": 1, "badge": true, "primary": "#6C1D45", "primaryBright": "#8C2D5F"}, {"slug": "cardiff-city", "name": "Cardiff City", "count": 0, "badge": true, "primary": "#0070B8", "primaryBright": "#5CA9FF"}, {"slug": "derby-county", "name": "Derby County", "count": 4, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "preston-north-end", "name": "Preston North End", "count": 3, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "qpr", "name": "Queens Park Rangers", "count": 2, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 4, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "southampton", "name": "Southampton", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "stoke-city", "name": "Stoke City", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "swansea-city", "name": "Swansea City", "count": 0, "badge": true, "primary": "#1E1E1E", "primaryBright": "#FFFFFF"}, {"slug": "watford", "name": "Watford", "count": 1, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "west-bromwich-albion", "name": "West Bromwich Albion", "count": 5, "badge": true, "primary": "#00448C", "primaryBright": "#5CA9FF"}, {"slug": "west-ham", "name": "West Ham United", "count": 2, "badge": true, "primary": "#7A263A", "primaryBright": "#C9AB7C"}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 6, "badge": true, "primary": "#FDB913", "primaryBright": "#FFE066"}, {"slug": "wrexham", "name": "Wrexham", "count": 2, "badge": false, "primary": "#C8102E", "primaryBright": "#FF6B6B"}];
+const CLUBS_LIST = [{"slug": "blackburn-rovers", "name": "Blackburn Rovers", "count": 3, "badge": true, "primary": "#009EE0", "primaryBright": "#5CD2FF"}, {"slug": "bristol-city", "name": "Bristol City", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "burnley", "name": "Burnley", "count": 1, "badge": true, "primary": "#6C1D45", "primaryBright": "#8C2D5F"}, {"slug": "cardiff-city", "name": "Cardiff City", "count": 1, "badge": true, "primary": "#0070B8", "primaryBright": "#5CA9FF"}, {"slug": "derby-county", "name": "Derby County", "count": 5, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "preston-north-end", "name": "Preston North End", "count": 4, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "qpr", "name": "Queens Park Rangers", "count": 6, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "sheffield-united", "name": "Sheffield United", "count": 4, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "southampton", "name": "Southampton", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "stoke-city", "name": "Stoke City", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "swansea-city", "name": "Swansea City", "count": 3, "badge": true, "primary": "#1E1E1E", "primaryBright": "#FFFFFF"}, {"slug": "watford", "name": "Watford", "count": 3, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "west-bromwich-albion", "name": "West Bromwich Albion", "count": 6, "badge": true, "primary": "#00448C", "primaryBright": "#5CA9FF"}, {"slug": "west-ham", "name": "West Ham United", "count": 3, "badge": true, "primary": "#7A263A", "primaryBright": "#C9AB7C"}, {"slug": "wolverhampton", "name": "Wolverhampton Wanderers", "count": 6, "badge": true, "primary": "#FDB913", "primaryBright": "#FFE066"}, {"slug": "wrexham", "name": "Wrexham", "count": 2, "badge": false, "primary": "#C8102E", "primaryBright": "#FF6B6B"}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T07:36:50.610403Z",
+  updated: "2026-08-08T09:58:49.199145Z",
   label: "League aggregation"
 };

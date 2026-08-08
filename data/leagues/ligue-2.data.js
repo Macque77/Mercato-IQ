@@ -6,64 +6,78 @@
 const LEAGUE = {
   name: "Ligue 2",
   nation: "France",
-  stories_count: 9
+  stories_count: 11
 };
 
 const TOP_STORIES = [  {
-    name: "Ilyes Housni", prob: 95, truth: 90, bullshit: false,
-    club_origin: "as-nancy-lorraine", club_display_name: "AS Nancy-Lorraine", direction: "in",
-    from: "Paris", to: "AS Nancy-Lorraine",
+    name: "Ben Hamed Touré", prob: 95, truth: 95, bullshit: false,
+    club_origin: "annecy", club_display_name: "FC Annecy", direction: "in",
+    from: "", to: "FC Annecy",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Abdel Hbouch", prob: 65, truth: 75, bullshit: false,
+    club_origin: "annecy", club_display_name: "FC Annecy", direction: "out",
+    from: "FC Annecy", to: "Annecy",
     tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Mickaël Le Bihan", prob: 85, truth: 85, bullshit: false,
-    club_origin: "dijon", club_display_name: "Dijon FCO", direction: "in",
-    from: "AJ Auxerre", to: "Dijon FCO",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    name: "Jean Grillot", prob: 100, truth: 100, bullshit: false,
+    club_origin: "clermont-foot", club_display_name: "Clermont Foot", direction: "in",
+    from: "Bordeaux", to: "Clermont Foot",
+    tier: 3, coverage: 2, coverage_trend: 'up',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Abdel Hbouch", prob: 40, truth: 70, bullshit: false,
-    club_origin: "annecy", club_display_name: "FC Annecy", direction: "in",
-    from: "FC Annecy", to: "FC Annecy",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-07-29T00:00:00Z"
+    name: "Ilyes Housni", prob: 100, truth: 100, bullshit: false,
+    club_origin: "as-nancy-lorraine", club_display_name: "AS Nancy-Lorraine", direction: "in",
+    from: "Paris", to: "AS Nancy-Lorraine",
+    tier: 3, coverage: 2, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Lucas Mounguenou", prob: 100, truth: 100, bullshit: false,
     club_origin: "annecy", club_display_name: "FC Annecy", direction: "in",
     from: "PSG", to: "FC Annecy",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
+    tier: 3, coverage: 2, coverage_trend: 'up',
     value: "Unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Jean Grillot", prob: 90, truth: 85, bullshit: false,
-    club_origin: "clermont-foot", club_display_name: "Clermont Foot", direction: "in",
-    from: "Girondins de Bordeaux", to: "Clermont Foot",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-07-29T00:00:00Z"
-  },
-  {
-    name: "Elson Mendes", prob: 90, truth: 85, bullshit: false,
+    name: "Elson Mendes", prob: 95, truth: 95, bullshit: false,
     club_origin: "asse-sochaux", club_display_name: "FC Sochaux-Montbéliard", direction: "out",
-    from: "FC Sochaux-Montbéliard", to: "Turkish 1st Division",
+    from: "FC Sochaux-Montbéliard", to: "Turkish first division",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Unknown", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Glody Ngonda", prob: 80, truth: 80, bullshit: false,
+    name: "Mickaël Le Bihan", prob: 90, truth: 85, bullshit: false,
+    club_origin: "dijon", club_display_name: "Dijon FCO", direction: "in",
+    from: "AJ Auxerre", to: "Dijon FCO",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Glody Ngonda", prob: 85, truth: 80, bullshit: false,
     club_origin: "dijon", club_display_name: "Dijon FCO", direction: "in",
     from: "VClub", to: "Dijon FCO",
     tier: 3, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
-    name: "Moussa Konaté", prob: 75, truth: 75, bullshit: false,
+    name: "Moussa Konaté", prob: 85, truth: 80, bullshit: false,
     club_origin: "dijon", club_display_name: "Dijon FCO", direction: "out",
     from: "Dijon FCO", to: "Dijon FCO",
     tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-07-29T00:00:00Z"
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
+  },
+  {
+    name: "Eliott Sorin", prob: 80, truth: 75, bullshit: false,
+    club_origin: "dijon", club_display_name: "Dijon FCO", direction: "out",
+    from: "Dijon FCO", to: "Dijon FCO",
+    tier: 3, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z"
   },
   {
     name: "Vincent Gomis", prob: 75, truth: 75, bullshit: false,
@@ -74,12 +88,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_CLUB = {"as-nancy-lorraine": 1, "dijon": 3, "annecy": 2, "clermont-foot": 1, "asse-sochaux": 1, "sb-metz": 1};
+const BY_CLUB = {"annecy": 3, "clermont-foot": 1, "as-nancy-lorraine": 1, "asse-sochaux": 1, "dijon": 4, "sb-metz": 1};
 
-const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "dijon", "name": "Dijon FCO", "count": 3, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "annecy", "name": "FC Annecy", "count": 2, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sb-metz", "name": "FC Metz", "count": 1, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 1, "badge": true, "primary": "#F4CD1E", "primaryBright": "#FFE666"}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0, "badge": true, "primary": "#FF6C00", "primaryBright": "#FFA55C"}];
+const CLUBS_LIST = [{"slug": "rodez-aveyron", "name": "AF Rodez", "count": 0, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "as-nancy-lorraine", "name": "AS Nancy-Lorraine", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "clermont-foot", "name": "Clermont Foot", "count": 1, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "dijon", "name": "Dijon FCO", "count": 4, "badge": true, "primary": "#FFFFFF", "primaryBright": "#FFFFFF"}, {"slug": "annecy", "name": "FC Annecy", "count": 3, "badge": true, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "sb-metz", "name": "FC Metz", "count": 1, "badge": true, "primary": "#8B1E3F", "primaryBright": "#C0526A"}, {"slug": "asse-sochaux", "name": "FC Sochaux-Montb\u00e9liard", "count": 1, "badge": true, "primary": "#F4CD1E", "primaryBright": "#FFE666"}, {"slug": "asm-montpellier", "name": "Montpellier HSC", "count": 0, "badge": true, "primary": "#FF6C00", "primaryBright": "#FFA55C"}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T07:36:50.613289Z",
+  updated: "2026-08-08T09:58:49.206500Z",
   label: "League aggregation"
 };

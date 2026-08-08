@@ -6,7 +6,7 @@
 const NATION = {
   name: "France",
   flag_emoji: "🇫🇷",
-  stories_count: 92
+  stories_count: 97
 };
 
 const TOP_STORIES = [  {
@@ -97,7 +97,7 @@ const TOP_STORIES = [  {
     name: "Bradley Barcola",prob: 58, truth: 90, bullshit: false,
     club_origin: "paris-saint-germain", club_display_name: "Paris Saint-Germain", direction: "out",
     from: "Paris Saint-Germain", to: "Liverpool",
-    tier: 1, coverage: 3, coverage_trend: 'down',
+    tier: 1, coverage: 3, coverage_trend: 'flat',
     value: "Nine figures sought", updated: "2026-08-03T14:30:00Z", league: "Ligue 1"
   },
   {
@@ -116,12 +116,12 @@ const TOP_STORIES = [  {
   },
 ];
 
-const BY_LEAGUE = {"Ligue 1": 83, "Ligue 2": 9, "Championnat National": 0, "Championnat National 3": 0, "Ligue 3": 0};
+const BY_LEAGUE = {"Ligue 1": 86, "Ligue 2": 11, "Championnat National": 0, "Championnat National 3": 0, "Ligue 3": 0};
 
-const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 83}, {"slug": "ligue-2", "name": "Ligue 2", "count": 9}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
+const LEAGUES_LIST = [{"slug": "ligue-1", "name": "Ligue 1", "count": 86}, {"slug": "ligue-2", "name": "Ligue 2", "count": 11}, {"slug": "championnat-national", "name": "Championnat National", "count": 0}, {"slug": "championnat-national-3", "name": "Championnat National 3", "count": 0}, {"slug": "ligue-3", "name": "Ligue 3", "count": 0}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T07:36:50.607248Z",
+  updated: "2026-08-08T09:58:49.044377Z",
   label: "Nation aggregation"
 };

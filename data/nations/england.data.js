@@ -6,10 +6,38 @@
 const NATION = {
   name: "England",
   flag_emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  stories_count: 257
+  stories_count: 271
 };
 
 const TOP_STORIES = [  {
+    name: "Divin Mubama",prob: 50, truth: 50, bullshit: false,
+    club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
+    from: "Manchester City", to: "Derby County",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Championship"
+  },
+  {
+    name: "Stephen Mfuni",prob: 50, truth: 50, bullshit: false,
+    club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
+    from: "Manchester City", to: "Derby County",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Championship"
+  },
+  {
+    name: "Tommy Watson",prob: 50, truth: 50, bullshit: false,
+    club_origin: "derby-county", club_display_name: "Derby County", direction: "in",
+    from: "Brighton", to: "Derby County",
+    tier: 0, coverage: 1, coverage_trend: 'down',
+    value: "Loan", updated: "2026-07-29T00:00:00Z", league: "Championship"
+  },
+  {
+    name: "Daniel Jebbison",prob: 50, truth: 50, bullshit: false,
+    club_origin: "preston-north-end", club_display_name: "Preston North End", direction: "out",
+    from: "Preston North End", to: "Blackburn Rovers",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Loan + option", updated: "2026-07-29T00:00:00Z", league: "Championship"
+  },
+  {
     name: "Franco Ravizzoli",prob: 45, truth: 50, bullshit: false,
     club_origin: "blackpool", club_display_name: "Blackpool", direction: "out",
     from: "Blackpool", to: "Blackpool",
@@ -22,6 +50,13 @@ const TOP_STORIES = [  {
     from: "Blackpool", to: "Blackpool",
     tier: 0, coverage: 1, coverage_trend: 'flat',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "League One"
+  },
+  {
+    name: "Joel Randall",prob: 30, truth: 40, bullshit: false,
+    club_origin: "wycombe-wanderers", club_display_name: "Wycombe Wanderers", direction: "in",
+    from: "Free agent (released by Bolton)", to: "Wycombe Wanderers",
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    value: "Free", updated: "2026-08-03T18:00:00Z", league: "League One"
   },
   {
     name: "David McGoldrick",prob: 20, truth: 35, bullshit: false,
@@ -52,76 +87,41 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-06-06T00:00:00Z", league: "Premier League"
   },
   {
-    name: "Jan Paul van Hecke",prob: 95, truth: 95, bullshit: false,
-    club_origin: "brighton", club_display_name: "Brighton", direction: "out",
-    from: "Brighton", to: "Tottenham",
-    tier: 1, coverage: 3, coverage_trend: 'flat',
-    value: "£52m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+    name: "Matheus Nunes",prob: 100, truth: 100, bullshit: false,
+    club_origin: "wolverhampton", club_display_name: "Wolverhampton Wanderers", direction: "in",
+    from: "Manchester City", to: "Wolverhampton Wanderers",
+    tier: 1, coverage: 1, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
-    name: "Sasa Lukic",prob: 95, truth: 100, bullshit: false,
-    club_origin: "fulham", club_display_name: "Fulham", direction: "out",
-    from: "Fulham", to: "Ipswich Town",
-    tier: 1, coverage: 4, coverage_trend: 'flat',
-    value: "£9m", updated: "2026-06-06T00:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Bruno Guimarães",prob: 90, truth: 95, bullshit: false,
+    name: "Bruno Guimarães",prob: 95, truth: 95, bullshit: false,
     club_origin: "arsenal", club_display_name: "Arsenal", direction: "in",
     from: "Newcastle United", to: "Arsenal",
     tier: 1, coverage: 8, coverage_trend: 'flat',
     value: "£75m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Maxence Lacroix",prob: 85, truth: 90, bullshit: false,
+    name: "Maxence Lacroix",prob: 95, truth: 95, bullshit: false,
     club_origin: "chelsea", club_display_name: "Chelsea", direction: "in",
     from: "Crystal Palace", to: "Chelsea",
     tier: 1, coverage: 4, coverage_trend: 'flat',
     value: "£52m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
   },
   {
-    name: "Youri Tielemans",prob: 85, truth: 90, bullshit: false,
-    club_origin: "aston-villa", club_display_name: "Aston Villa", direction: "out",
-    from: "Aston Villa", to: "Aston Villa",
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    value: "£35m", updated: "2026-06-06T12:00:00Z", league: "Premier League"
-  },
-  {
-    name: "Christian Norgaard",prob: 85, truth: 90, bullshit: false,
-    club_origin: "arsenal", club_display_name: "Arsenal", direction: "out",
-    from: "Arsenal", to: "Everton",
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    value: "£7m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Liam Delap",prob: 85, truth: 90, bullshit: false,
-    club_origin: "chelsea", club_display_name: "Chelsea", direction: "in",
-    from: "Ipswich Town", to: "Chelsea",
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Elliot Anderson",prob: 80, truth: 85, bullshit: false,
-    club_origin: "manchester-city", club_display_name: "Manchester City", direction: "in",
-    from: "Nottingham Forest", to: "Manchester City",
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T12:48:44Z", league: "Premier League"
-  },
-  {
-    name: "Morgan Rogers",prob: 75, truth: 85, bullshit: false,
-    club_origin: "chelsea", club_display_name: "Chelsea", direction: "in",
-    from: "Middlesbrough", to: "Chelsea",
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    value: "£117m", updated: "2026-08-03T12:48:44Z", league: "Premier League"
+    name: "Sasa Lukic",prob: 95, truth: 95, bullshit: false,
+    club_origin: "fulham", club_display_name: "Fulham", direction: "out",
+    from: "Fulham", to: "Ipswich Town",
+    tier: 1, coverage: 4, coverage_trend: 'flat',
+    value: "£9m", updated: "2026-06-06T00:00:00Z", league: "Premier League"
   },
 ];
 
-const BY_LEAGUE = {"League One": 115, "Championship": 35, "Premier League": 106, "League Two": 1};
+const BY_LEAGUE = {"Championship": 45, "League One": 118, "Premier League": 103, "League Two": 5};
 
-const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 115}, {"slug": "premier-league", "name": "Premier League", "count": 106}, {"slug": "championship", "name": "Championship", "count": 35}, {"slug": "league-two", "name": "League Two", "count": 1}];
+const LEAGUES_LIST = [{"slug": "league-one", "name": "League One", "count": 118}, {"slug": "premier-league", "name": "Premier League", "count": 103}, {"slug": "championship", "name": "Championship", "count": 45}, {"slug": "league-two", "name": "League Two", "count": 5}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T07:36:50.607030Z",
+  updated: "2026-08-08T09:58:49.044075Z",
   label: "Nation aggregation"
 };
