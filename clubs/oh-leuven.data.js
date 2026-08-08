@@ -33,20 +33,19 @@ const REPORT_META = {
 const CONFIRMED_IN = [
   {name:"Jamie Lawrence", sub:"23 · CB · Germany", club:"WSG Tirol", pos:"CB", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"2.01m Bayern-academy defender signs until 2029 after two seasons in the Austrian Bundesliga."},
   {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer from Celtic confirmed; described as having significant potential and right mentality"},
-  {name:"Shin Yamada", sub:"Unknown · Japan · Forward", club:"Unknown", pos:"Forward", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"First official transfer for OH Leuven this window"}
+  {name:"Shin Yamada", sub:"Unknown · Japan · Forward", club:"Unknown", pos:"Forward", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Ex-Bayern talent; contract until 2029"}
 ];
 const CONFIRMED_OUT = [
   {name:"Unknown Player", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"JPL champion departing to Eredivisie - official transfer"},
-  {name:"Sory Kaba", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure announced"}
+  {name:"Sory Kaba", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official departure confirmed"}
 ];
 const INCOMING = [
   {name:"Van Den Heuvel", sub:"Unknown · Unknown · Unknown", club:"Celtic", pos:"Unknown", report:"Transfer from Celtic with significant potential and right mentality", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:90, light:"g", trend:"flat", note:"Club expressed satisfaction with potential and mentality", lastSeen:"2026-08-07T14:38:27Z", baseProb:90, dead:true, deadReason:"Confirmed transfer from Celtic completed; should move to confirmed_in but full name/details insufficient to confirm from snippets alone"},
-  {name:"Unknown striker from Westerlo", sub:"Unknown · Unknown · Forward", club:"Westerlo", pos:"Forward", report:"OH Leuven finds striker at Westerlo", src:"VoetbalBelgie", tier:3, fee:"Unknown", truth:85, prob:75, light:"g", trend:"flat", note:"Transfer link with Westerlo striker", lastSeen:"2026-08-08T07:40:32Z", baseProb:75}
+  {name:"Unknown striker from Westerlo", sub:"Unknown · Unknown · Forward", club:"Westerlo", pos:"Forward", report:"OH Leuven finds striker at Westerlo", src:"VoetbalBelgie", tier:3, fee:"Unknown", truth:85, prob:75, light:"g", trend:"flat", note:"Transfer link with Westerlo striker", lastSeen:"2026-08-08T07:40:32Z", baseProb:75, dead:true, deadReason:"Identified as Shin Yamada (ex-Bayern talent) in official sources; no separate unnamed Westerlo transfer confirmed"}
 ];
 const OUTGOING = [
-  {name:"Davis Opoku", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", report:"Departing OH Leuven", src:"Unknown", tier:3, fee:"Undisclosed", truth:75, prob:80, light:"g", trend:"up", note:"On-page rumour from 27 Jul 2026", lastSeen:"2026-08-07T14:38:27Z", baseProb:80},
-  {name:"Aurélie Reynders", sub:"18 · Belgium · Forward", club:"OH Leuven", pos:"Forward", report:"Most expensive outgoing transfer from Belgium; departed OH Leuven", src:"robtv.be / Sporza", tier:2, fee:"Unknown", truth:90, prob:95, light:"g", trend:"up", note:"Record outgoing transfer from Belgium; player dreams of Barcelona", lastSeen:"2026-08-07T17:40:23Z", baseProb:95},
-  {name:"Nyakossi", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", report:"Expected to generate significant/gigantic transfer fee", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Described as potentially major income for the club", lastSeen:"2026-08-07T14:38:27Z", baseProb:70}
+  {name:"Aurélie Reynders", sub:"18 · Belgium · Unknown", club:"OH Leuven", pos:"Unknown", report:"Most expensive outgoing transfer from Belgium; reportedly dreams of Barcelona, could leave if opportunity arises", src:"Sporza", tier:2, fee:"Unknown", truth:70, prob:65, light:"g", trend:"down", note:"Young talent potentially outgrowing the club; Barcelona interest mentioned", lastSeen:"2026-08-08T11:19:01Z", baseProb:65},
+  {name:"Nyakossi", sub:"Unknown · Unknown · Unknown", club:"OH Leuven", pos:"Unknown", report:"Expected to generate significant/gigantic transfer fee", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"up", note:"Described as potentially major income for the club", lastSeen:"2026-08-07T14:38:27Z", baseProb:70, dead:true, deadReason:"No recent credible updates or confirmed transfer; no current snippet evidence of active negotiations"}
 ];
 const RISERS = [];
 const FALLERS = [];

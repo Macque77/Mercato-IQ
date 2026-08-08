@@ -32,8 +32,10 @@ const REPORT_META = {
 
 const CONFIRMED_IN = [
   {name:"Derensili Sanches Fernandes", sub:"W", club:"Excelsior (Netherlands)", pos:"W", fee:"Multi-million fee", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Reported close to completion pending visa formalities."},
-  {name:"Ibane Bowat", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer announced"},
-  {name:"Ethan Brierley", sub:"Unknown · Unknown · Unknown", club:"Unknown", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move completed"}
+  {name:"Archie Collins", sub:"Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer completed"},
+  {name:"Ibane Bowat", sub:"Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer announced"},
+  {name:"Ethan Brierley", sub:"Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Permanent move completed"},
+  {name:"Ashley Fletcher", sub:"Forward", club:"Unknown", pos:"F", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Official announcement"}
 ];
 const CONFIRMED_OUT = [
   {name:"Alfie May", sub:"ST", club:"Doncaster Rovers", pos:"ST", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"See Doncaster entry."},
@@ -80,7 +82,9 @@ const HUB = {
   huddersfieldTownBaliMumba: {l:"Huddersfield Town", u:"https://news.google.com/rss/articles/CBMiggFBVV95cUxNSEdtYWRVZ3R5QmEwTzJ0Y21HWkYzZ0dVLVhKeTYwNHNxbHpfanZIQzNHdHV3Qzl1bkpha2ZDbmxZRWdRSEJtMllwcFJuRXNqRGJNMkoydDBmMVZNMGlZRGlrZzZ3SmN6TVdySU9WdHZTMVdhT1dRX1hXWThVR2p3M3pR?oc=5"},
   huddersfieldTownLeeNicholls: {l:"Huddersfield Town", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2txQS1kdlJlMVhUVnFhb1pCZGRMV0NNd0tpWFhEQjRidmItcWRkM1NidDhRZHVTbjZtbkRhcG1lQ2tHWkY0Y2loUXR2RVktQ05ORlpqbERWTVRxMDQ4UlJuUXo2SVN0SWVrZTV1QWYzNGQ3Mmt5YUpKMXlfVWNyWXloQVVUQVdLSEpTUnItb00?oc=5"},
   googleNewsDerensiliSanchesFernandes: {l:"Google News", u:"https://news.google.com/rss/articles/CBMi_gFBVV95cUxQZnJnMG9PWm44YVFObUs0eVhnZ0lEbllNX2wyeWV3aUZoRVRNUkxtYjN3YmpsRGUyNzVNdVVHQnlUcHc1VmJpZUhCV2tuQWtWbHlxMmtKTDZzRGlfbTRzMTI1QXFWUC01TUNHWjVSNGVwYVFTQTBvRWZBRkxUbFlXa0hSNTV1UlVHcnhqV0ZvMGdZQmREOTlCLUhzM2NXajVRU0txcUhFVXdDak5SbndHME81dGd5YzkyOFRUaEpibS1ZY2dNSkVibFFwTWdtbEcwakY4c1FPdHotNUFRQ2ZKSXJwUFNYTmpNa09pNE9jako3ZE82b1pOZU1IZzJIUQ?oc=5"},
-  googleNewsLeeNicholls: {l:"Google News", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2txQS1kdlJlMVhUVnFhb1pCZGRMV0NNd0tpWFhEQjRidmItcWRkM1NidDhRZHVTbjZtbkRhcG1lQ2tHWkY0Y2loUXR2RVktY0ZFZGZOU1lUUT09?oc=5"}};
+  googleNewsLeeNicholls: {l:"Google News", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2txQS1kdlJlMVhUVnFhb1pCZGRMV0NNd0tpWFhEQjRidmItcWRkM1NidDhRZHVTbjZtbkRhcG1lQ2tHWkY0Y2loUXR2RVktY0ZFZGZOU1lUUT09?oc=5"},
+  huddersfieldTownAshleyFletcher: {l:"Huddersfield Town", u:"https://news.google.com/rss/articles/CBMidkFVX3lxTFBBZVFmLXNMVHBjT1FlS3k1alpabDFHaThwOUwwMl8zbERNQ2hHa3ZTNUx5VmNpcmlNd1pEeHRSNDZWdGNZcldxWUZHUEw2T3ZLQ0tfc19KSkpRdVI0bmIyYl9tNUZyX1VuZWN3MlNySWd4NDBGRUE"},
+  huddersfieldTownLeeNicholls1: {l:"Huddersfield Town", u:"https://news.google.com/rss/articles/CBMikAFBVV95cUxNY2txQS1kdlJlMVhUVnFhb1pCZGRMV0NNd0tpWFhEQjRidmItcWRkM1NidDhRZHVTbjZtbkRhcG1lQ2tHWkY0Y2loUXR2RVktQ05ORlpqbERWTVRxMDQ4UlJuUXo2SVN0SWVrZTV1QWYzNGQ3Mkt5YUpKMXlfVWNyWXloQVVUQVdLSEpTUnItb00"}};
 
 const LINKMAP = {
   "Derensili Sanches Fernandes": ["gnews-derensilisanchesfernande", "bBCDerensiliSanchesFernandes", "huddersfieldTownFCDerensiliSanchesFernandes", "bBCDerensiliSanchesFernandes1", "googleNewsDerensiliSanchesFernandes"],
@@ -91,8 +95,8 @@ const LINKMAP = {
   "Ethan Brierley": ["brentfordFCEthanBrierley", "unknownEthanBrierley"],
   "Dutch winger": ["yorkshirePostDutchwinger"],
   "Ex-Huddersfield Town forward": ["yorkshirePostExHuddersfieldTownforward", "yorkshirePostExHuddersfieldTownforward1"],
-  "Ashley Fletcher": ["huddersfieldTownFCAshleyFletcher"],
-  "Lee Nicholls": ["huddersfieldTownFCLeeNicholls", "yorkshirePostLeeNicholls", "huddersfieldTownLeeNicholls", "googleNewsLeeNicholls"],
+  "Ashley Fletcher": ["huddersfieldTownFCAshleyFletcher", "huddersfieldTownAshleyFletcher"],
+  "Lee Nicholls": ["huddersfieldTownFCLeeNicholls", "yorkshirePostLeeNicholls", "huddersfieldTownLeeNicholls", "googleNewsLeeNicholls", "huddersfieldTownLeeNicholls1"],
   "Portsmouth and former Chelsea and Fulham defender": ["yorkshirePostPortsmouthandformerChelseaandFulhamdefender"],
   "Bali Mumba": ["huddersfieldTownBaliMumba"]};
 const WL_LINKMAP = {};

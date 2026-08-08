@@ -30,19 +30,16 @@ const REPORT_META = {
   label: "Transfer window active; pending updates"
 };
 
-const CONFIRMED_IN = [
-  {name:"Luke Berry", sub:"Unknown", club:"Unknown", pos:"Unknown", fee:"Undisclosed", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed signing (existing on-page entry)"}
-];
+const CONFIRMED_IN = [];
 const CONFIRMED_OUT = [];
 const INCOMING = [
-  {name:"Luke Berry", sub:"MF", club:"Free agent", pos:"MF", report:"~2 wks ago", src:"FLW opinion", tier:4, fee:"Free", truth:30, prob:25, light:'o', trend:'flat', note:"Reunion speculation with the ex-Charlton Athletic midfielder, opinion-based.", lastSeen:"2026-08-04T19:10:50Z", baseProb:25},
-  {name:"Callum Stead", sub:"Striker · Barnet", club:"Barnet", pos:"ST", report:"Signed as first summer signing", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T10:03:39Z", baseProb:100},
-  {name:"Callum Perry", sub:"Coventry City", club:"Coventry City", pos:"Unknown", report:"Season-long loan from Coventry City", src:"The Coventry Observer", tier:3, fee:"Loan", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed season-long loan", lastSeen:"2026-08-08T10:03:39Z", baseProb:100},
-  {name:"Patrick Bauer", sub:"Defender · AFC Wimbledon", club:"AFC Wimbledon", pos:"DEF", report:"Signed from AFC Wimbledon", src:"BBC", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed signing", lastSeen:"2026-08-08T10:03:39Z", baseProb:100},
-  {name:"Sean Raggett", sub:"Defender · Rotherham United", club:"Rotherham United", pos:"DEF", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed loan signing", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
+  {name:"Callum Stead", sub:"unknown · unknown · Striker", club:"Barnet", pos:"Striker", report:"Signed as first summer signing", src:"BBC", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed signing from Barnet", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
+  {name:"Callum Perry", sub:"unknown · unknown · unknown", club:"Coventry City", pos:"unknown", report:"Season-long loan from Coventry City", src:"The Coventry Observer", tier:3, fee:"Loan", truth:95, prob:95, light:"g", trend:"down", note:"Season-long loan confirmed", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
+  {name:"Patrick Bauer", sub:"unknown · unknown · Defender", club:"AFC Wimbledon", pos:"Defender", report:"Signed from AFC Wimbledon", src:"BBC", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed signing from AFC Wimbledon", lastSeen:"2026-08-08T11:19:01Z", baseProb:95},
+  {name:"Sean Raggett", sub:"unknown · unknown · Defender", club:"Rotherham United", pos:"Defender", report:"Loan signing from Rotherham United", src:"BBC", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"down", note:"Confirmed loan signing", lastSeen:"2026-08-08T11:19:01Z", baseProb:95}
 ];
 const OUTGOING = [
-  {name:"Maldini Kacurri", sub:"Defender · Arsenal", club:"Arsenal", pos:"DEF", report:"Cambridge United joining chase for Albanian defender", src:"sportsboom.co.uk", tier:3, fee:"Undisclosed", truth:50, prob:25, light:"o", trend:"flat", note:"Interest only; player at Arsenal", lastSeen:"2026-08-08T10:03:39Z", baseProb:25}
+  {name:"Maldini Kacurri", sub:"unknown · Albanian · Defender", club:"Arsenal", pos:"Defender", report:"Cambridge United joining chase (implies departure sought)", src:"SportsBoom UK", tier:3, fee:"unknown", truth:40, prob:30, light:"y", trend:"up", note:"Rumour of transfer chase; unclear if player is leaving or if Cambridge is just interested in signing him from elsewhere", lastSeen:"2026-08-08T11:19:01Z", baseProb:30}
 ];
 const RISERS = [];
 const FALLERS = [];

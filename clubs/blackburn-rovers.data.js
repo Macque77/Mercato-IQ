@@ -36,10 +36,10 @@ const CONFIRMED_IN = [
 const CONFIRMED_OUT = [];
 const INCOMING = [
   {name:"Unknown", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:2, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Free transfer from Brentford - player name not specified in available snippets", lastSeen:"2026-08-08T07:40:33Z", baseProb:100, dead:true, deadReason:"no longer a current link"},
-  {name:"Unknown Brentford midfielder", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:3, fee:"Free", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed free transfer from Brentford", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
+  {name:"Unknown Brentford midfielder", sub:"Unknown · Unknown · Midfielder", club:"Brentford", pos:"Midfielder", report:"Blackburn Rovers complete free transfer deal for Brentford midfielder", src:"Lancashire Telegraph", tier:2, fee:"Free", truth:95, prob:95, light:"g", trend:"down", note:"Free transfer completed, player name not yet identified in snippet", lastSeen:"2026-08-08T11:19:01Z", baseProb:95}
 ];
 const OUTGOING = [
-  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Blackburn Rovers", pos:"Unknown", report:"How much Blackburn Rovers might get from Ash Phillips", src:"Lancashire Telegraph", tier:3, fee:"Unknown", truth:50, prob:50, light:"y", trend:"flat", note:"Transfer valuation speculation", lastSeen:"2026-08-08T10:03:39Z", baseProb:50}
+  {name:"Ash Phillips", sub:"Unknown · Unknown · Unknown", club:"Blackburn Rovers", pos:"Unknown", report:"How much Blackburn Rovers might get from Ash Phillips transfer", src:"Lancashire Telegraph", tier:2, fee:"Unknown", truth:70, prob:65, light:"g", trend:"up", note:"Potential departure under discussion", lastSeen:"2026-08-08T11:19:01Z", baseProb:65}
 ];
 const RISERS = [];
 const FALLERS = [];
@@ -72,7 +72,7 @@ const LINKMAP = {
   "Unknown Brentford Midfielder": ["lancashireTelegraphUnknownBrentfordMidfielder"],
   "unknown": ["lancashireTelegraphUnknownBrentfordMidfielder"],
   "Unknown": ["lancashireTelegraphUnknown", "lancashireTelegraphUnknown1", "lancashireTelegraphUnknownBrentfordMidfielder"],
-  "Unknown Brentford midfielder": ["lancashireTelegraphUnknownBrentfordmidfielder", "lancashireTelegraphUnknownBrentfordmidfielder1", "lancashireTelegraphUnknownBrentfordMidfielder"]};
+  "Unknown Brentford midfielder": ["lancashireTelegraphUnknownBrentfordmidfielder", "lancashireTelegraphUnknownBrentfordmidfielder1", "lancashireTelegraphUnknownBrentfordMidfielder", "lancashireTelegraphUnknown"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

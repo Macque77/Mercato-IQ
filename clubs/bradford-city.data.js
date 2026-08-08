@@ -47,7 +47,7 @@ const INCOMING = [
 ];
 const OUTGOING = [
   {name:"Lee Evans", sub:"MF", club:"Undisclosed", pos:"MF", report:"Lee Evans departs Bradford City", src:"FLW opinion", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"On-page rumour, no fresh snippet detail", lastSeen:"2026-08-07T14:38:27Z", baseProb:85, dead:true, deadReason:"Outgoing rumour; no recent snippet confirming departure"},
-  {name:"Ash Power", sub:"Bradford City · Defender", club:"Wigan Athletic", pos:"D", report:"Makes move to Wigan Athletic", src:"Bradford City AFC", tier:2, fee:"Unknown", truth:95, prob:98, light:"g", trend:"up", note:"Confirmed departure to Wigan Athletic", lastSeen:"2026-08-08T10:03:39Z", baseProb:98}
+  {name:"Ash Power", sub:"Bradford City · Defender", club:"Wigan Athletic", pos:"D", report:"Makes move to Wigan Athletic", src:"Bradford City AFC", tier:2, fee:"Unknown", truth:95, prob:98, light:"g", trend:"up", note:"Confirmed departure to Wigan Athletic", lastSeen:"2026-08-08T10:03:39Z", baseProb:98, dead:true, deadReason:"no longer a current link"}
 ];
 const RISERS = [];
 const FALLERS = [];

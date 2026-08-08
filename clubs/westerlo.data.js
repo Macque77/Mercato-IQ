@@ -45,10 +45,11 @@ const CONFIRMED_OUT = [
   {name:"Emin Bayram", sub:"CB · Turkey", club:"Istanbul Başakşehir", pos:"CB", fee:"~€5m", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Turkish defender completes a three-year move after 94 appearances for Westerlo."}
 ];
 const INCOMING = [
-  {name:"Cisse Sandra", sub:"24 · Belgium · Midfielder", club:"Club Brugge", pos:"Midfielder", report:"Transfer completed from Club Brugge to KVC Westerlo", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal finalized; Club Brugge receives fee reported at significant sum", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
+  {name:"Cisse Sandra", sub:"24 · Belgium · M", club:"Club Brugge", pos:"M", report:"Transfer completed from Club Brugge", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Deal finalized; fee reported as substantial sum by Belgian sources", lastSeen:"2026-08-08T11:19:01Z", baseProb:100}
 ];
 const OUTGOING = [
-  {name:"Jarne Rommens", sub:"23 · Belgium · Defender", club:"Rangers", pos:"Defender", report:"On way to Rangers; among most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:85, light:"g", trend:"up", note:"Transfer in advanced stages to Rangers", lastSeen:"2026-08-08T10:03:39Z", baseProb:85}
+  {name:"Jarne Rommens", sub:"Unknown · Belgium · Unknown", club:"Rangers", pos:"Unknown", report:"On way to Rangers; among most expensive outgoing transfers", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:85, prob:80, light:"g", trend:"down", note:"Transfer in advanced stages to Scottish club", lastSeen:"2026-08-08T11:19:01Z", baseProb:80},
+  {name:"Ferri", sub:"Unknown · Unknown · Unknown", club:"Feyenoord", pos:"Unknown", report:"Principle agreement reached for exit to Feyenoord", src:"VoetbalPrimeur.be", tier:3, fee:"Undisclosed", truth:75, prob:70, light:"g", trend:"flat", note:"Deal in advanced stages; principle accord confirmed", lastSeen:"2026-08-08T11:19:01Z", baseProb:70}
 ];
 const RISERS = [];
 const FALLERS = [];

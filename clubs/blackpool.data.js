@@ -35,11 +35,11 @@ const CONFIRMED_OUT = [
   {name:"Ashley Fletcher", sub:"", club:"Huddersfield Town", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Confirmed transfer to Huddersfield Town"}
 ];
 const INCOMING = [
-  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"Incoming rumour", src:"FLW opinion", tier:0, fee:"Free", truth:30, prob:20, light:"o", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-08T10:03:39Z", baseProb:20}
+  {name:"Jay Fulton", sub:"MF", club:"Free agent", pos:"MF", report:"Incoming rumour", src:"FLW opinion", tier:0, fee:"Free", truth:30, prob:20, light:"o", trend:"down", note:"On-page rumour retained; no fresh snippet data to update", lastSeen:"2026-08-08T11:19:01Z", baseProb:20}
 ];
 const OUTGOING = [
-  {name:"Franco Ravizzoli", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:0, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour; no fresh snippet provided", lastSeen:"2026-08-08T10:03:39Z", baseProb:45},
-  {name:"Josh Bowler", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:0, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour; no fresh snippet provided", lastSeen:"2026-08-08T10:03:39Z", baseProb:45},
+  {name:"Franco Ravizzoli", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:0, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour; no fresh snippet provided", lastSeen:"2026-08-08T11:19:01Z", baseProb:45},
+  {name:"Josh Bowler", sub:"Unknown · Unknown · Unknown", club:"Blackpool", pos:"Unknown", report:"Linked with exit", src:"Unknown", tier:0, fee:"Undisclosed", truth:50, prob:45, light:"y", trend:"down", note:"On-page rumour; no fresh snippet provided", lastSeen:"2026-08-08T11:19:01Z", baseProb:45},
   {name:"Ashley Fletcher", sub:"", club:"Huddersfield Town", pos:"", report:"Ashley Fletcher leaves Blackpool to join Huddersfield Town", src:"BBC", tier:2, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed departure", lastSeen:"2026-08-07T01:42:32Z", baseProb:100, dead:true, deadReason:"Confirmed transfer to Huddersfield Town"}
 ];
 const RISERS = [];

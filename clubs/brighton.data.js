@@ -102,12 +102,12 @@ const CONFIRMED_OUT =
 const INCOMING = [
   {name:"Solly March", sub:"30 · England · D/M", club:"Crystal Palace", pos:"D/M", report:"Crystal Palace considering free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:60, prob:40, light:"y", trend:"up", note:"Palace exploring move after contract situation; multiple sources confirm interest", lastSeen:"2026-08-08T04:21:31Z", baseProb:40, dead:true, deadReason:"Duplicate entry removed (kept as incoming rumour to Crystal Palace, not outgoing to same club)"},
   {name:"Gabby George", sub:"Unknown · Unknown · Unknown", club:"Manchester United", pos:"Unknown", report:"Gabby George joins Brighton & Hove Albion", src:"Manchester United Website", tier:2, fee:"Unknown", truth:100, prob:100, light:"g", trend:"flat", note:"Confirmed transfer from Manchester United", lastSeen:"2026-08-07T14:38:27Z", baseProb:100},
-  {name:"Ayase Ueda", sub:"24 · Japan · F", club:"Feyenoord", pos:"ST", report:"Brighton make concrete move for Feyenoord striker", src:"Football Place", tier:3, fee:"", truth:70, prob:60, light:"g", trend:"up", note:"Concrete interest reported; no recent updates on progress", lastSeen:"2026-08-08T10:03:39Z", baseProb:60}
+  {name:"Ayase Ueda", sub:"24 · Japan · F", club:"Feyenoord", pos:"F", report:"Brighton make concrete move for Feyenoord striker", src:"transferfeed", tier:3, fee:"", truth:65, prob:50, light:"y", trend:"down", note:"Concrete interest reported but no recent updates on progression", lastSeen:"2026-08-08T11:19:01Z", baseProb:50}
 ];
 
 const OUTGOING = [
-  {name:"Jan Paul van Hecke", sub:"24 · Netherlands · D", club:"Brighton", pos:"CB", report:"Tottenham agree £52million Jan Paul van Hecke transfer with Brighton", src:"The Athletic", tier:1, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Deal agreed per David Ornstein; high confidence transfer", lastSeen:"2026-08-08T10:03:39Z", baseProb:90},
-  {name:"Solly March", sub:"30 · England · W", club:"Brighton", pos:"W", report:"Crystal Palace consider shock free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:65, prob:55, light:"g", trend:"up", note:"Palace in advanced talks", lastSeen:"2026-08-08T10:03:39Z", baseProb:55}
+  {name:"Jan Paul van Hecke", sub:"24 · Belgium · D", club:"Brighton", pos:"D", report:"Tottenham agree £52million Jan Paul van Hecke transfer", src:"The Athletic", tier:2, fee:"£52m", truth:95, prob:90, light:"g", trend:"flat", note:"Deal agreed per David Ornstein reporting", lastSeen:"2026-08-08T11:19:01Z", baseProb:90},
+  {name:"Solly March", sub:"30 · England · W", club:"Brighton", pos:"W", report:"Crystal Palace consider shock free transfer for Brighton icon Solly March", src:"Goal.com", tier:3, fee:"Free", truth:70, prob:60, light:"g", trend:"up", note:"Palace exploring move after contract situation; multiple recent reports of interest", lastSeen:"2026-08-08T11:19:01Z", baseProb:60}
 ];
 const DEAD = [
   {name:"Said El Mala", sub:"Unknown · Unknown · Unknown", club:"Köln", pos:"Unknown", report:"Brighton pushing for final talks with Köln", src:"On-page rumour", tier:3, fee:"Unknown", truth:45, prob:40, light:"y", trend:"down", note:"Active negotiation reported", lastSeen:"2026-08-06T13:55:46Z", baseProb:40, dead:true, deadReason:"No recent credible reporting; transfer window context unclear", dir:"in", deadAt:"2026-08-06T14:13:58Z"},
@@ -194,7 +194,8 @@ const HUB = {
   manchesterUnitedWebsiteGabbyGeorge1: {l:"Manchester United Website", u:"https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMnFTNG4wTmR4UzBRY1d5cUhwcnE2ZlljOF9ZNW1aRlRJdEcwRC05Y1diZ2lSVlBlYkpyb0RrZHNQbHVsTkFocFZkNDEEc2FuSWtFdlhrVEVjT3E5MlIyblNUdUpWUHlNVUo3aDlVRWsxNzRDWnZ0Um9uOURqaklNbmpCVzAwTXcteER3"},
   footballPlaceAyaseUeda: {l:"Football Place", u:"https://news.google.com/rss/articles/CBMiggFBVV95cUxNTWxtOW50NTRvS2hSRVlTZnhfMDVSa0N4SWo0VXJFOEVTcHFaZkpSZC1iZ2ZZR2FfT2xtcXBuVU5uMjd3NmlPMmk5N3ctWFFCNG1ZNGU1LTB0RXF5NGhCdGU1bklfNldhdUQ3S3kzcGE2d2ROcUxxX0U1bjU2dWxQVjJ3"},
   goalcomSollyMarch1: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUWN5Nk1wZWp2ZlZxQS1uZ01tZXRMUmZETzlNYlRLQTFBendpRWtERlpLQnNyRHlFa3VvN3N5NTltakRIRklKb0lLcGNBSTdYc1JCY1A1dFJFLWxVT0ZQUEd4RWJWaUxjZV9EekFvZFpZSVlYdW1kemFBbV82eWlrTnMxOU96UmZnY0tEZXRIY3VFOFh2NXVydTNBOXJsdk5rc0RvVS1GZERYZGY1enNrM1dTUFdRQ0RvaDFDZVVXaUpBNlJDbldGY0t3LTRvSklCTjQyMTN4Wk4tNW5HWk9DTGhpb0xsQQ"},
-  theNewYorkTimesJoelVeltman: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV"}};
+  theNewYorkTimesJoelVeltman: {l:"The New York Times", u:"https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1hiNFZJYndwVlVDazg2eFVTOGV0Tmt5UEpUcFUzQ2h2ckE4dlZoc1NzVGZaVTdmbHdiRzRuNDVzaG9oTFo2dWRNZ2Y2S05aaFJTTTVrRFdtc09kN1pXRnBOSzlDRE5CbHBzSnRfQnhIZGJIWWpZRUpxTkZjUUJLLVNEOERWLVBROW1oV2djaVpxUVBSYkNV"},
+  goalcomSollyMarch2: {l:"Goal.com", u:"https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUWN5Nk1wZWp2ZlZxQS1uZ01tZXRMUmZETzlNYlRLQTFBendpRWtERlpLQnNyRHlFa3VvN3N5NTltakRIRklKb0lLcGNBSTdYc1JCY1A1dFJFLWxVT0ZQUEd4RWJWaUxjZV9EekFvZFpZSVlYdW1kemFBbV82eWlrNnMxOU96UmZnY0tEZXRIY3VFOFh2NXVydTNBOXJsdk5rc0RvVS1GZERYZGY1enNrM1dTUFdRQ0RvaDFDZVVXaUpBNlJDbldGY0t3LTRvSklCTjQyMTN4Wk4tNW5HWk9DTGhpb0xsQQ"}};
 const LINKMAP = {
   "Young data-model targets": ["athletic","argus","bbcGossip"],
   "Squad depth for Europe": ["argus","sky"],
@@ -214,7 +215,7 @@ const LINKMAP = {
   "Jeremy Sarmiento": ["sportsMoleJeremySarmiento"],
   "Adam Webster": ["sportsMoleJeremySarmiento"],
   "Joel Veltman": ["sportsMoleJeremySarmiento", "skySportsTransferCentreCarlRushworth", "theNewYorkTimesJoelVeltman"],
-  "Solly March": ["sportsMoleJeremySarmiento", "goalcomSollyMarch", "goalcomSollyMarch1"],
+  "Solly March": ["sportsMoleJeremySarmiento", "goalcomSollyMarch", "goalcomSollyMarch1", "goalcomSollyMarch2"],
   "James Milner": ["sportsMoleJeremySarmiento"],
   "Carl Rushworth": ["skySportsTransferCentreCarlRushworth", "bBCCarlRushworth"],
   "Diego Coppola": ["skySportsTransferCentreCarlRushworth"],

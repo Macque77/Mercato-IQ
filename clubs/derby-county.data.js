@@ -39,12 +39,12 @@ const CONFIRMED_OUT = [
   {name:"Liam Thompson", sub:"", club:"Mansfield Town", pos:"", fee:"", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Transfer to Mansfield Town confirmed"}
 ];
 const INCOMING = [
-  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"Incoming transfer", src:"Pete O'Rourke", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T10:03:40Z", baseProb:50},
-  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"Incoming transfer", src:"Football League World", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T10:03:40Z", baseProb:50},
-  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"Incoming transfer", src:"Sunderland Echo", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T10:03:40Z", baseProb:50}
+  {name:"Divin Mubama", sub:"ST", club:"Manchester City", pos:"ST", report:"Incoming transfer", src:"Pete O'Rourke", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T11:19:01Z", baseProb:50},
+  {name:"Stephen Mfuni", sub:"18 · CB", club:"Manchester City", pos:"CB", report:"Incoming transfer", src:"Football League World", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T11:19:01Z", baseProb:50},
+  {name:"Tommy Watson", sub:"20 · LW · England", club:"Brighton", pos:"LW", report:"Incoming transfer", src:"Sunderland Echo", tier:0, fee:"Loan", truth:50, prob:50, light:"y", trend:"down", note:"On-page rumour, no fresh snippet provided", lastSeen:"2026-08-08T11:19:01Z", baseProb:50}
 ];
 const OUTGOING = [
-  {name:"Dajaune Brown", sub:"unknown · unknown · Striker", club:"Rochdale", pos:"Striker", report:"Loan switch to Rochdale", src:"Derby County", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Brown makes loan switch to Rochdale after joining Derby", lastSeen:"2026-08-07T01:42:32Z", baseProb:95},
+  {name:"Dajaune Brown", sub:"unknown · unknown · Striker", club:"Rochdale", pos:"Striker", report:"Loan switch to Rochdale", src:"Derby County", tier:2, fee:"Loan", truth:95, prob:95, light:"g", trend:"flat", note:"Brown makes loan switch to Rochdale after joining Derby", lastSeen:"2026-08-07T01:42:32Z", baseProb:95, dead:true, deadReason:"Listed as loan to Rochdale on page but snippets indicate completed outgoing transfer to EFL club, not a live rumour"},
   {name:"Thompson", sub:"unknown · unknown · unknown", club:"Mansfield Town", pos:"unknown", report:"Departs for Mansfield Town", src:"Derby County", tier:2, fee:"unknown", truth:95, prob:95, light:"g", trend:"flat", note:"Thompson transfer departure confirmed", lastSeen:"2026-08-07T01:42:32Z", baseProb:95, dead:true, deadReason:"Identified as Liam Thompson, confirmed transfer to Mansfield Town completed"},
   {name:"Liam Thompson", sub:"", club:"Mansfield Town", pos:"", report:"Transfer confirmed", src:"derbytelegraph.co.uk", tier:3, fee:"", truth:100, prob:100, light:"g", trend:"flat", note:"Thompson departs for Mansfield Town", lastSeen:"2026-08-08T10:03:40Z", baseProb:100}
 ];
@@ -67,7 +67,8 @@ const HUB = {
   derbyCountyOfficialThompson: {l:"Derby County (Official)", u:"https://news.google.com/rss/articles/CBMijgFBVV95cUxQN0VQOFVUbjhBUUJrWXh0YVdtWGltazdmdzB0WDA3cTNMYTJvZ1RqZXFnZFRoYkVycEJJNXF1UUQ0OFd0cURZYWxLbG4xVjgyalptbU01WUpsb3R5MUMydEJyNU1kcFVYWV83cEN3N0lGakYtOF9xOUQzc21QTmpnUEd0MmNRX0FyR0NlUUdB"},
   derbyshireLiveDajauneBrown1: {l:"Derbyshire Live", u:"https://news.google.com/rss/articles/CBMipgFBVV95cUxNOExDTW8zWVl5Rkg3RUZDT0pGSnZLaHZac3RlaTJmX2tjS2ZqRmVJbGk5RUctM0ZmYVRpcU9wUDVCZzNqdGlseDhfTW1vdnRITmIzY1c4ckZ3bDh4N091bXdBV2tmN1NWU2ZYdmxQbnpfVUc0ajdUdDRTYUo4bFdOcnh4U194emRLNU0wN1BRdFQ1UXVFQzVLcFV6Wk1mVGEzNTdkSXlR"},
   derbyshireLiveLiamThompson: {l:"Derbyshire Live", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX1RRTkJKMzlxcXR4TlpRdGFjR1dOcU1oMVZLcl80U3Q3Y0pKb2RkUmR1QVBsWUhGUVRkc3ZfVGM3WXk5eGdYWVlQclNDb05iZ2ZtMFItY1dJUld1aDQzUkFJR1N0RGdTY1RvTE5uVXZ1MkR1Y0M2N1hMSmFHQmpIZGFDWUliT3VJRTlJY1ByX1U2OUV2b0VQWmUyMHVMTGJlLUVCem5iN29CM2c"},
-  googleNewsDerbyCountyDajauneBrown: {l:"Google News / Derby County", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxORVFkVjlfNjZzZmoxM3NpS1NIRTQzbnVOVFdvREhrVEFaTUJnaEMtQnVEOWViLTJFenBxSlNwU2NCWEhjU2I1VVQ4SG93VDhkTW1xYnh2bFRsUmRFakF6Q1RQVFBtN3FsUUZPOFhBNHlJUkcyMlRVNEZORDBuZEFIZEVOX0RGYmdYQmc"}};
+  googleNewsDerbyCountyDajauneBrown: {l:"Google News / Derby County", u:"https://news.google.com/rss/articles/CBMiigFBVV95cUxORVFkVjlfNjZzZmoxM3NpS1NIRTQzbnVOVFdvREhrVEFaTUJnaEMtQnVEOWViLTJFenBxSlNwU2NCWEhjU2I1VVQ4SG93VDhkTW1xYnh2bFRsUmRFakF6Q1RQVFBtN3FsUUZPOFhBNHlJUkcyMlRVNEZORDBuZEFIZEVOX0RGYmdYQmc"},
+  derbyshireLiveLiamThompson1: {l:"Derbyshire Live", u:"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRmtIdTNqS05aT1o1Sl96cEVsQnhnQ05ZYzBVOXoyWTR5MHdIdEE5S0JtV1hfMHA3ckVtU3Fvbkp1NGpScmx6alc2eXZVYVZ0V0RxNjBYMWVDUGRTaGNDSnVoSWl4VzBHWmdVcm5zYTNuSVN3ckJ6cjJabjFKb0pHMmtmcWVGM1VVYkRyNVNGcUJka21Ba2xINDM4djFuQ25mTmk5Ri1BZjJndTg"}};
 
 const LINKMAP = {
   "Bobby Clark": ["gnews-bobbyclark"],
@@ -76,7 +77,7 @@ const LINKMAP = {
   "Tommy Watson": ["sunderlandecho"],
   "Dajaune Brown": ["derbyshireLiveDajauneBrown", "derbyCountyDajauneBrown", "derbyCountyOfficialDajauneBrown", "derbyshireLiveDajauneBrown1", "googleNewsDerbyCountyDajauneBrown"],
   "Thompson": ["derbyCountyThompson", "derbyCountyOfficialThompson"],
-  "Liam Thompson": ["derbyshireLiveLiamThompson", "derbyCountyThompson", "derbyCountyOfficialThompson"]};
+  "Liam Thompson": ["derbyshireLiveLiamThompson", "derbyCountyThompson", "derbyCountyOfficialThompson", "derbyshireLiveLiamThompson1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {

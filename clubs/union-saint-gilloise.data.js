@@ -38,7 +38,7 @@ const CONFIRMED_OUT = [
   {name:"Sadiki", sub:"Unknown · Unknown · Unknown", club:"", pos:"Unknown", fee:"Unknown", free:false, status:"done", statusTxt:"DONE, OFFICIAL", note:"Player departure confirmed; player statement released"}
 ];
 const INCOMING = [
-  {name:"Fedde Leysen", sub:"PSV", club:"PSV", pos:"Defender", report:"Transfer from PSV confirmed", src:"transferfeed snapshot", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Already confirmed on page", lastSeen:"2026-08-08T10:03:39Z", baseProb:100}
+  {name:"Fedde Leysen", sub:"PSV", club:"PSV", pos:"DEF", report:"Transfer from PSV confirmed", src:"transferfeed snapshot", tier:2, fee:"Undisclosed", truth:100, prob:100, light:"g", trend:"flat", note:"Already confirmed on page", lastSeen:"2026-08-08T11:19:01Z", baseProb:100}
 ];
 const OUTGOING = [
   {name:"Anan Khalaili", sub:"21 · RWB · Israel", club:"Nottingham Forest", pos:"RWB", report:"Departure linked", src:"The Athletic", tier:3, fee:"£17m bid rejected", truth:50, prob:50, light:"y", trend:"up", note:"On page as of 29 Jul 2026", lastSeen:"2026-08-08T07:40:32Z", baseProb:50, dead:true, deadReason:"No recent credible link; stale rumour"},
@@ -64,7 +64,8 @@ const HUB = {
   pSVFeddeLeysen: {l:"PSV", u:"https://news.google.com/rss/articles/CBMioAFBVV95cUxOSFFrR2NZMERWb25DbVdiVWZ2QThEWW9fVnIyalNFenlOSTJjWDVDcmlZZFFKa1dvTW9vWk8xWnppQVF5Nks1Qmo3bEVRdTYxOEFGazRJZnRQaV9wSFJtNnJUVHpKNjBqd2xGalNXaEhDaS1HRi1WdDNUWVlEaGQ1X0hpRVJPemstaFl4QnJwS28zNnc3eG9SaGw4Ykk5WXlZ"},
   voetbalPrimeurbeSadiki: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPS0dSZUs5b0c4cVN2aUhCb1M4dGx0S0ZKXzhTZ1kwbUF0X0FRR0lUeUtES0dDTEU2VkRjTWFudnNNam9CNW16U1hiS3JhX1pYX3dXRHdIWkpjd09BZXhkVnR4azBpLXNCSjJDQXowSkJ0Zm5ZSHVlRUpBNzM5cUU4eGhiZGN3b2I0X29UWEZLblptNEhfelpYTzVCTS1BaHJ3R1o5ZWVXNVg3eXVhQTd3MkYwQ0JZOHo0WXpHalhZTkRNaG10Q3c"},
   voetbalBelgieMilanHokke: {l:"VoetbalBelgie", u:"https://news.google.com/rss/articles/CBMirwFBVV95cUxPd0RhMmNJMG5VMkN3V2ZNcGlkb0tNMnZxcTNkdW9IQXQ0YWFQa2I2Vk5rSFB3UTJQNDJTNGFLVkxjYlVfOVh5X1dhTFdSaHNNakJ1Z2RlZTEyU1NNNU5MRWZfSmpYc1JURmZQU3YtbnFmbWhPUC0zN3h5V0ltRXZGa3g5NG1UTkM5VWptbHhfMGdMQjBfS2M0QjFzQTZvZnk2MFktTWZQY0NzelZWQ2ln"},
-  unknownFeddeLeysen: {l:"unknown", u:"unknown"}};
+  unknownFeddeLeysen: {l:"unknown", u:"unknown"},
+  voetbalPrimeurbeSadiki1: {l:"VoetbalPrimeur.be", u:"https://news.google.com/rss/articles/CBMixgFBVV95cUxPS0dSZUs5b0c4cVN2aUhCb1M4dGx0S0ZKXzhTZ1kwbUF0X0FRR0lUeUtES0dDTEU2VkRjTWFudnNNam9CNW16U1giS3JhX1pYX3dXRHdIWkpjd09BZXhkVnR4azBpLXNCSjJDQXowSkJ0Zm5ZSHVlRUpBNzM5cUU4eGhiZGN3b2I0X29UWEZLblptNEhfelpYTzVCTS1BaHJ3R1o5ZWVXNVg3eXVhQTd3MkYwQ0JZOHo0WXpHalhZTkRNaG10Q3c"}};
 
 const LINKMAP = {
   "Milan Hokke": ["voetbalkrantMilanHokke", "voetbalBelgieMilanHokke"],
@@ -74,7 +75,7 @@ const LINKMAP = {
   "Keo Boets": ["voetbalkrantKeoBoets"],
   "Kjell Scherpen": ["beINSportsKjellScherpen"],
   "Fedde Leysen": ["pSVFeddeLeysen", "unknownFeddeLeysen"],
-  "Sadiki": ["voetbalPrimeurbeSadiki"]};
+  "Sadiki": ["voetbalPrimeurbeSadiki", "voetbalPrimeurbeSadiki1"]};
 const WL_LINKMAP = {};
 
 const PROSE = {
