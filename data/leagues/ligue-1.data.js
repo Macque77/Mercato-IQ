@@ -157,6 +157,6 @@ const CLUBS_LIST = [{"slug": "aj-auxerre", "name": "AJ Auxerre", "count": 4, "ba
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T16:00:43.533958Z",
+  updated: "2026-08-08T18:02:17.512480Z",
   label: "League aggregation"
 };

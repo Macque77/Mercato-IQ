@@ -13,7 +13,7 @@ const TOP_STORIES = [  {
     name: "Danny Imray",prob: 100, truth: 100, bullshit: false,
     club_origin: "wrexham", club_display_name: "Wrexham", direction: "in",
     from: "Crystal Palace", to: "Wrexham",
-    tier: 0, coverage: 1, coverage_trend: 'flat',
+    tier: 0, coverage: 2, coverage_trend: 'up',
     value: "Undisclosed", updated: "2026-08-03T18:00:00Z", league: "Championship"
   },
   {
@@ -27,7 +27,7 @@ const TOP_STORIES = [  {
     name: "Liam Cullen",prob: 100, truth: 100, bullshit: false,
     club_origin: "swansea-city", club_display_name: "Swansea City", direction: "out",
     from: "Swansea City", to: "Swansea City",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
+    tier: 2, coverage: 3, coverage_trend: 'up',
     value: "", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
   {
@@ -41,7 +41,7 @@ const TOP_STORIES = [  {
     name: "Kyrell Wilson",prob: 95, truth: 95, bullshit: false,
     club_origin: "swansea-city", club_display_name: "Swansea City", direction: "out",
     from: "Swansea City", to: "Swansea City",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
+    tier: 2, coverage: 2, coverage_trend: 'up',
     value: "", updated: "2026-07-29T00:00:00Z", league: "Championship"
   },
 ];
@@ -52,6 +52,6 @@ const LEAGUES_LIST = [{"slug": "championship", "name": "Championship", "count": 
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T16:00:43.526248Z",
+  updated: "2026-08-08T18:02:17.505674Z",
   label: "Nation aggregation"
 };
