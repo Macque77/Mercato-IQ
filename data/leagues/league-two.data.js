@@ -24,6 +24,6 @@ const CLUBS_LIST = [{"slug": "bristol-rovers", "name": "Bristol Rovers", "count"
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T04:00:16.489584Z",
+  updated: "2026-08-08T07:36:50.612473Z",
   label: "League aggregation"
 };

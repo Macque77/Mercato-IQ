@@ -6,10 +6,17 @@
 const NATION = {
   name: "Belgium",
   flag_emoji: "🇧🇪",
-  stories_count: 25
+  stories_count: 27
 };
 
 const TOP_STORIES = [  {
+    name: "Chris-Kévin Nadje",prob: 95, truth: 95, bullshit: false,
+    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
+    from: "Feyenoord", to: "KAS Eupen",
+    tier: 1, coverage: 7, coverage_trend: 'up',
+    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+  },
+  {
     name: "Joel Ndala",prob: 80, truth: 85, bullshit: false,
     club_origin: "cercle-brugge", club_display_name: "Cercle Brugge", direction: "in",
     from: "Manchester City", to: "Cercle Brugge",
@@ -24,24 +31,17 @@ const TOP_STORIES = [  {
     value: "£17m bid rejected", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
-    name: "Chris-Kévin Nadje",prob: 95, truth: 100, bullshit: false,
-    club_origin: "eupen", club_display_name: "KAS Eupen", direction: "in",
-    from: "Feyenoord", to: "KAS Eupen",
-    tier: 2, coverage: 6, coverage_trend: 'up',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
+    name: "Fedde Leysen",prob: 100, truth: 100, bullshit: false,
+    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "in",
+    from: "PSV", to: "Union Saint-Gilloise",
+    tier: 2, coverage: 2, coverage_trend: 'up',
+    value: "unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
     name: "Aurélie Reynders",prob: 95, truth: 90, bullshit: false,
     club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "out",
     from: "OH Leuven", to: "OH Leuven",
     tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
-  },
-  {
-    name: "Fedde Leysen",prob: 95, truth: 95, bullshit: false,
-    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "in",
-    from: "PSV", to: "Union Saint-Gilloise",
-    tier: 2, coverage: 1, coverage_trend: 'flat',
     value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
@@ -52,10 +52,38 @@ const TOP_STORIES = [  {
     value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
   },
   {
+    name: "Bisiwu",prob: 80, truth: 85, bullshit: false,
+    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "out",
+    from: "Club Brugge", to: "Barcelona",
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T14:30:00Z", league: "Pro League"
+  },
+  {
+    name: "Jan Virgili",prob: 65, truth: 70, bullshit: false,
+    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
+    from: "Mallorca", to: "Club Brugge",
+    tier: 2, coverage: 4, coverage_trend: 'flat',
+    value: "Undisclosed", updated: "2026-08-03T14:30:00Z", league: "Pro League"
+  },
+  {
     name: "Unknown player",prob: 60, truth: 65, bullshit: false,
     club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "out",
     from: "Club Brugge", to: "Unknown competitor",
     tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T14:30:00Z", league: "Pro League"
+  },
+  {
+    name: "Cheveyo Tsawa",prob: 50, truth: 60, bullshit: false,
+    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
+    from: "", to: "Club Brugge",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
+    value: "", updated: "2026-08-03T14:30:00Z", league: "Pro League"
+  },
+  {
+    name: "Vasovic",prob: 40, truth: 50, bullshit: false,
+    club_origin: "club-brugge", club_display_name: "Club Brugge", direction: "in",
+    from: "", to: "Club Brugge",
+    tier: 2, coverage: 2, coverage_trend: 'flat',
     value: "", updated: "2026-08-03T14:30:00Z", league: "Pro League"
   },
   {
@@ -73,13 +101,6 @@ const TOP_STORIES = [  {
     value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
   {
-    name: "Tomáš Souček",prob: 25, truth: 40, bullshit: false,
-    club_origin: "rsc-anderlecht", club_display_name: "RSC Anderlecht", direction: "in",
-    from: "West Ham United", to: "RSC Anderlecht",
-    tier: 2, coverage: 2, coverage_trend: 'flat',
-    value: "", updated: "2026-08-03T14:30:00Z", league: "Pro League"
-  },
-  {
     name: "Anouar Ait El-Hadj",prob: 20, truth: 45, bullshit: false,
     club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
     from: "Union Saint-Gilloise", to: "Undisclosed",
@@ -90,38 +111,17 @@ const TOP_STORIES = [  {
     name: "Cisse Sandra",prob: 100, truth: 100, bullshit: false,
     club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "in",
     from: "Club Brugge", to: "KVC Westerlo",
-    tier: 3, coverage: 3, coverage_trend: 'flat',
-    value: "€18m", updated: "2026-08-03T18:30:00Z", league: "Pro League"
-  },
-  {
-    name: "Sadiki",prob: 95, truth: 95, bullshit: false,
-    club_origin: "union-saint-gilloise", club_display_name: "Union Saint-Gilloise", direction: "out",
-    from: "Union Saint-Gilloise", to: "Union Saint-Gilloise",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "Unknown", updated: "2026-07-29T00:00:00Z", league: "Pro League"
-  },
-  {
-    name: "Van Den Heuvel",prob: 90, truth: 85, bullshit: false,
-    club_origin: "oh-leuven", club_display_name: "OH Leuven", direction: "in",
-    from: "Celtic", to: "OH Leuven",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-07-29T00:00:00Z", league: "Pro League"
-  },
-  {
-    name: "Jarne Rommens",prob: 85, truth: 85, bullshit: false,
-    club_origin: "westerlo", club_display_name: "KVC Westerlo", direction: "out",
-    from: "KVC Westerlo", to: "Rangers",
-    tier: 3, coverage: 2, coverage_trend: 'flat',
-    value: "Undisclosed", updated: "2026-08-03T18:30:00Z", league: "Pro League"
+    tier: 3, coverage: 5, coverage_trend: 'up',
+    value: "Reported ~€18m", updated: "2026-08-03T18:30:00Z", league: "Pro League"
   },
 ];
 
-const BY_LEAGUE = {"Pro League": 25, "Challenger Pro League": 0, "Division 1": 0};
+const BY_LEAGUE = {"Pro League": 27, "Challenger Pro League": 0, "Division 1": 0};
 
-const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 25}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
+const LEAGUES_LIST = [{"slug": "pro-league", "name": "Pro League", "count": 27}, {"slug": "challenger-pro-league", "name": "Challenger Pro League", "count": 0}, {"slug": "division-1", "name": "Division 1", "count": 0}];
 
 const REPORT_META = {
   asof: "08 Aug 2026",
-  updated: "2026-08-08T04:00:16.479129Z",
+  updated: "2026-08-08T07:36:50.606783Z",
   label: "Nation aggregation"
 };
