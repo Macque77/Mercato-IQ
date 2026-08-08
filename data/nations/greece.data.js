@@ -86,7 +86,7 @@ const BY_LEAGUE = {"Super League": 10, "Gamma Ethniki": 0};
 const LEAGUES_LIST = [{"slug": "super-league", "name": "Super League", "count": 10}, {"slug": "gamma-ethniki", "name": "Gamma Ethniki", "count": 0}];
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.114163Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.480534Z",
   label: "Nation aggregation"
 };

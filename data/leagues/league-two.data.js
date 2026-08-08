@@ -10,11 +10,11 @@ const LEAGUE = {
 };
 
 const TOP_STORIES = [  {
-    name: "Shaq Forde", prob: 70, truth: 80, bullshit: false,
+    name: "Shaq Forde", prob: 50, truth: 85, bullshit: false,
     club_origin: "bristol-rovers", club_display_name: "Bristol Rovers", direction: "out",
     from: "Bristol Rovers", to: "Bristol Rovers",
-    tier: 3, coverage: 1, coverage_trend: 'flat',
-    value: "unknown", updated: "2026-07-29T00:00:00Z"
+    tier: 2, coverage: 1, coverage_trend: 'flat',
+    value: "Unknown", updated: "2026-07-29T00:00:00Z"
   },
 ];
 
@@ -23,7 +23,7 @@ const BY_CLUB = {"bristol-rovers": 1};
 const CLUBS_LIST = [{"slug": "bristol-rovers", "name": "Bristol Rovers", "count": 1, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}];
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.166108Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.489584Z",
   label: "League aggregation"
 };

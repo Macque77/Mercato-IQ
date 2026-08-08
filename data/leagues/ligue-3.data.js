@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "as-acn-ajaccio", "name": "AC Ajaccio", "count": 0, "badge": false, "primary": "#D71920", "primaryBright": "#FF6B6B"}, {"slug": "amiens-sc", "name": "Amiens SC", "count": 0, "badge": false, "primary": "#0057A8", "primaryBright": "#5CA9FF"}, {"slug": "caen", "name": "Stade Malherbe Caen", "count": 0, "badge": false, "primary": "#B7161C", "primaryBright": "#FF6B6B"}, {"slug": "valenciennes-fc", "name": "Valenciennes FC", "count": 0, "badge": false, "primary": "#8B1E3F", "primaryBright": "#C0526A"}];
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.167963Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.491408Z",
   label: "League aggregation"
 };

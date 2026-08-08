@@ -16,7 +16,7 @@ const BY_CLUB = {};
 const CLUBS_LIST = [{"slug": "erzgebirge-aue", "name": "FC Erzgebirge Aue", "count": 0, "badge": false, "primary": "#5B2C82", "primaryBright": "#A87FD6"}, {"slug": "sandhausen", "name": "SV Sandhausen", "count": 0, "badge": false, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}];
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.170177Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.493391Z",
   label: "League aggregation"
 };

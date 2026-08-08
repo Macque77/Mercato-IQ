@@ -86,7 +86,7 @@ const BY_CLUB = {"st-pauli": 1, "1-fc-heidenheim": 3, "arminia-bielefeld": 4, "v
 const CLUBS_LIST = [{"slug": "1-fc-heidenheim", "name": "1. FC Heidenheim", "count": 3, "badge": true, "primary": "#004B87", "primaryBright": "#5CA9FF"}, {"slug": "arminia-bielefeld", "name": "Arminia Bielefeld", "count": 4, "badge": true, "primary": "#1E3A8A", "primaryBright": "#6FA8FF"}, {"slug": "dynamo-dresden", "name": "Dynamo Dresden", "count": 1, "badge": true, "primary": "#FFD700", "primaryBright": "#FFE666"}, {"slug": "st-pauli", "name": "FC St. Pauli", "count": 1, "badge": true, "primary": "#5B3A29", "primaryBright": "#8F6A54"}, {"slug": "vfl-bochum", "name": "VfL Bochum", "count": 1, "badge": true, "primary": "#00427A", "primaryBright": "#00427A"}, {"slug": "vfl-wolfsburg", "name": "VfL Wolfsburg", "count": 0, "badge": true, "primary": "#65B32E", "primaryBright": "#8FE05C"}];
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.159480Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.483632Z",
   label: "League aggregation"
 };

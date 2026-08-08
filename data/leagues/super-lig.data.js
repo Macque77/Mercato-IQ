@@ -37,7 +37,7 @@ const BY_CLUB = {"fenerbahce": 2, "galatasaray": 1};
 const CLUBS_LIST = [{"slug": "fenerbahce", "name": "Fenerbah\u00e7e SK", "count": 2, "badge": true, "primary": "#FDB913", "primaryBright": "#FDB913"}, {"slug": "galatasaray", "name": "Galatasaray SK", "count": 1, "badge": true, "primary": "#DC2426", "primaryBright": "#DC2426"}];
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.173227Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.496051Z",
   label: "League aggregation"
 };

@@ -121,7 +121,7 @@ const BY_LEAGUE = {"Serie A": 125, "Serie C": 4, "Serie B": 7, "Serie D": 0};
 const LEAGUES_LIST = [{"slug": "serie-a", "name": "Serie A", "count": 125}, {"slug": "serie-b", "name": "Serie B", "count": 7}, {"slug": "serie-c", "name": "Serie C", "count": 4}, {"slug": "serie-d", "name": "Serie D", "count": 0}];
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.156651Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.480861Z",
   label: "Nation aggregation"
 };

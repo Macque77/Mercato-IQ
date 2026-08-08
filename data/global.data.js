@@ -31,17 +31,17 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Franco Ravizzoli",
-    club_display_name: "Blackpool",
-    summary: "On-page rumour retained; no fresh snippet data to update",
-    value: "Undisclosed",
-    from: "Blackpool", to: "Leicester City",
-    direction: "out",
-    prob: 40, truth: 55, trend: 'down', bullshit: false,
+    headline: "Divin Mubama",
+    club_display_name: "Derby County",
+    summary: "O'Rourke is a credible EFL-focused reporter and the logic stacks up given Derby'",
+    value: "Loan",
+    from: "Manchester City", to: "Derby County",
+    direction: "in",
+    prob: 50, truth: 65, trend: 'down', bullshit: false,
     tier: 0, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "League One",
-    club_link: "blackpool",
-    updated: "2026-08-03T18:00:00Z"
+    nation: "England", league: "Championship",
+    club_link: "derby-county",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Moussa Koné",
@@ -55,6 +55,19 @@ const HEADLINES = [
     nation: "France", league: "Ligue 1",
     club_link: "stade-brest",
     updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "Stephen Mfuni",
+    club_display_name: "Derby County",
+    summary: "",
+    value: "Loan",
+    from: "Manchester City", to: "Derby County",
+    direction: "in",
+    prob: 30, truth: 50, trend: 'down', bullshit: false,
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "Championship",
+    club_link: "derby-county",
+    updated: "2026-07-29T00:00:00Z"
   },
   {
     headline: "Kamory Doumbia",
@@ -135,19 +148,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Josh Bowler",
-    club_display_name: "Blackpool",
-    summary: "On-page rumour retained; no fresh snippet data to update",
-    value: "Undisclosed",
-    from: "Blackpool", to: "Nottingham Forest",
-    direction: "out",
-    prob: 25, truth: 35, trend: 'down', bullshit: false,
-    tier: 0, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "League One",
-    club_link: "blackpool",
-    updated: "2026-08-03T18:00:00Z"
-  },
-  {
     headline: "Kerim Alajbegović",
     club_display_name: "AC Milan",
     summary: "On-page entry dated 1 Aug 2026; no fresh snippet found",
@@ -172,6 +172,19 @@ const HEADLINES = [
     nation: "Italy", league: "Serie A",
     club_link: "ac-milan",
     updated: "2026-08-03T14:30:00Z"
+  },
+  {
+    headline: "David McGoldrick",
+    club_display_name: "Mansfield Town",
+    summary: "",
+    value: "Undisclosed",
+    from: "Barnsley", to: "Mansfield Town",
+    direction: "in",
+    prob: 20, truth: 35, trend: 'down', bullshit: false,
+    tier: 0, coverage: 1, coverage_trend: 'flat',
+    nation: "England", league: "League One",
+    club_link: "mansfield-town",
+    updated: "2026-08-03T18:00:00Z"
   },
   {
     headline: "Matheus Nwaneri",
@@ -226,6 +239,19 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Tommy Watson",
+    club_display_name: "Derby County",
+    summary: "",
+    value: "Loan",
+    from: "Brighton", to: "Derby County",
+    direction: "in",
+    prob: 15, truth: 45, trend: 'down', bullshit: false,
+    tier: 0, coverage: 1, coverage_trend: 'down',
+    nation: "England", league: "Championship",
+    club_link: "derby-county",
+    updated: "2026-07-29T00:00:00Z"
+  },
+  {
     headline: "Brahim Diaz",
     club_display_name: "AC Milan",
     summary: "On-page entry; no fresh snippet found",
@@ -265,17 +291,30 @@ const HEADLINES = [
     updated: "2026-06-06T00:00:00Z"
   },
   {
-    headline: "Lee Nicholls",
-    club_display_name: "Huddersfield Town",
-    summary: "Official transfer completed",
-    value: "Unknown",
-    from: "Huddersfield Town", to: "Preston North End",
+    headline: "Sasa Lukic",
+    club_display_name: "Fulham",
+    summary: "Medical completed; deal imminent",
+    value: "£9m",
+    from: "Fulham", to: "Ipswich Town",
     direction: "out",
-    prob: 100, truth: 100, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "League One",
-    club_link: "huddersfield-town",
-    updated: "2026-08-03T18:00:00Z"
+    prob: 95, truth: 95, trend: 'flat', bullshit: false,
+    tier: 1, coverage: 4, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "fulham",
+    updated: "2026-06-06T00:00:00Z"
+  },
+  {
+    headline: "Bruno Guimarães",
+    club_display_name: "Arsenal",
+    summary: "Near total agreement reached; medical imminent",
+    value: "Undisclosed",
+    from: "Newcastle United", to: "Arsenal",
+    direction: "in",
+    prob: 95, truth: 95, trend: 'up', bullshit: false,
+    tier: 1, coverage: 8, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Kodai Sano",
@@ -291,55 +330,42 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Bruno Guimarães",
-    club_display_name: "Arsenal",
-    summary: "Near total agreement reached; medical imminent",
-    value: "Undisclosed",
-    from: "Newcastle United", to: "Arsenal",
-    direction: "in",
-    prob: 90, truth: 95, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 8, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Jan Paul van Hecke",
-    club_display_name: "Brighton",
-    summary: "Fee agreed with Tottenham",
-    value: "£52m",
-    from: "Brighton", to: "Brighton",
-    direction: "out",
-    prob: 85, truth: 95, trend: 'down', bullshit: false,
-    tier: 1, coverage: 3, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "brighton",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
     headline: "Maxence Lacroix",
     club_display_name: "Chelsea",
-    summary: "Medical stage",
+    summary: "Medical imminent",
     value: "£52m",
     from: "Crystal Palace", to: "Chelsea",
     direction: "in",
-    prob: 85, truth: 90, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 3, coverage_trend: 'flat',
+    prob: 90, truth: 95, trend: 'up', bullshit: false,
+    tier: 1, coverage: 4, coverage_trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "chelsea",
     updated: "2026-08-03T12:48:44Z"
   },
   {
-    headline: "Rodri",
-    club_display_name: "Manchester City",
-    summary: "Multiple sources confirm advanced negotiations; Real Madrid pursuing; Barcelona'",
-    value: "€45m (Barcelona offer)",
-    from: "Manchester City", to: "Manchester City",
+    headline: "Christian Norgaard",
+    club_display_name: "Arsenal",
+    summary: "Agreement in principle reached with Everton",
+    value: "£7m",
+    from: "Arsenal", to: "Everton",
     direction: "out",
-    prob: 85, truth: 90, trend: 'up', bullshit: false,
-    tier: 1, coverage: 8, coverage_trend: 'flat',
+    prob: 90, truth: 90, trend: 'up', bullshit: false,
+    tier: 1, coverage: 5, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
-    club_link: "manchester-city",
+    club_link: "arsenal",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Morgan Rogers",
+    club_display_name: "Chelsea",
+    summary: "Verbal agreement reached",
+    value: "£117m",
+    from: "Middlesbrough", to: "Chelsea",
+    direction: "in",
+    prob: 85, truth: 90, trend: 'up', bullshit: false,
+    tier: 1, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "chelsea",
     updated: "2026-08-03T12:48:44Z"
   },
   {
@@ -350,7 +376,7 @@ const HEADLINES = [
     from: "Aston Villa", to: "Aston Villa",
     direction: "out",
     prob: 85, truth: 90, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 5, coverage_trend: 'up',
+    tier: 1, coverage: 5, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "aston-villa",
     updated: "2026-06-06T12:00:00Z"
@@ -369,16 +395,16 @@ const HEADLINES = [
     updated: "2026-06-06T12:00:00Z"
   },
   {
-    headline: "Eberechi Eze",
-    club_display_name: "Crystal Palace",
-    summary: "Agreement in principle reached",
-    value: "Undisclosed",
-    from: "Crystal Palace", to: "Arsenal",
-    direction: "out",
+    headline: "Liam Delap",
+    club_display_name: "Chelsea",
+    summary: "Agreement reached",
+    value: "Unknown",
+    from: "Ipswich Town", to: "Chelsea",
+    direction: "in",
     prob: 85, truth: 90, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
-    club_link: "crystal-palace",
+    club_link: "chelsea",
     updated: "2026-08-03T12:48:44Z"
   },
   {
@@ -408,19 +434,6 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Morgan Rogers",
-    club_display_name: "Chelsea",
-    summary: "Verbal agreement reached",
-    value: "£117m",
-    from: "Middlesbrough", to: "Chelsea",
-    direction: "in",
-    prob: 80, truth: 85, trend: 'up', bullshit: false,
-    tier: 1, coverage: 2, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "chelsea",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
     headline: "Lucas Digne",
     club_display_name: "Paris Saint-Germain",
     summary: "Would provide cover for Nuno Mendes; Digne previously at PSG 2013-15",
@@ -434,35 +447,9 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Christian Norgaard",
-    club_display_name: "Arsenal",
-    summary: "Agreement in principle with Everton reached",
-    value: "£7m",
-    from: "Arsenal", to: "Everton",
-    direction: "out",
-    prob: 80, truth: 85, trend: 'down', bullshit: false,
-    tier: 1, coverage: 5, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "arsenal",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
-    headline: "Liam Delap",
-    club_display_name: "Chelsea",
-    summary: "Agreement reached",
-    value: "Unknown",
-    from: "Ipswich Town", to: "Chelsea",
-    direction: "in",
-    prob: 80, truth: 85, trend: 'up', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "chelsea",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
     headline: "Pep Chavarria",
     club_display_name: "Chelsea",
-    summary: "Close to finalising",
+    summary: "Deal close to completion",
     value: "Unknown",
     from: "Rayo Vallecano", to: "Chelsea",
     direction: "in",
@@ -488,11 +475,11 @@ const HEADLINES = [
   {
     headline: "Elliot Anderson",
     club_display_name: "Manchester City",
-    summary: "Deal described as agreement reached",
+    summary: "Ornstein confirms agreement in place following improved bid",
     value: "Undisclosed",
     from: "Nottingham Forest", to: "Manchester City",
     direction: "in",
-    prob: 80, truth: 85, trend: 'down', bullshit: false,
+    prob: 80, truth: 85, trend: 'flat', bullshit: false,
     tier: 1, coverage: 5, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "manchester-city",
@@ -512,9 +499,22 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
+    headline: "Rodri",
+    club_display_name: "Manchester City",
+    summary: "Ornstein reports Real Madrid advancing negotiations while Barcelona's €45m bid w",
+    value: "€45m (Barcelona offer rejected)",
+    from: "Manchester City", to: "Manchester City",
+    direction: "out",
+    prob: 75, truth: 80, trend: 'down', bullshit: false,
+    tier: 1, coverage: 8, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
     headline: "Alejandro Garnacho",
     club_display_name: "Aston Villa",
-    summary: "Deal agreed with Chelsea",
+    summary: "Deal agreed between clubs",
     value: "Undisclosed",
     from: "Chelsea", to: "Aston Villa",
     direction: "in",
@@ -523,19 +523,6 @@ const HEADLINES = [
     nation: "England", league: "Premier League",
     club_link: "aston-villa",
     updated: "2026-06-06T12:00:00Z"
-  },
-  {
-    headline: "James Trafford",
-    club_display_name: "Manchester City",
-    summary: "Active talks reported",
-    value: "Undisclosed",
-    from: "Leeds United", to: "Manchester City",
-    direction: "in",
-    prob: 75, truth: 80, trend: 'up', bullshit: false,
-    tier: 1, coverage: 4, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "manchester-city",
-    updated: "2026-08-03T12:48:44Z"
   },
   {
     headline: "Zion Suzuki",
@@ -579,14 +566,53 @@ const HEADLINES = [
   {
     headline: "Lewis Hall",
     club_display_name: "Manchester United",
-    summary: "Multiple Ornstein updates confirm talks ongoing; agreement structure discussed",
+    summary: "Multiple updates from Ornstein; deal appears to be progressing but faces resista",
     value: "£60m",
     from: "Newcastle United", to: "Manchester United",
     direction: "in",
     prob: 70, truth: 85, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 5, coverage_trend: 'flat',
+    tier: 1, coverage: 6, coverage_trend: 'up',
     nation: "England", league: "Premier League",
     club_link: "manchester-united",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "Bryan Mbeumo",
+    club_display_name: "Brentford",
+    summary: "Improved bid reported; deal not yet agreed",
+    value: "£60m+",
+    from: "Brentford", to: "Brentford",
+    direction: "out",
+    prob: 70, truth: 85, trend: 'up', bullshit: false,
+    tier: 1, coverage: 2, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "brentford",
+    updated: "2026-06-06T12:00:00Z"
+  },
+  {
+    headline: "Danny Welbeck",
+    club_display_name: "Chelsea",
+    summary: "Early stage exploration",
+    value: "Unknown",
+    from: "Brighton", to: "Chelsea",
+    direction: "in",
+    prob: 70, truth: 75, trend: 'up', bullshit: false,
+    tier: 1, coverage: 5, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "chelsea",
+    updated: "2026-08-03T12:48:44Z"
+  },
+  {
+    headline: "James Trafford",
+    club_display_name: "Manchester City",
+    summary: "Ornstein reports Leeds in negotiations with Manchester City",
+    value: "Undisclosed",
+    from: "Leeds United", to: "Manchester City",
+    direction: "in",
+    prob: 70, truth: 75, trend: 'down', bullshit: false,
+    tier: 1, coverage: 4, coverage_trend: 'flat',
+    nation: "England", league: "Premier League",
+    club_link: "manchester-city",
     updated: "2026-08-03T12:48:44Z"
   },
   {
@@ -603,14 +629,14 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Danny Welbeck",
+    headline: "Enzo Fernández",
     club_display_name: "Chelsea",
-    summary: "In exploration stage",
+    summary: "Early stage interest from Man City",
     value: "Unknown",
-    from: "Brighton & Hove Albion", to: "Chelsea",
-    direction: "in",
+    from: "Chelsea", to: "Chelsea",
+    direction: "out",
     prob: 65, truth: 70, trend: 'up', bullshit: false,
-    tier: 1, coverage: 5, coverage_trend: 'flat',
+    tier: 1, coverage: 1, coverage_trend: 'flat',
     nation: "England", league: "Premier League",
     club_link: "chelsea",
     updated: "2026-08-03T12:48:44Z"
@@ -655,30 +681,17 @@ const HEADLINES = [
     updated: "2026-08-03T14:30:00Z"
   },
   {
-    headline: "Enzo Fernández",
-    club_display_name: "Chelsea",
-    summary: "Interest from Man City",
-    value: "Unknown",
-    from: "Chelsea", to: "Chelsea",
-    direction: "out",
-    prob: 60, truth: 65, trend: 'up', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "England", league: "Premier League",
-    club_link: "chelsea",
-    updated: "2026-08-03T12:48:44Z"
-  },
-  {
     headline: "Bradley Barcola",
-    club_display_name: "Paris Saint-Germain",
-    summary: "",
-    value: "Nine figures sought",
+    club_display_name: "Liverpool",
+    summary: "Ornstein confirms medical done on Tuesday; player has agreed four-year deal",
+    value: "£116m",
     from: "Paris Saint-Germain", to: "Liverpool",
-    direction: "out",
-    prob: 58, truth: 90, trend: 'up', bullshit: false,
-    tier: 1, coverage: 3, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "paris-saint-germain",
-    updated: "2026-08-03T14:30:00Z"
+    direction: "in",
+    prob: 60, truth: 75, trend: 'up', bullshit: false,
+    tier: 1, coverage: 9, coverage_trend: 'up',
+    nation: "England", league: "Premier League",
+    club_link: "liverpool",
+    updated: "2026-06-06T00:00:00Z"
   },
   {
     headline: "Arne Engels",
@@ -771,19 +784,6 @@ const HEADLINES = [
     club_link: "nottingham-forest",
     updated: "2026-07-30T14:00:00Z"
   },
-  {
-    headline: "Geronimo Rulli",
-    club_display_name: "Olympique de Marseille",
-    summary: "Marseille reportedly want a replacement (e.g. Restes) lined up before sanctionin",
-    value: "Undisclosed",
-    from: "Olympique de Marseille", to: "Manchester City",
-    direction: "out",
-    prob: 55, truth: 70, trend: 'flat', bullshit: false,
-    tier: 1, coverage: 1, coverage_trend: 'flat',
-    nation: "France", league: "Ligue 1",
-    club_link: "olympique-marseille",
-    updated: "2026-08-03T14:30:00Z"
-  },
 ];
 
 const NATIONS = [
@@ -797,7 +797,7 @@ const NATIONS = [
   },
   {
     name: "France", slug: "france", flag_emoji: "🇫🇷",
-    stories_count: 92, league_count: 2
+    stories_count: 91, league_count: 2
   },
   {
     name: "Spain", slug: "spain", flag_emoji: "🇪🇸",
@@ -813,7 +813,7 @@ const NATIONS = [
   },
   {
     name: "Belgium", slug: "belgium", flag_emoji: "🇧🇪",
-    stories_count: 23, league_count: 1
+    stories_count: 25, league_count: 1
   },
   {
     name: "Portugal", slug: "portugal", flag_emoji: "🇵🇹",
@@ -833,7 +833,7 @@ const NATIONS = [
   },
   {
     name: "Wales", slug: "wales", flag_emoji: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
-    stories_count: 3, league_count: 1
+    stories_count: 2, league_count: 1
   },
   {
     name: "Sweden", slug: "sweden", flag_emoji: "🇸🇪",
@@ -843,7 +843,7 @@ const NATIONS = [
 
 const STATS = {
   total_stories: 734,
-  clubs_covered: 199,
+  clubs_covered: 198,
   tier1_count: 76,
   top_league: "Serie A",
   most_active_club: "Sunderland",
@@ -852,7 +852,7 @@ const STATS = {
 };
 
 const REPORT_META = {
-  asof: "07 Aug 2026",
-  updated: "2026-08-07T23:02:04.112352Z",
+  asof: "08 Aug 2026",
+  updated: "2026-08-08T04:00:16.478688Z",
   label: "Global aggregation from all clubs"
 };
